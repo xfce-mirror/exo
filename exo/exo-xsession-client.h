@@ -67,6 +67,9 @@ GdkWindow         *exo_xsession_client_get_group            (ExoXsessionClient  
 void               exo_xsession_client_set_group            (ExoXsessionClient  *client,
                                                              GdkWindow          *leader);
 
+gboolean           exo_xsession_client_get_restart_command  (ExoXsessionClient  *client,
+                                                             gchar            ***argv,
+                                                             gint               *argc);
 void               exo_xsession_client_set_restart_command  (ExoXsessionClient  *client,
                                                              gchar             **argv,
                                                              gint                argc);

@@ -1,7 +1,6 @@
-/* $Id: exo-ellipsized-label.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
- * Copyright (c) 2000 John Sullivan <sullivan@eazel.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -50,22 +49,18 @@ struct _ExoEllipsizedLabelClass
 
 struct _ExoEllipsizedLabel
 {
-  GtkLabel                   __parent__;
+  GtkLabel __parent__;
+
+  /*< private >*/
   ExoEllipsizedLabelPrivate *priv;
 };
 
 GType                 exo_ellipsized_label_get_type      (void) G_GNUC_CONST;
 
-GtkWidget            *exo_ellipsized_label_new           (const gchar           *full_text);
+GtkWidget            *exo_ellipsized_label_new           (const gchar           *text);
 
-const gchar          *exo_ellipsized_label_get_full_text (ExoEllipsizedLabel    *label);
-
-void                  exo_ellipsized_label_set_full_text (ExoEllipsizedLabel    *label,
-                                                          const gchar           *full_text);
-
-ExoPangoEllipsizeMode exo_ellipsized_label_get_mode      (ExoEllipsizedLabel    *label);
-
-void                  exo_ellipsized_label_set_mode      (ExoEllipsizedLabel    *label,
+ExoPangoEllipsizeMode exo_ellipsized_label_get_ellipsize (ExoEllipsizedLabel    *label);
+void                  exo_ellipsized_label_set_ellipsize (ExoEllipsizedLabel    *label,
                                                           ExoPangoEllipsizeMode  mode);
 
 G_END_DECLS;

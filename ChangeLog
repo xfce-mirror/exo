@@ -1,3 +1,27 @@
+2004-11-26	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-string.h, exo/exo-string.c: Added exo_strndupv() utility
+	  function to duplicate string arrays.
+	* exo/exo-enum-types.h, exo/exo-pango-extensions.c,
+	  exo/exo-enum-types.c, exo/exo-pango-extensions.h: Added 
+	  EXO_PANGO_ELLIPSIZE_NONE to be compatible with Pango. Use
+	  ellipsizing functions provided by Pango 1.6 if build against
+	  Pango 1.6 or above.
+	* exo/exo-xsession-client.h, exo/exo-xsession-client.c: Added
+	  exo_xsession_client_get_restart_command() as per Brians request.
+	* exo/exo-ellipsized-label.c, exo/exo-ellipsized-label.h: Made this
+	  widget compatible with GtkLabel from Gtk+ 2.6.
+	* exo/exo-cell-renderer-ellipsized-text.c,
+	  exo/exo-cell-renderer-ellipsized-text.h: Added a CellRenderer widget
+	  that enhances GtkCellRendererText with the ability to automatically
+	  ellipsize text. This is compatible with GtkCellRendererText from
+	  Gtk+ 2.6.
+	* exo/Makefile.am, HACKING: Added "regenerate" targets to regenerate
+	  the marshallers and enum types files.
+	* exo/exo.h: Include new header files.
+	* docs/: Updated API documentation.
+	* configure.ac: Updated version to 0.2.0pre1.
+
 2004-11-25	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-toolbars-view.c, exo/exo-toolbars-view.h: Changed the

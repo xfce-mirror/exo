@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-25 19:30+0100\n"
+"POT-Creation-Date: 2004-11-26 23:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: exo/exo-ellipsized-label.c:105
-msgid "Full text"
+#: exo/exo-ellipsized-label.c:119
+msgid "Ellipsize"
 msgstr ""
 
-#: exo/exo-ellipsized-label.c:106
-msgid "Full text, will be ellipsized"
+#: exo/exo-ellipsized-label.c:120
+msgid ""
+"The preferred place to ellipsize the string, if the label does not have "
+"enough room to display the entire string, if at all"
 msgstr ""
 
 #: exo/exo-file-watch.c:340
@@ -29,59 +31,67 @@ msgstr ""
 msgid "Unable to stat file %s"
 msgstr ""
 
-#: exo/exo-icon-bar.c:226 exo/exo-icon-view.c:339
+#: exo/exo-icon-bar.c:228 exo/exo-icon-view.c:393
+msgid "Orientation"
+msgstr ""
+
+#: exo/exo-icon-bar.c:229
+msgid "The orientation of the iconbar"
+msgstr ""
+
+#: exo/exo-icon-bar.c:245 exo/exo-icon-view.c:339
 msgid "Pixbuf column"
 msgstr ""
 
-#: exo/exo-icon-bar.c:227 exo/exo-icon-view.c:340
+#: exo/exo-icon-bar.c:246 exo/exo-icon-view.c:340
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr ""
 
-#: exo/exo-icon-bar.c:242 exo/exo-icon-view.c:357
+#: exo/exo-icon-bar.c:261 exo/exo-icon-view.c:357
 msgid "Text column"
 msgstr ""
 
-#: exo/exo-icon-bar.c:243 exo/exo-icon-view.c:358
+#: exo/exo-icon-bar.c:262 exo/exo-icon-view.c:358
 msgid "Model column used to retrieve the text from"
 msgstr ""
 
-#: exo/exo-icon-bar.c:255
+#: exo/exo-icon-bar.c:274
 msgid "Icon Bar Model"
 msgstr ""
 
-#: exo/exo-icon-bar.c:256
+#: exo/exo-icon-bar.c:275
 msgid "Model for the icon bar"
 msgstr ""
 
-#: exo/exo-icon-bar.c:272
+#: exo/exo-icon-bar.c:291
 msgid "Active"
 msgstr ""
 
-#: exo/exo-icon-bar.c:273
+#: exo/exo-icon-bar.c:292
 msgid "Active item index"
 msgstr ""
 
-#: exo/exo-icon-bar.c:279 exo/exo-icon-bar.c:280
+#: exo/exo-icon-bar.c:298 exo/exo-icon-bar.c:299
 msgid "Active item fill color"
 msgstr ""
 
-#: exo/exo-icon-bar.c:286 exo/exo-icon-bar.c:287
+#: exo/exo-icon-bar.c:305 exo/exo-icon-bar.c:306
 msgid "Active item border color"
 msgstr ""
 
-#: exo/exo-icon-bar.c:293 exo/exo-icon-bar.c:294
+#: exo/exo-icon-bar.c:312 exo/exo-icon-bar.c:313
 msgid "Active item text color"
 msgstr ""
 
-#: exo/exo-icon-bar.c:300 exo/exo-icon-bar.c:301
+#: exo/exo-icon-bar.c:319 exo/exo-icon-bar.c:320
 msgid "Cursor item fill color"
 msgstr ""
 
-#: exo/exo-icon-bar.c:307 exo/exo-icon-bar.c:308
+#: exo/exo-icon-bar.c:326 exo/exo-icon-bar.c:327
 msgid "Cursor item border color"
 msgstr ""
 
-#: exo/exo-icon-bar.c:314 exo/exo-icon-bar.c:315
+#: exo/exo-icon-bar.c:333 exo/exo-icon-bar.c:334
 msgid "Cursor item text color"
 msgstr ""
 
@@ -107,10 +117,6 @@ msgstr ""
 
 #: exo/exo-icon-view.c:386
 msgid "The model for the icon view"
-msgstr ""
-
-#: exo/exo-icon-view.c:393
-msgid "Orientation"
 msgstr ""
 
 #: exo/exo-icon-view.c:394
@@ -148,35 +154,35 @@ msgstr ""
 msgid "Separator"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:723
+#: exo/exo-toolbars-view.c:739
 msgid "Toolbar _Style"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:730
+#: exo/exo-toolbars-view.c:746
 msgid "_Default"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:739
+#: exo/exo-toolbars-view.c:755
 msgid "_Icons only"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:748
+#: exo/exo-toolbars-view.c:764
 msgid "_Text only"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:757
+#: exo/exo-toolbars-view.c:773
 msgid "_Both"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:766
+#: exo/exo-toolbars-view.c:782
 msgid "Both _horizontal"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:774
+#: exo/exo-toolbars-view.c:790
 msgid "_Remove Toolbar"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:789
+#: exo/exo-toolbars-view.c:805
 msgid "Customize Toolbar..."
 msgstr ""
 

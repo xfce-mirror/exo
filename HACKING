@@ -50,11 +50,12 @@ Release process
   5) Run make update-po in po/ and update po/de.po (don't forget the header)!
   6) Unset libexo_version_tab in configure.ac and reset it after the
      release is done.
-  7) Verify that make dist works.
-  8) "svn commit" the changes.
-  9) Create a simple tag for the release,
+  7) Run make regenerate
+  8) Verify that make dist works.
+  9) "svn commit" the changes.
+ 10) Create a simple tag for the release,
       "svn copy https://os-cillation.de:8080/repos/libexo/trunk \
          https://os-cillation.de:8080/repos/libexo/tags/release-X.Y.Z"
      where X.Y.Z is the version number.
- 10) upload the tarball to os-cillation ftp
- 11) Update freshmeat entry.
+ 11) upload the tarball to os-cillation ftp
+ 12) Update freshmeat entry.

@@ -34,6 +34,7 @@
 #include <gdk/gdkx.h>
 
 #include <exo/exo-private.h>
+#include <exo/exo-string.h>
 #include <exo/exo-xsession-client.h>
 
 
@@ -347,6 +348,60 @@ exo_xsession_client_get_group (ExoXsessionClient *client)
 
 
 /**
+ * exo_xsession_client_get_restart_command:
+ * @client  : An #ExoXsessionClient.
+ * @argv    : Pointer to the location where the
+ *            pointer to the argument vector should
+ *            be stored to.
+ * @argc    : Pointer to the location where the
+ *            number of arguments should be stored
+ *            to or %NULL.
+ *
+ * Retrieves the restart command previously set on @client. The
+ * result is stored in @argv and should be freed using 
+ * g_strfreev() when no longer needed.
+ *
+ * See exo_xsession_client_set_restart_command() for further
+ * explanation.
+ *
+ * Return value: %TRUE on success, else %FALSE.
+ **/
+gboolean
+exo_xsession_client_get_restart_command (ExoXsessionClient  *client,
+                                         gchar            ***argv,
+                                         gint               *argc)
+{
+  gchar **argv_return;
+  gint    argc_return;
+
+  g_return_val_if_fail (EXO_IS_XSESSION_CLIENT (client), FALSE);
+  g_return_val_if_fail (argv != NULL, FALSE);
+
+  if (G_UNLIKELY (client->priv->leader == NULL))
+    {
+      g_warning ("Tried to get the restart command for an ExoXsessionClient "
+                 "instance, which is not connected to any client leader "
+                 "window.");
+      return FALSE;
+    }
+
+  if (XGetCommand (GDK_DRAWABLE_XDISPLAY (client->priv->leader),
+                   GDK_DRAWABLE_XID (client->priv->leader),
+                   &argv_return, &argc_return))
+    {
+      if (argc != NULL)
+        *argc = argc_return;
+      *argv = exo_strndupv (argv_return, argc_return);
+      XFreeStringList (argv_return);
+      return TRUE;
+    }
+
+  return FALSE;
+}
+
+
+
+/**
  * exo_xsession_client_set_restart_command:
  * @client  : An #ExoXsessionClient.
  * @argv    : The argument vector.
@@ -358,6 +413,11 @@ exo_xsession_client_get_group (ExoXsessionClient *client)
  *
  * This function can only be used if @client is associated with
  * a client leader window.
+ *
+ * Please take note, that gtk_init() automatically sets the
+ * %WM_COMMAND property on all client leader windows that are
+ * implicitly created by Gtk+. So, you may only need to call
+ * this function in response to the ::save-yourself signal.
  **/
 void
 exo_xsession_client_set_restart_command (ExoXsessionClient *client,

@@ -29,10 +29,13 @@
 
 G_BEGIN_DECLS;
 
-gchar   *exo_str_elide_underscores  (const gchar *text);
+gchar    *exo_str_elide_underscores  (const gchar *text);
 
-gboolean exo_str_is_equal           (const gchar *a,
-                                     const gchar *b);
+gboolean  exo_str_is_equal           (const gchar *a,
+                                      const gchar *b);
+
+gchar   **exo_strndupv               (gchar      **strv,
+                                      gint         num);
 
 G_END_DECLS;
 

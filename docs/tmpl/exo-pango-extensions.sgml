@@ -1,0 +1,44 @@
+<!-- ##### SECTION Title ##### -->
+Extensions to Pango
+
+<!-- ##### SECTION Short_Description ##### -->
+Miscelleanous extensions to the Pango library.
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+This facility provides ellipsizing support functions for
+Pango 1.4 and below. If its build against Pango 1.6 or
+above, it uses the ellipsizing functionality provided
+by Pango, else its emulated in libexo.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+<ulink url="http://developer.gnome.org/doc/API/2.0/pango/"
+type="http">Pango Reference Manual</ulink>, <link
+linkend="ExoEllipsizedLabel">ExoEllipsizedLabel</link>,
+<link linkend="ExoCellRendererEllipsizedText">ExoCellRendererEllipsizedText</link>
+</para>
+
+<!-- ##### ENUM ExoPangoEllipsizeMode ##### -->
+<para>
+
+</para>
+
+@EXO_PANGO_ELLIPSIZE_NONE: 
+@EXO_PANGO_ELLIPSIZE_START: 
+@EXO_PANGO_ELLIPSIZE_MIDDLE: 
+@EXO_PANGO_ELLIPSIZE_END: 
+
+<!-- ##### FUNCTION exo_pango_layout_set_text_ellipsized ##### -->
+<para>
+
+</para>
+
+@layout: 
+@string: 
+@width: 
+@mode: 
+@Returns: 
+
+

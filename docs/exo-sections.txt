@@ -2,20 +2,6 @@
 
 
 <SECTION>
-<FILE>exo-config</FILE>
-<TITLE>Version Information</TITLE>
-exo_major_version
-exo_minor_version
-exo_micro_version
-<SUBSECTION>
-EXO_MAJOR_VERSION
-EXO_MINOR_VERSION
-EXO_MICRO_VERSION
-EXO_CHECK_VERSION
-</SECTION>
-
-
-<SECTION>
 <FILE>exo-toolbars-model</FILE>
 <TITLE>ExoToolbarsModel</TITLE>
 ExoToolbarsModel
@@ -55,7 +41,6 @@ EXO_TOOLBARS_MODEL_GET_CLASS
 exo_toolbars_model_get_type
 </SECTION>
 
-
 <SECTION>
 <FILE>exo-toolbars-editor</FILE>
 ExoToolbarsEditor
@@ -93,7 +78,6 @@ EXO_TOOLBARS_EDITOR_DIALOG_GET_CLASS
 exo_toolbars_editor_dialog_get_type
 </SECTION>
 
-
 <SECTION>
 <FILE>exo-toolbars-view</FILE>
 <TITLE>ExoToolbarsView</TITLE>
@@ -118,6 +102,40 @@ exo_toolbars_view_get_type
 </SECTION>
 
 
+
+<SECTION>
+<FILE>exo-cell-renderer-ellipsized-text</FILE>
+<TITLE>ExoCellRendererEllipsizedText</TITLE>
+ExoCellRendererEllipsizedText
+exo_cell_renderer_ellipsized_text_new
+<SUBSECTION Standard>
+EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT
+EXO_CELL_RENDERER_ELLIPSIZED_TEXT
+EXO_CELL_RENDERER_ELLIPSIZED_TEXT_CLASS
+EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT
+EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT_CLASS
+EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_CLASS
+<SUBSECTION Private>
+exo_cell_renderer_ellipsized_text_get_type
+</SECTION>
+
+<SECTION>
+<FILE>exo-ellipsized-label</FILE>
+<TITLE>ExoEllipsizedLabel</TITLE>
+ExoEllipsizedLabel
+exo_ellipsized_label_new
+exo_ellipsized_label_get_ellipsize
+exo_ellipsized_label_set_ellipsize
+<SUBSECTION Standard>
+EXO_TYPE_ELLIPSIZED_LABEL
+EXO_ELLIPSIZED_LABEL
+EXO_ELLIPSIZED_LABEL_CLASS
+EXO_IS_ELLIPSIZED_LABEL
+EXO_IS_ELLIPSIZED_LABEL_CLASS
+EXO_ELLIPSIZED_LABEL_GET_CLASS
+<SUBSECTION Private>
+exo_ellipsized_label_get_type
+</SECTION>
 
 <SECTION>
 <FILE>exo-icon-bar</FILE>
@@ -156,15 +174,37 @@ exo_icon_bar_get_type
 exo_gdk_pixbuf_scale_ratio
 </SECTION>
 
-
-
 <SECTION>
 <FILE>exo-gobject-extensions</FILE>
 <TITLE>Extensions to GObject</TITLE>
 exo_g_value_transform_negate
 </SECTION>
 
+<SECTION>
+<FILE>exo-pango-extensions</FILE>
+<TITLE>Extensions to Pango</TITLE>
+ExoPangoEllipsizeMode
+exo_pango_layout_set_text_ellipsized
+<SUBSECTION Standard>
+EXO_TYPE_PANGO_ELLIPSIZE_MODE
+<SUBSECTION Private>
+exo_pango_ellipsize_mode_get_type
+</SECTION>
 
+
+
+<SECTION>
+<FILE>exo-config</FILE>
+<TITLE>Version Information</TITLE>
+exo_major_version
+exo_minor_version
+exo_micro_version
+<SUBSECTION>
+EXO_MAJOR_VERSION
+EXO_MINOR_VERSION
+EXO_MICRO_VERSION
+EXO_CHECK_VERSION
+</SECTION>
 
 <SECTION>
 <FILE>exo-binding</FILE>
@@ -182,16 +222,13 @@ exo_mutual_binding_new_with_negation
 exo_mutual_binding_unbind
 </SECTION>
 
-
-
 <SECTION>
 <FILE>exo-string</FILE>
 <TITLE>String Utility Functions</TITLE>
 exo_str_elide_underscores
 exo_str_is_equal
+exo_strndupv
 </SECTION>
-
-
 
 <SECTION>
 <FILE>exo-xsession-client</FILE>
@@ -200,6 +237,7 @@ ExoXsessionClient
 exo_xsession_client_new_with_group
 exo_xsession_client_get_group
 exo_xsession_client_set_group
+exo_xsession_client_get_restart_command
 exo_xsession_client_set_restart_command
 <SUBSECTION Standard>
 EXO_TYPE_XSESSION_CLIENT

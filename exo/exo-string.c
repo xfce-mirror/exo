@@ -102,3 +102,35 @@ exo_str_is_equal (const gchar *a,
   return FALSE;
 }
 
+
+
+/**
+ * exo_strndupv:
+ * @strv  : String vector to duplicate.
+ * @num   : Number of strings in @strv to
+ *          duplicate.
+ *
+ * Creates a new string vector containing the
+ * first @n elements of @strv.
+ *
+ * Return value: The new string vector. Should be
+ *               freed using g_strfreev() when no
+ *               longer needed.
+ **/
+gchar**
+exo_strndupv (gchar **strv,
+              gint    num)
+{
+  gchar **result;
+
+  g_return_val_if_fail (strv != NULL, NULL);
+  g_return_val_if_fail (num >= 0, NULL);
+
+  result = g_new (gchar *, num + 1);
+  result[num--] = NULL;
+  for (; num >= 0; --num)
+    result[num] = g_strdup (strv[num]);
+
+  return result;
+}
+

@@ -1,4 +1,4 @@
-/* $Id: exo-pango-extensions.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
  * Copyright (c) 2000 Anders Carlsson <andersca@gnu.org>
@@ -30,14 +30,13 @@
 
 G_BEGIN_DECLS;
 
-typedef enum _ExoPangoEllipsizeMode ExoPangoEllipsizeMode;
-
-enum _ExoPangoEllipsizeMode
+typedef enum /*< enum,prefix=EXO_PANGO_ELLIPSIZE_MODE >*/
 {
+  EXO_PANGO_ELLIPSIZE_NONE,
   EXO_PANGO_ELLIPSIZE_START,
   EXO_PANGO_ELLIPSIZE_MIDDLE,
   EXO_PANGO_ELLIPSIZE_END,
-};
+} ExoPangoEllipsizeMode;
 
 gboolean  exo_pango_layout_set_text_ellipsized (PangoLayout           *layout,
                                                 const char            *string,

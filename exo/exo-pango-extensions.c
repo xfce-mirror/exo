@@ -1,4 +1,4 @@
-/* $Id: exo-pango-extensions.c,v 1.1.1.1 2004/09/14 22:32:58 bmeurer Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
  * Copyright (c) 2000 Anders Carlsson <andersca@gnu.org>
@@ -39,6 +39,7 @@
 
 
 
+#ifndef PANGO_TYPE_ELLIPSIZE_MODE
 static int
 measure_string_width (const char  *string,
                       PangoLayout *layout)
@@ -359,6 +360,7 @@ ellipsize_middle (const char *string, PangoLayout *layout, int width)
 
 	return result;
 }
+#endif /* !PANGO_TYPE_ELLIPSIZE_MODE */
 
 
 
@@ -383,6 +385,17 @@ exo_pango_layout_set_text_ellipsized (PangoLayout            *layout,
                                        int                     width,
                                        ExoPangoEllipsizeMode  mode)
 {
+#ifdef PANGO_TYPE_ELLIPSIZE_MODE
+  g_return_val_if_fail (PANGO_IS_LAYOUT (layout), FALSE);
+  g_return_val_if_fail (string != NULL, FALSE);
+  g_return_val_if_fail (width >= 0, FALSE);
+
+  pango_layout_set_text (layout, string, -1);
+  pango_layout_set_width (layout, PANGO_SCALE * width);
+  pango_layout_set_ellipsize (layout, mode);
+
+  return (mode != EXO_PANGO_ELLIPSIZE_NONE);
+#else
   gboolean  equals;
   gchar    *result;
 
@@ -392,6 +405,10 @@ exo_pango_layout_set_text_ellipsized (PangoLayout            *layout,
 
   switch (mode)
     {
+    case EXO_PANGO_ELLIPSIZE_NONE:
+      result = g_strdup (string);
+      break;
+
     case EXO_PANGO_ELLIPSIZE_START:
       result = ellipsize_start (string, layout, width);
       break;
@@ -416,6 +433,7 @@ exo_pango_layout_set_text_ellipsized (PangoLayout            *layout,
   g_free (result);
 
   return !equals;
+#endif
 }
 
 

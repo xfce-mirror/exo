@@ -67,8 +67,10 @@ libLTLIBRARIES_INSTALL = $(INSTALL)
 LTLIBRARIES = $(lib_LTLIBRARIES)
 libexo_0_2_la_DEPENDENCIES =
 am_libexo_0_2_la_OBJECTS = libexo_0_2_la-exo-binding.lo \
+	libexo_0_2_la-exo-cell-renderer-ellipsized-text.lo \
 	libexo_0_2_la-exo-config.lo libexo_0_2_la-exo-dbus.lo \
 	libexo_0_2_la-exo-ellipsized-label.lo \
+	libexo_0_2_la-exo-enum-types.lo \
 	libexo_0_2_la-exo-file-watch.lo \
 	libexo_0_2_la-exo-gdk-pixbuf-extensions.lo \
 	libexo_0_2_la-exo-gtk-extensions.lo \
@@ -260,13 +262,19 @@ INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_LTLIBRARIES = libexo-0.2.la
+libexo_headers = \
+	exo-pango-extensions.h
+
 libexoincludedir = $(includedir)/exo-0.2/exo
 libexoinclude_HEADERS = \
+	$(libexo_headers)						\
 	exo.h								\
 	exo-binding.h							\
+	exo-cell-renderer-ellipsized-text.h				\
 	exo-config.h							\
 	exo-dbus.h							\
 	exo-ellipsized-label.h						\
+	exo-enum-types.h						\
 	exo-file-watch.h						\
 	exo-gdk-pixbuf-extensions.h					\
 	exo-gtk-extensions.h						\
@@ -275,7 +283,6 @@ libexoinclude_HEADERS = \
 	exo-icon-bar.h							\
 	exo-icon-view.h							\
 	exo-md5.h							\
-	exo-pango-extensions.h						\
 	exo-property-proxy.h						\
 	exo-string.h							\
 	exo-toolbars-editor.h						\
@@ -288,9 +295,11 @@ libexoinclude_HEADERS = \
 libexo_0_2_la_SOURCES = \
 	$(libexo_HEADERS)						\
 	exo-binding.c							\
+	exo-cell-renderer-ellipsized-text.c				\
 	exo-config.c							\
 	exo-dbus.c							\
 	exo-ellipsized-label.c						\
+	exo-enum-types.c						\
 	exo-file-watch.c						\
 	exo-gdk-pixbuf-extensions.c					\
 	exo-gtk-extensions.c						\
@@ -336,8 +345,6 @@ libexo_0_2_la_LIBADD = \
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = exo-0.2.pc
 EXTRA_DIST = \
-	exo-0.2.pc.in							\
-	exo-config.h.in							\
 	exo-marshal.list
 
 all: all-am
@@ -414,9 +421,11 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-binding.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-cell-renderer-ellipsized-text.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-config.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-dbus.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-ellipsized-label.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-enum-types.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-file-watch.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-gdk-pixbuf-extensions.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-gobject-extensions.Plo@am__quote@
@@ -466,6 +475,13 @@ libexo_0_2_la-exo-binding.lo: exo-binding.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -c -o libexo_0_2_la-exo-binding.lo `test -f 'exo-binding.c' || echo '$(srcdir)/'`exo-binding.c
 
+libexo_0_2_la-exo-cell-renderer-ellipsized-text.lo: exo-cell-renderer-ellipsized-text.c
+@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -MT libexo_0_2_la-exo-cell-renderer-ellipsized-text.lo -MD -MP -MF "$(DEPDIR)/libexo_0_2_la-exo-cell-renderer-ellipsized-text.Tpo" -c -o libexo_0_2_la-exo-cell-renderer-ellipsized-text.lo `test -f 'exo-cell-renderer-ellipsized-text.c' || echo '$(srcdir)/'`exo-cell-renderer-ellipsized-text.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_2_la-exo-cell-renderer-ellipsized-text.Tpo" "$(DEPDIR)/libexo_0_2_la-exo-cell-renderer-ellipsized-text.Plo"; else rm -f "$(DEPDIR)/libexo_0_2_la-exo-cell-renderer-ellipsized-text.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-cell-renderer-ellipsized-text.c' object='libexo_0_2_la-exo-cell-renderer-ellipsized-text.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -c -o libexo_0_2_la-exo-cell-renderer-ellipsized-text.lo `test -f 'exo-cell-renderer-ellipsized-text.c' || echo '$(srcdir)/'`exo-cell-renderer-ellipsized-text.c
+
 libexo_0_2_la-exo-config.lo: exo-config.c
 @am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -MT libexo_0_2_la-exo-config.lo -MD -MP -MF "$(DEPDIR)/libexo_0_2_la-exo-config.Tpo" -c -o libexo_0_2_la-exo-config.lo `test -f 'exo-config.c' || echo '$(srcdir)/'`exo-config.c; \
 @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_2_la-exo-config.Tpo" "$(DEPDIR)/libexo_0_2_la-exo-config.Plo"; else rm -f "$(DEPDIR)/libexo_0_2_la-exo-config.Tpo"; exit 1; fi
@@ -486,6 +502,13 @@ libexo_0_2_la-exo-ellipsized-label.lo: exo-ellipsized-label.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-ellipsized-label.c' object='libexo_0_2_la-exo-ellipsized-label.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -c -o libexo_0_2_la-exo-ellipsized-label.lo `test -f 'exo-ellipsized-label.c' || echo '$(srcdir)/'`exo-ellipsized-label.c
+
+libexo_0_2_la-exo-enum-types.lo: exo-enum-types.c
+@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -MT libexo_0_2_la-exo-enum-types.lo -MD -MP -MF "$(DEPDIR)/libexo_0_2_la-exo-enum-types.Tpo" -c -o libexo_0_2_la-exo-enum-types.lo `test -f 'exo-enum-types.c' || echo '$(srcdir)/'`exo-enum-types.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_2_la-exo-enum-types.Tpo" "$(DEPDIR)/libexo_0_2_la-exo-enum-types.Plo"; else rm -f "$(DEPDIR)/libexo_0_2_la-exo-enum-types.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-enum-types.c' object='libexo_0_2_la-exo-enum-types.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -c -o libexo_0_2_la-exo-enum-types.lo `test -f 'exo-enum-types.c' || echo '$(srcdir)/'`exo-enum-types.c
 
 libexo_0_2_la-exo-file-watch.lo: exo-file-watch.c
 @am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -MT libexo_0_2_la-exo-file-watch.lo -MD -MP -MF "$(DEPDIR)/libexo_0_2_la-exo-file-watch.Tpo" -c -o libexo_0_2_la-exo-file-watch.lo `test -f 'exo-file-watch.c' || echo '$(srcdir)/'`exo-file-watch.c; \
@@ -845,13 +868,29 @@ uninstall-am: uninstall-info-am uninstall-libLTLIBRARIES \
 	uninstall-pkgconfigDATA
 
 
-exo-marshal.h: $(srcdir)/exo-marshal.list
+regenerate:
+	( cd $(srcdir) && glib-mkenums \
+		--fhead "#ifndef __EXO_ENUM_TYPES_H__\n#define __EXO_ENUM_TYPES_H__\n#include <libxfce4util/libxfce4util.h>\nG_BEGIN_DECLS\n" \
+		--fprod "/* enumerations from \"@filename@\" */\n" \
+		--vhead "GType @enum_name@_get_type (void);\n#define EXO_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
+		--ftail "G_END_DECLS\n\n#endif /* !__EXO_ENUM_TYPES_H__ */" \
+		$(libexo_headers) ) > xgen \
+	&& (cmp -s xgen exo-enum-types.h || cp xgen exo-enum-types.h ) \
+	&& rm -f xgen
+	( cd $(srcdir) && glib-mkenums \
+		--fhead "#undef GTK_DISABLE_DEPRECATED\n#define GTK_ENABLE_BROKEN\n#include <exo/exo.h>\n" \
+		--fprod "\n/* enumerations from \"@filename@\" */" \
+		--vhead "GType\n@enum_name@_get_type (void)\n{\n\tstatic GType type = 0;\n\tif (type == 0) {\n\tstatic const G@Type@Value values[] = {"\
+		--vprod "\t{ @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
+		--vtail "\t{ 0, NULL, NULL }\n\t};\n\ttype = g_@type@_register_static (\"@EnumName@\", values);\n  }\n\treturn type;\n}\n" \
+		$(libexo_headers) ) > xgen \
+	&& (cmp -s xgen exo-enum-types.c || cp xgen exo-enum-types.c ) \
+	&& rm -f xgen
 	glib-genmarshal --prefix=_exo_marshal --header \
 		$(srcdir)/exo-marshal.list > exo-marshal.h
-
-exo-marshal.c: $(srcdir)/exo-marshal.list
 	glib-genmarshal --prefix=_exo_marshal --body \
 		$(srcdir)/exo-marshal.list > exo-marshal.c
+	echo "Regenerated source files"
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

@@ -5,9 +5,12 @@
 <!ENTITY exo-toolbars-editor SYSTEM "xml/exo-toolbars-editor.xml">
 <!ENTITY exo-toolbars-editor-dialog SYSTEM "xml/exo-toolbars-editor-dialog.xml">
 <!ENTITY exo-toolbars-view SYSTEM "xml/exo-toolbars-view.xml">
+<!ENTITY exo-cell-renderer-ellipsized-text SYSTEM "xml/exo-cell-renderer-ellipsized-text.xml">
+<!ENTITY exo-ellipsized-label SYSTEM "xml/exo-ellipsized-label.xml">
 <!ENTITY exo-icon-bar SYSTEM "xml/exo-icon-bar.xml">
 <!ENTITY exo-gdk-pixbuf-extensions SYSTEM "xml/exo-gdk-pixbuf-extensions.xml">
 <!ENTITY exo-gobject-extensions SYSTEM "xml/exo-gobject-extensions.xml">
+<!ENTITY exo-pango-extensions SYSTEM "xml/exo-pango-extensions.xml">
 <!ENTITY exo-config SYSTEM "xml/exo-config.xml">
 <!ENTITY exo-binding SYSTEM "xml/exo-binding.xml">
 <!ENTITY exo-string SYSTEM "xml/exo-string.xml">
@@ -64,6 +67,8 @@
   <part id="exo-widgets">
     <title>Additional widgets</title>
 
+    &exo-cell-renderer-ellipsized-text;
+    &exo-ellipsized-label;
     &exo-icon-bar;
   </part>
 
@@ -71,6 +76,7 @@
     <title>Extensions to existing frameworks</title>
     &exo-gdk-pixbuf-extensions;
     &exo-gobject-extensions;
+    &exo-pango-extensions;
   </part>
 
   <part id="exo-miscelleanous">

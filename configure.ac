@@ -11,7 +11,7 @@ m4_define([libexo_verinfo], [0:1:0])
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [2])
 m4_define([libexo_version_micro], [0])
-m4_define([libexo_version_tag], [svn])
+m4_define([libexo_version_tag], [pre1])
 m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()libexo_version_tag()])
 
 dnl Initialize autoconf
