@@ -1,3 +1,8 @@
+2004-10-11	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-md5.c: Don't include <md5.h> if MD5Init wasn't found
+	  on the system.
+
 2004-09-30	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-bar.c: Fixed the text color problem by introducing

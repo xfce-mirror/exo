@@ -26,9 +26,6 @@
 #include <sys/types.h>
 #endif
 
-#ifdef HAVE_MD5_H
-#include <md5.h>
-#endif
 #ifdef HAVE_MEMORY_H
 #include <memory.h>
 #endif
@@ -40,7 +37,8 @@
 
 
 
-#ifndef HAVE_MD5INIT
+#if !defined(HAVE_MD5INIT) || !defined(HAVE_MD5_H)
+
 /*
  * This code implements the MD5 message-digest algorithm.
  * The algorithm is due to Ron Rivest. The original code was
@@ -276,6 +274,10 @@ MD5End (MD5_CTX *ctx, gchar *buffer)
 	
 	return buffer;
 }
+
+#else
+
+#include <md5.h>
 
 #endif  /* !defined (HAVE_MD5INIT) */
 
