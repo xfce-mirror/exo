@@ -23,6 +23,10 @@ libexoinclude_HEADERS =							\
 	exo-pango-extensions.h						\
 	exo-property-proxy.h						\
 	exo-string.h							\
+	exo-toolbars-editor.h						\
+	exo-toolbars-editor-dialog.h					\
+	exo-toolbars-model.h						\
+	exo-toolbars-view.h						\
 	exo-uri.h
 
 libexo_0_1_la_SOURCES =							\
@@ -41,18 +45,29 @@ libexo_0_1_la_SOURCES =							\
 	exo-pango-extensions.c						\
 	exo-property-proxy.c						\
 	exo-string.c							\
+	exo-toolbars-editor.c						\
+	exo-toolbars-editor-dialog.c					\
+	exo-toolbars-model.c						\
+	exo-toolbars-private.c						\
+	exo-toolbars-private.h						\
+	exo-toolbars-view.c						\
 	exo-uri.c
 
 libexo_0_1_la_CFLAGS =							\
 	@DBUS_CFLAGS@							\
-	@LIBXFCEGUI4_CFLAGS@
+	@LIBXFCEGUI4_CFLAGS@						\
+	@LIBXML_CFLAGS@
 
 libexo_0_1_la_LDFLAGS =							\
+	-export-dynamic							\
+	-version-info @LIBEXO_VERINFO@					\
+	-export-symbols-regex "^[^_].*"					\
 	-no-undefined
 
 libexo_0_1_la_LIBADD =							\
 	@DBUS_LIBS@							\
-	@LIBXFCEGUI4_LIBS@
+	@LIBXFCEGUI4_LIBS@						\
+	@LIBXML_LIBS@
 
 exo-marshal.h: $(srcdir)/exo-marshal.list
 	glib-genmarshal --prefix=_exo_marshal --header \

@@ -40,6 +40,10 @@
 #include <exo/exo-pango-extensions.h>
 #include <exo/exo-property-proxy.h>
 #include <exo/exo-string.h>
+#include <exo/exo-toolbars-editor.h>
+#include <exo/exo-toolbars-editor-dialog.h>
+#include <exo/exo-toolbars-model.h>
+#include <exo/exo-toolbars-view.h>
 #include <exo/exo-uri.h>
 
 #undef EXO_INSIDE_EXO_H

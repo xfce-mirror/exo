@@ -1,3 +1,21 @@
+2004-11-09	Benedikt Meurer <benny@xfce.org>
+
+	* configure.ac: Depend on libxml-2.0. Set libtool verinfo properly.
+	* exo/exo-string.h, exo/exo-string.c: Added a function
+	  exo_str_elide_underscores that is used to remove underscores
+	  from label texts.
+	* exo/exo-marshal.list, exo/exo-marshal.c, exo/exo-marshal.h: Added
+	  additional marshallers required for the toolbars stuff.
+	* exo/exo-toolbars-private.h, exo/exo-toolbars-private.c,
+	  exo/exo-toolbars-model.h, exo/exo-toolbars-model.c,
+	  exo/exo-toolbars-view.h, exo/exo-toolbars-view.c,
+	  exo/exo-toolbars-editor-dialog.h, exo/exo-toolbars-editor-dialog.c,
+	  exo/exo-toolbars-editor.h, exo/exo-toolbars-editor.c: Added a
+	  customizable toolbar with backend and editing frontend. This is
+	  partly based on the editable toolbar found in libegg, but not
+	  compatible in any way.
+	* exo/exo.h: Include new headers.
+
 2004-10-12	Benedikt Meurer <benny@xfce.org>
 
 	* configure.ac: Version 0.1.2.

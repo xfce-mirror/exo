@@ -7,6 +7,7 @@ dnl Written by Benedikt Meurer <benny@xfce.org>.
 dnl
 
 dnl Version information
+m4_define([libexo_verinfo], [0:1:0])
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [1])
 m4_define([libexo_version_micro], [2])
@@ -26,6 +27,10 @@ LIBEXO_VERSION=libexo_version
 AM_INIT_AUTOMAKE([exo], [$LIBEXO_VERSION])
 AM_CONFIG_HEADER([config.h])
 AM_MAINTAINER_MODE
+
+dnl libtool versioning
+LIBEXO_VERINFO=libexo_verinfo
+AC_SUBST([LIBEXO_VERINFO])
 
 dnl check for UNIX variants
 AC_AIX
@@ -51,6 +56,7 @@ dnl Check for required packages
 BM_DEPEND([DBUS], [dbus-glib-1], [0.22])
 BM_DEPEND([GTK], [gtk+-2.0], [2.4.0])
 BM_DEPEND([LIBXFCEGUI4], [libxfcegui4-1.0], [4.1.24])
+BM_DEPEND([LIBXML], [libxml-2.0], [2.4.0])
 
 dnl Check for session management libraries
 BM_LIBSM

@@ -64,7 +64,12 @@ am_libexo_0_1_la_OBJECTS = libexo_0_1_la-exo-dbus.lo \
 	libexo_0_1_la-exo-marshal.lo libexo_0_1_la-exo-md5.lo \
 	libexo_0_1_la-exo-pango-extensions.lo \
 	libexo_0_1_la-exo-property-proxy.lo \
-	libexo_0_1_la-exo-string.lo libexo_0_1_la-exo-uri.lo
+	libexo_0_1_la-exo-string.lo \
+	libexo_0_1_la-exo-toolbars-editor.lo \
+	libexo_0_1_la-exo-toolbars-editor-dialog.lo \
+	libexo_0_1_la-exo-toolbars-model.lo \
+	libexo_0_1_la-exo-toolbars-private.lo \
+	libexo_0_1_la-exo-toolbars-view.lo libexo_0_1_la-exo-uri.lo
 libexo_0_1_la_OBJECTS = $(am_libexo_0_1_la_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
@@ -82,6 +87,11 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-pango-extensions.Plo \
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-property-proxy.Plo \
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-string.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Plo \
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-uri.Plo
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -140,6 +150,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 LDFLAGS = @LDFLAGS@
+LIBEXO_VERINFO = @LIBEXO_VERINFO@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBSM_CFLAGS = @LIBSM_CFLAGS@
@@ -152,6 +163,9 @@ LIBX11_LIBS = @LIBX11_LIBS@
 LIBXFCEGUI4_CFLAGS = @LIBXFCEGUI4_CFLAGS@
 LIBXFCEGUI4_LIBS = @LIBXFCEGUI4_LIBS@
 LIBXFCEGUI4_REQUIRED_VERSION = @LIBXFCEGUI4_REQUIRED_VERSION@
+LIBXML_CFLAGS = @LIBXML_CFLAGS@
+LIBXML_LIBS = @LIBXML_LIBS@
+LIBXML_REQUIRED_VERSION = @LIBXML_REQUIRED_VERSION@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
@@ -240,6 +254,10 @@ libexoinclude_HEADERS = \
 	exo-pango-extensions.h						\
 	exo-property-proxy.h						\
 	exo-string.h							\
+	exo-toolbars-editor.h						\
+	exo-toolbars-editor-dialog.h					\
+	exo-toolbars-model.h						\
+	exo-toolbars-view.h						\
 	exo-uri.h
 
 libexo_0_1_la_SOURCES = \
@@ -258,18 +276,29 @@ libexo_0_1_la_SOURCES = \
 	exo-pango-extensions.c						\
 	exo-property-proxy.c						\
 	exo-string.c							\
+	exo-toolbars-editor.c						\
+	exo-toolbars-editor-dialog.c					\
+	exo-toolbars-model.c						\
+	exo-toolbars-private.c						\
+	exo-toolbars-private.h						\
+	exo-toolbars-view.c						\
 	exo-uri.c
 
 libexo_0_1_la_CFLAGS = \
 	@DBUS_CFLAGS@							\
-	@LIBXFCEGUI4_CFLAGS@
+	@LIBXFCEGUI4_CFLAGS@						\
+	@LIBXML_CFLAGS@
 
 libexo_0_1_la_LDFLAGS = \
+	-export-dynamic							\
+	-version-info @LIBEXO_VERINFO@					\
+	-export-symbols-regex "^[^_].*"					\
 	-no-undefined
 
 libexo_0_1_la_LIBADD = \
 	@DBUS_LIBS@							\
-	@LIBXFCEGUI4_LIBS@
+	@LIBXFCEGUI4_LIBS@						\
+	@LIBXML_LIBS@
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = exo-0.1.pc
@@ -361,6 +390,11 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-pango-extensions.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-property-proxy.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-string.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-uri.Plo@am__quote@
 
 .c.o:
@@ -698,6 +732,126 @@ libexo_0_1_la-exo-string.lo: exo-string.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-string.Plo' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-string.TPlo' @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-string.lo `test -f 'exo-string.c' || echo '$(srcdir)/'`exo-string.c
+
+libexo_0_1_la-exo-toolbars-editor.o: exo-toolbars-editor.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-editor.o -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Tpo" -c -o libexo_0_1_la-exo-toolbars-editor.o `test -f 'exo-toolbars-editor.c' || echo '$(srcdir)/'`exo-toolbars-editor.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-editor.c' object='libexo_0_1_la-exo-toolbars-editor.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-editor.o `test -f 'exo-toolbars-editor.c' || echo '$(srcdir)/'`exo-toolbars-editor.c
+
+libexo_0_1_la-exo-toolbars-editor.obj: exo-toolbars-editor.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-editor.obj -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Tpo" -c -o libexo_0_1_la-exo-toolbars-editor.obj `if test -f 'exo-toolbars-editor.c'; then $(CYGPATH_W) 'exo-toolbars-editor.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-editor.c'; fi`; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-editor.c' object='libexo_0_1_la-exo-toolbars-editor.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-editor.obj `if test -f 'exo-toolbars-editor.c'; then $(CYGPATH_W) 'exo-toolbars-editor.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-editor.c'; fi`
+
+libexo_0_1_la-exo-toolbars-editor.lo: exo-toolbars-editor.c
+@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-editor.lo -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Tpo" -c -o libexo_0_1_la-exo-toolbars-editor.lo `test -f 'exo-toolbars-editor.c' || echo '$(srcdir)/'`exo-toolbars-editor.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Plo"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-editor.c' object='libexo_0_1_la-exo-toolbars-editor.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.Plo' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-editor.lo `test -f 'exo-toolbars-editor.c' || echo '$(srcdir)/'`exo-toolbars-editor.c
+
+libexo_0_1_la-exo-toolbars-editor-dialog.o: exo-toolbars-editor-dialog.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-editor-dialog.o -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Tpo" -c -o libexo_0_1_la-exo-toolbars-editor-dialog.o `test -f 'exo-toolbars-editor-dialog.c' || echo '$(srcdir)/'`exo-toolbars-editor-dialog.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-editor-dialog.c' object='libexo_0_1_la-exo-toolbars-editor-dialog.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-editor-dialog.o `test -f 'exo-toolbars-editor-dialog.c' || echo '$(srcdir)/'`exo-toolbars-editor-dialog.c
+
+libexo_0_1_la-exo-toolbars-editor-dialog.obj: exo-toolbars-editor-dialog.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-editor-dialog.obj -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Tpo" -c -o libexo_0_1_la-exo-toolbars-editor-dialog.obj `if test -f 'exo-toolbars-editor-dialog.c'; then $(CYGPATH_W) 'exo-toolbars-editor-dialog.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-editor-dialog.c'; fi`; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-editor-dialog.c' object='libexo_0_1_la-exo-toolbars-editor-dialog.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-editor-dialog.obj `if test -f 'exo-toolbars-editor-dialog.c'; then $(CYGPATH_W) 'exo-toolbars-editor-dialog.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-editor-dialog.c'; fi`
+
+libexo_0_1_la-exo-toolbars-editor-dialog.lo: exo-toolbars-editor-dialog.c
+@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-editor-dialog.lo -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Tpo" -c -o libexo_0_1_la-exo-toolbars-editor-dialog.lo `test -f 'exo-toolbars-editor-dialog.c' || echo '$(srcdir)/'`exo-toolbars-editor-dialog.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Plo"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-editor-dialog.c' object='libexo_0_1_la-exo-toolbars-editor-dialog.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.Plo' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-editor-dialog.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-editor-dialog.lo `test -f 'exo-toolbars-editor-dialog.c' || echo '$(srcdir)/'`exo-toolbars-editor-dialog.c
+
+libexo_0_1_la-exo-toolbars-model.o: exo-toolbars-model.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-model.o -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Tpo" -c -o libexo_0_1_la-exo-toolbars-model.o `test -f 'exo-toolbars-model.c' || echo '$(srcdir)/'`exo-toolbars-model.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-model.c' object='libexo_0_1_la-exo-toolbars-model.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-model.o `test -f 'exo-toolbars-model.c' || echo '$(srcdir)/'`exo-toolbars-model.c
+
+libexo_0_1_la-exo-toolbars-model.obj: exo-toolbars-model.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-model.obj -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Tpo" -c -o libexo_0_1_la-exo-toolbars-model.obj `if test -f 'exo-toolbars-model.c'; then $(CYGPATH_W) 'exo-toolbars-model.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-model.c'; fi`; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-model.c' object='libexo_0_1_la-exo-toolbars-model.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-model.obj `if test -f 'exo-toolbars-model.c'; then $(CYGPATH_W) 'exo-toolbars-model.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-model.c'; fi`
+
+libexo_0_1_la-exo-toolbars-model.lo: exo-toolbars-model.c
+@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-model.lo -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Tpo" -c -o libexo_0_1_la-exo-toolbars-model.lo `test -f 'exo-toolbars-model.c' || echo '$(srcdir)/'`exo-toolbars-model.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Plo"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-model.c' object='libexo_0_1_la-exo-toolbars-model.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.Plo' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-model.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-model.lo `test -f 'exo-toolbars-model.c' || echo '$(srcdir)/'`exo-toolbars-model.c
+
+libexo_0_1_la-exo-toolbars-private.o: exo-toolbars-private.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-private.o -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Tpo" -c -o libexo_0_1_la-exo-toolbars-private.o `test -f 'exo-toolbars-private.c' || echo '$(srcdir)/'`exo-toolbars-private.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-private.c' object='libexo_0_1_la-exo-toolbars-private.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-private.o `test -f 'exo-toolbars-private.c' || echo '$(srcdir)/'`exo-toolbars-private.c
+
+libexo_0_1_la-exo-toolbars-private.obj: exo-toolbars-private.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-private.obj -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Tpo" -c -o libexo_0_1_la-exo-toolbars-private.obj `if test -f 'exo-toolbars-private.c'; then $(CYGPATH_W) 'exo-toolbars-private.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-private.c'; fi`; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-private.c' object='libexo_0_1_la-exo-toolbars-private.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-private.obj `if test -f 'exo-toolbars-private.c'; then $(CYGPATH_W) 'exo-toolbars-private.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-private.c'; fi`
+
+libexo_0_1_la-exo-toolbars-private.lo: exo-toolbars-private.c
+@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-private.lo -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Tpo" -c -o libexo_0_1_la-exo-toolbars-private.lo `test -f 'exo-toolbars-private.c' || echo '$(srcdir)/'`exo-toolbars-private.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Plo"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-private.c' object='libexo_0_1_la-exo-toolbars-private.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.Plo' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-private.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-private.lo `test -f 'exo-toolbars-private.c' || echo '$(srcdir)/'`exo-toolbars-private.c
+
+libexo_0_1_la-exo-toolbars-view.o: exo-toolbars-view.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-view.o -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Tpo" -c -o libexo_0_1_la-exo-toolbars-view.o `test -f 'exo-toolbars-view.c' || echo '$(srcdir)/'`exo-toolbars-view.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-view.c' object='libexo_0_1_la-exo-toolbars-view.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-view.o `test -f 'exo-toolbars-view.c' || echo '$(srcdir)/'`exo-toolbars-view.c
+
+libexo_0_1_la-exo-toolbars-view.obj: exo-toolbars-view.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-view.obj -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Tpo" -c -o libexo_0_1_la-exo-toolbars-view.obj `if test -f 'exo-toolbars-view.c'; then $(CYGPATH_W) 'exo-toolbars-view.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-view.c'; fi`; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-view.c' object='libexo_0_1_la-exo-toolbars-view.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-view.obj `if test -f 'exo-toolbars-view.c'; then $(CYGPATH_W) 'exo-toolbars-view.c'; else $(CYGPATH_W) '$(srcdir)/exo-toolbars-view.c'; fi`
+
+libexo_0_1_la-exo-toolbars-view.lo: exo-toolbars-view.c
+@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-toolbars-view.lo -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Tpo" -c -o libexo_0_1_la-exo-toolbars-view.lo `test -f 'exo-toolbars-view.c' || echo '$(srcdir)/'`exo-toolbars-view.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Plo"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-toolbars-view.c' object='libexo_0_1_la-exo-toolbars-view.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.Plo' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-toolbars-view.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-toolbars-view.lo `test -f 'exo-toolbars-view.c' || echo '$(srcdir)/'`exo-toolbars-view.c
 
 libexo_0_1_la-exo-uri.o: exo-uri.c
 @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-uri.o -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-uri.Tpo" -c -o libexo_0_1_la-exo-uri.o `test -f 'exo-uri.c' || echo '$(srcdir)/'`exo-uri.c; \

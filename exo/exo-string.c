@@ -34,6 +34,47 @@
 
 
 /**
+ * exo_str_elide_underscores:
+ * @text        : A zero terminated string.
+ *
+ * Returns a copy of @text with all mnemonic underscores
+ * stripped off.
+ *
+ * Return value : A copy of @text without underscores. The
+ *                returned string must be freed when no
+ *                longer required.
+ **/
+gchar*
+exo_str_elide_underscores (const gchar *text)
+{
+  const gchar *s;
+  gboolean     last_underscore = FALSE;
+  gchar       *result;
+  gchar       *t;
+
+  g_return_val_if_fail (text != NULL, NULL);
+  
+  result = g_malloc (strlen (text) + 1);
+
+  for (s = text, t = result; *s != '\0'; ++s)
+    if (!last_underscore && *s == '_')
+      {
+        last_underscore = TRUE;
+      }
+    else
+      {
+        last_underscore = FALSE;
+        *t++ = *s;
+      }
+
+  *t = '\0';
+
+  return result;
+}
+
+
+
+/**
  * exo_str_is_equal:
  * @a           : pointer to first string or %NULL.
  * @b           : pointer to second string or %NULL.
@@ -53,7 +94,4 @@ exo_str_is_equal (const gchar *a, const gchar *b)
   else
     return (strcmp (a, b) == 0);
 }
-
-
-
 

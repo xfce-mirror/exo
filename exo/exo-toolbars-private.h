@@ -1,6 +1,7 @@
-/* $Id: exo-string.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
+/* $Id: exo-uri.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
 /*-
- * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2004  Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2003  Marco Pesenti Gritti
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,18 +23,22 @@
 #error "Only <exo/exo.h> can be included directly, this file may disappear or change contents."
 #endif
 
-#ifndef __EXO_STRING_H__
-#define __EXO_STRING_H__
+#ifndef __EXO_TOOLBARS_PRIVATE_H__
+#define __EXO_TOOLBARS_PRIVATE_H__
 
-#include <glib.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS;
 
-gchar   *exo_str_elide_underscores  (const gchar *text);
+GdkPixbuf *_exo_toolbars_new_separator_pixbuf (void);
+GtkWidget *_exo_toolbars_new_separator_image  (void);
 
-gboolean exo_str_is_equal           (const gchar *a,
-                                     const gchar *b);
+GtkAction *_exo_toolbars_find_action          (GtkUIManager     *ui_manager,
+                                               const gchar      *name);
+
+void       _exo_toolbars_set_drag_cursor      (GtkWidget        *widget);
+void       _exo_toolbars_unset_drag_cursor    (GtkWidget        *widget);
 
 G_END_DECLS;
 
-#endif /* !__EXO_STRING_H__ */
+#endif /* !__EXO_TOOLBARS_PRIVATE_H__ */
