@@ -1,5 +1,8 @@
 2004-09-30	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-bar.c: Fixed the text color problem by introducing
+	  two new style properties active_item_text_color and
+	  cursor_item_text_color, which defaults to black.
 	* exo/exo-icon-bar.c(exo_icon_bar_paint_item): Always draw the text
 	  with ACTIVE or SELECTED state to work-around issues with gtk
 	  themes that do not yet know about ExoIconBar. We need a real

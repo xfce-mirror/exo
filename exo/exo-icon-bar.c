@@ -289,6 +289,13 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
                                                                G_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
+                                           g_param_spec_boxed ("active_item_text_color",
+                                                               _("Active item text color"),
+                                                               _("Active item text color"),
+                                                               GDK_TYPE_COLOR,
+                                                               G_PARAM_READABLE));
+
+  gtk_widget_class_install_style_property (gtkwidget_class,
                                            g_param_spec_boxed ("cursor_item_fill_color",
                                                                _("Cursor item fill color"),
                                                                _("Cursor item fill color"),
@@ -299,6 +306,13 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
                                            g_param_spec_boxed ("cursor_item_border_color",
                                                                _("Cursor item border color"),
                                                                _("Cursor item border color"),
+                                                               GDK_TYPE_COLOR,
+                                                               G_PARAM_READABLE));
+
+  gtk_widget_class_install_style_property (gtkwidget_class,
+                                           g_param_spec_boxed ("cursor_item_text_color",
+                                                               _("Cursor item text color"),
+                                                               _("Cursor item text color"),
                                                                GDK_TYPE_COLOR,
                                                                G_PARAM_READABLE));
 
@@ -818,7 +832,6 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
                          ExoIconBarItem *item,
                          GdkRectangle   *area)
 {
-  GtkStateType  state;
   GdkPixbuf    *pixbuf;
   gint          focus_width;
   gint          focus_pad;
@@ -832,8 +845,6 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
                         "focus-line-width", &focus_width,
                         "focus-padding", &focus_pad,
                         NULL);
-
-  state = GTK_STATE_ACTIVE;
 
   /* calculate pixbuf/layout location */
   px = (icon_bar->priv->item_width - item->pixbuf_width) / 2 + focus_pad + focus_width + ICON_ITEM_MARGIN;
@@ -939,13 +950,59 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
 
   if (icon_bar->priv->text_column != -1)
     {
+      GdkColor *text_color;
+      GdkGC    *gc;
+
       exo_icon_bar_update_item_text (icon_bar, item);
 
-      gtk_paint_layout (GTK_WIDGET (icon_bar)->style,
-                        icon_bar->priv->bin_window,
-                        (icon_bar->priv->active_item == item) ? state : GTK_STATE_NORMAL,
-                        TRUE, area, GTK_WIDGET (icon_bar), "icon_bar",
-                        lx, ly, icon_bar->priv->layout);
+      if (icon_bar->priv->active_item == item)
+        {
+          gtk_widget_style_get (GTK_WIDGET (icon_bar),
+                                "active_item_text_color", &text_color,
+                                NULL);
+
+          if (text_color == NULL)
+            {
+              text_color = gdk_color_copy (&GTK_WIDGET (icon_bar)->style->base[GTK_STATE_SELECTED]);
+              gdk_color_parse ("#000000", text_color);
+            }
+
+          gc = gdk_gc_new (GDK_DRAWABLE (icon_bar->priv->bin_window));
+          gdk_gc_copy (gc, GTK_WIDGET (icon_bar)->style->text_gc[GTK_STATE_SELECTED]);
+          gdk_gc_set_clip_rectangle (gc, area);
+          gdk_gc_set_rgb_fg_color (gc, text_color);
+          gdk_draw_layout (icon_bar->priv->bin_window, gc, lx, ly, icon_bar->priv->layout);
+          g_object_unref (G_OBJECT (gc));
+          gdk_color_free (text_color);
+        }
+      else if (icon_bar->priv->cursor_item == item)
+        {
+          gtk_widget_style_get (GTK_WIDGET (icon_bar),
+                                "cursor_item_text_color", &text_color,
+                                NULL);
+
+          if (text_color == NULL)
+            {
+              text_color = gdk_color_copy (&GTK_WIDGET (icon_bar)->style->base[GTK_STATE_SELECTED]);
+              gdk_color_parse ("#000000", text_color);
+            }
+
+          gc = gdk_gc_new (GDK_DRAWABLE (icon_bar->priv->bin_window));
+          gdk_gc_copy (gc, GTK_WIDGET (icon_bar)->style->text_gc[GTK_STATE_SELECTED]);
+          gdk_gc_set_clip_rectangle (gc, area);
+          gdk_gc_set_rgb_fg_color (gc, text_color);
+          gdk_draw_layout (icon_bar->priv->bin_window, gc, lx, ly, icon_bar->priv->layout);
+          g_object_unref (G_OBJECT (gc));
+          gdk_color_free (text_color);
+        }
+      else
+        {
+          gtk_paint_layout (GTK_WIDGET (icon_bar)->style,
+                            icon_bar->priv->bin_window,
+                            GTK_STATE_NORMAL, TRUE, area,
+                            GTK_WIDGET (icon_bar), "icon_bar",
+                            lx, ly, icon_bar->priv->layout);
+        }
     }
 }
 
