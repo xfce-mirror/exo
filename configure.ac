@@ -91,8 +91,7 @@ if test x"$enable_python" != x"no"; then
   if test -z "$PYTHON"; then
     AC_MSG_WARN([Python not found])
   else
-    AM_CHECK_PYTHON_HEADERS([have_python_headers=yes], [have_python_headers=no])
-
+    XDT_CHECK_PYTHON_HEADERS([have_python_headers=yes],[have_python_headers=no])
     XDT_CHECK_PACKAGE([PYGTK], [pygtk-2.0], [2.4.0], \
                       [have_pygtk=yes], [have_pygtk=no])
 
