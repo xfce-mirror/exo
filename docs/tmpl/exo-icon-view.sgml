@@ -1,0 +1,355 @@
+<!-- ##### SECTION Title ##### -->
+ExoIconView
+
+<!-- ##### SECTION Short_Description ##### -->
+A widget which displays a list of icons in a grid
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+  #ExoIconView provides an alternative view on a list model.
+  It displays the model as a grid of icons with labels. Like
+  #GtkTreeView, it allows to select one or multiple items 
+  (depending on the selection mode, see exo_icon_view_set_selection_mode()).
+  In addition to selection with the arrow keys, #ExoIconView supports
+  rubberband selection, which is controlled by dragging the pointer.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+</para>
+
+<!-- ##### STRUCT ExoIconView ##### -->
+<para>
+  The <structname>ExoIconView</structname> struct contains only
+  private fields and should not be directly accessed.
+</para>
+
+
+<!-- ##### SIGNAL ExoIconView::activate-cursor-item ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+@Returns: 
+
+<!-- ##### SIGNAL ExoIconView::item-activated ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL ExoIconView::move-cursor ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL ExoIconView::select-all ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+
+<!-- ##### SIGNAL ExoIconView::select-cursor-item ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+
+<!-- ##### SIGNAL ExoIconView::selection-changed ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+
+<!-- ##### SIGNAL ExoIconView::set-scroll-adjustments ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL ExoIconView::toggle-cursor-item ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+
+<!-- ##### SIGNAL ExoIconView::unselect-all ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+
+<!-- ##### ARG ExoIconView:markup-column ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ExoIconView:model ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ExoIconView:orientation ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ExoIconView:pixbuf-column ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ExoIconView:selection-mode ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ExoIconView:text-column ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ExoIconView:selection-box-alpha ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ExoIconView:selection-box-color ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION exo_icon_view_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_new_with_model ##### -->
+<para>
+
+</para>
+
+@model: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_model ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_model ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@model: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_text_column ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_text_column ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@column: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_markup_column ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_markup_column ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@column: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_pixbuf_column ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_pixbuf_column ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@column: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_orientation ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_orientation ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@orientation: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_selection_mode ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_selection_mode ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@mode: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_path_at_pos ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@x: 
+@y: 
+@Returns: 
+
+
+<!-- ##### USER_FUNCTION ExoIconViewForeachFunc ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+@data: 
+
+
+<!-- ##### FUNCTION exo_icon_view_selected_foreach ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@func: 
+@data: 
+
+
+<!-- ##### FUNCTION exo_icon_view_select_path ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+
+
+<!-- ##### FUNCTION exo_icon_view_unselect_path ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+
+
+<!-- ##### FUNCTION exo_icon_view_path_is_selected ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_selected_items ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_select_all ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+
+
+<!-- ##### FUNCTION exo_icon_view_unselect_all ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+
+
+<!-- ##### FUNCTION exo_icon_view_item_activated ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+
+

@@ -313,8 +313,6 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * The ::selection-mode property specifies the selection mode of
    * icon view. If the mode is #GTK_SELECTION_MULTIPLE, rubberband selection
    * is enabled, for the other modes, only keyboard selection is possible.
-   *
-   * Since: 2.6
    */
   g_object_class_install_property (gobject_class,
                                    PROP_SELECTION_MODE,
@@ -332,8 +330,6 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * containing the pixbufs which are displayed. The pixbuf column must be 
    * of type #GDK_TYPE_PIXBUF. Setting this property to -1 turns off the
    * display of pixbufs.
-   *
-   * Since: 2.6
    */
   g_object_class_install_property (gobject_class,
                                    PROP_PIXBUF_COLUMN,
@@ -350,8 +346,6 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * containing the texts which are displayed. The text column must be 
    * of type #G_TYPE_STRING. If this property and the :markup-column 
    * property are both set to -1, no texts are displayed.   
-   *
-   * Since: 2.6
    */
   g_object_class_install_property (gobject_class,
 				   PROP_TEXT_COLUMN,
@@ -370,8 +364,6 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * of type #G_TYPE_STRING. If this property and the :text-column property 
    * are both set to column numbers, it overrides the text column.
    * If both are set to -1, no texts are displayed.   
-   *
-   * Since: 2.6
    */
   g_object_class_install_property (gobject_class,
 				   PROP_MARKUP_COLUMN,
@@ -2784,8 +2776,6 @@ exo_icon_view_scroll_to_item (ExoIconView     *icon_view,
  * Creates a new #ExoIconView widget
  * 
  * Return value: A newly created #ExoIconView widget
- *
- * Since: 2.6
  **/
 GtkWidget *
 exo_icon_view_new (void)
@@ -2800,8 +2790,6 @@ exo_icon_view_new (void)
  * Creates a new #ExoIconView widget with the model @model.
  * 
  * Return value: A newly created #ExoIconView widget.
- *
- * Since: 2.6 
  **/
 GtkWidget *
 exo_icon_view_new_with_model (GtkTreeModel *model)
@@ -2820,8 +2808,6 @@ exo_icon_view_new_with_model (GtkTreeModel *model)
  * 
  * Return value: The #GtkTreePath corresponding to the icon or %NULL
  * if no icon exists at that position.
- *
- * Since: 2.6 
  **/
 GtkTreePath *
 exo_icon_view_get_path_at_pos (ExoIconView *icon_view,
@@ -2851,8 +2837,6 @@ exo_icon_view_get_path_at_pos (ExoIconView *icon_view,
  * 
  * Calls a function for each selected icon. Note that the model or
  * selection cannot be modified from within this function.
- *
- * Since: 2.6 
  **/
 void
 exo_icon_view_selected_foreach (ExoIconView           *icon_view,
@@ -2879,8 +2863,6 @@ exo_icon_view_selected_foreach (ExoIconView           *icon_view,
  * @mode: The selection mode
  * 
  * Sets the selection mode of the @icon_view.
- *
- * Since: 2.6 
  **/
 void
 exo_icon_view_set_selection_mode (ExoIconView      *icon_view,
@@ -2907,8 +2889,6 @@ exo_icon_view_set_selection_mode (ExoIconView      *icon_view,
  * Gets the selection mode of the @icon_view.
  *
  * Return value: the current selection mode
- *
- * Since: 2.6 
  **/
 GtkSelectionMode
 exo_icon_view_get_selection_mode (ExoIconView *icon_view)
@@ -2927,8 +2907,6 @@ exo_icon_view_get_selection_mode (ExoIconView *icon_view)
  * If the @icon_view already has a model set, it will remove 
  * it before setting the new model.  If @model is %NULL, then
  * it will unset the old model.
- *
- * Since: 2.6 
  **/
 void
 exo_icon_view_set_model (ExoIconView *icon_view,
@@ -3024,8 +3002,6 @@ exo_icon_view_set_model (ExoIconView *icon_view,
  * model is unset.
  *
  * Return value: A #GtkTreeModel, or %NULL if none is currently being used.
- *
- * Since: 2.6 
  **/
 GtkTreeModel *
 exo_icon_view_get_model (ExoIconView *icon_view)
@@ -3042,8 +3018,6 @@ exo_icon_view_get_model (ExoIconView *icon_view)
  * 
  * Sets the column with text for @icon_view to be @column. The text
  * column must be of type #G_TYPE_STRING.
- *
- * Since: 2.6 
  **/
 void
 exo_icon_view_set_text_column (ExoIconView *icon_view,
@@ -3081,8 +3055,6 @@ exo_icon_view_set_text_column (ExoIconView *icon_view,
  * Returns the column with text for @icon_view.
  *
  * Returns: the text column, or -1 if it's unset.
- *
- * Since: 2.6
  */
 gint
 exo_icon_view_get_text_column (ExoIconView  *icon_view)
@@ -3101,8 +3073,6 @@ exo_icon_view_get_text_column (ExoIconView  *icon_view)
  * @column. The markup column must be of type #G_TYPE_STRING.
  * If the markup column is set to something, it overrides
  * the text column set by exo_icon_view_set_text_column().
- *
- * Since: 2.6
  **/
 void
 exo_icon_view_set_markup_column (ExoIconView *icon_view,
@@ -3140,8 +3110,6 @@ exo_icon_view_set_markup_column (ExoIconView *icon_view,
  * Returns the column with markup text for @icon_view.
  *
  * Returns: the markup column, or -1 if it's unset.
- *
- * Since: 2.6
  */
 gint
 exo_icon_view_get_markup_column (ExoIconView  *icon_view)
@@ -3158,8 +3126,6 @@ exo_icon_view_get_markup_column (ExoIconView  *icon_view)
  * 
  * Sets the column with pixbufs for @icon_view to be @column. The pixbuf
  * column must be of type #GDK_TYPE_PIXBUF
- *
- * Since: 2.6 
  **/
 void
 exo_icon_view_set_pixbuf_column (ExoIconView *icon_view,
@@ -3198,8 +3164,6 @@ exo_icon_view_set_pixbuf_column (ExoIconView *icon_view,
  * Returns the column with pixbufs for @icon_view.
  *
  * Returns: the pixbuf column, or -1 if it's unset.
- *
- * Since: 2.6
  */
 gint
 exo_icon_view_get_pixbuf_column (ExoIconView  *icon_view)
@@ -3215,8 +3179,6 @@ exo_icon_view_get_pixbuf_column (ExoIconView  *icon_view)
  * @path: The #GtkTreePath to be selected.
  * 
  * Selects the row at @path.
- *
- * Since: 2.6
  **/
 void
 exo_icon_view_select_path (ExoIconView *icon_view,
@@ -3243,8 +3205,6 @@ exo_icon_view_select_path (ExoIconView *icon_view,
  * @path: The #GtkTreePath to be unselected.
  * 
  * Unselects the row at @path.
- *
- * Since: 2.6
  **/
 void
 exo_icon_view_unselect_path (ExoIconView *icon_view,
@@ -3281,8 +3241,6 @@ exo_icon_view_unselect_path (ExoIconView *icon_view,
  * </programlisting></informalexample>
  *
  * Return value: A #GList containing a #GtkTreePath for each selected row.
- *
- * Since: 2.6
  **/
 GList *
 exo_icon_view_get_selected_items (ExoIconView *icon_view)
@@ -3313,8 +3271,6 @@ exo_icon_view_get_selected_items (ExoIconView *icon_view)
  * 
  * Selects all the icons. @icon_view must has its selection mode set
  * to #GTK_SELECTION_MULTIPLE.
- *
- * Since: 2.6
  **/
 void
 exo_icon_view_select_all (ExoIconView *icon_view)
@@ -3348,8 +3304,6 @@ exo_icon_view_select_all (ExoIconView *icon_view)
  * @icon_view: A #ExoIconView.
  * 
  * Unselects all the icons.
- *
- * Since: 2.6
  **/
 void
 exo_icon_view_unselect_all (ExoIconView *icon_view)
@@ -3373,8 +3327,6 @@ exo_icon_view_unselect_all (ExoIconView *icon_view)
  * selected. If @icon does not point to a valid location, %FALSE is returned.
  * 
  * Return value: %TRUE if @path is selected.
- *
- * Since: 2.6
  **/
 gboolean
 exo_icon_view_path_is_selected (ExoIconView *icon_view,
@@ -3401,8 +3353,6 @@ exo_icon_view_path_is_selected (ExoIconView *icon_view,
  * @path: The #GtkTreePath to be activated
  * 
  * Activates the item determined by @path.
- *
- * Since: 2.6
  **/
 void
 exo_icon_view_item_activated (ExoIconView      *icon_view,
@@ -3416,13 +3366,11 @@ exo_icon_view_item_activated (ExoIconView      *icon_view,
 
 /**
  * exo_icon_view_set_orientation:
- * @icon_view: a #ExoIconView
- * @orientation: the relative position of texts and icons 
+ * @icon_view:   An #ExoIconView
+ * @orientation: The relative position of texts and icons 
  * 
  * Sets the ::orientation property which determines whether the labels 
  * are drawn beside the icons instead of below.
- *
- * Since: 2.6
  **/
 void 
 exo_icon_view_set_orientation (ExoIconView    *icon_view,
@@ -3443,14 +3391,12 @@ exo_icon_view_set_orientation (ExoIconView    *icon_view,
 
 /**
  * exo_icon_view_get_orientation:
- * @icon_view: a #ExoIconView
+ * @icon_view: An #ExoIconView
  * 
  * Returns the value of the ::orientation property which determines 
  * whether the labels are drawn beside the icons instead of below. 
  * 
  * Return value: the relative position of texts and icons 
- *
- * Since: 2.6
  **/
 GtkOrientation
 exo_icon_view_get_orientation (ExoIconView *icon_view)

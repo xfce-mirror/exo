@@ -114,9 +114,6 @@ void             exo_icon_view_selected_foreach   (ExoIconView           *icon_v
 void             exo_icon_view_set_selection_mode (ExoIconView           *icon_view,
                                                     GtkSelectionMode        mode);
 GtkSelectionMode exo_icon_view_get_selection_mode (ExoIconView           *icon_view);
-gboolean         exo_icon_view_get_text_beside_icon (ExoIconView         *icon_view);
-void             exo_icon_view_set_text_beside_icon (ExoIconView         *icon_view,
-                                                      gboolean              text_beside_icon);
 void             exo_icon_view_select_path        (ExoIconView           *icon_view,
                                                     GtkTreePath            *path);
 void             exo_icon_view_unselect_path      (ExoIconView           *icon_view,

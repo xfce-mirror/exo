@@ -166,6 +166,45 @@ EXO_ICON_BAR_GET_CLASS
 exo_icon_bar_get_type
 </SECTION>
 
+<SECTION>
+<FILE>exo-icon-view</FILE>
+<TITLE>ExoIconView</TITLE>
+ExoIconView
+exo_icon_view_new
+exo_icon_view_new_with_model
+exo_icon_view_get_model
+exo_icon_view_set_model
+exo_icon_view_get_text_column
+exo_icon_view_set_text_column
+exo_icon_view_get_markup_column
+exo_icon_view_set_markup_column
+exo_icon_view_get_pixbuf_column
+exo_icon_view_set_pixbuf_column
+exo_icon_view_get_orientation
+exo_icon_view_set_orientation
+exo_icon_view_get_selection_mode
+exo_icon_view_set_selection_mode
+exo_icon_view_get_path_at_pos
+ExoIconViewForeachFunc
+exo_icon_view_selected_foreach
+exo_icon_view_select_path
+exo_icon_view_unselect_path
+exo_icon_view_path_is_selected
+exo_icon_view_get_selected_items
+exo_icon_view_select_all
+exo_icon_view_unselect_all
+exo_icon_view_item_activated
+<SUBSECTION Standard>
+EXO_TYPE_ICON_VIEW
+EXO_ICON_VIEW
+EXO_ICON_VIEW_CLASS
+EXO_IS_ICON_VIEW
+EXO_IS_ICON_VIEW_CLASS
+EXO_ICON_VIEW_GET_CLASS
+<SUBSECTION Private>
+exo_icon_view_get_type
+</SECTION>
+
 
 
 <SECTION>
