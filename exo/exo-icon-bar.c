@@ -32,7 +32,7 @@
 
 
 #define MINIMUM_ICON_ITEM_WIDTH 32
-#define ICON_ITEM_MARGIN        1
+#define ICON_TEXT_PADDING 1
 
 #define EXO_ICON_BAR_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_ICON_BAR, ExoIconBarPrivate))
 
@@ -955,12 +955,11 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
       x = 0;
       y = icon_bar->priv->item_height * item->index;
 
-      px = (icon_bar->priv->item_width - item->pixbuf_width) / 2 + focus_pad + focus_width + ICON_ITEM_MARGIN;
-      py = (icon_bar->priv->item_height - (item->pixbuf_height + item->layout_height)) / 2
+      px = (icon_bar->priv->item_width - item->pixbuf_width) / 2 + focus_pad + focus_width;
+      py = (icon_bar->priv->item_height - (item->pixbuf_height + item->layout_height + 2 * ICON_TEXT_PADDING)) / 2
          + icon_bar->priv->item_height * item->index + focus_pad + focus_width;
-      lx = (icon_bar->priv->item_width - (item->layout_width)) / 2
-          + ICON_ITEM_MARGIN;
-      ly = py + item->pixbuf_height;
+      lx = (icon_bar->priv->item_width - (item->layout_width)) / 2 + focus_pad;
+      ly = py + item->pixbuf_height + ICON_TEXT_PADDING;
     }
   else
     {
@@ -970,9 +969,9 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
       px = (icon_bar->priv->item_width - item->pixbuf_width) / 2 + focus_pad + focus_width
          + icon_bar->priv->item_width * item->index;
       py = (icon_bar->priv->item_height - (item->pixbuf_height + item->layout_height)) / 2
-          + ICON_ITEM_MARGIN + focus_pad + focus_width;
+          + focus_pad + focus_width;
       lx = (icon_bar->priv->item_width - (item->layout_width)) / 2 + x;
-      ly = py + item->pixbuf_height;
+      ly = py + item->pixbuf_height + ICON_TEXT_PADDING;
     }
 
   if (icon_bar->priv->active_item == item)
@@ -995,20 +994,20 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
         }
 
       gc = gdk_gc_new (icon_bar->priv->bin_window);
-      gdk_gc_set_rgb_fg_color (gc, fill_color);
       gdk_gc_set_clip_rectangle (gc, area);
+      gdk_gc_set_rgb_fg_color (gc, fill_color);
       gdk_draw_rectangle (icon_bar->priv->bin_window, gc, TRUE,
-                          x + focus_width + ICON_ITEM_MARGIN,
-                          y + focus_width + ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_width - 2 * (focus_width + ICON_ITEM_MARGIN) + 1,
-                          icon_bar->priv->item_height - 2 * (focus_width + ICON_ITEM_MARGIN));
+                          x + focus_pad + focus_width,
+                          y + focus_pad + focus_width,
+                          icon_bar->priv->item_width - 2 * (focus_width + focus_pad) + 1,
+                          icon_bar->priv->item_height - 2 * (focus_width + focus_pad) + 1);
       gdk_gc_set_rgb_fg_color (gc, border_color);
-      gdk_gc_set_line_attributes (gc, focus_width, GDK_LINE_SOLID,GDK_CAP_BUTT, GDK_JOIN_MITER);
+      gdk_gc_set_line_attributes (gc, focus_width, GDK_LINE_SOLID, GDK_CAP_BUTT, GDK_JOIN_MITER);
       gdk_draw_rectangle (icon_bar->priv->bin_window, gc, FALSE,
-                          x + ICON_ITEM_MARGIN,
-                          y + ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_width - 2 * ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_height - 2 * ICON_ITEM_MARGIN - 1);
+                          x + focus_pad + focus_width / 2,
+                          y + focus_pad + focus_width / 2,
+                          icon_bar->priv->item_width - (2 * focus_pad + focus_width) + 1,
+                          icon_bar->priv->item_height - (2 * focus_pad + focus_width) + 1);
       gdk_color_free (border_color);
       gdk_color_free (fill_color);
       g_object_unref (gc);
@@ -1033,20 +1032,20 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
         }
 
       gc = gdk_gc_new (icon_bar->priv->bin_window);
-      gdk_gc_set_rgb_fg_color (gc, fill_color);
       gdk_gc_set_clip_rectangle (gc, area);
+      gdk_gc_set_rgb_fg_color (gc, fill_color);
       gdk_draw_rectangle (icon_bar->priv->bin_window, gc, TRUE,
-                          x + focus_width + ICON_ITEM_MARGIN,
-                          y + focus_width + ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_width - 2 * (focus_width + ICON_ITEM_MARGIN) + 1,
-                          icon_bar->priv->item_height - 2 * (focus_width + ICON_ITEM_MARGIN));
+                          x + focus_pad + focus_width,
+                          y + focus_pad + focus_width,
+                          icon_bar->priv->item_width - 2 * (focus_width + focus_pad) + 1,
+                          icon_bar->priv->item_height - 2 * (focus_width + focus_pad) + 1);
       gdk_gc_set_rgb_fg_color (gc, border_color);
-      gdk_gc_set_line_attributes (gc, focus_width, GDK_LINE_SOLID,GDK_CAP_BUTT, GDK_JOIN_MITER);
+      gdk_gc_set_line_attributes (gc, focus_width, GDK_LINE_SOLID, GDK_CAP_BUTT, GDK_JOIN_MITER);
       gdk_draw_rectangle (icon_bar->priv->bin_window, gc, FALSE,
-                          x + ICON_ITEM_MARGIN,
-                          y + ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_width - 2 * ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_height - 2 * ICON_ITEM_MARGIN - 1);
+                          x + focus_pad + focus_width / 2,
+                          y + focus_pad + focus_width / 2,
+                          icon_bar->priv->item_width - (2 * focus_pad + focus_width) + 1,
+                          icon_bar->priv->item_height - (2 * focus_pad + focus_width) + 1);
       gdk_color_free (border_color);
       gdk_color_free (fill_color);
       g_object_unref (gc);
@@ -1172,9 +1171,9 @@ exo_icon_bar_calculate_item_size (ExoIconBar      *icon_bar,
       item->layout_height = 0;
     }
 
-  item->width = MAX (item->layout_width, item->pixbuf_width)
-              + 2 * (focus_width + focus_pad + ICON_ITEM_MARGIN);
-  item->height = item->layout_height + 2 * (focus_width + focus_pad + ICON_ITEM_MARGIN)
+  item->width = MAX (item->layout_width + 2 * ICON_TEXT_PADDING, item->pixbuf_width)
+              + 2 * (focus_width + focus_pad);
+  item->height = item->layout_height + 2 * (focus_width + focus_pad + ICON_TEXT_PADDING)
                + item->pixbuf_height;
 }
 
