@@ -1,7 +1,7 @@
 /* $Id: exo-uri.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
 /*-
- * Copyright (c) 2004  Benedikt Meurer <benny@xfce.org>
- * Copyright (c) 2003  Marco Pesenti Gritti
+ * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2003 Marco Pesenti Gritti
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public

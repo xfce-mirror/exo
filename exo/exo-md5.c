@@ -1,6 +1,7 @@
 /* $Id$ */
 /*-
  * Copyright (c) 2004  Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2004 James M. Cape <jcape@ignore-your.tv>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -236,8 +237,8 @@ MD5Update (MD5_CTX *ctx, md5byte const *buf, unsigned len)
  * 1 0* (64-bit count of bits processed, MSB-first)
  * Returns the newly allocated string of the hash.
  */
-static char*
-MD5End (MD5_CTX *ctx, gchar *buffer)
+static void
+MD5Final (unsigned char digest[16], MD5_CTX *ctx)
 {
 	int i;
 	int count = ctx->bytes[0] & 0x3f;	/* Number of bytes in ctx->in */
@@ -267,12 +268,7 @@ MD5End (MD5_CTX *ctx, gchar *buffer)
 
 	byteSwap(ctx->buf, 4);
 
-	bytes = (guint8 *) ctx->buf;
-	for (i = 0; i < 16; i++)
-		g_snprintf (buffer + (i * 2), 3, "%02x", bytes[i]);
-	buffer[32] = '\0';
-	
-	return buffer;
+  memcpy (digest, ctx->buf, 16);
 }
 
 #else
@@ -283,30 +279,245 @@ MD5End (MD5_CTX *ctx, gchar *buffer)
 
 
 
+static void
+get_md5 (const gchar *contents,
+         guchar       digest[16])
+{
+  MD5_CTX ctx;
+
+  MD5Init (&ctx);
+  MD5Update (&ctx, contents, strlen (contents));
+  MD5Final (digest, &ctx);
+}
+
+
+
+GType
+exo_md5_digest_get_type (void)
+{
+  static GType type = G_TYPE_INVALID;
+
+  if (G_UNLIKELY (type == G_TYPE_INVALID))
+    {
+      type = g_boxed_type_register_static ("ExoMd5Digest",
+                                           (GBoxedCopyFunc) exo_md5_digest_dup,
+                                           (GBoxedFreeFunc) exo_md5_digest_free);
+    }
+
+  return type;
+}
+
+
+
 /**
- * exo_md5_calculate_hash:
- * @source      : source string.
- * @buffer      : target buffer.
- * @length      : target buffer size, atleast 33 bytes.
+ * exo_str_get_md5_digest:
+ * @contents : The string to create a digest of.
  *
- * Calculates the MD5 hash of @source and stores it into @buffer.
+ * Creates a binary MD5 digest of the string @contents.
  *
- * Return value : a pointer to @buffer on success, else %NULL.
+ * Return value: A new binary MD5 digest. It should be freed
+ *               with exo_md5_digest_free() when no longer
+ *               needed.
+ **/
+ExoMd5Digest*
+exo_str_get_md5_digest (const gchar *contents)
+{
+  ExoMd5Digest *digest;
+
+  g_return_val_if_fail (contents != NULL, NULL);
+
+  digest = g_new (ExoMd5Digest, 1);
+  get_md5 (contents, digest->digest);
+
+  return digest;
+}
+
+
+
+/**
+ * exo_str_get_md5_str:
+ * @contents : The string to create a digest of.
+ *
+ * Creates a character array MD5 digestof the string
+ * @contents.
+ *
+ * Return value: A newly-allocated character array which
+ *               should be free with g_free() when no
+ *               longer needed.
  **/
 gchar*
-exo_md5_calculate_hash (const gchar *source,
-                        gchar       *buffer,
-                        gsize        length)
+exo_str_get_md5_str (const gchar *contents)
 {
-  MD5_CTX context;
+  ExoMd5Digest digest;
 
-  g_return_val_if_fail (source != NULL, NULL);
-  g_return_val_if_fail (buffer != NULL, NULL);
-  g_return_val_if_fail (length >= 33, NULL);
+  g_return_val_if_fail (contents != NULL, NULL);
 
-  MD5Init (&context);
-  MD5Update (&context, source, strlen (source));
-  return MD5End (&context, buffer);
+  get_md5 (contents, digest.digest);
+
+  return exo_md5_digest_to_str (&digest);
+}
+
+
+
+/**
+ * exo_md5_str_to_digest:
+ * @str_digest : The character array digest to convert.
+ *
+ * Converts thq @str_digest character array digest
+ * into a binary digest.
+ *
+ * Return value: A newly allocated binary digest. It should
+ *               be freed with exo_md5_digest_free() when
+ *               no longer needed.
+ **/
+ExoMd5Digest*
+exo_md5_str_to_digest (const gchar *str_digest)
+{
+  ExoMd5Digest *digest;
+  guint         n;
+
+  g_return_val_if_fail (str_digest != NULL, NULL);
+  g_return_val_if_fail (strlen (str_digest) == 32, NULL);
+
+  digest = g_new (ExoMd5Digest, 1);
+  for (n = 0; n < 16; ++n)
+    {
+      digest->digest[n] =
+        g_ascii_xdigit_value (str_digest[2 * n]) << 4 |
+        g_ascii_xdigit_value (str_digest[2 * n + 1]);
+    }
+
+  return digest;
+}
+
+
+
+/**
+ * exo_md5_digest_to_str:
+ * @digest : The binary MD5 digest to convert.
+ *
+ * Converts the binary @digest to an ASCII character array
+ * digest. The result can be used as an ordinary C string.
+ *
+ * Return value: A newly-allocated character array which
+ *               should be freed with g_free() when no
+ *               longer needed.
+ **/
+gchar*
+exo_md5_digest_to_str (const ExoMd5Digest *digest)
+{
+  static gchar hex_digits[] = "0123456789abcdef";
+  guchar      *str_digest;
+  guint        n;
+
+  g_return_val_if_fail (digest != NULL, NULL);
+
+  str_digest = g_new (guchar, 33);
+  for (n = 0; n < 16; n++)
+    {
+      str_digest[2 * n]     = hex_digits[digest->digest[n] >> 4];
+      str_digest[2 * n + 1] = hex_digits[digest->digest[n] & 0xf];
+    }
+  str_digest[32] = 0;
+
+  return (gchar *) str_digest;
+}
+
+
+
+/**
+ * exo_md5_digest_dup:
+ * @digest : The MD5 digest to copy.
+ *
+ * Duplicates the contents of the @digest binary
+ * MD5 digest.
+ *
+ * Return value: A new binary MD5 digest. It should
+ *               be freed with exo_md5_digest_free()
+ *               when no longer needed.
+ **/
+ExoMd5Digest*
+exo_md5_digest_dup (const ExoMd5Digest *digest)
+{
+  g_return_val_if_fail (digest != NULL, NULL);
+
+  return g_memdup (digest, sizeof (*digest));
+}
+
+
+
+/**
+ * exo_md5_digest_free:
+ * @digest : The MD5 digest to free.
+ *
+ * Frees the memory allocated for the MD5 binary
+ * @digest.
+ **/
+void
+exo_md5_digest_free (ExoMd5Digest *digest)
+{
+  g_free (digest);
+}
+
+
+
+/**
+ * exo_md5_digest_hash:
+ * @digest : The #ExoMd5Digest to hash.
+ *
+ * Gets the numeric hash of @digest, for use
+ * in #GHashTable and #GCache.
+ *
+ * Return value: An unsigned integer hash of
+ *               the digest;
+ **/
+guint
+exo_md5_digest_hash (gconstpointer digest)
+{
+  return *((guint *) digest);
+}
+
+
+
+/**
+ * exo_md5_digest_equal:
+ * @digest1: the first #ExoMd5Digest to compare.
+ * @digest2: the second #ExoMd5Digest to compare.
+ * 
+ * Tests the equality of @digest1 and @digest2, useful for #GHashTable and
+ * #GCashe.
+ * 
+ * Returns: %TRUE if both digests are equal, %FALSE otherwise.
+ **/
+gboolean
+exo_md5_digest_equal (gconstpointer digest1,
+                      gconstpointer digest2)
+{
+  guint *d1;
+  guint *d2;
+  guint  i;
+
+  /* Both NULL or same digest */
+  if (digest1 == digest2)
+    return TRUE;
+
+  /* One is NULL and the other isn't */
+  if (digest1 == NULL || digest2 == NULL)
+    return FALSE;
+
+  d1 = (guint *) digest1;
+  d2 = (guint *) digest2;
+
+  for (i = 0; i < (16 / sizeof (guint)); ++i)
+    {
+      if (*d1 != *d2)
+        return FALSE;
+
+      d1 += i;
+      d2 += i;
+    }
+
+  return TRUE;
 }
 
 

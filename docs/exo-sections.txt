@@ -223,6 +223,24 @@ exo_mutual_binding_unbind
 </SECTION>
 
 <SECTION>
+<FILE>exo-md5</FILE>
+<TITLE>MD5 functions</TITLE>
+ExoMd5Digest
+exo_str_get_md5_digest
+exo_str_get_md5_str
+exo_md5_str_to_digest
+exo_md5_digest_to_str
+exo_md5_digest_dup
+exo_md5_digest_free
+exo_md5_digest_hash
+exo_md5_digest_equal
+<SUBSECTION Standard>
+EXO_TYPE_MD5_DIGEST
+<SUBSECTION Private>
+exo_md5_digest_get_type
+</SECTION>
+
+<SECTION>
 <FILE>exo-string</FILE>
 <TITLE>String Utility Functions</TITLE>
 exo_str_elide_underscores

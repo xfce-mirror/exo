@@ -1,6 +1,7 @@
 /* $Id$ */
 /*-
  * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2004 James M. Cape <jcape@ignore-your.tv>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -25,13 +26,32 @@
 #ifndef __EXO_MD5_H__
 #define __EXO_MD5_H__
 
-#include <glib.h>
+#include <glib-object.h>
 
 G_BEGIN_DECLS;
 
-gchar *exo_md5_calculate_hash (const gchar *source,
-                               gchar       *buffer,
-                               gsize        length);
+#define EXO_TYPE_MD5_DIGEST (exo_md5_digest_get_type ())
+
+typedef struct _ExoMd5Digest ExoMd5Digest;
+struct _ExoMd5Digest
+{
+  guchar digest[16];
+};
+
+GType         exo_md5_digest_get_type (void)  G_GNUC_CONST;
+
+ExoMd5Digest *exo_str_get_md5_digest  (const gchar        *contents);
+gchar        *exo_str_get_md5_str     (const gchar        *contents);
+
+ExoMd5Digest *exo_md5_str_to_digest   (const gchar        *str_digest);
+gchar        *exo_md5_digest_to_str   (const ExoMd5Digest *digest);
+
+ExoMd5Digest *exo_md5_digest_dup      (const ExoMd5Digest *digest);
+void          exo_md5_digest_free     (ExoMd5Digest       *digest);
+
+guint         exo_md5_digest_hash     (gconstpointer       digest);
+gboolean      exo_md5_digest_equal    (gconstpointer       digest1,
+                                       gconstpointer       digest2);
 
 G_END_DECLS;
 

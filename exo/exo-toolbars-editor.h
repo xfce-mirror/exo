@@ -1,7 +1,7 @@
 /* $Id: exo-uri.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
 /*-
- * Copyright (c) 2004  Benedikt Meurer <benny@xfce.org>
- * Copyright (c) 2003  Marco Pesenti Gritti
+ * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2003 Marco Pesenti Gritti
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -18,6 +18,10 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
  */
+
+#if !defined (EXO_INSIDE_EXO_H) && !defined (EXO_COMPILATION)
+#error "Only <exo/exo.h> can be included directly, this file may disappear or change contents."
+#endif
 
 #ifndef __EXO_TOOLBARS_EDITOR_H__
 #define __EXO_TOOLBARS_EDITOR_H__
@@ -49,7 +53,9 @@ struct _ExoToolbarsEditorClass
 
 struct _ExoToolbarsEditor
 {
-  GtkVBox                   __parent__;
+  GtkVBox __parent__;
+
+  /*< private >*/
   ExoToolbarsEditorPrivate *priv;
 };
 

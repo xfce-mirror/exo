@@ -9,7 +9,8 @@
 - Added an ellipsizing cell renderer ExoCellRendererEllipsizedText, compatible
   with GtkCellRendererText in Gtk+ 2.6.
 - ExoIconBar has an "orientation" property now. The "selection-changed" signal
-  has been renamed to "changed".
+  has been renamed to "changed". The ExoIconBar background is updated when
+  the Gtk style changes.
 - libexo is fully internationalized now.
 - The ExoToolbarsView class has been changed to provide a "Customize 
   Toolbars..." menu item together with the other items and to emit a

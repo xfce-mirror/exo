@@ -1,7 +1,7 @@
-/* $Id: exo-icon-view.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
+/* $Id$ */
 /*-
- * Copyright (C) 2004  Benedikt Meurer <benny@xfce.org>
- * Copyright (C) 2002, 2004  Anders Carlsson <andersca@gnome.org>
+ * Copyright (c) 2004      Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2002,2004 Anders Carlsson <andersca@gnome.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -48,6 +48,8 @@ typedef void (* ExoIconViewForeachFunc) (ExoIconView     *icon_view,
 struct _ExoIconView
 {
   GtkContainer parent;
+
+  /*< private >*/
   ExoIconViewPrivate *priv;
 };
 
@@ -72,6 +74,11 @@ struct _ExoIconViewClass
 				                             GtkMovementStep   step,
 				                             gint              count);
   gboolean (*activate_cursor_item)  (ExoIconView     *icon_view);
+
+  void  (*reserved1)  (void);
+  void  (*reserved2)  (void);
+  void  (*reserved3)  (void);
+  void  (*reserved4)  (void);
 };
 
 GType      exo_icon_view_get_type       (void);
