@@ -9,26 +9,31 @@ Group:			Development/Libraries
 BuildRoot:		%{_tmppath}/%{name}-root
 Requires:		libxfcegui4 >= @LIBXFCEGUI4_REQUIRED_VERSION@
 BuildRequires:		libxfcegui4-devel >= @LIBXFCEGUI4_REQUIRED_VERSION@
-Requires:		dbus-glib >= @DBUS_REQUIRED_VERSION@
-BuildRequires:		dbus-devel >= @DBUS_REQUIRED_VERSION@
 BuildRequires:		gtk-doc
 
 %description
 Extension library for Xfce, targeted at application development.
 
 %package devel
-Summary:	Development tools for exo library
+Summary:	Development files for the exo library
 Group:		Development/Libraries
 Requires:	@PACKAGE_TARNAME@ >= @PACKAGE_VERSION@
 
 %description devel
 Static libraries and header files for the exo library.
 
+%package docs
+Summary:	Reference documentation for the exo library
+Group:		Development/Libraries
+
+%description docs
+The reference documentation for the exo library.
+
 %prep
 %setup -q
 
 %build
-%configure --enable-gtk-doc
+%configure --enable-final --enable-gtk-doc
 make
 
 %install
@@ -53,4 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.so
 %{_libdir}/lib*a
 %{_libdir}/pkgconfig/*.pc
+
+%files docs
+%defattr(-, root, root)
 %{_datadir}/gtk-doc
