@@ -3,9 +3,9 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: exo
+Name: @PACKAGE_TARNAME@
 Description: Extension library for Xfce
-Requires: libxfcegui4-1.0 dbus-glib-1
-Version: @VERSION@
-Libs: -L${libdir} -lexo-0.2
-Cflags: -I${includedir}/exo-0.2 -DDBUS_API_SUBJECT_TO_CHANGE
+Requires: libxfcegui4-1.0
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -lexo-@LIBEXO_VERSION_API@
+Cflags: -I${includedir}/exo-@LIBEXO_VERSION_API@

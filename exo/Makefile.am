@@ -26,15 +26,19 @@ libexo_headers =							\
 	exo-toolbars-view.h						\
 	exo-xsession-client.h
 
+libexo_built_public_sources =						\
+	exo-enum-types.h
+
 libexo_built_sources =							\
+	$(libexo_built_public_sources)					\
 	exo-enum-types.c						\
-	exo-enum-types.h						\
 	exo-marshal.c							\
 	exo-marshal.h
 
 libexoincludedir = $(includedir)/exo-0.3/exo
 
 libexoinclude_HEADERS =							\
+	$(libexo_built_public_sources)					\
 	$(libexo_headers)						\
 	exo.h								\
 	exo-config.h

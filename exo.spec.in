@@ -1,5 +1,5 @@
 Summary:		Application library for the Xfce desktop environment
-Name:			@PACKAGE_TARNAME@
+Name:			@PACKAGE_TARNAME@@LIBEXO_VERSION_API@
 Version:		@PACKAGE_VERSION@
 Release:		1
 License:		LGPL
@@ -22,23 +22,17 @@ Requires:	@PACKAGE_TARNAME@ >= @PACKAGE_VERSION@
 %description devel
 Static libraries and header files for the exo library.
 
-%package docs
-Summary:	Reference documentation for the exo library
-Group:		Development/Libraries
-
-%description docs
-The reference documentation for the exo library.
-
 %prep
 %setup -q
 
 %build
-%configure --enable-final --enable-gtk-doc
+%configure --enable-final --enable-gtk-doc --disable-python
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT mandir=%{_mandir}
+mv $RPM_BUILD_ROOT/%{_datadir}/gtk-doc/html/exo $RPM_BUILD_ROOT/%{_datadir}/gtk-doc/html/exo-@LIBEXO_VERSION_API@
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -58,7 +52,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.so
 %{_libdir}/lib*a
 %{_libdir}/pkgconfig/*.pc
-
-%files docs
-%defattr(-, root, root)
 %{_datadir}/gtk-doc
+
