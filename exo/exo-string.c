@@ -35,14 +35,14 @@
 
 /**
  * exo_str_elide_underscores:
- * @text        : A zero terminated string.
+ * @text : A zero terminated string.
  *
  * Returns a copy of @text with all mnemonic underscores
  * stripped off.
  *
- * Return value : A copy of @text without underscores. The
- *                returned string must be freed when no
- *                longer required.
+ * Return value: A copy of @text without underscores. The
+ *               returned string must be freed when no
+ *               longer required.
  **/
 gchar*
 exo_str_elide_underscores (const gchar *text)
@@ -76,22 +76,29 @@ exo_str_elide_underscores (const gchar *text)
 
 /**
  * exo_str_is_equal:
- * @a           : pointer to first string or %NULL.
- * @b           : pointer to second string or %NULL.
+ * @a : A pointer to first string or %NULL.
+ * @b : A pointer to second string or %NULL.
  *
- * %NULL-safe string comparison. Returns true if both @a and @b are
+ * %NULL-safe string comparison. Returns %TRUE if both @a and @b are
  * %NULL or if @a and @b refer to valid strings which are equal.
  *
- * Return value : %TRUE if @a equals @b, else %FALSE.
+ * You should always prefer this function over strcmp().
+ *
+ * Return value: %TRUE if @a equals @b, else %FALSE.
  **/
 gboolean
-exo_str_is_equal (const gchar *a, const gchar *b)
+exo_str_is_equal (const gchar *a,
+                  const gchar *b)
 {
   if (a == NULL && b == NULL)
     return TRUE;
   else if (a == NULL || b == NULL)
     return FALSE;
-  else
-    return (strcmp (a, b) == 0);
+
+  while (*a == *b++)
+    if (*a++ == '\0')
+      return TRUE;
+
+  return FALSE;
 }
 

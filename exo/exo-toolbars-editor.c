@@ -515,9 +515,18 @@ exo_toolbars_editor_update (ExoToolbarsEditor *editor)
  * exo_toolbars_editor_new:
  * @ui_manager  : A #GtkUIManager.
  *
- * Creates a new #ExoToolbarsEditor.
+ * Creates a new #ExoToolbarsEditor that will
+ * be associated with @ui_manager. @ui_manager must
+ * be a valid #GtkUIManager, %NULL is not allowed
+ * at this point.
  *
- * Return value : A new #ExoToolbarsEditor.
+ * The newly created #ExoToolbarsEditor will not
+ * be usable until you associate an #ExoToolbarsModel
+ * with it, using the function exo_toolbars_editor_set_model().
+ * You should probably use exo_toolbars_new_with_model()
+ * instead.
+ *
+ * Return value: A new #ExoToolbarsEditor.
  **/
 GtkWidget*
 exo_toolbars_editor_new (GtkUIManager *ui_manager)
@@ -537,9 +546,12 @@ exo_toolbars_editor_new (GtkUIManager *ui_manager)
  * @model       : An #ExoToolbarsModel.
  *
  * Creates a new #ExoToolbarsEditor that will be
- * associated with @model.
+ * associated with @model and @ui_manager. You
+ * must supply a valid #GtkUIManager and a valid
+ * #ExoToolbarsModel here or the function will
+ * fail.
  *
- * Return value : A new #ExoToolbarsEditor.
+ * Return value: A new #ExoToolbarsEditor.
  **/
 GtkWidget*
 exo_toolbars_editor_new_with_model (GtkUIManager     *ui_manager,
@@ -558,12 +570,13 @@ exo_toolbars_editor_new_with_model (GtkUIManager     *ui_manager,
 
 /**
  * exo_toolbars_editor_get_model:
- * @editor      : An #ExoToolbarsEditor.
+ * @editor  : An #ExoToolbarsEditor.
  *
  * Returns the #ExoToolbarsModel currently associated
- * with @editor or %NULL.
+ * with @editor or %NULL if no #ExoToolbarsModel is
+ * currently associated with @editor.
  *
- * Return value : An #ExoToolbarsModel or %NULL.
+ * Return value: An #ExoToolbarsModel or %NULL.
  **/
 ExoToolbarsModel*
 exo_toolbars_editor_get_model (ExoToolbarsEditor *editor)
@@ -579,7 +592,11 @@ exo_toolbars_editor_get_model (ExoToolbarsEditor *editor)
  * @editor  : An #ExoToolbarsEditor.
  * @model   : An #ExoToolbarsModel or %NULL.
  *
- * Sets the model to edit by this @editor.
+ * Sets the model to edit by this @editor. If you specify
+ * %NULL for @model, the editor widget will be disabled.
+ * Else the editor widget will load the toolbars from
+ * @model and reinitialize its user interface according
+ * to @model.
  **/
 void
 exo_toolbars_editor_set_model (ExoToolbarsEditor *editor,
@@ -626,12 +643,13 @@ exo_toolbars_editor_set_model (ExoToolbarsEditor *editor,
 
 /**
  * exo_toolbars_editor_get_ui_manager:
- * @editor      : An #ExoToolbarsEditor.
+ * @editor : An #ExoToolbarsEditor.
  *
  * Returns the #GtkUIManager associated with
- * @editor or %NULL.
+ * @editor or %NULL if no user interface
+ * manager is associated with @editor currently.
  *
- * Return value : A #GtkUIManager or %NULL.
+ * Return value: A #GtkUIManager or %NULL.
  **/
 GtkUIManager*
 exo_toolbars_editor_get_ui_manager (ExoToolbarsEditor *editor)
@@ -646,6 +664,11 @@ exo_toolbars_editor_get_ui_manager (ExoToolbarsEditor *editor)
  * exo_toolbars_editor_set_ui_manager:
  * @editor      : An #ExoToolbarsEditor.
  * @ui_manager  : A #GtkUIManager or %NULL.
+ *
+ * Sets the #GtkUIManager to use by this #ExoToolbarsEditor. If you
+ * specify %NULL for @ui_manager, the editor widget will be disabled.
+ * Else the editor will load the available actions from @ui_manager
+ * and reinitialize the user interface.
  **/
 void
 exo_toolbars_editor_set_ui_manager (ExoToolbarsEditor *editor,

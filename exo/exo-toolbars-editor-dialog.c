@@ -137,7 +137,10 @@ exo_toolbars_editor_dialog_add_toolbar (ExoToolbarsEditorDialog *dialog)
  * @ui_manager  : A #GtkUIManager.
  * @model       : An #ExoToolbarsModel.
  *
- * Return value : A new #ExoToolbarsEditorDialog.
+ * Creates a new #ExoToolbarsEditorDialog that is associated with
+ * @ui_manager and @model.
+ *
+ * Return value: A new #ExoToolbarsEditorDialog.
  **/
 GtkWidget*
 exo_toolbars_editor_dialog_new_with_model (GtkUIManager     *ui_manager,

@@ -1,5 +1,13 @@
 2004-11-11	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-string.c(exo_str_is_equal): Avoid call to strcmp here.
+	* configure.ac, exo/exo-toolbars-model.c: Elide the dependency on
+	  libxml-2.0. Replaced with a GLib based XML parser.
+	* configure.ac, m4/gtk-doc.m4, docs/: Added initial API reference
+	  documentation for libexo.
+
+2004-11-11	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-toolbars-private.c: Fix a crash on X setups where Gtk+
 	  doesn't use the best visual by default.
 

@@ -54,7 +54,7 @@ struct _ExoToolbarsModelClass
 {
   GObjectClass  __parent__;
 
-  /* methods */
+  /* Virtual Table */
   gboolean     (*add_item)  (ExoToolbarsModel *model,
                              gint              toolbar_position,
                              gint              item_position,
@@ -66,7 +66,7 @@ struct _ExoToolbarsModelClass
   void   (*reserved3)  (void);
   void   (*reserved4)  (void);
 
-  /* signals */
+  /* Signals */
   void   (*item_added)        (ExoToolbarsModel *model,
                                gint              toolbar_position,
                                gint              item_position);
@@ -97,6 +97,8 @@ struct _ExoToolbarsModelClass
 struct _ExoToolbarsModel
 {
   GObject                  __parent__;
+
+  /*< private >*/
   ExoToolbarsModelPrivate *priv;
 };
 

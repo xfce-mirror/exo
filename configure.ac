@@ -56,16 +56,20 @@ dnl Check for required packages
 BM_DEPEND([DBUS], [dbus-glib-1], [0.22])
 BM_DEPEND([GTK], [gtk+-2.0], [2.4.0])
 BM_DEPEND([LIBXFCEGUI4], [libxfcegui4-1.0], [4.1.24])
-BM_DEPEND([LIBXML], [libxml-2.0], [2.4.0])
 
 dnl Check for session management libraries
 BM_LIBSM
+
+dnl Check for gtk-doc
+GTK_DOC_CHECK([1.0])
 
 dnl Check for debugging support
 BM_DEBUG_SUPPORT
 
 AC_OUTPUT([
 Makefile
+docs/version.xml
+docs/Makefile
 exo/exo-0.1.pc
 exo/Makefile
 ])

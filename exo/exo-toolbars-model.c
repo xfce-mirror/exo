@@ -28,7 +28,7 @@
 #endif
 #include <stdio.h>
 
-#include <libxml/tree.h>
+#include <libxfce4util/libxfce4util.h>
 
 #include <exo/exo-marshal.h>
 #include <exo/exo-string.h>
@@ -43,8 +43,18 @@
 
 typedef struct _ExoToolbarsToolbar ExoToolbarsToolbar;
 typedef struct _ExoToolbarsItem    ExoToolbarsItem;
+typedef struct _UiParser           UiParser;
 
 
+
+typedef enum
+{
+  UI_PARSER_START,
+  UI_PARSER_TOOLBARS,
+  UI_PARSER_TOOLBAR,
+  UI_PARSER_TOOLITEM,
+  UI_PARSER_SEPARATOR,
+} UiParserState;
 
 enum
 {
@@ -83,6 +93,16 @@ static ExoToolbarsItem *exo_toolbars_item_new                   (const gchar    
                                                                  const gchar            *type,
                                                                  gboolean                is_separator);
 static void             exo_toolbars_toolbar_free               (ExoToolbarsToolbar     *toolbar);
+static void             start_element_handler                   (GMarkupParseContext    *context,
+                                                                 const gchar            *element_name,
+                                                                 const gchar           **attribute_names,
+                                                                 const gchar           **attribute_values,
+                                                                 gpointer                user_data,
+                                                                 GError                **error);
+static void             end_element_handler                     (GMarkupParseContext    *context,
+                                                                 const gchar            *element_name,
+                                                                 gpointer                user_data,
+                                                                 GError                **error);
 
 
 
@@ -107,7 +127,26 @@ struct _ExoToolbarsItem
   gboolean  is_separator;
 };
 
+typedef XFCE_GENERIC_STACK(UiParserState) UiParserStack;
 
+struct _UiParser
+{
+  UiParserStack     *stack;
+  
+  ExoToolbarsModel  *model;
+  gint               toolbar_position;
+};
+
+
+
+static GMarkupParser markup_parser =
+{
+  start_element_handler,
+  end_element_handler,
+  NULL,
+  NULL,
+  NULL,
+};
 
 static GObjectClass *parent_class;
 static guint         toolbars_model_signals[LAST_SIGNAL];
@@ -151,6 +190,13 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 
   /**
    * ExoToolbarsModel::item-added:
+   * @model             : The #ExoToolbarsModel to which an item was added.
+   * @toolbar_position  : The index of the toolbar in @model to which the item
+   *                      was added.
+   * @item_position     : The index of the new item in the specified toolbar.
+   *
+   * This signal is emitted whenever a new item is added to a toolbar
+   * managed by @model.
    **/
   toolbars_model_signals[ITEM_ADDED] =
     g_signal_new ("item-added",
@@ -165,6 +211,13 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 
   /**
    * ExoToolbarsModel::item-removed:
+   * @model             : The #ExoToolbarsModel from which an item was removed.
+   * @toolbar_position  : The index of the toolbar in @model from which
+   *                      the item was removed.
+   * @item_position     : The index of the item in the specified toolbar.
+   *
+   * This signal is emitted whenever an item is removed from a toolbar
+   * managed by @model.
    **/
   toolbars_model_signals[ITEM_REMOVED] =
     g_signal_new ("item-removed",
@@ -179,6 +232,11 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 
   /**
    * ExoToolbarsModel::toolbar-added:
+   * @model             : The #ExoToolbarsModel to which a new toolbar was
+   *                      added.
+   * @toolbar_position  : The index of the new toolbar in @model.
+   *
+   * This signal is emitted whenever a new toolbar is added to @model.
    **/
   toolbars_model_signals[TOOLBAR_ADDED] =
     g_signal_new ("toolbar-added",
@@ -192,6 +250,13 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 
   /**
    * ExoToolbarsModel::toolbar-changed:
+   * @model             : The #ExoToolbarsModel that manages the changed
+   *                      toolbar.
+   * @toolbar_position  : The index of the changed toolbar in @model.
+   *
+   * This signal is emitted whenever the flags or the style of a toolbar
+   * change, which is managed by @model. All views connected to @model
+   * should then update their internal state of the specified toolbar.
    **/
   toolbars_model_signals[TOOLBAR_CHANGED] =
     g_signal_new ("toolbar-changed",
@@ -205,6 +270,11 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 
   /**
    * ExoToolbarsModel::toolbar-removed:
+   * @model             : The #ExoToolbarsModel
+   * @toolbar_position  : The index of the toolbar in @model that was
+   *                      removed.
+   *
+   * This signal is emitted whenever a toolbar is removed from @model.
    **/
   toolbars_model_signals[TOOLBAR_REMOVED] =
     g_signal_new ("toolbar-removed",
@@ -408,12 +478,175 @@ exo_toolbars_toolbar_free (ExoToolbarsToolbar *toolbar)
 
 
 
+static void
+start_element_handler (GMarkupParseContext  *context,
+                       const gchar          *element_name,
+                       const gchar         **attribute_names,
+                       const gchar         **attribute_values,
+                       gpointer              user_data,
+                       GError              **error)
+{
+  const gchar *style_prop = NULL;
+  const gchar *name_prop = NULL;
+  const gchar *type_prop = EXO_TOOLBARS_ITEM_TYPE;
+  const gchar *id_prop = NULL;
+  UiParser    *parser = user_data;
+  guint        n;
+
+  switch (xfce_stack_top (parser->stack))
+    {
+    case UI_PARSER_START:
+      if (exo_str_is_equal (element_name, "toolbars"))
+        xfce_stack_push (parser->stack, UI_PARSER_TOOLBARS);
+      else
+        goto unknown_element;
+      break;
+
+    case UI_PARSER_TOOLBARS:
+      if (exo_str_is_equal (element_name, "toolbar"))
+        {
+          /* find name/style attributes */
+          for (n = 0; attribute_names[n] != NULL; ++n)
+            {
+              if (exo_str_is_equal (attribute_names[n], "name"))
+                name_prop = attribute_values[n];
+              else if (exo_str_is_equal (attribute_names[n], "style"))
+                style_prop = attribute_values[n];
+            }
+
+          /* name is required */
+          if (G_UNLIKELY (name_prop == NULL))
+            {
+              g_set_error (error, G_MARKUP_ERROR, G_MARKUP_ERROR_INVALID_CONTENT,
+                           "Element <toolbar> requires an attribute name");
+              return;
+            }
+
+          /* create the toolbar */
+          parser->toolbar_position = exo_toolbars_model_add_toolbar (parser->model, -1, name_prop);
+
+          /* set style if given */
+          if (exo_str_is_equal (style_prop, "icons"))
+            exo_toolbars_model_set_style (parser->model, GTK_TOOLBAR_ICONS, parser->toolbar_position);
+          else if (exo_str_is_equal (style_prop, "text"))
+            exo_toolbars_model_set_style (parser->model, GTK_TOOLBAR_TEXT, parser->toolbar_position);
+          else if (exo_str_is_equal (style_prop, "both"))
+            exo_toolbars_model_set_style (parser->model, GTK_TOOLBAR_BOTH, parser->toolbar_position);
+          else if (exo_str_is_equal (style_prop, "both-horiz"))
+            exo_toolbars_model_set_style (parser->model, GTK_TOOLBAR_BOTH_HORIZ, parser->toolbar_position);
+
+          xfce_stack_push (parser->stack, UI_PARSER_TOOLBAR);
+        }
+      else
+        goto unknown_element;
+      break;
+
+    case UI_PARSER_TOOLBAR:
+      if (exo_str_is_equal (element_name, "toolitem"))
+        {
+          /* find id/type attributes */
+          for (n = 0; attribute_names[n] != NULL; ++n)
+            {
+              if (exo_str_is_equal (attribute_names[n], "id"))
+                id_prop = attribute_values[n];
+              else if (exo_str_is_equal (attribute_names[n], "type"))
+                type_prop = attribute_values[n];
+            }
+
+          /* id is required */
+          if (G_UNLIKELY (id_prop == NULL))
+            {
+              g_set_error (error, G_MARKUP_ERROR, G_MARKUP_ERROR_INVALID_CONTENT,
+                           "Element <toolitem> requires an attribute id");
+              return;
+            }
+
+          /* add the new toolitem */
+          exo_toolbars_model_add_item (parser->model, parser->toolbar_position,
+                                       -1, id_prop, type_prop);
+
+          xfce_stack_push (parser->stack, UI_PARSER_TOOLITEM);
+        }
+      else if (exo_str_is_equal (element_name, "separator"))
+        {
+          /* add the new separator */
+          exo_toolbars_model_add_separator (parser->model, parser->toolbar_position, -1);
+
+          xfce_stack_push (parser->stack, UI_PARSER_SEPARATOR);
+        }
+      else
+        goto unknown_element;
+      break;
+
+    default:
+      goto unknown_element;
+    }
+
+  return;
+
+unknown_element:
+  g_set_error (error, G_MARKUP_ERROR, G_MARKUP_ERROR_UNKNOWN_ELEMENT,
+               "Unknown element <%s>", element_name);
+}
+
+
+
+static void
+end_element_handler (GMarkupParseContext  *context,
+                     const gchar          *element_name,
+                     gpointer              user_data,
+                     GError              **error)
+{
+  UiParser *parser = user_data;
+
+  switch (xfce_stack_top (parser->stack))
+    {
+    case UI_PARSER_START:
+      g_set_error (error, G_MARKUP_ERROR, G_MARKUP_ERROR_INVALID_CONTENT,
+                   "End element handler called while in root context");
+      return;
+
+    case UI_PARSER_TOOLBARS:
+      if (!exo_str_is_equal (element_name, "toolbars"))
+        goto unknown_element;
+      break;
+
+    case UI_PARSER_TOOLBAR:
+      if (!exo_str_is_equal (element_name, "toolbar"))
+        goto unknown_element;
+      break;
+
+    case UI_PARSER_TOOLITEM:
+      if (!exo_str_is_equal (element_name, "toolitem"))
+        goto unknown_element;
+      break;
+
+    case UI_PARSER_SEPARATOR:
+      if (!exo_str_is_equal (element_name, "separator"))
+        goto unknown_element;
+      break;
+      
+    default:
+      goto unknown_element;
+    }
+
+  xfce_stack_pop (parser->stack);
+  return;
+
+unknown_element:
+  g_set_error (error, G_MARKUP_ERROR, G_MARKUP_ERROR_UNKNOWN_ELEMENT,
+               "Unknown closing element <%s>", element_name);
+}
+
+
+
 /**
  * exo_toolbars_model_new:
  *
- * Creates a new #ExoToolbarsModel.
+ * Creates a new #ExoToolbarsModel with a reference count
+ * of one.
  *
- * Return value : A newly created #ExoToolbarsModel.
+ * Return value: A newly created #ExoToolbarsModel.
  **/
 ExoToolbarsModel*
 exo_toolbars_model_new (void)
@@ -425,6 +658,13 @@ exo_toolbars_model_new (void)
 
 /**
  * exo_toolbars_model_set_actions:
+ * @model     : An #ExoToolbarsModel.
+ * @actions   : A string array with action names.
+ * @n_actions : The number of strings in @actions.
+ *
+ * Specifies the list of valid actions for @model. @model will only
+ * manage actions that are specified in this list. This function
+ * should be called right after you created @model.
  **/
 void
 exo_toolbars_model_set_actions (ExoToolbarsModel      *model,
@@ -459,6 +699,11 @@ exo_toolbars_model_set_actions (ExoToolbarsModel      *model,
 
 /**
  * exo_toolbars_model_get_actions:
+ * @model : An #ExoToolbarsModel.
+ *
+ * Returns the list of valid actions for @model.
+ *
+ * Return value: The list of valid actions for @model.
  **/
 gchar**
 exo_toolbars_model_get_actions (ExoToolbarsModel *model)
@@ -472,86 +717,49 @@ exo_toolbars_model_get_actions (ExoToolbarsModel *model)
 /**
  * exo_toolbars_model_load_from_file:
  * @model       : An #ExoToolbarsModel.
- * @filename    :
- * @error       :
+ * @filename    : The name of the file to parse.
+ * @error       : Return location for an error or %NULL.
  *
- * Return value :
+ * Parses a file containing a toolbars UI definition and merges it with
+ * the current contents of @model.
+ *
+ * Return value: %TRUE if the data was successfully loaded from the file
+ *               specified by @filename, else %FALSE.
  **/
 gboolean
 exo_toolbars_model_load_from_file (ExoToolbarsModel *model,
                                    const gchar      *filename,
                                    GError          **error)
 {
-  xmlNodePtr node;
-  xmlNodePtr child;
-  xmlDocPtr  doc;
-  xmlChar   *style;
-  xmlChar   *name;
-  xmlChar   *type;
-  xmlChar   *id;
-  gint       index;
-  
+  GMarkupParseContext *context;
+  UiParser             parser;
+  gboolean             succeed;
+  gchar               *content;
+  gsize                content_len;
+
   g_return_val_if_fail (EXO_IS_TOOLBARS_MODEL (model), FALSE);
   g_return_val_if_fail (filename != NULL, FALSE);
 
-  doc = xmlParseFile (filename);
-  if (G_UNLIKELY (doc == NULL))
-    {
-      g_set_error (error, G_MARKUP_ERROR, G_MARKUP_ERROR_PARSE,
-                   "Unable to parse file %s", filename);
-      return FALSE;
-    }
+  /* read the file into memory */
+  if (!g_file_get_contents (filename, &content, &content_len, error))
+    return FALSE;
 
-  for (node = xmlDocGetRootElement (doc)->children; node != NULL; node = node->next)
-    if (xmlStrEqual (node->name, (const xmlChar *) "toolbar"))
-      {
-        name = xmlGetProp (node, (const xmlChar *) "name");
-        if (G_UNLIKELY (name == NULL))
-          continue;
+  /* initialize the parser */
+  parser.stack = xfce_stack_new (UiParserStack);
+  parser.model = model;
+  xfce_stack_push (parser.stack, UI_PARSER_START);
 
-        index = exo_toolbars_model_add_toolbar (model, -1, (const gchar *) name);
-        xmlFree (name);
+  /* parse the file */
+  context = g_markup_parse_context_new (&markup_parser, 0, &parser, NULL);
+  succeed = g_markup_parse_context_parse (context, content, content_len, error)
+         && g_markup_parse_context_end_parse (context, error);
 
-        style = xmlGetProp (node, (const xmlChar *) "style");
-        if (style != NULL)
-          {
-            if (exo_str_is_equal ((const gchar *) style, "icons"))
-              exo_toolbars_model_set_style (model, GTK_TOOLBAR_ICONS, index);
-            else if (exo_str_is_equal ((const gchar *) style, "text"))
-              exo_toolbars_model_set_style (model, GTK_TOOLBAR_TEXT, index);
-            else if (exo_str_is_equal ((const gchar *) style, "both"))
-              exo_toolbars_model_set_style (model, GTK_TOOLBAR_BOTH, index);
-            else if (exo_str_is_equal ((const gchar *) style, "both-horiz"))
-              exo_toolbars_model_set_style (model, GTK_TOOLBAR_BOTH_HORIZ, index);
+  /* cleanup */
+  g_markup_parse_context_free (context);
+  xfce_stack_free (parser.stack);
+  g_free (content);
 
-            xmlFree (style);
-          }
-
-        for (child = node->children; child != NULL; child = child->next)
-          {
-            if (xmlStrEqual (child->name, (const xmlChar *) "toolitem"))
-              {
-                id = xmlGetProp (child, (const xmlChar *) "id");
-                if (G_LIKELY (id != NULL))
-                  {
-                    type = xmlGetProp (child, (const xmlChar *) "type");
-                    if (G_UNLIKELY (type == NULL))
-                      type = xmlStrdup (EXO_TOOLBARS_ITEM_TYPE);
-                    exo_toolbars_model_add_item (model, index, -1, id, type);
-                    xmlFree (type);
-                    xmlFree (id);
-                  }
-              }
-            else if (xmlStrEqual (child->name, (const xmlChar *) "separator"))
-              {
-                exo_toolbars_model_add_separator (model, index, -1);
-              }
-          }
-      }
-
-  xmlFreeDoc (doc);
-
-  return TRUE;
+  return succeed;
 }
 
 
@@ -559,10 +767,14 @@ exo_toolbars_model_load_from_file (ExoToolbarsModel *model,
 /**
  * exo_toolbars_model_save_to_file:
  * @model       : An #ExoToolbarsModel.
- * @filename    :
- * @error       :
+ * @filename    : The name of the file to save to.
+ * @error       : The return location for an error or %NULL.
  *
- * Return value :
+ * Stores the UI definition of the contents of @model to the file
+ * specified by @filename.
+ *
+ * Return value: %TRUE if saving was successfully, else %FALSE is
+ *               returned.
  **/
 gboolean
 exo_toolbars_model_save_to_file (ExoToolbarsModel *model,
@@ -589,6 +801,7 @@ exo_toolbars_model_save_to_file (ExoToolbarsModel *model,
 
   fprintf (fp, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
   fprintf (fp, "<!DOCTYPE toolbars SYSTEM \"toolbars.dtd\">\n\n");
+  fprintf (fp, "<!-- Autogenerated by %s -->\n\n", PACKAGE_STRING);
   fprintf (fp, "<toolbars>\n");
 
   for (tp = model->priv->toolbars; tp != NULL; tp = tp->next)
@@ -653,8 +866,8 @@ exo_toolbars_model_save_to_file (ExoToolbarsModel *model,
  * %EXO_TOOLBARS_MODEL_OVERRIDE_STYLE is set for the
  * toolbar.
  *
- * Return value       : The #GtkToolbarStyle associated with
- *                      @toolbar_position.
+ * Return value: The #GtkToolbarStyle associated with
+ *               @toolbar_position.
  **/
 GtkToolbarStyle
 exo_toolbars_model_get_style (ExoToolbarsModel *model,
@@ -678,6 +891,10 @@ exo_toolbars_model_get_style (ExoToolbarsModel *model,
  * @model             : An #ExoToolbarsModel.
  * @style             : A #GtkToolbarStyle.
  * @toolbar_position  : The index of a toolbar in @model.
+ *
+ * Sets the style to use for a particular toolbar in @model. You can
+ * undo the effect of this function by calling
+ * exo_toolbars_model_unset_style().
  **/
 void
 exo_toolbars_model_set_style (ExoToolbarsModel *model,
@@ -708,6 +925,9 @@ exo_toolbars_model_set_style (ExoToolbarsModel *model,
  * exo_toolbars_model_unset_style:
  * @model             : An #ExoToolbarsModel.
  * @toolbar_position  : The index of a toolbar in @model.
+ *
+ * Undoes the effect of exo_toolbars_model_unset_style() and resets
+ * the style of the specified toolbar to the system default.
  **/
 void
 exo_toolbars_model_unset_style (ExoToolbarsModel *model,
@@ -738,8 +958,8 @@ exo_toolbars_model_unset_style (ExoToolbarsModel *model,
  * Returns the #ExoToolbarsModelFlags associated with the 
  * toolbar at @toolbar_position.
  *
- * Return value       : The #ExoToolbarsModelFlags associated
- *                      with @toolbar_position.
+ * Return value: The #ExoToolbarsModelFlags associated
+ *               with @toolbar_position.
  **/
 ExoToolbarsModelFlags
 exo_toolbars_model_get_flags (ExoToolbarsModel *model,
@@ -850,12 +1070,16 @@ exo_toolbars_model_get_item_data (ExoToolbarsModel *model,
 /**
  * exo_toolbars_model_add_item:
  * @model             : An #ExoToolbarsModel.
- * @toolbar_position  :
- * @item_position     :
- * @id                :
- * @type              :
+ * @toolbar_position  : The index of toolbar in @model.
+ * @item_position     : The position in the specified toolbar or -1.
+ * @id                : The identifier of the new item.
+ * @type              : The type of the new item.
  *
- * Return value       :
+ * Adds a new toolbar item with the specified @type and @id to @model,
+ * where @id has to be a valid action name for @model, that was previously
+ * set with exo_toolbars_model_set_actions().
+ *
+ * Return value: %TRUE if the item was added successfully, else %FALSE.
  **/
 gboolean
 exo_toolbars_model_add_item (ExoToolbarsModel      *model,
@@ -873,8 +1097,12 @@ exo_toolbars_model_add_item (ExoToolbarsModel      *model,
 /**
  * exo_toolbars_model_add_separator:
  * @model             : An #ExoToolbarsModel.
- * @toolbar_position  :
- * @item_position     :
+ * @toolbar_position  : The index of a toolbar in @model.
+ * @item_position     : The position in the specified toolbar or -1.
+ *
+ * Adds a new separator item to the specified toolbar in @model. If
+ * you specify -1 for @item_position, the separator will be appended
+ * to the toolbar, else it will be inserted at the specified @item_position.
  **/
 void
 exo_toolbars_model_add_separator (ExoToolbarsModel *model,
@@ -903,10 +1131,16 @@ exo_toolbars_model_add_separator (ExoToolbarsModel *model,
 /**
  * exo_toolbars_model_add_toolbar:
  * @model             : An #ExoToolbarsModel.
- * @toolbar_position  :
- * @name              :
+ * @toolbar_position  : Where to insert the new toolbar in @model
+ *                      or -1 to append the toolbar.
+ * @name              : The name of the new toolbar.
  *
- * Return value       : The real position of the new toolbar in @model.
+ * Adds a new toolbar to @model. If you specify -1 for @toolbar_position,
+ * the toolbar will be appended to @model; else the toolbar will be
+ * inserted at the specified position. Emits the ::toolbar-added
+ * signal.
+ *
+ * Return value: The real position of the new toolbar in @model.
  **/
 gint
 exo_toolbars_model_add_toolbar (ExoToolbarsModel *model,
@@ -946,7 +1180,11 @@ exo_toolbars_model_add_toolbar (ExoToolbarsModel *model,
  * @new_toolbar_position  : New toolbar index.
  * @new_item_position     : New item index.
  *
- * Moves an item to another position.
+ * Moves an item to another position. The move operation
+ * is done by first removing the specified item and afterwards
+ * readding the item at the new position. Therefore, this
+ * functions emits the ::item-removed and ::item-added
+ * signals.
  **/
 void
 exo_toolbars_model_move_item (ExoToolbarsModel *model,
@@ -989,7 +1227,8 @@ exo_toolbars_model_move_item (ExoToolbarsModel *model,
  * @item_position     : The index of the item to remove.
  *
  * Removes the toolbar item at @item_position from the toolbar
- * @toolbar_position in @model.
+ * @toolbar_position in @model and emits the ::item-removed
+ * signal.
  **/
 void
 exo_toolbars_model_remove_item (ExoToolbarsModel *model,
@@ -1021,7 +1260,10 @@ exo_toolbars_model_remove_item (ExoToolbarsModel *model,
 /**
  * exo_toolbars_model_remove_toolbar:
  * @model             : A #ExoToolbarsModel.
- * @toolbar_position  :
+ * @toolbar_position  : The index of a toolbar in @model.
+ *
+ * Removes the specified toolbar from @model and emits
+ * the ::toolbar-removed signal.
  **/
 void
 exo_toolbars_model_remove_toolbar (ExoToolbarsModel *model,
@@ -1049,9 +1291,11 @@ exo_toolbars_model_remove_toolbar (ExoToolbarsModel *model,
 /**
  * exo_toolbars_model_n_items:
  * @model             : An #ExoToolbarsModel.
- * @toolbar_position  :
+ * @toolbar_position  : The index of a toolbar in @model.
  *
- * Return value       :
+ * Returns the number of items in the specified toolbar.
+ *
+ * Return value: The number of items in the specified toolbar.
  **/
 gint
 exo_toolbars_model_n_items (ExoToolbarsModel *model,
@@ -1072,11 +1316,14 @@ exo_toolbars_model_n_items (ExoToolbarsModel *model,
 /**
  * exo_toolbars_model_item_nth:
  * @model             : An #ExoToolbarsModel.
- * @toolbar_position  :
- * @item_position     :
- * @is_separator      :
- * @id                :
- * @type              :
+ * @toolbar_position  : The index of a toolbar in @model.
+ * @item_position     : The index of an item in the specified toolbar.
+ * @is_separator      : Return location for the separator setting or %NULL.
+ * @id                : Return location for the item id or %NULL.
+ * @type              : Return location for the item type or %NULL.
+ *
+ * Queries the properites of the toolbar item at @item_position in toolbar
+ * @toolbar_position.
  **/
 void
 exo_toolbars_model_item_nth (ExoToolbarsModel *model,
@@ -1111,9 +1358,12 @@ exo_toolbars_model_item_nth (ExoToolbarsModel *model,
 
 /**
  * exo_toolbars_model_n_toolbars:
- * @model       : An #ExoToolbarsModel.
+ * @model : An #ExoToolbarsModel.
  *
- * Return value : The number of toolbars in @model.
+ * Returns the number of toolbars currently
+ * managed by @model.
+ *
+ * Return value: The number of toolbars in @model.
  **/
 gint
 exo_toolbars_model_n_toolbars (ExoToolbarsModel *model)
@@ -1127,9 +1377,13 @@ exo_toolbars_model_n_toolbars (ExoToolbarsModel *model)
 /**
  * exo_toolbars_model_toolbar_nth:
  * @model             : An #ExoToolbarsModel.
- * @toolbar_position  :
+ * @toolbar_position  : The index of a toolbar in @model.
  *
- * Return value       :
+ * Returns the name of the toolbar at @toolbar_position in
+ * @model.
+ *
+ * Return value: The name of the toolbar at @toolbar_position
+ *               in @model.
  **/
 const gchar*
 exo_toolbars_model_toolbar_nth (ExoToolbarsModel *model,

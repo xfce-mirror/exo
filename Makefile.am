@@ -1,5 +1,6 @@
 SUBDIRS =								\
-	exo
+	exo								\
+	docs
 
 distclean-local:
 	rm -rf *.spec *.cache *~

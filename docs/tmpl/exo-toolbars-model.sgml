@@ -1,0 +1,347 @@
+<!-- ##### SECTION Title ##### -->
+ExoToolbarsModel
+
+<!-- ##### SECTION Short_Description ##### -->
+The toolbars backend used by #ExoToolbarsView
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+The #ExoToolbarsModel class includes the basic functionality
+to manage editable toolbars.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+#ExoToolbarsView, #ExoToolbarsEditor, #ExoToolbarsEditorDialog
+</para>
+
+<!-- ##### STRUCT ExoToolbarsModel ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL ExoToolbarsModel::get-item-data ##### -->
+<para>
+
+</para>
+
+@exotoolbarsmodel: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL ExoToolbarsModel::get-item-id ##### -->
+<para>
+
+</para>
+
+@exotoolbarsmodel: the object which received the signal.
+@arg1: 
+@arg2: 
+@Returns: 
+
+<!-- ##### SIGNAL ExoToolbarsModel::get-item-type ##### -->
+<para>
+
+</para>
+
+@exotoolbarsmodel: the object which received the signal.
+@arg1: 
+@Returns: 
+
+<!-- ##### SIGNAL ExoToolbarsModel::item-added ##### -->
+<para>
+
+</para>
+
+@exotoolbarsmodel: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL ExoToolbarsModel::item-removed ##### -->
+<para>
+
+</para>
+
+@exotoolbarsmodel: the object which received the signal.
+@arg1: 
+@arg2: 
+
+<!-- ##### SIGNAL ExoToolbarsModel::toolbar-added ##### -->
+<para>
+
+</para>
+
+@exotoolbarsmodel: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL ExoToolbarsModel::toolbar-changed ##### -->
+<para>
+
+</para>
+
+@exotoolbarsmodel: the object which received the signal.
+@arg1: 
+
+<!-- ##### SIGNAL ExoToolbarsModel::toolbar-removed ##### -->
+<para>
+
+</para>
+
+@exotoolbarsmodel: the object which received the signal.
+@arg1: 
+
+<!-- ##### ENUM ExoToolbarsModelFlags ##### -->
+<para>
+
+</para>
+
+@EXO_TOOLBARS_MODEL_NOT_REMOVABLE: 
+@EXO_TOOLBARS_MODEL_ACCEPT_ITEMS_ONLY: 
+@EXO_TOOLBARS_MODEL_OVERRIDE_STYLE: 
+
+<!-- ##### MACRO EXO_TOOLBARS_ITEM_TYPE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### FUNCTION exo_toolbars_model_new ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_set_actions ##### -->
+<para>
+
+</para>
+
+@model: 
+@actions: 
+@n_actions: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_get_actions ##### -->
+<para>
+
+</para>
+
+@model: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_load_from_file ##### -->
+<para>
+
+</para>
+
+@model: 
+@filename: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_save_to_file ##### -->
+<para>
+
+</para>
+
+@model: 
+@filename: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_get_flags ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_set_flags ##### -->
+<para>
+
+</para>
+
+@model: 
+@flags: 
+@toolbar_position: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_get_style ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_set_style ##### -->
+<para>
+
+</para>
+
+@model: 
+@style: 
+@toolbar_position: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_unset_style ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_get_item_type ##### -->
+<para>
+
+</para>
+
+@model: 
+@dnd_type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_get_item_id ##### -->
+<para>
+
+</para>
+
+@model: 
+@type: 
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_get_item_data ##### -->
+<para>
+
+</para>
+
+@model: 
+@type: 
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_add_item ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@item_position: 
+@id: 
+@type: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_add_separator ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@item_position: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_add_toolbar ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_move_item ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@item_position: 
+@new_toolbar_position: 
+@new_item_position: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_remove_item ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@item_position: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_remove_toolbar ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_n_items ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_item_nth ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@item_position: 
+@is_separator: 
+@id: 
+@type: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_n_toolbars ##### -->
+<para>
+
+</para>
+
+@model: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_toolbars_model_toolbar_nth ##### -->
+<para>
+
+</para>
+
+@model: 
+@toolbar_position: 
+@Returns: 
+
+

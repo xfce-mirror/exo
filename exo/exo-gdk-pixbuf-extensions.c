@@ -1,4 +1,4 @@
-/* $Id: exo-gdk-pixbuf-extensions.c,v 1.1.1.1 2004/09/14 22:32:58 bmeurer Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2004  Benedikt Meurer <benny@xfce.org>
  *
@@ -35,10 +35,13 @@
 
 /**
  * exo_gdk_pixbuf_scale_ratio:
- * @source      :
- * @dest_size   :
+ * @source    : The source #GdkPixbuf.
+ * @dest_size : The target size in pixel.
  *
- * Return value :
+ * Scales @source to @dest_size while preserving the aspect ratio of
+ * @source.
+ *
+ * Return value: A newly created #GdkPixbuf.
  **/
 GdkPixbuf*
 exo_gdk_pixbuf_scale_ratio (GdkPixbuf *source,

@@ -55,8 +55,7 @@ libexo_0_1_la_SOURCES =							\
 
 libexo_0_1_la_CFLAGS =							\
 	@DBUS_CFLAGS@							\
-	@LIBXFCEGUI4_CFLAGS@						\
-	@LIBXML_CFLAGS@
+	@LIBXFCEGUI4_CFLAGS@
 
 libexo_0_1_la_LDFLAGS =							\
 	-export-dynamic							\
@@ -66,8 +65,7 @@ libexo_0_1_la_LDFLAGS =							\
 
 libexo_0_1_la_LIBADD =							\
 	@DBUS_LIBS@							\
-	@LIBXFCEGUI4_LIBS@						\
-	@LIBXML_LIBS@
+	@LIBXFCEGUI4_LIBS@
 
 exo-marshal.h: $(srcdir)/exo-marshal.list
 	glib-genmarshal --prefix=_exo_marshal --header \
