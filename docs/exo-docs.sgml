@@ -18,21 +18,24 @@
 <!ENTITY exo-string SYSTEM "xml/exo-string.xml">
 <!ENTITY exo-xsession-client SYSTEM "xml/exo-xsession-client.xml">
 <!ENTITY version SYSTEM "version.xml">
+<!ENTITY date "December 2004">
 ]>
 
 <book id="index">
 	<bookinfo>
 		<title>exo Reference Manual</title>
 		<releaseinfo>for exo &version;</releaseinfo>
+    <pubdate>&date;</pubdate>
 	</bookinfo>
 
 	<part id="exo-overview">
 		<title>Overview</title>
 		<para>
-      libexo is an extension library for <ulink url="http://www.xfce.org/" type="http">Xfce</ulink>,
+      <ulink type="http" url="http://libexo.os-cillation.com/">libexo</ulink> is an extension
+      library for <ulink url="http://www.xfce.org/" type="http">Xfce</ulink>,
       developed by <ulink url="http://www.os-cillation.com/" type="http">os-cillation</ulink>.
       While Xfce comes with quite a few libraries that are targeted at desktop development,
-      libexo is targeted at application developement; in particular, developing applications for
+      libexo is targeted at application developement - in particular, developing applications for
       the Xfce Desktop Environment.
 		</para>
 	</part>

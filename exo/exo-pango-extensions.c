@@ -368,18 +368,18 @@ ellipsize_middle (const char *string, PangoLayout *layout, int width)
 
 /**
  * exo_pango_layout_set_text_ellipsized:
- * @layout      : A #PangoLayout.
- * @string      :
- * @width       :
- * @mode        :
+ * @layout : A #PangoLayout.
+ * @string : The string to ellipsize.
+ * @width  : The maximal width for the @layout.
+ * @mode   : The ellipsize mode.
  * 
  * Truncates a string if required to fit in @width and sets it on the
  * layout. Truncation involves removing characters from the start, middle or end
  * respectively and replacing them with "...". Algorithm is a bit
  * fuzzy, won't work 100%.
  *
- * Return value : %TRUE if @string had to be ellipsized to fit into @width, else
- *                %FALSE.
+ * Return value: %TRUE if @string had to be ellipsized to fit into @width, else
+ *               %FALSE.
  **/
 gboolean
 exo_pango_layout_set_text_ellipsized (PangoLayout            *layout,

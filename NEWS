@@ -1,5 +1,5 @@
-0.2.0pre2
-=========
+0.2.0
+=====
 - The ellipsizing functions now use the Pango 1.6 builtin functionality
   if available.
 - Added lightweight session management support with the ExoXsessionClient
@@ -19,7 +19,12 @@
 - ExoPropertyProxy has been replaced by ExoBinding, which is based on
   the GObject Binding Properties implementation available from
   http://ex-code.com/glib-bind/. ExoBinding is way more powerful and
-  easier to handle than ExoPropertyProxy.
+  easier to handle than ExoPropertyProxy. ExoBinding contains some 
+  improvements over GBinding; for example, GBinding can run into an
+  endless loop, when you bind properties of type GBoxed, whereas
+  ExoBinding doesn't suffer from this problem.
+- The MD5 functions have been changed to be compatible with the MD5 API
+  found in libegg.
 - The API documentation is nearly complete now.
 
 0.1.3

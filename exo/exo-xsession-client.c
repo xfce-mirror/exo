@@ -49,6 +49,7 @@ enum
 {
   PROP_0,
   PROP_GROUP,
+  PROP_RESTART_COMMAND,
 };
 
 enum
@@ -118,9 +119,20 @@ exo_xsession_client_class_init (ExoXsessionClientClass *klass)
                                    PROP_GROUP,
                                    g_param_spec_object ("group",
                                                         _("Window group"),
-                                                        _("Window group"),
+                                                        _("Window group leader"),
                                                         GDK_TYPE_WINDOW,
                                                         G_PARAM_READWRITE));
+
+  /**
+   * ExoXsessionClient:restart-command:
+   **/
+  g_object_class_install_property (gobject_class,
+                                   PROP_RESTART_COMMAND,
+                                   g_param_spec_boxed ("restart-command",
+                                                       _("Restart command"),
+                                                       _("Session restart command"),
+                                                       G_TYPE_STRV,
+                                                       G_PARAM_READWRITE));
 
   /**
    * ExoXsessionClient::save-yourself:
@@ -169,11 +181,21 @@ exo_xsession_client_get_property (GObject     *object,
                                   GParamSpec  *pspec)
 {
   ExoXsessionClient *client = EXO_XSESSION_CLIENT (object);
+  gchar            **argv;
 
   switch (prop_id)
     {
     case PROP_GROUP:
       g_value_set_object (value, client->priv->leader);
+      break;
+
+    case PROP_RESTART_COMMAND:
+      if (!exo_xsession_client_get_restart_command (client, &argv, NULL))
+        {
+          argv = g_new (gchar *, 1);
+          argv[0] = NULL;
+        }
+      g_value_take_boxed (value, argv);
       break;
 
     default:
@@ -196,6 +218,10 @@ exo_xsession_client_set_property (GObject       *object,
     {
     case PROP_GROUP:
       exo_xsession_client_set_group (client, g_value_get_object (value));
+      break;
+
+    case PROP_RESTART_COMMAND:
+      exo_xsession_client_set_restart_command (client, g_value_get_boxed (value), -1);
       break;
 
     default:
@@ -407,7 +433,7 @@ exo_xsession_client_get_restart_command (ExoXsessionClient  *client,
  * exo_xsession_client_set_restart_command:
  * @client  : An #ExoXsessionClient.
  * @argv    : The argument vector.
- * @argc    : The number of arguments in @argv.
+ * @argc    : The number of arguments in @argv or -1.
  *
  * Sets the %WM_COMMAND property on the client leader window,
  * which instructs the session manager (or session-enabled window
@@ -415,6 +441,10 @@ exo_xsession_client_get_restart_command (ExoXsessionClient  *client,
  *
  * This function can only be used if @client is associated with
  * a client leader window.
+ *
+ * If @argc is specify as -1, the argument vector @argv is expected
+ * to be %NULL<!-- -->-terminated and @argc will be automatically
+ * calculated from @argv.
  *
  * Please take note, that gtk_init() automatically sets the
  * %WM_COMMAND property on all client leader windows that are
@@ -428,7 +458,7 @@ exo_xsession_client_set_restart_command (ExoXsessionClient *client,
 {
   g_return_if_fail (EXO_IS_XSESSION_CLIENT (client));
   g_return_if_fail (argv != NULL);
-  g_return_if_fail (argc > 0);
+  g_return_if_fail (argc != 0);
 
   if (G_UNLIKELY (client->priv->leader == NULL))
     {
@@ -437,6 +467,11 @@ exo_xsession_client_set_restart_command (ExoXsessionClient *client,
                  "window.");
       return;
     }
+
+  /* count the arguments if caller doesn't specify the argc */
+  if (G_UNLIKELY (argc < 0))
+    for (argc = 0; argv[argc] != NULL; ++argc)
+      ;
 
   XSetCommand (GDK_DRAWABLE_XDISPLAY (client->priv->leader),
                GDK_DRAWABLE_XID (client->priv->leader),
