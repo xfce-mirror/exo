@@ -1,6 +1,8 @@
-/* $Id: exo-xsession-client.c 25 2004-11-23 15:07:56Z bmeurer $ */
+/* $Id$ */
 /*-
- * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2004 os-cillation e.K.
+ *
+ * Written by Benedikt Meurer <benny@xfce.org>.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public

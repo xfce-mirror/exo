@@ -1,7 +1,9 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004      Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2004      os-cillation e.K.
  * Copyright (c) 2002,2004 Anders Carlsson <andersca@gnome.org>
+ *
+ * Written by Benedikt Meurer <benny@xfce.org>.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public

@@ -1,6 +1,8 @@
-/* $Id: exo-property-proxy.c,v 1.1.1.1 2004/09/14 22:32:58 bmeurer Exp $ */
+/* $Id$ */
 /*-
- * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2004 os-cillation e.K.
+ *
+ * Written by Benedikt Meurer <benny@xfce.org>.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
