@@ -1,7 +1,12 @@
+if HAVE_PYTHON
+PYTHON_SUBDIR=python
+endif
+
 SUBDIRS =								\
 	exo								\
 	docs								\
-	po
+	po								\
+	$(PYTHON_SUBDIR)
 
 distclean-local:
 	rm -rf *.spec *.cache *~

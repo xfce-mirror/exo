@@ -1,0 +1,188 @@
+;; -*- scheme -*-
+; object definitions ...
+(define-object IconBar
+  (in-module "Exo")
+  (parent "GtkContainer")
+  (c-name "ExoIconBar")
+  (gtype-id "EXO_TYPE_ICON_BAR")
+)
+
+(define-object XsessionClient
+  (in-module "Exo")
+  (parent "GObject")
+  (c-name "ExoXsessionClient")
+  (gtype-id "EXO_TYPE_XSESSION_CLIENT")
+)
+
+;; Enumerations and flags ...
+
+
+;; From ../exo/exo-icon-bar.h
+
+(define-function exo_icon_bar_get_type
+  (c-name "exo_icon_bar_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_icon_bar_new
+  (c-name "exo_icon_bar_new")
+  (is-constructor-of "ExoIconBar")
+  (return-type "GtkWidget*")
+)
+
+(define-function exo_icon_bar_new_with_model
+  (c-name "exo_icon_bar_new_with_model")
+  (is-constructor-of "ExoIconBar")
+  (return-type "GtkWidget*")
+  (properties
+    '("model" (optional))
+  )
+)
+
+(define-method get_model
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_get_model")
+  (return-type "GtkTreeModel*")
+)
+
+(define-method set_model
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_set_model")
+  (return-type "none")
+  (parameters
+    '("GtkTreeModel*" "model")
+  )
+)
+
+(define-method get_pixbuf_column
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_get_pixbuf_column")
+  (return-type "gint")
+)
+
+(define-method set_pixbuf_column
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_set_pixbuf_column")
+  (return-type "none")
+  (parameters
+    '("gint" "column")
+  )
+)
+
+(define-method get_text_column
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_get_text_column")
+  (return-type "gint")
+)
+
+(define-method set_text_column
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_set_text_column")
+  (return-type "none")
+  (parameters
+    '("gint" "column")
+  )
+)
+
+(define-method get_orientation
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_get_orientation")
+  (return-type "GtkOrientation")
+)
+
+(define-method set_orientation
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_set_orientation")
+  (return-type "none")
+  (parameters
+    '("GtkOrientation" "orientation")
+  )
+)
+
+(define-method get_active
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_get_active")
+  (return-type "gint")
+)
+
+(define-method set_active
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_set_active")
+  (return-type "none")
+  (parameters
+    '("gint" "index")
+  )
+)
+
+(define-method get_active_iter
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_get_active_iter")
+  (return-type "gboolean")
+  (parameters
+    '("GtkTreeIter*" "iter")
+  )
+)
+
+(define-method set_active_iter
+  (of-object "ExoIconBar")
+  (c-name "exo_icon_bar_set_active_iter")
+  (return-type "none")
+  (parameters
+    '("GtkTreeIter*" "iter")
+  )
+)
+
+
+
+;; From ../exo/exo-xsession-client.h
+
+(define-function exo_xsession_client_get_type
+  (c-name "exo_xsession_client_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_xsession_client_new_with_group
+  (c-name "exo_xsession_client_new_with_group")
+  (is-constructor-of "ExoXsessionClient")
+  (return-type "ExoXsessionClient*")
+  (properties
+    '("leader" (optional))
+  )
+)
+
+(define-method get_group
+  (of-object "ExoXsessionClient")
+  (c-name "exo_xsession_client_get_group")
+  (return-type "GdkWindow*")
+)
+
+(define-method set_group
+  (of-object "ExoXsessionClient")
+  (c-name "exo_xsession_client_set_group")
+  (return-type "none")
+  (parameters
+    '("GdkWindow*" "leader")
+  )
+)
+
+(define-method get_restart_command
+  (of-object "ExoXsessionClient")
+  (c-name "exo_xsession_client_get_restart_command")
+  (return-type "gboolean")
+  (parameters
+    '("gchar***" "argv")
+    '("gint*" "argc")
+  )
+)
+
+(define-method set_restart_command
+  (of-object "ExoXsessionClient")
+  (c-name "exo_xsession_client_set_restart_command")
+  (return-type "none")
+  (parameters
+    '("gchar**" "argv")
+    '("gint" "argc")
+  )
+)
+
+

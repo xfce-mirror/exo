@@ -1,0 +1,135 @@
+/* $Id$ */
+/* vim:set ts=2 sw=2 et ai syntax=c cindent: */
+/*-
+ * Copyright (c) 2005 os-cillation e.K.
+ *
+ * Written by Benedikt Meurer <benny@xfce.org>.
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+ */
+
+%%
+headers
+#include <Python.h>
+#include <pygtk/pygtk.h>
+#include <exo/exo.h>
+
+%%
+modulename exo
+
+%%
+import gobject.GObject as PyGObject_Type
+import gtk.gdk.Window as PyGdkWindow_Type
+import gtk.Container as PyGtkContainer_Type
+import gtk.TreeModel as PyGtkTreeModel_Type
+
+%%
+ignore-glob
+  *_get_type
+
+%%
+ignore
+  exo_icon_bar_new
+
+%%
+override exo_xsession_client_get_restart_command kwargs
+static PyObject*
+_wrap_exo_xsession_client_get_restart_command (PyGObject *self,
+                                               PyObject  *args,
+                                               PyObject  *kwargs)
+{
+  PyObject *result;
+  PyObject *value;
+  gchar   **argv;
+  gint      argc;
+  gint      n;
+
+  if (exo_xsession_client_get_restart_command (EXO_XSESSION_CLIENT (self->obj),
+                                               &argv, &argc))
+    {
+      result = PyList_New (0);
+      if (G_UNLIKELY (result == NULL))
+        return NULL;
+
+      for (n = 0; n < argc; ++n)
+        {
+          value = Py_BuildValue ("s", argv[n]);
+          PyList_Append (result, value);
+          Py_DECREF (value);
+        }
+
+      g_strfreev (argv);
+    }
+  else
+    {
+      Py_INCREF (Py_None);
+      result = Py_None;
+    }
+
+  return result;
+}
+
+%%
+override exo_xsession_client_set_restart_command kwargs
+static PyObject*
+_wrap_exo_xsession_client_set_restart_command (PyGObject *self,
+                                               PyObject  *args,
+                                               PyObject  *kwargs)
+{
+  static char *kwlist[] = { "args", NULL };
+  PyObject    *sequence;
+  PyObject    *item;
+  gchar      **argv;
+  gint         argc;
+  gint         n;
+
+  if (!PyArg_ParseTupleAndKeywords (args, kwargs,
+                                    "0:ExoXsessionClient.set_restart_command",
+                                    kwlist, &sequence))
+    return NULL;
+
+  if (!PySequence_Check (sequence))
+    {
+      PyErr_SetString (PyExc_TypeError, "first argument must be a sequence");
+      return NULL;
+    }
+
+  argc = PySequence_Length (sequence);
+  argv = g_new0 (gchar *, argc + 1);
+
+  for (n = 0; n < argc; ++n)
+    {
+      item = PySequence_GetItem (sequence, n);
+      Py_DECREF (item);
+
+      if (!PyString_Check (item) && !PyUnicode_Check (item))
+        {
+          PyErr_SetString (PyExc_TypeError, "sequence item "
+                           "not a string or unicode object");
+          g_strfreev (argv);
+          return NULL;
+        }
+
+      argv[n] = g_strdup (PyString_AsString (item));
+    }
+
+  exo_xsession_client_set_restart_command (EXO_XSESSION_CLIENT (self->obj),
+                                           argv, argc);
+  g_strfreev (argv);
+
+  Py_INCREF (Py_None);
+  return Py_None;
+}
