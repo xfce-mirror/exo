@@ -1,6 +1,6 @@
 SUBDIRS =								\
 	exo								\
-	docs								\
+	doc								\
 	po
 
 distclean-local:
@@ -24,3 +24,5 @@ EXTRA_DIST =								\
 	exo.spec
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
+
+# vi:set ts=8 sw=8 noet ai nocindent:
