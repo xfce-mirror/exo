@@ -1,3 +1,30 @@
+2004-11-22	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-bar.c, exo/exo-icon-bar.h, docs/tmpl/exo-icon-bar.sgml:
+	  ExoIconBar can no longer receive focus. Renamed "changed" signal to
+	  "selection-changed". Several code cleanups and gtk-doc completed.
+	* exo/exo-binding.c, exo/exo-gobject-extensions.c,
+	  exo/exo-binding.h, exo/exo-gobject-extensions.h,
+	  docs/tmpl/exo-binding.sgml, docs/tmpl/exo-gobject-extensions.sgml:
+	  Replacement for ExoPropertyProxy. Based on the GObject Binding
+	  Properties code from http://ex-code.com/glib-bind/. This
+	  implementation is easier, faster and requires less memory.
+	* exo/exo.h: Deprecated ExoPropertyProxy in favour of ExoBinding.
+	* configure.ac: Added some M4 magic to allow version tags. Updated
+	  version to 0.2.0svn.
+	* po/: Updated translations.
+	* exo/exo-private.c, exo/exo-private.h, exo/exo-toolbars-view.c: Get
+	  i18n support working.
+
+2004-11-16	Benedikt Meurer <benny@xfce.org>
+
+	* po/, configure.ac: Made libexo translatable.
+
+2004-11-15	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-ellipsized-label.c: Remove the tooltips from the label
+	  object.
+
 2004-11-15	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-toolbars-view.c: Emit "popup-menu" if the user clicks the

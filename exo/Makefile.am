@@ -3,20 +3,23 @@ INCLUDES = 								\
 	-DDBUS_API_SUBJECT_TO_CHANGE					\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DEXO_COMPILATION						\
-	-DG_LOG_DOMAIN=\"exo\"
+	-DG_LOG_DOMAIN=\"exo\"						\
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
-lib_LTLIBRARIES = libexo-0.1.la
+lib_LTLIBRARIES = libexo-0.2.la
 
-libexoincludedir = $(includedir)/exo-0.1/exo
+libexoincludedir = $(includedir)/exo-0.2/exo
 
 libexoinclude_HEADERS =							\
 	exo.h								\
+	exo-binding.h							\
 	exo-config.h							\
 	exo-dbus.h							\
 	exo-ellipsized-label.h						\
 	exo-file-watch.h						\
 	exo-gdk-pixbuf-extensions.h					\
 	exo-gtk-extensions.h						\
+	exo-gobject-extensions.h					\
 	exo-ice.h							\
 	exo-icon-bar.h							\
 	exo-icon-view.h							\
@@ -30,14 +33,16 @@ libexoinclude_HEADERS =							\
 	exo-toolbars-view.h						\
 	exo-uri.h
 
-libexo_0_1_la_SOURCES =							\
+libexo_0_2_la_SOURCES =							\
 	$(libexo_HEADERS)						\
+	exo-binding.c							\
 	exo-config.c							\
 	exo-dbus.c							\
 	exo-ellipsized-label.c						\
 	exo-file-watch.c						\
 	exo-gdk-pixbuf-extensions.c					\
 	exo-gtk-extensions.c						\
+	exo-gobject-extensions.c					\
 	exo-ice.c							\
 	exo-icon-bar.c							\
 	exo-icon-view.c							\
@@ -45,6 +50,8 @@ libexo_0_1_la_SOURCES =							\
 	exo-marshal.h							\
 	exo-md5.c							\
 	exo-pango-extensions.c						\
+	exo-private.c							\
+	exo-private.h							\
 	exo-property-proxy.c						\
 	exo-string.c							\
 	exo-toolbars-editor.c						\
@@ -55,17 +62,17 @@ libexo_0_1_la_SOURCES =							\
 	exo-toolbars-view.c						\
 	exo-uri.c
 
-libexo_0_1_la_CFLAGS =							\
+libexo_0_2_la_CFLAGS =							\
 	@DBUS_CFLAGS@							\
 	@LIBXFCEGUI4_CFLAGS@
 
-libexo_0_1_la_LDFLAGS =							\
+libexo_0_2_la_LDFLAGS =							\
 	-export-dynamic							\
 	-version-info @LIBEXO_VERINFO@					\
 	-export-symbols-regex "^[^_].*"					\
 	-no-undefined
 
-libexo_0_1_la_LIBADD =							\
+libexo_0_2_la_LIBADD =							\
 	@DBUS_LIBS@							\
 	@LIBXFCEGUI4_LIBS@
 
@@ -78,10 +85,10 @@ exo-marshal.c: $(srcdir)/exo-marshal.list
 		$(srcdir)/exo-marshal.list > exo-marshal.c
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = exo-0.1.pc
+pkgconfig_DATA = exo-0.2.pc
 
 EXTRA_DIST = 								\
-	$(pkgconfig_DATA)						\
+	exo-0.2.pc.in							\
 	exo-config.h.in							\
 	exo-marshal.list
 

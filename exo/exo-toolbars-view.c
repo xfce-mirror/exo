@@ -30,8 +30,7 @@
 #include <string.h>
 #endif
 
-#include <libxfce4util/libxfce4util.h>
-
+#include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-private.h>
@@ -186,6 +185,9 @@ static void
 exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
 {
   GObjectClass *gobject_class;
+
+  /* initialize exo i18n support */
+  _exo_i18n_init ();
 
   g_type_class_add_private (klass, sizeof (ExoToolbarsViewPrivate));
 

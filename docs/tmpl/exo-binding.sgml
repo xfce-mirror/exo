@@ -1,0 +1,189 @@
+<!-- ##### SECTION Title ##### -->
+Binding Properties Functions
+
+<!-- ##### SECTION Short_Description ##### -->
+Functions used to bind two object properties together
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+Binding properties is synchronizing values of several properties,
+so that when one of the bound properties changes, the other
+bound properties are automatically changed to the new value as
+well. These functions eliminate the need to write property
+change notification callbacks manually. It also increases the
+reliability of your project as you don't need to repeat similar
+code (and errors) manually.
+</para>
+<para>
+Both uni-directional and mutual
+bindings are supported and you can specify functions to perform
+explicit transformation of values if required. Multiple properties
+can be bound together in a complex way and infinite loops are
+eliminated automatically.
+</para>
+<para>
+For example, lets say, your program has a #GtkEntry widget that allows
+the user to enter some text for the program, but this entry widget should
+only be sensitive if a #GtkCheckButton is active.
+</para>
+<example>
+<title>Connecting a <structname>GtkCheckButton</structname> and a
+<structname>GtkEntry</structname></title>
+<programlisting>
+{
+  GtkWidget *button;
+  GtkWidget *entry;
+
+  button = gtk_check_button_new_with_label ("Activate me");
+  entry = gtk_entry_new ();
+
+  exo_binding_new (G_OBJECT (button), "active",
+                   G_OBJECT (entry), "sensitive");
+  
+  /* add button and entry to the gui... */
+}
+</programlisting>
+</example>
+<para>
+As you can see, all you need to do is to call one function to connect
+the sensitivity of the entry widget with the state of the check
+button. No need to write signal handlers for this purpose any more.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+<ulink url="http://developer.gnome.org/doc/API/2.0/gobject/">GObject Reference
+Manual</ulink>, <link linkend="exo-Extensions-to-GObject">Extensions to GObject</link>
+</para>
+
+<!-- ##### STRUCT ExoBinding ##### -->
+<para>
+Opaque structure representing a one-way binding between two properties. It
+is automatically removed if one of the bound objects is finalized.
+</para>
+
+@src_object: 
+@base: 
+@link: 
+
+<!-- ##### STRUCT ExoMutualBinding ##### -->
+<para>
+Opaque structure representing a mutual binding between two properties.
+It is automatically freed if one of the bound objects is finalized.
+</para>
+
+@base: 
+@direct: 
+@reverse: 
+
+<!-- ##### USER_FUNCTION ExoBindingTransform ##### -->
+<para>
+Function type used for binding transformation functions.
+</para>
+<para>
+Accomplished transformation from @src_value to @dst_value.
+@src_value and @dst_value are already initialized before
+this function gets called.
+</para>
+
+@src_value: Value to transform.
+@dst_value: Value to store the result of the transformation into.
+@user_data: User data supplied at binding creation.
+@Returns: %FALSE if transformation failed, else %TRUE.
+
+
+<!-- ##### FUNCTION exo_binding_new ##### -->
+<para>
+
+</para>
+
+@src_object: 
+@src_property: 
+@dst_object: 
+@dst_property: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_binding_new_full ##### -->
+<para>
+
+</para>
+
+@src_object: 
+@src_property: 
+@dst_object: 
+@dst_property: 
+@transform: 
+@destroy_notify: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_binding_new_with_negation ##### -->
+<para>
+
+</para>
+
+@src_object: 
+@src_property: 
+@dst_object: 
+@dst_property: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_binding_unbind ##### -->
+<para>
+
+</para>
+
+@binding: 
+
+
+<!-- ##### FUNCTION exo_mutual_binding_new ##### -->
+<para>
+
+</para>
+
+@object1: 
+@property1: 
+@object2: 
+@property2: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_mutual_binding_new_full ##### -->
+<para>
+
+</para>
+
+@object1: 
+@property1: 
+@object2: 
+@property2: 
+@transform: 
+@reverse_transform: 
+@destroy_notify: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_mutual_binding_new_with_negation ##### -->
+<para>
+
+</para>
+
+@object1: 
+@property1: 
+@object2: 
+@property2: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_mutual_binding_unbind ##### -->
+<para>
+
+</para>
+
+@binding: 
+
+

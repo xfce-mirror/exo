@@ -51,7 +51,7 @@ GTKDOC_CFLAGS = 					\
 	@LIBXFCEGUI4_CFLAGS@
 
 GTKDOC_LIBS =  						\
-	$(top_builddir)/exo/libexo-0.1.la
+	$(top_builddir)/exo/libexo-0.2.la
 
 # Commands for compiling and linking 
 GTKDOC_CC=$(LIBTOOL) --mode=compile $(CC)

@@ -118,11 +118,68 @@ exo_toolbars_view_get_type
 </SECTION>
 
 
+
+<SECTION>
+<FILE>exo-icon-bar</FILE>
+<TITLE>ExoIconBar</TITLE>
+ExoIconBar
+exo_icon_bar_new
+exo_icon_bar_new_with_model
+exo_icon_bar_get_model
+exo_icon_bar_set_model
+exo_icon_bar_get_pixbuf_column
+exo_icon_bar_set_pixbuf_column
+exo_icon_bar_get_text_column
+exo_icon_bar_set_text_column
+exo_icon_bar_get_active
+exo_icon_bar_set_active
+exo_icon_bar_get_active_iter
+exo_icon_bar_set_active_iter
+<SUBSECTION Standard>
+EXO_TYPE_ICON_BAR
+EXO_ICON_BAR
+EXO_ICON_BAR_CLASS
+EXO_IS_ICON_BAR
+EXO_IS_ICON_BAR_CLASS
+EXO_ICON_BAR_GET_CLASS
+<SUBSECTION Private>
+exo_icon_bar_get_type
+</SECTION>
+
+
+
 <SECTION>
 <FILE>exo-gdk-pixbuf-extensions</FILE>
 <TITLE>Extensions to gdk-pixbuf</TITLE>
 exo_gdk_pixbuf_scale_ratio
 </SECTION>
+
+
+
+<SECTION>
+<FILE>exo-gobject-extensions</FILE>
+<TITLE>Extensions to GObject</TITLE>
+exo_g_value_transform_negate
+</SECTION>
+
+
+
+<SECTION>
+<FILE>exo-binding</FILE>
+<TITLE>Binding Properties Functions</TITLE>
+ExoBinding
+ExoMutualBinding
+ExoBindingTransform
+exo_binding_new
+exo_binding_new_full
+exo_binding_new_with_negation
+exo_binding_unbind
+exo_mutual_binding_new
+exo_mutual_binding_new_full
+exo_mutual_binding_new_with_negation
+exo_mutual_binding_unbind
+</SECTION>
+
 
 
 <SECTION>

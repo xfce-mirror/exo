@@ -48,8 +48,6 @@ struct _ExoIconBarClass
   void (*set_scroll_adjustments)  (ExoIconBar    *icon_bar,
                                    GtkAdjustment *hadjustment,
                                    GtkAdjustment *vadjustment);
-
-  /* FIXME: remove this, and add padding! */
   void (*selection_changed)       (ExoIconBar *icon_bar);
 };
 

@@ -31,22 +31,27 @@
 
 #include <exo/exo-config.h>
 
+#include <exo/exo-binding.h>
 #include <exo/exo-dbus.h>
 #include <exo/exo-ellipsized-label.h>
 #include <exo/exo-file-watch.h>
 #include <exo/exo-gdk-pixbuf-extensions.h>
 #include <exo/exo-gtk-extensions.h>
+#include <exo/exo-gobject-extensions.h>
 #include <exo/exo-icon-bar.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-md5.h>
 #include <exo/exo-pango-extensions.h>
-#include <exo/exo-property-proxy.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-editor-dialog.h>
 #include <exo/exo-toolbars-model.h>
 #include <exo/exo-toolbars-view.h>
 #include <exo/exo-uri.h>
+
+#ifndef EXO_DISABLE_DEPRECATED
+#include <exo/exo-property-proxy.h>
+#endif
 
 #undef EXO_INSIDE_EXO_H
 

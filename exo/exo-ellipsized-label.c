@@ -1,4 +1,4 @@
-/* $Id: exo-ellipsized-label.c,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
  * Copyright (c) 2000 John Sullivan <sullivan@eazel.com>
@@ -22,6 +22,8 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+
+#include <libxfce4util/libxfce4util.h>
 
 #include <exo/exo-ellipsized-label.h>
 #include <exo/exo-string.h>
@@ -61,7 +63,6 @@ static void     exo_ellipsized_label_size_allocate (GtkWidget      *widget,
 struct _ExoEllipsizedLabelPrivate
 {
   gchar                *full_text;
-  GtkTooltips          *tips;
   ExoPangoEllipsizeMode mode;
 };
 
@@ -101,10 +102,10 @@ exo_ellipsized_label_class_init (ExoEllipsizedLabelClass *klass)
   g_object_class_install_property (gobject_class,
                                    PROP_FULL_TEXT,
                                    g_param_spec_string ("full-text",
-                                                        "Full text",
-                                                        "Full text, will be ellipsized",
+                                                        _("Full text"),
+                                                        _("Full text, will be ellipsized"),
                                                         NULL,
-                                                        G_PARAM_WRITABLE));
+                                                        G_PARAM_READWRITE));
 }
 
 
@@ -113,12 +114,7 @@ static void
 exo_ellipsized_label_init (ExoEllipsizedLabel *label)
 {
   label->priv       = EXO_ELLIPSIZED_LABEL_GET_PRIVATE (label);
-  label->priv->tips = gtk_tooltips_new ();
   label->priv->mode = EXO_PANGO_ELLIPSIZE_END;
-
-  /* f*ck the floating ref thang */
-  g_object_ref (G_OBJECT (label->priv->tips));
-  gtk_object_sink (GTK_OBJECT (label->priv->tips));
 }
 
 
@@ -130,7 +126,6 @@ exo_ellipsized_label_finalize (GObject *object)
 
   if (G_LIKELY (label->priv->full_text != NULL))
     g_free (label->priv->full_text);
-  g_object_unref (label->priv->tips);
 
   parent_class->finalize (object);
 }
@@ -212,32 +207,19 @@ exo_ellipsized_label_size_allocate (GtkWidget      *widget,
                                      GtkAllocation *allocation)
 {
   ExoEllipsizedLabel *label = EXO_ELLIPSIZED_LABEL (widget);
-  gboolean            show_tips;
 
   if (G_LIKELY (GTK_LABEL (label)->layout != NULL))
     {
       if (G_UNLIKELY (label->priv->full_text == NULL))
         {
           pango_layout_set_text (GTK_LABEL (label)->layout, "", -1);
-          show_tips = FALSE;
         }
       else
         {
-          show_tips = exo_pango_layout_set_text_ellipsized (GTK_LABEL (label)->layout,
-                                                             label->priv->full_text,
-                                                             allocation->width,
-                                                             label->priv->mode);
-        }
-
-      if (show_tips)
-        {
-          gtk_tooltips_enable  (label->priv->tips);
-          gtk_tooltips_set_tip (label->priv->tips, widget, 
-                                label->priv->full_text, NULL);
-        }
-      else
-        {
-          gtk_tooltips_disable (label->priv->tips);
+          exo_pango_layout_set_text_ellipsized (GTK_LABEL (label)->layout,
+                                                label->priv->full_text,
+                                                allocation->width,
+                                                label->priv->mode);
         }
     }
 
@@ -256,7 +238,7 @@ GtkWidget*
 exo_ellipsized_label_new (const gchar *full_text)
 {
   return g_object_new (EXO_TYPE_ELLIPSIZED_LABEL,
-                       "full_text", full_text,
+                       "full-text", full_text,
                        NULL);
 }
 

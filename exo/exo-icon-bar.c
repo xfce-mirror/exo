@@ -53,7 +53,7 @@ enum
 
 enum
 {
-  CHANGED,
+  SELECTION_CHANGED,
   LAST_SIGNAL,
 };
 
@@ -247,7 +247,7 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
   /**
    * ExoIconBar:model:
    *
-   * The ::model property contains the ...
+   * The model for the icon bar.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_MODEL,
@@ -275,47 +275,55 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
                                                      G_PARAM_READWRITE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
-                                           g_param_spec_boxed ("active_item_fill_color",
+                                           g_param_spec_boxed ("active-item-fill-color",
                                                                _("Active item fill color"),
                                                                _("Active item fill color"),
                                                                GDK_TYPE_COLOR,
                                                                G_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
-                                           g_param_spec_boxed ("active_item_border_color",
+                                           g_param_spec_boxed ("active-item-border-color",
                                                                _("Active item border color"),
                                                                _("Active item border color"),
                                                                GDK_TYPE_COLOR,
                                                                G_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
-                                           g_param_spec_boxed ("active_item_text_color",
+                                           g_param_spec_boxed ("active-item-text-color",
                                                                _("Active item text color"),
                                                                _("Active item text color"),
                                                                GDK_TYPE_COLOR,
                                                                G_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
-                                           g_param_spec_boxed ("cursor_item_fill_color",
+                                           g_param_spec_boxed ("cursor-item-fill-color",
                                                                _("Cursor item fill color"),
                                                                _("Cursor item fill color"),
                                                                GDK_TYPE_COLOR,
                                                                G_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
-                                           g_param_spec_boxed ("cursor_item_border_color",
+                                           g_param_spec_boxed ("cursor-item-border-color",
                                                                _("Cursor item border color"),
                                                                _("Cursor item border color"),
                                                                GDK_TYPE_COLOR,
                                                                G_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
-                                           g_param_spec_boxed ("cursor_item_text_color",
+                                           g_param_spec_boxed ("cursor-item-text-color",
                                                                _("Cursor item text color"),
                                                                _("Cursor item text color"),
                                                                GDK_TYPE_COLOR,
                                                                G_PARAM_READABLE));
 
+  /**
+   * ExoIconBar::set-scroll-adjustments:
+   * @icon_bar    : The #ExoIconBar.
+   * @hadjustment : The horizontal adjustment.
+   * @vadjustment : The vertical adjustment.
+   *
+   * Used internally to make the #ExoIconBar scrollable.
+   **/
   gtkwidget_class->set_scroll_adjustments_signal =
     g_signal_new ("set-scroll-adjustments",
                   G_TYPE_FROM_CLASS (gobject_class),
@@ -328,10 +336,14 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
                   GTK_TYPE_ADJUSTMENT);
 
   /**
-   * ExoIconBar::changed:
+   * ExoIconBar::selection-changed:
+   * @icon_bar  : The #ExoIconBar.
+   *
+   * This signal is emitted whenever the currently selected icon
+   * changes.
    **/
-  icon_bar_signals[CHANGED] =
-    g_signal_new ("changed",
+  icon_bar_signals[SELECTION_CHANGED] =
+    g_signal_new ("selection-changed",
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_FIRST,
                   G_STRUCT_OFFSET (ExoIconBarClass, selection_changed),
@@ -353,7 +365,7 @@ exo_icon_bar_init (ExoIconBar *icon_bar)
   icon_bar->priv->layout = gtk_widget_create_pango_layout (GTK_WIDGET (icon_bar), NULL);
   pango_layout_set_width (icon_bar->priv->layout, -1);
 
-  GTK_WIDGET_SET_FLAGS (icon_bar, GTK_CAN_FOCUS);
+  GTK_WIDGET_UNSET_FLAGS (icon_bar, GTK_CAN_FOCUS);
 
   exo_icon_bar_set_adjustments (icon_bar, NULL, NULL);
 }
@@ -833,6 +845,10 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
                          GdkRectangle   *area)
 {
   GdkPixbuf    *pixbuf;
+  GdkColor     *border_color;
+  GdkColor     *fill_color;
+  GdkColor     *text_color;
+  GdkGC        *gc;
   gint          focus_width;
   gint          focus_pad;
   gint          px, py;
@@ -856,13 +872,9 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
 
   if (icon_bar->priv->active_item == item)
     {
-      GdkColor *border_color;
-      GdkColor *fill_color;
-      GdkGC *gc;
-
       gtk_widget_style_get (GTK_WIDGET (icon_bar),
-                            "active_item_fill_color", &fill_color,
-                            "active_item_border_color", &border_color,
+                            "active-item-fill-color", &fill_color,
+                            "active-item-border-color", &border_color,
                             NULL);
 
       if (fill_color == NULL)
@@ -896,13 +908,9 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
     }
   else if (icon_bar->priv->cursor_item == item)
     {
-      GdkColor *border_color;
-      GdkColor *fill_color;
-      GdkGC *gc;
-
       gtk_widget_style_get (GTK_WIDGET (icon_bar),
-                            "cursor_item_fill_color", &fill_color,
-                            "cursor_item_border_color", &border_color,
+                            "cursor-item-fill-color", &fill_color,
+                            "cursor-item-border-color", &border_color,
                             NULL);
 
       if (fill_color == NULL)
@@ -950,15 +958,12 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
 
   if (icon_bar->priv->text_column != -1)
     {
-      GdkColor *text_color;
-      GdkGC    *gc;
-
       exo_icon_bar_update_item_text (icon_bar, item);
 
       if (icon_bar->priv->active_item == item)
         {
           gtk_widget_style_get (GTK_WIDGET (icon_bar),
-                                "active_item_text_color", &text_color,
+                                "active-item-text-color", &text_color,
                                 NULL);
 
           if (text_color == NULL)
@@ -978,7 +983,7 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
       else if (icon_bar->priv->cursor_item == item)
         {
           gtk_widget_style_get (GTK_WIDGET (icon_bar),
-                                "cursor_item_text_color", &text_color,
+                                "cursor-item-text-color", &text_color,
                                 NULL);
 
           if (text_color == NULL)
@@ -1317,7 +1322,7 @@ exo_icon_bar_rows_reordered (GtkTreeModel *model,
 /**
  * exo_icon_bar_new:
  *
- * Return value :
+ * Return value: a newly allocated #ExoIconBar.
  **/
 GtkWidget*
 exo_icon_bar_new (void)
@@ -1329,13 +1334,19 @@ exo_icon_bar_new (void)
 
 /**
  * exo_icon_bar_new_with_model:
- * @model       : A #GtkTreeModel.
+ * @model : A #GtkTreeModel.
  *
- * Return value :
+ * Creates a new #ExoIconBar and associates it with
+ * @model.
+ *
+ * Return value: a newly allocated #ExoIconBar, which
+ *               is associated with @model.
  **/
 GtkWidget*
 exo_icon_bar_new_with_model (GtkTreeModel *model)
 {
+  g_return_val_if_fail (GTK_IS_TREE_MODEL (model), NULL);
+
   return g_object_new (EXO_TYPE_ICON_BAR,
                        "model", model,
                        NULL);
@@ -1345,12 +1356,12 @@ exo_icon_bar_new_with_model (GtkTreeModel *model)
 
 /**
  * exo_icon_bar_get_model:
- * @icon_bar    : A #ExoIconBar.
+ * @icon_bar  : A #ExoIconBar.
  *
  * Returns the model the #ExoIconBar is based on. Returns %NULL if
  * the model is unset.
  * 
- * Return value : A #GtkTreeModel, or %NULL if none is currently being used.
+ * Return value: A #GtkTreeModel, or %NULL if none is currently being used.
  **/
 GtkTreeModel*
 exo_icon_bar_get_model (ExoIconBar *icon_bar)
@@ -1457,11 +1468,11 @@ exo_icon_bar_set_model (ExoIconBar    *icon_bar,
 
 /**
  * exo_icon_bar_get_pixbuf_column:
- * @icon_bar    : A #ExoIconBar.
+ * @icon_bar  : An #ExoIconBar.
  *
  * Returns the column with pixbufs for @icon_bar.
  *
- * Return value : the pixbuf column, or -1 if it's unset.
+ * Return value: the pixbuf column, or -1 if it's unset.
  **/
 gint
 exo_icon_bar_get_pixbuf_column (ExoIconBar *icon_bar)
@@ -1474,7 +1485,7 @@ exo_icon_bar_get_pixbuf_column (ExoIconBar *icon_bar)
 
 /**
  * exo_icon_bar_set_pixbuf_column:
- * @icon_bar  : A #ExoIconBar.
+ * @icon_bar  : An #ExoIconBar.
  * @column    : A column in the currently used model.
  *
  * Sets the column with pixbufs for @icon_bar to be @column. The pixbuf
@@ -1515,11 +1526,11 @@ exo_icon_bar_set_pixbuf_column (ExoIconBar *icon_bar,
 
 /**
  * exo_icon_bar_get_text_column:
- * @icon_bar    : A #ExoIconBar.
+ * @icon_bar  : An #ExoIconBar.
  *
  * Returns the column with text for @icon_bar.
  *
- * Return value : the text column, or -1 if it's unset.
+ * Return value: the text column, or -1 if it's unset.
  **/
 gint
 exo_icon_bar_get_text_column (ExoIconBar *icon_bar)
@@ -1532,8 +1543,9 @@ exo_icon_bar_get_text_column (ExoIconBar *icon_bar)
 
 /**
  * exo_icon_bar_set_text_column:
- * @icon_bar  : A #ExoIconBar.
- * @column    : A column in the currently used model.
+ * @icon_bar  : An #ExoIconBar.
+ * @column    : A column in the currently used model or -1 to
+ *              use no text in @icon_bar.
  *
  * Sets the column with text for @icon_bar to be @column. The
  * text column must be of type #G_TYPE_STRING.
@@ -1573,13 +1585,13 @@ exo_icon_bar_set_text_column (ExoIconBar *icon_bar,
 
 /**
  * exo_icon_bar_get_active:
- * @icon_bar    : A #ExoIconBar.
+ * @icon_bar  : An #ExoIconBar.
  *
  * Returns the index of the currently active item, or -1 if there's no
  * active item.
  *
- * Return value : An integer which is the index of the currently active item,
- *                or -1 if there's no active item.
+ * Return value: An integer which is the index of the currently active item,
+ *               or -1 if there's no active item.
  **/
 gint
 exo_icon_bar_get_active (ExoIconBar *icon_bar)
@@ -1595,7 +1607,7 @@ exo_icon_bar_get_active (ExoIconBar *icon_bar)
 
 /**
  * exo_icon_bar_set_active:
- * @icon_bar  : A #ExoIconBar.
+ * @icon_bar  : An #ExoIconBar.
  * @index     : An index in the model passed during construction,
  *              or -1 to have no active item.
  *
@@ -1617,7 +1629,7 @@ exo_icon_bar_set_active (ExoIconBar *icon_bar,
   else
     icon_bar->priv->active_item = NULL;
 
-  g_signal_emit (G_OBJECT (icon_bar), icon_bar_signals[CHANGED], 0);
+  g_signal_emit (G_OBJECT (icon_bar), icon_bar_signals[SELECTION_CHANGED], 0);
   g_object_notify (G_OBJECT (icon_bar), "active");
   gtk_widget_queue_draw (GTK_WIDGET (icon_bar));
 }
@@ -1626,12 +1638,12 @@ exo_icon_bar_set_active (ExoIconBar *icon_bar,
 
 /**
  * exo_icon_bar_get_active_iter:
- * @icon_bar    : A #ExoIconBar.
- * @iter        : The uninitialized #GtkTreeIter.
+ * @icon_bar  : An #ExoIconBar.
+ * @iter      : An uninitialized #GtkTreeIter.
  *
  * Sets @iter to point to the current active item, if it exists.
  *
- * Return value : %TRUE if @iter was set.
+ * Return value: %TRUE if @iter was set.
  **/
 gboolean
 exo_icon_bar_get_active_iter (ExoIconBar  *icon_bar,
@@ -1665,11 +1677,13 @@ exo_icon_bar_get_active_iter (ExoIconBar  *icon_bar,
 
 /**
  * exo_icon_bar_set_active_iter:
- * @icon_bar  : A #ExoIconBar.
+ * @icon_bar  : An #ExoIconBar.
  * @iter      : The #GtkTreeIter.
  *
  * Sets the current active item to be the one referenced by @iter. @iter
  * must correspond to a path of depth one.
+ *
+ * This can only be called if @icon_bar is associated with #GtkTreeModel.
  **/
 void
 exo_icon_bar_set_active_iter (ExoIconBar  *icon_bar,

@@ -9,33 +9,34 @@ dnl
 dnl Version information
 m4_define([libexo_verinfo], [0:1:0])
 m4_define([libexo_version_major], [0])
-m4_define([libexo_version_minor], [1])
-m4_define([libexo_version_micro], [3])
-m4_define([libexo_version], [libexo_version_major.libexo_version_minor.libexo_version_micro])
+m4_define([libexo_version_minor], [2])
+m4_define([libexo_version_micro], [0])
+m4_define([libexo_version_tag], [svn])
+m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()libexo_version_tag()])
 
 dnl Initialize autoconf
 AC_COPYRIGHT([Copyright (c) 2004 os-cillation.
 All rights reserved.
         
 Written by Benedikt Meurer <benny@xfce.org>.])
-AC_INIT([exo], [libexo_version], [benny@xfce.org])
+AC_INIT([exo], [libexo_version()], [benny@xfce.org])
 AC_PREREQ([2.50])
 AC_REVISION([$Id$])
 
 dnl Initialize automake
-LIBEXO_VERSION=libexo_version
+LIBEXO_VERSION=libexo_version()
 AM_INIT_AUTOMAKE([exo], [$LIBEXO_VERSION])
 AM_CONFIG_HEADER([config.h])
 AM_MAINTAINER_MODE
 
 dnl libtool versioning
-LIBEXO_VERINFO=libexo_verinfo
+LIBEXO_VERINFO=libexo_verinfo()
 AC_SUBST([LIBEXO_VERINFO])
 
 dnl Subst libexo version
-LIBEXO_VERSION_MAJOR=libexo_version_major
-LIBEXO_VERSION_MINOR=libexo_version_minor
-LIBEXO_VERSION_MICRO=libexo_version_micro
+LIBEXO_VERSION_MAJOR=libexo_version_major()
+LIBEXO_VERSION_MINOR=libexo_version_minor()
+LIBEXO_VERSION_MICRO=libexo_version_micro()
 AC_SUBST([LIBEXO_VERSION_MAJOR])
 AC_SUBST([LIBEXO_VERSION_MINOR])
 AC_SUBST([LIBEXO_VERSION_MICRO])
@@ -60,6 +61,9 @@ dnl check for Message Digest functions
 AC_SEARCH_LIBS([MD5Init], [md c], \
                [AC_DEFINE([HAVE_MD5INIT], [1], [Define if MD5Init present])])
 
+dnl Check for i18n support
+BM_I18N([libexo], [de])
+
 dnl Check for required packages
 BM_DEPEND([DBUS], [dbus-glib-1], [0.22])
 BM_DEPEND([GTK], [gtk+-2.0], [2.4.0])
@@ -78,7 +82,8 @@ AC_OUTPUT([
 Makefile
 docs/version.xml
 docs/Makefile
-exo/exo-0.1.pc
+exo/exo-0.2.pc
 exo/exo-config.h
 exo/Makefile
+po/Makefile.in
 ])
