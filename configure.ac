@@ -36,9 +36,11 @@ dnl Subst libexo version
 LIBEXO_VERSION_MAJOR=libexo_version_major()
 LIBEXO_VERSION_MINOR=libexo_version_minor()
 LIBEXO_VERSION_MICRO=libexo_version_micro()
+LIBEXO_VERSION_API=$LIBEXO_VERSION_MAJOR.$LIBEXO_VERSION_MINOR
 AC_SUBST([LIBEXO_VERSION_MAJOR])
 AC_SUBST([LIBEXO_VERSION_MINOR])
 AC_SUBST([LIBEXO_VERSION_MICRO])
+AC_SUBST([LIBEXO_VERSION_API])
 
 dnl check for UNIX variants
 AC_AIX()
@@ -141,4 +143,5 @@ exo/exo-0.3.pc
 exo/exo-config.h
 po/Makefile.in
 python/Makefile
+python/examples/Makefile
 ])

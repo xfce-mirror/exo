@@ -1,5 +1,19 @@
 ;; -*- scheme -*-
 ; object definitions ...
+(define-object CellRendererEllipsizedText
+  (in-module "Exo")
+  (parent "GtkCellRendererText")
+  (c-name "ExoCellRendererEllipsizedText")
+  (gtype-id "EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT")
+)
+
+(define-object EllipsizedLabel
+  (in-module "Exo")
+  (parent "GtkLabel")
+  (c-name "ExoEllipsizedLabel")
+  (gtype-id "EXO_TYPE_ELLIPSIZED_LABEL")
+)
+
 (define-object IconBar
   (in-module "Exo")
   (parent "GtkContainer")
@@ -15,6 +29,66 @@
 )
 
 ;; Enumerations and flags ...
+
+(define-enum PangoEllipsizeMode
+  (in-module "Exo")
+  (c-name "ExoPangoEllipsizeMode")
+  (gtype-id "EXO_TYPE_PANGO_ELLIPSIZE_MODE")
+  (values
+    '("none" "EXO_PANGO_ELLIPSIZE_NONE")
+    '("start" "EXO_PANGO_ELLIPSIZE_START")
+    '("middle" "EXO_PANGO_ELLIPSIZE_MIDDLE")
+    '("end" "EXO_PANGO_ELLIPSIZE_END")
+  )
+)
+
+
+;; From ../exo/exo-cell-renderer-ellipsized-text.h
+
+(define-function exo_cell_renderer_ellipsized_text_get_type
+  (c-name "exo_cell_renderer_ellipsized_text_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_cell_renderer_ellipsized_text_new
+  (c-name "exo_cell_renderer_ellipsized_text_new")
+  (is-constructor-of "ExoCellRendererEllipsizedText")
+  (return-type "GtkCellRenderer*")
+)
+
+
+
+;; From ../exo/exo-ellipsized-label.h
+
+(define-function exo_ellipsized_label_get_type
+  (c-name "exo_ellipsized_label_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_ellipsized_label_new
+  (c-name "exo_ellipsized_label_new")
+  (is-constructor-of "ExoEllipsizedLabel")
+  (return-type "GtkWidget*")
+  (parameters
+    '("const-gchar*" "text")
+  )
+)
+
+(define-method get_ellipsize
+  (of-object "ExoEllipsizedLabel")
+  (c-name "exo_ellipsized_label_get_ellipsize")
+  (return-type "ExoPangoEllipsizeMode")
+)
+
+(define-method set_ellipsize
+  (of-object "ExoEllipsizedLabel")
+  (c-name "exo_ellipsized_label_set_ellipsize")
+  (return-type "none")
+  (parameters
+    '("ExoPangoEllipsizeMode" "mode")
+  )
+)
+
 
 
 ;; From ../exo/exo-icon-bar.h

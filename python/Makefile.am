@@ -1,9 +1,16 @@
-version = $(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR)
+SUBDIRS =								\
+	examples
 
 defsdir = $(datadir)/pygtk/2.0/defs
 defs_DATA = exo.defs
 
-exobindingsdir = $(pyexecdir)/exo-$(version)
+pyexodir = $(pythondir)
+pyexo_PYTHON = pyexo.py
+
+exomoduledir = $(pyexecdir)/exo-$(LIBEXO_VERSION_API)/exo
+exomodule_PYTHON = __init__.py
+
+exobindingsdir = $(pyexecdir)/exo-$(LIBEXO_VERSION_API)
 exobindings_LTLIBRARIES = _exo.la
 
 _exo_la_CFLAGS =							\
@@ -20,7 +27,7 @@ _exo_la_LDFLAGS =							\
 	-no-undefined
 
 _exo_la_LIBADD =							\
-	$(top_builddir)/exo/libexo-$(version).la			\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la		\
 	$(LIBXFCEGUI4_LIBS)
 
 _exo_la_SOURCES =							\
@@ -32,7 +39,7 @@ nodist__exo_la_SOURCES =						\
 BUILT_SOURCES =								\
 	exo.c
 
-$(srcdir)/exo.c: $(defs_DATA) exo.override Makefile
+exo.c: $(defs_DATA) $(srcdir)/exo.override Makefile
 .defs.c:
 	(cd $(srcdir) 							\
 	 && $(PYGTK_CODEGEN)						\
@@ -40,15 +47,18 @@ $(srcdir)/exo.c: $(defs_DATA) exo.override Makefile
 	    --register $(PYGTK_DEFSDIR)/atk-types.defs			\
 	    --register $(PYGTK_DEFSDIR)/gdk-types.defs			\
 	    --register $(PYGTK_DEFSDIR)/gtk-types.defs			\
-	    --override $(*F).override					\
-	    --prefix $(*F) $(*F).defs) > xgen-pygc			\
-	&& cp xgen-pygc $*.c						\
-	&& rm -f xgen-pygc
+	    --override $*.override					\
+	    --prefix $* $*.defs) > xgen-$*.c				\
+	&& cp xgen-$*.c $*.c						\
+	&& rm -f xgen-$*.c
 
 EXTRA_DIST =								\
-	$(defs_DATA)
+	$(defs_DATA)							\
+	$(exomodule_DATA)						\
+	$(pyexo_PYTHON)							\
+	exo.override
 
 CLEANFILES =								\
-	$(srcdir)/exo.c
+	exo.c
 
 

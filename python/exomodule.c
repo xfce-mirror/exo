@@ -23,7 +23,9 @@
 #include <pygobject.h>
 
 
+extern void exo_add_constants (PyObject *module, const gchar *strip_prefix);
 extern void exo_register_classes (PyObject *d);
+
 extern PyMethodDef exo_functions[];
 
 
@@ -39,6 +41,7 @@ init_exo (void)
   d = PyModule_GetDict (m);
 
   exo_register_classes (d);
+  exo_add_constants (m, "EXO_");
 
   if (PyErr_Occurred ())
     {
