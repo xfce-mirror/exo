@@ -38,8 +38,11 @@ import gobject.GObject as PyGObject_Type
 import gtk.gdk.Window as PyGdkWindow_Type
 import gtk.CellRendererText as PyGtkCellRendererText_Type
 import gtk.Container as PyGtkContainer_Type
+import gtk.Dialog as PyGtkDialog_Type
 import gtk.Label as PyGtkLabel_Type
 import gtk.TreeModel as PyGtkTreeModel_Type
+import gtk.UIManager as PyGtkUIManager_Type
+import gtk.VBox as PyGtkVBox_Type
 
 %%
 ignore-glob
@@ -50,6 +53,9 @@ ignore
   exo_icon_bar_new
   exo_icon_view_new
   exo_icon_view_selected_foreach
+  exo_toolbars_editor_new
+  exo_toolbars_view_new
+
 %%
 override exo_icon_view_get_selected_items kwargs
 static PyObject*
@@ -83,11 +89,167 @@ _wrap_exo_icon_view_get_selected_items (PyGObject *self,
 }
 
 %%
-override exo_xsession_client_get_restart_command kwargs
+override exo_toolbars_model_get_actions
 static PyObject*
-_wrap_exo_xsession_client_get_restart_command (PyGObject *self,
-                                               PyObject  *args,
-                                               PyObject  *kwargs)
+_wrap_exo_toolbars_model_get_actions (PyGObject *self)
+{
+  PyObject *result;
+  PyObject *value;
+  gchar   **actions;
+  guint     n;
+
+  actions = exo_toolbars_model_get_actions (EXO_TOOLBARS_MODEL (self->obj));
+  if (G_LIKELY (actions != NULL))
+    {
+      result = PyList_New (0);
+      if (G_UNLIKELY (result == NULL))
+        return NULL;
+
+      for (n = 0; actions[n] != NULL; ++n)
+        {
+          value = Py_BuildValue ("s", actions[n]);
+          PyList_Append (result, value);
+          Py_DECREF (value);
+        }
+
+      g_strfreev (actions);
+    }
+  else
+    {
+      Py_INCREF (Py_None);
+      result = Py_None;
+    }
+
+  return result;
+}
+
+%%
+override exo_toolbars_model_set_actions kwargs
+static PyObject*
+_wrap_exo_toolbars_model_set_actions (PyGObject *self,
+                                      PyObject  *args,
+                                      PyObject  *kwargs)
+{
+  static char *kwlist[] = { "args", NULL };
+  PyObject    *sequence;
+  PyObject    *item;
+  gchar      **actions;
+  guint        n_actions;
+  guint        n;
+
+  if (!PyArg_ParseTupleAndKeywords (args, kwargs,
+                                    "O:ExoToolbarsModel.set_actions",
+                                    kwlist, &sequence))
+    return NULL;
+
+  if (!PySequence_Check (sequence))
+    {
+      PyErr_SetString (PyExc_TypeError, "first argument must be a sequence");
+      return NULL;
+    }
+
+  n_actions = PySequence_Length (sequence);
+  actions = g_new0 (gchar *, n_actions + 1);
+
+  for (n = 0; n < n_actions; ++n)
+    {
+      item = PySequence_GetItem (sequence, n);
+      Py_DECREF (item);
+
+      if (!PyString_Check (item) && !PyUnicode_Check (item))
+        {
+          PyErr_SetString (PyExc_TypeError, "sequence item "
+                           "not a string or unicode object");
+          g_strfreev (actions);
+          return NULL;
+        }
+
+      actions[n] = g_strdup (PyString_AsString (item));
+    }
+
+  exo_toolbars_model_set_actions (EXO_TOOLBARS_MODEL (self->obj),
+                                  actions, n_actions);
+  g_strfreev (actions);
+
+  Py_INCREF (Py_None);
+  return Py_None;
+}
+
+%%
+override exo_toolbars_model_get_item_type kwargs
+static PyObject*
+_wrap_exo_toolbars_model_get_item_type (PyGObject *self,
+                                        PyObject  *args,
+                                        PyObject  *kwargs)
+{
+  static char *kwlist[] = { "dnd_type", NULL };
+  PyObject    *object;
+  GdkAtom      type;
+  gchar       *result;
+
+  if (!PyArg_ParseTupleAndKeywords (args, kwargs,
+                                    "O:ExoToolbarsModel.get_item_type",
+                                    kwlist, &object))
+    return NULL;
+
+  if (G_UNLIKELY (object == NULL))
+    type = NULL;
+  else if (PyString_Check (object))
+    type = gdk_atom_intern (PyString_AsString (object), FALSE);
+  else if (PyGdkAtom_Check (object))
+    type = PyGdkAtom_Get (object);
+  else
+    {
+      PyErr_SetString (PyExc_TypeError, "unable to convert argument to GdkAtom");
+      return NULL;
+    }
+
+  result = exo_toolbars_model_get_item_type (EXO_TOOLBARS_MODEL (self->obj), type);
+  if (G_LIKELY (result != NULL))
+    {
+      object = PyString_FromString (result);
+      g_free (result);
+    }
+  else
+    {
+      object = Py_None;
+      Py_INCREF (Py_None);
+    }
+
+  return object;
+}
+
+%%
+override exo_toolbars_model_item_nth kwargs
+static PyObject*
+_wrap_exo_toolbars_model_item_nth (PyGObject *self,
+                                   PyObject  *args,
+                                   PyObject  *kwargs)
+{
+  static char *kwlist[] = { "toolbar_position", "item_position", NULL };
+  const gchar *type;
+  const gchar *id;
+  gboolean     is_separator;
+  gint         toolbar_position;
+  gint         item_position;
+  
+
+  if (!PyArg_ParseTupleAndKeywords (args, kwargs,
+                                    "ii:ExoToolbarsModel.item_nth",
+                                    kwlist, &toolbar_position, &item_position))
+    return NULL;
+
+  exo_toolbars_model_item_nth (EXO_TOOLBARS_MODEL (self->obj),
+                               toolbar_position, item_position,
+                               &is_separator, &id, &type);
+
+  return Py_BuildValue ("(iss)", is_separator, id, type);
+}
+
+%%
+override exo_xsession_client_get_restart_command
+static PyObject*
+_wrap_exo_xsession_client_get_restart_command (PyGObject *self)
 {
   PyObject *result;
   PyObject *value;

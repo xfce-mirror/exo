@@ -1,6 +1,8 @@
 noinst_DATA =								\
 	README								\
-	ellipsizing.py
+	ellipsizing.py							\
+	toolbars.py							\
+	toolbars.ui
 
 EXTRA_DIST =								\
 	$(noinst_DATA)

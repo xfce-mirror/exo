@@ -28,6 +28,47 @@
   (gtype-id "EXO_TYPE_ICON_VIEW")
 )
 
+(define-object ToolbarsEditor
+  (in-module "Exo")
+  (parent "GtkVBox")
+  (c-name "ExoToolbarsEditor")
+  (gtype-id "EXO_TYPE_TOOLBARS_EDITOR")
+)
+
+(define-object ToolbarsEditorDialog
+  (in-module "Exo")
+  (parent "GtkDialog")
+  (c-name "ExoToolbarsEditorDialog")
+  (gtype-id "EXO_TYPE_TOOLBARS_EDITOR_DIALOG")
+)
+
+(define-object ToolbarsModel
+  (in-module "Exo")
+  (parent "GObject")
+  (c-name "ExoToolbarsModel")
+  (gtype-id "EXO_TYPE_TOOLBARS_MODEL")
+)
+
+(define-object ToolbarsView
+  (in-module "Exo")
+  (parent "GtkVBox")
+  (c-name "ExoToolbarsView")
+  (gtype-id "EXO_TYPE_TOOLBARS_VIEW")
+)
+
+;; Enumerations and flags ...
+
+(define-flags ToolbarsModelFlags
+  (in-module "Exo")
+  (c-name "ExoToolbarsModelFlags")
+  (gtype-id "EXO_TYPE_TOOLBARS_MODEL_FLAGS")
+  (values
+    '("not-removable" "EXO_TOOLBARS_MODEL_NOT_REMOVABLE")
+    '("accept-items-only" "EXO_TOOLBARS_MODEL_ACCEPT_ITEMS_ONLY")
+    '("override-style" "EXO_TOOLBARS_MODEL_OVERRIDE_STYLE")
+  )
+)
+
 (define-object XsessionClient
   (in-module "Exo")
   (parent "GObject")
@@ -48,6 +89,18 @@
     '("end" "EXO_PANGO_ELLIPSIZE_END")
   )
 )
+
+(define-flags ToolbarsModelFlags
+  (in-module "Exo")
+  (c-name "ExoToolbarsModelFlags")
+  (gtype-id "EXO_TYPE_TOOLBARS_MODEL_FLAGS")
+  (values
+    '("not-removable" "EXO_TOOLBARS_MODEL_NOT_REMOVABLE")
+    '("accept-items-only" "EXO_TOOLBARS_MODEL_ACCEPT_ITEMS_ONLY")
+    '("override-style" "EXO_TOOLBARS_MODEL_OVERRIDE_STYLE")
+  )
+)
+
 
 
 ;; From ../exo/exo-cell-renderer-ellipsized-text.h
@@ -452,6 +505,383 @@
   (parameters
     '("gchar**" "argv")
     '("gint" "argc")
+  )
+)
+
+
+
+;; From ../exo/exo-toolbars-editor-dialog.h
+
+(define-function exo_toolbars_editor_dialog_get_type
+  (c-name "exo_toolbars_editor_dialog_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_toolbars_editor_dialog_new_with_model
+  (c-name "exo_toolbars_editor_dialog_new_with_model")
+  (return-type "GtkWidget*")
+  (is-constructor-of "ExoToolbarsEditorDialog")
+  (parameters
+    '("GtkUIManager*" "ui_manager")
+    '("ExoToolbarsModel*" "model")
+  )
+)
+
+
+
+;; From ../exo/exo-toolbars-editor.h
+
+(define-function exo_toolbars_editor_get_type
+  (c-name "exo_toolbars_editor_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_toolbars_editor_new
+  (c-name "exo_toolbars_editor_new")
+  (is-constructor-of "ExoToolbarsEditor")
+  (return-type "GtkWidget*")
+  (parameters
+    '("GtkUIManager*" "ui_manager")
+  )
+)
+
+(define-function exo_toolbars_editor_new_with_model
+  (c-name "exo_toolbars_editor_new_with_model")
+  (is-constructor-of "ExoToolbarsEditor")
+  (return-type "GtkWidget*")
+  (properties
+    '("ui_manager" (optional))
+    '("model" (optional))
+  )
+)
+
+(define-method get_model
+  (of-object "ExoToolbarsEditor")
+  (c-name "exo_toolbars_editor_get_model")
+  (return-type "ExoToolbarsModel*")
+)
+
+(define-method set_model
+  (of-object "ExoToolbarsEditor")
+  (c-name "exo_toolbars_editor_set_model")
+  (return-type "none")
+  (parameters
+    '("ExoToolbarsModel*" "model")
+  )
+)
+
+(define-method get_ui_manager
+  (of-object "ExoToolbarsEditor")
+  (c-name "exo_toolbars_editor_get_ui_manager")
+  (return-type "GtkUIManager*")
+)
+
+(define-method set_ui_manager
+  (of-object "ExoToolbarsEditor")
+  (c-name "exo_toolbars_editor_set_ui_manager")
+  (return-type "none")
+  (parameters
+    '("GtkUIManager*" "ui_manager")
+  )
+)
+
+
+
+;; From ../exo/exo-toolbars-model.h
+
+(define-function exo_toolbars_model_get_type
+  (c-name "exo_toolbars_model_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_toolbars_model_new
+  (c-name "exo_toolbars_model_new")
+  (is-constructor-of "ExoToolbarsModel")
+  (return-type "ExoToolbarsModel*")
+)
+
+(define-method set_actions
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_set_actions")
+  (return-type "none")
+  (parameters
+    '("gchar**" "actions")
+    '("guint" "n_actions")
+  )
+)
+
+(define-method get_actions
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_get_actions")
+  (return-type "gchar**")
+)
+
+(define-method load_from_file
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_load_from_file")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "filename")
+    '("GError**" "error")
+  )
+)
+
+(define-method save_to_file
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_save_to_file")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "filename")
+    '("GError**" "error")
+  )
+)
+
+(define-method get_flags
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_get_flags")
+  (return-type "ExoToolbarsModelFlags")
+  (parameters
+    '("gint" "toolbar_position")
+  )
+)
+
+(define-method set_flags
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_set_flags")
+  (return-type "none")
+  (parameters
+    '("ExoToolbarsModelFlags" "flags")
+    '("gint" "toolbar_position")
+  )
+)
+
+(define-method get_style
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_get_style")
+  (return-type "GtkToolbarStyle")
+  (parameters
+    '("gint" "toolbar_position")
+  )
+)
+
+(define-method set_style
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_set_style")
+  (return-type "none")
+  (parameters
+    '("GtkToolbarStyle" "style")
+    '("gint" "toolbar_position")
+  )
+)
+
+(define-method unset_style
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_unset_style")
+  (return-type "none")
+  (parameters
+    '("gint" "toolbar_position")
+  )
+)
+
+(define-method get_item_type
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_get_item_type")
+  (return-type "gchar*")
+  (parameters
+    '("GdkAtom" "dnd_type")
+  )
+)
+
+(define-method get_item_id
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_get_item_id")
+  (return-type "gchar*")
+  (parameters
+    '("const-gchar*" "type")
+    '("const-gchar*" "name")
+  )
+)
+
+(define-method get_item_data
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_get_item_data")
+  (return-type "gchar*")
+  (parameters
+    '("const-gchar*" "type")
+    '("const-gchar*" "id")
+  )
+)
+
+(define-method add_item
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_add_item")
+  (return-type "gboolean")
+  (parameters
+    '("gint" "toolbar_position")
+    '("gint" "item_position")
+    '("const-gchar*" "id")
+    '("const-gchar*" "type")
+  )
+)
+
+(define-method add_separator
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_add_separator")
+  (return-type "none")
+  (parameters
+    '("gint" "toolbar_position")
+    '("gint" "item_position")
+  )
+)
+
+(define-method add_toolbar
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_add_toolbar")
+  (return-type "gint")
+  (parameters
+    '("gint" "toolbar_position")
+    '("const-gchar*" "name")
+  )
+)
+
+(define-method move_item
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_move_item")
+  (return-type "none")
+  (parameters
+    '("gint" "toolbar_position")
+    '("gint" "item_position")
+    '("gint" "new_toolbar_position")
+    '("gint" "new_item_position")
+  )
+)
+
+(define-method remove_item
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_remove_item")
+  (return-type "none")
+  (parameters
+    '("gint" "toolbar_position")
+    '("gint" "item_position")
+  )
+)
+
+(define-method remove_toolbar
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_remove_toolbar")
+  (return-type "none")
+  (parameters
+    '("gint" "toolbar_position")
+  )
+)
+
+(define-method n_items
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_n_items")
+  (return-type "gint")
+  (parameters
+    '("gint" "toolbar_position")
+  )
+)
+
+(define-method item_nth
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_item_nth")
+  (return-type "none")
+  (parameters
+    '("gint" "toolbar_position")
+    '("gint" "item_position")
+    '("gboolean*" "is_separator")
+    '("const-gchar**" "id")
+    '("const-gchar**" "type")
+  )
+)
+
+(define-method n_toolbars
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_n_toolbars")
+  (return-type "gint")
+)
+
+(define-method toolbar_nth
+  (of-object "ExoToolbarsModel")
+  (c-name "exo_toolbars_model_toolbar_nth")
+  (return-type "const-gchar*")
+  (parameters
+    '("gint" "toolbar_position")
+  )
+)
+
+
+
+;; From ../exo/exo-toolbars-view.h
+
+(define-function exo_toolbars_view_get_type
+  (c-name "exo_toolbars_view_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_toolbars_view_new
+  (c-name "exo_toolbars_view_new")
+  (is-constructor-of "ExoToolbarsView")
+  (return-type "GtkWidget*")
+  (properties
+    '("ui_manager" (optional))
+  )
+)
+
+(define-function exo_toolbars_view_new_with_model
+  (c-name "exo_toolbars_view_new_with_model")
+  (is-constructor-of "ExoToolbarsView")
+  (return-type "GtkWidget*")
+  (properties
+    '("ui_manager" (optional))
+    '("model" (optional))
+  )
+)
+
+(define-method get_editing
+  (of-object "ExoToolbarsView")
+  (c-name "exo_toolbars_view_get_editing")
+  (return-type "gboolean")
+)
+
+(define-method set_editing
+  (of-object "ExoToolbarsView")
+  (c-name "exo_toolbars_view_set_editing")
+  (return-type "none")
+  (parameters
+    '("gboolean" "editing")
+  )
+)
+
+(define-method get_model
+  (of-object "ExoToolbarsView")
+  (c-name "exo_toolbars_view_get_model")
+  (return-type "ExoToolbarsModel*")
+)
+
+(define-method set_model
+  (of-object "ExoToolbarsView")
+  (c-name "exo_toolbars_view_set_model")
+  (return-type "none")
+  (parameters
+    '("ExoToolbarsModel*" "model")
+  )
+)
+
+(define-method get_ui_manager
+  (of-object "ExoToolbarsView")
+  (c-name "exo_toolbars_view_get_ui_manager")
+  (return-type "GtkUIManager*")
+)
+
+(define-method set_ui_manager
+  (of-object "ExoToolbarsView")
+  (c-name "exo_toolbars_view_set_ui_manager")
+  (return-type "none")
+  (parameters
+    '("GtkUIManager*" "ui_manager")
   )
 )
 
