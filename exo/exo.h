@@ -1,6 +1,6 @@
 /* $Id: exo.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2005 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -24,7 +24,7 @@
 #define __EXO_H__
 
 #ifndef EXO_API_SUBJECT_TO_CHANGE
-#error "Please define EXO_API_SUBJECT_TO_CHANGE to acknoledge your understanding that libexo hasn't reached 1.0 and is sibject to API churn. See the README for a full explanation."
+#error "Please define EXO_API_SUBJECT_TO_CHANGE to acknoledge your understanding that libexo hasn't reached 1.0 and is subject to API churn. See the README for a full explanation."
 #endif
 
 #define EXO_INSIDE_EXO_H
@@ -35,10 +35,8 @@
 
 #include <exo/exo-binding.h>
 #include <exo/exo-cell-renderer-ellipsized-text.h>
-#include <exo/exo-dbus.h>
 #include <exo/exo-ellipsized-label.h>
 #include <exo/exo-enum-types.h>
-#include <exo/exo-file-watch.h>
 #include <exo/exo-gdk-pixbuf-extensions.h>
 #include <exo/exo-gtk-extensions.h>
 #include <exo/exo-gobject-extensions.h>
@@ -51,12 +49,7 @@
 #include <exo/exo-toolbars-editor-dialog.h>
 #include <exo/exo-toolbars-model.h>
 #include <exo/exo-toolbars-view.h>
-#include <exo/exo-uri.h>
 #include <exo/exo-xsession-client.h>
-
-#ifndef EXO_DISABLE_DEPRECATED
-#include <exo/exo-property-proxy.h>
-#endif
 
 #undef EXO_INSIDE_EXO_H
 

@@ -1,5 +1,33 @@
 2005-02-15	Benedikt Meurer <benny@xfce.org>
 
+	* configure.ac, po/libexo.pot, po/libexo-0.3.pot: Include the major
+	  and minor version in the translation domain name to allow parallel
+	  installations of libexo-0.2 and libexo-0.3.
+	* configure.ac, exo/exo-dbus.c, exo/exo-dbus.h, exo/exo.h,
+	  exo/Makefile.am, po/POTFILES.in: Remove dependency on D-BUS.
+	* configure.ac, exo/exo-ice.h, exo/exo-ice.c, exo/Makefile.am,
+	  po/POTFILES.in: Remove ICE module, which can be readded later
+	  on, but for now, we'll stick to the lightweight session
+	  management provided by ExoXSessionClient.
+	* configure.ac, NEWS, exo/exo-0.2.pc.in, exo/exo-0.3.pc.in,
+	  exo/Makefile.am: Bump version to 0.3.0svn.
+	* Makefile.am: Remove stale reference to the m4 directory.
+	* exo/exo.h, exo/exo-property-proxy.h, exo/exo-property-proxy.c,
+	  exo/Makefile.am, po/POTFILES.in: Remove obsolete class
+	  ExoPropertyProxy, which was replaced with ExoBinding already.
+	* exo/exo-file-watch.h, exo/exo-file-watch.c, exo/exo.h,
+	  exo/Makefile.am, po/POTFILES.in: Remove obsolete class ExoFileWatch.
+	  Thunar will include a better implementation.
+	* exo/exo-uri.c, exo/exo-uri.h, exo/exo.h, exo/Makefile.am,
+	  po/POTFILES.in: Remove unused class ExoUri.
+	* exo/Makefile.am: Added rules to properly auto-generate the built
+	  files. These autogeneration rules are only available if
+	  --enable-maintainer-mode is specified for configure (which is
+	  usually the case for autogen runs, but not for enduser configure
+	  runs).
+
+2005-02-15	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-cell-render-ellipsized-text.c
 	  (exo_cell_renderer_ellipsized_text_render): Make sure that the
 	  cell actually contains text (text string != NULL), because else

@@ -23,6 +23,4 @@ EXTRA_DIST =								\
 	exo.spec.in							\
 	exo.spec
 
-ACLOCAL_AMFLAGS = -I m4
-
 DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
