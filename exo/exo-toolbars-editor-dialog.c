@@ -1,7 +1,7 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
- * Copyright (c) 2003 Marco Pesenti Gritti
+ * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2003      Marco Pesenti Gritti
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -135,7 +135,7 @@ exo_toolbars_editor_dialog_add_toolbar (ExoToolbarsEditorDialog *dialog)
 
 
 /**
- * exo_toolbars_editor_dialog_new_with_view:
+ * exo_toolbars_editor_dialog_new_with_model:
  * @ui_manager  : A #GtkUIManager.
  * @model       : An #ExoToolbarsModel.
  *

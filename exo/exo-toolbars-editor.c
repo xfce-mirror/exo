@@ -1,7 +1,7 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
- * Copyright (c) 2003 Marco Pesenti Gritti
+ * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2003      Marco Pesenti Gritti
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -120,7 +120,13 @@ exo_toolbars_editor_class_init (ExoToolbarsEditorClass *klass)
   gobject_class->set_property = exo_toolbars_editor_set_property;
 
   /**
-   * ExoToolbarsEditor::model:
+   * ExoToolbarsEditor:model:
+   *
+   * The #ExoToolbarsModel that should be edited from within this
+   * toolbars editor. If you set this property to %NULL, the editor
+   * widget will be disabled, else the editor widget will load the
+   * toolbars from the given #ExoToolbarsModel and initialize its
+   * user interface according to the model.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_MODEL,
@@ -131,7 +137,17 @@ exo_toolbars_editor_class_init (ExoToolbarsEditorClass *klass)
                                                         G_PARAM_READWRITE));
 
   /**
-   * ExoToolbarsEditor::ui-manager:
+   * ExoToolbarsEditor:ui-manager:
+   *
+   * The #GtkUIManager used by this editor. If this property is
+   * %NULL, the editor widget will be disabled, else if you specify
+   * a valid #GtkUIManager, the editor widget will load the available
+   * actions from the given user interface manager and initialize
+   * its user interface according to the specified #GtkUIManager.
+   *
+   * The given @ui-manager needs to support all actions that were
+   * specified for the model, used by the editor, with the
+   * exo_toolbars_model_set_actions() method.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_UI_MANAGER,
@@ -525,7 +541,7 @@ exo_toolbars_editor_update (ExoToolbarsEditor *editor)
  * The newly created #ExoToolbarsEditor will not
  * be usable until you associate an #ExoToolbarsModel
  * with it, using the function exo_toolbars_editor_set_model().
- * You should probably use exo_toolbars_new_with_model()
+ * You should probably use exo_toolbars_editor_new_with_model()
  * instead.
  *
  * Return value: A new #ExoToolbarsEditor.

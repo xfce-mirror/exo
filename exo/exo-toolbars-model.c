@@ -1,7 +1,7 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
- * Copyright (c) 2003 Marco Pesenti Gritti
+ * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2003      Marco Pesenti Gritti
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -653,6 +653,10 @@ unknown_element:
  *
  * Creates a new #ExoToolbarsModel with a reference count
  * of one.
+ *
+ * You need to call exo_toolbars_model_set_actions() first, after
+ * you created an #ExoToolbarsModel to set the list of actions,
+ * that should be available from the toolbars.
  *
  * Return value: A newly created #ExoToolbarsModel.
  **/
