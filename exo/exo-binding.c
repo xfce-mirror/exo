@@ -41,7 +41,6 @@ exo_bind_properties_transfer (GObject             *src_object,
   gboolean     result;
   GValue       src_value = { 0, };
   GValue       dst_value = { 0, };
-  GValue       prev_dst_value = { 0, };
 
   src_name = g_param_spec_get_name (src_pspec);
   dst_name = g_param_spec_get_name (dst_pspec);
@@ -57,12 +56,7 @@ exo_bind_properties_transfer (GObject             *src_object,
   g_return_if_fail (result);
 
   g_param_value_validate (dst_pspec, &dst_value);
-
-  g_value_init (&prev_dst_value, G_PARAM_SPEC_VALUE_TYPE (dst_pspec));
-  g_object_get_property (dst_object, dst_name, &prev_dst_value);
-  if (g_param_values_cmp (dst_pspec, &dst_value, &prev_dst_value))
-    g_object_set_property (dst_object, dst_name, &dst_value);
-  g_value_unset (&prev_dst_value);
+  g_object_set_property (dst_object, dst_name, &dst_value);
   g_value_unset (&dst_value);
 }
 
@@ -75,12 +69,22 @@ exo_bind_properties_notify (GObject    *src_object,
 {
   ExoBindingLink *link = data;
 
+  /* block the destination handler for mutual bindings,
+   * so we don't recurse here.
+   */
+  if (link->dst_handler != 0)
+    g_signal_handler_block (link->dst_object, link->dst_handler);
+
   exo_bind_properties_transfer (src_object,
                                 src_pspec,
                                 link->dst_object,
                                 link->dst_pspec,
                                 link->transform,
                                 link->user_data);
+
+  /* unblock destination handler */
+  if (link->dst_handler != 0)
+    g_signal_handler_unblock (link->dst_object, link->dst_handler);
 }
 
 
@@ -180,6 +184,7 @@ exo_binding_link_init (ExoBindingLink     *link,
 
   link->dst_object  = dst_object;
   link->dst_pspec   = dst_pspec;
+  link->dst_handler = 0;
   link->transform   = transform;
   link->user_data   = user_data;
 
@@ -443,6 +448,14 @@ exo_mutual_binding_new_full (GObject            *object1,
                          reverse_transform,
                          exo_mutual_binding_on_disconnect_object2,
                          user_data);
+
+  /* tell each link about the reverse link for mutual
+   * bindings, to make sure that we do not ever recurse
+   * in notify (yeah, the GObject notify dispatching is
+   * really weird!).
+   */
+  binding->direct.dst_handler = binding->reverse.handler;
+  binding->reverse.dst_handler = binding->direct.handler;
 
   return binding;
 }

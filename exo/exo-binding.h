@@ -48,6 +48,7 @@ struct _ExoBindingLink
 {
   GObject             *dst_object;
   GParamSpec          *dst_pspec;
+  gulong               dst_handler; /* only set for mutual bindings */
   gulong               handler;
   ExoBindingTransform  transform;
   gpointer             user_data;

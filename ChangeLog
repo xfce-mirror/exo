@@ -1,5 +1,13 @@
 2004-11-28	Benedikt Meurer <benny@xfce.org>
 
+	* po/libexo.pot: Updated.
+	* po/de.po, po/de.gmo: Completed the german translations.
+	* exo/exo-binding.c, exo/exo-binding.h: Avoid recursing in notify
+	  handlers for mutual bindings by blocking the destination handler.
+	* configure.ac, NEWS: Version 0.2.0pre2.
+
+2004-11-28	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.h: Added 4 padding fields to ExoIconViewClass
 	  for future expansion.
 	* exo/exo-md5.h, exo/exo-md5.c: Changed the API to be compatible
