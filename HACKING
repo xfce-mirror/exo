@@ -10,16 +10,20 @@ Coding Style
 Release process
 ===============
 
- 1) Check out a fresh copy from Subversion
- 2) Increment the version number in configure.ac
- 3) Update NEWS and ChangeLog, and don't forget to add an entry
-    ("Released x.y.z") to ChangeLog, so people can see which changes
-    were before and after a given release.
- 4) Verify that make dist works.
- 5) "svn commit" the changes.
- 6) Create a simple tag for the release,
+  1) Check out a fresh copy from Subversion
+  2) Increment the version number in configure.ac
+  3) Update NEWS and ChangeLog, and don't forget to add an entry
+     ("Released x.y.z") to ChangeLog, so people can see which changes
+     were before and after a given release.
+  4) Check the gtk-doc.
+  5) Run make update-po in po/ and update po/de.po (don't forget the header)!
+  6) Unset libexo_version_tab in configure.ac and reset it after the
+     release is done.
+  7) Verify that make dist works.
+  8) "svn commit" the changes.
+  9) Create a simple tag for the release,
       "svn copy https://os-cillation.de:8080/repos/libexo/trunk \
          https://os-cillation.de:8080/repos/libexo/tags/release-X.Y.Z"
-    where X.Y.Z is the version number.
- 7) upload the tarball to os-cillation ftp
- 8) Update freshmeat entry.
+     where X.Y.Z is the version number.
+ 10) upload the tarball to os-cillation ftp
+ 11) Update freshmeat entry.
