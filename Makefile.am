@@ -1,6 +1,6 @@
 SUBDIRS =								\
 	exo								\
-	doc								\
+	docs								\
 	po
 
 distclean-local:

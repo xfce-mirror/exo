@@ -79,9 +79,9 @@ BM_DEBUG_SUPPORT()
 AC_OUTPUT([
 Makefile
 exo.spec
-doc/Makefile
-doc/reference/Makefile
-doc/reference/version.xml
+docs/Makefile
+docs/reference/Makefile
+docs/reference/version.xml
 exo/Makefile
 exo/exo-0.3.pc
 exo/exo-config.h
