@@ -503,7 +503,11 @@ exo_icon_bar_style_set (GtkWidget *widget,
 
   GTK_WIDGET_CLASS (parent_class)->style_set (widget, previous_style);
 
-  gdk_window_set_background (icon_bar->priv->bin_window, &widget->style->base[widget->state]);
+  if (GTK_WIDGET_REALIZED (widget))
+    {
+      gdk_window_set_background (icon_bar->priv->bin_window,
+                                 &widget->style->base[widget->state]);
+    }
 }
 
 

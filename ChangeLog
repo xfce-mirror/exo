@@ -1,5 +1,12 @@
 2004-11-27	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-ellipsized-label.c(exo_ellipsized_label_new): Fix typo, the
+	  property is named "label", not "text".
+	* exo/exo-icon-bar.c(exo_icon_bar_style_set): Reset background color
+	  only if the widget is realized.
+
+2004-11-27	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-bar.c: Update background of the bin_window as well
 	  when style changes. This fixes bug #23.
 

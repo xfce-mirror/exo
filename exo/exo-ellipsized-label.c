@@ -261,7 +261,7 @@ GtkWidget*
 exo_ellipsized_label_new (const gchar *text)
 {
   return g_object_new (EXO_TYPE_ELLIPSIZED_LABEL,
-                       "text", text,
+                       "label", text,
                        NULL);
 }
 
