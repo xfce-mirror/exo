@@ -62,7 +62,7 @@ AC_SEARCH_LIBS([MD5Init], [md c], \
                [AC_DEFINE([HAVE_MD5INIT], [1], [Define if MD5Init present])])
 
 dnl Check for i18n support
-BM_I18N([libexo], [de])
+BM_I18N([libexo], [de en_GB])
 
 dnl Check for required packages
 BM_DEPEND([DBUS], [dbus-glib-1], [0.22])

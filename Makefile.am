@@ -18,6 +18,7 @@ EXTRA_DIST =								\
 	INSTALL								\
 	NEWS								\
 	README								\
+	THANKS								\
 	TODO								\
 	exo.spec.in							\
 	exo.spec
