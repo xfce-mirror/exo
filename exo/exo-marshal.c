@@ -162,3 +162,50 @@ _exo_marshal_BOOLEAN__ENUM_INT (GClosure     *closure,
   g_value_set_boolean (return_value, v_return);
 }
 
+/* BOOLEAN:INT,ENUM,BOOLEAN,ENUM,BOOLEAN (./exo-marshal.list:4) */
+void
+_exo_marshal_BOOLEAN__INT_ENUM_BOOLEAN_ENUM_BOOLEAN (GClosure     *closure,
+                                                     GValue       *return_value,
+                                                     guint         n_param_values,
+                                                     const GValue *param_values,
+                                                     gpointer      invocation_hint,
+                                                     gpointer      marshal_data)
+{
+  typedef gboolean (*GMarshalFunc_BOOLEAN__INT_ENUM_BOOLEAN_ENUM_BOOLEAN) (gpointer     data1,
+                                                                           gint         arg_1,
+                                                                           gint         arg_2,
+                                                                           gboolean     arg_3,
+                                                                           gint         arg_4,
+                                                                           gboolean     arg_5,
+                                                                           gpointer     data2);
+  register GMarshalFunc_BOOLEAN__INT_ENUM_BOOLEAN_ENUM_BOOLEAN callback;
+  register GCClosure *cc = (GCClosure*) closure;
+  register gpointer data1, data2;
+  gboolean v_return;
+
+  g_return_if_fail (return_value != NULL);
+  g_return_if_fail (n_param_values == 6);
+
+  if (G_CCLOSURE_SWAP_DATA (closure))
+    {
+      data1 = closure->data;
+      data2 = g_value_peek_pointer (param_values + 0);
+    }
+  else
+    {
+      data1 = g_value_peek_pointer (param_values + 0);
+      data2 = closure->data;
+    }
+  callback = (GMarshalFunc_BOOLEAN__INT_ENUM_BOOLEAN_ENUM_BOOLEAN) (marshal_data ? marshal_data : cc->callback);
+
+  v_return = callback (data1,
+                       g_marshal_value_peek_int (param_values + 1),
+                       g_marshal_value_peek_enum (param_values + 2),
+                       g_marshal_value_peek_boolean (param_values + 3),
+                       g_marshal_value_peek_enum (param_values + 4),
+                       g_marshal_value_peek_boolean (param_values + 5),
+                       data2);
+
+  g_value_set_boolean (return_value, v_return);
+}
+

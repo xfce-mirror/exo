@@ -6890,6 +6890,7 @@ fi
 INSTALL_STRIP_PROGRAM="\${SHELL} \$(install_sh) -c -s"
 AC_SUBST([INSTALL_STRIP_PROGRAM])])
 
+m4_include([m4/X11.m4])
 m4_include([m4/debug.m4])
 m4_include([m4/depends.m4])
 m4_include([m4/pkg.m4])

@@ -43,9 +43,9 @@ subdir = exo
 DIST_COMMON = $(libexoinclude_HEADERS) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/exo-0.1.pc.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/debug.m4 \
-	$(top_srcdir)/m4/depends.m4 $(top_srcdir)/m4/pkg.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/X11.m4 \
+	$(top_srcdir)/m4/debug.m4 $(top_srcdir)/m4/depends.m4 \
+	$(top_srcdir)/m4/pkg.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(mkdir_p)
@@ -59,7 +59,7 @@ am_libexo_0_1_la_OBJECTS = libexo_0_1_la-exo-dbus.lo \
 	libexo_0_1_la-exo-ellipsized-label.lo \
 	libexo_0_1_la-exo-file-watch.lo \
 	libexo_0_1_la-exo-gdk-pixbuf-extensions.lo \
-	libexo_0_1_la-exo-gtk-extensions.lo \
+	libexo_0_1_la-exo-gtk-extensions.lo libexo_0_1_la-exo-ice.lo \
 	libexo_0_1_la-exo-icon-bar.lo libexo_0_1_la-exo-icon-view.lo \
 	libexo_0_1_la-exo-marshal.lo libexo_0_1_la-exo-md5.lo \
 	libexo_0_1_la-exo-pango-extensions.lo \
@@ -74,6 +74,7 @@ am__depfiles_maybe = depfiles
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-file-watch.Plo \
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-gdk-pixbuf-extensions.Plo \
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-gtk-extensions.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-ice.Plo \
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-icon-bar.Plo \
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-icon-view.Plo \
 @AMDEP_TRUE@	./$(DEPDIR)/libexo_0_1_la-exo-marshal.Plo \
@@ -141,7 +142,13 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
+LIBSM_CFLAGS = @LIBSM_CFLAGS@
+LIBSM_LDFLAGS = @LIBSM_LDFLAGS@
+LIBSM_LIBS = @LIBSM_LIBS@
 LIBTOOL = @LIBTOOL@
+LIBX11_CFLAGS = @LIBX11_CFLAGS@
+LIBX11_LDFLAGS = @LIBX11_LDFLAGS@
+LIBX11_LIBS = @LIBX11_LIBS@
 LIBXFCEGUI4_CFLAGS = @LIBXFCEGUI4_CFLAGS@
 LIBXFCEGUI4_LIBS = @LIBXFCEGUI4_LIBS@
 LIBXFCEGUI4_REQUIRED_VERSION = @LIBXFCEGUI4_REQUIRED_VERSION@
@@ -165,6 +172,10 @@ SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
 VERSION = @VERSION@
+X_CFLAGS = @X_CFLAGS@
+X_EXTRA_LIBS = @X_EXTRA_LIBS@
+X_LIBS = @X_LIBS@
+X_PRE_LIBS = @X_PRE_LIBS@
 ac_ct_AR = @ac_ct_AR@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_CXX = @ac_ct_CXX@
@@ -221,6 +232,7 @@ libexoinclude_HEADERS = \
 	exo-file-watch.h						\
 	exo-gdk-pixbuf-extensions.h					\
 	exo-gtk-extensions.h						\
+	exo-ice.h							\
 	exo-icon-bar.h							\
 	exo-icon-view.h							\
 	exo-md5.h							\
@@ -236,6 +248,7 @@ libexo_0_1_la_SOURCES = \
 	exo-file-watch.c						\
 	exo-gdk-pixbuf-extensions.c					\
 	exo-gtk-extensions.c						\
+	exo-ice.c							\
 	exo-icon-bar.c							\
 	exo-icon-view.c							\
 	exo-marshal.c							\
@@ -339,6 +352,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-file-watch.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-gdk-pixbuf-extensions.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-gtk-extensions.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-ice.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-icon-bar.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-icon-view.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_1_la-exo-marshal.Plo@am__quote@
@@ -491,6 +505,30 @@ libexo_0_1_la-exo-gtk-extensions.lo: exo-gtk-extensions.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-gtk-extensions.Plo' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-gtk-extensions.TPlo' @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-gtk-extensions.lo `test -f 'exo-gtk-extensions.c' || echo '$(srcdir)/'`exo-gtk-extensions.c
+
+libexo_0_1_la-exo-ice.o: exo-ice.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-ice.o -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-ice.Tpo" -c -o libexo_0_1_la-exo-ice.o `test -f 'exo-ice.c' || echo '$(srcdir)/'`exo-ice.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-ice.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-ice.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-ice.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-ice.c' object='libexo_0_1_la-exo-ice.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-ice.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-ice.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-ice.o `test -f 'exo-ice.c' || echo '$(srcdir)/'`exo-ice.c
+
+libexo_0_1_la-exo-ice.obj: exo-ice.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-ice.obj -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-ice.Tpo" -c -o libexo_0_1_la-exo-ice.obj `if test -f 'exo-ice.c'; then $(CYGPATH_W) 'exo-ice.c'; else $(CYGPATH_W) '$(srcdir)/exo-ice.c'; fi`; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-ice.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-ice.Po"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-ice.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-ice.c' object='libexo_0_1_la-exo-ice.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-ice.Po' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-ice.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-ice.obj `if test -f 'exo-ice.c'; then $(CYGPATH_W) 'exo-ice.c'; else $(CYGPATH_W) '$(srcdir)/exo-ice.c'; fi`
+
+libexo_0_1_la-exo-ice.lo: exo-ice.c
+@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-ice.lo -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-ice.Tpo" -c -o libexo_0_1_la-exo-ice.lo `test -f 'exo-ice.c' || echo '$(srcdir)/'`exo-ice.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_1_la-exo-ice.Tpo" "$(DEPDIR)/libexo_0_1_la-exo-ice.Plo"; else rm -f "$(DEPDIR)/libexo_0_1_la-exo-ice.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-ice.c' object='libexo_0_1_la-exo-ice.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/libexo_0_1_la-exo-ice.Plo' tmpdepfile='$(DEPDIR)/libexo_0_1_la-exo-ice.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -c -o libexo_0_1_la-exo-ice.lo `test -f 'exo-ice.c' || echo '$(srcdir)/'`exo-ice.c
 
 libexo_0_1_la-exo-icon-bar.o: exo-icon-bar.c
 @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_1_la_CFLAGS) $(CFLAGS) -MT libexo_0_1_la-exo-icon-bar.o -MD -MP -MF "$(DEPDIR)/libexo_0_1_la-exo-icon-bar.Tpo" -c -o libexo_0_1_la-exo-icon-bar.o `test -f 'exo-icon-bar.c' || echo '$(srcdir)/'`exo-icon-bar.c; \

@@ -1,4 +1,4 @@
-/* $Id$ */
+/* $Id: exo-icon-bar.c,v 1.2 2004/09/17 23:41:41 bmeurer Exp $ */
 /*-
  * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -22,17 +22,15 @@
 #error "Only <exo/exo.h> can be included directly, this file may disappear or change contents."
 #endif
 
-#ifndef __EXO_MD5_H__
-#define __EXO_MD5_H__
+#ifndef __EXO_ICE_H__
+#define __EXO_ICE_H__
 
 #include <glib.h>
 
 G_BEGIN_DECLS;
 
-gchar *exo_md5_calculate_hash (const gchar *source,
-                               gchar       *buffer,
-                               gsize        length);
+void exo_ice_init (void);
 
 G_END_DECLS;
 
-#endif /* !__EXO_MD5_H__ */
+#endif /* !__EXO_ICE_H__ */

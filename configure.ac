@@ -1,4 +1,4 @@
-dnl $Id: configure.ac,v 1.2 2004/09/17 09:48:24 bmeurer Exp $
+dnl $Id$
 dnl
 dnl Copyright (c) 2004 os-cillation.
 dnl All rights reserved.
@@ -9,7 +9,7 @@ dnl
 dnl Version information
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [1])
-m4_define([libexo_version_micro], [0])
+m4_define([libexo_version_micro], [1])
 m4_define([libexo_version], [libexo_version_major.libexo_version_minor.libexo_version_micro])
 
 dnl Initialize autoconf
@@ -17,13 +17,13 @@ AC_COPYRIGHT([Copyright (c) 2004 os-cillation.
 All rights reserved.
         
 Written by Benedikt Meurer <benny@xfce.org>.])
-AC_INIT([libexo], [libexo_version], [benny@xfce.org])
+AC_INIT([exo], [libexo_version], [benny@xfce.org])
 AC_PREREQ([2.50])
-AC_REVISION([$Id: configure.ac,v 1.2 2004/09/17 09:48:24 bmeurer Exp $])
+AC_REVISION([$Id$])
 
 dnl Initialize automake
 LIBEXO_VERSION=libexo_version
-AM_INIT_AUTOMAKE([libexo], [$LIBEXO_VERSION])
+AM_INIT_AUTOMAKE([exo], [$LIBEXO_VERSION])
 AM_CONFIG_HEADER([config.h])
 AM_MAINTAINER_MODE
 
@@ -39,20 +39,21 @@ AC_PROG_LIBTOOL
 
 dnl check for standard header files
 AC_HEADER_STDC
-AC_CHECK_HEADERS([errno.h locale.h math.h md5.h openssl/md5.h string.h \
+AC_CHECK_HEADERS([errno.h fcntl.h locale.h math.h md5.h string.h \
                   sys/resource.h sys/stat.h sys/time.h sys/types.h \
                   time.h])
 
 dnl check for Message Digest functions
 AC_SEARCH_LIBS([MD5Init], [md c], \
                [AC_DEFINE([HAVE_MD5INIT], [1], [Define if MD5Init present])])
-AC_SEARCH_LIBS([MD5_Init], [crypto], \
-               [AC_DEFINE([HAVE_MD5_INIT], [1], [Define if MD5_Init present])])
 
 dnl Check for required packages
 BM_DEPEND([DBUS], [dbus-glib-1], [0.22])
 BM_DEPEND([GTK], [gtk+-2.0], [2.4.0])
 BM_DEPEND([LIBXFCEGUI4], [libxfcegui4-1.0], [4.1.24])
+
+dnl Check for session management libraries
+BM_LIBSM
 
 dnl Check for debugging support
 BM_DEBUG_SUPPORT

@@ -1,0 +1,7 @@
+0.1.1
+=====
+- An ICE module was added, based upon the ice-layer from xfce4-session and
+  the gnome-ice module of libgnomeui.
+- libexo no longer requires SSL on non-BSD systems, since a MD5 fallback
+  implementation was added, which will be used if the system doesn't
+  provide MD5_* functions.

@@ -1,51 +1,20 @@
-2004-09-17 11:48  bmeurer
+2004-09-25	Benedikt Meurer <benny@xfce.org>
 
-	* Makefile.in, configure, configure.ac, exo/Makefile.am,
-	  exo/Makefile.in, exo/exo-0.1.pc.in, exo/exo-1.0.pc.in,
-	  exo/exo-dbus.h, exo/exo-ellipsized-label.c,
-	  exo/exo-ellipsized-label.h, exo/exo-file-watch.h,
-	  exo/exo-gdk-pixbuf-extensions.h, exo/exo-gtk-extensions.h,
-	  exo/exo-icon-bar.h, exo/exo-icon-view.h, exo/exo-md5.h,
-	  exo/exo-pango-extensions.h, exo/exo-property-proxy.h,
-	  exo/exo-string.h, exo/exo-uri.h, exo/exo.h: Change version
-	  handling slightly. This will ease breaking the API at a later
-	  time.
+	* configure.ac: Version 0.1.1.
 
-2004-09-15 00:32  bmeurer
+2004-09-24	Benedikt Meurer <benny@xfce.org>
 
-	* AUTHORS, Makefile.am, Makefile.in, README, aclocal.m4,
-	  autogen.sh, compile, config.guess, config.h.in, config.sub,
-	  configure, configure.ac, depcomp, install-sh, ltmain.sh, missing,
-	  exo/Makefile.am, exo/Makefile.in, exo/exo-1.0.pc.in,
-	  exo/exo-dbus.c, exo/exo-dbus.h, exo/exo-ellipsized-label.c,
-	  exo/exo-ellipsized-label.h, exo/exo-file-watch.c,
-	  exo/exo-file-watch.h, exo/exo-gdk-pixbuf-extensions.c,
-	  exo/exo-gdk-pixbuf-extensions.h, exo/exo-gtk-extensions.c,
-	  exo/exo-gtk-extensions.h, exo/exo-icon-bar.c, exo/exo-icon-bar.h,
-	  exo/exo-icon-view.c, exo/exo-icon-view.h, exo/exo-marshal.c,
-	  exo/exo-marshal.h, exo/exo-marshal.list, exo/exo-md5.c,
-	  exo/exo-md5.h, exo/exo-pango-extensions.c,
-	  exo/exo-pango-extensions.h, exo/exo-property-proxy.c,
-	  exo/exo-property-proxy.h, exo/exo-string.c, exo/exo-string.h,
-	  exo/exo-uri.c, exo/exo-uri.h, exo/exo.h, m4/X11.m4, m4/debug.m4,
-	  m4/depends.m4, m4/i18n.m4, m4/pkg.m4: Initial import.
+	* exo/exo-ice.c, exo/exo-ice.h: Add ICE module based upon the
+	  ice-layer from xfce4-session and the gnome-ice module of
+	  libgnomeui.
+	* configure.ac: Add check for ICE/XSM libraries.
 
-2004-09-15 00:32  bmeurer
+2004-09-23	Benedikt Meurer <benny@xfce.org>
 
-	* AUTHORS, Makefile.am, Makefile.in, README, aclocal.m4,
-	  autogen.sh, compile, config.guess, config.h.in, config.sub,
-	  configure, configure.ac, depcomp, install-sh, ltmain.sh, missing,
-	  exo/Makefile.am, exo/Makefile.in, exo/exo-1.0.pc.in,
-	  exo/exo-dbus.c, exo/exo-dbus.h, exo/exo-ellipsized-label.c,
-	  exo/exo-ellipsized-label.h, exo/exo-file-watch.c,
-	  exo/exo-file-watch.h, exo/exo-gdk-pixbuf-extensions.c,
-	  exo/exo-gdk-pixbuf-extensions.h, exo/exo-gtk-extensions.c,
-	  exo/exo-gtk-extensions.h, exo/exo-icon-bar.c, exo/exo-icon-bar.h,
-	  exo/exo-icon-view.c, exo/exo-icon-view.h, exo/exo-marshal.c,
-	  exo/exo-marshal.h, exo/exo-marshal.list, exo/exo-md5.c,
-	  exo/exo-md5.h, exo/exo-pango-extensions.c,
-	  exo/exo-pango-extensions.h, exo/exo-property-proxy.c,
-	  exo/exo-property-proxy.h, exo/exo-string.c, exo/exo-string.h,
-	  exo/exo-uri.c, exo/exo-uri.h, exo/exo.h, m4/X11.m4, m4/debug.m4,
-	  m4/depends.m4, m4/i18n.m4, m4/pkg.m4: Initial revision
+	* exo/exo-md5.c: Add a fallback implementation for the MD5 algorithm,
+	  taken from ROX-Filer. Only used if MD5Init isn't found on the
+	  system.
 
+2004-09-14	Benedikt Meurer <benny@xfce.org>
+
+	* Initial import.

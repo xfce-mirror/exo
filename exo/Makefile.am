@@ -15,6 +15,7 @@ libexoinclude_HEADERS =							\
 	exo-file-watch.h						\
 	exo-gdk-pixbuf-extensions.h					\
 	exo-gtk-extensions.h						\
+	exo-ice.h							\
 	exo-icon-bar.h							\
 	exo-icon-view.h							\
 	exo-md5.h							\
@@ -30,6 +31,7 @@ libexo_0_1_la_SOURCES =							\
 	exo-file-watch.c						\
 	exo-gdk-pixbuf-extensions.c					\
 	exo-gtk-extensions.c						\
+	exo-ice.c							\
 	exo-icon-bar.c							\
 	exo-icon-view.c							\
 	exo-marshal.c							\

@@ -30,6 +30,14 @@ extern void _exo_marshal_BOOLEAN__ENUM_INT (GClosure     *closure,
                                             gpointer      invocation_hint,
                                             gpointer      marshal_data);
 
+/* BOOLEAN:INT,ENUM,BOOLEAN,ENUM,BOOLEAN (./exo-marshal.list:4) */
+extern void _exo_marshal_BOOLEAN__INT_ENUM_BOOLEAN_ENUM_BOOLEAN (GClosure     *closure,
+                                                                 GValue       *return_value,
+                                                                 guint         n_param_values,
+                                                                 const GValue *param_values,
+                                                                 gpointer      invocation_hint,
+                                                                 gpointer      marshal_data);
+
 G_END_DECLS
 
 #endif /* ___exo_marshal_MARSHAL_H__ */
