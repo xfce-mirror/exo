@@ -1,3 +1,9 @@
+2004-10-12	Benedikt Meurer <benny@xfce.org>
+
+	* configure.ac: Version 0.1.2.
+	* m4/debug.m4: Added linker optimizations if --enable-final is
+	  given (recent GNU binutils required).
+
 2004-10-11	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-md5.c: Don't include <md5.h> if MD5Init wasn't found

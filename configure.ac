@@ -9,7 +9,7 @@ dnl
 dnl Version information
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [1])
-m4_define([libexo_version_micro], [1])
+m4_define([libexo_version_micro], [2])
 m4_define([libexo_version], [libexo_version_major.libexo_version_minor.libexo_version_micro])
 
 dnl Initialize autoconf
@@ -57,19 +57,6 @@ BM_LIBSM
 
 dnl Check for debugging support
 BM_DEBUG_SUPPORT
-
-dnl Check whether to build a final version
-AC_ARG_ENABLE([final],
-AC_HELP_STRING([--enable-final], [Build final]),
-  [], [enable_final=no])
-AC_MSG_CHECKING([whether to build final])
-if test x"$enable_final" = x"no"; then
-  AC_MSG_RESULT([no])
-else
-  CPPFLAGS="$CPPFLAGS -DG_DISABLE_CHECKS -DG_DISABLE_ASSERT"
-  CPPFLAGS="$CPPFLAGS -DG_DISABLE_CAST_CHECKS"
-  AC_MSG_RESULT([yes])
-fi
 
 AC_OUTPUT([
 Makefile
