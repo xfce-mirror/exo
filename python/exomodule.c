@@ -21,12 +21,81 @@
  */
 
 #include <pygobject.h>
+#include <pygtk/pygtk.h>
 
 
 extern void exo_add_constants (PyObject *module, const gchar *strip_prefix);
 extern void exo_register_classes (PyObject *d);
 
 extern PyMethodDef exo_functions[];
+
+
+/* Unfortunately pygtk doesn't export the following functions,
+ * that are required for the IconView, so we have to duplicate
+ * them here.
+ */
+PyObject*
+pygtk_tree_path_to_pyobject (GtkTreePath *path)
+{
+  gint len, i, *indices;
+  PyObject *ret;
+
+  len = gtk_tree_path_get_depth (path);
+  indices = gtk_tree_path_get_indices (path);
+
+  ret = PyTuple_New (len);
+  for (i = 0; i < len; i++)
+    PyTuple_SetItem (ret, i, PyInt_FromLong (indices[i]));
+  return ret;
+}
+
+GtkTreePath*
+pygtk_tree_path_from_pyobject (PyObject *object)
+{
+  if (PyString_Check(object))
+    {
+      GtkTreePath *path;
+      
+      path = gtk_tree_path_new_from_string (PyString_AsString (object));
+      return path;
+    }
+  else if (PyInt_Check(object))
+    {
+      GtkTreePath *path;
+      
+      path = gtk_tree_path_new();
+      gtk_tree_path_append_index(path, PyInt_AsLong(object));
+      return path;
+    }
+  else if (PyTuple_Check(object))
+    {
+      GtkTreePath *path;
+      guint len, i;
+      
+      len = PyTuple_Size(object);
+      if (len < 1)
+        return NULL;
+
+      path = gtk_tree_path_new();
+      for (i = 0; i < len; i++)
+        {
+          PyObject *item = PyTuple_GetItem(object, i);
+          gint index = PyInt_AsLong(item);
+          
+          if (PyErr_Occurred())
+            {
+              gtk_tree_path_free(path);
+              PyErr_Clear();
+              return NULL;
+            }
+          gtk_tree_path_append_index(path, index);
+        }
+
+      return path;
+    }
+  
+  return NULL;
+}
 
 
 DL_EXPORT(void)

@@ -21,6 +21,13 @@
   (gtype-id "EXO_TYPE_ICON_BAR")
 )
 
+(define-object IconView
+  (in-module "Exo")
+  (parent "GtkContainer")
+  (c-name "ExoIconView")
+  (gtype-id "EXO_TYPE_ICON_VIEW")
+)
+
 (define-object XsessionClient
   (in-module "Exo")
   (parent "GObject")
@@ -69,8 +76,9 @@
   (c-name "exo_ellipsized_label_new")
   (is-constructor-of "ExoEllipsizedLabel")
   (return-type "GtkWidget*")
-  (parameters
-    '("const-gchar*" "text")
+  (properties
+    '("label" (optional))
+    '("ellipsize" (optional))
   )
 )
 
@@ -203,6 +211,194 @@
   (return-type "none")
   (parameters
     '("GtkTreeIter*" "iter")
+  )
+)
+
+
+
+;; From ../exo/exo-icon-view.h
+
+(define-function exo_icon_view_get_type
+  (c-name "exo_icon_view_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_icon_view_new
+  (c-name "exo_icon_view_new")
+  (is-constructor-of "ExoIconView")
+  (return-type "GtkWidget*")
+)
+
+(define-function exo_icon_view_new_with_model
+  (c-name "exo_icon_view_new_with_model")
+  (is-constructor-of "ExoIconView")
+  (return-type "GtkWidget*")
+  (properties
+    '("model" "optional")
+  )
+)
+
+(define-method set_model
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_model")
+  (return-type "none")
+  (parameters
+    '("GtkTreeModel*" "model")
+  )
+)
+
+(define-method get_model
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_model")
+  (return-type "GtkTreeModel*")
+)
+
+(define-method set_text_column
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_text_column")
+  (return-type "none")
+  (parameters
+    '("gint" "column")
+  )
+)
+
+(define-method get_text_column
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_text_column")
+  (return-type "gint")
+)
+
+(define-method set_markup_column
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_markup_column")
+  (return-type "none")
+  (parameters
+    '("gint" "column")
+  )
+)
+
+(define-method get_markup_column
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_markup_column")
+  (return-type "gint")
+)
+
+(define-method set_pixbuf_column
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_pixbuf_column")
+  (return-type "none")
+  (parameters
+    '("gint" "column")
+  )
+)
+
+(define-method get_pixbuf_column
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_pixbuf_column")
+  (return-type "gint")
+)
+
+(define-method set_orientation
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_orientation")
+  (return-type "none")
+  (parameters
+    '("GtkOrientation" "orientation")
+  )
+)
+
+(define-method get_orientation
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_orientation")
+  (return-type "GtkOrientation")
+)
+
+(define-method get_path_at_pos
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_path_at_pos")
+  (return-type "GtkTreePath*")
+  (parameters
+    '("gint" "x")
+    '("gint" "y")
+  )
+)
+
+(define-method selected_foreach
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_selected_foreach")
+  (return-type "none")
+  (parameters
+    '("ExoIconViewForeachFunc" "func")
+    '("gpointer" "data")
+  )
+)
+
+(define-method set_selection_mode
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_selection_mode")
+  (return-type "none")
+  (parameters
+    '("GtkSelectionMode" "mode")
+  )
+)
+
+(define-method get_selection_mode
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_selection_mode")
+  (return-type "GtkSelectionMode")
+)
+
+(define-method select_path
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_select_path")
+  (return-type "none")
+  (parameters
+    '("GtkTreePath*" "path")
+  )
+)
+
+(define-method unselect_path
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_unselect_path")
+  (return-type "none")
+  (parameters
+    '("GtkTreePath*" "path")
+  )
+)
+
+(define-method path_is_selected
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_path_is_selected")
+  (return-type "gboolean")
+  (parameters
+    '("GtkTreePath*" "path")
+  )
+)
+
+(define-method get_selected_items
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_selected_items")
+  (return-type "GList*")
+)
+
+(define-method select_all
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_select_all")
+  (return-type "none")
+)
+
+(define-method unselect_all
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_unselect_all")
+  (return-type "none")
+)
+
+(define-method item_activated
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_item_activated")
+  (return-type "none")
+  (parameters
+    '("GtkTreePath*" "path")
   )
 )
 

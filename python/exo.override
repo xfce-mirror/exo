@@ -27,6 +27,9 @@ headers
 #include <pygtk/pygtk.h>
 #include <exo/exo.h>
 
+extern GtkTreePath *pygtk_tree_path_from_pyobject (PyObject *object);
+extern PyObject *pygtk_tree_path_to_pyobject (GtkTreePath *path);
+
 %%
 modulename exo
 
@@ -45,6 +48,39 @@ ignore-glob
 %%
 ignore
   exo_icon_bar_new
+  exo_icon_view_new
+  exo_icon_view_selected_foreach
+%%
+override exo_icon_view_get_selected_items kwargs
+static PyObject*
+_wrap_exo_icon_view_get_selected_items (PyGObject *self,
+                                        PyObject  *args,
+                                        PyObject  *kwargs)
+{
+  PyObject *result;
+  PyObject *item;
+  GList    *items;
+  GList    *lp;
+
+  items = exo_icon_view_get_selected_items (EXO_ICON_VIEW (self->obj));
+
+  result = PyList_New (0);
+  if (G_UNLIKELY (result == NULL))
+    return NULL;
+
+  for (lp = items; lp != NULL; lp = lp->next)
+    {
+      item = pygtk_tree_path_to_pyobject (lp->data);
+      PyList_Append (result, item);
+      Py_DECREF (item);
+
+      gtk_tree_path_free (lp->data);
+    }
+
+  g_list_free (items);
+
+  return result;
+}
 
 %%
 override exo_xsession_client_get_restart_command kwargs

@@ -1,3 +1,11 @@
+2005-02-21	Benedikt Meurer <benny@xfce.org>
+
+	* python/exomodule.c: Add pygtk_tree_path_to_pyobject() and
+	  pygtk_tree_path_from_pyobject() from the pygtk distribution, as
+	  the pygtk module unfortunately doesn't export them.
+	* python/exo.override, python/exo.defs: Add the ExoIconView class
+	  to the Python bindings.
+
 2005-02-19	Benedikt Meurer <benny@xfce.org>
 
 	* acinclude.m4, configure.ac: Remove custom Python headers check
