@@ -1,7 +1,7 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
- * Copyright (c) 2003 Marco Pesenti Gritti
+ * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2003      Marco Pesenti Gritti
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -745,7 +745,7 @@ exo_toolbars_view_context_menu (GtkWidget       *toolbar,
   submenu = gtk_menu_new ();
   gtk_menu_item_set_submenu (GTK_MENU_ITEM (item), submenu);
 
-  item = gtk_radio_menu_item_new_with_mnemonic (NULL, _("_Default"));
+  item = gtk_radio_menu_item_new_with_mnemonic (NULL, _("_Desktop Default"));
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style < 0));
   g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (0));
   g_signal_connect (G_OBJECT (item), "activate",
@@ -772,7 +772,7 @@ exo_toolbars_view_context_menu (GtkWidget       *toolbar,
   gtk_widget_show (item);
 
   item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
-                                                            _("_Both"));
+                                                            _("Text for _All Icons"));
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_BOTH));
   g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_BOTH + 1));
   g_signal_connect (G_OBJECT (item), "activate",
@@ -781,7 +781,7 @@ exo_toolbars_view_context_menu (GtkWidget       *toolbar,
   gtk_widget_show (item);
 
   item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
-                                                            _("Both _horizontal"));
+                                                            _("Text for I_mportant Icons"));
   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_BOTH_HORIZ));
   g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_BOTH_HORIZ + 1));
   g_signal_connect (G_OBJECT (item), "activate",
