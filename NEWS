@@ -1,3 +1,25 @@
+0.2.0pre1
+=========
+- The ellipsizing functions now use the Pango 1.6 builtin functionality
+  if available.
+- Added lightweight session management support with the ExoXsessionClient
+  class.
+- The API of ExoEllipsizedLabel was changed to be compatible with GtkLabel
+  in Gtk+ 2.5 and above.
+- Added an ellipsizing cell renderer ExoCellRendererEllipsizedText, compatible
+  with GtkCellRendererText in Gtk+ 2.6.
+- ExoIconBar has an "orientation" property now. The "selection-changed" signal
+  has been renamed to "changed".
+- libexo is fully internationalized now.
+- The ExoToolbarsView class has been changed to provide a "Customize 
+  Toolbars..." menu item together with the other items and to emit a
+  signal "customize".
+- ExoPropertyProxy has been replaced by ExoBinding, which is based on
+  the GObject Binding Properties implementation available from
+  http://ex-code.com/glib-bind/. ExoBinding is way more powerful and
+  easier to handle than ExoPropertyProxy.
+- The API documentation is nearly complete now.
+
 0.1.3
 =====
 - Added a framework for editable toolbars (ExoToolbarsModel, ExoToolbarsView,
