@@ -676,6 +676,7 @@ exo_toolbars_view_context_menu (GtkWidget       *toolbar,
   GtkWidget            *menu;
   GtkWidget            *item;
   GtkWidget            *image;
+  gboolean              result;
   gint                  position;
 
   if (G_LIKELY (view->priv->editing))
@@ -759,6 +760,10 @@ exo_toolbars_view_context_menu (GtkWidget       *toolbar,
 
       gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL,
                       button, gtk_get_current_event_time ());
+    }
+  else
+    {
+      g_signal_emit_by_name (G_OBJECT (view), "popup-menu", &result);
     }
 }
 
