@@ -31,7 +31,8 @@ libexoinclude_HEADERS =							\
 	exo-toolbars-editor-dialog.h					\
 	exo-toolbars-model.h						\
 	exo-toolbars-view.h						\
-	exo-uri.h
+	exo-uri.h							\
+	exo-xsession-client.h
 
 libexo_0_2_la_SOURCES =							\
 	$(libexo_HEADERS)						\
@@ -60,10 +61,13 @@ libexo_0_2_la_SOURCES =							\
 	exo-toolbars-private.c						\
 	exo-toolbars-private.h						\
 	exo-toolbars-view.c						\
-	exo-uri.c
+	exo-uri.c							\
+	exo-xsession-client.c
 
 libexo_0_2_la_CFLAGS =							\
 	@DBUS_CFLAGS@							\
+	@LIBSM_CFLAGS@							\
+	@LIBX11_CFLAGS@							\
 	@LIBXFCEGUI4_CFLAGS@
 
 libexo_0_2_la_LDFLAGS =							\
@@ -74,6 +78,8 @@ libexo_0_2_la_LDFLAGS =							\
 
 libexo_0_2_la_LIBADD =							\
 	@DBUS_LIBS@							\
+	@LIBSM_LIBS@							\
+	@LIBX11_LIBS@							\
 	@LIBXFCEGUI4_LIBS@
 
 exo-marshal.h: $(srcdir)/exo-marshal.list

@@ -72,6 +72,9 @@ BM_DEPEND([LIBXFCEGUI4], [libxfcegui4-1.0], [4.1.90])
 dnl Check for session management libraries
 BM_LIBSM
 
+dnl Check for X11 libraries
+BM_LIBX11_REQUIRE
+
 dnl Check for gtk-doc
 GTK_DOC_CHECK([1.0])
 

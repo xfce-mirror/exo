@@ -83,7 +83,8 @@ am_libexo_0_2_la_OBJECTS = libexo_0_2_la-exo-binding.lo \
 	libexo_0_2_la-exo-toolbars-editor-dialog.lo \
 	libexo_0_2_la-exo-toolbars-model.lo \
 	libexo_0_2_la-exo-toolbars-private.lo \
-	libexo_0_2_la-exo-toolbars-view.lo libexo_0_2_la-exo-uri.lo
+	libexo_0_2_la-exo-toolbars-view.lo libexo_0_2_la-exo-uri.lo \
+	libexo_0_2_la-exo-xsession-client.lo
 libexo_0_2_la_OBJECTS = $(am_libexo_0_2_la_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
@@ -281,7 +282,8 @@ libexoinclude_HEADERS = \
 	exo-toolbars-editor-dialog.h					\
 	exo-toolbars-model.h						\
 	exo-toolbars-view.h						\
-	exo-uri.h
+	exo-uri.h							\
+	exo-xsession-client.h
 
 libexo_0_2_la_SOURCES = \
 	$(libexo_HEADERS)						\
@@ -310,10 +312,13 @@ libexo_0_2_la_SOURCES = \
 	exo-toolbars-private.c						\
 	exo-toolbars-private.h						\
 	exo-toolbars-view.c						\
-	exo-uri.c
+	exo-uri.c							\
+	exo-xsession-client.c
 
 libexo_0_2_la_CFLAGS = \
 	@DBUS_CFLAGS@							\
+	@LIBSM_CFLAGS@							\
+	@LIBX11_CFLAGS@							\
 	@LIBXFCEGUI4_CFLAGS@
 
 libexo_0_2_la_LDFLAGS = \
@@ -324,6 +329,8 @@ libexo_0_2_la_LDFLAGS = \
 
 libexo_0_2_la_LIBADD = \
 	@DBUS_LIBS@							\
+	@LIBSM_LIBS@							\
+	@LIBX11_LIBS@							\
 	@LIBXFCEGUI4_LIBS@
 
 pkgconfigdir = $(libdir)/pkgconfig
@@ -429,6 +436,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-toolbars-private.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-toolbars-view.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-uri.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libexo_0_2_la-exo-xsession-client.Plo@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
@@ -611,6 +619,13 @@ libexo_0_2_la-exo-uri.lo: exo-uri.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-uri.c' object='libexo_0_2_la-exo-uri.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -c -o libexo_0_2_la-exo-uri.lo `test -f 'exo-uri.c' || echo '$(srcdir)/'`exo-uri.c
+
+libexo_0_2_la-exo-xsession-client.lo: exo-xsession-client.c
+@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -MT libexo_0_2_la-exo-xsession-client.lo -MD -MP -MF "$(DEPDIR)/libexo_0_2_la-exo-xsession-client.Tpo" -c -o libexo_0_2_la-exo-xsession-client.lo `test -f 'exo-xsession-client.c' || echo '$(srcdir)/'`exo-xsession-client.c; \
+@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libexo_0_2_la-exo-xsession-client.Tpo" "$(DEPDIR)/libexo_0_2_la-exo-xsession-client.Plo"; else rm -f "$(DEPDIR)/libexo_0_2_la-exo-xsession-client.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='exo-xsession-client.c' object='libexo_0_2_la-exo-xsession-client.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libexo_0_2_la_CFLAGS) $(CFLAGS) -c -o libexo_0_2_la-exo-xsession-client.lo `test -f 'exo-xsession-client.c' || echo '$(srcdir)/'`exo-xsession-client.c
 
 mostlyclean-libtool:
 	-rm -f *.lo

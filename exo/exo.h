@@ -48,6 +48,7 @@
 #include <exo/exo-toolbars-model.h>
 #include <exo/exo-toolbars-view.h>
 #include <exo/exo-uri.h>
+#include <exo/exo-xsession-client.h>
 
 #ifndef EXO_DISABLE_DEPRECATED
 #include <exo/exo-property-proxy.h>
