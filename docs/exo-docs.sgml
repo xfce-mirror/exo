@@ -6,6 +6,7 @@
 <!ENTITY exo-toolbars-editor-dialog SYSTEM "xml/exo-toolbars-editor-dialog.xml">
 <!ENTITY exo-toolbars-view SYSTEM "xml/exo-toolbars-view.xml">
 <!ENTITY exo-gdk-pixbuf-extensions SYSTEM "xml/exo-gdk-pixbuf-extensions.xml">
+<!ENTITY exo-config SYSTEM "xml/exo-config.xml">
 <!ENTITY exo-string SYSTEM "xml/exo-string.xml">
 <!ENTITY version SYSTEM "version.xml">
 ]>
@@ -55,6 +56,7 @@
 
   <part id="exo-miscelleanous">
     <title>Miscelleanous</title>
+    &exo-config;
     &exo-string;
   </part>
 </book>

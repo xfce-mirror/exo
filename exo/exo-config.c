@@ -18,36 +18,15 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#ifndef __EXO_H__
-#define __EXO_H__
-
-#ifndef EXO_API_SUBJECT_TO_CHANGE
-#error "Please define EXO_API_SUBJECT_TO_CHANGE to acknoledge your understanding that libexo hasn't reached 1.0 and is sibject to API churn. See the README for a full explanation."
+#ifdef HAVE_CONFIG_H
+#include <config.h>
 #endif
-
-#define EXO_INSIDE_EXO_H
-
-#include <libxfcegui4/libxfcegui4.h>
 
 #include <exo/exo-config.h>
 
-#include <exo/exo-dbus.h>
-#include <exo/exo-ellipsized-label.h>
-#include <exo/exo-file-watch.h>
-#include <exo/exo-gdk-pixbuf-extensions.h>
-#include <exo/exo-gtk-extensions.h>
-#include <exo/exo-icon-bar.h>
-#include <exo/exo-icon-view.h>
-#include <exo/exo-md5.h>
-#include <exo/exo-pango-extensions.h>
-#include <exo/exo-property-proxy.h>
-#include <exo/exo-string.h>
-#include <exo/exo-toolbars-editor.h>
-#include <exo/exo-toolbars-editor-dialog.h>
-#include <exo/exo-toolbars-model.h>
-#include <exo/exo-toolbars-view.h>
-#include <exo/exo-uri.h>
 
-#undef EXO_INSIDE_EXO_H
 
-#endif /* !__EXO_H__ */
+const guint exo_major_version = EXO_MAJOR_VERSION;
+const guint exo_minor_version = EXO_MINOR_VERSION;
+const guint exo_micro_version = EXO_MICRO_VERSION;
+

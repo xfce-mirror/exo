@@ -10,7 +10,7 @@ dnl Version information
 m4_define([libexo_verinfo], [0:1:0])
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [1])
-m4_define([libexo_version_micro], [2])
+m4_define([libexo_version_micro], [3])
 m4_define([libexo_version], [libexo_version_major.libexo_version_minor.libexo_version_micro])
 
 dnl Initialize autoconf
@@ -31,6 +31,14 @@ AM_MAINTAINER_MODE
 dnl libtool versioning
 LIBEXO_VERINFO=libexo_verinfo
 AC_SUBST([LIBEXO_VERINFO])
+
+dnl Subst libexo version
+LIBEXO_VERSION_MAJOR=libexo_version_major
+LIBEXO_VERSION_MINOR=libexo_version_minor
+LIBEXO_VERSION_MICRO=libexo_version_micro
+AC_SUBST([LIBEXO_VERSION_MAJOR])
+AC_SUBST([LIBEXO_VERSION_MINOR])
+AC_SUBST([LIBEXO_VERSION_MICRO])
 
 dnl check for UNIX variants
 AC_AIX
@@ -55,7 +63,7 @@ AC_SEARCH_LIBS([MD5Init], [md c], \
 dnl Check for required packages
 BM_DEPEND([DBUS], [dbus-glib-1], [0.22])
 BM_DEPEND([GTK], [gtk+-2.0], [2.4.0])
-BM_DEPEND([LIBXFCEGUI4], [libxfcegui4-1.0], [4.1.24])
+BM_DEPEND([LIBXFCEGUI4], [libxfcegui4-1.0], [4.1.90])
 
 dnl Check for session management libraries
 BM_LIBSM
@@ -71,5 +79,6 @@ Makefile
 docs/version.xml
 docs/Makefile
 exo/exo-0.1.pc
+exo/exo-config.h
 exo/Makefile
 ])

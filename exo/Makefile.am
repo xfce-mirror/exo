@@ -11,6 +11,7 @@ libexoincludedir = $(includedir)/exo-0.1/exo
 
 libexoinclude_HEADERS =							\
 	exo.h								\
+	exo-config.h							\
 	exo-dbus.h							\
 	exo-ellipsized-label.h						\
 	exo-file-watch.h						\
@@ -31,6 +32,7 @@ libexoinclude_HEADERS =							\
 
 libexo_0_1_la_SOURCES =							\
 	$(libexo_HEADERS)						\
+	exo-config.c							\
 	exo-dbus.c							\
 	exo-ellipsized-label.c						\
 	exo-file-watch.c						\
@@ -80,5 +82,6 @@ pkgconfig_DATA = exo-0.1.pc
 
 EXTRA_DIST = 								\
 	$(pkgconfig_DATA)						\
+	exo-config.h.in							\
 	exo-marshal.list
 

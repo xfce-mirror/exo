@@ -370,7 +370,13 @@ exo_toolbars_model_real_add_item (ExoToolbarsModel *model,
   g_return_val_if_fail (EXO_IS_TOOLBARS_MODEL (model), FALSE);
   g_return_val_if_fail (type != NULL, FALSE);
   g_return_val_if_fail (id != NULL, FALSE);
-  g_return_val_if_fail (exo_toolbars_model_has_action (model, id), FALSE);
+  
+  if (!exo_toolbars_model_has_action (model, id))
+    {
+      g_warning ("Tried to add action \"%s\" to an ExoToolbarsModel, "
+                 "which does not include \"%s\".", id, id);
+      return FALSE;
+    }
 
   toolbar = g_list_nth_data (model->priv->toolbars, toolbar_position);
   g_return_val_if_fail (toolbar != NULL, FALSE);
