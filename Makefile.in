@@ -38,8 +38,8 @@ host_triplet = @host@
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
 	$(srcdir)/exo.spec.in $(top_srcdir)/configure AUTHORS COPYING \
-	ChangeLog INSTALL NEWS TODO compile config.guess config.sub \
-	depcomp install-sh ltmain.sh missing mkinstalldirs
+	ChangeLog INSTALL NEWS THANKS TODO compile config.guess \
+	config.sub depcomp install-sh ltmain.sh missing mkinstalldirs
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/X11.m4 \
@@ -234,11 +234,13 @@ EXTRA_DIST = \
 	INSTALL								\
 	NEWS								\
 	README								\
+	THANKS								\
 	TODO								\
 	exo.spec.in							\
 	exo.spec
 
 ACLOCAL_AMFLAGS = -I m4
+DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 

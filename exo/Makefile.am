@@ -116,6 +116,9 @@ regenerate:
 		$(srcdir)/exo-marshal.list > exo-marshal.c
 	echo "Regenerated source files"
 
+# required for gtk-doc
+dist-hook: all
+
 EXTRA_DIST = 								\
 	exo-marshal.list
 

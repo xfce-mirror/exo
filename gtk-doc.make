@@ -133,7 +133,7 @@ uninstall-local:
 # Require gtk-doc when making dist
 #
 if ENABLE_GTK_DOC
-dist-check-gtkdoc:
+dist-check-gtkdoc: all
 else
 dist-check-gtkdoc:
 	@echo "*** gtk-doc must be installed and enabled in order to make dist"
