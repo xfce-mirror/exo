@@ -56,7 +56,7 @@ binary-arch: build install
 	dh_testroot
 	
 	dh_installchangelogs ChangeLog
-	dh_installdocs README
+	dh_installdocs AUTHORS COPYING HACKING NEWS README TODO
 	
 	dh_install --list-missing --sourcedir=debian/tmp
 	dh_strip
