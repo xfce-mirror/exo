@@ -1,0 +1,187 @@
+# Japanese translations for exo package
+# Copyright (C) 2004-2005 Benedikt Meurer
+# This file is distributed under the same license as the exo package.
+# Daichi Kawahata <daichik@users.sourceforge.net>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: exo 0.3.0pre1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-02 20:07+0100\n"
+"PO-Revision-Date: 2005-03-17 08:42+0900\n"
+"Last-Translator: Daichi Kawahata <daichik@users.sourceforge.net>\n"
+"Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: exo/exo-ellipsized-label.c:121
+msgid "Ellipsize"
+msgstr "省略"
+
+#: exo/exo-ellipsized-label.c:122
+msgid ""
+"The preferred place to ellipsize the string, if the label does not have "
+"enough room to display the entire string, if at all"
+msgstr ""
+"ラベルが全ての文字列を表示するのに十分なスペースが無い場合や、まったく無い場"
+"合に文字列の好きな箇所を省略します。"
+
+#: exo/exo-icon-bar.c:233 exo/exo-icon-view.c:381
+msgid "Orientation"
+msgstr "方向"
+
+#: exo/exo-icon-bar.c:234
+msgid "The orientation of the iconbar"
+msgstr "アイコンバーが延びる方向です"
+
+#: exo/exo-icon-bar.c:250 exo/exo-icon-view.c:331
+msgid "Pixbuf column"
+msgstr "ピクセルバッファ欄"
+
+#: exo/exo-icon-bar.c:251 exo/exo-icon-view.c:332
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "アイコンのピクセルバッファを取得するために使用されるモデル欄です"
+
+#: exo/exo-icon-bar.c:266 exo/exo-icon-view.c:347
+msgid "Text column"
+msgstr "文字欄"
+
+#: exo/exo-icon-bar.c:267 exo/exo-icon-view.c:348
+msgid "Model column used to retrieve the text from"
+msgstr "文字を取得するために使用されるモデル欄です"
+
+#: exo/exo-icon-bar.c:279
+msgid "Icon Bar Model"
+msgstr "アイコンバーのモデル"
+
+#: exo/exo-icon-bar.c:280
+msgid "Model for the icon bar"
+msgstr "アイコンバーのためのモデルです"
+
+#: exo/exo-icon-bar.c:296
+msgid "Active"
+msgstr "アクティブ"
+
+#: exo/exo-icon-bar.c:297
+msgid "Active item index"
+msgstr "アクティブアイテムのインデックス"
+
+#: exo/exo-icon-bar.c:303 exo/exo-icon-bar.c:304
+msgid "Active item fill color"
+msgstr "アクティブアイテムの塗潰し色"
+
+#: exo/exo-icon-bar.c:310 exo/exo-icon-bar.c:311
+msgid "Active item border color"
+msgstr "アクティブアイテムの枠の色"
+
+#: exo/exo-icon-bar.c:317 exo/exo-icon-bar.c:318
+msgid "Active item text color"
+msgstr "アクティブアイテムの文字色"
+
+#: exo/exo-icon-bar.c:324 exo/exo-icon-bar.c:325
+msgid "Cursor item fill color"
+msgstr "カーソルアイテムの塗潰し色"
+
+#: exo/exo-icon-bar.c:331 exo/exo-icon-bar.c:332
+msgid "Cursor item border color"
+msgstr "カーソルアイテムの枠の色"
+
+#: exo/exo-icon-bar.c:338 exo/exo-icon-bar.c:339
+msgid "Cursor item text color"
+msgstr "カーソルアイテムの文字色"
+
+#: exo/exo-icon-view.c:314
+msgid "Selection mode"
+msgstr "選択モード"
+
+#: exo/exo-icon-view.c:315
+msgid "The selection mode"
+msgstr "選択モードです"
+
+#: exo/exo-icon-view.c:365
+msgid "Markup column"
+msgstr "マークアップ欄"
+
+#: exo/exo-icon-view.c:366
+msgid "Model column used to retrieve the text if using Pango markup"
+msgstr ""
+"Pango のマックアップが使用されている場合に文字を取得するためのモデル欄です"
+
+#: exo/exo-icon-view.c:373
+msgid "Icon View Model"
+msgstr "アイコン表示モデル"
+
+#: exo/exo-icon-view.c:374
+msgid "The model for the icon view"
+msgstr "アイコン表示のためのモデルです"
+
+#: exo/exo-icon-view.c:382
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"それぞれのアイテムの文字とアイコンがお互いにどの位置に置かれるかを選択します"
+
+#: exo/exo-icon-view.c:390
+msgid "Selection Box Color"
+msgstr "選択ボックスの色"
+
+#: exo/exo-icon-view.c:391
+msgid "Color of the selection box"
+msgstr "選択ボックスの色です"
+
+#: exo/exo-icon-view.c:397
+msgid "Selection Box Alpha"
+msgstr "選択ボックスのα値"
+
+#: exo/exo-icon-view.c:398
+msgid "Opacity of the selection box"
+msgstr "選択ボックスの透明度です"
+
+#: exo/exo-toolbars-editor-dialog.c:107
+msgid "_Add a new toolbar"
+msgstr "新しいツールバーを追加(_A)"
+
+#: exo/exo-toolbars-editor.c:209
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"追加するにはアイテムをツールバーの上にドラッグして下さい、削除するにはツール"
+"バーからドラッグして下さい。"
+
+#: exo/exo-toolbars-editor.c:522
+msgid "Separator"
+msgstr "セパレータ"
+
+#: exo/exo-toolbars-view.c:741
+msgid "Toolbar _Style"
+msgstr "ツールバーのスタイル(_S)"
+
+#: exo/exo-toolbars-view.c:748
+msgid "_Desktop Default"
+msgstr "デスクトップの標準(_D)"
+
+#: exo/exo-toolbars-view.c:757
+msgid "_Icons only"
+msgstr "アイコンのみ(_I)"
+
+#: exo/exo-toolbars-view.c:766
+msgid "_Text only"
+msgstr "文字のみ(_T)"
+
+#: exo/exo-toolbars-view.c:775
+msgid "Text for _All Icons"
+msgstr "全てのアイコンの文字(_A)"
+
+#: exo/exo-toolbars-view.c:784
+msgid "Text for I_mportant Icons"
+msgstr "重要なアイコンの文字(_M)"
+
+#: exo/exo-toolbars-view.c:792
+msgid "_Remove Toolbar"
+msgstr "ツールバーを削除(_R)"
+
+#: exo/exo-toolbars-view.c:807
+msgid "Customize Toolbar..."
+msgstr "ツールバーのカスタマイズ..."
