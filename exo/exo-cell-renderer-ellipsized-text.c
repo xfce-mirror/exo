@@ -474,8 +474,13 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer   *cell,
       g_object_unref (G_OBJECT (gc));
     }
 
-  if (renderer->priv->ellipsize_set && renderer->priv->ellipsize != EXO_PANGO_ELLIPSIZE_NONE)
+  if (renderer->priv->ellipsize_set && celltext->text != NULL
+      && renderer->priv->ellipsize != EXO_PANGO_ELLIPSIZE_NONE)
     {
+      /* We only go here if celltext->text is not NULL, because
+       * if libexo is compiled with --enable-final, there'll be
+       * no more NULL checking performed.
+       */
       exo_pango_layout_set_text_ellipsized (layout, celltext->text,
                                             cell_area->width - cell->xpad * 2,
                                             renderer->priv->ellipsize);
