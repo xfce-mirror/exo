@@ -11,7 +11,7 @@ m4_define([libexo_verinfo], [0:0:0])
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [3])
 m4_define([libexo_version_micro], [0])
-m4_define([libexo_version_tag], [pre1])
+m4_define([libexo_version_tag], [])
 m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()libexo_version_tag()])
 
 dnl Initialize autoconf
@@ -70,7 +70,7 @@ XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.4.0])
 XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.2.0])
 
 dnl Check for X11 libraries
-XDT_CHECK_LIBX11_REQUIRE
+XDT_CHECK_LIBX11_REQUIRE()
 
 dnl Check for gtk-doc
 GTK_DOC_CHECK([1.0])

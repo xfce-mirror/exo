@@ -1,8 +1,10 @@
-0.3.0pre1
-=========
+0.3.0
+=====
 - The icon bar is now sized and rendered properly with all Gtk+ theme engines.
 - The following obsolete components have been removed: ExoIce, ExoFileWatch,
   ExoUri and ExoPropertyProxy.
+- A bug in ExoCellRendererEllipsizedText was fixed, which caused Xfmedia to
+  crash under certain circumstances.
 - The dependency on D-BUS is gone.
 - Python bindings have been added.
 - Updated API documentation.
