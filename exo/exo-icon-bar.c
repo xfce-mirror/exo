@@ -45,6 +45,7 @@ typedef struct _ExoIconBarItem ExoIconBarItem;
 enum
 {
   PROP_0,
+  PROP_ORIENTATION,
   PROP_PIXBUF_COLUMN,
   PROP_TEXT_COLUMN,
   PROP_MODEL,
@@ -110,23 +111,23 @@ static ExoIconBarItem *exo_icon_bar_item_new              (void);
 static void            exo_icon_bar_item_free             (ExoIconBarItem   *item);
 static void            exo_icon_bar_item_invalidate       (ExoIconBarItem   *item);
 static void            exo_icon_bar_build_items           (ExoIconBar       *icon_bar);
-static void            exo_icon_bar_row_changed       (GtkTreeModel   *model,
-                                                       GtkTreePath    *path,
-                                                       GtkTreeIter    *iter,
-                                                       ExoIconBar     *icon_bar);
-static void            exo_icon_bar_row_inserted      (GtkTreeModel   *model,
-                                                       GtkTreePath    *path,
-                                                       GtkTreeIter    *iter,
-                                                       ExoIconBar     *icon_bar);
-static void            exo_icon_bar_row_deleted       (GtkTreeModel   *model,
-                                                       GtkTreePath    *path,
-                                                       GtkTreeIter    *iter,
-                                                       ExoIconBar     *icon_bar);
-static void            exo_icon_bar_rows_reordered    (GtkTreeModel   *model,
-                                                       GtkTreePath    *path,
-                                                       GtkTreeIter    *iter,
-                                                       gint           *new_order,
-                                                       ExoIconBar     *icon_bar);
+static void            exo_icon_bar_row_changed           (GtkTreeModel     *model,
+                                                           GtkTreePath      *path,
+                                                           GtkTreeIter      *iter,
+                                                           ExoIconBar       *icon_bar);
+static void            exo_icon_bar_row_inserted          (GtkTreeModel     *model,
+                                                           GtkTreePath      *path,
+                                                           GtkTreeIter      *iter,
+                                                           ExoIconBar       *icon_bar);
+static void            exo_icon_bar_row_deleted           (GtkTreeModel     *model,
+                                                           GtkTreePath      *path,
+                                                           GtkTreeIter      *iter,
+                                                           ExoIconBar       *icon_bar);
+static void            exo_icon_bar_rows_reordered        (GtkTreeModel     *model,
+                                                           GtkTreePath      *path,
+                                                           GtkTreeIter      *iter,
+                                                           gint             *new_order,
+                                                           ExoIconBar       *icon_bar);
 
 
 
@@ -163,6 +164,8 @@ struct _ExoIconBarPrivate
 
   GtkAdjustment  *hadjustment;
   GtkAdjustment  *vadjustment;
+
+  GtkOrientation  orientation;
 
   GtkTreeModel   *model;
 
@@ -211,6 +214,22 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
   gtkwidget_class->button_press_event = exo_icon_bar_button_press;
 
   klass->set_scroll_adjustments = exo_icon_bar_set_adjustments;
+
+  /**
+   * ExoIconBar:orientation:
+   *
+   * The orientation of the icon bar.
+   *
+   * Default value: %GTK_ORIENTATION_VERTICAL
+   **/
+  g_object_class_install_property (gobject_class,
+                                   PROP_ORIENTATION,
+                                   g_param_spec_enum ("orientation",
+                                                      _("Orientation"),
+                                                      _("The orientation of the iconbar"),
+                                                      GTK_TYPE_ORIENTATION,
+                                                      GTK_ORIENTATION_VERTICAL,
+                                                      G_PARAM_READWRITE));
 
   /**
    * ExoIconBar:pixbuf-column:
@@ -359,6 +378,7 @@ exo_icon_bar_init (ExoIconBar *icon_bar)
 {
   icon_bar->priv = EXO_ICON_BAR_GET_PRIVATE (icon_bar);
 
+  icon_bar->priv->orientation = GTK_ORIENTATION_VERTICAL;
   icon_bar->priv->pixbuf_column = -1;
   icon_bar->priv->text_column = -1;
 
@@ -406,6 +426,10 @@ exo_icon_bar_get_property (GObject          *object,
 
   switch (prop_id)
     {
+    case PROP_ORIENTATION:
+      g_value_set_enum (value, icon_bar->priv->orientation);
+      break;
+
     case PROP_PIXBUF_COLUMN:
       g_value_set_int (value, icon_bar->priv->pixbuf_column);
       break;
@@ -440,6 +464,10 @@ exo_icon_bar_set_property (GObject          *object,
 
   switch (prop_id)
     {
+    case PROP_ORIENTATION:
+      exo_icon_bar_set_orientation (icon_bar, g_value_get_enum (value));
+      break;
+
     case PROP_PIXBUF_COLUMN:
       exo_icon_bar_set_pixbuf_column (icon_bar, g_value_get_int (value));
       break;
@@ -576,8 +604,16 @@ exo_icon_bar_size_request (GtkWidget      *widget,
   icon_bar->priv->item_width = max_width;
   icon_bar->priv->item_height = max_height;
 
-  icon_bar->priv->width = requisition->width = icon_bar->priv->item_width;
-  icon_bar->priv->height = requisition->height = icon_bar->priv->item_height * n;
+  if (icon_bar->priv->orientation == GTK_ORIENTATION_VERTICAL)
+    {
+      icon_bar->priv->width = requisition->width = icon_bar->priv->item_width;
+      icon_bar->priv->height = requisition->height = icon_bar->priv->item_height * n;
+    }
+  else
+    {
+      icon_bar->priv->width = requisition->width = icon_bar->priv->item_width * n;
+      icon_bar->priv->height = requisition->height = icon_bar->priv->item_height;
+    }
 }
 
 
@@ -616,8 +652,16 @@ exo_icon_bar_size_allocate (GtkWidget     *widget,
   icon_bar->priv->vadjustment->upper = MAX (allocation->height, icon_bar->priv->height);
   gtk_adjustment_changed (icon_bar->priv->vadjustment);
 
-  icon_bar->priv->width = MAX (icon_bar->priv->width, allocation->width);
-  icon_bar->priv->item_width = icon_bar->priv->width;
+  if (icon_bar->priv->orientation == GTK_ORIENTATION_VERTICAL)
+    {
+      icon_bar->priv->width = MAX (icon_bar->priv->width, allocation->width);
+      icon_bar->priv->item_width = icon_bar->priv->width;
+    }
+  else
+    {
+      icon_bar->priv->height = MAX (icon_bar->priv->height, allocation->height);
+      icon_bar->priv->item_height = icon_bar->priv->height;
+    }
 }
 
 
@@ -638,8 +682,17 @@ exo_icon_bar_expose (GtkWidget      *widget,
     {
       item = lp->data;
 
-      area.x = 0;
-      area.y = item->index * icon_bar->priv->item_height;
+      if (icon_bar->priv->orientation == GTK_ORIENTATION_VERTICAL)
+        {
+          area.x = 0;
+          area.y = item->index * icon_bar->priv->item_height;
+        }
+      else
+        {
+          area.x = item->index * icon_bar->priv->item_width;
+          area.y = 0;
+        }
+
       area.width = icon_bar->priv->item_width;
       area.height = icon_bar->priv->item_height;
 
@@ -812,8 +865,10 @@ exo_icon_bar_get_item_at_pos (ExoIconBar *icon_bar,
   if (G_UNLIKELY (icon_bar->priv->item_height == 0))
     return NULL;
 
-  lp = g_list_nth (icon_bar->priv->items,
-                   y / icon_bar->priv->item_height);
+  if (icon_bar->priv->orientation == GTK_ORIENTATION_VERTICAL)
+    lp = g_list_nth (icon_bar->priv->items, y / icon_bar->priv->item_height);
+  else
+    lp = g_list_nth (icon_bar->priv->items, x / icon_bar->priv->item_width);
 
   return (lp != NULL) ? lp->data : NULL;
 }
@@ -828,8 +883,17 @@ exo_icon_bar_queue_draw_item (ExoIconBar     *icon_bar,
 
   if (GTK_WIDGET_REALIZED (icon_bar))
     {
-      area.x = 0;
-      area.y = icon_bar->priv->item_height * item->index;
+      if (icon_bar->priv->orientation == GTK_ORIENTATION_VERTICAL)
+        {
+          area.x = 0;
+          area.y = icon_bar->priv->item_height * item->index;
+        }
+      else
+        {
+          area.x = icon_bar->priv->item_width * item->index;
+          area.y = 0;
+        }
+
       area.width = icon_bar->priv->item_width;
       area.height = icon_bar->priv->item_height;
 
@@ -851,6 +915,7 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
   GdkGC        *gc;
   gint          focus_width;
   gint          focus_pad;
+  gint          x, y;
   gint          px, py;
   gint          lx, ly;
 
@@ -863,12 +928,30 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
                         NULL);
 
   /* calculate pixbuf/layout location */
-  px = (icon_bar->priv->item_width - item->pixbuf_width) / 2 + focus_pad + focus_width + ICON_ITEM_MARGIN;
-  py = (icon_bar->priv->item_height - (item->pixbuf_height + item->layout_height)) / 2
-     + icon_bar->priv->item_height * item->index + focus_pad + focus_width;
-  lx = (icon_bar->priv->item_width - (item->layout_width)) / 2
-      + ICON_ITEM_MARGIN;
-  ly = py + item->pixbuf_height;
+  if (icon_bar->priv->orientation == GTK_ORIENTATION_VERTICAL)
+    {
+      x = 0;
+      y = icon_bar->priv->item_height * item->index;
+
+      px = (icon_bar->priv->item_width - item->pixbuf_width) / 2 + focus_pad + focus_width + ICON_ITEM_MARGIN;
+      py = (icon_bar->priv->item_height - (item->pixbuf_height + item->layout_height)) / 2
+         + icon_bar->priv->item_height * item->index + focus_pad + focus_width;
+      lx = (icon_bar->priv->item_width - (item->layout_width)) / 2
+          + ICON_ITEM_MARGIN;
+      ly = py + item->pixbuf_height;
+    }
+  else
+    {
+      x = icon_bar->priv->item_width * item->index;
+      y = 0;
+
+      px = (icon_bar->priv->item_width - item->pixbuf_width) / 2 + focus_pad + focus_width
+         + icon_bar->priv->item_width * item->index;
+      py = (icon_bar->priv->item_height - (item->pixbuf_height + item->layout_height)) / 2
+          + ICON_ITEM_MARGIN + focus_pad + focus_width;
+      lx = (icon_bar->priv->item_width - (item->layout_width)) / 2 + x;
+      ly = py + item->pixbuf_height;
+    }
 
   if (icon_bar->priv->active_item == item)
     {
@@ -892,14 +975,16 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
       gc = gdk_gc_new (icon_bar->priv->bin_window);
       gdk_gc_set_rgb_fg_color (gc, fill_color);
       gdk_gc_set_clip_rectangle (gc, area);
-      gdk_draw_rectangle (icon_bar->priv->bin_window, gc, TRUE, focus_width + ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_height * item->index + focus_width + ICON_ITEM_MARGIN,
+      gdk_draw_rectangle (icon_bar->priv->bin_window, gc, TRUE,
+                          x + focus_width + ICON_ITEM_MARGIN,
+                          y + focus_width + ICON_ITEM_MARGIN,
                           icon_bar->priv->item_width - 2 * (focus_width + ICON_ITEM_MARGIN) + 1,
                           icon_bar->priv->item_height - 2 * (focus_width + ICON_ITEM_MARGIN));
       gdk_gc_set_rgb_fg_color (gc, border_color);
       gdk_gc_set_line_attributes (gc, focus_width, GDK_LINE_SOLID,GDK_CAP_BUTT, GDK_JOIN_MITER);
-      gdk_draw_rectangle (icon_bar->priv->bin_window, gc, FALSE, ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_height * item->index + ICON_ITEM_MARGIN,
+      gdk_draw_rectangle (icon_bar->priv->bin_window, gc, FALSE,
+                          x + ICON_ITEM_MARGIN,
+                          y + ICON_ITEM_MARGIN,
                           icon_bar->priv->item_width - 2 * ICON_ITEM_MARGIN,
                           icon_bar->priv->item_height - 2 * ICON_ITEM_MARGIN - 1);
       gdk_color_free (border_color);
@@ -928,14 +1013,16 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
       gc = gdk_gc_new (icon_bar->priv->bin_window);
       gdk_gc_set_rgb_fg_color (gc, fill_color);
       gdk_gc_set_clip_rectangle (gc, area);
-      gdk_draw_rectangle (icon_bar->priv->bin_window, gc, TRUE, focus_width + ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_height * item->index + focus_width + ICON_ITEM_MARGIN,
+      gdk_draw_rectangle (icon_bar->priv->bin_window, gc, TRUE,
+                          x + focus_width + ICON_ITEM_MARGIN,
+                          y + focus_width + ICON_ITEM_MARGIN,
                           icon_bar->priv->item_width - 2 * (focus_width + ICON_ITEM_MARGIN) + 1,
                           icon_bar->priv->item_height - 2 * (focus_width + ICON_ITEM_MARGIN));
       gdk_gc_set_rgb_fg_color (gc, border_color);
       gdk_gc_set_line_attributes (gc, focus_width, GDK_LINE_SOLID,GDK_CAP_BUTT, GDK_JOIN_MITER);
-      gdk_draw_rectangle (icon_bar->priv->bin_window, gc, FALSE, ICON_ITEM_MARGIN,
-                          icon_bar->priv->item_height * item->index + ICON_ITEM_MARGIN,
+      gdk_draw_rectangle (icon_bar->priv->bin_window, gc, FALSE,
+                          x + ICON_ITEM_MARGIN,
+                          y + ICON_ITEM_MARGIN,
                           icon_bar->priv->item_width - 2 * ICON_ITEM_MARGIN,
                           icon_bar->priv->item_height - 2 * ICON_ITEM_MARGIN - 1);
       gdk_color_free (border_color);
@@ -1579,6 +1666,48 @@ exo_icon_bar_set_text_column (ExoIconBar *icon_bar,
   exo_icon_bar_invalidate (icon_bar);
 
   g_object_notify (G_OBJECT (icon_bar), "text-column");
+}
+
+
+
+/**
+ * exo_icon_bar_get_orientation:
+ * @icon_bar  : An #ExoIconBar.
+ *
+ * Retrieves the current orientation of the toolbar. See
+ * exo_icon_bar_set_orientation().
+ *
+ * Return value: The orientation of @icon_bar.
+ **/
+GtkOrientation
+exo_icon_bar_get_orientation (ExoIconBar *icon_bar)
+{
+  g_return_val_if_fail (EXO_IS_ICON_BAR (icon_bar), GTK_ORIENTATION_VERTICAL);
+  return icon_bar->priv->orientation;
+}
+
+
+
+/**
+ * exo_icon_bar_set_orientation:
+ * @icon_bar    : An #ExoIconBar.
+ * @orientation : A new #GtkOrientation.
+ *
+ * Sets whether the @icon_bar should appear horizontally
+ * or vertically.
+ **/
+void
+exo_icon_bar_set_orientation (ExoIconBar    *icon_bar,
+                              GtkOrientation orientation)
+{
+  g_return_if_fail (EXO_IS_ICON_BAR (icon_bar));
+
+  if (icon_bar->priv->orientation != orientation)
+    {
+      icon_bar->priv->orientation = orientation;
+      gtk_widget_queue_resize (GTK_WIDGET (icon_bar));
+      g_object_notify (G_OBJECT (icon_bar), "orientation");
+    }
 }
 
 

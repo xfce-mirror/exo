@@ -48,6 +48,12 @@ struct _ExoToolbarsViewClass
   /* signals */
   void  (*action_request) (ExoToolbarsView  *view,
                            const gchar      *action_name);
+  void  (*customize)      (ExoToolbarsView  *view);
+
+  void  (*reserved1)      (void);
+  void  (*reserved2)      (void);
+  void  (*reserved3)      (void);
+  void  (*reserved4)      (void);
 };
 
 struct _ExoToolbarsView

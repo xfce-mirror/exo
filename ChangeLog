@@ -1,3 +1,18 @@
+2004-11-25	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-toolbars-view.c, exo/exo-toolbars-view.h: Changed the
+	  semantics of the ExoToolbarsView class. The integrated right-click
+	  menu now contains an item "Customize Toolbars...", when the user
+	  has connected a handler to the "customize" signal. The icons
+	  where removed from the right-click menu until better icons are
+	  available.
+	* po/libexo.pot, po/de.po, po/de.gmo: Updated the german translations.
+	* docs/: Updated online documentation.
+	* exo/exo-icon-bar.c, exo/exo-icon-bar.h: Added an "orientation"
+	  property. Iconbar now supports horizontal and vertical mode.
+	* docs/Makefile.am, gtk-doc.make: Imported the gtk-doc make rules
+	  from Gtk+ 2.5.
+
 2004-11-23	Benedikt Meurer <benny@xfce.org>
 
 	* README, HACKING: Improved these documents.

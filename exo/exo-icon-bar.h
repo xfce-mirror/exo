@@ -45,43 +45,54 @@ struct _ExoIconBarClass
   GtkContainerClass __parent__;
 
   /* signals */
-  void (*set_scroll_adjustments)  (ExoIconBar    *icon_bar,
-                                   GtkAdjustment *hadjustment,
-                                   GtkAdjustment *vadjustment);
-  void (*selection_changed)       (ExoIconBar *icon_bar);
+  void  (*set_scroll_adjustments)  (ExoIconBar    *icon_bar,
+                                    GtkAdjustment *hadjustment,
+                                    GtkAdjustment *vadjustment);
+  void  (*selection_changed)       (ExoIconBar *icon_bar);
+
+  void  (*reserved1) (void);
+  void  (*reserved2) (void);
+  void  (*reserved3) (void);
+  void  (*reserved4) (void);
 };
 
 struct _ExoIconBar
 {
   GtkContainer       __parent__;
+
+  /*< private >*/
   ExoIconBarPrivate *priv;
 };
 
 GType           exo_icon_bar_get_type           (void) G_GNUC_CONST;
 
 GtkWidget      *exo_icon_bar_new                (void);
-GtkWidget      *exo_icon_bar_new_with_model     (GtkTreeModel *model);
+GtkWidget      *exo_icon_bar_new_with_model     (GtkTreeModel   *model);
 
-GtkTreeModel   *exo_icon_bar_get_model          (ExoIconBar   *icon_bar);
-void            exo_icon_bar_set_model          (ExoIconBar   *icon_bar,
-                                                 GtkTreeModel *model);
+GtkTreeModel   *exo_icon_bar_get_model          (ExoIconBar     *icon_bar);
+void            exo_icon_bar_set_model          (ExoIconBar     *icon_bar,
+                                                 GtkTreeModel   *model);
 
-gint            exo_icon_bar_get_pixbuf_column  (ExoIconBar   *icon_bar);
-void            exo_icon_bar_set_pixbuf_column  (ExoIconBar   *icon_bar,
-                                                 gint          column);
+gint            exo_icon_bar_get_pixbuf_column  (ExoIconBar     *icon_bar);
+void            exo_icon_bar_set_pixbuf_column  (ExoIconBar     *icon_bar,
+                                                 gint            column);
 
-gint            exo_icon_bar_get_text_column    (ExoIconBar   *icon_bar);
-void            exo_icon_bar_set_text_column    (ExoIconBar   *icon_bar,
-                                                 gint          column);
+gint            exo_icon_bar_get_text_column    (ExoIconBar     *icon_bar);
+void            exo_icon_bar_set_text_column    (ExoIconBar     *icon_bar,
+                                                 gint            column);
 
-gint            exo_icon_bar_get_active         (ExoIconBar   *icon_bar);
-void            exo_icon_bar_set_active         (ExoIconBar   *icon_bar,
-                                                 gint          index);
+GtkOrientation  exo_icon_bar_get_orientation    (ExoIconBar     *icon_bar);
+void            exo_icon_bar_set_orientation    (ExoIconBar     *icon_bar,
+                                                 GtkOrientation  orientation);
 
-gboolean        exo_icon_bar_get_active_iter    (ExoIconBar   *icon_bar,
-                                                 GtkTreeIter  *iter);
-void            exo_icon_bar_set_active_iter    (ExoIconBar   *icon_bar,
-                                                 GtkTreeIter  *iter);
+gint            exo_icon_bar_get_active         (ExoIconBar     *icon_bar);
+void            exo_icon_bar_set_active         (ExoIconBar     *icon_bar,
+                                                 gint            index);
+
+gboolean        exo_icon_bar_get_active_iter    (ExoIconBar     *icon_bar,
+                                                 GtkTreeIter    *iter);
+void            exo_icon_bar_set_active_iter    (ExoIconBar     *icon_bar,
+                                                 GtkTreeIter    *iter);
 
 G_END_DECLS;
 

@@ -13,6 +13,12 @@
 # PARTICULAR PURPOSE.
 
 @SET_MAKE@
+
+# -*- mode: makefile -*-
+
+####################################
+# Everything below here is generic #
+####################################
 srcdir = @srcdir@
 top_srcdir = @top_srcdir@
 VPATH = @srcdir@
@@ -35,9 +41,9 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = docs
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
-	$(srcdir)/version.xml.in
+	$(srcdir)/version.xml.in $(top_srcdir)/gtk-doc.make
+subdir = docs
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/X11.m4 \
 	$(top_srcdir)/m4/debug.m4 $(top_srcdir)/m4/depends.m4 \
@@ -197,6 +203,7 @@ sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
+AUTOMAKE_OPTIONS = 1.6
 
 # The name of the module.
 DOC_MODULE = exo
@@ -204,11 +211,11 @@ DOC_MODULE = exo
 # The top-level SGML file.
 DOC_MAIN_SGML_FILE = exo-docs.sgml
 
-# The directory containing the source code. Relative to $(srcdir)
-DOC_SOURCE_DIR = ../exo
-
 # Extra options to supply to gtkdoc-scan
 SCAN_OPTIONS = --deprecated-guards="EXO_DISABLE_DEPRECATED"
+
+# The directory containing the source code. Relative to $(srcdir)
+DOC_SOURCE_DIR = ../exo
 
 # Extra options to supply to gtkdoc-mkdb
 MKDB_OPTIONS = --sgml-mode --output-format=xml
@@ -234,33 +241,24 @@ content_files = \
 	version.xml
 
 
-# Other files to distribute
-extra_files = \
-	version.xml.in
-
-
 # CFLAGS and LDFLAGS for compiling scan program. Only needed
 # if $(DOC_MODULE).types is non-empty.
-GTKDOC_CFLAGS = \
+INCLUDES = \
 	-DDBUS_API_SUBJECT_TO_CHANGE			\
 	-DEXO_API_SUBJECT_TO_CHANGE			\
 	-I$(top_srcdir) 				\
 	-I$(top_builddir) 				\
-	@DBUS_CFLAGS@					\
-	@GTK_CFLAGS@					\
-	@LIBXFCEGUI4_CFLAGS@
+	$(DBUS_CFLAGS)					\
+	$(GTK_CFLAGS)					\
+	$(LIBXFCEGUI4_CFLAGS)
 
 GTKDOC_LIBS = \
 	$(top_builddir)/exo/libexo-0.2.la
 
-
-# Commands for compiling and linking 
-GTKDOC_CC = $(LIBTOOL) --mode=compile $(CC)
-GTKDOC_LD = $(LIBTOOL) --mode=link $(CC)
-
-####################################
-# Everything below here is generic #
-####################################
+@GTK_DOC_USE_LIBTOOL_FALSE@GTKDOC_CC = $(CC) $(INCLUDES) $(AM_CFLAGS) $(CFLAGS)
+@GTK_DOC_USE_LIBTOOL_TRUE@GTKDOC_CC = $(LIBTOOL) --mode=compile $(CC) $(INCLUDES) $(AM_CFLAGS) $(CFLAGS)
+@GTK_DOC_USE_LIBTOOL_FALSE@GTKDOC_LD = $(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS)
+@GTK_DOC_USE_LIBTOOL_TRUE@GTKDOC_LD = $(LIBTOOL) --mode=link $(CC) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS)
 
 # We set GPATH here; this gives us semantics for GNU make
 # which are more like other make's VPATH, when it comes to
@@ -269,15 +267,11 @@ GTKDOC_LD = $(LIBTOOL) --mode=link $(CC)
 #
 GPATH = $(srcdir)
 TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
-EXTRA_DIST = \
-	$(content_files)		\
-	$(extra_files)			\
-	$(HTML_IMAGES)			\
-	$(DOC_MAIN_SGML_FILE)		\
-	$(DOC_MODULE).types		\
-	$(DOC_MODULE)-sections.txt	\
-	$(DOC_MODULE)-overrides.txt
 
+# Other files to distribute
+EXTRA_DIST = $(content_files) $(HTML_IMAGES) $(DOC_MAIN_SGML_FILE) \
+	$(DOC_MODULE).types $(DOC_MODULE)-sections.txt \
+	$(DOC_MODULE)-overrides.txt version.xml.in
 DOC_STAMPS = scan-build.stamp tmpl-build.stamp sgml-build.stamp html-build.stamp \
 	   $(srcdir)/tmpl.stamp $(srcdir)/sgml.stamp $(srcdir)/html.stamp
 
@@ -288,10 +282,11 @@ SCANOBJ_FILES = \
 	$(DOC_MODULE).prerequisites \
 	$(DOC_MODULE).signals
 
+CLEANFILES = $(SCANOBJ_FILES) $(DOC_MODULE)-unused.txt $(DOC_STAMPS)
 all: all-am
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/gtk-doc.make $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -340,6 +335,7 @@ CTAGS:
 
 
 distdir: $(DISTFILES)
+	$(mkdir_p) $(distdir)/..
 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
 	list='$(DISTFILES)'; for file in $$list; do \
@@ -390,6 +386,7 @@ install-strip:
 mostlyclean-generic:
 
 clean-generic:
+	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
 
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
@@ -463,8 +460,9 @@ uninstall-am: uninstall-info-am uninstall-local
 
 @ENABLE_GTK_DOC_TRUE@scan-build.stamp: $(HFILE_GLOB)
 @ENABLE_GTK_DOC_TRUE@	@echo '*** Scanning header files ***'
+@ENABLE_GTK_DOC_TRUE@	@-chmod -R u+w $(srcdir)
 @ENABLE_GTK_DOC_TRUE@	if grep -l '^..*$$' $(srcdir)/$(DOC_MODULE).types > /dev/null ; then \
-@ENABLE_GTK_DOC_TRUE@	    CC="$(GTKDOC_CC)" LD="$(GTKDOC_LD)" CFLAGS="$(GTKDOC_CFLAGS)" LDFLAGS="$(GTKDOC_LIBS)" gtkdoc-scangobj --module=$(DOC_MODULE) --output-dir=$(srcdir) ; \
+@ENABLE_GTK_DOC_TRUE@	    CC="$(GTKDOC_CC)" LD="$(GTKDOC_LD)" CFLAGS="$(GTKDOC_CFLAGS)" LDFLAGS="$(GTKDOC_LIBS)" gtkdoc-scangobj $(SCANGOBJ_OPTIONS) --module=$(DOC_MODULE) --output-dir=$(srcdir) ; \
 @ENABLE_GTK_DOC_TRUE@	else \
 @ENABLE_GTK_DOC_TRUE@	    cd $(srcdir) ; \
 @ENABLE_GTK_DOC_TRUE@	    for i in $(SCANOBJ_FILES) ; do \
@@ -482,18 +480,20 @@ uninstall-am: uninstall-info-am uninstall-local
 
 @ENABLE_GTK_DOC_TRUE@tmpl-build.stamp: $(DOC_MODULE)-decl.txt $(SCANOBJ_FILES) $(DOC_MODULE)-sections.txt $(DOC_MODULE)-overrides.txt
 @ENABLE_GTK_DOC_TRUE@	@echo '*** Rebuilding template files ***'
+@ENABLE_GTK_DOC_TRUE@	@-chmod -R u+w $(srcdir)
 @ENABLE_GTK_DOC_TRUE@	cd $(srcdir) && gtkdoc-mktmpl --module=$(DOC_MODULE)
 @ENABLE_GTK_DOC_TRUE@	touch tmpl-build.stamp
 
 @ENABLE_GTK_DOC_TRUE@tmpl.stamp: tmpl-build.stamp
 @ENABLE_GTK_DOC_TRUE@	@true
 
-#### sgml ####
+#### xml ####
 
 @ENABLE_GTK_DOC_TRUE@sgml-build.stamp: tmpl.stamp $(CFILE_GLOB) $(srcdir)/tmpl/*.sgml
-@ENABLE_GTK_DOC_TRUE@	@echo '*** Building SGML ***'
+@ENABLE_GTK_DOC_TRUE@	@echo '*** Building XML ***'
+@ENABLE_GTK_DOC_TRUE@	@-chmod -R u+w $(srcdir)
 @ENABLE_GTK_DOC_TRUE@	cd $(srcdir) && \
-@ENABLE_GTK_DOC_TRUE@	gtkdoc-mkdb --module=$(DOC_MODULE) --source-dir=$(DOC_SOURCE_DIR) $(MKDB_OPTIONS)
+@ENABLE_GTK_DOC_TRUE@	gtkdoc-mkdb --module=$(DOC_MODULE) --source-dir=$(DOC_SOURCE_DIR) --output-format=xml $(MKDB_OPTIONS)
 @ENABLE_GTK_DOC_TRUE@	touch sgml-build.stamp
 
 @ENABLE_GTK_DOC_TRUE@sgml.stamp: sgml-build.stamp
@@ -503,6 +503,7 @@ uninstall-am: uninstall-info-am uninstall-local
 
 @ENABLE_GTK_DOC_TRUE@html-build.stamp: sgml.stamp $(DOC_MAIN_SGML_FILE) $(content_files)
 @ENABLE_GTK_DOC_TRUE@	@echo '*** Building HTML ***'
+@ENABLE_GTK_DOC_TRUE@	@-chmod -R u+w $(srcdir)
 @ENABLE_GTK_DOC_TRUE@	rm -rf $(srcdir)/html 
 @ENABLE_GTK_DOC_TRUE@	mkdir $(srcdir)/html
 @ENABLE_GTK_DOC_TRUE@	cd $(srcdir)/html && gtkdoc-mkhtml $(DOC_MODULE) ../$(DOC_MAIN_SGML_FILE)
@@ -515,24 +516,25 @@ uninstall-am: uninstall-info-am uninstall-local
 ##############
 
 clean-local:
-	rm -f *~ *.bak $(SCANOBJ_FILES) *-unused.txt $(DOC_STAMPS)
+	rm -f *~ *.bak
+	rm -rf .libs
 
 maintainer-clean-local: clean
-	cd $(srcdir) && rm -rf sgml html $(DOC_MODULE)-decl-list.txt $(DOC_MODULE)-decl.txt
+	cd $(srcdir) && rm -rf xml html $(DOC_MODULE)-decl-list.txt $(DOC_MODULE)-decl.txt
 
 install-data-local:
-	$(mkinstalldirs) $(DESTDIR)$(TARGET_DIR)
-	(installfiles=`echo $(srcdir)/html/*`; \
+	installfiles=`echo $(srcdir)/html/*`; \
 	if test "$$installfiles" = '$(srcdir)/html/*'; \
 	then echo '-- Nothing to install' ; \
 	else \
+	  $(mkinstalldirs) $(DESTDIR)$(TARGET_DIR); \
 	  for i in $$installfiles; do \
 	    echo '-- Installing '$$i ; \
 	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
 	  done; \
 	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
-	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR); \
-	fi)
+	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR) || :; \
+	fi
 
 uninstall-local:
 	rm -f $(DESTDIR)$(TARGET_DIR)/*

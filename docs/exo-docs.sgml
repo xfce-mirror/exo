@@ -24,28 +24,36 @@
 	<part id="exo-overview">
 		<title>Overview</title>
 		<para>
+      libexo is an extension library for <ulink url="http://www.xfce.org/" type="http">Xfce</ulink>,
+      developed by <ulink url="http://www.os-cillation.com/" type="http">os-cillation</ulink>.
+      While Xfce comes with quite a few libraries that are targeted at desktop development,
+      libexo is targeted at application developement; in particular, developing applications for
+      the Xfce Desktop Environment.
 		</para>
 	</part>
 
 	<part id="exo-toolbars">
 		<title>Editable Toolbars</title>
 
-    <para>These objects together provide a framework for editable
-    toolbars based on the GtkAction facility introduced with Gtk+
-    2.4. To create editable toolbars with exo, use the <link
-    linkend="ExoToolbarsModel">ExoToolbarsModel</link> class with the
-    <link linkend="ExoToolbarsView">ExoToolbarsView</link> widget. This
-    widget is designed around a <firstterm>Model/View/Controller</firstterm>
-    design and consists of three parts:
+    <para>
+      These classes together provide a framework for editable
+      toolbars based on the GtkAction facility introduced with Gtk+
+      2.4. To create editable toolbars with exo, use the <link
+      linkend="ExoToolbarsModel">ExoToolbarsModel</link> class with the
+      <link linkend="ExoToolbarsView">ExoToolbarsView</link> widget. This
+      widget is designed around a <firstterm>Model/View/Controller</firstterm>
+      design and consists of three parts:
+
       <simplelist>
         <member>The toolbars widget (<structname>ExoToolbarsView</structname>)</member>
         <member>The toolbars model (<structname>ExoToolbarsModel</structname>)</member>
         <member>The toolbars editor widget (<structname>ExoToolbarsEditor</structname>)</member>
       </simplelist>
 
-    The <link linkend="ExoToolbarsEditorDialog">ExoToolbarsEditorDialog</link> widget is provided
-    for convenience, it simply wraps the <link linkend="ExoToolbarsEditor">ExoToolbarsEditor</link>
-    component into a <structname>GtkDialog</structname>.</para>
+      The <link linkend="ExoToolbarsEditorDialog">ExoToolbarsEditorDialog</link> widget is provided
+      for convenience, it simply wraps the <link linkend="ExoToolbarsEditor">ExoToolbarsEditor</link>
+      component into a <structname>GtkDialog</structname>.
+    </para>
 
 		&exo-toolbars-model;
 		&exo-toolbars-editor;
@@ -72,6 +80,10 @@
     &exo-string;
     &exo-xsession-client;
   </part>
+
+  <index>
+    <title>Index</title>
+  </index>
 </book>
 
 <!--

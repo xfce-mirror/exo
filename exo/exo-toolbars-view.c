@@ -57,6 +57,7 @@ enum
 enum
 {
   ACTION_REQUEST,
+  CUSTOMIZE,
   LAST_SIGNAL,
 };
 
@@ -200,6 +201,11 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
 
   /**
    * ExoToolbarsView:editing:
+   *
+   * This property tells if the toolbars contained with this
+   * #ExoToolbarsView are currently being edited by the user.
+   * If the user edits a view, the view will act as proxy
+   * and make the requested changes to the model.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_EDITING,
@@ -211,6 +217,11 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
 
   /**
    * ExoToolbarsView:model:
+   *
+   * The #ExoToolbarsModel associated with this #ExoToolbarsView
+   * or %NULL if there is no model currently associated with this
+   * view. The view is build up from the model, which says, that
+   * it will display the toolbars as described in the model.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_MODEL,
@@ -222,6 +233,12 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
 
   /**
    * ExoToolbarsView:ui-manager:
+   *
+   * The #GtkUIManager currently associated with this #ExoToolbarsView
+   * or %NULL. The #GtkUIManager object is used to translate action
+   * names as used by the #ExoToolbarsModel into #GtkAction objects,
+   * which are then used to create and maintain the items in the
+   * toolbars.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_UI_MANAGER,
@@ -232,7 +249,8 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
                                                         G_PARAM_READWRITE));
 
   /**
-   * ExoToolbarsView::action-request
+   * ExoToolbarsView::action-request:
+   * @view  : An #ExoToolbarsView.
    **/
   toolbars_view_signals[ACTION_REQUEST] =
     g_signal_new ("action-request",
@@ -243,6 +261,27 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
                   g_cclosure_marshal_VOID__STRING,
                   G_TYPE_NONE, 1,
                   G_TYPE_STRING);
+
+  /**
+   * ExoToolbarsView::customize:
+   * @view  : An #ExoToolbarsView.
+   *
+   * This signal is emitted if the users chooses the
+   * <emphasis>Customize Toolbars...</emphasis> option
+   * from the right-click menu.
+   *
+   * Please take note, that the option will only be
+   * present in the right-click menu, if you had previously
+   * connected a handler to this signal.
+   **/
+  toolbars_view_signals[CUSTOMIZE] =
+    g_signal_new ("customize",
+                  G_TYPE_FROM_CLASS (gobject_class),
+                  G_SIGNAL_RUN_LAST,
+                  G_STRUCT_OFFSET (ExoToolbarsViewClass, customize),
+                  NULL, NULL,
+                  g_cclosure_marshal_VOID__VOID,
+                  G_TYPE_NONE, 0);
 }
 
 
@@ -666,6 +705,15 @@ remove_toolbar_activated (GtkWidget       *menuitem,
 
 
 static void
+customize_toolbar_activated (GtkWidget       *menuitem,
+                             ExoToolbarsView *view)
+{
+  g_signal_emit (G_OBJECT (view), toolbars_view_signals[CUSTOMIZE], 0);
+}
+
+
+
+static void
 exo_toolbars_view_context_menu (GtkWidget       *toolbar,
                                 gint             x,
                                 gint             y,
@@ -677,96 +725,95 @@ exo_toolbars_view_context_menu (GtkWidget       *toolbar,
   GtkWidget            *submenu;
   GtkWidget            *menu;
   GtkWidget            *item;
-  GtkWidget            *image;
-  gboolean              result;
   gint                  position;
 
-  if (G_LIKELY (view->priv->editing))
+  view->priv->selected_toolbar = toolbar;
+
+  position = exo_toolbars_view_get_toolbar_position (view, toolbar);
+  flags = exo_toolbars_model_get_flags (view->priv->model, position);
+  if ((flags & EXO_TOOLBARS_MODEL_OVERRIDE_STYLE) != 0)
+    style = exo_toolbars_model_get_style (view->priv->model, position);
+
+  menu = gtk_menu_new ();
+
+  item = gtk_image_menu_item_new_with_mnemonic (_("Toolbar _Style"));
+  gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+  gtk_widget_show (item);
+
+  submenu = gtk_menu_new ();
+  gtk_menu_item_set_submenu (GTK_MENU_ITEM (item), submenu);
+
+  item = gtk_radio_menu_item_new_with_mnemonic (NULL, _("_Default"));
+  gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style < 0));
+  g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (0));
+  g_signal_connect (G_OBJECT (item), "activate",
+                    G_CALLBACK (toolbar_style_activated), view);
+  gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
+  gtk_widget_show (item);
+
+  item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
+                                                            _("_Icons only"));
+  gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_ICONS));
+  g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_ICONS + 1));
+  g_signal_connect (G_OBJECT (item), "activate",
+                    G_CALLBACK (toolbar_style_activated), view);
+  gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
+  gtk_widget_show (item);
+
+  item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
+                                                            _("_Text only"));
+  gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_TEXT));
+  g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_TEXT + 1));
+  g_signal_connect (G_OBJECT (item), "activate",
+                    G_CALLBACK (toolbar_style_activated), view);
+  gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
+  gtk_widget_show (item);
+
+  item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
+                                                            _("_Both"));
+  gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_BOTH));
+  g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_BOTH + 1));
+  g_signal_connect (G_OBJECT (item), "activate",
+                    G_CALLBACK (toolbar_style_activated), view);
+  gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
+  gtk_widget_show (item);
+
+  item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
+                                                            _("Both _horizontal"));
+  gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_BOTH_HORIZ));
+  g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_BOTH_HORIZ + 1));
+  g_signal_connect (G_OBJECT (item), "activate",
+                    G_CALLBACK (toolbar_style_activated), view);
+  gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
+  gtk_widget_show (item);
+
+  item = gtk_image_menu_item_new_with_mnemonic (_("_Remove Toolbar"));
+  g_signal_connect (G_OBJECT (item), "activate",
+                    G_CALLBACK (remove_toolbar_activated), view);
+  gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+  gtk_widget_show (item);
+
+  if ((flags & EXO_TOOLBARS_MODEL_NOT_REMOVABLE) != 0)
+    gtk_widget_set_sensitive (item, FALSE);
+
+  if (g_signal_has_handler_pending (G_OBJECT (view), toolbars_view_signals[CUSTOMIZE], 0, TRUE))
     {
-      view->priv->selected_toolbar = toolbar;
-
-      position = exo_toolbars_view_get_toolbar_position (view, toolbar);
-      flags = exo_toolbars_model_get_flags (view->priv->model, position);
-      if ((flags & EXO_TOOLBARS_MODEL_OVERRIDE_STYLE) != 0)
-        style = exo_toolbars_model_get_style (view->priv->model, position);
-
-      menu = gtk_menu_new ();
-
-      item = gtk_image_menu_item_new_with_mnemonic (_("Toolbar _Style"));
+      item = gtk_separator_menu_item_new ();
       gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
       gtk_widget_show (item);
 
-      image = gtk_image_new_from_stock (GTK_STOCK_PROPERTIES, GTK_ICON_SIZE_MENU);
-      gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
-      gtk_widget_show (image);
-
-      submenu = gtk_menu_new ();
-      gtk_menu_item_set_submenu (GTK_MENU_ITEM (item), submenu);
-
-      item = gtk_radio_menu_item_new_with_mnemonic (NULL, _("_Default"));
-      gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style < 0));
-      g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (0));
+      item = gtk_image_menu_item_new_with_mnemonic (_("Customize Toolbar..."));
       g_signal_connect (G_OBJECT (item), "activate",
-                        G_CALLBACK (toolbar_style_activated), view);
-      gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
-      gtk_widget_show (item);
-
-      item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
-                                                                _("_Icons only"));
-      gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_ICONS));
-      g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_ICONS + 1));
-      g_signal_connect (G_OBJECT (item), "activate",
-                        G_CALLBACK (toolbar_style_activated), view);
-      gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
-      gtk_widget_show (item);
-
-      item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
-                                                                _("_Text only"));
-      gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_TEXT));
-      g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_TEXT + 1));
-      g_signal_connect (G_OBJECT (item), "activate",
-                        G_CALLBACK (toolbar_style_activated), view);
-      gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
-      gtk_widget_show (item);
-
-      item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
-                                                                _("_Both"));
-      gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_BOTH));
-      g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_BOTH + 1));
-      g_signal_connect (G_OBJECT (item), "activate",
-                        G_CALLBACK (toolbar_style_activated), view);
-      gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
-      gtk_widget_show (item);
-
-      item = gtk_radio_menu_item_new_with_mnemonic_from_widget (GTK_RADIO_MENU_ITEM (item),
-                                                                _("Both _horizontal"));
-      gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), (style == GTK_TOOLBAR_BOTH_HORIZ));
-      g_object_set_data (G_OBJECT (item), "exo-toolbar-style", GINT_TO_POINTER (GTK_TOOLBAR_BOTH_HORIZ + 1));
-      g_signal_connect (G_OBJECT (item), "activate",
-                        G_CALLBACK (toolbar_style_activated), view);
-      gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item);
-      gtk_widget_show (item);
-
-      item = gtk_image_menu_item_new_with_mnemonic (_("_Remove Toolbar"));
-      g_signal_connect (G_OBJECT (item), "activate",
-                        G_CALLBACK (remove_toolbar_activated), view);
+                        G_CALLBACK (customize_toolbar_activated), view);
       gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
       gtk_widget_show (item);
 
-      image = gtk_image_new_from_stock (GTK_STOCK_REMOVE, GTK_ICON_SIZE_MENU);
-      gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
-      gtk_widget_show (image);
-
-      if ((flags & EXO_TOOLBARS_MODEL_NOT_REMOVABLE) != 0)
+      if (view->priv->editing)
         gtk_widget_set_sensitive (item, FALSE);
+    }
 
-      gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL,
-                      button, gtk_get_current_event_time ());
-    }
-  else
-    {
-      g_signal_emit_by_name (G_OBJECT (view), "popup-menu", &result);
-    }
+  gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL,
+                  button, gtk_get_current_event_time ());
 }
 
 
