@@ -1,6 +1,6 @@
 dnl $Id$
 dnl
-dnl Copyright (c) 2004 os-cillation.
+dnl Copyright (c) 2004-2005 os-cillation.
 dnl All rights reserved.
 dnl
 dnl Written by Benedikt Meurer <benny@xfce.org>.
@@ -15,7 +15,7 @@ m4_define([libexo_version_tag], [svn])
 m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()libexo_version_tag()])
 
 dnl Initialize autoconf
-AC_COPYRIGHT([Copyright (c) 2004 os-cillation.
+AC_COPYRIGHT([Copyright (c) 2004-2005 os-cillation.
 All rights reserved.
         
 Written by Benedikt Meurer <benny@xfce.org>.])
@@ -24,8 +24,7 @@ AC_PREREQ([2.50])
 AC_REVISION([$Id$])
 
 dnl Initialize automake
-LIBEXO_VERSION=libexo_version()
-AM_INIT_AUTOMAKE([exo], [$LIBEXO_VERSION])
+AM_INIT_AUTOMAKE([AC_PACKAGE_TARNAME()], [AC_PACKAGE_VERSION()])
 AM_CONFIG_HEADER([config.h])
 AM_MAINTAINER_MODE
 
@@ -67,7 +66,7 @@ BM_I18N([libexo], [de en_GB])
 dnl Check for required packages
 BM_DEPEND([DBUS], [dbus-glib-1], [0.22])
 BM_DEPEND([GTK], [gtk+-2.0], [2.4.0])
-BM_DEPEND([LIBXFCEGUI4], [libxfcegui4-1.0], [4.1.90])
+BM_DEPEND([LIBXFCEGUI4], [libxfcegui4-1.0], [4.2.0])
 
 dnl Check for session management libraries
 BM_LIBSM

@@ -1,6 +1,6 @@
 Summary:		Application library for the Xfce desktop environment
-Name:			exo
-Version:		@VERSION@
+Name:			@PACKAGE_TARNAME@
+Version:		@PACKAGE_VERSION@
 Release:		1
 License:		LGPL
 URL:			http://libexo.os-cillation.com/
@@ -19,7 +19,7 @@ Extension library for Xfce, targeted at application development.
 %package devel
 Summary:	Development tools for exo library
 Group:		Development/Libraries
-Requires:	exo >= @VERSION@
+Requires:	@PACKAGE_TARNAME@ >= @PACKAGE_VERSION@
 
 %description devel
 Static libraries and header files for the exo library.

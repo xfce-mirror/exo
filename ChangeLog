@@ -1,3 +1,14 @@
+2005-01-27	Benedikt Meurer <benny@xfce.org>
+
+	* m4/, configure, Makefile.in, debian/, depcomp, docs/Makefile.in,
+	  config.guess, exo/Makefile.in, config.sub, ltmain.sh, gtk-doc.make,
+	  po/Makefile.in.in, po/*.gmo, mkinstalldirs, config.h.in, missing,
+	  aclocal.m4, install-sh: Removed all auto-generated files from the
+	  repository.
+	* autogen.sh, configure.ac: Use xfce4-dev-tools.
+	* exo.spec.in: Use @PACKAGE_TARNAME@ and @PACKAGE_VERSION@ instead
+	  of hardcoding values.
+
 2004-12-23	Benedikt Meurer <benny@xfce.org>
 
 	* gtk-doc.make, exo/Makefile.am: Get 'make dist' to work from a
