@@ -1,7 +1,7 @@
 SUBDIRS =								\
 	examples
 
-defsdir = $(datadir)/pygtk/2.0/defs
+defsdir = $(datadir)/pygtk/2.0/defs/exo-$(LIBEXO_VERSION_API)
 defs_DATA = exo.defs
 
 pyexodir = $(pythondir)

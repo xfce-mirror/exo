@@ -11,6 +11,12 @@ SUBDIRS =								\
 distclean-local:
 	rm -rf *.spec *.cache *~
 
+dist-bz2: dist
+	zcat $(PACKAGE_TARNAME)-$(PACKAGE_VERSION).tar.gz | \
+	  bzip2 --best -c > $(PACKAGE_TARNAME)-$(PACKAGE_VERSION).tar.bz2
+
+distcheck-bz2: distcheck dist-bz2
+
 rpm: dist
 	rpmbuild -ta $(PACKAGE)-$(VERSION).tar.gz
 	@rm -f $(PACKAGE)-$(VERSION).tar.gz

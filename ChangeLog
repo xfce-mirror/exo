@@ -1,3 +1,12 @@
+2005-03-02	Benedikt Meurer <benny@xfce.org>
+
+	* configure.ac, NEWS: Version 0.3.0pre1.
+	* HACKING: Fix a typo in the 'Release process' section. Remove the
+	  obsolete step 'make regenerate' from the release process.
+	* po/de.po, po/libexo-0.3.pot, po/en_GB.po: Run 'make update-po'.
+	* Makefile.am: Add the "dist-bz2" and "distcheck-bz2" targets.
+	* exo/exo-md5.c(MD5Final): Remove unused variables i and bytes.
+
 2005-02-25	Benedikt Meurer <benny@xfce.org>
 
 	* docs/reference/tmpl/exo-toolbars-editor-dialog.sgml,

@@ -242,10 +242,8 @@ MD5Update (MD5_CTX *ctx, md5byte const *buf, unsigned len)
 static void
 MD5Final (unsigned char digest[16], MD5_CTX *ctx)
 {
-	int i;
 	int count = ctx->bytes[0] & 0x3f;	/* Number of bytes in ctx->in */
 	md5byte *p = (md5byte *)ctx->in + count;
-	guint8	*bytes;
 
 	/* Set the first char of padding to 0x80.  There is always room. */
 	*p++ = 0x80;
