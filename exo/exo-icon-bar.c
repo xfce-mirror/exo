@@ -1,4 +1,4 @@
-/* $Id: exo-icon-bar.c,v 1.2 2004/09/17 23:41:41 bmeurer Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -833,10 +833,7 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
                         "focus-padding", &focus_pad,
                         NULL);
 
-  if (GTK_WIDGET_HAS_FOCUS (icon_bar))
-    state = GTK_STATE_SELECTED;
-  else
-    state = GTK_STATE_ACTIVE;
+  state = GTK_STATE_ACTIVE;
 
   /* calculate pixbuf/layout location */
   px = (icon_bar->priv->item_width - item->pixbuf_width) / 2 + focus_pad + focus_width + ICON_ITEM_MARGIN;
