@@ -57,7 +57,6 @@ new_pixbuf_from_widget (GtkWidget *widget)
   GtkRequisition requisition;
   GtkAllocation allocation;
   GdkPixmap *pixmap;
-  GdkVisual *visual;
   gint icon_width;
   gint icon_height;
 
@@ -99,8 +98,7 @@ new_pixbuf_from_widget (GtkWidget *widget)
   gtk_widget_size_request (window, &requisition);
   
   /* Create a pixmap */
-  visual = gtk_widget_get_visual (window);
-  pixmap = gdk_pixmap_new (NULL, icon_width, icon_height, gdk_visual_get_best_depth());
+  pixmap = gdk_pixmap_new (GDK_DRAWABLE (window->window), icon_width, icon_height, -1);
   gdk_drawable_set_colormap (GDK_DRAWABLE (pixmap), gtk_widget_get_colormap (window));
 
   /* Draw the window */
