@@ -83,6 +83,7 @@ BM_DEBUG_SUPPORT
 
 AC_OUTPUT([
 Makefile
+exo.spec
 docs/version.xml
 docs/Makefile
 exo/exo-0.2.pc

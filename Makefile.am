@@ -6,6 +6,10 @@ SUBDIRS =								\
 distclean-local:
 	rm -rf *.spec *.cache *~
 
+rpm: dist
+	rpmbuild -ta $(PACKAGE)-$(VERSION).tar.gz
+	@rm -f $(PACKAGE)-$(VERSION).tar.gz
+
 EXTRA_DIST =								\
 	AUTHORS								\
 	COPYING								\
@@ -14,6 +18,8 @@ EXTRA_DIST =								\
 	INSTALL								\
 	NEWS								\
 	README								\
-	TODO
+	TODO								\
+	exo.spec.in							\
+	exo.spec
 
 ACLOCAL_AMFLAGS = -I m4

@@ -1,0 +1,56 @@
+Summary:		Application library for the Xfce desktop environment
+Name:			exo
+Version:		@VERSION@
+Release:		1
+License:		LGPL
+URL:			http://libexo.os-cillation.com/
+Source0:		%{name}-%{version}.tar.gz
+Group:			Development/Libraries
+BuildRoot:		%{_tmppath}/%{name}-root
+Requires:		libxfcegui4 >= @LIBXFCEGUI4_REQUIRED_VERSION@
+BuildRequires:		libxfcegui4-devel >= @LIBXFCEGUI4_REQUIRED_VERSION@
+Requires:		dbus-glib >= @DBUS_REQUIRED_VERSION@
+BuildRequires:		dbus-devel >= @DBUS_REQUIRED_VERSION@
+BuildRequires:		gtk-doc
+
+%description
+Extension library for Xfce, targeted at application development.
+
+%package devel
+Summary:	Development tools for exo library
+Group:		Development/Libraries
+Requires:	exo >= @VERSION@
+
+%description devel
+Static libraries and header files for the exo library.
+
+%prep
+%setup -q
+
+%build
+%configure --enable-gtk-doc
+make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT mandir=%{_mandir}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
+%files
+%defattr(-,root,root)
+%{_libdir}/lib*.so.*
+%{_datadir}/locale
+
+%files devel
+%defattr(-, root, root)
+%{_includedir}
+%{_libdir}/lib*.so
+%{_libdir}/lib*a
+%{_libdir}/pkgconfig/*.pc
+%{_datadir}/gtk-doc

@@ -24494,7 +24494,7 @@ echo "${ECHO_T}no" >&6
   fi
 
 
-                                                                      ac_config_files="$ac_config_files Makefile docs/version.xml docs/Makefile exo/exo-0.2.pc exo/exo-config.h exo/Makefile po/Makefile.in"
+                                                                                ac_config_files="$ac_config_files Makefile exo.spec docs/version.xml docs/Makefile exo/exo-0.2.pc exo/exo-config.h exo/Makefile po/Makefile.in"
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
 # tests run on this system so they can be shared between configure
@@ -25081,6 +25081,7 @@ do
   case "$ac_config_target" in
   # Handling of arguments.
   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+  "exo.spec" ) CONFIG_FILES="$CONFIG_FILES exo.spec" ;;
   "docs/version.xml" ) CONFIG_FILES="$CONFIG_FILES docs/version.xml" ;;
   "docs/Makefile" ) CONFIG_FILES="$CONFIG_FILES docs/Makefile" ;;
   "exo/exo-0.2.pc" ) CONFIG_FILES="$CONFIG_FILES exo/exo-0.2.pc" ;;
