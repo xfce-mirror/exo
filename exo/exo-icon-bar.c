@@ -72,6 +72,8 @@ static void            exo_icon_bar_set_property          (GObject          *obj
                                                            guint             prop_id,
                                                            const GValue     *value,
                                                            GParamSpec       *pspec);
+static void            exo_icon_bar_style_set             (GtkWidget        *widget,
+                                                           GtkStyle         *previous_style);
 static void            exo_icon_bar_realize               (GtkWidget        *widget);
 static void            exo_icon_bar_unrealize             (GtkWidget        *widget);
 static void            exo_icon_bar_map                   (GtkWidget        *widget);
@@ -203,6 +205,7 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
   gtkobject_class->destroy = exo_icon_bar_destroy;
 
   gtkwidget_class = GTK_WIDGET_CLASS (klass);
+  gtkwidget_class->style_set = exo_icon_bar_style_set;
   gtkwidget_class->realize = exo_icon_bar_realize;
   gtkwidget_class->unrealize = exo_icon_bar_unrealize;
   gtkwidget_class->map = exo_icon_bar_map;
@@ -488,6 +491,19 @@ exo_icon_bar_set_property (GObject          *object,
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
     }
+}
+
+
+
+static void
+exo_icon_bar_style_set (GtkWidget *widget,
+                        GtkStyle  *previous_style)
+{
+  ExoIconBar *icon_bar = EXO_ICON_BAR (widget);
+
+  GTK_WIDGET_CLASS (parent_class)->style_set (widget, previous_style);
+
+  gdk_window_set_background (icon_bar->priv->bin_window, &widget->style->base[widget->state]);
 }
 
 
