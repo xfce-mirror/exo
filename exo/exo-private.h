@@ -31,7 +31,10 @@
 
 G_BEGIN_DECLS;
 
-void  _exo_i18n_init  (void);
+void   _exo_i18n_init                   (void);
+
+gchar *_exo_load_mime_comment_from_file (const gchar *filename,
+                                         GError     **error);
 
 G_END_DECLS;
 

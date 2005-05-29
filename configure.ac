@@ -140,6 +140,7 @@ docs/reference/version.xml
 exo/Makefile
 exo/exo-0.3.pc
 exo/exo-config.h
+exo/xdgmime/Makefile
 po/Makefile.in
 python/Makefile
 python/examples/Makefile

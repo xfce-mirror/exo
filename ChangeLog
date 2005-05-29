@@ -1,3 +1,21 @@
+2005-05-29	Benedikt Meurer <benny@xfce.org>
+
+	* exo/xdgmime/: Import the xdgmime module from freedesktop.org.
+	* exo/exo-mime-info.{c,h}, exo/exo-mime-database.{c,h}: Add two new
+	  classes ExoMimeDatabase and ExoMimeInfo to provide a high-level
+	  interface to the Shared MIME Database. We currently use xdgmime as
+	  backend, but that may change over time.
+	* configure.ac, exo/Makefile.am, exo/exo.h: Add the new classes to the
+	  build framework.
+	* python/examples/toolbars.py: Fix typo.
+	* exo/exo-private.{c,h}: Import the MIME parser from the filer
+	  repository, which is used to query the comment for a given MIME
+	  type.
+	* python/exo.defs: Add the ExoMimeDatabase and ExoMimeInfo classes to
+	  the Python bindings.
+	* python/examples/mime.py: Add a short example of how to use the MIME
+	  module from a Python script.
+
 2005-03-17	Benedikt Meurer <benny@xfce.org>
 
 	* configure.ac, po/ja.po, THANKS, NEWS: Add ja translations, thanks to

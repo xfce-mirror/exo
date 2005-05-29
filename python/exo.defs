@@ -28,6 +28,20 @@
   (gtype-id "EXO_TYPE_ICON_VIEW")
 )
 
+(define-object MimeDatabase
+  (in-module "Exo")
+  (parent "GObject")
+  (c-name "ExoMimeDatabase")
+  (gtype-id "EXO_TYPE_MIME_DATABASE")
+)
+
+(define-object MimeInfo
+  (in-module "Exo")
+  (parent "GObject")
+  (c-name "ExoMimeInfo")
+  (gtype-id "EXO_TYPE_MIME_INFO")
+)
+
 (define-object ToolbarsEditor
   (in-module "Exo")
   (parent "GtkVBox")
@@ -453,6 +467,69 @@
   (parameters
     '("GtkTreePath*" "path")
   )
+)
+
+
+
+;; From ../exo/exo-mime-database.h
+
+(define-function exo_mime_database_get_type
+  (c-name "exo_mime_database_get_type")
+  (return-type "GType")
+)
+
+(define-function mime_database_get_default
+  (c-name "exo_mime_database_get_default")
+  (return-type "ExoMimeDatabase*")
+)
+
+(define-method get_info_for_data
+  (of-object "ExoMimeDatabase")
+  (c-name "exo_mime_database_get_info_for_data")
+  (return-type "ExoMimeInfo*")
+  (parameters
+    '("gconstpointer" "data")
+    '("gsize" "length")
+  )
+)
+
+(define-method get_info_for_file
+  (of-object "ExoMimeDatabase")
+  (c-name "exo_mime_database_get_info_for_file")
+  (return-type "ExoMimeInfo*")
+  (parameters
+    '("const-gchar*" "file_name")
+  )
+)
+
+(define-method get_info_from_file_name
+  (of-object "ExoMimeDatabase")
+  (c-name "exo_mime_database_get_info_from_file_name")
+  (return-type "ExoMimeInfo*")
+  (parameters
+    '("const-gchar*" "file_name")
+  )
+)
+
+
+
+;; From ../exo/exo-mime-info.h
+
+(define-function exo_mime_info_get_type
+  (c-name "exo_mime_info_get_type")
+  (return-type "GType")
+)
+
+(define-method get_comment
+  (of-object "ExoMimeInfo")
+  (c-name "exo_mime_info_get_comment")
+  (return-type "const-char*")
+)
+
+(define-method get_name
+  (of-object "ExoMimeInfo")
+  (c-name "exo_mime_info_get_name")
+  (return-type "const-char*")
 )
 
 

@@ -1,10 +1,16 @@
+# $Id$
+
+SUBDIRS =								\
+	xdgmime
+
 INCLUDES = 								\
 	-I$(top_srcdir)							\
 	-DDBUS_API_SUBJECT_TO_CHANGE					\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DEXO_COMPILATION						\
 	-DG_LOG_DOMAIN=\"exo\"						\
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
+	-DXDG_PREFIX=_exo_xdg
 
 lib_LTLIBRARIES = libexo-0.3.la
 
@@ -18,6 +24,8 @@ libexo_headers =							\
 	exo-icon-bar.h							\
 	exo-icon-view.h							\
 	exo-md5.h							\
+	exo-mime-database.h						\
+	exo-mime-info.h							\
 	exo-pango-extensions.h						\
 	exo-string.h							\
 	exo-toolbars-editor.h						\
@@ -56,6 +64,8 @@ libexo_0_3_la_SOURCES =							\
 	exo-icon-bar.c							\
 	exo-icon-view.c							\
 	exo-md5.c							\
+	exo-mime-database.c						\
+	exo-mime-info.c							\
 	exo-pango-extensions.c						\
 	exo-private.c							\
 	exo-private.h							\
@@ -78,7 +88,11 @@ libexo_0_3_la_LDFLAGS =							\
 	-export-symbols-regex "^[^_].*"					\
 	-no-undefined
 
+libexo_0_3_la_DEPENDENCIES =						\
+	$(top_builddir)/exo/xdgmime/libxdgmime.la
+
 libexo_0_3_la_LIBADD =							\
+	$(top_builddir)/exo/xdgmime/libxdgmime.la			\
 	$(LIBX11_LIBS)							\
 	$(LIBXFCEGUI4_LIBS)
 
@@ -159,4 +173,4 @@ dist-hook: all
 EXTRA_DIST = 								\
 	exo-marshal.list
 
-# vi:set ts=8 sw=8 noet ai nocindent:
+# vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

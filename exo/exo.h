@@ -1,4 +1,4 @@
-/* $Id: exo.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2004-2005 os-cillation e.K.
  *
@@ -43,6 +43,8 @@
 #include <exo/exo-icon-bar.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-md5.h>
+#include <exo/exo-mime-info.h>
+#include <exo/exo-mime-database.h>
 #include <exo/exo-pango-extensions.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
