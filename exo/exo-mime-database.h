@@ -71,6 +71,8 @@ GType            exo_mime_database_get_type (void) G_GNUC_CONST;
 
 ExoMimeDatabase *exo_mime_database_get_default (void);
 
+ExoMimeInfo     *exo_mime_database_get_info                 (ExoMimeDatabase *database,
+                                                             const gchar     *name);
 ExoMimeInfo     *exo_mime_database_get_info_for_data        (ExoMimeDatabase *database,
                                                              gconstpointer    data,
                                                              gsize            length);
