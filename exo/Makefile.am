@@ -5,7 +5,6 @@ SUBDIRS =								\
 
 INCLUDES = 								\
 	-I$(top_srcdir)							\
-	-DDBUS_API_SUBJECT_TO_CHANGE					\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DEXO_COMPILATION						\
 	-DG_LOG_DOMAIN=\"exo\"						\

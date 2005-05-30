@@ -2,9 +2,12 @@ if HAVE_PYTHON
 PYTHON_SUBDIR=python
 endif
 
+JAVA_SUBDIR=java
+
 SUBDIRS =								\
 	exo								\
 	docs								\
+	$(JAVA_SUBDIR)							\
 	po								\
 	$(PYTHON_SUBDIR)
 

@@ -1,3 +1,10 @@
+2005-05-30	Benedikt Meurer <benny@xfce.org>
+
+	* exo/Makefile.am: We don't use D-Bus any longer, so no need to keep
+	  that define around.
+	* configure.ac, acinclude.m4, java/, Makefile.am: Add experimental
+	  Java bindings (very incomplete).
+
 2005-05-29	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-mime-database.h: Fix missing function declaration.

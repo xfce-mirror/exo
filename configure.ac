@@ -50,6 +50,9 @@ AC_MINIX()
 dnl check for basic programs
 AC_PROG_CC()
 AC_PROG_INSTALL()
+AC_PROG_JAR()
+AC_PROG_JAVAC()
+AC_PROG_JAVAH()
 AC_PROG_LIBTOOL()
 
 dnl check for standard header files
@@ -141,6 +144,7 @@ exo/Makefile
 exo/exo-0.3.pc
 exo/exo-config.h
 exo/xdgmime/Makefile
+java/Makefile
 po/Makefile.in
 python/Makefile
 python/examples/Makefile
