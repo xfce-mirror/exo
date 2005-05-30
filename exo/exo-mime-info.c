@@ -39,6 +39,19 @@ enum
   PROP_NAME,
 };
 
+static const struct
+{
+  const gchar *const type;
+  const gchar *const icon;
+} GNOME_ICONNAMES[] =
+{
+  { "inode/directory", "gnome-fs-directory" },
+  { "inode/blockdevice", "gnome-fs-blockdev" },
+  { "inode/chardevice", "gnome-fs-chardev" },
+  { "inode/fifo", "gnome-fs-fifo" },
+  { "inode/socket", "gnome-fs-socket" },
+};
+
 
 
 static void     exo_mime_info_class_init    (ExoMimeInfoClass      *klass);
@@ -64,8 +77,11 @@ struct _ExoMimeInfo
 {
   GObject __parent__;
 
-  gchar *comment;
-  gchar *name;
+  gchar       *comment;
+  gchar       *name;
+
+  const gchar *media;
+  const gchar *subtype;
 };
 
 
@@ -129,8 +145,9 @@ exo_mime_info_class_init (ExoMimeInfoClass *klass)
 static void
 exo_mime_info_init (ExoMimeInfo *info)
 {
-  info->comment = NULL;
-  info->name = NULL;
+  /* nothing to do here, as GObject already takes care of clearing
+   * the memory and thereby setting all pointers to NULL.
+   */
 }
 
 
@@ -181,12 +198,49 @@ exo_mime_info_set_property (GObject      *object,
                             GParamSpec   *pspec)
 {
   ExoMimeInfo *info = EXO_MIME_INFO (object);
+  const gchar *name;
+  const gchar *s;
+  const gchar *t;
+  const gchar *u;
+  gchar       *v;
 
   switch (prop_id)
     {
     case PROP_NAME:
       if (info->name == 0)
-        info->name = g_value_dup_string (value);
+        {
+          name = g_value_get_string (value);
+          for (s = NULL, t = name; *t != '\0'; ++t)
+            if (G_UNLIKELY (*t == '/'))
+              s = t;
+
+          /* since the property can only be set on construction
+           * by the ExoMimeDatabase class, we can safely ignore
+           * problems here.
+           */
+          if (G_UNLIKELY (s == NULL))
+            return;
+
+          /* allocate memory to store both the full name, as
+           * well as the media type alone.
+           */
+          info->name = g_new (gchar, (t - name) + (s - name) + 2);
+
+          /* copy the full name (including the terminator) */
+          for (u = name, v = info->name; u <= t; ++u, ++v)
+            *v = *u;
+
+          /* set the subtype pointer */
+          info->subtype = info->name + (s - name) + 1;
+
+          /* copy the media portion */
+          info->media = v;
+          for (u = name; u < s; ++u, ++v)
+            *v = *u;
+
+          /* terminate the media portion */
+          *v = '\0';
+        }
       break;
 
     default:
@@ -199,9 +253,9 @@ exo_mime_info_set_property (GObject      *object,
 
 /**
  * exo_mime_info_get_comment:
- * @info  : An #ExoMimeInfo instance.
+ * @info  : an #ExoMimeInfo instance.
  *
- * Return value: The comment associated with the @info or the empty string
+ * Return value: the comment associated with the @info or the empty string
  *               if no comment was provided.
  */
 const gchar*
@@ -235,12 +289,12 @@ exo_mime_info_get_comment (ExoMimeInfo *info)
 
 /**
  * exo_mime_info_get_name:
- * @info  : An #ExoMimeInfo instance.
+ * @info  : an #ExoMimeInfo instance.
  *
  * Returns the full qualified name of the MIME type described
  * by the @info object.
  *
- * Return value: The name of @info.
+ * Return value: the name of @info.
  */
 const gchar*
 exo_mime_info_get_name (ExoMimeInfo *info)
@@ -250,5 +304,102 @@ exo_mime_info_get_name (ExoMimeInfo *info)
 }
 
 
+
+/**
+ * exo_mime_info_get_media:
+ * @info  : an #ExoMimeInfo instance.
+ *
+ * Returns the media portion of the MIME type, e.g. if your #ExoMimeInfo
+ * instance refers to "text/plain", invoking this method will return
+ * "text".
+ *
+ * Return value: the media portion of the MIME type.
+ */
+const gchar*
+exo_mime_info_get_media (ExoMimeInfo *info)
+{
+  g_return_val_if_fail (EXO_IS_MIME_INFO (info), NULL);
+  return info->media;
+}
+
+
+
+/**
+ * exo_mime_info_get_subtype:
+ * @info  : an #ExoMimeInfo instance.
+ *
+ * Returns the subtype portion of the MIME type, e.g. if your #ExoMimeInfo
+ * instance refers to "application/octect-stream", invoking this method
+ * will return "octect-stream".
+ *
+ * Return value: the subtype portion of the MIME type.
+ */
+const gchar*
+exo_mime_info_get_subtype (ExoMimeInfo *info)
+{
+  g_return_val_if_fail (EXO_IS_MIME_INFO (info), NULL);
+  return info->subtype;
+}
+
+
+
+/**
+ * exo_mime_info_lookup_icon:
+ * @info        : an #ExoMimeInfo instance.
+ * @icon_theme  : reference to a #GtkIconTheme, on which the icon lookup
+ *                should be performed.
+ * @size        : desired icon size.
+ * @flags       : flags modifying the behavior of the icon lookup.
+ *
+ * Tries to lookup an icon for the given MIME @info object on the given
+ * @icon_theme object. The implementation will try various popular
+ * icon naming styles.
+ *
+ * Return value: a #GtkIconInfo structure containing information about the
+ *               icon, or %NULL if the icon wasn't found. Free with the
+ *               returned structure with #gtk_icon_info_free().
+ */
+GtkIconInfo*
+exo_mime_info_lookup_icon (ExoMimeInfo        *info,
+                           GtkIconTheme       *icon_theme,
+                           gint                size,
+                           GtkIconLookupFlags  flags)
+{
+  GtkIconInfo *icon;
+  gchar        name[512];
+  gsize        n;
+
+  g_return_val_if_fail (EXO_IS_MIME_INFO (info), NULL);
+  g_return_val_if_fail (GTK_IS_ICON_THEME (icon_theme), NULL);
+
+  /* full name */
+  g_snprintf (name, sizeof (name), "gnome-mime-%s-%s",
+              info->media, info->subtype);
+  icon = gtk_icon_theme_lookup_icon (icon_theme, name, size, flags);
+  if (icon != NULL)
+    goto done;
+
+  /* only the media portion */
+  name[11 + ((info->subtype - 1) - info->name)] = '\0';
+  icon = gtk_icon_theme_lookup_icon (icon_theme, name, size, flags);
+  if (icon != NULL)
+    goto done;
+
+  /* GNOME uses non-standard names for special MIME types */
+  for (n = 0; n < G_N_ELEMENTS (GNOME_ICONNAMES); ++n)
+    if (exo_str_is_equal (info->name, GNOME_ICONNAMES[n].type))
+      {
+        icon = gtk_icon_theme_lookup_icon (icon_theme, GNOME_ICONNAMES[n].icon,
+                                           size, flags);
+        if (icon != NULL)
+          goto done;
+      }
+
+  /* try fallback application/octect-stream */
+  icon = gtk_icon_theme_lookup_icon (icon_theme, "gnome-mime-application-octect-stream", size, flags);
+
+done:
+  return icon;
+}
 
 

@@ -27,7 +27,7 @@
 #ifndef __EXO_MIME_INFO_H__
 #define __EXO_MIME_INFO_H__
 
-#include <glib-object.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS;
 
@@ -44,8 +44,16 @@ typedef struct _ExoMimeInfo        ExoMimeInfo;
 
 GType exo_mime_info_get_type (void) G_GNUC_CONST;
 
-const gchar *exo_mime_info_get_comment (ExoMimeInfo *info);
-const gchar *exo_mime_info_get_name    (ExoMimeInfo *info);
+const gchar *exo_mime_info_get_comment  (ExoMimeInfo        *info) G_GNUC_PURE;
+const gchar *exo_mime_info_get_name     (ExoMimeInfo        *info) G_GNUC_PURE;
+
+const gchar *exo_mime_info_get_media    (ExoMimeInfo        *info) G_GNUC_PURE;
+const gchar *exo_mime_info_get_subtype  (ExoMimeInfo        *info) G_GNUC_PURE;
+
+GtkIconInfo *exo_mime_info_lookup_icon  (ExoMimeInfo        *info,
+                                         GtkIconTheme       *icon_theme,
+                                         gint                size,
+                                         GtkIconLookupFlags  flags);
 
 G_END_DECLS;
 

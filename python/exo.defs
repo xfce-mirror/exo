@@ -483,6 +483,15 @@
   (return-type "ExoMimeDatabase*")
 )
 
+(define-method get_info
+  (of-object "ExoMimeDatabase")
+  (c-name "exo_mime_database_get_info")
+  (return-type "ExoMimeInfo*")
+  (parameters
+    '("const-gchar*" "name")
+  )
+)
+
 (define-method get_info_for_data
   (of-object "ExoMimeDatabase")
   (c-name "exo_mime_database_get_info_for_data")
@@ -530,6 +539,29 @@
   (of-object "ExoMimeInfo")
   (c-name "exo_mime_info_get_name")
   (return-type "const-char*")
+)
+
+(define-method get_media
+  (of-object "ExoMimeInfo")
+  (c-name "exo_mime_info_get_media")
+  (return-type "const-char*")
+)
+
+(define-method get_subtype
+  (of-object "ExoMimeInfo")
+  (c-name "exo_mime_info_get_subtype")
+  (return-type "const-char*")
+)
+
+(define-method lookup_icon
+  (of-object "ExoMimeInfo")
+  (c-name "exo_mime_info_lookup_icon")
+  (return-type "GtkIconInfo*")
+  (parameters
+    '("GtkIconTheme*" "icon_theme")
+    '("gint" "size")
+    '("GtkIconLookupFlags" "flags")
+  )
 )
 
 

@@ -24,15 +24,9 @@
 #include <config.h>
 #endif
 
-#include <gtk/gtk.h>
-
 #include <exo/exo-mime-database.h>
 
 #include <xdgmime/xdgmime.h>
-
-
-
-#define EXO_MIME_DATABASE_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_MIME_DATABASE, ExoMimeDatabasePrivate))
 
 
 
@@ -53,8 +47,27 @@ static void     exo_mime_database_reload_idle_destroy (gpointer              use
 
 
 
-struct _ExoMimeDatabasePrivate
+struct _ExoMimeDatabaseClass
 {
+  GObjectClass __parent__;
+
+  /* signals */
+  void (*changed) (ExoMimeDatabase *database);
+
+  void (*reserved1) (void);
+  void (*reserved2) (void);
+  void (*reserved3) (void);
+  void (*reserved4) (void);
+  void (*reserved5) (void);
+  void (*reserved6) (void);
+  void (*reserved7) (void);
+  void (*reserved8) (void);
+};
+
+struct _ExoMimeDatabase
+{
+  GObject __parent__;
+
   GHashTable *info_cache;
   gint        reload_idle_id;
   gint        reload_id;
@@ -75,8 +88,6 @@ static void
 exo_mime_database_class_init (ExoMimeDatabaseClass *klass)
 {
   GObjectClass *gobject_class;
-
-  g_type_class_add_private (klass, sizeof (ExoMimeDatabasePrivate));
 
   parent_class = g_type_class_peek_parent (klass);
 
@@ -112,16 +123,15 @@ exo_mime_database_class_init (ExoMimeDatabaseClass *klass)
 static void
 exo_mime_database_init (ExoMimeDatabase *database)
 {
-  database->priv = EXO_MIME_DATABASE_GET_PRIVATE (database);
-  database->priv->reload_idle_id = -1;
+  database->reload_idle_id = -1;
 
   /* register the reload notification with the XDG mime implementation */
-  database->priv->reload_id =
+  database->reload_id =
     xdg_mime_register_reload_callback (exo_mime_database_reload,
                                        database, NULL);
 
   /* allocate the internal MIME info cache */
-  database->priv->info_cache =
+  database->info_cache =
     g_hash_table_new_full (g_str_hash, g_str_equal, NULL, g_object_unref);
 }
 
@@ -133,14 +143,14 @@ exo_mime_database_finalize (GObject *object)
   ExoMimeDatabase *database = EXO_MIME_DATABASE (object);
 
   /* unregister the main loop idle callback (if any) */
-  if (database->priv->reload_idle_id >= 0)
-    g_source_remove (database->priv->reload_idle_id);
+  if (database->reload_idle_id >= 0)
+    g_source_remove (database->reload_idle_id);
 
   /* drop the internal MIME info cache */
-  g_hash_table_destroy (database->priv->info_cache);
+  g_hash_table_destroy (database->info_cache);
 
   /* unregister the internal reload notification */
-  xdg_mime_remove_callback (database->priv->reload_id);
+  xdg_mime_remove_callback (database->reload_id);
 
   G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -157,9 +167,9 @@ exo_mime_database_reload (void *user_data)
    * xdg_mime_ function invokation and so handlers would need
    * to be reentrant, which makes things unnecessary complex.
    */
-  if (database->priv->reload_idle_id < 0)
+  if (database->reload_idle_id < 0)
     {
-      database->priv->reload_idle_id =
+      database->reload_idle_id =
         g_idle_add_full (G_PRIORITY_LOW, exo_mime_database_reload_idle,
                          database, exo_mime_database_reload_idle_destroy);
     }
@@ -175,7 +185,7 @@ exo_mime_database_reload_idle (void *user_data)
   GDK_THREADS_ENTER ();
 
   /* drop all cached MIME info instances */
-  g_hash_table_foreach_remove (database->priv->info_cache,
+  g_hash_table_foreach_remove (database->info_cache,
                                (GHRFunc) gtk_true, NULL);
 
   g_signal_emit (G_OBJECT (database), database_signals[CHANGED], 0);
@@ -192,7 +202,7 @@ exo_mime_database_reload_idle_destroy (void *user_data)
 {
   GDK_THREADS_ENTER ();
 
-  EXO_MIME_DATABASE (user_data)->priv->reload_idle_id = -1;
+  EXO_MIME_DATABASE (user_data)->reload_idle_id = -1;
 
   GDK_THREADS_LEAVE ();
 }
@@ -255,7 +265,7 @@ exo_mime_database_get_info (ExoMimeDatabase *database,
   g_return_val_if_fail (EXO_IS_MIME_DATABASE (database), NULL);
   g_return_val_if_fail (name != 0 && *name != '\0', NULL);
 
-  info = g_hash_table_lookup (database->priv->info_cache, name);
+  info = g_hash_table_lookup (database->info_cache, name);
   if (G_UNLIKELY (info == NULL))
     {
       info = g_object_new (EXO_TYPE_MIME_INFO,
@@ -267,7 +277,7 @@ exo_mime_database_get_info (ExoMimeDatabase *database,
        * while we keep a reference on it.
        */
       name = exo_mime_info_get_name (info);
-      g_hash_table_insert (database->priv->info_cache, (gpointer)name, info);
+      g_hash_table_insert (database->info_cache, (gpointer)name, info);
     }
   else
     {

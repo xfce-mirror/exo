@@ -31,9 +31,8 @@
 
 G_BEGIN_DECLS;
 
-typedef struct _ExoMimeDatabasePrivate ExoMimeDatabasePrivate;
-typedef struct _ExoMimeDatabaseClass   ExoMimeDatabaseClass;
-typedef struct _ExoMimeDatabase        ExoMimeDatabase;
+typedef struct _ExoMimeDatabaseClass ExoMimeDatabaseClass;
+typedef struct _ExoMimeDatabase      ExoMimeDatabase;
 
 #define EXO_TYPE_MIME_DATABASE            (exo_mime_database_get_type ())
 #define EXO_MIME_DATABASE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_MIME_DATABASE, ExoMimeDatabase))
@@ -41,31 +40,6 @@ typedef struct _ExoMimeDatabase        ExoMimeDatabase;
 #define EXO_IS_MIME_DATABASE(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EXO_TYPE_MIME_DATABASE))
 #define EXO_IS_MIME_DATABASE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EXO_TYPE_MIME_DATABASE))
 #define EXO_MIME_DATABASE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EXO_TYPE_MIME_DATABASE, ExoMimeDatabaseClass))
-
-struct _ExoMimeDatabaseClass
-{
-  GObjectClass __parent__;
-
-  /* signals */
-  void (*changed) (ExoMimeDatabase *database);
-
-  void (*reserved1) (void);
-  void (*reserved2) (void);
-  void (*reserved3) (void);
-  void (*reserved4) (void);
-  void (*reserved5) (void);
-  void (*reserved6) (void);
-  void (*reserved7) (void);
-  void (*reserved8) (void);
-};
-
-struct _ExoMimeDatabase
-{
-  GObject __parent__;
-
-  /*< private >*/
-  ExoMimeDatabasePrivate *priv;
-};
 
 GType            exo_mime_database_get_type (void) G_GNUC_CONST;
 
