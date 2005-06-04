@@ -170,7 +170,7 @@ exo_mime_database_reload (void *user_data)
   if (database->reload_idle_id < 0)
     {
       database->reload_idle_id =
-        g_idle_add_full (G_PRIORITY_LOW, exo_mime_database_reload_idle,
+        g_idle_add_full (G_PRIORITY_HIGH, exo_mime_database_reload_idle,
                          database, exo_mime_database_reload_idle_destroy);
     }
 }
