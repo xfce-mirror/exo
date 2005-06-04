@@ -279,10 +279,8 @@ exo_mime_database_get_info (ExoMimeDatabase *database,
       name = exo_mime_info_get_name (info);
       g_hash_table_insert (database->info_cache, (gpointer)name, info);
     }
-  else
-    {
-      g_object_ref (G_OBJECT (info));
-    }
+  
+  g_object_ref (G_OBJECT (info));
 
   return info;
 }

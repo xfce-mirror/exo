@@ -1,3 +1,10 @@
+2005-06-04	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-mime-database.h: Fix indentation.
+	* exo/exo-mime-database.c (exo_mime_database_get_info): The
+	  ExoMimeDatabase instance takes a reference on every returned
+	  ExoMimeInfo object.
+
 2005-05-30	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-mime-database.{c,h}: Don't use separate private data

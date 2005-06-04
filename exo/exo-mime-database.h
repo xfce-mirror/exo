@@ -41,9 +41,9 @@ typedef struct _ExoMimeDatabase      ExoMimeDatabase;
 #define EXO_IS_MIME_DATABASE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EXO_TYPE_MIME_DATABASE))
 #define EXO_MIME_DATABASE_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EXO_TYPE_MIME_DATABASE, ExoMimeDatabaseClass))
 
-GType            exo_mime_database_get_type (void) G_GNUC_CONST;
+GType            exo_mime_database_get_type                 (void) G_GNUC_CONST;
 
-ExoMimeDatabase *exo_mime_database_get_default (void);
+ExoMimeDatabase *exo_mime_database_get_default              (void);
 
 ExoMimeInfo     *exo_mime_database_get_info                 (ExoMimeDatabase *database,
                                                              const gchar     *name);
