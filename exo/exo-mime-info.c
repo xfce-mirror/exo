@@ -157,7 +157,8 @@ exo_mime_info_finalize (GObject *object)
 {
   ExoMimeInfo *info = EXO_MIME_INFO (object);
 
-  g_free (info->comment);
+  if (info->comment != NULL && info->comment != info->name)
+    g_free (info->comment);
   g_free (info->name);
 
   G_OBJECT_CLASS (parent_class)->finalize (object);
@@ -279,7 +280,7 @@ exo_mime_info_get_comment (ExoMimeInfo *info)
         }
 
       if (G_UNLIKELY (info->comment == NULL))
-        info->comment = g_strdup ("");
+        info->comment = info->name;
     }
 
   return info->comment;

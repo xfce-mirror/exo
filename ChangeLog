@@ -1,3 +1,8 @@
+2005-06-05	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-mime-info.c: Use the MIME-Type's name as fallback if the
+	  Shared MIME Database contains no comment for a given type.
+
 2005-06-04	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-mime-database.c: Run the reload signal at the highest
