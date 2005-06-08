@@ -1,3 +1,9 @@
+2005-06-08	Benedikt Meurer <benny@xfce.org>
+
+	* configure.ac: Check for libintl.h as well.
+	* exo/exo-private.c: Need to include locale.h here to get LC_MESSAGES
+	  on all systems.
+
 2005-06-05	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-mime-info.c: Use the MIME-Type's name as fallback if the

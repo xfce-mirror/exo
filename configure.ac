@@ -54,7 +54,7 @@ AC_PROG_LIBTOOL()
 
 dnl check for standard header files
 AC_HEADER_STDC()
-AC_CHECK_HEADERS([errno.h fcntl.h locale.h math.h md5.h string.h \
+AC_CHECK_HEADERS([errno.h fcntl.h libintl.h locale.h math.h md5.h string.h \
                   sys/resource.h sys/stat.h sys/time.h sys/types.h \
                   time.h])
 

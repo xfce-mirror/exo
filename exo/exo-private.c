@@ -24,6 +24,13 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_LIBINTL_H
+#include <libintl.h>
+#endif
+#ifdef HAVE_LOCALE_H
+#include <locale.h>
+#endif
+
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
 
