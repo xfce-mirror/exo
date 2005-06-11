@@ -63,7 +63,7 @@ AC_SEARCH_LIBS([MD5Init], [md c], \
                [AC_DEFINE([HAVE_MD5INIT], [1], [Define if MD5Init present])])
 
 dnl Check for i18n support
-XDT_I18N([de en_GB ja], [libexo-libexo_version_major().libexo_version_minor()])
+XDT_I18N([de en_GB es ja], [libexo-libexo_version_major().libexo_version_minor()])
 
 dnl Check for required packages
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.4.0])
