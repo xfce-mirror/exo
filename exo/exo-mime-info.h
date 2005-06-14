@@ -42,18 +42,20 @@ typedef struct _ExoMimeInfo        ExoMimeInfo;
 #define EXO_IS_MIME_INFO_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EXO_TYPE_MIME_INFO))
 #define EXO_MIME_INFO_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EXO_TYPE_MIME_INFO, ExoMimeInfoClass))
 
-GType exo_mime_info_get_type (void) G_GNUC_CONST;
+GType        exo_mime_info_get_type         (void) G_GNUC_CONST;
 
-const gchar *exo_mime_info_get_comment  (ExoMimeInfo        *info) G_GNUC_PURE;
-const gchar *exo_mime_info_get_name     (ExoMimeInfo        *info) G_GNUC_PURE;
+const gchar *exo_mime_info_get_comment      (ExoMimeInfo        *info) G_GNUC_PURE;
+const gchar *exo_mime_info_get_name         (ExoMimeInfo        *info) G_GNUC_PURE;
 
-const gchar *exo_mime_info_get_media    (ExoMimeInfo        *info) G_GNUC_PURE;
-const gchar *exo_mime_info_get_subtype  (ExoMimeInfo        *info) G_GNUC_PURE;
+const gchar *exo_mime_info_get_media        (ExoMimeInfo        *info) G_GNUC_PURE;
+const gchar *exo_mime_info_get_subtype      (ExoMimeInfo        *info) G_GNUC_PURE;
 
-GtkIconInfo *exo_mime_info_lookup_icon  (ExoMimeInfo        *info,
-                                         GtkIconTheme       *icon_theme,
-                                         gint                size,
-                                         GtkIconLookupFlags  flags);
+const gchar *exo_mime_info_lookup_icon_name (ExoMimeInfo        *info,
+                                             GtkIconTheme       *icon_theme);
+GtkIconInfo *exo_mime_info_lookup_icon      (ExoMimeInfo        *info,
+                                             GtkIconTheme       *icon_theme,
+                                             gint                size,
+                                             GtkIconLookupFlags  flags);
 
 G_END_DECLS;
 

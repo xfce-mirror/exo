@@ -54,17 +54,19 @@ static const struct
 
 
 
-static void     exo_mime_info_class_init    (ExoMimeInfoClass      *klass);
-static void     exo_mime_info_init          (ExoMimeInfo           *info);
-static void     exo_mime_info_finalize      (GObject               *object);
-static void     exo_mime_info_get_property  (GObject               *object,
-                                             guint                  prop_id,
-                                             GValue                *value,
-                                             GParamSpec            *pspec);
-static void     exo_mime_info_set_property  (GObject               *object,
-                                             guint                  prop_id,
-                                             const GValue          *value,
-                                             GParamSpec            *pspec);
+static void     exo_mime_info_class_init          (ExoMimeInfoClass *klass);
+static void     exo_mime_info_init                (ExoMimeInfo      *info);
+static void     exo_mime_info_finalize            (GObject          *object);
+static void     exo_mime_info_get_property        (GObject          *object,
+                                                   guint             prop_id,
+                                                   GValue           *value,
+                                                   GParamSpec       *pspec);
+static void     exo_mime_info_set_property        (GObject          *object,
+                                                   guint             prop_id,
+                                                   const GValue     *value,
+                                                   GParamSpec       *pspec);
+static void     exo_mime_info_icon_theme_changed  (GtkIconTheme     *icon_theme,
+                                                   ExoMimeInfo      *info);
 
 
 
@@ -77,11 +79,15 @@ struct _ExoMimeInfo
 {
   GObject __parent__;
 
-  gchar       *comment;
-  gchar       *name;
+  gchar        *comment;
+  gchar        *name;
 
-  const gchar *media;
-  const gchar *subtype;
+  const gchar  *media;
+  const gchar  *subtype;
+
+  gchar        *icon_name;
+  gboolean      icon_name_static : 1;
+  GtkIconTheme *icon_theme;
 };
 
 
@@ -157,9 +163,21 @@ exo_mime_info_finalize (GObject *object)
 {
   ExoMimeInfo *info = EXO_MIME_INFO (object);
 
+  /* release comment/name info */
   if (info->comment != NULL && info->comment != info->name)
     g_free (info->comment);
   g_free (info->name);
+
+  /* disconnect from the icon theme (if any) */
+  if (G_LIKELY (info->icon_theme != NULL))
+    {
+      g_signal_handlers_disconnect_by_func (G_OBJECT (info->icon_theme), exo_mime_info_icon_theme_changed, info);
+      g_object_unref (G_OBJECT (info->icon_theme));
+    }
+
+  /* free the icon name if it isn't one of the statics */
+  if (G_LIKELY (!info->icon_name_static && info->icon_name != NULL))
+    g_free (info->icon_name);
 
   G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -247,6 +265,26 @@ exo_mime_info_set_property (GObject      *object,
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
+    }
+}
+
+
+
+static void
+exo_mime_info_icon_theme_changed (GtkIconTheme *icon_theme,
+                                  ExoMimeInfo  *info)
+{
+  g_return_if_fail (GTK_IS_ICON_THEME (icon_theme));
+  g_return_if_fail (EXO_IS_MIME_INFO (info));
+  g_return_if_fail (info->icon_theme == icon_theme);
+
+  /* drop the cached icon name, so the next lookup call
+   * will perform a lookup again.
+   */
+  if (G_LIKELY (!info->icon_name_static))
+    {
+      g_free (info->icon_name);
+      info->icon_name = NULL;
     }
 }
 
@@ -345,6 +383,87 @@ exo_mime_info_get_subtype (ExoMimeInfo *info)
 
 
 /**
+ * exo_mime_info_lookup_icon_name:
+ * @info       : an #ExoMimeInfo instance.
+ * @icon_theme : a #GtkIconTheme instance.
+ *
+ * Tries to determine the name of a suitable icon for @info
+ * in @icon_theme. The returned icon name can then be used
+ * in calls to #gtk_icon_theme_lookup_icon() or
+ * #gtk_icon_theme_load_icon().
+ *
+ * Return value: a suitable icon name for @info in @icon_theme.
+ **/
+const gchar*
+exo_mime_info_lookup_icon_name (ExoMimeInfo  *info,
+                                GtkIconTheme *icon_theme)
+{
+  gsize n;
+
+  g_return_val_if_fail (EXO_IS_MIME_INFO (info), NULL);
+  g_return_val_if_fail (GTK_IS_ICON_THEME (icon_theme), NULL);
+
+  /* check if our cached name will suffice */
+  if (G_LIKELY (info->icon_theme == icon_theme && info->icon_name != NULL))
+    return info->icon_name;
+
+  /* if we have a new icon theme, connect to the new one */
+  if (G_UNLIKELY (info->icon_theme != icon_theme))
+    {
+      /* disconnect from the previous one */
+      if (G_LIKELY (info->icon_theme != NULL))
+        {
+          g_signal_handlers_disconnect_by_func (G_OBJECT (info->icon_theme), exo_mime_info_icon_theme_changed, info);
+          g_object_unref (G_OBJECT (info->icon_theme));
+        }
+
+      /* connect to the new one */
+      info->icon_theme = icon_theme;
+      g_object_ref (G_OBJECT (icon_theme));
+      g_signal_connect (G_OBJECT (icon_theme), "changed", G_CALLBACK (exo_mime_info_icon_theme_changed), info);
+    }
+
+  /* free the previously set icon name */
+  if (!info->icon_name_static)
+    g_free (info->icon_name);
+
+  /* start out with the full name (assuming a non-static icon_name) */
+  info->icon_name = g_strdup_printf ("gnome-mime-%s-%s", info->media, info->subtype);
+  info->icon_name_static = FALSE;
+  if (!gtk_icon_theme_has_icon (icon_theme, info->icon_name))
+    {
+      /* only the media portion */
+      info->icon_name[11 + ((info->subtype - 1) - info->name)] = '\0';
+      if (!gtk_icon_theme_has_icon (icon_theme, info->icon_name))
+        {
+          /* if we get here, we'll use a static icon name */
+          info->icon_name_static = TRUE;
+          g_free (info->icon_name);
+
+          /* GNOME uses non-standard names for special MIME types */
+          for (n = 0; n < G_N_ELEMENTS (GNOME_ICONNAMES); ++n)
+            if (exo_str_is_equal (info->name, GNOME_ICONNAMES[n].type))
+              if (gtk_icon_theme_has_icon (icon_theme, GNOME_ICONNAMES[n].icon))
+                {
+                  info->icon_name = (gchar *)GNOME_ICONNAMES[n].icon;
+                  break;
+                }
+
+          /* fallback is always application/octect-stream */
+          if (n == G_N_ELEMENTS (GNOME_ICONNAMES))
+            info->icon_name = (gchar *)"gnome-mime-application-octect-stream";
+        }
+    }
+
+  g_assert (info->icon_name != NULL);
+  g_assert (info->icon_name[0] != '\0');
+
+  return info->icon_name;
+}
+
+
+
+/**
  * exo_mime_info_lookup_icon:
  * @info        : an #ExoMimeInfo instance.
  * @icon_theme  : reference to a #GtkIconTheme, on which the icon lookup
@@ -356,6 +475,10 @@ exo_mime_info_get_subtype (ExoMimeInfo *info)
  * @icon_theme object. The implementation will try various popular
  * icon naming styles.
  *
+ * This method is basicly a wrapper for #exo_mime_info_lookup_icon_name()
+ * and #gtk_icon_theme_lookup_icon(). If you don't plan to perform any
+ * caching on icons, this method is what you want.
+ *
  * Return value: a #GtkIconInfo structure containing information about the
  *               icon, or %NULL if the icon wasn't found. Free with the
  *               returned structure with #gtk_icon_info_free().
@@ -366,41 +489,13 @@ exo_mime_info_lookup_icon (ExoMimeInfo        *info,
                            gint                size,
                            GtkIconLookupFlags  flags)
 {
-  GtkIconInfo *icon;
-  gchar        name[512];
-  gsize        n;
+  const gchar *icon_name;
 
   g_return_val_if_fail (EXO_IS_MIME_INFO (info), NULL);
   g_return_val_if_fail (GTK_IS_ICON_THEME (icon_theme), NULL);
 
-  /* full name */
-  g_snprintf (name, sizeof (name), "gnome-mime-%s-%s",
-              info->media, info->subtype);
-  icon = gtk_icon_theme_lookup_icon (icon_theme, name, size, flags);
-  if (icon != NULL)
-    goto done;
-
-  /* only the media portion */
-  name[11 + ((info->subtype - 1) - info->name)] = '\0';
-  icon = gtk_icon_theme_lookup_icon (icon_theme, name, size, flags);
-  if (icon != NULL)
-    goto done;
-
-  /* GNOME uses non-standard names for special MIME types */
-  for (n = 0; n < G_N_ELEMENTS (GNOME_ICONNAMES); ++n)
-    if (exo_str_is_equal (info->name, GNOME_ICONNAMES[n].type))
-      {
-        icon = gtk_icon_theme_lookup_icon (icon_theme, GNOME_ICONNAMES[n].icon,
-                                           size, flags);
-        if (icon != NULL)
-          goto done;
-      }
-
-  /* try fallback application/octect-stream */
-  icon = gtk_icon_theme_lookup_icon (icon_theme, "gnome-mime-application-octect-stream", size, flags);
-
-done:
-  return icon;
+  icon_name = exo_mime_info_lookup_icon_name (info, icon_theme);
+  return gtk_icon_theme_lookup_icon (icon_theme, icon_name, size, flags);
 }
 
 

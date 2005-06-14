@@ -1,3 +1,12 @@
+2005-06-14	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-mime-info.{c,h}: Add a method exo_mime_info_lookup_icon_name()
+	  which determines the name of a suitable icon in a given icon theme.
+	  The result of the lookup is cached internally. The purpose of this
+	  change is to allow for better caching of mime icons in the application
+	  using this interface. The implementation tries to reduce memory
+	  usage as much as possible.
+
 2005-06-13	Benedikt Meurer <benny@xfce.org>
 
 	* po/ja.po: Update japanese translations, thanks to Daichi Kawahata
