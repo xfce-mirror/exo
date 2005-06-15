@@ -553,6 +553,15 @@
   (return-type "const-char*")
 )
 
+(define-method lookup_icon_name
+  (of-object "ExoMimeInfo")
+  (c-name "exo_mime_info_lookup_icon_name")
+  (return-type "const-char*")
+  (parameters
+    '("GtkIconTheme*" "icon_theme")
+  )
+)
+
 (define-method lookup_icon
   (of-object "ExoMimeInfo")
   (c-name "exo_mime_info_lookup_icon")

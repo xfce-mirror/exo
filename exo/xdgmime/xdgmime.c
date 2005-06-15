@@ -403,7 +403,7 @@ xdg_check_time_and_dirs (void)
 
 /* Called in every public function.  It reloads the hash function if need be.
  */
-static void
+void
 xdg_mime_init (void)
 {
   if (xdg_check_time_and_dirs ())

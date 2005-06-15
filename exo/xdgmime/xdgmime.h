@@ -66,6 +66,7 @@ typedef void (*XdgMimeDestroy)  (void *user_data);
 extern const char *xdg_mime_type_unknown;
 #define XDG_MIME_TYPE_UNKNOWN xdg_mime_type_unknown
 
+void         xdg_mime_init                         (void);
 const char  *xdg_mime_get_mime_type_for_data       (const void *data,
 						    size_t      len);
 const char  *xdg_mime_get_mime_type_for_file       (const char *file_name);

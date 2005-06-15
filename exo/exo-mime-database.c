@@ -125,6 +125,13 @@ exo_mime_database_init (ExoMimeDatabase *database)
 {
   database->reload_idle_id = -1;
 
+  /* be sure that the XDG mime module is initialized properly first,
+   * because else, it'll fire a change notification on the first
+   * call to a XDG mime function, which in turn will lead to an
+   * unnecessary reload of the MIME types.
+   */
+  xdg_mime_init ();
+
   /* register the reload notification with the XDG mime implementation */
   database->reload_id =
     xdg_mime_register_reload_callback (exo_mime_database_reload,

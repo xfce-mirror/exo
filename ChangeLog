@@ -1,3 +1,17 @@
+2005-06-15	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-mime-database.c(exo_mime_database_init): Be sure to call
+	  xdg_mime_init() before setting up the reload callback function,
+	  because else the first call to a public xdg_mime_* function will
+	  lead to an invokation of xdg_mime_init(), which in turn will fire
+	  all reload callbacks, which in turn will make the ExoMimeDatabase
+	  drop it's internal state, which means that in the worst case, all
+	  the MIME information would be loaded twice on program startup.
+	* exo/xdgmime/xdgmime.{c,h}: The xdg_mime_init() function must be
+	  public.
+	* python/exo.defs: Add the exo_mime_info_lookup_icon_name() method to
+	  the Python bindings.
+
 2005-06-14	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-mime-info.{c,h}: Add a method exo_mime_info_lookup_icon_name()
