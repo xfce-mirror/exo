@@ -34,6 +34,7 @@
 
 #include <libxfce4util/libxfce4util.h>
 
+#include <exo/exo-config.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-private.h>
@@ -134,7 +135,7 @@ exo_toolbars_editor_class_init (ExoToolbarsEditorClass *klass)
                                                         "Toolbars Model",
                                                         "Toolbars Model",
                                                         EXO_TYPE_TOOLBARS_MODEL,
-                                                        G_PARAM_READWRITE));
+                                                        EXO_PARAM_READWRITE));
 
   /**
    * ExoToolbarsEditor:ui-manager:
@@ -155,7 +156,7 @@ exo_toolbars_editor_class_init (ExoToolbarsEditorClass *klass)
                                                         "UI Manager",
                                                         "UI Manager",
                                                         GTK_TYPE_UI_MANAGER,
-                                                        G_PARAM_READWRITE));
+                                                        EXO_PARAM_READWRITE));
 }
 
 

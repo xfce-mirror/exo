@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2005 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -35,6 +35,7 @@
 
 #include <gdk/gdkx.h>
 
+#include <exo/exo-config.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-xsession-client.h>
@@ -121,7 +122,7 @@ exo_xsession_client_class_init (ExoXsessionClientClass *klass)
                                                         _("Window group"),
                                                         _("Window group leader"),
                                                         GDK_TYPE_WINDOW,
-                                                        G_PARAM_READWRITE));
+                                                        EXO_PARAM_READWRITE));
 
   /**
    * ExoXsessionClient:restart-command:
@@ -132,7 +133,7 @@ exo_xsession_client_class_init (ExoXsessionClientClass *klass)
                                                        _("Restart command"),
                                                        _("Session restart command"),
                                                        G_TYPE_STRV,
-                                                       G_PARAM_READWRITE));
+                                                       EXO_PARAM_READWRITE));
 
   /**
    * ExoXsessionClient::save-yourself:

@@ -1,3 +1,15 @@
+2005-06-16	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-config.h.in: Add defines for EXO_PARAM_READABLE,
+	  EXO_PARAM_WRITABLE and EXO_PARAM_READWRITE, which enables us to take
+	  advantage of the new G_PARAM_STATIC_* defines in GObject 2.7.x/2.8.x,
+	  that are used to tell GParamSpec, that it doesn't need to take a
+	  copy of the name, nick and blurb settings if they are static strings.
+	* exo/exo-cell-renderer-ellipsized-text.c, exo/exo-toolbars-view.c,
+	  exo/exo-mime-info.c, exo/exo-toolbars-editor.c, exo/exo-icon-bar.c,
+	  exo/exo-xsession-client.c: Make use of the new EXO_PARAM_* defines
+	  that were added to exo/exo-config.h.in.
+
 2005-06-15	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-mime-database.c(exo_mime_database_init): Be sure to call

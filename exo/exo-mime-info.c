@@ -24,6 +24,7 @@
 #include <config.h>
 #endif
 
+#include <exo/exo-config.h>
 #include <exo/exo-mime-info.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
@@ -128,7 +129,7 @@ exo_mime_info_class_init (ExoMimeInfoClass *klass)
                                                         _("Mime info comment"),
                                                         _("The comment gives a better description of the MIME type"),
                                                         NULL,
-                                                        G_PARAM_READABLE));
+                                                        EXO_PARAM_READABLE));
 
   /**
    * ExoMimeInfo:name:
@@ -143,7 +144,7 @@ exo_mime_info_class_init (ExoMimeInfoClass *klass)
                                                         _("Mime info name"),
                                                         _("The full qualified name of the mime type"),
                                                         NULL,
-                                                        G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
+                                                        EXO_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
 }
 
 

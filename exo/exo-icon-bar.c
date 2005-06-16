@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2005 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -26,6 +26,7 @@
 
 #include <libxfce4util/libxfce4util.h>
 
+#include <exo/exo-config.h>
 #include <exo/exo-icon-bar.h>
 #include <exo/exo-marshal.h>
 
@@ -234,7 +235,7 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
                                                       _("The orientation of the iconbar"),
                                                       GTK_TYPE_ORIENTATION,
                                                       GTK_ORIENTATION_VERTICAL,
-                                                      G_PARAM_READWRITE));
+                                                      EXO_PARAM_READWRITE));
 
   /**
    * ExoIconBar:pixbuf-column:
@@ -250,7 +251,7 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
                                                      _("Pixbuf column"),
                                                      _("Model column used to retrieve the icon pixbuf from"),
                                                      -1, G_MAXINT, -1,
-                                                     G_PARAM_READWRITE));
+                                                     EXO_PARAM_READWRITE));
 
   /**
    * ExoIconBar:text-column:
@@ -266,7 +267,7 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
                                                      _("Text column"),
                                                      _("Model column used to retrieve the text from"),
                                                      -1, G_MAXINT, -1,
-                                                     G_PARAM_READWRITE));
+                                                     EXO_PARAM_READWRITE));
 
   /**
    * ExoIconBar:model:
@@ -279,7 +280,7 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
                                                         _("Icon Bar Model"),
                                                         _("Model for the icon bar"),
                                                         GTK_TYPE_TREE_MODEL,
-                                                        G_PARAM_READWRITE));
+                                                        EXO_PARAM_READWRITE));
 
   /**
    * ExoIconBar:active:
@@ -296,49 +297,49 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
                                                      _("Active"),
                                                      _("Active item index"),
                                                      -1, G_MAXINT, -1,
-                                                     G_PARAM_READWRITE));
+                                                     EXO_PARAM_READWRITE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
                                            g_param_spec_boxed ("active-item-fill-color",
                                                                _("Active item fill color"),
                                                                _("Active item fill color"),
                                                                GDK_TYPE_COLOR,
-                                                               G_PARAM_READABLE));
+                                                               EXO_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
                                            g_param_spec_boxed ("active-item-border-color",
                                                                _("Active item border color"),
                                                                _("Active item border color"),
                                                                GDK_TYPE_COLOR,
-                                                               G_PARAM_READABLE));
+                                                               EXO_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
                                            g_param_spec_boxed ("active-item-text-color",
                                                                _("Active item text color"),
                                                                _("Active item text color"),
                                                                GDK_TYPE_COLOR,
-                                                               G_PARAM_READABLE));
+                                                               EXO_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
                                            g_param_spec_boxed ("cursor-item-fill-color",
                                                                _("Cursor item fill color"),
                                                                _("Cursor item fill color"),
                                                                GDK_TYPE_COLOR,
-                                                               G_PARAM_READABLE));
+                                                               EXO_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
                                            g_param_spec_boxed ("cursor-item-border-color",
                                                                _("Cursor item border color"),
                                                                _("Cursor item border color"),
                                                                GDK_TYPE_COLOR,
-                                                               G_PARAM_READABLE));
+                                                               EXO_PARAM_READABLE));
 
   gtk_widget_class_install_style_property (gtkwidget_class,
                                            g_param_spec_boxed ("cursor-item-text-color",
                                                                _("Cursor item text color"),
                                                                _("Cursor item text color"),
                                                                GDK_TYPE_COLOR,
-                                                               G_PARAM_READABLE));
+                                                               EXO_PARAM_READABLE));
 
   /**
    * ExoIconBar::set-scroll-adjustments:

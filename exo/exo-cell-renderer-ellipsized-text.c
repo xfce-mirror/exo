@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2005 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -27,6 +27,7 @@
 #include <libxfce4util/libxfce4util.h>
 
 #include <exo/exo-cell-renderer-ellipsized-text.h>
+#include <exo/exo-config.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-pango-extensions.h>
 
@@ -120,14 +121,15 @@ exo_cell_renderer_ellipsized_text_class_init (ExoCellRendererEllipsizedTextClass
                                                             "room to display the entire string, if at all"),
                                                           EXO_TYPE_PANGO_ELLIPSIZE_MODE,
                                                           EXO_PANGO_ELLIPSIZE_NONE,
-                                                          G_PARAM_READWRITE));
+                                                          EXO_PARAM_READWRITE));
 
       g_object_class_install_property (gobject_class,
                                        PROP_ELLIPSIZE_SET,
                                        g_param_spec_boolean ("ellipsize-set",
                                                              _("Ellipsize set"),
                                                              _("Whether this tag affects the ellipsize mode"),
-                                                             FALSE, G_PARAM_READWRITE));
+                                                             FALSE,
+                                                             EXO_PARAM_READWRITE));
     }
 }
 

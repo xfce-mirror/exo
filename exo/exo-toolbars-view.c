@@ -32,6 +32,7 @@
 #include <string.h>
 #endif
 
+#include <exo/exo-config.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
@@ -215,7 +216,7 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
                                                          "Editing",
                                                          "Editing",
                                                          FALSE,
-                                                         G_PARAM_READWRITE));
+                                                         EXO_PARAM_READWRITE));
 
   /**
    * ExoToolbarsView:model:
@@ -231,7 +232,7 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
                                                         "Model",
                                                         "Model",
                                                         EXO_TYPE_TOOLBARS_MODEL,
-                                                        G_PARAM_READWRITE));
+                                                        EXO_PARAM_READWRITE));
 
   /**
    * ExoToolbarsView:ui-manager:
@@ -248,7 +249,7 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
                                                         "UI Manager",
                                                         "UI Manager",
                                                         GTK_TYPE_UI_MANAGER,
-                                                        G_PARAM_READWRITE));
+                                                        EXO_PARAM_READWRITE));
 
   /**
    * ExoToolbarsView::action-request:
