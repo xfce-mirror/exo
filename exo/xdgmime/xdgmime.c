@@ -783,7 +783,8 @@ xdg_mime_remove_callback (int callback_id)
 	    callback_list = list->next;
 
 	  /* invoke the destroy handler */
-	  (list->destroy) (list->data);
+	  if (list->destroy != NULL)
+	    (list->destroy) (list->data);
 	  free (list);
 	  return;
 	}
