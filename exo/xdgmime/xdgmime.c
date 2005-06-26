@@ -41,6 +41,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/time.h>
+#include <fcntl.h>
 #include <unistd.h>
 #include <assert.h>
 
@@ -140,7 +141,7 @@ xdg_mime_init_from_directory (const char *directory)
 	  list->next = dir_time_list;
 	  dir_time_list = list;
 
-	  caches = realloc (caches, n_caches + 1);
+	  caches = realloc (caches, sizeof (XdgMimeCache *) * (n_caches + 1));
 	  caches[n_caches] = cache;
 	  n_caches++;
 
@@ -392,7 +393,7 @@ xdg_check_time_and_dirs (void)
   gettimeofday (&tv, NULL);
   current_time = tv.tv_sec;
 
-  if (current_time >= last_stat_time + 5)
+  if (current_time >= last_stat_time + 60)
     {
       retval = xdg_check_dirs ();
       last_stat_time = current_time;
@@ -448,7 +449,7 @@ const char *
 xdg_mime_get_mime_type_for_file (const char *file_name)
 {
   const char *mime_type;
-  FILE *file;
+  int fd;
   unsigned char *data;
   int max_extent;
   int bytes_read;
@@ -471,11 +472,21 @@ xdg_mime_get_mime_type_for_file (const char *file_name)
   if (mime_type != XDG_MIME_TYPE_UNKNOWN)
     return mime_type;
 
-  if (stat (file_name, &statbuf) != 0)
+  fd = open (file_name, O_RDONLY, 0);
+  if (fd < 0)
     return XDG_MIME_TYPE_UNKNOWN;
 
+  if (fstat (fd, &statbuf) != 0)
+    {
+      close (fd);
+      return XDG_MIME_TYPE_UNKNOWN;
+    }
+
   if (!S_ISREG (statbuf.st_mode))
-    return XDG_MIME_TYPE_UNKNOWN;
+    {
+      close (fd);
+      return XDG_MIME_TYPE_UNKNOWN;
+    }
 
   /* FIXME: Need to make sure that max_extent isn't totally broken.  This could
    * be large and need getting from a stream instead of just reading it all
@@ -483,27 +494,24 @@ xdg_mime_get_mime_type_for_file (const char *file_name)
   max_extent = _xdg_mime_magic_get_buffer_extents (global_magic);
   data = malloc (max_extent);
   if (data == NULL)
-    return XDG_MIME_TYPE_UNKNOWN;
-        
-      file = fopen (file_name, "r");
-  if (file == NULL)
     {
-      free (data);
+      close (fd);
       return XDG_MIME_TYPE_UNKNOWN;
     }
 
-  bytes_read = fread (data, 1, max_extent, file);
-  if (ferror (file))
+  bytes_read = read (fd, data, max_extent);
+
+  close (fd);
+
+  if (bytes_read <= 0)
     {
       free (data);
-      fclose (file);
       return XDG_MIME_TYPE_UNKNOWN;
     }
 
   mime_type = _xdg_mime_magic_lookup_data (global_magic, data, bytes_read);
 
   free (data);
-  fclose (file);
 
   if (mime_type)
     return mime_type;

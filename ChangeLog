@@ -1,3 +1,15 @@
+2005-06-26	Benedikt Meurer <benny@xfce.org>
+
+	* exo/xdgmime/ChangeLog: Import the xdgmime ChangeLog to ease syncing.
+	* exo/xdgmime/xdgmime.c(xdg_mime_init_from_directory): Import patch
+	  from federico to realloc the right size.
+	* exo/xdgmime/xdgmime.c(xdg_check_time_and_dirs): Increase re-check
+	  time to 60 seconds.
+	* exo/xdgmime/xdgmime.c(xdg_mime_get_mime_type_for_file): Don't use
+	  stdio streams to grab the data from the file for the magic check,
+	  because the additional overhead is unnecessary. Prefer fstat() over
+	  stat() to avoid having to resolve the inode for the given path twice.
+
 2005-06-24	Benedikt Meurer <benny@xfce.org>
 
 	* exo/xdgmime/xdgmime.c(xdg_mime_remove_callback): Allow to specify
