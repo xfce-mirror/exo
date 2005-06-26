@@ -453,7 +453,6 @@ xdg_mime_get_mime_type_for_file (const char *file_name)
   unsigned char *data;
   int max_extent;
   int bytes_read;
-  struct stat statbuf;
   const char *base_name;
 
   if (file_name == NULL)
@@ -472,30 +471,18 @@ xdg_mime_get_mime_type_for_file (const char *file_name)
   if (mime_type != XDG_MIME_TYPE_UNKNOWN)
     return mime_type;
 
-  fd = open (file_name, O_RDONLY, 0);
-  if (fd < 0)
-    return XDG_MIME_TYPE_UNKNOWN;
-
-  if (fstat (fd, &statbuf) != 0)
-    {
-      close (fd);
-      return XDG_MIME_TYPE_UNKNOWN;
-    }
-
-  if (!S_ISREG (statbuf.st_mode))
-    {
-      close (fd);
-      return XDG_MIME_TYPE_UNKNOWN;
-    }
-
   /* FIXME: Need to make sure that max_extent isn't totally broken.  This could
    * be large and need getting from a stream instead of just reading it all
    * in. */
   max_extent = _xdg_mime_magic_get_buffer_extents (global_magic);
   data = malloc (max_extent);
   if (data == NULL)
+    return XDG_MIME_TYPE_UNKNOWN;
+
+  fd = open (file_name, O_RDONLY, 0);
+  if (fd < 0)
     {
-      close (fd);
+      free (data);
       return XDG_MIME_TYPE_UNKNOWN;
     }
 

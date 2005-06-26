@@ -1,5 +1,12 @@
 2005-06-26	Benedikt Meurer <benny@xfce.org>
 
+	* exo/xdgmime/xdgmime.c, exo/exo-mime-database.c: The MIME detector
+	  doesn't perform any stat() calls anymore. The application is
+	  responsible to check that only regular files will be tested.
+	* TODO: Add items that must be done for the MIME detector.
+
+2005-06-26	Benedikt Meurer <benny@xfce.org>
+
 	* exo/xdgmime/ChangeLog: Import the xdgmime ChangeLog to ease syncing.
 	* exo/xdgmime/xdgmime.c(xdg_mime_init_from_directory): Import patch
 	  from federico to realloc the right size.

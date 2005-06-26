@@ -327,8 +327,13 @@ exo_mime_database_get_info_for_data (ExoMimeDatabase *database,
  * @database  : An #ExoMimeDatabase instance.
  * @file_name : The path to the file whose MIME type should be determined.
  *
- * Call #g_object_unref on the returned #ExoMimeInfo instance
+ * Call #g_object_unref() on the returned #ExoMimeInfo instance
  * if you don't need it any longer.
+ *
+ * Note that this method cannot handle file system entities other
+ * than regular files. The result of calling this method on
+ * a directory or another special file is undefined. The application
+ * should make sure that @file_name refers to a regular file.
  *
  * Return value: The appropriate MIME info for the given file.
  **/
@@ -364,7 +369,7 @@ exo_mime_database_get_info_from_file_name (ExoMimeDatabase *database,
   const gchar *name;
 
   g_return_val_if_fail (EXO_IS_MIME_DATABASE (database), NULL);
-  g_return_val_if_fail (file_name != 0, NULL);
+  g_return_val_if_fail (file_name != NULL, NULL);
 
   name = xdg_mime_get_mime_type_from_file_name (file_name);
   return exo_mime_database_get_info (database, name);

@@ -2,3 +2,10 @@
   hacky after all. We've to replace that with a better implementation one
   day.
 - Finish the Python bindings.
+
+- The MIME cache module in the xdgmime implementation must be fixed to work
+  properly, esp. in cases where the MIME cache contains broken entries where
+  the MIME type is 0 characters long.
+- The content sniffer in both the non-cached and the cached version must be
+  changed to checks the contents for text/plain if application/octect-stream
+  is guessed.
