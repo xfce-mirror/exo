@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: autogen.sh,v 1.7 2005/01/26 22:07:26 benny Exp $
+# $Id$
 #
 # Copyright (c) 2002-2005
 #         The Xfce development team. All rights reserved.
@@ -17,6 +17,11 @@ autogen.sh: You don't seem to have the Xfce development tools installed on
 EOF
   exit 1
 }
+
+# substitute revision and date
+revision=`svn info $0 | awk '/^Revision: / {printf "%04d\n", $2}'`
+sed -e "s/@DATE@/`date +%Y%m%d`/g" -e "s/@REVISION@/${revision}/g" \
+  < "configure.in.in" > "configure.in"
 
 exec xdt-autogen $@
 

@@ -11,8 +11,9 @@ m4_define([libexo_verinfo], [0:0:0])
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [3])
 m4_define([libexo_version_micro], [1])
+m4_define([libexo_version_build], [r@REVISION@])
 m4_define([libexo_version_tag], [svn])
-m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()libexo_version_tag()])
+m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()ifelse(libexo_version_tag(), [], [], [libexo_version_tag()-libexo_version_build()])])
 
 dnl Initialize autoconf
 AC_COPYRIGHT([Copyright (c) 2004-2005 os-cillation.
