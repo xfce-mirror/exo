@@ -1,3 +1,11 @@
+2005-06-27	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-bar.c: G_DEFINE_TYPE already defines a parent class
+	  pointer, no need to do that manually.
+	* exo/exo-icon-bar.c: Show the bin_window directly in the realize
+	  method instead of overriding the map method.
+	* exo/exo-icon-bar.c: Fix a few rendering bugs. Still not perfect.
+
 2005-06-26	Benedikt Meurer <benny@xfce.org>
 
 	* exo/xdgmime/xdgmime.c, exo/exo-mime-database.c: The MIME detector

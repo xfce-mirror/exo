@@ -79,7 +79,6 @@ static void            exo_icon_bar_style_set             (GtkWidget        *wid
                                                            GtkStyle         *previous_style);
 static void            exo_icon_bar_realize               (GtkWidget        *widget);
 static void            exo_icon_bar_unrealize             (GtkWidget        *widget);
-static void            exo_icon_bar_map                   (GtkWidget        *widget);
 static void            exo_icon_bar_size_request          (GtkWidget        *widget,
                                                            GtkRequisition   *requisition);
 static void            exo_icon_bar_size_allocate         (GtkWidget        *widget,
@@ -179,7 +178,6 @@ struct _ExoIconBarPrivate
 
 
 
-static GObjectClass *parent_class;
 static guint icon_bar_signals[LAST_SIGNAL];
 
 
@@ -197,8 +195,6 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
 
   g_type_class_add_private (klass, sizeof (ExoIconBarPrivate));
 
-  parent_class = g_type_class_peek_parent (klass);
-
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_icon_bar_finalize;
   gobject_class->get_property = exo_icon_bar_get_property;
@@ -211,7 +207,6 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
   gtkwidget_class->style_set = exo_icon_bar_style_set;
   gtkwidget_class->realize = exo_icon_bar_realize;
   gtkwidget_class->unrealize = exo_icon_bar_unrealize;
-  gtkwidget_class->map = exo_icon_bar_map;
   gtkwidget_class->size_request = exo_icon_bar_size_request;
   gtkwidget_class->size_allocate = exo_icon_bar_size_allocate;
   gtkwidget_class->expose_event = exo_icon_bar_expose;
@@ -405,7 +400,7 @@ exo_icon_bar_destroy (GtkObject *object)
 
   exo_icon_bar_set_model (icon_bar, NULL);
 
-  GTK_OBJECT_CLASS (parent_class)->destroy (object);
+  GTK_OBJECT_CLASS (exo_icon_bar_parent_class)->destroy (object);
 }
 
 
@@ -417,7 +412,7 @@ exo_icon_bar_finalize (GObject *object)
 
   g_object_unref (G_OBJECT (icon_bar->priv->layout));
 
-  G_OBJECT_CLASS (parent_class)->finalize (object);
+  G_OBJECT_CLASS (exo_icon_bar_parent_class)->finalize (object);
 }
 
 
@@ -504,7 +499,7 @@ exo_icon_bar_style_set (GtkWidget *widget,
 {
   ExoIconBar *icon_bar = EXO_ICON_BAR (widget);
 
-  GTK_WIDGET_CLASS (parent_class)->style_set (widget, previous_style);
+  GTK_WIDGET_CLASS (exo_icon_bar_parent_class)->style_set (widget, previous_style);
 
   if (GTK_WIDGET_REALIZED (widget))
     {
@@ -561,6 +556,7 @@ exo_icon_bar_realize (GtkWidget *widget)
   widget->style = gtk_style_attach (widget->style, widget->window);
   gdk_window_set_background (widget->window, &widget->style->base[widget->state]);
   gdk_window_set_background (icon_bar->priv->bin_window, &widget->style->base[widget->state]);
+  gdk_window_show (icon_bar->priv->bin_window);
 }
 
 
@@ -575,20 +571,7 @@ exo_icon_bar_unrealize (GtkWidget *widget)
   icon_bar->priv->bin_window = NULL;
 
   /* GtkWidget::unrealize destroys children and widget->window */
-  GTK_WIDGET_CLASS (parent_class)->unrealize (widget);
-}
-
-
-
-static void
-exo_icon_bar_map (GtkWidget *widget)
-{
-  ExoIconBar *icon_bar = EXO_ICON_BAR (widget);
-
-  GTK_WIDGET_SET_FLAGS (widget, GTK_MAPPED);
-
-  gdk_window_show (icon_bar->priv->bin_window);
-  gdk_window_show (widget->window);
+  GTK_WIDGET_CLASS (exo_icon_bar_parent_class)->unrealize (widget);
 }
 
 
@@ -957,9 +940,9 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
       y = icon_bar->priv->item_height * item->index;
 
       px = (icon_bar->priv->item_width - item->pixbuf_width) / 2 + focus_pad + focus_width;
-      py = (icon_bar->priv->item_height - (item->pixbuf_height + item->layout_height + 2 * ICON_TEXT_PADDING)) / 2
+      py = (icon_bar->priv->item_height - (item->pixbuf_height + item->layout_height + ICON_TEXT_PADDING)) / 2
          + icon_bar->priv->item_height * item->index + focus_pad + focus_width;
-      lx = (icon_bar->priv->item_width - (item->layout_width)) / 2 + focus_pad;
+      lx = (icon_bar->priv->item_width - (item->layout_width + ICON_TEXT_PADDING)) / 2 + focus_pad;
       ly = py + item->pixbuf_height + ICON_TEXT_PADDING;
     }
   else
@@ -1172,7 +1155,7 @@ exo_icon_bar_calculate_item_size (ExoIconBar      *icon_bar,
       item->layout_height = 0;
     }
 
-  item->width = MAX (item->layout_width + 2 * ICON_TEXT_PADDING, item->pixbuf_width)
+  item->width = MAX (item->layout_width, item->pixbuf_width) + 2 * ICON_TEXT_PADDING
               + 2 * (focus_width + focus_pad);
   item->height = item->layout_height + 2 * (focus_width + focus_pad + ICON_TEXT_PADDING)
                + item->pixbuf_height;
