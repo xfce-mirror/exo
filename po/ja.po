@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libexo 0.3.1svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-28 00:06+0200\n"
+"POT-Creation-Date: 2005-07-02 17:06+0200\n"
 "PO-Revision-Date: 2005-06-07 00:16+0900\n"
 "Last-Translator: Daichi Kawahata <daichik@users.sourceforge.net>\n"
 "Language-Team: xfce-users-jp <xfce-users-jp@ml.fdiary.net>\n"
@@ -15,9 +15,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: exo/exo-ellipsized-label.c:121
+#: exo-csource/main.c:224
+#, c-format
+msgid "Usage: %s [options] [file]\n"
+msgstr ""
+
+#: exo-csource/main.c:225
+#, c-format
+msgid "       %s [options] --build-list [[name file]...]\n"
+msgstr ""
+
+#: exo-csource/main.c:227
+msgid "  -h, --help        Print this help message and exit\n"
+msgstr ""
+
+#: exo-csource/main.c:228
+msgid "  -v, --version     Print version information and exit\n"
+msgstr ""
+
+#: exo-csource/main.c:229
+msgid "  --extern          Generate extern symbols\n"
+msgstr ""
+
+#: exo-csource/main.c:230
+msgid "  --static          Generate static symbols\n"
+msgstr ""
+
+#: exo-csource/main.c:231
+msgid "  --name=identifier C macro/variable name\n"
+msgstr ""
+
+#: exo-csource/main.c:232
+msgid "  --build-list      Parse (name, file) pairs\n"
+msgstr ""
+
+#: exo-csource/main.c:242
+msgid ""
+"Copyright (c) 2005\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr ""
+
+#: exo-csource/main.c:245
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr ""
+
+#: exo-csource/main.c:249
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr ""
+
+#: exo/exo-cell-renderer-ellipsized-text.c:118 exo/exo-ellipsized-label.c:121
 msgid "Ellipsize"
 msgstr "中略"
+
+#: exo/exo-cell-renderer-ellipsized-text.c:119
+msgid ""
+"The preferred place to ellipsize the string, if the cell renderer does not "
+"have enough room to display the entire string, if at all"
+msgstr ""
+"セル・レンダラーが全ての文字列を表示するのに十分なスペースが無い場合や、まっ"
+"たく無い場合に文字列を省略する優先箇所です。"
+
+#: exo/exo-cell-renderer-ellipsized-text.c:129
+msgid "Ellipsize set"
+msgstr "中略をセット"
+
+#: exo/exo-cell-renderer-ellipsized-text.c:130
+msgid "Whether this tag affects the ellipsize mode"
+msgstr "このタグが中略モードに影響を及ぼすかどうかを設定します。"
 
 #: exo/exo-ellipsized-label.c:122
 msgid ""
@@ -139,6 +213,22 @@ msgstr "選択ボックスのα値"
 msgid "Opacity of the selection box"
 msgstr "選択ボックスの透明度です。"
 
+#: exo/exo-mime-info.c:129
+msgid "Mime info comment"
+msgstr "MIME 情報コメント"
+
+#: exo/exo-mime-info.c:130
+msgid "The comment gives a better description of the MIME type"
+msgstr "このコメントに MIME タイプのより詳しい説明を記述します。"
+
+#: exo/exo-mime-info.c:144
+msgid "Mime info name"
+msgstr "MIME 情報名"
+
+#: exo/exo-mime-info.c:145
+msgid "The full qualified name of the mime type"
+msgstr "MIME タイプの完全な名前です。"
+
 #: exo/exo-toolbars-editor-dialog.c:107
 msgid "_Add a new toolbar"
 msgstr "新しいツールバーを追加(_A)"
@@ -187,39 +277,18 @@ msgstr "ツールバーを削除(_R)"
 msgid "Customize Toolbar..."
 msgstr "ツールバーのカスタマイズ..."
 
-#~ msgid ""
-#~ "The preferred place to ellipsize the string, if the cell renderer does "
-#~ "not have enough room to display the entire string, if at all"
-#~ msgstr ""
-#~ "セル・レンダラーが全ての文字列を表示するのに十分なスペースが無い場合や、"
-#~ "まったく無い場合に文字列を省略する優先箇所です。"
+#: exo/exo-xsession-client.c:122
+msgid "Window group"
+msgstr "ウィンドウグループ"
 
-#~ msgid "Ellipsize set"
-#~ msgstr "中略をセット"
+#: exo/exo-xsession-client.c:123
+msgid "Window group leader"
+msgstr "ウィンドウグループのリーダーです。"
 
-#~ msgid "Whether this tag affects the ellipsize mode"
-#~ msgstr "このタグが中略モードに影響を及ぼすかどうかを設定します。"
+#: exo/exo-xsession-client.c:133
+msgid "Restart command"
+msgstr "再起動コマンド"
 
-#~ msgid "Mime info comment"
-#~ msgstr "MIME 情報コメント"
-
-#~ msgid "The comment gives a better description of the MIME type"
-#~ msgstr "このコメントに MIME タイプのより詳しい説明を記述します。"
-
-#~ msgid "Mime info name"
-#~ msgstr "MIME 情報名"
-
-#~ msgid "The full qualified name of the mime type"
-#~ msgstr "MIME タイプの完全な名前です。"
-
-#~ msgid "Window group"
-#~ msgstr "ウィンドウグループ"
-
-#~ msgid "Window group leader"
-#~ msgstr "ウィンドウグループのリーダーです。"
-
-#~ msgid "Restart command"
-#~ msgstr "再起動コマンド"
-
-#~ msgid "Session restart command"
-#~ msgstr "セッションを再起動するコマンドです。"
+#: exo/exo-xsession-client.c:134
+msgid "Session restart command"
+msgstr "セッションを再起動するコマンドです。"

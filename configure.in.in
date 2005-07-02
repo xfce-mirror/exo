@@ -68,6 +68,7 @@ XDT_I18N([de en_GB es fr ja],
          [libexo-libexo_version_major().libexo_version_minor()])
 
 dnl Check for required packages
+XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.4.0])
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.4.0])
 XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.2.0])
 
@@ -143,7 +144,10 @@ exo/Makefile
 exo/exo-0.3.pc
 exo/exo-config.h
 exo/xdgmime/Makefile
+exo-csource/Makefile
 po/Makefile.in
 python/Makefile
 python/examples/Makefile
+tests/Makefile
+tests/data/Makefile
 ])

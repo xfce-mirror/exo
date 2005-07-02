@@ -1,3 +1,16 @@
+2005-07-02	Benedikt Meurer <benny@xfce.org>
+
+	* exo-csource/Makefile.am, exo-csource/main.c: Import the exo-csource
+	  utility, which can generate C code for arbitrary data, much like
+	  gdk-pixbuf-csource, but not limited to images.
+	* docs/reference/exo-csource.xml, docs/reference/Makefile.am,
+	  docs/reference/exo-docs.sgml: Add documentation for the exo-csource
+	  utility.
+	* tests/: Add a simple test case for the exo-csource utility.
+	* po/: Hook the new strings from exo-csource into the translation
+	  database.
+	* Makefile.am, configure.in.in: Link new stuff into the build framework.
+
 2005-06-28	Benedikt Meurer <benny@xfce.org>
 
 	* configure.in.in, autogen.sh, Makefile.am: Merge build framework

@@ -17,31 +17,162 @@
 <!ENTITY exo-md5 SYSTEM "xml/exo-md5.xml">
 <!ENTITY exo-string SYSTEM "xml/exo-string.xml">
 <!ENTITY exo-xsession-client SYSTEM "xml/exo-xsession-client.xml">
+
+<!ENTITY exo-csource SYSTEM "exo-csource.xml">
+
 <!ENTITY version SYSTEM "version.xml">
 <!ENTITY date "March 2005">
 ]>
 
-<book id="index">
-	<bookinfo>
-		<title>exo Reference Manual</title>
-		<releaseinfo>for exo &version;</releaseinfo>
+<book id="index" lang="en">
+  <bookinfo>
+    <title>exo Reference Manual</title>
+    <releaseinfo>Version &version;</releaseinfo>
     <pubdate>&date;</pubdate>
-	</bookinfo>
 
-	<part id="exo-overview">
-		<title>Overview</title>
-		<para>
+    <copyright>
+      <year>2004</year>
+      <year>2005</year>
+      <holder>os-cillation e.K.</holder>
+    </copyright>
+
+    <legalnotice id="legalnotice">
+      <para>
+        Permission is granted to copy, distribute and/or modify this document
+        under the terms of the GNU Free Documentation License, Version 1.1 or
+        any later version published by the Free Software Foundation; with no
+        Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+        Texts. The complete license text is available from the <ulink
+        type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.
+      </para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <firstname>Benedikt</firstname>
+        <surname>Meurer</surname>
+        <affiliation>
+          <address><email>benny@xfce.org</email></address>
+          <orgname>os-cillation</orgname>
+          <orgdiv>System development</orgdiv>
+          <jobtitle>Software developer</jobtitle>
+        </affiliation>
+      </author>
+    </authorgroup>
+  </bookinfo>
+
+  <part id="exo-overview">
+    <title>Overview</title>
+    <para>
       <ulink type="http" url="http://libexo.os-cillation.com/">libexo</ulink> is an extension
       library for <ulink url="http://www.xfce.org/" type="http">Xfce</ulink>,
       developed by <ulink url="http://www.os-cillation.com/" type="http">os-cillation</ulink>.
       While Xfce comes with quite a few libraries that are targeted at desktop development,
       libexo is targeted at application developement - in particular, developing applications for
       the Xfce Desktop Environment.
-		</para>
-	</part>
+    </para>
 
-	<part id="exo-toolbars">
-		<title>Editable Toolbars</title>
+    <para>
+      The <application>exo</application> library depends on the following libraries:
+
+      <variablelist>
+        <varlistentry>
+          <term>GLib</term>
+          <listitem>
+            <para>
+              A general-purpose utility library, not specific to graphical user interfaces.
+              GLib provides many useful data types, macros, type conversions,
+              string utilities, file utilities, a main loop abstraction, and so on.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Pango</term>
+          <listitem>
+            <para>
+              Pango is a library for internationalized text handling. It centers
+              around the <link linkend="PangoLayout">PangoLayout</link> object, representing
+              a paragraph of text.  Pango provides the engine for <link
+              linkend="GtkTextView">GtkTextView</link>, <link linkend="GtkLabel">GtkLabel</link>, 
+              <link linkend="GtkEntry">GtkEntry</link>, and other widgets that display text.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>ATK</term>
+          <listitem>
+            <para>
+              ATK is the Accessibility Toolkit. It provides a set of generic
+              interfaces allowing accessibility technologies to interact with a
+              graphical user interface. For example, a screen reader uses ATK to
+              discover the text in an interface and read it to blind users.  GTK+
+              widgets have built-in support for accessibility using the ATK
+              framework.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>GdkPixbuf</term>
+          <listitem>
+            <para>
+              This is a small library which allows you to create <link linkend="GdkPixbuf">GdkPixbuf</link>
+              ("pixel buffer") objects from image data or image files. Use a <link linkend="GdkPixbuf">GdkPixbuf</link>
+              in combination with <link linkend="GtkImage">GtkImage</link> to display images.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>GDK</term>
+          <listitem>
+            <para>
+              GDK is the abstraction layer that allows GTK+ to support multiple
+              windowing systems. GDK provides drawing and window system facilities
+              on X11, Windows, and the Linux framebuffer device.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>GTK+</term>
+          <listitem>
+            <para>
+              The GTK+ library contains <firstterm>widgets</firstterm>, that is, GUI
+              components such as <link linkend="GtkButton">GtkButton</link> or 
+              <link linkend="GtkTextView">GtkTextView</link>.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>libxfce4util</term>
+          <listitem>
+            <para>
+              The Xfce utility library provides various helper functions and classes for
+              C programmers, that aren't directly related to GUI tasks.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>libxfcegui4</term>
+          <listitem>
+            <para>
+              The Xfce GUI library extends the basic functionality provided by the GTK+
+              library with widgets and other classes that were required in the development
+              of the Xfce desktop environment.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </part>
+
+  <part id="exo-toolbars">
+    <title>Editable Toolbars</title>
 
     <para>
       These classes together provide a framework for editable
@@ -63,11 +194,11 @@
       component into a <structname>GtkDialog</structname>.
     </para>
 
-		&exo-toolbars-model;
-		&exo-toolbars-editor;
-		&exo-toolbars-editor-dialog;
-		&exo-toolbars-view;
-	</part>
+    &exo-toolbars-model;
+    &exo-toolbars-editor;
+    &exo-toolbars-editor-dialog;
+    &exo-toolbars-view;
+  </part>
 
   <part id="exo-widgets">
     <title>Additional widgets</title>
@@ -91,6 +222,17 @@
     &exo-md5;
     &exo-string;
     &exo-xsession-client;
+  </part>
+
+  <part id="exo-tools">
+    <title>Tools</title>
+
+    <para>
+      This part presents the tools which are shipped with the
+      <application>exo</application> library.
+    </para>
+
+    &exo-csource;
   </part>
 
   <index>

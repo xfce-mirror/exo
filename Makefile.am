@@ -4,9 +4,11 @@ endif
 
 SUBDIRS =								\
 	exo								\
+	exo-csource							\
 	docs								\
 	po								\
-	$(PYTHON_SUBDIR)
+	$(PYTHON_SUBDIR)						\
+	tests
 
 AUTOMAKE_OPTIONS =							\
 	1.8								\

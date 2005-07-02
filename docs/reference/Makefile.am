@@ -35,7 +35,8 @@ HTML_IMAGES =
 
 # Extra SGML files that are included by DOC_MAIN_SGML_FILE
 content_files = 					\
-	version.xml
+	version.xml					\
+	exo-csource.xml
 
 # CFLAGS and LDFLAGS for compiling scan program. Only needed
 # if $(DOC_MODULE).types is non-empty.
@@ -53,6 +54,16 @@ include $(top_srcdir)/gtk-doc.make
 
 # Other files to distribute
 EXTRA_DIST += 						\
+	exo-csource.1					\
 	version.xml.in
 
-# vi:set ts=8 sw=8 noet ai nocindent:
+# manual pages
+man_MANS =						\
+	exo-csource.1
+
+if MAINTAINER_MODE
+%.1: %.xml
+	xsltproc -nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
+endif
+
+# vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

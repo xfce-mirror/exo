@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.2.1svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-28 00:06+0200\n"
+"POT-Creation-Date: 2005-07-02 17:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: en_GB <LL@li.org>\n"
@@ -15,9 +15,85 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: exo/exo-ellipsized-label.c:121
+#: exo-csource/main.c:224
+#, c-format
+msgid "Usage: %s [options] [file]\n"
+msgstr ""
+
+#: exo-csource/main.c:225
+#, c-format
+msgid "       %s [options] --build-list [[name file]...]\n"
+msgstr ""
+
+#: exo-csource/main.c:227
+msgid "  -h, --help        Print this help message and exit\n"
+msgstr ""
+
+#: exo-csource/main.c:228
+msgid "  -v, --version     Print version information and exit\n"
+msgstr ""
+
+#: exo-csource/main.c:229
+msgid "  --extern          Generate extern symbols\n"
+msgstr ""
+
+#: exo-csource/main.c:230
+msgid "  --static          Generate static symbols\n"
+msgstr ""
+
+#: exo-csource/main.c:231
+msgid "  --name=identifier C macro/variable name\n"
+msgstr ""
+
+#: exo-csource/main.c:232
+msgid "  --build-list      Parse (name, file) pairs\n"
+msgstr ""
+
+#: exo-csource/main.c:242
+msgid ""
+"Copyright (c) 2005\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr ""
+
+#: exo-csource/main.c:245
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr ""
+
+#: exo-csource/main.c:249
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr ""
+
+#: exo/exo-cell-renderer-ellipsized-text.c:118 exo/exo-ellipsized-label.c:121
 msgid "Ellipsize"
 msgstr "Ellipsize"
+
+#: exo/exo-cell-renderer-ellipsized-text.c:119
+#, fuzzy
+msgid ""
+"The preferred place to ellipsize the string, if the cell renderer does not "
+"have enough room to display the entire string, if at all"
+msgstr ""
+"The preferred place to ellipsize the string, if the label does not have "
+"enough room to display the entire string, if at all"
+
+#: exo/exo-cell-renderer-ellipsized-text.c:129
+#, fuzzy
+msgid "Ellipsize set"
+msgstr "Ellipsize"
+
+#: exo/exo-cell-renderer-ellipsized-text.c:130
+msgid "Whether this tag affects the ellipsize mode"
+msgstr ""
 
 #: exo/exo-ellipsized-label.c:122
 msgid ""
@@ -137,6 +213,22 @@ msgstr "Selection Box Alpha"
 msgid "Opacity of the selection box"
 msgstr "Opacity of the selection box"
 
+#: exo/exo-mime-info.c:129
+msgid "Mime info comment"
+msgstr ""
+
+#: exo/exo-mime-info.c:130
+msgid "The comment gives a better description of the MIME type"
+msgstr ""
+
+#: exo/exo-mime-info.c:144
+msgid "Mime info name"
+msgstr ""
+
+#: exo/exo-mime-info.c:145
+msgid "The full qualified name of the mime type"
+msgstr ""
+
 #: exo/exo-toolbars-editor-dialog.c:107
 msgid "_Add a new toolbar"
 msgstr "_Add a new toolbar"
@@ -185,6 +277,22 @@ msgstr "_Remove Toolbar"
 #: exo/exo-toolbars-view.c:808
 msgid "Customize Toolbar..."
 msgstr "Customise Toolbar..."
+
+#: exo/exo-xsession-client.c:122
+msgid "Window group"
+msgstr ""
+
+#: exo/exo-xsession-client.c:123
+msgid "Window group leader"
+msgstr ""
+
+#: exo/exo-xsession-client.c:133
+msgid "Restart command"
+msgstr ""
+
+#: exo/exo-xsession-client.c:134
+msgid "Session restart command"
+msgstr ""
 
 #~ msgid "Unable to stat file %s"
 #~ msgstr "Unable to stat file %s"
