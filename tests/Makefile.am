@@ -26,7 +26,7 @@ test_exo_csource_LDADD =						\
 DISTCLEANFILES = test-exo-csource-data.c
 BUILT_SOURCES = test-exo-csource-data.c
 
-test-exo-csource-data.c: $(srcdir)/Makefile $(srcdir)/data/data.bin $(srcdir)/data/data.txt
+test-exo-csource-data.c: Makefile $(srcdir)/data/data.bin $(srcdir)/data/data.txt
 	$(top_builddir)/exo-csource/exo-csource --extern --build-list data_bin $(srcdir)/data/data.bin data_txt $(srcdir)/data/data.txt > test-exo-csource-data.c
 
 clean-local:

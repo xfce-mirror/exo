@@ -1,5 +1,9 @@
 2005-07-02	Benedikt Meurer <benny@xfce.org>
 
+	* tests/Makefile.am: Don't assume that srcdir = builddir.
+
+2005-07-02	Benedikt Meurer <benny@xfce.org>
+
 	* exo-csource/Makefile.am, exo-csource/main.c: Import the exo-csource
 	  utility, which can generate C code for arbitrary data, much like
 	  gdk-pixbuf-csource, but not limited to images.
