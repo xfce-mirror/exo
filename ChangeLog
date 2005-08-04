@@ -1,3 +1,21 @@
+2005-08-04	Benedikt Meurer <benny@xfce.org>
+
+	* configure.in.in: Merge debug support from Thunar. Add check for
+	  target platform, supports only i386 currently.
+	* exo/exo-noop-generic.c, exo/exo-noop-i386.S, exo/exo-noop.h: Add
+	  commonly used noops.
+	* exo/exo.h: Include exo-object.h and exo-noop.h.
+	* exo/exo-config.h.in: Add EXO_GNUC_MALLOC macro.
+	* exo/exo-object.{c,h}, exo/exo-object-generic.c, exo/exo-object-i386.S:
+	  Add lightweight object class which features thread-safe type
+	  registration and atomic refcouting, but provides none of the more
+	  advanced features of GObject. This can be used for lightweight, fast
+	  objects, that don't require any of GObject's features other than
+	  refcounting.
+	* exo/Makefile.am: Add the new files.
+	* tests/test-exo-noop.c, tests/test-exo-noop.c, tests/Makefile.am: Add
+	  new tests for exo-noop and exo-object.
+
 2005-07-19	Benedikt Meurer <benny@xfce.org>
 
 	* po/ja.po: Update japanese translations, thanks to Daichi Kawahata

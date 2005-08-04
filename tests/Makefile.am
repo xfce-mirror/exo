@@ -8,10 +8,14 @@ INCLUDES =								\
 	-DG_LOG_DOMAIN=\"exo-tests\"
 
 TESTS =									\
-	test-exo-csource
+	test-exo-csource						\
+	test-exo-object							\
+	test-exo-noop
 
 check_PROGRAMS =							\
-	test-exo-csource
+	test-exo-csource						\
+	test-exo-object							\
+	test-exo-noop
 
 test_exo_csource_SOURCES =						\
 	test-exo-csource.c						\
@@ -22,6 +26,34 @@ test_exo_csource_CFLAGS =						\
 
 test_exo_csource_LDADD =						\
 	$(GLIB_LIBS)
+
+test_exo_noop_SOURCES =							\
+	test-exo-noop.c
+
+test_exo_noop_CFLAGS =							\
+	-DEXO_API_SUBJECT_TO_CHANGE					\
+	$(GTK_CFLAGS)							\
+	$(LIBXFCEGUI4_CFLAGS)
+
+test_exo_noop_DEPENDENCIES =						\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+
+test_exo_noop_LDADD =							\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+
+test_exo_object_SOURCES =						\
+	test-exo-object.c
+
+test_exo_object_CFLAGS =						\
+	-DEXO_API_SUBJECT_TO_CHANGE					\
+	$(GTK_CFLAGS)							\
+	$(LIBXFCEGUI4_CFLAGS)
+
+test_exo_object_DEPENDENCIES =						\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+
+test_exo_object_LDADD =							\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 DISTCLEANFILES = test-exo-csource-data.c
 BUILT_SOURCES = test-exo-csource-data.c

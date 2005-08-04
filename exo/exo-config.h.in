@@ -69,6 +69,17 @@ extern const guint exo_micro_version;
 #define EXO_PARAM_READWRITE (G_PARAM_READWRITE)
 #endif
 
+/* define EXO_GNUC_MALLOC appropriately */
+#if defined(G_GNUC_MALLOC)
+#define EXO_GNUC_MALLOC G_GNUC_MALLOC
+#else
+#if __GNUC__ > 2 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 96)
+#define EXO_GNUC_MALLOC __attribute__ ((__malloc__))
+#else
+#define EXO_GNUC_MALLOC
+#endif
+#endif
+
 G_END_DECLS;
 
 #endif /* !__EXO_CONFIG_H__ */

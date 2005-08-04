@@ -22,9 +22,11 @@ libexo_headers =							\
 	exo-gobject-extensions.h					\
 	exo-icon-bar.h							\
 	exo-icon-view.h							\
+	exo-object.h							\
 	exo-md5.h							\
 	exo-mime-database.h						\
 	exo-mime-info.h							\
+	exo-noop.h							\
 	exo-pango-extensions.h						\
 	exo-string.h							\
 	exo-toolbars-editor.h						\
@@ -42,6 +44,16 @@ libexo_built_sources =							\
 	exo-marshal.c							\
 	exo-marshal.h
 
+if EXO_CPU_I386
+libexo_platform_sources =						\
+	exo-object-i386.S						\
+	exo-noop-i386.S
+else
+libexo_platform_sources =						\
+	exo-object-generic.c						\
+	exo-noop-generic.c
+endif
+
 libexoincludedir = $(includedir)/exo-0.3/exo
 
 libexoinclude_HEADERS =							\
@@ -53,6 +65,7 @@ libexoinclude_HEADERS =							\
 libexo_0_3_la_SOURCES =							\
 	$(libexoinclude_HEADERS)					\
 	$(libexo_built_sources)						\
+	$(libexo_platform_sources)					\
 	exo-binding.c							\
 	exo-cell-renderer-ellipsized-text.c				\
 	exo-config.c							\
@@ -62,6 +75,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-gobject-extensions.c					\
 	exo-icon-bar.c							\
 	exo-icon-view.c							\
+	exo-object.c							\
 	exo-md5.c							\
 	exo-mime-database.c						\
 	exo-mime-info.c							\
