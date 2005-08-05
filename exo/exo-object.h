@@ -62,6 +62,8 @@ struct _ExoObject
   /*< private >*/
   GTypeInstance __parent__;
   guint         ref_count;
+  gpointer      reserved1;
+  gpointer      reserved2;
 };
 
 GType     exo_object_get_type  (void) G_GNUC_CONST;
