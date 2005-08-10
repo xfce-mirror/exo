@@ -27,24 +27,6 @@
 
 
 /**
- * exo_object_new:
- * @type : the type id of the #ExoObject subtype to instantiate.
- *
- * Creates a new instance of a #ExoObject subtype (as given by
- * the @type id).
- *
- * Return value: the new instance of @type.
- **/
-gpointer
-exo_object_new (GType type)
-{
-  g_return_val_if_fail (g_type_is_a (type, EXO_TYPE_OBJECT), NULL);
-  return g_type_create_instance (type);
-}
-
-
-
-/**
  * exo_object_ref:
  * @object : an #ExoObject.
  *
@@ -63,32 +45,6 @@ exo_object_ref (gpointer object)
   g_atomic_int_inc (&EXO_OBJECT (object)->ref_count);
 
   return object;
-}
-
-
-
-/**
- * exo_object_unref:
- * @object : an #ExoObject.
- *
- * Decrements the reference count on @object by
- * 1. If the reference count drops to zero, the
- * resources allocated to @object will be freed.
- **/
-void
-exo_object_unref (gpointer object)
-{
-  g_return_if_fail (EXO_IS_OBJECT (object));
-  g_return_if_fail (EXO_OBJECT (object)->ref_count > 0);
-
-  if (g_atomic_int_dec_and_test (&EXO_OBJECT (object)->ref_count))
-    {
-      /* finalize the object */
-      (*EXO_OBJECT_GET_CLASS (object)->finalize) (EXO_OBJECT (object));
-
-      /* free the instance resources */
-      g_type_free_instance ((GTypeInstance *) object);
-    }
 }
 
 

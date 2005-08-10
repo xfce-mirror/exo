@@ -1,3 +1,10 @@
+2005-08-11	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-object-generic.c, exo/exo-object-i386.S, exo/exo-object.c:
+	  Better let the compiler handle the exo_object_new() and
+	  exo_object_unref() methods, so we don't need to care about
+	  text relocations.
+
 2005-08-05	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-object.h: Reserve two pointers for ExoObject.

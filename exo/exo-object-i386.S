@@ -24,17 +24,6 @@ gcc2_compiled.:
 
 
 	.align		16
-	.globl		exo_object_new
-	.type		exo_object_new, @function
-exo_object_new:
-	/* just jump to g_type_create_instance passing
-	 * the full stack to it.
-	 */
-	jmp		g_type_create_instance
-	.size		exo_object_new, .-exo_object_new
-
-
-	.align		16
 	.globl		exo_object_ref
 	.type		exo_object_ref, @function
 exo_object_ref:
@@ -44,40 +33,4 @@ exo_object_ref:
 	ret
 	.size		exo_object_ref, .-exo_object_ref
 
-
-	.align		16
-	.globl		exo_object_unref
-	.type		exo_object_unref, @function
-exo_object_unref:
-	/* decrement the ref_count by one and remember 
-	 * the previous value in %eax.
-	 */
-	movl		4(%esp), %eax
-	leal		4(%eax), %edx
-	movl		$-1, %eax
-	lock; xaddl	%eax, (%edx)
-
-	/* if the previous value was not 1 then we
-	 * simply return from here.
-	 */
-	decl		%eax
-	jz		.L1
-	ret
-.L1:
-	/* else we first call the finalize method
-	 * (which has offset 4 in the class struct).
-	 */
-	movl		4(%esp), %edx
-	pushl		%edx
-	movl		(%edx), %eax
-	call		*4(%eax)
-	addl		$4, %esp
-
-	/* and afterwards leave it to the function
-	 * g_type_free_instance to clean up the
-	 * stack, which is possible, because that
-	 * function takes exactly the same parameters.
-	 */
-	jmp		g_type_free_instance
-	.size		exo_object_unref, .-exo_object_unref
 
