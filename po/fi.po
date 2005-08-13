@@ -1,0 +1,301 @@
+# Finnish translations for libexo.
+# Copyright (c) 2004-2005 os-cillation
+# This file is distributed under the same license as the libexo package.
+# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: libexo 0.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-08-13 12:49+0300\n"
+"PO-Revision-Date: 2005-08-13 12:58+0100\n"
+"Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
+"Language-Team: os-cillation <info@os-cillation.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../exo-csource/main.c:230
+#, c-format
+msgid "Usage: %s [options] [file]\n"
+msgstr "Käyttö: %s [valitsimet] [tiedosto]\n"
+
+#: ../exo-csource/main.c:231
+#, c-format
+msgid "       %s [options] --build-list [[name file]...]\n"
+msgstr "        %s [valitsimet] --build-list [[nimi tiedosto]...]\n"
+
+#: ../exo-csource/main.c:233
+msgid "  -h, --help        Print this help message and exit\n"
+msgstr "  -h, --help        Näytä tämä ohjeteksti ja poistu\n"
+
+#: ../exo-csource/main.c:234
+msgid "  -v, --version     Print version information and exit\n"
+msgstr "  -v, --version     Näytä versiotiedot ja poistu\n"
+
+#: ../exo-csource/main.c:235
+msgid "  --extern          Generate extern symbols\n"
+msgstr "  --extern          Generoi extern-symbolit\n"
+
+#: ../exo-csource/main.c:236
+msgid "  --static          Generate static symbols\n"
+msgstr "  --static          Generoi staattiset symbolit\n"
+
+#: ../exo-csource/main.c:237
+msgid "  --name=identifier C macro/variable name\n"
+msgstr "  --name=tunniste   C-makron tai muuttujan nimi\n"
+
+#: ../exo-csource/main.c:238
+msgid "  --build-list      Parse (name, file) pairs\n"
+msgstr "  --build-list      Lue (nimi, tiedosto)-parit\n"
+
+#: ../exo-csource/main.c:248
+msgid ""
+"Copyright (c) 2005\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr ""
+"Copyright (c) 2005\n"
+"  os-cillation e.K. Kaikki oikeudet pidätetään.\n"
+"\n"
+"Kirjoittanut Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+
+#: ../exo-csource/main.c:251
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr ""
+"%s ei ole MINKÄÄNLAISEN TAKUUN ALAINEN.\n"
+"Voit levittää ja kopioida %s -ohjelmistoa GNU Lesser General\n"
+"Public License -lisenssin ehtojen mukaisesti. Lisenssin löydät\n"
+"%s -lähdekoodipakkauksesta.\n"
+"\n"
+
+#: ../exo-csource/main.c:255
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "Ilmoitathan ohjelmistovirheet osoitteeseen <%s>.\n"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:118
+#: ../exo/exo-ellipsized-label.c:121
+msgid "Ellipsize"
+msgstr "Lyhennä"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:119
+msgid ""
+"The preferred place to ellipsize the string, if the cell renderer does not "
+"have enough room to display the entire string, if at all"
+msgstr ""
+"Kohta, josta merkkijono pyritään tarvittaessa lyhentämään, jos "
+"lohkopiirtimellä ei ole tarpeeksi tilaa merkkijonon näyttämiseen."
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:129
+msgid "Ellipsize set"
+msgstr "Lyhentämissarja"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:130
+msgid "Whether this tag affects the ellipsize mode"
+msgstr "Vaikuttaako tämä tunniste lyhennystilaan"
+
+#: ../exo/exo-ellipsized-label.c:122
+msgid ""
+"The preferred place to ellipsize the string, if the label does not have "
+"enough room to display the entire string, if at all"
+msgstr ""
+"Kohta, josta merkkijono pyritään tarvittaessa lyhentämään, jos "
+"nimikkeellä ei ole tarpeeksi tilaa merkkijonon näyttämiseen."
+
+#: ../exo/exo-icon-bar.c:229 ../exo/exo-icon-view.c:381
+msgid "Orientation"
+msgstr "Suunta"
+
+#: ../exo/exo-icon-bar.c:230
+msgid "The orientation of the iconbar"
+msgstr "Kuvakepalkin suunta"
+
+#: ../exo/exo-icon-bar.c:246 ../exo/exo-icon-view.c:331
+msgid "Pixbuf column"
+msgstr "Pixbuf-sarake"
+
+#: ../exo/exo-icon-bar.c:247 ../exo/exo-icon-view.c:332
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "Mallin sarake, josta kuvakkeen pixbuf noudetaan"
+
+#: ../exo/exo-icon-bar.c:262 ../exo/exo-icon-view.c:347
+msgid "Text column"
+msgstr "Tekstisarake"
+
+#: ../exo/exo-icon-bar.c:263 ../exo/exo-icon-view.c:348
+msgid "Model column used to retrieve the text from"
+msgstr "Mallin sarake, josta teksti noudetaan"
+
+#: ../exo/exo-icon-bar.c:275
+msgid "Icon Bar Model"
+msgstr "Kuvakepalkkimalli"
+
+#: ../exo/exo-icon-bar.c:276
+msgid "Model for the icon bar"
+msgstr "Kuvakepalkin malli"
+
+#: ../exo/exo-icon-bar.c:292
+msgid "Active"
+msgstr "Aktiivinen"
+
+#: ../exo/exo-icon-bar.c:293
+msgid "Active item index"
+msgstr "Aktiivisen kuvakkeen indeksi"
+
+#: ../exo/exo-icon-bar.c:299 ../exo/exo-icon-bar.c:300
+msgid "Active item fill color"
+msgstr "Aktiivisen kohteen täyttöväri"
+
+#: ../exo/exo-icon-bar.c:306 ../exo/exo-icon-bar.c:307
+msgid "Active item border color"
+msgstr "Aktiivisen kohteen reunuksen väri"
+
+#: ../exo/exo-icon-bar.c:313 ../exo/exo-icon-bar.c:314
+msgid "Active item text color"
+msgstr "Aktiivisen kohteen tekstin väri"
+
+#: ../exo/exo-icon-bar.c:320 ../exo/exo-icon-bar.c:321
+msgid "Cursor item fill color"
+msgstr "Osoitinkohteen täyttöväri"
+
+#: ../exo/exo-icon-bar.c:327 ../exo/exo-icon-bar.c:328
+msgid "Cursor item border color"
+msgstr "Osoitinkohteen reunuksen väri"
+
+#: ../exo/exo-icon-bar.c:334 ../exo/exo-icon-bar.c:335
+msgid "Cursor item text color"
+msgstr "Osoitinkohteen tekstin väri"
+
+#: ../exo/exo-icon-view.c:314
+msgid "Selection mode"
+msgstr "Valintatapa"
+
+#: ../exo/exo-icon-view.c:315
+msgid "The selection mode"
+msgstr "Valintatapa"
+
+#: ../exo/exo-icon-view.c:365
+msgid "Markup column"
+msgstr "Merkkaussarake"
+
+#: ../exo/exo-icon-view.c:366
+msgid "Model column used to retrieve the text if using Pango markup"
+msgstr "Mallin sarake, josta teksti noudetaan käytettäessä Pango-merkkausta"
+
+#: ../exo/exo-icon-view.c:373
+msgid "Icon View Model"
+msgstr "Kuvakenäkymämalli"
+
+#: ../exo/exo-icon-view.c:374
+msgid "The model for the icon view"
+msgstr "Kuvakenäkymän malli"
+
+#: ../exo/exo-icon-view.c:382
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"Kuinka kohteiden teksti ja kuvake sijoitetaan suhteessa toisiinsa"
+
+#: ../exo/exo-icon-view.c:390
+msgid "Selection Box Color"
+msgstr "Valintalaatikon väri"
+
+#: ../exo/exo-icon-view.c:391
+msgid "Color of the selection box"
+msgstr "Valintalaatikon väri"
+
+#: ../exo/exo-icon-view.c:397
+msgid "Selection Box Alpha"
+msgstr "Valintalaatikon alpha"
+
+#: ../exo/exo-icon-view.c:398
+msgid "Opacity of the selection box"
+msgstr "Valintalaatikon läpinäkyvyys"
+
+#: ../exo/exo-mime-info.c:129
+msgid "Mime info comment"
+msgstr "Mime-tiedon kommentti"
+
+#: ../exo/exo-mime-info.c:130
+msgid "The comment gives a better description of the MIME type"
+msgstr "Kommentti kuvailee MIME-tyyppiä paremmin"
+
+#: ../exo/exo-mime-info.c:144
+msgid "Mime info name"
+msgstr "Mime-tiedon nimi"
+
+#: ../exo/exo-mime-info.c:145
+msgid "The full qualified name of the mime type"
+msgstr "Mime-tyypin täysi, kelvollinen nimi"
+
+#: ../exo/exo-toolbars-editor-dialog.c:107
+msgid "_Add a new toolbar"
+msgstr "_Lisää uusi välinepalkki"
+
+#: ../exo/exo-toolbars-editor.c:210
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Lisää ja poista ylläolevissa välinepalkeissa olevia kohteita raahaamalla."
+
+#: ../exo/exo-toolbars-editor.c:523
+msgid "Separator"
+msgstr "Erotin"
+
+#: ../exo/exo-toolbars-view.c:742
+msgid "Toolbar _Style"
+msgstr "Välinepalkin t_yyli"
+
+#: ../exo/exo-toolbars-view.c:749
+msgid "_Desktop Default"
+msgstr "Työpöydän _oletus"
+
+#: ../exo/exo-toolbars-view.c:758
+msgid "_Icons only"
+msgstr "Pelkät _kuvakkeet"
+
+#: ../exo/exo-toolbars-view.c:767
+msgid "_Text only"
+msgstr "Pelkkä t_eksti"
+
+#: ../exo/exo-toolbars-view.c:776
+msgid "Text for _All Icons"
+msgstr "Teksti k_aikille kuvakkeille"
+
+#: ../exo/exo-toolbars-view.c:785
+msgid "Text for I_mportant Icons"
+msgstr "Teksti vain t_ärkeille kuvakkeille"
+
+#: ../exo/exo-toolbars-view.c:793
+msgid "_Remove Toolbar"
+msgstr "_Poista välinepalkki"
+
+#: ../exo/exo-toolbars-view.c:808
+msgid "Customize Toolbar..."
+msgstr "Mukauta välinepalkkia..."
+
+#: ../exo/exo-xsession-client.c:122
+msgid "Window group"
+msgstr "Ikkunaryhmä"
+
+#: ../exo/exo-xsession-client.c:123
+msgid "Window group leader"
+msgstr "Ikkunaryhmän johtaja"
+
+#: ../exo/exo-xsession-client.c:133
+msgid "Restart command"
+msgstr "Uudelleenkäynnistyskomento"
+
+#: ../exo/exo-xsession-client.c:134
+msgid "Session restart command"
+msgstr "Istunnon uudelleenkäynnistyskomento"
