@@ -26,6 +26,7 @@
 
 #include <exo/exo-object.h>
 #include <exo/exo-noop.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -188,6 +189,33 @@ exo_object_new (GType type)
 {
   g_return_val_if_fail (g_type_is_a (type, EXO_TYPE_OBJECT), NULL);
   return g_type_create_instance (type);
+}
+
+
+
+/**
+ * exo_object_ref:
+ * @object : an #ExoObject.
+ *
+ * Increments the reference count on @object by 1
+ * in an atomic fashion and returns a pointer to
+ * @object.
+ *
+ * Return value: a reference to @object.
+ **/
+gpointer
+exo_object_ref (gpointer object)
+{
+  g_return_val_if_fail (EXO_IS_OBJECT (object), NULL);
+  g_return_val_if_fail (EXO_OBJECT (object)->ref_count > 0, NULL);
+
+#if defined(EXO_CPU_I386)
+  __asm__ __volatile__ ("lock; incl %0" : "=m" (EXO_OBJECT (object)->ref_count) : "m" (EXO_OBJECT (object)->ref_count));
+#else
+  g_atomic_int_inc (&EXO_OBJECT (object)->ref_count);
+#endif
+
+  return object;
 }
 
 
@@ -370,3 +398,5 @@ exo_value_dup_object (const GValue *value)
 
 
 
+#define __EXO_OBJECT_C__
+#include <exo/exo-aliasdef.c>

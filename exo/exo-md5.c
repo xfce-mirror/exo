@@ -37,6 +37,7 @@
 #endif
 
 #include <exo/exo-md5.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -286,7 +287,7 @@ get_md5 (const gchar *contents,
   MD5_CTX ctx;
 
   MD5Init (&ctx);
-  MD5Update (&ctx, contents, strlen (contents));
+  MD5Update (&ctx, (const guchar *) contents, strlen (contents));
   MD5Final (digest, &ctx);
 }
 
@@ -521,3 +522,6 @@ exo_md5_digest_equal (gconstpointer digest1,
 }
 
 
+
+#define __EXO_MD5_C__
+#include <exo/exo-aliasdef.c>

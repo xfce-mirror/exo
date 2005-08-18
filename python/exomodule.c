@@ -23,6 +23,12 @@
 #include <pygobject.h>
 #include <pygtk/pygtk.h>
 
+#ifdef HAVE_GNUC_VISIBILITY
+/* we need to explicitly export the init_exo() function, since we hide
+ * everything by default.
+ */
+extern DL_EXPORT(void) init_exo (void) __attribute((visibility("default")));
+#endif
 
 extern void exo_add_constants (PyObject *module, const gchar *strip_prefix);
 extern void exo_register_classes (PyObject *d);

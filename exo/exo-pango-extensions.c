@@ -34,6 +34,7 @@
 
 #include <exo/exo-pango-extensions.h>
 #include <exo/exo-string.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -440,4 +441,5 @@ exo_pango_layout_set_text_ellipsized (PangoLayout            *layout,
 
 
 
-
+#define __EXO_PANGO_EXTENSIONS_C__
+#include <exo/exo-aliasdef.c>

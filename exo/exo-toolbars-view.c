@@ -38,6 +38,7 @@
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-private.h>
 #include <exo/exo-toolbars-view.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -479,7 +480,7 @@ exo_toolbars_view_drag_data_get (GtkWidget        *item,
     target = exo_toolbars_model_get_item_data (view->priv->model, type, id);
 
   gtk_selection_data_set (selection_data, selection_data->target,
-                          8, target, strlen (target));
+                          8, (guchar *) target, strlen (target));
 
   g_free (target);
 }
@@ -637,7 +638,7 @@ exo_toolbars_view_drag_data_received (GtkWidget         *toolbar,
 
   target = gtk_drag_dest_find_target (toolbar, context, NULL);
   type = exo_toolbars_model_get_item_type (view->priv->model, target);
-  id = exo_toolbars_model_get_item_id (view->priv->model, type, selection_data->data);
+  id = exo_toolbars_model_get_item_id (view->priv->model, type, (const gchar *) selection_data->data);
 
   if (G_UNLIKELY (id == NULL))
     {
@@ -660,7 +661,7 @@ exo_toolbars_view_drag_data_received (GtkWidget         *toolbar,
       item_position = gtk_toolbar_get_drop_index (GTK_TOOLBAR (toolbar), x, y);
       toolbar_position = exo_toolbars_view_get_toolbar_position (view, toolbar);
 
-      if (data_is_separator (selection_data->data))
+      if (data_is_separator ((const gchar *) selection_data->data))
         exo_toolbars_model_add_separator (view->priv->model, toolbar_position, item_position);
       else
         exo_toolbars_model_add_item (view->priv->model, toolbar_position, item_position, id, type);
@@ -1403,3 +1404,8 @@ exo_toolbars_view_set_ui_manager (ExoToolbarsView *view,
       exo_toolbars_view_construct (view);
     }
 }
+
+
+
+#define __EXO_TOOLBARS_VIEW_C__
+#include <exo/exo-aliasdef.c>

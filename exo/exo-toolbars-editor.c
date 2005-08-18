@@ -38,6 +38,7 @@
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-private.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -300,7 +301,7 @@ exo_toolbars_editor_drag_data_get (GtkWidget          *item,
   action = g_object_get_data (G_OBJECT (item), "gtk-action");
   target = (action != NULL) ? gtk_action_get_name (action) : "separator";
   gtk_selection_data_set (selection_data, selection_data->target,
-                          8, target, strlen (target));
+                          8, (const guchar *) target, strlen (target));
 }
 
 
@@ -709,3 +710,8 @@ exo_toolbars_editor_set_ui_manager (ExoToolbarsEditor *editor,
 
   exo_toolbars_editor_update (editor);
 }
+
+
+
+#define __EXO_TOOLBARS_EDITOR_C__
+#include <exo/exo-aliasdef.c>

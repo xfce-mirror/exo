@@ -39,6 +39,7 @@
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-xsession-client.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -478,3 +479,8 @@ exo_xsession_client_set_restart_command (ExoXsessionClient *client,
                GDK_DRAWABLE_XID (client->priv->leader),
                argv, argc);
 }
+
+
+
+#define __EXO_XSESSION_CLIENT_C__
+#include <exo/exo-aliasdef.c>

@@ -29,6 +29,7 @@
 #include <exo/exo-ellipsized-label.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-string.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -325,3 +326,7 @@ exo_ellipsized_label_set_ellipsize (ExoEllipsizedLabel   *label,
     }
 }
 
+
+
+#define __EXO_ELLIPSIZED_LABEL_C__
+#include <exo/exo-aliasdef.c>

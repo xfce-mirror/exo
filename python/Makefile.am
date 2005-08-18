@@ -1,3 +1,5 @@
+# $Id$
+
 SUBDIRS =								\
 	examples
 
@@ -56,9 +58,17 @@ EXTRA_DIST =								\
 	$(defs_DATA)							\
 	$(exomodule_DATA)						\
 	$(pyexo_PYTHON)							\
+        abicheck.sh                                                     \
 	exo.override
 
 CLEANFILES =								\
-	exo.c
+	actual-abi							\
+	exo.c								\
+	expected-abi
 
+if HAVE_GNUC_VISIBILITY
+TESTS =									\
+	abicheck.sh
+endif
 
+# vi:set ts=8 sw=8 et ai nocindent syntax=automake:

@@ -27,7 +27,7 @@
 #ifndef __EXO_STRING_H__
 #define __EXO_STRING_H__
 
-#include <glib.h>
+#include <exo/exo-config.h>
 
 G_BEGIN_DECLS;
 

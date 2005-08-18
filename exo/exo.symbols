@@ -1,0 +1,322 @@
+/* $Id$ */
+/*-
+ * Copyright (c) 2005 Benedikt Meurer <benny@xfce.org>.
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public
+ * License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+ */
+
+/* This file lists all exported symbols. It is used to generate
+ * the gobject.def file used to control exports on Windows and the
+ * exo-alias.h/exo-aliasdef.c files used to avoid PLT entries for 
+ * internal uses of exported functions (see make-exo-alias.pl).
+ * 
+ * Every symbol must be included in the right
+ * #ifdef IN_HEADER(sym) #endif and
+ * #ifdef IN_SOURCE(sym) #endif sections. 
+ */
+
+#ifdef ALL_FILES
+#define IN_HEADER(x) 1
+#define IN_SOURCE(x) 1
+#endif
+
+/* exo-binding functions */
+#if IN_HEADER(__EXO_BINDING_H__)
+#if IN_SOURCE(__EXO_BINDING_C__)
+exo_binding_new
+exo_binding_new_full
+exo_binding_new_with_negation
+exo_binding_unbind
+exo_mutual_binding_new
+exo_mutual_binding_new_full
+exo_mutual_binding_new_with_negation
+exo_mutual_binding_unbind
+#endif
+#endif
+
+/* ExoCellRendererEllipsizedText methods */
+#if IN_HEADER(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__)
+#if IN_SOURCE(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_C__)
+exo_cell_renderer_ellipsized_text_get_type G_GNUC_CONST
+exo_cell_renderer_ellipsized_text_new
+#endif
+#endif
+
+/* exo-config variables */
+#if IN_HEADER(__EXO_CONFIG_H__)
+#if IN_SOURCE(__EXO_CONFIG_C__)
+exo_major_version
+exo_minor_version
+exo_micro_version
+#endif
+#endif
+
+/* ExoEllipsizedLabel methods */
+#if IN_HEADER(__EXO_ELLIPSIZED_LABEL_H__)
+#if IN_SOURCE(__EXO_ELLIPSIZED_LABEL_C__)
+exo_ellipsized_label_get_type G_GNUC_CONST
+exo_ellipsized_label_new
+exo_ellipsized_label_get_ellipsize
+exo_ellipsized_label_set_ellipsize
+#endif
+#endif
+
+/* exo-enum-types functions */
+#if IN_HEADER(__EXO_ENUM_TYPES_H__)
+#if IN_SOURCE(__EXO_ENUM_TYPES_C__)
+exo_icon_view_drop_position_get_type G_GNUC_CONST
+exo_pango_ellipsize_mode_get_type G_GNUC_CONST
+exo_toolbars_model_flags_get_type G_GNUC_CONST
+#endif
+#endif
+
+/* exo-gdk-pixbuf-extensions functions */
+#if IN_HEADER(__EXO_GDK_PIXBUF_EXTENSIONS_H__)
+#if IN_SOURCE(__EXO_GDK_PIXBUF_EXTENSIONS_C__)
+exo_gdk_pixbuf_scale_ratio
+#endif
+#endif
+
+/* exo-gobject-extensions functions */
+#if IN_HEADER(__EXO_GOBJECT_EXTENSIONS_H__)
+#if IN_SOURCE(__EXO_GOBJECT_EXTENSIONS_C__)
+exo_g_value_transform_negate
+#endif
+#endif
+
+/* exo-gtk-extensions functions */
+#if IN_HEADER(__EXO_GTK_EXTENSIONS_H__)
+#if IN_SOURCE(__EXO_GTK_EXTENSIONS_C__)
+exo_gtk_object_destroy_later
+exo_gtk_radio_action_set_current_value
+#endif
+#endif
+
+/* ExoIconBar methods */
+#if IN_HEADER(__EXO_ICON_BAR_H__)
+#if IN_SOURCE(__EXO_ICON_BAR_C__)
+exo_icon_bar_get_type G_GNUC_CONST
+exo_icon_bar_new
+exo_icon_bar_new_with_model
+exo_icon_bar_get_model
+exo_icon_bar_set_model
+exo_icon_bar_get_pixbuf_column
+exo_icon_bar_set_pixbuf_column
+exo_icon_bar_get_text_column
+exo_icon_bar_set_text_column
+exo_icon_bar_get_orientation
+exo_icon_bar_set_orientation
+exo_icon_bar_get_active
+exo_icon_bar_set_active
+exo_icon_bar_get_active_iter
+exo_icon_bar_set_active_iter
+#endif
+#endif
+
+/* ExoIconView methods */
+#if IN_HEADER(__EXO_ICON_VIEW_H__)
+#if IN_SOURCE(__EXO_ICON_VIEW_C__)
+exo_icon_view_get_type G_GNUC_CONST
+exo_icon_view_new
+exo_icon_view_new_with_model
+exo_icon_view_get_model
+exo_icon_view_set_model
+exo_icon_view_get_text_column
+exo_icon_view_set_text_column
+exo_icon_view_get_markup_column
+exo_icon_view_set_markup_column
+exo_icon_view_get_pixbuf_column
+exo_icon_view_set_pixbuf_column
+exo_icon_view_get_orientation
+exo_icon_view_set_orientation
+exo_icon_view_get_columns
+exo_icon_view_set_columns
+exo_icon_view_get_item_width
+exo_icon_view_set_item_width
+exo_icon_view_get_spacing
+exo_icon_view_set_spacing
+exo_icon_view_get_row_spacing
+exo_icon_view_set_row_spacing
+exo_icon_view_get_column_spacing
+exo_icon_view_set_column_spacing
+exo_icon_view_get_margin
+exo_icon_view_set_margin
+exo_icon_view_get_selection_mode
+exo_icon_view_set_selection_mode
+exo_icon_view_get_path_at_pos
+exo_icon_view_get_item_at_pos
+exo_icon_view_get_visible_range
+exo_icon_view_selected_foreach
+exo_icon_view_select_path
+exo_icon_view_unselect_path
+exo_icon_view_path_is_selected
+exo_icon_view_get_selected_items
+exo_icon_view_select_all
+exo_icon_view_unselect_all
+exo_icon_view_item_activated
+exo_icon_view_get_cursor
+exo_icon_view_set_cursor
+exo_icon_view_scroll_to_path
+exo_icon_view_enable_model_drag_source
+exo_icon_view_enable_model_drag_dest
+exo_icon_view_unset_model_drag_source
+exo_icon_view_unset_model_drag_dest
+exo_icon_view_set_reorderable
+exo_icon_view_get_reorderable
+exo_icon_view_set_drag_dest_item
+exo_icon_view_get_drag_dest_item
+exo_icon_view_get_dest_item_at_pos
+exo_icon_view_create_drag_icon
+#endif
+#endif
+
+/* exo-md5 functions */
+#if IN_HEADER(__EXO_MD5_H__)
+#if IN_SOURCE(__EXO_MD5_C__)
+exo_md5_digest_get_type G_GNUC_CONST
+exo_str_get_md5_digest
+exo_str_get_md5_str
+exo_md5_str_to_digest
+exo_md5_digest_to_str
+exo_md5_digest_dup
+exo_md5_digest_free
+exo_md5_digest_hash
+exo_md5_digest_equal
+#endif
+#endif
+
+/* exo-noop functions */
+#if IN_HEADER(__EXO_NOOP_H__)
+#if IN_SOURCE(__EXO_NOOP_C__)
+exo_noop G_GNUC_PURE
+exo_noop_one G_GNUC_PURE
+exo_noop_zero G_GNUC_PURE
+exo_noop_null G_GNUC_PURE
+exo_noop_true G_GNUC_PURE
+exo_noop_false G_GNUC_PURE
+#endif
+#endif
+
+/* ExoObject methods */
+#if IN_HEADER(__EXO_OBJECT_H__)
+#if IN_SOURCE(__EXO_OBJECT_C__)
+exo_object_get_type G_GNUC_CONST
+exo_object_new
+exo_object_ref
+exo_object_unref
+exo_param_spec_object_get_type G_GNUC_CONST
+exo_param_spec_object
+exo_value_set_object
+exo_value_take_object
+exo_value_get_object
+exo_value_dup_object
+#endif
+#endif
+
+/* exo-pango-extensions functions */
+#if IN_HEADER(__EXO_PANGO_EXTENSIONS_H__)
+#if IN_SOURCE(__EXO_PANGO_EXTENSIONS_C__)
+exo_pango_layout_set_text_ellipsized
+#endif
+#endif
+
+/* exo-string functions */
+#if IN_HEADER(__EXO_STRING_H__)
+#if IN_SOURCE(__EXO_STRING_C__)
+exo_str_elide_underscores
+exo_str_is_equal
+exo_strndupv
+#endif
+#endif
+
+/* ExoToolbarsEditorDialog methods */
+#if IN_HEADER(__EXO_TOOLBARS_EDITOR_DIALOG_H__)
+#if IN_SOURCE(__EXO_TOOLBARS_EDITOR_DIALOG_C__)
+exo_toolbars_editor_dialog_get_type G_GNUC_CONST
+exo_toolbars_editor_dialog_new_with_model
+#endif
+#endif
+
+/* ExoToolbarsEditor methods */
+#if IN_HEADER(__EXO_TOOLBARS_EDITOR_H__)
+#if IN_SOURCE(__EXO_TOOLBARS_EDITOR_C__)
+exo_toolbars_editor_get_type G_GNUC_CONST
+exo_toolbars_editor_new
+exo_toolbars_editor_new_with_model
+exo_toolbars_editor_get_model
+exo_toolbars_editor_set_model
+exo_toolbars_editor_get_ui_manager
+exo_toolbars_editor_set_ui_manager
+#endif
+#endif
+
+/* ExoToolbarsModel methods */
+#if IN_HEADER(__EXO_TOOLBARS_MODEL_H__)
+#if IN_SOURCE(__EXO_TOOLBARS_MODEL_C__)
+exo_toolbars_model_get_type G_GNUC_CONST
+exo_toolbars_model_new
+exo_toolbars_model_set_actions
+exo_toolbars_model_get_actions
+exo_toolbars_model_load_from_file
+exo_toolbars_model_save_to_file
+exo_toolbars_model_get_flags
+exo_toolbars_model_set_flags
+exo_toolbars_model_get_style
+exo_toolbars_model_set_style
+exo_toolbars_model_unset_style
+exo_toolbars_model_get_item_type
+exo_toolbars_model_get_item_id
+exo_toolbars_model_get_item_data
+exo_toolbars_model_add_item
+exo_toolbars_model_add_separator
+exo_toolbars_model_add_toolbar
+exo_toolbars_model_move_item
+exo_toolbars_model_remove_item
+exo_toolbars_model_remove_toolbar
+exo_toolbars_model_n_items
+exo_toolbars_model_item_nth
+exo_toolbars_model_n_toolbars
+exo_toolbars_model_toolbar_nth
+#endif
+#endif
+
+/* ExoToolbarsView methods */
+#if IN_HEADER(__EXO_TOOLBARS_VIEW_H__)
+#if IN_SOURCE(__EXO_TOOLBARS_VIEW_C__)
+exo_toolbars_view_get_type G_GNUC_CONST
+exo_toolbars_view_new
+exo_toolbars_view_new_with_model
+exo_toolbars_view_get_editing
+exo_toolbars_view_set_editing
+exo_toolbars_view_get_model
+exo_toolbars_view_set_model
+exo_toolbars_view_get_ui_manager
+exo_toolbars_view_set_ui_manager
+#endif
+#endif
+
+/* ExoXsessionClient methods */
+#if IN_HEADER(__EXO_XSESSION_CLIENT_H__)
+#if IN_SOURCE(__EXO_XSESSION_CLIENT_C__)
+exo_xsession_client_get_type G_GNUC_CONST
+exo_xsession_client_new_with_group
+exo_xsession_client_get_group
+exo_xsession_client_set_group
+exo_xsession_client_get_restart_command
+exo_xsession_client_set_restart_command
+#endif
+#endif
+

@@ -28,6 +28,7 @@
 #ifndef __EXO_MD5_H__
 #define __EXO_MD5_H__
 
+#include <exo/exo-config.h>
 #include <glib-object.h>
 
 G_BEGIN_DECLS;

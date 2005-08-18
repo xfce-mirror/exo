@@ -32,6 +32,7 @@
 #endif
 
 #include <exo/exo-gdk-pixbuf-extensions.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -87,4 +88,5 @@ exo_gdk_pixbuf_scale_ratio (GdkPixbuf *source,
 
 
 
-
+#define __EXO_GDK_PIXBUF_EXTENSIONS_C__
+#include <exo/exo-aliasdef.c>

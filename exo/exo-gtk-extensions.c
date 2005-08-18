@@ -25,6 +25,7 @@
 #endif
 
 #include <exo/exo-gtk-extensions.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -80,3 +81,6 @@ exo_gtk_radio_action_set_current_value (GtkRadioAction *action,
 }
 
 
+
+#define __EXO_GTK_EXTENSIONS_C__
+#include <exo/exo-aliasdef.c>

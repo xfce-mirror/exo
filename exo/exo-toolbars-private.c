@@ -26,6 +26,7 @@
 #endif
 
 #include <exo/exo-toolbars-private.h>
+#include <exo/exo-alias.h>
 
 
 

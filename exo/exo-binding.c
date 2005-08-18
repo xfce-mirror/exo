@@ -27,6 +27,7 @@
 
 #include <exo/exo-binding.h>
 #include <exo/exo-gobject-extensions.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -507,3 +508,8 @@ exo_mutual_binding_unbind (ExoMutualBinding *binding)
 {
   g_signal_handler_disconnect (binding->direct.dst_object, binding->direct.handler);
 }
+
+
+
+#define __EXO_BINDING_C__
+#include <exo/exo-aliasdef.c>

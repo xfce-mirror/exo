@@ -20,4 +20,7 @@ exo_csource_LDFLAGS =							\
 exo_csource_LDADD =							\
 	$(GLIB_LIBS)
 
+# require to make dist in tests/
+dist-hook: all
+
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

@@ -22,8 +22,8 @@
 #error "Only <exo/exo.h> can be included directly, this file may disappear or change contents."
 #endif
 
-#ifndef __EXO_UTIL_H__
-#define __EXO_UTIL_H__
+#ifndef __EXO_NOOP_H__
+#define __EXO_NOOP_H__
 
 #include <glib.h>
 
@@ -38,4 +38,4 @@ gboolean  exo_noop_false  (void) G_GNUC_PURE;
 
 G_END_DECLS;
 
-#endif /* !__EXO_UTIL_H__ */
+#endif /* !__EXO_NOOP_H__ */

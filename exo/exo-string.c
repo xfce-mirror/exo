@@ -32,6 +32,7 @@
 #endif
 
 #include <exo/exo-string.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -136,3 +137,7 @@ exo_strndupv (gchar **strv,
   return result;
 }
 
+
+
+#define __EXO_STRING_C__
+#include <exo/exo-aliasdef.c>

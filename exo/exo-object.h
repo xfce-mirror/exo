@@ -61,14 +61,14 @@ struct _ExoObject
 {
   /*< private >*/
   GTypeInstance __parent__;
-  guint         ref_count;
+  gint          ref_count;
   gpointer      reserved1;
   gpointer      reserved2;
 };
 
 GType     exo_object_get_type  (void) G_GNUC_CONST;
 
-gpointer  exo_object_new       (GType    type) EXO_GNUC_MALLOC;
+gpointer  exo_object_new       (GType    type);
 
 gpointer  exo_object_ref       (gpointer object);
 void      exo_object_unref     (gpointer object);

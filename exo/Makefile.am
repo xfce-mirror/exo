@@ -1,15 +1,11 @@
 # $Id$
 
-SUBDIRS =								\
-	xdgmime
-
 INCLUDES = 								\
 	-I$(top_srcdir)							\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DEXO_COMPILATION						\
 	-DG_LOG_DOMAIN=\"exo\"						\
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
-	-DXDG_PREFIX=_exo_xdg
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_LTLIBRARIES = libexo-0.3.la
 
@@ -24,8 +20,6 @@ libexo_headers =							\
 	exo-icon-view.h							\
 	exo-object.h							\
 	exo-md5.h							\
-	exo-mime-database.h						\
-	exo-mime-info.h							\
 	exo-noop.h							\
 	exo-pango-extensions.h						\
 	exo-string.h							\
@@ -40,19 +34,11 @@ libexo_built_public_sources =						\
 
 libexo_built_sources =							\
 	$(libexo_built_public_sources)					\
+	exo-alias.h							\
+	exo-aliasdef.c							\
 	exo-enum-types.c						\
 	exo-marshal.c							\
 	exo-marshal.h
-
-if EXO_CPU_I386
-libexo_platform_sources =						\
-	exo-object-i386.S						\
-	exo-noop-i386.S
-else
-libexo_platform_sources =						\
-	exo-object-generic.c						\
-	exo-noop-generic.c
-endif
 
 libexoincludedir = $(includedir)/exo-0.3/exo
 
@@ -65,7 +51,6 @@ libexoinclude_HEADERS =							\
 libexo_0_3_la_SOURCES =							\
 	$(libexoinclude_HEADERS)					\
 	$(libexo_built_sources)						\
-	$(libexo_platform_sources)					\
 	exo-binding.c							\
 	exo-cell-renderer-ellipsized-text.c				\
 	exo-config.c							\
@@ -77,8 +62,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-icon-view.c							\
 	exo-object.c							\
 	exo-md5.c							\
-	exo-mime-database.c						\
-	exo-mime-info.c							\
+	exo-noop.c							\
 	exo-pango-extensions.c						\
 	exo-private.c							\
 	exo-private.h							\
@@ -101,11 +85,7 @@ libexo_0_3_la_LDFLAGS =							\
 	-export-symbols-regex "^[^_].*"					\
 	-no-undefined
 
-libexo_0_3_la_DEPENDENCIES =						\
-	$(top_builddir)/exo/xdgmime/libxdgmime.la
-
 libexo_0_3_la_LIBADD =							\
-	$(top_builddir)/exo/xdgmime/libxdgmime.la			\
 	$(LIBX11_LIBS)							\
 	$(LIBXFCEGUI4_LIBS)
 
@@ -124,6 +104,8 @@ pkgconfig_DATA = exo-0.3.pc
 ##
 if MAINTAINER_MODE
 CLEANFILES =								\
+	actual-abi							\
+	expected-abi							\
 	xgen-eetc							\
 	xgen-eeth							\
 	xgen-emc							\
@@ -137,13 +119,24 @@ DISTCLEANFILES =							\
 BUILT_SOURCES =								\
 	$(libexo_built_sources)
 
+if HAVE_GNUC_VISIBILITY
+TESTS =									\
+	abicheck.sh
+endif
+
+exo-alias.h: make-exo-alias.pl exo.symbols
+	$(PERL) $(srcdir)/make-exo-alias.pl < $(srcdir)/exo.symbols > exo-alias.h
+
+exo-aliasdef.c: make-exo-alias.pl exo.symbols
+	$(PERL) $(srcdir)/make-exo-alias.pl -def < $(srcdir)/exo.symbols > exo-aliasdef.c
+
 exo-enum-types.h: stamp-exo-enum-types.h
 	@true
 stamp-exo-enum-types.h: $(libexo_headers) Makefile
 	( cd $(srcdir) && glib-mkenums \
 		--fhead "#ifndef __EXO_ENUM_TYPES_H__\n#define __EXO_ENUM_TYPES_H__\n#include <libxfce4util/libxfce4util.h>\nG_BEGIN_DECLS\n" \
 		--fprod "/* enumerations from \"@filename@\" */\n" \
-		--vhead "GType @enum_name@_get_type (void);\n#define EXO_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
+		--vhead "GType @enum_name@_get_type (void) G_GNUC_CONST;\n#define EXO_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
 		--ftail "G_END_DECLS\n\n#endif /* !__EXO_ENUM_TYPES_H__ */" \
 		$(libexo_headers) ) >> xgen-eeth \
 	&& (cmp -s xgen-eeth exo-enum-types.h || cp xgen-eeth exo-enum-types.h ) \
@@ -152,11 +145,12 @@ stamp-exo-enum-types.h: $(libexo_headers) Makefile
 
 exo-enum-types.c: $(libexo_headers) Makefile
 	( cd $(srcdir) && glib-mkenums \
-		--fhead "#undef GTK_DISABLE_DEPRECATED\n#define GTK_ENABLE_BROKEN\n#include <exo/exo.h>\n" \
+		--fhead "#undef GTK_DISABLE_DEPRECATED\n#define GTK_ENABLE_BROKEN\n#include <exo/exo.h>\n#include <exo/exo-alias.h>\n" \
 		--fprod "\n/* enumerations from \"@filename@\" */" \
 		--vhead "GType\n@enum_name@_get_type (void)\n{\n\tstatic GType type = 0;\n\tif (type == 0) {\n\tstatic const G@Type@Value values[] = {"\
 		--vprod "\t{ @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
 		--vtail "\t{ 0, NULL, NULL }\n\t};\n\ttype = g_@type@_register_static (\"@EnumName@\", values);\n  }\n\treturn type;\n}\n" \
+		--ftail "\n#define __EXO_ENUM_TYPES_C__\n#include <exo/exo-aliasdef.c>\n" \
 		$(libexo_headers) ) >> xgen-eetc \
 	&& cp xgen-eetc exo-enum-types.c \
 	&& rm -f xgen-eetc
@@ -184,6 +178,11 @@ endif
 dist-hook: all
 
 EXTRA_DIST = 								\
-	exo-marshal.list
+	abicheck.sh							\
+	exo.symbols							\
+	exo-alias.h							\
+	exo-aliasdef.c							\
+	exo-marshal.list						\
+	make-exo-alias.pl
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

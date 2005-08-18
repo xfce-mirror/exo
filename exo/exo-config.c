@@ -25,6 +25,7 @@
 #endif
 
 #include <exo/exo-config.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -32,3 +33,7 @@ const guint exo_major_version = EXO_MAJOR_VERSION;
 const guint exo_minor_version = EXO_MINOR_VERSION;
 const guint exo_micro_version = EXO_MICRO_VERSION;
 
+
+
+#define __EXO_CONFIG_C__
+#include <exo/exo-aliasdef.c>

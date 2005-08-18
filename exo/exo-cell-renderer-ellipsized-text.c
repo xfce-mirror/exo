@@ -30,6 +30,7 @@
 #include <exo/exo-config.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-pango-extensions.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -518,3 +519,6 @@ exo_cell_renderer_ellipsized_text_new (void)
 }
 
 
+
+#define __EXO_CELL_RENDERER_ELLIPSIZED_TEXT_C__
+#include <exo/exo-aliasdef.c>

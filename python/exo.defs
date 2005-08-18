@@ -28,20 +28,6 @@
   (gtype-id "EXO_TYPE_ICON_VIEW")
 )
 
-(define-object MimeDatabase
-  (in-module "Exo")
-  (parent "GObject")
-  (c-name "ExoMimeDatabase")
-  (gtype-id "EXO_TYPE_MIME_DATABASE")
-)
-
-(define-object MimeInfo
-  (in-module "Exo")
-  (parent "GObject")
-  (c-name "ExoMimeInfo")
-  (gtype-id "EXO_TYPE_MIME_INFO")
-)
-
 (define-object ToolbarsEditor
   (in-module "Exo")
   (parent "GtkVBox")
@@ -70,7 +56,30 @@
   (gtype-id "EXO_TYPE_TOOLBARS_VIEW")
 )
 
+(define-object XsessionClient
+  (in-module "Exo")
+  (parent "GObject")
+  (c-name "ExoXsessionClient")
+  (gtype-id "EXO_TYPE_XSESSION_CLIENT")
+)
+
+
+
 ;; Enumerations and flags ...
+
+(define-enum IconViewDropPosition
+  (in-module "Exo")
+  (c-name "ExoIconViewDropPosition")
+  (gtype-id "EXO_TYPE_ICON_VIEW_DROP_POSITION")
+  (values
+    '("no-drop" "EXO_ICON_VIEW_NO_DROP")
+    '("drop-into" "EXO_ICON_VIEW_DROP_INTO")
+    '("drop-left" "EXO_ICON_VIEW_DROP_LEFT")
+    '("drop-right" "EXO_ICON_VIEW_DROP_RIGHT")
+    '("drop-above" "EXO_ICON_VIEW_DROP_ABOVE")
+    '("drop-below" "EXO_ICON_VIEW_DROP_BELOW")
+  )
+)
 
 (define-flags ToolbarsModelFlags
   (in-module "Exo")
@@ -82,15 +91,6 @@
     '("override-style" "EXO_TOOLBARS_MODEL_OVERRIDE_STYLE")
   )
 )
-
-(define-object XsessionClient
-  (in-module "Exo")
-  (parent "GObject")
-  (c-name "ExoXsessionClient")
-  (gtype-id "EXO_TYPE_XSESSION_CLIENT")
-)
-
-;; Enumerations and flags ...
 
 (define-enum PangoEllipsizeMode
   (in-module "Exo")
@@ -101,17 +101,6 @@
     '("start" "EXO_PANGO_ELLIPSIZE_START")
     '("middle" "EXO_PANGO_ELLIPSIZE_MIDDLE")
     '("end" "EXO_PANGO_ELLIPSIZE_END")
-  )
-)
-
-(define-flags ToolbarsModelFlags
-  (in-module "Exo")
-  (c-name "ExoToolbarsModelFlags")
-  (gtype-id "EXO_TYPE_TOOLBARS_MODEL_FLAGS")
-  (values
-    '("not-removable" "EXO_TOOLBARS_MODEL_NOT_REMOVABLE")
-    '("accept-items-only" "EXO_TOOLBARS_MODEL_ACCEPT_ITEMS_ONLY")
-    '("override-style" "EXO_TOOLBARS_MODEL_OVERRIDE_STYLE")
   )
 )
 
@@ -298,17 +287,7 @@
 
 (define-function exo_icon_view_new_with_model
   (c-name "exo_icon_view_new_with_model")
-  (is-constructor-of "ExoIconView")
   (return-type "GtkWidget*")
-  (properties
-    '("model" "optional")
-  )
-)
-
-(define-method set_model
-  (of-object "ExoIconView")
-  (c-name "exo_icon_view_set_model")
-  (return-type "none")
   (parameters
     '("GtkTreeModel*" "model")
   )
@@ -320,12 +299,12 @@
   (return-type "GtkTreeModel*")
 )
 
-(define-method set_text_column
+(define-method set_model
   (of-object "ExoIconView")
-  (c-name "exo_icon_view_set_text_column")
+  (c-name "exo_icon_view_set_model")
   (return-type "none")
   (parameters
-    '("gint" "column")
+    '("GtkTreeModel*" "model")
   )
 )
 
@@ -335,9 +314,9 @@
   (return-type "gint")
 )
 
-(define-method set_markup_column
+(define-method set_text_column
   (of-object "ExoIconView")
-  (c-name "exo_icon_view_set_markup_column")
+  (c-name "exo_icon_view_set_text_column")
   (return-type "none")
   (parameters
     '("gint" "column")
@@ -350,9 +329,9 @@
   (return-type "gint")
 )
 
-(define-method set_pixbuf_column
+(define-method set_markup_column
   (of-object "ExoIconView")
-  (c-name "exo_icon_view_set_pixbuf_column")
+  (c-name "exo_icon_view_set_markup_column")
   (return-type "none")
   (parameters
     '("gint" "column")
@@ -365,6 +344,21 @@
   (return-type "gint")
 )
 
+(define-method set_pixbuf_column
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_pixbuf_column")
+  (return-type "none")
+  (parameters
+    '("gint" "column")
+  )
+)
+
+(define-method get_orientation
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_orientation")
+  (return-type "GtkOrientation")
+)
+
 (define-method set_orientation
   (of-object "ExoIconView")
   (c-name "exo_icon_view_set_orientation")
@@ -374,10 +368,109 @@
   )
 )
 
-(define-method get_orientation
+(define-method get_columns
   (of-object "ExoIconView")
-  (c-name "exo_icon_view_get_orientation")
-  (return-type "GtkOrientation")
+  (c-name "exo_icon_view_get_columns")
+  (return-type "gint")
+)
+
+(define-method set_columns
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_columns")
+  (return-type "none")
+  (parameters
+    '("gint" "columns")
+  )
+)
+
+(define-method get_item_width
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_item_width")
+  (return-type "gint")
+)
+
+(define-method set_item_width
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_item_width")
+  (return-type "none")
+  (parameters
+    '("gint" "item_width")
+  )
+)
+
+(define-method get_spacing
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_spacing")
+  (return-type "gint")
+)
+
+(define-method set_spacing
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_spacing")
+  (return-type "none")
+  (parameters
+    '("gint" "spacing")
+  )
+)
+
+(define-method get_row_spacing
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_row_spacing")
+  (return-type "gint")
+)
+
+(define-method set_row_spacing
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_row_spacing")
+  (return-type "none")
+  (parameters
+    '("gint" "row_spacing")
+  )
+)
+
+(define-method get_column_spacing
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_column_spacing")
+  (return-type "gint")
+)
+
+(define-method set_column_spacing
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_column_spacing")
+  (return-type "none")
+  (parameters
+    '("gint" "column_spacing")
+  )
+)
+
+(define-method get_margin
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_margin")
+  (return-type "gint")
+)
+
+(define-method set_margin
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_margin")
+  (return-type "none")
+  (parameters
+    '("gint" "margin")
+  )
+)
+
+(define-method get_selection_mode
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_selection_mode")
+  (return-type "GtkSelectionMode")
+)
+
+(define-method set_selection_mode
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_selection_mode")
+  (return-type "none")
+  (parameters
+    '("GtkSelectionMode" "mode")
+  )
 )
 
 (define-method get_path_at_pos
@@ -390,6 +483,28 @@
   )
 )
 
+(define-method get_item_at_pos
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_item_at_pos")
+  (return-type "gboolean")
+  (parameters
+    '("gint" "x")
+    '("gint" "y")
+    '("GtkTreePath**" "path")
+    '("GtkCellRenderer**" "cell")
+  )
+)
+
+(define-method get_visible_range
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_visible_range")
+  (return-type "gboolean")
+  (parameters
+    '("GtkTreePath**" "start_path")
+    '("GtkTreePath**" "end_path")
+  )
+)
+
 (define-method selected_foreach
   (of-object "ExoIconView")
   (c-name "exo_icon_view_selected_foreach")
@@ -398,21 +513,6 @@
     '("ExoIconViewForeachFunc" "func")
     '("gpointer" "data")
   )
-)
-
-(define-method set_selection_mode
-  (of-object "ExoIconView")
-  (c-name "exo_icon_view_set_selection_mode")
-  (return-type "none")
-  (parameters
-    '("GtkSelectionMode" "mode")
-  )
-)
-
-(define-method get_selection_mode
-  (of-object "ExoIconView")
-  (c-name "exo_icon_view_get_selection_mode")
-  (return-type "GtkSelectionMode")
 )
 
 (define-method select_path
@@ -469,107 +569,127 @@
   )
 )
 
-
-
-;; From ../exo/exo-mime-database.h
-
-(define-function exo_mime_database_get_type
-  (c-name "exo_mime_database_get_type")
-  (return-type "GType")
-)
-
-(define-function mime_database_get_default
-  (c-name "exo_mime_database_get_default")
-  (return-type "ExoMimeDatabase*")
-)
-
-(define-method get_info
-  (of-object "ExoMimeDatabase")
-  (c-name "exo_mime_database_get_info")
-  (return-type "ExoMimeInfo*")
+(define-method get_cursor
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_cursor")
+  (return-type "gboolean")
   (parameters
-    '("const-gchar*" "name")
+    '("GtkTreePath**" "path")
+    '("GtkCellRenderer**" "cell")
   )
 )
 
-(define-method get_info_for_data
-  (of-object "ExoMimeDatabase")
-  (c-name "exo_mime_database_get_info_for_data")
-  (return-type "ExoMimeInfo*")
+(define-method set_cursor
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_cursor")
+  (return-type "none")
   (parameters
-    '("gconstpointer" "data")
-    '("gsize" "length")
+    '("GtkTreePath*" "path")
+    '("GtkCellRenderer*" "cell")
+    '("gboolean" "start_editing")
   )
 )
 
-(define-method get_info_for_file
-  (of-object "ExoMimeDatabase")
-  (c-name "exo_mime_database_get_info_for_file")
-  (return-type "ExoMimeInfo*")
+(define-method scroll_to_path
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_scroll_to_path")
+  (return-type "none")
   (parameters
-    '("const-gchar*" "file_name")
+    '("GtkTreePath*" "path")
+    '("gboolean" "use_align")
+    '("gfloat" "row_align")
+    '("gfloat" "col_align")
   )
 )
 
-(define-method get_info_from_file_name
-  (of-object "ExoMimeDatabase")
-  (c-name "exo_mime_database_get_info_from_file_name")
-  (return-type "ExoMimeInfo*")
+(define-method enable_model_drag_source
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_enable_model_drag_source")
+  (return-type "none")
   (parameters
-    '("const-gchar*" "file_name")
+    '("GdkModifierType" "start_button_mask")
+    '("const-GtkTargetEntry*" "targets")
+    '("gint" "n_targets")
+    '("GdkDragAction" "actions")
   )
 )
 
-
-
-;; From ../exo/exo-mime-info.h
-
-(define-function exo_mime_info_get_type
-  (c-name "exo_mime_info_get_type")
-  (return-type "GType")
-)
-
-(define-method get_comment
-  (of-object "ExoMimeInfo")
-  (c-name "exo_mime_info_get_comment")
-  (return-type "const-char*")
-)
-
-(define-method get_name
-  (of-object "ExoMimeInfo")
-  (c-name "exo_mime_info_get_name")
-  (return-type "const-char*")
-)
-
-(define-method get_media
-  (of-object "ExoMimeInfo")
-  (c-name "exo_mime_info_get_media")
-  (return-type "const-char*")
-)
-
-(define-method get_subtype
-  (of-object "ExoMimeInfo")
-  (c-name "exo_mime_info_get_subtype")
-  (return-type "const-char*")
-)
-
-(define-method lookup_icon_name
-  (of-object "ExoMimeInfo")
-  (c-name "exo_mime_info_lookup_icon_name")
-  (return-type "const-char*")
+(define-method enable_model_drag_dest
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_enable_model_drag_dest")
+  (return-type "none")
   (parameters
-    '("GtkIconTheme*" "icon_theme")
+    '("const-GtkTargetEntry*" "targets")
+    '("gint" "n_targets")
+    '("GdkDragAction" "actions")
   )
 )
 
-(define-method lookup_icon
-  (of-object "ExoMimeInfo")
-  (c-name "exo_mime_info_lookup_icon")
-  (return-type "GtkIconInfo*")
+(define-method unset_model_drag_source
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_unset_model_drag_source")
+  (return-type "none")
+)
+
+(define-method unset_model_drag_dest
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_unset_model_drag_dest")
+  (return-type "none")
+)
+
+(define-method set_reorderable
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_reorderable")
+  (return-type "none")
   (parameters
-    '("GtkIconTheme*" "icon_theme")
-    '("gint" "size")
-    '("GtkIconLookupFlags" "flags")
+    '("gboolean" "reorderable")
+  )
+)
+
+(define-method get_reorderable
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_reorderable")
+  (return-type "gboolean")
+)
+
+(define-method set_drag_dest_item
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_drag_dest_item")
+  (return-type "none")
+  (parameters
+    '("GtkTreePath*" "path")
+    '("ExoIconViewDropPosition" "pos")
+  )
+)
+
+(define-method get_drag_dest_item
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_drag_dest_item")
+  (return-type "none")
+  (parameters
+    '("GtkTreePath**" "path")
+    '("ExoIconViewDropPosition*" "pos")
+  )
+)
+
+(define-method get_dest_item_at_pos
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_dest_item_at_pos")
+  (return-type "gboolean")
+  (parameters
+    '("gint" "drag_x")
+    '("gint" "drag_y")
+    '("GtkTreePath**" "path")
+    '("ExoIconViewDropPosition*" "pos")
+  )
+)
+
+(define-method create_drag_icon
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_create_drag_icon")
+  (return-type "GdkPixmap*")
+  (parameters
+    '("GtkTreePath*" "path")
   )
 )
 
