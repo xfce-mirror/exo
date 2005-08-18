@@ -95,12 +95,7 @@ dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.4.0])
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.4.0])
-XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.2.0])
-
-dnl *******************************
-dnl *** Check for X11 libraries ***
-dnl *******************************
-XDT_CHECK_LIBX11_REQUIRE()
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.0])
 
 dnl *************************
 dnl *** Check for gtk-doc ***

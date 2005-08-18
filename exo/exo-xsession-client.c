@@ -31,15 +31,15 @@
 #include <string.h>
 #endif
 
-#include <X11/Xlib.h>
-
-#include <gdk/gdkx.h>
-
 #include <exo/exo-config.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-xsession-client.h>
 #include <exo/exo-alias.h>
+
+#ifdef GDK_WINDOWING_X11
+#include <gdk/gdkx.h>
+#endif
 
 
 
@@ -73,16 +73,20 @@ static void             exo_xsession_client_set_property  (GObject              
                                                            guint                   prop_id,
                                                            const GValue           *value,
                                                            GParamSpec             *pspec);
+#ifdef GDK_WINDOWING_X11
 static GdkFilterReturn  exo_xsession_client_filter        (GdkXEvent              *xevent,
                                                            GdkEvent               *event,
                                                            gpointer                data);
+#endif
 
 
 
 struct _ExoXsessionClientPrivate
 {
+#ifdef GDK_WINDOWING_X11
   Atom        wm_protocols;
   Atom        wm_save_yourself;
+#endif
   GdkWindow  *leader;
 };
 
@@ -234,6 +238,7 @@ exo_xsession_client_set_property (GObject       *object,
 
 
 
+#ifdef GDK_WINDOWING_X11
 static GdkFilterReturn
 exo_xsession_client_filter (GdkXEvent *xevent,
                             GdkEvent  *event,
@@ -253,6 +258,7 @@ exo_xsession_client_filter (GdkXEvent *xevent,
 
   return GDK_FILTER_CONTINUE;
 }
+#endif
 
 
 
@@ -286,6 +292,7 @@ void
 exo_xsession_client_set_group (ExoXsessionClient *client,
                                GdkWindow         *leader)
 {
+#ifdef GDK_WINDOWING_X11
   static char *atom_names[2] = { "WM_PROTOCOLS", "WM_SAVE_YOURSELF" };
   Atom         atoms[2];
   Atom        *protocols;
@@ -356,6 +363,7 @@ exo_xsession_client_set_group (ExoXsessionClient *client,
     }
 
   g_object_notify (G_OBJECT (client), "group");
+#endif
 }
 
 
@@ -401,6 +409,7 @@ exo_xsession_client_get_restart_command (ExoXsessionClient  *client,
                                          gchar            ***argv,
                                          gint               *argc)
 {
+#ifdef GDK_WINDOWING_X11
   gchar **argv_return;
   gint    argc_return;
 
@@ -425,6 +434,7 @@ exo_xsession_client_get_restart_command (ExoXsessionClient  *client,
       XFreeStringList (argv_return);
       return TRUE;
     }
+#endif
 
   return FALSE;
 }
@@ -475,9 +485,11 @@ exo_xsession_client_set_restart_command (ExoXsessionClient *client,
     for (argc = 0; argv[argc] != NULL; ++argc)
       ;
 
+#ifdef GDK_WINDOWING_X11
   XSetCommand (GDK_DRAWABLE_XDISPLAY (client->priv->leader),
                GDK_DRAWABLE_XID (client->priv->leader),
                argv, argc);
+#endif
 }
 
 

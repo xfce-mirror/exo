@@ -8,7 +8,7 @@ exo_csource=exo-csource
 
 Name: @PACKAGE_TARNAME@
 Description: Extension library for Xfce
-Requires: libxfcegui4-1.0
+Requires: gtk+-2.0 libxfce4util-1.0
 Version: @PACKAGE_VERSION@
 Libs: -L${libdir} -lexo-${exo_api_version}
 Cflags: -I${includedir}/exo-${exo_api_version}

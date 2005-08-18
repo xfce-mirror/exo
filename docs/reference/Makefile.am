@@ -45,7 +45,7 @@ INCLUDES =	 					\
 	-I$(top_srcdir) 				\
 	-I$(top_builddir) 				\
 	$(GTK_CFLAGS)					\
-	$(LIBXFCEGUI4_CFLAGS)
+	$(LIBXFCE4UTIL_CFLAGS)
 
 GTKDOC_LIBS =  						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la

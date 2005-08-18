@@ -29,7 +29,7 @@
 
 #define EXO_INSIDE_EXO_H
 
-#include <libxfcegui4/libxfcegui4.h>
+#include <libxfce4util/libxfce4util.h>
 
 #include <exo/exo-config.h>
 

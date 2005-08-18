@@ -18,7 +18,8 @@ exobindings_LTLIBRARIES = _exo.la
 _exo_la_CFLAGS =							\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-I$(top_srcdir)							\
-	$(LIBXFCEGUI4_CFLAGS)						\
+        $(GTK_CFLAGS)							\
+	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(PYGTK_CFLAGS)							\
 	$(PYTHON_INCLUDES)
 
@@ -30,7 +31,8 @@ _exo_la_LDFLAGS =							\
 
 _exo_la_LIBADD =							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la		\
-	$(LIBXFCEGUI4_LIBS)
+        $(GTK_LIBS)							\
+	$(LIBXFCE4UTIL_LIBS)
 
 _exo_la_SOURCES =							\
 	exomodule.c
@@ -43,7 +45,7 @@ BUILT_SOURCES =								\
 
 exo.c: $(defs_DATA) $(srcdir)/exo.override Makefile
 .defs.c:
-	(cd $(srcdir) 							\
+	(cd $(srcdir)							\
 	 && $(PYGTK_CODEGEN)						\
 	    --register $(PYGTK_DEFSDIR)/pango-types.defs		\
 	    --register $(PYGTK_DEFSDIR)/atk-types.defs			\
@@ -71,4 +73,4 @@ TESTS =									\
 	abicheck.sh
 endif
 
-# vi:set ts=8 sw=8 et ai nocindent syntax=automake:
+# vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

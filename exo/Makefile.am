@@ -76,8 +76,8 @@ libexo_0_3_la_SOURCES =							\
 	exo-xsession-client.c
 
 libexo_0_3_la_CFLAGS =							\
-	$(LIBX11_CFLAGS)						\
-	$(LIBXFCEGUI4_CFLAGS)
+	$(GTK_CFLAGS)							\
+	$(LIBXFCE4UTIL_CFLAGS)
 
 libexo_0_3_la_LDFLAGS =							\
 	-export-dynamic							\
@@ -86,8 +86,8 @@ libexo_0_3_la_LDFLAGS =							\
 	-no-undefined
 
 libexo_0_3_la_LIBADD =							\
-	$(LIBX11_LIBS)							\
-	$(LIBXFCEGUI4_LIBS)
+	$(GTK_LIBS)							\
+	$(LIBXFCE4UTIL_LIBS)
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = exo-0.3.pc

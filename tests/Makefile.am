@@ -33,7 +33,7 @@ test_exo_noop_SOURCES =							\
 test_exo_noop_CFLAGS =							\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	$(GTK_CFLAGS)							\
-	$(LIBXFCEGUI4_CFLAGS)
+	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_noop_DEPENDENCIES =						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
@@ -47,7 +47,7 @@ test_exo_object_SOURCES =						\
 test_exo_object_CFLAGS =						\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	$(GTK_CFLAGS)							\
-	$(LIBXFCEGUI4_CFLAGS)
+	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_object_DEPENDENCIES =						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
