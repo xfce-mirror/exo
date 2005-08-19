@@ -1,5 +1,15 @@
 2005-08-19	Benedikt Meurer <benny@xfce.org>
 
+	* python/Makefile.am: Fix indentation.
+	* configure.in.in: Enable debugging by default when building from a
+	  SVN sandbox. Disable debugging by default when building a release.
+	* TODO: Remove obsolete items.
+	* HACKING: Fix repository URLs and file names.
+	* NEWS: Collect atleast the most important changes.
+	* po/: Run 'gmake update-po'.
+
+2005-08-19	Benedikt Meurer <benny@xfce.org>
+
 	* configure.in.in: Bump the libtool revision number.
 
 2005-08-19	Benedikt Meurer <benny@xfce.org>

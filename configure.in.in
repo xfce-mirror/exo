@@ -160,7 +160,10 @@ AM_CONDITIONAL([HAVE_PYTHON], [test x"$have_python" = x"yes"])
 dnl ***********************************
 dnl *** Check for debugging support ***
 dnl ***********************************
-AC_ARG_ENABLE([debug], AC_HELP_STRING([--disable-debug], [Disable debugging support]), [], [enable_debug=no])
+AC_ARG_ENABLE([debug],
+AC_HELP_STRING([--enable-debug], [Enable debugging support])
+AC_HELP_STRING([--disable-debug], [Disable debugging support]),
+  [], [ifelse(libexo_version_tag(), [], [enable_debug=no], [enable_debug=yes])])
 AC_MSG_CHECKING([whether to enable debugging support])
 if test x"$enable_debug" != x"no"; then
   CFLAGS="$CFLAGS -O0 -g3 -DG_DISABLE_DEPRECATED -Werror -Wall"

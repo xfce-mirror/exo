@@ -18,7 +18,7 @@ exobindings_LTLIBRARIES = _exo.la
 _exo_la_CFLAGS =							\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-I$(top_srcdir)							\
-        $(GTK_CFLAGS)							\
+	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(PYGTK_CFLAGS)							\
 	$(PYTHON_INCLUDES)
@@ -31,7 +31,7 @@ _exo_la_LDFLAGS =							\
 
 _exo_la_LIBADD =							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la		\
-        $(GTK_LIBS)							\
+	$(GTK_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)
 
 _exo_la_SOURCES =							\

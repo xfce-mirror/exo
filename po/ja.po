@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libexo 0.3.1svn-r\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-16 01:09+0900\n"
+"POT-Creation-Date: 2005-08-19 16:18+0200\n"
 "PO-Revision-Date: 2005-08-16 01:10+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -83,11 +83,11 @@ msgstr ""
 msgid "Please report bugs to <%s>.\n"
 msgstr "バグは <%s> に報告して下さい。\n"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:118 exo/exo-ellipsized-label.c:121
+#: exo/exo-cell-renderer-ellipsized-text.c:119 exo/exo-ellipsized-label.c:122
 msgid "Ellipsize"
 msgstr "中略"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:119
+#: exo/exo-cell-renderer-ellipsized-text.c:120
 msgid ""
 "The preferred place to ellipsize the string, if the cell renderer does not "
 "have enough room to display the entire string, if at all"
@@ -95,15 +95,15 @@ msgstr ""
 "セル・レンダラーが全ての文字列を表示するのに十分なスペースが無い場合や、まっ"
 "たく無い場合に文字列を省略する優先箇所です。"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:129
+#: exo/exo-cell-renderer-ellipsized-text.c:130
 msgid "Ellipsize set"
 msgstr "中略をセット"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:130
+#: exo/exo-cell-renderer-ellipsized-text.c:131
 msgid "Whether this tag affects the ellipsize mode"
 msgstr "このタグが中略モードに影響を及ぼすかどうかを設定します。"
 
-#: exo/exo-ellipsized-label.c:122
+#: exo/exo-ellipsized-label.c:123
 msgid ""
 "The preferred place to ellipsize the string, if the label does not have "
 "enough room to display the entire string, if at all"
@@ -111,139 +111,179 @@ msgstr ""
 "ラベルが全ての文字列を表示するのに十分なスペースが無い場合や、まったく無い場"
 "合に文字列を省略する優先箇所です。"
 
-#: exo/exo-icon-bar.c:229 exo/exo-icon-view.c:381
+#: exo/exo-icon-bar.c:230 exo/exo-icon-view.c:592
 msgid "Orientation"
 msgstr "方向"
 
-#: exo/exo-icon-bar.c:230
+#: exo/exo-icon-bar.c:231
 msgid "The orientation of the iconbar"
 msgstr "アイコンバーが延びる方向です。"
 
-#: exo/exo-icon-bar.c:246 exo/exo-icon-view.c:331
+#: exo/exo-icon-bar.c:247 exo/exo-icon-view.c:609
 msgid "Pixbuf column"
 msgstr "ピクセルバッファ欄"
 
-#: exo/exo-icon-bar.c:247 exo/exo-icon-view.c:332
+#: exo/exo-icon-bar.c:248 exo/exo-icon-view.c:610
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "アイコンのピクセルバッファを取得するために使用されるモデル欄です。"
 
-#: exo/exo-icon-bar.c:262 exo/exo-icon-view.c:347
+#: exo/exo-icon-bar.c:263 exo/exo-icon-view.c:689
 msgid "Text column"
 msgstr "文字欄"
 
-#: exo/exo-icon-bar.c:263 exo/exo-icon-view.c:348
+#: exo/exo-icon-bar.c:264 exo/exo-icon-view.c:690
 msgid "Model column used to retrieve the text from"
 msgstr "文字を取得するために使用されるモデル欄です。"
 
-#: exo/exo-icon-bar.c:275
+#: exo/exo-icon-bar.c:276
 msgid "Icon Bar Model"
 msgstr "アイコンバーのモデル"
 
-#: exo/exo-icon-bar.c:276
+#: exo/exo-icon-bar.c:277
 msgid "Model for the icon bar"
 msgstr "アイコンバーのためのモデルです。"
 
-#: exo/exo-icon-bar.c:292
+#: exo/exo-icon-bar.c:293
 msgid "Active"
 msgstr "アクティブ"
 
-#: exo/exo-icon-bar.c:293
+#: exo/exo-icon-bar.c:294
 msgid "Active item index"
 msgstr "有効アイテムのインデックス"
 
-#: exo/exo-icon-bar.c:299 exo/exo-icon-bar.c:300
+#: exo/exo-icon-bar.c:300 exo/exo-icon-bar.c:301
 msgid "Active item fill color"
 msgstr "有効アイテムの塗潰し色"
 
-#: exo/exo-icon-bar.c:306 exo/exo-icon-bar.c:307
+#: exo/exo-icon-bar.c:307 exo/exo-icon-bar.c:308
 msgid "Active item border color"
 msgstr "有効アイテムの枠の色"
 
-#: exo/exo-icon-bar.c:313 exo/exo-icon-bar.c:314
+#: exo/exo-icon-bar.c:314 exo/exo-icon-bar.c:315
 msgid "Active item text color"
 msgstr "有効アイテムの文字色"
 
-#: exo/exo-icon-bar.c:320 exo/exo-icon-bar.c:321
+#: exo/exo-icon-bar.c:321 exo/exo-icon-bar.c:322
 msgid "Cursor item fill color"
 msgstr "カーソル・アイテムの塗潰し色"
 
-#: exo/exo-icon-bar.c:327 exo/exo-icon-bar.c:328
+#: exo/exo-icon-bar.c:328 exo/exo-icon-bar.c:329
 msgid "Cursor item border color"
 msgstr "カーソル・アイテムの枠の色"
 
-#: exo/exo-icon-bar.c:334 exo/exo-icon-bar.c:335
+#: exo/exo-icon-bar.c:335 exo/exo-icon-bar.c:336
 msgid "Cursor item text color"
 msgstr "カーソル・アイテムの文字色"
 
-#: exo/exo-icon-view.c:314
-msgid "Selection mode"
-msgstr "選択モード"
+#: exo/exo-icon-view.c:495
+msgid "Column Spacing"
+msgstr ""
 
-#: exo/exo-icon-view.c:315
-msgid "The selection mode"
-msgstr "選択モードです。"
+#: exo/exo-icon-view.c:496
+msgid "Space which is inserted between grid column"
+msgstr ""
 
-#: exo/exo-icon-view.c:365
+#: exo/exo-icon-view.c:512
+msgid "Number of columns"
+msgstr ""
+
+#: exo/exo-icon-view.c:513
+msgid "Number of columns to display"
+msgstr ""
+
+#: exo/exo-icon-view.c:530
+msgid "Width for each item"
+msgstr ""
+
+#: exo/exo-icon-view.c:531
+msgid "The width used for each item"
+msgstr ""
+
+#: exo/exo-icon-view.c:546
+msgid "Margin"
+msgstr ""
+
+#: exo/exo-icon-view.c:547
+msgid "Space which is inserted at the edges of the icon view"
+msgstr ""
+
+#: exo/exo-icon-view.c:563
 msgid "Markup column"
 msgstr "マークアップ欄"
 
-#: exo/exo-icon-view.c:366
+#: exo/exo-icon-view.c:564
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Pango のマークアップが使用されている場合に文字を取得するためのモデル欄です。"
 
-#: exo/exo-icon-view.c:373
+#: exo/exo-icon-view.c:578
 msgid "Icon View Model"
 msgstr "アイコン表示モデル"
 
-#: exo/exo-icon-view.c:374
+#: exo/exo-icon-view.c:579
 msgid "The model for the icon view"
 msgstr "アイコン表示のためのモデルです。"
 
-#: exo/exo-icon-view.c:382
+#: exo/exo-icon-view.c:593
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr ""
 "それぞれのアイテムの文字とアイコンがお互いにどの位置に置かれるかを選択しま"
 "す。"
 
-#: exo/exo-icon-view.c:390
+#: exo/exo-icon-view.c:625
+msgid "Reorderable"
+msgstr ""
+
+#: exo/exo-icon-view.c:626
+msgid "View is reorderable"
+msgstr ""
+
+#: exo/exo-icon-view.c:641
+msgid "Row Spacing"
+msgstr ""
+
+#: exo/exo-icon-view.c:642
+msgid "Space which is inserted between grid rows"
+msgstr ""
+
+#: exo/exo-icon-view.c:656
+msgid "Selection mode"
+msgstr "選択モード"
+
+#: exo/exo-icon-view.c:657
+msgid "The selection mode"
+msgstr "選択モードです。"
+
+#: exo/exo-icon-view.c:673
+msgid "Spacing"
+msgstr ""
+
+#: exo/exo-icon-view.c:674
+msgid "Space which is inserted between cells of an item"
+msgstr ""
+
+#: exo/exo-icon-view.c:701
 msgid "Selection Box Color"
 msgstr "選択ボックスの色"
 
-#: exo/exo-icon-view.c:391
+#: exo/exo-icon-view.c:702
 msgid "Color of the selection box"
 msgstr "選択ボックスの色です。"
 
-#: exo/exo-icon-view.c:397
+#: exo/exo-icon-view.c:712
 msgid "Selection Box Alpha"
 msgstr "選択ボックスのα値"
 
-#: exo/exo-icon-view.c:398
+#: exo/exo-icon-view.c:713
 msgid "Opacity of the selection box"
 msgstr "選択ボックスの透明度です。"
 
-#: exo/exo-mime-info.c:129
-msgid "Mime info comment"
-msgstr "MIME 情報コメント"
-
-#: exo/exo-mime-info.c:130
-msgid "The comment gives a better description of the MIME type"
-msgstr "このコメントに MIME タイプのより詳しい説明を記述します。"
-
-#: exo/exo-mime-info.c:144
-msgid "Mime info name"
-msgstr "MIME 情報名"
-
-#: exo/exo-mime-info.c:145
-msgid "The full qualified name of the mime type"
-msgstr "MIME タイプの完全な名前です。"
-
-#: exo/exo-toolbars-editor-dialog.c:107
+#: exo/exo-toolbars-editor-dialog.c:108
 msgid "_Add a new toolbar"
 msgstr "新しいツールバーを追加(_A)"
 
-#: exo/exo-toolbars-editor.c:210
+#: exo/exo-toolbars-editor.c:211
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
@@ -251,54 +291,66 @@ msgstr ""
 "追加するにはアイテムをツールバーの上にドラッグして下さい、削除するにはツール"
 "バーからドラッグして下さい。"
 
-#: exo/exo-toolbars-editor.c:523
+#: exo/exo-toolbars-editor.c:524
 msgid "Separator"
 msgstr "セパレータ"
 
-#: exo/exo-toolbars-view.c:742
+#: exo/exo-toolbars-view.c:743
 msgid "Toolbar _Style"
 msgstr "ツールバーのスタイル(_S)"
 
-#: exo/exo-toolbars-view.c:749
+#: exo/exo-toolbars-view.c:750
 msgid "_Desktop Default"
 msgstr "デスクトップの標準(_D)"
 
-#: exo/exo-toolbars-view.c:758
+#: exo/exo-toolbars-view.c:759
 msgid "_Icons only"
 msgstr "アイコンのみ(_I)"
 
-#: exo/exo-toolbars-view.c:767
+#: exo/exo-toolbars-view.c:768
 msgid "_Text only"
 msgstr "文字のみ(_T)"
 
-#: exo/exo-toolbars-view.c:776
+#: exo/exo-toolbars-view.c:777
 msgid "Text for _All Icons"
 msgstr "全アイコンに文字を添える(_A)"
 
-#: exo/exo-toolbars-view.c:785
+#: exo/exo-toolbars-view.c:786
 msgid "Text for I_mportant Icons"
 msgstr "重要アイコンに文字を添える(_M)"
 
-#: exo/exo-toolbars-view.c:793
+#: exo/exo-toolbars-view.c:794
 msgid "_Remove Toolbar"
 msgstr "ツールバーを削除(_R)"
 
-#: exo/exo-toolbars-view.c:808
+#: exo/exo-toolbars-view.c:809
 msgid "Customize Toolbar..."
 msgstr "ツールバーのカスタマイズ..."
 
-#: exo/exo-xsession-client.c:122
+#: exo/exo-xsession-client.c:127
 msgid "Window group"
 msgstr "ウィンドウグループ"
 
-#: exo/exo-xsession-client.c:123
+#: exo/exo-xsession-client.c:128
 msgid "Window group leader"
 msgstr "ウィンドウグループのリーダーです。"
 
-#: exo/exo-xsession-client.c:133
+#: exo/exo-xsession-client.c:138
 msgid "Restart command"
 msgstr "再起動コマンド"
 
-#: exo/exo-xsession-client.c:134
+#: exo/exo-xsession-client.c:139
 msgid "Session restart command"
 msgstr "セッションを再起動するコマンドです。"
+
+#~ msgid "Mime info comment"
+#~ msgstr "MIME 情報コメント"
+
+#~ msgid "The comment gives a better description of the MIME type"
+#~ msgstr "このコメントに MIME タイプのより詳しい説明を記述します。"
+
+#~ msgid "Mime info name"
+#~ msgstr "MIME 情報名"
+
+#~ msgid "The full qualified name of the mime type"
+#~ msgstr "MIME タイプの完全な名前です。"

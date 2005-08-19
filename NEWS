@@ -1,6 +1,13 @@
 0.3.1svn
 ========
-- New translations: Daichi Kawahata (ja)
+- Added a new lightweight object class ExoObject, which is based on the
+  GLib Type System just like GObject, but provides only thread-safe
+  reference counting.
+- Updated the ExoIconView class to support an API compatible to the GtkIconView
+  in Gtk+ 2.8, and improve the performance of the icon view.
+- Added a new utility exo-csource, which can generate C source code from
+  arbitrary data.
+- New translations: Patricio Carr (es), Stephane Roy (fr), Daichi Kawahata (ja)
 
 
 0.3.0

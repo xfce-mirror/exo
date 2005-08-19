@@ -16,7 +16,7 @@ Please and send a patch against a recent version of this package. Patches
 against the Subversion trunk branch are most preferable. You can always
 access the trunk branch from 
 
-  https://os-cillation.com:8080/websvn/listing.php?repname=libexo
+  http://svn.foo-projects.org/listing.php?repname=xfce4&path=/libexo/#/libexo/
 
 
 Feature requests
@@ -42,19 +42,19 @@ Release process
 ===============
 
   1) Check out a fresh copy from Subversion
-  2) Increment the version number in configure.ac
+  2) Increment the version number in configure.in.in
   3) Update NEWS and ChangeLog, and don't forget to add an entry
      ("Released x.y.z") to ChangeLog, so people can see which changes
      were before and after a given release.
   4) Check the gtk-doc.
   5) Run make update-po in po/ and update po/de.po (don't forget the header)!
-  6) Unset libexo_version_tag in configure.ac and reset it after the
+  6) Unset libexo_version_tag in configure.in.in and reset it after the
      release is done.
   7) Verify that make dist works.
   8) "svn commit" the changes.
   9) Create a simple tag for the release,
-      "svn copy https://os-cillation.de:8080/repos/libexo/trunk \
-         https://os-cillation.de:8080/repos/libexo/tags/release-X.Y.Z"
+      "svn copy svn+ssh://foo-projects.org/var/svn/xfce/libexo/trunk \
+         svn+ssh://foo-projects.org/var/svn/xfce/libexo/tags/release-X.Y.Z"
      where X.Y.Z is the version number.
  10) Upload the tarballs to os-cillation ftp
  11) Upload the tarballs to os-works
