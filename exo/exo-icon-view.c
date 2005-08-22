@@ -1840,6 +1840,9 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
         }
       else
         {
+          /* cancel the current editing, if it exists */
+          exo_icon_view_stop_editing (icon_view, TRUE);
+
           if (icon_view->priv->selection_mode != GTK_SELECTION_BROWSE &&
               !(event->state & GDK_CONTROL_MASK))
             {
@@ -1964,7 +1967,8 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
                                    gint          x,
                                    gint          y)
 {
-  GList *items;
+  gpointer drag_data;
+  GList   *items;
 
   g_assert (!icon_view->priv->doing_rubberband);
 
@@ -1983,6 +1987,16 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
   icon_view->priv->doing_rubberband = TRUE;
 
   gtk_grab_add (GTK_WIDGET (icon_view));
+
+  /* be sure to disable Gtk+ DnD callbacks, because else rubberbanding will be interrupted */
+  drag_data = g_object_get_data (G_OBJECT (icon_view), "gtk-site-data");
+  if (G_LIKELY (drag_data != NULL))
+    {
+      g_signal_handlers_block_matched (G_OBJECT (icon_view),
+                                       G_SIGNAL_MATCH_DATA,
+                                       0, 0, NULL, NULL,
+                                       drag_data);
+    }
 }
 
 
@@ -1990,11 +2004,23 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
 static void
 exo_icon_view_stop_rubberbanding (ExoIconView *icon_view)
 {
+  gpointer drag_data;
+
   if (G_LIKELY (icon_view->priv->doing_rubberband))
     {
       icon_view->priv->doing_rubberband = FALSE;
       gtk_grab_remove (GTK_WIDGET (icon_view));
       gtk_widget_queue_draw (GTK_WIDGET (icon_view));
+
+      /* re-enable Gtk+ DnD callbacks again */
+      drag_data = g_object_get_data (G_OBJECT (icon_view), "gtk-site-data");
+      if (G_LIKELY (drag_data != NULL))
+        {
+          g_signal_handlers_unblock_matched (G_OBJECT (icon_view),
+                                             G_SIGNAL_MATCH_DATA,
+                                             0, 0, NULL, NULL,
+                                             drag_data);
+        }
     }
 }
 

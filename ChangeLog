@@ -1,3 +1,10 @@
+2005-08-22	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c: Disable Gtk+ DnD callbacks when starting a
+	  rubberband selection and re-enable them afterwards.
+	* exo/exo-icon-view.c(exo_icon_view_button_press_event): Cancel cell
+	  editing when clicking on an empty area.
+
 2005-08-19	Benedikt Meurer <benny@xfce.org>
 
 	* python/Makefile.am: Fix indentation.
