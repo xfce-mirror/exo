@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2005 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -31,10 +31,7 @@
 
 G_BEGIN_DECLS;
 
-void   _exo_i18n_init                   (void);
-
-gchar *_exo_load_mime_comment_from_file (const gchar *filename,
-                                         GError     **error);
+void _exo_i18n_init (void);
 
 G_END_DECLS;
 
