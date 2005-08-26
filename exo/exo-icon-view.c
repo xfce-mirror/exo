@@ -1311,9 +1311,6 @@ exo_icon_view_expose_event (GtkWidget      *widget,
       rubber_rect.width = ABS (icon_view->priv->rubberband_x1 - icon_view->priv->rubberband_x2) + 1;
       rubber_rect.height = ABS (icon_view->priv->rubberband_y1 - icon_view->priv->rubberband_y2) + 1;
 
-      /* setup the clipping area */
-      gdk_gc_set_clip_region (icon_view->priv->rubberband_fill_gc, event->region);
-
       /* draw the required rectangles */
       gdk_region_get_rectangles (event->region, &rectangles, &n_rectangles);
       while (n_rectangles--)
