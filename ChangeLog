@@ -1,3 +1,10 @@
+2005-08-26	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c: Allocate the GCs required for drawing the
+	  rubberband selection when the rubberbanding starts and deallocate
+	  them when rubberbanding is done, instead of allocating them for
+	  every expose_event handler invokation.
+
 2005-08-25	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-private.{c,h}: Drop the MIME info parser.

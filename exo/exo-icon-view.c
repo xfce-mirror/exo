@@ -360,6 +360,8 @@ struct _ExoIconViewPrivate
   gboolean doing_rubberband;
   gint rubberband_x1, rubberband_y1;
   gint rubberband_x2, rubberband_y2;
+  GdkGC *rubberband_border_gc;
+  GdkGC *rubberband_fill_gc;
 
   gint scroll_timeout_id;
   gint scroll_value_diff;
@@ -1279,16 +1281,12 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   ExoIconViewDropPosition dest_pos;
   ExoIconViewItem        *dest_item = NULL;
   ExoIconViewItem        *item;
-  const GdkColor         *background_color;
   GdkRectangle           *rectangles;
   ExoIconView            *icon_view = EXO_ICON_VIEW (widget);
   GtkTreePath            *path;
   GdkRectangle            rubber_rect;
   GdkRectangle            rect;
   const GList            *lp;
-  GdkColor               *color;
-  guchar                  alpha;
-  GdkGC                  *gc;
   gint                    n_rectangles;
   gint                    dest_index = -1;
  
@@ -1307,38 +1305,21 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   /* paint the rubberband background */
   if (G_UNLIKELY (icon_view->priv->doing_rubberband))
     {
-      /* determine the fill color and alpha setting */
-      gtk_widget_style_get (GTK_WIDGET (icon_view), "selection-box-color", &color, "selection-box-alpha", &alpha, NULL);
-      if (G_LIKELY (color == NULL))
-        color = gdk_color_copy (&GTK_WIDGET (icon_view)->style->base[GTK_STATE_SELECTED]);
-
-      /* calculate the fill color (based on the fill color, the alpha setting and the background color) */
-      background_color = &GTK_WIDGET (icon_view)->style->base[GTK_STATE_NORMAL];
-      color->red = ((color->red * (alpha / 255.0)) + (background_color->red * (255.0 - alpha / 255.0)));
-      color->green = ((color->green * (alpha / 255.0)) + (background_color->green * (255.0 - alpha / 255.0)));
-      color->blue = ((color->blue * (alpha / 255.0)) + (background_color->blue * (255.0 - alpha / 255.0)));
-
       /* calculate the rubberband area */
       rubber_rect.x = MIN (icon_view->priv->rubberband_x1, icon_view->priv->rubberband_x2);
       rubber_rect.y = MIN (icon_view->priv->rubberband_y1, icon_view->priv->rubberband_y2);
       rubber_rect.width = ABS (icon_view->priv->rubberband_x1 - icon_view->priv->rubberband_x2) + 1;
       rubber_rect.height = ABS (icon_view->priv->rubberband_y1 - icon_view->priv->rubberband_y2) + 1;
 
-      /* allocate a graphics context */
-      gc = gdk_gc_new (event->window);
-      gdk_gc_set_rgb_fg_color (gc, color);
-      gdk_gc_set_clip_region (gc, event->region);
+      /* setup the clipping area */
+      gdk_gc_set_clip_region (icon_view->priv->rubberband_fill_gc, event->region);
 
       /* draw the required rectangles */
       gdk_region_get_rectangles (event->region, &rectangles, &n_rectangles);
       while (n_rectangles--)
         if (gdk_rectangle_intersect (&rubber_rect, &rectangles[n_rectangles], &rect))
-          gdk_draw_rectangle (event->window, gc, TRUE, rect.x, rect.y, rect.width, rect.height);
+          gdk_draw_rectangle (event->window, icon_view->priv->rubberband_fill_gc, TRUE, rect.x, rect.y, rect.width, rect.height);
       g_free (rectangles);
-
-      /* cleanup */
-      g_object_unref (G_OBJECT (gc));
-      gdk_color_free (color);
     }
 
   /* paint all items that are affected by the expose event */
@@ -1415,18 +1396,10 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   /* draw the rubberband border */
   if (G_UNLIKELY (icon_view->priv->doing_rubberband))
     {
-      /* determine the border color */
-      gtk_widget_style_get (GTK_WIDGET (icon_view), "selection-box-color", &color, NULL);
-      if (G_LIKELY (color == NULL))
-        color = gdk_color_copy (&GTK_WIDGET (icon_view)->style->base[GTK_STATE_SELECTED]);
-
       /* draw the border */
-      gc = gdk_gc_new (event->window);
-      gdk_gc_set_rgb_fg_color (gc, color);
-      gdk_gc_set_clip_region (gc, event->region);
-      gdk_draw_rectangle (event->window, gc, FALSE, rubber_rect.x, rubber_rect.y, rubber_rect.width - 1, rubber_rect.height - 1);
-      g_object_unref (G_OBJECT (gc));
-      gdk_color_free (color);
+      gdk_gc_set_clip_region (icon_view->priv->rubberband_border_gc, event->region);
+      gdk_draw_rectangle (event->window, icon_view->priv->rubberband_border_gc, FALSE,
+                          rubber_rect.x, rubber_rect.y, rubber_rect.width - 1, rubber_rect.height - 1);
     }
 
   /* let the GtkContainer forward the expose event to all children */
@@ -1967,8 +1940,11 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
                                    gint          x,
                                    gint          y)
 {
-  gpointer drag_data;
-  GList   *items;
+  const GdkColor *background_color;
+  GdkColor       *color;
+  guchar          alpha;
+  gpointer        drag_data;
+  GList          *items;
 
   g_assert (!icon_view->priv->doing_rubberband);
 
@@ -1985,6 +1961,32 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
   icon_view->priv->rubberband_y2 = y;
 
   icon_view->priv->doing_rubberband = TRUE;
+
+  /* determine the border color */
+  gtk_widget_style_get (GTK_WIDGET (icon_view), "selection-box-color", &color, NULL);
+  if (G_LIKELY (color == NULL))
+    color = gdk_color_copy (&GTK_WIDGET (icon_view)->style->base[GTK_STATE_SELECTED]);
+
+  /* allocate the border GC */
+  icon_view->priv->rubberband_border_gc = gdk_gc_new (icon_view->priv->bin_window);
+  gdk_gc_set_rgb_fg_color (icon_view->priv->rubberband_border_gc, color);
+  gdk_color_free (color);
+
+  /* determine the fill color and alpha setting */
+  gtk_widget_style_get (GTK_WIDGET (icon_view), "selection-box-color", &color, "selection-box-alpha", &alpha, NULL);
+  if (G_LIKELY (color == NULL))
+    color = gdk_color_copy (&GTK_WIDGET (icon_view)->style->base[GTK_STATE_SELECTED]);
+
+  /* calculate the fill color (based on the fill color, the alpha setting and the background color) */
+  background_color = &GTK_WIDGET (icon_view)->style->base[GTK_STATE_NORMAL];
+  color->red = ((color->red * (alpha / 255.0)) + (background_color->red * (255.0 - alpha / 255.0)));
+  color->green = ((color->green * (alpha / 255.0)) + (background_color->green * (255.0 - alpha / 255.0)));
+  color->blue = ((color->blue * (alpha / 255.0)) + (background_color->blue * (255.0 - alpha / 255.0)));
+
+  /* allocate the GC to draw the rubberband background */
+  icon_view->priv->rubberband_fill_gc = gdk_gc_new (icon_view->priv->bin_window);
+  gdk_gc_set_rgb_fg_color (icon_view->priv->rubberband_fill_gc, color);
+  gdk_color_free (color);
 
   gtk_grab_add (GTK_WIDGET (icon_view));
 
@@ -2012,6 +2014,12 @@ exo_icon_view_stop_rubberbanding (ExoIconView *icon_view)
       gtk_grab_remove (GTK_WIDGET (icon_view));
       gtk_widget_queue_draw (GTK_WIDGET (icon_view));
 
+      /* drop the GCs for drawing the rubberband */
+      g_object_unref (G_OBJECT (icon_view->priv->rubberband_border_gc));
+      g_object_unref (G_OBJECT (icon_view->priv->rubberband_fill_gc));
+      icon_view->priv->rubberband_border_gc = NULL;
+      icon_view->priv->rubberband_fill_gc = NULL;
+
       /* re-enable Gtk+ DnD callbacks again */
       drag_data = g_object_get_data (G_OBJECT (icon_view), "gtk-site-data");
       if (G_LIKELY (drag_data != NULL))
@@ -2029,27 +2037,31 @@ exo_icon_view_stop_rubberbanding (ExoIconView *icon_view)
 static void
 exo_icon_view_update_rubberband_selection (ExoIconView *icon_view)
 {
-  GList *items;
-  gint x, y, width, height;
-  gboolean changed = FALSE;
+  ExoIconViewItem *item;
+  gboolean         selected;
+  gboolean         changed = FALSE;;
+  gboolean         is_in;
+  GList           *lp;
+  gint             x, y;
+  gint             width;
+  gint             height;
   
+  /* determine the new rubberband area */
   x = MIN (icon_view->priv->rubberband_x1, icon_view->priv->rubberband_x2);
   y = MIN (icon_view->priv->rubberband_y1, icon_view->priv->rubberband_y2);
   width = ABS (icon_view->priv->rubberband_x1 - icon_view->priv->rubberband_x2);
   height = ABS (icon_view->priv->rubberband_y1 - icon_view->priv->rubberband_y2);
   
-  for (items = icon_view->priv->items; items; items = items->next)
+  /* check all items */
+  for (lp = icon_view->priv->items; lp != NULL; lp = lp->next)
     {
-      ExoIconViewItem *item = items->data;
-      gboolean is_in;
-      gboolean selected;
-      
-      is_in = exo_icon_view_item_hit_test (icon_view, item, 
-                                           x, y, width, height);
+      item = EXO_ICON_VIEW_ITEM (lp->data);
+
+      is_in = exo_icon_view_item_hit_test (icon_view, item, x, y, width, height);
 
       selected = is_in ^ item->selected_before_rubberbanding;
 
-      if (item->selected != selected)
+      if (G_UNLIKELY (item->selected != selected))
         {
           changed = TRUE;
           item->selected = selected;
