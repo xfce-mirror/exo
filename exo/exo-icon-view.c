@@ -2331,11 +2331,7 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
   rtl = gtk_widget_get_direction (GTK_WIDGET (icon_view)) == GTK_TEXT_DIR_RTL;
 
   /* alloca() is safe on gcc/i386 */
-#if defined(__GNUC__) && defined(__i386__)
-  max_height = alloca (icon_view->priv->n_cells * sizeof (gint));
-#else
-  max_height = g_new (gint, icon_view->priv->n_cells);
-#endif
+  max_height = g_newa (gint, icon_view->priv->n_cells);
   for (i = icon_view->priv->n_cells; --i >= 0; )
     max_height[i] = 0;
 
@@ -2407,10 +2403,7 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
         item->col = col - 1 - item->col;
     }
 
-#if !defined(__GNUC__) || !defined(__i386__)
-  g_free (max_height);
-#endif
-  
+ 
   return last_item;
 }
 
@@ -3099,13 +3092,8 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
   length = gtk_tree_model_iter_n_children (model, NULL);
 
   /* alloca() is safe on gcc/i386 */
-#if defined(__GNUC__) && defined(__i386__)
-  order = alloca (length * sizeof (gint));
-  item_array = alloca (length * sizeof (ExoIconViewItem *));
-#else
-  item_array = g_new (ExoIconViewItem *, length);
-  order = g_new (gint, length);
-#endif
+  item_array = g_newa (ExoIconViewItem *, length);
+  order = g_newa (gint, length);
 
   for (i = 0; i < length; i++)
     order [new_order[i]] = i;
@@ -3123,11 +3111,6 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
   icon_view->priv->items = items;
 
   exo_icon_view_queue_layout (icon_view);
-
-#if !defined(__GNUC__) || !defined(__i386__)
-  g_free (item_array);
-  g_free (order);
-#endif
 }
 
 

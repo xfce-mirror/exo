@@ -1385,17 +1385,15 @@ exo_icon_bar_rows_reordered (GtkTreeModel *model,
   gint             i;
 
   length = gtk_tree_model_iter_n_children (model, NULL);
-  inverted_order = g_new (gint, length);
+  inverted_order = g_newa (gint, length);
 
   /* invert the array */
   for (i = 0; i < length; ++i)
     inverted_order[new_order[i]] = i;
 
-  item_array = g_new (ExoIconBarItem *, length);
+  item_array = g_newa (ExoIconBarItem *, length);
   for (i = 0, lp = icon_bar->priv->items; lp != NULL; ++i, lp = lp->next)
     item_array[inverted_order[i]] = lp->data;
-
-  g_free (inverted_order);
 
   for (i = 0; i < length; ++i)
     {
@@ -1403,7 +1401,6 @@ exo_icon_bar_rows_reordered (GtkTreeModel *model,
       items = g_list_append (items, item_array[i]);
     }
 
-  g_free (item_array);
   g_list_free (icon_bar->priv->items);
   icon_bar->priv->items = g_list_reverse (items);
 
