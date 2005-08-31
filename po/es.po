@@ -17,36 +17,36 @@ msgstr ""
 #: exo-csource/main.c:230
 #, c-format
 msgid "Usage: %s [options] [file]\n"
-msgstr ""
+msgstr "Uso: %s [opciones] [archivo]\n"
 
 #: exo-csource/main.c:231
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr ""
+msgstr "       %s [opciones] --build-list [[nombre archivo]]...]\n"
 
 #: exo-csource/main.c:233
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr ""
+msgstr "  -h, --help        Mostrar este mensaje de ayuda y salir\n"
 
 #: exo-csource/main.c:234
 msgid "  -v, --version     Print version information and exit\n"
-msgstr ""
+msgstr "  -v, --version     Mostrar informacion sobre la version y salir\n"
 
 #: exo-csource/main.c:235
 msgid "  --extern          Generate extern symbols\n"
-msgstr ""
+msgstr "  --extern          Generar simbolos externos\n"
 
 #: exo-csource/main.c:236
 msgid "  --static          Generate static symbols\n"
-msgstr ""
+msgstr "  --static          Generar simbolos estaticos\n"
 
 #: exo-csource/main.c:237
 msgid "  --name=identifier C macro/variable name\n"
-msgstr ""
+msgstr "  --name=identificador macro C/nombre de variable\n"
 
 #: exo-csource/main.c:238
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr ""
+msgstr "  --build-list      Parsear pares (nombre, archivo)\n"
 
 #: exo-csource/main.c:248
 msgid ""
@@ -56,6 +56,11 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
+"Copyright (c) 2005\n"
+"        os-cillation e.K. Todos los derechos reservados.\n"
+"\n"
+"Escrito por Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
 
 #: exo-csource/main.c:251
 #, c-format
@@ -66,11 +71,16 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
+"%s se ofrece ABSOLUTAMENTE SIN GARANTIA,\n"
+"Usted puede redistribuir copias de %s bajo los terminos de\n"
+"la Licencia Publica General Menor GNU, la cual se encuentra\n"
+"en el paquete de fuentes de %s.\n"
+"\n"
 
 #: exo-csource/main.c:255
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr ""
+msgstr "Por favor, reporte errores a <%s>.\n"
 
 #: exo/exo-cell-renderer-ellipsized-text.c:119 exo/exo-ellipsized-label.c:122
 msgid "Ellipsize"
@@ -92,7 +102,7 @@ msgstr "Elipsar"
 
 #: exo/exo-cell-renderer-ellipsized-text.c:131
 msgid "Whether this tag affects the ellipsize mode"
-msgstr ""
+msgstr "Si esta funcion afecta el modo Elipsar"
 
 #: exo/exo-ellipsized-label.c:123
 msgid ""
@@ -168,39 +178,39 @@ msgstr "Color de texto del item cursor"
 
 #: exo/exo-icon-view.c:495
 msgid "Column Spacing"
-msgstr ""
+msgstr "Espaciamiento de columna"
 
 #: exo/exo-icon-view.c:496
 msgid "Space which is inserted between grid column"
-msgstr ""
+msgstr "Espacio que se inserta entre columnas"
 
 #: exo/exo-icon-view.c:512
 msgid "Number of columns"
-msgstr ""
+msgstr "Numero de columnas"
 
 #: exo/exo-icon-view.c:513
 msgid "Number of columns to display"
-msgstr ""
+msgstr "Numero de columnas a mostrar"
 
 #: exo/exo-icon-view.c:530
 msgid "Width for each item"
-msgstr ""
+msgstr "Ancho de cada item"
 
 #: exo/exo-icon-view.c:531
 msgid "The width used for each item"
-msgstr ""
+msgstr "El ancho usado por cada item"
 
 #: exo/exo-icon-view.c:546
 msgid "Margin"
-msgstr ""
+msgstr "Margen"
 
 #: exo/exo-icon-view.c:547
 msgid "Space which is inserted at the edges of the icon view"
-msgstr ""
+msgstr "Espacio que se inserta a los bordes de la vista de icono"
 
 #: exo/exo-icon-view.c:563
 msgid "Markup column"
-msgstr ""
+msgstr "Columna de markup"
 
 #: exo/exo-icon-view.c:564
 msgid "Model column used to retrieve the text if using Pango markup"
@@ -221,19 +231,19 @@ msgstr "Como el texto y el icono de cada item son posicionados entre si"
 
 #: exo/exo-icon-view.c:625
 msgid "Reorderable"
-msgstr ""
+msgstr "Reordenable"
 
 #: exo/exo-icon-view.c:626
 msgid "View is reorderable"
-msgstr ""
+msgstr "La vista es reordenable"
 
 #: exo/exo-icon-view.c:641
 msgid "Row Spacing"
-msgstr ""
+msgstr "Espacio de fila"
 
 #: exo/exo-icon-view.c:642
 msgid "Space which is inserted between grid rows"
-msgstr ""
+msgstr "Espacio que se inserta entre filas"
 
 #: exo/exo-icon-view.c:656
 msgid "Selection mode"
@@ -245,11 +255,11 @@ msgstr "Modo de seleccion"
 
 #: exo/exo-icon-view.c:673
 msgid "Spacing"
-msgstr ""
+msgstr "Espaciado"
 
 #: exo/exo-icon-view.c:674
 msgid "Space which is inserted between cells of an item"
-msgstr ""
+msgstr "Espacio que se inserta entre celdas de un item"
 
 #: exo/exo-icon-view.c:701
 msgid "Selection Box Color"
@@ -317,19 +327,19 @@ msgstr "Personalizar barra de herramientas..."
 
 #: exo/exo-xsession-client.c:127
 msgid "Window group"
-msgstr ""
+msgstr "Grupo de ventanas"
 
 #: exo/exo-xsession-client.c:128
 msgid "Window group leader"
-msgstr ""
+msgstr "Lider de grupo de ventanas"
 
 #: exo/exo-xsession-client.c:138
 msgid "Restart command"
-msgstr ""
+msgstr "Comando Reiniciar"
 
 #: exo/exo-xsession-client.c:139
 msgid "Session restart command"
-msgstr ""
+msgstr "Comando Reiniciar sesion"
 
 #~ msgid "_Both"
 #~ msgstr "_Beides"
