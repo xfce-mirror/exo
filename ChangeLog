@@ -1,5 +1,15 @@
 2005-08-31	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add two new methods
+	  exo_icon_view_widget_to_icon_coords() and
+	  exo_icon_view_icon_to_widget_coords(), which are used to translate
+	  between widget coordinates and icon window coordinates.
+	* exo/exo-icon-view.c(exo_icon_view_get_dest_item_at_pos): Be consistent
+	  with the other methods that accept (x,y) coordinates and use icon
+	  window coordinates instead of widget coordinates.
+
+2005-08-31	Benedikt Meurer <benny@xfce.org>
+
 	* po/es.po: Update spanish translations, thanks to Patricio Carr
 	  <pato@patocarr.com>.
 

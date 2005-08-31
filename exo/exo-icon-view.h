@@ -163,6 +163,17 @@ GtkSelectionMode  exo_icon_view_get_selection_mode        (const ExoIconView    
 void              exo_icon_view_set_selection_mode        (ExoIconView              *icon_view,
                                                            GtkSelectionMode          mode);
 
+void              exo_icon_view_widget_to_icon_coords     (const ExoIconView        *icon_view,
+                                                           gint                      wx,
+                                                           gint                      wy,
+                                                           gint                     *ix,
+                                                           gint                     *iy);
+void              exo_icon_view_icon_to_widget_coords     (const ExoIconView        *icon_view,
+                                                           gint                      ix,
+                                                           gint                      iy,
+                                                           gint                     *wx,
+                                                           gint                     *wy);
+
 GtkTreePath      *exo_icon_view_get_path_at_pos           (const ExoIconView        *icon_view,
                                                            gint                      x,
                                                            gint                      y);

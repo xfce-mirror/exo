@@ -3956,6 +3956,62 @@ exo_icon_view_new_with_model (GtkTreeModel *model)
 
 
 /**
+ * exo_icon_view_widget_to_icon_coords:
+ * @icon_view : a #ExoIconView.
+ * @wx        : widget x coordinate.
+ * @wy        : widget y coordinate.
+ * @ix        : return location for icon x coordinate or %NULL.
+ * @iy        : return location for icon y coordinate or %NULL.
+ *
+ * Converts widget coordinates to coordinates for the icon window
+ * (the full scrollable area of the icon view).
+ **/
+void
+exo_icon_view_widget_to_icon_coords (const ExoIconView *icon_view,
+                                     gint               wx,
+                                     gint               wy,
+                                     gint              *ix,
+                                     gint              *iy)
+{
+  g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));
+
+  if (G_LIKELY (ix != NULL))
+    *ix = wx + icon_view->priv->hadjustment->value;
+  if (G_LIKELY (iy != NULL))
+    *iy = wy + icon_view->priv->vadjustment->value;
+}
+
+
+
+/**
+ * exo_icon_view_icon_to_widget_coords:
+ * @icon_view : a #ExoIconView.
+ * @ix        : icon x coordinate.
+ * @iy        : icon y coordinate.
+ * @wx        : return location for widget x coordinate or %NULL.
+ * @wy        : return location for widget y coordinate or %NULL.
+ *
+ * Converts icon view coordinates (coordinates in full scrollable
+ * area of the icon view) to widget coordinates.
+ **/
+void
+exo_icon_view_icon_to_widget_coords (const ExoIconView *icon_view,
+                                     gint               ix,
+                                     gint               iy,
+                                     gint              *wx,
+                                     gint              *wy)
+{
+  g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));
+
+  if (G_LIKELY (wx != NULL))
+    *wx = ix - icon_view->priv->hadjustment->value;
+  if (G_LIKELY (wy != NULL))
+    *wy = iy - icon_view->priv->vadjustment->value;
+}
+
+
+
+/**
  * exo_icon_view_get_path_at_pos:
  * @icon_view : A #ExoIconView.
  * @x         : The x position to be identified
@@ -6328,7 +6384,11 @@ exo_icon_view_get_drag_dest_item (ExoIconView              *icon_view,
  * @pos       : Return location for the drop position, or %NULL
  * 
  * Determines the destination item for a given position.
- * 
+ *
+ * Both @drag_x and @drag_y are given in icon window coordinates. Use
+ * #exo_icon_view_widget_to_icon_coords() if you need to translate
+ * widget coordinates first.
+ *
  * Return value: whether there is an item at the given position.
  *
  * Since: 0.3.1
@@ -6351,22 +6411,18 @@ exo_icon_view_get_dest_item_at_pos (ExoIconView              *icon_view,
   g_return_val_if_fail (drag_y >= 0, FALSE);
   g_return_val_if_fail (icon_view->priv->bin_window != NULL, FALSE);
 
-
-  if (path)
+  if (G_LIKELY (path != NULL))
     *path = NULL;
 
-  item = exo_icon_view_get_item_at_coords (icon_view, 
-                                           drag_x + icon_view->priv->hadjustment->value, 
-                                           drag_y + icon_view->priv->vadjustment->value,
-                                           FALSE, NULL);
+  item = exo_icon_view_get_item_at_coords (icon_view, drag_x, drag_y, FALSE, NULL);
 
-  if (item == NULL)
+  if (G_UNLIKELY (item == NULL))
     return FALSE;
 
-  if (path)
+  if (G_LIKELY (path != NULL))
     *path = gtk_tree_path_new_from_indices (item->index, -1);
 
-  if (pos)
+  if (G_LIKELY (pos != NULL))
     {
       if (drag_x < item->area.x + item->area.width / 4)
         *pos = EXO_ICON_VIEW_DROP_LEFT;
