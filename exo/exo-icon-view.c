@@ -937,7 +937,10 @@ static void
 exo_icon_view_dispose (GObject *object)
 {
   ExoIconView *icon_view = EXO_ICON_VIEW (object);
-  
+
+  /* reset the drag dest item */
+  exo_icon_view_set_drag_dest_item (icon_view, NULL, EXO_ICON_VIEW_NO_DROP);
+
   /* reset the model (also stops any active editing) */
   exo_icon_view_set_model (icon_view, NULL);
 

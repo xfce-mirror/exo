@@ -1,3 +1,9 @@
+2005-09-01	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c(exo_icon_view_dispose): Reset the drag destination
+	  item as we use a tree row reference here, which can cause a memory
+	  leak with custom DnD implementations.
+
 2005-08-31	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add two new methods
