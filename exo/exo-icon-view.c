@@ -4025,7 +4025,7 @@ exo_icon_view_icon_to_widget_coords (const ExoIconView *icon_view,
  * the cell at the specified position.
  * 
  * Return value: The #GtkTreePath corresponding to the icon or %NULL
- * if no icon exists at that position.
+ *               if no icon exists at that position.
  **/
 GtkTreePath*
 exo_icon_view_get_path_at_pos (const ExoIconView *icon_view,
@@ -4035,6 +4035,10 @@ exo_icon_view_get_path_at_pos (const ExoIconView *icon_view,
   ExoIconViewItem *item;
   
   g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), NULL);
+
+  /* translate the widget coordinates to icon window coordinates */
+  x += icon_view->priv->hadjustment->value;
+  y += icon_view->priv->vadjustment->value;
 
   item = exo_icon_view_get_item_at_coords (icon_view, x, y, TRUE, NULL);
 
