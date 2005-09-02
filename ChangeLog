@@ -1,5 +1,10 @@
 2005-09-02	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c(exo_icon_view_allocate_children): Increase the
+	  area allocated to child widgets by focus-line-width and focus-padding.
+
+2005-09-02	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c(exo_icon_view_get_path_at_pos): Actually accept
 	  widget coordinates here, to be compatible with GtkTreeView.
 
