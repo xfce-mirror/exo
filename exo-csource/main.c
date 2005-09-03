@@ -155,7 +155,7 @@ print_csource (FILE        *fp,
   gint          column = 0;
 
   g_fprintf (fp, "/* automatically generated from %s */\n", filename);
-  g_fprintf (fp, "%sconst unsigned %s_length = %uu;\n", gen_linkage, gen_varname, length);
+  g_fprintf (fp, "%sconst unsigned %s_length = %uu;\n", gen_linkage, gen_varname, (guint) length);
   g_fprintf (fp, "#ifdef __SUNPRO_C\n");
   g_fprintf (fp, "#pragma align 4 (%s)\n", gen_varname);
   g_fprintf (fp, "#endif\n");

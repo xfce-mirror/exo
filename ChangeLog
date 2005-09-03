@@ -1,3 +1,8 @@
+2005-09-03	Benedikt Meurer <benny@xfce.org>
+
+	* exo-csource/main.c(print_csource): Fix a small bug for platforms,
+	  where size_t is different from unsigned int.
+
 2005-09-02	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c(exo_icon_view_allocate_children): Increase the
