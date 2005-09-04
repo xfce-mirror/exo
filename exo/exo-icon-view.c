@@ -3336,7 +3336,7 @@ find_item_page_up_down (ExoIconView     *icon_view,
     }
   else 
     {
-      for (; item != NULL; item = item->next)
+      for (; item != NULL; item = item->prev)
         {
           for (next = item->prev; next; next = next->prev)
             if (EXO_ICON_VIEW_ITEM (next->data)->col == col)
