@@ -4308,16 +4308,12 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
 
       /* drop all items belonging to the previous model */
       for (lp = icon_view->priv->items; lp != NULL; lp = lp->next)
-        {
-          /* drop the additional resources */
-          item = EXO_ICON_VIEW_ITEM (lp->data);
-          g_free (item->box);
-
-          /* release the item resources */
-          g_chunk_free (item, icon_view->priv->items_chunk);
-        }
+        g_free (EXO_ICON_VIEW_ITEM (lp->data)->box);
       g_list_free (icon_view->priv->items);
       icon_view->priv->items = NULL;
+
+      /* reset the item memory chunk as there are no items left now */
+      g_mem_chunk_reset (icon_view->priv->items_chunk);
 
       /* reset statistics */
       icon_view->priv->anchor_item = NULL;
@@ -4363,7 +4359,8 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       icon_view->priv->items = g_list_reverse (items);
 
       /* layout the new items */
-      exo_icon_view_queue_layout (icon_view);
+      if (!GTK_WIDGET_REALIZED (icon_view))
+        exo_icon_view_queue_layout (icon_view);
     }
 
   /* notify listeners */
