@@ -18,7 +18,6 @@ libexo_headers =							\
 	exo-gobject-extensions.h					\
 	exo-icon-bar.h							\
 	exo-icon-view.h							\
-	exo-object.h							\
 	exo-md5.h							\
 	exo-noop.h							\
 	exo-pango-extensions.h						\
@@ -60,7 +59,6 @@ libexo_0_3_la_SOURCES =							\
 	exo-gobject-extensions.c					\
 	exo-icon-bar.c							\
 	exo-icon-view.c							\
-	exo-object.c							\
 	exo-md5.c							\
 	exo-noop.c							\
 	exo-pango-extensions.c						\

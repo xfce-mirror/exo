@@ -212,22 +212,6 @@ exo_noop_false G_GNUC_PURE
 #endif
 #endif
 
-/* ExoObject methods */
-#if IN_HEADER(__EXO_OBJECT_H__)
-#if IN_SOURCE(__EXO_OBJECT_C__)
-exo_object_get_type G_GNUC_CONST
-exo_object_new
-exo_object_ref
-exo_object_unref
-exo_param_spec_object_get_type G_GNUC_CONST
-exo_param_spec_object
-exo_value_set_object
-exo_value_take_object
-exo_value_get_object
-exo_value_dup_object
-#endif
-#endif
-
 /* exo-pango-extensions functions */
 #if IN_HEADER(__EXO_PANGO_EXTENSIONS_H__)
 #if IN_SOURCE(__EXO_PANGO_EXTENSIONS_C__)

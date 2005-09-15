@@ -42,7 +42,6 @@
 #include <exo/exo-gobject-extensions.h>
 #include <exo/exo-icon-bar.h>
 #include <exo/exo-icon-view.h>
-#include <exo/exo-object.h>
 #include <exo/exo-md5.h>
 #include <exo/exo-noop.h>
 #include <exo/exo-pango-extensions.h>

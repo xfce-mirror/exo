@@ -1,3 +1,11 @@
+2005-09-15	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-object.{c,h}, tests/test-exo-object.c, exo/Makefile.am,
+	  exo/exo.h, exo/exo.symbols, tests/Makefile.am: Remove the ExoObject
+	  class as it causes to much trouble, unfortunately. Maybe one day the
+	  GType System and the various language bindings will be ready for this,
+	  then we can re-add it.
+
 2005-09-06	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c(exo_icon_view_set_model): Reset the item memory
