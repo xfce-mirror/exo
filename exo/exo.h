@@ -43,13 +43,13 @@
 #include <exo/exo-icon-bar.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-md5.h>
-#include <exo/exo-noop.h>
 #include <exo/exo-pango-extensions.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-editor-dialog.h>
 #include <exo/exo-toolbars-model.h>
 #include <exo/exo-toolbars-view.h>
+#include <exo/exo-utils.h>
 #include <exo/exo-xsession-client.h>
 
 #undef EXO_INSIDE_EXO_H

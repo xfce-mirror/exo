@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include <exo/exo-noop.h>
+#include <exo/exo-utils.h>
 #include <exo/exo-alias.h>
 
 
@@ -138,6 +138,6 @@ exo_noop_false (void)
 
 
 
-#define __EXO_NOOP_C__
+#define __EXO_UTILS_C__
 #include <exo/exo-aliasdef.c>
 

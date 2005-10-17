@@ -200,9 +200,9 @@ exo_md5_digest_equal
 #endif
 #endif
 
-/* exo-noop functions */
-#if IN_HEADER(__EXO_NOOP_H__)
-#if IN_SOURCE(__EXO_NOOP_C__)
+/* exo-utils functions */
+#if IN_HEADER(__EXO_UTILS_H__)
+#if IN_SOURCE(__EXO_UTILS_C__)
 exo_noop G_GNUC_PURE
 exo_noop_one G_GNUC_PURE
 exo_noop_zero G_GNUC_PURE

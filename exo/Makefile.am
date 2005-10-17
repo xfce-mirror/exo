@@ -19,13 +19,13 @@ libexo_headers =							\
 	exo-icon-bar.h							\
 	exo-icon-view.h							\
 	exo-md5.h							\
-	exo-noop.h							\
 	exo-pango-extensions.h						\
 	exo-string.h							\
 	exo-toolbars-editor.h						\
 	exo-toolbars-editor-dialog.h					\
 	exo-toolbars-model.h						\
 	exo-toolbars-view.h						\
+	exo-utils.h							\
 	exo-xsession-client.h
 
 libexo_built_public_sources =						\
@@ -60,7 +60,6 @@ libexo_0_3_la_SOURCES =							\
 	exo-icon-bar.c							\
 	exo-icon-view.c							\
 	exo-md5.c							\
-	exo-noop.c							\
 	exo-pango-extensions.c						\
 	exo-private.c							\
 	exo-private.h							\
@@ -71,6 +70,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-toolbars-private.c						\
 	exo-toolbars-private.h						\
 	exo-toolbars-view.c						\
+	exo-utils.c							\
 	exo-xsession-client.c
 
 libexo_0_3_la_CFLAGS =							\

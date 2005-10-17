@@ -22,12 +22,59 @@
 #error "Only <exo/exo.h> can be included directly, this file may disappear or change contents."
 #endif
 
-#ifndef __EXO_NOOP_H__
-#define __EXO_NOOP_H__
+#ifndef __EXO_UTILS_H__
+#define __EXO_UTILS_H__
 
 #include <glib.h>
 
 G_BEGIN_DECLS;
+
+/**
+ * exo_atomic_inc:
+ * @value : a pointer to the integer to increment.
+ *
+ * Increments the integer at @value by one in an
+ * atomic fashion.
+ **/
+static inline void
+exo_atomic_inc (gint *value)
+{
+#if defined(__GNUC__) && defined(__i386__) && defined(__OPTIMIZE__)
+  __asm__ __volatile__ ("lock; incl %0"
+                        : "=m" (*value)
+                        : "m" (*value));
+#else
+  g_atomic_int_inc (value);
+#endif
+}
+
+/**
+ * exo_atomic_dec:
+ * @value : a pointer to the integer to decrement.
+ *
+ * Decrements the integer at @value by one in an
+ * atomic fashion and returns %TRUE if the @value
+ * dropped to zero by this operation, else %FALSE.
+ *
+ * Return value: %TRUE if @value dropped to zero,
+ *               else %FALSE.
+ **/
+static inline gboolean
+exo_atomic_dec (gint *value)
+{
+#if defined(__GNUC__) && defined(__i386__) && defined(__OPTIMIZE__)
+  gint result;
+
+  __asm__ __volatile__ ("lock; xaddl %0,%1"
+                        : "=r" (result), "=m" (*value)
+                        : "0" (-1), "m" (*value));
+
+  return (result == 1);
+#else
+  return g_atomic_int_dec_and_test (value);
+#endif
+}
+
 
 void      exo_noop        (void) G_GNUC_PURE;
 gint      exo_noop_one    (void) G_GNUC_PURE;
@@ -38,4 +85,4 @@ gboolean  exo_noop_false  (void) G_GNUC_PURE;
 
 G_END_DECLS;
 
-#endif /* !__EXO_NOOP_H__ */
+#endif /* !__EXO_UTILS_H__ */
