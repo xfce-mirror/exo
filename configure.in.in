@@ -211,27 +211,14 @@ if test x"$enable_visibility" != x"no"; then
     int main (int argc, char **argv) { test_default (); test_hidden (); return 0; }
   ]),
   [
+    have_gnuc_visibility=yes
     AC_MSG_RESULT([yes])
-    dnl Check if the compiler supports -fvisibility=hidden
-    save_CFLAGS="$CFLAGS"
-    CFLAGS="$CFLAGS -fvisibility=hidden"
-    AC_MSG_CHECKING([whether $CC accepts -fvisibility=hidden])
-    AC_COMPILE_IFELSE(AC_LANG_SOURCE([int x;]),
-    [
-      have_gnuc_visibility=yes
-      AC_MSG_RESULT([yes])
-    ],
-    [
-      AC_MSG_RESULT([no])
-    ])
-    CFLAGS="$save_CFLAGS"
   ],
   [
     AC_MSG_RESULT([no])
   ])
 fi
 if test x"$have_gnuc_visibility" = x"yes"; then
-  CFLAGS="$CFLAGS -fvisibility=hidden"
   CPPFLAGS="$CPPFLAGS -DHAVE_GNUC_VISIBILITY"
 fi
 AM_CONDITIONAL([HAVE_GNUC_VISIBILITY], [test x"$have_gnuc_visibility" = x"yes"])

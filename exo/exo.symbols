@@ -58,9 +58,12 @@ exo_cell_renderer_ellipsized_text_new
 /* exo-config variables */
 #if IN_HEADER(__EXO_CONFIG_H__)
 #if IN_SOURCE(__EXO_CONFIG_C__)
+#ifdef INCLUDE_VARIABLES
 exo_major_version
 exo_minor_version
 exo_micro_version
+#endif
+exo_check_version
 #endif
 #endif
 
@@ -209,6 +212,10 @@ exo_noop_zero G_GNUC_PURE
 exo_noop_null G_GNUC_PURE
 exo_noop_true G_GNUC_PURE
 exo_noop_false G_GNUC_PURE
+#ifdef INCLUDE_INTERNAL_SYMBOLS
+exo_atomic_inc
+exo_atomic_dec
+#endif
 #endif
 #endif
 

@@ -1,3 +1,23 @@
+2005-10-27	Benedikt Meurer <benny@xfce.org>
+
+	* exo/abicheck.sh, exo/exo-utils.{c,h}, exo/exo.symbols: Include
+	  implementations for the exo_atomic_* functions and add them to the
+	  exported interface of the library.
+	* configure.in.in: Don't use -fvisibility=hidden, as it causes trouble
+	  with the extern inline functions.
+	* exo/exo-private.h, exo/exo-toolbars-private.h, python/exo.override,
+	  python/exomodule.c: Mark internal symbols with G_GNUC_INTERNAL.
+	* docs/reference/exo-docs.sgml, docs/reference/exo-sections.txt,
+	  docs/reference/tmpl/exo-utils.sgml: Add the exo-utils to the reference
+	  documentation.
+	* docs/reference/tmpl/exo-config.sgml: Mark the config interface as
+	  Stable.
+	* exo/exo-config.{c,h.in}, exo/exo.symbols,
+	  docs/reference/exo-sections.txt: Add exo_check_version() to support
+	  runtime version checks.
+	* exo/exo.symbols, exo/abicheck.sh: Use special handling for exported
+	  variables.
+
 2005-10-17	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-noop.{c,h}, exo/exo-utils.{c,h}, exo/Makefile.am, exo/exo.h,

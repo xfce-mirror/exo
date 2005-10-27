@@ -35,5 +35,48 @@ const guint exo_micro_version = EXO_MICRO_VERSION;
 
 
 
+/**
+ * exo_check_version:
+ * @required_major : the required major version.
+ * @required_minor : the required minor version.
+ * @required_micro : the required micro version.
+ *
+ * Checks that the <systemitem class="library">exo</systemitem> library
+ * in use is compatible with the given version. Generally you would pass in
+ * the constants #EXO_MAJOR_VERSION, #EXO_MINOR_VERSION and #EXO_MICRO_VERSION
+ * as the three arguments to this function; that produces
+ * a check that the library in use is compatible with the version of
+ * <systemitem class="library">exo</systemitem> the application was
+ * compiled against.
+ *
+ * <example>
+ * <title>Checking the runtime version of the exo library</title>
+ * <programlisting>
+ * const gchar *mismatch;
+ * mismatch = exo_check_version (EXO_VERSION_MAJOR,
+ *                               EXO_VERSION_MINOR,
+ *                               EXO_VERSION_MICRO);
+ * if (G_UNLIKELY (mismatch != NULL))
+ *   g_error ("Version mismatch: %<!---->s", mismatch);
+ * </programlisting>
+ * </example>
+ *
+ * Return value: %NULL if the library is compatible with the given version,
+ *               or a string describing the version mismatch. The returned
+ *               string is owned by the library and must not be freed or
+ *               modified by the caller.
+ *
+ * Since: 0.3.1
+ **/
+const gchar*
+exo_check_version (guint required_major,
+                   guint required_minor,
+                   guint required_micro)
+{
+  return NULL;
+}
+
+
+
 #define __EXO_CONFIG_C__
 #include <exo/exo-aliasdef.c>

@@ -29,14 +29,18 @@
 
 G_BEGIN_DECLS;
 
-/**
- * exo_atomic_inc:
- * @value : a pointer to the integer to increment.
- *
- * Increments the integer at @value by one in an
- * atomic fashion.
- **/
-static inline void
+void                    exo_noop        (void) G_GNUC_PURE;
+gint                    exo_noop_one    (void) G_GNUC_PURE;
+gint                    exo_noop_zero   (void) G_GNUC_PURE;
+gpointer                exo_noop_null   (void) G_GNUC_PURE;
+gboolean                exo_noop_true   (void) G_GNUC_PURE;
+gboolean                exo_noop_false  (void) G_GNUC_PURE;
+G_INLINE_FUNC void      exo_atomic_inc  (gint *value);
+G_INLINE_FUNC gboolean  exo_atomic_dec  (gint *value);
+
+/* inline function implementations */
+#if defined(G_CAN_INLINE) || defined(__EXO_UTILS_C__)
+G_INLINE_FUNC void
 exo_atomic_inc (gint *value)
 {
 #if defined(__GNUC__) && defined(__i386__) && defined(__OPTIMIZE__)
@@ -48,18 +52,7 @@ exo_atomic_inc (gint *value)
 #endif
 }
 
-/**
- * exo_atomic_dec:
- * @value : a pointer to the integer to decrement.
- *
- * Decrements the integer at @value by one in an
- * atomic fashion and returns %TRUE if the @value
- * dropped to zero by this operation, else %FALSE.
- *
- * Return value: %TRUE if @value dropped to zero,
- *               else %FALSE.
- **/
-static inline gboolean
+G_INLINE_FUNC gboolean
 exo_atomic_dec (gint *value)
 {
 #if defined(__GNUC__) && defined(__i386__) && defined(__OPTIMIZE__)
@@ -74,14 +67,7 @@ exo_atomic_dec (gint *value)
   return g_atomic_int_dec_and_test (value);
 #endif
 }
-
-
-void      exo_noop        (void) G_GNUC_PURE;
-gint      exo_noop_one    (void) G_GNUC_PURE;
-gint      exo_noop_zero   (void) G_GNUC_PURE;
-gpointer  exo_noop_null   (void) G_GNUC_PURE;
-gboolean  exo_noop_true   (void) G_GNUC_PURE;
-gboolean  exo_noop_false  (void) G_GNUC_PURE;
+#endif /* G_CAN_INLINE || __EXO_UTILS_C__ */
 
 G_END_DECLS;
 

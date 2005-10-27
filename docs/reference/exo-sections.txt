@@ -238,6 +238,7 @@ exo_pango_ellipsize_mode_get_type
 exo_major_version
 exo_minor_version
 exo_micro_version
+exo_check_version
 <SUBSECTION>
 EXO_MAJOR_VERSION
 EXO_MINOR_VERSION
@@ -285,6 +286,19 @@ exo_md5_digest_get_type
 exo_str_elide_underscores
 exo_str_is_equal
 exo_strndupv
+</SECTION>
+
+<SECTION>
+<FILE>exo-utils</FILE>
+<TITLE>Miscellaneous Utility Functions</TITLE>
+exo_noop
+exo_noop_one
+exo_noop_zero
+exo_noop_null
+exo_noop_true
+exo_noop_false
+exo_atomic_inc
+exo_atomic_dec
 </SECTION>
 
 <SECTION>

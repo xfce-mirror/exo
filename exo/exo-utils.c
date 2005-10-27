@@ -22,6 +22,9 @@
 #include <config.h>
 #endif
 
+/* implement exo-utils's inline functions */
+#define G_IMPLEMENT_INLINES 1
+#define __EXO_UTILS_C__
 #include <exo/exo-utils.h>
 #include <exo/exo-alias.h>
 
@@ -35,6 +38,8 @@
  * situations that require a function to be called,
  * but that function does not need to do anything
  * useful.
+ *
+ * Since: 0.3.1
  **/
 void
 exo_noop (void)
@@ -53,6 +58,8 @@ exo_noop (void)
  * actions.
  *
  * Return value: the integer value %1.
+ *
+ * Since: 0.3.1
  **/
 gint
 exo_noop_one (void)
@@ -72,6 +79,8 @@ exo_noop_one (void)
  * actions.
  *
  * Return value: the integer value %0.
+ *
+ * Since: 0.3.1
  **/
 gint
 exo_noop_zero (void)
@@ -91,6 +100,8 @@ exo_noop_zero (void)
  * other actions.
  *
  * Return value: a %NULL pointer.
+ *
+ * Since: 0.3.1
  **/
 gpointer
 exo_noop_null (void)
@@ -110,6 +121,8 @@ exo_noop_null (void)
  * other actions.
  *
  * Return value: the boolean value %TRUE.
+ *
+ * Since: 0.3.1
  **/
 gboolean
 exo_noop_true (void)
@@ -129,6 +142,8 @@ exo_noop_true (void)
  * other actions.
  *
  * Return value: the boolean value %FALSE.
+ *
+ * Since: 0.3.1
  **/
 gboolean
 exo_noop_false (void)

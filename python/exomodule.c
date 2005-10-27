@@ -23,15 +23,12 @@
 #include <pygobject.h>
 #include <pygtk/pygtk.h>
 
-#ifdef HAVE_GNUC_VISIBILITY
-/* we need to explicitly export the init_exo() function, since we hide
- * everything by default.
- */
-extern DL_EXPORT(void) init_exo (void) __attribute((visibility("default")));
-#endif
-
-extern void exo_add_constants (PyObject *module, const gchar *strip_prefix);
-extern void exo_register_classes (PyObject *d);
+/* mark internal symbols with G_GNUC_INTERNAL */
+void         exo_add_constants             (PyObject    *module,
+                                            const gchar *strip_prefix) G_GNUC_INTERNAL;
+void         exo_register_classes          (PyObject    *d) G_GNUC_INTERNAL;
+GtkTreePath *pygtk_tree_path_from_pyobject (PyObject    *object) G_GNUC_INTERNAL;
+PyObject    *pygtk_tree_path_to_pyobject   (GtkTreePath *path) G_GNUC_INTERNAL;
 
 extern PyMethodDef exo_functions[];
 

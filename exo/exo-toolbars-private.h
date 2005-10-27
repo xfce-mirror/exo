@@ -32,14 +32,14 @@
 
 G_BEGIN_DECLS;
 
-GdkPixbuf *_exo_toolbars_new_separator_pixbuf (void);
-GtkWidget *_exo_toolbars_new_separator_image  (void);
+GdkPixbuf *_exo_toolbars_new_separator_pixbuf (void) G_GNUC_INTERNAL G_GNUC_MALLOC;
+GtkWidget *_exo_toolbars_new_separator_image  (void) G_GNUC_INTERNAL G_GNUC_MALLOC;
 
-GtkAction *_exo_toolbars_find_action          (GtkUIManager     *ui_manager,
-                                               const gchar      *name);
+GtkAction *_exo_toolbars_find_action          (GtkUIManager *ui_manager,
+                                               const gchar  *name) G_GNUC_INTERNAL;
 
-void       _exo_toolbars_set_drag_cursor      (GtkWidget        *widget);
-void       _exo_toolbars_unset_drag_cursor    (GtkWidget        *widget);
+void       _exo_toolbars_set_drag_cursor      (GtkWidget    *widget) G_GNUC_INTERNAL;
+void       _exo_toolbars_unset_drag_cursor    (GtkWidget    *widget) G_GNUC_INTERNAL;
 
 G_END_DECLS;
 

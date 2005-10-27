@@ -27,8 +27,12 @@ headers
 #include <pygtk/pygtk.h>
 #include <exo/exo.h>
 
-extern GtkTreePath *pygtk_tree_path_from_pyobject (PyObject *object);
-extern PyObject *pygtk_tree_path_to_pyobject (GtkTreePath *path);
+/* mark internal symbols with G_GNUC_INTERNAL */
+void         exo_add_constants             (PyObject    *module,
+                                            const gchar *strip_prefix) G_GNUC_INTERNAL;
+void         exo_register_classes          (PyObject    *d) G_GNUC_INTERNAL;
+GtkTreePath *pygtk_tree_path_from_pyobject (PyObject    *object) G_GNUC_INTERNAL;
+PyObject    *pygtk_tree_path_to_pyobject   (GtkTreePath *path) G_GNUC_INTERNAL;
 
 %%
 modulename exo

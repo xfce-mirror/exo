@@ -47,6 +47,10 @@ extern const guint exo_major_version;
 extern const guint exo_minor_version;
 extern const guint exo_micro_version;
 
+const gchar *exo_check_version (guint required_major,
+                                guint required_minor,
+                                guint required_micro);
+
 /* with newer GObject versions it's possible to avoid the unnecessary
  * copying of the name, nick and blurb settings for GParamSpec's.
  */
