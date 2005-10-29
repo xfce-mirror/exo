@@ -2332,7 +2332,6 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
 {
   ExoIconViewItem *item;
   gint focus_width;
-  gint spacing;
   gint x, current_width;
   GList *items, *last_item;
   gint col;
@@ -2356,8 +2355,6 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
   gtk_widget_style_get (GTK_WIDGET (icon_view),
                         "focus-line-width", &focus_width,
                         NULL);
-
-  spacing = icon_view->priv->spacing;
 
   x += icon_view->priv->margin + focus_width;
   current_width += 2 * (icon_view->priv->margin + focus_width);
@@ -4926,7 +4923,7 @@ exo_icon_view_set_cursor (ExoIconView     *icon_view,
 
   exo_icon_view_stop_editing (icon_view, TRUE);
   
-  item = g_list_nth (icon_view->priv->items, gtk_tree_path_get_indices(path)[0])->data;
+  item = g_list_nth_data (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
   if (G_UNLIKELY (item == NULL))
     return;
   
@@ -5985,15 +5982,12 @@ exo_icon_view_drag_motion (GtkWidget      *widget,
                            gint            y,
                            guint           time)
 {
-  GtkTreePath *path = NULL;
-  GtkTreeModel *model;
   ExoIconViewDropPosition pos;
-  ExoIconView *icon_view;
-  GdkDragAction suggested_action = 0;
-  GdkAtom target;
-  gboolean empty;
-
-  icon_view = EXO_ICON_VIEW (widget);
+  GdkDragAction           suggested_action = 0;
+  GtkTreePath            *path = NULL;
+  ExoIconView            *icon_view = EXO_ICON_VIEW (widget);
+  gboolean                empty;
+  GdkAtom                 target;
 
   if (!set_destination (icon_view, context, x, y, &suggested_action, &target))
     return FALSE;
@@ -6001,7 +5995,6 @@ exo_icon_view_drag_motion (GtkWidget      *widget,
   exo_icon_view_get_drag_dest_item (icon_view, &path, &pos);
 
   /* we only know this *after* set_desination_row */
-  model = exo_icon_view_get_model (icon_view);
   empty = icon_view->priv->empty_view_drop;
 
   if (path == NULL && !empty)
@@ -6012,10 +6005,7 @@ exo_icon_view_drag_motion (GtkWidget      *widget,
   else
     {
       if (icon_view->priv->scroll_timeout_id == 0)
-        {
-          icon_view->priv->scroll_timeout_id =
-            g_timeout_add (50, drag_scroll_timeout, icon_view);
-        }
+        icon_view->priv->scroll_timeout_id = g_timeout_add (50, drag_scroll_timeout, icon_view);
 
       if (target == gdk_atom_intern ("GTK_TREE_MODEL_ROW", FALSE))
         {
@@ -6032,7 +6022,7 @@ exo_icon_view_drag_motion (GtkWidget      *widget,
         }
     }
 
-  if (path)
+  if (path != NULL)
     gtk_tree_path_free (path);
 
   return TRUE;
@@ -6467,26 +6457,30 @@ exo_icon_view_get_dest_item_at_pos (ExoIconView              *icon_view,
  * 
  * Since: 0.3.1
  **/
-GdkPixmap *
+GdkPixmap*
 exo_icon_view_create_drag_icon (ExoIconView *icon_view,
                                 GtkTreePath *path)
 {
-  GtkWidget *widget;
-  GdkPixmap *drawable;
-  GList *l;
-  gint index;
   GdkRectangle area;
-  GdkGC *gc;
+  GtkWidget   *widget = GTK_WIDGET (icon_view);
+  GdkPixmap   *drawable;
+  GdkGC       *gc;
+  GList       *lp;
+  gint         index;
 
-  widget = GTK_WIDGET (icon_view);
+  g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), NULL);
+  g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, NULL);
+
+  /* verify that the widget is realized */
+  if (G_UNLIKELY (!GTK_WIDGET_REALIZED (icon_view)))
+    return NULL;
 
   index = gtk_tree_path_get_indices (path)[0];
 
-  for (l = icon_view->priv->items; l; l = l->next) 
+  for (lp = icon_view->priv->items; lp != NULL; lp = lp->next) 
     {
-      ExoIconViewItem *item = l->data;
-      
-      if (index == item->index)
+      ExoIconViewItem *item = lp->data;
+      if (G_UNLIKELY (index == item->index))
         {
           drawable = gdk_pixmap_new (icon_view->priv->bin_window,
                                      item->area.width + 2,
@@ -6683,7 +6677,6 @@ exo_icon_view_item_accessible_action_do_action (AtkAction *action,
                                                 gint       i)
 {
   ExoIconViewItemAccessible *item;
-  ExoIconView *icon_view;
 
   if (i < 0 || i >= LAST_ACTION) 
     return FALSE;
@@ -6695,8 +6688,6 @@ exo_icon_view_item_accessible_action_do_action (AtkAction *action,
 
   if (atk_state_set_contains_state (item->state_set, ATK_STATE_DEFUNCT))
     return FALSE;
-
-  icon_view = EXO_ICON_VIEW (item->widget);
 
   switch (i)
     {

@@ -1,3 +1,16 @@
+2005-10-29	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c(exo_icon_view_set_cursor): Use g_list_nth_data()
+	  instead of g_list_nth()->data.
+	* exo/exo-icon-view.c(exo_icon_view_layout_single_row): Drop unused
+	  variable spacing.
+	* exo/exo-icon-view.c(exo_icon_view_drag_motion): Drop unused variable
+	  model.
+	* exo/exo-icon-view.c(exo_icon_view_item_accessible_action_do_action):
+	  Drop unused variable icon_view.
+	* exo/exo-icon-view.c(exo_icon_view_create_drag_icon): Verify that
+	  the icon view is realized.
+
 2005-10-27	Benedikt Meurer <benny@xfce.org>
 
 	* exo/abicheck.sh, exo/exo-utils.{c,h}, exo/exo.symbols: Include
