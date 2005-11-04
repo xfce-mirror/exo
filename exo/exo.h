@@ -50,6 +50,7 @@
 #include <exo/exo-toolbars-model.h>
 #include <exo/exo-toolbars-view.h>
 #include <exo/exo-utils.h>
+#include <exo/exo-wrap-table.h>
 #include <exo/exo-xsession-client.h>
 
 #undef EXO_INSIDE_EXO_H

@@ -301,6 +301,19 @@ exo_toolbars_view_set_ui_manager
 #endif
 #endif
 
+#if IN_HEADER(__EXO_WRAP_TABLE_H__)
+#if IN_SOURCE(__EXO_WRAP_TABLE_C__)
+exo_wrap_table_get_type G_GNUC_CONST
+exo_wrap_table_new G_GNUC_MALLOC
+exo_wrap_table_get_col_spacing
+exo_wrap_table_set_col_spacing
+exo_wrap_table_get_row_spacing
+exo_wrap_table_set_row_spacing
+exo_wrap_table_get_homogeneous
+exo_wrap_table_set_homogeneous
+#endif
+#endif
+
 /* ExoXsessionClient methods */
 #if IN_HEADER(__EXO_XSESSION_CLIENT_H__)
 #if IN_SOURCE(__EXO_XSESSION_CLIENT_C__)

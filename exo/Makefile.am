@@ -26,6 +26,7 @@ libexo_headers =							\
 	exo-toolbars-model.h						\
 	exo-toolbars-view.h						\
 	exo-utils.h							\
+	exo-wrap-table.h						\
 	exo-xsession-client.h
 
 libexo_built_public_sources =						\
@@ -71,6 +72,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-toolbars-private.h						\
 	exo-toolbars-view.c						\
 	exo-utils.c							\
+	exo-wrap-table.c						\
 	exo-xsession-client.c
 
 libexo_0_3_la_CFLAGS =							\

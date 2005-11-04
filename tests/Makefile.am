@@ -5,6 +5,7 @@ SUBDIRS =								\
 
 INCLUDES =								\
 	-I$(top_srcdir)							\
+	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DG_LOG_DOMAIN=\"exo-tests\"
 
 TESTS =									\
@@ -29,7 +30,6 @@ test_exo_noop_SOURCES =							\
 	test-exo-noop.c
 
 test_exo_noop_CFLAGS =							\
-	-DEXO_API_SUBJECT_TO_CHANGE					\
 	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
@@ -37,6 +37,22 @@ test_exo_noop_DEPENDENCIES =						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 test_exo_noop_LDADD =							\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+
+noinst_PROGRAMS =							\
+	test-exo-wrap-table
+
+test_exo_wrap_table_SOURCES =						\
+	test-exo-wrap-table.c
+
+test_exo_wrap_table_CFLAGS =						\
+	$(GTK_CFLAGS)							\
+	$(LIBXFCE4UTIL_CFLAGS)
+
+test_exo_wrap_table_DEPENDENCIES =					\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+
+test_exo_wrap_table_LDADD =						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 DISTCLEANFILES = test-exo-csource-data.c

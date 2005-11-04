@@ -1,3 +1,16 @@
+2005-11-04	Benedikt Meurer <benny@xfce.org>
+
+	* exo/Makefile.am, exo/exo.h, exo/exo.symbols, exo/exo-wrap-table.{c,h}:
+	  Add new class ExoWrapTable, which provides a container widget with
+	  automatic child layouting according to the width allocated to the
+	  container.
+	* docs/reference/exo-docs.sgml, docs/reference/exo-sections.txt,
+	  docs/reference/exo.types, docs/reference/tmpl/exo-wrap-table.sgml:
+	  Add API documentation for ExoWrapTable.
+	* tests/test-exo-wrap-table.c, tests/Makefile.am: Add a simple test
+	  case for ExoWrapTable.
+	* po/*.po: Merge new strings.
+
 2005-10-29	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c(exo_icon_view_set_cursor): Use g_list_nth_data()
