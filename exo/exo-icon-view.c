@@ -114,6 +114,8 @@ static void                 exo_icon_view_size_request                   (GtkWid
                                                                           GtkRequisition         *requisition);
 static void                 exo_icon_view_size_allocate                  (GtkWidget              *widget,
                                                                           GtkAllocation          *allocation);
+static void                 exo_icon_view_style_set                      (GtkWidget              *widget,
+                                                                          GtkStyle               *previous_style);
 static gboolean             exo_icon_view_expose_event                   (GtkWidget              *widget,
                                                                           GdkEventExpose         *event);
 static gboolean             exo_icon_view_motion_notify_event            (GtkWidget              *widget,
@@ -457,6 +459,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   gtkwidget_class->unrealize = exo_icon_view_unrealize;
   gtkwidget_class->size_request = exo_icon_view_size_request;
   gtkwidget_class->size_allocate = exo_icon_view_size_allocate;
+  gtkwidget_class->style_set = exo_icon_view_style_set;
   gtkwidget_class->expose_event = exo_icon_view_expose_event;
   gtkwidget_class->motion_notify_event = exo_icon_view_motion_notify_event;
   gtkwidget_class->button_press_event = exo_icon_view_button_press_event;
@@ -897,7 +900,7 @@ exo_icon_view_init (ExoIconView *icon_view)
 {
   icon_view->priv = EXO_ICON_VIEW_GET_PRIVATE (icon_view);
   
-  icon_view->priv->items_chunk = g_mem_chunk_create (ExoIconViewItem, 512, G_ALLOC_AND_FREE);
+  icon_view->priv->items_chunk = g_mem_chunk_create (ExoIconViewItem, 512, G_ALLOC_ONLY);
 
   icon_view->priv->width = 0;
   icon_view->priv->height = 0;
@@ -1283,6 +1286,22 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   if (vadjustment->value > vadjustment->upper - vadjustment->page_size)
     gtk_adjustment_set_value (vadjustment, MAX (0, vadjustment->upper - vadjustment->page_size));
   gtk_adjustment_changed (vadjustment);
+}
+
+
+
+static void
+exo_icon_view_style_set (GtkWidget *widget,
+                         GtkStyle  *previous_style)
+{
+  ExoIconView *icon_view = EXO_ICON_VIEW (widget);
+
+  /* let GtkWidget do its work */
+  (*GTK_WIDGET_CLASS (exo_icon_view_parent_class)->style_set) (widget, previous_style);
+
+  /* apply the new style for the bin_window if we're realized */
+  if (GTK_WIDGET_REALIZED (widget))
+    gdk_window_set_background (icon_view->priv->bin_window, &widget->style->base[widget->state]);
 }
 
 
@@ -2543,10 +2562,10 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
   GList               *lp;
   gchar               *buffer;
 
-  if (item->area.width != -1 && item->area.height != -1) 
+  if (G_LIKELY (item->area.width != -1 && item->area.height != -1) )
     return;
 
-  if (item->n_cells != icon_view->priv->n_cells)
+  if (G_UNLIKELY (item->n_cells != icon_view->priv->n_cells))
     {
       /* apply the new cell size */
       item->n_cells = icon_view->priv->n_cells;
@@ -3063,7 +3082,6 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
   
   /* release the item resources */
   g_free (item->box);
-  g_chunk_free (item, icon_view->priv->items_chunk);
 
   /* update the indices of the following items */
   for (next = list->next; next; next = next->next)
@@ -3071,6 +3089,10 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
   
   /* drop the item from the list */
   icon_view->priv->items = g_list_delete_link (icon_view->priv->items, list);
+
+  /* reset the item chunk if this was the last item */
+  if (G_UNLIKELY (icon_view->priv->items == NULL))
+    g_mem_chunk_reset (icon_view->priv->items_chunk);
 
   /* recalculate the layout */
   exo_icon_view_queue_layout (icon_view);

@@ -1,3 +1,11 @@
+2005-11-07	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c: Use an alloc-only memory chunk and reset it
+	  whenever the item count drops to zero. This saves some overhead
+	  required for managing the allocated chunks.
+	* exo/exo-icon-view.c: Update the bin_window background whenever a
+	  new style is set.
+
 2005-11-04	Benedikt Meurer <benny@xfce.org>
 
 	* exo/Makefile.am, exo/exo.h, exo/exo.symbols, exo/exo-wrap-table.{c,h}:
