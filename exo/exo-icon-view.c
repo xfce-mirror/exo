@@ -3010,6 +3010,10 @@ exo_icon_view_row_changed (GtkTreeModel *model,
   if (G_UNLIKELY (item == icon_view->priv->edited_item))
     exo_icon_view_stop_editing (icon_view, TRUE);
 
+  /* emit "selection-changed" if the item is selected */
+  if (G_UNLIKELY (item->selected))
+    g_signal_emit (icon_view, icon_view_signals[SELECTION_CHANGED], 0);
+
   /* recalculate layout */
   exo_icon_view_item_invalidate_size (item);
   exo_icon_view_queue_layout (icon_view);

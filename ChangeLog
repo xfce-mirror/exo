@@ -1,3 +1,9 @@
+2005-11-11	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c(exo_icon_view_row_changed): Emit the
+	  "selection-changed" signal whenever a currently selected row
+	  changes.
+
 2005-11-07	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c: Use an alloc-only memory chunk and reset it
