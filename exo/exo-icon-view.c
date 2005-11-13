@@ -1434,7 +1434,7 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   /* let the GtkContainer forward the expose event to all children */
   (*GTK_WIDGET_CLASS (exo_icon_view_parent_class)->expose_event) (widget, event);
 
-  return TRUE;
+  return FALSE;
 }
 
 

@@ -1,3 +1,9 @@
+2005-11-13	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c(exo_icon_view_expose_event): Return FALSE from
+	  the expose_event() method, so signal handlers can run after the
+	  default handler ran.
+
 2005-11-11	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c(exo_icon_view_row_changed): Emit the
