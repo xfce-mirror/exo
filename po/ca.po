@@ -1,19 +1,19 @@
-# Catalan translation of Xfce.
-# Copyright (C) 2005 THE Xfce'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the Xfce package.
+# Catalan translations for exo package.
+# Copyright (C) 2004-2005 os-cillation e.K.
+# This file is distributed under the same license as the exo package.
 # Pau Rul·lan Ferragut <paurullan@bulma.net>, 2005.
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Xfce VERSION\n"
+"Project-Id-Version: exo 0.3.1.1svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-29 20:38+0900\n"
-"PO-Revision-Date: 2005-11-07 00:13+0100\n"
+"POT-Creation-Date: 2005-11-14 18:16+0100\n"
+"PO-Revision-Date: 2005-11-15 07:36+0900\n"
 "Last-Translator: Pau Rul·lan Ferragut <paurullan@bulma.net>\n"
 "Language-Team: Catalan <ca@dodds.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: exo-csource/main.c:230
 #, c-format
@@ -26,37 +26,30 @@ msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "        %s [opcions] --build-list [[nom del fitxer]...]\n"
 
 #: exo-csource/main.c:233
-#, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help            Mostra aquest missatge i surt\n"
 
 #: exo-csource/main.c:234
-#, c-format
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --version         Mostra la versió i surt\n"
 
 #: exo-csource/main.c:235
-#, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern              Genera símbols externs\n"
 
 #: exo-csource/main.c:236
-#, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr " --static               Genera símbols estàtics\n"
 
 #: exo-csource/main.c:237
-#, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier             nom de la macro de C\n"
 
 #: exo-csource/main.c:238
-#, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list          Analitza parelles (nom, fitxer)\n"
 
 #: exo-csource/main.c:248
-#, c-format
 msgid ""
 "Copyright (c) 2005\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -64,7 +57,6 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"\n"
 "Copyright (c) 2005\n"
 "          os-cillation e.K. Tots els drets reservats.\n"
 "\n"
@@ -80,7 +72,6 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
-"\n"
 "%s ve sense CAP TIPUS DE GARANTIA,\n"
 "Podeu redistribuir còpies de %s baix els termes de\n"
 "la GNU Lesser General Public License, la qual podeu trobar al\n"
@@ -120,7 +111,7 @@ msgstr ""
 "El lloc preferit per posar punts suspensius a la cadena, si l'etiqueta no\n"
 "té prou espai per mostrar tota la cadena"
 
-#: exo/exo-icon-bar.c:230 exo/exo-icon-view.c:594
+#: exo/exo-icon-bar.c:230 exo/exo-icon-view.c:597
 msgid "Orientation"
 msgstr "Orientació"
 
@@ -128,19 +119,19 @@ msgstr "Orientació"
 msgid "The orientation of the iconbar"
 msgstr "Orienctació del plafó d'icones"
 
-#: exo/exo-icon-bar.c:247 exo/exo-icon-view.c:611
+#: exo/exo-icon-bar.c:247 exo/exo-icon-view.c:614
 msgid "Pixbuf column"
 msgstr "Columna de memòria de píxel"
 
-#: exo/exo-icon-bar.c:248 exo/exo-icon-view.c:612
+#: exo/exo-icon-bar.c:248 exo/exo-icon-view.c:615
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Columna del model d'on obtenir la icona de la memòria de píxel"
 
-#: exo/exo-icon-bar.c:263 exo/exo-icon-view.c:691
+#: exo/exo-icon-bar.c:263 exo/exo-icon-view.c:694
 msgid "Text column"
 msgstr "Columna de text"
 
-#: exo/exo-icon-bar.c:264 exo/exo-icon-view.c:692
+#: exo/exo-icon-bar.c:264 exo/exo-icon-view.c:695
 msgid "Model column used to retrieve the text from"
 msgstr "Columna del model d'on obtenir el text"
 
@@ -184,104 +175,105 @@ msgstr "Cursor amb vora de color"
 msgid "Cursor item text color"
 msgstr "Cursor amb text de color"
 
-#: exo/exo-icon-view.c:497
+#: exo/exo-icon-view.c:500
 msgid "Column Spacing"
 msgstr "Espaiat entre columnes"
 
-#: exo/exo-icon-view.c:498
+#: exo/exo-icon-view.c:501
 msgid "Space which is inserted between grid column"
 msgstr "L'espai inserit entre les columnes d'una graella"
 
-#: exo/exo-icon-view.c:514
+#: exo/exo-icon-view.c:517
 msgid "Number of columns"
 msgstr "Número de columnes"
 
-#: exo/exo-icon-view.c:515
+#: exo/exo-icon-view.c:518
 msgid "Number of columns to display"
 msgstr "El nombre de columnes a mostrar"
 
-#: exo/exo-icon-view.c:532
+#: exo/exo-icon-view.c:535
 msgid "Width for each item"
 msgstr "Amplada de cada element"
 
-#: exo/exo-icon-view.c:533
+#: exo/exo-icon-view.c:536
 msgid "The width used for each item"
 msgstr "L'amplada utilitzada per cada element"
 
-#: exo/exo-icon-view.c:548
+#: exo/exo-icon-view.c:551
 msgid "Margin"
 msgstr "Marge"
 
-#: exo/exo-icon-view.c:549
+#: exo/exo-icon-view.c:552
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Espai inserit a les vores de la vista d'icones"
 
-#: exo/exo-icon-view.c:565
+#: exo/exo-icon-view.c:568
 msgid "Markup column"
 msgstr "Columna d'etiquetatge"
 
-#: exo/exo-icon-view.c:566
+#: exo/exo-icon-view.c:569
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Columna del model d'on obtenir el text si es fa servir el marcatge Pango"
+msgstr ""
+"Columna del model d'on obtenir el text si es fa servir el marcatge Pango"
 
-#: exo/exo-icon-view.c:580
+#: exo/exo-icon-view.c:583
 msgid "Icon View Model"
 msgstr "Model de vista d'icones"
 
-#: exo/exo-icon-view.c:581
+#: exo/exo-icon-view.c:584
 msgid "The model for the icon view"
 msgstr "El model per la vista d'icones"
 
-#: exo/exo-icon-view.c:595
+#: exo/exo-icon-view.c:598
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Posicionament relatiu entre el text i la icona de cada element"
 
-#: exo/exo-icon-view.c:627
+#: exo/exo-icon-view.c:630
 msgid "Reorderable"
 msgstr "Reordenable"
 
-#: exo/exo-icon-view.c:628
+#: exo/exo-icon-view.c:631
 msgid "View is reorderable"
 msgstr "Vista és reordenable"
 
-#: exo/exo-icon-view.c:643
+#: exo/exo-icon-view.c:646
 msgid "Row Spacing"
 msgstr "Espaiat de files"
 
-#: exo/exo-icon-view.c:644
+#: exo/exo-icon-view.c:647
 msgid "Space which is inserted between grid rows"
 msgstr "L'espai inserit entre les files d'una graella"
 
-#: exo/exo-icon-view.c:658
+#: exo/exo-icon-view.c:661
 msgid "Selection mode"
 msgstr "Mode de selecció"
 
-#: exo/exo-icon-view.c:659
+#: exo/exo-icon-view.c:662
 msgid "The selection mode"
 msgstr "El mode de selecció"
 
-#: exo/exo-icon-view.c:675
+#: exo/exo-icon-view.c:678
 msgid "Spacing"
 msgstr "Espaiat"
 
-#: exo/exo-icon-view.c:676
+#: exo/exo-icon-view.c:679
 msgid "Space which is inserted between cells of an item"
 msgstr "Espai inserit entre les cel·les de cada element"
 
-#: exo/exo-icon-view.c:703
+#: exo/exo-icon-view.c:706
 msgid "Selection Box Color"
 msgstr "Color de la caixa de selecció"
 
-#: exo/exo-icon-view.c:704
+#: exo/exo-icon-view.c:707
 msgid "Color of the selection box"
 msgstr "Color de la caixa de selecció"
 
-#: exo/exo-icon-view.c:714
+#: exo/exo-icon-view.c:717
 msgid "Selection Box Alpha"
 msgstr "Alfa de la caixa de selecció"
 
-#: exo/exo-icon-view.c:715
+#: exo/exo-icon-view.c:718
 msgid "Opacity of the selection box"
 msgstr "Opacitat de la caixa de selecció"
 
@@ -349,4 +341,3 @@ msgstr "Reinicia ordre"
 #: exo/exo-xsession-client.c:139
 msgid "Session restart command"
 msgstr "Ordre per reiniciar la sessió"
-
