@@ -79,8 +79,8 @@ exo_gdk_pixbuf_scale_ratio (GdkPixbuf *source,
     }
 
   dest = gdk_pixbuf_scale_simple (source,
-                                  dest_width,
-                                  dest_height,
+                                  MAX (dest_width, 1),
+                                  MAX (dest_height, 1),
                                   GDK_INTERP_BILINEAR);
 
   return dest;
