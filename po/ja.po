@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.1svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-14 18:16+0100\n"
+"POT-Creation-Date: 2005-11-21 23:46+0900\n"
 "PO-Revision-Date: 2005-10-10 01:45+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -28,30 +28,37 @@ msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [オプション] --build-list [[名前 ファイル]...]\n"
 
 #: exo-csource/main.c:233
+#, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        このヘルプメッセージを表示して終了します\n"
 
 #: exo-csource/main.c:234
+#, c-format
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --version     バージョン情報を表示して終了します\n"
 
 #: exo-csource/main.c:235
+#, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          extern シンボルを生成します\n"
 
 #: exo-csource/main.c:236
+#, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          static シンボルを生成します\n"
 
 #: exo-csource/main.c:237
+#, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier C マクロ/変数名\n"
 
 #: exo-csource/main.c:238
+#, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      解析する (名前, ファイルの) ペアです\n"
 
 #: exo-csource/main.c:248
+#, c-format
 msgid ""
 "Copyright (c) 2005\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -344,3 +351,11 @@ msgstr "再起動コマンド"
 #: exo/exo-xsession-client.c:139
 msgid "Session restart command"
 msgstr "セッションを再起動するコマンドです。"
+
+#, fuzzy
+#~ msgid "Column spacing"
+#~ msgstr "表示欄スペース"
+
+#, fuzzy
+#~ msgid "Row spacing"
+#~ msgstr "行スペース"
