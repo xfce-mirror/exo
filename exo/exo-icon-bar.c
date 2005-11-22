@@ -29,6 +29,7 @@
 #include <exo/exo-config.h>
 #include <exo/exo-icon-bar.h>
 #include <exo/exo-marshal.h>
+#include <exo/exo-string.h>
 #include <exo/exo-alias.h>
 
 
@@ -179,11 +180,37 @@ struct _ExoIconBarPrivate
 
 
 
-static guint icon_bar_signals[LAST_SIGNAL];
+static GObjectClass *exo_icon_bar_parent_class;
+static guint         icon_bar_signals[LAST_SIGNAL];
 
 
 
-G_DEFINE_TYPE (ExoIconBar, exo_icon_bar, GTK_TYPE_CONTAINER);
+GType
+exo_icon_bar_get_type (void)
+{
+  static GType type = G_TYPE_INVALID;
+
+  if (G_UNLIKELY (type == G_TYPE_INVALID))
+    {
+      static const GTypeInfo info =
+      {
+        sizeof (ExoIconBarClass),
+        NULL,
+        NULL,
+        (GClassInitFunc) exo_icon_bar_class_init,
+        NULL,
+        NULL,
+        sizeof (ExoIconBar),
+        0,
+        (GInstanceInitFunc) exo_icon_bar_init,
+        NULL,
+      };
+
+      type = g_type_register_static (GTK_TYPE_CONTAINER, I_("ExoIconBar"), &info, 0);
+    }
+
+  return type;
+}
 
 
 
@@ -195,6 +222,8 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
   GObjectClass   *gobject_class;
 
   g_type_class_add_private (klass, sizeof (ExoIconBarPrivate));
+
+  exo_icon_bar_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_icon_bar_finalize;
@@ -346,7 +375,7 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
    * Used internally to make the #ExoIconBar scrollable.
    **/
   gtkwidget_class->set_scroll_adjustments_signal =
-    g_signal_new ("set-scroll-adjustments",
+    g_signal_new (I_("set-scroll-adjustments"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoIconBarClass, set_scroll_adjustments),
@@ -364,7 +393,7 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
    * changes.
    **/
   icon_bar_signals[SELECTION_CHANGED] =
-    g_signal_new ("selection-changed",
+    g_signal_new (I_("selection-changed"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_FIRST,
                   G_STRUCT_OFFSET (ExoIconBarClass, selection_changed),
@@ -401,7 +430,7 @@ exo_icon_bar_destroy (GtkObject *object)
 
   exo_icon_bar_set_model (icon_bar, NULL);
 
-  GTK_OBJECT_CLASS (exo_icon_bar_parent_class)->destroy (object);
+  (*GTK_OBJECT_CLASS (exo_icon_bar_parent_class)->destroy) (object);
 }
 
 
@@ -413,7 +442,7 @@ exo_icon_bar_finalize (GObject *object)
 
   g_object_unref (G_OBJECT (icon_bar->priv->layout));
 
-  G_OBJECT_CLASS (exo_icon_bar_parent_class)->finalize (object);
+  (*G_OBJECT_CLASS (exo_icon_bar_parent_class)->finalize) (object);
 }
 
 
@@ -500,7 +529,7 @@ exo_icon_bar_style_set (GtkWidget *widget,
 {
   ExoIconBar *icon_bar = EXO_ICON_BAR (widget);
 
-  GTK_WIDGET_CLASS (exo_icon_bar_parent_class)->style_set (widget, previous_style);
+  (*GTK_WIDGET_CLASS (exo_icon_bar_parent_class)->style_set) (widget, previous_style);
 
   if (GTK_WIDGET_REALIZED (widget))
     {
@@ -572,7 +601,7 @@ exo_icon_bar_unrealize (GtkWidget *widget)
   icon_bar->priv->bin_window = NULL;
 
   /* GtkWidget::unrealize destroys children and widget->window */
-  GTK_WIDGET_CLASS (exo_icon_bar_parent_class)->unrealize (widget);
+  (*GTK_WIDGET_CLASS (exo_icon_bar_parent_class)->unrealize) (widget);
 }
 
 

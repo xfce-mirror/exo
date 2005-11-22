@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2005 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -31,13 +31,22 @@
 
 G_BEGIN_DECLS;
 
-gchar    *exo_str_elide_underscores  (const gchar *text);
+gchar                *exo_str_elide_underscores  (const gchar *text);
 
-gboolean  exo_str_is_equal           (const gchar *a,
-                                      const gchar *b);
+gboolean              exo_str_is_equal           (const gchar *a,
+                                                  const gchar *b);
 
-gchar   **exo_strndupv               (gchar      **strv,
-                                      gint         num);
+gchar               **exo_strndupv               (gchar      **strv,
+                                                  gint         num);
+
+G_CONST_RETURN gchar *exo_intern_string          (const gchar *string);
+G_CONST_RETURN gchar *exo_intern_static_string   (const gchar *string);
+
+#if GLIB_CHECK_VERSION(2,9,0)
+#define I_(string) (g_intern_static_string ((string)))
+#else
+#define I_(string) (exo_intern_static_string ((string)))
+#endif
 
 G_END_DECLS;
 

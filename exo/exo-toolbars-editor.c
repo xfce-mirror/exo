@@ -99,11 +99,38 @@ static const GtkTargetEntry targets[] =
   { EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
 };
 
-static GObjectClass *parent_class;
+
+
+static GObjectClass *exo_toolbars_editor_parent_class;
 
 
 
-G_DEFINE_TYPE (ExoToolbarsEditor, exo_toolbars_editor, GTK_TYPE_VBOX);
+GType
+exo_toolbars_editor_get_type (void)
+{
+  static GType type = G_TYPE_INVALID;
+
+  if (G_UNLIKELY (type == G_TYPE_INVALID))
+    {
+      static const GTypeInfo info =
+      {
+        sizeof (ExoToolbarsEditorClass),
+        NULL,
+        NULL,
+        (GClassInitFunc) exo_toolbars_editor_class_init,
+        NULL,
+        NULL,
+        sizeof (ExoToolbarsEditor),
+        0,
+        (GInstanceInitFunc) exo_toolbars_editor_init,
+        NULL,
+      };
+
+      type = g_type_register_static (GTK_TYPE_VBOX, I_("ExoToolbarsEditor"), &info, 0);
+    }
+
+  return type;
+}
 
 
 
@@ -114,7 +141,7 @@ exo_toolbars_editor_class_init (ExoToolbarsEditorClass *klass)
 
   g_type_class_add_private (klass, sizeof (ExoToolbarsEditorPrivate));
   
-  parent_class = g_type_class_peek_parent (klass);
+  exo_toolbars_editor_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_toolbars_editor_finalize;
@@ -230,7 +257,7 @@ exo_toolbars_editor_finalize (GObject *object)
   exo_toolbars_editor_set_model (editor, NULL);
   exo_toolbars_editor_set_ui_manager (editor, NULL);
 
-  G_OBJECT_CLASS (parent_class)->finalize (object);
+  (*G_OBJECT_CLASS (exo_toolbars_editor_parent_class)->finalize) (object);
 }
 
 
@@ -298,7 +325,7 @@ exo_toolbars_editor_drag_data_get (GtkWidget          *item,
   const gchar *target;
   GtkAction   *action;
 
-  action = g_object_get_data (G_OBJECT (item), "gtk-action");
+  action = g_object_get_data (G_OBJECT (item), I_("gtk-action"));
   target = (action != NULL) ? gtk_action_get_name (action) : "separator";
   gtk_selection_data_set (selection_data, selection_data->target,
                           8, (const guchar *) target, strlen (target));
@@ -505,7 +532,7 @@ exo_toolbars_editor_update (ExoToolbarsEditor *editor)
       image = gtk_image_new_from_stock (stock, GTK_ICON_SIZE_LARGE_TOOLBAR);
       item = exo_toolbars_editor_create_item (editor, image, text,
                                               GDK_ACTION_MOVE);
-      g_object_set_data (G_OBJECT (item), "gtk-action", action);
+      g_object_set_data (G_OBJECT (item), I_("gtk-action"), action);
       gtk_table_attach_defaults (GTK_TABLE (editor->priv->table),
                                  item, x, x + 1, y, y + 1);
 

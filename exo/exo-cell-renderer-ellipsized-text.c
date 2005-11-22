@@ -30,6 +30,7 @@
 #include <exo/exo-config.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-pango-extensions.h>
+#include <exo/exo-string.h>
 #include <exo/exo-alias.h>
 
 
@@ -47,6 +48,7 @@ enum
 
 
 
+#if !GTK_CHECK_VERSION(2,6,0)
 static void exo_cell_renderer_ellipsized_text_class_init    (ExoCellRendererEllipsizedTextClass *klass);
 static void exo_cell_renderer_ellipsized_text_init          (ExoCellRendererEllipsizedText      *renderer);
 static void exo_cell_renderer_ellipsized_text_get_property  (GObject                            *object,
@@ -71,25 +73,58 @@ static void exo_cell_renderer_ellipsized_text_render        (GtkCellRenderer    
                                                              GdkRectangle                       *cell_area,
                                                              GdkRectangle                       *expose_area,
                                                              guint                               flags);
+#endif
 
 
 
+#if !GTK_CHECK_VERSION(2,6,0)
 struct _ExoCellRendererEllipsizedTextPrivate
 {
   ExoPangoEllipsizeMode ellipsize;
   guint                 ellipsize_set : 1;
 };
+#endif
 
 
 
-static GObjectClass *parent_class;
+GType
+exo_cell_renderer_ellipsized_text_get_type (void)
+{
+  static GType type = G_TYPE_INVALID;
+
+  if (G_UNLIKELY (type == G_TYPE_INVALID))
+    {
+      static const GTypeInfo info =
+      {
+        sizeof (ExoCellRendererEllipsizedTextClass),
+        NULL,
+        NULL,
+#if !GTK_CHECK_VERSION(2,6,0)
+        (GClassInitFunc) exo_cell_renderer_ellipsized_text_class_init,
+#else
+        NULL,
+#endif
+        NULL,
+        NULL,
+        sizeof (ExoCellRendererEllipsizedText),
+        0,
+#if !GTK_CHECK_VERSION(2,6,0)
+        (GInstanceInitFunc) exo_cell_renderer_ellipsized_text_init,
+#else
+        NULL,
+#endif
+        NULL,
+      };
+
+      type = g_type_register_static (GTK_TYPE_CELL_RENDERER_TEXT, I_("ExoCellRendererEllipsizedText"), &info, 0);
+    }
+
+  return type;
+}
 
 
 
-G_DEFINE_TYPE (ExoCellRendererEllipsizedText, exo_cell_renderer_ellipsized_text, GTK_TYPE_CELL_RENDERER_TEXT);
-
-
-
+#if !GTK_CHECK_VERSION(2,6,0)
 static void
 exo_cell_renderer_ellipsized_text_class_init (ExoCellRendererEllipsizedTextClass *klass)
 {
@@ -102,8 +137,6 @@ exo_cell_renderer_ellipsized_text_class_init (ExoCellRendererEllipsizedTextClass
   if (gtk_major_version == 2 && gtk_minor_version <= 4)
     {
       g_type_class_add_private (klass, sizeof (ExoCellRendererEllipsizedTextPrivate));
-
-      parent_class = g_type_class_peek_parent (klass);
 
       gobject_class = G_OBJECT_CLASS (klass);
       gobject_class->get_property = exo_cell_renderer_ellipsized_text_get_property;
@@ -497,6 +530,7 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer   *cell,
 
   g_object_unref (G_OBJECT (layout));
 }
+#endif
 
 
 

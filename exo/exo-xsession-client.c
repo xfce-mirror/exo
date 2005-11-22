@@ -92,12 +92,37 @@ struct _ExoXsessionClientPrivate
 
 
 
-static GObjectClass *parent_class;
+static GObjectClass *exo_xsession_client_parent_class;
 static guint         client_signals[LAST_SIGNAL];
 
 
 
-G_DEFINE_TYPE (ExoXsessionClient, exo_xsession_client, G_TYPE_OBJECT);
+GType
+exo_xsession_client_get_type (void)
+{
+  static GType type = G_TYPE_INVALID;
+
+  if (G_UNLIKELY (type == G_TYPE_INVALID))
+    {
+      static const GTypeInfo info =
+      {
+        sizeof (ExoXsessionClientClass),
+        NULL,
+        NULL,
+        (GClassInitFunc) exo_xsession_client_class_init,
+        NULL,
+        NULL,
+        sizeof (ExoXsessionClient),
+        0,
+        (GInstanceInitFunc) exo_xsession_client_init,
+        NULL,
+      };
+
+      type = g_type_register_static (G_TYPE_OBJECT, I_("ExoXsessionClient"), &info, 0);
+    }
+
+  return type;
+}
 
 
 
@@ -111,7 +136,7 @@ exo_xsession_client_class_init (ExoXsessionClientClass *klass)
 
   g_type_class_add_private (klass, sizeof (ExoXsessionClientPrivate));
 
-  parent_class = g_type_class_peek_parent (klass);
+  exo_xsession_client_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->dispose = exo_xsession_client_dispose;
@@ -149,7 +174,7 @@ exo_xsession_client_class_init (ExoXsessionClientClass *klass)
    * specified client leader window.
    **/
   client_signals[SAVE_YOURSELF] =
-    g_signal_new ("save-yourself",
+    g_signal_new (I_("save-yourself"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_FIRST,
                   G_STRUCT_OFFSET (ExoXsessionClientClass, save_yourself),
@@ -175,7 +200,7 @@ exo_xsession_client_dispose (GObject *object)
 
   exo_xsession_client_set_group (client, NULL);
 
-  G_OBJECT_CLASS (parent_class)->dispose (object);
+  (*G_OBJECT_CLASS (exo_xsession_client_parent_class)->dispose) (object);
 }
 
 

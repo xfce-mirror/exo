@@ -151,12 +151,37 @@ static GMarkupParser markup_parser =
   NULL,
 };
 
-static GObjectClass *parent_class;
+static GObjectClass *exo_toolbars_model_parent_class;
 static guint         toolbars_model_signals[LAST_SIGNAL];
 
 
 
-G_DEFINE_TYPE (ExoToolbarsModel, exo_toolbars_model, G_TYPE_OBJECT);
+GType
+exo_toolbars_model_get_type (void)
+{
+  static GType type = G_TYPE_INVALID;
+
+  if (G_UNLIKELY (type == G_TYPE_INVALID))
+    {
+      static const GTypeInfo info =
+      {
+        sizeof (ExoToolbarsModelClass),
+        NULL,
+        NULL,
+        (GClassInitFunc) exo_toolbars_model_class_init,
+        NULL,
+        NULL,
+        sizeof (ExoToolbarsModel),
+        0,
+        (GInstanceInitFunc) exo_toolbars_model_init,
+        NULL,
+      };
+
+      type = g_type_register_static (G_TYPE_OBJECT, I_("ExoToolbarsModel"), &info, 0);
+    }
+
+  return type;
+}
 
 
 
@@ -181,7 +206,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 
   g_type_class_add_private (klass, sizeof (ExoToolbarsModelPrivate));
 
-  parent_class = g_type_class_peek_parent (klass);
+  exo_toolbars_model_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_toolbars_model_finalize;
@@ -202,7 +227,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
    * managed by @model.
    **/
   toolbars_model_signals[ITEM_ADDED] =
-    g_signal_new ("item-added",
+    g_signal_new (I_("item-added"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoToolbarsModelClass, item_added),
@@ -223,7 +248,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
    * managed by @model.
    **/
   toolbars_model_signals[ITEM_REMOVED] =
-    g_signal_new ("item-removed",
+    g_signal_new (I_("item-removed"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoToolbarsModelClass, item_removed),
@@ -242,7 +267,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
    * This signal is emitted whenever a new toolbar is added to @model.
    **/
   toolbars_model_signals[TOOLBAR_ADDED] =
-    g_signal_new ("toolbar-added",
+    g_signal_new (I_("toolbar-added"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoToolbarsModelClass, toolbar_added),
@@ -262,7 +287,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
    * should then update their internal state of the specified toolbar.
    **/
   toolbars_model_signals[TOOLBAR_CHANGED] =
-    g_signal_new ("toolbar-changed",
+    g_signal_new (I_("toolbar-changed"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoToolbarsModelClass, toolbar_changed),
@@ -280,7 +305,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
    * This signal is emitted whenever a toolbar is removed from @model.
    **/
   toolbars_model_signals[TOOLBAR_REMOVED] =
-    g_signal_new ("toolbar-removed",
+    g_signal_new (I_("toolbar-removed"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoToolbarsModelClass, toolbar_removed),
@@ -293,7 +318,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
    * ExoToolbarsModel::get-item-type:
    **/
   toolbars_model_signals[GET_ITEM_TYPE] =
-    g_signal_new ("get-item-type",
+    g_signal_new (I_("get-item-type"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_FIRST | G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoToolbarsModelClass, get_item_type),
@@ -306,7 +331,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
    * ExoToolbarsModel::get-item-id:
    **/
   toolbars_model_signals[GET_ITEM_ID] =
-    g_signal_new ("get-item-id",
+    g_signal_new (I_("get-item-id"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_FIRST | G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoToolbarsModelClass, get_item_id),
@@ -320,7 +345,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
    * ExoToolbarsModel::get-item-data:
    **/
   toolbars_model_signals[GET_ITEM_DATA] =
-    g_signal_new ("get-item-data",
+    g_signal_new (I_("get-item-data"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_FIRST | G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoToolbarsModelClass, get_item_data),
@@ -354,7 +379,7 @@ exo_toolbars_model_finalize (GObject *object)
     exo_toolbars_toolbar_free (lp->data);
   g_list_free (model->priv->toolbars);
 
-  G_OBJECT_CLASS (parent_class)->finalize (object);
+  (*G_OBJECT_CLASS (exo_toolbars_model_parent_class)->finalize) (object);
 }
 
 

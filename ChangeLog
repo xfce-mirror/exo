@@ -1,3 +1,23 @@
+2005-11-22	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-string.{c,h}, exo/exo.symbols: Add exo_intern_string() and
+	  exo_intern_static_string(), which transform a string to it's GQuark
+	  representation and thereby can be used to reduce the memory overhead
+	  for static strings that will be handed to g_signal_new(),
+	  g_type_register_*(), etc.
+	* exo/exo-cell-renderer-ellipsized-text.c: We don't need to provide an
+	  implementation here if build with Gtk+ 2.6 or above, as starting with
+	  Gtk+ 2.6, GtkCellRendererText already provides the required
+	  functionality.
+	* exo/exo-cell-renderer-ellipsized-text.c, exo/exo-icon-bar.c,
+	  exo/exo-icon-view.c, exo/exo-toolbars-editor-dialog.c,
+	  exo/exo-toolbars-editor.c, exo/exo-toolbars-model.c,
+	  exo/exo-toolbars-view.c, exo/exo-wrap-table.c,
+	  exo/exo-xsession-client.c: Use exo_intern_static_string() aka I_() to
+	  avoid g_strdup()'ing static strings which are used for GQuarks in
+	  various places.
+	* po/: Update translations.
+
 2005-11-16	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-gdk-pixbuf-extensions.c(exo_gdk_pixbuf_scale_ratio): Be sure

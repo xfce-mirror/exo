@@ -34,6 +34,7 @@
 
 #include <libxfce4util/libxfce4util.h>
 
+#include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-editor-dialog.h>
 #include <exo/exo-alias.h>
@@ -57,7 +58,32 @@ struct _ExoToolbarsEditorDialogPrivate
 
 
 
-G_DEFINE_TYPE (ExoToolbarsEditorDialog, exo_toolbars_editor_dialog, GTK_TYPE_DIALOG);
+GType
+exo_toolbars_editor_dialog_get_type (void)
+{
+  static GType type = G_TYPE_INVALID;
+
+  if (G_UNLIKELY (type == G_TYPE_INVALID))
+    {
+      static const GTypeInfo info =
+      {
+        sizeof (ExoToolbarsEditorDialogClass),
+        NULL,
+        NULL,
+        (GClassInitFunc) exo_toolbars_editor_dialog_class_init,
+        NULL,
+        NULL,
+        sizeof (ExoToolbarsEditorDialog),
+        0,
+        (GInstanceInitFunc) exo_toolbars_editor_dialog_init,
+        NULL,
+      };
+
+      type = g_type_register_static (GTK_TYPE_DIALOG, I_("ExoToolbarsEditorDialog"), &info, 0);
+    }
+
+  return type;
+}
 
 
 
@@ -127,7 +153,7 @@ exo_toolbars_editor_dialog_add_toolbar (ExoToolbarsEditorDialog *dialog)
   model = exo_toolbars_editor_get_model (EXO_TOOLBARS_EDITOR (dialog->priv->editor));
   if (G_LIKELY (model != NULL))
     {
-      name = g_strdup_printf ("Terminal-toolbar-%d-%d", getpid (), (gint) time (NULL));
+      name = g_strdup_printf ("exo-toolbar-%d-%d", getpid (), (gint) time (NULL));
       exo_toolbars_model_add_toolbar (model, -1, name);
       g_free (name);
     }

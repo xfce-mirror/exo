@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2005 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -135,6 +135,56 @@ exo_strndupv (gchar **strv,
     result[num] = g_strdup (strv[num]);
 
   return result;
+}
+
+
+
+/**
+ * exo_intern_string:
+ * @string: a string
+ * 
+ * Returns a canonical representation for @string. Interned strings can
+ * be compared for equality by comparing the pointers, instead of using strcmp()
+ * or exo_str_is_equal(). exo_intern_string() takes a copy of the @string for its
+ * internal usage, so @string does not need to be static.
+ * 
+ * Return value: a canonical representation for the string
+ *
+ * Since: 0.3.1.1
+ */
+G_CONST_RETURN gchar*
+exo_intern_string (const gchar *string)
+{
+#if GLIB_CHECK_VERSION(2,9,0)
+  return g_intern_string (string);
+#else
+  return (string != NULL) ? g_quark_to_string (g_quark_from_string (string)) : NULL;
+#endif
+}
+
+
+
+/**
+ * exo_intern_static_string:
+ * @string: a static string
+ * 
+ * Returns a canonical representation for @string. Interned strings can
+ * be compared for equality by comparing the pointers, instead of using strcmp()
+ * or exo_str_is_equal(). exo_intern_static_string() does not copy the string,
+ * therefore @string must not be freed or modified. 
+ * 
+ * Return value: a canonical representation for the string
+ *
+ * Since: 0.3.1.1
+ */
+G_CONST_RETURN gchar*
+exo_intern_static_string (const gchar *string)
+{
+#if GLIB_CHECK_VERSION(2,9,0)
+  return g_intern_static_string (string);
+#else
+  return (string != NULL) ? g_quark_to_string (g_quark_from_static_string (string)) : NULL;
+#endif
 }
 
 

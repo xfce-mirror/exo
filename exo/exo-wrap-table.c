@@ -25,6 +25,7 @@
 
 #include <exo/exo-config.h>
 #include <exo/exo-private.h>
+#include <exo/exo-string.h>
 #include <exo/exo-wrap-table.h>
 #include <exo/exo-alias.h>
 
@@ -93,7 +94,36 @@ struct _ExoWrapTablePrivate
 
 
 
-G_DEFINE_TYPE (ExoWrapTable, exo_wrap_table, GTK_TYPE_CONTAINER);
+static GObjectClass *exo_wrap_table_parent_class;
+
+
+
+GType
+exo_wrap_table_get_type (void)
+{
+  static GType type = G_TYPE_INVALID;
+
+  if (G_UNLIKELY (type == G_TYPE_INVALID))
+    {
+      static const GTypeInfo info =
+      {
+        sizeof (ExoWrapTableClass),
+        NULL,
+        NULL,
+        (GClassInitFunc) exo_wrap_table_class_init,
+        NULL,
+        NULL,
+        sizeof (ExoWrapTable),
+        0,
+        (GInstanceInitFunc) exo_wrap_table_init,
+        NULL,
+      };
+
+      type = g_type_register_static (GTK_TYPE_CONTAINER, I_("ExoWrapTable"), &info, 0);
+    }
+
+  return type;
+}
 
 
 
@@ -106,6 +136,9 @@ exo_wrap_table_class_init (ExoWrapTableClass *klass)
 
   /* add our private data to the class */
   g_type_class_add_private (klass, sizeof (ExoWrapTablePrivate));
+
+  /* determine our parent type class */
+  exo_wrap_table_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->get_property = exo_wrap_table_get_property;

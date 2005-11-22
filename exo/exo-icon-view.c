@@ -41,6 +41,7 @@
 #include <exo/exo-icon-view.h>
 #include <exo/exo-marshal.h>
 #include <exo/exo-private.h>
+#include <exo/exo-string.h>
 #include <exo/exo-alias.h>
 
 
@@ -426,13 +427,45 @@ struct _ExoIconViewPrivate
 
 
 
-static guint icon_view_signals[LAST_SIGNAL];
+static GObjectClass *exo_icon_view_parent_class;
+static guint         icon_view_signals[LAST_SIGNAL];
 
-G_DEFINE_TYPE_WITH_CODE (ExoIconView,
-                         exo_icon_view,
-                         GTK_TYPE_CONTAINER,
-                         G_IMPLEMENT_INTERFACE (GTK_TYPE_CELL_LAYOUT,
-                                                exo_icon_view_cell_layout_init));
+
+
+GType
+exo_icon_view_get_type (void)
+{
+  static GType type = G_TYPE_INVALID;
+
+  if (G_UNLIKELY (type == G_TYPE_INVALID))
+    {
+      static const GTypeInfo info =
+      {
+        sizeof (ExoIconViewClass),
+        NULL,
+        NULL,
+        (GClassInitFunc) exo_icon_view_class_init,
+        NULL,
+        NULL,
+        sizeof (ExoIconView),
+        0,
+        (GInstanceInitFunc) exo_icon_view_init,
+        NULL,
+      };
+
+      static const GInterfaceInfo cell_layout_info =
+      {
+        (GInterfaceInitFunc) exo_icon_view_cell_layout_init,
+        NULL,
+        NULL,
+      };
+
+      type = g_type_register_static (GTK_TYPE_CONTAINER, I_("ExoIconView"), &info, 0);
+      g_type_add_interface_static (type, GTK_TYPE_CELL_LAYOUT, &cell_layout_info);
+    }
+
+  return type;
+}
 
 
 
@@ -447,6 +480,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   gtkbinding_set = gtk_binding_set_by_class (klass);
 
   g_type_class_add_private (klass, sizeof (ExoIconViewPrivate));
+
+  exo_icon_view_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->dispose = exo_icon_view_dispose;
@@ -726,7 +761,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * @path      :
    **/
   icon_view_signals[ITEM_ACTIVATED] =
-    g_signal_new ("item_activated",
+    g_signal_new (I_("item-activated"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoIconViewClass, item_activated),
@@ -740,7 +775,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * @icon_view : a #ExoIconView.
    **/
   icon_view_signals[SELECTION_CHANGED] =
-    g_signal_new ("selection_changed",
+    g_signal_new (I_("selection-changed"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_FIRST,
                   G_STRUCT_OFFSET (ExoIconViewClass, selection_changed),
@@ -755,7 +790,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * @vadjustment :
    **/
   gtkwidget_class->set_scroll_adjustments_signal =
-    g_signal_new ("set_scroll_adjustments",
+    g_signal_new (I_("set-scroll-adjustments"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoIconViewClass, set_scroll_adjustments),
@@ -769,7 +804,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * @icon_view : a #ExoIconView.
    **/
   icon_view_signals[SELECT_ALL] =
-    g_signal_new ("select_all",
+    g_signal_new (I_("select-all"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
                   G_STRUCT_OFFSET (ExoIconViewClass, select_all),
@@ -782,7 +817,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * @icon_view : a #ExoIconView.
    **/
   icon_view_signals[UNSELECT_ALL] =
-    g_signal_new ("unselect_all",
+    g_signal_new (I_("unselect-all"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
                   G_STRUCT_OFFSET (ExoIconViewClass, unselect_all),
@@ -795,7 +830,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * @icon_view : a #ExoIconView.
    **/
   icon_view_signals[SELECT_CURSOR_ITEM] =
-    g_signal_new ("select_cursor_item",
+    g_signal_new (I_("select-cursor-item"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
                   G_STRUCT_OFFSET (ExoIconViewClass, select_cursor_item),
@@ -808,7 +843,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * @icon_view : a #ExoIconView.
    **/
   icon_view_signals[TOGGLE_CURSOR_ITEM] =
-    g_signal_new ("toggle_cursor_item",
+    g_signal_new (I_("toggle-cursor-item"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
                   G_STRUCT_OFFSET (ExoIconViewClass, toggle_cursor_item),
@@ -823,7 +858,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * Return value:
    **/
   icon_view_signals[ACTIVATE_CURSOR_ITEM] =
-    g_signal_new ("activate_cursor_item",
+    g_signal_new (I_("activate-cursor-item"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
                   G_STRUCT_OFFSET (ExoIconViewClass, activate_cursor_item),
@@ -840,7 +875,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * Return value:
    **/
   icon_view_signals[MOVE_CURSOR] =
-    g_signal_new ("move_cursor",
+    g_signal_new (I_("move-cursor"),
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
                   G_STRUCT_OFFSET (ExoIconViewClass, move_cursor),
@@ -851,13 +886,13 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                   G_TYPE_INT);
 
   /* Key bindings */
-  gtk_binding_entry_add_signal (gtkbinding_set, GDK_a, GDK_CONTROL_MASK, "select_all", 0);
-  gtk_binding_entry_add_signal (gtkbinding_set, GDK_a, GDK_CONTROL_MASK | GDK_SHIFT_MASK, "unselect_all", 0);
-  gtk_binding_entry_add_signal (gtkbinding_set, GDK_space, GDK_CONTROL_MASK, "toggle_cursor_item", 0);
-  gtk_binding_entry_add_signal (gtkbinding_set, GDK_space, 0, "activate_cursor_item", 0);
-  gtk_binding_entry_add_signal (gtkbinding_set, GDK_Return, 0, "activate_cursor_item", 0);
-  gtk_binding_entry_add_signal (gtkbinding_set, GDK_ISO_Enter, 0, "activate_cursor_item", 0);
-  gtk_binding_entry_add_signal (gtkbinding_set, GDK_KP_Enter, 0, "activate_cursor_item", 0);
+  gtk_binding_entry_add_signal (gtkbinding_set, GDK_a, GDK_CONTROL_MASK, "select-all", 0);
+  gtk_binding_entry_add_signal (gtkbinding_set, GDK_a, GDK_CONTROL_MASK | GDK_SHIFT_MASK, "unselect-all", 0);
+  gtk_binding_entry_add_signal (gtkbinding_set, GDK_space, GDK_CONTROL_MASK, "toggle-cursor-item", 0);
+  gtk_binding_entry_add_signal (gtkbinding_set, GDK_space, 0, "activate-cursor-item", 0);
+  gtk_binding_entry_add_signal (gtkbinding_set, GDK_Return, 0, "activate-cursor-item", 0);
+  gtk_binding_entry_add_signal (gtkbinding_set, GDK_ISO_Enter, 0, "activate-cursor-item", 0);
+  gtk_binding_entry_add_signal (gtkbinding_set, GDK_KP_Enter, 0, "activate-cursor-item", 0);
 
   exo_icon_view_add_move_binding (gtkbinding_set, GDK_Up, 0, GTK_MOVEMENT_DISPLAY_LINES, -1);
   exo_icon_view_add_move_binding (gtkbinding_set, GDK_KP_Up, 0, GTK_MOVEMENT_DISPLAY_LINES, -1);
@@ -2020,7 +2055,7 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
   gtk_grab_add (GTK_WIDGET (icon_view));
 
   /* be sure to disable Gtk+ DnD callbacks, because else rubberbanding will be interrupted */
-  drag_data = g_object_get_data (G_OBJECT (icon_view), "gtk-site-data");
+  drag_data = g_object_get_data (G_OBJECT (icon_view), I_("gtk-site-data"));
   if (G_LIKELY (drag_data != NULL))
     {
       g_signal_handlers_block_matched (G_OBJECT (icon_view),
@@ -2050,7 +2085,7 @@ exo_icon_view_stop_rubberbanding (ExoIconView *icon_view)
       icon_view->priv->rubberband_fill_gc = NULL;
 
       /* re-enable Gtk+ DnD callbacks again */
-      drag_data = g_object_get_data (G_OBJECT (icon_view), "gtk-site-data");
+      drag_data = g_object_get_data (G_OBJECT (icon_view), I_("gtk-site-data"));
       if (G_LIKELY (drag_data != NULL))
         {
           g_signal_handlers_unblock_matched (G_OBJECT (icon_view),
@@ -2196,7 +2231,7 @@ exo_icon_view_set_adjustments (ExoIconView   *icon_view,
       g_object_ref (icon_view->priv->hadjustment);
       gtk_object_sink (GTK_OBJECT (icon_view->priv->hadjustment));
 
-      g_signal_connect (icon_view->priv->hadjustment, "value_changed",
+      g_signal_connect (icon_view->priv->hadjustment, "value-changed",
                         G_CALLBACK (exo_icon_view_adjustment_changed),
                         icon_view);
       need_adjust = TRUE;
@@ -2208,7 +2243,7 @@ exo_icon_view_set_adjustments (ExoIconView   *icon_view,
       g_object_ref (icon_view->priv->vadjustment);
       gtk_object_sink (GTK_OBJECT (icon_view->priv->vadjustment));
 
-      g_signal_connect (icon_view->priv->vadjustment, "value_changed",
+      g_signal_connect (icon_view->priv->vadjustment, "value-changed",
                         G_CALLBACK (exo_icon_view_adjustment_changed),
                         icon_view);
       need_adjust = TRUE;
@@ -5409,15 +5444,14 @@ set_status_pending (GdkDragContext *context,
                     GdkDragAction   suggested_action)
 {
   g_object_set_data (G_OBJECT (context),
-                     "gtk-icon-view-status-pending",
+                     I_("exo-icon-view-status-pending"),
                      GINT_TO_POINTER (suggested_action));
 }
 
 static GdkDragAction
 get_status_pending (GdkDragContext *context)
 {
-  return GPOINTER_TO_INT (g_object_get_data (G_OBJECT (context),
-                                             "gtk-icon-view-status-pending"));
+  return GPOINTER_TO_INT (g_object_get_data (G_OBJECT (context), I_("exo-icon-view-status-pending")));
 }
 
 static void
@@ -5457,12 +5491,12 @@ set_source_row (GdkDragContext *context,
 {
   if (source_row)
     g_object_set_data_full (G_OBJECT (context),
-                            "gtk-icon-view-source-row",
+                            I_("exo-icon-view-source-row"),
                             gtk_tree_row_reference_new (model, source_row),
                             (GDestroyNotify) gtk_tree_row_reference_free);
   else
     g_object_set_data_full (G_OBJECT (context),
-                            "gtk-icon-view-source-row",
+                            I_("exo-icon-view-source-row"),
                             NULL, NULL);
 }
 
@@ -5471,7 +5505,7 @@ get_source_row (GdkDragContext *context)
 {
   GtkTreeRowReference *ref;
 
-  ref = g_object_get_data (G_OBJECT (context), "gtk-icon-view-source-row");
+  ref = g_object_get_data (G_OBJECT (context), I_("exo-icon-view-source-row"));
 
   if (ref)
     return gtk_tree_row_reference_get_path (ref);
@@ -5507,7 +5541,7 @@ set_dest_row (GdkDragContext *context,
   if (!dest_row)
     {
       g_object_set_data_full (G_OBJECT (context),
-                              "gtk-icon-view-dest-row",
+                              I_("exo-icon-view-dest-row"),
                               NULL, NULL);
       return;
     }
@@ -5518,7 +5552,7 @@ set_dest_row (GdkDragContext *context,
   dr->empty_view_drop = empty_view_drop;
   dr->drop_append_mode = drop_append_mode;
   g_object_set_data_full (G_OBJECT (context),
-                          "gtk-icon-view-dest-row",
+                          I_("exo-icon-view-dest-row"),
                           dr, (GDestroyNotify) dest_row_free);
 }
 
@@ -5529,7 +5563,7 @@ get_dest_row (GdkDragContext *context)
 {
   DestRow *dr;
 
-  dr = g_object_get_data (G_OBJECT (context), "gtk-icon-view-dest-row");
+  dr = g_object_get_data (G_OBJECT (context), I_("exo-icon-view-dest-row"));
 
   if (dr)
     {
@@ -7771,7 +7805,7 @@ exo_icon_view_item_accessible_get_type (void)
       };
 
       type = g_type_register_static (ATK_TYPE_OBJECT,
-                                     "ExoIconViewItemAccessible", &tinfo, 0);
+                                     I_("ExoIconViewItemAccessible"), &tinfo, 0);
       g_type_add_interface_static (type, ATK_TYPE_COMPONENT,
                                    &atk_component_info);
       g_type_add_interface_static (type, ATK_TYPE_ACTION,
@@ -8697,7 +8731,7 @@ exo_icon_view_accessible_get_type (void)
       tinfo.instance_size = query.instance_size;
  
       type = g_type_register_static (derived_atk_type, 
-                                     "ExoIconViewAccessible", 
+                                     I_("ExoIconViewAccessible"), 
                                      &tinfo, 0);
       g_type_add_interface_static (type, ATK_TYPE_COMPONENT,
                                    &atk_component_info);
@@ -8760,7 +8794,7 @@ exo_icon_view_accessible_factory_get_type (void)
       };
 
       type = g_type_register_static (ATK_TYPE_OBJECT_FACTORY, 
-                                    "ExoIconViewAccessibleFactory",
+                                    I_("ExoIconViewAccessibleFactory"),
                                     &tinfo, 0);
     }
   return type;
