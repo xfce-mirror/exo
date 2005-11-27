@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.1.1svn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-11-22 17:40+0100\n"
-"PO-Revision-Date: 2005-10-15 16:38+0200\n"
+"PO-Revision-Date: 2005-11-27 04:22+0200\n"
 "Last-Translator: Stavros Giannouris <stavrosg2002@freemail.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
 "MIME-Version: 1.0\n"
@@ -24,37 +24,37 @@ msgstr "Χρήση: %s [επιλογές] [αρχείο]\n"
 #: exo-csource/main.c:231
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr ""
+msgstr "       %s [επιλογές] --build-list [[όνομα αρχείο]...]\n"
 
 #: exo-csource/main.c:233
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help        Εμφανίζει αυτό το κείμενο βοήθειας\n"
+msgstr "  -h, --help           Εμφανίζει αυτό το κείμενο βοήθειας\n"
 
 #: exo-csource/main.c:234
 #, c-format
 msgid "  -v, --version     Print version information and exit\n"
-msgstr "  -v, --version     Εμφανίζει τις πληροφορίες έκδοσης\n"
+msgstr "  -v, --version        Εμφανίζει τις πληροφορίες έκδοσης\n"
 
 #: exo-csource/main.c:235
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
-msgstr ""
+msgstr "  --extern             Δημιουργία εξωτερικών συμβόλων\n"
 
 #: exo-csource/main.c:236
 #, c-format
 msgid "  --static          Generate static symbols\n"
-msgstr ""
+msgstr "  --static             Δημιουργία στατικών συμβόλων\n"
 
 #: exo-csource/main.c:237
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr ""
+msgstr "  --name=αναγνωριστικό Όνομα μεταβλητής / μακροεντολής C\n"
 
 #: exo-csource/main.c:238
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr ""
+msgstr "  --build-list         Ανάλυση ζευγαριών (όνομα, αρχείο)\n"
 
 #: exo-csource/main.c:248
 #, c-format
@@ -80,23 +80,25 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
+"%s διανέμεται ΧΩΡΙΣ ΑΠΟΛΥΤΩΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ,\n"
+"Μπορείτε να αναδιανέμεται αντίγραφα του %s υπό τους όρους\n"
+"της άδειας GNU Lesser General Public License η οποία μπορεί\n"
+"να βρεθεί μέσα στο πακέτο με τον πηγαίο κώδικα του %s.\n"
+"\n"
 
 #: exo-csource/main.c:255
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Παρακαλούμε αναφέρατε σφάλματα στον <%s>/\n"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:152 exo/exo-ellipsized-label.c:122
+#: exo/exo-cell-renderer-ellipsized-text.c:152
+#: exo/exo-ellipsized-label.c:122
 msgid "Ellipsize"
 msgstr "Χρήση αποσιωπητικών"
 
 #: exo/exo-cell-renderer-ellipsized-text.c:153
-msgid ""
-"The preferred place to ellipsize the string, if the cell renderer does not "
-"have enough room to display the entire string, if at all"
-msgstr ""
-"Η προτιμώμενη θέση για τη χρήση αποσιωπητικών στο αλφαριθμητικό, αν η "
-"εργασία απόδοσης κελιού δεν έχει αρκετό χώρο για να το εμφανίσει ολόκληρο"
+msgid "The preferred place to ellipsize the string, if the cell renderer does not have enough room to display the entire string, if at all"
+msgstr "Η προτιμώμενη θέση για τη χρήση αποσιωπητικών στο αλφαριθμητικό, αν η εργασία απόδοσης κελιού δεν έχει αρκετό χώρο για να το εμφανίσει ολόκληρο"
 
 #: exo/exo-cell-renderer-ellipsized-text.c:163
 msgid "Ellipsize set"
@@ -107,14 +109,11 @@ msgid "Whether this tag affects the ellipsize mode"
 msgstr "Αν αυτή η ετικέτα επηρεάζει τη χρήση αποσιωπητικών"
 
 #: exo/exo-ellipsized-label.c:123
-msgid ""
-"The preferred place to ellipsize the string, if the label does not have "
-"enough room to display the entire string, if at all"
-msgstr ""
-"Η προτιμώμενη θέση για την αποσιώπηση αλφαριθμητικού, αν η ετικέτα δεν έχει "
-"αρκετό χώρο για την εμφάνιση ολόκληρου του αλφαριθμητικού"
+msgid "The preferred place to ellipsize the string, if the label does not have enough room to display the entire string, if at all"
+msgstr "Η προτιμώμενη θέση για την αποσιώπηση αλφαριθμητικού, αν η ετικέτα δεν έχει αρκετό χώρο για την εμφάνιση ολόκληρου του αλφαριθμητικού"
 
-#: exo/exo-icon-bar.c:259 exo/exo-icon-view.c:632
+#: exo/exo-icon-bar.c:259
+#: exo/exo-icon-view.c:632
 msgid "Orientation"
 msgstr "Προσανατολισμός"
 
@@ -122,19 +121,23 @@ msgstr "Προσανατολισμός"
 msgid "The orientation of the iconbar"
 msgstr "Ο προσαναταλισμός του iconbar"
 
-#: exo/exo-icon-bar.c:276 exo/exo-icon-view.c:649
+#: exo/exo-icon-bar.c:276
+#: exo/exo-icon-view.c:649
 msgid "Pixbuf column"
 msgstr "Στήλη Pixbuf"
 
-#: exo/exo-icon-bar.c:277 exo/exo-icon-view.c:650
+#: exo/exo-icon-bar.c:277
+#: exo/exo-icon-view.c:650
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Το μοντέλο στήλης για τη λήψη του pixbuf εικονιδίου"
 
-#: exo/exo-icon-bar.c:292 exo/exo-icon-view.c:729
+#: exo/exo-icon-bar.c:292
+#: exo/exo-icon-view.c:729
 msgid "Text column"
 msgstr "Στήλη κειμένου"
 
-#: exo/exo-icon-bar.c:293 exo/exo-icon-view.c:730
+#: exo/exo-icon-bar.c:293
+#: exo/exo-icon-view.c:730
 msgid "Model column used to retrieve the text from"
 msgstr "Το μοντέλο στήλης για τη λήψη του κειμένου"
 
@@ -154,27 +157,33 @@ msgstr "Ενεργό"
 msgid "Active item index"
 msgstr "Το αντικείμενο που είναι αυτή τη στιγμή ενεργό"
 
-#: exo/exo-icon-bar.c:329 exo/exo-icon-bar.c:330
+#: exo/exo-icon-bar.c:329
+#: exo/exo-icon-bar.c:330
 msgid "Active item fill color"
 msgstr "Χρώμα γεμίσματος ενεργού αντικειμένου"
 
-#: exo/exo-icon-bar.c:336 exo/exo-icon-bar.c:337
+#: exo/exo-icon-bar.c:336
+#: exo/exo-icon-bar.c:337
 msgid "Active item border color"
 msgstr "Χρώμα περιγράμματος ενεργού αντικειμένου"
 
-#: exo/exo-icon-bar.c:343 exo/exo-icon-bar.c:344
+#: exo/exo-icon-bar.c:343
+#: exo/exo-icon-bar.c:344
 msgid "Active item text color"
 msgstr "Χρώμα κειμένου ενεργού αντικειμένου"
 
-#: exo/exo-icon-bar.c:350 exo/exo-icon-bar.c:351
+#: exo/exo-icon-bar.c:350
+#: exo/exo-icon-bar.c:351
 msgid "Cursor item fill color"
 msgstr "Χρώμα γεμίσματος κέρσορα"
 
-#: exo/exo-icon-bar.c:357 exo/exo-icon-bar.c:358
+#: exo/exo-icon-bar.c:357
+#: exo/exo-icon-bar.c:358
 msgid "Cursor item border color"
 msgstr "Χρώμα περιγράμματος κέρσορα"
 
-#: exo/exo-icon-bar.c:364 exo/exo-icon-bar.c:365
+#: exo/exo-icon-bar.c:364
+#: exo/exo-icon-bar.c:365
 msgid "Cursor item text color"
 msgstr "Χρώμα κειμένου κέρσορα"
 
@@ -216,9 +225,7 @@ msgstr "Στήλη επισήμανσης"
 
 #: exo/exo-icon-view.c:604
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Το μοντέλο στήλης για τη λήψη του κειμένου, στην περίπτωση χρήσης σήμανσης "
-"Pango"
+msgstr "Το μοντέλο στήλης για τη λήψη του κειμένου, στην περίπτωση χρήσης σήμανσης Pango"
 
 #: exo/exo-icon-view.c:618
 msgid "Icon View Model"
@@ -229,10 +236,8 @@ msgid "The model for the icon view"
 msgstr "Το μοντέλο για την προβολή εικονιδίου"
 
 #: exo/exo-icon-view.c:633
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"Πως το κείμενο και κάθε στοιχείο τοποθετούνται σχετικά το ένα με το άλλο"
+msgid "How the text and icon of each item are positioned relative to each other"
+msgstr "Πως το κείμενο και κάθε στοιχείο τοποθετούνται σχετικά το ένα με το άλλο"
 
 #: exo/exo-icon-view.c:665
 msgid "Reorderable"
@@ -287,12 +292,8 @@ msgid "_Add a new toolbar"
 msgstr "_Προσθήκη μιας Νέας Εργαλειοθήκης"
 
 #: exo/exo-toolbars-editor.c:238
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Σύρετε ένα αντικείμενο στις εργαλειοθήκες παραπάνω για να το προσθέσετε, και "
-"από τις εργαλειοθήκες στον πίνακα αντικειμένων για να το αφαιρέσετε."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Σύρετε ένα αντικείμενο στις εργαλειοθήκες παραπάνω για να το προσθέσετε, και από τις εργαλειοθήκες στον πίνακα αντικειμένων για να το αφαιρέσετε."
 
 #: exo/exo-toolbars-editor.c:551
 msgid "Separator"
@@ -331,30 +332,28 @@ msgid "Customize Toolbar..."
 msgstr "Προσαρμογή Εργαλειθήκης..."
 
 #: exo/exo-wrap-table.c:169
-#, fuzzy
 msgid "Column spacing"
-msgstr "Διάστημα στηλών"
+msgstr "Διάστιχο στηλών"
 
 #: exo/exo-wrap-table.c:170
 msgid "The amount of space between two consecutive columns"
-msgstr ""
+msgstr "Το διάστημα μεταξύ δυο συνεχόμενων στηλών"
 
 #: exo/exo-wrap-table.c:184
-#, fuzzy
 msgid "Row spacing"
-msgstr "Διάστημα γραμμών"
+msgstr "Διάστιχο γραμμών"
 
 #: exo/exo-wrap-table.c:185
 msgid "The amount of space between two consecutive rows"
-msgstr ""
+msgstr "Το διάστημα μεταξύ δυο συνεχόμενων γραμμών"
 
 #: exo/exo-wrap-table.c:199
 msgid "Homogeneous"
-msgstr ""
+msgstr "Ομογενές"
 
 #: exo/exo-wrap-table.c:200
 msgid "Whether the children should be all the same size"
-msgstr ""
+msgstr "Εάν όλα τα θυγατρικά αντικείμενα πρέπει να έχουν το ίδιο μέγεθος"
 
 #: exo/exo-xsession-client.c:152
 msgid "Window group"
@@ -371,3 +370,4 @@ msgstr "Εντολή επανεκκίνησης"
 #: exo/exo-xsession-client.c:164
 msgid "Session restart command"
 msgstr "Εντολή επανεκκίνησης συνεδρίας"
+
