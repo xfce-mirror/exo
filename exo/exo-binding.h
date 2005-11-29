@@ -58,6 +58,7 @@ struct _ExoBindingLink
 
 struct _ExoBinding
 {
+  /*< private >*/
   GObject         *src_object;
   ExoBindingBase   base;
   ExoBindingLink   link;
@@ -65,6 +66,7 @@ struct _ExoBinding
 
 struct _ExoMutualBinding
 {
+  /*< private >*/
   ExoBindingBase  base;
   ExoBindingLink  direct;
   ExoBindingLink  reverse;
