@@ -1,3 +1,9 @@
+2005-11-30	Benedikt Meurer <benny@xfce.org>
+
+	* docs/reference/, exo/exo-gtk-extensions.{c,h}, exo/exo.symbols: Add
+	  exo_gtk_object_ref_sink(), which takes a reference on the object and
+	  drops the floating reference to the object (if any).
+
 2005-11-29	Benedikt Meurer <benny@xfce.org>
 
 	* docs/reference/, exo/exo-binding.h: Update reference documentation.

@@ -49,8 +49,49 @@ exo_gtk_object_destroy_later (GtkObject *object)
   g_return_if_fail (GTK_IS_OBJECT (object));
 
   g_idle_add_full (G_PRIORITY_HIGH, later_destroy, object, NULL);
+  exo_gtk_object_ref_sink (object);
+}
+
+
+
+/**
+ * exo_gtk_object_ref_sink:
+ * @object : a #GtkObject.
+ *
+ * Helper function used to take a reference on
+ * @object and droppping the floating reference
+ * to @object (if any) atomically.
+ *
+ * If libexo is compiled against Gtk+ 2.9.0 or
+ * newer, this function will use g_object_ref_sink(),
+ * since with newer Gtk+/GObject versions, the floating
+ * reference handling was moved to GObject. Else, this
+ * function will expand to
+ *
+ * <informalexample><programlisting>
+ * g_object_ref (G_OBJECT (object));
+ * gtk_object_sink (GTK_OBJECT (object));
+ * </programlisting></informalexample>
+ *
+ * The caller is responsible to release the reference
+ * on @object acquire by this function call using
+ * g_object_unref().
+ *
+ * Return value: a reference to @object.
+ **/
+gpointer
+exo_gtk_object_ref_sink (GtkObject *object)
+{
+  g_return_val_if_fail (GTK_IS_OBJECT (object), NULL);
+
+#if GTK_CHECK_VERSION(2,9,0)
+  g_object_ref_sink (G_OBJECT (object));
+#else
   g_object_ref (G_OBJECT (object));
-  gtk_object_sink (GTK_OBJECT (object));
+  gtk_object_sink (object);
+#endif
+
+  return object;
 }
 
 

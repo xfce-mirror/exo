@@ -31,10 +31,12 @@
 
 G_BEGIN_DECLS;
 
-void exo_gtk_object_destroy_later           (GtkObject      *object);
+void      exo_gtk_object_destroy_later            (GtkObject      *object);
 
-void exo_gtk_radio_action_set_current_value (GtkRadioAction *action,
-                                             gint            current_value);
+gpointer  exo_gtk_object_ref_sink                 (GtkObject      *object);
+
+void      exo_gtk_radio_action_set_current_value  (GtkRadioAction *action,
+                                                   gint            current_value);
 
 G_END_DECLS;
 
