@@ -1,3 +1,9 @@
+2005-12-03	Benedikt Meurer <benny@xfce.org>
+
+	* configure.in.in: Build the gnuc visibility test program with -Wall
+	  -Werror, as gcc reports warnings instead of errors if ELF visibility
+	  is not supported for the target platform, see bug #1253.
+
 2005-11-30	Benedikt Meurer <benny@xfce.org>
 
 	* docs/reference/, exo/exo-gtk-extensions.{c,h}, exo/exo.symbols: Add
