@@ -36,6 +36,10 @@ gchar                *exo_str_elide_underscores  (const gchar *text);
 gboolean              exo_str_is_equal           (const gchar *a,
                                                   const gchar *b);
 
+gchar                *exo_str_replace            (const gchar *str,
+                                                  const gchar *pattern,
+                                                  const gchar *replacement);
+
 gchar               **exo_strndupv               (gchar      **strv,
                                                   gint         num);
 

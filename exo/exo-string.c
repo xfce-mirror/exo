@@ -108,6 +108,73 @@ exo_str_is_equal (const gchar *a,
 
 
 /**
+ * exo_str_replace:
+ * @str         : the input string.
+ * @pattern     : a search pattern in @str.
+ * @replacement : replacement string for @pattern.
+ *
+ * Searches @str for occurances of @pattern and replaces each
+ * such occurance with @replacement. Returns a newly allocated
+ * copy of @str on which the given replacement were performed.
+ * The caller is responsible to free the returned string using
+ * g_free() when no longer needed.
+ *
+ * Note that @pattern and @replacement don't need to be of the
+ * same size.
+ *
+ * Return value: a newly allocated copy of @str where all
+ *               occurances of @pattern are replaced with
+ *               @replacement.
+ *
+ * Since: 0.3.1.1
+ **/
+gchar*
+exo_str_replace (const gchar *str,
+                 const gchar *pattern,
+                 const gchar *replacement)
+{
+  const gchar *s, *p;
+  GString     *result;
+
+  g_return_val_if_fail (str != NULL, NULL);
+  g_return_val_if_fail (pattern != NULL, NULL);
+  g_return_val_if_fail (replacement != NULL, NULL);
+
+  /* empty patterns are kinda useless, so we just return a copy of str */
+  if (G_UNLIKELY (*pattern == '\0'))
+    return g_strdup (str);
+
+  /* allocate the result string */
+  result = g_string_new (NULL);
+
+  /* process the input string */
+  while (*str != '\0')
+    {
+      if (G_UNLIKELY (*str == *pattern))
+        {
+          /* compare the pattern to the current string */
+          for (p = pattern + 1, s = str + 1; *p == *s; ++s, ++p)
+            if (*p == '\0' || *s == '\0')
+              break;
+
+          /* check if the pattern matches */
+          if (G_LIKELY (*p == '\0'))
+            {
+              g_string_append (result, replacement);
+              str = s;
+              continue;
+            }
+        }
+
+      g_string_append_c (result, *str++);
+    }
+
+  return g_string_free (result, FALSE);
+}
+
+
+
+/**
  * exo_strndupv:
  * @strv  : String vector to duplicate.
  * @num   : Number of strings in @strv to

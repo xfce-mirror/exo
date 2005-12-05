@@ -10,11 +10,13 @@ INCLUDES =								\
 
 TESTS =									\
 	test-exo-csource						\
-	test-exo-noop
+	test-exo-noop							\
+	test-exo-string
 
 check_PROGRAMS =							\
 	test-exo-csource						\
-	test-exo-noop
+	test-exo-noop							\
+	test-exo-string
 
 test_exo_csource_SOURCES =						\
 	test-exo-csource.c						\
@@ -37,6 +39,19 @@ test_exo_noop_DEPENDENCIES =						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 test_exo_noop_LDADD =							\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+
+test_exo_string_SOURCES =						\
+	test-exo-string.c
+
+test_exo_string_CFLAGS =						\
+	$(GTK_CFLAGS)							\
+	$(LIBXFCE4UTIL_CFLAGS)
+
+test_exo_string_DEPENDENCIES =						\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+
+test_exo_string_LDADD =							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 noinst_PROGRAMS =							\
