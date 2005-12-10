@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.1svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-21 23:46+0900\n"
+"POT-Creation-Date: 2005-11-22 17:40+0100\n"
 "PO-Revision-Date: 2005-11-17 16:52+0900\n"
 "Last-Translator: Joao Pedrosa <joaopedrosa@gmail.com>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
@@ -90,11 +90,11 @@ msgstr ""
 msgid "Please report bugs to <%s>.\n"
 msgstr "Por favor, relate bugs para <%s>.\n"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:119 exo/exo-ellipsized-label.c:122
+#: exo/exo-cell-renderer-ellipsized-text.c:152 exo/exo-ellipsized-label.c:122
 msgid "Ellipsize"
 msgstr "Elipsar"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:120
+#: exo/exo-cell-renderer-ellipsized-text.c:153
 msgid ""
 "The preferred place to ellipsize the string, if the cell renderer does not "
 "have enough room to display the entire string, if at all"
@@ -102,11 +102,11 @@ msgstr ""
 "O lugar preferido para elipsar a string, se o renderizador de célulanão "
 "tiver espaço suficiente para mostrar a string inteira, se absolutamente"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:130
+#: exo/exo-cell-renderer-ellipsized-text.c:163
 msgid "Ellipsize set"
 msgstr "Conjunto de elipsar"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:131
+#: exo/exo-cell-renderer-ellipsized-text.c:164
 msgid "Whether this tag affects the ellipsize mode"
 msgstr "Se este rótulo afeta o modo de elipsar"
 
@@ -118,178 +118,178 @@ msgstr ""
 "O lugar preferido para elipsar a string, se o rótulo não tiver espaço "
 "suficiente para mostrar a string inteira, se absolutamente"
 
-#: exo/exo-icon-bar.c:230 exo/exo-icon-view.c:597
+#: exo/exo-icon-bar.c:259 exo/exo-icon-view.c:632
 msgid "Orientation"
 msgstr "Orientação"
 
-#: exo/exo-icon-bar.c:231
+#: exo/exo-icon-bar.c:260
 msgid "The orientation of the iconbar"
 msgstr "A orientação da barra de ícones"
 
-#: exo/exo-icon-bar.c:247 exo/exo-icon-view.c:614
+#: exo/exo-icon-bar.c:276 exo/exo-icon-view.c:649
 msgid "Pixbuf column"
 msgstr "Coluna Pixbuf"
 
-#: exo/exo-icon-bar.c:248 exo/exo-icon-view.c:615
+#: exo/exo-icon-bar.c:277 exo/exo-icon-view.c:650
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Coluna de modelo usada para retirar o ícone pixbuf dela"
 
-#: exo/exo-icon-bar.c:263 exo/exo-icon-view.c:694
+#: exo/exo-icon-bar.c:292 exo/exo-icon-view.c:729
 msgid "Text column"
 msgstr "Coluna de texto"
 
-#: exo/exo-icon-bar.c:264 exo/exo-icon-view.c:695
+#: exo/exo-icon-bar.c:293 exo/exo-icon-view.c:730
 msgid "Model column used to retrieve the text from"
 msgstr "Coluna de modelo usada para retirar o texto dela"
 
-#: exo/exo-icon-bar.c:276
+#: exo/exo-icon-bar.c:305
 msgid "Icon Bar Model"
 msgstr "Modelo de Barra de Ícone"
 
-#: exo/exo-icon-bar.c:277
+#: exo/exo-icon-bar.c:306
 msgid "Model for the icon bar"
 msgstr "Modelo para a barra de ícone"
 
-#: exo/exo-icon-bar.c:293
+#: exo/exo-icon-bar.c:322
 msgid "Active"
 msgstr "Ativo"
 
-#: exo/exo-icon-bar.c:294
+#: exo/exo-icon-bar.c:323
 msgid "Active item index"
 msgstr "Índice de item ativo"
 
-#: exo/exo-icon-bar.c:300 exo/exo-icon-bar.c:301
+#: exo/exo-icon-bar.c:329 exo/exo-icon-bar.c:330
 msgid "Active item fill color"
 msgstr "Cor de preenchimento de ítem ativa"
 
-#: exo/exo-icon-bar.c:307 exo/exo-icon-bar.c:308
+#: exo/exo-icon-bar.c:336 exo/exo-icon-bar.c:337
 msgid "Active item border color"
 msgstr "Cor de borda de ítem ativa"
 
-#: exo/exo-icon-bar.c:314 exo/exo-icon-bar.c:315
+#: exo/exo-icon-bar.c:343 exo/exo-icon-bar.c:344
 msgid "Active item text color"
 msgstr "Cor de texto de ítem ativa"
 
-#: exo/exo-icon-bar.c:321 exo/exo-icon-bar.c:322
+#: exo/exo-icon-bar.c:350 exo/exo-icon-bar.c:351
 msgid "Cursor item fill color"
 msgstr "Cor de preenchimento de ítem de cursor"
 
-#: exo/exo-icon-bar.c:328 exo/exo-icon-bar.c:329
+#: exo/exo-icon-bar.c:357 exo/exo-icon-bar.c:358
 msgid "Cursor item border color"
 msgstr "Cor de borda de ítem de cursor"
 
-#: exo/exo-icon-bar.c:335 exo/exo-icon-bar.c:336
+#: exo/exo-icon-bar.c:364 exo/exo-icon-bar.c:365
 msgid "Cursor item text color"
 msgstr "Cor de texto de ítem de cursor"
 
-#: exo/exo-icon-view.c:500
+#: exo/exo-icon-view.c:535
 msgid "Column Spacing"
 msgstr "Espaçamento de Coluna"
 
-#: exo/exo-icon-view.c:501
+#: exo/exo-icon-view.c:536
 msgid "Space which is inserted between grid column"
 msgstr "Espaço que é inserido entre colunas de grid"
 
-#: exo/exo-icon-view.c:517
+#: exo/exo-icon-view.c:552
 msgid "Number of columns"
 msgstr "Número de colunas"
 
-#: exo/exo-icon-view.c:518
+#: exo/exo-icon-view.c:553
 msgid "Number of columns to display"
 msgstr "Número de colunas para mostrar"
 
-#: exo/exo-icon-view.c:535
+#: exo/exo-icon-view.c:570
 msgid "Width for each item"
 msgstr "Largura de cada ítem"
 
-#: exo/exo-icon-view.c:536
+#: exo/exo-icon-view.c:571
 msgid "The width used for each item"
 msgstr "A largura usada para cada ítem"
 
-#: exo/exo-icon-view.c:551
+#: exo/exo-icon-view.c:586
 msgid "Margin"
 msgstr "Margem"
 
-#: exo/exo-icon-view.c:552
+#: exo/exo-icon-view.c:587
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Espaço que é inserido nos limites da visualização de ícone"
 
-#: exo/exo-icon-view.c:568
+#: exo/exo-icon-view.c:603
 msgid "Markup column"
 msgstr "Coluna de Markup"
 
-#: exo/exo-icon-view.c:569
+#: exo/exo-icon-view.c:604
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Coluna de modelo usada para retirar o texto se estiver usando markup de pango"
 
-#: exo/exo-icon-view.c:583
+#: exo/exo-icon-view.c:618
 msgid "Icon View Model"
 msgstr "Modelo de Visualização de Ícone"
 
-#: exo/exo-icon-view.c:584
+#: exo/exo-icon-view.c:619
 msgid "The model for the icon view"
 msgstr "O modelo para a visualização de ícone"
 
-#: exo/exo-icon-view.c:598
+#: exo/exo-icon-view.c:633
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr ""
 "Como o texto e o ícone de cada ítem são posicionados relativamente a cada um"
 
-#: exo/exo-icon-view.c:630
+#: exo/exo-icon-view.c:665
 msgid "Reorderable"
 msgstr "Reordenável"
 
-#: exo/exo-icon-view.c:631
+#: exo/exo-icon-view.c:666
 msgid "View is reorderable"
 msgstr "Visualização é reordenável"
 
-#: exo/exo-icon-view.c:646
+#: exo/exo-icon-view.c:681
 msgid "Row Spacing"
 msgstr "Espaçamento de Linha"
 
-#: exo/exo-icon-view.c:647
+#: exo/exo-icon-view.c:682
 msgid "Space which is inserted between grid rows"
 msgstr "Espaço que é inserido entre linhas de grid"
 
-#: exo/exo-icon-view.c:661
+#: exo/exo-icon-view.c:696
 msgid "Selection mode"
 msgstr "Modo de seleção"
 
-#: exo/exo-icon-view.c:662
+#: exo/exo-icon-view.c:697
 msgid "The selection mode"
 msgstr "O modo de seleção"
 
-#: exo/exo-icon-view.c:678
+#: exo/exo-icon-view.c:713
 msgid "Spacing"
 msgstr "Espaçamento"
 
-#: exo/exo-icon-view.c:679
+#: exo/exo-icon-view.c:714
 msgid "Space which is inserted between cells of an item"
 msgstr "Espaço que é inserido entre células de um ítem"
 
-#: exo/exo-icon-view.c:706
+#: exo/exo-icon-view.c:741
 msgid "Selection Box Color"
 msgstr "Cor de Caixa de Seleção"
 
-#: exo/exo-icon-view.c:707
+#: exo/exo-icon-view.c:742
 msgid "Color of the selection box"
 msgstr "Cor de uma caixa de seleção"
 
-#: exo/exo-icon-view.c:717
+#: exo/exo-icon-view.c:752
 msgid "Selection Box Alpha"
 msgstr "Alpha de Caixa de Seleção"
 
-#: exo/exo-icon-view.c:718
+#: exo/exo-icon-view.c:753
 msgid "Opacity of the selection box"
 msgstr "Opacidade da caixa de seleção"
 
-#: exo/exo-toolbars-editor-dialog.c:108
+#: exo/exo-toolbars-editor-dialog.c:134
 msgid "_Add a new toolbar"
 msgstr "_Adicionar uma nova barra de ferramenta"
 
-#: exo/exo-toolbars-editor.c:211
+#: exo/exo-toolbars-editor.c:238
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
@@ -297,62 +297,80 @@ msgstr ""
 "Arraste um ítem sobre a barra de ferramentas para adicioná-lo, a partir da "
 "barra de ferramentas na tabela de itens para removê-lo."
 
-#: exo/exo-toolbars-editor.c:524
+#: exo/exo-toolbars-editor.c:551
 msgid "Separator"
 msgstr "Separador"
 
-#: exo/exo-toolbars-view.c:743
+#: exo/exo-toolbars-view.c:768
 msgid "Toolbar _Style"
 msgstr "E_stilo de Barra de Ferramenta"
 
-#: exo/exo-toolbars-view.c:750
+#: exo/exo-toolbars-view.c:775
 msgid "_Desktop Default"
 msgstr "Padrão de _Área de Trabalho"
 
-#: exo/exo-toolbars-view.c:759
+#: exo/exo-toolbars-view.c:784
 msgid "_Icons only"
 msgstr "Apenas _Ícones"
 
-#: exo/exo-toolbars-view.c:768
+#: exo/exo-toolbars-view.c:793
 msgid "_Text only"
 msgstr "Apenas _Texto"
 
-#: exo/exo-toolbars-view.c:777
+#: exo/exo-toolbars-view.c:802
 msgid "Text for _All Icons"
 msgstr "Texto p_ara Todos os Ícones"
 
-#: exo/exo-toolbars-view.c:786
+#: exo/exo-toolbars-view.c:811
 msgid "Text for I_mportant Icons"
 msgstr "Texto para Ícones Importantes"
 
-#: exo/exo-toolbars-view.c:794
+#: exo/exo-toolbars-view.c:819
 msgid "_Remove Toolbar"
 msgstr "_Remover Barra de Ferramentas"
 
-#: exo/exo-toolbars-view.c:809
+#: exo/exo-toolbars-view.c:834
 msgid "Customize Toolbar..."
 msgstr "Personalizar Barra de Ferramentas..."
 
-#: exo/exo-xsession-client.c:127
+#: exo/exo-wrap-table.c:169
+#, fuzzy
+msgid "Column spacing"
+msgstr "Espaçamento de Coluna"
+
+#: exo/exo-wrap-table.c:170
+msgid "The amount of space between two consecutive columns"
+msgstr ""
+
+#: exo/exo-wrap-table.c:184
+#, fuzzy
+msgid "Row spacing"
+msgstr "Espaçamento de Linha"
+
+#: exo/exo-wrap-table.c:185
+msgid "The amount of space between two consecutive rows"
+msgstr ""
+
+#: exo/exo-wrap-table.c:199
+msgid "Homogeneous"
+msgstr ""
+
+#: exo/exo-wrap-table.c:200
+msgid "Whether the children should be all the same size"
+msgstr ""
+
+#: exo/exo-xsession-client.c:152
 msgid "Window group"
 msgstr "Grupo de janela"
 
-#: exo/exo-xsession-client.c:128
+#: exo/exo-xsession-client.c:153
 msgid "Window group leader"
 msgstr "Líder de grupo de janela"
 
-#: exo/exo-xsession-client.c:138
+#: exo/exo-xsession-client.c:163
 msgid "Restart command"
 msgstr "Comando de reinício"
 
-#: exo/exo-xsession-client.c:139
+#: exo/exo-xsession-client.c:164
 msgid "Session restart command"
 msgstr "Comando de reinício de sessão"
-
-#, fuzzy
-#~ msgid "Column spacing"
-#~ msgstr "Espaçamento de Coluna"
-
-#, fuzzy
-#~ msgid "Row spacing"
-#~ msgstr "Espaçamento de Linha"
