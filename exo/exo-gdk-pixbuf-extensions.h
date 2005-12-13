@@ -31,6 +31,10 @@
 
 G_BEGIN_DECLS;
 
+GdkPixbuf *exo_gdk_pixbuf_scale_down  (GdkPixbuf *source,
+                                       gboolean   aspect_ratio,
+                                       gint       dest_width,
+                                       gint       dest_height);
 GdkPixbuf *exo_gdk_pixbuf_scale_ratio (GdkPixbuf *source,
                                        gint       dest_size);
 

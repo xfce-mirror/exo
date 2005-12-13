@@ -1,3 +1,16 @@
+2005-12-13	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-gdk-pixbuf-extensions.{c,h}, exo/exo.symbols: Add new function
+	  exo_gdk_pixbuf_scale_down(), which scales down an icon to fit into
+	  given dest_width/dest_height, optionally preserving the aspect ratio
+	  of the source icon.
+	* docs/reference/tmpl/exo-gdk-pixbuf-extensions.sgml,
+	  docs/reference/exo-sections.txt: Add new function to the reference
+	  manual.
+	* docs/reference/tmpl/exo-ellipsized-label.sgml,
+	  exo/exo-ellipsized-label.h: Small documentation fix.
+	* HACKING, README: Update URLs and descriptions.
+
 2005-12-05	Benedikt Meurer <benny@xfce.org>
 
 	* tests/test-exo-string.c, docs/reference/, exo/exo.symbols,

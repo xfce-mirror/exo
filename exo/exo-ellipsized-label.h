@@ -63,7 +63,7 @@ GtkWidget            *exo_ellipsized_label_new           (const gchar           
 
 ExoPangoEllipsizeMode exo_ellipsized_label_get_ellipsize (ExoEllipsizedLabel    *label);
 void                  exo_ellipsized_label_set_ellipsize (ExoEllipsizedLabel    *label,
-                                                          ExoPangoEllipsizeMode  mode);
+                                                          ExoPangoEllipsizeMode  ellipsize);
 
 G_END_DECLS;
 
