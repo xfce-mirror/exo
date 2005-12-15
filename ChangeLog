@@ -1,3 +1,10 @@
+2005-12-15	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c(exo_icon_view_expose_event): Don't handle expose
+	  events until the layout has been calculated.
+	* exo/exo-icon-view.c(exo_icon_view_expose_event): Simplify the rubber-
+	  band painting by taking advantage of double-buffering.
+
 2005-12-13	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-gdk-pixbuf-extensions.{c,h}, exo/exo.symbols: Add new function

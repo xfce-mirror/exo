@@ -1348,17 +1348,20 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   ExoIconViewDropPosition dest_pos;
   ExoIconViewItem        *dest_item = NULL;
   ExoIconViewItem        *item;
-  GdkRectangle           *rectangles;
   ExoIconView            *icon_view = EXO_ICON_VIEW (widget);
   GtkTreePath            *path;
   GdkRectangle            rubber_rect;
-  GdkRectangle            rect;
   const GList            *lp;
-  gint                    n_rectangles;
   gint                    dest_index = -1;
  
   /* verify that the expose happened on the icon window */
   if (G_UNLIKELY (event->window != icon_view->priv->bin_window))
+    return FALSE;
+
+  /* don't handle expose if the layout isn't done yet; the layout
+   * method will schedule a redraw when done.
+   */
+  if (G_UNLIKELY (icon_view->priv->layout_idle_id >= 0))
     return FALSE;
 
   /* check if we need to draw a drag indicator */
@@ -1378,12 +1381,11 @@ exo_icon_view_expose_event (GtkWidget      *widget,
       rubber_rect.width = ABS (icon_view->priv->rubberband_x1 - icon_view->priv->rubberband_x2) + 1;
       rubber_rect.height = ABS (icon_view->priv->rubberband_y1 - icon_view->priv->rubberband_y2) + 1;
 
-      /* draw the required rectangles */
-      gdk_region_get_rectangles (event->region, &rectangles, &n_rectangles);
-      while (n_rectangles--)
-        if (gdk_rectangle_intersect (&rubber_rect, &rectangles[n_rectangles], &rect))
-          gdk_draw_rectangle (event->window, icon_view->priv->rubberband_fill_gc, TRUE, rect.x, rect.y, rect.width, rect.height);
-      g_free (rectangles);
+      /* we take advantage of double-buffering here and use only a single
+       * draw_rectangle() operation w/o having to take care of clipping.
+       */
+      gdk_draw_rectangle (event->window, icon_view->priv->rubberband_fill_gc, TRUE,
+                          rubber_rect.x, rubber_rect.y, rubber_rect.width, rubber_rect.height);
     }
 
   /* paint all items that are affected by the expose event */
@@ -1461,7 +1463,6 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   if (G_UNLIKELY (icon_view->priv->doing_rubberband))
     {
       /* draw the border */
-      gdk_gc_set_clip_region (icon_view->priv->rubberband_border_gc, event->region);
       gdk_draw_rectangle (event->window, icon_view->priv->rubberband_border_gc, FALSE,
                           rubber_rect.x, rubber_rect.y, rubber_rect.width - 1, rubber_rect.height - 1);
     }
