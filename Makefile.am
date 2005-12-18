@@ -36,4 +36,12 @@ EXTRA_DIST =								\
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
 
+dist-bz2: dist
+	zcat $(PACKAGE)-$(VERSION).tar.gz | \
+	    bzip2 --best -c > $(PACKAGE)-$(VERSION).tar.bz2
+
+distcheck-bz2: distcheck
+	zcat $(PACKAGE)-$(VERSION).tar.gz | \
+            bzip2 --best -c > $(PACKAGE)-$(VERSION).tar.bz2
+					
 # vi:set ts=8 sw=8 noet ai nocindent:
