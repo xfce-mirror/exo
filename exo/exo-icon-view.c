@@ -2011,12 +2011,12 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
   gpointer        drag_data;
   GList          *items;
 
-  g_assert (!icon_view->priv->doing_rubberband);
+  /* be sure to disable any previously active rubberband */
+  exo_icon_view_stop_rubberbanding (icon_view);
 
   for (items = icon_view->priv->items; items; items = items->next)
     {
       ExoIconViewItem *item = items->data;
-
       item->selected_before_rubberbanding = item->selected;
     }
 
