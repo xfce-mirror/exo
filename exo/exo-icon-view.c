@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005  os-cillation e.K.
+ * Copyright (c) 2004-2006  os-cillation e.K.
  * Copyright (c) 2002,2004  Anders Carlsson <andersca@gnu.org>
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
@@ -2785,6 +2785,8 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
 
   if (G_UNLIKELY (icon_view->priv->prelit_item == item))
     flags |= GTK_CELL_RENDERER_PRELIT;
+  if (G_UNLIKELY (icon_view->priv->cursor_item == item))
+    flags |= GTK_CELL_RENDERER_FOCUSED;
   
 #ifdef DEBUG_ICON_VIEW
   gdk_draw_rectangle (drawable,

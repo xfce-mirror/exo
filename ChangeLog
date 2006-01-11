@@ -1,3 +1,9 @@
+2006-01-11	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c(exo_icon_view_paint_item): Let the cell renderer
+	  know whether the current item has the keyboard focus. Part one of fix
+	  for bug #1321.
+
 2005-12-30	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c(exo_icon_view_start_rubberbanding): Be sure to
