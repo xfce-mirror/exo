@@ -46,6 +46,11 @@
 
 
 
+#define SCROLL_EDGE_SIZE 15
+
+
+
+/* Property identifiers */
 enum
 {
   PROP_0,
@@ -64,6 +69,7 @@ enum
   PROP_REORDERABLE
 };
 
+/* Signal identifiers */
 enum
 {
   ITEM_ACTIVATED,
@@ -77,9 +83,16 @@ enum
   LAST_SIGNAL
 };
 
+/* Icon view flags */
+typedef enum
+{
+  EXO_ICON_VIEW_DRAW_KEYFOCUS = (1l << 0),  /* whether to draw keyboard focus */
+  EXO_ICON_VIEW_ITERS_PERSIST = (1l << 1),  /* whether current model provides persistent iterators */
+} ExoIconViewFlags;
 
-
-#define SCROLL_EDGE_SIZE 15
+#define EXO_ICON_VIEW_SET_FLAG(icon_view, flag)   G_STMT_START{ (EXO_ICON_VIEW (icon_view)->priv->flags |= flag); }G_STMT_END
+#define EXO_ICON_VIEW_UNSET_FLAG(icon_view, flag) G_STMT_START{ (EXO_ICON_VIEW (icon_view)->priv->flags &= ~(flag)); }G_STMT_END
+#define EXO_ICON_VIEW_FLAG_SET(icon_view, flag)   ((EXO_ICON_VIEW (icon_view)->priv->flags & (flag)) == (flag))
 
 
 
@@ -422,7 +435,8 @@ struct _ExoIconViewPrivate
   guint ctrl_pressed : 1;
   guint shift_pressed : 1;
 
-  guint iters_persist : 1;
+  /* ExoIconViewFlags */
+  guint flags;
 };
 
 
@@ -967,6 +981,8 @@ exo_icon_view_init (ExoIconView *icon_view)
   icon_view->priv->margin = 6;
 
   icon_view->priv->layout_idle_id = -1;
+
+  icon_view->priv->flags = EXO_ICON_VIEW_DRAW_KEYFOCUS;
 }
 
 
@@ -1696,6 +1712,10 @@ exo_icon_view_start_editing (ExoIconView         *icon_view,
   g_object_get (info->cell, "visible", &visible, "mode", &mode, NULL);
   if (G_LIKELY (visible && mode == GTK_CELL_RENDERER_MODE_EDITABLE))
     {
+      /* draw keyboard focus while editing */
+      EXO_ICON_VIEW_SET_FLAG (icon_view, EXO_ICON_VIEW_DRAW_KEYFOCUS);
+
+      /* determine the cell area */
       exo_icon_view_get_cell_area (icon_view, item, info, &cell_area);
 
       /* determine the tree path */
@@ -1890,7 +1910,6 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
           if (icon_view->priv->selection_mode == GTK_SELECTION_MULTIPLE)
             exo_icon_view_start_rubberbanding (icon_view, event->x, event->y);
         }
-
     }
   else if (event->button == 1 && event->type == GDK_2BUTTON_PRESS)
     {
@@ -1910,7 +1929,15 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
 
       icon_view->priv->last_single_clicked = NULL;
     }
-  
+ 
+  /* grab focus and stop drawing the keyboard focus indicator on single clicks */
+  if (G_LIKELY (event->type != GDK_2BUTTON_PRESS && event->type != GDK_3BUTTON_PRESS))
+    {
+      if (!GTK_WIDGET_HAS_FOCUS (icon_view))
+        gtk_widget_grab_focus (GTK_WIDGET (icon_view));
+      EXO_ICON_VIEW_UNSET_FLAG (icon_view, EXO_ICON_VIEW_DRAW_KEYFOCUS);
+    }
+ 
   if (dirty)
     g_signal_emit (icon_view, icon_view_signals[SELECTION_CHANGED], 0);
 
@@ -2785,7 +2812,7 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
 
   if (G_UNLIKELY (icon_view->priv->prelit_item == item))
     flags |= GTK_CELL_RENDERER_PRELIT;
-  if (G_UNLIKELY (icon_view->priv->cursor_item == item))
+  if (G_UNLIKELY (EXO_ICON_VIEW_FLAG_SET (icon_view, EXO_ICON_VIEW_DRAW_KEYFOCUS) && icon_view->priv->cursor_item == item))
     flags |= GTK_CELL_RENDERER_FOCUSED;
   
 #ifdef DEBUG_ICON_VIEW
@@ -3227,6 +3254,7 @@ exo_icon_view_real_move_cursor (ExoIconView     *icon_view,
     return FALSE;
 
   exo_icon_view_stop_editing (icon_view, FALSE);
+  EXO_ICON_VIEW_SET_FLAG (icon_view, EXO_ICON_VIEW_DRAW_KEYFOCUS);
   gtk_widget_grab_focus (GTK_WIDGET (icon_view));
 
   if (gtk_get_current_event_state (&state))
@@ -3772,7 +3800,7 @@ exo_icon_view_set_cell_data (const ExoIconView *icon_view,
   GSList              *slp;
   GList               *lp;
   
-  if (G_UNLIKELY (!icon_view->priv->iters_persist))
+  if (G_UNLIKELY (!EXO_ICON_VIEW_FLAG_SET (icon_view, EXO_ICON_VIEW_ITERS_PERSIST)))
     {
       path = gtk_tree_path_new_from_indices (item->index, -1);
       gtk_tree_model_get_iter (icon_view->priv->model, &iter, path);
@@ -4401,7 +4429,10 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       g_signal_connect (G_OBJECT (model), "rows-reordered", G_CALLBACK (exo_icon_view_rows_reordered), icon_view);
 
       /* check if the new model supports persistent iterators */
-      icon_view->priv->iters_persist = (gtk_tree_model_get_flags (model) & GTK_TREE_MODEL_ITERS_PERSIST) ? TRUE : FALSE;
+      if (gtk_tree_model_get_flags (model) & GTK_TREE_MODEL_ITERS_PERSIST)
+        EXO_ICON_VIEW_SET_FLAG (icon_view, EXO_ICON_VIEW_ITERS_PERSIST);
+      else
+        EXO_ICON_VIEW_UNSET_FLAG (icon_view, EXO_ICON_VIEW_ITERS_PERSIST);
 
       /* build up the initial items list */
       if (gtk_tree_model_get_iter_first (model, &iter))
