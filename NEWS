@@ -1,12 +1,19 @@
-0.3.1.1svn
-==========
+0.3.1.2alpha
+============
 - Updated the ExoIconView class to support an API compatible to the GtkIconView
   in Gtk+ 2.8, and improve the performance of the icon view.
 - Added a new utility exo-csource, which can generate C source code from
   arbitrary data.
+- Added various new convenience functions to make dealing with strings,
+  pixbufs and other data structures easier for C programmers.
+- Updated class structures to make sure constant static strings aren't
+  unnecessarily duplicated at runtime, and provide other packages with
+  the same functionality by exporting the functions and macros in
+  question.
 - Support three different levels of debugging support (yes/minimum/no).
-- New translations: Patricio Carr (es), Stephane Roy (fr), Daichi Kawahata (ja),
-                    Pau Rul·lan Ferragut (ca)
+- New translations: Pau Rul·lan Ferragut (ca), Stavros Giannouris (el),
+                    Patricio Carr (es), Jari RahkonenS (fi), tephane Roy
+		    (fr), Daichi Kawahata (ja), Joao Pedrosa (pt_BR)
 
 
 0.3.0

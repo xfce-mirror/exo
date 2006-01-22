@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.1svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-28 21:12+0900\n"
+"POT-Creation-Date: 2006-01-22 11:50+0100\n"
 "PO-Revision-Date: 2005-11-28 21:58+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -120,7 +120,7 @@ msgstr ""
 "ラベルが全ての文字列を表示するのに十分なスペースが無い場合や、まったく無い場"
 "合に文字列を省略する優先箇所です。"
 
-#: exo/exo-icon-bar.c:259 exo/exo-icon-view.c:632
+#: exo/exo-icon-bar.c:259 exo/exo-icon-view.c:646
 msgid "Orientation"
 msgstr "方向"
 
@@ -128,19 +128,19 @@ msgstr "方向"
 msgid "The orientation of the iconbar"
 msgstr "アイコンバーが延びる方向です。"
 
-#: exo/exo-icon-bar.c:276 exo/exo-icon-view.c:649
+#: exo/exo-icon-bar.c:276 exo/exo-icon-view.c:663
 msgid "Pixbuf column"
 msgstr "ピクセルバッファ欄"
 
-#: exo/exo-icon-bar.c:277 exo/exo-icon-view.c:650
+#: exo/exo-icon-bar.c:277 exo/exo-icon-view.c:664
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "アイコンのピクセルバッファを取得するために使用されるモデル欄です。"
 
-#: exo/exo-icon-bar.c:292 exo/exo-icon-view.c:729
+#: exo/exo-icon-bar.c:292 exo/exo-icon-view.c:743
 msgid "Text column"
 msgstr "文字欄"
 
-#: exo/exo-icon-bar.c:293 exo/exo-icon-view.c:730
+#: exo/exo-icon-bar.c:293 exo/exo-icon-view.c:744
 msgid "Model column used to retrieve the text from"
 msgstr "文字を取得するために使用されるモデル欄です。"
 
@@ -184,107 +184,107 @@ msgstr "カーソル・アイテムの枠の色"
 msgid "Cursor item text color"
 msgstr "カーソル・アイテムの文字色"
 
-#: exo/exo-icon-view.c:535
+#: exo/exo-icon-view.c:549
 msgid "Column Spacing"
 msgstr "表示欄スペース"
 
-#: exo/exo-icon-view.c:536
+#: exo/exo-icon-view.c:550
 msgid "Space which is inserted between grid column"
 msgstr "グリッド欄の間に挟まれるスペースです。"
 
-#: exo/exo-icon-view.c:552
+#: exo/exo-icon-view.c:566
 msgid "Number of columns"
 msgstr "表示欄の数"
 
-#: exo/exo-icon-view.c:553
+#: exo/exo-icon-view.c:567
 msgid "Number of columns to display"
 msgstr "表示する表示欄の数です。"
 
-#: exo/exo-icon-view.c:570
+#: exo/exo-icon-view.c:584
 msgid "Width for each item"
 msgstr "アイテムの幅"
 
-#: exo/exo-icon-view.c:571
+#: exo/exo-icon-view.c:585
 msgid "The width used for each item"
 msgstr "それぞれのアイテムに使用する幅です。"
 
-#: exo/exo-icon-view.c:586
+#: exo/exo-icon-view.c:600
 msgid "Margin"
 msgstr "余白"
 
-#: exo/exo-icon-view.c:587
+#: exo/exo-icon-view.c:601
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "アイテム表示の端に挟まれるスペースです。"
 
-#: exo/exo-icon-view.c:603
+#: exo/exo-icon-view.c:617
 msgid "Markup column"
 msgstr "マークアップ欄"
 
-#: exo/exo-icon-view.c:604
+#: exo/exo-icon-view.c:618
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Pango のマークアップが使用されている場合に文字を取得するためのモデル欄です。"
 
-#: exo/exo-icon-view.c:618
+#: exo/exo-icon-view.c:632
 msgid "Icon View Model"
 msgstr "アイコン表示モデル"
 
-#: exo/exo-icon-view.c:619
+#: exo/exo-icon-view.c:633
 msgid "The model for the icon view"
 msgstr "アイコン表示のためのモデルです。"
 
-#: exo/exo-icon-view.c:633
+#: exo/exo-icon-view.c:647
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr ""
 "それぞれのアイテムの文字とアイコンがお互いにどの位置に置かれるかを選択しま"
 "す。"
 
-#: exo/exo-icon-view.c:665
+#: exo/exo-icon-view.c:679
 msgid "Reorderable"
 msgstr "並べ替え可能"
 
-#: exo/exo-icon-view.c:666
+#: exo/exo-icon-view.c:680
 msgid "View is reorderable"
 msgstr "表示は並べ替え可能です。"
 
-#: exo/exo-icon-view.c:681
+#: exo/exo-icon-view.c:695
 msgid "Row Spacing"
 msgstr "行スペース"
 
-#: exo/exo-icon-view.c:682
+#: exo/exo-icon-view.c:696
 msgid "Space which is inserted between grid rows"
 msgstr "グリッド行の間に挟まれるスペースです。"
 
-#: exo/exo-icon-view.c:696
+#: exo/exo-icon-view.c:710
 msgid "Selection mode"
 msgstr "選択モード"
 
-#: exo/exo-icon-view.c:697
+#: exo/exo-icon-view.c:711
 msgid "The selection mode"
 msgstr "選択モードです。"
 
-#: exo/exo-icon-view.c:713
+#: exo/exo-icon-view.c:727
 msgid "Spacing"
 msgstr "スペース"
 
-#: exo/exo-icon-view.c:714
+#: exo/exo-icon-view.c:728
 msgid "Space which is inserted between cells of an item"
 msgstr "アイテムのセルの間に挟まれるスペースです。"
 
-#: exo/exo-icon-view.c:741
+#: exo/exo-icon-view.c:755
 msgid "Selection Box Color"
 msgstr "選択ボックスの色"
 
-#: exo/exo-icon-view.c:742
+#: exo/exo-icon-view.c:756
 msgid "Color of the selection box"
 msgstr "選択ボックスの色です。"
 
-#: exo/exo-icon-view.c:752
+#: exo/exo-icon-view.c:766
 msgid "Selection Box Alpha"
 msgstr "選択ボックスのα値"
 
-#: exo/exo-icon-view.c:753
+#: exo/exo-icon-view.c:767
 msgid "Opacity of the selection box"
 msgstr "選択ボックスの透明度です。"
 
