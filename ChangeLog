@@ -1,5 +1,11 @@
 2006-01-23	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-gtk-extensions.c(exo_gtk_radio_action_set_current_value):
+	  If no action matches the new value, the radio group will have no
+	  active action afterwards.
+
+2006-01-23	Benedikt Meurer <benny@xfce.org>
+
 	* configure.in.in: Bump version to 0.3.1.3svn.
 
 2006-01-22	Benedikt Meurer <benny@xfce.org>

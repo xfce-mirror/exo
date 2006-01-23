@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -99,7 +99,15 @@ exo_gtk_object_ref_sink (GtkObject *object)
 /**
  * exo_gtk_radio_action_set_current_value:
  * @action        : A #GtkRadioAction.
- * @current_value :
+ * @current_value : the value of the #GtkRadioAction to activate.
+ *
+ * Looks for all actions in the group to which @action belongs and if
+ * any of the actions matches the @current_value, it will become the
+ * new active action.
+ *
+ * Else if none of the actions in @action<!---->'s radio group match
+ * the specified @current_value, all actions will be deactivated and
+ * the radio group will have no active action afterwards.
  **/
 void
 exo_gtk_radio_action_set_current_value (GtkRadioAction *action,
@@ -110,15 +118,20 @@ exo_gtk_radio_action_set_current_value (GtkRadioAction *action,
 
   g_return_if_fail (GTK_IS_RADIO_ACTION (action));
 
+  /* check if we have action who's value matches */
   for (lp = gtk_radio_action_get_group (action); lp != NULL; lp = lp->next)
     {
       g_object_get (G_OBJECT (lp->data), "value", &value, NULL);
       if (value == current_value)
         {
           gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (lp->data), TRUE);
-          break;
+          return;
         }
     }
+
+  /* no action found, so none of the actions gets the "active" flag */
+  for (lp = gtk_radio_action_get_group (action); lp != NULL; lp = lp->next)
+    gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (lp->data), FALSE);
 }
 
 
