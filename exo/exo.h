@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -27,9 +27,16 @@
 #error "Please define EXO_API_SUBJECT_TO_CHANGE to acknoledge your understanding that libexo hasn't reached 1.0 and is subject to API churn. See the README for a full explanation."
 #endif
 
-#define EXO_INSIDE_EXO_H
+/* be sure to have i18n macros available and libintl.h included! */
+#if defined(GETTEXT_PACKAGE)
+#include <glib/gi18n-lib.h>
+#else
+#include <glib/gi18n.h>
+#endif
 
 #include <libxfce4util/libxfce4util.h>
+
+#define EXO_INSIDE_EXO_H
 
 #include <exo/exo-config.h>
 

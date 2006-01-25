@@ -1,3 +1,11 @@
+2006-01-25	Benedikt Meurer <benny@xfce.org>
+
+	* configure.in.in: Drop G_DISABLE_DEPRECATED completely. This fixes
+	  bug #1379.
+	* exo/exo.h: Make sure i18n stuff is setup properly, so people with
+	  older Xfce versions can still build and run Thunar. This fixes
+	  bug #1341.
+
 2006-01-23	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-gtk-extensions.c(exo_gtk_radio_action_set_current_value):

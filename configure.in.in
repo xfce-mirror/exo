@@ -171,7 +171,7 @@ AC_HELP_STRING([--enable-debug=@<:@no/minimum/yes@:>@], [Turn on debugging @<:@d
   [], [enable_debug=libexo_debug_default])
 AC_MSG_CHECKING([whether to enable debugging support])
 if test x"$enable_debug" = x"yes" -o x"$enable_debug" = x"full"; then
-  CFLAGS="$CFLAGS -O0 -g3 -DG_DISABLE_DEPRECATED -Werror -Wall"
+  CFLAGS="$CFLAGS -O0 -g3 -Werror -Wall"
 else
   CFLAGS="$CFLAGS -DG_DISABLE_CAST_CHECKS"
 
