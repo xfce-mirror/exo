@@ -1,5 +1,13 @@
 2006-01-31	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c: Drop accessibility support from the ExoIconView
+	  widget class for now, as it's totally broken right now. This should
+	  be rewritten from scratch at some time, using only the public
+	  interface of the class, once Atk/Gtk+ offers better support for
+	  accessibility on GtkCellRenderers.
+
+2006-01-31	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c: Fix two potential bugs, where the return value
 	  of g_list_remove() was ignored.
 
