@@ -1,5 +1,16 @@
 2006-01-31	Benedikt Meurer <benny@xfce.org>
 
+	* configure.in.in: Check for fnmatch.h.
+	* exo/exo-url.c: Make exo_url_show_on_screen() smarter in guessing the
+	  correct application, it is now able to open local HTML files as well
+	  if the url refers to a local file.
+	* exo-open/main.c(main): Popup an error dialog if an error occurs while
+	  trying to execute the preferred application or trying to open one of
+	  the specified URLs. This way we can just use it right away from
+	  applications/scripts without having to worry about user interaction.
+
+2006-01-31	Benedikt Meurer <benny@xfce.org>
+
 	* configure.in.in: Depend on GLib >= 2.6.4 and Gtk+ >= 2.6.0.
 	* configure.in.in, Makefile.am, icons/: Add preferred applications icon.
 	* configure.in.in, Makefile.am, exo-helper/, NEWS: Import exo-helper

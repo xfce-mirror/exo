@@ -22,6 +22,9 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_FNMATCH_H
+#include <fnmatch.h>
+#endif
 #ifdef HAVE_MEMORY_H
 #include <memory.h>
 #endif
@@ -107,7 +110,7 @@ exo_url_show (const gchar *url,
 
 
 static gboolean
-match (const gchar *pattern, const gchar *url)
+_exo_url_match (const gchar *pattern, const gchar *url)
 {
 #ifdef HAVE_REGEXEC
   regex_t regex;
@@ -123,6 +126,44 @@ match (const gchar *pattern, const gchar *url)
 #else
 #error "No POSIX regular expressions available, please report this to thunar-dev@xfce.org"
 #endif
+}
+
+
+
+static gchar*
+_exo_url_to_local_path (const gchar *url)
+{
+  gchar *current_dir;
+  gchar *path;
+
+  /* transform a file:-URI to a local path */
+  path = g_filename_from_uri (url, NULL, NULL);
+  if (G_LIKELY (path == NULL))
+    {
+      /* check if url is an absolute path */
+      if (g_path_is_absolute (url))
+        {
+          /* well, we got our path then */
+          path = g_strdup (url);
+        }
+      else
+        {
+          /* treat it like a relative path */
+          current_dir = g_get_current_dir ();
+          path = g_build_filename (current_dir, url, NULL);
+          g_free (current_dir);
+        }
+    }
+
+  /* verify that a file of the given name exists */
+  if (!g_file_test (path, G_FILE_TEST_IS_REGULAR))
+    {
+      /* no local path then! */
+      g_free (path);
+      path = NULL;
+    }
+
+  return path;
 }
 
 
@@ -150,18 +191,26 @@ exo_url_show_on_screen (const gchar *url,
                         GdkScreen   *screen,
                         GError     **error)
 {
-  const gchar *category;
+  const gchar *category = NULL;
+  gboolean     result;
+  gchar       *local_path;
+  gchar       *uri;
 
   g_return_val_if_fail (url != NULL, FALSE);
   g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
+  /* be sure to initialize i18n support first,
+   * so we get a translated error message.
+   */
+  _exo_i18n_init ();
+
   /* now, let's see what we have here */
-  if (match (MATCH_BROWSER1, url) || match (MATCH_BROWSER2, url))
+  if (_exo_url_match (MATCH_BROWSER1, url) || _exo_url_match (MATCH_BROWSER2, url))
     {
       category = "WebBrowser";
     }
-  else if (match (MATCH_MAILER, url))
+  else if (_exo_url_match (MATCH_MAILER, url))
     {
       /* ignore mailto: prefix, as not all mailers can handle it */
       if (g_str_has_prefix (url, "mailto:"))
@@ -170,10 +219,38 @@ exo_url_show_on_screen (const gchar *url,
     }
   else
     {
-      /* be sure to initialize i18n support first,
-       * so we get a translated error message.
-       */
-      _exo_i18n_init ();
+      /* check if we can translate the URL to a local path */
+      local_path = _exo_url_to_local_path (url);
+      if (G_LIKELY (local_path != NULL))
+        {
+          /* check if we have a local HTML file here */
+          if (fnmatch ("*.xhtml", local_path, FNM_CASEFOLD) == 0
+              || fnmatch ("*.htm", local_path, FNM_CASEFOLD) == 0
+              || fnmatch ("*.html", local_path, FNM_CASEFOLD) == 0)
+            {
+              /* transform the path to a file:-URI */
+              uri = g_filename_to_uri (local_path, NULL, error);
+              if (G_LIKELY (uri != NULL))
+                {
+                  /* try to execute the file:-URI in a web browser */
+                  result = exo_execute_preferred_application_on_screen ("WebBrowser", uri, NULL, envp, screen, error);
+                  g_free (uri);
+                }
+            }
+          else
+            {
+              /* it's not HTML, so whatever it is, we cannot open it */
+              g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
+                           _("Unable to open `%s'"), local_path);
+              result = FALSE;
+            }
+
+          /* release the local path */
+          g_free (local_path);
+
+          /* and we're done */
+          return result;
+        }
 
       /* and prepare the error */
       g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,

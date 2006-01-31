@@ -73,9 +73,10 @@ usage (void)
 int
 main (int argc, char **argv)
 {
-  GError *error = NULL;
-  gchar  *parameter;
-  gint    result = EXIT_SUCCESS;
+  GtkWidget *dialog;
+  GError    *error = NULL;
+  gchar     *parameter;
+  gint       result = EXIT_SUCCESS;
 
 #ifdef GETTEXT_PACKAGE
   /* setup i18n support */
@@ -84,6 +85,9 @@ main (int argc, char **argv)
 
   /* initialize Gtk+ */
   gtk_init (&argc, &argv);
+
+  /* setup default icon for windows */
+  gtk_window_set_default_icon_name ("preferences-desktop-default-applications");
 
   /* check what to do */
   if (argc == 2 && (strcmp (argv[1], "--help") == 0 || strcmp (argv[1], "-h") == 0))
@@ -110,7 +114,16 @@ main (int argc, char **argv)
       /* run the preferred application */
       if (!exo_execute_preferred_application (argv[2], parameter, NULL, NULL, &error))
         {
-          g_fprintf (stderr, "%s: %s.\n", g_get_prgname (), error->message);
+          /* display an error dialog */
+          dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL,
+                                           GTK_MESSAGE_ERROR,
+                                           GTK_BUTTONS_CLOSE,
+                                           _("Failed to launch preferred application for category `%s'."),
+                                           argv[2]);
+          gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
+          gtk_dialog_run (GTK_DIALOG (dialog));
+          gtk_widget_destroy (dialog);
+          result = EXIT_FAILURE;
           g_error_free (error);
         }
 
@@ -124,7 +137,15 @@ main (int argc, char **argv)
         {
           if (!exo_url_show (*argv, NULL, &error))
             {
-              g_fprintf (stderr, "%s: %s.\n", g_get_prgname (), error->message);
+              /* display an error dialog */
+              dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL,
+                                               GTK_MESSAGE_ERROR,
+                                               GTK_BUTTONS_CLOSE,
+                                               _("Failed to open URL `%s'."),
+                                               *argv);
+              gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
+              gtk_dialog_run (GTK_DIALOG (dialog));
+              gtk_widget_destroy (dialog);
               result = EXIT_FAILURE;
               g_error_free (error);
               break;
