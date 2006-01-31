@@ -1926,6 +1926,7 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
         }
 
       icon_view->priv->last_single_clicked = NULL;
+      icon_view->priv->pressed_button = -1;
     }
  
   /* grab focus and stop drawing the keyboard focus indicator on single clicks */

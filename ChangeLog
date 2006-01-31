@@ -1,5 +1,12 @@
 2006-01-31	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c(exo_icon_view_button_press_event): Reset
+	  pressed_button to -1 after handling a double blick, so that
+	  motion events occuring between here and the release event don't
+	  trigger a DnD operation.
+
+2006-01-31	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c: Drop accessibility support from the ExoIconView
 	  widget class for now, as it's totally broken right now. This should
 	  be rewritten from scratch at some time, using only the public
