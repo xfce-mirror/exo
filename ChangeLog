@@ -1,5 +1,10 @@
 2006-01-31	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c: Fix two potential bugs, where the return value
+	  of g_list_remove() was ignored.
+
+2006-01-31	Benedikt Meurer <benny@xfce.org>
+
 	* configure.in.in: Check for fnmatch.h.
 	* exo/exo-url.c: Make exo_url_show_on_screen() smarter in guessing the
 	  correct application, it is now able to open local HTML files as well
