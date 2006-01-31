@@ -1,3 +1,19 @@
+2006-01-31	Benedikt Meurer <benny@xfce.org>
+
+	* configure.in.in: Depend on GLib >= 2.6.4 and Gtk+ >= 2.6.0.
+	* configure.in.in, Makefile.am, icons/: Add preferred applications icon.
+	* configure.in.in, Makefile.am, exo-helper/, NEWS: Import exo-helper
+	  framework based on the helper framework found in Terminal. Bug #1368.
+	* exo/exo-execute.{c,h}, exo/exo-url.{c,h}, exo/Makefile.am, exo/exo.h,
+	  exo/exo.symbols: Add exo-url and exo-execute modules, which provide
+	  a consistent frontend to the helper framework.
+	* configure.in.in, Makefile.am, exo-open/: Add exo-open utility
+	  program, which simply calls appropriate functions in libexo.
+	* docs/reference/: Update the API documentation.
+	* po/POTFILES.in: Add new files.
+	* po/libexo-0.3.pot, po/*.po: Merge new strings.
+	* po/de.po: Update german translations.
+
 2006-01-25	Benedikt Meurer <benny@xfce.org>
 
 	* configure.in.in: Drop G_DISABLE_DEPRECATED completely. This fixes

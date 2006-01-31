@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-22 11:50+0100\n"
+"POT-Creation-Date: 2006-01-31 12:07+0100\n"
 "PO-Revision-Date: 2005-10-10 01:45+0900\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: British English <en_gb@li.org>\n"
@@ -15,48 +15,337 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: exo-csource/main.c:230
+#: ../exo/exo-cell-renderer-ellipsized-text.c:152
+#: ../exo/exo-ellipsized-label.c:122
+msgid "Ellipsize"
+msgstr "Ellipsize"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:153
+#, fuzzy
+msgid ""
+"The preferred place to ellipsize the string, if the cell renderer does not "
+"have enough room to display the entire string, if at all"
+msgstr ""
+"The preferred place to ellipsize the string, if the label does not have "
+"enough room to display the entire string, if at all"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:163
+#, fuzzy
+msgid "Ellipsize set"
+msgstr "Ellipsize"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:164
+msgid "Whether this tag affects the ellipsize mode"
+msgstr ""
+
+#: ../exo/exo-ellipsized-label.c:123
+msgid ""
+"The preferred place to ellipsize the string, if the label does not have "
+"enough room to display the entire string, if at all"
+msgstr ""
+"The preferred place to ellipsize the string, if the label does not have "
+"enough room to display the entire string, if at all"
+
+#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:646
+msgid "Orientation"
+msgstr "Orientation"
+
+#: ../exo/exo-icon-bar.c:260
+msgid "The orientation of the iconbar"
+msgstr "The orientation of the iconbar"
+
+#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:663
+msgid "Pixbuf column"
+msgstr "Pixbuf column"
+
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:664
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "Model column used to retrieve the icon pixbuf from"
+
+#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:743
+msgid "Text column"
+msgstr "Text column"
+
+#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:744
+msgid "Model column used to retrieve the text from"
+msgstr "Model column used to retrieve the text from"
+
+#: ../exo/exo-icon-bar.c:305
+msgid "Icon Bar Model"
+msgstr "Icon Bar Model"
+
+#: ../exo/exo-icon-bar.c:306
+msgid "Model for the icon bar"
+msgstr "Model for the icon bar"
+
+#: ../exo/exo-icon-bar.c:322
+msgid "Active"
+msgstr "Active"
+
+#: ../exo/exo-icon-bar.c:323
+msgid "Active item index"
+msgstr "Active item index"
+
+#: ../exo/exo-icon-bar.c:329 ../exo/exo-icon-bar.c:330
+msgid "Active item fill color"
+msgstr "Active item fill colour"
+
+#: ../exo/exo-icon-bar.c:336 ../exo/exo-icon-bar.c:337
+msgid "Active item border color"
+msgstr "Active item border colour"
+
+#: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
+msgid "Active item text color"
+msgstr "Active item text colour"
+
+#: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
+msgid "Cursor item fill color"
+msgstr "Cursor item fill colour"
+
+#: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
+msgid "Cursor item border color"
+msgstr "Cursor item border colour"
+
+#: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
+msgid "Cursor item text color"
+msgstr "Cursor item text colour"
+
+#: ../exo/exo-icon-view.c:549
+msgid "Column Spacing"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:550
+msgid "Space which is inserted between grid column"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:566
+msgid "Number of columns"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:567
+msgid "Number of columns to display"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:584
+msgid "Width for each item"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:585
+msgid "The width used for each item"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:600
+msgid "Margin"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:601
+msgid "Space which is inserted at the edges of the icon view"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:617
+msgid "Markup column"
+msgstr "Markup column"
+
+#: ../exo/exo-icon-view.c:618
+msgid "Model column used to retrieve the text if using Pango markup"
+msgstr "Model column used to retrieve the text if using Pango markup"
+
+#: ../exo/exo-icon-view.c:632
+msgid "Icon View Model"
+msgstr "Icon View Model"
+
+#: ../exo/exo-icon-view.c:633
+msgid "The model for the icon view"
+msgstr "The model for the icon view"
+
+#: ../exo/exo-icon-view.c:647
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"How the text and icon of each item are positioned relative to each other"
+
+#: ../exo/exo-icon-view.c:679
+msgid "Reorderable"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:680
+msgid "View is reorderable"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:695
+msgid "Row Spacing"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:696
+msgid "Space which is inserted between grid rows"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:710
+msgid "Selection mode"
+msgstr "Selection mode"
+
+#: ../exo/exo-icon-view.c:711
+msgid "The selection mode"
+msgstr "The selection mode"
+
+#: ../exo/exo-icon-view.c:727
+msgid "Spacing"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:728
+msgid "Space which is inserted between cells of an item"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:755
+msgid "Selection Box Color"
+msgstr "Selection Box Colour"
+
+#: ../exo/exo-icon-view.c:756
+msgid "Color of the selection box"
+msgstr "Colour of the selection box"
+
+#: ../exo/exo-icon-view.c:766
+msgid "Selection Box Alpha"
+msgstr "Selection Box Alpha"
+
+#: ../exo/exo-icon-view.c:767
+msgid "Opacity of the selection box"
+msgstr "Opacity of the selection box"
+
+#: ../exo/exo-toolbars-editor-dialog.c:134
+msgid "_Add a new toolbar"
+msgstr "_Add a new toolbar"
+
+#: ../exo/exo-toolbars-editor.c:238
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+
+#: ../exo/exo-toolbars-editor.c:551
+msgid "Separator"
+msgstr "Separator"
+
+#: ../exo/exo-toolbars-view.c:768
+msgid "Toolbar _Style"
+msgstr "Toolbar _Style"
+
+#: ../exo/exo-toolbars-view.c:775
+#, fuzzy
+msgid "_Desktop Default"
+msgstr "_Default"
+
+#: ../exo/exo-toolbars-view.c:784
+msgid "_Icons only"
+msgstr "_Icons only"
+
+#: ../exo/exo-toolbars-view.c:793
+msgid "_Text only"
+msgstr "_Text only"
+
+#: ../exo/exo-toolbars-view.c:802
+msgid "Text for _All Icons"
+msgstr ""
+
+#: ../exo/exo-toolbars-view.c:811
+msgid "Text for I_mportant Icons"
+msgstr ""
+
+#: ../exo/exo-toolbars-view.c:819
+msgid "_Remove Toolbar"
+msgstr "_Remove Toolbar"
+
+#: ../exo/exo-toolbars-view.c:834
+msgid "Customize Toolbar..."
+msgstr "Customise Toolbar..."
+
+#: ../exo/exo-url.c:180
+#, c-format
+msgid "The URL `%s' is not supported"
+msgstr ""
+
+#: ../exo/exo-url.c:247
+#, c-format
+msgid "Failed to open `%s'."
+msgstr ""
+
+#: ../exo/exo-wrap-table.c:169
+msgid "Column spacing"
+msgstr ""
+
+#: ../exo/exo-wrap-table.c:170
+msgid "The amount of space between two consecutive columns"
+msgstr ""
+
+#: ../exo/exo-wrap-table.c:184
+msgid "Row spacing"
+msgstr ""
+
+#: ../exo/exo-wrap-table.c:185
+msgid "The amount of space between two consecutive rows"
+msgstr ""
+
+#: ../exo/exo-wrap-table.c:199
+msgid "Homogeneous"
+msgstr ""
+
+#: ../exo/exo-wrap-table.c:200
+msgid "Whether the children should be all the same size"
+msgstr ""
+
+#: ../exo/exo-xsession-client.c:152
+msgid "Window group"
+msgstr ""
+
+#: ../exo/exo-xsession-client.c:153
+msgid "Window group leader"
+msgstr ""
+
+#: ../exo/exo-xsession-client.c:163
+msgid "Restart command"
+msgstr ""
+
+#: ../exo/exo-xsession-client.c:164
+msgid "Session restart command"
+msgstr ""
+
+#: ../exo-csource/main.c:230
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr ""
 
-#: exo-csource/main.c:231
+#: ../exo-csource/main.c:231
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr ""
 
-#: exo-csource/main.c:233
-#, c-format
+#: ../exo-csource/main.c:233
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr ""
 
-#: exo-csource/main.c:234
-#, c-format
+#: ../exo-csource/main.c:234
 msgid "  -v, --version     Print version information and exit\n"
 msgstr ""
 
-#: exo-csource/main.c:235
-#, c-format
+#: ../exo-csource/main.c:235
 msgid "  --extern          Generate extern symbols\n"
 msgstr ""
 
-#: exo-csource/main.c:236
-#, c-format
+#: ../exo-csource/main.c:236
 msgid "  --static          Generate static symbols\n"
 msgstr ""
 
-#: exo-csource/main.c:237
-#, c-format
+#: ../exo-csource/main.c:237
 msgid "  --name=identifier C macro/variable name\n"
 msgstr ""
 
-#: exo-csource/main.c:238
-#, c-format
+#: ../exo-csource/main.c:238
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr ""
 
-#: exo-csource/main.c:248
-#, c-format
+#: ../exo-csource/main.c:248
 msgid ""
 "Copyright (c) 2005\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -65,7 +354,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: exo-csource/main.c:251
+#: ../exo-csource/main.c:251 ../exo-open/main.c:99
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -75,292 +364,291 @@ msgid ""
 "\n"
 msgstr ""
 
-#: exo-csource/main.c:255
+#: ../exo-csource/main.c:255 ../exo-open/main.c:103
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr ""
 
-#: exo/exo-cell-renderer-ellipsized-text.c:152 exo/exo-ellipsized-label.c:122
-msgid "Ellipsize"
-msgstr "Ellipsize"
+#: ../exo-helper/exo-helper-chooser-dialog.c:119
+#: ../exo-helper/exo-helper-chooser-dialog.c:121
+#: ../exo-helper/exo-preferred-applications-settings.c:62
+msgid "Preferred Applications"
+msgstr ""
 
-#: exo/exo-cell-renderer-ellipsized-text.c:153
-#, fuzzy
+#.
+#. Internet
+#.
+#: ../exo-helper/exo-helper-chooser-dialog.c:140
+msgid "Internet"
+msgstr ""
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:153
+msgid "Default Web Browser"
+msgstr ""
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:161
 msgid ""
-"The preferred place to ellipsize the string, if the cell renderer does not "
-"have enough room to display the entire string, if at all"
-msgstr ""
-"The preferred place to ellipsize the string, if the label does not have "
-"enough room to display the entire string, if at all"
-
-#: exo/exo-cell-renderer-ellipsized-text.c:163
-#, fuzzy
-msgid "Ellipsize set"
-msgstr "Ellipsize"
-
-#: exo/exo-cell-renderer-ellipsized-text.c:164
-msgid "Whether this tag affects the ellipsize mode"
+"The preferred Web Browser will be used to open\n"
+"hyperlinks and display help contents."
 msgstr ""
 
-#: exo/exo-ellipsized-label.c:123
+#: ../exo-helper/exo-helper-chooser-dialog.c:185
+msgid "Default Mail Reader"
+msgstr ""
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:193
 msgid ""
-"The preferred place to ellipsize the string, if the label does not have "
-"enough room to display the entire string, if at all"
-msgstr ""
-"The preferred place to ellipsize the string, if the label does not have "
-"enough room to display the entire string, if at all"
-
-#: exo/exo-icon-bar.c:259 exo/exo-icon-view.c:646
-msgid "Orientation"
-msgstr "Orientation"
-
-#: exo/exo-icon-bar.c:260
-msgid "The orientation of the iconbar"
-msgstr "The orientation of the iconbar"
-
-#: exo/exo-icon-bar.c:276 exo/exo-icon-view.c:663
-msgid "Pixbuf column"
-msgstr "Pixbuf column"
-
-#: exo/exo-icon-bar.c:277 exo/exo-icon-view.c:664
-msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Model column used to retrieve the icon pixbuf from"
-
-#: exo/exo-icon-bar.c:292 exo/exo-icon-view.c:743
-msgid "Text column"
-msgstr "Text column"
-
-#: exo/exo-icon-bar.c:293 exo/exo-icon-view.c:744
-msgid "Model column used to retrieve the text from"
-msgstr "Model column used to retrieve the text from"
-
-#: exo/exo-icon-bar.c:305
-msgid "Icon Bar Model"
-msgstr "Icon Bar Model"
-
-#: exo/exo-icon-bar.c:306
-msgid "Model for the icon bar"
-msgstr "Model for the icon bar"
-
-#: exo/exo-icon-bar.c:322
-msgid "Active"
-msgstr "Active"
-
-#: exo/exo-icon-bar.c:323
-msgid "Active item index"
-msgstr "Active item index"
-
-#: exo/exo-icon-bar.c:329 exo/exo-icon-bar.c:330
-msgid "Active item fill color"
-msgstr "Active item fill colour"
-
-#: exo/exo-icon-bar.c:336 exo/exo-icon-bar.c:337
-msgid "Active item border color"
-msgstr "Active item border colour"
-
-#: exo/exo-icon-bar.c:343 exo/exo-icon-bar.c:344
-msgid "Active item text color"
-msgstr "Active item text colour"
-
-#: exo/exo-icon-bar.c:350 exo/exo-icon-bar.c:351
-msgid "Cursor item fill color"
-msgstr "Cursor item fill colour"
-
-#: exo/exo-icon-bar.c:357 exo/exo-icon-bar.c:358
-msgid "Cursor item border color"
-msgstr "Cursor item border colour"
-
-#: exo/exo-icon-bar.c:364 exo/exo-icon-bar.c:365
-msgid "Cursor item text color"
-msgstr "Cursor item text colour"
-
-#: exo/exo-icon-view.c:549
-msgid "Column Spacing"
+"The preferred Mail Reader will be used to compose\n"
+"emails when you click on email addresses."
 msgstr ""
 
-#: exo/exo-icon-view.c:550
-msgid "Space which is inserted between grid column"
+#.
+#. Utilities
+#.
+#: ../exo-helper/exo-helper-chooser-dialog.c:213
+msgid "Utilities"
 msgstr ""
 
-#: exo/exo-icon-view.c:566
-msgid "Number of columns"
+#: ../exo-helper/exo-helper-chooser-dialog.c:226
+msgid "Default Terminal Emulator"
 msgstr ""
 
-#: exo/exo-icon-view.c:567
-msgid "Number of columns to display"
-msgstr ""
-
-#: exo/exo-icon-view.c:584
-msgid "Width for each item"
-msgstr ""
-
-#: exo/exo-icon-view.c:585
-msgid "The width used for each item"
-msgstr ""
-
-#: exo/exo-icon-view.c:600
-msgid "Margin"
-msgstr ""
-
-#: exo/exo-icon-view.c:601
-msgid "Space which is inserted at the edges of the icon view"
-msgstr ""
-
-#: exo/exo-icon-view.c:617
-msgid "Markup column"
-msgstr "Markup column"
-
-#: exo/exo-icon-view.c:618
-msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Model column used to retrieve the text if using Pango markup"
-
-#: exo/exo-icon-view.c:632
-msgid "Icon View Model"
-msgstr "Icon View Model"
-
-#: exo/exo-icon-view.c:633
-msgid "The model for the icon view"
-msgstr "The model for the icon view"
-
-#: exo/exo-icon-view.c:647
+#: ../exo-helper/exo-helper-chooser-dialog.c:234
 msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"How the text and icon of each item are positioned relative to each other"
-
-#: exo/exo-icon-view.c:679
-msgid "Reorderable"
+"The preferred Terminal Emulator will be used to\n"
+"run commands that require a CLI environment."
 msgstr ""
 
-#: exo/exo-icon-view.c:680
-msgid "View is reorderable"
+#: ../exo-helper/exo-helper-chooser.c:177
+#: ../exo-helper/exo-helper-chooser.c:184
+msgid "Press left mouse button to change the selected application."
 msgstr ""
 
-#: exo/exo-icon-view.c:695
-msgid "Row Spacing"
+#: ../exo-helper/exo-helper-chooser.c:183
+msgid "Application Chooser Button"
 msgstr ""
 
-#: exo/exo-icon-view.c:696
-msgid "Space which is inserted between grid rows"
+#: ../exo-helper/exo-helper-chooser.c:319
+msgid "No application selected"
 msgstr ""
 
-#: exo/exo-icon-view.c:710
-msgid "Selection mode"
-msgstr "Selection mode"
-
-#: exo/exo-icon-view.c:711
-msgid "The selection mode"
-msgstr "The selection mode"
-
-#: exo/exo-icon-view.c:727
-msgid "Spacing"
+#: ../exo-helper/exo-helper-chooser.c:335
+msgid "Failed to set default Web Browser"
 msgstr ""
 
-#: exo/exo-icon-view.c:728
-msgid "Space which is inserted between cells of an item"
+#: ../exo-helper/exo-helper-chooser.c:336
+msgid "Failed to set default Mail Reader"
 msgstr ""
 
-#: exo/exo-icon-view.c:755
-msgid "Selection Box Color"
-msgstr "Selection Box Colour"
+#: ../exo-helper/exo-helper-chooser.c:337
+msgid "Failed to set default Terminal Emulator"
+msgstr ""
 
-#: exo/exo-icon-view.c:756
-msgid "Color of the selection box"
-msgstr "Colour of the selection box"
+#: ../exo-helper/exo-helper-chooser.c:401
+msgid "Select application"
+msgstr ""
 
-#: exo/exo-icon-view.c:766
-msgid "Selection Box Alpha"
-msgstr "Selection Box Alpha"
+#: ../exo-helper/exo-helper-chooser.c:439
+msgid "Choose a custom Web Browser"
+msgstr ""
 
-#: exo/exo-icon-view.c:767
-msgid "Opacity of the selection box"
-msgstr "Opacity of the selection box"
+#: ../exo-helper/exo-helper-chooser.c:440
+msgid "Choose a custom Mail Reader"
+msgstr ""
 
-#: exo/exo-toolbars-editor-dialog.c:134
-msgid "_Add a new toolbar"
-msgstr "_Add a new toolbar"
+#: ../exo-helper/exo-helper-chooser.c:441
+msgid "Choose a custom Terminal Emulator"
+msgstr ""
 
-#: exo/exo-toolbars-editor.c:238
+#: ../exo-helper/exo-helper-chooser.c:446
 msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-
-#: exo/exo-toolbars-editor.c:551
-msgid "Separator"
-msgstr "Separator"
-
-#: exo/exo-toolbars-view.c:768
-msgid "Toolbar _Style"
-msgstr "Toolbar _Style"
-
-#: exo/exo-toolbars-view.c:775
-#, fuzzy
-msgid "_Desktop Default"
-msgstr "_Default"
-
-#: exo/exo-toolbars-view.c:784
-msgid "_Icons only"
-msgstr "_Icons only"
-
-#: exo/exo-toolbars-view.c:793
-msgid "_Text only"
-msgstr "_Text only"
-
-#: exo/exo-toolbars-view.c:802
-msgid "Text for _All Icons"
+"Specify the application you want to use\n"
+"as default Web Browser for Xfce:"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:811
-msgid "Text for I_mportant Icons"
+#: ../exo-helper/exo-helper-chooser.c:447
+msgid ""
+"Specify the application you want to use\n"
+"as default Mail Reader for Xfce:"
 msgstr ""
 
-#: exo/exo-toolbars-view.c:819
-msgid "_Remove Toolbar"
-msgstr "_Remove Toolbar"
-
-#: exo/exo-toolbars-view.c:834
-msgid "Customize Toolbar..."
-msgstr "Customise Toolbar..."
-
-#: exo/exo-wrap-table.c:169
-msgid "Column spacing"
+#: ../exo-helper/exo-helper-chooser.c:448
+msgid ""
+"Specify the application you want to use\n"
+"as default Terminal Emulator for Xfce:"
 msgstr ""
 
-#: exo/exo-wrap-table.c:170
-msgid "The amount of space between two consecutive columns"
+#: ../exo-helper/exo-helper-chooser.c:512
+msgid "Browse the file system to choose a custom command."
 msgstr ""
 
-#: exo/exo-wrap-table.c:184
-msgid "Row spacing"
+#: ../exo-helper/exo-helper-chooser.c:687
+msgid "_Other..."
 msgstr ""
 
-#: exo/exo-wrap-table.c:185
-msgid "The amount of space between two consecutive rows"
+#: ../exo-helper/exo-helper-chooser.c:688
+msgid "Use a custom application which is not included in the above list."
 msgstr ""
 
-#: exo/exo-wrap-table.c:199
-msgid "Homogeneous"
+#: ../exo-helper/exo-helper-launcher-dialog.c:142
+msgid "Choose Preferred Application"
 msgstr ""
 
-#: exo/exo-wrap-table.c:200
-msgid "Whether the children should be all the same size"
+#: ../exo-helper/exo-helper-launcher-dialog.c:285
+msgid ""
+"Please choose your preferred Web\n"
+"Browser now and click OK to proceed."
 msgstr ""
 
-#: exo/exo-xsession-client.c:152
-msgid "Window group"
+#: ../exo-helper/exo-helper-launcher-dialog.c:287
+msgid ""
+"Please choose your preferred Mail Reader\n"
+"now and click OK to proceed."
 msgstr ""
 
-#: exo/exo-xsession-client.c:153
-msgid "Window group leader"
+#: ../exo-helper/exo-helper-launcher-dialog.c:289
+msgid ""
+"Please choose your preferred Terminal\n"
+"Emulator now and click OK to proceed."
 msgstr ""
 
-#: exo/exo-xsession-client.c:163
-msgid "Restart command"
+#: ../exo-helper/exo-helper.c:383
+msgid "No command specified"
 msgstr ""
 
-#: exo/exo-xsession-client.c:164
-msgid "Session restart command"
+#: ../exo-helper/exo-helper.c:675
+msgid "Failed to open helpers.rc for writing"
+msgstr ""
+
+#: ../exo-helper/exo-preferred-applications-settings.c:40
+msgid "Failed to launch exo-preferred-applications"
+msgstr ""
+
+#: ../exo-helper/helpers/Terminal.desktop.in.h:1
+msgid "Xfce Terminal"
+msgstr ""
+
+#: ../exo-helper/helpers/balsa.desktop.in.h:1
+msgid "Balsa"
+msgstr ""
+
+#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.h:1
+msgid "Debian Sensible Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.h:1
+msgid "Debian X Terminal Emulator"
+msgstr ""
+
+#: ../exo-helper/helpers/epiphany.desktop.in.h:1
+msgid "Epiphany Web Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/eterm.desktop.in.h:1
+msgid "Enlightened Terminal Emulator"
+msgstr ""
+
+#: ../exo-helper/helpers/evolution.desktop.in.h:1
+msgid "Novell Evolution"
+msgstr ""
+
+#: ../exo-helper/helpers/firefox.desktop.in.h:1
+msgid "Mozilla Firefox"
+msgstr ""
+
+#: ../exo-helper/helpers/galeon.desktop.in.h:1
+msgid "Galeon Web Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/gnome-terminal.desktop.in.h:1
+msgid "GNOME Terminal"
+msgstr ""
+
+#: ../exo-helper/helpers/kmail.desktop.in.h:1
+msgid "KMail"
+msgstr ""
+
+#: ../exo-helper/helpers/konqueror.desktop.in.h:1
+msgid "Konqueror Web Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/mozilla-browser.desktop.in.h:1
+msgid "Mozilla Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/mozilla-mailer.desktop.in.h:1
+msgid "Mozilla Mail"
+msgstr ""
+
+#: ../exo-helper/helpers/opera-browser.desktop.in.h:1
+msgid "Opera Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/opera-mailer.desktop.in.h:1
+msgid "Opera Mail"
+msgstr ""
+
+#: ../exo-helper/helpers/thunderbird.desktop.in.h:1
+msgid "Mozilla Thunderbird"
+msgstr ""
+
+#: ../exo-helper/helpers/xterm.desktop.in.h:1
+msgid "X Terminal"
+msgstr ""
+
+#: ../exo-open/main.c:43
+msgid "Usage: exo-open [URLs...]"
+msgstr ""
+
+#: ../exo-open/main.c:44
+msgid "       exo-open --launch TYPE [PARAMETERs...]"
+msgstr ""
+
+#: ../exo-open/main.c:46
+msgid "  -h, --help                          Print this help message and exit"
+msgstr ""
+
+#: ../exo-open/main.c:47
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr ""
+
+#: ../exo-open/main.c:49
+msgid ""
+"  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
+"                                      TYPE is one of the following values."
+msgstr ""
+
+#: ../exo-open/main.c:53
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr ""
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. * since the exo-helper utility will not accept localized TYPEs.
+#.
+#: ../exo-open/main.c:59
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+
+#: ../exo-open/main.c:63
+msgid ""
+"If you don't specify the --launch option, exo-open will open all specified\n"
+"URLs with their preferred URL handlers. Else, if you specify the --launch\n"
+"option, you can select which preferred application you want to run, and\n"
+"pass additional parameters to the application (i.e. for TerminalEmulator\n"
+"you can pass the command line that should be run in the terminal)."
+msgstr ""
+
+#: ../exo-open/main.c:96
+msgid ""
+"Copyright (c) 2005-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
 msgstr ""

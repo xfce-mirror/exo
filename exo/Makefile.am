@@ -5,6 +5,8 @@ INCLUDES = 								\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DEXO_COMPILATION						\
 	-DG_LOG_DOMAIN=\"exo\"						\
+	-DLIBEXECDIR=\"$(libexecdir)\"					\
+	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"			\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_LTLIBRARIES = libexo-0.3.la
@@ -13,6 +15,7 @@ libexo_headers =							\
 	exo-binding.h							\
 	exo-cell-renderer-ellipsized-text.h				\
 	exo-ellipsized-label.h						\
+	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
 	exo-gtk-extensions.h						\
 	exo-gobject-extensions.h					\
@@ -25,6 +28,7 @@ libexo_headers =							\
 	exo-toolbars-editor-dialog.h					\
 	exo-toolbars-model.h						\
 	exo-toolbars-view.h						\
+	exo-url.h							\
 	exo-utils.h							\
 	exo-wrap-table.h						\
 	exo-xsession-client.h
@@ -55,6 +59,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-cell-renderer-ellipsized-text.c				\
 	exo-config.c							\
 	exo-ellipsized-label.c						\
+	exo-execute.c							\
 	exo-gdk-pixbuf-extensions.c					\
 	exo-gtk-extensions.c						\
 	exo-gobject-extensions.c					\
@@ -71,6 +76,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-toolbars-private.c						\
 	exo-toolbars-private.h						\
 	exo-toolbars-view.c						\
+	exo-url.c							\
 	exo-utils.c							\
 	exo-wrap-table.c						\
 	exo-xsession-client.c

@@ -86,6 +86,16 @@ exo_toolbars_model_flags_get_type G_GNUC_CONST
 #endif
 #endif
 
+/* exo-execute functions */
+#if IN_HEADER(__EXO_EXECUTE_H__)
+#if IN_SOURCE(__EXO_EXECUTE_C__)
+exo_execute_preferred_application
+exo_execute_preferred_application_on_screen
+exo_execute_terminal_shell
+exo_execute_terminal_shell_on_screen
+#endif
+#endif
+
 /* exo-gdk-pixbuf-extensions functions */
 #if IN_HEADER(__EXO_GDK_PIXBUF_EXTENSIONS_H__)
 #if IN_SOURCE(__EXO_GDK_PIXBUF_EXTENSIONS_C__)
@@ -303,6 +313,15 @@ exo_toolbars_view_get_model
 exo_toolbars_view_set_model
 exo_toolbars_view_get_ui_manager
 exo_toolbars_view_set_ui_manager
+#endif
+#endif
+
+#if IN_HEADER(__EXO_URL_H__)
+#if IN_SOURCE(__EXO_URL_C__)
+exo_url_error_quark G_GNUC_CONST
+exo_url_show
+exo_url_show_on_screen
+exo_url_about_dialog_hook
 #endif
 #endif
 

@@ -1,3 +1,5 @@
+# $Id$
+
 if HAVE_PYTHON
 PYTHON_SUBDIR=python
 endif
@@ -5,7 +7,10 @@ endif
 SUBDIRS =								\
 	exo								\
 	exo-csource							\
+	exo-helper							\
+	exo-open							\
 	docs								\
+	icons								\
 	po								\
 	$(PYTHON_SUBDIR)						\
 	tests
@@ -32,7 +37,15 @@ EXTRA_DIST =								\
 	THANKS								\
 	TODO								\
 	exo.spec.in							\
-	exo.spec
+	exo.spec							\
+	intltool-extract.in						\
+	intltool-merge.in						\
+	intltool-update.in
+
+DISTCLEANFILES =							\
+	intltool-extract						\
+	intltool-merge							\
+	intltool-update
 
 DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
 

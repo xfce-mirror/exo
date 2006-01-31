@@ -73,6 +73,7 @@ dnl ********************************
 AM_PROG_AS()
 AC_PROG_CC()
 AC_PROG_INSTALL()
+AC_PROG_INTLTOOL([0.31], [no-xml])
 AC_PROG_LIBTOOL()
 AC_CHECK_PROGS([PERL], [perl5 perl])
 
@@ -81,8 +82,13 @@ dnl *** Check for standard header files ***
 dnl ***************************************
 AC_HEADER_STDC()
 AC_CHECK_HEADERS([assert.h errno.h fcntl.h libintl.h locale.h math.h md5.h \
-                  string.h sys/resource.h sys/stat.h sys/time.h sys/types.h \
-                  time.h])
+                  regex.h string.h sys/resource.h sys/stat.h sys/time.h \
+                  sys/types.h time.h])
+
+dnl ************************************
+dnl *** Check for standard functions ***
+dnl ************************************
+AC_CHECK_FUNCS([regexec])
 
 dnl ******************************************
 dnl *** Check for Message Digest functions ***
@@ -99,9 +105,15 @@ XDT_I18N([ca de el en_GB es fi fr ja pt_BR],
 dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
-XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.4.0])
-XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.4.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.0])
+XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.6.4])
+XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.6.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.2])
+
+dnl *********************************************
+dnl *** Check for xfce-mcs-manager (optional) ***
+dnl *********************************************
+XDT_CHECK_OPTIONAL_PACKAGE([XFCE_MCS_MANAGER], [xfce-mcs-manager], [4.2.2],
+                           [mcs-plugin], [xfce-mcs-manager], [yes])
 
 dnl *************************
 dnl *** Check for gtk-doc ***
@@ -235,6 +247,11 @@ exo/Makefile
 exo/exo-0.3.pc
 exo/exo-config.h
 exo-csource/Makefile
+exo-helper/Makefile
+exo-helper/helpers/Makefile
+exo-open/Makefile
+icons/Makefile
+icons/48x48/Makefile
 po/Makefile.in
 python/Makefile
 python/examples/Makefile

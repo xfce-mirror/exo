@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Icon=thunderbird
+Type=X-XFCE-Helper
+_Name=Mozilla Thunderbird
+StartupNotify=false
+X-XFCE-Binaries=thunderbird;thunderbird-gtk2;thunderbird-gtk;mozilla-thunderbird;
+X-XFCE-Category=MailReader
+X-XFCE-Commands=%B;
+X-XFCE-CommandsWithParameter=%B -remote "mailto(%s)";%B -compose "mailto:%s";

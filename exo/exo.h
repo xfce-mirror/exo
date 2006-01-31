@@ -43,6 +43,7 @@
 #include <exo/exo-binding.h>
 #include <exo/exo-cell-renderer-ellipsized-text.h>
 #include <exo/exo-ellipsized-label.h>
+#include <exo/exo-execute.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-gdk-pixbuf-extensions.h>
 #include <exo/exo-gtk-extensions.h>
@@ -56,6 +57,7 @@
 #include <exo/exo-toolbars-editor-dialog.h>
 #include <exo/exo-toolbars-model.h>
 #include <exo/exo-toolbars-view.h>
+#include <exo/exo-url.h>
 #include <exo/exo-utils.h>
 #include <exo/exo-wrap-table.h>
 #include <exo/exo-xsession-client.h>

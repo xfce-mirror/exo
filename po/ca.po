@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-22 11:50+0100\n"
+"POT-Creation-Date: 2006-01-31 12:07+0100\n"
 "PO-Revision-Date: 2006-01-08 21:54+0100\n"
 "Last-Translator: Pau Rul·lan Ferragut <paurullan@bulma.net>\n"
 "Language-Team: catalan\n"
@@ -15,48 +15,335 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: exo-csource/main.c:230
+#: ../exo/exo-cell-renderer-ellipsized-text.c:152
+#: ../exo/exo-ellipsized-label.c:122
+msgid "Ellipsize"
+msgstr "Punts suspensius"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:153
+msgid ""
+"The preferred place to ellipsize the string, if the cell renderer does not "
+"have enough room to display the entire string, if at all"
+msgstr ""
+"El lloc triat per inserir els punts suspensius si el representador de\n"
+"cadenes no té espai suficient per mostrar tota la cadena"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:163
+msgid "Ellipsize set"
+msgstr "Activa punts suspensius"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:164
+msgid "Whether this tag affects the ellipsize mode"
+msgstr "Si aquesta etiqueta afecta al mode de punts suspensius"
+
+#: ../exo/exo-ellipsized-label.c:123
+msgid ""
+"The preferred place to ellipsize the string, if the label does not have "
+"enough room to display the entire string, if at all"
+msgstr ""
+"El lloc preferit per posar punts suspensius a la cadena, si l'etiqueta no\n"
+"té prou espai per mostrar tota la cadena"
+
+#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:646
+msgid "Orientation"
+msgstr "Orientació"
+
+#: ../exo/exo-icon-bar.c:260
+msgid "The orientation of the iconbar"
+msgstr "Orienctació del plafó d'icones"
+
+#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:663
+msgid "Pixbuf column"
+msgstr "Columna de memòria de píxel"
+
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:664
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "Columna del model d'on obtenir la icona de la memòria de píxel"
+
+#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:743
+msgid "Text column"
+msgstr "Columna de text"
+
+#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:744
+msgid "Model column used to retrieve the text from"
+msgstr "Columna del model d'on obtenir el text"
+
+#: ../exo/exo-icon-bar.c:305
+msgid "Icon Bar Model"
+msgstr "Model del plafó d'icona"
+
+#: ../exo/exo-icon-bar.c:306
+msgid "Model for the icon bar"
+msgstr "Model pel plafó d'icona"
+
+#: ../exo/exo-icon-bar.c:322
+msgid "Active"
+msgstr "Actiu"
+
+#: ../exo/exo-icon-bar.c:323
+msgid "Active item index"
+msgstr "Activa element d'índex"
+
+#: ../exo/exo-icon-bar.c:329 ../exo/exo-icon-bar.c:330
+msgid "Active item fill color"
+msgstr "Activa element emplenat de color"
+
+#: ../exo/exo-icon-bar.c:336 ../exo/exo-icon-bar.c:337
+msgid "Active item border color"
+msgstr "Activa element amb vora de color"
+
+#: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
+msgid "Active item text color"
+msgstr "Activa element amd text de color"
+
+#: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
+msgid "Cursor item fill color"
+msgstr "Cursor emplenat de color"
+
+#: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
+msgid "Cursor item border color"
+msgstr "Cursor amb vora de color"
+
+#: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
+msgid "Cursor item text color"
+msgstr "Cursor amb text de color"
+
+#: ../exo/exo-icon-view.c:549
+msgid "Column Spacing"
+msgstr "Espaiat entre columnes"
+
+#: ../exo/exo-icon-view.c:550
+msgid "Space which is inserted between grid column"
+msgstr "L'espai inserit entre les columnes d'una graella"
+
+#: ../exo/exo-icon-view.c:566
+msgid "Number of columns"
+msgstr "Número de columnes"
+
+#: ../exo/exo-icon-view.c:567
+msgid "Number of columns to display"
+msgstr "El nombre de columnes a mostrar"
+
+#: ../exo/exo-icon-view.c:584
+msgid "Width for each item"
+msgstr "Amplada de cada element"
+
+#: ../exo/exo-icon-view.c:585
+msgid "The width used for each item"
+msgstr "L'amplada utilitzada per cada element"
+
+#: ../exo/exo-icon-view.c:600
+msgid "Margin"
+msgstr "Marge"
+
+#: ../exo/exo-icon-view.c:601
+msgid "Space which is inserted at the edges of the icon view"
+msgstr "Espai inserit a les vores de la vista d'icones"
+
+#: ../exo/exo-icon-view.c:617
+msgid "Markup column"
+msgstr "Columna d'etiquetatge"
+
+#: ../exo/exo-icon-view.c:618
+msgid "Model column used to retrieve the text if using Pango markup"
+msgstr ""
+"Columna del model d'on obtenir el text si es fa servir el marcatge Pango"
+
+#: ../exo/exo-icon-view.c:632
+msgid "Icon View Model"
+msgstr "Model de vista d'icones"
+
+#: ../exo/exo-icon-view.c:633
+msgid "The model for the icon view"
+msgstr "El model per la vista d'icones"
+
+#: ../exo/exo-icon-view.c:647
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr "Posicionament relatiu entre el text i la icona de cada element"
+
+#: ../exo/exo-icon-view.c:679
+msgid "Reorderable"
+msgstr "Reordenable"
+
+#: ../exo/exo-icon-view.c:680
+msgid "View is reorderable"
+msgstr "Vista és reordenable"
+
+#: ../exo/exo-icon-view.c:695
+msgid "Row Spacing"
+msgstr "Espaiat de files"
+
+#: ../exo/exo-icon-view.c:696
+msgid "Space which is inserted between grid rows"
+msgstr "L'espai inserit entre les files d'una graella"
+
+#: ../exo/exo-icon-view.c:710
+msgid "Selection mode"
+msgstr "Mode de selecció"
+
+#: ../exo/exo-icon-view.c:711
+msgid "The selection mode"
+msgstr "El mode de selecció"
+
+#: ../exo/exo-icon-view.c:727
+msgid "Spacing"
+msgstr "Espaiat"
+
+#: ../exo/exo-icon-view.c:728
+msgid "Space which is inserted between cells of an item"
+msgstr "Espai inserit entre les cel·les de cada element"
+
+#: ../exo/exo-icon-view.c:755
+msgid "Selection Box Color"
+msgstr "Color de la caixa de selecció"
+
+#: ../exo/exo-icon-view.c:756
+msgid "Color of the selection box"
+msgstr "Color de la caixa de selecció"
+
+#: ../exo/exo-icon-view.c:766
+msgid "Selection Box Alpha"
+msgstr "Alfa de la caixa de selecció"
+
+#: ../exo/exo-icon-view.c:767
+msgid "Opacity of the selection box"
+msgstr "Opacitat de la caixa de selecció"
+
+#: ../exo/exo-toolbars-editor-dialog.c:134
+msgid "_Add a new toolbar"
+msgstr "_Afegeix una nova barra d'eines"
+
+#: ../exo/exo-toolbars-editor.c:238
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Arrossega un element a les barres d'eines superiors per a afegir-lo. "
+"Arrossegueu-lo des de les barres d'eines a la taula d'elements per a "
+"suprimir-lo."
+
+#: ../exo/exo-toolbars-editor.c:551
+msgid "Separator"
+msgstr "Separador"
+
+#: ../exo/exo-toolbars-view.c:768
+msgid "Toolbar _Style"
+msgstr "E_stil de la barra d'eines"
+
+#: ../exo/exo-toolbars-view.c:775
+msgid "_Desktop Default"
+msgstr "_Escriptori predeterminat"
+
+#: ../exo/exo-toolbars-view.c:784
+msgid "_Icons only"
+msgstr "Només _icones"
+
+#: ../exo/exo-toolbars-view.c:793
+msgid "_Text only"
+msgstr "Només _text"
+
+#: ../exo/exo-toolbars-view.c:802
+msgid "Text for _All Icons"
+msgstr "Text per t_otes les icones"
+
+#: ../exo/exo-toolbars-view.c:811
+msgid "Text for I_mportant Icons"
+msgstr "Text per les icones i_mportants"
+
+#: ../exo/exo-toolbars-view.c:819
+msgid "_Remove Toolbar"
+msgstr "_Suprimir barra d'eines"
+
+#: ../exo/exo-toolbars-view.c:834
+msgid "Customize Toolbar..."
+msgstr "Personalitza barra d'eines..."
+
+#: ../exo/exo-url.c:180
+#, c-format
+msgid "The URL `%s' is not supported"
+msgstr ""
+
+#: ../exo/exo-url.c:247
+#, c-format
+msgid "Failed to open `%s'."
+msgstr ""
+
+#: ../exo/exo-wrap-table.c:169
+msgid "Column spacing"
+msgstr "Espaiat entre columnes"
+
+#: ../exo/exo-wrap-table.c:170
+msgid "The amount of space between two consecutive columns"
+msgstr "L'espai deixat entre dues columnes consecutives"
+
+#: ../exo/exo-wrap-table.c:184
+msgid "Row spacing"
+msgstr "Espaiat entre files"
+
+#: ../exo/exo-wrap-table.c:185
+msgid "The amount of space between two consecutive rows"
+msgstr "L'espai deixat entre dues files consecutives"
+
+#: ../exo/exo-wrap-table.c:199
+msgid "Homogeneous"
+msgstr "Homogeni"
+
+#: ../exo/exo-wrap-table.c:200
+msgid "Whether the children should be all the same size"
+msgstr "Si tots els fills han de tenir el mateix tamany"
+
+#: ../exo/exo-xsession-client.c:152
+msgid "Window group"
+msgstr "Grup de finestres"
+
+#: ../exo/exo-xsession-client.c:153
+msgid "Window group leader"
+msgstr "Finestra principal del grup"
+
+#: ../exo/exo-xsession-client.c:163
+msgid "Restart command"
+msgstr "Reinicia ordre"
+
+#: ../exo/exo-xsession-client.c:164
+msgid "Session restart command"
+msgstr "Ordre per reiniciar la sessió"
+
+#: ../exo-csource/main.c:230
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Ús: %s [opcions] [fitxer]\n"
 
-#: exo-csource/main.c:231
+#: ../exo-csource/main.c:231
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "        %s [opcions] --build-list [[nom del fitxer]...]\n"
 
-#: exo-csource/main.c:233
-#, c-format
+#: ../exo-csource/main.c:233
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help            Mostra aquest missatge i surt\n"
 
-#: exo-csource/main.c:234
-#, c-format
+#: ../exo-csource/main.c:234
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --version         Mostra la versió i surt\n"
 
-#: exo-csource/main.c:235
-#, c-format
+#: ../exo-csource/main.c:235
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern              Genera símbols externs\n"
 
-#: exo-csource/main.c:236
-#, c-format
+#: ../exo-csource/main.c:236
 msgid "  --static          Generate static symbols\n"
 msgstr " --static               Genera símbols estàtics\n"
 
-#: exo-csource/main.c:237
-#, c-format
+#: ../exo-csource/main.c:237
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier             nom de la macro de C\n"
 
-#: exo-csource/main.c:238
-#, c-format
+#: ../exo-csource/main.c:238
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list          Analitza parelles (nom, fitxer)\n"
 
-#: exo-csource/main.c:248
-#, c-format
+#: ../exo-csource/main.c:248
 msgid ""
 "Copyright (c) 2005\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -70,7 +357,7 @@ msgstr ""
 "Escrit per Benedikt Meurer <benny@xfce.org>\n"
 "\n"
 
-#: exo-csource/main.c:251
+#: ../exo-csource/main.c:251 ../exo-open/main.c:99
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -85,290 +372,299 @@ msgstr ""
 "paquet de codi font de %s.\n"
 "\n"
 
-#: exo-csource/main.c:255
+#: ../exo-csource/main.c:255 ../exo-open/main.c:103
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Per favor, informi dels errors a <%s>.\n"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:152 exo/exo-ellipsized-label.c:122
-msgid "Ellipsize"
-msgstr "Punts suspensius"
-
-#: exo/exo-cell-renderer-ellipsized-text.c:153
-msgid ""
-"The preferred place to ellipsize the string, if the cell renderer does not "
-"have enough room to display the entire string, if at all"
+#: ../exo-helper/exo-helper-chooser-dialog.c:119
+#: ../exo-helper/exo-helper-chooser-dialog.c:121
+#: ../exo-helper/exo-preferred-applications-settings.c:62
+msgid "Preferred Applications"
 msgstr ""
-"El lloc triat per inserir els punts suspensius si el representador de\n"
-"cadenes no té espai suficient per mostrar tota la cadena"
 
-#: exo/exo-cell-renderer-ellipsized-text.c:163
-msgid "Ellipsize set"
-msgstr "Activa punts suspensius"
-
-#: exo/exo-cell-renderer-ellipsized-text.c:164
-msgid "Whether this tag affects the ellipsize mode"
-msgstr "Si aquesta etiqueta afecta al mode de punts suspensius"
-
-#: exo/exo-ellipsized-label.c:123
-msgid ""
-"The preferred place to ellipsize the string, if the label does not have "
-"enough room to display the entire string, if at all"
+#.
+#. Internet
+#.
+#: ../exo-helper/exo-helper-chooser-dialog.c:140
+msgid "Internet"
 msgstr ""
-"El lloc preferit per posar punts suspensius a la cadena, si l'etiqueta no\n"
-"té prou espai per mostrar tota la cadena"
 
-#: exo/exo-icon-bar.c:259 exo/exo-icon-view.c:646
-msgid "Orientation"
-msgstr "Orientació"
-
-#: exo/exo-icon-bar.c:260
-msgid "The orientation of the iconbar"
-msgstr "Orienctació del plafó d'icones"
-
-#: exo/exo-icon-bar.c:276 exo/exo-icon-view.c:663
-msgid "Pixbuf column"
-msgstr "Columna de memòria de píxel"
-
-#: exo/exo-icon-bar.c:277 exo/exo-icon-view.c:664
-msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Columna del model d'on obtenir la icona de la memòria de píxel"
-
-#: exo/exo-icon-bar.c:292 exo/exo-icon-view.c:743
-msgid "Text column"
-msgstr "Columna de text"
-
-#: exo/exo-icon-bar.c:293 exo/exo-icon-view.c:744
-msgid "Model column used to retrieve the text from"
-msgstr "Columna del model d'on obtenir el text"
-
-#: exo/exo-icon-bar.c:305
-msgid "Icon Bar Model"
-msgstr "Model del plafó d'icona"
-
-#: exo/exo-icon-bar.c:306
-msgid "Model for the icon bar"
-msgstr "Model pel plafó d'icona"
-
-#: exo/exo-icon-bar.c:322
-msgid "Active"
-msgstr "Actiu"
-
-#: exo/exo-icon-bar.c:323
-msgid "Active item index"
-msgstr "Activa element d'índex"
-
-#: exo/exo-icon-bar.c:329 exo/exo-icon-bar.c:330
-msgid "Active item fill color"
-msgstr "Activa element emplenat de color"
-
-#: exo/exo-icon-bar.c:336 exo/exo-icon-bar.c:337
-msgid "Active item border color"
-msgstr "Activa element amb vora de color"
-
-#: exo/exo-icon-bar.c:343 exo/exo-icon-bar.c:344
-msgid "Active item text color"
-msgstr "Activa element amd text de color"
-
-#: exo/exo-icon-bar.c:350 exo/exo-icon-bar.c:351
-msgid "Cursor item fill color"
-msgstr "Cursor emplenat de color"
-
-#: exo/exo-icon-bar.c:357 exo/exo-icon-bar.c:358
-msgid "Cursor item border color"
-msgstr "Cursor amb vora de color"
-
-#: exo/exo-icon-bar.c:364 exo/exo-icon-bar.c:365
-msgid "Cursor item text color"
-msgstr "Cursor amb text de color"
-
-#: exo/exo-icon-view.c:549
-msgid "Column Spacing"
-msgstr "Espaiat entre columnes"
-
-#: exo/exo-icon-view.c:550
-msgid "Space which is inserted between grid column"
-msgstr "L'espai inserit entre les columnes d'una graella"
-
-#: exo/exo-icon-view.c:566
-msgid "Number of columns"
-msgstr "Número de columnes"
-
-#: exo/exo-icon-view.c:567
-msgid "Number of columns to display"
-msgstr "El nombre de columnes a mostrar"
-
-#: exo/exo-icon-view.c:584
-msgid "Width for each item"
-msgstr "Amplada de cada element"
-
-#: exo/exo-icon-view.c:585
-msgid "The width used for each item"
-msgstr "L'amplada utilitzada per cada element"
-
-#: exo/exo-icon-view.c:600
-msgid "Margin"
-msgstr "Marge"
-
-#: exo/exo-icon-view.c:601
-msgid "Space which is inserted at the edges of the icon view"
-msgstr "Espai inserit a les vores de la vista d'icones"
-
-#: exo/exo-icon-view.c:617
-msgid "Markup column"
-msgstr "Columna d'etiquetatge"
-
-#: exo/exo-icon-view.c:618
-msgid "Model column used to retrieve the text if using Pango markup"
+#: ../exo-helper/exo-helper-chooser-dialog.c:153
+msgid "Default Web Browser"
 msgstr ""
-"Columna del model d'on obtenir el text si es fa servir el marcatge Pango"
 
-#: exo/exo-icon-view.c:632
-msgid "Icon View Model"
-msgstr "Model de vista d'icones"
-
-#: exo/exo-icon-view.c:633
-msgid "The model for the icon view"
-msgstr "El model per la vista d'icones"
-
-#: exo/exo-icon-view.c:647
+#: ../exo-helper/exo-helper-chooser-dialog.c:161
 msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr "Posicionament relatiu entre el text i la icona de cada element"
-
-#: exo/exo-icon-view.c:679
-msgid "Reorderable"
-msgstr "Reordenable"
-
-#: exo/exo-icon-view.c:680
-msgid "View is reorderable"
-msgstr "Vista és reordenable"
-
-#: exo/exo-icon-view.c:695
-msgid "Row Spacing"
-msgstr "Espaiat de files"
-
-#: exo/exo-icon-view.c:696
-msgid "Space which is inserted between grid rows"
-msgstr "L'espai inserit entre les files d'una graella"
-
-#: exo/exo-icon-view.c:710
-msgid "Selection mode"
-msgstr "Mode de selecció"
-
-#: exo/exo-icon-view.c:711
-msgid "The selection mode"
-msgstr "El mode de selecció"
-
-#: exo/exo-icon-view.c:727
-msgid "Spacing"
-msgstr "Espaiat"
-
-#: exo/exo-icon-view.c:728
-msgid "Space which is inserted between cells of an item"
-msgstr "Espai inserit entre les cel·les de cada element"
-
-#: exo/exo-icon-view.c:755
-msgid "Selection Box Color"
-msgstr "Color de la caixa de selecció"
-
-#: exo/exo-icon-view.c:756
-msgid "Color of the selection box"
-msgstr "Color de la caixa de selecció"
-
-#: exo/exo-icon-view.c:766
-msgid "Selection Box Alpha"
-msgstr "Alfa de la caixa de selecció"
-
-#: exo/exo-icon-view.c:767
-msgid "Opacity of the selection box"
-msgstr "Opacitat de la caixa de selecció"
-
-#: exo/exo-toolbars-editor-dialog.c:134
-msgid "_Add a new toolbar"
-msgstr "_Afegeix una nova barra d'eines"
-
-#: exo/exo-toolbars-editor.c:238
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
+"The preferred Web Browser will be used to open\n"
+"hyperlinks and display help contents."
 msgstr ""
-"Arrossega un element a les barres d'eines superiors per a afegir-lo. "
-"Arrossegueu-lo des de les barres d'eines a la taula d'elements per a "
-"suprimir-lo."
 
-#: exo/exo-toolbars-editor.c:551
-msgid "Separator"
-msgstr "Separador"
+#: ../exo-helper/exo-helper-chooser-dialog.c:185
+msgid "Default Mail Reader"
+msgstr ""
 
-#: exo/exo-toolbars-view.c:768
-msgid "Toolbar _Style"
-msgstr "E_stil de la barra d'eines"
+#: ../exo-helper/exo-helper-chooser-dialog.c:193
+msgid ""
+"The preferred Mail Reader will be used to compose\n"
+"emails when you click on email addresses."
+msgstr ""
 
-#: exo/exo-toolbars-view.c:775
-msgid "_Desktop Default"
-msgstr "_Escriptori predeterminat"
+#.
+#. Utilities
+#.
+#: ../exo-helper/exo-helper-chooser-dialog.c:213
+msgid "Utilities"
+msgstr ""
 
-#: exo/exo-toolbars-view.c:784
-msgid "_Icons only"
-msgstr "Només _icones"
+#: ../exo-helper/exo-helper-chooser-dialog.c:226
+msgid "Default Terminal Emulator"
+msgstr ""
 
-#: exo/exo-toolbars-view.c:793
-msgid "_Text only"
-msgstr "Només _text"
+#: ../exo-helper/exo-helper-chooser-dialog.c:234
+msgid ""
+"The preferred Terminal Emulator will be used to\n"
+"run commands that require a CLI environment."
+msgstr ""
 
-#: exo/exo-toolbars-view.c:802
-msgid "Text for _All Icons"
-msgstr "Text per t_otes les icones"
+#: ../exo-helper/exo-helper-chooser.c:177
+#: ../exo-helper/exo-helper-chooser.c:184
+msgid "Press left mouse button to change the selected application."
+msgstr ""
 
-#: exo/exo-toolbars-view.c:811
-msgid "Text for I_mportant Icons"
-msgstr "Text per les icones i_mportants"
+#: ../exo-helper/exo-helper-chooser.c:183
+msgid "Application Chooser Button"
+msgstr ""
 
-#: exo/exo-toolbars-view.c:819
-msgid "_Remove Toolbar"
-msgstr "_Suprimir barra d'eines"
+#: ../exo-helper/exo-helper-chooser.c:319
+msgid "No application selected"
+msgstr ""
 
-#: exo/exo-toolbars-view.c:834
-msgid "Customize Toolbar..."
-msgstr "Personalitza barra d'eines..."
+#: ../exo-helper/exo-helper-chooser.c:335
+msgid "Failed to set default Web Browser"
+msgstr ""
 
-#: exo/exo-wrap-table.c:169
-msgid "Column spacing"
-msgstr "Espaiat entre columnes"
+#: ../exo-helper/exo-helper-chooser.c:336
+msgid "Failed to set default Mail Reader"
+msgstr ""
 
-#: exo/exo-wrap-table.c:170
-msgid "The amount of space between two consecutive columns"
-msgstr "L'espai deixat entre dues columnes consecutives"
+#: ../exo-helper/exo-helper-chooser.c:337
+msgid "Failed to set default Terminal Emulator"
+msgstr ""
 
-#: exo/exo-wrap-table.c:184
-msgid "Row spacing"
-msgstr "Espaiat entre files"
+#: ../exo-helper/exo-helper-chooser.c:401
+msgid "Select application"
+msgstr ""
 
-#: exo/exo-wrap-table.c:185
-msgid "The amount of space between two consecutive rows"
-msgstr "L'espai deixat entre dues files consecutives"
+#: ../exo-helper/exo-helper-chooser.c:439
+msgid "Choose a custom Web Browser"
+msgstr ""
 
-#: exo/exo-wrap-table.c:199
-msgid "Homogeneous"
-msgstr "Homogeni"
+#: ../exo-helper/exo-helper-chooser.c:440
+msgid "Choose a custom Mail Reader"
+msgstr ""
 
-#: exo/exo-wrap-table.c:200
-msgid "Whether the children should be all the same size"
-msgstr "Si tots els fills han de tenir el mateix tamany"
+#: ../exo-helper/exo-helper-chooser.c:441
+msgid "Choose a custom Terminal Emulator"
+msgstr ""
 
-#: exo/exo-xsession-client.c:152
-msgid "Window group"
-msgstr "Grup de finestres"
+#: ../exo-helper/exo-helper-chooser.c:446
+msgid ""
+"Specify the application you want to use\n"
+"as default Web Browser for Xfce:"
+msgstr ""
 
-#: exo/exo-xsession-client.c:153
-msgid "Window group leader"
-msgstr "Finestra principal del grup"
+#: ../exo-helper/exo-helper-chooser.c:447
+msgid ""
+"Specify the application you want to use\n"
+"as default Mail Reader for Xfce:"
+msgstr ""
 
-#: exo/exo-xsession-client.c:163
-msgid "Restart command"
-msgstr "Reinicia ordre"
+#: ../exo-helper/exo-helper-chooser.c:448
+msgid ""
+"Specify the application you want to use\n"
+"as default Terminal Emulator for Xfce:"
+msgstr ""
 
-#: exo/exo-xsession-client.c:164
-msgid "Session restart command"
-msgstr "Ordre per reiniciar la sessió"
+#: ../exo-helper/exo-helper-chooser.c:512
+msgid "Browse the file system to choose a custom command."
+msgstr ""
+
+#: ../exo-helper/exo-helper-chooser.c:687
+msgid "_Other..."
+msgstr ""
+
+#: ../exo-helper/exo-helper-chooser.c:688
+msgid "Use a custom application which is not included in the above list."
+msgstr ""
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:142
+msgid "Choose Preferred Application"
+msgstr ""
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:285
+msgid ""
+"Please choose your preferred Web\n"
+"Browser now and click OK to proceed."
+msgstr ""
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:287
+msgid ""
+"Please choose your preferred Mail Reader\n"
+"now and click OK to proceed."
+msgstr ""
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:289
+msgid ""
+"Please choose your preferred Terminal\n"
+"Emulator now and click OK to proceed."
+msgstr ""
+
+#: ../exo-helper/exo-helper.c:383
+msgid "No command specified"
+msgstr ""
+
+#: ../exo-helper/exo-helper.c:675
+msgid "Failed to open helpers.rc for writing"
+msgstr ""
+
+#: ../exo-helper/exo-preferred-applications-settings.c:40
+msgid "Failed to launch exo-preferred-applications"
+msgstr ""
+
+#: ../exo-helper/helpers/Terminal.desktop.in.h:1
+msgid "Xfce Terminal"
+msgstr ""
+
+#: ../exo-helper/helpers/balsa.desktop.in.h:1
+msgid "Balsa"
+msgstr ""
+
+#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.h:1
+msgid "Debian Sensible Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.h:1
+msgid "Debian X Terminal Emulator"
+msgstr ""
+
+#: ../exo-helper/helpers/epiphany.desktop.in.h:1
+msgid "Epiphany Web Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/eterm.desktop.in.h:1
+msgid "Enlightened Terminal Emulator"
+msgstr ""
+
+#: ../exo-helper/helpers/evolution.desktop.in.h:1
+msgid "Novell Evolution"
+msgstr ""
+
+#: ../exo-helper/helpers/firefox.desktop.in.h:1
+msgid "Mozilla Firefox"
+msgstr ""
+
+#: ../exo-helper/helpers/galeon.desktop.in.h:1
+msgid "Galeon Web Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/gnome-terminal.desktop.in.h:1
+msgid "GNOME Terminal"
+msgstr ""
+
+#: ../exo-helper/helpers/kmail.desktop.in.h:1
+msgid "KMail"
+msgstr ""
+
+#: ../exo-helper/helpers/konqueror.desktop.in.h:1
+msgid "Konqueror Web Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/mozilla-browser.desktop.in.h:1
+msgid "Mozilla Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/mozilla-mailer.desktop.in.h:1
+msgid "Mozilla Mail"
+msgstr ""
+
+#: ../exo-helper/helpers/opera-browser.desktop.in.h:1
+msgid "Opera Browser"
+msgstr ""
+
+#: ../exo-helper/helpers/opera-mailer.desktop.in.h:1
+msgid "Opera Mail"
+msgstr ""
+
+#: ../exo-helper/helpers/thunderbird.desktop.in.h:1
+msgid "Mozilla Thunderbird"
+msgstr ""
+
+#: ../exo-helper/helpers/xterm.desktop.in.h:1
+msgid "X Terminal"
+msgstr ""
+
+#: ../exo-open/main.c:43
+msgid "Usage: exo-open [URLs...]"
+msgstr ""
+
+#: ../exo-open/main.c:44
+msgid "       exo-open --launch TYPE [PARAMETERs...]"
+msgstr ""
+
+#: ../exo-open/main.c:46
+#, fuzzy
+msgid "  -h, --help                          Print this help message and exit"
+msgstr "  -h, --help            Mostra aquest missatge i surt\n"
+
+#: ../exo-open/main.c:47
+#, fuzzy
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr "  -v, --version         Mostra la versió i surt\n"
+
+#: ../exo-open/main.c:49
+msgid ""
+"  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
+"                                      TYPE is one of the following values."
+msgstr ""
+
+#: ../exo-open/main.c:53
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr ""
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. * since the exo-helper utility will not accept localized TYPEs.
+#.
+#: ../exo-open/main.c:59
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+
+#: ../exo-open/main.c:63
+msgid ""
+"If you don't specify the --launch option, exo-open will open all specified\n"
+"URLs with their preferred URL handlers. Else, if you specify the --launch\n"
+"option, you can select which preferred application you want to run, and\n"
+"pass additional parameters to the application (i.e. for TerminalEmulator\n"
+"you can pass the command line that should be run in the terminal)."
+msgstr ""
+
+#: ../exo-open/main.c:96
+#, fuzzy
+msgid ""
+"Copyright (c) 2005-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr ""
+"Copyright (c) 2005\n"
+"          os-cillation e.K. Tots els drets reservats.\n"
+"\n"
+"Escrit per Benedikt Meurer <benny@xfce.org>\n"
+"\n"
