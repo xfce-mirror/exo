@@ -35,6 +35,11 @@
 #include <string.h>
 #endif
 
+/* define FNM_CASEFOLD for systems that don't have it */
+#ifndef FNM_CASEFOLD
+#define FNM_CASEFOLD 0
+#endif
+
 #include <exo/exo-execute.h>
 #include <exo/exo-private.h>
 #include <exo/exo-url.h>
