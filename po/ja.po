@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.1.3svn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-03 20:22+0900\n"
-"PO-Revision-Date: 2005-11-28 21:58+0900\n"
+"PO-Revision-Date: 2006-02-04 11:05+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -265,17 +265,17 @@ msgstr "ツールバーのカスタマイズ..."
 #: ../exo/exo-url.c:244
 #, c-format
 msgid "Unable to open `%s'"
-msgstr ""
+msgstr "「%s」を開けません"
 
 #: ../exo/exo-url.c:257
 #, c-format
 msgid "The URL `%s' is not supported"
-msgstr ""
+msgstr "URL「%s」はサポートされていません"
 
 #: ../exo/exo-url.c:324
 #, c-format
 msgid "Failed to open `%s'."
-msgstr ""
+msgstr "「%s」を開くのに失敗しました。"
 
 #: ../exo/exo-wrap-table.c:169
 msgid "Column spacing"
@@ -385,251 +385,274 @@ msgstr ""
 msgid "Please report bugs to <%s>.\n"
 msgstr "バグは <%s> に報告して下さい。\n"
 
+# FIXME:
 #: ../exo-helper/exo-helper-chooser-dialog.c:119
 #: ../exo-helper/exo-helper-chooser-dialog.c:121
 #: ../exo-helper/exo-preferred-applications-settings.c:62
 msgid "Preferred Applications"
-msgstr ""
+msgstr "好きなアプリケーション"
 
 #.
 #. Internet
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:140
 msgid "Internet"
-msgstr ""
+msgstr "インターネット"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:153
 msgid "Default Web Browser"
-msgstr ""
+msgstr "標準のウェブブラウザー"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:161
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr ""
+"ハイパーリンクを開いたり、ヘルプの内容を表示するのに\n"
+"このウェブブラウザーを使用します。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:185
 msgid "Default Mail Reader"
-msgstr ""
+msgstr "標準のメールリーダー"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:193
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
+"メールアドレスをクリックしてメールを作成する時に\n"
+"このメールリーダーを使用します。"
 
 #.
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:213
 msgid "Utilities"
-msgstr ""
+msgstr "ユーティリティ"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:226
 msgid "Default Terminal Emulator"
-msgstr ""
+msgstr "標準のターミナル"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:234
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
+"CLI 環境が必要なコマンドを実行するのに\n"
+"このターミナルを使用します。"
 
 #: ../exo-helper/exo-helper-chooser.c:177
 #: ../exo-helper/exo-helper-chooser.c:184
 msgid "Press left mouse button to change the selected application."
 msgstr ""
+"選択されているアプリケーションを変更するにはマウスの左ボタンをクリックして下"
+"さい。"
 
 #: ../exo-helper/exo-helper-chooser.c:183
 msgid "Application Chooser Button"
-msgstr ""
+msgstr "アプリケーション選択ボタン"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "No application selected"
-msgstr ""
+msgstr "アプリケーションは選択されていません"
 
 #: ../exo-helper/exo-helper-chooser.c:335
 msgid "Failed to set default Web Browser"
-msgstr ""
+msgstr "標準のウェブブラウザーを設定するのに失敗しました"
 
 #: ../exo-helper/exo-helper-chooser.c:336
 msgid "Failed to set default Mail Reader"
-msgstr ""
+msgstr "標準のメールリーダーを設定するのに失敗しました"
 
 #: ../exo-helper/exo-helper-chooser.c:337
 msgid "Failed to set default Terminal Emulator"
-msgstr ""
+msgstr "標準のターミナルを設定するのに失敗しました"
 
 #: ../exo-helper/exo-helper-chooser.c:401
 msgid "Select application"
-msgstr ""
+msgstr "アプリケーションを選択して下さい"
 
 #: ../exo-helper/exo-helper-chooser.c:439
 msgid "Choose a custom Web Browser"
-msgstr ""
+msgstr "ウェブブラウザーを選択して下さい"
 
 #: ../exo-helper/exo-helper-chooser.c:440
 msgid "Choose a custom Mail Reader"
-msgstr ""
+msgstr "メールリーダーを選択して下さい"
 
 #: ../exo-helper/exo-helper-chooser.c:441
 msgid "Choose a custom Terminal Emulator"
-msgstr ""
+msgstr "ターミナルを選択して下さい"
 
 #: ../exo-helper/exo-helper-chooser.c:446
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
+"標準のウェブブラウザーとして使用したい\n"
+"アプリケーションを指定して下さい:"
 
 #: ../exo-helper/exo-helper-chooser.c:447
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
+"標準のメールリーダーとして使用したい\n"
+"アプリケーションを指定して下さい:"
 
 #: ../exo-helper/exo-helper-chooser.c:448
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
+"標準のターミナルとして使用したい\n"
+"アプリケーションを指定して下さい:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "指定コマンドを選ぶためにファイルシステムを参照します。"
 
 #: ../exo-helper/exo-helper-chooser.c:687
 msgid "_Other..."
-msgstr ""
+msgstr "その他(_O)..."
 
 #: ../exo-helper/exo-helper-chooser.c:688
 msgid "Use a custom application which is not included in the above list."
-msgstr ""
+msgstr "上のリストには無いアプリケーションを指定して使用します。"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:142
 msgid "Choose Preferred Application"
-msgstr ""
+msgstr "好きなアプリケーションを選択して下さい"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:285
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
 msgstr ""
+"好きなウェブブラウザーを選択して\n"
+"OK をクリックして下さい。"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:287
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
+"好きなメールリーダーを選択して\n"
+"OK をクリックして下さい。"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:289
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
+"好きなターミナルを選択して\n"
+"OK をクリックして下さい。"
 
 #: ../exo-helper/exo-helper.c:383
 msgid "No command specified"
-msgstr ""
+msgstr "コマンドが指定されていません"
 
 #: ../exo-helper/exo-helper.c:675
 msgid "Failed to open helpers.rc for writing"
-msgstr ""
+msgstr "書き込むために helpers.rc を開くのに失敗しました"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:40
 msgid "Failed to launch exo-preferred-applications"
-msgstr ""
+msgstr "exo-preferred-applications を実行するのに失敗しました"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.h:1
 msgid "Xfce Terminal"
-msgstr ""
+msgstr "Xfce ターミナル"
 
 #: ../exo-helper/helpers/balsa.desktop.in.h:1
 msgid "Balsa"
-msgstr ""
+msgstr "Balsa"
 
+# FIXME:
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.h:1
 msgid "Debian Sensible Browser"
-msgstr ""
+msgstr "Debian Sensible ブラウザー"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr ""
+msgstr "Debian X ターミナルエミュレーター"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.h:1
 msgid "Epiphany Web Browser"
-msgstr ""
+msgstr "Epiphany ウェブブラウザー"
 
+# FIXME: aka `eterm'
 #: ../exo-helper/helpers/eterm.desktop.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr ""
+msgstr "Enlightened ターミナルエミュレーター"
 
 #: ../exo-helper/helpers/evolution.desktop.in.h:1
 msgid "Novell Evolution"
-msgstr ""
+msgstr "Novell Evolution"
 
 #: ../exo-helper/helpers/firefox.desktop.in.h:1
 msgid "Mozilla Firefox"
-msgstr ""
+msgstr "Mozilla Firefox"
 
 #: ../exo-helper/helpers/galeon.desktop.in.h:1
 msgid "Galeon Web Browser"
-msgstr ""
+msgstr "Galeon ウェブブラウザー"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.h:1
 msgid "GNOME Terminal"
-msgstr ""
+msgstr "GNOME 端末"
 
 #: ../exo-helper/helpers/kmail.desktop.in.h:1
 msgid "KMail"
-msgstr ""
+msgstr "KMail"
 
 #: ../exo-helper/helpers/konqueror.desktop.in.h:1
 msgid "Konqueror Web Browser"
-msgstr ""
+msgstr "Konqueror ウェブブラウザー"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.h:1
 msgid "Mozilla Browser"
-msgstr ""
+msgstr "Mozilla ブラウザー"
 
 #: ../exo-helper/helpers/mozilla-mailer.desktop.in.h:1
 msgid "Mozilla Mail"
-msgstr ""
+msgstr "Mozilla メール"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.h:1
 msgid "Opera Browser"
-msgstr ""
+msgstr "Opera ブラウザー"
 
 #: ../exo-helper/helpers/opera-mailer.desktop.in.h:1
 msgid "Opera Mail"
-msgstr ""
+msgstr "Opera メール"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.h:1
 msgid "Mozilla Thunderbird"
-msgstr ""
+msgstr "Mozilla Thunderbird"
 
 #: ../exo-helper/helpers/xterm.desktop.in.h:1
 msgid "X Terminal"
-msgstr ""
+msgstr "X ターミナル"
 
 #: ../exo-open/main.c:43
 msgid "Usage: exo-open [URLs...]"
-msgstr ""
+msgstr "使用法: exo-open [URL(複数可)...]"
 
 #: ../exo-open/main.c:44
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "または: exo-open --launch タイプ [パラメーター(複数可)...]"
 
 #: ../exo-open/main.c:46
-#, fuzzy
 msgid "  -h, --help                          Print this help message and exit"
-msgstr "  -h, --help        このヘルプメッセージを表示して終了します\n"
+msgstr ""
+"  -h, --help                          このメッセージを表示して終了します"
 
 #: ../exo-open/main.c:47
-#, fuzzy
 msgid ""
 "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version     バージョン情報を表示して終了します\n"
+msgstr ""
+"  -v, --version                       バージョン情報を表示して終了します"
 
 #: ../exo-open/main.c:49
 msgid ""
@@ -638,10 +661,14 @@ msgid ""
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
+"  --launch タイプ [パラメーター...]   任意の「パラメーター(複数可)」と\n"
+"                                      一緒に「タイプ」のアプリケーションを\n"
+"                                      実行します。「タイプ」には以下の値の\n"
+"                                      一つを指定します。"
 
 #: ../exo-open/main.c:53
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr ""
+msgstr "以下の「タイプ」が --launch コマンドでサポートされます:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
@@ -652,6 +679,9 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"  WebBrowser       - 好きなウェブブラウザー。\n"
+"  MailReader       - 好きなウェブブラウザー。\n"
+"  TerminalEmulator - 好きなターミナル。"
 
 #: ../exo-open/main.c:63
 msgid ""
@@ -661,9 +691,13 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
+"オプション --launch を指定しない場合、exo-open は指定された全ての URL を\n"
+"あらかじめ決まっている取り扱い方で開きます。一方、オプション --launch を\n"
+"指定すると、実行したい好きなアプリケーションを選ぶ事ができ、そのアプリ\n"
+"ケーションにいくつかのパラメーターを渡せます (TerminalEmulator には、\n"
+"ターミナル内で実行する必要のあるコマンド行を渡せます)。"
 
 #: ../exo-open/main.c:100
-#, fuzzy
 msgid ""
 "Copyright (c) 2005-2006\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -671,7 +705,7 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) 2005\n"
+"Copyright (c) 2005-2006\n"
 "        os-cillation e.K. All rights reserved.\n"
 "\n"
 "Benedikt Meurer <benny@xfce.org> が作成しました。\n"
@@ -680,9 +714,9 @@ msgstr ""
 #: ../exo-open/main.c:121
 #, c-format
 msgid "Failed to launch preferred application for category `%s'."
-msgstr ""
+msgstr "タイプが「%s」のファイルを開くアプリケーションの実行に失敗しました。"
 
 #: ../exo-open/main.c:144
 #, c-format
 msgid "Failed to open URL `%s'."
-msgstr ""
+msgstr "URL「%s」を開くのに失敗しました。"
