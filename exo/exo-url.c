@@ -161,7 +161,7 @@ _exo_url_to_local_path (const gchar *url)
     }
 
   /* verify that a file of the given name exists */
-  if (!g_file_test (path, G_FILE_TEST_IS_REGULAR))
+  if (!g_file_test (path, G_FILE_TEST_EXISTS))
     {
       /* no local path then! */
       g_free (path);
@@ -198,8 +198,11 @@ exo_url_show_on_screen (const gchar *url,
 {
   const gchar *category = NULL;
   gboolean     result;
+  gchar       *display_name;
   gchar       *local_path;
+  gchar       *command;
   gchar       *uri;
+  gint         status;
 
   g_return_val_if_fail (url != NULL, FALSE);
   g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
@@ -224,6 +227,9 @@ exo_url_show_on_screen (const gchar *url,
     }
   else
     {
+      /* determine the display name for the screen */
+      display_name = gdk_screen_make_display_name (screen);
+
       /* check if we can translate the URL to a local path */
       local_path = _exo_url_to_local_path (url);
       if (G_LIKELY (local_path != NULL))
@@ -244,23 +250,65 @@ exo_url_show_on_screen (const gchar *url,
             }
           else
             {
-              /* it's not HTML, so whatever it is, we cannot open it */
-              g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
-                           _("Unable to open `%s'"), local_path);
-              result = FALSE;
+              /* but since we have a local file here, maybe the org.xfce.FileManager can open it? */
+              command = g_strdup_printf ("dbus-send --print-reply --dest=org.xfce.FileManager "
+                                         "/org/xfce/FileManager org.xfce.FileManager.Launch "
+                                         "string:\"%s\" string:\"%s\"", local_path, display_name);
+              result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
+              g_free (command);
+
+              /* check if it's handled now */
+              if (G_UNLIKELY (!result))
+                {
+                  /* but hey, we know that Thunar can open local files, so give it a go */
+                  command = g_strdup_printf ("Thunar --display=\"%s\" \"%s\"", display_name, local_path);
+                  result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
+                  g_free (command);
+                }
+
+              /* check if it's handled now */
+              if (G_UNLIKELY (!result))
+                {
+                  /* gnome-open is also worth a try, since it uses the standard applications database */
+                  command = g_strdup_printf ("env DISPLAY=\"%s\" gnome-open \"%s\"", display_name, local_path);
+                  result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
+                  g_free (command);
+                }
+
+              /* check if it's handled now */
+              if (G_UNLIKELY (!result))
+                {
+                  /* ok, we tried everything, but no luck, tell the user that we failed */
+                  g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
+                               _("Unable to open `%s'"), local_path);
+                }
             }
 
-          /* release the local path */
+          /* release the local path and the display name */
+          g_free (display_name);
           g_free (local_path);
 
           /* and we're done */
           return result;
         }
 
-      /* and prepare the error */
-      g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
-                   _("The URL `%s' is not supported"), url);
-      return FALSE;
+      /* not a local path, and not something that we support, but maybe gnome-open knows what to do */
+      command = g_strdup_printf ("env DISPLAY=\"%s\" gnome-open \"%s\"", display_name, url);
+      result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
+      g_free (command);
+
+      /* check if gnome-open handled the URL */
+      if (G_UNLIKELY (!result))
+        {
+          /* no options left, we have to tell the user that we failed */
+          g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
+                       _("The URL `%s' is not supported"), url);
+        }
+
+      /* release the display name */
+      g_free (display_name);
+
+      return result;
     }
 
   /* oki doki then, let's open it */

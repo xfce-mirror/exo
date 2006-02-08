@@ -1,3 +1,9 @@
+2006-02-08	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-url.c(exo_url_show_on_screen): Add better support to open
+	  local paths using various fallbacks. Also add gnome-open as fallback
+	  for URLs not support by the helpers.
+
 2006-02-03	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-url.c: Define FNM_CASEFOLD for systems that don't support it.
