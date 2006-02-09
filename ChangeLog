@@ -1,3 +1,9 @@
+2006-02-09	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-utils.h: Do not use the exo_atomic_* functions, unless the
+	  compiler will really inline the functions. Else, we can just call
+	  the g_atomic_int_* counterparts here.
+
 2006-02-08	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-url.c(exo_url_show_on_screen): Add better support to open

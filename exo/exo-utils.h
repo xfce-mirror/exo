@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2005 Benedikt Meurer <benny@xfce.org>.
+ * Copyright (c) 2005-2006 Benedikt Meurer <benny@xfce.org>.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -39,7 +39,8 @@ G_INLINE_FUNC void      exo_atomic_inc  (gint *value);
 G_INLINE_FUNC gboolean  exo_atomic_dec  (gint *value);
 
 /* inline function implementations */
-#if defined(G_CAN_INLINE) || defined(__EXO_UTILS_C__)
+#if (defined(G_CAN_INLINE) && defined(__GNUC__) && defined(__i386__) && defined(__OPTIMIZE__)) || defined(__EXO_UTILS_C__)
+
 G_INLINE_FUNC void
 exo_atomic_inc (gint *value)
 {
@@ -67,7 +68,18 @@ exo_atomic_dec (gint *value)
   return g_atomic_int_dec_and_test (value);
 #endif
 }
-#endif /* G_CAN_INLINE || __EXO_UTILS_C__ */
+
+#else /* (G_CAN_INLINE && __GNUC__ && __i386__ && __OPTIMIZE__) || __EXO_UTILS_C__ */
+
+/* We do not use the inline versions of the exo_atomic_* functions, unless we can
+ * benefit from it. If the compiler is not able to inline it (or won't inline it
+ * because of any policy) it'd actually cause more overhead than calling the
+ * g_atomic_int_* counterparts directly.
+ */
+#define exo_atomic_inc(value) G_STMT_START{ g_atomic_int_inc ((value)); }G_STMT_END
+#define exo_atomic_dec(value) (g_atomic_int_dec_and_test ((value)))
+
+#endif /* (G_CAN_INLINE && __GNUC__ && __i386__ && __OPTIMIZE__) || __EXO_UTILS_C__ */
 
 G_END_DECLS;
 
