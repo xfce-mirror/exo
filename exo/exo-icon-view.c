@@ -330,7 +330,6 @@ struct _ExoIconViewChild
 struct _ExoIconViewItem
 {
   GtkTreeIter iter;
-  gint index;
   
   gint row, col;
 
@@ -1416,7 +1415,7 @@ exo_icon_view_expose_event (GtkWidget      *widget,
       if (G_LIKELY (gdk_region_rect_in (event->region, &item->area) != GDK_OVERLAP_RECTANGLE_OUT))
         {
           exo_icon_view_paint_item (icon_view, item, &event->area, event->window, item->area.x, item->area.y, TRUE);
-          if (G_UNLIKELY (dest_index == item->index))
+          if (G_UNLIKELY (dest_index >= 0 && dest_item == NULL && dest_index == g_list_index (icon_view->priv->items, item)))
             dest_item = item;
         }
     }
@@ -1625,7 +1624,7 @@ exo_icon_view_item_activate_cell (ExoIconView         *icon_view,
     {
       exo_icon_view_get_cell_area (icon_view, item, info, &cell_area);
 
-      path = gtk_tree_path_new_from_indices (item->index, -1);
+      path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
       path_string = gtk_tree_path_to_string (path);
       gtk_tree_path_free (path);
 
@@ -1717,7 +1716,7 @@ exo_icon_view_start_editing (ExoIconView         *icon_view,
       exo_icon_view_get_cell_area (icon_view, item, info, &cell_area);
 
       /* determine the tree path */
-      path = gtk_tree_path_new_from_indices (item->index, -1);
+      path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
       path_string = gtk_tree_path_to_string (path);
       gtk_tree_path_free (path);
 
@@ -1801,6 +1800,7 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
   GtkCellRendererMode  mode;
   ExoIconViewItem     *item;
   ExoIconView         *icon_view;
+  GtkTreePath         *path;
   gboolean             dirty = FALSE;
   gint                 cursor_cell;
 
@@ -1918,9 +1918,7 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
 
       if (item && item == icon_view->priv->last_single_clicked)
         {
-          GtkTreePath *path;
-
-          path = gtk_tree_path_new_from_indices (item->index, -1);
+          path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
           exo_icon_view_item_activated (icon_view, path);
           gtk_tree_path_free (path);
         }
@@ -2342,7 +2340,7 @@ exo_icon_view_real_activate_cursor_item (ExoIconView *icon_view)
         }
     }
   
-  path = gtk_tree_path_new_from_indices (icon_view->priv->cursor_item->index, -1);
+  path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, icon_view->priv->cursor_item), -1);
   exo_icon_view_item_activated (icon_view, path);
   gtk_tree_path_free (path);
 
@@ -3079,7 +3077,6 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
                             ExoIconView  *icon_view)
 {
   ExoIconViewItem *item;
-  GList           *lp;
   gint             index;
   
   index = gtk_tree_path_get_indices (path)[0];
@@ -3087,15 +3084,10 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
   /* allocate the new item */
   item = g_chunk_new0 (ExoIconViewItem, icon_view->priv->items_chunk);
   item->iter = *iter;
-  item->index = index;
   item->area.width = -1;
   item->area.height = -1;
   icon_view->priv->items = g_list_insert (icon_view->priv->items, item, index);
   
-  /* fix the indices of the following items */
-  for (lp = g_list_nth (icon_view->priv->items, index + 1); lp != NULL; lp = lp->next)
-    EXO_ICON_VIEW_ITEM (lp->data)->index++;
- 
   /* invalidate the prelited item */
   icon_view->priv->prelit_item = NULL;
 
@@ -3113,7 +3105,6 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
   ExoIconViewItem *item;
   gboolean         changed = FALSE;
   GList           *list;
-  GList           *next;
 
   /* determine the position and the item for the path */
   list = g_list_nth (icon_view->priv->items, gtk_tree_path_get_indices (path)[0]);
@@ -3138,10 +3129,6 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
   /* release the item resources */
   g_free (item->box);
 
-  /* update the indices of the following items */
-  for (next = list->next; next; next = next->next)
-    EXO_ICON_VIEW_ITEM (next->data)->index--;
-  
   /* drop the item from the list */
   icon_view->priv->items = g_list_delete_link (icon_view->priv->items, list);
 
@@ -3168,34 +3155,42 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
                               gint         *new_order,
                               ExoIconView  *icon_view)
 {
-  int i;
-  int length;
-  GList *items = NULL, *list;
-  ExoIconViewItem **item_array;
-  gint *order;
-  
+  GList **list_array;
+  GList  *list;
+  gint   *order;
+  gint     length;
+  gint     i;
+
+  /* cancel any editing attempt */
   exo_icon_view_stop_editing (icon_view, TRUE);
 
+  /* determine the number of items to reorder */
   length = gtk_tree_model_iter_n_children (model, NULL);
+  if (G_UNLIKELY (length == 0))
+    return;
 
-  /* alloca() is safe on gcc/i386 */
-  item_array = g_newa (ExoIconViewItem *, length);
+  list_array = g_newa (GList *, length);
   order = g_newa (gint, length);
 
   for (i = 0; i < length; i++)
-    order [new_order[i]] = i;
+    order[new_order[i]] = i;
 
   for (i = 0, list = icon_view->priv->items; list != NULL; list = list->next, i++)
-    item_array[order[i]] = list->data;
+    list_array[order[i]] = list;
 
-  for (i = length - 1; i >= 0; i--)
+  /* hook up the first item */
+  icon_view->priv->items = list_array[0];
+  list_array[0]->prev = NULL;
+
+  /* hook up the remaining items */
+  for (i = 1; i < length; ++i)
     {
-      item_array[i]->index = i;
-      items = g_list_prepend (items, item_array[i]);
+      list_array[i - 1]->next = list_array[i];
+      list_array[i]->prev = list_array[i - 1];
     }
-  
-  g_list_free (icon_view->priv->items);
-  icon_view->priv->items = items;
+
+  /* hook up the last item */
+  list_array[length - 1]->next = NULL;
 
   exo_icon_view_queue_layout (icon_view);
 }
@@ -3788,7 +3783,7 @@ exo_icon_view_set_cell_data (const ExoIconView *icon_view,
   
   if (G_UNLIKELY (!EXO_ICON_VIEW_FLAG_SET (icon_view, EXO_ICON_VIEW_ITERS_PERSIST)))
     {
-      path = gtk_tree_path_new_from_indices (item->index, -1);
+      path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
       gtk_tree_model_get_iter (icon_view->priv->model, &iter, path);
       gtk_tree_path_free (path);
     }
@@ -4127,7 +4122,7 @@ exo_icon_view_get_path_at_pos (const ExoIconView *icon_view,
 
   item = exo_icon_view_get_item_at_coords (icon_view, x, y, TRUE, NULL);
 
-  return (item != NULL) ? gtk_tree_path_new_from_indices (item->index, -1) : NULL;
+  return (item != NULL) ? gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1) : NULL;
 }
 
 
@@ -4165,7 +4160,7 @@ exo_icon_view_get_item_at_pos (const ExoIconView *icon_view,
   item = exo_icon_view_get_item_at_coords (icon_view, x, y, TRUE, &info);
 
   if (G_LIKELY (path != NULL))
-    *path = (item != NULL) ? gtk_tree_path_new_from_indices (item->index, -1) : NULL;
+    *path = (item != NULL) ? gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1) : NULL;
 
   if (G_LIKELY (cell != NULL))
     *cell = (info != NULL) ? info->cell : NULL;
@@ -4195,9 +4190,10 @@ exo_icon_view_get_visible_range (const ExoIconView *icon_view,
                                  GtkTreePath      **start_path,
                                  GtkTreePath      **end_path)
 {
-  GList *icons;
+  GList *list;
   gint   start_index = -1;
   gint   end_index = -1;
+  gint   i;
 
   g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), FALSE);
 
@@ -4208,9 +4204,9 @@ exo_icon_view_get_visible_range (const ExoIconView *icon_view,
   if (start_path == NULL && end_path == NULL)
     return FALSE;
   
-  for (icons = icon_view->priv->items; icons; icons = icons->next) 
+  for (i = 0, list = icon_view->priv->items; list != NULL; ++i, list = list->next) 
     {
-      ExoIconViewItem *item = icons->data;
+      ExoIconViewItem *item = list->data;
 
       if ((item->area.x + item->area.width >= (int)icon_view->priv->hadjustment->value) &&
           (item->area.y + item->area.height >= (int)icon_view->priv->vadjustment->value) &&
@@ -4218,8 +4214,8 @@ exo_icon_view_get_visible_range (const ExoIconView *icon_view,
           (item->area.y <= (int) (icon_view->priv->vadjustment->value + icon_view->priv->vadjustment->page_size)))
         {
           if (start_index == -1)
-            start_index = item->index;
-          end_index = item->index;
+            start_index = i;
+          end_index = i;
         }
     }
 
@@ -4228,7 +4224,7 @@ exo_icon_view_get_visible_range (const ExoIconView *icon_view,
   if (end_path && end_index != -1)
     *end_path = gtk_tree_path_new_from_indices (end_index, -1);
   
-  return start_index != -1;
+  return (start_index != -1);
 }
 
 
@@ -4247,18 +4243,17 @@ exo_icon_view_selected_foreach (ExoIconView           *icon_view,
                                 ExoIconViewForeachFunc func,
                                 gpointer               data)
 {
-  GList *list;
-  
-  for (list = icon_view->priv->items; list; list = list->next)
+  GtkTreePath *path;
+  GList       *list;
+
+  path = gtk_tree_path_new_first ();
+  for (list = icon_view->priv->items; list != NULL; list = list->next)
     {
-      ExoIconViewItem *item = list->data;
-      GtkTreePath *path = gtk_tree_path_new_from_indices (item->index, -1);
-
-      if (item->selected)
-        (* func) (icon_view, path, data);
-
-      gtk_tree_path_free (path);
+      if (EXO_ICON_VIEW_ITEM (list->data)->selected)
+        (*func) (icon_view, path, data);
+      gtk_tree_path_next (path);
     }
+  gtk_tree_path_free (path);
 }
 
 
@@ -4342,7 +4337,6 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
   GtkTreeIter      iter;
   GList           *items = NULL;
   GList           *lp;
-  gint             index = 0;
 
   g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));
   g_return_if_fail (model == NULL || GTK_IS_TREE_MODEL (model));
@@ -4427,7 +4421,6 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
             {
               item = g_chunk_new0 (ExoIconViewItem, icon_view->priv->items_chunk);
               item->iter = iter;
-              item->index = index++;
               item->area.width = -1;
               item->area.height = -1;
               items = g_list_prepend (items, item);
@@ -4805,20 +4798,19 @@ exo_icon_view_unselect_path (ExoIconView *icon_view,
  *
  * Return value: A #GList containing a #GtkTreePath for each selected row.
  **/
-GList *
+GList*
 exo_icon_view_get_selected_items (const ExoIconView *icon_view)
 {
-  ExoIconViewItem *item;
-  GList           *selected = NULL;
-  GList           *lp;
+  GList *selected = NULL;
+  GList *lp;
+  gint   i;
   
   g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), NULL);
   
-  for (lp = icon_view->priv->items; lp != NULL; lp = lp->next)
+  for (i = 0, lp = icon_view->priv->items; lp != NULL; ++i, lp = lp->next)
     {
-      item = lp->data;
-      if (item->selected)
-        selected = g_list_prepend (selected, gtk_tree_path_new_from_indices (item->index, -1));
+      if (EXO_ICON_VIEW_ITEM (lp->data)->selected)
+        selected = g_list_prepend (selected, gtk_tree_path_new_from_indices (i, -1));
     }
 
   return selected;
@@ -4958,7 +4950,7 @@ exo_icon_view_get_cursor (const ExoIconView *icon_view,
   info = (icon_view->priv->cursor_cell < 0) ? NULL : g_list_nth_data (icon_view->priv->cell_list, icon_view->priv->cursor_cell);
 
   if (G_LIKELY (path != NULL))
-    *path = (item != NULL) ? gtk_tree_path_new_from_indices (item->index, -1) : NULL;
+    *path = (item != NULL) ? gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1) : NULL;
 
   if (G_LIKELY (cell != NULL))
     *cell = (info != NULL) ? info->cell : NULL;
@@ -5941,7 +5933,7 @@ exo_icon_view_drag_begin (GtkWidget      *widget,
   x = icon_view->priv->press_start_x - item->area.x + 1;
   y = icon_view->priv->press_start_y - item->area.y + 1;
   
-  path = gtk_tree_path_new_from_indices (item->index, -1);
+  path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
   icon = exo_icon_view_create_drag_icon (icon_view, path);
   gtk_tree_path_free (path);
 
@@ -6504,7 +6496,7 @@ exo_icon_view_get_dest_item_at_pos (ExoIconView              *icon_view,
     return FALSE;
 
   if (G_LIKELY (path != NULL))
-    *path = gtk_tree_path_new_from_indices (item->index, -1);
+    *path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
 
   if (G_LIKELY (pos != NULL))
     {
@@ -6560,7 +6552,7 @@ exo_icon_view_create_drag_icon (ExoIconView *icon_view,
   for (lp = icon_view->priv->items; lp != NULL; lp = lp->next) 
     {
       ExoIconViewItem *item = lp->data;
-      if (G_UNLIKELY (index == item->index))
+      if (G_UNLIKELY (index == g_list_index (icon_view->priv->items, item)))
         {
           drawable = gdk_pixmap_new (icon_view->priv->bin_window,
                                      item->area.width + 2,

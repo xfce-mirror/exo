@@ -1,3 +1,10 @@
+2006-02-10	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c: We do not need to keep around the index for every
+	  icon view item, as the index is simply the position in the list. In
+	  addition, we can speed up the reordering of items by reordering the
+	  list items of the existing list, rather than creating a new list.
+
 2006-02-09	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-utils.h: Do not use the exo_atomic_* functions, unless the
