@@ -2,15 +2,16 @@
 # Copyright (C) 2004-2006 os-cillation e.K.
 # This file is distributed under the same license as the libexo package.
 # Benedikt Meurer <benny@xfce.org>, 2004-2006.
+# Fabian Nowak <timystery@arcor.de>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.3svn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-11 13:45+0900\n"
-"PO-Revision-Date:  2006-01-31 12:10+0100\n"
-"Last-Translator: Benedikt Meurer <benny@xfce.org>\n"
-"Language-Team: os-cillation <info@os-cillation.com>\n"
+"PO-Revision-Date:  2006-02-16 12:26+0100\n"
+"Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
+"Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,6 +26,8 @@ msgid ""
 "The preferred place to ellipsize the string, if the cell renderer does not "
 "have enough room to display the entire string, if at all"
 msgstr ""
+"Der bvorzugte Ort um einen String abzukürzen, falls der Renderer für die "
+"Zelle nicht genug Platz hat, den ganzen String anzuzeigen, falls überhaupt"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:163
 msgid "Ellipsize set"
@@ -32,13 +35,15 @@ msgstr "Abkürzen gesetzt"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:164
 msgid "Whether this tag affects the ellipsize mode"
-msgstr ""
+msgstr "Ob dieser Tag den Abkürzungsmodus betrifft"
 
 #: ../exo/exo-ellipsized-label.c:123
 msgid ""
 "The preferred place to ellipsize the string, if the label does not have "
 "enough room to display the entire string, if at all"
 msgstr ""
+"Der bvorzugte Ort um einen String abzukürzen, falls das Label nicht genug "
+"Platz hat, den ganzen String anzuzeigen, falls überhaupt"
 
 #: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:643
 msgid "Orientation"
@@ -50,160 +55,164 @@ msgstr "Die Orientierung der Symbolleiste"
 
 #: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:660
 msgid "Pixbuf column"
-msgstr ""
+msgstr "Pixbuf-Spalte"
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:661
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr ""
+msgstr "Spalte für das Model, von der das Icon Pixbuf geholt werden soll"
 
 #: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:740
 msgid "Text column"
-msgstr ""
+msgstr "Textspalte"
 
 #: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:741
 msgid "Model column used to retrieve the text from"
-msgstr ""
+msgstr "Spale für das Model, von der der Text geholt werden soll"
 
 #: ../exo/exo-icon-bar.c:305
 msgid "Icon Bar Model"
-msgstr ""
+msgstr "Modell für Iconleisten"
 
 #: ../exo/exo-icon-bar.c:306
 msgid "Model for the icon bar"
-msgstr ""
+msgstr "Modell für die Iconleiste"
 
 #: ../exo/exo-icon-bar.c:322
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #: ../exo/exo-icon-bar.c:323
 msgid "Active item index"
-msgstr ""
+msgstr "Index für das aktive Element"
 
 #: ../exo/exo-icon-bar.c:329 ../exo/exo-icon-bar.c:330
 msgid "Active item fill color"
-msgstr ""
+msgstr "Füllfarbe für das aktive Element"
 
 #: ../exo/exo-icon-bar.c:336 ../exo/exo-icon-bar.c:337
 msgid "Active item border color"
-msgstr ""
+msgstr "Randfarbe für das aktive Element"
 
 #: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
 msgid "Active item text color"
-msgstr ""
+msgstr "Textfarbe für das aktive Element"
 
 #: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
 msgid "Cursor item fill color"
-msgstr ""
+msgstr "Füllfarbe für das Cursorelement"
 
 #: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
 msgid "Cursor item border color"
-msgstr ""
+msgstr "Randfarbe für das Cursorelement"
 
 #: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
 msgid "Cursor item text color"
-msgstr ""
+msgstr "Textfarbe für das Cursorelement"
 
 #: ../exo/exo-icon-view.c:546
 msgid "Column Spacing"
-msgstr ""
+msgstr "Spaltenabstand"
 
 #: ../exo/exo-icon-view.c:547
 msgid "Space which is inserted between grid column"
-msgstr ""
+msgstr "Platz, der zwischen Gittespalten eingefügt wird"
 
 #: ../exo/exo-icon-view.c:563
 msgid "Number of columns"
-msgstr ""
+msgstr "Anzahl Spalten"
 
 #: ../exo/exo-icon-view.c:564
 msgid "Number of columns to display"
-msgstr ""
+msgstr "Anzahl anzuzeigender Spalten"
 
 #: ../exo/exo-icon-view.c:581
 msgid "Width for each item"
-msgstr ""
+msgstr "Breite für jedes Element"
 
 #: ../exo/exo-icon-view.c:582
 msgid "The width used for each item"
-msgstr ""
+msgstr "Die Breite, die für jedes Element verwendet wird"
 
 #: ../exo/exo-icon-view.c:597
 msgid "Margin"
-msgstr ""
+msgstr "Rand"
 
 #: ../exo/exo-icon-view.c:598
 msgid "Space which is inserted at the edges of the icon view"
-msgstr ""
+msgstr "Platz, der an den Rändern der Symbolansicht eingefügt wird"
 
 #: ../exo/exo-icon-view.c:614
 msgid "Markup column"
-msgstr ""
+msgstr "Auswahlspalte"
 
 #: ../exo/exo-icon-view.c:615
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
+"Modellspalte, anhand derer Text geholt wird, falls die Auszeichungssprache "
+"Pango verwendet wird"
 
 #: ../exo/exo-icon-view.c:629
 msgid "Icon View Model"
-msgstr ""
+msgstr "Modell zur Symbolansicht"
 
 #: ../exo/exo-icon-view.c:630
 msgid "The model for the icon view"
-msgstr ""
+msgstr "Das Modell für die Symbolansicht"
 
 #: ../exo/exo-icon-view.c:644
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr ""
+"Wie der Text und das Symbol jedes Elements relativ zueinandner positioniert "
+"werden"
 
 #: ../exo/exo-icon-view.c:676
 msgid "Reorderable"
-msgstr ""
+msgstr "Umordbar"
 
 #: ../exo/exo-icon-view.c:677
 msgid "View is reorderable"
-msgstr ""
+msgstr "Die Ansicht ist umordbar"
 
 #: ../exo/exo-icon-view.c:692
 msgid "Row Spacing"
-msgstr ""
+msgstr "Zeilenabstand"
 
 #: ../exo/exo-icon-view.c:693
 msgid "Space which is inserted between grid rows"
-msgstr ""
+msgstr "Platz, der zwischen Gitterzeilen eingefügt wird"
 
 #: ../exo/exo-icon-view.c:707
 msgid "Selection mode"
-msgstr ""
+msgstr "Auswahlmodus"
 
 #: ../exo/exo-icon-view.c:708
 msgid "The selection mode"
-msgstr ""
+msgstr "Der Auswahlmodus"
 
 #: ../exo/exo-icon-view.c:724
 msgid "Spacing"
-msgstr ""
+msgstr "Abstand"
 
 #: ../exo/exo-icon-view.c:725
 msgid "Space which is inserted between cells of an item"
-msgstr ""
+msgstr "Platz, der zwischen Zellen eines Elements eingefügt wird"
 
 #: ../exo/exo-icon-view.c:752
 msgid "Selection Box Color"
-msgstr ""
+msgstr "Farbe der Auswahlbox"
 
 #: ../exo/exo-icon-view.c:753
 msgid "Color of the selection box"
-msgstr ""
+msgstr "Farbe für die Auswahlbox"
 
 #: ../exo/exo-icon-view.c:763
 msgid "Selection Box Alpha"
-msgstr ""
+msgstr "Alphawert für die Auswahlbox"
 
 #: ../exo/exo-icon-view.c:764
 msgid "Opacity of the selection box"
-msgstr ""
+msgstr "Deckkraft der Auswahlbox"
 
 #: ../exo/exo-toolbars-editor-dialog.c:134
 msgid "_Add a new toolbar"
@@ -256,57 +265,57 @@ msgstr "Werkzeugleiste anpassen..."
 #: ../exo/exo-url.c:283
 #, c-format
 msgid "Unable to open `%s'"
-msgstr ""
+msgstr "Kann `%s' nicht öffnen"
 
 #: ../exo/exo-url.c:305
 #, c-format
 msgid "The URL `%s' is not supported"
-msgstr ""
+msgstr "Der URL `%s' wird nicht unterstützt"
 
 #: ../exo/exo-url.c:377
 #, c-format
 msgid "Failed to open `%s'."
-msgstr ""
+msgstr "Konnte `%s' nicht öffnen."
 
 #: ../exo/exo-wrap-table.c:169
 msgid "Column spacing"
-msgstr ""
+msgstr "Spaltenabstand"
 
 #: ../exo/exo-wrap-table.c:170
 msgid "The amount of space between two consecutive columns"
-msgstr ""
+msgstr "Die Menge an Platz zwischen zwei aufeinanderfolgenden Spalten"
 
 #: ../exo/exo-wrap-table.c:184
 msgid "Row spacing"
-msgstr ""
+msgstr "Zeilenabstand"
 
 #: ../exo/exo-wrap-table.c:185
 msgid "The amount of space between two consecutive rows"
-msgstr ""
+msgstr "Die Menge an Platz zwischen zwei aufeinanderfolgenden Zeilen"
 
 #: ../exo/exo-wrap-table.c:199
 msgid "Homogeneous"
-msgstr ""
+msgstr "Gleich groß"
 
 #: ../exo/exo-wrap-table.c:200
 msgid "Whether the children should be all the same size"
-msgstr ""
+msgstr "Ob alle Kinder die gleiche Größe haben sollen"
 
 #: ../exo/exo-xsession-client.c:152
 msgid "Window group"
-msgstr ""
+msgstr "Fenstergruppe"
 
 #: ../exo/exo-xsession-client.c:153
 msgid "Window group leader"
-msgstr ""
+msgstr "Führer der Fenstergruppe"
 
 #: ../exo/exo-xsession-client.c:163
 msgid "Restart command"
-msgstr ""
+msgstr "Befehl zum Neustart"
 
 #: ../exo/exo-xsession-client.c:164
 msgid "Session restart command"
-msgstr ""
+msgstr "Befehl zum Neustart der Sitzung"
 
 #: ../exo-csource/main.c:230
 #, c-format
@@ -365,6 +374,11 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
+"%s kommt mit ABSOLUT KEINER GEWÄHR,\n"
+"Sie können Kopien von %s verbreiten unter den Begriffen der\n"
+"GNU Lesser General Public License, die im Quellpaket von\n"
+"%s gefunden werden kann.\n"
+"\n"
 
 #: ../exo-csource/main.c:255 ../exo-open/main.c:107
 #, c-format
@@ -386,49 +400,56 @@ msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:153
 msgid "Default Web Browser"
-msgstr ""
+msgstr "Standardmäßiger Webbrowser"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:161
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr ""
+"Der bevorzugte Webbrowser wird verwendet, um\n"
+"Hyperlinks zu öffnen und Hilfe anzuzeigen."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:185
 msgid "Default Mail Reader"
-msgstr ""
+msgstr "Standardmäßiger Email-Client"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:193
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
+"Der bevorzugte Email-Client wird verwendet, um Emails\n"
+"zu schreiben, wenn Sie auf eine Email-Adresse klicken."
 
 #.
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:213
 msgid "Utilities"
-msgstr ""
+msgstr "Werkzeuge"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:226
 msgid "Default Terminal Emulator"
-msgstr ""
+msgstr "Standardmäßiger Terminal-Emulator"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:234
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
+"Der bevorzugte Terminal-Emulator wird verwendet, um\n"
+"Befehle auszuführen, die eine CLI-Umgebung brauchen."
 
 #: ../exo-helper/exo-helper-chooser.c:177
 #: ../exo-helper/exo-helper-chooser.c:184
 msgid "Press left mouse button to change the selected application."
 msgstr ""
+"Drücken Sie die linke Maustaste, um die ausgewählte Anwendung zu ändern."
 
 #: ../exo-helper/exo-helper-chooser.c:183
 msgid "Application Chooser Button"
-msgstr ""
+msgstr "Knopf zur Auswahl der Anwendung"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "No application selected"
@@ -436,15 +457,15 @@ msgstr "Keine Anwendung ausgewählt"
 
 #: ../exo-helper/exo-helper-chooser.c:335
 msgid "Failed to set default Web Browser"
-msgstr ""
+msgstr "Konnte den standardmäßigen Webbrowser nicht einstellen"
 
 #: ../exo-helper/exo-helper-chooser.c:336
 msgid "Failed to set default Mail Reader"
-msgstr ""
+msgstr "Konnte den standardmäßigen Email-Client nicht einstellen"
 
 #: ../exo-helper/exo-helper-chooser.c:337
 msgid "Failed to set default Terminal Emulator"
-msgstr ""
+msgstr "Konnte den standardmäßigen Terminal-Emulator nicht einstellen"
 
 #: ../exo-helper/exo-helper-chooser.c:401
 msgid "Select application"
@@ -452,37 +473,46 @@ msgstr "Anwendung auswählen"
 
 #: ../exo-helper/exo-helper-chooser.c:439
 msgid "Choose a custom Web Browser"
-msgstr ""
+msgstr "Eigenen Webbrowser angeben"
 
 #: ../exo-helper/exo-helper-chooser.c:440
 msgid "Choose a custom Mail Reader"
-msgstr ""
+msgstr "Eigenen Email-Client angeben"
 
 #: ../exo-helper/exo-helper-chooser.c:441
 msgid "Choose a custom Terminal Emulator"
-msgstr ""
+msgstr "Eigenen Terminal-Emulator angeben"
 
 #: ../exo-helper/exo-helper-chooser.c:446
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
+"Geben Sie die Anwendung an, die Sie als\n"
+"standardmäßigen Webbrowser für Xfce\n"
+"verwenden wollen:"
 
 #: ../exo-helper/exo-helper-chooser.c:447
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
+"Geben Sie die Anwendung an, die Sie als\n"
+"standardmäßigen Email-Client für Xfce\n"
+"verwenden wollen:"
 
 #: ../exo-helper/exo-helper-chooser.c:448
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
+"Geben Sie die Anwendung an, die Sie als\n"
+"standardmäßigen Terminal-Emulator für Xfce\n"
+"verwenden wollen:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Daas Dateisystem durchsuchen, um einen eigenen Befehl zu wählen."
 
 #: ../exo-helper/exo-helper-chooser.c:687
 msgid "_Other..."
@@ -491,6 +521,7 @@ msgstr "_Andere..."
 #: ../exo-helper/exo-helper-chooser.c:688
 msgid "Use a custom application which is not included in the above list."
 msgstr ""
+"Eine eigene Anwendung verwenden, die in der obigen Liste nicht enthalten ist."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:142
 msgid "Choose Preferred Application"
@@ -542,19 +573,19 @@ msgstr "Balsa"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.h:1
 msgid "Debian Sensible Browser"
-msgstr ""
+msgstr "Debian Sensible Browser"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr ""
+msgstr "Debian Terminal-Emulator für X"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.h:1
 msgid "Epiphany Web Browser"
-msgstr "Epiphany Web Browser"
+msgstr "Epiphany Webbrowser"
 
 #: ../exo-helper/helpers/eterm.desktop.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr "Enlightened Terminal Emulator"
+msgstr "Enlightened Terminal-Emulator"
 
 #: ../exo-helper/helpers/evolution.desktop.in.h:1
 msgid "Novell Evolution"
@@ -566,7 +597,7 @@ msgstr "Mozilla Firefox"
 
 #: ../exo-helper/helpers/galeon.desktop.in.h:1
 msgid "Galeon Web Browser"
-msgstr "Galeon Web Browser"
+msgstr "Galeon Webbrowser"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.h:1
 msgid "GNOME Terminal"
@@ -578,11 +609,11 @@ msgstr "KMail"
 
 #: ../exo-helper/helpers/konqueror.desktop.in.h:1
 msgid "Konqueror Web Browser"
-msgstr "Konqueror Web Browser"
+msgstr "Konqueror Webbrowser"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.h:1
 msgid "Mozilla Browser"
-msgstr "Mozilla Browser"
+msgstr "Mozilla Webbrowser"
 
 #: ../exo-helper/helpers/mozilla-mailer.desktop.in.h:1
 msgid "Mozilla Mail"
@@ -590,7 +621,7 @@ msgstr "Mozilla Mail"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.h:1
 msgid "Opera Browser"
-msgstr "Opera Browser"
+msgstr "Opera Webbrowser"
 
 #: ../exo-helper/helpers/opera-mailer.desktop.in.h:1
 msgid "Opera Mail"
@@ -649,9 +680,9 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  WebBrowser       - Der bevorzugte Web Browser.\n"
+"  WebBrowser       - Der bevorzugte Webbrowser.\n"
 "  MailReader       - Das bevorzugte Mail Programm.\n"
-"  TerminalEmulator - Der bevorzugte Terminal Emulator."
+"  TerminalEmulator - Der bevorzugte Terminal-Emulator."
 
 #: ../exo-open/main.c:63
 msgid ""
@@ -661,6 +692,12 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
+"Falls Sie die --launch Option nicht angeben, wird exo-open alle angegebenen "
+"URLs mit ihrem bevorzugten URL-Handler öffnen. Ansonsten können Sie "
+"auswählen, welche bevorzugte Anwendung Sie starten wollen, und können dann "
+"zusätzliche Parameter der Anwendung übergeben (z.B. kann man dem "
+"TerminalEmulator die Kommandozeile übergeben, die im terminal ausgeführt "
+"werden soll)."
 
 #: ../exo-open/main.c:100
 msgid ""
@@ -677,11 +714,11 @@ msgstr ""
 "\n"
 
 #: ../exo-open/main.c:121
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to launch preferred application for category `%s'."
-msgstr "Konnte exo-preferred-applications nicht ausführen"
+msgstr "Konnte bevorzugte Anwendung aus der Kategorie `%s' nicht ausführen."
 
 #: ../exo-open/main.c:144
 #, c-format
 msgid "Failed to open URL `%s'."
-msgstr ""
+msgstr "Konnte URL `%s' nicht öffnen."
