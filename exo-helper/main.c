@@ -111,7 +111,7 @@ main (int argc, char **argv)
       /* try to parse the type */
       if (!exo_helper_category_from_string (argv[2], &category))
         {
-          g_warning (_("Invalid helper type `%s'"), argv[2]);
+          g_warning (_("Invalid helper type \"%s\""), argv[2]);
           return EXIT_FAILURE;
         }
 

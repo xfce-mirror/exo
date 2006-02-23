@@ -66,7 +66,8 @@ enum
   PROP_ROW_SPACING,
   PROP_COLUMN_SPACING,
   PROP_MARGIN,
-  PROP_REORDERABLE
+  PROP_REORDERABLE,
+  PROP_SINGLE_CLICK,
 };
 
 /* Signal identifiers */
@@ -428,6 +429,7 @@ struct _ExoIconViewPrivate
   guint source_set : 1;
   guint dest_set : 1;
   guint reorderable : 1;
+  guint single_click : 1;
   guint empty_view_drop :1;
 
   guint ctrl_pressed : 1;
@@ -489,11 +491,11 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   GtkBindingSet     *gtkbinding_set;
   GObjectClass      *gobject_class;
   
-  gtkbinding_set = gtk_binding_set_by_class (klass);
-
-  g_type_class_add_private (klass, sizeof (ExoIconViewPrivate));
-
+  /* determine the parent type class */
   exo_icon_view_parent_class = g_type_class_peek_parent (klass);
+
+  /* add our private data to the type's instances */
+  g_type_class_add_private (klass, sizeof (ExoIconViewPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->dispose = exo_icon_view_dispose;
@@ -533,7 +535,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   klass->move_cursor = exo_icon_view_real_move_cursor;
   
   /**
-   * ExoIconView::column-spacing:
+   * ExoIconView:column-spacing:
    *
    * The column-spacing property specifies the space which is inserted between
    * the columns of the icon view.
@@ -549,7 +551,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      EXO_PARAM_READWRITE));
 
   /**
-   * ExoIconView::columns:
+   * ExoIconView:columns:
    *
    * The columns property contains the number of the columns in which the
    * items should be displayed. If it is -1, the number of columns will
@@ -567,7 +569,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   
 
   /**
-   * ExoIconView::item-width:
+   * ExoIconView:item-width:
    *
    * The item-width property specifies the width to use for each item. 
    * If it is set to -1, the icon view will automatically determine a 
@@ -584,7 +586,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      EXO_PARAM_READWRITE));  
 
   /**
-   * ExoIconView::margin:
+   * ExoIconView:margin:
    *
    * The margin property specifies the space which is inserted 
    * at the edges of the icon view.
@@ -600,11 +602,11 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      EXO_PARAM_READWRITE));
 
   /**
-   * ExoIconView::markup-column:
+   * ExoIconView:markup-column:
    *
-   * The ::markup-column property contains the number of the model column
+   * The markup-column property contains the number of the model column
    * containing markup information to be displayed. The markup column must be 
-   * of type #G_TYPE_STRING. If this property and the :text-column property 
+   * of type #G_TYPE_STRING. If this property and the text-column property 
    * are both set to column numbers, it overrides the text column.
    * If both are set to -1, no texts are displayed.   
    **/
@@ -617,9 +619,9 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      EXO_PARAM_READWRITE));
 
   /**
-   * ExoIconView::model:
+   * ExoIconView:model:
    *
-   * The ::model property contains the #GtkTreeModel, which should be
+   * The model property contains the #GtkTreeModel, which should be
    * display by this icon view. Setting this property to %NULL turns
    * off the display of anything.
    **/
@@ -632,7 +634,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                         EXO_PARAM_READWRITE));
   
   /**
-   * ExoIconView::orientation:
+   * ExoIconView:orientation:
    *
    * The orientation property specifies how the cells (i.e. the icon and 
    * the text) of the item are positioned relative to each other.
@@ -647,7 +649,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                       EXO_PARAM_READWRITE));
 
   /**
-   * ExoIconView::pixbuf-column:
+   * ExoIconView:pixbuf-column:
    *
    * The ::pixbuf-column property contains the number of the model column
    * containing the pixbufs which are displayed. The pixbuf column must be 
@@ -663,7 +665,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      EXO_PARAM_READWRITE));
 
   /**
-   * ExoIconView::reorderable:
+   * ExoIconView:reorderable:
    *
    * The reorderable property specifies if the items can be reordered
    * by Drag and Drop.
@@ -679,7 +681,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                          EXO_PARAM_READWRITE));
 
   /**
-   * ExoIconView::row-spacing:
+   * ExoIconView:row-spacing:
    *
    * The row-spacing property specifies the space which is inserted between
    * the rows of the icon view.
@@ -695,9 +697,9 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      EXO_PARAM_READWRITE));
 
   /**
-   * ExoIconView::selection-mode:
+   * ExoIconView:selection-mode:
    * 
-   * The ::selection-mode property specifies the selection mode of
+   * The selection-mode property specifies the selection mode of
    * icon view. If the mode is #GTK_SELECTION_MULTIPLE, rubberband selection
    * is enabled, for the other modes, only keyboard selection is possible.
    **/
@@ -711,7 +713,22 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                       EXO_PARAM_READWRITE));
 
   /**
-   * ExoIconView::spacing:
+   * ExoIconView:single-click:
+   *
+   * Determines whether items can be activated by single or double clicks.
+   *
+   * Since: 0.3.1.3
+   **/
+  g_object_class_install_property (gobject_class,
+                                   PROP_SINGLE_CLICK,
+                                   g_param_spec_boolean ("single-click",
+                                                         _("Single Click"),
+                                                         _("Whether the items in the view can be activated with single clicks"),
+                                                         FALSE,
+                                                         EXO_PARAM_READWRITE));
+
+  /**
+   * ExoIconView:spacing:
    *
    * The spacing property specifies the space which is inserted between
    * the cells (i.e. the icon and the text) of an item.
@@ -727,11 +744,11 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      EXO_PARAM_READWRITE));
 
   /**
-   * ExoIconView::text-column:
+   * ExoIconView:text-column:
    *
-   * The ::text-column property contains the number of the model column
+   * The text-column property contains the number of the model column
    * containing the texts which are displayed. The text column must be 
-   * of type #G_TYPE_STRING. If this property and the :markup-column 
+   * of type #G_TYPE_STRING. If this property and the markup-column 
    * property are both set to -1, no texts are displayed.   
    **/
   g_object_class_install_property (gobject_class,
@@ -744,7 +761,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
 
   
   /**
-   * ExoIconView::selection-box-color:
+   * ExoIconView:selection-box-color:
    * Color of the selection box.
    **/
   gtk_widget_class_install_style_property (gtkwidget_class,
@@ -755,7 +772,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                                EXO_PARAM_READABLE));
 
   /**
-   * ExoIconView::selection-box-alpha:
+   * ExoIconView:selection-box-alpha:
    * Opacity of the selection box.
    **/
   gtk_widget_class_install_style_property (gtkwidget_class,
@@ -897,6 +914,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                   G_TYPE_INT);
 
   /* Key bindings */
+  gtkbinding_set = gtk_binding_set_by_class (klass);
   gtk_binding_entry_add_signal (gtkbinding_set, GDK_a, GDK_CONTROL_MASK, "select-all", 0);
   gtk_binding_entry_add_signal (gtkbinding_set, GDK_a, GDK_CONTROL_MASK | GDK_SHIFT_MASK, "unselect-all", 0);
   gtk_binding_entry_add_signal (gtkbinding_set, GDK_space, GDK_CONTROL_MASK, "toggle-cursor-item", 0);
@@ -1080,6 +1098,10 @@ exo_icon_view_get_property (GObject      *object,
       g_value_set_enum (value, icon_view->priv->selection_mode);
       break;
 
+    case PROP_SINGLE_CLICK:
+      g_value_set_boolean (value, icon_view->priv->single_click);
+      break;
+
     case PROP_SPACING:
       g_value_set_int (value, icon_view->priv->spacing);
       break;
@@ -1148,6 +1170,10 @@ exo_icon_view_set_property (GObject      *object,
 
     case PROP_SELECTION_MODE:
       exo_icon_view_set_selection_mode (icon_view, g_value_get_enum (value));
+      break;
+
+    case PROP_SINGLE_CLICK:
+      exo_icon_view_set_single_click (icon_view, g_value_get_boolean (value));
       break;
 
     case PROP_SPACING:
@@ -1516,6 +1542,7 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
 {
   ExoIconViewItem *item;
   ExoIconView     *icon_view = EXO_ICON_VIEW (widget);
+  GdkCursor       *cursor;
   gint             abs_y;
   
   exo_icon_view_maybe_begin_drag (icon_view, event);
@@ -1558,6 +1585,24 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
           icon_view->priv->prelit_item = item;
           if (G_LIKELY (item != NULL))
             exo_icon_view_queue_draw_item (icon_view, item);
+
+          /* check if we are in single click mode right now */
+          if (G_UNLIKELY (icon_view->priv->single_click))
+            {
+              /* display a hand cursor when pointer is above an item */
+              if (G_LIKELY (item != NULL))
+                {
+                  /* hand2 seems to be what we should use */
+                  cursor = gdk_cursor_new (GDK_HAND2);
+                  gdk_window_set_cursor (event->window, cursor);
+                  gdk_cursor_unref (cursor);
+                }
+              else
+                {
+                  /* reset the cursor */
+                  gdk_window_set_cursor (event->window, NULL);
+                }
+            }
         }
     }
   
@@ -1911,16 +1956,20 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
     }
   else if (event->button == 1 && event->type == GDK_2BUTTON_PRESS)
     {
-      item = exo_icon_view_get_item_at_coords (icon_view,
-                                               event->x, event->y,
-                                               TRUE,
-                                               NULL);
-
-      if (item && item == icon_view->priv->last_single_clicked)
+      /* ignore double-click events in single-click mode */
+      if (G_LIKELY (!icon_view->priv->single_click))
         {
-          path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
-          exo_icon_view_item_activated (icon_view, path);
-          gtk_tree_path_free (path);
+          item = exo_icon_view_get_item_at_coords (icon_view,
+                                                   event->x, event->y,
+                                                   TRUE,
+                                                   NULL);
+
+          if (item && item == icon_view->priv->last_single_clicked)
+            {
+              path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
+              exo_icon_view_item_activated (icon_view, path);
+              gtk_tree_path_free (path);
+            }
         }
 
       icon_view->priv->last_single_clicked = NULL;
@@ -1947,10 +1996,32 @@ static gboolean
 exo_icon_view_button_release_event (GtkWidget      *widget,
                                     GdkEventButton *event)
 {
-  ExoIconView *icon_view = EXO_ICON_VIEW (widget);
+  ExoIconViewItem *item;
+  ExoIconView     *icon_view = EXO_ICON_VIEW (widget);
+  GtkTreePath     *path;
   
   if (icon_view->priv->pressed_button == event->button)
-    icon_view->priv->pressed_button = -1;
+    {
+      /* check if we're in single click mode */
+      if (G_UNLIKELY (icon_view->priv->single_click))
+        {
+          /* determine the item at the mouse coords and check if this is the last single clicked one */
+          item = exo_icon_view_get_item_at_coords (icon_view, event->x, event->y, TRUE, NULL);
+          if (G_LIKELY (item != NULL && item == icon_view->priv->last_single_clicked))
+            {
+              /* emit an "item-activated" signal for this item */
+              path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
+              exo_icon_view_item_activated (icon_view, path);
+              gtk_tree_path_free (path);
+            }
+
+          /* reset the last single clicked item */
+          icon_view->priv->last_single_clicked = NULL;
+        }
+
+      /* reset the pressed_button state */
+      icon_view->priv->pressed_button = -1;
+    }
 
   exo_icon_view_stop_rubberbanding (icon_view);
 
@@ -3120,7 +3191,14 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
     icon_view->priv->cursor_item = NULL;
 
   if (G_UNLIKELY (item == icon_view->priv->prelit_item))
-    icon_view->priv->prelit_item = NULL;
+    {
+      /* reset the prelit item */
+      icon_view->priv->prelit_item = NULL;
+
+      /* in single click mode, we also reset the cursor when realized */
+      if (G_UNLIKELY (icon_view->priv->single_click && GTK_WIDGET_REALIZED (icon_view)))
+        gdk_window_set_cursor (icon_view->priv->bin_window, NULL);
+    }
 
   /* check if the selection changed */
   if (G_UNLIKELY (item->selected))
@@ -4302,6 +4380,55 @@ exo_icon_view_set_selection_mode (ExoIconView      *icon_view,
 
 
 /**
+ * exo_icon_view_get_single_click:
+ * @icon_view : a #ExoIconView.
+ *
+ * Returns %TRUE if @icon_view is currently in single click mode,
+ * else %FALSE will be returned.
+ *
+ * Return value: whether @icon_view is currently in single click mode.
+ *
+ * Since: 0.3.1.3
+ **/
+gboolean
+exo_icon_view_get_single_click (const ExoIconView *icon_view)
+{
+  g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), FALSE);
+  return icon_view->priv->single_click;
+}
+
+
+
+/**
+ * exo_icon_view_set_single_click:
+ * @icon_view    : a #ExoIconView.
+ * @single_click : %TRUE for single click, %FALSE for double click mode.
+ *
+ * If @single_click is %TRUE, @icon_view will be in single click mode
+ * afterwards, else @icon_view will be in double click mode.
+ *
+ * Since: 0.3.1.3
+ **/
+void
+exo_icon_view_set_single_click (ExoIconView *icon_view,
+                                gboolean     single_click)
+{
+  g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));
+
+  /* normalize the value */
+  single_click = !!single_click;
+
+  /* check if we have a new setting here */
+  if (icon_view->priv->single_click != single_click)
+    {
+      icon_view->priv->single_click = single_click;
+      g_object_notify (G_OBJECT (icon_view), "single-click");
+    }
+}
+
+
+
+/**
  * exo_icon_view_get_model:
  * @icon_view : a #ExoIconView
  *
@@ -4391,6 +4518,10 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       icon_view->priv->last_single_clicked = NULL;
       icon_view->priv->width = 0;
       icon_view->priv->height = 0;
+
+      /* reset cursor when in single click mode and realized */
+      if (G_UNLIKELY (icon_view->priv->single_click && GTK_WIDGET_REALIZED (icon_view)))
+        gdk_window_set_cursor (icon_view->priv->bin_window, NULL);
     }
 
   /* activate the new model */
@@ -4558,6 +4689,9 @@ update_pixbuf_cell (ExoIconView *icon_view)
  * Returns the column with text for @icon_view.
  *
  * Returns: the text column, or -1 if it's unset.
+ *
+ * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
+ *             now implements #GtkCellLayout.
  */
 gint
 exo_icon_view_get_text_column (const ExoIconView *icon_view)
@@ -4575,6 +4709,9 @@ exo_icon_view_get_text_column (const ExoIconView *icon_view)
  * 
  * Sets the column with text for @icon_view to be @column. The text
  * column must be of type #G_TYPE_STRING.
+ *
+ * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
+ *             now implements #GtkCellLayout.
  **/
 void
 exo_icon_view_set_text_column (ExoIconView *icon_view,
@@ -4618,6 +4755,9 @@ exo_icon_view_set_text_column (ExoIconView *icon_view,
  * Returns the column with markup text for @icon_view.
  *
  * Returns: the markup column, or -1 if it's unset.
+ *
+ * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
+ *             now implements #GtkCellLayout.
  */
 gint
 exo_icon_view_get_markup_column (const ExoIconView *icon_view)
@@ -4637,6 +4777,9 @@ exo_icon_view_get_markup_column (const ExoIconView *icon_view)
  * @column. The markup column must be of type #G_TYPE_STRING.
  * If the markup column is set to something, it overrides
  * the text column set by exo_icon_view_set_text_column().
+ *
+ * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
+ *             now implements #GtkCellLayout.
  **/
 void
 exo_icon_view_set_markup_column (ExoIconView *icon_view,
@@ -4679,6 +4822,9 @@ exo_icon_view_set_markup_column (ExoIconView *icon_view,
  * Returns the column with pixbufs for @icon_view.
  *
  * Returns: the pixbuf column, or -1 if it's unset.
+ *
+ * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
+ *             now implements #GtkCellLayout.
  */
 gint
 exo_icon_view_get_pixbuf_column (const ExoIconView *icon_view)
@@ -4696,6 +4842,9 @@ exo_icon_view_get_pixbuf_column (const ExoIconView *icon_view)
  * 
  * Sets the column with pixbufs for @icon_view to be @column. The pixbuf
  * column must be of type #GDK_TYPE_PIXBUF
+ *
+ * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
+ *             now implements #GtkCellLayout.
  **/
 void
 exo_icon_view_set_pixbuf_column (ExoIconView *icon_view,

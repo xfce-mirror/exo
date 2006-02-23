@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-11 13:45+0900\n"
+"POT-Creation-Date: 2006-02-23 23:34+0100\n"
 "PO-Revision-Date: 2005-10-10 01:45+0900\n"
 "Last-Translator: Dwayne Bailey <dwayne@translate.org.za>\n"
 "Language-Team: British English <en_gb@li.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 "The preferred place to ellipsize the string, if the label does not have "
 "enough room to display the entire string, if at all"
 
-#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:643
+#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:645
 msgid "Orientation"
 msgstr "Orientation"
 
@@ -54,19 +54,19 @@ msgstr "Orientation"
 msgid "The orientation of the iconbar"
 msgstr "The orientation of the iconbar"
 
-#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:660
+#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:662
 msgid "Pixbuf column"
 msgstr "Pixbuf column"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:661
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:663
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Model column used to retrieve the icon pixbuf from"
 
-#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:740
+#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:757
 msgid "Text column"
 msgstr "Text column"
 
-#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:741
+#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:758
 msgid "Model column used to retrieve the text from"
 msgstr "Model column used to retrieve the text from"
 
@@ -110,105 +110,113 @@ msgstr "Cursor item border colour"
 msgid "Cursor item text color"
 msgstr "Cursor item text colour"
 
-#: ../exo/exo-icon-view.c:546
+#: ../exo/exo-icon-view.c:548
 msgid "Column Spacing"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:547
+#: ../exo/exo-icon-view.c:549
 msgid "Space which is inserted between grid column"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:563
+#: ../exo/exo-icon-view.c:565
 msgid "Number of columns"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:564
+#: ../exo/exo-icon-view.c:566
 msgid "Number of columns to display"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:581
+#: ../exo/exo-icon-view.c:583
 msgid "Width for each item"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:582
+#: ../exo/exo-icon-view.c:584
 msgid "The width used for each item"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:597
+#: ../exo/exo-icon-view.c:599
 msgid "Margin"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:598
+#: ../exo/exo-icon-view.c:600
 msgid "Space which is inserted at the edges of the icon view"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:614
+#: ../exo/exo-icon-view.c:616
 msgid "Markup column"
 msgstr "Markup column"
 
-#: ../exo/exo-icon-view.c:615
+#: ../exo/exo-icon-view.c:617
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Model column used to retrieve the text if using Pango markup"
 
-#: ../exo/exo-icon-view.c:629
+#: ../exo/exo-icon-view.c:631
 msgid "Icon View Model"
 msgstr "Icon View Model"
 
-#: ../exo/exo-icon-view.c:630
+#: ../exo/exo-icon-view.c:632
 msgid "The model for the icon view"
 msgstr "The model for the icon view"
 
-#: ../exo/exo-icon-view.c:644
+#: ../exo/exo-icon-view.c:646
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr ""
 "How the text and icon of each item are positioned relative to each other"
 
-#: ../exo/exo-icon-view.c:676
+#: ../exo/exo-icon-view.c:678
 msgid "Reorderable"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:677
+#: ../exo/exo-icon-view.c:679
 msgid "View is reorderable"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:692
+#: ../exo/exo-icon-view.c:694
 msgid "Row Spacing"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:693
+#: ../exo/exo-icon-view.c:695
 msgid "Space which is inserted between grid rows"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:707
+#: ../exo/exo-icon-view.c:709
 msgid "Selection mode"
 msgstr "Selection mode"
 
-#: ../exo/exo-icon-view.c:708
+#: ../exo/exo-icon-view.c:710
 msgid "The selection mode"
 msgstr "The selection mode"
 
-#: ../exo/exo-icon-view.c:724
+#: ../exo/exo-icon-view.c:725
+msgid "Single Click"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:726
+msgid "Whether the items in the view can be activated with single clicks"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:741
 msgid "Spacing"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:725
+#: ../exo/exo-icon-view.c:742
 msgid "Space which is inserted between cells of an item"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:752
+#: ../exo/exo-icon-view.c:769
 msgid "Selection Box Color"
 msgstr "Selection Box Colour"
 
-#: ../exo/exo-icon-view.c:753
+#: ../exo/exo-icon-view.c:770
 msgid "Color of the selection box"
 msgstr "Colour of the selection box"
 
-#: ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-view.c:780
 msgid "Selection Box Alpha"
 msgstr "Selection Box Alpha"
 
-#: ../exo/exo-icon-view.c:764
+#: ../exo/exo-icon-view.c:781
 msgid "Opacity of the selection box"
 msgstr "Opacity of the selection box"
 
@@ -263,17 +271,17 @@ msgstr "Customise Toolbar..."
 
 #: ../exo/exo-url.c:283
 #, c-format
-msgid "Unable to open `%s'"
+msgid "Unable to open \"%s\""
 msgstr ""
 
 #: ../exo/exo-url.c:305
 #, c-format
-msgid "The URL `%s' is not supported"
+msgid "The URL \"%s\" is not supported"
 msgstr ""
 
 #: ../exo/exo-url.c:377
 #, c-format
-msgid "Failed to open `%s'."
+msgid "Failed to open \"%s\"."
 msgstr ""
 
 #: ../exo/exo-wrap-table.c:169
@@ -660,10 +668,10 @@ msgstr ""
 
 #: ../exo-open/main.c:121
 #, c-format
-msgid "Failed to launch preferred application for category `%s'."
+msgid "Failed to launch preferred application for category \"%s\"."
 msgstr ""
 
 #: ../exo-open/main.c:144
 #, c-format
-msgid "Failed to open URL `%s'."
+msgid "Failed to open URL \"%s\"."
 msgstr ""

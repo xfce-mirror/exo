@@ -118,7 +118,7 @@ main (int argc, char **argv)
           dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL,
                                            GTK_MESSAGE_ERROR,
                                            GTK_BUTTONS_CLOSE,
-                                           _("Failed to launch preferred application for category `%s'."),
+                                           _("Failed to launch preferred application for category \"%s\"."),
                                            argv[2]);
           gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
           gtk_dialog_run (GTK_DIALOG (dialog));
@@ -141,7 +141,7 @@ main (int argc, char **argv)
               dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL,
                                                GTK_MESSAGE_ERROR,
                                                GTK_BUTTONS_CLOSE,
-                                               _("Failed to open URL `%s'."),
+                                               _("Failed to open URL \"%s\"."),
                                                *argv);
               gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
               gtk_dialog_run (GTK_DIALOG (dialog));

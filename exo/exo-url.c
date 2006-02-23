@@ -262,7 +262,7 @@ exo_url_show_on_screen (const gchar *url,
                 {
                   /* but hey, we know that Thunar can open local files, so give it a go */
                   command = g_strdup_printf ("Thunar --display=\"%s\" \"%s\"", display_name, local_path);
-                  result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
+                  result = g_spawn_command_line_async (command, NULL);
                   g_free (command);
                 }
 
@@ -280,7 +280,7 @@ exo_url_show_on_screen (const gchar *url,
                 {
                   /* ok, we tried everything, but no luck, tell the user that we failed */
                   g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
-                               _("Unable to open `%s'"), local_path);
+                               _("Unable to open \"%s\""), local_path);
                 }
             }
 
@@ -302,7 +302,7 @@ exo_url_show_on_screen (const gchar *url,
         {
           /* no options left, we have to tell the user that we failed */
           g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
-                       _("The URL `%s' is not supported"), url);
+                       _("The URL \"%s\" is not supported"), url);
         }
 
       /* release the display name */
@@ -374,7 +374,7 @@ exo_url_about_dialog_hook (GtkAboutDialog *about_dialog,
       message = gtk_message_dialog_new (GTK_WINDOW (about_dialog),
                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                         GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
-                                        _("Failed to open `%s'."), link);
+                                        _("Failed to open \"%s\"."), link);
       gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (message), "%s.", error->message);
       gtk_dialog_run (GTK_DIALOG (message));
       gtk_widget_destroy (message);

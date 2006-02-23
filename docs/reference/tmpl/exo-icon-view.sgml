@@ -153,6 +153,11 @@ A widget which displays a list of icons in a grid
 
 </para>
 
+<!-- ##### ARG ExoIconView:single-click ##### -->
+<para>
+
+</para>
+
 <!-- ##### ARG ExoIconView:spacing ##### -->
 <para>
 
@@ -172,6 +177,18 @@ A widget which displays a list of icons in a grid
 <para>
 
 </para>
+
+<!-- ##### ENUM ExoIconViewDropPosition ##### -->
+<para>
+
+</para>
+
+@EXO_ICON_VIEW_NO_DROP: 
+@EXO_ICON_VIEW_DROP_INTO: 
+@EXO_ICON_VIEW_DROP_LEFT: 
+@EXO_ICON_VIEW_DROP_RIGHT: 
+@EXO_ICON_VIEW_DROP_ABOVE: 
+@EXO_ICON_VIEW_DROP_BELOW: 
 
 <!-- ##### FUNCTION exo_icon_view_new ##### -->
 <para>
@@ -280,6 +297,114 @@ A widget which displays a list of icons in a grid
 @orientation: 
 
 
+<!-- ##### FUNCTION exo_icon_view_get_columns ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_columns ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@columns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_item_width ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_item_width ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@item_width: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_spacing ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_spacing ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@spacing: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_row_spacing ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_row_spacing ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@row_spacing: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_column_spacing ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_column_spacing ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@column_spacing: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_margin ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_margin ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@margin: 
+
+
 <!-- ##### FUNCTION exo_icon_view_get_selection_mode ##### -->
 <para>
 
@@ -298,6 +423,48 @@ A widget which displays a list of icons in a grid
 @mode: 
 
 
+<!-- ##### FUNCTION exo_icon_view_get_single_click ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_single_click ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@single_click: 
+
+
+<!-- ##### FUNCTION exo_icon_view_widget_to_icon_coords ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@wx: 
+@wy: 
+@ix: 
+@iy: 
+
+
+<!-- ##### FUNCTION exo_icon_view_icon_to_widget_coords ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@ix: 
+@iy: 
+@wx: 
+@wy: 
+
+
 <!-- ##### FUNCTION exo_icon_view_get_path_at_pos ##### -->
 <para>
 
@@ -306,6 +473,30 @@ A widget which displays a list of icons in a grid
 @icon_view: 
 @x: 
 @y: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_item_at_pos ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@x: 
+@y: 
+@path: 
+@cell: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_visible_range ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@start_path: 
+@end_path: 
 @Returns: 
 
 
@@ -391,5 +582,139 @@ A widget which displays a list of icons in a grid
 
 @icon_view: 
 @path: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_cursor ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+@cell: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_cursor ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+@cell: 
+@start_editing: 
+
+
+<!-- ##### FUNCTION exo_icon_view_scroll_to_path ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+@use_align: 
+@row_align: 
+@col_align: 
+
+
+<!-- ##### FUNCTION exo_icon_view_enable_model_drag_source ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@start_button_mask: 
+@targets: 
+@n_targets: 
+@actions: 
+
+
+<!-- ##### FUNCTION exo_icon_view_enable_model_drag_dest ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@targets: 
+@n_targets: 
+@actions: 
+
+
+<!-- ##### FUNCTION exo_icon_view_unset_model_drag_source ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+
+
+<!-- ##### FUNCTION exo_icon_view_unset_model_drag_dest ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_reorderable ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@reorderable: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_reorderable ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_drag_dest_item ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+@pos: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_drag_dest_item ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+@pos: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_dest_item_at_pos ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@drag_x: 
+@drag_y: 
+@path: 
+@pos: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_create_drag_icon ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@path: 
+@Returns: 
 
 

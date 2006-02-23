@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005  os-cillation e.K.
+ * Copyright (c) 2004-2006  os-cillation e.K.
  * Copyright (c) 2002,2004  Anders Carlsson <andersca@gnu.org>
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
@@ -119,17 +119,17 @@ GtkTreeModel     *exo_icon_view_get_model                 (const ExoIconView    
 void              exo_icon_view_set_model                 (ExoIconView              *icon_view,
                                                            GtkTreeModel             *model);
 
+#ifndef EXO_DISABLE_DEPRECATED
 gint              exo_icon_view_get_text_column           (const ExoIconView        *icon_view);
 void              exo_icon_view_set_text_column           (ExoIconView              *icon_view,
                                                            gint                      column);
-
 gint              exo_icon_view_get_markup_column         (const ExoIconView        *icon_view);
 void              exo_icon_view_set_markup_column         (ExoIconView              *icon_view,
                                                            gint                      column);
-
 gint              exo_icon_view_get_pixbuf_column         (const ExoIconView        *icon_view);
 void              exo_icon_view_set_pixbuf_column         (ExoIconView              *icon_view,
                                                            gint                      column);
+#endif
 
 GtkOrientation    exo_icon_view_get_orientation           (const ExoIconView        *icon_view);
 void              exo_icon_view_set_orientation           (ExoIconView              *icon_view,
@@ -162,6 +162,10 @@ void              exo_icon_view_set_margin                (ExoIconView          
 GtkSelectionMode  exo_icon_view_get_selection_mode        (const ExoIconView        *icon_view);
 void              exo_icon_view_set_selection_mode        (ExoIconView              *icon_view,
                                                            GtkSelectionMode          mode);
+
+gboolean          exo_icon_view_get_single_click          (const ExoIconView        *icon_view);
+void              exo_icon_view_set_single_click          (ExoIconView              *icon_view,
+                                                           gboolean                  single_click);
 
 void              exo_icon_view_widget_to_icon_coords     (const ExoIconView        *icon_view,
                                                            gint                      wx,

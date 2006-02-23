@@ -1,3 +1,20 @@
+2006-02-23	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.{c,h}: Mark the "text-column", "markup-column" and
+	  "pixbuf-column" properties - their accessor methods - as deprecated,
+	  noting that developers should use the more powerful GtkCellRenderer's
+	  instead.
+	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add "single-click" property
+	  to ExoIconView. Bug #1411.
+	* docs/reference/: Update the API documentation.
+	* exo/exo-url.c: Spawn Thunar asynchronously, as it will not exit if
+	  no running instance is found. We can be sure that Thunar will handle
+	  the file if found.
+	* exo/exo-url.c, exo-open/main.c, exo-helper/main.c: Cleanup several
+	  error strings.
+	* po/libexo-0.3.pot, po/*.po: Merge changed/new strings.
+	* po/de.po: Update the german translations.
+
 2006-02-13	Benedikt Meurer <benny@xfce.org>
 
 	* exo-helper/helpers/Terminal.desktop.in: Add "xfce4-terminal" here to
