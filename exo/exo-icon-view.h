@@ -30,7 +30,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS
+G_BEGIN_DECLS;
 
 typedef struct _ExoIconViewPrivate    ExoIconViewPrivate;
 typedef struct _ExoIconViewClass      ExoIconViewClass;
@@ -45,21 +45,60 @@ typedef struct _ExoIconView           ExoIconView;
 
 /**
  * ExoIconViewForeachFunc:
- * @icon_view :
- * @path      :
- * @user_data :
+ * @icon_view : an #ExoIconView.
+ * @path      : the current path.
+ * @user_data : the user data supplied to exo_icon_view_selected_foreach().
+ *
+ * Callback function prototype, invoked for every selected path in the
+ * @icon_view. See exo_icon_view_selected_foreach() for details.
  **/
 typedef void (*ExoIconViewForeachFunc) (ExoIconView *icon_view,
                                         GtkTreePath *path,
                                         gpointer     user_data);
 
 /**
+ * ExoIconViewSearchEqualFunc:
+ * @model       : the #GtkTreeModel being searched.
+ * @column      : the search column set by exo_icon_view_set_search_column().
+ * @key         : the key string to compare with.
+ * @iter        : the #GtkTreeIter of the current item.
+ * @search_data : user data from exo_icon_view_set_search_equal_func().
+ *
+ * A function used for checking whether a row in @model matches a search key string
+ * entered by the user. Note the return value is reversed from what you would normally
+ * expect, though it has some similarity to strcmp() returning 0 for equal strings.
+ *
+ * Return value: %FALSE if the row matches, %TRUE otherwise.
+ **/
+typedef gboolean (*ExoIconViewSearchEqualFunc) (GtkTreeModel *model,
+                                                gint          column,
+                                                const gchar  *key,
+                                                GtkTreeIter  *iter,
+                                                gpointer      search_data);
+
+/**
+ * ExoIconViewSearchPositionFunc:
+ * @icon_view     : an #ExoIconView.
+ * @search_dialog : the search dialog window to place.
+ * @user_data     : user data from exo_icon_view_set_search_position_func().
+ *
+ * A function used to place the @search_dialog for the @icon_view.
+ **/
+typedef void (*ExoIconViewSearchPositionFunc) (ExoIconView *icon_view,
+                                               GtkWidget   *search_dialog,
+                                               gpointer     user_data);
+
+/**
  * ExoIconViewDropPosition:
- * @EXO_ICON_VIEW_NO_DROP    :
- * @EXO_ICON_VIEW_DROP_LEFT  :
- * @EXO_ICON_VIEW_DROP_RIGHT :
- * @EXO_ICON_VIEW_DROP_ABOVE : 
- * @EXO_ICON_VIEW_DROP_BELOW :
+ * @EXO_ICON_VIEW_NO_DROP    : no drop indicator.
+ * @EXO_ICON_VIEW_DROP_INTO  : drop indicator on an item.
+ * @EXO_ICON_VIEW_DROP_LEFT  : drop indicator on the left of an item.
+ * @EXO_ICON_VIEW_DROP_RIGHT : drop indicator on the right of an item.
+ * @EXO_ICON_VIEW_DROP_ABOVE : drop indicator above an item.
+ * @EXO_ICON_VIEW_DROP_BELOW : drop indicator below an item.
+ *
+ * Specifies whether to display the drop indicator,
+ * i.e. where to drop into the icon view.
  **/
 typedef enum
 {
@@ -84,30 +123,37 @@ struct _ExoIconViewClass
   GtkContainerClass __parent__;
 
   /* virtual methods */
-  void     (*set_scroll_adjustments) (ExoIconView     *icon_view,
-                                      GtkAdjustment   *hadjustment,
-                                      GtkAdjustment   *vadjustment);
+  void     (*set_scroll_adjustments)    (ExoIconView     *icon_view,
+                                         GtkAdjustment   *hadjustment,
+                                         GtkAdjustment   *vadjustment);
   
   /* signals */
-  void     (*item_activated)         (ExoIconView     *icon_view,
-                                      GtkTreePath     *path);
-  void     (*selection_changed)      (ExoIconView     *icon_view);
+  void     (*item_activated)            (ExoIconView     *icon_view,
+                                         GtkTreePath     *path);
+  void     (*selection_changed)         (ExoIconView     *icon_view);
 
   /* Key binding signals */
-  void     (*select_all)             (ExoIconView    *icon_view);
-  void     (*unselect_all)           (ExoIconView    *icon_view);
-  void     (*select_cursor_item)     (ExoIconView    *icon_view);
-  void     (*toggle_cursor_item)     (ExoIconView    *icon_view);
-  gboolean (*move_cursor)            (ExoIconView    *icon_view,
-                                      GtkMovementStep step,
-                                      gint            count);
-  gboolean (*activate_cursor_item)   (ExoIconView    *icon_view);
+  void     (*select_all)                (ExoIconView    *icon_view);
+  void     (*unselect_all)              (ExoIconView    *icon_view);
+  void     (*select_cursor_item)        (ExoIconView    *icon_view);
+  void     (*toggle_cursor_item)        (ExoIconView    *icon_view);
+  gboolean (*move_cursor)               (ExoIconView    *icon_view,
+                                         GtkMovementStep step,
+                                         gint            count);
+  gboolean (*activate_cursor_item)      (ExoIconView    *icon_view);
+  gboolean (*start_interactive_search)  (ExoIconView    *icon_view);
 
   /*< private >*/
+  void (*reserved0) (void);
   void (*reserved1) (void);
   void (*reserved2) (void);
   void (*reserved3) (void);
   void (*reserved4) (void);
+  void (*reserved5) (void);
+  void (*reserved6) (void);
+  void (*reserved7) (void);
+  void (*reserved8) (void);
+  void (*reserved9) (void);
 };
 
 GType             exo_icon_view_get_type                  (void) G_GNUC_CONST;
@@ -253,6 +299,24 @@ GdkPixmap        *exo_icon_view_create_drag_icon          (ExoIconView          
                                                            GtkTreePath              *path);
 
 
-G_END_DECLS
+/* Interactive search support */
+gboolean                      exo_icon_view_get_enable_search         (const ExoIconView            *icon_view);
+void                          exo_icon_view_set_enable_search         (ExoIconView                  *icon_view,
+                                                                       gboolean                      enable_search);
+gint                          exo_icon_view_get_search_column         (const ExoIconView            *icon_view);
+void                          exo_icon_view_set_search_column         (ExoIconView                  *icon_view,
+                                                                       gint                          search_column);
+ExoIconViewSearchEqualFunc    exo_icon_view_get_search_equal_func     (const ExoIconView            *icon_view);
+void                          exo_icon_view_set_search_equal_func     (ExoIconView                  *icon_view,
+                                                                       ExoIconViewSearchEqualFunc    search_equal_func,
+                                                                       gpointer                      search_equal_data,
+                                                                       GDestroyNotify                search_equal_destroy);
+ExoIconViewSearchPositionFunc exo_icon_view_get_search_position_func  (const ExoIconView            *icon_view);
+void                          exo_icon_view_set_search_position_func  (ExoIconView                  *icon_view,
+                                                                       ExoIconViewSearchPositionFunc search_position_func,
+                                                                       gpointer                      search_position_data,
+                                                                       GDestroyNotify                search_position_destroy);
+ 
+G_END_DECLS;
 
 #endif /* __EXO_ICON_VIEW_H__ */

@@ -84,6 +84,14 @@ A widget which displays a list of icons in a grid
 @arg1: 
 @arg2: 
 
+<!-- ##### SIGNAL ExoIconView::start-interactive-search ##### -->
+<para>
+
+</para>
+
+@exoiconview: the object which received the signal.
+@Returns: 
+
 <!-- ##### SIGNAL ExoIconView::toggle-cursor-item ##### -->
 <para>
 
@@ -104,6 +112,11 @@ A widget which displays a list of icons in a grid
 </para>
 
 <!-- ##### ARG ExoIconView:columns ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ExoIconView:enable-search ##### -->
 <para>
 
 </para>
@@ -144,6 +157,11 @@ A widget which displays a list of icons in a grid
 </para>
 
 <!-- ##### ARG ExoIconView:row-spacing ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG ExoIconView:search-column ##### -->
 <para>
 
 </para>
@@ -716,5 +734,104 @@ A widget which displays a list of icons in a grid
 @icon_view: 
 @path: 
 @Returns: 
+
+
+<!-- ##### USER_FUNCTION ExoIconViewSearchEqualFunc ##### -->
+<para>
+
+</para>
+
+@model: 
+@column: 
+@key: 
+@iter: 
+@search_data: 
+@Returns: 
+
+
+<!-- ##### USER_FUNCTION ExoIconViewSearchPositionFunc ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@search_dialog: 
+@user_data: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_enable_search ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_enable_search ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@enable_search: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_search_column ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_search_column ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@search_column: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_search_equal_func ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_search_equal_func ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@search_equal_func: 
+@search_equal_data: 
+@search_equal_destroy: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_search_position_func ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_search_position_func ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@search_position_func: 
+@search_position_data: 
+@search_position_destroy: 
 
 

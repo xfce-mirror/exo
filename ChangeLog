@@ -1,5 +1,18 @@
 2006-02-24	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-private.{c,h}: Add helper function required for the
+	  interactive search, _exo_gtk_widget_send_focus_change().
+	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add interactive search
+	  capabilities to ExoIconView. Bug #1358.
+	* docs/reference/: Update the API documentation.
+	* exo-helper/exo-helper-chooser-dialog.c
+	  (exo_helper_chooser_dialog_key_press_event): Close the chooser dialog
+	  on <control>W, so we are consistent with other applications.
+	* po/libexo-0.3.pot, po/*.po: Merge new strings.
+	* po/de.po: Further updates on the german translations.
+
+2006-02-24	Benedikt Meurer <benny@xfce.org>
+
 	* autogen.sh: Be sure to run svn info with LC_ALL=C.
 
 2006-02-23	Benedikt Meurer <benny@xfce.org>

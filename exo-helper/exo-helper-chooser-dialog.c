@@ -258,7 +258,7 @@ static gboolean
 exo_helper_chooser_dialog_key_press_event (GtkWidget   *widget,
                                            GdkEventKey *event)
 {
-  if (G_UNLIKELY (event->keyval == GDK_Escape))
+  if (G_UNLIKELY (event->keyval == GDK_Escape || ((event->state & GDK_CONTROL_MASK) != 0 && (event->keyval == GDK_W || event->keyval == GDK_w))))
     {
       gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_CLOSE);
       return TRUE;

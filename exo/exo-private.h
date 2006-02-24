@@ -27,11 +27,16 @@
 #ifndef __EXO_PRIVATE_H__
 #define __EXO_PRIVATE_H__
 
+#include <gtk/gtk.h>
+
 #include <libxfce4util/libxfce4util.h>
 
 G_BEGIN_DECLS;
 
-void _exo_i18n_init (void) G_GNUC_INTERNAL;
+void _exo_i18n_init                    (void) G_GNUC_INTERNAL;
+
+void _exo_gtk_widget_send_focus_change (GtkWidget *widget,
+                                        gboolean   in) G_GNUC_INTERNAL;
 
 G_END_DECLS;
 

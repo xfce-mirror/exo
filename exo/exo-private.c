@@ -52,3 +52,32 @@ _exo_i18n_init (void)
     }
 }
 
+
+
+void
+_exo_gtk_widget_send_focus_change (GtkWidget *widget,
+                                   gboolean   in)
+{
+  GdkEvent *fevent;
+  
+  g_object_ref (G_OBJECT (widget));
+   
+ if (in)
+    GTK_WIDGET_SET_FLAGS (widget, GTK_HAS_FOCUS);
+  else
+    GTK_WIDGET_UNSET_FLAGS (widget, GTK_HAS_FOCUS);
+
+  fevent = gdk_event_new (GDK_FOCUS_CHANGE);
+  fevent->focus_change.type = GDK_FOCUS_CHANGE;
+  fevent->focus_change.window = g_object_ref (widget->window);
+  fevent->focus_change.in = in;
+  
+  gtk_widget_event (widget, fevent);
+  
+  g_object_notify (G_OBJECT (widget), "has-focus");
+
+  g_object_unref (G_OBJECT (widget));
+  gdk_event_free (fevent);
+}
+
+
