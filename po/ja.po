@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-24 16:56+0100\n"
+"POT-Creation-Date: 2006-02-24 22:17+0100\n"
 "PO-Revision-Date: 2006-02-11 13:55+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -411,8 +411,8 @@ msgid "Please report bugs to <%s>.\n"
 msgstr "バグは <%s> に報告して下さい。\n"
 
 # FIXME: Preferred, how it should be?
-#: ../exo-helper/exo-helper-chooser-dialog.c:119
-#: ../exo-helper/exo-helper-chooser-dialog.c:121
+#: ../exo-helper/exo-helper-chooser-dialog.c:120
+#: ../exo-helper/exo-helper-chooser-dialog.c:129
 #: ../exo-helper/exo-preferred-applications-settings.c:62
 msgid "Preferred Applications"
 msgstr "常用アプリケーション"
@@ -420,16 +420,16 @@ msgstr "常用アプリケーション"
 #.
 #. Internet
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:140
+#: ../exo-helper/exo-helper-chooser-dialog.c:148
 msgid "Internet"
 msgstr "インターネット"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:153
+#: ../exo-helper/exo-helper-chooser-dialog.c:161
 msgid "Default Web Browser"
 msgstr "ウェブブラウザー"
 
 # FIXME: preferred, how it should be?
-#: ../exo-helper/exo-helper-chooser-dialog.c:161
+#: ../exo-helper/exo-helper-chooser-dialog.c:169
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
@@ -437,12 +437,12 @@ msgstr ""
 "ここで指定されたウェブブラウザーは、リンクを\n"
 "開いたり、ヘルプの内容を表示するために使われます。"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:185
+#: ../exo-helper/exo-helper-chooser-dialog.c:193
 msgid "Default Mail Reader"
 msgstr "メールリーダー"
 
 # FIXME: preferred, how it should be?
-#: ../exo-helper/exo-helper-chooser-dialog.c:193
+#: ../exo-helper/exo-helper-chooser-dialog.c:201
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
@@ -453,16 +453,16 @@ msgstr ""
 #.
 #. Utilities
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:213
+#: ../exo-helper/exo-helper-chooser-dialog.c:221
 msgid "Utilities"
 msgstr "ユーティリティ"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:226
+#: ../exo-helper/exo-helper-chooser-dialog.c:234
 msgid "Default Terminal Emulator"
 msgstr "ターミナル"
 
 # FIXME: preferred, how it should be?
-#: ../exo-helper/exo-helper-chooser-dialog.c:234
+#: ../exo-helper/exo-helper-chooser-dialog.c:242
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
@@ -470,6 +470,12 @@ msgstr ""
 "ここで指定されたターミナルは、コマンド行\n"
 "インターフェイスが必要なコマンドを実行する\n"
 "ために使われます。"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:296
+#: ../exo-helper/exo-helper-launcher-dialog.c:260
+#, fuzzy
+msgid "Failed to open the documentation browser."
+msgstr "標準のウェブブラウザーを設定するのに失敗しました"
 
 #: ../exo-helper/exo-helper-chooser.c:177
 #: ../exo-helper/exo-helper-chooser.c:184
@@ -551,12 +557,12 @@ msgid "Use a custom application which is not included in the above list."
 msgstr "上のリストには無いアプリケーションを指定して使用します。"
 
 # FIXME: Preferred, how it should be?
-#: ../exo-helper/exo-helper-launcher-dialog.c:142
+#: ../exo-helper/exo-helper-launcher-dialog.c:143
 msgid "Choose Preferred Application"
 msgstr "常用しているアプリケーションを選択して下さい"
 
 # FIXME: preferred, how it should be?
-#: ../exo-helper/exo-helper-launcher-dialog.c:285
+#: ../exo-helper/exo-helper-launcher-dialog.c:319
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
@@ -565,7 +571,7 @@ msgstr ""
 "選択して「OK」をクリックして下さい。"
 
 # FIXME: preferred, how it should be?
-#: ../exo-helper/exo-helper-launcher-dialog.c:287
+#: ../exo-helper/exo-helper-launcher-dialog.c:321
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
@@ -574,7 +580,7 @@ msgstr ""
 "選択して「OK」をクリックして下さい。"
 
 # FIXME: preferred, how it should be?
-#: ../exo-helper/exo-helper-launcher-dialog.c:289
+#: ../exo-helper/exo-helper-launcher-dialog.c:323
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."

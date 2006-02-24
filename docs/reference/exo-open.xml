@@ -1,0 +1,104 @@
+<!--
+  $Id$
+
+  Copyright (c) 2006 os-cillation
+
+  Written by Benedikt Meurer <benny@xfce.org>
+-->
+
+<refentry id="exo-open">
+  <refmeta>
+    <refentrytitle>exo-open</refentrytitle>
+    <manvolume>1</manvolume>
+  </refmeta>
+
+  <refnamediv>
+    <refname>exo-open</refname>
+    <refpurpose>Open URLs and launch preferred applications</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>exo-open</command>
+      <arg rep="repeat">
+        <arg>url</arg>
+      </arg>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>exo-open</command>
+      <arg choice="plain">--launch</arg>
+      <arg>category</arg>
+      <arg rep="repeat">
+        <arg>parameter</arg>
+      </arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>Description</title>
+    <para>
+      <command>exo-open</command> is a command line frontend to the <emphasis role="bold">Xfce Preferred Applications</emphasis>
+      framework. It can either be used to open a list of <parameter>url</parameter>s with the default URL handler or launch
+      the preferred application for a certain category.
+    </para>
+  </refsect1>
+
+  <refsect1>
+    <title>Invocation</title>
+    <para>
+      <command>exo-open</command> either takes a list of URLs and tries to open each of them using the default handler,
+      or, when using the <option>--launch</option> tries to launch the preferred application for a certain category,
+      optionally passing any number of <parameter>parameter</parameter>s to the application.
+    </para>
+
+    <refsect2>
+      <title>Options</title>
+      <variablelist>
+        <varlistentry>
+          <term><option>-h</option>, <option>--help</option></term>
+          <listitem>
+            <para>Print brief help and exit.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><option>-v</option>, <option>--version</option></term>
+          <listitem>
+            <para>Print version information and exit.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><option>--launch</option> <parameter>category</parameter> <parameter>parameters...</parameter></term>
+          <listitem>
+            <para>
+              Launch the preferred application for the given <parameter>category</parameter> with the optional
+              <parameter>parameters...</parameter>, where <parameter>category</parameter> is either
+              <emphasis role="bold">WebBrowser</emphasis>, <emphasis role="bold">MailReader</emphasis> or
+              <emphasis role="bold">TerminalEmulator</emphasis>.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </refsect2>
+
+    <para>
+      If you do not specify the <option>--launch</option> option, <command>exo-open</command> will open all specified
+      URLs with their preferred URL handlers. Else, if you specify the <option>--launch</option> option, you can
+      select which preferred application you want to run, and pass additional <parameter>parameters</parameter> to
+      the application (i.e. for <emphasis role="bold">TerminalEmulator</emphasis> you can pass the command line that
+      should be run in the terminal).
+    </para>
+  </refsect1>
+
+  <refsect1>
+    <title>Author</title>
+    <para>
+      <command>exo-open</command> was written by Benedikt Meurer <email>benny@xfce.org</email>.
+    </para>
+    <para>
+      This manual page was provided by Benedikt Meurer <email>benny@xfce.org</email>.
+    </para>
+  </refsect1>
+
+</refentry>

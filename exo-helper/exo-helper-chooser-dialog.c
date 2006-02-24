@@ -32,6 +32,7 @@ static void     exo_helper_chooser_dialog_class_init      (ExoHelperChooserDialo
 static void     exo_helper_chooser_dialog_init            (ExoHelperChooserDialog       *chooser_dialog);
 static gboolean exo_helper_chooser_dialog_key_press_event (GtkWidget                    *widget,
                                                            GdkEventKey                  *event);
+static void     exo_helper_chooser_dialog_show_help       (ExoHelperChooserDialog       *dialog);
 
 
 
@@ -104,6 +105,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   AtkObject      *object;
   GtkWidget      *notebook;
   GtkWidget      *chooser;
+  GtkWidget      *button;
   GtkWidget      *header;
   GtkWidget      *frame;
   GtkWidget      *label;
@@ -113,10 +115,16 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   /* verify category settings */
   g_assert (EXO_HELPER_N_CATEGORIES == 3);
 
-  gtk_dialog_add_button (GTK_DIALOG (chooser_dialog), GTK_STOCK_HELP, GTK_RESPONSE_HELP);
   gtk_dialog_add_button (GTK_DIALOG (chooser_dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
   gtk_dialog_set_has_separator (GTK_DIALOG (chooser_dialog), FALSE);
   gtk_window_set_title (GTK_WINDOW (chooser_dialog), _("Preferred Applications"));
+
+  /* add the "Help" button */
+  button = gtk_button_new_from_stock (GTK_STOCK_HELP);
+  g_signal_connect_swapped (G_OBJECT (button), "clicked", G_CALLBACK (exo_helper_chooser_dialog_show_help), chooser_dialog);
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->action_area), button, FALSE, TRUE, 0);
+  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (GTK_DIALOG (chooser_dialog)->action_area), button, TRUE);
+  gtk_widget_show (button);
 
   header = exo_helper_create_header ("preferences-desktop-default-applications", _("Preferred Applications"));
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->vbox), header, FALSE, FALSE, 0);
@@ -265,6 +273,32 @@ exo_helper_chooser_dialog_key_press_event (GtkWidget   *widget,
     }
 
   return (*GTK_WIDGET_CLASS (exo_helper_chooser_dialog_parent_class)->key_press_event) (widget, event);
+}
+
+
+
+static void
+exo_helper_chooser_dialog_show_help (ExoHelperChooserDialog *chooser_dialog)
+{
+  GtkWidget *message;
+  GError    *error = NULL;
+
+  g_return_if_fail (EXO_IS_HELPER_CHOOSER_DIALOG (chooser_dialog));
+
+  /* try to open the documentation using xfhelp4 */
+  if (!gdk_spawn_command_line_on_screen (gtk_widget_get_screen (GTK_WIDGET (chooser_dialog)), "xfhelp4 exo-preferred-applications.html", &error))
+    {
+      message = gtk_message_dialog_new (GTK_WINDOW (chooser_dialog),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT
+                                        | GTK_DIALOG_MODAL,
+                                        GTK_MESSAGE_ERROR,
+                                        GTK_BUTTONS_CLOSE,
+                                        _("Failed to open the documentation browser."));
+      gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (message), "%s.", error->message);
+      gtk_dialog_run (GTK_DIALOG (message));
+      gtk_widget_destroy (message);
+      g_error_free (error);
+    }
 }
 
 

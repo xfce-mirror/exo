@@ -1,5 +1,16 @@
 2006-02-24	Benedikt Meurer <benny@xfce.org>
 
+	* docs/manual/, Makefile.am, configure.in.in, docs/Makefile.am,
+	  exo-helper/exo-helper-chooser-dialog.c,
+	  exo-helper/exo-helper-launcher-dialog.c: Add initial user manual for
+	  the preferred applications framework, and connect the "Help" buttons
+	  to display the manual. Bug #1403.
+	* docs/reference/exo-open.xml, docs/reference/Makefile.am: Add initial
+	  manpage for exo-open.
+	* po/libexo-0.3.pot, po/*.po: Merge new strings.
+
+2006-02-24	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-private.{c,h}: Add helper function required for the
 	  interactive search, _exo_gtk_widget_send_focus_change().
 	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add interactive search

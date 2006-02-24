@@ -49,6 +49,7 @@ static void exo_helper_launcher_dialog_set_property     (GObject                
 static void exo_helper_launcher_dialog_notify_is_valid  (ExoHelperChooser             *chooser,
                                                          GParamSpec                   *pspec,
                                                          ExoHelperLauncherDialog      *launcher_dialog);
+static void exo_helper_launcher_dialog_show_help        (ExoHelperLauncherDialog      *launcher_dialog);
 
 
 
@@ -129,17 +130,24 @@ exo_helper_launcher_dialog_init (ExoHelperLauncherDialog *launcher_dialog)
   AtkRelation    *relation;
   AtkObject      *object;
   GtkWidget      *chooser;
+  GtkWidget      *button;
   GtkWidget      *image;
   GtkWidget      *hbox;
   GtkWidget      *vbox;
 
-  gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), GTK_STOCK_HELP, GTK_RESPONSE_HELP);
   gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
   gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), GTK_STOCK_OK, GTK_RESPONSE_OK);
   gtk_dialog_set_default_response (GTK_DIALOG (launcher_dialog), GTK_RESPONSE_OK);
   gtk_dialog_set_has_separator (GTK_DIALOG (launcher_dialog), FALSE);
   gtk_window_set_resizable (GTK_WINDOW (launcher_dialog), FALSE);
   gtk_window_set_title (GTK_WINDOW (launcher_dialog), _("Choose Preferred Application"));
+
+  /* add the "Help" button */
+  button = gtk_button_new_from_stock (GTK_STOCK_HELP);
+  g_signal_connect_swapped (G_OBJECT (button), "clicked", G_CALLBACK (exo_helper_launcher_dialog_show_help), launcher_dialog);
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (launcher_dialog)->action_area), button, FALSE, TRUE, 0);
+  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (GTK_DIALOG (launcher_dialog)->action_area), button, TRUE);
+  gtk_widget_show (button);
 
   hbox = gtk_hbox_new (FALSE, 12);
   gtk_container_set_border_width (GTK_CONTAINER (hbox), 12);
@@ -229,6 +237,32 @@ exo_helper_launcher_dialog_notify_is_valid (ExoHelperChooser        *chooser,
 
   gtk_dialog_set_response_sensitive (GTK_DIALOG (launcher_dialog), GTK_RESPONSE_OK,
                                      exo_helper_chooser_get_is_valid (chooser));
+}
+
+
+
+static void
+exo_helper_launcher_dialog_show_help (ExoHelperLauncherDialog *launcher_dialog)
+{
+  GtkWidget *message;
+  GError    *error = NULL;
+
+  g_return_if_fail (EXO_IS_HELPER_LAUNCHER_DIALOG (launcher_dialog));
+
+  /* try to open the documentation using xfhelp4 */
+  if (!gdk_spawn_command_line_on_screen (gtk_widget_get_screen (GTK_WIDGET (launcher_dialog)), "xfhelp4 exo-preferred-applications.html", &error))
+    {
+      message = gtk_message_dialog_new (GTK_WINDOW (launcher_dialog),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT
+                                        | GTK_DIALOG_MODAL,
+                                        GTK_MESSAGE_ERROR,
+                                        GTK_BUTTONS_CLOSE,
+                                        _("Failed to open the documentation browser."));
+      gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (message), "%s.", error->message);
+      gtk_dialog_run (GTK_DIALOG (message));
+      gtk_widget_destroy (message);
+      g_error_free (error);
+    }
 }
 
 

@@ -55,11 +55,13 @@ include $(top_srcdir)/gtk-doc.make
 # Other files to distribute
 EXTRA_DIST += 						\
 	exo-csource.1					\
+	exo-open.1					\
 	version.xml.in
 
 # manual pages
 man_MANS =						\
-	exo-csource.1
+	exo-csource.1					\
+	exo-open.1
 
 if MAINTAINER_MODE
 %.1: %.xml
