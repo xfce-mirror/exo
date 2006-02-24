@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-24 22:17+0100\n"
-"PO-Revision-Date: 2006-02-22 22:04+0200\n"
+"POT-Creation-Date: 2006-02-25 01:43+0200\n"
+"PO-Revision-Date: 2006-02-25 01:41+0200\n"
 "Last-Translator: Stavros Giannouris <stavrosg2002@freemail.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
 "MIME-Version: 1.0\n"
@@ -127,7 +127,7 @@ msgstr "Ο αριθμός των στηλών  που προβάλλεται"
 
 #: ../exo/exo-icon-view.c:655
 msgid "Enable Search"
-msgstr ""
+msgstr "Ενεργοποίηση Αναζήτησης"
 
 #: ../exo/exo-icon-view.c:656
 msgid "View allows user to search through columns interactively"
@@ -190,9 +190,8 @@ msgid "Space which is inserted between grid rows"
 msgstr "Το διάστημα που εισάγεται ανάμεσα στα κελιά γραμμών πλέγματος"
 
 #: ../exo/exo-icon-view.c:799
-#, fuzzy
 msgid "Search Column"
-msgstr "Στήλη επισήμανσης"
+msgstr "Αναζήτηση Στήλης"
 
 #: ../exo/exo-icon-view.c:800
 msgid "Model column to search through when searching through item"
@@ -208,11 +207,11 @@ msgstr "Η λειτουργία επιλογής"
 
 #: ../exo/exo-icon-view.c:830
 msgid "Single Click"
-msgstr ""
+msgstr "Μονό Κλικ"
 
 #: ../exo/exo-icon-view.c:831
 msgid "Whether the items in the view can be activated with single clicks"
-msgstr ""
+msgstr "Εάν θα ενεργοποιούνται τα αντικείμενα στην προβολή με μονά κλικ"
 
 #: ../exo/exo-icon-view.c:846
 msgid "Spacing"
@@ -287,19 +286,19 @@ msgid "Customize Toolbar..."
 msgstr "Προσαρμογή Εργαλειθήκης..."
 
 #: ../exo/exo-url.c:283
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to open \"%s\""
-msgstr "Αδυναμία ανοίγματος του \"%s\""
+msgstr "Δεν ήταν δυνατό το άνοιγμα του \"%s\""
 
 #: ../exo/exo-url.c:305
-#, fuzzy, c-format
+#, c-format
 msgid "The URL \"%s\" is not supported"
-msgstr "Το URL \"%s\"1 δεν υποστηρίζεται"
+msgstr "Το URL \"%s\" δεν υποστηρίζεται"
 
 #: ../exo/exo-url.c:377
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Αποτυχία ανοίγματος \"%s\"."
+msgstr "Το άνοιγμα του \"%s\" απέτυχε."
 
 #: ../exo/exo-wrap-table.c:169
 msgid "Column spacing"
@@ -431,6 +430,8 @@ msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr ""
+"Ο προτιμώμενος Περιηγητής Ιστού θα χρησιμοποιηθεί\n"
+"για να ανοίγει δεσμούς και περιεχόμενα βοήθειας."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:193
 msgid "Default Mail Reader"
@@ -441,6 +442,8 @@ msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
+"Ο προτιμώμενος Αναγνώστης Αλληλογραφίας θα χρησιμοποιηθεί\n"
+"για τη σύνθεση αλληλογραφίας όταν επιλέγετε διευθύνσεις αλληλογραφίας."
 
 #.
 #. Utilities
@@ -458,6 +461,8 @@ msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
+"Ο προτιμώμενος Εξομοιωτής Τερματικού θα χρησιμοποιηθεί\n"
+"για να εκτελεστούν εντολές που απαιτούν περιβάλλον γραμμής εντολών."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:296
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
@@ -479,15 +484,15 @@ msgstr "Δεν επιλέχθηκε εφαρμογή"
 
 #: ../exo-helper/exo-helper-chooser.c:335
 msgid "Failed to set default Web Browser"
-msgstr ""
+msgstr "Ο ορισμός του προκαθορισμένου Περιηγητή Ιστού απέτυχε"
 
 #: ../exo-helper/exo-helper-chooser.c:336
 msgid "Failed to set default Mail Reader"
-msgstr ""
+msgstr "Ο ορισμός του προκαθορισμένου Αναγνώστη Αλληλογραφίας απέτυχε"
 
 #: ../exo-helper/exo-helper-chooser.c:337
 msgid "Failed to set default Terminal Emulator"
-msgstr ""
+msgstr "Ο ορισμός του προκαθορισμένου Εξομοιωτή Τερματικού απέτυχε"
 
 #: ../exo-helper/exo-helper-chooser.c:401
 msgid "Select application"
@@ -643,11 +648,11 @@ msgstr "Τερματικό X"
 
 #: ../exo-open/main.c:43
 msgid "Usage: exo-open [URLs...]"
-msgstr ""
+msgstr "Χρήση: exo-open [URLs...]"
 
 #: ../exo-open/main.c:44
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       exo-open --launch ΤΥΠΟΣ [ΠΑΡΑΜΕΤΡΟΙ...]"
 
 #: ../exo-open/main.c:46
 msgid "  -h, --help                          Print this help message and exit"
@@ -711,6 +716,6 @@ msgid "Failed to launch preferred application for category \"%s\"."
 msgstr ""
 
 #: ../exo-open/main.c:144
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open URL \"%s\"."
-msgstr "Αποτυχία ανοίγματος \"%s\"."
+msgstr "Το άνοιγμα του URL \"%s\" απέτυχε."
