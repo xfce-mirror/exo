@@ -2155,7 +2155,7 @@ exo_icon_view_button_release_event (GtkWidget      *widget,
   if (icon_view->priv->pressed_button == event->button)
     {
       /* check if we're in single click mode */
-      if (G_UNLIKELY (icon_view->priv->single_click))
+      if (G_UNLIKELY (icon_view->priv->single_click && (event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) == 0))
         {
           /* determine the item at the mouse coords and check if this is the last single clicked one */
           item = exo_icon_view_get_item_at_coords (icon_view, event->x, event->y, TRUE, NULL);
