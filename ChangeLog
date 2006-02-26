@@ -1,5 +1,11 @@
 2006-02-26	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c, exo/exo-tree-view.c: Revert the hover-autoselect
+	  stuff for now, as the current implementation can cause trouble. Maybe
+	  re-add it later, once a good implementation is available.
+
+2006-02-26	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c: Reset the cursor in single-click mode when the
 	  pointer leaves the icon view window.
 

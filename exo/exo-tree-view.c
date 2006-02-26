@@ -69,8 +69,6 @@ static gboolean exo_tree_view_leave_notify_event    (GtkWidget        *widget,
                                                      GdkEventCrossing *event);
 static void     exo_tree_view_drag_begin            (GtkWidget        *widget,
                                                      GdkDragContext   *context);
-static gboolean exo_tree_view_hover_timeout         (gpointer          user_data);
-static void     exo_tree_view_hover_timeout_destroy (gpointer          user_data);
 
 
 
@@ -82,8 +80,7 @@ struct _ExoTreeViewPrivate
   /* whether the next button-release-event should emit "row-activate" */
   guint        button_release_activates : 1;
 
-  gint         hover_timeout_id;
-  guint        hover_state;
+  /* the path below the pointer or NULL */
   GtkTreePath *hover_path;
 };
 
@@ -173,9 +170,6 @@ exo_tree_view_init (ExoTreeView *tree_view)
 {
   /* grab a pointer on the private data */
   tree_view->priv = EXO_TREE_VIEW_GET_PRIVATE (tree_view);
-
-  /* initialize the private data */
-  tree_view->priv->hover_timeout_id = -1;
 }
 
 
@@ -184,10 +178,6 @@ static void
 exo_tree_view_finalize (GObject *object)
 {
   ExoTreeView *tree_view = EXO_TREE_VIEW (object);
-
-  /* be sure to cancel any pending hover timeout */
-  if (G_UNLIKELY (tree_view->priv->hover_timeout_id >= 0))
-    g_source_remove (tree_view->priv->hover_timeout_id);
 
   /* be sure to release the hover path */
   if (G_UNLIKELY (tree_view->priv->hover_path == NULL))
@@ -368,10 +358,6 @@ exo_tree_view_motion_notify_event (GtkWidget      *widget,
           /* setup the new path */
           tree_view->priv->hover_path = path;
 
-          /* be sure to cancel the hover auto-select timer */
-          if (G_LIKELY (tree_view->priv->hover_timeout_id >= 0))
-            g_source_remove (tree_view->priv->hover_timeout_id);
-
           /* check if we're over a row right now */
           if (G_LIKELY (path != NULL))
             {
@@ -379,16 +365,6 @@ exo_tree_view_motion_notify_event (GtkWidget      *widget,
               cursor = gdk_cursor_new (GDK_HAND2);
               gdk_window_set_cursor (event->window, cursor);
               gdk_cursor_unref (cursor);
-
-              /* schedule the hover timeout source if the tree view has focus */
-              if (G_LIKELY (GTK_WIDGET_HAS_FOCUS (tree_view)))
-                {
-                  /* remember the modifier state and schedule the timer */
-                  tree_view->priv->hover_state = event->state;
-                  tree_view->priv->hover_timeout_id = g_timeout_add_full (G_PRIORITY_LOW, EXO_TREE_VIEW_HOVER_TIMEOUT,
-                                                                          exo_tree_view_hover_timeout, tree_view,
-                                                                          exo_tree_view_hover_timeout_destroy);
-                }
             }
           else
             {
@@ -415,10 +391,6 @@ exo_tree_view_leave_notify_event (GtkWidget        *widget,
                                   GdkEventCrossing *event)
 {
   ExoTreeView *tree_view = EXO_TREE_VIEW (widget);
-
-  /* cancel any pending hover auto-select timer */
-  if (tree_view->priv->hover_timeout_id >= 0)
-    g_source_remove (tree_view->priv->hover_timeout_id);
 
   /* release and reset the hover path (if any) */
   if (tree_view->priv->hover_path != NULL)
@@ -451,100 +423,6 @@ exo_tree_view_drag_begin (GtkWidget      *widget,
 
   /* call the parent's drag begin handler */
   return (*GTK_WIDGET_CLASS (exo_tree_view_parent_class)->drag_begin) (widget, context);
-}
-
-
-
-static gboolean
-exo_tree_view_hover_timeout (gpointer user_data)
-{
-  GtkTreeSelection *selection;
-  ExoTreeView      *tree_view = EXO_TREE_VIEW (user_data);
-  GtkTreePath      *anchor_path;
-  GList            *selected_paths;
-  GList            *lp;
-
-  GDK_THREADS_ENTER ();
-
-  /* check if we're still in single-click mode, have the focus and a hover path */
-  if (GTK_WIDGET_HAS_FOCUS (tree_view) && tree_view->priv->single_click && tree_view->priv->hover_path != NULL)
-    {
-      /* make sure the hover row is fully visible */
-      gtk_tree_view_scroll_to_cell (GTK_TREE_VIEW (tree_view), tree_view->priv->hover_path, NULL, FALSE, 0.0f, 0.0f);
-
-      /* determine the tree selection */
-      selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
-
-      /* alter selection depending on the hover path */
-      if (selection->type == GTK_SELECTION_NONE)
-        {
-          /* just change the cursor item */
-          gtk_tree_view_set_cursor (GTK_TREE_VIEW (tree_view), tree_view->priv->hover_path, NULL, FALSE);
-        }
-      else if (selection->type == GTK_SELECTION_MULTIPLE && (tree_view->priv->hover_state & GDK_SHIFT_MASK) != 0)
-        {
-          /* there's no way to obtain the anchor path from GtkTreeView, so we use the cursor path,
-           * which should be the same as anchor in this situation (hopefully!).
-           */
-          gtk_tree_view_get_cursor (GTK_TREE_VIEW (tree_view), &anchor_path, NULL);
-
-          /* unselect all rows first */
-          gtk_tree_selection_unselect_all (selection);
-
-          /* place the cursor on the new row */
-          gtk_tree_view_set_cursor (GTK_TREE_VIEW (tree_view), tree_view->priv->hover_path, NULL, FALSE);
-
-          /* select the appropriate rows */
-          if (G_LIKELY (anchor_path != NULL))
-            {
-              gtk_tree_selection_select_range (selection, anchor_path, tree_view->priv->hover_path);
-              gtk_tree_path_free (anchor_path);
-            }
-        }
-      else
-        {
-          if (((selection->type == GTK_SELECTION_SINGLE && gtk_tree_selection_path_is_selected (selection, tree_view->priv->hover_path))
-                || (selection->type == GTK_SELECTION_MULTIPLE)) && (tree_view->priv->hover_state & GDK_CONTROL_MASK) != 0)
-            {
-              /* add the row to the selection */
-              gtk_tree_selection_select_path (selection, tree_view->priv->hover_path);
-
-              /* remember the current selection as the set_cursor() call will unselect everything else */
-              selected_paths = gtk_tree_selection_get_selected_rows (selection, NULL);
-
-              /* place the cursor on the hover row (will unselect everything except the row) */
-              gtk_tree_view_set_cursor (GTK_TREE_VIEW (tree_view), tree_view->priv->hover_path, NULL, FALSE);
-
-              /* select the previously selected rows again */
-              for (lp = selected_paths; lp != NULL; lp = lp->next)
-                {
-                  gtk_tree_selection_select_path (selection, lp->data);
-                  gtk_tree_path_free (lp->data);
-                }
-              g_list_free (selected_paths);
-            }
-          else if (!gtk_tree_selection_path_is_selected (selection, tree_view->priv->hover_path))
-            {
-              /* unselect everything else first */
-              gtk_tree_selection_unselect_all (selection);
-
-              /* place the cursor on the hover row (will also select the row) */
-              gtk_tree_view_set_cursor (GTK_TREE_VIEW (tree_view), tree_view->priv->hover_path, NULL, FALSE);
-            }
-        }
-    }
-
-  GDK_THREADS_LEAVE ();
-
-  return FALSE;
-}
-
-
-
-static void
-exo_tree_view_hover_timeout_destroy (gpointer user_data)
-{
-  EXO_TREE_VIEW (user_data)->priv->hover_timeout_id = -1;
 }
 
 
