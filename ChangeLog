@@ -1,3 +1,11 @@
+2006-02-27	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c, exo/exo-tree-view.c: Also drop the prelit
+	  timeout defines.
+	* exo/exo-icon-view.c(exo_icon_view_button_press_event): Do not alter
+	  selection while shift is pressed when clicking on an already selected
+	  file. Bug #1501.
+
 2006-02-26	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c, exo/exo-tree-view.c: Revert the hover-autoselect

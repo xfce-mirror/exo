@@ -30,11 +30,6 @@
 
 
 
-/* the hover auto-select delay (in ms) */
-#define EXO_TREE_VIEW_HOVER_TIMEOUT (500)
-
-
-
 #define EXO_TREE_VIEW_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_TREE_VIEW, ExoTreeViewPrivate))
 
 

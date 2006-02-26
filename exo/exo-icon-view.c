@@ -46,9 +46,6 @@
 
 
 
-/* the prelit select timeout (in ms) */
-#define EXO_ICON_VIEW_SELECT_PRELIT_TIMEOUT (500)
-
 /* the search dialog timeout (in ms) */
 #define EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT (5000)
 
@@ -2040,16 +2037,20 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
           else if (icon_view->priv->selection_mode == GTK_SELECTION_MULTIPLE &&
                    (event->state & GDK_SHIFT_MASK))
             {
-              exo_icon_view_unselect_all_internal (icon_view);
+              /* check if the item is not already selected (otherwise do nothing) */
+              if (G_LIKELY (!item->selected))
+                {
+                  exo_icon_view_unselect_all_internal (icon_view);
 
-              exo_icon_view_set_cursor_item (icon_view, item, cursor_cell);
-              if (!icon_view->priv->anchor_item)
-                icon_view->priv->anchor_item = item;
-              else 
-                exo_icon_view_select_all_between (icon_view,
-                                                  icon_view->priv->anchor_item,
-                                                  item);
-              dirty = TRUE;
+                  exo_icon_view_set_cursor_item (icon_view, item, cursor_cell);
+                  if (!icon_view->priv->anchor_item)
+                    icon_view->priv->anchor_item = item;
+                  else 
+                    exo_icon_view_select_all_between (icon_view,
+                                                      icon_view->priv->anchor_item,
+                                                      item);
+                  dirty = TRUE;
+                }
             }
           else 
             {
