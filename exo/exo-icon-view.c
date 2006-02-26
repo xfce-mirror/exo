@@ -152,6 +152,8 @@ static gboolean             exo_icon_view_key_press_event                (GtkWid
                                                                           GdkEventKey            *event);
 static gboolean             exo_icon_view_focus_out_event                (GtkWidget              *widget,
                                                                           GdkEventFocus          *event);
+static gboolean             exo_icon_view_leave_notify_event             (GtkWidget              *widget,
+                                                                          GdkEventCrossing       *event);
 static void                 exo_icon_view_remove                         (GtkContainer           *container,
                                                                           GtkWidget              *widget);
 static void                 exo_icon_view_forall                         (GtkContainer           *container,
@@ -596,6 +598,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   gtkwidget_class->button_release_event = exo_icon_view_button_release_event;
   gtkwidget_class->key_press_event = exo_icon_view_key_press_event;
   gtkwidget_class->focus_out_event = exo_icon_view_focus_out_event;
+  gtkwidget_class->leave_notify_event = exo_icon_view_leave_notify_event;
   gtkwidget_class->drag_begin = exo_icon_view_drag_begin;
   gtkwidget_class->drag_end = exo_icon_view_drag_end;
   gtkwidget_class->drag_data_get = exo_icon_view_drag_data_get;
@@ -2311,6 +2314,24 @@ exo_icon_view_focus_out_event (GtkWidget     *widget,
   /* schedule a redraw with the new focus state */
   gtk_widget_queue_draw (widget);
 
+  return FALSE;
+}
+
+
+
+static gboolean
+exo_icon_view_leave_notify_event (GtkWidget        *widget,
+                                  GdkEventCrossing *event)
+{
+  /* reset cursor to default */
+  if (GTK_WIDGET_REALIZED (widget))
+    gdk_window_set_cursor (widget->window, NULL);
+
+  /* call the parent's leave_notify_event (if any) */
+  if (GTK_WIDGET_CLASS (exo_icon_view_parent_class)->leave_notify_event != NULL)
+    return (*GTK_WIDGET_CLASS (exo_icon_view_parent_class)->leave_notify_event) (widget, event);
+
+  /* other signal handlers may be invoked */
   return FALSE;
 }
 

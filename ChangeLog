@@ -1,5 +1,10 @@
 2006-02-26	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c: Reset the cursor in single-click mode when the
+	  pointer leaves the icon view window.
+
+2006-02-26	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-tree-view.{c,h}, exo/Makefile.am, exo/exo.h, exo/exo.symbols:
 	  Add ExoTreeView which derives from GtkTreeView and extends it with
 	  single-click support and also works around the GtkTreeView limitation
