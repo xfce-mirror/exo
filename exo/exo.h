@@ -57,6 +57,7 @@
 #include <exo/exo-toolbars-editor-dialog.h>
 #include <exo/exo-toolbars-model.h>
 #include <exo/exo-toolbars-view.h>
+#include <exo/exo-tree-view.h>
 #include <exo/exo-url.h>
 #include <exo/exo-utils.h>
 #include <exo/exo-wrap-table.h>

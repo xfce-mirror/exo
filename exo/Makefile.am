@@ -28,6 +28,7 @@ libexo_headers =							\
 	exo-toolbars-editor-dialog.h					\
 	exo-toolbars-model.h						\
 	exo-toolbars-view.h						\
+	exo-tree-view.h							\
 	exo-url.h							\
 	exo-utils.h							\
 	exo-wrap-table.h						\
@@ -76,6 +77,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-toolbars-private.c						\
 	exo-toolbars-private.h						\
 	exo-toolbars-view.c						\
+	exo-tree-view.c							\
 	exo-url.c							\
 	exo-utils.c							\
 	exo-wrap-table.c						\

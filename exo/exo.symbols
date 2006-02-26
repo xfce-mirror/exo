@@ -326,6 +326,15 @@ exo_toolbars_view_set_ui_manager
 #endif
 #endif
 
+#if IN_HEADER(__EXO_TREE_VIEW_H__)
+#if IN_SOURCE(__EXO_TREE_VIEW_C__)
+exo_tree_view_get_type G_GNUC_CONST
+exo_tree_view_new G_GNUC_MALLOC
+exo_tree_view_get_single_click
+exo_tree_view_set_single_click
+#endif
+#endif
+
 #if IN_HEADER(__EXO_URL_H__)
 #if IN_SOURCE(__EXO_URL_C__)
 exo_url_error_quark G_GNUC_CONST

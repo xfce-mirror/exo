@@ -1,5 +1,15 @@
 2006-02-26	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-tree-view.{c,h}, exo/Makefile.am, exo/exo.h, exo/exo.symbols:
+	  Add ExoTreeView which derives from GtkTreeView and extends it with
+	  single-click support and also works around the GtkTreeView limitation
+	  of dragging multiple files.
+	* docs/references/: Update the API documentation.
+	* po/POTFILES.in: Add exo-tree-view.c here.
+	* po/libexo-0.3.pot, po/*.po: Update translations.
+
+2006-02-26	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c: Automatically select prelited items after a
 	  certain amount of time in single-click mode.
 
