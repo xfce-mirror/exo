@@ -46,6 +46,9 @@
 
 
 
+/* the prelit select timeout (in ms) */
+#define EXO_ICON_VIEW_SELECT_PRELIT_TIMEOUT (500)
+
 /* the search dialog timeout (in ms) */
 #define EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT (5000)
 
@@ -220,6 +223,8 @@ static void                 exo_icon_view_move_cursor_start_end          (ExoIco
                                                                           gint                    count);
 static void                 exo_icon_view_scroll_to_item                 (ExoIconView            *icon_view,
                                                                           ExoIconViewItem        *item);
+static gboolean             exo_icon_view_select_prelit_timeout          (gpointer                user_data);
+static void                 exo_icon_view_select_prelit_timeout_destroy  (gpointer                user_data);
 static void                 exo_icon_view_select_item                    (ExoIconView            *icon_view,
                                                                           ExoIconViewItem        *item);
 static void                 exo_icon_view_unselect_item                  (ExoIconView            *icon_view,
@@ -442,6 +447,10 @@ struct _ExoIconViewPrivate
   ExoIconViewItem *edited_item;
   GtkCellEditable *editable;
   ExoIconViewItem *prelit_item;
+
+  /* automatically select prelited items after a timeout */
+  guint            select_prelit_state; /* the keyboard modifier state */
+  gint             select_prelit_timeout_id;
 
   ExoIconViewItem *last_single_clicked;
 
@@ -1109,6 +1118,8 @@ exo_icon_view_init (ExoIconView *icon_view)
   icon_view->priv->column_spacing = 6;
   icon_view->priv->margin = 6;
 
+  icon_view->priv->select_prelit_timeout_id = -1;
+
   icon_view->priv->layout_idle_id = -1;
 
   icon_view->priv->enable_search = TRUE;
@@ -1126,6 +1137,10 @@ static void
 exo_icon_view_dispose (GObject *object)
 {
   ExoIconView *icon_view = EXO_ICON_VIEW (object);
+
+  /* cancel any pending prelit-select timeout */
+  if (G_UNLIKELY (icon_view->priv->select_prelit_timeout_id >= 0))
+    g_source_remove (icon_view->priv->select_prelit_timeout_id);
 
   /* cancel any pending search timeout */
   if (G_UNLIKELY (icon_view->priv->search_timeout_id >= 0))
@@ -1738,6 +1753,10 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
           if (G_LIKELY (item != NULL))
             exo_icon_view_queue_draw_item (icon_view, item);
 
+          /* cancel any pending prelit select timeout */
+          if (icon_view->priv->select_prelit_timeout_id >= 0)
+            g_source_remove (icon_view->priv->select_prelit_timeout_id);
+
           /* check if we are in single click mode right now */
           if (G_UNLIKELY (icon_view->priv->single_click))
             {
@@ -1748,6 +1767,17 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
                   cursor = gdk_cursor_new (GDK_HAND2);
                   gdk_window_set_cursor (event->window, cursor);
                   gdk_cursor_unref (cursor);
+
+                  /* extend the selection if either control or shift is pressed */
+                  icon_view->priv->select_prelit_state = event->state;
+
+                  /* schedule the timeout source if the icon view has the focus */
+                  if (G_LIKELY (GTK_WIDGET_HAS_FOCUS (icon_view)))
+                    {
+                      icon_view->priv->select_prelit_timeout_id = g_timeout_add_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SELECT_PRELIT_TIMEOUT,
+                                                                                      exo_icon_view_select_prelit_timeout, icon_view,
+                                                                                      exo_icon_view_select_prelit_timeout_destroy);
+                    }
                 }
               else
                 {
@@ -3336,6 +3366,91 @@ exo_icon_view_get_item_at_coords (const ExoIconView    *icon_view,
     }
 
   return NULL;
+}
+
+
+
+static gboolean
+exo_icon_view_select_prelit_timeout (gpointer user_data)
+{
+  ExoIconViewItem *item;
+  ExoIconView     *icon_view = EXO_ICON_VIEW (user_data);
+  gboolean         dirty = FALSE;
+
+  GDK_THREADS_ENTER ();
+
+  /* check if we're still in single-click mode, have the focus and a prelit item */
+  if (GTK_WIDGET_HAS_FOCUS (icon_view) && icon_view->priv->single_click && icon_view->priv->prelit_item != NULL)
+    {
+      item = icon_view->priv->prelit_item;
+
+      /* make sure the item is fully visible */
+      exo_icon_view_scroll_to_item (icon_view, item);
+
+      /* alter selection depending on the prelit item */
+      if (icon_view->priv->selection_mode == GTK_SELECTION_NONE)
+        {
+          /* just change the cursor item */
+          exo_icon_view_set_cursor_item (icon_view, item, -1);
+        }
+      else if (icon_view->priv->selection_mode == GTK_SELECTION_MULTIPLE && (icon_view->priv->select_prelit_state & GDK_SHIFT_MASK) != 0)
+        {
+          /* unselect all items first */
+          exo_icon_view_unselect_all_internal (icon_view);
+
+          /* place the cursor on the new item */
+          exo_icon_view_set_cursor_item (icon_view, item, -1);
+          if (icon_view->priv->anchor_item == NULL)
+            icon_view->priv->anchor_item = item;
+          else 
+            exo_icon_view_select_all_between (icon_view, icon_view->priv->anchor_item, item);
+          dirty = TRUE;
+        }
+      else 
+        {
+          if ((icon_view->priv->selection_mode == GTK_SELECTION_MULTIPLE ||
+              ((icon_view->priv->selection_mode == GTK_SELECTION_SINGLE) && item->selected)) &&
+              (icon_view->priv->select_prelit_state & GDK_CONTROL_MASK) != 0)
+            {
+              /* add the item to the selection */
+              exo_icon_view_queue_draw_item (icon_view, item);
+              item->selected = !item->selected;
+              dirty = TRUE;
+            }
+          else
+            {
+              if (!item->selected)
+                {
+                  /* unselect everything else first */
+                  exo_icon_view_unselect_all_internal (icon_view);
+
+                  /* select the item */
+                  exo_icon_view_queue_draw_item (icon_view, item);
+                  item->selected = TRUE;
+                  dirty = TRUE;
+                }
+            }
+
+          exo_icon_view_set_cursor_item (icon_view, item, -1);
+          icon_view->priv->anchor_item = item;
+        }
+
+      /* check if we should emit "selection-changed" */
+      if (G_LIKELY (dirty))
+        g_signal_emit (G_OBJECT (icon_view), icon_view_signals[SELECTION_CHANGED], 0);
+    }
+
+  GDK_THREADS_LEAVE ();
+
+  return FALSE;
+}
+
+
+
+static void
+exo_icon_view_select_prelit_timeout_destroy (gpointer user_data)
+{
+  EXO_ICON_VIEW (user_data)->priv->select_prelit_timeout_id = -1;
 }
 
 
