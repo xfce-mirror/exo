@@ -233,37 +233,44 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
 {
   GtkTreeSelection *selection;
   ExoTreeView      *tree_view = EXO_TREE_VIEW (widget);
-  GtkTreePath      *path;
+  GtkTreePath      *path = NULL;
   gboolean          result;
   GList            *selected_paths = NULL;
   GList            *lp;
 
+  /* by default we won't emit "row-activated" on button-release-events */
+  tree_view->priv->button_release_activates = FALSE;
+
   /* grab the tree selection */
   selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
 
-  /* determine the path at the event coordinates */
-  if (!gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (tree_view), event->x, event->y, &path, NULL, NULL, NULL))
-    path = NULL;
-
-  /* we unselect all selected items if the user clicks on an empty
-   * area of the tree view and no modifier key is active.
-   */
-  if (path == NULL && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0)
-    gtk_tree_selection_unselect_all (selection);
-
-  /* completely ignore double-clicks in single-click mode */
-  if (tree_view->priv->single_click && event->type == GDK_2BUTTON_PRESS)
+  /* check if the button press was on the internal tree view window */
+  if (G_LIKELY (event->window == gtk_tree_view_get_bin_window (GTK_TREE_VIEW (tree_view))))
     {
-      /* make sure we ignore the GDK_BUTTON_RELEASE
-       * event for this GDK_2BUTTON_PRESS event.
-       */
-      tree_view->priv->button_release_activates = FALSE;
-      return TRUE;
-    }
+      /* determine the path at the event coordinates */
+      if (!gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (tree_view), event->x, event->y, &path, NULL, NULL, NULL))
+        path = NULL;
 
-  /* check if the next button-release-event should activate the selected row (single click support) */
-  tree_view->priv->button_release_activates = (tree_view->priv->single_click && event->type == GDK_BUTTON_PRESS && event->button == 1
-                                               && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0);
+      /* we unselect all selected items if the user clicks on an empty
+       * area of the tree view and no modifier key is active.
+       */
+      if (path == NULL && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0)
+        gtk_tree_selection_unselect_all (selection);
+
+      /* completely ignore double-clicks in single-click mode */
+      if (tree_view->priv->single_click && event->type == GDK_2BUTTON_PRESS)
+        {
+          /* make sure we ignore the GDK_BUTTON_RELEASE
+           * event for this GDK_2BUTTON_PRESS event.
+           */
+          gtk_tree_path_free (path);
+          return TRUE;
+        }
+
+      /* check if the next button-release-event should activate the selected row (single click support) */
+      tree_view->priv->button_release_activates = (tree_view->priv->single_click && event->type == GDK_BUTTON_PRESS && event->button == 1
+                                                   && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0);
+    }
 
   /* unfortunately GtkTreeView will unselect rows except the clicked one,
    * which makes dragging from a GtkTreeView problematic. That's why we

@@ -1,5 +1,11 @@
 2006-02-27	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-tree-view.c(exo_tree_view_button_press_event): In single-click
+	  mode, do not emit "row-activated" if the button-press event was for
+	  one of the associated windows (i.e. the columns header window).
+
+2006-02-27	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c: Handle scrolling to a path before the view
 	  is realized/layouted.
 
