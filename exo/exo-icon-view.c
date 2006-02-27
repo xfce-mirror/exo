@@ -483,14 +483,21 @@ struct _ExoIconViewPrivate
   GtkTreeRowReference *dest_item;
   ExoIconViewDropPosition dest_pos;
 
-  guint source_set : 1;
-  guint dest_set : 1;
-  guint reorderable : 1;
-  guint single_click : 1;
-  guint empty_view_drop :1;
+  /* delayed scrolling */
+  GtkTreeRowReference          *scroll_to_path;
+  gfloat                        scroll_to_row_align;
+  gfloat                        scroll_to_col_align;
+  guint                         scroll_to_use_align : 1;
 
-  guint ctrl_pressed : 1;
-  guint shift_pressed : 1;
+  /* misc flags */
+  guint                         source_set : 1;
+  guint                         dest_set : 1;
+  guint                         reorderable : 1;
+  guint                         single_click : 1;
+  guint                         empty_view_drop :1;
+
+  guint                         ctrl_pressed : 1;
+  guint                         shift_pressed : 1;
 
   /* Interactive search support */
   guint                         enable_search : 1;
@@ -1149,6 +1156,13 @@ exo_icon_view_dispose (GObject *object)
   /* reset the drag dest item */
   exo_icon_view_set_drag_dest_item (icon_view, NULL, EXO_ICON_VIEW_NO_DROP);
 
+  /* drop the scroll to path (if any) */
+  if (G_UNLIKELY (icon_view->priv->scroll_to_path != NULL))
+    {
+      gtk_tree_row_reference_free (icon_view->priv->scroll_to_path);
+      icon_view->priv->scroll_to_path = NULL;
+    }
+
   /* reset the model (also stops any active editing) */
   exo_icon_view_set_model (icon_view, NULL);
 
@@ -1478,6 +1492,7 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   GtkAdjustment *hadjustment;
   GtkAdjustment *vadjustment;
   ExoIconView   *icon_view = EXO_ICON_VIEW (widget);
+  GtkTreePath   *path;
 
   /* apply the new size allocation */
   widget->allocation = *allocation;
@@ -1503,7 +1518,6 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   hadjustment->upper = MAX (allocation->width, icon_view->priv->width);
   if (hadjustment->value > hadjustment->upper - hadjustment->page_size)
     gtk_adjustment_set_value (hadjustment, MAX (0, hadjustment->upper - hadjustment->page_size));
-  gtk_adjustment_changed (hadjustment);
 
   /* update the vertical scroll adjustment accordingly */
   vadjustment = icon_view->priv->vadjustment;
@@ -1514,7 +1528,31 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   vadjustment->upper = MAX (allocation->height, icon_view->priv->height);
   if (vadjustment->value > vadjustment->upper - vadjustment->page_size)
     gtk_adjustment_set_value (vadjustment, MAX (0, vadjustment->upper - vadjustment->page_size));
-  gtk_adjustment_changed (vadjustment);
+
+  /* scroll to the previously remember path (will emit "changed" for the adjustments) */
+  if (GTK_WIDGET_REALIZED (widget) && icon_view->priv->scroll_to_path != NULL
+      && gtk_tree_row_reference_valid (icon_view->priv->scroll_to_path))
+    {
+      /* grab the path from the reference and invalidate the reference */
+      path = gtk_tree_row_reference_get_path (icon_view->priv->scroll_to_path);
+      gtk_tree_row_reference_free (icon_view->priv->scroll_to_path);
+      icon_view->priv->scroll_to_path = NULL;
+
+      /* try to scroll again */
+      exo_icon_view_scroll_to_path (icon_view, path,
+                                    icon_view->priv->scroll_to_use_align,
+                                    icon_view->priv->scroll_to_row_align,
+                                    icon_view->priv->scroll_to_col_align);
+
+      /* release the path */
+      gtk_tree_path_free (path);
+    }
+  else
+    {
+      /* we need to emit "changed" ourselves */
+      gtk_adjustment_changed (hadjustment);
+      gtk_adjustment_changed (vadjustment);
+    }
 }
 
 
@@ -4813,6 +4851,15 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
         gdk_window_set_cursor (icon_view->priv->bin_window, NULL);
     }
 
+  /* be sure to drop any previous scroll_to_path reference,
+   * as it points to the old (no longer valid) model.
+   */
+  if (G_UNLIKELY (icon_view->priv->scroll_to_path != NULL))
+    {
+      gtk_tree_row_reference_free (icon_view->priv->scroll_to_path);
+      icon_view->priv->scroll_to_path = NULL;
+    }
+
   /* activate the new model */
   icon_view->priv->model = model;
 
@@ -5468,8 +5515,11 @@ exo_icon_view_set_cursor (ExoIconView     *icon_view,
       info = NULL;
     }
 
+  /* place the cursor on the item */
   exo_icon_view_set_cursor_item (icon_view, item, cell_pos);
-  exo_icon_view_scroll_to_item (icon_view, item);
+
+  /* scroll to the item (maybe delayed) */
+  exo_icon_view_scroll_to_path (icon_view, path, FALSE, 0.0f, 0.0f);
 
   if (start_editing)
     exo_icon_view_start_editing (icon_view, item, info, NULL);
@@ -5515,42 +5565,58 @@ exo_icon_view_scroll_to_path (ExoIconView *icon_view,
   g_return_if_fail (row_align >= 0.0 && row_align <= 1.0);
   g_return_if_fail (col_align >= 0.0 && col_align <= 1.0);
   
-  item = g_list_nth_data (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-  if (G_UNLIKELY (item == NULL))
-    return;
-
-  if (use_align)
+  /* Delay scrolling if either not realized or pending layout() */
+  if (!GTK_WIDGET_REALIZED (icon_view) || icon_view->priv->layout_idle_id >= 0)
     {
-      gint x, y;
-      gint focus_width;
-      gfloat offset, value;
+      /* release the previous scroll_to_path reference */
+      if (G_UNLIKELY (icon_view->priv->scroll_to_path != NULL))
+        gtk_tree_row_reference_free (icon_view->priv->scroll_to_path);
 
-      gtk_widget_style_get (GTK_WIDGET (icon_view),
-                            "focus-line-width", &focus_width,
-                            NULL);
-      
-      gdk_window_get_position (icon_view->priv->bin_window, &x, &y);
-      
-      offset =  y + item->area.y - focus_width - 
-        row_align * (GTK_WIDGET (icon_view)->allocation.height - item->area.height);
-      value = CLAMP (icon_view->priv->vadjustment->value + offset, 
-                     icon_view->priv->vadjustment->lower,
-                     icon_view->priv->vadjustment->upper - icon_view->priv->vadjustment->page_size);
-      gtk_adjustment_set_value (icon_view->priv->vadjustment, value);
-
-      offset = x + item->area.x - focus_width - 
-        col_align * (GTK_WIDGET (icon_view)->allocation.width - item->area.width);
-      value = CLAMP (icon_view->priv->hadjustment->value + offset, 
-                     icon_view->priv->hadjustment->lower,
-                     icon_view->priv->hadjustment->upper - icon_view->priv->hadjustment->page_size);
-      gtk_adjustment_set_value (icon_view->priv->hadjustment, value);
-
-      gtk_adjustment_changed (icon_view->priv->hadjustment);
-      gtk_adjustment_changed (icon_view->priv->vadjustment);
+      /* remember a reference for the new path and settings */
+      icon_view->priv->scroll_to_path = gtk_tree_row_reference_new_proxy (G_OBJECT (icon_view), icon_view->priv->model, path);
+      icon_view->priv->scroll_to_use_align = use_align;
+      icon_view->priv->scroll_to_row_align = row_align;
+      icon_view->priv->scroll_to_col_align = col_align;
     }
   else
     {
-      exo_icon_view_scroll_to_item (icon_view, item);    
+      item = g_list_nth_data (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
+      if (G_UNLIKELY (item == NULL))
+        return;
+
+      if (use_align)
+        {
+          gint x, y;
+          gint focus_width;
+          gfloat offset, value;
+
+          gtk_widget_style_get (GTK_WIDGET (icon_view),
+                                "focus-line-width", &focus_width,
+                                NULL);
+          
+          gdk_window_get_position (icon_view->priv->bin_window, &x, &y);
+          
+          offset =  y + item->area.y - focus_width - 
+            row_align * (GTK_WIDGET (icon_view)->allocation.height - item->area.height);
+          value = CLAMP (icon_view->priv->vadjustment->value + offset, 
+                         icon_view->priv->vadjustment->lower,
+                         icon_view->priv->vadjustment->upper - icon_view->priv->vadjustment->page_size);
+          gtk_adjustment_set_value (icon_view->priv->vadjustment, value);
+
+          offset = x + item->area.x - focus_width - 
+            col_align * (GTK_WIDGET (icon_view)->allocation.width - item->area.width);
+          value = CLAMP (icon_view->priv->hadjustment->value + offset, 
+                         icon_view->priv->hadjustment->lower,
+                         icon_view->priv->hadjustment->upper - icon_view->priv->hadjustment->page_size);
+          gtk_adjustment_set_value (icon_view->priv->hadjustment, value);
+
+          gtk_adjustment_changed (icon_view->priv->hadjustment);
+          gtk_adjustment_changed (icon_view->priv->vadjustment);
+        }
+      else
+        {
+          exo_icon_view_scroll_to_item (icon_view, item);    
+        }
     }
 }
 
