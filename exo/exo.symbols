@@ -99,6 +99,9 @@ exo_execute_terminal_shell_on_screen
 /* exo-gdk-pixbuf-extensions functions */
 #if IN_HEADER(__EXO_GDK_PIXBUF_EXTENSIONS_H__)
 #if IN_SOURCE(__EXO_GDK_PIXBUF_EXTENSIONS_C__)
+exo_gdk_pixbuf_colorize G_GNUC_MALLOC
+exo_gdk_pixbuf_lucent G_GNUC_MALLOC
+exo_gdk_pixbuf_spotlight G_GNUC_MALLOC
 exo_gdk_pixbuf_scale_down
 exo_gdk_pixbuf_scale_ratio
 #endif

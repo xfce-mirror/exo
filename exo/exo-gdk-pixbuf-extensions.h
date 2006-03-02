@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -27,16 +27,25 @@
 #ifndef __EXO_GDK_PIXBUF_EXTENSIONS_H__
 #define __EXO_GDK_PIXBUF_EXTENSIONS_H__
 
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <gdk/gdk.h>
 
 G_BEGIN_DECLS;
 
-GdkPixbuf *exo_gdk_pixbuf_scale_down  (GdkPixbuf *source,
-                                       gboolean   aspect_ratio,
-                                       gint       dest_width,
-                                       gint       dest_height);
-GdkPixbuf *exo_gdk_pixbuf_scale_ratio (GdkPixbuf *source,
-                                       gint       dest_size);
+GdkPixbuf *exo_gdk_pixbuf_colorize    (const GdkPixbuf *src,
+                                       const GdkColor  *color) G_GNUC_MALLOC;
+
+GdkPixbuf *exo_gdk_pixbuf_lucent      (const GdkPixbuf *src,
+                                       guint            percent) G_GNUC_MALLOC;
+
+GdkPixbuf *exo_gdk_pixbuf_spotlight   (const GdkPixbuf *src) G_GNUC_MALLOC;
+
+GdkPixbuf *exo_gdk_pixbuf_scale_down  (GdkPixbuf       *source,
+                                       gboolean         aspect_ratio,
+                                       gint             dest_width,
+                                       gint             dest_height);
+
+GdkPixbuf *exo_gdk_pixbuf_scale_ratio (GdkPixbuf       *source,
+                                       gint             dest_size);
 
 G_END_DECLS;
 
