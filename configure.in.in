@@ -99,8 +99,7 @@ AC_SEARCH_LIBS([MD5Init], [md c], \
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
-XDT_I18N([ca de el en_GB es eu fi fr ja pt_BR],
-         [libexo-libexo_version_major().libexo_version_minor()])
+XDT_I18N([@LINGUAS@], [libexo-libexo_version_major().libexo_version_minor()])
 
 dnl ***********************************
 dnl *** Check for required packages ***
