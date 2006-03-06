@@ -1,20 +1,21 @@
+# translation of eu.po to librezale
 # Basque translations for xfce package.
 # Copyright (C) 2004-2006 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
-# Piarres Beobide <pi@beobide.net>, 2006.
 #
+# Piarres Beobide <pi@beobide.net>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: exo 0.3.1.3svn\n"
+"Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-04 12:21+0900\n"
-"PO-Revision-Date: 2006-02-22 11:34+0100\n"
+"PO-Revision-Date: 2006-03-06 21:32+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
-"Language-Team: Librezale.org <librezale@librezale.org>\n"
+"Language-Team: librezale <librezale@librezale.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 0.6.3.20060126\n"
+"X-Generator: KBabel 1.11.2\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:152
 #: ../exo/exo-ellipsized-label.c:122
@@ -127,11 +128,11 @@ msgstr "Bistaraziko diren zutabe kopurua"
 
 #: ../exo/exo-icon-view.c:665
 msgid "Enable Search"
-msgstr ""
+msgstr "Bailketa Galitu"
 
 #: ../exo/exo-icon-view.c:666
 msgid "View allows user to search through columns interactively"
-msgstr ""
+msgstr "Ikuspegiak erabiltzaileari zutabetan interaktiboki bilatzeko aukera ematen dio"
 
 #: ../exo/exo-icon-view.c:683
 msgid "Width for each item"
@@ -168,8 +169,7 @@ msgid "The model for the icon view"
 msgstr "Ikono ikuspegiaren modeloa"
 
 #: ../exo/exo-icon-view.c:746
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr "Elementu bakoitzaren testu eta ikonoaren kokapena bestearekiko"
 
 #: ../exo/exo-icon-view.c:778
@@ -189,13 +189,12 @@ msgid "Space which is inserted between grid rows"
 msgstr "Sareta lerroren artean txertatuko den tartea"
 
 #: ../exo/exo-icon-view.c:809
-#, fuzzy
 msgid "Search Column"
-msgstr "Zutabea markatu"
+msgstr "Baileta Zutabea"
 
 #: ../exo/exo-icon-view.c:810
 msgid "Model column to search through when searching through item"
-msgstr ""
+msgstr "Elementuen artean bilatzerakoane rbailiko den zutabe modeloa"
 
 #: ../exo/exo-icon-view.c:824
 msgid "Selection mode"
@@ -207,11 +206,11 @@ msgstr "Aukeratze modua"
 
 #: ../exo/exo-icon-view.c:840 ../exo/exo-tree-view.c:155
 msgid "Single Click"
-msgstr ""
+msgstr "Klik bakana"
 
 #: ../exo/exo-icon-view.c:841 ../exo/exo-tree-view.c:156
 msgid "Whether the items in the view can be activated with single clicks"
-msgstr ""
+msgstr "Honela ikuspegiko elementuak klika bakan batez aktibatu daitezke"
 
 #: ../exo/exo-icon-view.c:856
 msgid "Spacing"
@@ -286,19 +285,19 @@ msgid "Customize Toolbar..."
 msgstr "Tresnabarra Pertsonalizatu..."
 
 #: ../exo/exo-url.c:283
-#, fuzzy, c-format
+#, c-format
 msgid "Unable to open \"%s\""
-msgstr "Ezin da `%s' ireki"
+msgstr "Ezin da \"%s\" ireki"
 
 #: ../exo/exo-url.c:305
-#, fuzzy, c-format
+#, c-format
 msgid "The URL \"%s\" is not supported"
-msgstr "`%s' URL-a ez da onartzen"
+msgstr "\"%s\" URL-a ez da onartzen"
 
 #: ../exo/exo-url.c:377
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Huts `%s' irekitzerakoan."
+msgstr "Huts  \"%s\" irekitzerakoan."
 
 #: ../exo/exo-wrap-table.c:169
 msgid "Column spacing"
@@ -465,9 +464,8 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:296
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
-#, fuzzy
 msgid "Failed to open the documentation browser."
-msgstr "Huts lehenetsiriko web nabigatzailea ezartzerakoan"
+msgstr "Huts dokumentazio nabigatzailea irekitzarekoan."
 
 #: ../exo-helper/exo-helper-chooser.c:177
 #: ../exo-helper/exo-helper-chooser.c:184
@@ -668,14 +666,11 @@ msgstr "       exo-open --launch MOTA [PARAMETROAK...]"
 
 #: ../exo-open/main.c:46
 msgid "  -h, --help                          Print this help message and exit"
-msgstr ""
-"  -h, --help                          Laguntza testua hau bistarazi eta irten"
+msgstr "  -h, --help                          Laguntza testua hau bistarazi eta irten"
 
 #: ../exo-open/main.c:47
-msgid ""
-"  -v, --version                       Print version information and exit"
-msgstr ""
-"  -v, --version                       Bertsio xehetasunak bistarazi eta irten"
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Bertsio xehetasunak bistarazi eta irten"
 
 #: ../exo-open/main.c:49
 msgid ""
@@ -739,11 +734,12 @@ msgstr ""
 "\n"
 
 #: ../exo-open/main.c:121
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Huts `%s' ataleko hobetsiriko aplikazioa irekitzerakoan."
+msgstr "Huts \"%s\" ataleko hobetsiriko aplikazioa irekitzerakoan."
 
 #: ../exo-open/main.c:144
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open URL \"%s\"."
-msgstr "Huts `%s' URL-a irekitzerakoan."
+msgstr "Huts \"%s\" URL-a irekitzerakoan."
+
