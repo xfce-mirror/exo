@@ -1492,7 +1492,6 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   GtkAdjustment *hadjustment;
   GtkAdjustment *vadjustment;
   ExoIconView   *icon_view = EXO_ICON_VIEW (widget);
-  GtkTreePath   *path;
 
   /* apply the new size allocation */
   widget->allocation = *allocation;
@@ -1529,30 +1528,9 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   if (vadjustment->value > vadjustment->upper - vadjustment->page_size)
     gtk_adjustment_set_value (vadjustment, MAX (0, vadjustment->upper - vadjustment->page_size));
 
-  /* scroll to the previously remember path (will emit "changed" for the adjustments) */
-  if (GTK_WIDGET_REALIZED (widget) && icon_view->priv->scroll_to_path != NULL
-      && gtk_tree_row_reference_valid (icon_view->priv->scroll_to_path))
-    {
-      /* grab the path from the reference and invalidate the reference */
-      path = gtk_tree_row_reference_get_path (icon_view->priv->scroll_to_path);
-      gtk_tree_row_reference_free (icon_view->priv->scroll_to_path);
-      icon_view->priv->scroll_to_path = NULL;
-
-      /* try to scroll again */
-      exo_icon_view_scroll_to_path (icon_view, path,
-                                    icon_view->priv->scroll_to_use_align,
-                                    icon_view->priv->scroll_to_row_align,
-                                    icon_view->priv->scroll_to_col_align);
-
-      /* release the path */
-      gtk_tree_path_free (path);
-    }
-  else
-    {
-      /* we need to emit "changed" ourselves */
-      gtk_adjustment_changed (hadjustment);
-      gtk_adjustment_changed (vadjustment);
-    }
+  /* we need to emit "changed" ourselves */
+  gtk_adjustment_changed (hadjustment);
+  gtk_adjustment_changed (vadjustment);
 }
 
 
@@ -1595,6 +1573,28 @@ exo_icon_view_expose_event (GtkWidget      *widget,
    */
   if (G_UNLIKELY (icon_view->priv->layout_idle_id >= 0))
     return FALSE;
+
+  /* scroll to the previously remember path */
+  if (icon_view->priv->scroll_to_path != NULL)
+    {
+      /* grab the path from the reference and invalidate the reference */
+      path = gtk_tree_row_reference_get_path (icon_view->priv->scroll_to_path);
+      gtk_tree_row_reference_free (icon_view->priv->scroll_to_path);
+      icon_view->priv->scroll_to_path = NULL;
+
+      /* check if the reference was still valid */
+      if (G_LIKELY (path != NULL))
+        {
+          /* try to scroll again */
+          exo_icon_view_scroll_to_path (icon_view, path,
+                                        icon_view->priv->scroll_to_use_align,
+                                        icon_view->priv->scroll_to_row_align,
+                                        icon_view->priv->scroll_to_col_align);
+
+          /* release the path */
+          gtk_tree_path_free (path);
+        }
+    }
 
   /* check if we need to draw a drag indicator */
   exo_icon_view_get_drag_dest_item (icon_view, &path, &dest_pos);
@@ -4909,8 +4909,7 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       icon_view->priv->items = g_list_reverse (items);
 
       /* layout the new items */
-      if (!GTK_WIDGET_REALIZED (icon_view))
-        exo_icon_view_queue_layout (icon_view);
+      exo_icon_view_queue_layout (icon_view);
     }
 
   /* hide the interactive search dialog (if any) */

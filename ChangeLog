@@ -1,3 +1,10 @@
+2006-03-08	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c(exo_icon_view_set_model): Always schedule a
+	  relayout here.
+	* exo/exo-icon-view.c: Apply the scroll_to_path in the expose event
+	  handler rather than the size_allocate.
+
 2006-03-06	Benedikt Meurer <benny@xfce.org>
 
 	* autogen.sh, configure.in.in, po/LINGUAS: Read the set of available
