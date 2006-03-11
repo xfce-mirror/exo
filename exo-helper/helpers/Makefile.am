@@ -21,6 +21,7 @@ desktop_in_files =							\
 	mozilla-mailer.desktop.in					\
 	opera-browser.desktop.in					\
 	opera-mailer.desktop.in						\
+	sylpheed-claws.desktop.in					\
 	thunderbird.desktop.in						\
 	xterm.desktop.in
 desktop_DATA =								\
