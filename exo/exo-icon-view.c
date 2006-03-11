@@ -3509,11 +3509,13 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
   if (G_UNLIKELY (item == icon_view->priv->edited_item))
     exo_icon_view_stop_editing (icon_view, TRUE);
 
+  /* use the next item (if any) as anchor, else use prev, otherwise reset anchor */
   if (G_UNLIKELY (item == icon_view->priv->anchor_item))
-    icon_view->priv->anchor_item = NULL;
+    icon_view->priv->anchor_item = (list->next != NULL) ? list->next->data : ((list->prev != NULL) ? list->prev->data : NULL);
 
+  /* use the next item (if any) as cursor, else use prev, otherwise reset cursor */
   if (G_UNLIKELY (item == icon_view->priv->cursor_item))
-    icon_view->priv->cursor_item = NULL;
+    icon_view->priv->cursor_item = (list->next != NULL) ? list->next->data : ((list->prev != NULL) ? list->prev->data : NULL);
 
   if (G_UNLIKELY (item == icon_view->priv->prelit_item))
     {

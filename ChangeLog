@@ -1,3 +1,9 @@
+2006-03-11	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c(exo_icon_view_row_deleted): Use next/prev item (if
+	  any) as cursor/anchor when a row is deleted from the model. Else if
+	  the deleted item was the last item, reset anchor/cursor.
+
 2006-03-08	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c(exo_icon_view_set_model): Always schedule a
