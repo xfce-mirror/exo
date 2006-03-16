@@ -26,6 +26,7 @@
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-tree-view.h>
+#include <exo/exo-utils.h>
 #include <exo/exo-alias.h>
 
 
@@ -277,7 +278,15 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
    * remember the selected paths here and restore them later.
    */
   if (path != NULL && gtk_tree_selection_path_is_selected (selection, path))
-    selected_paths = gtk_tree_selection_get_selected_rows (selection, NULL);
+    {
+      /* if no custom select function is set, we simply use exo_noop_false here,
+       * to tell the tree view that it may not alter the selection.
+       */
+      if (G_LIKELY (selection->user_func == NULL))
+        gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) exo_noop_false, NULL, NULL);
+      else
+        selected_paths = gtk_tree_selection_get_selected_rows (selection, NULL);
+    }
 
   /* call the parent's button press handler */
   result = (*GTK_WIDGET_CLASS (exo_tree_view_parent_class)->button_press_event) (widget, event);
@@ -285,9 +294,20 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   /* restore previous selection if the path is still selected */
   if (path != NULL && gtk_tree_selection_path_is_selected (selection, path))
     {
-      /* select all previously selected paths */
-      for (lp = selected_paths; lp != NULL; lp = lp->next)
-        gtk_tree_selection_select_path (selection, lp->data);
+      /* check if we have to restore paths */
+      if (G_LIKELY (selection->user_func == (GtkTreeSelectionFunc) exo_noop_false))
+        {
+          /* just reset the select function (previously set to exo_noop_false),
+           * there's no clean way to do this, so what the heck.
+           */
+          selection->user_func = NULL;
+        }
+      else
+        {
+          /* select all previously selected paths */
+          for (lp = selected_paths; lp != NULL; lp = lp->next)
+            gtk_tree_selection_select_path (selection, lp->data);
+        }
     }
 
   /* release the path (if any) */
