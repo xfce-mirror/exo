@@ -277,7 +277,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
    * which makes dragging from a GtkTreeView problematic. That's why we
    * remember the selected paths here and restore them later.
    */
-  if (path != NULL && gtk_tree_selection_path_is_selected (selection, path))
+  if ((event->state & gtk_accelerator_get_default_mod_mask ()) == 0 && path != NULL && gtk_tree_selection_path_is_selected (selection, path))
     {
       /* if no custom select function is set, we simply use exo_noop_false here,
        * to tell the tree view that it may not alter the selection.
@@ -292,7 +292,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   result = (*GTK_WIDGET_CLASS (exo_tree_view_parent_class)->button_press_event) (widget, event);
 
   /* restore previous selection if the path is still selected */
-  if (path != NULL && gtk_tree_selection_path_is_selected (selection, path))
+  if ((event->state & gtk_accelerator_get_default_mod_mask ()) == 0 && path != NULL && gtk_tree_selection_path_is_selected (selection, path))
     {
       /* check if we have to restore paths */
       if (G_LIKELY (selection->user_func == (GtkTreeSelectionFunc) exo_noop_false))
