@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:152
 #: ../exo/exo-ellipsized-label.c:122
@@ -504,7 +504,7 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Просмотреть файловую систему, чтобы выбрать нужную команду."
 
 #: ../exo-helper/exo-helper-chooser.c:687
 msgid "_Other..."
@@ -512,45 +512,51 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:688
 msgid "Use a custom application which is not included in the above list."
-msgstr ""
+msgstr "Использовать другое приложение, которое не входит в этот список."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:143
 msgid "Choose Preferred Application"
-msgstr ""
+msgstr "Выбрать предпочитаемые приложения"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:319
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
 msgstr ""
+"Пожалуйста, выберите предпочитаемый веб-браузери нажмите OK, чтобы "
+"продолжить."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:321
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
+"Пожалуйста, выберите предпочитаемую почтовуюпрограмму и нажмите OK, чтобы "
+"продолжить."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:323
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
+"Пожалуйста, выберите предпочитаемый эмулятортерминала и нажмите OK, чтобы "
+"продолжить."
 
 #: ../exo-helper/exo-helper.c:383
 msgid "No command specified"
-msgstr ""
+msgstr "Не указан комментарий"
 
 #: ../exo-helper/exo-helper.c:675
 msgid "Failed to open helpers.rc for writing"
-msgstr ""
+msgstr "Не удалось открыть helpers.rc для записи"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:40
 msgid "Failed to launch exo-preferred-applications"
-msgstr ""
+msgstr "Не удалось запустить exo-preferred-applications"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.h:1
 msgid "Xfce Terminal"
-msgstr ""
+msgstr "Терминал Xfce"
 
 #: ../exo-helper/helpers/balsa.desktop.in.h:1
 msgid "Balsa"
@@ -562,11 +568,11 @@ msgstr ""
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr ""
+msgstr "Эмулятор X терминала Debian"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.h:1
 msgid "Epiphany Web Browser"
-msgstr ""
+msgstr "Веб-браузер Epiphany"
 
 #: ../exo-helper/helpers/eterm.desktop.in.h:1
 msgid "Enlightened Terminal Emulator"
@@ -582,11 +588,11 @@ msgstr "Mozilla Firefox"
 
 #: ../exo-helper/helpers/galeon.desktop.in.h:1
 msgid "Galeon Web Browser"
-msgstr ""
+msgstr "Веб-браузер Galeon"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.h:1
 msgid "GNOME Terminal"
-msgstr ""
+msgstr "Терминал GNOME"
 
 #: ../exo-helper/helpers/kmail.desktop.in.h:1
 msgid "KMail"
@@ -594,23 +600,23 @@ msgstr "KMail"
 
 #: ../exo-helper/helpers/konqueror.desktop.in.h:1
 msgid "Konqueror Web Browser"
-msgstr ""
+msgstr "Веб-браузер Konqueror"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.h:1
 msgid "Mozilla Browser"
-msgstr ""
+msgstr "Браузер Mozilla"
 
 #: ../exo-helper/helpers/mozilla-mailer.desktop.in.h:1
 msgid "Mozilla Mail"
-msgstr ""
+msgstr "Почтовая программа Mozilla"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.h:1
 msgid "Opera Browser"
-msgstr ""
+msgstr "Браузер Opera"
 
 #: ../exo-helper/helpers/opera-mailer.desktop.in.h:1
 msgid "Opera Mail"
-msgstr ""
+msgstr "Почтовая программа Opera"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.h:1
 msgid "Mozilla Thunderbird"
@@ -618,24 +624,27 @@ msgstr "Mozilla Thunderbird"
 
 #: ../exo-helper/helpers/xterm.desktop.in.h:1
 msgid "X Terminal"
-msgstr ""
+msgstr "X терминал"
 
 #: ../exo-open/main.c:43
 msgid "Usage: exo-open [URLs...]"
-msgstr ""
+msgstr "Использование: exo-open [URLs...]"
 
 #: ../exo-open/main.c:44
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       exo-open --launch ТИП [ПАРАМЕТРЫ...]"
 
 #: ../exo-open/main.c:46
 msgid "  -h, --help                          Print this help message and exit"
 msgstr ""
+"  -h, --help                          Вывести это справочное сообщение и "
+"выйти"
 
 #: ../exo-open/main.c:47
 msgid ""
 "  -v, --version                       Print version information and exit"
 msgstr ""
+"  -v, --version                       Вывести информацию о версии и выйти"
 
 #: ../exo-open/main.c:49
 msgid ""
@@ -647,7 +656,7 @@ msgstr ""
 
 #: ../exo-open/main.c:53
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr ""
+msgstr "Для команды --launch поддерживаются следующие ТИПы:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
@@ -680,11 +689,9 @@ msgstr ""
 #: ../exo-open/main.c:121
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr ""
+msgstr "Не удалось запустить предпочтительное приложение для категории \"%s\"."
 
 #: ../exo-open/main.c:144
 #, c-format
 msgid "Failed to open URL \"%s\"."
-msgstr ""
-
-
+msgstr "Не удалось открыть URL \"%s\"."
