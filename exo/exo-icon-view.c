@@ -3679,32 +3679,6 @@ exo_icon_view_real_move_cursor (ExoIconView     *icon_view,
 
 
 
-static ExoIconViewItem*
-find_item (ExoIconView     *icon_view,
-           ExoIconViewItem *current,
-           gint             row_ofs,
-           gint             col_ofs)
-{
-  ExoIconViewItem *item;
-  GList           *lp;
-  gint             col;
-  gint             row;
-
-  row = current->row + row_ofs;
-  col = current->col + col_ofs;
-
-  for (lp = icon_view->priv->items; lp != NULL; lp = lp->next)
-    {
-      item = EXO_ICON_VIEW_ITEM (lp->data);
-      if (G_UNLIKELY (item->row == row && item->col == col))
-        return item;
-    }
-  
-  return NULL;
-}
-
-
-
 static gint
 find_cell (ExoIconView     *icon_view,
            ExoIconViewItem *item,
@@ -3885,24 +3859,22 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
                                    gint         count)
 {
   ExoIconViewItem *item;
-  gint cell;
-  gboolean dirty = FALSE;
-  gint step;
+  gboolean         dirty = FALSE;
+  GList           *list;
+  gint             cell = -1;
+  gint             step;
   
   if (!GTK_WIDGET_HAS_FOCUS (icon_view))
     return;
   
   if (!icon_view->priv->cursor_item)
     {
-      GList *list;
-
       if (count > 0)
         list = icon_view->priv->items;
       else
         list = g_list_last (icon_view->priv->items);
 
       item = list ? list->data : NULL;
-      cell = -1;
     }
   else
     {
@@ -3917,7 +3889,28 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
           if (count == 0)
             break;
 
-          item = find_item (icon_view, item, step, 0);
+          /* determine the list position for the item */
+          list = g_list_find (icon_view->priv->items, item);
+
+          /* determine the item in the next/prev row */
+          if (step > 0)
+            {
+              for (list = list->next; list != NULL; list = list->next)
+                if (EXO_ICON_VIEW_ITEM (list->data)->row == item->row + step
+                    && EXO_ICON_VIEW_ITEM (list->data)->col == item->col)
+                  break;
+            }
+          else
+            {
+              for (list = list->prev; list != NULL; list = list->prev)
+                if (EXO_ICON_VIEW_ITEM (list->data)->row == item->row + step
+                    && EXO_ICON_VIEW_ITEM (list->data)->col == item->col)
+                  break;
+            }
+
+          /* check if we found a matching item */
+          item = (list != NULL) ? list->data : NULL;
+
           count = count - step;
         }
     }
@@ -4009,17 +4002,16 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
                                       gint         count)
 {
   ExoIconViewItem *item;
-  gint cell = -1;
-  gboolean dirty = FALSE;
-  gint step;
+  gboolean         dirty = FALSE;
+  GList           *list;
+  gint             cell = -1;
+  gint             step;
   
   if (!GTK_WIDGET_HAS_FOCUS (icon_view))
     return;
   
   if (!icon_view->priv->cursor_item)
     {
-      GList *list;
-
       if (count > 0)
         list = icon_view->priv->items;
       else
@@ -4039,8 +4031,19 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
                             step, &count);
           if (count == 0)
             break;
+
+          /* lookup the item in the list */
+          list = g_list_find (icon_view->priv->items, item);
+
+          /* determine the next/prev list item depending on step,
+           * support wrapping around on the edges, as requested
+           * in http://bugzilla.xfce.org/show_bug.cgi?id=1623.
+           */
+          list = (step > 0) ? list->next : list->prev;
+
+          /* determine the item for the list position (if any) */
+          item = (list != NULL) ? list->data : NULL;
           
-          item = find_item (icon_view, item, 0, step);
           count = count - step;
         }
     }
