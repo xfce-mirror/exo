@@ -330,23 +330,50 @@ exo_tree_view_button_release_event (GtkWidget      *widget,
                                     GdkEventButton *event)
 {
   GtkTreeViewColumn *column;
+  GtkTreeSelection  *selection;
   GtkTreePath       *path;
   ExoTreeView       *tree_view = EXO_TREE_VIEW (widget);
 
-  /* check if we're in single-click mode and the button-release-event should emit a "row-activate" */
-  if (G_UNLIKELY (tree_view->priv->single_click && tree_view->priv->button_release_activates))
+  /* verify that the release event is for the internal tree view window */
+  if (G_LIKELY (event->window == gtk_tree_view_get_bin_window (GTK_TREE_VIEW (tree_view))))
     {
-      /* reset the "release-activates" flag */
-      tree_view->priv->button_release_activates = FALSE;
-
-      /* determine the path to the row that should be activated */
-      if (gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (tree_view), event->x, event->y, &path, &column, NULL, NULL))
+      /* check if we're in single-click mode and the button-release-event should emit a "row-activate" */
+      if (G_UNLIKELY (tree_view->priv->single_click && tree_view->priv->button_release_activates))
         {
-          /* emit row-activated for the determined row */
-          gtk_tree_view_row_activated (GTK_TREE_VIEW (tree_view), path, column);
+          /* reset the "release-activates" flag */
+          tree_view->priv->button_release_activates = FALSE;
 
-          /* cleanup */
-          gtk_tree_path_free (path);
+          /* determine the path to the row that should be activated */
+          if (gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (tree_view), event->x, event->y, &path, &column, NULL, NULL))
+            {
+              /* emit row-activated for the determined row */
+              gtk_tree_view_row_activated (GTK_TREE_VIEW (tree_view), path, column);
+
+              /* cleanup */
+              gtk_tree_path_free (path);
+            }
+        }
+      else if ((event->state & gtk_accelerator_get_default_mod_mask ()) == 0)
+        {
+          /* determine the path on which the button was released and select only this row, this way
+           * the user is still able to alter the selection easily if all rows are selected.
+           */
+          if (gtk_tree_view_get_path_at_pos (GTK_TREE_VIEW (tree_view), event->x, event->y, &path, &column, NULL, NULL))
+            {
+              /* check if the path is selected */
+              selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
+              if (gtk_tree_selection_path_is_selected (selection, path))
+                {
+                  /* unselect all rows */
+                  gtk_tree_selection_unselect_all (selection);
+
+                  /* select the row and place the cursor on it */
+                  gtk_tree_view_set_cursor (GTK_TREE_VIEW (tree_view), path, column, FALSE);
+                }
+
+              /* cleanup */
+              gtk_tree_path_free (path);
+            }
         }
     }
 

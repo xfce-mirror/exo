@@ -1,3 +1,9 @@
+2006-03-31	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-tree-view.c(exo_tree_view_button_release_event): Use button
+	  release to easily alter the selection even if all visible rows are
+	  selected in possible preparation for a drag operation.
+
 2006-03-30	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c: Implement "Right Arrow Keyboard Navigation" for
