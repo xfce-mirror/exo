@@ -372,7 +372,7 @@ exo_xsession_client_set_group (ExoXsessionClient *client,
                            &protocols, &nprotocols))
         {
           protocols_custom = g_new (Atom, nprotocols + 1);
-          bcopy (protocols, protocols_custom, nprotocols * sizeof (*protocols));
+          memcpy (protocols_custom, protocols, nprotocols * sizeof (*protocols));
           protocols_custom[nprotocols++] = client->priv->wm_save_yourself;
 
           XSetWMProtocols (GDK_DRAWABLE_XDISPLAY (leader),

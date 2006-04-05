@@ -153,7 +153,7 @@ exo_toolbars_editor_dialog_add_toolbar (ExoToolbarsEditorDialog *dialog)
   model = exo_toolbars_editor_get_model (EXO_TOOLBARS_EDITOR (dialog->priv->editor));
   if (G_LIKELY (model != NULL))
     {
-      name = g_strdup_printf ("exo-toolbar-%d-%d", getpid (), (gint) time (NULL));
+      name = g_strdup_printf ("exo-toolbar-%ld-%d", (glong) getpid (), (gint) time (NULL));
       exo_toolbars_model_add_toolbar (model, -1, name);
       g_free (name);
     }

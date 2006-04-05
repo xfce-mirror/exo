@@ -1,3 +1,13 @@
+2006-04-05	Benedikt Meurer <benny@xfce.org>
+
+	* configure.in.in: Do not depend on Xfce 4.2.2, as 4.2.1 will also do.
+	* configure.in.in: Solaris has MD5 functions in libmd5.
+	* exo/exo-toolbars-editor-dialog.c
+	  (exo_toolbars_editor_dialog_add_toolbar): Fix format warning.
+	* exo/exo-xsession-client.c(exo_xsession_client_set_group): Use
+	  memcpy() instead of bcopy().
+	* docs/reference/exo-open.xml: Fix typo.
+
 2006-03-31	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-tree-view.c(exo_tree_view_button_release_event): Use button

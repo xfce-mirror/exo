@@ -93,7 +93,7 @@ AC_CHECK_FUNCS([regexec])
 dnl ******************************************
 dnl *** Check for Message Digest functions ***
 dnl ******************************************
-AC_SEARCH_LIBS([MD5Init], [md c], \
+AC_SEARCH_LIBS([MD5Init], [md5 md c], \
                [AC_DEFINE([HAVE_MD5INIT], [1], [Define if MD5Init present])])
 
 dnl ******************************
@@ -106,12 +106,12 @@ dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.6.4])
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.6.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.2])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.1])
 
 dnl *********************************************
 dnl *** Check for xfce-mcs-manager (optional) ***
 dnl *********************************************
-XDT_CHECK_OPTIONAL_PACKAGE([XFCE_MCS_MANAGER], [xfce-mcs-manager], [4.2.2],
+XDT_CHECK_OPTIONAL_PACKAGE([XFCE_MCS_MANAGER], [xfce-mcs-manager], [4.2.1],
                            [mcs-plugin], [xfce-mcs-manager], [yes])
 
 dnl *************************
