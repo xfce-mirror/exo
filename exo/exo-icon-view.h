@@ -213,6 +213,10 @@ gboolean          exo_icon_view_get_single_click          (const ExoIconView    
 void              exo_icon_view_set_single_click          (ExoIconView              *icon_view,
                                                            gboolean                  single_click);
 
+guint             exo_icon_view_get_single_click_timeout  (const ExoIconView        *icon_view);
+void              exo_icon_view_set_single_click_timeout  (ExoIconView              *icon_view,
+                                                           guint                     single_click_timeout);
+
 void              exo_icon_view_widget_to_icon_coords     (const ExoIconView        *icon_view,
                                                            gint                      wx,
                                                            gint                      wy,

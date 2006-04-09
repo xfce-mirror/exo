@@ -1,5 +1,13 @@
 2006-04-09	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.{c,h}, exo/exo-tree-view.{c,h}, exo/exo.symbols:
+	  Add "single-click-timeout" properties to ExoIconView and ExoTreeView,
+	  which control the delay after which the item under the mouse pointer
+	  is automatically selected. Bug #1509.
+	* docs/reference/: Update API documentation.
+
+2006-04-09	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c(exo_icon_view_select_all_between), THANKS:
 	  Apply patch to improve shift-selection in the icon view, from
 	  Matt McClinch <mattmcclinch@gmail.com>.
@@ -13,6 +21,11 @@
 	* exo/exo-xsession-client.c(exo_xsession_client_set_group): Use
 	  memcpy() instead of bcopy().
 	* docs/reference/exo-open.xml: Fix typo.
+
+2006-03-31	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-view.c(exo_icon_view_row_inserted): No need to invali-
+	  date the prelit_item here.
 
 2006-03-31	Benedikt Meurer <benny@xfce.org>
 
