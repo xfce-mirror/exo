@@ -3807,46 +3807,38 @@ exo_icon_view_select_all_between (ExoIconView     *icon_view,
                                   ExoIconViewItem *cursor)
 {
   GList *items;
-  ExoIconViewItem *item;
-  gint row1, row2, col1, col2;
+  ExoIconViewItem *item, *last;
   gboolean dirty = FALSE;
   
-  if (anchor->row < cursor->row)
-    {
-      row1 = anchor->row;
-      row2 = cursor->row;
-    }
-  else
-    {
-      row1 = cursor->row;
-      row2 = anchor->row;
-    }
-
-  if (anchor->col < cursor->col)
-    {
-      col1 = anchor->col;
-      col2 = cursor->col;
-    }
-  else
-    {
-      col1 = cursor->col;
-      col2 = anchor->col;
-    }
-
   for (items = icon_view->priv->items; items; items = items->next)
     {
       item = items->data;
 
-      if (row1 <= item->row && item->row <= row2 &&
-          col1 <= item->col && item->col <= col2)
+      if (item == anchor)
         {
-          if (!item->selected)
-            dirty = TRUE;
-
-          item->selected = TRUE;
-          
-          exo_icon_view_queue_draw_item (icon_view, item);
+          last = cursor;
+          break;
         }
+      else if (item == cursor)
+        {
+          last = anchor;
+          break;
+        }
+    }
+
+  for (; items; items = items->next)
+    {
+      item = items->data;
+
+      if (!item->selected)
+        dirty = TRUE;
+
+      item->selected = TRUE;
+
+      exo_icon_view_queue_draw_item (icon_view, item);
+
+      if (item == last)
+        break;
     }
 
   return dirty;
