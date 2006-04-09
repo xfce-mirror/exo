@@ -1,5 +1,11 @@
 2006-04-09	Benedikt Meurer <benny@xfce.org>
 
+	* icons/Makefile.am: Be sure to run gtk-update-icon-cache after
+	  installing new icons into the hicolor icon theme (skipped if $DESTDIR
+	  is set).
+
+2006-04-09	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.{c,h}, exo/exo-tree-view.{c,h}, exo/exo.symbols:
 	  Add "single-click-timeout" properties to ExoIconView and ExoTreeView,
 	  which control the delay after which the item under the mouse pointer
