@@ -2140,20 +2140,17 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
           else if (icon_view->priv->selection_mode == GTK_SELECTION_MULTIPLE &&
                    (event->state & GDK_SHIFT_MASK))
             {
-              /* check if the item is not already selected (otherwise do nothing) */
-              if (G_LIKELY (!item->selected))
-                {
-                  exo_icon_view_unselect_all_internal (icon_view);
+              if (!(event->state & GDK_CONTROL_MASK)) 
+                exo_icon_view_unselect_all_internal (icon_view);
 
-                  exo_icon_view_set_cursor_item (icon_view, item, cursor_cell);
-                  if (!icon_view->priv->anchor_item)
-                    icon_view->priv->anchor_item = item;
-                  else 
-                    exo_icon_view_select_all_between (icon_view,
-                                                      icon_view->priv->anchor_item,
-                                                      item);
-                  dirty = TRUE;
-                }
+              exo_icon_view_set_cursor_item (icon_view, item, cursor_cell);
+              if (!icon_view->priv->anchor_item)
+                icon_view->priv->anchor_item = item;
+              else 
+                exo_icon_view_select_all_between (icon_view,
+                                                  icon_view->priv->anchor_item,
+                                                  item);
+              dirty = TRUE;
             }
           else 
             {
@@ -7343,22 +7340,19 @@ exo_icon_view_single_click_timeout (gpointer user_data)
       else if ((icon_view->priv->single_click_timeout_state & GDK_SHIFT_MASK) != 0
             && icon_view->priv->selection_mode == GTK_SELECTION_MULTIPLE)
         {
-          /* check if the item is not already selected (otherwise do nothing) */
-          if (G_LIKELY (!item->selected))
-            {
-              /* unselect all previously selected items */
-              exo_icon_view_unselect_all_internal (icon_view);
+          if (!(icon_view->priv->single_click_timeout_state & GDK_CONTROL_MASK))
+            /* unselect all previously selected items */
+            exo_icon_view_unselect_all_internal (icon_view);
 
-              /* select all items between the anchor and the prelit item */
-              exo_icon_view_set_cursor_item (icon_view, item, -1);
-              if (icon_view->priv->anchor_item == NULL)
-                icon_view->priv->anchor_item = item;
-              else 
-                exo_icon_view_select_all_between (icon_view, icon_view->priv->anchor_item, item);
+          /* select all items between the anchor and the prelit item */
+          exo_icon_view_set_cursor_item (icon_view, item, -1);
+          if (icon_view->priv->anchor_item == NULL)
+            icon_view->priv->anchor_item = item;
+          else 
+            exo_icon_view_select_all_between (icon_view, icon_view->priv->anchor_item, item);
 
-              /* selection was changed */
-              dirty = TRUE;
-            }
+          /* selection was changed */
+          dirty = TRUE;
         }
       else
         {
