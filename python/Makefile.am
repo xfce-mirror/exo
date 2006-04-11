@@ -35,7 +35,9 @@ _exo_la_LIBADD =							\
 	$(LIBXFCE4UTIL_LIBS)
 
 _exo_la_SOURCES =							\
-	exomodule.c
+	exomodule.c							\
+	pyexo.h								\
+	pyexobinding.c
 
 nodist__exo_la_SOURCES =						\
 	exo.c

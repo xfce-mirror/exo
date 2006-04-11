@@ -1,7 +1,7 @@
 # $Id$
 # vim:set ts=4 sw=4 et ai syntax=python:
 #
-# Copyright (c) 2005 os-cillation
+# Copyright (c) 2005-2006 os-cillation
 # Copyright (c) 1998-2002 James Henstridge
 #
 # Written by Benedikt Meurer <benny@xfce.org>.
@@ -24,3 +24,15 @@
 
 # load the required modules:
 from _exo import *
+
+
+
+class BindingWithNegation(Binding):
+    def __init__(self, src_object, src_property, dst_object, dst_property):
+        Binding.__init__(self, src_object, src_property, dst_object, dst_property, lambda value: not value)
+
+
+
+class MutualBindingWithNegation(MutualBinding):
+    def __init__(self, src_object, src_property, dst_object, dst_property):
+        MutualBinding.__init__(self, src_object, src_property, dst_object, dst_property, lambda value: not value, lambda value: not value)

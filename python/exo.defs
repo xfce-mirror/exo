@@ -56,14 +56,26 @@
   (gtype-id "EXO_TYPE_TOOLBARS_VIEW")
 )
 
+(define-object TreeView
+  (in-module "Exo")
+  (parent "GtkTreeView")
+  (c-name "ExoTreeView")
+  (gtype-id "EXO_TYPE_TREE_VIEW")
+)
+
+(define-object WrapTable
+  (in-module "Exo")
+  (parent "GtkContainer")
+  (c-name "ExoWrapTable")
+  (gtype-id "EXO_TYPE_WRAP_TABLE")
+)
+
 (define-object XsessionClient
   (in-module "Exo")
   (parent "GObject")
   (c-name "ExoXsessionClient")
   (gtype-id "EXO_TYPE_XSESSION_CLIENT")
 )
-
-
 
 ;; Enumerations and flags ...
 
@@ -89,18 +101,6 @@
     '("not-removable" "EXO_TOOLBARS_MODEL_NOT_REMOVABLE")
     '("accept-items-only" "EXO_TOOLBARS_MODEL_ACCEPT_ITEMS_ONLY")
     '("override-style" "EXO_TOOLBARS_MODEL_OVERRIDE_STYLE")
-  )
-)
-
-(define-enum PangoEllipsizeMode
-  (in-module "Exo")
-  (c-name "ExoPangoEllipsizeMode")
-  (gtype-id "EXO_TYPE_PANGO_ELLIPSIZE_MODE")
-  (values
-    '("none" "EXO_PANGO_ELLIPSIZE_NONE")
-    '("start" "EXO_PANGO_ELLIPSIZE_START")
-    '("middle" "EXO_PANGO_ELLIPSIZE_MIDDLE")
-    '("end" "EXO_PANGO_ELLIPSIZE_END")
   )
 )
 
@@ -132,9 +132,8 @@
   (c-name "exo_ellipsized_label_new")
   (is-constructor-of "ExoEllipsizedLabel")
   (return-type "GtkWidget*")
-  (properties
-    '("label" (optional))
-    '("ellipsize" (optional))
+  (parameters
+    '("const-gchar*" "text")
   )
 )
 
@@ -149,7 +148,128 @@
   (c-name "exo_ellipsized_label_set_ellipsize")
   (return-type "none")
   (parameters
-    '("ExoPangoEllipsizeMode" "mode")
+    '("ExoPangoEllipsizeMode" "ellipsize")
+  )
+)
+
+
+
+;; From ../exo/exo-enum-types.h
+
+(define-function exo_icon_view_drop_position_get_type
+  (c-name "exo_icon_view_drop_position_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_pango_ellipsize_mode_get_type
+  (c-name "exo_pango_ellipsize_mode_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_toolbars_model_flags_get_type
+  (c-name "exo_toolbars_model_flags_get_type")
+  (return-type "GType")
+)
+
+
+
+;; From ../exo/exo-execute.h
+
+(define-function execute_preferred_application
+  (c-name "exo_execute_preferred_application")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "category")
+    '("const-gchar*" "parameter")
+    '("const-gchar*" "working_directory")
+    '("gchar**" "envp")
+    '("GError**" "error")
+  )
+)
+
+(define-function execute_preferred_application_on_screen
+  (c-name "exo_execute_preferred_application_on_screen")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "category")
+    '("const-gchar*" "parameter")
+    '("const-gchar*" "working_directory")
+    '("gchar**" "envp")
+    '("GdkScreen*" "screen")
+    '("GError**" "error")
+  )
+)
+
+(define-function execute_terminal_shell
+  (c-name "exo_execute_terminal_shell")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "command_line")
+    '("const-gchar*" "working_directory")
+    '("gchar**" "envp")
+    '("GError**" "error")
+  )
+)
+
+(define-function execute_terminal_shell_on_screen
+  (c-name "exo_execute_terminal_shell_on_screen")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "command_line")
+    '("const-gchar*" "working_directory")
+    '("gchar**" "envp")
+    '("GdkScreen*" "screen")
+    '("GError**" "error")
+  )
+)
+
+
+
+;; From ../exo/exo-gdk-pixbuf-extensions.h
+
+(define-function exo_gdk_pixbuf_colorize
+  (c-name "exo_gdk_pixbuf_colorize")
+  (return-type "GdkPixbuf*")
+  (parameters
+    '("const-GdkPixbuf*" "src")
+    '("const-GdkColor*" "color")
+  )
+)
+
+(define-function exo_gdk_pixbuf_lucent
+  (c-name "exo_gdk_pixbuf_lucent")
+  (return-type "GdkPixbuf*")
+  (parameters
+    '("const-GdkPixbuf*" "src")
+    '("guint" "percent")
+  )
+)
+
+(define-function exo_gdk_pixbuf_spotlight
+  (c-name "exo_gdk_pixbuf_spotlight")
+  (return-type "GdkPixbuf*")
+  (parameters
+    '("const-GdkPixbuf*" "src")
+  )
+)
+
+(define-function exo_gdk_pixbuf_scale_down
+  (c-name "exo_gdk_pixbuf_scale_down")
+  (return-type "GdkPixbuf*")
+  (parameters
+    '("GdkPixbuf*" "source")
+    '("gboolean" "aspect_ratio")
+    '("gint" "dest_width")
+    '("gint" "dest_height")
+  )
+)
+
+(define-function exo_gdk_pixbuf_scale_ratio
+  (c-name "exo_gdk_pixbuf_scale_ratio")
+  (return-type "GdkPixbuf*")
+  (parameters
+    '("GdkPixbuf*" "source")
+    '("gint" "dest_size")
   )
 )
 
@@ -170,10 +290,9 @@
 
 (define-function exo_icon_bar_new_with_model
   (c-name "exo_icon_bar_new_with_model")
-  (is-constructor-of "ExoIconBar")
   (return-type "GtkWidget*")
-  (properties
-    '("model" (optional))
+  (parameters
+    '("GtkTreeModel*" "model")
   )
 )
 
@@ -473,6 +592,60 @@
   )
 )
 
+(define-method get_single_click
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_single_click")
+  (return-type "gboolean")
+)
+
+(define-method set_single_click
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_single_click")
+  (return-type "none")
+  (parameters
+    '("gboolean" "single_click")
+  )
+)
+
+(define-method get_single_click_timeout
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_single_click_timeout")
+  (return-type "guint")
+)
+
+(define-method set_single_click_timeout
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_single_click_timeout")
+  (return-type "none")
+  (parameters
+    '("guint" "single_click_timeout")
+  )
+)
+
+(define-method widget_to_icon_coords
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_widget_to_icon_coords")
+  (return-type "none")
+  (parameters
+    '("gint" "wx")
+    '("gint" "wy")
+    '("gint*" "ix")
+    '("gint*" "iy")
+  )
+)
+
+(define-method icon_to_widget_coords
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_icon_to_widget_coords")
+  (return-type "none")
+  (parameters
+    '("gint" "ix")
+    '("gint" "iy")
+    '("gint*" "wx")
+    '("gint*" "wy")
+  )
+)
+
 (define-method get_path_at_pos
   (of-object "ExoIconView")
   (c-name "exo_icon_view_get_path_at_pos")
@@ -693,56 +866,67 @@
   )
 )
 
-
-
-;; From ../exo/exo-xsession-client.h
-
-(define-function exo_xsession_client_get_type
-  (c-name "exo_xsession_client_get_type")
-  (return-type "GType")
-)
-
-(define-function exo_xsession_client_new_with_group
-  (c-name "exo_xsession_client_new_with_group")
-  (is-constructor-of "ExoXsessionClient")
-  (return-type "ExoXsessionClient*")
-  (properties
-    '("leader" (optional))
-  )
-)
-
-(define-method get_group
-  (of-object "ExoXsessionClient")
-  (c-name "exo_xsession_client_get_group")
-  (return-type "GdkWindow*")
-)
-
-(define-method set_group
-  (of-object "ExoXsessionClient")
-  (c-name "exo_xsession_client_set_group")
-  (return-type "none")
-  (parameters
-    '("GdkWindow*" "leader")
-  )
-)
-
-(define-method get_restart_command
-  (of-object "ExoXsessionClient")
-  (c-name "exo_xsession_client_get_restart_command")
+(define-method get_enable_search
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_enable_search")
   (return-type "gboolean")
+)
+
+(define-method set_enable_search
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_enable_search")
+  (return-type "none")
   (parameters
-    '("gchar***" "argv")
-    '("gint*" "argc")
+    '("gboolean" "enable_search")
   )
 )
 
-(define-method set_restart_command
-  (of-object "ExoXsessionClient")
-  (c-name "exo_xsession_client_set_restart_command")
+(define-method get_search_column
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_search_column")
+  (return-type "gint")
+)
+
+(define-method set_search_column
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_search_column")
   (return-type "none")
   (parameters
-    '("gchar**" "argv")
-    '("gint" "argc")
+    '("gint" "search_column")
+  )
+)
+
+(define-method get_search_equal_func
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_search_equal_func")
+  (return-type "ExoIconViewSearchEqualFunc")
+)
+
+(define-method set_search_equal_func
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_search_equal_func")
+  (return-type "none")
+  (parameters
+    '("ExoIconViewSearchEqualFunc" "search_equal_func")
+    '("gpointer" "search_equal_data")
+    '("GDestroyNotify" "search_equal_destroy")
+  )
+)
+
+(define-method get_search_position_func
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_get_search_position_func")
+  (return-type "ExoIconViewSearchPositionFunc")
+)
+
+(define-method set_search_position_func
+  (of-object "ExoIconView")
+  (c-name "exo_icon_view_set_search_position_func")
+  (return-type "none")
+  (parameters
+    '("ExoIconViewSearchPositionFunc" "search_position_func")
+    '("gpointer" "search_position_data")
+    '("GDestroyNotify" "search_position_destroy")
   )
 )
 
@@ -758,7 +942,6 @@
 (define-function exo_toolbars_editor_dialog_new_with_model
   (c-name "exo_toolbars_editor_dialog_new_with_model")
   (return-type "GtkWidget*")
-  (is-constructor-of "ExoToolbarsEditorDialog")
   (parameters
     '("GtkUIManager*" "ui_manager")
     '("ExoToolbarsModel*" "model")
@@ -785,11 +968,10 @@
 
 (define-function exo_toolbars_editor_new_with_model
   (c-name "exo_toolbars_editor_new_with_model")
-  (is-constructor-of "ExoToolbarsEditor")
   (return-type "GtkWidget*")
-  (properties
-    '("ui_manager" (optional))
-    '("model" (optional))
+  (parameters
+    '("GtkUIManager*" "ui_manager")
+    '("ExoToolbarsModel*" "model")
   )
 )
 
@@ -1063,18 +1245,17 @@
   (c-name "exo_toolbars_view_new")
   (is-constructor-of "ExoToolbarsView")
   (return-type "GtkWidget*")
-  (properties
-    '("ui_manager" (optional))
+  (parameters
+    '("GtkUIManager*" "ui_manager")
   )
 )
 
 (define-function exo_toolbars_view_new_with_model
   (c-name "exo_toolbars_view_new_with_model")
-  (is-constructor-of "ExoToolbarsView")
   (return-type "GtkWidget*")
-  (properties
-    '("ui_manager" (optional))
-    '("model" (optional))
+  (parameters
+    '("GtkUIManager*" "ui_manager")
+    '("ExoToolbarsModel*" "model")
   )
 )
 
@@ -1122,5 +1303,191 @@
     '("GtkUIManager*" "ui_manager")
   )
 )
+
+
+
+;; From ../exo/exo-tree-view.h
+
+(define-function exo_tree_view_get_type
+  (c-name "exo_tree_view_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_tree_view_new
+  (c-name "exo_tree_view_new")
+  (is-constructor-of "ExoTreeView")
+  (return-type "GtkWidget*")
+)
+
+(define-method get_single_click
+  (of-object "ExoTreeView")
+  (c-name "exo_tree_view_get_single_click")
+  (return-type "gboolean")
+)
+
+(define-method set_single_click
+  (of-object "ExoTreeView")
+  (c-name "exo_tree_view_set_single_click")
+  (return-type "none")
+  (parameters
+    '("gboolean" "single_click")
+  )
+)
+
+(define-method get_single_click_timeout
+  (of-object "ExoTreeView")
+  (c-name "exo_tree_view_get_single_click_timeout")
+  (return-type "guint")
+)
+
+(define-method set_single_click_timeout
+  (of-object "ExoTreeView")
+  (c-name "exo_tree_view_set_single_click_timeout")
+  (return-type "none")
+  (parameters
+    '("guint" "single_click_timeout")
+  )
+)
+
+
+
+;; From ../exo/exo-url.h
+
+(define-function url_show
+  (c-name "exo_url_show")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "url")
+    '("gchar**" "envp")
+    '("GError**" "error")
+  )
+)
+
+(define-function url_show_on_screen
+  (c-name "exo_url_show_on_screen")
+  (return-type "gboolean")
+  (parameters
+    '("const-gchar*" "url")
+    '("gchar**" "envp")
+    '("GdkScreen*" "screen")
+    '("GError**" "error")
+  )
+)
+
+
+
+;; From ../exo/exo-wrap-table.h
+
+(define-function exo_wrap_table_get_type
+  (c-name "exo_wrap_table_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_wrap_table_new
+  (c-name "exo_wrap_table_new")
+  (is-constructor-of "ExoWrapTable")
+  (return-type "GtkWidget*")
+  (parameters
+    '("gboolean" "homogeneous")
+  )
+)
+
+(define-method get_col_spacing
+  (of-object "ExoWrapTable")
+  (c-name "exo_wrap_table_get_col_spacing")
+  (return-type "guint")
+)
+
+(define-method set_col_spacing
+  (of-object "ExoWrapTable")
+  (c-name "exo_wrap_table_set_col_spacing")
+  (return-type "none")
+  (parameters
+    '("guint" "col_spacing")
+  )
+)
+
+(define-method get_row_spacing
+  (of-object "ExoWrapTable")
+  (c-name "exo_wrap_table_get_row_spacing")
+  (return-type "guint")
+)
+
+(define-method set_row_spacing
+  (of-object "ExoWrapTable")
+  (c-name "exo_wrap_table_set_row_spacing")
+  (return-type "none")
+  (parameters
+    '("guint" "row_spacing")
+  )
+)
+
+(define-method get_homogeneous
+  (of-object "ExoWrapTable")
+  (c-name "exo_wrap_table_get_homogeneous")
+  (return-type "gboolean")
+)
+
+(define-method set_homogeneous
+  (of-object "ExoWrapTable")
+  (c-name "exo_wrap_table_set_homogeneous")
+  (return-type "none")
+  (parameters
+    '("gboolean" "homogeneous")
+  )
+)
+
+
+
+;; From ../exo/exo-xsession-client.h
+
+(define-function exo_xsession_client_get_type
+  (c-name "exo_xsession_client_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_xsession_client_new_with_group
+  (c-name "exo_xsession_client_new_with_group")
+  (return-type "ExoXsessionClient*")
+  (parameters
+    '("GdkWindow*" "leader")
+  )
+)
+
+(define-method get_group
+  (of-object "ExoXsessionClient")
+  (c-name "exo_xsession_client_get_group")
+  (return-type "GdkWindow*")
+)
+
+(define-method set_group
+  (of-object "ExoXsessionClient")
+  (c-name "exo_xsession_client_set_group")
+  (return-type "none")
+  (parameters
+    '("GdkWindow*" "leader")
+  )
+)
+
+(define-method get_restart_command
+  (of-object "ExoXsessionClient")
+  (c-name "exo_xsession_client_get_restart_command")
+  (return-type "gboolean")
+  (parameters
+    '("gchar***" "argv")
+    '("gint*" "argc")
+  )
+)
+
+(define-method set_restart_command
+  (of-object "ExoXsessionClient")
+  (c-name "exo_xsession_client_set_restart_command")
+  (return-type "none")
+  (parameters
+    '("gchar**" "argv")
+    '("gint" "argc")
+  )
+)
+
 
 

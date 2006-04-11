@@ -1,6 +1,8 @@
 noinst_DATA =								\
 	README								\
+	binding.py							\
 	ellipsizing.py							\
+	preferred-applications.py					\
 	toolbars.py							\
 	toolbars.ui
 

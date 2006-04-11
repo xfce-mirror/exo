@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2005 os-cillation e.K.
+ * Copyright (c) 2005-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -20,8 +20,13 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#include <pygobject.h>
-#include <pygtk/pygtk.h>
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include "pyexo.h"
+
+
 
 /* mark internal symbols with G_GNUC_INTERNAL */
 void         exo_add_constants             (PyObject    *module,
@@ -101,6 +106,7 @@ pygtk_tree_path_from_pyobject (PyObject *object)
 }
 
 
+
 DL_EXPORT(void)
 init_exo (void)
 {
@@ -118,5 +124,24 @@ init_exo (void)
   if (PyErr_Occurred ())
     {
       Py_FatalError ("cannot initialize module _exo");
+      return;
     }
+
+  /* register additional types */
+#define REGISTER_TYPE(type, name)                     \
+  type.ob_type = &PyType_Type;                        \
+  type.tp_alloc = PyType_GenericAlloc;                \
+  type.tp_new = PyType_GenericNew;                    \
+  if (PyType_Ready (&type))                           \
+    return;                                           \
+  PyDict_SetItemString (d, name, (PyObject *) &type);
+
+  REGISTER_TYPE (PyExoBinding_Type, "Binding");
+  REGISTER_TYPE (PyExoMutualBinding_Type, "MutualBinding");
+
+#undef REGISTER_TYPE
+
+  /* use exo-url for about dialogs by default */
+  gtk_about_dialog_set_email_hook (exo_url_about_dialog_hook, NULL, NULL);
+  gtk_about_dialog_set_url_hook (exo_url_about_dialog_hook, NULL, NULL);
 }
