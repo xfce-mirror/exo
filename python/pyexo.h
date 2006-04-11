@@ -23,10 +23,10 @@
 #ifndef __PYEXO_H__
 #define __PYEXO_H__
 
-#include <exo/exo.h>
-
 #include <pygobject.h>
 #include <pygtk/pygtk.h>
+
+#include <exo/exo.h>
 
 G_BEGIN_DECLS;
 

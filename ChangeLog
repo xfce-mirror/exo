@@ -1,5 +1,10 @@
 2006-04-11	Benedikt Meurer <benny@xfce.org>
 
+	* python/pyexo.h: Work-around compile problem when glibc headers are
+	  included before Pythons config file.
+
+2006-04-11	Benedikt Meurer <benny@xfce.org>
+
 	* python/: Update the Python bindings, including exo-url, exo-execute
 	  and exo-binding. Update the Python examples.
 
