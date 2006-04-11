@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.5svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-25 08:18+0900\n"
+"POT-Creation-Date: 2006-04-11 20:11+0900\n"
 "PO-Revision-Date: 2006-03-06 21:32+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: librezale <librezale@librezale.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 "Katea elipsatzeko lekurik gogojoena, etiketak ez badu kate osoa bistratzeko "
 "memoria aski, hala ere"
 
-#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:745
+#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:759
 msgid "Orientation"
 msgstr "Norabidea"
 
@@ -54,19 +54,19 @@ msgstr "Norabidea"
 msgid "The orientation of the iconbar"
 msgstr "Ikono barraren norabidea"
 
-#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:762
+#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:776
 msgid "Pixbuf column"
 msgstr "Pixbuf zutabea"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:777
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Ikono pixbuf-a eskuratzeko erabiliko den zutabe modeloa"
 
-#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:872
+#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:903
 msgid "Text column"
 msgstr "Testu zutabea"
 
-#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:873
+#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:904
 msgid "Model column used to retrieve the text from"
 msgstr "Testua hortik eskuratzeko erabiliko den zutabe modeloa"
 
@@ -110,132 +110,143 @@ msgstr "Kurtsore elementu ertz kolorea"
 msgid "Cursor item text color"
 msgstr "Kurtsore elementu testu kolorea"
 
-#: ../exo/exo-icon-view.c:633
+#: ../exo/exo-icon-view.c:647
 msgid "Column Spacing"
 msgstr "Zutane Tartea"
 
-#: ../exo/exo-icon-view.c:634
+#: ../exo/exo-icon-view.c:648
 msgid "Space which is inserted between grid column"
 msgstr "Sareta zutabeen artean sartuko den tartea"
 
-#: ../exo/exo-icon-view.c:650
+#: ../exo/exo-icon-view.c:664
 msgid "Number of columns"
 msgstr "Zutabe kopurua"
 
-#: ../exo/exo-icon-view.c:651
+#: ../exo/exo-icon-view.c:665
 msgid "Number of columns to display"
 msgstr "Bistaraziko diren zutabe kopurua"
 
-#: ../exo/exo-icon-view.c:665
+#: ../exo/exo-icon-view.c:679
 msgid "Enable Search"
 msgstr "Bailketa Galitu"
 
-#: ../exo/exo-icon-view.c:666
+#: ../exo/exo-icon-view.c:680
 msgid "View allows user to search through columns interactively"
 msgstr ""
 "Ikuspegiak erabiltzaileari zutabetan interaktiboki bilatzeko aukera ematen "
 "dio"
 
-#: ../exo/exo-icon-view.c:683
+#: ../exo/exo-icon-view.c:697
 msgid "Width for each item"
 msgstr "Elementu bakoitzaren zabalera"
 
-#: ../exo/exo-icon-view.c:684
+#: ../exo/exo-icon-view.c:698
 msgid "The width used for each item"
 msgstr "Elementu bakoitzarentzat erabiliko den zabalera"
 
-#: ../exo/exo-icon-view.c:699
+#: ../exo/exo-icon-view.c:713
 msgid "Margin"
 msgstr "Marjina"
 
-#: ../exo/exo-icon-view.c:700
+#: ../exo/exo-icon-view.c:714
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Ikono ikuspegiaren ertzetan txertatuko den lekua"
 
-#: ../exo/exo-icon-view.c:716
+#: ../exo/exo-icon-view.c:730
 msgid "Markup column"
 msgstr "Zutabea markatu"
 
-#: ../exo/exo-icon-view.c:717
+#: ../exo/exo-icon-view.c:731
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Pango markatzea erabiltzen bada testua eskuratzeko erabiliko den zutabe "
 "modeloa"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:745
 msgid "Icon View Model"
 msgstr "Ikono Ikuspegi Modeloa"
 
-#: ../exo/exo-icon-view.c:732
+#: ../exo/exo-icon-view.c:746
 msgid "The model for the icon view"
 msgstr "Ikono ikuspegiaren modeloa"
 
-#: ../exo/exo-icon-view.c:746
+#: ../exo/exo-icon-view.c:760
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Elementu bakoitzaren testu eta ikonoaren kokapena bestearekiko"
 
-#: ../exo/exo-icon-view.c:778
+#: ../exo/exo-icon-view.c:792
 msgid "Reorderable"
 msgstr "Berrantolagarria"
 
-#: ../exo/exo-icon-view.c:779
+#: ../exo/exo-icon-view.c:793
 msgid "View is reorderable"
 msgstr "Iksupegoia berrantolagarria da"
 
-#: ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-view.c:808
 msgid "Row Spacing"
 msgstr "Lerro tartea"
 
-#: ../exo/exo-icon-view.c:795
+#: ../exo/exo-icon-view.c:809
 msgid "Space which is inserted between grid rows"
 msgstr "Sareta lerroren artean txertatuko den tartea"
 
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:823
 msgid "Search Column"
 msgstr "Baileta Zutabea"
 
-#: ../exo/exo-icon-view.c:810
+#: ../exo/exo-icon-view.c:824
 msgid "Model column to search through when searching through item"
 msgstr "Elementuen artean bilatzerakoane rbailiko den zutabe modeloa"
 
-#: ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-view.c:838
 msgid "Selection mode"
 msgstr "Aukeratze modua"
 
-#: ../exo/exo-icon-view.c:825
+#: ../exo/exo-icon-view.c:839
 msgid "The selection mode"
 msgstr "Aukeratze modua"
 
-#: ../exo/exo-icon-view.c:840 ../exo/exo-tree-view.c:156
+#: ../exo/exo-icon-view.c:854 ../exo/exo-tree-view.c:169
 msgid "Single Click"
 msgstr "Klik bakana"
 
-#: ../exo/exo-icon-view.c:841 ../exo/exo-tree-view.c:157
+#: ../exo/exo-icon-view.c:855 ../exo/exo-tree-view.c:170
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Honela ikuspegiko elementuak klika bakan batez aktibatu daitezke"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:186
+#, fuzzy
+msgid "Single Click Timeout"
+msgstr "Klik bakana"
+
+#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:187
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:887
 msgid "Spacing"
 msgstr "Tartea"
 
-#: ../exo/exo-icon-view.c:857
+#: ../exo/exo-icon-view.c:888
 msgid "Space which is inserted between cells of an item"
 msgstr "Elementu baten gelaxkan artean txertatuko den tartea"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:911
 msgid "Selection Box Color"
 msgstr "Aukeratze Kutxa Kolorea"
 
-#: ../exo/exo-icon-view.c:881
+#: ../exo/exo-icon-view.c:912
 msgid "Color of the selection box"
 msgstr "Aukeratze kutxaren kolorea"
 
-#: ../exo/exo-icon-view.c:887
+#: ../exo/exo-icon-view.c:918
 msgid "Selection Box Alpha"
 msgstr "Aukeratze Kutxa Alpha"
 
-#: ../exo/exo-icon-view.c:888
+#: ../exo/exo-icon-view.c:919
 msgid "Opacity of the selection box"
 msgstr "Aukeratze kutxaren opakotasuna"
 

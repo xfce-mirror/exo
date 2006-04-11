@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.5svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-25 08:18+0900\n"
+"POT-Creation-Date: 2006-04-11 20:11+0900\n"
 "PO-Revision-Date: 2006-03-31 17:49-0300\n"
 "Last-Translator: Adriano Winter Bess <awbess@gmail.com>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
@@ -24,7 +24,10 @@ msgstr "Em forma de elipse"
 msgid ""
 "The preferred place to ellipsize the string, if the cell renderer does not "
 "have enough room to display the entire string, if at all"
-msgstr "O lugar preferido para tornar a expressão em forma de elipse, caso o renderizador de célula não tiver espaço suficiente para mostrar a expressão inteira, se este for o caso"
+msgstr ""
+"O lugar preferido para tornar a expressão em forma de elipse, caso o "
+"renderizador de célula não tiver espaço suficiente para mostrar a expressão "
+"inteira, se este for o caso"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:163
 msgid "Ellipsize set"
@@ -38,9 +41,12 @@ msgstr "Se este rótulo afeta o modo de tornar em forma de elipse"
 msgid ""
 "The preferred place to ellipsize the string, if the label does not have "
 "enough room to display the entire string, if at all"
-msgstr "O lugar preferido para tornar a expressão em forma de elipse, caso o rótulo não tenha espaço suficiente para mostrar a expressão inteira, se este for o caso"
+msgstr ""
+"O lugar preferido para tornar a expressão em forma de elipse, caso o rótulo "
+"não tenha espaço suficiente para mostrar a expressão inteira, se este for o "
+"caso"
 
-#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:745
+#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:759
 msgid "Orientation"
 msgstr "Orientação"
 
@@ -48,19 +54,19 @@ msgstr "Orientação"
 msgid "The orientation of the iconbar"
 msgstr "A orientação da barra de ícones"
 
-#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:762
+#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:776
 msgid "Pixbuf column"
 msgstr "Coluna Pixbuf"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:777
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Coluna de modelo usada para retirar o ícone pixbuf dela"
 
-#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:872
+#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:903
 msgid "Text column"
 msgstr "Coluna de texto"
 
-#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:873
+#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:904
 msgid "Model column used to retrieve the text from"
 msgstr "Coluna de modelo usada para retirar o texto dela"
 
@@ -104,128 +110,142 @@ msgstr "Cor de borda de item de cursor"
 msgid "Cursor item text color"
 msgstr "Cor de texto de item de cursor"
 
-#: ../exo/exo-icon-view.c:633
+#: ../exo/exo-icon-view.c:647
 msgid "Column Spacing"
 msgstr "Espaçamento de Coluna"
 
-#: ../exo/exo-icon-view.c:634
+#: ../exo/exo-icon-view.c:648
 msgid "Space which is inserted between grid column"
 msgstr "Espaço que é inserido entre grades de colunas"
 
-#: ../exo/exo-icon-view.c:650
+#: ../exo/exo-icon-view.c:664
 msgid "Number of columns"
 msgstr "Número de colunas"
 
-#: ../exo/exo-icon-view.c:651
+#: ../exo/exo-icon-view.c:665
 msgid "Number of columns to display"
 msgstr "Número de colunas para mostrar"
 
-#: ../exo/exo-icon-view.c:665
+#: ../exo/exo-icon-view.c:679
 msgid "Enable Search"
 msgstr "Habilitar Procura"
 
-#: ../exo/exo-icon-view.c:666
+#: ../exo/exo-icon-view.c:680
 msgid "View allows user to search through columns interactively"
 msgstr "Visão permite ao usuário procurar através das colunas interativamente"
 
-#: ../exo/exo-icon-view.c:683
+#: ../exo/exo-icon-view.c:697
 msgid "Width for each item"
 msgstr "Largura de cada item"
 
-#: ../exo/exo-icon-view.c:684
+#: ../exo/exo-icon-view.c:698
 msgid "The width used for each item"
 msgstr "A largura usada para cada item"
 
-#: ../exo/exo-icon-view.c:699
+#: ../exo/exo-icon-view.c:713
 msgid "Margin"
 msgstr "Margem"
 
-#: ../exo/exo-icon-view.c:700
+#: ../exo/exo-icon-view.c:714
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Espaço que é inserido nos limites da visualização de ícone"
 
-#: ../exo/exo-icon-view.c:716
+#: ../exo/exo-icon-view.c:730
 msgid "Markup column"
 msgstr "Coluna de Marcação"
 
-#: ../exo/exo-icon-view.c:717
-msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Coluna do modelo usada para retirar o texto se estiver usando marcação Pango"
-
 #: ../exo/exo-icon-view.c:731
+msgid "Model column used to retrieve the text if using Pango markup"
+msgstr ""
+"Coluna do modelo usada para retirar o texto se estiver usando marcação Pango"
+
+#: ../exo/exo-icon-view.c:745
 msgid "Icon View Model"
 msgstr "Modelo de Visualização de Ícone"
 
-#: ../exo/exo-icon-view.c:732
+#: ../exo/exo-icon-view.c:746
 msgid "The model for the icon view"
 msgstr "O modelo para a visualização de ícone"
 
-#: ../exo/exo-icon-view.c:746
+#: ../exo/exo-icon-view.c:760
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
-msgstr "Como o texto e o ícone de cada item são posicionados relativamente um ao outro"
+msgstr ""
+"Como o texto e o ícone de cada item são posicionados relativamente um ao "
+"outro"
 
-#: ../exo/exo-icon-view.c:778
+#: ../exo/exo-icon-view.c:792
 msgid "Reorderable"
 msgstr "Reordenável"
 
-#: ../exo/exo-icon-view.c:779
+#: ../exo/exo-icon-view.c:793
 msgid "View is reorderable"
 msgstr "Visualização é reordenável"
 
-#: ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-view.c:808
 msgid "Row Spacing"
 msgstr "Espaçamento de Linha"
 
-#: ../exo/exo-icon-view.c:795
+#: ../exo/exo-icon-view.c:809
 msgid "Space which is inserted between grid rows"
 msgstr "Espaço que é inserido entre grades de linhas"
 
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:823
 msgid "Search Column"
 msgstr "Coluna de Procura"
 
-#: ../exo/exo-icon-view.c:810
+#: ../exo/exo-icon-view.c:824
 msgid "Model column to search through when searching through item"
 msgstr "Coluna do modelo a procurar quando procurando por item"
 
-#: ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-view.c:838
 msgid "Selection mode"
 msgstr "Modo de seleção"
 
-#: ../exo/exo-icon-view.c:825
+#: ../exo/exo-icon-view.c:839
 msgid "The selection mode"
 msgstr "O modo de seleção"
 
-#: ../exo/exo-icon-view.c:840 ../exo/exo-tree-view.c:156
+#: ../exo/exo-icon-view.c:854 ../exo/exo-tree-view.c:169
 msgid "Single Click"
 msgstr "Clique Único"
 
-#: ../exo/exo-icon-view.c:841 ../exo/exo-tree-view.c:157
+#: ../exo/exo-icon-view.c:855 ../exo/exo-tree-view.c:170
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Se os itens da visão podem ser ativados com cliques únicos"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:186
+#, fuzzy
+msgid "Single Click Timeout"
+msgstr "Clique Único"
+
+#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:187
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:887
 msgid "Spacing"
 msgstr "Espaçamento"
 
-#: ../exo/exo-icon-view.c:857
+#: ../exo/exo-icon-view.c:888
 msgid "Space which is inserted between cells of an item"
 msgstr "Espaço que é inserido entre células de um ítem"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:911
 msgid "Selection Box Color"
 msgstr "Cor da Caixa de Seleção"
 
-#: ../exo/exo-icon-view.c:881
+#: ../exo/exo-icon-view.c:912
 msgid "Color of the selection box"
 msgstr "Cor da caixa de seleção"
 
-#: ../exo/exo-icon-view.c:887
+#: ../exo/exo-icon-view.c:918
 msgid "Selection Box Alpha"
 msgstr "Alpha da Caixa de Seleção"
 
-#: ../exo/exo-icon-view.c:888
+#: ../exo/exo-icon-view.c:919
 msgid "Opacity of the selection box"
 msgstr "Opacidade da caixa de seleção"
 
@@ -237,7 +257,9 @@ msgstr "_Adicionar uma nova barra de ferramentas"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr "Arraste um item sobre a barras de ferramentas para adicioná-lo, a partir das barras de ferramentas para a tabela de ítens para removê-lo."
+msgstr ""
+"Arraste um item sobre a barras de ferramentas para adicioná-lo, a partir das "
+"barras de ferramentas para a tabela de ítens para removê-lo."
 
 #: ../exo/exo-toolbars-editor.c:551
 msgid "Separator"
@@ -462,7 +484,8 @@ msgstr "Falhou ao abrir o navegador de documentação."
 #: ../exo-helper/exo-helper-chooser.c:177
 #: ../exo-helper/exo-helper-chooser.c:184
 msgid "Press left mouse button to change the selected application."
-msgstr "Pressione o botão esquerdo do mouse para mudar a aplicação selecionada."
+msgstr ""
+"Pressione o botão esquerdo do mouse para mudar a aplicação selecionada."
 
 #: ../exo-helper/exo-helper-chooser.c:183
 msgid "Application Chooser Button"
@@ -658,12 +681,14 @@ msgstr "       exo-open --launch TIPO [PARÂMETROs...]"
 
 #: ../exo-open/main.c:46
 msgid "  -h, --help                          Print this help message and exit"
-msgstr "  -h, --help                          Mostra esta mensagem de ajuda e sai"
+msgstr ""
+"  -h, --help                          Mostra esta mensagem de ajuda e sai"
 
 #: ../exo-open/main.c:47
 msgid ""
 "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Mostra informação de versão e sai"
+msgstr ""
+"  -v, --version                       Mostra informação de versão e sai"
 
 #: ../exo-open/main.c:49
 msgid ""
@@ -702,9 +727,11 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
 "Se você não especificar a opção --launch, exo-open irá abrir todas as URLs\n"
-"especificadas com seus tratadores de URL preferidos. Caso contrário, se você\n"
+"especificadas com seus tratadores de URL preferidos. Caso contrário, se "
+"você\n"
 "especificar a opção --launch, você pode selecionar qual aplicação preferida\n"
-"você deseja executar e passar parâmetros adicionais para a aplicação (isto é,\n"
+"você deseja executar e passar parâmetros adicionais para a aplicação (isto "
+"é,\n"
 "para TerminalEmulator você pode passar a linha de comando que deve ser\n"
 "executada dentro do terminal)."
 

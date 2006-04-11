@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libexo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-25 08:18+0900\n"
+"POT-Creation-Date: 2006-04-11 20:11+0900\n"
 "PO-Revision-Date: 2006-03-29 22:37+0300\n"
 "Last-Translator: Stathis Kamperis <ekamperi@auth.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -26,7 +26,9 @@ msgstr "Χρήση αποσιωπητικών"
 msgid ""
 "The preferred place to ellipsize the string, if the cell renderer does not "
 "have enough room to display the entire string, if at all"
-msgstr "Η προτιμώμενη θέση για τη χρήση αποσιωπητικών στο αλφαριθμητικό, αν το κελί δεν έχει αρκετό χώρο για να το εμφανίσει ολόκληρο"
+msgstr ""
+"Η προτιμώμενη θέση για τη χρήση αποσιωπητικών στο αλφαριθμητικό, αν το κελί "
+"δεν έχει αρκετό χώρο για να το εμφανίσει ολόκληρο"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:163
 msgid "Ellipsize set"
@@ -44,7 +46,7 @@ msgstr ""
 "Η προτιμώμενη θέση για την αποσιώπηση αλφαριθμητικού, αν η ετικέτα δεν έχει "
 "αρκετό χώρο για την εμφάνιση ολόκληρου του αλφαριθμητικού"
 
-#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:745
+#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:759
 msgid "Orientation"
 msgstr "Προσανατολισμός"
 
@@ -52,19 +54,19 @@ msgstr "Προσανατολισμός"
 msgid "The orientation of the iconbar"
 msgstr "Ο προσανατολισμός του Iconbar"
 
-#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:762
+#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:776
 msgid "Pixbuf column"
 msgstr "Στήλη Pixbuf"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:777
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Το μοντέλο στήλης για τη λήψη του pixbuf εικονιδίου"
 
-#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:872
+#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:903
 msgid "Text column"
 msgstr "Στήλη κειμένου"
 
-#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:873
+#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:904
 msgid "Model column used to retrieve the text from"
 msgstr "Το μοντέλο στήλης για τη λήψη του κειμένου"
 
@@ -108,129 +110,142 @@ msgstr "Χρώμα περιγράμματος κέρσορα"
 msgid "Cursor item text color"
 msgstr "Χρώμα κειμένου κέρσορα"
 
-#: ../exo/exo-icon-view.c:633
+#: ../exo/exo-icon-view.c:647
 msgid "Column Spacing"
 msgstr "Διάστημα στηλών"
 
-#: ../exo/exo-icon-view.c:634
+#: ../exo/exo-icon-view.c:648
 msgid "Space which is inserted between grid column"
 msgstr "Το διάστημα που εισάγεται ανάμεσα στα κελιά στηλών πλέγματος"
 
-#: ../exo/exo-icon-view.c:650
+#: ../exo/exo-icon-view.c:664
 msgid "Number of columns"
 msgstr "Αριθμός στηλών"
 
-#: ../exo/exo-icon-view.c:651
+#: ../exo/exo-icon-view.c:665
 msgid "Number of columns to display"
 msgstr "Ο αριθμός των στηλών  που προβάλλεται"
 
-#: ../exo/exo-icon-view.c:665
+#: ../exo/exo-icon-view.c:679
 msgid "Enable Search"
 msgstr "Ενεργοποίηση αναζήτησης"
 
-#: ../exo/exo-icon-view.c:666
+#: ../exo/exo-icon-view.c:680
 msgid "View allows user to search through columns interactively"
 msgstr "Η Προβολή επιτρέπει το χρήστη να ερευνήσει στις στήλες διαδραστικά"
 
-#: ../exo/exo-icon-view.c:683
+#: ../exo/exo-icon-view.c:697
 msgid "Width for each item"
 msgstr "Πλάτος για κάθε αντικείμενο"
 
-#: ../exo/exo-icon-view.c:684
+#: ../exo/exo-icon-view.c:698
 msgid "The width used for each item"
 msgstr "Το πλάτος που χρησιμοποιείται για κάθε στοιχείο"
 
-#: ../exo/exo-icon-view.c:699
+#: ../exo/exo-icon-view.c:713
 msgid "Margin"
 msgstr "Περιθώριο"
 
-#: ../exo/exo-icon-view.c:700
+#: ../exo/exo-icon-view.c:714
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Το διάστημα που εισάγεται στα όρια της προβολής εικονιδίου"
 
-#: ../exo/exo-icon-view.c:716
+#: ../exo/exo-icon-view.c:730
 msgid "Markup column"
 msgstr "Στήλη επισήμανσης"
 
-#: ../exo/exo-icon-view.c:717
+#: ../exo/exo-icon-view.c:731
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Το μοντέλο στήλης για τη λήψη του κειμένου, στην περίπτωση χρήσης σήμανσης "
 "Pango"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:745
 msgid "Icon View Model"
 msgstr "Μοντέλο προβολής εικονιδίου"
 
-#: ../exo/exo-icon-view.c:732
+#: ../exo/exo-icon-view.c:746
 msgid "The model for the icon view"
 msgstr "Το μοντέλο για την προβολή εικονιδίου"
 
-#: ../exo/exo-icon-view.c:746
-msgid "How the text and icon of each item are positioned relative to each other"
-msgstr "Πως το κείμενο και κάθε στοιχείο τοποθετούνται το ένα σε σχέση με το άλλο"
+#: ../exo/exo-icon-view.c:760
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"Πως το κείμενο και κάθε στοιχείο τοποθετούνται το ένα σε σχέση με το άλλο"
 
-#: ../exo/exo-icon-view.c:778
+#: ../exo/exo-icon-view.c:792
 msgid "Reorderable"
 msgstr "Δυνατότητα αναταξινόμησης"
 
-#: ../exo/exo-icon-view.c:779
+#: ../exo/exo-icon-view.c:793
 msgid "View is reorderable"
 msgstr "Η προβολή έχει δυνατότητα αναταξινόμησης"
 
-#: ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-view.c:808
 msgid "Row Spacing"
 msgstr "Διάστημα γραμμών"
 
-#: ../exo/exo-icon-view.c:795
+#: ../exo/exo-icon-view.c:809
 msgid "Space which is inserted between grid rows"
 msgstr "Το διάστημα που εισάγεται ανάμεσα στα κελιά γραμμών πλέγματος"
 
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:823
 msgid "Search Column"
 msgstr "Αναζήτηση στήλης"
 
-#: ../exo/exo-icon-view.c:810
+#: ../exo/exo-icon-view.c:824
 msgid "Model column to search through when searching through item"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-view.c:838
 msgid "Selection mode"
 msgstr "Λειτουργία επιλογής"
 
-#: ../exo/exo-icon-view.c:825
+#: ../exo/exo-icon-view.c:839
 msgid "The selection mode"
 msgstr "Η λειτουργία επιλογής"
 
-#: ../exo/exo-icon-view.c:840 ../exo/exo-tree-view.c:156
+#: ../exo/exo-icon-view.c:854 ../exo/exo-tree-view.c:169
 msgid "Single Click"
 msgstr "Μονό κλικ"
 
-#: ../exo/exo-icon-view.c:841 ../exo/exo-tree-view.c:157
+#: ../exo/exo-icon-view.c:855 ../exo/exo-tree-view.c:170
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Εάν θα ενεργοποιούνται τα αντικείμενα στην προβολή με μονά κλικ"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:186
+#, fuzzy
+msgid "Single Click Timeout"
+msgstr "Μονό κλικ"
+
+#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:187
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:887
 msgid "Spacing"
 msgstr "Διάστιχο"
 
-#: ../exo/exo-icon-view.c:857
+#: ../exo/exo-icon-view.c:888
 msgid "Space which is inserted between cells of an item"
 msgstr "Το διάστημα που εισάγεται ανάμεσα στα κελιά ενός στοιχείου"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:911
 msgid "Selection Box Color"
 msgstr "Χρώμα κουτιού επιλογής"
 
-#: ../exo/exo-icon-view.c:881
+#: ../exo/exo-icon-view.c:912
 msgid "Color of the selection box"
 msgstr "Χρώμα του κουτιού επιλογής"
 
-#: ../exo/exo-icon-view.c:887
+#: ../exo/exo-icon-view.c:918
 msgid "Selection Box Alpha"
 msgstr "Τιμή διαφάνειας κουτιού επιλογής"
 
-#: ../exo/exo-icon-view.c:888
+#: ../exo/exo-icon-view.c:919
 msgid "Opacity of the selection box"
 msgstr "Αδιαφάνεια κουτιού επιλογής"
 
@@ -535,7 +550,8 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid "Browse the file system to choose a custom command."
-msgstr "Περιήγηση του συστήματος αρχείων για την επιλογή της προσαρμοσμένης εντολής."
+msgstr ""
+"Περιήγηση του συστήματος αρχείων για την επιλογή της προσαρμοσμένης εντολής."
 
 #: ../exo-helper/exo-helper-chooser.c:687
 msgid "_Other..."
@@ -543,7 +559,8 @@ msgstr "Άλ_λες..."
 
 #: ../exo-helper/exo-helper-chooser.c:688
 msgid "Use a custom application which is not included in the above list."
-msgstr "Χρήση προσαρμοσμένης εφαρμογής που δεν περιλαμβάνεται στην παραπάνω λίστα."
+msgstr ""
+"Χρήση προσαρμοσμένης εφαρμογής που δεν περιλαμβάνεται στην παραπάνω λίστα."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:143
 msgid "Choose Preferred Application"
@@ -667,11 +684,14 @@ msgstr "       exo-open --launch ΤΥΠΟΣ [ΠΑΡΑΜΕΤΡΟΙ...]"
 
 #: ../exo-open/main.c:46
 msgid "  -h, --help                          Print this help message and exit"
-msgstr "  -h, --help                          Εμφανίζει αυτό το κείμενο βοήθειας"
+msgstr ""
+"  -h, --help                          Εμφανίζει αυτό το κείμενο βοήθειας"
 
 #: ../exo-open/main.c:47
-msgid "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Εμφανίζει τις πληροφορίες έκδοσης"
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr ""
+"  -v, --version                       Εμφανίζει τις πληροφορίες έκδοσης"
 
 #: ../exo-open/main.c:49
 msgid ""
@@ -734,10 +754,10 @@ msgstr ""
 #: ../exo-open/main.c:121
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Η εκκίνηση της προτιμώμενης εφαρμογής για την κατηγορία \"%s\" απέτυχε."
+msgstr ""
+"Η εκκίνηση της προτιμώμενης εφαρμογής για την κατηγορία \"%s\" απέτυχε."
 
 #: ../exo-open/main.c:144
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Το άνοιγμα του URL \"%s\" απέτυχε."
-
