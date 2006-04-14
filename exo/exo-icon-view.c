@@ -420,6 +420,7 @@ struct _ExoIconViewItem
 struct _ExoIconViewPrivate
 {
   gint width, height;
+  gint prev_width, prev_height; /* exo_icon_view_layout() contains a note about these ones */
 
   GtkSelectionMode selection_mode;
 
@@ -3080,7 +3081,7 @@ exo_icon_view_layout_single_col (ExoIconView *icon_view,
 
       if (G_LIKELY (items != first_item))
         {
-          if (current_height > GTK_WIDGET (icon_view)->allocation.height)
+          if (current_height >= GTK_WIDGET (icon_view)->allocation.height)
             break;
         }
 
@@ -3224,12 +3225,29 @@ exo_icon_view_layout (ExoIconView *icon_view)
         }
       while (icons != NULL);
 
-      if (maximum_height != icon_view->priv->height)
-        icon_view->priv->height = maximum_height;
-
       x += icon_view->priv->margin;
-      if (x != icon_view->priv->width)
-        icon_view->priv->width = x;
+
+      /* We remember the previous height/width to make sure we don't run into an endless loop
+       * with GtkScrolledWindow trying to remove an automatic scrollbar, layouting the icons
+       * again, GtkScrolledWindow notices that the scrollbar is necessary, readds it, layouting
+       * again, GtkScrolledWindow tries to remove automatic scrollbar, and so on... GTK+ is really
+       * a mess sometimes.
+       */
+      if ((maximum_height != icon_view->priv->height && maximum_height != icon_view->priv->prev_height)
+          || (x != icon_view->priv->width && x != icon_view->priv->prev_width))
+        {
+          if (maximum_height != icon_view->priv->height)
+            {
+              icon_view->priv->prev_height = icon_view->priv->height;
+              icon_view->priv->height = maximum_height;
+            }
+
+          if (x != icon_view->priv->width)
+            {
+              icon_view->priv->prev_width = icon_view->priv->width;
+              icon_view->priv->width = x;
+            }
+        }
     }
 
   exo_icon_view_set_adjustment_upper (icon_view->priv->hadjustment, icon_view->priv->width);
@@ -5053,6 +5071,7 @@ exo_icon_view_set_layout_mode (ExoIconView          *icon_view,
 
       /* invalidate the current item sizes */
       exo_icon_view_invalidate_sizes (icon_view);
+      exo_icon_view_queue_layout (icon_view);
 
       /* notify listeners */
       g_object_notify (G_OBJECT (icon_view), "layout-mode");

@@ -1,5 +1,11 @@
 2006-04-14	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c: Avoid calling size_allocate() again and again,
+	  because of GtkScrolledWindow interaction (actually because GTK+ is
+	  totally broken here).
+
+2006-04-14	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add support for an
 	  additional layout mode, which is similar to the list view in Windows
 	  Explorer and lays out items in columns instead of rows, based on a
