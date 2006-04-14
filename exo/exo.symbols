@@ -83,6 +83,7 @@ exo_ellipsized_label_set_ellipsize
 exo_icon_view_drop_position_get_type G_GNUC_CONST
 exo_pango_ellipsize_mode_get_type G_GNUC_CONST
 exo_toolbars_model_flags_get_type G_GNUC_CONST
+exo_icon_view_layout_mode_get_type G_GNUC_CONST
 #endif
 #endif
 
@@ -178,6 +179,8 @@ exo_icon_view_get_single_click
 exo_icon_view_set_single_click
 exo_icon_view_get_single_click_timeout
 exo_icon_view_set_single_click_timeout
+exo_icon_view_get_layout_mode
+exo_icon_view_set_layout_mode
 exo_icon_view_widget_to_icon_coords
 exo_icon_view_icon_to_widget_coords
 exo_icon_view_get_path_at_pos

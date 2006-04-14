@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.5svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-11 20:11+0900\n"
+"POT-Creation-Date: 2006-04-14 13:21+0200\n"
 "PO-Revision-Date:  2006-03-04 13:52+0100\n"
 "Last-Translator: Benedikt Meurer <benny@xfce.org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 "nicht genug Platz vorhanden ist, den ganzen String anzuzeigen, falls "
 "überhaupt"
 
-#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:759
+#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:784
 msgid "Orientation"
 msgstr "Orientierung"
 
@@ -54,19 +54,19 @@ msgstr "Orientierung"
 msgid "The orientation of the iconbar"
 msgstr "Die Orientierung der Symbolleiste"
 
-#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:801
 msgid "Pixbuf column"
 msgstr "Pixbuf-Spalte"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:802
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Spalte für das Model, von der das Icon Pixbuf geholt werden soll"
 
-#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:903
+#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:928
 msgid "Text column"
 msgstr "Textspalte"
 
-#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:904
+#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:929
 msgid "Model column used to retrieve the text from"
 msgstr "Spalte für das Model, von der der Text geholt werden soll"
 
@@ -110,143 +110,152 @@ msgstr "Randfarbe für das Cursorelement"
 msgid "Cursor item text color"
 msgstr "Textfarbe für das Cursorelement"
 
-#: ../exo/exo-icon-view.c:647
+#: ../exo/exo-icon-view.c:652
 msgid "Column Spacing"
 msgstr "Spaltenabstand"
 
-#: ../exo/exo-icon-view.c:648
+#: ../exo/exo-icon-view.c:653
 msgid "Space which is inserted between grid column"
 msgstr "Platz, der zwischen Gitterspalten eingefügt wird"
 
-#: ../exo/exo-icon-view.c:664
+#: ../exo/exo-icon-view.c:669
 msgid "Number of columns"
 msgstr "Anzahl Spalten"
 
-#: ../exo/exo-icon-view.c:665
+#: ../exo/exo-icon-view.c:670
 msgid "Number of columns to display"
 msgstr "Anzahl anzuzeigender Spalten"
 
-#: ../exo/exo-icon-view.c:679
+#: ../exo/exo-icon-view.c:684
 msgid "Enable Search"
 msgstr "Suche aktivieren"
 
-#: ../exo/exo-icon-view.c:680
+#: ../exo/exo-icon-view.c:685
 msgid "View allows user to search through columns interactively"
 msgstr "Symbolansicht erlaubt dem Benutzer interaktive Suche"
 
-#: ../exo/exo-icon-view.c:697
+#: ../exo/exo-icon-view.c:702
 msgid "Width for each item"
 msgstr "Breite für jedes Element"
 
-#: ../exo/exo-icon-view.c:698
+#: ../exo/exo-icon-view.c:703
 msgid "The width used for each item"
 msgstr "Die Breite, die für jedes Element verwendet wird"
 
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:721
+msgid "Layout mode"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:722
+#, fuzzy
+msgid "The layout mode"
+msgstr "Der Auswahlmodus"
+
+#: ../exo/exo-icon-view.c:738
 msgid "Margin"
 msgstr "Rand"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:739
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Platz, der an den Rändern der Symbolansicht eingefügt wird"
 
-#: ../exo/exo-icon-view.c:730
+#: ../exo/exo-icon-view.c:755
 msgid "Markup column"
 msgstr "Auswahlspalte"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:756
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Modellspalte, anhand derer Text geholt wird, falls die Auszeichungssprache "
 "von Pango verwendet wird"
 
-#: ../exo/exo-icon-view.c:745
+#: ../exo/exo-icon-view.c:770
 msgid "Icon View Model"
 msgstr "Modell zur Symbolansicht"
 
-#: ../exo/exo-icon-view.c:746
+#: ../exo/exo-icon-view.c:771
 msgid "The model for the icon view"
 msgstr "Das Modell für die Symbolansicht"
 
-#: ../exo/exo-icon-view.c:760
+#: ../exo/exo-icon-view.c:785
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr ""
 "Wie der Text und das Symbol jedes Elements relativ zueinandner angeordnet "
 "werden"
 
-#: ../exo/exo-icon-view.c:792
+#: ../exo/exo-icon-view.c:817
 msgid "Reorderable"
 msgstr "Umordbar"
 
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-view.c:818
 msgid "View is reorderable"
 msgstr "Die Ansicht ist umordbar"
 
-#: ../exo/exo-icon-view.c:808
+#: ../exo/exo-icon-view.c:833
 msgid "Row Spacing"
 msgstr "Zeilenabstand"
 
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:834
 msgid "Space which is inserted between grid rows"
 msgstr "Platz, der zwischen Gitterzeilen eingefügt wird"
 
-#: ../exo/exo-icon-view.c:823
+#: ../exo/exo-icon-view.c:848
 msgid "Search Column"
 msgstr "Suchspalte"
 
-#: ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-view.c:849
 msgid "Model column to search through when searching through item"
 msgstr "Die Spalte im Modell, die durchsucht werden soll"
 
-#: ../exo/exo-icon-view.c:838
+#: ../exo/exo-icon-view.c:863
 msgid "Selection mode"
 msgstr "Auswahlmodus"
 
-#: ../exo/exo-icon-view.c:839
+#: ../exo/exo-icon-view.c:864
 msgid "The selection mode"
 msgstr "Der Auswahlmodus"
 
-#: ../exo/exo-icon-view.c:854 ../exo/exo-tree-view.c:169
+#: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:169
 msgid "Single Click"
 msgstr "Einfacher Klick"
 
-#: ../exo/exo-icon-view.c:855 ../exo/exo-tree-view.c:170
+#: ../exo/exo-icon-view.c:880 ../exo/exo-tree-view.c:170
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Ob die Objekte bei einem einfachen Klick aktiviert werden sollen"
 
-#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:186
+#: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:186
 #, fuzzy
 msgid "Single Click Timeout"
 msgstr "Einfacher Klick"
 
-#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:187
+#: ../exo/exo-icon-view.c:897 ../exo/exo-tree-view.c:187
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:887
+#: ../exo/exo-icon-view.c:912
 msgid "Spacing"
 msgstr "Abstand"
 
-#: ../exo/exo-icon-view.c:888
+#: ../exo/exo-icon-view.c:913
 msgid "Space which is inserted between cells of an item"
 msgstr "Platz, der zwischen Zellen eines Elements eingefügt wird"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:936
 msgid "Selection Box Color"
 msgstr "Farbe der Auswahlbox"
 
-#: ../exo/exo-icon-view.c:912
+#: ../exo/exo-icon-view.c:937
 msgid "Color of the selection box"
 msgstr "Farbe für die Auswahlbox"
 
-#: ../exo/exo-icon-view.c:918
+#: ../exo/exo-icon-view.c:943
 msgid "Selection Box Alpha"
 msgstr "Alphawert für die Auswahlbox"
 
-#: ../exo/exo-icon-view.c:919
+#: ../exo/exo-icon-view.c:944
 msgid "Opacity of the selection box"
 msgstr "Deckkraft der Auswahlbox"
 

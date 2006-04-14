@@ -126,6 +126,11 @@ A widget which displays a list of icons in a grid
 
 </para>
 
+<!-- ##### ARG ExoIconView:layout-mode ##### -->
+<para>
+
+</para>
+
 <!-- ##### ARG ExoIconView:margin ##### -->
 <para>
 
@@ -212,6 +217,14 @@ A widget which displays a list of icons in a grid
 @EXO_ICON_VIEW_DROP_RIGHT: 
 @EXO_ICON_VIEW_DROP_ABOVE: 
 @EXO_ICON_VIEW_DROP_BELOW: 
+
+<!-- ##### ENUM ExoIconViewLayoutMode ##### -->
+<para>
+
+</para>
+
+@EXO_ICON_VIEW_LAYOUT_ROWS: 
+@EXO_ICON_VIEW_LAYOUT_COLS: 
 
 <!-- ##### FUNCTION exo_icon_view_new ##### -->
 <para>
@@ -444,6 +457,24 @@ A widget which displays a list of icons in a grid
 
 @icon_view: 
 @mode: 
+
+
+<!-- ##### FUNCTION exo_icon_view_get_layout_mode ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_icon_view_set_layout_mode ##### -->
+<para>
+
+</para>
+
+@icon_view: 
+@layout_mode: 
 
 
 <!-- ##### FUNCTION exo_icon_view_get_single_click ##### -->

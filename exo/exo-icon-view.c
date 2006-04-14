@@ -38,6 +38,7 @@
 #include <gdk/gdkkeysyms.h>
 
 #include <exo/exo-config.h>
+#include <exo/exo-enum-types.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-marshal.h>
 #include <exo/exo-private.h>
@@ -61,6 +62,7 @@ enum
   PROP_TEXT_COLUMN,
   PROP_MARKUP_COLUMN,  
   PROP_SELECTION_MODE,
+  PROP_LAYOUT_MODE,
   PROP_ORIENTATION,
   PROP_MODEL,
   PROP_COLUMNS,
@@ -201,6 +203,7 @@ static void                 exo_icon_view_calculate_item_size            (ExoIco
                                                                           ExoIconViewItem        *item);
 static void                 exo_icon_view_calculate_item_size2           (ExoIconView            *icon_view,
                                                                           ExoIconViewItem        *item,
+                                                                          gint                   *max_width,
                                                                           gint                   *max_height);
 static void                 exo_icon_view_update_rubberband              (gpointer                data);
 static void                 exo_icon_view_item_invalidate_size           (ExoIconViewItem        *item);
@@ -419,6 +422,8 @@ struct _ExoIconViewPrivate
   gint width, height;
 
   GtkSelectionMode selection_mode;
+
+  ExoIconViewLayoutMode layout_mode;
 
   GdkWindow *bin_window;
 
@@ -698,6 +703,26 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      _("The width used for each item"),
                                                      -1, G_MAXINT, -1,
                                                      EXO_PARAM_READWRITE));  
+
+  /**
+   * ExoIconView:layout-mode:
+   *
+   * The layout-mode property specifies the way items are layed out in
+   * the #ExoIconView. This can be either %EXO_ICON_VIEW_LAYOUT_ROWS,
+   * which is the default, where items are layed out horizontally in
+   * rows from top to bottom, or %EXO_ICON_VIEW_LAYOUT_COLS, where items
+   * are layed out vertically in columns from left to right.
+   * 
+   * Since: 0.3.1.5
+   **/
+  g_object_class_install_property (gobject_class,
+                                   PROP_LAYOUT_MODE,
+                                   g_param_spec_enum ("layout-mode",
+                                                      _("Layout mode"),
+                                                      _("The layout mode"),
+                                                      EXO_TYPE_ICON_VIEW_LAYOUT_MODE,
+                                                      EXO_ICON_VIEW_LAYOUT_ROWS,
+                                                      EXO_PARAM_READWRITE));
 
   /**
    * ExoIconView:margin:
@@ -1312,6 +1337,10 @@ exo_icon_view_get_property (GObject      *object,
       g_value_set_int (value, icon_view->priv->text_column);
       break;
 
+    case PROP_LAYOUT_MODE:
+      g_value_set_enum (value, icon_view->priv->layout_mode);
+      break;
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1396,6 +1425,10 @@ exo_icon_view_set_property (GObject      *object,
 
     case PROP_TEXT_COLUMN:
       exo_icon_view_set_text_column (icon_view, g_value_get_int (value));
+      break;
+
+    case PROP_LAYOUT_MODE:
+      exo_icon_view_set_layout_mode (icon_view, g_value_get_enum (value));
       break;
 
     default:
@@ -1670,10 +1703,20 @@ exo_icon_view_expose_event (GtkWidget      *widget,
     {
       /* check if this item is in the visible area */
       item = EXO_ICON_VIEW_ITEM (lp->data);
-      if (item->area.y > event->area.y + event->area.height)
-        break;
-      else if (item->area.y + item->area.height < event->area.y)
-        continue;
+      if (G_LIKELY (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS))
+        {
+          if (item->area.y > event->area.y + event->area.height)
+            break;
+          else if (item->area.y + item->area.height < event->area.y)
+            continue;
+        }
+      else
+        {
+          if (item->area.x > event->area.x + event->area.width)
+            break;
+          else if (item->area.x + item->area.width < event->area.x)
+            continue;
+        }
 
       /* check if this item needs an update */
       if (G_LIKELY (gdk_region_rect_in (event->region, &item->area) != GDK_OVERLAP_RECTANGLE_OUT))
@@ -1755,23 +1798,30 @@ exo_icon_view_expose_event (GtkWidget      *widget,
 static gboolean
 rubberband_scroll_timeout (gpointer user_data)
 {
-  ExoIconView *icon_view = EXO_ICON_VIEW (user_data);
-  gdouble      value;
+  GtkAdjustment *adjustment;
+  ExoIconView   *icon_view = EXO_ICON_VIEW (user_data);
+  gdouble        value;
 
   GDK_THREADS_ENTER ();
   
-  value = MIN (icon_view->priv->vadjustment->value + icon_view->priv->scroll_value_diff,
-               icon_view->priv->vadjustment->upper - icon_view->priv->vadjustment->page_size);
+  /* determine the adjustment for the scroll direction */
+  adjustment = (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS)
+             ? icon_view->priv->vadjustment
+             : icon_view->priv->hadjustment;
 
-  gtk_adjustment_set_value (icon_view->priv->vadjustment, value);
+  /* determine the new scroll value */
+  value = MIN (adjustment->value + icon_view->priv->scroll_value_diff, adjustment->upper - adjustment->page_size);
 
+  /* apply the new value */
+  gtk_adjustment_set_value (adjustment, value);
+
+  /* update the rubberband */
   exo_icon_view_update_rubberband (icon_view);
   
   GDK_THREADS_LEAVE ();
 
   return TRUE;
 }
-
 
 
 static gboolean
@@ -1781,26 +1831,40 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
   ExoIconViewItem *item;
   ExoIconView     *icon_view = EXO_ICON_VIEW (widget);
   GdkCursor       *cursor;
-  gint             abs_y;
+  gint             size;
+  gint             abs;
   
   exo_icon_view_maybe_begin_drag (icon_view, event);
 
   if (icon_view->priv->doing_rubberband)
     {
       exo_icon_view_update_rubberband (widget);
-      
-      abs_y = event->y - icon_view->priv->height *
-        (icon_view->priv->vadjustment->value /
-         (icon_view->priv->vadjustment->upper -
-          icon_view->priv->vadjustment->lower));
 
-      if (abs_y < 0 || abs_y > widget->allocation.height)
+      if (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS)
         {
-          if (abs_y < 0)
-            icon_view->priv->scroll_value_diff = abs_y;
-          else
-            icon_view->priv->scroll_value_diff = abs_y - widget->allocation.height;
+          abs = event->y - icon_view->priv->height *
+             (icon_view->priv->vadjustment->value /
+             (icon_view->priv->vadjustment->upper -
+              icon_view->priv->vadjustment->lower));
 
+          size = widget->allocation.height;
+        }
+      else
+        {
+          abs = event->x - icon_view->priv->width *
+             (icon_view->priv->hadjustment->value /
+             (icon_view->priv->hadjustment->upper -
+              icon_view->priv->hadjustment->lower));
+
+          size = widget->allocation.width;
+        }
+
+      if (abs < 0 || abs > size)
+        {
+          if (abs < 0)
+            icon_view->priv->scroll_value_diff = abs;
+          else
+            icon_view->priv->scroll_value_diff = abs - size;
           icon_view->priv->event_last_x = event->x;
           icon_view->priv->event_last_y = event->y;
 
@@ -2867,7 +2931,7 @@ exo_icon_view_adjustment_changed (GtkAdjustment *adjustment,
 
 
 
-static GList *
+static GList*
 exo_icon_view_layout_single_row (ExoIconView *icon_view, 
                                  GList       *first_item, 
                                  gint         item_width,
@@ -2876,33 +2940,34 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
                                  gint        *maximum_width)
 {
   ExoIconViewItem *item;
-  gint focus_width;
-  gint x, current_width;
-  GList *items, *last_item;
-  gint col;
-  gint colspan;
-  gint *max_height;
-  gint i;
-  gboolean rtl;
+  gboolean         rtl;
+  GList           *last_item;
+  GList           *items = first_item;
+  gint            *max_width;
+  gint            *max_height;
+  gint             focus_width;
+  gint             current_width;
+  gint             colspan;
+  gint             col = 0;
+  gint             x;
+  gint             i;
 
-  rtl = gtk_widget_get_direction (GTK_WIDGET (icon_view)) == GTK_TEXT_DIR_RTL;
+  rtl = (gtk_widget_get_direction (GTK_WIDGET (icon_view)) == GTK_TEXT_DIR_RTL);
 
-  /* alloca() is safe on gcc/i386 */
+  max_width = g_newa (gint, icon_view->priv->n_cells);
   max_height = g_newa (gint, icon_view->priv->n_cells);
   for (i = icon_view->priv->n_cells; --i >= 0; )
-    max_height[i] = 0;
-
-  x = 0;
-  col = 0;
-  items = first_item;
-  current_width = 0;
+    {
+      max_width[i] = 0;
+      max_height[i] = 0;
+    }
 
   gtk_widget_style_get (GTK_WIDGET (icon_view),
                         "focus-line-width", &focus_width,
                         NULL);
 
-  x += icon_view->priv->margin + focus_width;
-  current_width += 2 * (icon_view->priv->margin + focus_width);
+  x = icon_view->priv->margin + focus_width;
+  current_width = 2 * (icon_view->priv->margin + focus_width);
 
   for (items = first_item; items != NULL; items = items->next)
     {
@@ -2930,7 +2995,10 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
       x = current_width - (icon_view->priv->margin + focus_width); 
 
       for (i = 0; i < icon_view->priv->n_cells; i++)
-        max_height[i] = MAX (max_height[i], item->box[i].height);
+        {
+          max_width[i] = MAX (max_width[i], item->box[i].width);
+          max_height[i] = MAX (max_height[i], item->box[i].height);
+        }
               
       if (current_width > *maximum_width)
         *maximum_width = current_width;
@@ -2948,7 +3016,7 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
     {
       item = EXO_ICON_VIEW_ITEM (items->data);
 
-      exo_icon_view_calculate_item_size2 (icon_view, item, max_height);
+      exo_icon_view_calculate_item_size2 (icon_view, item, max_width, max_height);
 
       /* We may want to readjust the new y coordinate. */
       if (item->area.y + item->area.height + focus_width + icon_view->priv->row_spacing > *y)
@@ -2957,8 +3025,101 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
       if (G_UNLIKELY (rtl))
         item->col = col - 1 - item->col;
     }
-
  
+  return last_item;
+}
+
+
+
+static GList*
+exo_icon_view_layout_single_col (ExoIconView *icon_view, 
+                                 GList       *first_item,
+                                 gint         item_height,
+                                 gint         col,
+                                 gint        *x,
+                                 gint        *maximum_height)
+{
+  ExoIconViewItem *item;
+  GList           *items = first_item;
+  GList           *last_item;
+  gint            *max_width;
+  gint            *max_height;
+  gint             focus_width;
+  gint             current_height;
+  gint             rowspan;
+  gint             row = 0;
+  gint             y;
+  gint             i;
+
+  max_width = g_newa (gint, icon_view->priv->n_cells);
+  max_height = g_newa (gint, icon_view->priv->n_cells);
+  for (i = icon_view->priv->n_cells; --i >= 0; )
+    {
+      max_width[i] = 0;
+      max_height[i] = 0;
+    }
+
+  gtk_widget_style_get (GTK_WIDGET (icon_view),
+                        "focus-line-width", &focus_width,
+                        NULL);
+
+  y = icon_view->priv->margin + focus_width;
+  current_height = 2 * (icon_view->priv->margin + focus_width);
+
+  for (items = first_item; items != NULL; items = items->next)
+    {
+      item = EXO_ICON_VIEW_ITEM (items->data);
+
+      exo_icon_view_calculate_item_size (icon_view, item);
+
+      rowspan = 1 + (item->area.height - 1) / (item_height + icon_view->priv->row_spacing);
+
+      item->area.height = rowspan * item_height + (rowspan - 1) * icon_view->priv->row_spacing;
+
+      current_height += item->area.height;
+
+      if (G_LIKELY (items != first_item))
+        {
+          if (current_height > GTK_WIDGET (icon_view)->allocation.height)
+            break;
+        }
+
+      current_height += icon_view->priv->row_spacing + 2 * focus_width;
+
+      item->area.y = y + focus_width;
+      item->area.x = *x;
+
+      y = current_height - (icon_view->priv->margin + focus_width); 
+
+      for (i = 0; i < icon_view->priv->n_cells; i++)
+        {
+          max_width[i] = MAX (max_width[i], item->box[i].width);
+          max_height[i] = MAX (max_height[i], item->box[i].height);
+        }
+
+      if (current_height > *maximum_height)
+        *maximum_height = current_height;
+
+      item->row = row;
+      item->col = col;
+
+      row++;
+    }
+
+  last_item = items;
+
+  /* Now go through the column again and align the icons */
+  for (items = first_item; items != last_item; items = items->next)
+    {
+      item = EXO_ICON_VIEW_ITEM (items->data);
+
+      exo_icon_view_calculate_item_size2 (icon_view, item, max_width, max_height);
+
+      /* We may want to readjust the new x coordinate. */
+      if (item->area.x + item->area.width + focus_width + icon_view->priv->column_spacing > *x)
+        *x = item->area.x + item->area.width + focus_width + icon_view->priv->column_spacing;
+    }
+
   return last_item;
 }
 
@@ -2993,49 +3154,82 @@ exo_icon_view_set_adjustment_upper (GtkAdjustment *adj,
 static void
 exo_icon_view_layout (ExoIconView *icon_view)
 {
-  gint y = 0, maximum_width = 0;
   GList *icons;
-  GtkWidget *widget = GTK_WIDGET (icon_view);
-  gint row;
-  gint item_width;
+  gint   maximum_height = 0;
+  gint   maximum_width = 0;
+  gint   item_height;
+  gint   item_width;
+  gint   row, col;
+  gint   x, y;
 
-  if (icon_view->priv->model == NULL)
+  /* verify that we still have a valid model */
+  if (G_UNLIKELY (icon_view->priv->model == NULL))
     return;
 
-  /* calculate item sizes on-demand */
-  item_width = icon_view->priv->item_width;
-  if (item_width < 0)
+  if (G_LIKELY (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS))
     {
-      for (icons = icon_view->priv->items; icons; icons = icons->next)
+      /* calculate item sizes on-demand */
+      item_width = icon_view->priv->item_width;
+      if (item_width < 0)
+        {
+          for (icons = icon_view->priv->items; icons != NULL; icons = icons->next)
+            {
+              ExoIconViewItem *item = icons->data;
+              exo_icon_view_calculate_item_size (icon_view, item);
+              item_width = MAX (item_width, item->area.width);
+            }
+        }
+
+      icons = icon_view->priv->items;
+      y = icon_view->priv->margin;
+      row = 0;
+
+      do
+        {
+          icons = exo_icon_view_layout_single_row (icon_view, icons, 
+                                                   item_width, row,
+                                                   &y, &maximum_width);
+          row++;
+        }
+      while (icons != NULL);
+
+      if (maximum_width != icon_view->priv->width)
+        icon_view->priv->width = maximum_width;
+
+      y += icon_view->priv->margin;
+
+      if (y != icon_view->priv->height)
+        icon_view->priv->height = y;
+    }
+  else
+    {
+      /* calculate item sizes on-demand */
+      for (icons = icon_view->priv->items, item_height = 0; icons != NULL; icons = icons->next)
         {
           ExoIconViewItem *item = icons->data;
           exo_icon_view_calculate_item_size (icon_view, item);
-          item_width = MAX (item_width, item->area.width);
+          item_height = MAX (item_height, item->area.height);
         }
-    }
 
-  icons = icon_view->priv->items;
-  y += icon_view->priv->margin;
-  row = 0;
-  
-  do
-    {
-      icons = exo_icon_view_layout_single_row (icon_view, icons, 
-                                               item_width, row,
-                                               &y, &maximum_width);
-      row++;
-    }
-  while (icons != NULL);
+      icons = icon_view->priv->items;
+      x = icon_view->priv->margin;
+      col = 0;
 
-  if (maximum_width != icon_view->priv->width)
-    {
-      icon_view->priv->width = maximum_width;
-    }
-  y += icon_view->priv->margin;
-  
-  if (y != icon_view->priv->height)
-    {
-      icon_view->priv->height = y;
+      do
+        {
+          icons = exo_icon_view_layout_single_col (icon_view, icons,
+                                                   item_height, col,
+                                                   &x, &maximum_height);
+          col++;
+        }
+      while (icons != NULL);
+
+      if (maximum_height != icon_view->priv->height)
+        icon_view->priv->height = maximum_height;
+
+      x += icon_view->priv->margin;
+      if (x != icon_view->priv->width)
+        icon_view->priv->width = x;
     }
 
   exo_icon_view_set_adjustment_upper (icon_view->priv->hadjustment, icon_view->priv->width);
@@ -3044,8 +3238,8 @@ exo_icon_view_layout (ExoIconView *icon_view)
   if (GTK_WIDGET_REALIZED (icon_view))
     {
       gdk_window_resize (icon_view->priv->bin_window,
-                         MAX (icon_view->priv->width, widget->allocation.width),
-                         MAX (icon_view->priv->height, widget->allocation.height));
+                         MAX (icon_view->priv->width, GTK_WIDGET (icon_view)->allocation.width),
+                         MAX (icon_view->priv->height, GTK_WIDGET (icon_view)->allocation.height));
     }
 
   if (icon_view->priv->layout_idle_id >= 0)
@@ -3141,27 +3335,42 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
 static void
 exo_icon_view_calculate_item_size2 (ExoIconView     *icon_view,
                                     ExoIconViewItem *item,
+                                    gint            *max_width,
                                     gint            *max_height)
 {
   ExoIconViewCellInfo *info;
-  GdkRectangle cell_area;
-  GdkRectangle *box;
-  gint spacing;
-  GList *lp;
-  gint i, k;
-  gboolean rtl;
+  GdkRectangle        *box;
+  GdkRectangle         cell_area;
+  gboolean             rtl;
+  GList               *lp;
+  gint                 spacing;
+  gint                 i, k;
 
   rtl = (gtk_widget_get_direction (GTK_WIDGET (icon_view)) == GTK_TEXT_DIR_RTL);
 
   spacing = icon_view->priv->spacing;
 
-  item->area.height = 0;
-  for (i = 0; i < icon_view->priv->n_cells; i++)
+  if (G_LIKELY (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS))
     {
-      if (icon_view->priv->orientation == GTK_ORIENTATION_HORIZONTAL)
-        item->area.height = MAX (item->area.height, max_height[i]);
-      else
-        item->area.height += max_height[i] + (i > 0 ? spacing : 0);
+      item->area.height = 0;
+      for (i = 0; i < icon_view->priv->n_cells; ++i)
+        {
+          if (icon_view->priv->orientation == GTK_ORIENTATION_HORIZONTAL)
+            item->area.height = MAX (item->area.height, max_height[i]);
+          else
+            item->area.height += max_height[i] + (i > 0 ? spacing : 0);
+        }
+    }
+  else
+    {
+      item->area.width = 0;
+      for (i = 0; i < icon_view->priv->n_cells; ++i)
+        {
+          if (icon_view->priv->orientation == GTK_ORIENTATION_HORIZONTAL)
+            item->area.width += max_width[i] + (i > 0 ? spacing : 0);
+          else
+            item->area.width = MAX (item->area.width, max_width[i]);
+        }
     }
 
   cell_area.x = item->area.x;
@@ -3303,14 +3512,12 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
                           y - item->area.y + cell_area.y, 
                           cell_area.width, cell_area.height);
 
-      box = item->box[info->position];
-          
       gdk_draw_rectangle (drawable,
                           GTK_WIDGET (icon_view)->style->black_gc,
                           FALSE,
-                          x - item->area.x + box.x, 
-                          y - item->area.y + box.y, 
-                          box.width, box.height);
+                          x - item->area.x + item->box[info->position].x, 
+                          y - item->area.y + item->box[info->position].y, 
+                          item->box[info->position].width, item->box[info->position].height);
 #endif
 
       cell_area.x = x - item->area.x + cell_area.x;
@@ -3955,20 +4162,27 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
           /* determine the list position for the item */
           list = g_list_find (icon_view->priv->items, item);
 
-          /* determine the item in the next/prev row */
-          if (step > 0)
+          if (G_LIKELY (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS))
             {
-              for (list = list->next; list != NULL; list = list->next)
-                if (EXO_ICON_VIEW_ITEM (list->data)->row == item->row + step
-                    && EXO_ICON_VIEW_ITEM (list->data)->col == item->col)
-                  break;
+              /* determine the item in the next/prev row */
+              if (step > 0)
+                {
+                  for (list = list->next; list != NULL; list = list->next)
+                    if (EXO_ICON_VIEW_ITEM (list->data)->row == item->row + step
+                        && EXO_ICON_VIEW_ITEM (list->data)->col == item->col)
+                      break;
+                 }
+              else
+                {
+                  for (list = list->prev; list != NULL; list = list->prev)
+                    if (EXO_ICON_VIEW_ITEM (list->data)->row == item->row + step
+                        && EXO_ICON_VIEW_ITEM (list->data)->col == item->col)
+                      break;
+                }
             }
           else
             {
-              for (list = list->prev; list != NULL; list = list->prev)
-                if (EXO_ICON_VIEW_ITEM (list->data)->row == item->row + step
-                    && EXO_ICON_VIEW_ITEM (list->data)->col == item->col)
-                  break;
+              list = (step > 0) ? list->next : list->prev;
             }
 
           /* check if we found a matching item */
@@ -4098,11 +4312,32 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
           /* lookup the item in the list */
           list = g_list_find (icon_view->priv->items, item);
 
-          /* determine the next/prev list item depending on step,
-           * support wrapping around on the edges, as requested
-           * in http://bugzilla.xfce.org/show_bug.cgi?id=1623.
-           */
-          list = (step > 0) ? list->next : list->prev;
+          if (G_LIKELY (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS))
+            {
+              /* determine the next/prev list item depending on step,
+               * support wrapping around on the edges, as requested
+               * in http://bugzilla.xfce.org/show_bug.cgi?id=1623.
+               */
+              list = (step > 0) ? list->next : list->prev;
+            }
+          else
+            {
+              /* determine the item in the next/prev row */
+              if (step > 0)
+                {
+                  for (list = list->next; list != NULL; list = list->next)
+                    if (EXO_ICON_VIEW_ITEM (list->data)->col == item->col + step
+                        && EXO_ICON_VIEW_ITEM (list->data)->row == item->row)
+                      break;
+                 }
+              else
+                {
+                  for (list = list->prev; list != NULL; list = list->prev)
+                    if (EXO_ICON_VIEW_ITEM (list->data)->col == item->col + step
+                        && EXO_ICON_VIEW_ITEM (list->data)->row == item->row)
+                      break;
+                }
+            }
 
           /* determine the item for the list position (if any) */
           item = (list != NULL) ? list->data : NULL;
@@ -4767,6 +5002,60 @@ exo_icon_view_set_selection_mode (ExoIconView      *icon_view,
       icon_view->priv->selection_mode = mode;
 
       g_object_notify (G_OBJECT (icon_view), "selection-mode");
+    }
+}
+
+
+
+/**
+ * exo_icon_view_get_layout_mode:
+ * @icon_view : A #ExoIconView.
+ *
+ * Returns the #ExoIconViewLayoutMode used to layout the
+ * items in the @icon_view.
+ *
+ * Return value: the layout mode of @icon_view.
+ *
+ * Since: 0.3.1.5
+ **/
+ExoIconViewLayoutMode 
+exo_icon_view_get_layout_mode (const ExoIconView *icon_view)
+{
+  g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), EXO_ICON_VIEW_LAYOUT_ROWS);
+  return icon_view->priv->layout_mode;
+}
+
+
+
+/**
+ * exo_icon_view_set_layout_mode:
+ * @icon_view   : a #ExoIconView.
+ * @layout_mode : the new #ExoIconViewLayoutMode for @icon_view.
+ *
+ * Sets the layout mode of @icon_view to @layout_mode.
+ *
+ * Since: 0.3.1.5
+ **/
+void
+exo_icon_view_set_layout_mode (ExoIconView          *icon_view,
+                               ExoIconViewLayoutMode layout_mode)
+{
+  g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));
+
+  /* check if we have a new setting */
+  if (G_LIKELY (icon_view->priv->layout_mode != layout_mode))
+    {
+      /* apply the new setting */
+      icon_view->priv->layout_mode = layout_mode;
+
+      /* cancel any active cell editor */
+      exo_icon_view_stop_editing (icon_view, TRUE);
+
+      /* invalidate the current item sizes */
+      exo_icon_view_invalidate_sizes (icon_view);
+
+      /* notify listeners */
+      g_object_notify (G_OBJECT (icon_view), "layout-mode");
     }
 }
 

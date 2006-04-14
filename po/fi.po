@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.5svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-11 20:11+0900\n"
+"POT-Creation-Date: 2006-04-14 13:21+0200\n"
 "PO-Revision-Date: 2006-04-10 23:22+0300\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Kohta, josta merkkijono pyritään tarvittaessa lyhentämään, jos nimikkeellä "
 "ei ole tarpeeksi tilaa merkkijonon näyttämiseen."
 
-#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:759
+#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:784
 msgid "Orientation"
 msgstr "Suunta"
 
@@ -52,19 +52,19 @@ msgstr "Suunta"
 msgid "The orientation of the iconbar"
 msgstr "Kuvakepalkin suunta"
 
-#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:801
 msgid "Pixbuf column"
 msgstr "Pixbuf-sarake"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:802
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Mallin sarake, josta kuvakkeen pixbuf noudetaan"
 
-#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:903
+#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:928
 msgid "Text column"
 msgstr "Tekstisarake"
 
-#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:904
+#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:929
 msgid "Model column used to retrieve the text from"
 msgstr "Mallin sarake, josta teksti noudetaan"
 
@@ -108,112 +108,121 @@ msgstr "Osoitinkohteen reunuksen väri"
 msgid "Cursor item text color"
 msgstr "Osoitinkohteen tekstin väri"
 
-#: ../exo/exo-icon-view.c:647
+#: ../exo/exo-icon-view.c:652
 msgid "Column Spacing"
 msgstr "Sarakkeiden välit"
 
-#: ../exo/exo-icon-view.c:648
+#: ../exo/exo-icon-view.c:653
 msgid "Space which is inserted between grid column"
 msgstr "Ruudukon sarakkeiden välinen tyhjä tila"
 
-#: ../exo/exo-icon-view.c:664
+#: ../exo/exo-icon-view.c:669
 msgid "Number of columns"
 msgstr "Sarakkeiden määrä"
 
-#: ../exo/exo-icon-view.c:665
+#: ../exo/exo-icon-view.c:670
 msgid "Number of columns to display"
 msgstr "Näytettävien sarakkeiden määrä"
 
-#: ../exo/exo-icon-view.c:679
+#: ../exo/exo-icon-view.c:684
 msgid "Enable Search"
 msgstr "Käytä hakua"
 
-#: ../exo/exo-icon-view.c:680
+#: ../exo/exo-icon-view.c:685
 msgid "View allows user to search through columns interactively"
 msgstr "Näkymä sallii käyttäjän hakea sarakkeista interaktiivisesti"
 
-#: ../exo/exo-icon-view.c:697
+#: ../exo/exo-icon-view.c:702
 msgid "Width for each item"
 msgstr "Kohteiden leveys"
 
-#: ../exo/exo-icon-view.c:698
+#: ../exo/exo-icon-view.c:703
 msgid "The width used for each item"
 msgstr "Ruudukon kohteiden leveys"
 
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:721
+msgid "Layout mode"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:722
+#, fuzzy
+msgid "The layout mode"
+msgstr "Valintatapa"
+
+#: ../exo/exo-icon-view.c:738
 msgid "Margin"
 msgstr "Marginaali"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:739
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Kuvakenäkymän reunoille lisättävä tyhjä tila"
 
-#: ../exo/exo-icon-view.c:730
+#: ../exo/exo-icon-view.c:755
 msgid "Markup column"
 msgstr "Merkkaussarake"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:756
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Mallin sarake, josta teksti noudetaan käytettäessä Pango-merkkausta"
 
-#: ../exo/exo-icon-view.c:745
+#: ../exo/exo-icon-view.c:770
 msgid "Icon View Model"
 msgstr "Kuvakenäkymämalli"
 
-#: ../exo/exo-icon-view.c:746
+#: ../exo/exo-icon-view.c:771
 msgid "The model for the icon view"
 msgstr "Kuvakenäkymän malli"
 
-#: ../exo/exo-icon-view.c:760
+#: ../exo/exo-icon-view.c:785
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Kuinka kohteiden teksti ja kuvake sijoitetaan suhteessa toisiinsa"
 
-#: ../exo/exo-icon-view.c:792
+#: ../exo/exo-icon-view.c:817
 msgid "Reorderable"
 msgstr "Uudelleen järjestettävä"
 
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-view.c:818
 msgid "View is reorderable"
 msgstr "Näkymän voi järjestää uudelleen"
 
-#: ../exo/exo-icon-view.c:808
+#: ../exo/exo-icon-view.c:833
 msgid "Row Spacing"
 msgstr "Rivivälit"
 
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:834
 msgid "Space which is inserted between grid rows"
 msgstr "Ruudukon rivien välinen tyhjä tila"
 
-#: ../exo/exo-icon-view.c:823
+#: ../exo/exo-icon-view.c:848
 msgid "Search Column"
 msgstr "Hakusarake"
 
-#: ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-view.c:849
 msgid "Model column to search through when searching through item"
 msgstr "Mallin sarake, josta etsitään kohteen kautta etsittäessä"
 
-#: ../exo/exo-icon-view.c:838
+#: ../exo/exo-icon-view.c:863
 msgid "Selection mode"
 msgstr "Valintatapa"
 
-#: ../exo/exo-icon-view.c:839
+#: ../exo/exo-icon-view.c:864
 msgid "The selection mode"
 msgstr "Valintatapa"
 
-#: ../exo/exo-icon-view.c:854 ../exo/exo-tree-view.c:169
+#: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:169
 msgid "Single Click"
 msgstr "Kertanapsautus"
 
-#: ../exo/exo-icon-view.c:855 ../exo/exo-tree-view.c:170
+#: ../exo/exo-icon-view.c:880 ../exo/exo-tree-view.c:170
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Voiko näkymän kohteet valita kertanapsautuksilla"
 
-#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:186
+#: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:186
 msgid "Single Click Timeout"
 msgstr "Kertanapsautusviive"
 
-#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:187
+#: ../exo/exo-icon-view.c:897 ../exo/exo-tree-view.c:187
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -221,27 +230,27 @@ msgstr ""
 "Viive, jonka jälkeen hiiren osoittimen alla oleva kohde valitaan "
 "automaattisesti kertanapsautustilassa"
 
-#: ../exo/exo-icon-view.c:887
+#: ../exo/exo-icon-view.c:912
 msgid "Spacing"
 msgstr "Välit"
 
-#: ../exo/exo-icon-view.c:888
+#: ../exo/exo-icon-view.c:913
 msgid "Space which is inserted between cells of an item"
 msgstr "Kohteen lohkojen välinen tyhjä tila"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:936
 msgid "Selection Box Color"
 msgstr "Valintalaatikon väri"
 
-#: ../exo/exo-icon-view.c:912
+#: ../exo/exo-icon-view.c:937
 msgid "Color of the selection box"
 msgstr "Valintalaatikon väri"
 
-#: ../exo/exo-icon-view.c:918
+#: ../exo/exo-icon-view.c:943
 msgid "Selection Box Alpha"
 msgstr "Valintalaatikon alpha"
 
-#: ../exo/exo-icon-view.c:919
+#: ../exo/exo-icon-view.c:944
 msgid "Opacity of the selection box"
 msgstr "Valintalaatikon läpinäkyvyys"
 
