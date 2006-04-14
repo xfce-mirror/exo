@@ -25,6 +25,9 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_MATH_H
+#include <math.h>
+#endif
 #ifdef HAVE_MEMORY_H
 #include <memory.h>
 #endif
@@ -148,6 +151,8 @@ static gboolean             exo_icon_view_button_press_event             (GtkWid
                                                                           GdkEventButton         *event);
 static gboolean             exo_icon_view_button_release_event           (GtkWidget              *widget,
                                                                           GdkEventButton         *event);
+static gboolean             exo_icon_view_scroll_event                   (GtkWidget              *widget,
+                                                                          GdkEventScroll         *event);
 static gboolean             exo_icon_view_key_press_event                (GtkWidget              *widget,
                                                                           GdkEventKey            *event);
 static gboolean             exo_icon_view_focus_out_event                (GtkWidget              *widget,
@@ -614,6 +619,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   gtkwidget_class->motion_notify_event = exo_icon_view_motion_notify_event;
   gtkwidget_class->button_press_event = exo_icon_view_button_press_event;
   gtkwidget_class->button_release_event = exo_icon_view_button_release_event;
+  gtkwidget_class->scroll_event = exo_icon_view_scroll_event;
   gtkwidget_class->key_press_event = exo_icon_view_key_press_event;
   gtkwidget_class->focus_out_event = exo_icon_view_focus_out_event;
   gtkwidget_class->leave_notify_event = exo_icon_view_leave_notify_event;
@@ -2350,6 +2356,43 @@ exo_icon_view_button_release_event (GtkWidget      *widget,
   exo_icon_view_stop_rubberbanding (icon_view);
 
   remove_scroll_timeout (icon_view);
+
+  return TRUE;
+}
+
+
+
+static gboolean
+exo_icon_view_scroll_event (GtkWidget      *widget,
+                            GdkEventScroll *event)
+{
+  GtkAdjustment *adjustment;
+  ExoIconView   *icon_view = EXO_ICON_VIEW (widget);
+  gdouble        delta;
+  gdouble        value;
+
+  /* we don't care for scroll events in "rows" layout mode, as
+   * that's completely handled by GtkScrolledWindow.
+   */
+  if (icon_view->priv->layout_mode != EXO_ICON_VIEW_LAYOUT_COLS)
+    return FALSE;
+
+  /* also, we don't care for anything but Up/Down, as
+   * everything else will be handled by GtkScrolledWindow.
+   */
+  if (event->direction != GDK_SCROLL_UP && event->direction != GDK_SCROLL_DOWN)
+    return FALSE;
+
+  /* determine the horizontal adjustment */
+  adjustment = icon_view->priv->hadjustment;
+
+  /* determine the scroll delta */
+  delta = pow (adjustment->page_size, 2.0 / 3.0);
+  delta = (event->direction == GDK_SCROLL_UP) ? -delta : delta;
+
+  /* apply the new adjustment value */
+  value = CLAMP (adjustment->value + delta, adjustment->lower, adjustment->upper - adjustment->page_size);
+  gtk_adjustment_set_value (adjustment, value);
 
   return TRUE;
 }

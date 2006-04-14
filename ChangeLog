@@ -1,5 +1,10 @@
 2006-04-14	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c: Allow horizontal scrolling using the regular
+	  mouse wheel when in EXO_ICON_VIEW_LAYOUT_COLS mode. Bug #1665.
+
+2006-04-14	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c: Avoid calling size_allocate() again and again,
 	  because of GtkScrolledWindow interaction (actually because GTK+ is
 	  totally broken here).
