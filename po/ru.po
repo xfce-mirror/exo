@@ -2,7 +2,7 @@
 # Copyright (C) 2004-2006 os-cillation e.K.
 # This file is distributed under the same license as the libexo package.
 # Andrey Fedoseev <andrey.fedoseev@gmail.com>, 2006.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.5svn\n"
@@ -410,51 +410,60 @@ msgstr ""
 #: ../exo-helper/exo-helper-chooser-dialog.c:129
 #: ../exo-helper/exo-preferred-applications-settings.c:62
 msgid "Preferred Applications"
-msgstr ""
+msgstr "Препочитаемые приложения"
 
 #.
 #. Internet
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:148
 msgid "Internet"
-msgstr ""
+msgstr "Интернет"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:161
 msgid "Default Web Browser"
-msgstr ""
+msgstr "Веб-браузер по умолчанию"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:169
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr ""
+"Предпочитаемый веб-браузер, который будет\n"
+"использован для открытия гиперссылок и просмотра\n"
+"справки."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:193
 msgid "Default Mail Reader"
-msgstr ""
+msgstr "Почтовая программа по умолчанию"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:201
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
+"Предпочитаемая почтовая программа, котороя будет\n"
+"использована для составления писем при нажатии на\n"
+"на почтовый адрес."
 
 #.
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:221
 msgid "Utilities"
-msgstr ""
+msgstr "Утилиты"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:234
 msgid "Default Terminal Emulator"
-msgstr ""
+msgstr "Эмулятор терминала по умолчанию"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:242
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
+"Предпочитаемый эмулятор терминала, который будет\n"
+"использоваться для запуска команд, которым требуется\n"
+"окружение командной строки."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:296
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
@@ -507,18 +516,26 @@ msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
+"Укажите приложение, которые вы хотите\n"
+"использовать в качестве веб-браузера для Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:447
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
+"Укажите приложение, которые вы хотите\n"
+"использовать в качестве почтовой\n"
+"программы для Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:448
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
+"Укажите приложение, которые вы хотите\n"
+"использовать в качестве эмулятора\n"
+"терминала для Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid "Browse the file system to choose a custom command."
@@ -526,7 +543,7 @@ msgstr "Просмотреть файловую систему, чтобы вы�
 
 #: ../exo-helper/exo-helper-chooser.c:687
 msgid "_Other..."
-msgstr ""
+msgstr "Другой..."
 
 #: ../exo-helper/exo-helper-chooser.c:688
 msgid "Use a custom application which is not included in the above list."
@@ -541,7 +558,7 @@ msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
 msgstr ""
-"Пожалуйста, выберите предпочитаемый веб-браузери нажмите OK, чтобы "
+"Пожалуйста, выберите предпочитаемый веб-браузер и нажмите OK, чтобы "
 "продолжить."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:321
@@ -549,7 +566,7 @@ msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
-"Пожалуйста, выберите предпочитаемую почтовуюпрограмму и нажмите OK, чтобы "
+"Пожалуйста, выберите предпочитаемую почтовую программу и нажмите OK, чтобы "
 "продолжить."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:323
@@ -557,7 +574,7 @@ msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
-"Пожалуйста, выберите предпочитаемый эмулятортерминала и нажмите OK, чтобы "
+"Пожалуйста, выберите предпочитаемый эмулятор терминала и нажмите OK, чтобы "
 "продолжить."
 
 #: ../exo-helper/exo-helper.c:383
@@ -594,7 +611,7 @@ msgstr "Веб-браузер Epiphany"
 
 #: ../exo-helper/helpers/eterm.desktop.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr ""
+msgstr "Эмулятор терминала Enlightened"
 
 #: ../exo-helper/helpers/evolution.desktop.in.h:1
 msgid "Novell Evolution"
@@ -671,6 +688,11 @@ msgid ""
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
+"  --launch ТИП [ПАРАМЕТРЫ...]         Запустить приложение выбранного\n"
+"                                      ТИПа с дополнительными ПАРАМЕТРАМИ, "
+"где\n"
+"                                      ТИП может принимать одно из следующих\n"
+"                                      значений."
 
 #: ../exo-open/main.c:53
 msgid "The following TYPEs are supported for the --launch command:"
@@ -685,6 +707,9 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"  WebBrowser       - Предпочитаемый веб браузер.\n"
+"  MailReader       - Предпочитаемая почтовая программа.\n"
+"  TerminalEmulator - Предпочитаемый эмулятор терминала."
 
 #: ../exo-open/main.c:63
 msgid ""
@@ -694,6 +719,12 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
+"Если вы не укажете параметр --launch, exo-open откроет все указанные\n"
+"адреса с помощью установленных для обработчиков. Если вы укажете\n"
+"параметр --launch, то вы сможете выбрать приложения, которые должны\n"
+"быть запущены, и передать дополнительные параметры этим приложениям\n"
+"(напр. вы можете передать эмулятору терминала команду, которая должна\n"
+"быть запущена в командной строке)."
 
 #: ../exo-open/main.c:100
 msgid ""
