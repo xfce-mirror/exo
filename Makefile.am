@@ -36,8 +36,6 @@ EXTRA_DIST =								\
 	README								\
 	THANKS								\
 	TODO								\
-	exo.spec.in							\
-	exo.spec							\
 	intltool-extract.in						\
 	intltool-merge.in						\
 	intltool-update.in

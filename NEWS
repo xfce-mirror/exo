@@ -1,4 +1,4 @@
-0.3.1.4svn
+0.3.1.5svn
 ==========
 - Imported the "Xfce Preferred Applications" framework, which allows users to
   select their preferred applications (i.e. web browser, mail reader, terminal
@@ -8,6 +8,13 @@
 - Updated the ExoIconView class to support an API compatible to the GtkIconView
   in Gtk+ 2.8, and improve the performance of the icon view.
 - Added single click navigation support to ExoIconView.
+- Added hover-selection support to ExoIconView in single-click mode, which
+  automatically selects an item when the mouse is paused over it for a
+  certain amount of time.
+- Added "Right Arrow Keyboard Navigation" to ExoIconView, as suggested in
+  http://chabada.sk/better-desktop/#nautilus-improvements.
+- Added a compact layout mode to ExoIconView, similar to the list view found
+  in Windows Explorer.
 - Added a new widget ExoTreeView, which extends GtkTreeView with single click
   navigation.
 - Added a new widget ExoWrapTable, which layouts its child widgets in an
@@ -21,11 +28,12 @@
   unnecessarily duplicated at runtime, and provide other packages with
   the same functionality by exporting the functions and macros in
   question.
+- Updated the python bindings to include the new functionality.
 - Support three different levels of debugging support (yes/minimum/no).
 - New translations: Pau Rul·lan Ferragut (ca), Stavros Giannouris (el),
                     Patricio Carr (es), Piarres Beobide (eu), Jari Rahkonen
                     (fi), Stephane Roy (fr), Daichi Kawahata (ja), Joao
-                    Pedrosa (pt_BR)
+                    Pedrosa (pt_BR), Andrey Fedoseev (ru)
 
 
 0.3.0
