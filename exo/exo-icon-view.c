@@ -3147,7 +3147,7 @@ exo_icon_view_layout_single_col (ExoIconView *icon_view,
       item->row = row;
       item->col = col;
 
-      row++;
+      row += rowspan;
     }
 
   last_item = items;
