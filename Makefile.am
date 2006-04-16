@@ -36,15 +36,19 @@ EXTRA_DIST =								\
 	README								\
 	THANKS								\
 	TODO								\
+	exo.spec.in							\
 	intltool-extract.in						\
 	intltool-merge.in						\
 	intltool-update.in
 
 DISTCLEANFILES =							\
+	exo.spec							\
 	intltool-extract						\
 	intltool-merge							\
 	intltool-update
 
-DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --enable-xsltproc
+DISTCHECK_CONFIGURE_FLAGS =						\
+	--enable-gtk-doc						\
+	--enable-xsltproc
 
 # vi:set ts=8 sw=8 noet ai nocindent:

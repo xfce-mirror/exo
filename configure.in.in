@@ -9,19 +9,19 @@ dnl
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-m4_define([libexo_verinfo], [2:0:2])
+m4_define([libexo_verinfo], [3:0:3])
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [3])
 m4_define([libexo_version_micro], [1])
-m4_define([libexo_version_nano], [5])
+m4_define([libexo_version_nano], [6])
 m4_define([libexo_version_build], [r@REVISION@])
-m4_define([libexo_version_tag], [svn])
-m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()ifelse(libexo_version_nano(), [], [], [.libexo_version_nano()])ifelse(libexo_version_tag(), [], [], [libexo_version_tag()-libexo_version_build()])])
+m4_define([libexo_version_tag], [beta1])
+m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()ifelse(libexo_version_nano(), [], [], [.libexo_version_nano()])ifelse(libexo_version_tag(), [svn], [libexo_version_tag()-libexo_version_build()], [libexo_version_tag()])])
 
 dnl ********************************************
 dnl *** Full debug support for SVN snapshots ***
 dnl ********************************************
-m4_define([libexo_debug_default], [ifelse(libexo_version_tag(), [], [minimum], [full])])
+m4_define([libexo_debug_default], [ifelse(libexo_version_tag(), [svn], [full], [minimum])])
 
 dnl ***************************
 dnl *** Initialize autoconf ***
@@ -106,12 +106,12 @@ dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.6.4])
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.6.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.1])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.2])
 
 dnl *********************************************
 dnl *** Check for xfce-mcs-manager (optional) ***
 dnl *********************************************
-XDT_CHECK_OPTIONAL_PACKAGE([XFCE_MCS_MANAGER], [xfce-mcs-manager], [4.2.1],
+XDT_CHECK_OPTIONAL_PACKAGE([XFCE_MCS_MANAGER], [xfce-mcs-manager], [4.2.2],
                            [mcs-plugin], [xfce-mcs-manager], [yes])
 
 dnl *************************
@@ -257,6 +257,7 @@ docs/manual/C/exo-preferred-applications.xml
 docs/manual/C/images/Makefile
 docs/reference/Makefile
 docs/reference/version.xml
+exo.spec
 exo/Makefile
 exo/exo-0.3.pc
 exo/exo-config.h
