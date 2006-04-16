@@ -21,11 +21,27 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_SYS_TYPES_H
+#include <sys/types.h>
+#endif
+#ifdef HAVE_SYS_WAIT_H
+#include <sys/wait.h>
+#endif
+
+#ifdef HAVE_ERRNO_H
+#include <errno.h>
+#endif
 #ifdef HAVE_MEMORY_H
 #include <memory.h>
 #endif
+#ifdef HAVE_STDLIB_H
+#include <stdlib.h>
+#endif
 #ifdef HAVE_STRING_H
 #include <string.h>
+#endif
+#ifdef HAVE_UNISTD_H
+#include <unistd.h>
 #endif
 
 #include <exo-helper/exo-helper.h>
@@ -357,12 +373,17 @@ exo_helper_execute (ExoHelper   *helper,
                     const gchar *parameter,
                     GError     **error)
 {
+  GTimeVal previous;
+  GTimeVal current;
   gboolean succeed = FALSE;
   GError  *err = NULL;
   gchar  **commands;
   gchar  **argv;
   gchar   *command;
   guint    n;
+  gint     status;
+  gint     result;
+  gint     pid;
 
   // FIXME: startup-notification
 
@@ -400,14 +421,58 @@ exo_helper_execute (ExoHelper   *helper,
         continue;
 
       /* try to run the command */
-      succeed = gdk_spawn_on_screen (screen, NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &err);
+      succeed = gdk_spawn_on_screen (screen, NULL, argv, NULL, G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH, NULL, NULL, &pid, &err);
 
       /* cleanup */
       g_strfreev (argv);
 
       /* check if the execution was successful */
       if (G_LIKELY (succeed))
-        break;
+        {
+          /* determine the current time */
+          g_get_current_time (&previous);
+
+          /* wait up to 5 seconds to see whether the command worked */
+          for (;;)
+            {
+              /* check if the command exited with an error */
+              result = waitpid (pid, &status, WNOHANG);
+              if (result < 0)
+                {
+                  /* something weird happened */
+                  err = g_error_new_literal (G_FILE_ERROR, g_file_error_from_errno (errno), g_strerror (errno));
+                  succeed = FALSE;
+                  break;
+                }
+              else if (result > 0 && status != 0)
+                {
+                  /* the command failed */
+                  err = g_error_new_literal (G_FILE_ERROR, g_file_error_from_errno (EIO), g_strerror (EIO));
+                  succeed = FALSE;
+                  break;
+                }
+              else if (result != 0)
+                {
+                  /* the command succeed */
+                  succeed = TRUE;
+                  break;
+                }
+
+              /* determine the current time */
+              g_get_current_time (&current);
+
+              /* check if the command is still running after 5 seconds (which indicates that the command worked) */
+              if (((current.tv_sec - previous.tv_sec) * 1000ull + (current.tv_usec - previous.tv_usec) / 1000ull) > 5000ull)
+                break;
+
+              /* wait some time */
+              g_usleep (50 * 1000);
+            }
+
+          /* check if we should retry with the next command */
+          if (G_LIKELY (succeed))
+            break;
+        }
     }
 
   /* propagate the error */

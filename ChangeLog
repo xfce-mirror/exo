@@ -1,5 +1,12 @@
 2006-04-16	Benedikt Meurer <benny@xfce.org>
 
+	* configure.in.in: Check for sys/wait.h.
+	* exo-helper/exo-helper.c: Properly retry with the remaining commands
+	  if a command returns with an error within 5 seconds. This finally
+	  fixes the issues with Firefox.
+
+2006-04-16	Benedikt Meurer <benny@xfce.org>
+
 	* docs/manual/C/exo-preferred-applications.xml.in: Update the
 	  documentation date.
 
