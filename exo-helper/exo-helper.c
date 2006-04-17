@@ -451,7 +451,7 @@ exo_helper_execute (ExoHelper   *helper,
                   succeed = FALSE;
                   break;
                 }
-              else if (result != 0)
+              else if (result == pid)
                 {
                   /* the command succeed */
                   succeed = TRUE;
@@ -462,7 +462,7 @@ exo_helper_execute (ExoHelper   *helper,
               g_get_current_time (&current);
 
               /* check if the command is still running after 5 seconds (which indicates that the command worked) */
-              if (((current.tv_sec - previous.tv_sec) * 1000ull + (current.tv_usec - previous.tv_usec) / 1000ull) > 5000ull)
+              if (((current.tv_sec - previous.tv_sec) * 1000ll + (current.tv_usec - previous.tv_usec) / 1000ll) > 5000ll)
                 break;
 
               /* wait some time */
