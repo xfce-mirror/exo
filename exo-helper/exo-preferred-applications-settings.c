@@ -53,13 +53,11 @@ mcs_plugin_init (McsPlugin *plugin)
   GtkIconTheme *icon_theme;
 
   /* setup i18n support */
-#ifdef GETTEXT_PACKAGE
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-#endif
 
   /* initialize plugin structure */
   plugin->plugin_name = g_strdup ("exo-preferred-applications");
-  plugin->caption = g_strdup (_("Preferred Applications"));
+  plugin->caption = g_strdup (Q_ ("Button Label|Preferred Applications"));
   plugin->run_dialog = run_dialog;
 
   /* lookup the icon (on the default icon theme, *sigh*) */
