@@ -4509,8 +4509,14 @@ exo_icon_view_scroll_to_item (ExoIconView     *icon_view,
       gtk_adjustment_set_value (icon_view->priv->hadjustment, 
                                 icon_view->priv->hadjustment->value + x + item->area.x - focus_width);
     }
-  else if (x + item->area.x + item->area.width + focus_width > GTK_WIDGET (icon_view)->allocation.width)
+  else if (x + item->area.x + item->area.width + focus_width > GTK_WIDGET (icon_view)->allocation.width
+        && item->area.width < GTK_WIDGET (icon_view)->allocation.width)
     {
+      /* the second condition above is to make sure that we don't scroll horizontally if the item
+       * width is larger than the allocation width. Fixes a weird scrolling bug in the compact view.
+       * See http://bugzilla.xfce.org/show_bug.cgi?id=1683 for details.
+       */
+
       gtk_adjustment_set_value (icon_view->priv->hadjustment, 
                                 icon_view->priv->hadjustment->value + x + item->area.x + item->area.width 
                                 + focus_width - GTK_WIDGET (icon_view)->allocation.width);

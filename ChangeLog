@@ -1,5 +1,12 @@
 2006-04-19	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c(exo_icon_view_scroll_to_item): Avoid scrolling
+	  horizontally (to the right) if the item width is larger than the
+	  available allocation width, which fixes a weird scrolling bug with
+	  the compact view. Bug #1683.
+
+2006-04-19	Benedikt Meurer <benny@xfce.org>
+
 	* exo-helper/exo-preferred-applications-settings.c(mcs_plugin_init):
 	  Mark button label translation. Bug #1669.
 	* po/libexo-0.3.pot, po/*.po: Update translations.
