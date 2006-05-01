@@ -5,9 +5,9 @@
 # Dotan Kamber <kamberd@yahoo.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: libexo-0.3_he\n"
+"Project-Id-Version: exo 0.3.1.5svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-16 09:24+0200\n"
+"POT-Creation-Date: 2006-04-19 17:57+0200\n"
 "PO-Revision-Date: 2006-04-19 02:37+0300\n"
 "Last-Translator: Dotan Kamber <kamberd@yahoo.com>\n"
 "Language-Team: Hebrew\n"
@@ -27,7 +27,9 @@ msgstr "קיטוע מחרוזות"
 msgid ""
 "The preferred place to ellipsize the string, if the cell renderer does not "
 "have enough room to display the entire string, if at all"
-msgstr "המיקום המועדף לקיטוע מחרוזות, אם אין אפשרות להציג בתא את מלוא המחרוזת, אם בכלל."
+msgstr ""
+"המיקום המועדף לקיטוע מחרוזות, אם אין אפשרות להציג בתא את מלוא המחרוזת, אם "
+"בכלל."
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:163
 #, fuzzy
@@ -44,7 +46,9 @@ msgstr "האם לתג זה השפעה על אופן קיטוע המחרוזות.
 msgid ""
 "The preferred place to ellipsize the string, if the label does not have "
 "enough room to display the entire string, if at all"
-msgstr "המיקום המועדף לקיטוע מחרוזות אם אין אפשרות להציג בתווית את מלוא המחרוזת, אם בכלל"
+msgstr ""
+"המיקום המועדף לקיטוע מחרוזות אם אין אפשרות להציג בתווית את מלוא המחרוזת, אם "
+"בכלל"
 
 #: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:791
 msgid "Orientation"
@@ -181,7 +185,8 @@ msgid "The model for the icon view"
 msgstr "הדוגמה לתצוגת-סמלים"
 
 #: ../exo/exo-icon-view.c:792
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr "כיצד מסודרים זה ביחס לזה הכיתוב והסמל של כל פריט"
 
 #: ../exo/exo-icon-view.c:824
@@ -268,7 +273,9 @@ msgstr "_הוספת סרגל כלים חדש"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr "גרירת פריט אל סרגלי הכלים מעלה תוסיף אותו וגרירת פריט מסרגלי הכלים בטבלת הפריטים תסיר אותו"
+msgstr ""
+"גרירת פריט אל סרגלי הכלים מעלה תוסיף אותו וגרירת פריט מסרגלי הכלים בטבלת "
+"הפריטים תסיר אותו"
 
 #: ../exo/exo-toolbars-editor.c:551
 msgid "Separator"
@@ -433,7 +440,6 @@ msgstr "נא לדווח על באגים ל- <%s>.\n"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:120
 #: ../exo-helper/exo-helper-chooser-dialog.c:129
-#: ../exo-helper/exo-preferred-applications-settings.c:62
 msgid "Preferred Applications"
 msgstr "יישומים מועדפים"
 
@@ -609,6 +615,11 @@ msgstr "כשל בפתיחת helper.rc לכתיבה"
 msgid "Failed to launch exo-preferred-applications"
 msgstr "כשל בשיגור היישומים המועדפים של exo"
 
+#: ../exo-helper/exo-preferred-applications-settings.c:60
+#, fuzzy
+msgid "Button Label|Preferred Applications"
+msgstr "יישומים מועדפים"
+
 #: ../exo-helper/helpers/Terminal.desktop.in.h:1
 msgid "Xfce Terminal"
 msgstr "Xfce Terminal"
@@ -694,8 +705,10 @@ msgid "  -h, --help                          Print this help message and exit"
 msgstr "  -h, --help                          Print this help message and exit"
 
 #: ../exo-open/main.c:47
-msgid "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Print version information and exit"
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr ""
+"  -v, --version                       Print version information and exit"
 
 #: ../exo-open/main.c:49
 msgid ""
@@ -763,4 +776,3 @@ msgstr "כשל בשיגור היישום המועדף לקבוצה \"%s\"."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "כשל בפתיחת כתובת \"%s\"."
-
