@@ -274,6 +274,11 @@ MD5Final (unsigned char digest[16], MD5_CTX *ctx)
 
 #else
 
+/* RedHat AS, Fedora */
+#ifdef HAVE_MD5GLOBAL_H
+#include <md5global.h>
+#endif
+
 #include <md5.h>
 
 #endif  /* !defined (HAVE_MD5INIT) */
