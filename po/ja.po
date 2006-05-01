@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.1.5svn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-04-19 17:57+0200\n"
-"PO-Revision-Date: 2006-04-23 17:16+0900\n"
+"PO-Revision-Date: 2006-05-01 21:45+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -132,7 +132,7 @@ msgstr "検索を有効にする"
 
 #: ../exo/exo-icon-view.c:692
 msgid "View allows user to search through columns interactively"
-msgstr ""
+msgstr "表示欄をインタラクティブに検索できるようにします。"
 
 #: ../exo/exo-icon-view.c:709
 msgid "Width for each item"
@@ -202,9 +202,10 @@ msgstr "グリッド行の間に挟まれるスペースです。"
 msgid "Search Column"
 msgstr "検索欄"
 
+# FIXME: wtf
 #: ../exo/exo-icon-view.c:856
 msgid "Model column to search through when searching through item"
-msgstr ""
+msgstr "アイテムを検索する時に検索するモデル欄です。"
 
 #: ../exo/exo-icon-view.c:870
 msgid "Selection mode"
@@ -231,6 +232,8 @@ msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr ""
+"シングルクリックモードの時にマウスカーソルの下にあるアイテムが自動的に選択状"
+"態になるまでの時間です。"
 
 #: ../exo/exo-icon-view.c:919
 msgid "Spacing"
@@ -265,8 +268,8 @@ msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
 msgstr ""
-"追加するにはアイテムをツールバーの上にドラッグして下さい、削除するにはツール"
-"バーからドラッグして下さい。"
+"追加するにはアイテムをツールバーの上にドラッグしてください、ツールバーからド"
+"ラッグすると削除されます。"
 
 #: ../exo/exo-toolbars-editor.c:551
 msgid "Separator"
@@ -425,13 +428,12 @@ msgstr ""
 #: ../exo-csource/main.c:255 ../exo-open/main.c:107
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "バグは <%s> に報告して下さい。\n"
+msgstr "バグは <%s> に報告してください。\n"
 
-# FIXME: Preferred, how it should be?
 #: ../exo-helper/exo-helper-chooser-dialog.c:120
 #: ../exo-helper/exo-helper-chooser-dialog.c:129
 msgid "Preferred Applications"
-msgstr "常用アプリケーション"
+msgstr "お気に入りのアプリ"
 
 #.
 #. Internet
@@ -444,27 +446,27 @@ msgstr "インターネット"
 msgid "Default Web Browser"
 msgstr "ウェブブラウザー"
 
-# FIXME: preferred, how it should be?
 #: ../exo-helper/exo-helper-chooser-dialog.c:169
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr ""
-"ここで指定されたウェブブラウザーは、リンクを\n"
-"開いたり、ヘルプの内容を表示するために使われます。"
+"ここで指定した、お気に入りのウェブブラウザーは、\n"
+"リンクを開いたりヘルプの内容を表示するために\n"
+"使われます。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:193
 msgid "Default Mail Reader"
 msgstr "メールリーダー"
 
-# FIXME: preferred, how it should be?
 #: ../exo-helper/exo-helper-chooser-dialog.c:201
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
-"ここで指定されたメールリーダーは、メールアドレスを\n"
-"クリックしてメールを作成する時に使われます。"
+"ここで指定した、お気に入りのメールリーダーは、\n"
+"メールアドレスをクリックしてメールを作成する時に\n"
+"使われます。"
 
 #.
 #. Utilities
@@ -477,15 +479,14 @@ msgstr "ユーティリティ"
 msgid "Default Terminal Emulator"
 msgstr "ターミナル"
 
-# FIXME: preferred, how it should be?
 #: ../exo-helper/exo-helper-chooser-dialog.c:242
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
-"ここで指定されたターミナルは、コマンド行\n"
-"インターフェイスが必要なコマンドを実行する\n"
-"ために使われます。"
+"ここで指定した、お気に入りのターミナルは、\n"
+"コマンド行インターフェイスが必要なコマンドを\n"
+"実行するために使われます。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:296
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
@@ -521,19 +522,19 @@ msgstr "標準のターミナルを設定するのに失敗しました"
 
 #: ../exo-helper/exo-helper-chooser.c:401
 msgid "Select application"
-msgstr "アプリケーションを選択して下さい"
+msgstr "アプリケーションを選択してください"
 
 #: ../exo-helper/exo-helper-chooser.c:439
 msgid "Choose a custom Web Browser"
-msgstr "ウェブブラウザーを選択して下さい"
+msgstr "ウェブブラウザーを選択してください"
 
 #: ../exo-helper/exo-helper-chooser.c:440
 msgid "Choose a custom Mail Reader"
-msgstr "メールリーダーを選択して下さい"
+msgstr "メールリーダーを選択してください"
 
 #: ../exo-helper/exo-helper-chooser.c:441
 msgid "Choose a custom Terminal Emulator"
-msgstr "ターミナルを選択して下さい"
+msgstr "ターミナルを選択してください"
 
 #: ../exo-helper/exo-helper-chooser.c:446
 msgid ""
@@ -541,7 +542,7 @@ msgid ""
 "as default Web Browser for Xfce:"
 msgstr ""
 "標準のウェブブラウザーとして使用したい\n"
-"アプリケーションを指定して下さい:"
+"アプリケーションを指定してください:"
 
 #: ../exo-helper/exo-helper-chooser.c:447
 msgid ""
@@ -549,7 +550,7 @@ msgid ""
 "as default Mail Reader for Xfce:"
 msgstr ""
 "標準のメールリーダーとして使用したい\n"
-"アプリケーションを指定して下さい:"
+"アプリケーションを指定してください:"
 
 #: ../exo-helper/exo-helper-chooser.c:448
 msgid ""
@@ -557,7 +558,7 @@ msgid ""
 "as default Terminal Emulator for Xfce:"
 msgstr ""
 "標準のターミナルとして使用したい\n"
-"アプリケーションを指定して下さい:"
+"アプリケーションを指定してください:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid "Browse the file system to choose a custom command."
@@ -571,37 +572,33 @@ msgstr "その他(_O)..."
 msgid "Use a custom application which is not included in the above list."
 msgstr "上のリストには無いアプリケーションを指定して使用します。"
 
-# FIXME: Preferred, how it should be?
 #: ../exo-helper/exo-helper-launcher-dialog.c:143
 msgid "Choose Preferred Application"
-msgstr "常用しているアプリケーションを選択して下さい"
+msgstr "お気に入りのアプリを選択してください"
 
-# FIXME: preferred, how it should be?
 #: ../exo-helper/exo-helper-launcher-dialog.c:319
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
 msgstr ""
-"常用しているウェブブラウザーを\n"
-"選択して「OK」をクリックして下さい。"
+"お気に入りのウェブブラウザーを\n"
+"選択して「OK」をクリックしてください。"
 
-# FIXME: preferred, how it should be?
 #: ../exo-helper/exo-helper-launcher-dialog.c:321
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
-"常用しているメールリーダーを\n"
-"選択して「OK」をクリックして下さい。"
+"お気に入りのメールリーダーを\n"
+"選択して「OK」をクリックしてください。"
 
-# FIXME: preferred, how it should be?
 #: ../exo-helper/exo-helper-launcher-dialog.c:323
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
-"常用しているターミナルを\n"
-"選択して「OK」をクリックして下さい。"
+"お気に入りのターミナルを\n"
+"選択して「OK」をクリックしてください。"
 
 #: ../exo-helper/exo-helper.c:404
 msgid "No command specified"
@@ -615,10 +612,9 @@ msgstr "書き込むために helpers.rc を開くのに失敗しました"
 msgid "Failed to launch exo-preferred-applications"
 msgstr "コマンド exo-preferred-applications を実行するのに失敗しました"
 
-# FIXME: Preferred, how it should be?
 #: ../exo-helper/exo-preferred-applications-settings.c:60
 msgid "Button Label|Preferred Applications"
-msgstr "常用アプリケーション"
+msgstr "お気に入りのアプリ"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.h:1
 msgid "Xfce Terminal"
@@ -729,7 +725,6 @@ msgstr ""
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "以下の「タイプ」が --launch コマンドでサポートされます:"
 
-# FIXME: preferred, how it should be?
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
@@ -739,11 +734,10 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  WebBrowser       - 常用しているウェブブラウザー。\n"
-"  MailReader       - 常用しているウェブブラウザー。\n"
-"  TerminalEmulator - 常用しているターミナル。"
+"  WebBrowser       - お気に入りのウェブブラウザー。\n"
+"  MailReader       - お気に入りのウェブブラウザー。\n"
+"  TerminalEmulator - お気に入りのターミナル。"
 
-# FIXME: preferred, how it should be?
 #: ../exo-open/main.c:63
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
@@ -754,8 +748,8 @@ msgid ""
 msgstr ""
 "オプション --launch を指定しない場合、exo-open は指定された全ての URL を\n"
 "あらかじめ決まっている取り扱い方で開きます。一方、オプション --launch を\n"
-"指定すると、実行したい好きなアプリケーションを選ぶ事ができ、そのアプリ\n"
-"ケーションにいくつかのパラメーターを渡せます (TerminalEmulator には、\n"
+"指定すると、実行したいお気に入りのアプリケーションを選べ、その\n"
+"アプリケーションにいくつかのパラメーターを渡せます (TerminalEmulator には、\n"
 "ターミナル内で実行する必要のあるコマンド行を渡せます)。"
 
 #: ../exo-open/main.c:100
@@ -772,7 +766,6 @@ msgstr ""
 "Benedikt Meurer <benny@xfce.org> が作成しました。\n"
 "\n"
 
-# FIXME: preferred, how it should be?
 #: ../exo-open/main.c:121
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
