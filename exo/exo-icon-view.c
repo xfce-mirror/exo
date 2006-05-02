@@ -2694,7 +2694,7 @@ exo_icon_view_update_rubberband_selection (ExoIconView *icon_view)
 {
   ExoIconViewItem *item;
   gboolean         selected;
-  gboolean         changed = FALSE;;
+  gboolean         changed = FALSE;
   gboolean         is_in;
   GList           *lp;
   gint             x, y;

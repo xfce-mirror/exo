@@ -22,6 +22,10 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_SYS_TYPES_H
+#include <sys/types.h>
+#endif
+
 #ifdef HAVE_FNMATCH_H
 #include <fnmatch.h>
 #endif
