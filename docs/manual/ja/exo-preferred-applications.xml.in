@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY date "April 2006">
+<!ENTITY version "@PACKAGE_VERSION@">
+]>
+<article id="exo-preferred-applications" lang="ja">
+
+
+  <!-- Header -->
+  <articleinfo>
+    <title>Xfce 4 お気に入りのアプリ</title>
+
+    <pubdate>&date;</pubdate>
+
+    <copyright>
+      <year>2004</year>
+      <year>2005</year>
+      <year>2006</year>
+      <holder>Benedikt Meurer</holder>
+    </copyright><copyright><year>2006.</year><holder>Daichi Kawahata (daichi@xfce.org)</holder></copyright>
+
+    <legalnotice id="legalnotice">
+      <para>フリーソフトウェア財団が公表する GNU フリー文書利用許諾契約書の第1.1版、あるいはそれ以降のいずれかの版の条件下において、この文書の複製、配布および/または変更が許可されます。変更出来ない箇所、表紙文および裏表紙文があってはいけません。この利用許諾契約書の全文は<ulink type="http" url="http://www.gnu.org/">フリーソフトウェア財団</ulink>から取得する事ができます。</para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <firstname>Benedikt</firstname>
+        <surname>Meurer</surname>
+        <affiliation>
+          <address><email>benny@xfce.org</email></address>
+        </affiliation>
+      </author>
+    </authorgroup>
+
+    <releaseinfo>このマニュアルはフレームワーク<emphasis>Xfceお気に入りのアプリ</emphasis>、そのコンポーネントのバージョン @PACKAGE_VERSION@ について書かれています。</releaseinfo>
+  </articleinfo>
+
+
+  <!-- Content -->
+  <sect1 id="intro">
+    <title>初めに</title>
+
+    <para>Xfce デスクトップ環境の 4.x シリーズを通じて、例えばハイパーリンクを開くのに使用されるウェブブラウザーのように、ユーザーが簡単にお気に入りのアプリケーションを設定する方法はありませんでした。このフレームワーク<emphasis>Xfceお気に入りのアプリ</emphasis>はこの制約を取り除いてユーザーが好きなウェブブラウザー、メールリーダー、ターミナルエミュレーターを選べるように Xfce 4.3 で新たに追加されました。</para>
+  </sect1>
+
+
+  <sect1 id="configuration">
+    <title>設定</title>
+
+    <para>
+      You can access the configuration dialog by clicking on the
+      <guibutton>Preferred Applications</guibutton> button in the
+      <ulink type="http" url="xfce-mcs-manager.html#manager-dialog">Xfce
+      Settings Manager</ulink>. The configuration dialog is split
+      into two pages, which are described in the following sections.
+    </para>
+
+    <sect2 id="configuration-internet">
+      <title>インターネットアプリケーション</title>
+
+      <para>
+        The first page of the configuration dialog allows you to select
+        your preferred Web Browser and Mail Reader. The selected Web
+        Browser will be used to open hyperlinks that you click on and
+        to display the documentation, whereas the Mail Reader will be
+        used to compose mails.
+      </para>
+
+      <figure id="configuration-internet-figure">
+        <title>インターネットアプリケーション</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/exo-preferred-applications-internet.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>インターネットアプリケーションの選択</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>
+        To select a different Web Browser than the current default one,
+        click on the button in the <guilabel>Default Web Browser</guilabel>
+        section and a list of web browsers that were detected on your
+        system will appear, as shown in <xref linkend="configuration-webbrowser-menu"/>.
+      </para>
+
+      <figure id="configuration-webbrowser-menu">
+        <title>ウェブブラウザーの選択</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/exo-preferred-applications-webbrowser-menu.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>ウェブブラウザーの選択</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>
+        If the Web Browser you are looking for is not automatically
+        detected by the system, you can select
+        <guimenu><guimenuitem>Other...</guimenuitem></guimenu> from the
+        drop down menu and a dialog will appear asking you to enter the
+        command for the custom Web Browser, as shown in <xref linkend="configuration-webbrowser-custom"/>.
+      </para>
+
+      <figure id="configuration-webbrowser-custom">
+        <title>Specify a custom Web Browser</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/exo-preferred-applications-webbrowser-custom.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Specify a custom Web Browser</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>
+        The special marker <literal>%s</literal> in the command will be
+        substituted with the URL when you click on a hyperlink. When
+        running just the preferred Web Browser without any URL, i.e.
+        using <command>exo-open --launch WebBrowser</command>, only the
+        binary of the specified command will be used and the parameters
+        will be stripped off. In the example above, with <command>mywebbrowser
+        "%s"</command> as custom Web Browser, the command
+        <command>mywebbrowser</command> will be used to open the Web
+        Browser without an URL.
+      </para>
+    </sect2>
+
+    <sect2 id="configuration-utilities">
+      <title>その他のアプリケーション</title>
+
+      <para>
+        The first page of the configuration dialog allows you to select
+        your preferred terminal emulator. The preferred terminal emulator
+        will be used throughout the Xfce Desktop Environment to launch
+        applications that need to be run in a CLI (command line
+        interface) environment.
+      </para>
+
+      <figure id="configuration-utilities-figure">
+        <title>その他のアプリケーション</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/exo-preferred-applications-utilities.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>その他のアプリケーションの選択</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>
+        For custom terminal commands, the special marker <literal>%s</literal>
+        will be substituted with the application to run in the terminal.
+        Otherwise the same rules apply as described in <xref linkend="configuration-internet"/>.
+      </para>
+    </sect2>
+  </sect1>
+
+
+  <sect1 id="exo-open">
+    <title>exo-open</title>
+
+    <para>
+      A simple command line frontend to the <emphasis>Xfce Preferred
+      Applications</emphasis> framework is included, named
+      <application>exo-open</application>. Users and developers can use
+      this utility to launch the preferred application for a certain
+      category or open URLs with the default URL handler.
+    </para>
+
+    <para>
+      <application>exo-open</application> supports two operation modes.
+      The first will simply launch the preferred application for a
+      certain category, optionally passing a parameter (the exact meaning
+      of the term <emphasis>parameter</emphasis> depends on the category).
+      For example, to launch the command <command>mutt</command> in the
+      preferred Terminal Emulator, you would use 
+    </para>
+
+<screen>exo-open --launch TerminalEmulator mutt</screen>
+
+    <para>
+      while to just open the preferred Web Browser, the following
+      command would be used:
+    </para>
+
+<screen>exo-open --launch WebBrowser</screen>
+
+    <para>
+      The second mode supported by <application>exo-open</application> opens
+      all parameters passed to it with the default URL handlers. Here URLs
+      mean either fully qualified URLs (i.e.
+      <literal>http://www.xfce.org/</literal> or
+      <literal>mailto:xfce4-dev@xfce.org</literal>) or local paths (i.e.
+      <literal>/home/dude/myfile.txt</literal>). For example to open
+      <literal>/home/dude/file1.mp3</literal> and
+      <literal>/home/dude/file2.txt</literal> in the default
+      applications, you would use the following command:
+    </para>
+
+<screen>exo-open /home/dude/file1.mp3 /home/dude/file2.txt</screen>
+
+    <para>
+      To start composing a mail to the <ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce4-dev">xfce4-dev</ulink>
+      mailing list, you can do:
+    </para>
+
+<screen>exo-open mailto:xfce4-dev@xfce.org</screen>
+  </sect1>
+
+
+  <sect1 id="copyright">
+    <title>このプログラムについて</title>
+
+    <para>
+      The <emphasis>Xfce Preferred Applications</emphasis> framework and its
+      components was written by Benedikt Meurer (<email>benny@xfce.org</email>)
+      for the Xfce Desktop Environment. For more information, please visit
+      the <ulink url="http://www.xfce.org" type="http">Xfce website</ulink>.
+    </para>
+
+    <para>
+      To report a bug or make a suggestion regarding the software or this
+      manual, use the <ulink type="http" url="http://bugzilla.xfce.org/">Xfce
+      Bug Tracking System</ulink> (Product: <literal>libexo</literal>,
+      Component: <literal>helpers</literal>).
+    </para>
+
+    <para>
+      If you have questions about the use or installation of this package,
+      please ask on the <ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce">xfce</ulink> mailing
+      list. Development discussion takes place on the <ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce4-dev">xfce4-dev</ulink>
+      mailing list.
+    </para>
+
+     <para>このソフトウェアはフリーソフトウェア財団が公表する GNU 一般公衆利用許諾契約書の条件下に配布されています。第2版あるいは、あなたが選ぶそれ以降の版のいずれかが適用されます。</para>
+
+    <para>このプログラムには、GNU 一般公衆利用許諾契約書のコピーが附属するはずですが、もし無いのであればフリーソフトウェア財団に連絡して下さい。59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.</para>
+  </sect1>
+  
+</article>

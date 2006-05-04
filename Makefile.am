@@ -12,6 +12,7 @@ SUBDIRS =								\
 	docs								\
 	icons								\
 	po								\
+	po-doc								\
 	$(PYTHON_SUBDIR)						\
 	tests
 
