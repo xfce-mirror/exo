@@ -32,9 +32,9 @@ run_dialog (McsPlugin *plugin)
 {
   GtkWidget *message;
   GError    *error = NULL;
-  gchar     *argv[] = { "exo-preferred-applications", NULL };
+  gchar     *argv[] = { BINDIR G_DIR_SEPARATOR_S "exo-preferred-applications", NULL };
 
-  if (!g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error))
+  if (!g_spawn_async (NULL, argv, NULL, 0, NULL, NULL, NULL, &error))
     {
       message = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
                                         "%s.", _("Failed to launch exo-preferred-applications"));
@@ -67,6 +67,10 @@ mcs_plugin_init (McsPlugin *plugin)
   /* if that didn't work, we know where we installed the icon, so load it directly */
   if (G_UNLIKELY (plugin->icon == NULL))
     plugin->icon = gdk_pixbuf_new_from_file (DATADIR "/icons/hicolor/48x48/preferences-desktop-default-applications.png", NULL);
+
+  /* attach icon name to the plugin icon (if any) */
+  if (G_LIKELY (plugin->icon != NULL))
+    g_object_set_data_full (G_OBJECT (plugin->icon), "mcs-plugin-icon-name", g_strdup ("preferences-desktop-default-applications"), g_free);
 
   return MCS_PLUGIN_INIT_OK;
 }

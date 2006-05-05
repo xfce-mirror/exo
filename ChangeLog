@@ -1,3 +1,13 @@
+2006-05-05	Benedikt Meurer <benny@xfce.org>
+
+	* configure.in.in: Update PACKAGE_BUGREPORT.
+	* exo-source/main.c(print_version): Update copyright.
+	* exo-source/main.c: Print version and usage in local encoding.
+	* exo-helper/exo-preferred-applications-settings.c: Use absolute path
+	  to spawn exo-preferred-applications to make sure we always launch
+	  the script installed with this version of the package. Add icon name
+	  to the plugin icon object to support the new mcs manager.
+
 2006-05-04	Daichi Kawahata <daichi@xfce.org>
 
 	* Makefile.am, configure.in.in, docs/manual/Makefile.am,

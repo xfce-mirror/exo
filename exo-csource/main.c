@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2005 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2005-2006 Benedikt Meurer <benny@xfce.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -52,8 +52,8 @@ static void print_csource (FILE        *fp,
                            const gchar *data,
                            gsize        length,
                            const gchar *filename);
-static void print_usage   (FILE        *fp);
-static void print_version (FILE        *fp);
+static void print_usage   (void);
+static void print_version (void);
 
 
 
@@ -79,13 +79,13 @@ parse_args (gint    *argc_p,
       if (strcmp (argv[n], "--help") == 0
           || strcmp (argv[n], "-h") == 0)
         {
-          print_usage (stdout);
+          print_usage ();
           exit (EXIT_SUCCESS);
         }
       else if (strcmp (argv[n], "--version") == 0
           || strcmp (argv[n], "-v") == 0)
         {
-          print_version (stdout);
+          print_version ();
           exit (EXIT_SUCCESS);
         }
       else if (strcmp (argv[n], "--extern") == 0)
@@ -225,34 +225,34 @@ print_csource (FILE        *fp,
 
 
 static void
-print_usage (FILE *fp)
+print_usage (void)
 {
-  g_fprintf (fp, _("Usage: %s [options] [file]\n"), g_get_prgname ());
-  g_fprintf (fp, _("       %s [options] --build-list [[name file]...]\n"), g_get_prgname ());
-  g_fprintf (fp, "\n");
-  g_fprintf (fp, _("  -h, --help        Print this help message and exit\n"));
-  g_fprintf (fp, _("  -v, --version     Print version information and exit\n"));
-  g_fprintf (fp, _("  --extern          Generate extern symbols\n"));
-  g_fprintf (fp, _("  --static          Generate static symbols\n"));
-  g_fprintf (fp, _("  --name=identifier C macro/variable name\n"));
-  g_fprintf (fp, _("  --build-list      Parse (name, file) pairs\n"));
-  g_fprintf (fp, "\n");
+  g_print (_("Usage: %s [options] [file]\n"), g_get_prgname ());
+  g_print (_("       %s [options] --build-list [[name file]...]\n"), g_get_prgname ());
+  g_print ("\n");
+  g_print (_("  -h, --help        Print this help message and exit\n"));
+  g_print (_("  -v, --version     Print version information and exit\n"));
+  g_print (_("  --extern          Generate extern symbols\n"));
+  g_print (_("  --static          Generate static symbols\n"));
+  g_print (_("  --name=identifier C macro/variable name\n"));
+  g_print (_("  --build-list      Parse (name, file) pairs\n"));
+  g_print ("\n");
 }
 
 
 
 static void
-print_version (FILE *fp)
+print_version (void)
 {
-  g_fprintf (fp, "%s %s\n\n", g_get_prgname (), PACKAGE_VERSION);
-  g_fprintf (fp, _("Copyright (c) 2005\n"
-                   "        os-cillation e.K. All rights reserved.\n\n"
-                   "Written by Benedikt Meurer <benny@xfce.org>.\n\n"));
-  g_fprintf (fp, _("%s comes with ABSOLUTELY NO WARRANTY,\n"
-                   "You may redistribute copies of %s under the terms of\n"
-                   "the GNU Lesser General Public License which can be found in the\n"
-                   "%s source package.\n\n"), g_get_prgname (), g_get_prgname (), PACKAGE_TARNAME);
-  g_fprintf (fp, _("Please report bugs to <%s>.\n"), PACKAGE_BUGREPORT);
+  g_print ("%s %s\n\n", g_get_prgname (), PACKAGE_VERSION);
+  g_print (_("Copyright (c) 2005-2006\n"
+             "        os-cillation e.K. All rights reserved.\n\n"
+             "Written by Benedikt Meurer <benny@xfce.org>.\n\n"));
+  g_print (_("%s comes with ABSOLUTELY NO WARRANTY,\n"
+             "You may redistribute copies of %s under the terms of\n"
+             "the GNU Lesser General Public License which can be found in the\n"
+             "%s source package.\n\n"), g_get_prgname (), g_get_prgname (), PACKAGE_TARNAME);
+  g_print (_("Please report bugs to <%s>.\n"), PACKAGE_BUGREPORT);
 }
 
 
@@ -287,7 +287,7 @@ main (int argc, char **argv)
     {
       if (G_UNLIKELY (argc != 2))
         {
-          print_usage (stderr);
+          print_usage ();
           exit (EXIT_FAILURE);
         }
 
