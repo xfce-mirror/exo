@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-05 18:28+0900\n"
+"POT-Creation-Date: 2006-05-06 00:05+0200\n"
 "PO-Revision-Date: 2006-04-14 17:58+0200\n"
 "Last-Translator: Stavros Giannouris <stavrosg2002@freemail.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -395,15 +395,15 @@ msgstr "  --name=αναγνωριστικό Όνομα μεταβλητής / μ
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list         Ανάλυση ζευγαριών (όνομα, αρχείο)\n"
 
-#: ../exo-csource/main.c:248
+#: ../exo-csource/main.c:248 ../exo-open/main.c:100
 msgid ""
-"Copyright (c) 2005\n"
+"Copyright (c) 2005-2006\n"
 "        os-cillation e.K. All rights reserved.\n"
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) 2005\n"
+"Copyright (c) 2005-2006\n"
 "        os-cillation e.K. All rights reserved.\n"
 "\n"
 "Γραμμένο από τον Benedikt Meurer <benny@xfce.org>.\n"
@@ -429,24 +429,27 @@ msgstr ""
 msgid "Please report bugs to <%s>.\n"
 msgstr "Παρακαλούμε αναφέρατε σφάλματα στον <%s>/\n"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:120
-#: ../exo-helper/exo-helper-chooser-dialog.c:129
+#: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Προτιμώμενες εφαρμογές"
 
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
+msgid "Select default applications for various services"
+msgstr ""
+
 #.
 #. Internet
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:148
+#: ../exo-helper/exo-helper-chooser-dialog.c:125
 msgid "Internet"
 msgstr "Διαδίκτυο"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:161
+#: ../exo-helper/exo-helper-chooser-dialog.c:138
 msgid "Default Web Browser"
 msgstr "Προεπιλεγμένος περιηγητής"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:169
+#: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
@@ -454,11 +457,11 @@ msgstr ""
 "Ο προτιμώμενος περιηγητής ιστού θα χρησιμοποιηθεί\n"
 "για να ανοίγει δεσμούς και περιεχόμενα βοήθειας."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:193
+#: ../exo-helper/exo-helper-chooser-dialog.c:170
 msgid "Default Mail Reader"
 msgstr "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:201
+#: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
@@ -469,15 +472,15 @@ msgstr ""
 #.
 #. Utilities
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:221
+#: ../exo-helper/exo-helper-chooser-dialog.c:198
 msgid "Utilities"
 msgstr "Εργαλεία"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:234
+#: ../exo-helper/exo-helper-chooser-dialog.c:211
 msgid "Default Terminal Emulator"
 msgstr "Προεπιλεγμένο τερματικό"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:242
+#: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
@@ -485,8 +488,7 @@ msgstr ""
 "Ο προτιμώμενος εξομοιωτής τερματικού θα χρησιμοποιηθεί\n"
 "για να εκτελεστούν εντολές που απαιτούν περιβάλλον γραμμής εντολών."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:296
-#: ../exo-helper/exo-helper-launcher-dialog.c:260
+#: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid "Failed to open the documentation browser."
 msgstr "Η εκκίνηση του αναγνώστη τεκμηρίωσης απέτυχε."
 
@@ -571,11 +573,11 @@ msgid "Use a custom application which is not included in the above list."
 msgstr ""
 "Χρήση προσαρμοσμένης εφαρμογής που δεν περιλαμβάνεται στην παραπάνω λίστα."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:143
+#: ../exo-helper/exo-helper-launcher-dialog.c:141
 msgid "Choose Preferred Application"
 msgstr "Επιλογή προτιμώμενης εφαρμογής"
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:319
+#: ../exo-helper/exo-helper-launcher-dialog.c:284
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
@@ -583,7 +585,7 @@ msgstr ""
 "Παρακαλώ επιλέξτε τον περιηγητή ιστού που\n"
 "προτιμάτε και πιέστε ΟΚ για να προχωρήσετε."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:321
+#: ../exo-helper/exo-helper-launcher-dialog.c:286
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
@@ -591,7 +593,7 @@ msgstr ""
 "Παρακαλώ επιλέξτε τον αναγνώστη αλληλογραφίας\n"
 "που προτιμάτε και πιέστε ΟΚ για να προχωρήσετε."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:323
+#: ../exo-helper/exo-helper-launcher-dialog.c:288
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
@@ -760,20 +762,6 @@ msgstr ""
 "περάσετε επί πλέον παραμέτρους στην εφαρμογή (π.χ. για το TerminalEmulator\n"
 "μπορείτε να δώσετε την εντολή που θα τρέξει στο τερματικό)."
 
-#: ../exo-open/main.c:100
-msgid ""
-"Copyright (c) 2005-2006\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr ""
-"Copyright (c) 2005-2006\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Γραμμένο από τον Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-
 #: ../exo-open/main.c:121
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
@@ -784,3 +772,16 @@ msgstr ""
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Το άνοιγμα του URL \"%s\" απέτυχε."
+
+#~ msgid ""
+#~ "Copyright (c) 2005\n"
+#~ "        os-cillation e.K. All rights reserved.\n"
+#~ "\n"
+#~ "Written by Benedikt Meurer <benny@xfce.org>.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (c) 2005\n"
+#~ "        os-cillation e.K. All rights reserved.\n"
+#~ "\n"
+#~ "Γραμμένο από τον Benedikt Meurer <benny@xfce.org>.\n"
+#~ "\n"

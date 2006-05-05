@@ -40,11 +40,13 @@ exo_helper_0_3_CFLAGS =							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 exo_helper_0_3_DEPENDENCIES =						\
+	$(top_builddir)/exo-support/libexo-support.la			\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 exo_helper_0_3_LDADD =							\
 	$(GTK_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
+	$(top_builddir)/exo-support/libexo-support.la			\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 bin_SCRIPTS =								\

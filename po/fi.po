@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-05 13:22+0300\n"
+"POT-Creation-Date: 2006-05-06 00:05+0200\n"
 "PO-Revision-Date: 2006-05-05 13:24+0300\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
@@ -389,16 +389,16 @@ msgstr "  --name=tunniste   C-makron tai muuttujan nimi\n"
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Lue (nimi, tiedosto)-parit\n"
 
-#: ../exo-csource/main.c:248
+#: ../exo-csource/main.c:248 ../exo-open/main.c:100
 msgid ""
-"Copyright (c) 2005\n"
+"Copyright (c) 2005-2006\n"
 "        os-cillation e.K. All rights reserved.\n"
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) 2005\n"
-"  os-cillation e.K. Kaikki oikeudet pidätetään.\n"
+"Copyright (c) 2005-2006\n"
+"        os-cillation e.K. Kaikki oikeudet pidätetään.\n"
 "\n"
 "Kirjoittanut Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
@@ -423,24 +423,27 @@ msgstr ""
 msgid "Please report bugs to <%s>.\n"
 msgstr "Ilmoitathan ohjelmistovirheet osoitteeseen <%s>.\n"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:120
-#: ../exo-helper/exo-helper-chooser-dialog.c:129
+#: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Oletussovellukset"
 
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
+msgid "Select default applications for various services"
+msgstr ""
+
 #.
 #. Internet
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:148
+#: ../exo-helper/exo-helper-chooser-dialog.c:125
 msgid "Internet"
 msgstr "Internet"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:161
+#: ../exo-helper/exo-helper-chooser-dialog.c:138
 msgid "Default Web Browser"
 msgstr "WWW-selain"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:169
+#: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
@@ -448,11 +451,11 @@ msgstr ""
 "Oletusarvoista WWW-selainta käytetään hyperlinkkien\n"
 "avaamiseen ja ohjeiden näyttämiseen."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:193
+#: ../exo-helper/exo-helper-chooser-dialog.c:170
 msgid "Default Mail Reader"
 msgstr "Sähkopostiohjelma"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:201
+#: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
@@ -463,15 +466,15 @@ msgstr ""
 #.
 #. Utilities
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:221
+#: ../exo-helper/exo-helper-chooser-dialog.c:198
 msgid "Utilities"
 msgstr "Apuohjelmat"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:234
+#: ../exo-helper/exo-helper-chooser-dialog.c:211
 msgid "Default Terminal Emulator"
 msgstr "Pääteohjelma"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:242
+#: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
@@ -479,8 +482,7 @@ msgstr ""
 "Oletusarvoista pääteohjelmaa käytetään komentorivi-\n"
 "sovellusten suorittamiseen."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:296
-#: ../exo-helper/exo-helper-launcher-dialog.c:260
+#: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid "Failed to open the documentation browser."
 msgstr "Dokumentaatioselaimen avaaminen epäonnistui"
 
@@ -561,11 +563,11 @@ msgstr "_Muu..."
 msgid "Use a custom application which is not included in the above list."
 msgstr "Valitse mukautettu sovellus, jota ei löyty yläpuoliselta listalta."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:143
+#: ../exo-helper/exo-helper-launcher-dialog.c:141
 msgid "Choose Preferred Application"
 msgstr "Valitse oletussovellus"
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:319
+#: ../exo-helper/exo-helper-launcher-dialog.c:284
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
@@ -573,7 +575,7 @@ msgstr ""
 "Valitse haluamasi WWW-selain ja\n"
 "napsauta OK jatkaaksesi."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:321
+#: ../exo-helper/exo-helper-launcher-dialog.c:286
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
@@ -581,7 +583,7 @@ msgstr ""
 "Valitse haluamasi sähköpostiohjelma ja\n"
 "napsauta OK jatkaaksesi."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:323
+#: ../exo-helper/exo-helper-launcher-dialog.c:288
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
@@ -743,20 +745,6 @@ msgstr ""
 "sovelluksen ja antaa sille lisäparametreja (voit esimerkiksi määrittää\n"
 "päätteessä suoritettavan komentorivin)."
 
-#: ../exo-open/main.c:100
-msgid ""
-"Copyright (c) 2005-2006\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr ""
-"Copyright (c) 2005-2006\n"
-"        os-cillation e.K. Kaikki oikeudet pidätetään.\n"
-"\n"
-"Kirjoittanut Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-
 #: ../exo-open/main.c:121
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
@@ -766,3 +754,16 @@ msgstr "Oletussovelluksen suorittaminen kategorialle \"%s\" epäonnistui."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "URL:n \"%s\" avaaminen epäonnistui."
+
+#~ msgid ""
+#~ "Copyright (c) 2005\n"
+#~ "        os-cillation e.K. All rights reserved.\n"
+#~ "\n"
+#~ "Written by Benedikt Meurer <benny@xfce.org>.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (c) 2005\n"
+#~ "  os-cillation e.K. Kaikki oikeudet pidätetään.\n"
+#~ "\n"
+#~ "Kirjoittanut Benedikt Meurer <benny@xfce.org>.\n"
+#~ "\n"

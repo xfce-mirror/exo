@@ -1,3 +1,17 @@
+2006-05-06	Benedikt Meurer <benny@xfce.org>
+
+	* Makefile.am: Add --enable-xml2po to DISTCHECK_CONFIGURE_FLAGS.
+	* exo-helper/exo-helper-launcher-dialog.c: Drop the "Help" button from
+	  the launcher dialog.
+	* Makefile.am, configure.in.in, exo-support/: Import XfceHeading and
+	  XfceTitledDialog from libxfcegui4 to use by the tools in this package
+	  without readding the dependency on libxfcegui4.
+	* exo-helper/Makefile.am, exo-helper/exo-helper-chooser-dialog.c,
+	  exo-helper/exo-helper-utils.{c,h}: Use XfceTitledDialog as superclass
+	  for ExoHelperChooserDialog.
+	* po/libexo-0.3.pot, po/*.po: Updated.
+	* po/de.po: Update the german translations.
+
 2006-05-05	Benedikt Meurer <benny@xfce.org>
 
 	* configure.in.in: Update PACKAGE_BUGREPORT.

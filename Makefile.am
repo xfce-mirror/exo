@@ -7,6 +7,7 @@ endif
 SUBDIRS =								\
 	exo								\
 	exo-csource							\
+	exo-support							\
 	exo-helper							\
 	exo-open							\
 	docs								\
@@ -50,6 +51,7 @@ DISTCLEANFILES =							\
 
 DISTCHECK_CONFIGURE_FLAGS =						\
 	--enable-gtk-doc						\
+	--enable-xml2po							\
 	--enable-xsltproc
 
 # vi:set ts=8 sw=8 noet ai nocindent:

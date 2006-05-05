@@ -24,31 +24,25 @@
 #include <gdk/gdkkeysyms.h>
 
 #include <exo-helper/exo-helper-chooser-dialog.h>
-#include <exo-helper/exo-helper-utils.h>
+
+#include <exo-support/exo-support.h>
 
 
 
-static void     exo_helper_chooser_dialog_class_init      (ExoHelperChooserDialogClass  *klass);
-static void     exo_helper_chooser_dialog_init            (ExoHelperChooserDialog       *chooser_dialog);
-static gboolean exo_helper_chooser_dialog_key_press_event (GtkWidget                    *widget,
-                                                           GdkEventKey                  *event);
-static void     exo_helper_chooser_dialog_show_help       (ExoHelperChooserDialog       *dialog);
+static void exo_helper_chooser_dialog_init      (ExoHelperChooserDialog *chooser_dialog);
+static void exo_helper_chooser_dialog_show_help (ExoHelperChooserDialog *dialog);
 
 
 
 struct _ExoHelperChooserDialogClass
 {
-  GtkDialogClass __parent__;
+  XfceTitledDialogClass __parent__;
 };
 
 struct _ExoHelperChooserDialog
 {
-  GtkDialog __parent__;
+  XfceTitledDialog __parent__;
 };
-
-
-
-static GObjectClass *exo_helper_chooser_dialog_parent_class;
 
 
 
@@ -64,7 +58,7 @@ exo_helper_chooser_dialog_get_type (void)
         sizeof (ExoHelperChooserDialogClass),
         NULL,
         NULL,
-        (GClassInitFunc) exo_helper_chooser_dialog_class_init,
+        NULL,
         NULL,
         NULL,
         sizeof (ExoHelperChooserDialog),
@@ -73,24 +67,10 @@ exo_helper_chooser_dialog_get_type (void)
         NULL,
       };
 
-      type = g_type_register_static (GTK_TYPE_DIALOG, I_("ExoHelperChooserDialog"), &info, 0);
+      type = g_type_register_static (XFCE_TYPE_TITLED_DIALOG, I_("ExoHelperChooserDialog"), &info, 0);
     }
 
   return type;
-}
-
-
-
-static void
-exo_helper_chooser_dialog_class_init (ExoHelperChooserDialogClass *klass)
-{
-  GtkWidgetClass *gtkwidget_class;
-
-  /* determine the parent type class */
-  exo_helper_chooser_dialog_parent_class = g_type_class_peek_parent (klass);
-
-  gtkwidget_class = GTK_WIDGET_CLASS (klass);
-  gtkwidget_class->key_press_event = exo_helper_chooser_dialog_key_press_event;
 }
 
 
@@ -106,7 +86,6 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   GtkWidget      *notebook;
   GtkWidget      *chooser;
   GtkWidget      *button;
-  GtkWidget      *header;
   GtkWidget      *frame;
   GtkWidget      *label;
   GtkWidget      *vbox;
@@ -117,7 +96,9 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
 
   gtk_dialog_add_button (GTK_DIALOG (chooser_dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
   gtk_dialog_set_has_separator (GTK_DIALOG (chooser_dialog), FALSE);
+  gtk_window_set_icon_name (GTK_WINDOW (chooser_dialog), "preferences-desktop-default-applications");
   gtk_window_set_title (GTK_WINDOW (chooser_dialog), _("Preferred Applications"));
+  xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (chooser_dialog), _("Select default applications for various services"));
 
   /* add the "Help" button */
   button = gtk_button_new_from_stock (GTK_STOCK_HELP);
@@ -125,10 +106,6 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->action_area), button, FALSE, TRUE, 0);
   gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (GTK_DIALOG (chooser_dialog)->action_area), button, TRUE);
   gtk_widget_show (button);
-
-  header = exo_helper_create_header ("preferences-desktop-default-applications", _("Preferred Applications"));
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->vbox), header, FALSE, FALSE, 0);
-  gtk_widget_show (header);
 
   notebook = gtk_notebook_new ();
   gtk_container_set_border_width (GTK_CONTAINER (notebook), 6);
@@ -258,21 +235,6 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
 
   /* cleanup */
   pango_attr_list_unref (attr_list_bold);
-}
-
-
-
-static gboolean
-exo_helper_chooser_dialog_key_press_event (GtkWidget   *widget,
-                                           GdkEventKey *event)
-{
-  if (G_UNLIKELY (event->keyval == GDK_Escape || ((event->state & GDK_CONTROL_MASK) != 0 && (event->keyval == GDK_W || event->keyval == GDK_w))))
-    {
-      gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_CLOSE);
-      return TRUE;
-    }
-
-  return (*GTK_WIDGET_CLASS (exo_helper_chooser_dialog_parent_class)->key_press_event) (widget, event);
 }
 
 

@@ -24,12 +24,9 @@
 
 G_BEGIN_DECLS;
 
-gboolean   exo_helper_category_from_string  (const gchar       *string,
-                                             ExoHelperCategory *category_return) G_GNUC_INTERNAL;
-gchar     *exo_helper_category_to_string    (ExoHelperCategory  category) G_GNUC_INTERNAL G_GNUC_MALLOC;
-
-GtkWidget *exo_helper_create_header         (const gchar       *icon,
-                                             const gchar       *text) G_GNUC_INTERNAL G_GNUC_MALLOC;
+gboolean exo_helper_category_from_string (const gchar       *string,
+                                          ExoHelperCategory *category_return) G_GNUC_INTERNAL;
+gchar   *exo_helper_category_to_string   (ExoHelperCategory  category) G_GNUC_INTERNAL G_GNUC_MALLOC;
 
 G_END_DECLS;
 
