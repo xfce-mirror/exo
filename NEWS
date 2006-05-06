@@ -1,5 +1,5 @@
-0.3.1.6beta1
-============
+0.3.1.7svn
+==========
 - Imported the "Xfce Preferred Applications" framework, which allows users to
   select their preferred applications (i.e. web browser, mail reader, terminal
   emulator) using a nice graphical interface, rather than having to figure out
@@ -22,6 +22,8 @@
   chooser in Thunar.
 - Added a new utility exo-csource, which can generate C source code from
   arbitrary data.
+- Added a new utility exo-desktop-item-edit, which is used to create new
+  launchers/links on the desktop and when dropping URLs to the file manager.
 - Added various new convenience functions to make dealing with strings,
   pixbufs and other data structures easier for C programmers.
 - Updated class structures to make sure constant static strings aren't
@@ -30,10 +32,13 @@
   question.
 - Updated the python bindings to include the new functionality.
 - Support three different levels of debugging support (yes/minimum/no).
-- New translations: Pau Rul·lan Ferragut (ca), Stavros Giannouris (el),
-                    Patricio Carr (es), Piarres Beobide (eu), Jari Rahkonen
-                    (fi), Stephane Roy (fr), Daichi Kawahata (ja), Joao
-                    Pedrosa (pt_BR), Andrey Fedoseev (ru)
+- New translations: Pau Rul·lan Ferragut (ca), Michal Várady (cs), Stavros
+                    Giannouris (el), Dwayne Bailey (en_GB), Patricio Carr (es),
+		    Peeter Vois (et), Piarres Beobide (eu), Jari Rahkonen
+                    (fi), Stephane Roy (fr), Dotan Kamber (he), Szervác Attila
+		    (hu), Daichi Kawahata (ja), Piotr Maliński (pl), Adriano
+		    Winter Bess (pt_BR), Joao Pedrosa (pt_BR), Andrey Fedoseev
+		    (ru), Maxim Zenin (ru)
 
 
 0.3.0

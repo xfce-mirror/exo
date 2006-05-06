@@ -8,6 +8,7 @@ SUBDIRS =								\
 	exo								\
 	exo-csource							\
 	exo-support							\
+	exo-desktop-item-edit						\
 	exo-helper							\
 	exo-open							\
 	docs								\

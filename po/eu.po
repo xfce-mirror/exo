@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-06 00:05+0200\n"
+"POT-Creation-Date: 2006-05-06 23:11+0200\n"
 "PO-Revision-Date: 2006-03-06 21:32+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: librezale <librezale@librezale.org>\n"
@@ -396,7 +396,8 @@ msgstr "  --name=identifikatzailea C makro/aldagai izena\n"
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Bikoteak (izena, fitxategia) analizatu\n"
 
-#: ../exo-csource/main.c:248 ../exo-open/main.c:100
+#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:138
+#: ../exo-open/main.c:100
 msgid ""
 "Copyright (c) 2005-2006\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -410,7 +411,8 @@ msgstr ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:251 ../exo-open/main.c:103
+#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:141
+#: ../exo-open/main.c:103
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -424,10 +426,204 @@ msgstr ""
 "\"GNU Lesser General Public License\" lizentziaren arauetan.\n"
 "\n"
 
-#: ../exo-csource/main.c:255 ../exo-open/main.c:107
+#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:145
+#: ../exo-open/main.c:107
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Erroreen berri eman <%s>-ra.\n"
+
+#. allocate the file chooser
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:262
+#, fuzzy
+msgid "Select an Application"
+msgstr "Aplikazioa hautatu"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:271
+#: ../exo-desktop-item-edit/exo-die-editor.c:634
+msgid "All Files"
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:276
+msgid "Executable Files"
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:291
+msgid "Perl Scripts"
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:297
+msgid "Python Scripts"
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:303
+msgid "Ruby Scripts"
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:309
+msgid "Shell Scripts"
+msgstr ""
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:306
+msgid "_Name:"
+msgstr ""
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:324
+msgid "C_omment:"
+msgstr ""
+
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:342
+msgid "Comm_and:"
+msgstr ""
+
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:359
+msgid "_URL:"
+msgstr ""
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:377
+msgid "_Icon:"
+msgstr ""
+
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. setup a label to tell that no icon was selected
+#: ../exo-desktop-item-edit/exo-die-editor.c:396
+#: ../exo-desktop-item-edit/exo-die-editor.c:1088
+msgid "No icon"
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:407
+msgid "Options:"
+msgstr ""
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
+#: ../exo-desktop-item-edit/exo-die-editor.c:418
+msgid "Use _startup notification"
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:419
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
+#: ../exo-desktop-item-edit/exo-die-editor.c:431
+#, fuzzy
+msgid "Run in _terminal"
+msgstr "X Terminala"
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:432
+msgid "Select this option to run the command in a terminal window."
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:624
+#, fuzzy
+msgid "Select an Icon"
+msgstr "Aplikazioa hautatu"
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
+msgid "Image Files"
+msgstr ""
+
+#. --- constants ---
+#: ../exo-desktop-item-edit/main.c:40
+msgid "Create Launcher"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:40
+msgid "Create Link"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:41
+msgid "Edit Launcher"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:41
+msgid "Edit Link"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:61
+msgid "Create a new desktop file in the given directory"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:62
+msgid "Type of desktop file to create (Application or Link)"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:63
+msgid "Preset name when creating a desktop file"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:64
+msgid "Preset comment when creating a desktop file"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:65
+msgid "Preset command when creating a launcher"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:66
+msgid "Preset URL when creating a link"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:67
+msgid "Preset icon when creating a desktop file"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:68
+#, fuzzy
+msgid "Print version information and exit"
+msgstr "  -v, --version     Bertsio xehetasunak bistarazi eta irten\n"
+
+#. initialize Gtk+
+#: ../exo-desktop-item-edit/main.c:110
+msgid "[FILE|FOLDER]"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:123
+#, fuzzy, c-format
+msgid "Failed to open display: %s"
+msgstr "Huts  \"%s\" irekitzerakoan."
+
+#: ../exo-desktop-item-edit/main.c:152
+#, fuzzy
+msgid "No file/folder specified"
+msgstr "Ez da komandoa ezarri"
+
+#. tell the user that we don't support the type
+#: ../exo-desktop-item-edit/main.c:210
+#, c-format
+msgid "Unsupported desktop file type '%s'"
+msgstr ""
+
+#. add the "Create"/"Save" button (as default)
+#: ../exo-desktop-item-edit/main.c:230
+msgid "C_reate"
+msgstr ""
+
+#. create failed, ask the user to specify a file name
+#: ../exo-desktop-item-edit/main.c:326
+msgid "Choose filename"
+msgstr ""
+
+#: ../exo-desktop-item-edit/main.c:380
+#, fuzzy, c-format
+msgid "Failed to create \"%s\"."
+msgstr "Huts  \"%s\" irekitzerakoan."
+
+#: ../exo-desktop-item-edit/main.c:380
+#, fuzzy, c-format
+msgid "Failed to save \"%s\"."
+msgstr "Huts  \"%s\" irekitzerakoan."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1

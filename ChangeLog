@@ -1,5 +1,18 @@
 2006-05-06	Benedikt Meurer <benny@xfce.org>
 
+	* exo-desktop-item-edit/, configure.in.in, Makefile.am: Import the
+	  exo-desktop-item-edit utility, used to create/edit .desktop links
+	  and launchers. Bug #1724.
+	* icons/48x48/: Import fallback icons for the exo-desktop-item-edit
+	  utility, required for older icon themes that weren't updated to
+	  the icon naming spec yet.
+	* po/POTFILES.in: Add new files here.
+	* po/libexo-0.3.pot, po/*.po: Updated.
+	* po/de.po: Update german translations.
+	* NEWS, THANKS: Update NEWS and THANKS.
+
+2006-05-06	Benedikt Meurer <benny@xfce.org>
+
 	* Makefile.am: Add --enable-xml2po to DISTCHECK_CONFIGURE_FLAGS.
 	* exo-helper/exo-helper-launcher-dialog.c: Drop the "Help" button from
 	  the launcher dialog.
