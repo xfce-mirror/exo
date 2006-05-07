@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-05-06 23:11+0200\n"
-"PO-Revision-Date: 2006-05-06 08:36+0100\n"
+"PO-Revision-Date: 2006-05-07 10:20+0100\n"
 "Last-Translator: SZERVÑC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
@@ -19,9 +19,7 @@ msgid "Ellipsize"
 msgstr ""
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:153
-msgid ""
-"The preferred place to ellipsize the string, if the cell renderer does not "
-"have enough room to display the entire string, if at all"
+msgid "The preferred place to ellipsize the string, if the cell renderer does not have enough room to display the entire string, if at all"
 msgstr ""
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:163
@@ -33,12 +31,11 @@ msgid "Whether this tag affects the ellipsize mode"
 msgstr ""
 
 #: ../exo/exo-ellipsized-label.c:123
-msgid ""
-"The preferred place to ellipsize the string, if the label does not have "
-"enough room to display the entire string, if at all"
+msgid "The preferred place to ellipsize the string, if the label does not have enough room to display the entire string, if at all"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:259 ../exo/exo-icon-view.c:791
+#: ../exo/exo-icon-bar.c:259
+#: ../exo/exo-icon-view.c:791
 msgid "Orientation"
 msgstr "Irány"
 
@@ -46,19 +43,23 @@ msgstr "Irány"
 msgid "The orientation of the iconbar"
 msgstr "Az ikonsáv iránya"
 
-#: ../exo/exo-icon-bar.c:276 ../exo/exo-icon-view.c:808
+#: ../exo/exo-icon-bar.c:276
+#: ../exo/exo-icon-view.c:808
 msgid "Pixbuf column"
 msgstr "Kép oszlop"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-bar.c:277
+#: ../exo/exo-icon-view.c:809
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Modell oszlop az ikon képek behozására innen:"
 
-#: ../exo/exo-icon-bar.c:292 ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-bar.c:292
+#: ../exo/exo-icon-view.c:935
 msgid "Text column"
 msgstr "Szöveg oszlop"
 
-#: ../exo/exo-icon-bar.c:293 ../exo/exo-icon-view.c:936
+#: ../exo/exo-icon-bar.c:293
+#: ../exo/exo-icon-view.c:936
 msgid "Model column used to retrieve the text from"
 msgstr "Modell oszlop a szövegek behozására innen:"
 
@@ -78,27 +79,33 @@ msgstr "Aktív"
 msgid "Active item index"
 msgstr "Aktív elem index"
 
-#: ../exo/exo-icon-bar.c:329 ../exo/exo-icon-bar.c:330
+#: ../exo/exo-icon-bar.c:329
+#: ../exo/exo-icon-bar.c:330
 msgid "Active item fill color"
 msgstr "Aktív elem kitöltő szín"
 
-#: ../exo/exo-icon-bar.c:336 ../exo/exo-icon-bar.c:337
+#: ../exo/exo-icon-bar.c:336
+#: ../exo/exo-icon-bar.c:337
 msgid "Active item border color"
 msgstr "Aktív elem keret szín"
 
-#: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
+#: ../exo/exo-icon-bar.c:343
+#: ../exo/exo-icon-bar.c:344
 msgid "Active item text color"
 msgstr "Aktív elem szöveg szín"
 
-#: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
+#: ../exo/exo-icon-bar.c:350
+#: ../exo/exo-icon-bar.c:351
 msgid "Cursor item fill color"
 msgstr "Kurzor elem kitöltő szín"
 
-#: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
+#: ../exo/exo-icon-bar.c:357
+#: ../exo/exo-icon-bar.c:358
 msgid "Cursor item border color"
 msgstr "Kurzor elem keret szín"
 
-#: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
+#: ../exo/exo-icon-bar.c:364
+#: ../exo/exo-icon-bar.c:365
 msgid "Cursor item text color"
 msgstr "Kurzor elem szöveg szín"
 
@@ -167,8 +174,7 @@ msgid "The model for the icon view"
 msgstr "Az ikon nézet modellje"
 
 #: ../exo/exo-icon-view.c:792
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr "A szöveg és ikon egymáshoz való viszonya"
 
 #: ../exo/exo-icon-view.c:824
@@ -203,25 +209,25 @@ msgstr "Kijelölés mód"
 msgid "The selection mode"
 msgstr "A kijelölés módja"
 
-#: ../exo/exo-icon-view.c:886 ../exo/exo-tree-view.c:169
+#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-tree-view.c:169
 msgid "Single Click"
 msgstr "Egy-kattintás"
 
-#: ../exo/exo-icon-view.c:887 ../exo/exo-tree-view.c:170
+#: ../exo/exo-icon-view.c:887
+#: ../exo/exo-tree-view.c:170
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Az elem egy-kattintásra aktiválódjon-e a nézetben"
 
-#: ../exo/exo-icon-view.c:903 ../exo/exo-tree-view.c:186
+#: ../exo/exo-icon-view.c:903
+#: ../exo/exo-tree-view.c:186
 msgid "Single Click Timeout"
 msgstr "Egy-kattintós késleltetés"
 
-#: ../exo/exo-icon-view.c:904 ../exo/exo-tree-view.c:187
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"Az idő, mely egy elem kijelöléséig tart, ha ráhúzod az egeret egy-kattintós "
-"módban"
+#: ../exo/exo-icon-view.c:904
+#: ../exo/exo-tree-view.c:187
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "Az idő, mely egy elem kijelöléséig tart, ha ráhúzod az egeret egy-kattintós módban"
 
 #: ../exo/exo-icon-view.c:919
 msgid "Spacing"
@@ -252,12 +258,8 @@ msgid "_Add a new toolbar"
 msgstr "Új eszközsáv hozzá_adása"
 
 #: ../exo/exo-toolbars-editor.c:238
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Húzz egy elemet az eszközsávok fölé hozzáadáshoz, és róluk az elemek "
-"táblájába eltávolításukhoz."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Húzz egy elemet az eszközsávok fölé hozzáadáshoz, és róluk az elemek táblájába eltávolításukhoz."
 
 #: ../exo/exo-toolbars-editor.c:551
 msgid "Separator"
@@ -384,7 +386,8 @@ msgstr "  --name=identifier C makró/változó név\n"
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Értelmezi a (név, fájl) párokat\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:138
+#: ../exo-csource/main.c:248
+#: ../exo-desktop-item-edit/main.c:138
 #: ../exo-open/main.c:100
 msgid ""
 "Copyright (c) 2005-2006\n"
@@ -399,7 +402,8 @@ msgstr ""
 "Írta Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:141
+#: ../exo-csource/main.c:251
+#: ../exo-desktop-item-edit/main.c:141
 #: ../exo-open/main.c:103
 #, c-format
 msgid ""
@@ -415,7 +419,8 @@ msgstr ""
 "%s forrás csomagban lelsz.\n"
 "\n"
 
-#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:145
+#: ../exo-csource/main.c:255
+#: ../exo-desktop-item-edit/main.c:145
 #: ../exo-open/main.c:107
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -423,196 +428,188 @@ msgstr "Kérjük, jelentsd nekünk a hibákat itt: <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:262
-#, fuzzy
 msgid "Select an Application"
 msgstr "Válassz alkalmazást"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
 #: ../exo-desktop-item-edit/exo-die-editor.c:634
 msgid "All Files"
-msgstr ""
+msgstr "Minden fájl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:276
 msgid "Executable Files"
-msgstr ""
+msgstr "Futtatható fájlok"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:291
 msgid "Perl Scripts"
-msgstr ""
+msgstr "Perl szkriptek"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:297
 msgid "Python Scripts"
-msgstr ""
+msgstr "Python szkriptek"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:303
 msgid "Ruby Scripts"
-msgstr ""
+msgstr "Ruby szkriptek"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:309
 msgid "Shell Scripts"
-msgstr ""
+msgstr "Shell szkriptek"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:306
 msgid "_Name:"
-msgstr ""
+msgstr "_Név:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:324
 msgid "C_omment:"
-msgstr ""
+msgstr "Megjegyzés:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:342
 msgid "Comm_and:"
-msgstr ""
+msgstr "P_arancs:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:359
 msgid "_URL:"
-msgstr ""
+msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:377
 msgid "_Icon:"
-msgstr ""
+msgstr "_Ikon:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:396
 #: ../exo-desktop-item-edit/exo-die-editor.c:1088
 msgid "No icon"
-msgstr ""
+msgstr "Nincs ikon"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:407
 msgid "Options:"
-msgstr ""
+msgstr "Lehetőségek:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:418
 msgid "Use _startup notification"
-msgstr ""
+msgstr "Indítás jelenté_s használata"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:419
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Válaszd e lehetőséget az indítás jelentés bekapcsolásához a parancs indításakor a fájlkezelőből vagy a menüből. Nem minden alkalmazás támogatja ezt."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-#, fuzzy
 msgid "Run in _terminal"
-msgstr "X Terminál"
+msgstr "Futtatás _terminálban"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:432
 msgid "Select this option to run the command in a terminal window."
-msgstr ""
+msgstr "Válaszd e lehetőséget a parancs futtatásához egy terminál ablakban."
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:624
-#, fuzzy
 msgid "Select an Icon"
-msgstr "Válassz alkalmazást"
+msgstr "Válassz ikont"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
 msgid "Image Files"
-msgstr ""
+msgstr "Kép fájlok"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:40
 msgid "Create Launcher"
-msgstr ""
+msgstr "Indító létrehozása"
 
 #: ../exo-desktop-item-edit/main.c:40
 msgid "Create Link"
-msgstr ""
+msgstr "Lánc létrehozása"
 
 #: ../exo-desktop-item-edit/main.c:41
 msgid "Edit Launcher"
-msgstr ""
+msgstr "Indító szerkesztése"
 
 #: ../exo-desktop-item-edit/main.c:41
 msgid "Edit Link"
-msgstr ""
+msgstr "Lánc szerkesztése"
 
 #: ../exo-desktop-item-edit/main.c:61
 msgid "Create a new desktop file in the given directory"
-msgstr ""
+msgstr "Készíts egy új asztali fájlt az adott könyvtárban"
 
 #: ../exo-desktop-item-edit/main.c:62
 msgid "Type of desktop file to create (Application or Link)"
-msgstr ""
+msgstr "Létrehozandó asztali fájl típusa (alkalmazás vagy lánc)"
 
 #: ../exo-desktop-item-edit/main.c:63
 msgid "Preset name when creating a desktop file"
-msgstr ""
+msgstr "Név azonnal egy asztali fájl létrehozásakor"
 
 #: ../exo-desktop-item-edit/main.c:64
 msgid "Preset comment when creating a desktop file"
-msgstr ""
+msgstr "Parancs azonnal egy asztali fájl létrehozásakor"
 
 #: ../exo-desktop-item-edit/main.c:65
 msgid "Preset command when creating a launcher"
-msgstr ""
+msgstr "Parancs azonnal egy indító létrehozásakor"
 
 #: ../exo-desktop-item-edit/main.c:66
 msgid "Preset URL when creating a link"
-msgstr ""
+msgstr "URL azonnal egy lánc létrehozásakor"
 
 #: ../exo-desktop-item-edit/main.c:67
 msgid "Preset icon when creating a desktop file"
-msgstr ""
+msgstr "Ikon azonnal egy asztali fájl létrehozásakor"
 
 #: ../exo-desktop-item-edit/main.c:68
-#, fuzzy
 msgid "Print version information and exit"
-msgstr "  -v, --version     Kiírja a verzió információt és kilép\n"
+msgstr "Kiírja a verzió információt és kilép"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:110
 msgid "[FILE|FOLDER]"
-msgstr ""
+msgstr "[FÁJL|MAPPA]"
 
 #: ../exo-desktop-item-edit/main.c:123
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open display: %s"
-msgstr "\"%s\" megnyitása sikertelen."
+msgstr "Kijelző megnyitása sikertelen: %s"
 
 #: ../exo-desktop-item-edit/main.c:152
-#, fuzzy
 msgid "No file/folder specified"
-msgstr "Nincs parancs megadva"
+msgstr "Nincs fájl/mappa megadva"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:210
 #, c-format
 msgid "Unsupported desktop file type '%s'"
-msgstr ""
+msgstr "Nem támogatott '%s' asztali fájl típus"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:230
 msgid "C_reate"
-msgstr ""
+msgstr "Létr_rehoz"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:326
 msgid "Choose filename"
-msgstr ""
+msgstr "Válassz fájlnevet"
 
 #: ../exo-desktop-item-edit/main.c:380
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to create \"%s\"."
-msgstr "\"%s\" megnyitása sikertelen."
+msgstr "\"%s\" létrehozása sikertelen."
 
 #: ../exo-desktop-item-edit/main.c:380
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to save \"%s\"."
-msgstr "\"%s\" megnyitása sikertelen."
+msgstr "\"%s\" mentése sikertelen."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -891,20 +888,16 @@ msgid "  -h, --help                          Print this help message and exit"
 msgstr "  -h, --help                          Kiírja e súgót és kilép"
 
 #: ../exo-open/main.c:47
-msgid ""
-"  -v, --version                       Print version information and exit"
-msgstr ""
-"  -v, --version                       Kiírja a verzió információt és kilép"
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Kiírja a verzió információt és kilép"
 
 #: ../exo-open/main.c:49
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch TÍPUS [PARAMÉTERek...]     A TÍPUShoz társított alkalmazást "
-"futtatja\n"
+"  --launch TÍPUS [PARAMÉTERek...]     A TÍPUShoz társított alkalmazást futtatja\n"
 "                                      lehetséges PARAMÉTERekkel, ahol a\n"
 "                                      TÍPUS az alábbiak egyike."
 
@@ -961,3 +954,4 @@ msgstr "\"%s\" URL megnyitása sikertelen"
 #~ "\n"
 #~ "Írta Benedikt Meurer <benny@xfce.org>.\n"
 #~ "\n"
+
