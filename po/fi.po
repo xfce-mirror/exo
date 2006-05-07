@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-06 23:11+0200\n"
-"PO-Revision-Date: 2006-05-05 13:24+0300\n"
+"POT-Creation-Date: 2006-05-07 09:59+0300\n"
+"PO-Revision-Date: 2006-05-07 10:07+0300\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
 "MIME-Version: 1.0\n"
@@ -427,78 +427,77 @@ msgid "Please report bugs to <%s>.\n"
 msgstr "Ilmoitathan ohjelmistovirheet osoitteeseen <%s>.\n"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:262
-#, fuzzy
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:295
 msgid "Select an Application"
 msgstr "Valitse sovellus"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-desktop-item-edit/exo-die-editor.c:634
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-desktop-item-edit/exo-die-editor.c:629
 msgid "All Files"
-msgstr ""
-
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:276
-msgid "Executable Files"
-msgstr ""
-
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:291
-msgid "Perl Scripts"
-msgstr ""
-
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:297
-msgid "Python Scripts"
-msgstr ""
-
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:303
-msgid "Ruby Scripts"
-msgstr ""
+msgstr "Kaikki tiedostot"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:309
+msgid "Executable Files"
+msgstr "Suoritettavat tiedostot"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:324
+msgid "Perl Scripts"
+msgstr "Perl-skriptit"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:330
+msgid "Python Scripts"
+msgstr "Python-skriptit"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:336
+msgid "Ruby Scripts"
+msgstr "Ruby-skriptit"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:342
 msgid "Shell Scripts"
-msgstr ""
+msgstr "Komentotulkin skriptit"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:306
 msgid "_Name:"
-msgstr ""
+msgstr "_Nimi:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:324
 msgid "C_omment:"
-msgstr ""
+msgstr "Ko_mmentti:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:342
 msgid "Comm_and:"
-msgstr ""
+msgstr "_Komento:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:359
 msgid "_URL:"
-msgstr ""
+msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:377
 msgid "_Icon:"
-msgstr ""
+msgstr "Ku_vake:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:396
-#: ../exo-desktop-item-edit/exo-die-editor.c:1088
+#: ../exo-desktop-item-edit/exo-die-editor.c:1066
 msgid "No icon"
-msgstr ""
+msgstr "Ei kuvaketta"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:407
 msgid "Options:"
-msgstr ""
+msgstr "Valinnat:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:418
 msgid "Use _startup notification"
-msgstr ""
+msgstr "Käytä _käynnistyksen huomautusta"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:419
 msgid ""
@@ -506,118 +505,117 @@ msgid ""
 "from the file manager or the menu. Not every application supports startup "
 "notification."
 msgstr ""
+"Valitse tämä ottaaksesi käyttöön käynnistyksen huomautuksen, kun komento "
+"suoritetaan tiedostonhallinnasta tai valikosta. Kaikki sovellukset eivät "
+"tue käynnistyksen huomautusta."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-#, fuzzy
 msgid "Run in _terminal"
-msgstr "X-pääte"
+msgstr "Suorita _päätteessä"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:432
 msgid "Select this option to run the command in a terminal window."
-msgstr ""
+msgstr "Valitse tämä suorittaaksesi komennon pääteikkunassa."
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:624
-#, fuzzy
+#: ../exo-desktop-item-edit/exo-die-editor.c:619
 msgid "Select an Icon"
-msgstr "Valitse sovellus"
+msgstr "Valitse kuvake"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-desktop-item-edit/exo-die-editor.c:634
 msgid "Image Files"
-msgstr ""
+msgstr "Kuvatiedostot"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:40
 msgid "Create Launcher"
-msgstr ""
+msgstr "Luo käynnistin"
 
 #: ../exo-desktop-item-edit/main.c:40
 msgid "Create Link"
-msgstr ""
+msgstr "Luo linkki"
 
 #: ../exo-desktop-item-edit/main.c:41
 msgid "Edit Launcher"
-msgstr ""
+msgstr "Muokkaa käynnistintä"
 
 #: ../exo-desktop-item-edit/main.c:41
 msgid "Edit Link"
-msgstr ""
+msgstr "Muokkaa linkkiä"
 
 #: ../exo-desktop-item-edit/main.c:61
 msgid "Create a new desktop file in the given directory"
-msgstr ""
+msgstr "Luo uusi desktop-tiedosto valittuun hakemistoon"
 
 #: ../exo-desktop-item-edit/main.c:62
 msgid "Type of desktop file to create (Application or Link)"
-msgstr ""
+msgstr "Luotavan desktop-tiedoston tyyppi (sovellus tai linkki)"
 
 #: ../exo-desktop-item-edit/main.c:63
 msgid "Preset name when creating a desktop file"
-msgstr ""
+msgstr "Esiasetettu nimi luotaessa desktop-tiedostoa"
 
 #: ../exo-desktop-item-edit/main.c:64
 msgid "Preset comment when creating a desktop file"
-msgstr ""
+msgstr "Esiasetettu kommentti luotaessa desktop-tiedostoa"
 
 #: ../exo-desktop-item-edit/main.c:65
 msgid "Preset command when creating a launcher"
-msgstr ""
+msgstr "Esiasetettu komento luotaessa käynnistintä"
 
 #: ../exo-desktop-item-edit/main.c:66
 msgid "Preset URL when creating a link"
-msgstr ""
+msgstr "Esiasetettu URL luotaessa linkkiä"
 
 #: ../exo-desktop-item-edit/main.c:67
 msgid "Preset icon when creating a desktop file"
-msgstr ""
+msgstr "Esiasetettu kuvake luotaessa desktop-tiedostoa"
 
 #: ../exo-desktop-item-edit/main.c:68
-#, fuzzy
 msgid "Print version information and exit"
-msgstr "  -v, --version     Näytä versiotiedot ja poistu\n"
+msgstr "Näytä versiotiedot ja poistu"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:110
 msgid "[FILE|FOLDER]"
-msgstr ""
+msgstr "[TIEDOSTO|HAKEMISTO]"
 
 #: ../exo-desktop-item-edit/main.c:123
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open display: %s"
-msgstr "Kohteen \"%s\" avaaminen epäonnistui."
+msgstr "Näytön avaaminen epäonnistui: %s"
 
 #: ../exo-desktop-item-edit/main.c:152
-#, fuzzy
 msgid "No file/folder specified"
-msgstr "Ei komentoa määritetty"
+msgstr "Tiedostoa/hakemistoa ei määritetty"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:210
 #, c-format
 msgid "Unsupported desktop file type '%s'"
-msgstr ""
+msgstr "Tyypin \"%s\" desktop-tiedostoja ei tueta"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:230
 msgid "C_reate"
-msgstr ""
+msgstr "_Luo"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:326
 msgid "Choose filename"
-msgstr ""
+msgstr "Valitse tiedostonimi"
 
 #: ../exo-desktop-item-edit/main.c:380
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Kohteen \"%s\" avaaminen epäonnistui."
+msgstr "Kohteen \"%s\" luominen epäonnistui."
 
 #: ../exo-desktop-item-edit/main.c:380
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Kohteen \"%s\" avaaminen epäonnistui."
+msgstr "Kohteen \"%s\" tallentaminen epäonnistui."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -626,7 +624,7 @@ msgstr "Oletussovellukset"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:101
 msgid "Select default applications for various services"
-msgstr ""
+msgstr "Valitse oletussovellukset erinäisille palveluille"
 
 #.
 #. Internet
