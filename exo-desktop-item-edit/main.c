@@ -34,6 +34,10 @@
 
 #include <exo-support/exo-support.h>
 
+#if defined(GDK_WINDOWING_X11)
+#include <gdk/gdkx.h>
+#endif
+
 
 
 /* --- constants --- */
@@ -52,6 +56,7 @@ static gchar   *opt_comment = "";
 static gchar   *opt_command = "";
 static gchar   *opt_url = "";
 static gchar   *opt_icon = "";
+static gint     opt_xid = 0;
 
 
 
@@ -66,6 +71,7 @@ static GOptionEntry option_entries[] =
   { "url", 0, 0, G_OPTION_ARG_STRING, &opt_url, N_ ("Preset URL when creating a link"), NULL, },
   { "icon", 0, 0, G_OPTION_ARG_STRING, &opt_icon, N_ ("Preset icon when creating a desktop file"), NULL, },
   { "version", 'v', 0, G_OPTION_ARG_NONE, &opt_version, N_ ("Print version information and exit"), NULL, },
+  { "xid", 0, G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_INT, &opt_xid, NULL, NULL, },
   { NULL, },
 };
 
@@ -77,6 +83,9 @@ main (int argc, char **argv)
   ExoDieEditorMode mode;
   GEnumClass      *enum_klass;
   GEnumValue      *enum_value;
+#if defined(GDK_WINDOWING_X11)
+  GdkWindow       *xwindow;
+#endif
   GtkWidget       *chooser;
   GtkWidget       *message;
   GtkWidget       *button;
@@ -281,6 +290,23 @@ main (int argc, char **argv)
       g_assert_not_reached ();
       break;
     }
+
+  /* check if a parent window id was specified */
+#if defined(GDK_WINDOWING_X11)
+  if (G_UNLIKELY (opt_xid != 0))
+    {
+      /* try to determine the window for the id */
+      xwindow = gdk_window_foreign_new (opt_xid);
+      if (G_LIKELY (xwindow != NULL))
+        {
+          /* realize the dialog first... */
+          gtk_widget_realize (dialog);
+
+          /* ...and set the "transient for" relation */
+          gdk_window_set_transient_for (dialog->window, xwindow);
+        }
+    }
+#endif
 
   /* default to base as file/foldername */
   filename = g_strdup (argv[1]);

@@ -1,5 +1,12 @@
 2006-05-07	Benedikt Meurer <benny@xfce.org>
 
+	* exo-desktop-item-edit/main.c: Add hidden command line switch --xid
+	  to allow applications to pass a parent window id, so the window
+	  manager can properly place the "Create Launcher/Link" window above
+	  the parent window.
+
+2006-05-07	Benedikt Meurer <benny@xfce.org>
+
 	* exo-desktop-item-edit/exo-die-icon-button.{c,h}: This wasn't meant
 	  to be imported.
 
