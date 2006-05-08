@@ -1,7 +1,7 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2000 Ramiro Estrugo <ramiro@eazel.com>
- * Copyright (c) 2005 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2000      Ramiro Estrugo <ramiro@eazel.com>
+ * Copyright (c) 2005-2006 Benedikt Meurer <benny@xfce.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -443,7 +443,7 @@ exo_wrap_table_layout (ExoWrapTable *table)
 
   /* initialize the position */
   x = x0;
-  y = GTK_WIDGET (table)->allocation.x + GTK_CONTAINER (table)->border_width;
+  y = GTK_WIDGET (table)->allocation.y + GTK_CONTAINER (table)->border_width;
 
   /* allocate space to all visible children */
   for (lp = table->priv->children; lp != NULL; lp = lp->next)
