@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-07 09:59+0300\n"
-"PO-Revision-Date: 2006-05-07 10:07+0300\n"
+"POT-Creation-Date: 2006-05-10 16:55+0300\n"
+"PO-Revision-Date: 2006-05-10 16:55+0300\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
 "MIME-Version: 1.0\n"
@@ -389,7 +389,7 @@ msgstr "  --name=tunniste   C-makron tai muuttujan nimi\n"
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Lue (nimi, tiedosto)-parit\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:138
+#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:147
 #: ../exo-open/main.c:100
 msgid ""
 "Copyright (c) 2005-2006\n"
@@ -404,7 +404,7 @@ msgstr ""
 "Kirjoittanut Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:141
+#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:150
 #: ../exo-open/main.c:103
 #, c-format
 msgid ""
@@ -420,7 +420,7 @@ msgstr ""
 "%s -lähdekoodipakkauksesta.\n"
 "\n"
 
-#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:145
+#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:154
 #: ../exo-open/main.c:107
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -497,7 +497,7 @@ msgstr "Valinnat:"
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:418
 msgid "Use _startup notification"
-msgstr "Käytä _käynnistyksen huomautusta"
+msgstr "Käytä käynnistyksen _huomautusta"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:419
 msgid ""
@@ -506,8 +506,8 @@ msgid ""
 "notification."
 msgstr ""
 "Valitse tämä ottaaksesi käyttöön käynnistyksen huomautuksen, kun komento "
-"suoritetaan tiedostonhallinnasta tai valikosta. Kaikki sovellukset eivät "
-"tue käynnistyksen huomautusta."
+"suoritetaan tiedostonhallinnasta tai valikosta. Kaikki sovellukset eivät tue "
+"käynnistyksen huomautusta."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -529,90 +529,90 @@ msgid "Image Files"
 msgstr "Kuvatiedostot"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:40
+#: ../exo-desktop-item-edit/main.c:44
 msgid "Create Launcher"
 msgstr "Luo käynnistin"
 
-#: ../exo-desktop-item-edit/main.c:40
+#: ../exo-desktop-item-edit/main.c:44
 msgid "Create Link"
 msgstr "Luo linkki"
 
-#: ../exo-desktop-item-edit/main.c:41
+#: ../exo-desktop-item-edit/main.c:45
 msgid "Edit Launcher"
 msgstr "Muokkaa käynnistintä"
 
-#: ../exo-desktop-item-edit/main.c:41
+#: ../exo-desktop-item-edit/main.c:45
 msgid "Edit Link"
 msgstr "Muokkaa linkkiä"
 
-#: ../exo-desktop-item-edit/main.c:61
+#: ../exo-desktop-item-edit/main.c:66
 msgid "Create a new desktop file in the given directory"
 msgstr "Luo uusi desktop-tiedosto valittuun hakemistoon"
 
-#: ../exo-desktop-item-edit/main.c:62
+#: ../exo-desktop-item-edit/main.c:67
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Luotavan desktop-tiedoston tyyppi (sovellus tai linkki)"
 
-#: ../exo-desktop-item-edit/main.c:63
+#: ../exo-desktop-item-edit/main.c:68
 msgid "Preset name when creating a desktop file"
 msgstr "Esiasetettu nimi luotaessa desktop-tiedostoa"
 
-#: ../exo-desktop-item-edit/main.c:64
+#: ../exo-desktop-item-edit/main.c:69
 msgid "Preset comment when creating a desktop file"
 msgstr "Esiasetettu kommentti luotaessa desktop-tiedostoa"
 
-#: ../exo-desktop-item-edit/main.c:65
+#: ../exo-desktop-item-edit/main.c:70
 msgid "Preset command when creating a launcher"
 msgstr "Esiasetettu komento luotaessa käynnistintä"
 
-#: ../exo-desktop-item-edit/main.c:66
+#: ../exo-desktop-item-edit/main.c:71
 msgid "Preset URL when creating a link"
 msgstr "Esiasetettu URL luotaessa linkkiä"
 
-#: ../exo-desktop-item-edit/main.c:67
+#: ../exo-desktop-item-edit/main.c:72
 msgid "Preset icon when creating a desktop file"
 msgstr "Esiasetettu kuvake luotaessa desktop-tiedostoa"
 
-#: ../exo-desktop-item-edit/main.c:68
+#: ../exo-desktop-item-edit/main.c:73
 msgid "Print version information and exit"
 msgstr "Näytä versiotiedot ja poistu"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:110
+#: ../exo-desktop-item-edit/main.c:119
 msgid "[FILE|FOLDER]"
 msgstr "[TIEDOSTO|HAKEMISTO]"
 
-#: ../exo-desktop-item-edit/main.c:123
+#: ../exo-desktop-item-edit/main.c:132
 #, c-format
 msgid "Failed to open display: %s"
 msgstr "Näytön avaaminen epäonnistui: %s"
 
-#: ../exo-desktop-item-edit/main.c:152
+#: ../exo-desktop-item-edit/main.c:161
 msgid "No file/folder specified"
 msgstr "Tiedostoa/hakemistoa ei määritetty"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:210
+#: ../exo-desktop-item-edit/main.c:219
 #, c-format
 msgid "Unsupported desktop file type '%s'"
 msgstr "Tyypin \"%s\" desktop-tiedostoja ei tueta"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:230
+#: ../exo-desktop-item-edit/main.c:239
 msgid "C_reate"
 msgstr "_Luo"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:326
+#: ../exo-desktop-item-edit/main.c:352
 msgid "Choose filename"
 msgstr "Valitse tiedostonimi"
 
-#: ../exo-desktop-item-edit/main.c:380
+#: ../exo-desktop-item-edit/main.c:406
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Kohteen \"%s\" luominen epäonnistui."
 
-#: ../exo-desktop-item-edit/main.c:380
+#: ../exo-desktop-item-edit/main.c:406
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Kohteen \"%s\" tallentaminen epäonnistui."
