@@ -22,9 +22,15 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_MEMORY_H
+#include <memory.h>
+#endif
 #include <stdio.h>
 #ifdef HAVE_STDLIB_H
 #include <stdlib.h>
+#endif
+#ifdef HAVE_STRING_H
+#include <string.h>
 #endif
 
 #include <glib/gstdio.h>
@@ -260,8 +266,15 @@ main (int argc, char **argv)
   exo_die_editor_set_comment (EXO_DIE_EDITOR (editor), (value != NULL) ? value : "");
   g_free (value);
 
-  /* setup the icon */
+  /* setup the icon (automatically fixing broken icons) */
   value = g_key_file_get_locale_string (key_file, "Desktop Entry", "Icon", NULL, NULL);
+  if (value != NULL && !g_path_is_absolute (value))
+    {
+      /* check if this is an invalid icon declaration */
+      s = strrchr (value, '.');
+      if (G_UNLIKELY (s != NULL))
+        *s = '\0';
+    }
   exo_die_editor_set_icon (EXO_DIE_EDITOR (editor), (value != NULL) ? value : "");
   g_free (value);
 
