@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.5svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-07 04:56+0300\n"
+"POT-Creation-Date: 2006-05-13 14:07+0900\n"
 "PO-Revision-Date: 2006-05-07 12:32+0200\n"
 "Last-Translator: Stavros Giannouris <stavrosg2002@freemail.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -395,7 +395,7 @@ msgstr "  --name=αναγνωριστικό Όνομα μεταβλητής / μ
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list         Ανάλυση ζευγαριών (όνομα, αρχείο)\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:138
+#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
 #: ../exo-open/main.c:100
 msgid ""
 "Copyright (c) 2005-2006\n"
@@ -410,7 +410,7 @@ msgstr ""
 "Γραμμένο από τον Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:141
+#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:156
 #: ../exo-open/main.c:103
 #, c-format
 msgid ""
@@ -426,7 +426,7 @@ msgstr ""
 "να βρεθεί μέσα στο πακέτο με τον πηγαίο κώδικα του %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:145
+#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:160
 #: ../exo-open/main.c:107
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -537,90 +537,90 @@ msgid "Image Files"
 msgstr "Εικόνες"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:40
+#: ../exo-desktop-item-edit/main.c:50
 msgid "Create Launcher"
 msgstr "Δημιουργία εκκινητή"
 
-#: ../exo-desktop-item-edit/main.c:40
+#: ../exo-desktop-item-edit/main.c:50
 msgid "Create Link"
 msgstr "Δημιουργία δεσμού"
 
-#: ../exo-desktop-item-edit/main.c:41
+#: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Launcher"
 msgstr "Επεξεργασία εκκινητή"
 
-#: ../exo-desktop-item-edit/main.c:41
+#: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Link"
 msgstr "Επεξεργασία δεσμού"
 
-#: ../exo-desktop-item-edit/main.c:61
+#: ../exo-desktop-item-edit/main.c:72
 msgid "Create a new desktop file in the given directory"
 msgstr "Δημιουργία νέου αρχείου desktop στον επιλεγμένο κατάλογο"
 
-#: ../exo-desktop-item-edit/main.c:62
+#: ../exo-desktop-item-edit/main.c:73
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Τύπος αρχείου desktop (εφαρμογή ή δεσμός)"
 
-#: ../exo-desktop-item-edit/main.c:63
+#: ../exo-desktop-item-edit/main.c:74
 msgid "Preset name when creating a desktop file"
 msgstr "Εξορισμού όνομα κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:64
+#: ../exo-desktop-item-edit/main.c:75
 msgid "Preset comment when creating a desktop file"
 msgstr "Εξορισμού σχόλιο κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:65
+#: ../exo-desktop-item-edit/main.c:76
 msgid "Preset command when creating a launcher"
 msgstr "Εξορισμού εντολή κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:66
+#: ../exo-desktop-item-edit/main.c:77
 msgid "Preset URL when creating a link"
 msgstr "Εξορισμού URL κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:67
+#: ../exo-desktop-item-edit/main.c:78
 msgid "Preset icon when creating a desktop file"
 msgstr "Εξορισμού εικονίδιο κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:68
+#: ../exo-desktop-item-edit/main.c:79
 msgid "Print version information and exit"
 msgstr "Αναφέρει τις πληροφορίες έκδοσης"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:110
+#: ../exo-desktop-item-edit/main.c:125
 msgid "[FILE|FOLDER]"
 msgstr "[ΑΡΧΕΙΟ|ΦΑΚΕΛΟΣ]"
 
-#: ../exo-desktop-item-edit/main.c:123
+#: ../exo-desktop-item-edit/main.c:138
 #, c-format
 msgid "Failed to open display: %s"
 msgstr "Αποτυχία ανοίγματος οθόνης: %s"
 
-#: ../exo-desktop-item-edit/main.c:152
+#: ../exo-desktop-item-edit/main.c:167
 msgid "No file/folder specified"
 msgstr "Δεν έχει οριστεί όνομα αρχείου ή φακέλου."
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:210
+#: ../exo-desktop-item-edit/main.c:225
 #, c-format
 msgid "Unsupported desktop file type '%s'"
 msgstr "Μη υποστηριζόμενος τύπος αρχείου '%s'"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:230
+#: ../exo-desktop-item-edit/main.c:245
 msgid "C_reate"
 msgstr "_Δημιουργία"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:326
+#: ../exo-desktop-item-edit/main.c:365
 msgid "Choose filename"
 msgstr "Επιλέξετε όνομα αρχείου"
 
-#: ../exo-desktop-item-edit/main.c:380
+#: ../exo-desktop-item-edit/main.c:419
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Η δημιουργία του \"%s\" απέτυχε."
 
-#: ../exo-desktop-item-edit/main.c:380
+#: ../exo-desktop-item-edit/main.c:419
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Η αποθήκευση του \"%s\" απέτυχε"

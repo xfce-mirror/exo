@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-06 23:11+0200\n"
+"POT-Creation-Date: 2006-05-13 14:07+0900\n"
 "PO-Revision-Date: 2006-05-05 20:14+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -395,7 +395,7 @@ msgstr "  --name=identifier Název proměnné nebo makra jazyka C\n"
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Parsovací páry (název, soubor)\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:138
+#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
 #: ../exo-open/main.c:100
 msgid ""
 "Copyright (c) 2005-2006\n"
@@ -410,7 +410,7 @@ msgstr ""
 "Napsal Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:141
+#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:156
 #: ../exo-open/main.c:103
 #, c-format
 msgid ""
@@ -426,40 +426,40 @@ msgstr ""
 "přiložené u zdrojového balíčku aplikace %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:145
+#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:160
 #: ../exo-open/main.c:107
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Prosíme, hlaste chyby na <%s>.\n"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:262
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:295
 #, fuzzy
 msgid "Select an Application"
 msgstr "Vyberte aplikaci"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-desktop-item-edit/exo-die-editor.c:634
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-desktop-item-edit/exo-die-editor.c:629
 msgid "All Files"
 msgstr ""
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:276
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:309
 msgid "Executable Files"
 msgstr ""
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:291
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:324
 msgid "Perl Scripts"
 msgstr ""
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:297
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:330
 msgid "Python Scripts"
 msgstr ""
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:303
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:336
 msgid "Ruby Scripts"
 msgstr ""
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:309
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:342
 msgid "Shell Scripts"
 msgstr ""
 
@@ -491,7 +491,7 @@ msgstr ""
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:396
-#: ../exo-desktop-item-edit/exo-die-editor.c:1088
+#: ../exo-desktop-item-edit/exo-die-editor.c:1066
 msgid "No icon"
 msgstr ""
 
@@ -525,102 +525,102 @@ msgstr "X Terminál"
 msgid "Select this option to run the command in a terminal window."
 msgstr ""
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:624
+#: ../exo-desktop-item-edit/exo-die-editor.c:619
 #, fuzzy
 msgid "Select an Icon"
 msgstr "Vyberte aplikaci"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-desktop-item-edit/exo-die-editor.c:634
 msgid "Image Files"
 msgstr ""
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:40
+#: ../exo-desktop-item-edit/main.c:50
 msgid "Create Launcher"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:40
+#: ../exo-desktop-item-edit/main.c:50
 msgid "Create Link"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:41
+#: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Launcher"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:41
+#: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Link"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:61
+#: ../exo-desktop-item-edit/main.c:72
 msgid "Create a new desktop file in the given directory"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:62
+#: ../exo-desktop-item-edit/main.c:73
 msgid "Type of desktop file to create (Application or Link)"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:63
+#: ../exo-desktop-item-edit/main.c:74
 msgid "Preset name when creating a desktop file"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:64
+#: ../exo-desktop-item-edit/main.c:75
 msgid "Preset comment when creating a desktop file"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:65
+#: ../exo-desktop-item-edit/main.c:76
 msgid "Preset command when creating a launcher"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:66
+#: ../exo-desktop-item-edit/main.c:77
 msgid "Preset URL when creating a link"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:67
+#: ../exo-desktop-item-edit/main.c:78
 msgid "Preset icon when creating a desktop file"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:68
+#: ../exo-desktop-item-edit/main.c:79
 #, fuzzy
 msgid "Print version information and exit"
 msgstr "  -v, --version     Zobrazí informaci o verzi\n"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:110
+#: ../exo-desktop-item-edit/main.c:125
 msgid "[FILE|FOLDER]"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:123
+#: ../exo-desktop-item-edit/main.c:138
 #, fuzzy, c-format
 msgid "Failed to open display: %s"
 msgstr "Otevření \"%s\" selhalo."
 
-#: ../exo-desktop-item-edit/main.c:152
+#: ../exo-desktop-item-edit/main.c:167
 #, fuzzy
 msgid "No file/folder specified"
 msgstr "Nebyl zadán žádný příkaz"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:210
+#: ../exo-desktop-item-edit/main.c:225
 #, c-format
 msgid "Unsupported desktop file type '%s'"
 msgstr ""
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:230
+#: ../exo-desktop-item-edit/main.c:245
 msgid "C_reate"
 msgstr ""
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:326
+#: ../exo-desktop-item-edit/main.c:365
 msgid "Choose filename"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:380
+#: ../exo-desktop-item-edit/main.c:419
 #, fuzzy, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Otevření \"%s\" selhalo."
 
-#: ../exo-desktop-item-edit/main.c:380
+#: ../exo-desktop-item-edit/main.c:419
 #, fuzzy, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Otevření \"%s\" selhalo."

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-06 23:11+0200\n"
-"PO-Revision-Date: 2006-05-07 21:32+0900\n"
+"POT-Creation-Date: 2006-05-13 14:07+0900\n"
+"PO-Revision-Date: 2006-05-08 00:36+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -461,7 +461,7 @@ msgstr "  --name=identifier C マクロ/変数名\n"
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      解析する (名前, ファイルの) ペアです\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:138
+#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
 #: ../exo-open/main.c:100
 msgid ""
 "Copyright (c) 2005-2006\n"
@@ -476,7 +476,7 @@ msgstr ""
 "Benedikt Meurer <benny@xfce.org> が製作しました。\n"
 "\n"
 
-#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:141
+#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:156
 #: ../exo-open/main.c:103
 #, c-format
 msgid ""
@@ -492,39 +492,39 @@ msgstr ""
 "%s source package.\n"
 "\n"
 
-#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:145
+#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:160
 #: ../exo-open/main.c:107
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "バグは <%s> に報告してください。\n"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:262
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:295
 msgid "Select an Application"
 msgstr "アプリケーションを選択してください"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-desktop-item-edit/exo-die-editor.c:634
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-desktop-item-edit/exo-die-editor.c:629
 msgid "All Files"
 msgstr "全てのファイル"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:276
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:309
 msgid "Executable Files"
 msgstr "実行可能ファイル"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:291
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:324
 msgid "Perl Scripts"
 msgstr "Perlスクリプト"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:297
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:330
 msgid "Python Scripts"
 msgstr "Pythonスクリプト"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:303
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:336
 msgid "Ruby Scripts"
 msgstr "Rubyスクリプト"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:309
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:342
 msgid "Shell Scripts"
 msgstr "シェルスクリプト"
 
@@ -556,7 +556,7 @@ msgstr "アイコン(_I):"
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:396
-#: ../exo-desktop-item-edit/exo-die-editor.c:1088
+#: ../exo-desktop-item-edit/exo-die-editor.c:1066
 msgid "No icon"
 msgstr "アイコンはありません"
 
@@ -593,99 +593,99 @@ msgid "Select this option to run the command in a terminal window."
 msgstr ""
 "このオプションを有効にすると、コマンドはターミナルウィンドウで実行されます。"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:624
+#: ../exo-desktop-item-edit/exo-die-editor.c:619
 msgid "Select an Icon"
 msgstr "アイコンを選択してください"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-desktop-item-edit/exo-die-editor.c:634
 msgid "Image Files"
 msgstr "画像ファイル"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:40
+#: ../exo-desktop-item-edit/main.c:50
 msgid "Create Launcher"
 msgstr "ランチャーを作成"
 
-#: ../exo-desktop-item-edit/main.c:40
+#: ../exo-desktop-item-edit/main.c:50
 msgid "Create Link"
 msgstr "リンクを作成"
 
-#: ../exo-desktop-item-edit/main.c:41
+#: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Launcher"
 msgstr "ランチャーを編集"
 
-#: ../exo-desktop-item-edit/main.c:41
+#: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Link"
 msgstr "リンクを編集"
 
-#: ../exo-desktop-item-edit/main.c:61
+#: ../exo-desktop-item-edit/main.c:72
 msgid "Create a new desktop file in the given directory"
 msgstr "指定されたファルダに新しいデスクトップファイルを作成します。"
 
-#: ../exo-desktop-item-edit/main.c:62
+#: ../exo-desktop-item-edit/main.c:73
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "作成するデスクトップファイルのタイプ (Application または Link) です。"
 
-#: ../exo-desktop-item-edit/main.c:63
+#: ../exo-desktop-item-edit/main.c:74
 msgid "Preset name when creating a desktop file"
 msgstr "デスクトップファイルを作成する場合のプリセット名です。"
 
-#: ../exo-desktop-item-edit/main.c:64
+#: ../exo-desktop-item-edit/main.c:75
 msgid "Preset comment when creating a desktop file"
 msgstr "デスクトップファイルを作成する場合のプリセットコメントです。"
 
-#: ../exo-desktop-item-edit/main.c:65
+#: ../exo-desktop-item-edit/main.c:76
 msgid "Preset command when creating a launcher"
 msgstr "ランチャーを作成する場合のプリセットコマンドです。"
 
-#: ../exo-desktop-item-edit/main.c:66
+#: ../exo-desktop-item-edit/main.c:77
 msgid "Preset URL when creating a link"
 msgstr "リンクを作成する場合のプリセットURLです。"
 
-#: ../exo-desktop-item-edit/main.c:67
+#: ../exo-desktop-item-edit/main.c:78
 msgid "Preset icon when creating a desktop file"
 msgstr "デスクトップファイルを作成する場合のプリセットアイコンです。"
 
-#: ../exo-desktop-item-edit/main.c:68
+#: ../exo-desktop-item-edit/main.c:79
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了します"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:110
+#: ../exo-desktop-item-edit/main.c:125
 msgid "[FILE|FOLDER]"
 msgstr "[ファイル|フォルダ]"
 
-#: ../exo-desktop-item-edit/main.c:123
+#: ../exo-desktop-item-edit/main.c:138
 #, c-format
 msgid "Failed to open display: %s"
 msgstr "ディスプレイを開くのに失敗しました: %s"
 
-#: ../exo-desktop-item-edit/main.c:152
+#: ../exo-desktop-item-edit/main.c:167
 msgid "No file/folder specified"
 msgstr "ファイル/フォルダが指定されていません"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:210
+#: ../exo-desktop-item-edit/main.c:225
 #, c-format
 msgid "Unsupported desktop file type '%s'"
 msgstr "タイプ「%s」はデスクトップファイルでサポートされません"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:230
+#: ../exo-desktop-item-edit/main.c:245
 msgid "C_reate"
 msgstr "作成(_R)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:326
+#: ../exo-desktop-item-edit/main.c:365
 msgid "Choose filename"
 msgstr "ファイル名を選択してください"
 
-#: ../exo-desktop-item-edit/main.c:380
+#: ../exo-desktop-item-edit/main.c:419
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "「%s」を作成するのに失敗しました。"
 
-#: ../exo-desktop-item-edit/main.c:380
+#: ../exo-desktop-item-edit/main.c:419
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "「%s」を保存するのに失敗しました。"
@@ -697,7 +697,7 @@ msgstr "お気に入りのアプリ"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:101
 msgid "Select default applications for various services"
-msgstr "色々なサービスのための標準のアプリを選択してください"
+msgstr "各種サービスのための標準アプリケーションを選択します"
 
 #.
 #. Internet
@@ -760,8 +760,8 @@ msgstr "標準の文書ブラウザーを設定するのに失敗しました"
 #: ../exo-helper/exo-helper-chooser.c:184
 msgid "Press left mouse button to change the selected application."
 msgstr ""
-"選択されているアプリケーションを変更するにはマウスの左ボタンをクリックして下"
-"さい。"
+"選択されているアプリケーションを変更するにはマウスの左ボタンをクリックしてく"
+"ださい。"
 
 #: ../exo-helper/exo-helper-chooser.c:183
 msgid "Application Chooser Button"
