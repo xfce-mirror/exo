@@ -21,6 +21,13 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_MEMORY_H
+#include <memory.h>
+#endif
+#ifdef HAVE_STRING_H
+#include <string.h>
+#endif
+
 #include <exo-helper/exo-helper-chooser.h>
 #include <exo-helper/exo-helper-enum-types.h>
 #include <exo-helper/exo-helper-utils.h>
@@ -391,41 +398,122 @@ static void
 browse_clicked (GtkWidget *button,
                 GtkWidget *entry)
 {
-  GtkWidget *toplevel;
-  GtkWidget *dialog;
-  gchar    **argv;
-  gchar     *filename;
-  gchar     *text;
+  GtkFileFilter *filter;
+  GtkWidget     *toplevel;
+  GtkWidget     *chooser;
+  gchar         *filename;
+  gchar         *text;
+  gchar         *s;
 
+  /* determine the toplevel window */
   toplevel = gtk_widget_get_toplevel (entry);
-  dialog = gtk_file_chooser_dialog_new (_("Select application"),
-                                        GTK_WINDOW (toplevel),
-                                        GTK_FILE_CHOOSER_ACTION_OPEN,
-                                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                        GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
-                                        NULL);
-  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dialog), BINDIR);
-  gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (dialog), TRUE);
+  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+    return;
 
+  /* allocate the chooser */
+  chooser = gtk_file_chooser_dialog_new (_("Select application"),
+                                         GTK_WINDOW (toplevel),
+                                         GTK_FILE_CHOOSER_ACTION_OPEN,
+                                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                         GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+                                         NULL);
+  gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), TRUE);
+
+  /* add filters */
+  filter = gtk_file_filter_new ();
+  gtk_file_filter_set_name (filter, _("All Files"));
+  gtk_file_filter_add_pattern (filter, "*");
+  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), filter);
+
+  filter = gtk_file_filter_new ();
+  gtk_file_filter_set_name (filter, _("Executable Files"));
+  gtk_file_filter_add_mime_type (filter, "application/x-csh");
+  gtk_file_filter_add_mime_type (filter, "application/x-executable");
+  gtk_file_filter_add_mime_type (filter, "application/x-perl");
+  gtk_file_filter_add_mime_type (filter, "application/x-python");
+  gtk_file_filter_add_mime_type (filter, "application/x-ruby");
+  gtk_file_filter_add_mime_type (filter, "application/x-shellscript");
+  gtk_file_filter_add_pattern (filter, "*.pl");
+  gtk_file_filter_add_pattern (filter, "*.py");
+  gtk_file_filter_add_pattern (filter, "*.rb");
+  gtk_file_filter_add_pattern (filter, "*.sh");
+  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), filter);
+  gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (chooser), filter);
+
+  filter = gtk_file_filter_new ();
+  gtk_file_filter_set_name (filter, _("Perl Scripts"));
+  gtk_file_filter_add_mime_type (filter, "application/x-perl");
+  gtk_file_filter_add_pattern (filter, "*.pl");
+  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), filter);
+
+  filter = gtk_file_filter_new ();
+  gtk_file_filter_set_name (filter, _("Python Scripts"));
+  gtk_file_filter_add_mime_type (filter, "application/x-python");
+  gtk_file_filter_add_pattern (filter, "*.py");
+  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), filter);
+
+  filter = gtk_file_filter_new ();
+  gtk_file_filter_set_name (filter, _("Ruby Scripts"));
+  gtk_file_filter_add_mime_type (filter, "application/x-ruby");
+  gtk_file_filter_add_pattern (filter, "*.rb");
+  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), filter);
+
+  filter = gtk_file_filter_new ();
+  gtk_file_filter_set_name (filter, _("Shell Scripts"));
+  gtk_file_filter_add_mime_type (filter, "application/x-csh");
+  gtk_file_filter_add_mime_type (filter, "application/x-shellscript");
+  gtk_file_filter_add_pattern (filter, "*.sh");
+  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), filter);
+
+  /* default to bindir */
+  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), BINDIR);
+
+  /* preselect the filename */
   filename = gtk_editable_get_chars (GTK_EDITABLE (entry), 0, -1);
-  if (G_LIKELY (filename != NULL && g_shell_parse_argv (filename, NULL, &argv, NULL)))
+  if (G_LIKELY (filename != NULL))
     {
-      if (G_LIKELY (*argv != NULL && g_path_is_absolute (*argv)))
-        gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (dialog), *argv);
-      g_strfreev (argv);
-    }
-  g_free (filename);
+      /* use only the first argument */
+      s = strchr (filename, ' ');
+      if (G_UNLIKELY (s != NULL))
+        *s = '\0';
 
-  if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+      /* check if we have a filename */
+      if (G_LIKELY (*filename != '\0'))
+        {
+          /* check if the filename is not an absolute path */
+          if (G_LIKELY (!g_path_is_absolute (filename)))
+            {
+              /* try to lookup the filename in $PATH */
+              s = g_find_program_in_path (filename);
+              if (G_LIKELY (s != NULL))
+                {
+                  /* use the absolute path instead */
+                  g_free (filename);
+                  filename = s;
+                }
+            }
+
+          /* check if we have an absolute path now */
+          if (G_LIKELY (g_path_is_absolute (filename)))
+            gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (chooser), filename);
+        }
+
+      /* release the filename */
+      g_free (filename);
+    }
+
+  /* run the chooser dialog */
+  if (gtk_dialog_run (GTK_DIALOG (chooser)) == GTK_RESPONSE_ACCEPT)
     {
-      filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (dialog));
+      filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
       text = g_strconcat (filename, " \"%s\"", NULL);
       gtk_entry_set_text (GTK_ENTRY (entry), text);
       g_free (filename);
       g_free (text);
     }
 
-  gtk_widget_destroy (dialog);
+  /* destroy the chooser */
+  gtk_widget_destroy (chooser);
 }
 
 
@@ -474,8 +562,10 @@ menu_activate_other (GtkWidget        *item,
                                         NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
   gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), GTK_RESPONSE_OK, FALSE);
-  gtk_container_set_border_width (GTK_CONTAINER (dialog), 6);
-  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog)->vbox), 12);
+  gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
+  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 6);
+  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog)->action_area), 5);
+  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->action_area), 6);
   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 
   hbox = g_object_new (GTK_TYPE_HBOX, "border-width", 5, "spacing", 12, NULL);
