@@ -29,11 +29,9 @@
 
 
 /* mark internal symbols with G_GNUC_INTERNAL */
-void         exo_add_constants             (PyObject    *module,
-                                            const gchar *strip_prefix) G_GNUC_INTERNAL;
-void         exo_register_classes          (PyObject    *d) G_GNUC_INTERNAL;
-GtkTreePath *pygtk_tree_path_from_pyobject (PyObject    *object) G_GNUC_INTERNAL;
-PyObject    *pygtk_tree_path_to_pyobject   (GtkTreePath *path) G_GNUC_INTERNAL;
+void exo_add_constants    (PyObject    *module,
+                           const gchar *strip_prefix) G_GNUC_INTERNAL;
+void exo_register_classes (PyObject    *d) G_GNUC_INTERNAL;
 
 extern PyMethodDef exo_functions[];
 
@@ -42,21 +40,7 @@ extern PyMethodDef exo_functions[];
  * that are required for the IconView, so we have to duplicate
  * them here.
  */
-PyObject*
-pygtk_tree_path_to_pyobject (GtkTreePath *path)
-{
-  gint len, i, *indices;
-  PyObject *ret;
-
-  len = gtk_tree_path_get_depth (path);
-  indices = gtk_tree_path_get_indices (path);
-
-  ret = PyTuple_New (len);
-  for (i = 0; i < len; i++)
-    PyTuple_SetItem (ret, i, PyInt_FromLong (indices[i]));
-  return ret;
-}
-
+#if !defined(pygtk_tree_path_from_pyobject)
 GtkTreePath*
 pygtk_tree_path_from_pyobject (PyObject *object)
 {
@@ -104,6 +88,24 @@ pygtk_tree_path_from_pyobject (PyObject *object)
   
   return NULL;
 }
+#endif
+
+#if !defined(pygtk_tree_path_to_pyobject)
+PyObject*
+pygtk_tree_path_to_pyobject (GtkTreePath *path)
+{
+  gint len, i, *indices;
+  PyObject *ret;
+
+  len = gtk_tree_path_get_depth (path);
+  indices = gtk_tree_path_get_indices (path);
+
+  ret = PyTuple_New (len);
+  for (i = 0; i < len; i++)
+    PyTuple_SetItem (ret, i, PyInt_FromLong (indices[i]));
+  return ret;
+}
+#endif
 
 
 

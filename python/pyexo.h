@@ -51,6 +51,15 @@ typedef struct
 
 extern PyTypeObject PyExoMutualBinding_Type;
 
+/* ---------- PyGTK helpers ---------- */
+#if !defined(pygtk_tree_path_from_pyobject)
+GtkTreePath *pygtk_tree_path_from_pyobject (PyObject *object) G_GNUC_INTERNAL;
+#endif
+
+#if !defined(pygtk_tree_path_to_pyobject)
+PyObject *pygtk_tree_path_to_pyobject (GtkTreePath *path) G_GNUC_INTERNAL;
+#endif
+
 G_END_DECLS;
 
 #endif /* !__PYEXO_H__ */
