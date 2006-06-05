@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-13 14:07+0900\n"
-"PO-Revision-Date: 2006-05-06 14:16-0300\n"
+"POT-Creation-Date: 2006-06-04 13:31-0300\n"
+"PO-Revision-Date: 2006-05-18 20:47-0300\n"
 "Last-Translator: Adriano Winter Bess <awbess@gmail.com>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
 "MIME-Version: 1.0\n"
@@ -435,77 +435,82 @@ msgstr "Por favor, relate problemas para <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:295
-#, fuzzy
 msgid "Select an Application"
-msgstr "Selecione a aplicação"
+msgstr "Selecione uma Aplicação"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
 #: ../exo-desktop-item-edit/exo-die-editor.c:629
+#: ../exo-helper/exo-helper-chooser.c:424
 msgid "All Files"
-msgstr ""
+msgstr "Todos os Arquivos"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:309
+#: ../exo-helper/exo-helper-chooser.c:429
 msgid "Executable Files"
-msgstr ""
+msgstr "Arquivos Executáveis"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:324
+#: ../exo-helper/exo-helper-chooser.c:444
 msgid "Perl Scripts"
-msgstr ""
+msgstr "Scripts Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:330
+#: ../exo-helper/exo-helper-chooser.c:450
 msgid "Python Scripts"
-msgstr ""
+msgstr "Scripts Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:336
+#: ../exo-helper/exo-helper-chooser.c:456
 msgid "Ruby Scripts"
-msgstr ""
+msgstr "Scripts Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:342
+#: ../exo-helper/exo-helper-chooser.c:462
 msgid "Shell Scripts"
-msgstr ""
+msgstr "Scripts Shell"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:306
 msgid "_Name:"
-msgstr ""
+msgstr "_Nome:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:324
 msgid "C_omment:"
-msgstr ""
+msgstr "C_omentário:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:342
 msgid "Comm_and:"
-msgstr ""
+msgstr "Com_ando:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:359
 msgid "_URL:"
-msgstr ""
+msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:377
 msgid "_Icon:"
-msgstr ""
+msgstr "Í_cone:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:396
 #: ../exo-desktop-item-edit/exo-die-editor.c:1066
 msgid "No icon"
-msgstr ""
+msgstr "Nenhum ícone"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:407
 msgid "Options:"
-msgstr ""
+msgstr "Opções"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:418
 msgid "Use _startup notification"
-msgstr ""
+msgstr "Usar _notificação de inicialização"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:419
 msgid ""
@@ -513,118 +518,118 @@ msgid ""
 "from the file manager or the menu. Not every application supports startup "
 "notification."
 msgstr ""
+"Selecione esta opção para habilitar a notificação de inicialização quando o "
+"comando é executado a partir do gerenciador de arquivos ou do menu. Nem "
+"todas as aplicações suportam notificação de inicialização."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-#, fuzzy
 msgid "Run in _terminal"
-msgstr "Terminal X"
+msgstr "Executar no _terminal"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:432
 msgid "Select this option to run the command in a terminal window."
 msgstr ""
+"Selecione esta opção para executar o comando em uma janela de terminal."
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:619
-#, fuzzy
 msgid "Select an Icon"
-msgstr "Selecione a aplicação"
+msgstr "Selecione um Ícone"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:634
 msgid "Image Files"
-msgstr ""
+msgstr "Arquivos de Imagens"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:50
 msgid "Create Launcher"
-msgstr ""
+msgstr "Criar Lançador"
 
 #: ../exo-desktop-item-edit/main.c:50
 msgid "Create Link"
-msgstr ""
+msgstr "Criar Ligação"
 
 #: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Launcher"
-msgstr ""
+msgstr "Editar Lançador"
 
 #: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Link"
-msgstr ""
+msgstr "Editar Ligação"
 
 #: ../exo-desktop-item-edit/main.c:72
 msgid "Create a new desktop file in the given directory"
-msgstr ""
+msgstr "Criar um novo arquivo de ambiente de trabalho no diretório dado"
 
 #: ../exo-desktop-item-edit/main.c:73
 msgid "Type of desktop file to create (Application or Link)"
-msgstr ""
+msgstr "Tipo de arquivo de ambiente de trabalho a criar (Aplicação ou Ligação)"
 
 #: ../exo-desktop-item-edit/main.c:74
 msgid "Preset name when creating a desktop file"
-msgstr ""
+msgstr "Nome pré-ajustado ao criar um arquivo do ambiente de trabalho"
 
 #: ../exo-desktop-item-edit/main.c:75
 msgid "Preset comment when creating a desktop file"
-msgstr ""
+msgstr "Comentário pré-ajustado ao criar um arquivo do ambiente de trabalho"
 
 #: ../exo-desktop-item-edit/main.c:76
 msgid "Preset command when creating a launcher"
-msgstr ""
+msgstr "Comando pré-ajustado ao criar um lançador"
 
 #: ../exo-desktop-item-edit/main.c:77
 msgid "Preset URL when creating a link"
-msgstr ""
+msgstr "URL pré-ajustada ao criar uma ligação"
 
 #: ../exo-desktop-item-edit/main.c:78
 msgid "Preset icon when creating a desktop file"
-msgstr ""
+msgstr "Ícone pré-ajustado ao criar um arquivo do ambiente de trabalho"
 
 #: ../exo-desktop-item-edit/main.c:79
-#, fuzzy
 msgid "Print version information and exit"
-msgstr "  -v, --version     Mostra informação de versão e sai\n"
+msgstr "Mostra informação de versão e sai"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:125
 msgid "[FILE|FOLDER]"
-msgstr ""
+msgstr "[ARQUIVO|PASTA]"
 
 #: ../exo-desktop-item-edit/main.c:138
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open display: %s"
-msgstr "Falhou ao abrir \"%s\"."
+msgstr "Falhou ao abrir exibição: %s"
 
 #: ../exo-desktop-item-edit/main.c:167
-#, fuzzy
 msgid "No file/folder specified"
-msgstr "Nenhum comando especificado"
+msgstr "Nenhum arquivo/pasta especificado(a)"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:225
 #, c-format
 msgid "Unsupported desktop file type '%s'"
-msgstr ""
+msgstr "Tipo de arquivo de ambiente de trabalho não suportado: '%s'"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:245
 msgid "C_reate"
-msgstr ""
+msgstr "C_riar"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:365
 msgid "Choose filename"
-msgstr ""
+msgstr "Escolher nome do arquivo"
 
 #: ../exo-desktop-item-edit/main.c:419
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Falhou ao abrir \"%s\"."
+msgstr "Falhou ao criar \"%s\"."
 
 #: ../exo-desktop-item-edit/main.c:419
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Falhou ao abrir \"%s\"."
+msgstr "Falhou ao salvar \"%s\"."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -689,49 +694,50 @@ msgstr ""
 msgid "Failed to open the documentation browser."
 msgstr "Falhou ao abrir o navegador de documentação."
 
-#: ../exo-helper/exo-helper-chooser.c:177
 #: ../exo-helper/exo-helper-chooser.c:184
+#: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
 msgstr ""
 "Pressione o botão esquerdo do mouse para mudar a aplicação selecionada."
 
-#: ../exo-helper/exo-helper-chooser.c:183
+#: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
 msgstr "Botão de Escolha de Aplicação"
 
-#: ../exo-helper/exo-helper-chooser.c:319
+#: ../exo-helper/exo-helper-chooser.c:326
 msgid "No application selected"
 msgstr "Nenhuma aplicação selecionada"
 
-#: ../exo-helper/exo-helper-chooser.c:335
+#: ../exo-helper/exo-helper-chooser.c:342
 msgid "Failed to set default Web Browser"
 msgstr "Falhou ao ajustar o Navegador Web padrão"
 
-#: ../exo-helper/exo-helper-chooser.c:336
+#: ../exo-helper/exo-helper-chooser.c:343
 msgid "Failed to set default Mail Reader"
 msgstr "Falhou ao ajustar o Leitor de E-mail padrão"
 
-#: ../exo-helper/exo-helper-chooser.c:337
+#: ../exo-helper/exo-helper-chooser.c:344
 msgid "Failed to set default Terminal Emulator"
 msgstr "Falhou ao ajustar o Emulador de Terminal padrão"
 
-#: ../exo-helper/exo-helper-chooser.c:401
+#. allocate the chooser
+#: ../exo-helper/exo-helper-chooser.c:414
 msgid "Select application"
 msgstr "Selecione a aplicação"
 
-#: ../exo-helper/exo-helper-chooser.c:439
+#: ../exo-helper/exo-helper-chooser.c:527
 msgid "Choose a custom Web Browser"
 msgstr "Escolha um outro Navegador Web"
 
-#: ../exo-helper/exo-helper-chooser.c:440
+#: ../exo-helper/exo-helper-chooser.c:528
 msgid "Choose a custom Mail Reader"
 msgstr "Escolha um outro Leitor de E-mail"
 
-#: ../exo-helper/exo-helper-chooser.c:441
+#: ../exo-helper/exo-helper-chooser.c:529
 msgid "Choose a custom Terminal Emulator"
 msgstr "Escolha um outro Emulador de Terminal"
 
-#: ../exo-helper/exo-helper-chooser.c:446
+#: ../exo-helper/exo-helper-chooser.c:534
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
@@ -739,7 +745,7 @@ msgstr ""
 "Especifique a aplicação que você deseja usar\n"
 "como Navegador Web padrão para o Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:447
+#: ../exo-helper/exo-helper-chooser.c:535
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
@@ -747,7 +753,7 @@ msgstr ""
 "Especifique a aplicação que você deseja usar\n"
 "como Leitor de E-mail padrão para o Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:448
+#: ../exo-helper/exo-helper-chooser.c:536
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
@@ -755,15 +761,15 @@ msgstr ""
 "Especifique a aplicação que você deseja usar\n"
 "como Emulador de Terminal padrão para o Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:512
+#: ../exo-helper/exo-helper-chooser.c:602
 msgid "Browse the file system to choose a custom command."
 msgstr "Navegue pelo sistema de arquivos para escolher um outro comando."
 
-#: ../exo-helper/exo-helper-chooser.c:687
+#: ../exo-helper/exo-helper-chooser.c:777
 msgid "_Other..."
 msgstr "_Outro..."
 
-#: ../exo-helper/exo-helper-chooser.c:688
+#: ../exo-helper/exo-helper-chooser.c:778
 msgid "Use a custom application which is not included in the above list."
 msgstr "Usar uma aplicação particular que não está incluída na lista acima."
 
