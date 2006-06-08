@@ -1,3 +1,18 @@
+2006-06-08	Benedikt Meurer <benny@xfce.org>
+
+	* exo-helper/helpers/exo-compose-mail-0.3: Add simple Perl script to
+	  support extended mailto:-URIs for all included MailReaders. For
+	  example, it is now possible to specify a subject or attach files
+	  when composing mails using exo-open.
+	* exo-helper/helpers/: Use exo-compose-mail-0.3 for all included
+	  MailReaders, and add Mutt and Sylpheed to the list.
+	* acinclude.m4, configure.in.in: Check for required Perl modules,
+	  otherwise exo-compose-mail-0.3 will fail "silently".
+	* docs/reference/exo-open.xml: Update the exo-open manual page with
+	  a short description of the extended mailto:-syntax.
+	* po/POTFILES.in: Add new files here.
+	* po/libexo-0.3.pot, po/*.po: Updated.
+
 2006-05-25	Benedikt Meurer <benny@xfce.org>
 
 	* exo-helper/helpers/firefox.desktop.in: Don't forcibly open a new

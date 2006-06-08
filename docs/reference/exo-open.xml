@@ -92,6 +92,22 @@
   </refsect1>
 
   <refsect1>
+    <title>Composing emails</title>
+    <para>
+      <command>exo-open</command> allows users and developers to open the preferred email composer from the command
+      line by simply invoking <command>exo-open mailto:USER@HOST.TLD</command>. This will
+      open the composer window with <parameter>USER@HOST.TLD</parameter> as the recipient. This syntax is supported
+      by all <emphasis role="bold">MailReader</emphasis>s. In addition the <emphasis role="bold">MailReader</emphasis>s
+      that ship as part of libexo also support extended mailto:-URIs (but be aware that user-defined mailers do
+      not necessarily support this), which allows you to also specify default values for the subject and the body
+      of the mail, add additional recipients (both Cc: and To:) and attach files to emails. For example
+      <parameter>mailto:foo@foo.org?cc=bar@bar.org&amp;subject=Foo&amp;attach=/foo/bar.txt</parameter>
+      tells the composer to start an email to foo@foo.org and bar@bar.org with Foo in the subject and the file
+      /foo/bar.txt attached to the message.
+    </para>
+  </refsect1>
+
+  <refsect1>
     <title>Author</title>
     <para>
       <command>exo-open</command> was written by Benedikt Meurer <email>benny@xfce.org</email>.

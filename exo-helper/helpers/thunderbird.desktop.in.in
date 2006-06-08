@@ -8,4 +8,4 @@ StartupNotify=false
 X-XFCE-Binaries=thunderbird;thunderbird-gtk2;thunderbird-gtk;mozilla-thunderbird;
 X-XFCE-Category=MailReader
 X-XFCE-Commands=%B;
-X-XFCE-CommandsWithParameter=%B -remote "mailto(%s)";%B -compose "mailto:%s";
+X-XFCE-CommandsWithParameter=@libexecdir@/exo-compose-mail-0.3 mozilla-remote %B "mailto:%s";@libexecdir@/exo-compose-mail-0.3 mozilla %B "mailto:%s";

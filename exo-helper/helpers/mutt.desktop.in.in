@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Icon=mutt
+Type=X-XFCE-Helper
+_Name=Mutt
+StartupNotify=false
+X-XFCE-Binaries=mutt;
+X-XFCE-Category=MailReader
+X-XFCE-Commands=exo-open --launch Terminal %B;
+X-XFCE-CommandsWithParameter=exo-open --launch Terminal @libexecdir@/exo-compose-mail-0.3 mutt %B "mailto:%s";

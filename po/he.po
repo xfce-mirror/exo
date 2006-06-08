@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-13 14:07+0900\n"
+"POT-Creation-Date: 2006-06-08 01:31+0200\n"
 "PO-Revision-Date: 2006-04-19 02:37+0300\n"
 "Last-Translator: Dotan Kamber <kamberd@yahoo.com>\n"
 "Language-Team: Hebrew\n"
@@ -449,26 +449,32 @@ msgstr "בחירת יישום"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
 #: ../exo-desktop-item-edit/exo-die-editor.c:629
+#: ../exo-helper/exo-helper-chooser.c:424
 msgid "All Files"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:309
+#: ../exo-helper/exo-helper-chooser.c:429
 msgid "Executable Files"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:324
+#: ../exo-helper/exo-helper-chooser.c:444
 msgid "Perl Scripts"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:330
+#: ../exo-helper/exo-helper-chooser.c:450
 msgid "Python Scripts"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:336
+#: ../exo-helper/exo-helper-chooser.c:456
 msgid "Ruby Scripts"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:342
+#: ../exo-helper/exo-helper-chooser.c:462
 msgid "Shell Scripts"
 msgstr ""
 
@@ -697,48 +703,49 @@ msgstr ""
 msgid "Failed to open the documentation browser."
 msgstr "כשל בפתיחת דפדפן התיעוד."
 
-#: ../exo-helper/exo-helper-chooser.c:177
 #: ../exo-helper/exo-helper-chooser.c:184
+#: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
 msgstr "לחיצת עכבר שמאלית תאפשר לשנות את היישום הנבחר."
 
-#: ../exo-helper/exo-helper-chooser.c:183
+#: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
 msgstr "כפתור בחירת יישום"
 
-#: ../exo-helper/exo-helper-chooser.c:319
+#: ../exo-helper/exo-helper-chooser.c:326
 msgid "No application selected"
 msgstr "לא נבחר יישום"
 
-#: ../exo-helper/exo-helper-chooser.c:335
+#: ../exo-helper/exo-helper-chooser.c:342
 msgid "Failed to set default Web Browser"
 msgstr "כשל בהגדרת ברירת המחדל לדפדפן אינטרנט"
 
-#: ../exo-helper/exo-helper-chooser.c:336
+#: ../exo-helper/exo-helper-chooser.c:343
 msgid "Failed to set default Mail Reader"
 msgstr "כשל בהגדרת ברירת המחדל לקורא דוא\"ל"
 
-#: ../exo-helper/exo-helper-chooser.c:337
+#: ../exo-helper/exo-helper-chooser.c:344
 msgid "Failed to set default Terminal Emulator"
 msgstr "כשל בהגדרת ברירת המחדל למדמה מסוף"
 
-#: ../exo-helper/exo-helper-chooser.c:401
+#. allocate the chooser
+#: ../exo-helper/exo-helper-chooser.c:414
 msgid "Select application"
 msgstr "בחירת יישום"
 
-#: ../exo-helper/exo-helper-chooser.c:439
+#: ../exo-helper/exo-helper-chooser.c:527
 msgid "Choose a custom Web Browser"
 msgstr "בחירת דפדפן אינטרנט מותאם אישית"
 
-#: ../exo-helper/exo-helper-chooser.c:440
+#: ../exo-helper/exo-helper-chooser.c:528
 msgid "Choose a custom Mail Reader"
 msgstr "בחירת קורא דוא\"ל מותאם אישית"
 
-#: ../exo-helper/exo-helper-chooser.c:441
+#: ../exo-helper/exo-helper-chooser.c:529
 msgid "Choose a custom Terminal Emulator"
 msgstr "בחירת מדמה מסוף מותאם אישית"
 
-#: ../exo-helper/exo-helper-chooser.c:446
+#: ../exo-helper/exo-helper-chooser.c:534
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
@@ -746,7 +753,7 @@ msgstr ""
 "הגדרת היישום בו ברצונך להשתמש\n"
 "כברירת מחדל לדפדפן אינטרנט עבוד xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:447
+#: ../exo-helper/exo-helper-chooser.c:535
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
@@ -754,7 +761,7 @@ msgstr ""
 "הגדרת היישום בו ברצונך להשתמש\n"
 "כברירת המחדל לקורא דוא\"ל עבור Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:448
+#: ../exo-helper/exo-helper-chooser.c:536
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
@@ -762,15 +769,15 @@ msgstr ""
 "הגדרת היישום בו ברצונך להשתמש\n"
 "כברירת המחדל למדמה מסוף עבור Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:512
+#: ../exo-helper/exo-helper-chooser.c:602
 msgid "Browse the file system to choose a custom command."
 msgstr "סיור במערכת הקבצים לבחירת פקודה מותאמת אישית."
 
-#: ../exo-helper/exo-helper-chooser.c:687
+#: ../exo-helper/exo-helper-chooser.c:777
 msgid "_Other..."
 msgstr "_אחר..."
 
-#: ../exo-helper/exo-helper-chooser.c:688
+#: ../exo-helper/exo-helper-chooser.c:778
 msgid "Use a custom application which is not included in the above list."
 msgstr "השתמש ביישום מותאם אישית אשר אינו נכלל ברשימה לעיל."
 
@@ -828,75 +835,87 @@ msgstr ""
 msgid "Xfce 4 Preferred Applications"
 msgstr "יישומים מועדפים"
 
-#: ../exo-helper/helpers/Terminal.desktop.in.h:1
+#: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
 msgstr "Xfce Terminal"
 
-#: ../exo-helper/helpers/balsa.desktop.in.h:1
+#: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
 
-#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.h:1
+#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
 msgstr "Debian Sensible Browser"
 
-#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.h:1
+#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Debian X Terminal Emulator"
 
-#: ../exo-helper/helpers/epiphany.desktop.in.h:1
+#: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
 msgstr "דפדפן האינטרנט Epiphany"
 
-#: ../exo-helper/helpers/eterm.desktop.in.h:1
+#: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
 msgstr "Enlightened Terminal Emulator"
 
-#: ../exo-helper/helpers/evolution.desktop.in.h:1
+#: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Novell Evolution"
 msgstr "Novell Evolution"
 
-#: ../exo-helper/helpers/firefox.desktop.in.h:1
+#: ../exo-helper/helpers/firefox.desktop.in.in.h:1
 msgid "Mozilla Firefox"
 msgstr "Mozilla Firefox"
 
-#: ../exo-helper/helpers/galeon.desktop.in.h:1
+#: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
 msgstr "דפדפן האינטרנט Galeon"
 
-#: ../exo-helper/helpers/gnome-terminal.desktop.in.h:1
+#: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
 msgstr "GNOME Terminal"
 
-#: ../exo-helper/helpers/kmail.desktop.in.h:1
+#: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
 
-#: ../exo-helper/helpers/konqueror.desktop.in.h:1
+#: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
 msgid "Konqueror Web Browser"
 msgstr "דפדפן האינטרנט Konqueror"
 
-#: ../exo-helper/helpers/mozilla-browser.desktop.in.h:1
+#: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
 msgstr "Mozilla Browser"
 
-#: ../exo-helper/helpers/mozilla-mailer.desktop.in.h:1
+#: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
 msgid "Mozilla Mail"
 msgstr "Mozilla Mail"
 
-#: ../exo-helper/helpers/opera-browser.desktop.in.h:1
+#: ../exo-helper/helpers/mutt.desktop.in.in.h:1
+msgid "Mutt"
+msgstr ""
+
+#: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
 msgstr "Opera Browser"
 
-#: ../exo-helper/helpers/opera-mailer.desktop.in.h:1
+#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
 msgid "Opera Mail"
 msgstr "Opera Mail"
 
-#: ../exo-helper/helpers/thunderbird.desktop.in.h:1
+#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
+msgid "Sylpheed"
+msgstr ""
+
+#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
+msgid "Sylpheed Claws"
+msgstr ""
+
+#: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
 msgstr "Mozilla Thunderbird"
 
-#: ../exo-helper/helpers/xterm.desktop.in.h:1
+#: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
 msgstr "X Terminal"
 

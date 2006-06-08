@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-13 14:07+0900\n"
+"POT-Creation-Date: 2006-06-08 01:31+0200\n"
 "PO-Revision-Date: 2006-05-30 16:08+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: librezale <librezale@librezale.org>\n"
@@ -179,7 +179,8 @@ msgid "The model for the icon view"
 msgstr "Ikono ikuspegiaren modeloa"
 
 #: ../exo/exo-icon-view.c:792
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr "Elementu bakoitzaren testu eta ikonoaren kokapena bestearekiko"
 
 #: ../exo/exo-icon-view.c:824
@@ -439,26 +440,32 @@ msgstr "Aplikazioa hautatu"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
 #: ../exo-desktop-item-edit/exo-die-editor.c:629
+#: ../exo-helper/exo-helper-chooser.c:424
 msgid "All Files"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:309
+#: ../exo-helper/exo-helper-chooser.c:429
 msgid "Executable Files"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:324
+#: ../exo-helper/exo-helper-chooser.c:444
 msgid "Perl Scripts"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:330
+#: ../exo-helper/exo-helper-chooser.c:450
 msgid "Python Scripts"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:336
+#: ../exo-helper/exo-helper-chooser.c:456
 msgid "Ruby Scripts"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:342
+#: ../exo-helper/exo-helper-chooser.c:462
 msgid "Shell Scripts"
 msgstr ""
 
@@ -687,48 +694,49 @@ msgstr ""
 msgid "Failed to open the documentation browser."
 msgstr "Huts dokumentazio nabigatzailea irekitzerakoan."
 
-#: ../exo-helper/exo-helper-chooser.c:177
 #: ../exo-helper/exo-helper-chooser.c:184
+#: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
 msgstr "Saguaren eskubiko botoia sakatu aplikazioa aldatzeko."
 
-#: ../exo-helper/exo-helper-chooser.c:183
+#: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
 msgstr "Aplikazio Hautatze Botoia"
 
-#: ../exo-helper/exo-helper-chooser.c:319
+#: ../exo-helper/exo-helper-chooser.c:326
 msgid "No application selected"
 msgstr "Ez da aplikaziorik hautatu"
 
-#: ../exo-helper/exo-helper-chooser.c:335
+#: ../exo-helper/exo-helper-chooser.c:342
 msgid "Failed to set default Web Browser"
 msgstr "Huts lehenetsiriko web nabigatzailea ezartzerakoan"
 
-#: ../exo-helper/exo-helper-chooser.c:336
+#: ../exo-helper/exo-helper-chooser.c:343
 msgid "Failed to set default Mail Reader"
 msgstr "Huts lehenetsiriko posta bezeroa ezartzerakoan"
 
-#: ../exo-helper/exo-helper-chooser.c:337
+#: ../exo-helper/exo-helper-chooser.c:344
 msgid "Failed to set default Terminal Emulator"
 msgstr "Huts lehenetsiriko terminal emuladorea ezartzerakoan"
 
-#: ../exo-helper/exo-helper-chooser.c:401
+#. allocate the chooser
+#: ../exo-helper/exo-helper-chooser.c:414
 msgid "Select application"
 msgstr "Aplikazioa hautatu"
 
-#: ../exo-helper/exo-helper-chooser.c:439
+#: ../exo-helper/exo-helper-chooser.c:527
 msgid "Choose a custom Web Browser"
 msgstr "Pertsonalizatutako Web Nabigatzaile bat aukeratu"
 
-#: ../exo-helper/exo-helper-chooser.c:440
+#: ../exo-helper/exo-helper-chooser.c:528
 msgid "Choose a custom Mail Reader"
 msgstr "Pertsonalizatutako posta bezero bat aukeratu"
 
-#: ../exo-helper/exo-helper-chooser.c:441
+#: ../exo-helper/exo-helper-chooser.c:529
 msgid "Choose a custom Terminal Emulator"
 msgstr "Pertsonalizatutako terminal emuladore bat aukeratu"
 
-#: ../exo-helper/exo-helper-chooser.c:446
+#: ../exo-helper/exo-helper-chooser.c:534
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
@@ -736,7 +744,7 @@ msgstr ""
 "Xfce-ren lehenetsiriko nabigatzaile bezala erabili\n"
 "nahi duzun aplikazioa zehaztu."
 
-#: ../exo-helper/exo-helper-chooser.c:447
+#: ../exo-helper/exo-helper-chooser.c:535
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
@@ -744,7 +752,7 @@ msgstr ""
 "Xfce-ren lehenetsiriko posta bezero bezala erabili\n"
 "nahi duzun aplikazioa zehaztu."
 
-#: ../exo-helper/exo-helper-chooser.c:448
+#: ../exo-helper/exo-helper-chooser.c:536
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
@@ -752,15 +760,15 @@ msgstr ""
 "Xfce-ren lehenetsiriko terminal emuladore bezala erabili\n"
 "nahi duzun aplikazioa zehaztu."
 
-#: ../exo-helper/exo-helper-chooser.c:512
+#: ../exo-helper/exo-helper-chooser.c:602
 msgid "Browse the file system to choose a custom command."
 msgstr "Pertsonalizatutakokomando bat aukeratzeko fitxategi sistema arakatu."
 
-#: ../exo-helper/exo-helper-chooser.c:687
+#: ../exo-helper/exo-helper-chooser.c:777
 msgid "_Other..."
 msgstr "_Besteak..."
 
-#: ../exo-helper/exo-helper-chooser.c:688
+#: ../exo-helper/exo-helper-chooser.c:778
 msgid "Use a custom application which is not included in the above list."
 msgstr "Beheko zerrendan ez dagoen aplikazio pertsonalizatu bat aukeratu."
 
@@ -818,75 +826,87 @@ msgstr ""
 msgid "Xfce 4 Preferred Applications"
 msgstr "Xfce 4 Hobetsiriko Aplikazioak"
 
-#: ../exo-helper/helpers/Terminal.desktop.in.h:1
+#: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
 msgstr "Xfce Terminala"
 
-#: ../exo-helper/helpers/balsa.desktop.in.h:1
+#: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
 
-#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.h:1
+#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
 msgstr "Debian Lehenetsiriko Nabigatzailea"
 
-#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.h:1
+#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Debian X Terminal Emuladorea"
 
-#: ../exo-helper/helpers/epiphany.desktop.in.h:1
+#: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
 msgstr "Epiphany Web Nabigatzailea"
 
-#: ../exo-helper/helpers/eterm.desktop.in.h:1
+#: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
 msgstr "Enlightened Terminal Emuladorea"
 
-#: ../exo-helper/helpers/evolution.desktop.in.h:1
+#: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Novell Evolution"
 msgstr "Novell Evolution"
 
-#: ../exo-helper/helpers/firefox.desktop.in.h:1
+#: ../exo-helper/helpers/firefox.desktop.in.in.h:1
 msgid "Mozilla Firefox"
 msgstr "Mozilla Firefox"
 
-#: ../exo-helper/helpers/galeon.desktop.in.h:1
+#: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
 msgstr "Galeon Web Nabigatzailea"
 
-#: ../exo-helper/helpers/gnome-terminal.desktop.in.h:1
+#: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
 msgstr "GNOME Terminala"
 
-#: ../exo-helper/helpers/kmail.desktop.in.h:1
+#: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
 
-#: ../exo-helper/helpers/konqueror.desktop.in.h:1
+#: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
 msgid "Konqueror Web Browser"
 msgstr "Konqueror Web Nabigatzailea"
 
-#: ../exo-helper/helpers/mozilla-browser.desktop.in.h:1
+#: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
 msgstr "Mozilla Nabigatzailea"
 
-#: ../exo-helper/helpers/mozilla-mailer.desktop.in.h:1
+#: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
 msgid "Mozilla Mail"
 msgstr "Mozilla Posta"
 
-#: ../exo-helper/helpers/opera-browser.desktop.in.h:1
+#: ../exo-helper/helpers/mutt.desktop.in.in.h:1
+msgid "Mutt"
+msgstr ""
+
+#: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
 msgstr "Opera Nabigatzailea"
 
-#: ../exo-helper/helpers/opera-mailer.desktop.in.h:1
+#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
 msgid "Opera Mail"
 msgstr "Opera Posta"
 
-#: ../exo-helper/helpers/thunderbird.desktop.in.h:1
+#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
+msgid "Sylpheed"
+msgstr ""
+
+#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
+msgid "Sylpheed Claws"
+msgstr ""
+
+#: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
 msgstr "Mozilla Thunderbird"
 
-#: ../exo-helper/helpers/xterm.desktop.in.h:1
+#: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
 msgstr "X Terminala"
 
@@ -900,11 +920,14 @@ msgstr "       exo-open --launch MOTA [PARAMETROAK...]"
 
 #: ../exo-open/main.c:46
 msgid "  -h, --help                          Print this help message and exit"
-msgstr "  -h, --help                          Laguntza testua hau bistarazi eta irten"
+msgstr ""
+"  -h, --help                          Laguntza testua hau bistarazi eta irten"
 
 #: ../exo-open/main.c:47
-msgid "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Bertsio xehetasunak bistarazi eta irten"
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr ""
+"  -v, --version                       Bertsio xehetasunak bistarazi eta irten"
 
 #: ../exo-open/main.c:49
 msgid ""
@@ -962,4 +985,3 @@ msgstr "Huts \"%s\" ataleko hobetsiriko aplikazioa irekitzerakoan."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Huts \"%s\" URL-a irekitzerakoan."
-
