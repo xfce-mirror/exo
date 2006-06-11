@@ -123,7 +123,7 @@ elsif ($style eq 'evolution') {
 }
 elsif ($style eq 'kmail') {
 	# generate the parameters for kmail
-	for (my $n = 1; $n < $#to; $n++) {
+	for (my $n = 1; $n < @to; $n++) {
 		push (@argv, '--cc', $to[$n]);
 	}
 	for my $cc (@cc) {
@@ -135,23 +135,23 @@ elsif ($style eq 'kmail') {
 	$subject and push (@argv, '--subject', $subject);
 	$body and push (@argv, '--body', $body);
 	push (@argv, '--composer');
-	push (@argv, $to[0]);
+	(@to > 0) and push (@argv, $to[0]);
 }
 elsif ($style eq 'sylpheed') {
 	# generate the mailto:-URI (somewhat like Evolution)
-	my $mailto = 'mailto:' . uri_escape($to[0]) . '?';
-	for (my $n = 1; $n < $#to; $n++) {
-		$mailto .= 'cc=' . uri_escape($to[$n]) . '&';
+	my $mailto = 'mailto:' . ((@to > 0) ? $to[0] : "") . '?';
+	for (my $n = 1; $n < @to; $n++) {
+		$mailto .= 'cc=' . $to[$n] . '&';
 	}
 	for my $cc (@cc) {
-		$mailto .= 'cc=' . uri_escape($cc) . '&';
+		$mailto .= 'cc=' . $cc . '&';
 	}
 	$subject and $mailto .= 'subject=' . uri_escape($subject) . '&';
 	$body and $mailto .= 'body=' . uri_escape($body);
 
 	# and add the parameters to the argv
 	push (@argv, '--compose', $mailto);
-	if ($#attachments > 0) {
+	if (@attachments > 0) {
 		push (@argv, '--attach');
 		for my $uri (@attachments) {
 			push (@argv, $uri->path ());
@@ -160,8 +160,8 @@ elsif ($style eq 'sylpheed') {
 }
 elsif ($style eq 'balsa') {
 	# same story with balsa
-	my $mailto = 'mailto:' . uri_escape($to[0]) . '?';
-	for (my $n = 1; $n < $#to; $n++) {
+	my $mailto = 'mailto:' . ((@to > 0) ? uri_escape($to[0]) : "") . '?';
+	for (my $n = 1; $n < @to; $n++) {
 		$mailto .= 'cc=' . uri_escape($to[$n]) . '&';
 	}
 	for my $cc (@cc) {
@@ -188,6 +188,11 @@ elsif ($style eq 'mutt') {
 	for my $to (@to) {
 		push (@argv, $to);
 	}
+
+	# mutt needs an address, if we don't have
+	# any, just append an empty string and mutt
+	# will prompt for the To: address
+	(not @to) and push (@argv, '');
 }
 else {
 	print STDERR "$0: Unsupported style '$style'.\n";
