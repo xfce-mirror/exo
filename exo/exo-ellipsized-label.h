@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -24,12 +24,13 @@
 #error "Only <exo/exo.h> can be included directly, this file may disappear or change contents."
 #endif
 
+/* ExoEllipsizedLabel is deprecated since 0.3.1.8. Use GtkLabel instead. */
+#ifndef EXO_DISABLE_DEPRECATED
+
 #ifndef __EXO_ELLIPSIZED_LABEL_H__
 #define __EXO_ELLIPSIZED_LABEL_H__
 
 #include <gtk/gtk.h>
-
-#include <exo/exo-pango-extensions.h>
 
 G_BEGIN_DECLS;
 
@@ -46,25 +47,27 @@ typedef struct _ExoEllipsizedLabel         ExoEllipsizedLabel;
 
 struct _ExoEllipsizedLabelClass
 {
+  /*< private >*/
   GtkLabelClass __parent__;
 };
 
 struct _ExoEllipsizedLabel
 {
-  GtkLabel __parent__;
-
   /*< private >*/
+  GtkLabel __parent__;
   ExoEllipsizedLabelPrivate *priv;
 };
 
-GType                 exo_ellipsized_label_get_type      (void) G_GNUC_CONST;
+GType              exo_ellipsized_label_get_type      (void) G_GNUC_CONST;
 
-GtkWidget            *exo_ellipsized_label_new           (const gchar           *text);
+GtkWidget         *exo_ellipsized_label_new           (const gchar        *text) G_GNUC_MALLOC;
 
-ExoPangoEllipsizeMode exo_ellipsized_label_get_ellipsize (ExoEllipsizedLabel    *label);
-void                  exo_ellipsized_label_set_ellipsize (ExoEllipsizedLabel    *label,
-                                                          ExoPangoEllipsizeMode  ellipsize);
+PangoEllipsizeMode exo_ellipsized_label_get_ellipsize (ExoEllipsizedLabel *label);
+void               exo_ellipsized_label_set_ellipsize (ExoEllipsizedLabel *label,
+                                                       PangoEllipsizeMode  ellipsize);
 
 G_END_DECLS;
 
 #endif /* !__EXO_ELLIPSIZED_LABEL_H__ */
+
+#endif /* !EXO_DISABLE_DEPRECATED */

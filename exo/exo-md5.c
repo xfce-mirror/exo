@@ -1,7 +1,7 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
- * Copyright (c) 2004 James M. Cape <jcape@ignore-your.tv>
+ * Copyright (c) 2004-2006 os-cillation e.K.
+ * Copyright (c) 2004      James M. Cape <jcape@ignore-your.tv>
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -37,6 +37,7 @@
 #endif
 
 #include <exo/exo-md5.h>
+#include <exo/exo-string.h>
 #include <exo/exo-alias.h>
 
 
@@ -305,7 +306,7 @@ exo_md5_digest_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      type = g_boxed_type_register_static ("ExoMd5Digest",
+      type = g_boxed_type_register_static (I_("ExoMd5Digest"),
                                            (GBoxedCopyFunc) exo_md5_digest_dup,
                                            (GBoxedFreeFunc) exo_md5_digest_free);
     }
@@ -412,17 +413,17 @@ exo_md5_str_to_digest (const gchar *str_digest)
 gchar*
 exo_md5_digest_to_str (const ExoMd5Digest *digest)
 {
-  static gchar hex_digits[] = "0123456789abcdef";
-  guchar      *str_digest;
-  guint        n;
+  static const gchar HEX_DIGITS[] = "0123456789abcdef";
+  guchar            *str_digest;
+  guint              n;
 
   g_return_val_if_fail (digest != NULL, NULL);
 
   str_digest = g_new (guchar, 33);
   for (n = 0; n < 16; n++)
     {
-      str_digest[2 * n]     = hex_digits[digest->digest[n] >> 4];
-      str_digest[2 * n + 1] = hex_digits[digest->digest[n] & 0xf];
+      str_digest[2 * n]     = HEX_DIGITS[digest->digest[n] >> 4];
+      str_digest[2 * n + 1] = HEX_DIGITS[digest->digest[n] & 0xf];
     }
   str_digest[32] = 0;
 

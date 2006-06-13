@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -24,11 +24,10 @@
 #include <config.h>
 #endif
 
-#include <libxfce4util/libxfce4util.h>
-
 #include <exo/exo-config.h>
 #include <exo/exo-icon-bar.h>
 #include <exo/exo-marshal.h>
+#include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-alias.h>
 
@@ -192,21 +191,12 @@ exo_icon_bar_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoIconBarClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_icon_bar_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoIconBar),
-        0,
-        (GInstanceInitFunc) exo_icon_bar_init,
-        NULL,
-      };
-
-      type = g_type_register_static (GTK_TYPE_CONTAINER, I_("ExoIconBar"), &info, 0);
+      type = _exo_g_type_register_simple (GTK_TYPE_CONTAINER,
+                                          "ExoIconBar",
+                                          sizeof (ExoIconBarClass),
+                                          exo_icon_bar_class_init,
+                                          sizeof (ExoIconBar),
+                                          exo_icon_bar_init);
     }
 
   return type;

@@ -1,7 +1,7 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
- * Copyright (c) 2004 James M. Cape <jcape@ignore-your.tv>
+ * Copyright (c) 2004-2006 os-cillation e.K.
+ * Copyright (c) 2004      James M. Cape <jcape@ignore-your.tv>
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -29,7 +29,6 @@
 #define __EXO_MD5_H__
 
 #include <exo/exo-config.h>
-#include <glib-object.h>
 
 G_BEGIN_DECLS;
 
@@ -43,13 +42,13 @@ struct _ExoMd5Digest
 
 GType         exo_md5_digest_get_type (void)  G_GNUC_CONST;
 
-ExoMd5Digest *exo_str_get_md5_digest  (const gchar        *contents);
-gchar        *exo_str_get_md5_str     (const gchar        *contents);
+ExoMd5Digest *exo_str_get_md5_digest  (const gchar        *contents) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+gchar        *exo_str_get_md5_str     (const gchar        *contents) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-ExoMd5Digest *exo_md5_str_to_digest   (const gchar        *str_digest);
-gchar        *exo_md5_digest_to_str   (const ExoMd5Digest *digest);
+ExoMd5Digest *exo_md5_str_to_digest   (const gchar        *str_digest) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+gchar        *exo_md5_digest_to_str   (const ExoMd5Digest *digest) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-ExoMd5Digest *exo_md5_digest_dup      (const ExoMd5Digest *digest);
+ExoMd5Digest *exo_md5_digest_dup      (const ExoMd5Digest *digest) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 void          exo_md5_digest_free     (ExoMd5Digest       *digest);
 
 guint         exo_md5_digest_hash     (gconstpointer       digest);

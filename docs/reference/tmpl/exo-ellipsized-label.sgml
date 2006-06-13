@@ -16,6 +16,11 @@ Gtk+ 2.4 with the ability to automatically ellipsize text with
 or above in that case. So its safe to use #ExoEllipsizedLabel
 with every Gtk+ version above 2.4.
 </para>
+<para>
+As of exo 0.3.1.8, #ExoEllipsizedLabel is deprecated and should not
+be used in newly written code. Instead use #GtkLabel directly, which
+supports the "ellipsize" property since GTK+ 2.6.
+</para>
 
 <!-- ##### SECTION See_Also ##### -->
 <para>

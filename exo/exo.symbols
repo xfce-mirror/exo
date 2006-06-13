@@ -51,7 +51,7 @@ exo_mutual_binding_unbind
 #if IN_HEADER(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__)
 #if IN_SOURCE(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_C__)
 exo_cell_renderer_ellipsized_text_get_type G_GNUC_CONST
-exo_cell_renderer_ellipsized_text_new
+exo_cell_renderer_ellipsized_text_new G_GNUC_MALLOC
 #endif
 #endif
 
@@ -71,7 +71,7 @@ exo_check_version
 #if IN_HEADER(__EXO_ELLIPSIZED_LABEL_H__)
 #if IN_SOURCE(__EXO_ELLIPSIZED_LABEL_C__)
 exo_ellipsized_label_get_type G_GNUC_CONST
-exo_ellipsized_label_new
+exo_ellipsized_label_new G_GNUC_MALLOC
 exo_ellipsized_label_get_ellipsize
 exo_ellipsized_label_set_ellipsize
 #endif
@@ -81,7 +81,6 @@ exo_ellipsized_label_set_ellipsize
 #if IN_HEADER(__EXO_ENUM_TYPES_H__)
 #if IN_SOURCE(__EXO_ENUM_TYPES_C__)
 exo_icon_view_drop_position_get_type G_GNUC_CONST
-exo_pango_ellipsize_mode_get_type G_GNUC_CONST
 exo_toolbars_model_flags_get_type G_GNUC_CONST
 exo_icon_view_layout_mode_get_type G_GNUC_CONST
 #endif
@@ -222,11 +221,11 @@ exo_icon_view_set_search_position_func
 #if IN_HEADER(__EXO_MD5_H__)
 #if IN_SOURCE(__EXO_MD5_C__)
 exo_md5_digest_get_type G_GNUC_CONST
-exo_str_get_md5_digest
-exo_str_get_md5_str
-exo_md5_str_to_digest
-exo_md5_digest_to_str
-exo_md5_digest_dup
+exo_str_get_md5_digest G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_str_get_md5_str G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_md5_str_to_digest G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_md5_digest_to_str G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_md5_digest_dup G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 exo_md5_digest_free
 exo_md5_digest_hash
 exo_md5_digest_equal
@@ -252,6 +251,7 @@ exo_atomic_dec
 /* exo-pango-extensions functions */
 #if IN_HEADER(__EXO_PANGO_EXTENSIONS_H__)
 #if IN_SOURCE(__EXO_PANGO_EXTENSIONS_C__)
+exo_pango_ellipsize_mode_get_type G_GNUC_CONST
 exo_pango_layout_set_text_ellipsized
 #endif
 #endif

@@ -102,21 +102,12 @@ exo_tree_view_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoTreeViewClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_tree_view_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoTreeView),
-        0,
-        (GInstanceInitFunc) exo_tree_view_init,
-        NULL,
-      };
-
-      type = g_type_register_static (GTK_TYPE_TREE_VIEW, I_("ExoTreeView"), &info, 0);
+      type = _exo_g_type_register_simple (GTK_TYPE_TREE_VIEW,
+                                          "ExoTreeView",
+                                          sizeof (ExoTreeViewClass),
+                                          exo_tree_view_class_init,
+                                          sizeof (ExoTreeView),
+                                          exo_tree_view_init);
     }
 
   return type;

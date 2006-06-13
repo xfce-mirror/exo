@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  * Copyright (c) 2003      Marco Pesenti Gritti
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
@@ -34,6 +34,7 @@
 
 #include <libxfce4util/libxfce4util.h>
 
+#include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-editor-dialog.h>
@@ -65,21 +66,12 @@ exo_toolbars_editor_dialog_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoToolbarsEditorDialogClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_toolbars_editor_dialog_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoToolbarsEditorDialog),
-        0,
-        (GInstanceInitFunc) exo_toolbars_editor_dialog_init,
-        NULL,
-      };
-
-      type = g_type_register_static (GTK_TYPE_DIALOG, I_("ExoToolbarsEditorDialog"), &info, 0);
+      type = _exo_g_type_register_simple (GTK_TYPE_DIALOG,
+                                          "ExoToolbarsEditorDialog",
+                                          sizeof (ExoToolbarsEditorDialogClass),
+                                          exo_toolbars_editor_dialog_class_init,
+                                          sizeof (ExoToolbarsEditorDialog),
+                                          exo_toolbars_editor_dialog_init);
     }
 
   return type;

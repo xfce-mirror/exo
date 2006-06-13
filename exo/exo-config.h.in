@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -27,7 +27,7 @@
 #ifndef __EXO_CONFIG_H__
 #define __EXO_CONFIG_H__
 
-#include <glib.h>
+#include <glib-object.h>
 
 G_BEGIN_DECLS;
 
@@ -50,6 +50,15 @@ extern const guint exo_micro_version;
 const gchar *exo_check_version (guint required_major,
                                 guint required_minor,
                                 guint required_micro);
+
+/* verify that G_GNUC_WARN_UNUSED_RESULT is defined */
+#if !defined(G_GNUC_WARN_UNUSED_RESULT)
+#if __GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 4)
+#define G_GNUC_WARN_UNUSED_RESULT __attribute__((warn_unused_result))
+#else
+#define G_GNUC_WARN_UNUSED_RESULT
+#endif /* __GNUC__ */
+#endif /* !defined(G_GNUC_WARN_UNUSED_RESULT) */
 
 /* with newer GObject versions it's possible to avoid the unnecessary
  * copying of the name, nick and blurb settings for GParamSpec's.

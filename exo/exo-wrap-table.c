@@ -105,21 +105,12 @@ exo_wrap_table_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoWrapTableClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_wrap_table_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoWrapTable),
-        0,
-        (GInstanceInitFunc) exo_wrap_table_init,
-        NULL,
-      };
-
-      type = g_type_register_static (GTK_TYPE_CONTAINER, I_("ExoWrapTable"), &info, 0);
+      type = _exo_g_type_register_simple (GTK_TYPE_CONTAINER,
+                                          "ExoWrapTable",
+                                          sizeof (ExoWrapTableClass),
+                                          exo_wrap_table_class_init,
+                                          sizeof (ExoWrapTable),
+                                          exo_wrap_table_init);
     }
 
   return type;

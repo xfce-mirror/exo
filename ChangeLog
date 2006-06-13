@@ -1,3 +1,22 @@
+2006-06-13	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-cell-renderer-ellipsized-text.{c,h}, exo/exo.symbols,
+	  exo/exo-ellipsized-label.{c,h}, exo/exo-pango-extensions.{c,h},
+	  docs/reference/: ExoCellRendererEllipsizedText, ExoEllipsizedLabel
+	  and the exo-pango-extensions are deprecated now.
+	* exo/exo-config.h.in: Verify that G_GNUC_WARN_UNUSED_RESULT is
+	  defined.
+	* exo/exo-md5.c(exo_md5_digest_get_type): Mark type name static.
+	* exo/exo-md5.c(exo_md5_digest_to_str): Move hex digits to rodata.
+	* exo/exo-md5.h, exo/exo.symbols: Warn if the result of an MD5
+	  function that returns data allocated on the heap is not used in
+	  the program.
+	* exo/exo-string.h: Warn if the result of a string function that
+	  returns data allocated on the heap is not used in the program.
+	* exo/exo-private.{c,h}, exo/exo-*.c: Reduce the number of relocations
+	  using a simple wrapper for g_type_register_static().
+	* configure.in.in: Use --as-needed if supported by the linker.
+
 2006-06-11	Benedikt Meurer <benny@xfce.org>
 
 	* exo-helper/helpers/balsa.desktop.in.in: Use the correct icon.

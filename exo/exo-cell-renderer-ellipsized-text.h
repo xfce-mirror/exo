@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -24,6 +24,9 @@
 #error "Only <exo/exo.h> can be included directly, this file may disappear or change contents."
 #endif
 
+/* ExoCellRendererEllipsizedText is deprecated since 0.3.1.8. Use GtkCellRendererText instead. */
+#ifndef EXO_DISABLE_DEPRECATED
+
 #ifndef __EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__
 #define __EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__
 
@@ -44,20 +47,22 @@ typedef struct _ExoCellRendererEllipsizedTextPrivate ExoCellRendererEllipsizedTe
 
 struct _ExoCellRendererEllipsizedTextClass
 {
+  /*< private >*/
   GtkCellRendererTextClass __parent__;
 };
 
 struct _ExoCellRendererEllipsizedText
 {
-  GtkCellRendererText __parent__;
-
   /*< private >*/
+  GtkCellRendererText __parent__;
   ExoCellRendererEllipsizedTextPrivate *priv;
 };
 
 GType            exo_cell_renderer_ellipsized_text_get_type (void) G_GNUC_CONST;
-GtkCellRenderer *exo_cell_renderer_ellipsized_text_new      (void);
+GtkCellRenderer *exo_cell_renderer_ellipsized_text_new      (void) G_GNUC_MALLOC;
 
 G_END_DECLS;
 
 #endif /* !__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__ */
+
+#endif /* !EXO_DISABLE_DEPRECATED */

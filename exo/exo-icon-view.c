@@ -559,28 +559,20 @@ exo_icon_view_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoIconViewClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_icon_view_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoIconView),
-        0,
-        (GInstanceInitFunc) exo_icon_view_init,
-        NULL,
-      };
-
-      static const GInterfaceInfo cell_layout_info =
+      GInterfaceInfo cell_layout_info =
       {
         (GInterfaceInitFunc) exo_icon_view_cell_layout_init,
         NULL,
         NULL,
       };
 
-      type = g_type_register_static (GTK_TYPE_CONTAINER, I_("ExoIconView"), &info, 0);
+      type = _exo_g_type_register_simple (GTK_TYPE_CONTAINER,
+                                          "ExoIconView",
+                                          sizeof (ExoIconViewClass),
+                                          exo_icon_view_class_init,
+                                          sizeof (ExoIconView),
+                                          exo_icon_view_init);
+
       g_type_add_interface_static (type, GTK_TYPE_CELL_LAYOUT, &cell_layout_info);
     }
 

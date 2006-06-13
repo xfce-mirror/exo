@@ -1,7 +1,7 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
- * Copyright (c) 2000 Anders Carlsson <andersca@gnu.org>
+ * Copyright (c) 2004-2006 os-cillation e.K.
+ * Copyright (c) 2000      Anders Carlsson <andersca@gnu.org>
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -25,6 +25,9 @@
 #error "Only <exo/exo.h> can be included directly, this file may disappear or change contents."
 #endif
 
+/* Deprecated since 0.3.1.8, since Pango supports ellipsizing now. */
+#ifndef EXO_DISABLE_DEPRECATED
+
 #ifndef __EXO_PANGO_EXTENSIONS_H__
 #define __EXO_PANGO_EXTENSIONS_H__
 
@@ -32,19 +35,24 @@
 
 G_BEGIN_DECLS;
 
-typedef enum /*< enum,prefix=EXO_PANGO_ELLIPSIZE_MODE >*/
-{
-  EXO_PANGO_ELLIPSIZE_NONE,
-  EXO_PANGO_ELLIPSIZE_START,
-  EXO_PANGO_ELLIPSIZE_MIDDLE,
-  EXO_PANGO_ELLIPSIZE_END,
-} ExoPangoEllipsizeMode;
+/* define ExoPangoEllipsizeMode for backward compatibility */
+typedef PangoEllipsizeMode ExoPangoEllipsizeMode;
 
-gboolean  exo_pango_layout_set_text_ellipsized (PangoLayout           *layout,
-                                                const char            *string,
-                                                int                    width,
-                                                ExoPangoEllipsizeMode  mode);
+#define EXO_PANGO_ELLIPSIZE_NONE    PANGO_ELLIPSIZE_NONE
+#define EXO_PANGO_ELLIPSIZE_START   PANGO_ELLIPSIZE_START
+#define EXO_PANGO_ELLIPSIZE_MIDDLE  PANGO_ELLIPSIZE_MIDDLE
+#define EXO_PANGO_ELLIPSIZE_END     PANGO_ELLIPSIZE_END
+
+#define EXO_TYPE_PANGO_ELLIPSIZE_MODE (exo_pango_ellipsize_mode_get_type ())
+GType    exo_pango_ellipsize_mode_get_type    (void) G_GNUC_CONST;
+
+gboolean exo_pango_layout_set_text_ellipsized (PangoLayout       *layout,
+                                               const gchar       *string,
+                                               gint               width,
+                                               PangoEllipsizeMode mode);
 
 G_END_DECLS;
 
 #endif /* !__EXO_PANGO_EXTENSIONS_H__ */
+
+#endif /* !EXO_DISABLE_DEPRECATED */

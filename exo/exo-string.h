@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -31,17 +31,17 @@
 
 G_BEGIN_DECLS;
 
-gchar                *exo_str_elide_underscores  (const gchar *text);
+gchar                *exo_str_elide_underscores  (const gchar *text) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 gboolean              exo_str_is_equal           (const gchar *a,
                                                   const gchar *b);
 
 gchar                *exo_str_replace            (const gchar *str,
                                                   const gchar *pattern,
-                                                  const gchar *replacement);
+                                                  const gchar *replacement) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 gchar               **exo_strndupv               (gchar      **strv,
-                                                  gint         num);
+                                                  gint         num) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 G_CONST_RETURN gchar *exo_intern_string          (const gchar *string);
 G_CONST_RETURN gchar *exo_intern_static_string   (const gchar *string);

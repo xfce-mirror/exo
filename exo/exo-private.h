@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -29,14 +29,21 @@
 
 #include <gtk/gtk.h>
 
-#include <libxfce4util/libxfce4util.h>
+#include <glib/gi18n-lib.h>
 
 G_BEGIN_DECLS;
 
-void _exo_i18n_init                    (void) G_GNUC_INTERNAL;
+void  _exo_i18n_init                    (void) G_GNUC_INTERNAL;
 
-void _exo_gtk_widget_send_focus_change (GtkWidget *widget,
-                                        gboolean   in) G_GNUC_INTERNAL;
+void  _exo_gtk_widget_send_focus_change (GtkWidget *widget,
+                                         gboolean   in) G_GNUC_INTERNAL;
+
+GType _exo_g_type_register_simple       (GType        type_parent,
+                                         const gchar *type_name_static,
+                                         guint        class_size,
+                                         gpointer     class_init,
+                                         guint        instance_size,
+                                         gpointer     instance_init) G_GNUC_INTERNAL;
 
 G_END_DECLS;
 

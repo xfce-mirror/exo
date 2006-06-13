@@ -20,6 +20,11 @@ if available. For Gtk+ 2.4, it uses the <link
 linkend="exo-Extensions-to-Pango">Pango Extensions</link> to
 ellipsize text properly.
 </para>
+<para>
+As of exo 0.3.1.8, #ExoCellRendererEllipsizedText is deprecated and
+should not be used in newly written code. Instead use #GtkCellRendererText
+directly, which supports the "ellipsize" property since GTK+ 2.6.
+</para>
 
 <!-- ##### SECTION See_Also ##### -->
 <para>

@@ -104,21 +104,12 @@ exo_xsession_client_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoXsessionClientClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_xsession_client_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoXsessionClient),
-        0,
-        (GInstanceInitFunc) exo_xsession_client_init,
-        NULL,
-      };
-
-      type = g_type_register_static (G_TYPE_OBJECT, I_("ExoXsessionClient"), &info, 0);
+      type = _exo_g_type_register_simple (G_TYPE_OBJECT,
+                                          "ExoXsessionClient",
+                                          sizeof (ExoXsessionClientClass),
+                                          exo_xsession_client_class_init,
+                                          sizeof (ExoXsessionClient),
+                                          exo_xsession_client_init);
     }
 
   return type;

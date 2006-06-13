@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  * Copyright (c) 2003      Marco Pesenti Gritti
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
@@ -33,6 +33,7 @@
 #include <libxfce4util/libxfce4util.h>
 
 #include <exo/exo-marshal.h>
+#include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-model.h>
 #include <exo/exo-toolbars-private.h>
@@ -142,15 +143,6 @@ struct _UiParser
 
 
 
-static GMarkupParser markup_parser =
-{
-  start_element_handler,
-  end_element_handler,
-  NULL,
-  NULL,
-  NULL,
-};
-
 static GObjectClass *exo_toolbars_model_parent_class;
 static guint         toolbars_model_signals[LAST_SIGNAL];
 
@@ -163,21 +155,12 @@ exo_toolbars_model_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoToolbarsModelClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_toolbars_model_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoToolbarsModel),
-        0,
-        (GInstanceInitFunc) exo_toolbars_model_init,
-        NULL,
-      };
-
-      type = g_type_register_static (G_TYPE_OBJECT, I_("ExoToolbarsModel"), &info, 0);
+      type = _exo_g_type_register_simple (G_TYPE_OBJECT,
+                                          "ExoToolbarsModel",
+                                          sizeof (ExoToolbarsModelClass),
+                                          exo_toolbars_model_class_init,
+                                          sizeof (ExoToolbarsModel),
+                                          exo_toolbars_model_init);
     }
 
   return type;
@@ -769,6 +752,15 @@ exo_toolbars_model_load_from_file (ExoToolbarsModel *model,
                                    const gchar      *filename,
                                    GError          **error)
 {
+  const GMarkupParser markup_parser =
+  {
+    start_element_handler,
+    end_element_handler,
+    NULL,
+    NULL,
+    NULL,
+  };
+
   GMarkupParseContext *context;
   UiParser             parser;
   gboolean             succeed;

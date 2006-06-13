@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  * Copyright (c) 2003      Marco Pesenti Gritti
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
@@ -189,21 +189,12 @@ exo_toolbars_view_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoToolbarsViewClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_toolbars_view_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoToolbarsView),
-        0,
-        (GInstanceInitFunc) exo_toolbars_view_init,
-        NULL,
-      };
-
-      type = g_type_register_static (GTK_TYPE_VBOX, I_("ExoToolbarsView"), &info, 0);
+      type = _exo_g_type_register_simple (GTK_TYPE_VBOX,
+                                          "ExoToolbarsView",
+                                          sizeof (ExoToolbarsViewClass),
+                                          exo_toolbars_view_class_init,
+                                          sizeof (ExoToolbarsView),
+                                          exo_toolbars_view_init);
     }
 
   return type;
