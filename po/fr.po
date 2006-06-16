@@ -2,15 +2,16 @@
 # Copyright (C) 2004-2006 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
 # Stephane Roy <sroy@j2n.net>, 2005-2006.
+# Maximilian Schleiss <maxschleiss@bluewin.ch>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.7svn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-06-16 21:58+0900\n"
-"PO-Revision-Date: 2006-03-02 10:42+0100\n"
-"Last-Translator: Stephane Roy <sroy@j2n.net>\n"
-"Language-Team: French <traduc@traduc.org>\n"
+"PO-Revision-Date: 2006-06-11 16:05+0100\n"
+"Last-Translator: Maximilian Schleiss <maxschleiss@bluewin.ch>\n"
+"Language-Team: French <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,15 +70,15 @@ msgstr "Activer la couleur du texte de l'élément"
 
 #: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
-msgstr ""
+msgstr "Couleur de remplissage de l'élément du curseur"
 
 #: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
-msgstr ""
+msgstr "Couleur du bord de l'élément du curseur"
 
 #: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
-msgstr ""
+msgstr "Couleur du texte de l'élément du curseur"
 
 #: ../exo/exo-icon-view.c:651
 msgid "Column Spacing"
@@ -102,6 +103,8 @@ msgstr "Activer la recherche"
 #: ../exo/exo-icon-view.c:684
 msgid "View allows user to search through columns interactively"
 msgstr ""
+"La vue permet à l'utilisateur de chercher dans les colonnes de manière "
+"interactive"
 
 #: ../exo/exo-icon-view.c:701
 msgid "Width for each item"
@@ -113,12 +116,11 @@ msgstr "La largeur utilisée pour chaque élément"
 
 #: ../exo/exo-icon-view.c:720
 msgid "Layout mode"
-msgstr ""
+msgstr "Mode de disposition"
 
 #: ../exo/exo-icon-view.c:721
-#, fuzzy
 msgid "The layout mode"
-msgstr "Le mode de sélection"
+msgstr "Le mode de disposition"
 
 #: ../exo/exo-icon-view.c:737
 msgid "Margin"
@@ -175,7 +177,7 @@ msgstr "Colonne recherche"
 
 #: ../exo/exo-icon-view.c:848
 msgid "Model column to search through when searching through item"
-msgstr ""
+msgstr "Modèle de colonne à rechercher lors de la recherche d'un élément"
 
 #: ../exo/exo-icon-view.c:862
 msgid "Selection mode"
@@ -187,23 +189,24 @@ msgstr "Le mode de sélection"
 
 #: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:160
 msgid "Single Click"
-msgstr "Simple clic"
+msgstr "Simple clique"
 
 #: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:161
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr ""
-"Si les éléments dans la vue peuvent être activé ou non avec un simple clic"
+"Si les éléments dans la vue peuvent être activés ou non avec un simple clique"
 
 #: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:177
-#, fuzzy
 msgid "Single Click Timeout"
-msgstr "Simple clic"
+msgstr "Compte à rebours simple clique"
 
 #: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:178
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr ""
+"La limite de temps après laquelle l'élément sous le curseur de la souris est "
+"automatiquement sélectionné en mode simple clique"
 
 #: ../exo/exo-icon-view.c:911
 msgid "Spacing"
@@ -405,7 +408,6 @@ msgstr "S'il vous plaît, reportez tout bogue à <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:295
-#, fuzzy
 msgid "Select an Application"
 msgstr "Sélectionner une application"
 
@@ -413,75 +415,75 @@ msgstr "Sélectionner une application"
 #: ../exo-desktop-item-edit/exo-die-editor.c:629
 #: ../exo-helper/exo-helper-chooser.c:424
 msgid "All Files"
-msgstr ""
+msgstr "Tous les fichiers"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:309
 #: ../exo-helper/exo-helper-chooser.c:429
 msgid "Executable Files"
-msgstr ""
+msgstr "Fichiers exécutables"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:324
 #: ../exo-helper/exo-helper-chooser.c:444
 msgid "Perl Scripts"
-msgstr ""
+msgstr "Scripts perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:330
 #: ../exo-helper/exo-helper-chooser.c:450
 msgid "Python Scripts"
-msgstr ""
+msgstr "Scripts python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:336
 #: ../exo-helper/exo-helper-chooser.c:456
 msgid "Ruby Scripts"
-msgstr ""
+msgstr "Scripts ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:342
 #: ../exo-helper/exo-helper-chooser.c:462
 msgid "Shell Scripts"
-msgstr ""
+msgstr "Scripts shell"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:306
 msgid "_Name:"
-msgstr ""
+msgstr "_Nom:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:324
 msgid "C_omment:"
-msgstr ""
+msgstr "C_ommentaire:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:342
 msgid "Comm_and:"
-msgstr ""
+msgstr "Comm_ande:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:359
 msgid "_URL:"
-msgstr ""
+msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:377
 msgid "_Icon:"
-msgstr ""
+msgstr "_Icône:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:396
 #: ../exo-desktop-item-edit/exo-die-editor.c:1066
 msgid "No icon"
-msgstr ""
+msgstr "Pas d'icône"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:407
 msgid "Options:"
-msgstr ""
+msgstr "Options:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:418
 msgid "Use _startup notification"
-msgstr ""
+msgstr "Utili_ser la notification de démarrage"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:419
 msgid ""
@@ -489,118 +491,119 @@ msgid ""
 "from the file manager or the menu. Not every application supports startup "
 "notification."
 msgstr ""
+"Sélectionner cette option pour activer la notification au démarrage lorsque "
+"la commande est exécutée depuis le gestionnaire de fichier ou le menu. La "
+"notification au démarrage n'est pas supportée par toutes les applications."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-#, fuzzy
 msgid "Run in _terminal"
-msgstr "Terminal X"
+msgstr "Exécuter dans _terminal"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:432
 msgid "Select this option to run the command in a terminal window."
 msgstr ""
+"Sélectionner cette option pour exécuter la commande dans une fenêtre "
+"terminal."
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:619
-#, fuzzy
 msgid "Select an Icon"
-msgstr "Sélectionner une application"
+msgstr "Sélectionner une icône"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:634
 msgid "Image Files"
-msgstr ""
+msgstr "Fichiers image"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:50
 msgid "Create Launcher"
-msgstr ""
+msgstr "Créer lanceur"
 
 #: ../exo-desktop-item-edit/main.c:50
 msgid "Create Link"
-msgstr ""
+msgstr "Créer lien"
 
 #: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Launcher"
-msgstr ""
+msgstr "Éditer lanceur"
 
 #: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Link"
-msgstr ""
+msgstr "Éditer lien"
 
 #: ../exo-desktop-item-edit/main.c:72
 msgid "Create a new desktop file in the given directory"
-msgstr ""
+msgstr "Créer un nouveau fichier de bureau dans le dossier"
 
 #: ../exo-desktop-item-edit/main.c:73
 msgid "Type of desktop file to create (Application or Link)"
-msgstr ""
+msgstr "Genre de fichier de bureau à créer (Application ou lien)"
 
 #: ../exo-desktop-item-edit/main.c:74
 msgid "Preset name when creating a desktop file"
-msgstr ""
+msgstr "Nom préréglé à la création d'un fichier de bureau"
 
 #: ../exo-desktop-item-edit/main.c:75
 msgid "Preset comment when creating a desktop file"
-msgstr ""
+msgstr "Commentaire préréglé à la création d'un fichier de bureau"
 
 #: ../exo-desktop-item-edit/main.c:76
 msgid "Preset command when creating a launcher"
-msgstr ""
+msgstr "Commande préréglée à la création d'un lanceur"
 
 #: ../exo-desktop-item-edit/main.c:77
 msgid "Preset URL when creating a link"
-msgstr ""
+msgstr "URL préréglé à la création d'un lien"
 
 #: ../exo-desktop-item-edit/main.c:78
 msgid "Preset icon when creating a desktop file"
-msgstr ""
+msgstr "Icône préréglé à la création d'un fichier de bureau"
 
 #: ../exo-desktop-item-edit/main.c:79
-#, fuzzy
 msgid "Print version information and exit"
-msgstr "  -v, --version     Afficher les informations de version et quitter\n"
+msgstr "Afficher la version et quitter"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:125
 msgid "[FILE|FOLDER]"
-msgstr ""
+msgstr "[FILE|FOLDER]"
 
 #: ../exo-desktop-item-edit/main.c:138
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open display: %s"
-msgstr "Échec à l'ouverture de \"%s\"."
+msgstr "Échec à l'ouverture de l'affichage: %s"
 
 #: ../exo-desktop-item-edit/main.c:167
-#, fuzzy
 msgid "No file/folder specified"
-msgstr "Aucune commande précisée"
+msgstr "Aucun fichier/dossier précisé"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:225
 #, c-format
 msgid "Unsupported desktop file type '%s'"
-msgstr ""
+msgstr "Type de fichier de bureau non supporté '%s'"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:245
 msgid "C_reate"
-msgstr ""
+msgstr "C_réer"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:365
 msgid "Choose filename"
-msgstr ""
+msgstr "Choisir nom de fichier"
 
 #: ../exo-desktop-item-edit/main.c:419
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Échec à l'ouverture de \"%s\"."
+msgstr "Échec à la création de \"%s\"."
 
 #: ../exo-desktop-item-edit/main.c:419
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Échec à l'ouverture de \"%s\"."
+msgstr "Échec à l'enregistrement de \"%s\"."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -609,7 +612,7 @@ msgstr "Applications favorites"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:101
 msgid "Select default applications for various services"
-msgstr ""
+msgstr "Sélectionner les applications par défaut pour divers services"
 
 #.
 #. Internet
@@ -791,18 +794,17 @@ msgid "Failed to launch exo-preferred-applications"
 msgstr "Échec au lancement de exo-preferred-applications"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:60
-#, fuzzy
 msgid "Button Label|Preferred Applications"
 msgstr "Applications favorites"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr ""
+"Applications favorites (navigateur Web, messagerie et émulateur de terminal)"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
-#, fuzzy
 msgid "Xfce 4 Preferred Applications"
-msgstr "Applications favorites"
+msgstr "Applications favorites Xfce 4"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -862,7 +864,7 @@ msgstr "Mozilla Mail"
 
 #: ../exo-helper/helpers/mutt.desktop.in.in.h:1
 msgid "Mutt"
-msgstr ""
+msgstr "Mutt"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
@@ -874,11 +876,11 @@ msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
-msgstr ""
+msgstr "Sylpheed"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Sylpheed Claws"
-msgstr ""
+msgstr "Sylpheed Claws"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
