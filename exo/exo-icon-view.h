@@ -1,4 +1,4 @@
-/* $Id: exo-icon-view.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
+/* $Id$ */
 /*-
  * Copyright (C) 2004  Benedikt Meurer <benny@xfce.org>
  * Copyright (C) 2002, 2004  Anders Carlsson <andersca@gnome.org>
