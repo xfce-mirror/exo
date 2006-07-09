@@ -1,10 +1,13 @@
-0.3.1.7svn
-==========
+0.3.1.8beta2
+============
 - Imported the "Xfce Preferred Applications" framework, which allows users to
   select their preferred applications (i.e. web browser, mail reader, terminal
   emulator) using a nice graphical interface, rather than having to figure out
   where to add which environment variable to make Xfce use Firefox as default
-  web browser.
+  web browser. The "Xfce Preferred Applications" framework can also pass
+  additional information when composing emails using the preferred mail reader,
+  for example, you can use the extended mailto:-syntax to open the composer
+  with a predefined subject and automatically attached files.
 - Updated the ExoIconView class to support an API compatible to the GtkIconView
   in Gtk+ 2.8, and improve the performance of the icon view.
 - Added single click navigation support to ExoIconView.
@@ -26,6 +29,8 @@
   launchers/links on the desktop and when dropping URLs to the file manager.
 - Added various new convenience functions to make dealing with strings,
   pixbufs and other data structures easier for C programmers.
+- The number of relocations in the library and the number of linked dependencies
+  were reduced to improve the startup time of applications using this library.
 - Updated class structures to make sure constant static strings aren't
   unnecessarily duplicated at runtime, and provide other packages with
   the same functionality by exporting the functions and macros in
@@ -37,8 +42,9 @@
 		    Peeter Vois (et), Piarres Beobide (eu), Jari Rahkonen
                     (fi), Stephane Roy (fr), Dotan Kamber (he), Szervác Attila
 		    (hu), Daichi Kawahata (ja), Piotr Maliński (pl), Adriano
-		    Winter Bess (pt_BR), Joao Pedrosa (pt_BR), Andrey Fedoseev
-		    (ru), Maxim Zenin (ru)
+		    Winter Bess (pt_BR), Joao Pedrosa (pt_BR), Mişu Moldovan
+		    (ro), Andrey Fedoseev (ru), Maxim Zenin (ru), Alexander
+		    Toresson (sv)
 
 
 0.3.0
