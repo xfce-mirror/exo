@@ -1,4 +1,4 @@
-/* $Id: exo-pango-extensions.h,v 1.2 2004/09/17 09:48:24 bmeurer Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2004 Benedikt Meurer <benny@xfce.org>
  * Copyright (c) 2000 Anders Carlsson <andersca@gnu.org>
