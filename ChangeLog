@@ -1,3 +1,12 @@
+2006-07-26	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-xsession-client.c(exo_xsession_client_set_group): Use the
+	  stack to allocate the temporary custom protocols.
+	* exo/exo-private.h: Add support macros for the slice allocator.
+	* exo/exo-binding.c, exo/exo-icon-bar.c, exo/exo-icon-view.c,
+	  exo/exo-md5.c, exo/exo-toolbars-model.c: Use the slice allocator
+	  to reduce memory overhead where possible.
+
 2006-07-09	Benedikt Meurer <benny@xfce.org>
 
 	* configure.in.in: Post-release version bump.

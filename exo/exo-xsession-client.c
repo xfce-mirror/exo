@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2005 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -362,7 +362,7 @@ exo_xsession_client_set_group (ExoXsessionClient *client,
                            GDK_DRAWABLE_XID (leader),
                            &protocols, &nprotocols))
         {
-          protocols_custom = g_new (Atom, nprotocols + 1);
+          protocols_custom = g_newa (Atom, nprotocols + 1);
           memcpy (protocols_custom, protocols, nprotocols * sizeof (*protocols));
           protocols_custom[nprotocols++] = client->priv->wm_save_yourself;
 
@@ -371,7 +371,6 @@ exo_xsession_client_set_group (ExoXsessionClient *client,
                            protocols_custom, nprotocols);
 
           XFree ((void *) protocols);
-          g_free (protocols_custom);
         }
 
       gdk_window_add_filter (leader, exo_xsession_client_filter, client);

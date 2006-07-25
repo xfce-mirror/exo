@@ -402,8 +402,6 @@ struct _ExoIconViewItem
 {
   GtkTreeIter iter;
   
-  gint row, col;
-
   /* Bounding box */
   GdkRectangle area;
 
@@ -418,6 +416,8 @@ struct _ExoIconViewItem
   gint *before;
   gint *after;
 
+  guint row : (sizeof (guint) / 2) - 1;
+  guint col : (sizeof (guint) / 2) - 1;
   guint selected : 1;
   guint selected_before_rubberbanding : 1;
 };
@@ -437,7 +437,6 @@ struct _ExoIconViewPrivate
 
   GtkTreeModel *model;
   
-  GMemChunk *items_chunk;
   GList *items;
   
   GtkAdjustment *hadjustment;
@@ -1143,8 +1142,6 @@ exo_icon_view_init (ExoIconView *icon_view)
 {
   icon_view->priv = EXO_ICON_VIEW_GET_PRIVATE (icon_view);
   
-  icon_view->priv->items_chunk = g_mem_chunk_create (ExoIconViewItem, 512, G_ALLOC_ONLY);
-
   icon_view->priv->width = 0;
   icon_view->priv->height = 0;
   icon_view->priv->selection_mode = GTK_SELECTION_SINGLE;
@@ -1242,9 +1239,6 @@ exo_icon_view_finalize (GObject *object)
 
   /* drop the cell renderers */
   exo_icon_view_cell_layout_clear (GTK_CELL_LAYOUT (icon_view));
-
-  /* drop the items chunk */
-  g_mem_chunk_destroy (icon_view->priv->items_chunk);
 
   /* be sure to cancel the single click timeout */
   if (G_UNLIKELY (icon_view->priv->single_click_timeout_id >= 0))
@@ -1943,7 +1937,7 @@ exo_icon_view_remove (GtkContainer *container,
         {
           icon_view->priv->children = g_list_delete_link (icon_view->priv->children, lp);
           gtk_widget_unparent (widget);
-          g_free (child);
+          _exo_slice_free (ExoIconViewChild, child);
           return;
         }
     }
@@ -2007,7 +2001,7 @@ exo_icon_view_put (ExoIconView     *icon_view,
   ExoIconViewChild *child;
   
   /* allocate the new child */
-  child = g_new (ExoIconViewChild, 1);
+  child = _exo_slice_new (ExoIconViewChild);
   child->widget = widget;
   child->item = item;
   child->cell = cell;
@@ -3808,7 +3802,7 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
   index = gtk_tree_path_get_indices (path)[0];
 
   /* allocate the new item */
-  item = g_chunk_new0 (ExoIconViewItem, icon_view->priv->items_chunk);
+  item = _exo_slice_new0 (ExoIconViewItem);
   item->iter = *iter;
   item->area.width = -1;
   item->area.height = -1;
@@ -3868,9 +3862,8 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
   /* drop the item from the list */
   icon_view->priv->items = g_list_delete_link (icon_view->priv->items, list);
 
-  /* reset the item chunk if this was the last item */
-  if (G_UNLIKELY (icon_view->priv->items == NULL))
-    g_mem_chunk_reset (icon_view->priv->items_chunk);
+  /* release the item */
+  _exo_slice_free (ExoIconViewItem, item);
 
   /* recalculate the layout */
   exo_icon_view_queue_layout (icon_view);
@@ -4594,9 +4587,9 @@ free_cell_info (ExoIconViewCellInfo *info)
   if (G_UNLIKELY (info->destroy != NULL))
     (*info->destroy) (info->func_data);
 
-  g_object_unref (G_OBJECT (info->cell));
   free_cell_attributes (info);
-  g_free (info);
+  g_object_unref (G_OBJECT (info->cell));
+  _exo_slice_free (ExoIconViewCellInfo, info);
 }
 
 
@@ -4615,7 +4608,7 @@ exo_icon_view_cell_layout_pack_start (GtkCellLayout   *layout,
   g_object_ref (renderer);
   gtk_object_sink (GTK_OBJECT (renderer));
 
-  info = g_new0 (ExoIconViewCellInfo, 1);
+  info = _exo_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
   info->expand = expand ? TRUE : FALSE;
   info->pack = GTK_PACK_START;
@@ -4643,7 +4636,7 @@ exo_icon_view_cell_layout_pack_end (GtkCellLayout   *layout,
   g_object_ref (renderer);
   gtk_object_sink (GTK_OBJECT (renderer));
 
-  info = g_new0 (ExoIconViewCellInfo, 1);
+  info = _exo_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
   info->expand = expand ? TRUE : FALSE;
   info->pack = GTK_PACK_END;
@@ -5198,12 +5191,12 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
 
       /* drop all items belonging to the previous model */
       for (lp = icon_view->priv->items; lp != NULL; lp = lp->next)
-        g_free (EXO_ICON_VIEW_ITEM (lp->data)->box);
+        {
+          g_free (EXO_ICON_VIEW_ITEM (lp->data)->box);
+          _exo_slice_free (ExoIconViewItem, lp->data);
+        }
       g_list_free (icon_view->priv->items);
       icon_view->priv->items = NULL;
-
-      /* reset the item memory chunk as there are no items left now */
-      g_mem_chunk_reset (icon_view->priv->items_chunk);
 
       /* reset statistics */
       icon_view->priv->search_column = -1;
@@ -5270,7 +5263,7 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
         {
           do
             {
-              item = g_chunk_new0 (ExoIconViewItem, icon_view->priv->items_chunk);
+              item = _exo_slice_new0 (ExoIconViewItem);
               item->iter = iter;
               item->area.width = -1;
               item->area.height = -1;
@@ -6429,7 +6422,7 @@ dest_row_free (gpointer data)
   DestRow *dr = (DestRow *)data;
 
   gtk_tree_row_reference_free (dr->dest_row);
-  g_free (dr);
+  _exo_slice_free (DestRow, dr);
 }
 
 static void
@@ -6449,7 +6442,7 @@ set_dest_row (GdkDragContext *context,
       return;
     }
   
-  dr = g_new0 (DestRow, 1);
+  dr = _exo_slice_new0 (DestRow);
      
   dr->dest_row = gtk_tree_row_reference_new (model, dest_row);
   dr->empty_view_drop = empty_view_drop;

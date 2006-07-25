@@ -1,7 +1,7 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
- * Copyright (c) 2004 Victor Porton (http://ex-code.com/~porton/)
+ * Copyright (c) 2004-2006 os-cillation e.K.
+ * Copyright (c) 2004      Victor Porton (http://ex-code.com/~porton/)
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -27,6 +27,7 @@
 
 #include <exo/exo-binding.h>
 #include <exo/exo-gobject-extensions.h>
+#include <exo/exo-private.h>
 #include <exo/exo-alias.h>
 
 
@@ -121,7 +122,7 @@ exo_binding_on_disconnect (gpointer  data,
   if (link->dst_object != NULL)
     g_object_weak_unref (link->dst_object, exo_binding_on_dst_object_destroy, binding);
 
-  g_free (binding);
+  _exo_slice_free (ExoBinding, binding);
 }
 
 
@@ -145,7 +146,7 @@ exo_mutual_binding_on_disconnect_object1 (gpointer  data,
         binding->base.destroy (binding->direct.user_data);
       binding->direct.dst_object = NULL;
       g_signal_handler_disconnect (object2, binding->reverse.handler);
-      g_free (binding);
+      _exo_slice_free (ExoMutualBinding, binding);
     }
 }
 
@@ -281,7 +282,7 @@ exo_binding_new_full (GObject            *src_object,
                                 transform,
                                 user_data);
 
-  binding = g_new (ExoBinding, 1);
+  binding = _exo_slice_new (ExoBinding);
   binding->src_object = src_object;
   binding->base.destroy = destroy_notify;
 
@@ -431,7 +432,7 @@ exo_mutual_binding_new_full (GObject            *object1,
                                 transform,
                                 user_data);
 
-  binding = g_new (ExoMutualBinding, 1);
+  binding = _exo_slice_new (ExoMutualBinding);
   binding->base.destroy = destroy_notify;
 
   exo_binding_link_init (&binding->direct,
