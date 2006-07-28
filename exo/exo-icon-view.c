@@ -416,8 +416,8 @@ struct _ExoIconViewItem
   gint *before;
   gint *after;
 
-  guint row : (sizeof (guint) / 2) - 1;
-  guint col : (sizeof (guint) / 2) - 1;
+  guint row : ((sizeof (guint) / 2) * 8) - 1;
+  guint col : ((sizeof (guint) / 2) * 8) - 1;
   guint selected : 1;
   guint selected_before_rubberbanding : 1;
 };
