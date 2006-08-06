@@ -1,3 +1,20 @@
+2006-08-06	Benedikt Meurer <benny@xfce.org>
+
+	* exo-desktop-item-edit/exo-die-command-entry.c,
+	  exo-desktop-item-edit/exo-die-command-model.c: Set the completion
+	  model only after the command model is loaded, as GtkEntryCompletion
+	  in GTK+ 2.10 is way to slow when adding rows to a model, which makes
+	  the dialog hang for several seconds on startup.
+	* exo-desktop-item-edit/exo-die-desktop-model.{c,h},
+	  exo-desktop-item-edit/Makefile.am, exo-desktop-item-edit/main.c,
+	  exo-desktop-item-edit/exo-die-editor.c: Add a convenient way to
+	  create launchers for applications installed on the system and
+	  available via the desktop database, by typing the name of the
+	  application in the "Name" field and using the available completion.
+	* po/POTFILES.in: Add new files here.
+	* po/libexo-0.3.pot, po/*.po: Updated.
+	* po/de.po: Update german translations.
+
 2006-07-28	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-view.c(ExoIconViewItem): Apply patch from Matt McClinch 

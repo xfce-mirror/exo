@@ -222,7 +222,7 @@ main (int argc, char **argv)
   if (G_UNLIKELY (enum_value == NULL))
     {
       /* tell the user that we don't support the type */
-      s = g_strdup_printf (_("Unsupported desktop file type '%s'"), value);
+      s = g_strdup_printf (_("Unsupported desktop file type \"%s\""), value);
       g_fprintf (stderr, "%s: %s: %s\n", g_get_prgname (), argv[1], s);
       g_free (s);
 
@@ -238,7 +238,7 @@ main (int argc, char **argv)
                                                 NULL, GTK_DIALOG_NO_SEPARATOR,
                                                 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
                                                 NULL);
-  gtk_window_set_default_size (GTK_WINDOW (dialog), 430, 400);
+  gtk_window_set_default_size (GTK_WINDOW (dialog), 450, 400);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), ICON_NAMES[mode]);
 
   /* add the "Create"/"Save" button (as default) */

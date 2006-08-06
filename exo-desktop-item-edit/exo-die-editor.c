@@ -23,6 +23,7 @@
 #endif
 
 #include <exo-desktop-item-edit/exo-die-command-entry.h>
+#include <exo-desktop-item-edit/exo-die-desktop-model.h>
 #include <exo-desktop-item-edit/exo-die-editor.h>
 
 
@@ -44,19 +45,28 @@ enum
 
 
 
-static void exo_die_editor_class_init   (ExoDieEditorClass  *klass);
-static void exo_die_editor_init         (ExoDieEditor       *editor);
-static void exo_die_editor_finalize     (GObject            *object);
-static void exo_die_editor_get_property (GObject            *object,
-                                         guint               prop_id,
-                                         GValue             *value,
-                                         GParamSpec         *pspec);
-static void exo_die_editor_set_property (GObject            *object,
-                                         guint               prop_id,
-                                         const GValue       *value,
-                                         GParamSpec         *pspec);
-static void exo_die_editor_icon_clicked (GtkWidget          *button,
-                                         ExoDieEditor       *editor);
+static void     exo_die_editor_class_init     (ExoDieEditorClass  *klass);
+static void     exo_die_editor_init           (ExoDieEditor       *editor);
+static void     exo_die_editor_finalize       (GObject            *object);
+static void     exo_die_editor_get_property   (GObject            *object,
+                                               guint               prop_id,
+                                               GValue             *value,
+                                               GParamSpec         *pspec);
+static void     exo_die_editor_set_property   (GObject            *object,
+                                               guint               prop_id,
+                                               const GValue       *value,
+                                               GParamSpec         *pspec);
+static void     exo_die_editor_icon_clicked   (GtkWidget          *button,
+                                               ExoDieEditor       *editor);
+static gboolean exo_die_editor_match_selected (GtkEntryCompletion *completion,
+                                               GtkTreeModel       *model,
+                                               GtkTreeIter        *iter,
+                                               gpointer            user_data);
+static void     exo_die_editor_cell_data_func (GtkCellLayout      *cell_layout,
+                                               GtkCellRenderer    *renderer,
+                                               GtkTreeModel       *model,
+                                               GtkTreeIter        *iter,
+                                               gpointer            user_data);
 
 
 
@@ -68,6 +78,7 @@ struct _ExoDieEditorClass
 struct _ExoDieEditor
 {
   GtkTable         __parent__;
+  GtkWidget       *name_entry;
   GtkWidget       *icon_button;
   GtkTooltips     *tooltips;
   ExoDieEditorMode mode;
@@ -152,7 +163,7 @@ exo_die_editor_class_init (ExoDieEditorClass *klass)
                                    g_param_spec_enum ("mode", "mode", "mode",
                                                       EXO_DIE_TYPE_EDITOR_MODE,
                                                       EXO_DIE_EDITOR_MODE_APPLICATION,
-                                                      EXO_PARAM_READWRITE));
+                                                      EXO_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
   /**
    * ExoDieEditor:name:
@@ -285,6 +296,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   gint       row;
 
   /* start with sane defaults */
+  editor->mode = EXO_DIE_EDITOR_MODE_LINK;
   editor->command = g_strdup ("");
   editor->comment = g_strdup ("");
   editor->icon = g_strdup ("");
@@ -311,12 +323,12 @@ exo_die_editor_init (ExoDieEditor *editor)
   gtk_widget_show (label);
   g_free (text);
 
-  entry = gtk_entry_new ();
-  gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
-  exo_mutual_binding_new (G_OBJECT (editor), "name", G_OBJECT (entry), "text");
-  gtk_table_attach (GTK_TABLE (editor), entry, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
-  gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
-  gtk_widget_show (entry);
+  editor->name_entry = gtk_entry_new ();
+  gtk_entry_set_activates_default (GTK_ENTRY (editor->name_entry), TRUE);
+  exo_mutual_binding_new (G_OBJECT (editor), "name", G_OBJECT (editor->name_entry), "text");
+  gtk_table_attach (GTK_TABLE (editor), editor->name_entry, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
+  gtk_label_set_mnemonic_widget (GTK_LABEL (label), editor->name_entry);
+  gtk_widget_show (editor->name_entry);
 
   row += 1;
 
@@ -695,6 +707,111 @@ exo_die_editor_icon_clicked (GtkWidget    *button,
 
 
 
+static gboolean
+exo_die_editor_match_selected (GtkEntryCompletion *completion,
+                               GtkTreeModel       *model,
+                               GtkTreeIter        *iter,
+                               gpointer            user_data)
+{
+  ExoDieEditor *editor = EXO_DIE_EDITOR (user_data);
+  gboolean      terminal;
+  gboolean      snotify;
+  gchar        *comment;
+  gchar        *command;
+  gchar        *icon;
+  gchar        *name;
+
+  g_return_val_if_fail (GTK_IS_ENTRY_COMPLETION (completion), FALSE);
+  g_return_val_if_fail (EXO_DIE_IS_EDITOR (editor), FALSE);
+  g_return_val_if_fail (GTK_IS_TREE_MODEL (model), FALSE);
+
+  /* determine the attributes for the selected row */
+  gtk_tree_model_get (model, iter,
+                      EXO_DIE_DESKTOP_MODEL_COLUMN_COMMENT, &comment,
+                      EXO_DIE_DESKTOP_MODEL_COLUMN_COMMAND, &command,
+                      EXO_DIE_DESKTOP_MODEL_COLUMN_ICON, &icon,
+                      EXO_DIE_DESKTOP_MODEL_COLUMN_NAME, &name,
+                      EXO_DIE_DESKTOP_MODEL_COLUMN_SNOTIFY, &snotify,
+                      EXO_DIE_DESKTOP_MODEL_COLUMN_TERMINAL, &terminal,
+                      -1);
+
+  /* apply the settings to the editor */
+  exo_die_editor_set_name (editor, name);
+  exo_die_editor_set_comment (editor, (comment != NULL) ? comment : "");
+  exo_die_editor_set_command (editor, command);
+  exo_die_editor_set_icon (editor, (icon != NULL) ? icon : "");
+  exo_die_editor_set_snotify (editor, snotify);
+  exo_die_editor_set_terminal (editor, terminal);
+
+  /* cleanup */
+  g_free (comment);
+  g_free (command);
+  g_free (icon);
+  g_free (name);
+
+  return TRUE;
+}
+
+
+
+static void
+exo_die_editor_cell_data_func (GtkCellLayout   *cell_layout,
+                               GtkCellRenderer *renderer,
+                               GtkTreeModel    *model,
+                               GtkTreeIter     *iter,
+                               gpointer         user_data)
+{
+  ExoDieEditor *editor = EXO_DIE_EDITOR (user_data);
+  GtkIconTheme *icon_theme;
+  GdkPixbuf    *pixbuf_scaled;
+  GdkPixbuf    *pixbuf = NULL;
+  gchar        *icon;
+  gint          pixbuf_width;
+  gint          pixbuf_height;
+
+  /* determine the icon for the row */
+  gtk_tree_model_get (model, iter, EXO_DIE_DESKTOP_MODEL_COLUMN_ICON, &icon, -1);
+
+  /* check the icon depending on the type */
+  if (icon != NULL && g_path_is_absolute (icon))
+    {
+      /* try to load the icon from the file */
+      pixbuf = gdk_pixbuf_new_from_file (icon, NULL);
+    }
+  else if (icon != NULL && *icon != '\0')
+    {
+      /* determine the appropriate icon theme */
+      icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (editor)));
+
+      /* try to load the named icon */
+      pixbuf = gtk_icon_theme_load_icon (icon_theme, icon, 16, 0, NULL);
+    }
+
+  /* setup the icon button */
+  if (G_LIKELY (pixbuf != NULL))
+    {
+      /* scale down the icon if required */
+      pixbuf_width = gdk_pixbuf_get_width (pixbuf);
+      pixbuf_height = gdk_pixbuf_get_height (pixbuf);
+      if (G_UNLIKELY (pixbuf_width > 16 || pixbuf_height > 16))
+        {
+          pixbuf_scaled = exo_gdk_pixbuf_scale_ratio (pixbuf, 16);
+          g_object_unref (G_OBJECT (pixbuf));
+          pixbuf = pixbuf_scaled;
+        }
+    }
+
+  /* setup the pixbuf for the renderer */
+  g_object_set (G_OBJECT (renderer), "pixbuf", pixbuf, NULL);
+
+  /* cleanup */
+  if (G_LIKELY (pixbuf != NULL))
+    g_object_unref (G_OBJECT (pixbuf));
+  g_free (icon);
+}
+
+
+
 /**
  * exo_die_editor_new:
  *
@@ -770,6 +887,10 @@ void
 exo_die_editor_set_mode (ExoDieEditor    *editor,
                          ExoDieEditorMode mode)
 {
+  ExoDieDesktopModel *desktop_model;
+  GtkEntryCompletion *completion;
+  GtkCellRenderer    *renderer;
+
   g_return_if_fail (EXO_DIE_IS_EDITOR (editor));
 
   /* check if we have a new mode here */
@@ -777,6 +898,42 @@ exo_die_editor_set_mode (ExoDieEditor    *editor,
     {
       /* apply the new mode */
       editor->mode = mode;
+
+      /* enable name completion based on the mode */
+      if (mode == EXO_DIE_EDITOR_MODE_APPLICATION)
+        {
+          /* allocate a new completion for the name entry */
+          completion = gtk_entry_completion_new ();
+          gtk_entry_completion_set_inline_completion (completion, TRUE);
+          gtk_entry_completion_set_minimum_key_length (completion, 3);
+          gtk_entry_completion_set_popup_completion (completion, TRUE);
+          g_signal_connect (G_OBJECT (completion), "match-selected", G_CALLBACK (exo_die_editor_match_selected), editor);
+          gtk_entry_set_completion (GTK_ENTRY (editor->name_entry), completion);
+          g_object_unref (G_OBJECT (completion));
+
+          /* allocate the desktop application model */
+          desktop_model = exo_die_desktop_model_new ();
+          gtk_entry_completion_set_match_func (completion, exo_die_desktop_model_match_func, desktop_model, NULL);
+          gtk_entry_completion_set_model (completion, GTK_TREE_MODEL (desktop_model));
+          g_object_unref (G_OBJECT (desktop_model));
+
+          /* add the icon renderer */
+          renderer = gtk_cell_renderer_pixbuf_new ();
+          gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (completion), renderer, FALSE);
+          gtk_cell_layout_set_cell_data_func (GTK_CELL_LAYOUT (completion), renderer, exo_die_editor_cell_data_func, editor, NULL);
+
+          /* add the text renderer */
+          renderer = g_object_new (GTK_TYPE_CELL_RENDERER_TEXT, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
+          gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (completion), renderer, TRUE);
+          gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (completion), renderer,
+                                          "markup", EXO_DIE_DESKTOP_MODEL_COLUMN_ABSTRACT,
+                                          NULL);
+        }
+      else
+        {
+          /* completion is disabled for links */
+          gtk_entry_set_completion (GTK_ENTRY (editor->name_entry), NULL);
+        }
 
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");

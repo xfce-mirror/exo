@@ -26,6 +26,15 @@
 
 
 
+/* Signal identifiers */
+enum
+{
+  LOADED,
+  LAST_SIGNAL,
+};
+
+
+
 static void               exo_die_command_model_class_init            (ExoDieCommandModelClass  *klass);
 static void               exo_die_command_model_tree_model_init       (GtkTreeModelIface        *iface);
 static void               exo_die_command_model_init                  (ExoDieCommandModel       *command_model);
@@ -85,6 +94,7 @@ struct _ExoDieCommandModel
 
 
 static GObjectClass *exo_die_command_model_parent_class;
+static guint         command_model_signals[LAST_SIGNAL];
 
 
 
@@ -135,6 +145,21 @@ exo_die_command_model_class_init (ExoDieCommandModelClass *klass)
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_die_command_model_finalize;
+
+  /**
+   * ExoDieCommandModel::loaded:
+   * @command_model : an #ExoDieCommandModel.
+   *
+   * Emitted by the @command_model once the completion
+   * data is loaded from the disk.
+   **/
+  command_model_signals[LOADED] =
+    g_signal_new (I_("loaded"),
+                  G_TYPE_FROM_CLASS (klass),
+                  G_SIGNAL_RUN_LAST,
+                  0, NULL, NULL,
+                  g_cclosure_marshal_VOID__VOID,
+                  G_TYPE_NONE, 0);
 }
 
 
@@ -422,6 +447,9 @@ exo_die_command_model_collect_idle (gpointer user_data)
       lp->next = np;
     }
   gtk_tree_path_free (path);
+
+  /* tell the consumer that we are loaded */
+  g_signal_emit (G_OBJECT (command_model), command_model_signals[LOADED], 0);
 
   GDK_THREADS_LEAVE ();
 

@@ -57,6 +57,8 @@ static void exo_die_command_entry_set_property    (GObject                  *obj
 static void exo_die_command_entry_activate        (ExoDieCommandEntry       *command_entry);
 static void exo_die_command_entry_button_clicked  (GtkWidget                *button,
                                                    ExoDieCommandEntry       *command_entry);
+static void exo_die_command_entry_model_loaded    (ExoDieCommandModel       *command_model,
+                                                   ExoDieCommandEntry       *command_entry);
 
 
 
@@ -70,9 +72,10 @@ struct _ExoDieCommandEntryClass
 
 struct _ExoDieCommandEntry
 {
-  GtkHBox    __parent__;
-  GtkWidget *entry;
-  gchar     *text;
+  GtkHBox             __parent__;
+  ExoDieCommandModel *model;
+  GtkWidget          *entry;
+  gchar              *text;
 };
 
 
@@ -163,13 +166,15 @@ exo_die_command_entry_class_init (ExoDieCommandEntryClass *klass)
 static void
 exo_die_command_entry_init (ExoDieCommandEntry *command_entry)
 {
-  ExoDieCommandModel *command_model;
-  GtkEntryCompletion *completion;
-  GtkWidget          *button;
-  GtkWidget          *image;
+  GtkWidget *button;
+  GtkWidget *image;
 
   /* setup the box */
   gtk_box_set_spacing (GTK_BOX (command_entry), 3);
+
+  /* allocate the command model */
+  command_entry->model = exo_die_command_model_new ();
+  g_signal_connect (G_OBJECT (command_entry->model), "loaded", G_CALLBACK (exo_die_command_entry_model_loaded), command_entry);
 
   gtk_widget_push_composite_child ();
 
@@ -178,20 +183,6 @@ exo_die_command_entry_init (ExoDieCommandEntry *command_entry)
   exo_mutual_binding_new (G_OBJECT (command_entry->entry), "text", G_OBJECT (command_entry), "text");
   gtk_box_pack_start (GTK_BOX (command_entry), command_entry->entry, TRUE, TRUE, 0);
   gtk_widget_show (command_entry->entry);
-
-  /* allocate a new completion for the entry */
-  completion = gtk_entry_completion_new ();
-  gtk_entry_completion_set_minimum_key_length (completion, 1);
-  gtk_entry_completion_set_inline_completion (completion, TRUE);
-  gtk_entry_completion_set_popup_completion (completion, TRUE);
-  gtk_entry_set_completion (GTK_ENTRY (command_entry->entry), completion);
-  g_object_unref (G_OBJECT (completion));
-
-  /* setup a command model for the completion */
-  command_model = exo_die_command_model_new ();
-  gtk_entry_completion_set_model (completion, GTK_TREE_MODEL (command_model));
-  gtk_entry_completion_set_text_column (completion, EXO_DIE_COMMAND_MODEL_COLUMN_NAME);
-  g_object_unref (G_OBJECT (command_model));
 
   button = gtk_button_new ();
   g_signal_connect (G_OBJECT (button), "clicked", G_CALLBACK (exo_die_command_entry_button_clicked), command_entry);
@@ -211,6 +202,10 @@ static void
 exo_die_command_entry_finalize (GObject *object)
 {
   ExoDieCommandEntry *command_entry = EXO_DIE_COMMAND_ENTRY (object);
+
+  /* release the model */
+  g_signal_handlers_disconnect_by_func (G_OBJECT (command_entry->model), exo_die_command_entry_model_loaded, command_entry);
+  g_object_unref (G_OBJECT (command_entry->model));
 
   /* release the text */
   g_free (command_entry->text);
@@ -404,6 +399,25 @@ exo_die_command_entry_button_clicked (GtkWidget          *button,
 
   /* destroy the chooser */
   gtk_widget_destroy (chooser);
+}
+
+
+
+static void
+exo_die_command_entry_model_loaded (ExoDieCommandModel *command_model,
+                                    ExoDieCommandEntry *command_entry)
+{
+  GtkEntryCompletion *completion;
+
+  /* allocate a new completion for the entry */
+  completion = gtk_entry_completion_new ();
+  gtk_entry_completion_set_minimum_key_length (completion, 1);
+  gtk_entry_completion_set_inline_completion (completion, TRUE);
+  gtk_entry_completion_set_popup_completion (completion, TRUE);
+  gtk_entry_completion_set_model (completion, GTK_TREE_MODEL (command_model));
+  gtk_entry_completion_set_text_column (completion, EXO_DIE_COMMAND_MODEL_COLUMN_NAME);
+  gtk_entry_set_completion (GTK_ENTRY (command_entry->entry), completion);
+  g_object_unref (G_OBJECT (completion));
 }
 
 

@@ -17,6 +17,8 @@ exo_desktop_item_edit_SOURCES =						\
 	exo-die-command-entry.h						\
 	exo-die-command-model.c						\
 	exo-die-command-model.h						\
+	exo-die-desktop-model.c						\
+	exo-die-desktop-model.h						\
 	exo-die-editor.c						\
 	exo-die-editor.h						\
 	exo-die-enum-types.c						\
