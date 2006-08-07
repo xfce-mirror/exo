@@ -610,6 +610,7 @@ exo_die_desktop_item_new_from_file (const gchar *file)
   const gchar       *command;
   const gchar       *icon;
   const gchar       *name;
+  const gchar       *type;
   XfceRc            *rc;
   gint               icon_len;
 
@@ -626,9 +627,10 @@ exo_die_desktop_item_new_from_file (const gchar *file)
           comment = xfce_rc_read_entry (rc, "Comment", NULL);
           icon = xfce_rc_read_entry (rc, "Icon", NULL);
           name = xfce_rc_read_entry (rc, "Name", NULL);
+          type = xfce_rc_read_entry (rc, "Type", "Application");
 
-          /* check if the required attributes were found */
-          if (G_LIKELY (command != NULL && name != NULL))
+          /* check if the required attributes were found (and we have an Application) */
+          if (G_LIKELY (strcmp (type, "Application") == 0 && command != NULL && name != NULL))
             {
               /* allocate the desktop item */
               desktop_item = g_new (ExoDieDesktopItem, 1);
