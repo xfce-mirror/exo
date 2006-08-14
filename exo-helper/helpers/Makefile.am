@@ -25,6 +25,7 @@ desktop_in_in_files =							\
 	sylpheed.desktop.in.in						\
 	sylpheed-claws.desktop.in.in					\
 	thunderbird.desktop.in.in					\
+	urxvt.desktop.in.in						\
 	xterm.desktop.in.in
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
