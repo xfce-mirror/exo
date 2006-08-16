@@ -6,9 +6,11 @@ defaults_DATA = helpers.rc
 desktopdir = $(datadir)/xfce4/helpers
 desktop_in_in_files =							\
 	Terminal.desktop.in.in						\
+	aterm.desktop.in.in						\
 	balsa.desktop.in.in						\
 	debian-sensible-browser.desktop.in.in				\
 	debian-x-terminal-emulator.desktop.in.in			\
+	encompass.desktop.in.in						\
 	epiphany.desktop.in.in						\
 	eterm.desktop.in.in						\
 	evolution.desktop.in.in						\
@@ -17,15 +19,20 @@ desktop_in_in_files =							\
 	gnome-terminal.desktop.in.in					\
 	kmail.desktop.in.in						\
 	konqueror.desktop.in.in						\
+	links.desktop.in.in						\
+	lynx.desktop.in.in						\
 	mozilla-browser.desktop.in.in					\
 	mozilla-mailer.desktop.in.in					\
 	mutt.desktop.in.in						\
+	netscape-navigator.desktop.in.in				\
+	nxterm.desktop.in.in						\
 	opera-browser.desktop.in.in					\
 	opera-mailer.desktop.in.in					\
 	sylpheed.desktop.in.in						\
 	sylpheed-claws.desktop.in.in					\
 	thunderbird.desktop.in.in					\
 	urxvt.desktop.in.in						\
+	w3m.desktop.in.in						\
 	xterm.desktop.in.in
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)

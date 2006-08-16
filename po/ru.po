@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.8beta2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-14 21:42+0200\n"
+"POT-Creation-Date: 2006-08-16 15:27+0200\n"
 "PO-Revision-Date: 2006-04-26 16:32+0300\n"
 "Last-Translator: Maxim Zenin <webmechanics@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -405,32 +405,32 @@ msgstr "Выбрать приложение"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:299
 #: ../exo-desktop-item-edit/exo-die-editor.c:641
-#: ../exo-helper/exo-helper-chooser.c:424
+#: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:429
+#: ../exo-helper/exo-helper-chooser.c:437
 msgid "Executable Files"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:319
-#: ../exo-helper/exo-helper-chooser.c:444
+#: ../exo-helper/exo-helper-chooser.c:452
 msgid "Perl Scripts"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:325
-#: ../exo-helper/exo-helper-chooser.c:450
+#: ../exo-helper/exo-helper-chooser.c:458
 msgid "Python Scripts"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:331
-#: ../exo-helper/exo-helper-chooser.c:456
+#: ../exo-helper/exo-helper-chooser.c:464
 msgid "Ruby Scripts"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:337
-#: ../exo-helper/exo-helper-chooser.c:462
+#: ../exo-helper/exo-helper-chooser.c:470
 msgid "Shell Scripts"
 msgstr ""
 
@@ -618,8 +618,9 @@ msgid "Internet"
 msgstr "Интернет"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-msgid "Default Web Browser"
-msgstr "Веб-браузер по умолчанию"
+#, fuzzy
+msgid "Web Browser"
+msgstr "Веб-браузер Galeon"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -630,7 +631,8 @@ msgstr ""
 "открытия гиперссылок и просмотра справки."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-msgid "Default Mail Reader"
+#, fuzzy
+msgid "Mail Reader"
 msgstr "Почтовая программа по умолчанию"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
@@ -650,7 +652,8 @@ msgid "Utilities"
 msgstr "Утилиты"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-msgid "Default Terminal Emulator"
+#, fuzzy
+msgid "Terminal Emulator"
 msgstr "Эмулятор терминала по умолчанию"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
@@ -675,40 +678,40 @@ msgstr "Нажмите левую кнопку мыши для смены при
 msgid "Application Chooser Button"
 msgstr "Кнопка выбора приложения"
 
-#: ../exo-helper/exo-helper-chooser.c:326
+#: ../exo-helper/exo-helper-chooser.c:334
 msgid "No application selected"
 msgstr "Приложение не выбрано"
 
-#: ../exo-helper/exo-helper-chooser.c:342
+#: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
 msgstr "Невозможно открыть ПО просмотра web"
 
-#: ../exo-helper/exo-helper-chooser.c:343
+#: ../exo-helper/exo-helper-chooser.c:351
 msgid "Failed to set default Mail Reader"
 msgstr "Невозможно открыть ПО чтения электронной почты"
 
-#: ../exo-helper/exo-helper-chooser.c:344
+#: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
 msgstr "Невозможно открыть ПО терминала"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:414
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Select application"
 msgstr "Выбрать приложение"
 
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
 msgstr "Выберите ПО просмотра web"
 
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:536
 msgid "Choose a custom Mail Reader"
 msgstr "Выберите ПО чтения электронной почты"
 
-#: ../exo-helper/exo-helper-chooser.c:529
+#: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
 msgstr "Выберите ПО терминала"
 
-#: ../exo-helper/exo-helper-chooser.c:534
+#: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
@@ -716,7 +719,7 @@ msgstr ""
 "Укажите приложение, которые вы хотите\n"
 "использовать в качестве веб-браузера для Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:535
+#: ../exo-helper/exo-helper-chooser.c:543
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
@@ -725,7 +728,7 @@ msgstr ""
 "использовать в качестве почтовой\n"
 "программы для Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:536
+#: ../exo-helper/exo-helper-chooser.c:544
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
@@ -734,15 +737,15 @@ msgstr ""
 "использовать в качестве эмулятора\n"
 "терминала для Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:602
+#: ../exo-helper/exo-helper-chooser.c:610
 msgid "Browse the file system to choose a custom command."
 msgstr "Просмотреть файловую систему, чтобы выбрать нужную команду."
 
-#: ../exo-helper/exo-helper-chooser.c:777
+#: ../exo-helper/exo-helper-chooser.c:793
 msgid "_Other..."
 msgstr "Другой..."
 
-#: ../exo-helper/exo-helper-chooser.c:778
+#: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
 msgstr "Использовать другое приложение, которое не входит в этот список."
 
@@ -803,6 +806,10 @@ msgstr "Предпочтительные приложения"
 msgid "Xfce Terminal"
 msgstr "Терминал Xfce"
 
+#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
+msgid "aterm"
+msgstr ""
+
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
@@ -814,6 +821,10 @@ msgstr ""
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Эмулятор X терминала Debian"
+
+#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
+msgid "Encompass"
+msgstr ""
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
@@ -847,6 +858,16 @@ msgstr "KMail"
 msgid "Konqueror Web Browser"
 msgstr "Веб-браузер Konqueror"
 
+#: ../exo-helper/helpers/links.desktop.in.in.h:1
+#, fuzzy
+msgid "Links Text Browser"
+msgstr "Веб-браузер Epiphany"
+
+#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
+#, fuzzy
+msgid "Lynx Text Browser"
+msgstr "Веб-браузер Galeon"
+
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
 msgstr "Браузер Mozilla"
@@ -859,6 +880,14 @@ msgstr "Почтовая программа Mozilla"
 msgid "Mutt"
 msgstr ""
 
+#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
+msgid "Netscape Navigator"
+msgstr ""
+
+#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
+msgid "NXterm"
+msgstr ""
+
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
 msgstr "Браузер Opera"
@@ -867,12 +896,12 @@ msgstr "Браузер Opera"
 msgid "Opera Mail"
 msgstr "Почтовая программа Opera"
 
-#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-msgid "Sylpheed"
-msgstr ""
-
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Sylpheed Claws"
+msgstr ""
+
+#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
+msgid "Sylpheed"
 msgstr ""
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
@@ -882,6 +911,11 @@ msgstr "Mozilla Thunderbird"
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
 msgstr ""
+
+#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
+#, fuzzy
+msgid "W3M Text Browser"
+msgstr "Браузер Opera"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -961,3 +995,6 @@ msgstr "Не удалось запустить предпочтительное 
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Не удалось открыть URL \"%s\"."
+
+#~ msgid "Default Web Browser"
+#~ msgstr "Веб-браузер по умолчанию"

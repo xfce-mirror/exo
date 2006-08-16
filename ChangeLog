@@ -1,3 +1,17 @@
+2006-08-16	Benedikt Meurer <benny@xfce.org>
+
+	* exo-helper/exo-helper-chooser-dialog.c
+	  (exo_helper_chooser_dialog_init): Use "Web Browser" instead of
+	  "Default Web Browser" (same for terminal and mailer) for the section
+	  titles, as the term "Default" is somewhat redundant to the rest of
+	  the dialog and makes the whole UI looks busy.
+	* exo-helper/exo-helper-chooser.c: Display fallback icon if no
+	  specific icon for the helper was found.
+	* exo-helper/helpers/: Add several new helpers.
+	* po/POTFILES.in: Add new files here.
+	* po/libexo-0.3.pot, po/*.po: Merge new strings.
+	* po/de.po: Update german translations.
+
 2006-08-14	Benedikt Meurer <benny@xfce.org>
 
 	* exo-helper/helpers/urxvt.desktop.in.in,

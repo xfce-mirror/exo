@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.8beta2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-14 21:42+0200\n"
+"POT-Creation-Date: 2006-08-16 15:27+0200\n"
 "PO-Revision-Date: 2006-05-15 00:52+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan\n"
@@ -412,32 +412,32 @@ msgstr "Seleccioneu una aplicació"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:299
 #: ../exo-desktop-item-edit/exo-die-editor.c:641
-#: ../exo-helper/exo-helper-chooser.c:424
+#: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
 msgstr "Tots els fitxers"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:429
+#: ../exo-helper/exo-helper-chooser.c:437
 msgid "Executable Files"
 msgstr "Fitxer executables"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:319
-#: ../exo-helper/exo-helper-chooser.c:444
+#: ../exo-helper/exo-helper-chooser.c:452
 msgid "Perl Scripts"
 msgstr "Seqüències en Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:325
-#: ../exo-helper/exo-helper-chooser.c:450
+#: ../exo-helper/exo-helper-chooser.c:458
 msgid "Python Scripts"
 msgstr "Seqüències en Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:331
-#: ../exo-helper/exo-helper-chooser.c:456
+#: ../exo-helper/exo-helper-chooser.c:464
 msgid "Ruby Scripts"
 msgstr "Seqüències en Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:337
-#: ../exo-helper/exo-helper-chooser.c:462
+#: ../exo-helper/exo-helper-chooser.c:470
 msgid "Shell Scripts"
 msgstr "Seqüències de shell"
 
@@ -625,8 +625,9 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-msgid "Default Web Browser"
-msgstr "Navegador web predeterminat"
+#, fuzzy
+msgid "Web Browser"
+msgstr "Navegador web Galeon"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -637,7 +638,8 @@ msgstr ""
 "hiperenllaços i mostrar l'ajuda."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-msgid "Default Mail Reader"
+#, fuzzy
+msgid "Mail Reader"
 msgstr "Client de correu preferit"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
@@ -656,7 +658,8 @@ msgid "Utilities"
 msgstr "Utilitats"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-msgid "Default Terminal Emulator"
+#, fuzzy
+msgid "Terminal Emulator"
 msgstr "Emulador de terminal predeterminat"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
@@ -681,40 +684,40 @@ msgstr ""
 msgid "Application Chooser Button"
 msgstr "Botó d'elecció d'aplicació"
 
-#: ../exo-helper/exo-helper-chooser.c:326
+#: ../exo-helper/exo-helper-chooser.c:334
 msgid "No application selected"
 msgstr "No s'ha seleccionat cap aplicació"
 
-#: ../exo-helper/exo-helper-chooser.c:342
+#: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
 msgstr "No s'ha pogut definir el navegador web predeterminat"
 
-#: ../exo-helper/exo-helper-chooser.c:343
+#: ../exo-helper/exo-helper-chooser.c:351
 msgid "Failed to set default Mail Reader"
 msgstr "No s'ha pogut definir el client de correu predeterminat"
 
-#: ../exo-helper/exo-helper-chooser.c:344
+#: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
 msgstr "No s'ha pogut definir l'emulador de terminal predeterminat"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:414
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Select application"
 msgstr "Seleccioni l'aplicació"
 
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
 msgstr "Escolliu un navegador web"
 
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:536
 msgid "Choose a custom Mail Reader"
 msgstr "Escolliu un client de correu"
 
-#: ../exo-helper/exo-helper-chooser.c:529
+#: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
 msgstr "Escolliu un emulador de terminal"
 
-#: ../exo-helper/exo-helper-chooser.c:534
+#: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
@@ -722,7 +725,7 @@ msgstr ""
 "Especifiqueu l'aplicació que voleu emprar\n"
 "com a navegador web per l'Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:535
+#: ../exo-helper/exo-helper-chooser.c:543
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
@@ -730,7 +733,7 @@ msgstr ""
 "Especifiqueu l'aplicació que voleu usar\n"
 "com a client de correu per l'Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:536
+#: ../exo-helper/exo-helper-chooser.c:544
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
@@ -738,15 +741,15 @@ msgstr ""
 "Especifiqueu l'aplicació que voleu usar\n"
 "com a emulador de terminal per l'Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:602
+#: ../exo-helper/exo-helper-chooser.c:610
 msgid "Browse the file system to choose a custom command."
 msgstr "Navega pel sistema de fitxer per escullir una ordre."
 
-#: ../exo-helper/exo-helper-chooser.c:777
+#: ../exo-helper/exo-helper-chooser.c:793
 msgid "_Other..."
 msgstr "_Altres…"
 
-#: ../exo-helper/exo-helper-chooser.c:778
+#: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
 msgstr "Usa una aplicació que no està inclosa a la llista anterior."
 
@@ -808,6 +811,10 @@ msgstr "Aplicacions preferides d'Xfce4"
 msgid "Xfce Terminal"
 msgstr "Terminal d'Xfce"
 
+#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
+msgid "aterm"
+msgstr ""
+
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
@@ -819,6 +826,10 @@ msgstr "Navegador sensible de Debian"
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Emulador de Terminal X de Debian"
+
+#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
+msgid "Encompass"
+msgstr ""
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
@@ -852,6 +863,16 @@ msgstr "KMail"
 msgid "Konqueror Web Browser"
 msgstr "Navegador web Konqueror"
 
+#: ../exo-helper/helpers/links.desktop.in.in.h:1
+#, fuzzy
+msgid "Links Text Browser"
+msgstr "Navegador web Epiphany"
+
+#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
+#, fuzzy
+msgid "Lynx Text Browser"
+msgstr "Navegador web Galeon"
+
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
 msgstr "Navegador Mozilla"
@@ -864,6 +885,14 @@ msgstr "Correu de Mozilla"
 msgid "Mutt"
 msgstr ""
 
+#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
+msgid "Netscape Navigator"
+msgstr ""
+
+#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
+msgid "NXterm"
+msgstr ""
+
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
 msgstr "Navegador Opera"
@@ -872,12 +901,12 @@ msgstr "Navegador Opera"
 msgid "Opera Mail"
 msgstr "Correu d'Opera"
 
-#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-msgid "Sylpheed"
-msgstr ""
-
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Sylpheed Claws"
+msgstr ""
+
+#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
+msgid "Sylpheed"
 msgstr ""
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
@@ -887,6 +916,11 @@ msgstr "Mozilla Thunderbird"
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
 msgstr ""
+
+#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
+#, fuzzy
+msgid "W3M Text Browser"
+msgstr "Navegador Opera"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -963,3 +997,6 @@ msgstr "No s'ha pogut llançar l'aplicació predeferida de la categoria «%s»."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "No s'ha pogut obrir la URL «%s»"
+
+#~ msgid "Default Web Browser"
+#~ msgstr "Navegador web predeterminat"

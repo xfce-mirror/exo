@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.8beta2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-14 21:42+0200\n"
+"POT-Creation-Date: 2006-08-16 15:27+0200\n"
 "PO-Revision-Date: 2006-06-04 22:41+0300\n"
 "Last-Translator: Mişu Moldovan <dumol@gnome.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
@@ -409,32 +409,32 @@ msgstr "Selectaţi o aplicaţie"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:299
 #: ../exo-desktop-item-edit/exo-die-editor.c:641
-#: ../exo-helper/exo-helper-chooser.c:424
+#: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
 msgstr "Toate fişierele"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:429
+#: ../exo-helper/exo-helper-chooser.c:437
 msgid "Executable Files"
 msgstr "Fişiere executabile"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:319
-#: ../exo-helper/exo-helper-chooser.c:444
+#: ../exo-helper/exo-helper-chooser.c:452
 msgid "Perl Scripts"
 msgstr "Scripturi Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:325
-#: ../exo-helper/exo-helper-chooser.c:450
+#: ../exo-helper/exo-helper-chooser.c:458
 msgid "Python Scripts"
 msgstr "Scripturi Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:331
-#: ../exo-helper/exo-helper-chooser.c:456
+#: ../exo-helper/exo-helper-chooser.c:464
 msgid "Ruby Scripts"
 msgstr "Scripturi Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:337
-#: ../exo-helper/exo-helper-chooser.c:462
+#: ../exo-helper/exo-helper-chooser.c:470
 msgid "Shell Scripts"
 msgstr "Scripturi shell"
 
@@ -621,8 +621,9 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-msgid "Default Web Browser"
-msgstr "Navigator web implicit"
+#, fuzzy
+msgid "Web Browser"
+msgstr "Navigatorul Galeon"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -633,7 +634,8 @@ msgstr ""
 "adresele de internet şi a afişa informaţiile de ajutor."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-msgid "Default Mail Reader"
+#, fuzzy
+msgid "Mail Reader"
 msgstr "Client de mail implicit"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
@@ -652,7 +654,8 @@ msgid "Utilities"
 msgstr "Utilitare"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-msgid "Default Terminal Emulator"
+#, fuzzy
+msgid "Terminal Emulator"
 msgstr "Terminal implicit"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
@@ -676,40 +679,40 @@ msgstr "Cu un click stânga puteţi schimba aplicaţia selectată."
 msgid "Application Chooser Button"
 msgstr "Buton selector de aplicaţii"
 
-#: ../exo-helper/exo-helper-chooser.c:326
+#: ../exo-helper/exo-helper-chooser.c:334
 msgid "No application selected"
 msgstr "Nu aţi selectat nici o aplicaţie"
 
-#: ../exo-helper/exo-helper-chooser.c:342
+#: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
 msgstr "Nu s-a putut seta navigatorul web implicit"
 
-#: ../exo-helper/exo-helper-chooser.c:343
+#: ../exo-helper/exo-helper-chooser.c:351
 msgid "Failed to set default Mail Reader"
 msgstr "Nu s-a putut seta clientul de mail implicit"
 
-#: ../exo-helper/exo-helper-chooser.c:344
+#: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
 msgstr "Nu s-a putut seta emulatorul de terminal implicit"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:414
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Select application"
 msgstr "Selectaţi aplicaţia"
 
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
 msgstr "Alegeţi un navigator web preferat"
 
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:536
 msgid "Choose a custom Mail Reader"
 msgstr "Alegeţi un client de mail preferat"
 
-#: ../exo-helper/exo-helper-chooser.c:529
+#: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
 msgstr "Alegeţi un emulator de terminal preferat"
 
-#: ../exo-helper/exo-helper-chooser.c:534
+#: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
@@ -717,7 +720,7 @@ msgstr ""
 "Specificaţi aplicaţia ce doriţi să o utilizaţi\n"
 "ca navigator web implicit în Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:535
+#: ../exo-helper/exo-helper-chooser.c:543
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
@@ -725,7 +728,7 @@ msgstr ""
 "Specificaţi aplicaţia ce doriţi să o utilizaţi\n"
 "ca client de mail implicit în Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:536
+#: ../exo-helper/exo-helper-chooser.c:544
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
@@ -733,15 +736,15 @@ msgstr ""
 "Specificaţi aplicaţia ce doriţi să o utilizaţi\n"
 "ca emulator de terminal implicit în Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:602
+#: ../exo-helper/exo-helper-chooser.c:610
 msgid "Browse the file system to choose a custom command."
 msgstr "Navigaţi în sistemul de fişiere pentru a alege o altă comandă."
 
-#: ../exo-helper/exo-helper-chooser.c:777
+#: ../exo-helper/exo-helper-chooser.c:793
 msgid "_Other..."
 msgstr "_Altceva..."
 
-#: ../exo-helper/exo-helper-chooser.c:778
+#: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
 msgstr "Utilizează o aplicaţie ce nu este inclusă în lista de mai sus."
 
@@ -802,6 +805,10 @@ msgstr "Aplicaţii preferate în Xfce 4"
 msgid "Xfce Terminal"
 msgstr "Terminal Xfce"
 
+#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
+msgid "aterm"
+msgstr ""
+
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
@@ -813,6 +820,10 @@ msgstr "Navigatorul standard Debian"
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Terminalul standard Debian"
+
+#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
+msgid "Encompass"
+msgstr ""
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
@@ -846,6 +857,16 @@ msgstr "KMail"
 msgid "Konqueror Web Browser"
 msgstr "Navigatorul Konqueror"
 
+#: ../exo-helper/helpers/links.desktop.in.in.h:1
+#, fuzzy
+msgid "Links Text Browser"
+msgstr "Navigatorul Epiphany"
+
+#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
+#, fuzzy
+msgid "Lynx Text Browser"
+msgstr "Navigatorul Galeon"
+
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
 msgstr "Navigatorul Mozilla"
@@ -858,6 +879,14 @@ msgstr "Mozilla Mail"
 msgid "Mutt"
 msgstr ""
 
+#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
+msgid "Netscape Navigator"
+msgstr ""
+
+#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
+msgid "NXterm"
+msgstr ""
+
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
 msgstr "Navigatorul Opera"
@@ -866,12 +895,12 @@ msgstr "Navigatorul Opera"
 msgid "Opera Mail"
 msgstr "Opera Mail"
 
-#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-msgid "Sylpheed"
-msgstr ""
-
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Sylpheed Claws"
+msgstr ""
+
+#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
+msgid "Sylpheed"
 msgstr ""
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
@@ -881,6 +910,11 @@ msgstr "Mozilla Thunderbird"
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
 msgstr ""
+
+#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
+#, fuzzy
+msgid "W3M Text Browser"
+msgstr "Navigatorul Opera"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -956,3 +990,6 @@ msgstr "Nu s-a putut lansa aplicaţia preferată pentru categoria „%s”."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Nu s-a putut deschide URL-ul „%s”."
+
+#~ msgid "Default Web Browser"
+#~ msgstr "Navigator web implicit"

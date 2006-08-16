@@ -298,21 +298,29 @@ exo_helper_chooser_update (ExoHelperChooser *chooser)
   helper = exo_helper_database_get_default (chooser->database, chooser->category);
   if (G_LIKELY (helper != NULL))
     {
+      /* use the default icon theme here */
+      icon_theme = gtk_icon_theme_get_default ();
+
       /* try to load the icon for the helper */
       icon_name = exo_helper_get_icon (helper);
       if (G_LIKELY (icon_name != NULL))
         {
           gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &icon_size, &icon_size);
           if (g_path_is_absolute (icon_name))
-            {
-              icon = gdk_pixbuf_new_from_file_at_scale (icon_name, icon_size, icon_size, TRUE, NULL);
-            }
+            icon = gdk_pixbuf_new_from_file_at_scale (icon_name, icon_size, icon_size, TRUE, NULL);
           else
-            {
-              icon_theme = gtk_icon_theme_get_default ();
-              icon = gtk_icon_theme_load_icon (icon_theme, icon_name, icon_size, 0, NULL);
-            }
+            icon = gtk_icon_theme_load_icon (icon_theme, icon_name, icon_size, 0, NULL);
         }
+
+      /* fallback to application-x-executable */
+      if (G_UNLIKELY (icon == NULL))
+        icon = gtk_icon_theme_load_icon (icon_theme, "application-x-executable", icon_size, 0, NULL);
+
+      /* fallback to gnome-mime-application-x-executable */
+      if (G_UNLIKELY (icon == NULL))
+        icon = gtk_icon_theme_load_icon (icon_theme, "gnome-mime-application-x-executable", icon_size, 0, NULL);
+
+      /* setup the icon for the chooser image */
       gtk_image_set_from_pixbuf (GTK_IMAGE (chooser->image), icon);
       if (G_LIKELY (icon != NULL))
         g_object_unref (G_OBJECT (icon));
@@ -755,15 +763,23 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
             icon = gdk_pixbuf_new_from_file_at_scale (icon_name, icon_size, icon_size, TRUE, NULL);
           else
             icon = gtk_icon_theme_load_icon (icon_theme, icon_name, icon_size, 0, NULL);
+        }
 
-          /* setup the icon */
-          if (G_LIKELY (icon != NULL))
-            {
-              image = gtk_image_new_from_pixbuf (icon);
-              gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
-              g_object_unref (G_OBJECT (icon));
-              gtk_widget_show (image);
-            }
+      /* fallback to application-x-executable */
+      if (G_UNLIKELY (icon == NULL))
+        icon = gtk_icon_theme_load_icon (icon_theme, "application-x-executable", icon_size, 0, NULL);
+
+      /* fallback to gnome-mime-application-x-executable */
+      if (G_UNLIKELY (icon == NULL))
+        icon = gtk_icon_theme_load_icon (icon_theme, "gnome-mime-application-x-executable", icon_size, 0, NULL);
+
+      /* setup the icon */
+      if (G_LIKELY (icon != NULL))
+        {
+          image = gtk_image_new_from_pixbuf (icon);
+          gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
+          g_object_unref (G_OBJECT (icon));
+          gtk_widget_show (image);
         }
     }
 

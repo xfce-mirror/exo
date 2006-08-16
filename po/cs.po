@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.8beta2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-14 21:42+0200\n"
+"POT-Creation-Date: 2006-08-16 15:27+0200\n"
 "PO-Revision-Date: 2006-07-12 21:28+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -410,32 +410,32 @@ msgstr "Vyberte si aplikaci"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:299
 #: ../exo-desktop-item-edit/exo-die-editor.c:641
-#: ../exo-helper/exo-helper-chooser.c:424
+#: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
 msgstr "Všechny soubory"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:429
+#: ../exo-helper/exo-helper-chooser.c:437
 msgid "Executable Files"
 msgstr "Spustitelné soubory"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:319
-#: ../exo-helper/exo-helper-chooser.c:444
+#: ../exo-helper/exo-helper-chooser.c:452
 msgid "Perl Scripts"
 msgstr "Skripty jazyka Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:325
-#: ../exo-helper/exo-helper-chooser.c:450
+#: ../exo-helper/exo-helper-chooser.c:458
 msgid "Python Scripts"
 msgstr "Skripty jazyka Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:331
-#: ../exo-helper/exo-helper-chooser.c:456
+#: ../exo-helper/exo-helper-chooser.c:464
 msgid "Ruby Scripts"
 msgstr "Skripty jazyka Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:337
-#: ../exo-helper/exo-helper-chooser.c:462
+#: ../exo-helper/exo-helper-chooser.c:470
 msgid "Shell Scripts"
 msgstr "Shellové skripty"
 
@@ -622,8 +622,9 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-msgid "Default Web Browser"
-msgstr "Výchozí webový prohlížeč"
+#, fuzzy
+msgid "Web Browser"
+msgstr "Webový prohlížeč Galeon"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -634,7 +635,8 @@ msgstr ""
 "chozí pro otevírání odkazů a surfování po webu."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-msgid "Default Mail Reader"
+#, fuzzy
+msgid "Mail Reader"
 msgstr "Výchozí e-mailový klient"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
@@ -654,7 +656,8 @@ msgid "Utilities"
 msgstr "Nástroje"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-msgid "Default Terminal Emulator"
+#, fuzzy
+msgid "Terminal Emulator"
 msgstr "Výchozí emulátor terminálu"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
@@ -679,40 +682,40 @@ msgstr "Klikněte levým tlačítkem pro změnu vybrané aplikace."
 msgid "Application Chooser Button"
 msgstr "Tlačítko pro výběr aplikace"
 
-#: ../exo-helper/exo-helper-chooser.c:326
+#: ../exo-helper/exo-helper-chooser.c:334
 msgid "No application selected"
 msgstr "Nebyla vybrána žádná aplikace"
 
-#: ../exo-helper/exo-helper-chooser.c:342
+#: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
 msgstr "Nepodařilo se nastavit výchozí webový prohlížec"
 
-#: ../exo-helper/exo-helper-chooser.c:343
+#: ../exo-helper/exo-helper-chooser.c:351
 msgid "Failed to set default Mail Reader"
 msgstr "Nepodařilo se nastavit výchozí e-mailový klient"
 
-#: ../exo-helper/exo-helper-chooser.c:344
+#: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
 msgstr "Nepodařilo se nastavit výchozí emulátor terminálu"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:414
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Select application"
 msgstr "Vyberte aplikaci"
 
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
 msgstr "Vyberte vlastní webový prohlížeč"
 
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:536
 msgid "Choose a custom Mail Reader"
 msgstr "Vyberte vlastní e-mailový klient"
 
-#: ../exo-helper/exo-helper-chooser.c:529
+#: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
 msgstr "Vyberte vlastní emulátor terminálu"
 
-#: ../exo-helper/exo-helper-chooser.c:534
+#: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
@@ -720,7 +723,7 @@ msgstr ""
 "Upřesněte aplikaci, kterou chcete použít\n"
 "jako výchozí webový prohlížeč v prosředí Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:535
+#: ../exo-helper/exo-helper-chooser.c:543
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
@@ -728,7 +731,7 @@ msgstr ""
 "Upřesněte aplikaci, kterou chcete použít\n"
 "jako výchozí e-mailový klient v prostředí Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:536
+#: ../exo-helper/exo-helper-chooser.c:544
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
@@ -736,15 +739,15 @@ msgstr ""
 "Upřesněte aplikaci, kterou chcete použít\n"
 "jako výchozí emulátor terminálu v prostředí Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:602
+#: ../exo-helper/exo-helper-chooser.c:610
 msgid "Browse the file system to choose a custom command."
 msgstr "Procházet systém souborů pro výběr vlastního příkazu."
 
-#: ../exo-helper/exo-helper-chooser.c:777
+#: ../exo-helper/exo-helper-chooser.c:793
 msgid "_Other..."
 msgstr "_Ostatní"
 
-#: ../exo-helper/exo-helper-chooser.c:778
+#: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
 msgstr "Použít vlastní aplikaci, která není uvedena v seznamu výše."
 
@@ -806,6 +809,10 @@ msgstr "Upřednostňované aplikace prostředí Xfce 4"
 msgid "Xfce Terminal"
 msgstr "Terminál Xfce"
 
+#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
+msgid "aterm"
+msgstr ""
+
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
@@ -817,6 +824,10 @@ msgstr "Debian Sensible Browser"
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Debian X Terminal Emulator"
+
+#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
+msgid "Encompass"
+msgstr ""
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
@@ -850,6 +861,16 @@ msgstr "KMail"
 msgid "Konqueror Web Browser"
 msgstr "Webová prohlížeč Konqueror"
 
+#: ../exo-helper/helpers/links.desktop.in.in.h:1
+#, fuzzy
+msgid "Links Text Browser"
+msgstr "Webový prohlížeč Epiphany"
+
+#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
+#, fuzzy
+msgid "Lynx Text Browser"
+msgstr "Webový prohlížeč Galeon"
+
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
 msgstr "Mozilla Browser"
@@ -862,6 +883,14 @@ msgstr "Mozilla Mail"
 msgid "Mutt"
 msgstr "Mutt"
 
+#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
+msgid "Netscape Navigator"
+msgstr ""
+
+#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
+msgid "NXterm"
+msgstr ""
+
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
 msgstr "Opera"
@@ -870,13 +899,13 @@ msgstr "Opera"
 msgid "Opera Mail"
 msgstr "Opera Mail"
 
-#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-msgid "Sylpheed"
-msgstr "Sylpheed"
-
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Sylpheed Claws"
 msgstr "Sylpheed Claws"
+
+#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
+msgid "Sylpheed"
+msgstr "Sylpheed"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
@@ -885,6 +914,11 @@ msgstr "Mozilla Thunderbird"
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
 msgstr ""
+
+#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
+#, fuzzy
+msgid "W3M Text Browser"
+msgstr "Opera"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -961,3 +995,6 @@ msgstr "Nepodařilo se spustit předvolenou aplikaci kategorie \"%s\"."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Nepodařilo se otevřít adresu URL \"%s\"."
+
+#~ msgid "Default Web Browser"
+#~ msgstr "Výchozí webový prohlížeč"

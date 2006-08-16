@@ -135,7 +135,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_box_pack_start (GTK_BOX (vbox), frame, FALSE, TRUE, 0);
   gtk_widget_show (frame);
 
-  label = g_object_new (GTK_TYPE_LABEL, "attributes", attr_list_bold, "label", _("Default Web Browser"), NULL);
+  label = g_object_new (GTK_TYPE_LABEL, "attributes", attr_list_bold, "label", _("Web Browser"), NULL);
   gtk_frame_set_label_widget (GTK_FRAME (frame), label);
   gtk_widget_show (label);
 
@@ -167,7 +167,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_box_pack_start (GTK_BOX (vbox), frame, FALSE, TRUE, 0);
   gtk_widget_show (frame);
 
-  label = g_object_new (GTK_TYPE_LABEL, "attributes", attr_list_bold, "label", _("Default Mail Reader"), NULL);
+  label = g_object_new (GTK_TYPE_LABEL, "attributes", attr_list_bold, "label", _("Mail Reader"), NULL);
   gtk_frame_set_label_widget (GTK_FRAME (frame), label);
   gtk_widget_show (label);
 
@@ -208,7 +208,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_box_pack_start (GTK_BOX (vbox), frame, FALSE, TRUE, 0);
   gtk_widget_show (frame);
 
-  label = g_object_new (GTK_TYPE_LABEL, "attributes", attr_list_bold, "label", _("Default Terminal Emulator"), NULL);
+  label = g_object_new (GTK_TYPE_LABEL, "attributes", attr_list_bold, "label", _("Terminal Emulator"), NULL);
   gtk_frame_set_label_widget (GTK_FRAME (frame), label);
   gtk_widget_show (label);
 
