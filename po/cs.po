@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.1.8beta2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-16 15:27+0200\n"
-"PO-Revision-Date: 2006-07-12 21:28+0100\n"
+"PO-Revision-Date: 2006-08-18 23:48+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -202,7 +202,7 @@ msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr ""
-"Množství času, po kterém se položka pod kurzorem myši v módu jedoduchého "
+"Množství času, po kterém se položka pod kurzorem myši v módu jednoduchého "
 "kliknutí sama označí"
 
 #: ../exo/exo-icon-view.c:910
@@ -211,7 +211,7 @@ msgstr "Odstupy"
 
 #: ../exo/exo-icon-view.c:911
 msgid "Space which is inserted between cells of an item"
-msgstr "Místo, které je vloženo mezi buňky položky"
+msgstr "Prostor mezi buňkami položek"
 
 #: ../exo/exo-icon-view.c:934
 msgid "Selection Box Color"
@@ -290,7 +290,7 @@ msgstr "Adresa URL \"%s\" není podporovaná"
 #: ../exo/exo-url.c:381
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Otevření \"%s\" selhalo."
+msgstr "Nepodařilo se otevřít \"%s\"."
 
 #: ../exo/exo-wrap-table.c:160
 msgid "Column spacing"
@@ -314,7 +314,7 @@ msgstr "Homogenní"
 
 #: ../exo/exo-wrap-table.c:191
 msgid "Whether the children should be all the same size"
-msgstr "Zda mají být potomci stejné velikosti"
+msgstr "Zda mají mít potomci stejnou velikost"
 
 #: ../exo/exo-xsession-client.c:143
 msgid "Window group"
@@ -440,9 +440,9 @@ msgid "Shell Scripts"
 msgstr "Shellové skripty"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
-#, fuzzy, c-format
+#, c-format
 msgid "Create Launcher <b>%s</b>"
-msgstr "Vytvořit spouštěč"
+msgstr "Vytvořit spouštěč <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:318
@@ -502,7 +502,7 @@ msgstr ""
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:443
 msgid "Run in _terminal"
-msgstr "Spustit v terminálu"
+msgstr "Spustit v _terminálu"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:444
 msgid "Select this option to run the command in a terminal window."
@@ -539,7 +539,7 @@ msgstr "Vytvořit nový soubor plochy v daném adresáři"
 
 #: ../exo-desktop-item-edit/main.c:73
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Typ vytvářeného souboru plochu (aplikace nebo odkaz)"
+msgstr "Typ vytvářeného souboru plochy (aplikace nebo odkaz)"
 
 #: ../exo-desktop-item-edit/main.c:74
 msgid "Preset name when creating a desktop file"
@@ -573,7 +573,7 @@ msgstr "[SOUBOR|ADRESÁŘ]"
 #: ../exo-desktop-item-edit/main.c:138
 #, c-format
 msgid "Failed to open display: %s"
-msgstr "Otevření displeje selhalo: %s"
+msgstr "Nepodařilo se otevřít displej: %s"
 
 #: ../exo-desktop-item-edit/main.c:167
 msgid "No file/folder specified"
@@ -581,9 +581,9 @@ msgstr "Nebyl zadán žádný soubor nebo adresář"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:225
-#, fuzzy, c-format
+#, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Nepodporovaný typ souboru plochu '%s'"
+msgstr "Nepodporovaný typ souboru plochy \"%s\""
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:245
@@ -598,12 +598,12 @@ msgstr "Zadejte jiný název"
 #: ../exo-desktop-item-edit/main.c:419
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Vytvoření \"%s\" selhalo."
+msgstr "Nepodařilo se vytvořit \"%s\"."
 
 #: ../exo-desktop-item-edit/main.c:419
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Uložení \"%s\" selhalo."
+msgstr "Nepodařilo se uložit \"%s\"."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -612,7 +612,7 @@ msgstr "Upřednostňované aplikace"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:101
 msgid "Select default applications for various services"
-msgstr "Zvolit výchozí aplikace pro různé služby"
+msgstr "Zvolte si výchozí aplikace pro různé služby"
 
 #.
 #. Internet
@@ -622,9 +622,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-#, fuzzy
 msgid "Web Browser"
-msgstr "Webový prohlížeč Galeon"
+msgstr "Webový prohlížeč"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -635,9 +634,8 @@ msgstr ""
 "chozí pro otevírání odkazů a surfování po webu."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-#, fuzzy
 msgid "Mail Reader"
-msgstr "Výchozí e-mailový klient"
+msgstr "E-mailový klient"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid ""
@@ -656,9 +654,8 @@ msgid "Utilities"
 msgstr "Nástroje"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-#, fuzzy
 msgid "Terminal Emulator"
-msgstr "Výchozí emulátor terminálu"
+msgstr "Emulátor terminálu"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
@@ -721,7 +718,7 @@ msgid ""
 "as default Web Browser for Xfce:"
 msgstr ""
 "Upřesněte aplikaci, kterou chcete použít\n"
-"jako výchozí webový prohlížeč v prosředí Xfce:"
+"jako výchozí webový prohlížeč v prostředí Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:543
 msgid ""
@@ -811,7 +808,7 @@ msgstr "Terminál Xfce"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
-msgstr ""
+msgstr "aterm"
 
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
@@ -827,7 +824,7 @@ msgstr "Debian X Terminal Emulator"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
-msgstr ""
+msgstr "Encompass"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
@@ -862,14 +859,12 @@ msgid "Konqueror Web Browser"
 msgstr "Webová prohlížeč Konqueror"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
-#, fuzzy
 msgid "Links Text Browser"
-msgstr "Webový prohlížeč Epiphany"
+msgstr "Textový prohlížeč Links"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-#, fuzzy
 msgid "Lynx Text Browser"
-msgstr "Webový prohlížeč Galeon"
+msgstr "Textový prohlížeč Lynx"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
@@ -885,11 +880,11 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
-msgstr ""
+msgstr "Netscape Navigator"
 
 #: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
 msgid "NXterm"
-msgstr ""
+msgstr "NXterm"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
@@ -913,12 +908,11 @@ msgstr "Mozilla Thunderbird"
 
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
-msgstr ""
+msgstr "RXVT Unicode"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-#, fuzzy
 msgid "W3M Text Browser"
-msgstr "Opera"
+msgstr "Textový prohlížeč W3M"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
