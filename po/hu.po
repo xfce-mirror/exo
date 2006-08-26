@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: exo 0.3.1.8beta2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-08-26 14:01+0200\n"
-"PO-Revision-Date: 2006-08-16 18:48+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
+"PO-Revision-Date: 2006-08-26 23:27+0100\n"
+"Last-Translator: SZERVÑC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -16,47 +16,46 @@ msgstr ""
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
 msgid "Follow state"
-msgstr ""
+msgstr "Állapot követése"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:139
 #: ../exo/exo-cell-renderer-icon.c:146
 msgid "Render differently based on the selection state."
-msgstr ""
+msgstr "Kijelöléstől függő kirajzolás"
 
 #: ../exo/exo-cell-renderer-icon.c:167
-#, fuzzy
 msgid "Icon"
-msgstr "_Ikon:"
+msgstr "Ikon"
 
 #: ../exo/exo-cell-renderer-icon.c:168
 msgid "The icon to render."
-msgstr ""
+msgstr "Kirajzolandó ikon"
 
 #: ../exo/exo-cell-renderer-icon.c:189
 msgid "size"
-msgstr ""
+msgstr "méret"
 
 #: ../exo/exo-cell-renderer-icon.c:190
 msgid "The size of the icon to render in pixels."
-msgstr ""
+msgstr "Az ikon kirajzolási mérete pixelekben."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:770
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "\"%s\" megnyitása sikertelen."
+msgstr "\"%s\" fájl megnyitása sikertelen: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:832
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "\"%s\" létrehozása sikertelen."
+msgstr "\"%s\" fájl olvasása sikertelen: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "\"%s\" kép betöltése sikertelen: oka ismeretlen, talán hibás a kép fájl"
 
-#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:774
+#: ../exo/exo-icon-bar.c:249
+#: ../exo/exo-icon-view.c:774
 msgid "Orientation"
 msgstr "Irány"
 
@@ -64,19 +63,23 @@ msgstr "Irány"
 msgid "The orientation of the iconbar"
 msgstr "Az ikonsáv iránya"
 
-#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:791
+#: ../exo/exo-icon-bar.c:266
+#: ../exo/exo-icon-view.c:791
 msgid "Pixbuf column"
 msgstr "Kép oszlop"
 
-#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:792
+#: ../exo/exo-icon-bar.c:267
+#: ../exo/exo-icon-view.c:792
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Modell oszlop az ikon képek behozására innen:"
 
-#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:918
+#: ../exo/exo-icon-bar.c:282
+#: ../exo/exo-icon-view.c:918
 msgid "Text column"
 msgstr "Szöveg oszlop"
 
-#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:919
+#: ../exo/exo-icon-bar.c:283
+#: ../exo/exo-icon-view.c:919
 msgid "Model column used to retrieve the text from"
 msgstr "Modell oszlop a szövegek behozására innen:"
 
@@ -96,110 +99,111 @@ msgstr "Aktív"
 msgid "Active item index"
 msgstr "Aktív elem index"
 
-#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319
+#: ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "Aktív elem kitöltő szín"
 
-#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326
+#: ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "Aktív elem keret szín"
 
-#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333
+#: ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "Aktív elem szöveg szín"
 
-#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340
+#: ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "Kurzor elem kitöltő szín"
 
-#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347
+#: ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "Kurzor elem keret szín"
 
-#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354
+#: ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "Kurzor elem szöveg szín"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:85
-#, fuzzy
 msgid "Action Icons"
-msgstr "Válassz ikont"
+msgstr "Művelet ikonok"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:87
 msgid "Animations"
-msgstr ""
+msgstr "Animációk"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:89
-#, fuzzy
 msgid "Application Icons"
-msgstr "Alkalmazás választó gomb"
+msgstr "Alkalmazás ikonok"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:91
 msgid "Menu Icons"
-msgstr ""
+msgstr "Menü ikonok"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
 #: ../exo/exo-icon-chooser-dialog.c:93
 msgid "Device Icons"
-msgstr ""
+msgstr "Eszköz ikonok"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:95
 msgid "Emblems"
-msgstr ""
+msgstr "Jelképek"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:97
-#, fuzzy
 msgid "Emoticons"
-msgstr "Nincs ikon"
+msgstr "Emotikonok"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:99
 msgid "International Denominations"
-msgstr ""
+msgstr "Nemzetközi nevek"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:101
 msgid "File Type Icons"
-msgstr ""
+msgstr "Fájl típus ikonok"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
 #: ../exo/exo-icon-chooser-dialog.c:103
 msgid "Location Icons"
-msgstr ""
+msgstr "Hely ikonok"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:105
-#, fuzzy
 msgid "Status Icons"
-msgstr "Válassz ikont"
+msgstr "Állapot ikonok"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Uncategorized Icons"
-msgstr ""
+msgstr "Besorolatlan ikonok"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:111
-#, fuzzy
 msgid "All Icons"
-msgstr "Szöveg minden ikonhoz"
+msgstr "Minden ikon"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Kép fájlok"
 
 #. setup the header label
 #: ../exo/exo-icon-chooser-dialog.c:205
-#, fuzzy
 msgid "Select _icon from:"
-msgstr "Kijelölés mód"
+msgstr "Válassz _ikont innen:"
 
 #: ../exo/exo-icon-view.c:642
 msgid "Column Spacing"
@@ -266,8 +270,7 @@ msgid "The model for the icon view"
 msgstr "Az ikon nézet modellje"
 
 #: ../exo/exo-icon-view.c:775
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr "A szöveg és ikon egymáshoz való viszonya"
 
 #: ../exo/exo-icon-view.c:807
@@ -302,25 +305,25 @@ msgstr "Kijelölés mód"
 msgid "The selection mode"
 msgstr "A kijelölés módja"
 
-#: ../exo/exo-icon-view.c:869 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:869
+#: ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Egy-kattintás"
 
-#: ../exo/exo-icon-view.c:870 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:870
+#: ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Az elem egy-kattintásra aktiválódjon-e a nézetben"
 
-#: ../exo/exo-icon-view.c:886 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Egy-kattintós késleltetés"
 
-#: ../exo/exo-icon-view.c:887 ../exo/exo-tree-view.c:184
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"Az idő, mely egy elem kijelöléséig tart, ha ráhúzod az egeret egy-kattintós "
-"módban"
+#: ../exo/exo-icon-view.c:887
+#: ../exo/exo-tree-view.c:184
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "Az idő, mely egy elem kijelöléséig tart, ha ráhúzod az egeret egy-kattintós módban"
 
 #: ../exo/exo-icon-view.c:902
 msgid "Spacing"
@@ -348,44 +351,40 @@ msgstr "Jelölő doboz átlátszatlansága"
 
 #: ../exo/exo-thumbnail-preview.c:123
 msgid "Preview"
-msgstr ""
+msgstr "Előnézet"
 
-#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
-#, fuzzy
+#: ../exo/exo-thumbnail-preview.c:139
+#: ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
-msgstr "Nincs kijelölt alkalmazás"
+msgstr "Nincs kijelölt fájl"
 
 #: ../exo/exo-thumbnail-preview.c:299
 msgid "Block Device"
-msgstr ""
+msgstr "Blokk eszköz"
 
 #: ../exo/exo-thumbnail-preview.c:304
 msgid "Character Device"
-msgstr ""
+msgstr "Karakter eszköz"
 
 #: ../exo/exo-thumbnail-preview.c:309
 msgid "Folder"
-msgstr ""
+msgstr "Mappa"
 
 #: ../exo/exo-thumbnail-preview.c:314
 msgid "FIFO"
-msgstr ""
+msgstr "FIFO"
 
 #: ../exo/exo-thumbnail-preview.c:319
 msgid "Socket"
-msgstr ""
+msgstr "Socket"
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
 msgstr "Új eszközsáv hozzá_adása"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Húzz egy elemet az eszközsávok fölé hozzáadáshoz, és róluk az elemek "
-"táblájába eltávolításukhoz."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Húzz egy elemet az eszközsávok fölé hozzáadáshoz, és róluk az elemek táblájába eltávolításukhoz."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -512,7 +511,8 @@ msgstr "  --name=identifier C makró/változó név\n"
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Értelmezi a (név, fájl) párokat\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
+#: ../exo-csource/main.c:248
+#: ../exo-desktop-item-edit/main.c:153
 #: ../exo-open/main.c:100
 msgid ""
 "Copyright (c) 2005-2006\n"
@@ -527,7 +527,8 @@ msgstr ""
 "Írta Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:156
+#: ../exo-csource/main.c:251
+#: ../exo-desktop-item-edit/main.c:156
 #: ../exo-open/main.c:103
 #, c-format
 msgid ""
@@ -543,7 +544,8 @@ msgstr ""
 "%s forrás csomagban lelsz.\n"
 "\n"
 
-#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:160
+#: ../exo-csource/main.c:255
+#: ../exo-desktop-item-edit/main.c:160
 #: ../exo-open/main.c:107
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -633,14 +635,8 @@ msgid "Use _startup notification"
 msgstr "Indítás jelenté_s használata"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"Válaszd e lehetőséget az indítás jelentés bekapcsolásához a parancs "
-"indításakor a fájlkezelőből vagy a menüből. Nem minden alkalmazás támogatja "
-"ezt."
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Válaszd e lehetőséget az indítás jelentés bekapcsolásához a parancs indításakor a fájlkezelőből vagy a menüből. Nem minden alkalmazás támogatja ezt."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -655,7 +651,6 @@ msgstr "Válaszd e lehetőséget a parancs futtatásához egy terminál ablakban
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
-#, fuzzy
 msgid "Select an icon"
 msgstr "Válassz ikont"
 
@@ -1070,20 +1065,16 @@ msgid "  -h, --help                          Print this help message and exit"
 msgstr "  -h, --help                          Kiírja e súgót és kilép"
 
 #: ../exo-open/main.c:47
-msgid ""
-"  -v, --version                       Print version information and exit"
-msgstr ""
-"  -v, --version                       Kiírja a verzió információt és kilép"
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Kiírja a verzió információt és kilép"
 
 #: ../exo-open/main.c:49
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch TÍPUS [PARAMÉTERek...]     A TÍPUShoz társított alkalmazást "
-"futtatja\n"
+"  --launch TÍPUS [PARAMÉTERek...]     A TÍPUShoz társított alkalmazást futtatja\n"
 "                                      lehetséges PARAMÉTERekkel, ahol a\n"
 "                                      TÍPUS az alábbiak egyike."
 
@@ -1130,3 +1121,4 @@ msgstr "\"%s\" URL megnyitása sikertelen"
 
 #~ msgid "Select an Icon"
 #~ msgstr "Válassz ikont"
+
