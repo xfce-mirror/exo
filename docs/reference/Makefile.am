@@ -31,36 +31,43 @@ IGNORE_HFILES=
 EXTRA_HFILES=
 
 # Images to copy into HTML directory
-HTML_IMAGES =
+HTML_IMAGES =								\
+	$(srcdir)/images/exo-gtk-file-chooser-add-thumbnail-preview.png	\
+	$(srcdir)/images/exo-icon-chooser-dialog.png			\
+	$(srcdir)/images/exo-toolbars-editor.png			\
+	$(srcdir)/images/exo-toolbars-editor-dialog.png			\
+	$(srcdir)/images/exo-toolbars-view.png				\
+	$(srcdir)/images/exo-wrap-table.png
 
 # Extra SGML files that are included by DOC_MAIN_SGML_FILE
-content_files = 					\
-	version.xml					\
-	exo-csource.xml
+content_files = 							\
+	exo-csource.xml							\
+	version.xml							\
+	visual_index.xml
 
 # CFLAGS and LDFLAGS for compiling scan program. Only needed
 # if $(DOC_MODULE).types is non-empty.
-INCLUDES =	 					\
-	-DEXO_API_SUBJECT_TO_CHANGE			\
-	-I$(top_srcdir) 				\
-	-I$(top_builddir) 				\
-	$(GTK_CFLAGS)					\
+INCLUDES =	 							\
+	-DEXO_API_SUBJECT_TO_CHANGE					\
+	-I$(top_srcdir) 						\
+	-I$(top_builddir) 						\
+	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
-GTKDOC_LIBS =  						\
+GTKDOC_LIBS =  								\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 include $(top_srcdir)/gtk-doc.make
 
 # Other files to distribute
-EXTRA_DIST += 						\
-	exo-csource.1					\
-	exo-open.1					\
+EXTRA_DIST += 								\
+	exo-csource.1							\
+	exo-open.1							\
 	version.xml.in
 
 # manual pages
-man_MANS =						\
-	exo-csource.1					\
+man_MANS =								\
+	exo-csource.1							\
 	exo-open.1
 
 if MAINTAINER_MODE

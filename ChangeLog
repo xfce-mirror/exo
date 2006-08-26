@@ -1,3 +1,57 @@
+2006-08-26	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-config.h.in: Verify that G_GNUC_NULL_TERMINATED is defined.
+	* exo/exo-private.{c,h}: Add _exo_g_type_add_interface_simple() to
+	  further reduce the number of relocations.
+	* exo/exo-icon-view.c(exo_icon_view_get_type): Use the newly added
+	  _exo_g_type_add_interface_simple() function here.
+	* exo/exo-gdk-pixbuf-extensions.{c,h}, exo/exo.symbols: Import the
+	  exo_gdk_pixbuf_frame() function from Thunar, which will be used
+	  in the thumbnail preview widget to properly frame certain thumbnails,
+	  just like Thunar does.
+	* configure.in.in, exo/exo-gdk-pixbuf-extensions.{c,h}, exo/exo.symbols:
+	  Add new method exo_gdk_pixbuf_new_from_file_at_max_size(), which loads
+	  an image from a file, scaling down the image as necessary, but never
+	  scaling up. It uses mmap() if possible to speed up loading images.
+	* exo/exo-cell-renderer-ellipsized-text.{c,h}: Recycle the previously
+	  deprecated ExoCellRendererEllipsizedText class to be used as text
+	  renderers in ExoIconViews, utilizing the new follow-state property.
+	* exo/exo-thumbnail.{c,h}, exo/Makefile.am: Add an internal frontend
+	  to the thumbnail database, which is used for the thumbnail preview
+	  widget and to load SVG icons in the icon cell renderer.
+	* Makefile.am, configure.in.in, pixmaps/, exo/Makefile.am,
+	  exo/exo-thumbnail-preview.{c,h}: Import the ExoThumbnailPreview
+	  class as an internal widget class to display a thumbnail preview
+	  to be used in GtkFileChooser's. The preview widget was designed to
+	  look similar to the preview widget in The Gimp.
+	* exo/exo-gtk-extensions.{c,h}, exo/exo.symbols: Add the convenience
+	  helper function exo_gtk_file_chooser_add_thumbnail_preview(), which
+	  adds an ExoThumbnailsPreview to a given GtkFileChooser and connects
+	  it appropriately to display a thumbnail for the currently selected
+	  file (if possible).
+	* exo/Makefile.am, exo/exo-cell-renderer-icon.{c,h}, exo/exo.symbols,
+	  exo/exo.h: Import the ExoCellRendererIcon class, which should be used
+	  as icon cell renderer in ExoIconViews, and supports rendering named
+	  icons as well as image files, utilizing the thumbnail database
+	  whenever possible.
+	* exo/Makefile.am, exo/exo-icon-chooser-dialog.{c,h}, exo/exo.symbols,
+	  exo/exo-icon-chooser-model.{c,h}, exo/exo.h: Finally import the
+	  initial components of the icon chooser framework, namely the
+	  ExoIconChooserModel and ExoIconChooserDialog classes.
+	* exo-desktop-item-edit/exo-die-editor.c: Use the ExoIconChooserDialog
+	  here to select icons for .desktop files.
+	* tests/Makefile.am, tests/test-exo-icon-chooser-dialog.c: Add a simple
+	  test case for the ExoIconChooserDialog.
+	* configure.in.in, exo/exo-private.h: Use -DNDEBUG in release builds
+	  and -DG_ENABLE_DEBUG in full debug builds.
+	* exo/exo-wrap-table.c, exo/exo-xsession-client.c: Documentation fixes.
+	* docs/reference/: Update the API documentation.
+	* python/: Update the python bindings.
+	* po/POTFILES.in: Add new files here.
+	* po/libexo-0.3.pot, po/*.po: Merge new strings.
+	* po/de.po: Update german translations.
+	* HACKING: A few updates.
+
 2006-08-16	Benedikt Meurer <benny@xfce.org>
 
 	* exo-helper/exo-helper-chooser-dialog.c

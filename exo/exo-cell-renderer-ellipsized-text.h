@@ -24,15 +24,18 @@
 #error "Only <exo/exo.h> can be included directly, this file may disappear or change contents."
 #endif
 
-/* ExoCellRendererEllipsizedText is deprecated since 0.3.1.8. Use GtkCellRendererText instead. */
-#ifndef EXO_DISABLE_DEPRECATED
-
 #ifndef __EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__
 #define __EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__
+
+#include <exo/exo-config.h>
 
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS;
+
+typedef struct _ExoCellRendererEllipsizedTextPrivate ExoCellRendererEllipsizedTextPrivate;
+typedef struct _ExoCellRendererEllipsizedTextClass   ExoCellRendererEllipsizedTextClass;
+typedef struct _ExoCellRendererEllipsizedText        ExoCellRendererEllipsizedText;
 
 #define EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT            (exo_cell_renderer_ellipsized_text_get_type ())
 #define EXO_CELL_RENDERER_ELLIPSIZED_TEXT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT, ExoCellRendererEllipsizedText))
@@ -40,10 +43,6 @@ G_BEGIN_DECLS;
 #define EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT))
 #define EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((obj), EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT))
 #define EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT, ExoCellRendererEllipsizedTextClass))
-
-typedef struct _ExoCellRendererEllipsizedText        ExoCellRendererEllipsizedText;
-typedef struct _ExoCellRendererEllipsizedTextClass   ExoCellRendererEllipsizedTextClass;
-typedef struct _ExoCellRendererEllipsizedTextPrivate ExoCellRendererEllipsizedTextPrivate;
 
 struct _ExoCellRendererEllipsizedTextClass
 {
@@ -54,15 +53,14 @@ struct _ExoCellRendererEllipsizedTextClass
 struct _ExoCellRendererEllipsizedText
 {
   /*< private >*/
-  GtkCellRendererText __parent__;
+  GtkCellRendererText                   __parent__;
   ExoCellRendererEllipsizedTextPrivate *priv;
 };
 
 GType            exo_cell_renderer_ellipsized_text_get_type (void) G_GNUC_CONST;
-GtkCellRenderer *exo_cell_renderer_ellipsized_text_new      (void) G_GNUC_MALLOC;
+
+GtkCellRenderer *exo_cell_renderer_ellipsized_text_new      (void) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 G_END_DECLS;
 
 #endif /* !__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__ */
-
-#endif /* !EXO_DISABLE_DEPRECATED */

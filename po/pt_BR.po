@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.8beta2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-16 15:27+0200\n"
+"POT-Creation-Date: 2006-08-26 14:01+0200\n"
 "PO-Revision-Date: 2006-07-16 02:29-0300\n"
 "Last-Translator: Tomás Acauan Schertel <tschertel@gmail.com>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
@@ -16,7 +16,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:782
+#: ../exo/exo-cell-renderer-ellipsized-text.c:138
+#: ../exo/exo-cell-renderer-icon.c:145
+msgid "Follow state"
+msgstr ""
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:139
+#: ../exo/exo-cell-renderer-icon.c:146
+msgid "Render differently based on the selection state."
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:167
+#, fuzzy
+msgid "Icon"
+msgstr "Í_cone:"
+
+#: ../exo/exo-cell-renderer-icon.c:168
+msgid "The icon to render."
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:189
+msgid "size"
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:190
+msgid "The size of the icon to render in pixels."
+msgstr ""
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#, fuzzy, c-format
+msgid "Failed to open file \"%s\": %s"
+msgstr "Falhou ao abrir \"%s\"."
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:832
+#, fuzzy, c-format
+msgid "Failed to read file \"%s\": %s"
+msgstr "Falhou ao criar \"%s\"."
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:873
+#, c-format
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:774
 msgid "Orientation"
 msgstr "Orientação"
 
@@ -24,19 +67,19 @@ msgstr "Orientação"
 msgid "The orientation of the iconbar"
 msgstr "A orientação da barra de ícones"
 
-#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:791
 msgid "Pixbuf column"
 msgstr "Coluna Pixbuf"
 
-#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:792
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Coluna de modelo usada para retirar o ícone pixbuf dela"
 
-#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:926
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:918
 msgid "Text column"
 msgstr "Coluna de texto"
 
-#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:919
 msgid "Model column used to retrieve the text from"
 msgstr "Coluna de modelo usada para retirar o texto dela"
 
@@ -80,123 +123,204 @@ msgstr "Cor de borda de item de cursor"
 msgid "Cursor item text color"
 msgstr "Cor de texto de item de cursor"
 
-#: ../exo/exo-icon-view.c:650
+#. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
+#: ../exo/exo-icon-chooser-dialog.c:85
+#, fuzzy
+msgid "Action Icons"
+msgstr "Selecione um Ícone"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
+#: ../exo/exo-icon-chooser-dialog.c:87
+msgid "Animations"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
+#: ../exo/exo-icon-chooser-dialog.c:89
+#, fuzzy
+msgid "Application Icons"
+msgstr "Botão de Escolha de Aplicação"
+
+#. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
+#: ../exo/exo-icon-chooser-dialog.c:91
+msgid "Menu Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_DEVICES
+#: ../exo/exo-icon-chooser-dialog.c:93
+msgid "Device Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
+#: ../exo/exo-icon-chooser-dialog.c:95
+msgid "Emblems"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMOTES
+#: ../exo/exo-icon-chooser-dialog.c:97
+#, fuzzy
+msgid "Emoticons"
+msgstr "Nenhum ícone"
+
+#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
+#: ../exo/exo-icon-chooser-dialog.c:99
+msgid "International Denominations"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
+#: ../exo/exo-icon-chooser-dialog.c:101
+msgid "File Type Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_PLACES
+#: ../exo/exo-icon-chooser-dialog.c:103
+msgid "Location Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_STATUS
+#: ../exo/exo-icon-chooser-dialog.c:105
+#, fuzzy
+msgid "Status Icons"
+msgstr "Selecione um Ícone"
+
+#. EXO_ICON_CHOOSER_CONTEXT_OTHER
+#: ../exo/exo-icon-chooser-dialog.c:107
+msgid "Uncategorized Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_ALL
+#: ../exo/exo-icon-chooser-dialog.c:111
+#, fuzzy
+msgid "All Icons"
+msgstr "Texto p_ara Todos os Ícones"
+
+#. EXO_ICON_CHOOSER_CONTEXT_FILE
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+msgid "Image Files"
+msgstr "Arquivos de Imagens"
+
+#. setup the header label
+#: ../exo/exo-icon-chooser-dialog.c:205
+#, fuzzy
+msgid "Select _icon from:"
+msgstr "Modo de seleção"
+
+#: ../exo/exo-icon-view.c:642
 msgid "Column Spacing"
 msgstr "Espaçamento de Coluna"
 
-#: ../exo/exo-icon-view.c:651
+#: ../exo/exo-icon-view.c:643
 msgid "Space which is inserted between grid column"
 msgstr "Espaço que é inserido entre grades de colunas"
 
-#: ../exo/exo-icon-view.c:667
+#: ../exo/exo-icon-view.c:659
 msgid "Number of columns"
 msgstr "Número de colunas"
 
-#: ../exo/exo-icon-view.c:668
+#: ../exo/exo-icon-view.c:660
 msgid "Number of columns to display"
 msgstr "Número de colunas para mostrar"
 
-#: ../exo/exo-icon-view.c:682
+#: ../exo/exo-icon-view.c:674
 msgid "Enable Search"
 msgstr "Habilitar Procura"
 
-#: ../exo/exo-icon-view.c:683
+#: ../exo/exo-icon-view.c:675
 msgid "View allows user to search through columns interactively"
 msgstr "Visão permite ao usuário procurar através das colunas interativamente"
 
-#: ../exo/exo-icon-view.c:700
+#: ../exo/exo-icon-view.c:692
 msgid "Width for each item"
 msgstr "Largura de cada item"
 
-#: ../exo/exo-icon-view.c:701
+#: ../exo/exo-icon-view.c:693
 msgid "The width used for each item"
 msgstr "A largura usada para cada item"
 
-#: ../exo/exo-icon-view.c:719
+#: ../exo/exo-icon-view.c:711
 msgid "Layout mode"
 msgstr "Modo de leiaute"
 
-#: ../exo/exo-icon-view.c:720
+#: ../exo/exo-icon-view.c:712
 msgid "The layout mode"
 msgstr "O modo de leiaute"
 
-#: ../exo/exo-icon-view.c:736
+#: ../exo/exo-icon-view.c:728
 msgid "Margin"
 msgstr "Margem"
 
-#: ../exo/exo-icon-view.c:737
+#: ../exo/exo-icon-view.c:729
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Espaço que é inserido nos limites da visualização de ícone"
 
-#: ../exo/exo-icon-view.c:753
+#: ../exo/exo-icon-view.c:745
 msgid "Markup column"
 msgstr "Coluna de Marcação"
 
-#: ../exo/exo-icon-view.c:754
+#: ../exo/exo-icon-view.c:746
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Coluna do modelo usada para retirar o texto se estiver usando marcação Pango"
 
-#: ../exo/exo-icon-view.c:768
+#: ../exo/exo-icon-view.c:760
 msgid "Icon View Model"
 msgstr "Modelo de Visualização de Ícone"
 
-#: ../exo/exo-icon-view.c:769
+#: ../exo/exo-icon-view.c:761
 msgid "The model for the icon view"
 msgstr "O modelo para a visualização de ícone"
 
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-view.c:775
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr ""
 "Como o texto e o ícone de cada item são posicionados relativamente um ao "
 "outro"
 
-#: ../exo/exo-icon-view.c:815
+#: ../exo/exo-icon-view.c:807
 msgid "Reorderable"
 msgstr "Reordenável"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:808
 msgid "View is reorderable"
 msgstr "Visualização é reordenável"
 
-#: ../exo/exo-icon-view.c:831
+#: ../exo/exo-icon-view.c:823
 msgid "Row Spacing"
 msgstr "Espaçamento de Linha"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:824
 msgid "Space which is inserted between grid rows"
 msgstr "Espaço que é inserido entre grades de linhas"
 
-#: ../exo/exo-icon-view.c:846
+#: ../exo/exo-icon-view.c:838
 msgid "Search Column"
 msgstr "Coluna de Procura"
 
-#: ../exo/exo-icon-view.c:847
+#: ../exo/exo-icon-view.c:839
 msgid "Model column to search through when searching through item"
 msgstr "Coluna do modelo a procurar quando procurando por item"
 
-#: ../exo/exo-icon-view.c:861
+#: ../exo/exo-icon-view.c:853
 msgid "Selection mode"
 msgstr "Modo de seleção"
 
-#: ../exo/exo-icon-view.c:862
+#: ../exo/exo-icon-view.c:854
 msgid "The selection mode"
 msgstr "O modo de seleção"
 
-#: ../exo/exo-icon-view.c:877 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:869 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Clique Único"
 
-#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:870 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Se os itens da visão podem ser ativados com cliques únicos"
 
-#: ../exo/exo-icon-view.c:894 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:886 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Tempo de Clique Único"
 
-#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:184
+#: ../exo/exo-icon-view.c:887 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -204,29 +328,58 @@ msgstr ""
 "A quantidade de tempo após a qual o item sob o ponteiro do mouse será "
 "selecionado automaticamente em modo de clique único"
 
-#: ../exo/exo-icon-view.c:910
+#: ../exo/exo-icon-view.c:902
 msgid "Spacing"
 msgstr "Espaçamento"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:903
 msgid "Space which is inserted between cells of an item"
 msgstr "Espaço que é inserido entre células de um item"
 
-#: ../exo/exo-icon-view.c:934
+#: ../exo/exo-icon-view.c:926
 msgid "Selection Box Color"
 msgstr "Cor da Caixa de Seleção"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:927
 msgid "Color of the selection box"
 msgstr "Cor da caixa de seleção"
 
-#: ../exo/exo-icon-view.c:941
+#: ../exo/exo-icon-view.c:933
 msgid "Selection Box Alpha"
 msgstr "Alpha da Caixa de Seleção"
 
-#: ../exo/exo-icon-view.c:942
+#: ../exo/exo-icon-view.c:934
 msgid "Opacity of the selection box"
 msgstr "Opacidade da caixa de seleção"
+
+#: ../exo/exo-thumbnail-preview.c:123
+msgid "Preview"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+#, fuzzy
+msgid "No file selected"
+msgstr "Nenhuma aplicação selecionada"
+
+#: ../exo/exo-thumbnail-preview.c:299
+msgid "Block Device"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:304
+msgid "Character Device"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:309
+msgid "Folder"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:314
+msgid "FIFO"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:319
+msgid "Socket"
+msgstr ""
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
@@ -408,7 +561,6 @@ msgid "Select an Application"
 msgstr "Selecione uma Aplicação"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:299
-#: ../exo-desktop-item-edit/exo-die-editor.c:641
 #: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
 msgstr "Todos os Arquivos"
@@ -471,7 +623,7 @@ msgstr "Í_cone:"
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:408
-#: ../exo-desktop-item-edit/exo-die-editor.c:1223
+#: ../exo-desktop-item-edit/exo-die-editor.c:1134
 msgid "No icon"
 msgstr "Nenhum ícone"
 
@@ -508,13 +660,11 @@ msgid "Select this option to run the command in a terminal window."
 msgstr ""
 "Selecione esta opção para executar o comando em uma janela de terminal."
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:631
-msgid "Select an Icon"
+#. allocate the icon chooser dialog
+#: ../exo-desktop-item-edit/exo-die-editor.c:591
+#, fuzzy
+msgid "Select an icon"
 msgstr "Selecione um Ícone"
-
-#: ../exo-desktop-item-edit/exo-die-editor.c:646
-msgid "Image Files"
-msgstr "Arquivos de Imagens"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:50
@@ -996,6 +1146,9 @@ msgstr "Falhou ao executar aplicação preferida para categoria \"%s\"."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Falhou ao abrir a URL \"%s\"."
+
+#~ msgid "Select an Icon"
+#~ msgstr "Selecione um Ícone"
 
 #~ msgid "Default Web Browser"
 #~ msgstr "Navegador Web Padrão"

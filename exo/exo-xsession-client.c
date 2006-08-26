@@ -300,9 +300,32 @@ exo_xsession_client_new_with_group (GdkWindow *leader)
 
 
 /**
+ * exo_xsession_client_get_group:
+ * @client : An #ExoXsessionClient.
+ *
+ * Returns the client leader window of the group with which
+ * the @client is associated or %NULL if @client is not
+ * associated with any group.
+ *
+ * Return value: The client leader window of the group
+ *               with which @client is associated or
+ *               %NULL.
+ **/
+GdkWindow*
+exo_xsession_client_get_group (ExoXsessionClient *client)
+{
+  g_return_val_if_fail (EXO_IS_XSESSION_CLIENT (client), NULL);
+  return client->priv->leader;
+}
+
+
+
+/**
  * exo_xsession_client_set_group:
  * @client  : An #ExoXsessionClient.
  * @leader  : The client leader window of a group or %NULL.
+ *
+ * Sets the group according to the specified @leader.
  **/
 void
 exo_xsession_client_set_group (ExoXsessionClient *client,
@@ -379,23 +402,6 @@ exo_xsession_client_set_group (ExoXsessionClient *client,
 
   g_object_notify (G_OBJECT (client), "group");
 #endif
-}
-
-
-
-/**
- * exo_xsession_client_get_group:
- * @client  : An #ExoXsessionClient.
- *
- * Return value: The client leader window of the group
- *               with which @client is associated or
- *               %NULL.
- **/
-GdkWindow*
-exo_xsession_client_get_group (ExoXsessionClient *client)
-{
-  g_return_val_if_fail (EXO_IS_XSESSION_CLIENT (client), NULL);
-  return client->priv->leader;
 }
 
 

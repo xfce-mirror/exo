@@ -2,11 +2,17 @@
 Extensions to Gtk
 
 <!-- ##### SECTION Short_Description ##### -->
-Miscelleanous extensions to the Gtk+ library.
+Miscelleanous extensions to the Gtk+ library
 
 <!-- ##### SECTION Long_Description ##### -->
 <para>
+  Various additional functions to the core API provided by the Gtk+ library.
+</para>
 
+<para>
+  For example, exo_gtk_file_chooser_add_thumbnail_preview() is a convenience method to add a thumbnail based
+  preview widget to a #GtkFileChooser, which will display a preview of the selected file if either a thumbnail
+  is available or a thumbnail could be generated using the GdkPixbuf library.
 </para>
 
 <!-- ##### SECTION See_Also ##### -->
@@ -16,6 +22,14 @@ Miscelleanous extensions to the Gtk+ library.
 
 <!-- ##### SECTION Stability_Level ##### -->
 Stable
+
+<!-- ##### FUNCTION exo_gtk_object_destroy_later ##### -->
+<para>
+
+</para>
+
+@object: 
+
 
 <!-- ##### FUNCTION exo_gtk_object_ref_sink ##### -->
 <para>
@@ -33,5 +47,13 @@ Stable
 
 @action: 
 @current_value: 
+
+
+<!-- ##### FUNCTION exo_gtk_file_chooser_add_thumbnail_preview ##### -->
+<para>
+
+</para>
+
+@chooser: 
 
 

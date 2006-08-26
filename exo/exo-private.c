@@ -128,3 +128,28 @@ _exo_g_type_register_simple (GType        type_parent,
 }
 
 
+
+/**
+ * _exo_g_type_add_interface_simple:
+ * @instance_type       : the #GType which should implement the @interface_type.
+ * @interface_type      : the #GType of the interface.
+ * @interface_init_func : initialization function for the interface.
+ *
+ * Simple wrapper for g_type_add_interface_static(), which helps to avoid unnecessary
+ * relocations for the #GInterfaceInfo<!---->s.
+ **/
+void
+_exo_g_type_add_interface_simple (GType              instance_type,
+                                  GType              interface_type,
+                                  GInterfaceInitFunc interface_init_func)
+{
+  GInterfaceInfo info =
+  {
+    interface_init_func,
+    NULL,
+    NULL,
+  };
+
+  g_type_add_interface_static (instance_type, interface_type, &info);
+}
+

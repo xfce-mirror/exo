@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-16 15:27+0200\n"
+"POT-Creation-Date: 2006-08-26 14:01+0200\n"
 "PO-Revision-Date: 2006-08-24 14:27+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: librezale <librezale@librezale.org>\n"
@@ -17,7 +17,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 0.10rc3\n"
 
-#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:782
+#: ../exo/exo-cell-renderer-ellipsized-text.c:138
+#: ../exo/exo-cell-renderer-icon.c:145
+msgid "Follow state"
+msgstr ""
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:139
+#: ../exo/exo-cell-renderer-icon.c:146
+msgid "Render differently based on the selection state."
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:167
+#, fuzzy
+msgid "Icon"
+msgstr "_Ikonoa:"
+
+#: ../exo/exo-cell-renderer-icon.c:168
+msgid "The icon to render."
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:189
+msgid "size"
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:190
+msgid "The size of the icon to render in pixels."
+msgstr ""
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#, fuzzy, c-format
+msgid "Failed to open file \"%s\": %s"
+msgstr "Huts  \"%s\" irekitzerakoan."
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:832
+#, fuzzy, c-format
+msgid "Failed to read file \"%s\": %s"
+msgstr "Huts  \"%s\" sortzerakoan."
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:873
+#, c-format
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:774
 msgid "Orientation"
 msgstr "Norabidea"
 
@@ -25,19 +68,19 @@ msgstr "Norabidea"
 msgid "The orientation of the iconbar"
 msgstr "Ikono barraren norabidea"
 
-#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:791
 msgid "Pixbuf column"
 msgstr "Pixbuf zutabea"
 
-#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:792
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Ikono pixbuf-a eskuratzeko erabiliko den zutabe modeloa"
 
-#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:926
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:918
 msgid "Text column"
 msgstr "Testu zutabea"
 
-#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:919
 msgid "Model column used to retrieve the text from"
 msgstr "Testua hortik eskuratzeko erabiliko den zutabe modeloa"
 
@@ -81,124 +124,205 @@ msgstr "Kurtsore elementu ertz kolorea"
 msgid "Cursor item text color"
 msgstr "Kurtsore elementu testu kolorea"
 
-#: ../exo/exo-icon-view.c:650
+#. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
+#: ../exo/exo-icon-chooser-dialog.c:85
+#, fuzzy
+msgid "Action Icons"
+msgstr "Ikonoa hautatu"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
+#: ../exo/exo-icon-chooser-dialog.c:87
+msgid "Animations"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
+#: ../exo/exo-icon-chooser-dialog.c:89
+#, fuzzy
+msgid "Application Icons"
+msgstr "Aplikazio Hautatze Botoia"
+
+#. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
+#: ../exo/exo-icon-chooser-dialog.c:91
+msgid "Menu Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_DEVICES
+#: ../exo/exo-icon-chooser-dialog.c:93
+msgid "Device Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
+#: ../exo/exo-icon-chooser-dialog.c:95
+msgid "Emblems"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMOTES
+#: ../exo/exo-icon-chooser-dialog.c:97
+#, fuzzy
+msgid "Emoticons"
+msgstr "Ikonorik ez"
+
+#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
+#: ../exo/exo-icon-chooser-dialog.c:99
+msgid "International Denominations"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
+#: ../exo/exo-icon-chooser-dialog.c:101
+msgid "File Type Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_PLACES
+#: ../exo/exo-icon-chooser-dialog.c:103
+msgid "Location Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_STATUS
+#: ../exo/exo-icon-chooser-dialog.c:105
+#, fuzzy
+msgid "Status Icons"
+msgstr "Ikonoa hautatu"
+
+#. EXO_ICON_CHOOSER_CONTEXT_OTHER
+#: ../exo/exo-icon-chooser-dialog.c:107
+msgid "Uncategorized Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_ALL
+#: ../exo/exo-icon-chooser-dialog.c:111
+#, fuzzy
+msgid "All Icons"
+msgstr "Testua Ikono Guztientz_at"
+
+#. EXO_ICON_CHOOSER_CONTEXT_FILE
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+msgid "Image Files"
+msgstr "Irudi Fitxategiak"
+
+#. setup the header label
+#: ../exo/exo-icon-chooser-dialog.c:205
+#, fuzzy
+msgid "Select _icon from:"
+msgstr "Aukeratze modua"
+
+#: ../exo/exo-icon-view.c:642
 msgid "Column Spacing"
 msgstr "Zutabe Tartea"
 
-#: ../exo/exo-icon-view.c:651
+#: ../exo/exo-icon-view.c:643
 msgid "Space which is inserted between grid column"
 msgstr "Sareta zutabeen artean sartuko den tartea"
 
-#: ../exo/exo-icon-view.c:667
+#: ../exo/exo-icon-view.c:659
 msgid "Number of columns"
 msgstr "Zutabe kopurua"
 
-#: ../exo/exo-icon-view.c:668
+#: ../exo/exo-icon-view.c:660
 msgid "Number of columns to display"
 msgstr "Bistaraziko diren zutabe kopurua"
 
-#: ../exo/exo-icon-view.c:682
+#: ../exo/exo-icon-view.c:674
 msgid "Enable Search"
 msgstr "Bilaketa Gaitu"
 
-#: ../exo/exo-icon-view.c:683
+#: ../exo/exo-icon-view.c:675
 msgid "View allows user to search through columns interactively"
 msgstr ""
 "Ikuspegiak erabiltzaileari zutabetan interaktiboki bilatzeko aukera ematen "
 "dio"
 
-#: ../exo/exo-icon-view.c:700
+#: ../exo/exo-icon-view.c:692
 msgid "Width for each item"
 msgstr "Elementu bakoitzaren zabalera"
 
-#: ../exo/exo-icon-view.c:701
+#: ../exo/exo-icon-view.c:693
 msgid "The width used for each item"
 msgstr "Elementu bakoitzarentzat erabiliko den zabalera"
 
-#: ../exo/exo-icon-view.c:719
+#: ../exo/exo-icon-view.c:711
 msgid "Layout mode"
 msgstr "Aurkezpen modua"
 
-#: ../exo/exo-icon-view.c:720
+#: ../exo/exo-icon-view.c:712
 msgid "The layout mode"
 msgstr "Aurkezpen modua"
 
-#: ../exo/exo-icon-view.c:736
+#: ../exo/exo-icon-view.c:728
 msgid "Margin"
 msgstr "Marjina"
 
-#: ../exo/exo-icon-view.c:737
+#: ../exo/exo-icon-view.c:729
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Ikono ikuspegiaren ertzetan txertatuko den lekua"
 
-#: ../exo/exo-icon-view.c:753
+#: ../exo/exo-icon-view.c:745
 msgid "Markup column"
 msgstr "Zutabea markatu"
 
-#: ../exo/exo-icon-view.c:754
+#: ../exo/exo-icon-view.c:746
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Pango markatzea erabiltzen bada testua eskuratzeko erabiliko den zutabe "
 "modeloa"
 
-#: ../exo/exo-icon-view.c:768
+#: ../exo/exo-icon-view.c:760
 msgid "Icon View Model"
 msgstr "Ikono Ikuspegi Modeloa"
 
-#: ../exo/exo-icon-view.c:769
+#: ../exo/exo-icon-view.c:761
 msgid "The model for the icon view"
 msgstr "Ikono ikuspegiaren modeloa"
 
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-view.c:775
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Elementu bakoitzaren testu eta ikonoaren kokapena bestearekiko"
 
-#: ../exo/exo-icon-view.c:815
+#: ../exo/exo-icon-view.c:807
 msgid "Reorderable"
 msgstr "Berrantolagarria"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:808
 msgid "View is reorderable"
 msgstr "Ikuspegia berrantolagarria da"
 
-#: ../exo/exo-icon-view.c:831
+#: ../exo/exo-icon-view.c:823
 msgid "Row Spacing"
 msgstr "Lerro tartea"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:824
 msgid "Space which is inserted between grid rows"
 msgstr "Sareta lerroen artean txertatuko den tartea"
 
-#: ../exo/exo-icon-view.c:846
+#: ../exo/exo-icon-view.c:838
 msgid "Search Column"
 msgstr "Bilaketa Zutabea"
 
-#: ../exo/exo-icon-view.c:847
+#: ../exo/exo-icon-view.c:839
 msgid "Model column to search through when searching through item"
 msgstr "Elementuen artean bilatzerakoan erabiliko den zutabe modeloa"
 
-#: ../exo/exo-icon-view.c:861
+#: ../exo/exo-icon-view.c:853
 msgid "Selection mode"
 msgstr "Aukeratze modua"
 
-#: ../exo/exo-icon-view.c:862
+#: ../exo/exo-icon-view.c:854
 msgid "The selection mode"
 msgstr "Aukeratze modua"
 
-#: ../exo/exo-icon-view.c:877 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:869 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Klik bakana"
 
-#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:870 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Honela ikuspegiko elementuak klik bakan batez aktibatu daitezke"
 
-#: ../exo/exo-icon-view.c:894 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:886 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Klik bakan denbora muga"
 
-#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:184
+#: ../exo/exo-icon-view.c:887 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -206,29 +330,58 @@ msgstr ""
 "Klik bakaneko moduan kurtsorearen azpiko elementua automatikoki aukeratu "
 "pasa behar den denbora"
 
-#: ../exo/exo-icon-view.c:910
+#: ../exo/exo-icon-view.c:902
 msgid "Spacing"
 msgstr "Tartea"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:903
 msgid "Space which is inserted between cells of an item"
 msgstr "Elementu baten gelaxkan artean txertatuko den tartea"
 
-#: ../exo/exo-icon-view.c:934
+#: ../exo/exo-icon-view.c:926
 msgid "Selection Box Color"
 msgstr "Aukeratze Kutxa Kolorea"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:927
 msgid "Color of the selection box"
 msgstr "Aukeratze kutxaren kolorea"
 
-#: ../exo/exo-icon-view.c:941
+#: ../exo/exo-icon-view.c:933
 msgid "Selection Box Alpha"
 msgstr "Aukeratze Kutxa Alpha"
 
-#: ../exo/exo-icon-view.c:942
+#: ../exo/exo-icon-view.c:934
 msgid "Opacity of the selection box"
 msgstr "Aukeratze kutxaren opakotasuna"
+
+#: ../exo/exo-thumbnail-preview.c:123
+msgid "Preview"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+#, fuzzy
+msgid "No file selected"
+msgstr "Ez da aplikaziorik hautatu"
+
+#: ../exo/exo-thumbnail-preview.c:299
+msgid "Block Device"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:304
+msgid "Character Device"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:309
+msgid "Folder"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:314
+msgid "FIFO"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:319
+msgid "Socket"
+msgstr ""
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
@@ -409,7 +562,6 @@ msgid "Select an Application"
 msgstr "Aplikazio bat hautatu"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:299
-#: ../exo-desktop-item-edit/exo-die-editor.c:641
 #: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
 msgstr "Fitxategi Guztiak"
@@ -472,7 +624,7 @@ msgstr "_Ikonoa:"
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:408
-#: ../exo-desktop-item-edit/exo-die-editor.c:1223
+#: ../exo-desktop-item-edit/exo-die-editor.c:1134
 msgid "No icon"
 msgstr "Ikonorik ez"
 
@@ -508,13 +660,11 @@ msgstr "_Terminalean abiarazi"
 msgid "Select this option to run the command in a terminal window."
 msgstr "Aukera hau hautatu komandoa terminal batetan abiarazteko."
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:631
-msgid "Select an Icon"
+#. allocate the icon chooser dialog
+#: ../exo-desktop-item-edit/exo-die-editor.c:591
+#, fuzzy
+msgid "Select an icon"
 msgstr "Ikonoa hautatu"
-
-#: ../exo-desktop-item-edit/exo-die-editor.c:646
-msgid "Image Files"
-msgstr "Irudi Fitxategiak"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:50
@@ -622,8 +772,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-msgid "Default Web Browser"
-msgstr "Lehenetsiriko Web Nabigatzailea"
+msgid "Web Browser"
+msgstr "Web Nabigatzailea"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -634,8 +784,8 @@ msgstr ""
 "eta laguntza bistaratzeko erabiliko da."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-msgid "Default Mail Reader"
-msgstr "Lehenetsiriko Posta Bezeroa"
+msgid "Mail Reader"
+msgstr "Posta Bezeroa"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid ""
@@ -653,8 +803,8 @@ msgid "Utilities"
 msgstr "Lanabesak"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-msgid "Default Terminal Emulator"
-msgstr "Lehenetsiriko Terminal Emuladorea"
+msgid "Terminal Emulator"
+msgstr "Terminal Emuladorea"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
@@ -804,6 +954,10 @@ msgstr "Xfce 4 Hobetsiriko Aplikazioak"
 msgid "Xfce Terminal"
 msgstr "Xfce Terminala"
 
+#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
+msgid "aterm"
+msgstr "aterm"
+
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
@@ -815,6 +969,10 @@ msgstr "Debian Lehenetsiriko Nabigatzailea"
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Debian X Terminal Emuladorea"
+
+#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
+msgid "Encompass"
+msgstr "Encompass"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
@@ -848,6 +1006,14 @@ msgstr "KMail"
 msgid "Konqueror Web Browser"
 msgstr "Konqueror Web Nabigatzailea"
 
+#: ../exo-helper/helpers/links.desktop.in.in.h:1
+msgid "Links Text Browser"
+msgstr "Links Testu Nabigatzailea"
+
+#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
+msgid "Lynx Text Browser"
+msgstr "Lynx Testu Nabigatzailea"
+
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
 msgstr "Mozilla Nabigatzailea"
@@ -860,6 +1026,14 @@ msgstr "Mozilla Posta"
 msgid "Mutt"
 msgstr "Mutt"
 
+#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
+msgid "Netscape Navigator"
+msgstr "Netscape Navigator"
+
+#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
+msgid "NXterm"
+msgstr "NXterm"
+
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
 msgstr "Opera Nabigatzailea"
@@ -868,17 +1042,25 @@ msgstr "Opera Nabigatzailea"
 msgid "Opera Mail"
 msgstr "Opera Posta"
 
-#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-msgid "Sylpheed"
-msgstr "Sylpheed"
-
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Sylpheed Claws"
 msgstr "Sylpheed Claws"
 
+#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
+msgid "Sylpheed"
+msgstr "Sylpheed"
+
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
 msgstr "Mozilla Thunderbird"
+
+#: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
+msgid "RXVT Unicode"
+msgstr "RXVT Unicode"
+
+#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
+msgid "W3M Text Browser"
+msgstr "W3M Testu Nabigatzailea"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -958,46 +1140,14 @@ msgstr "Huts \"%s\" ataleko hobetsiriko aplikazioa irekitzerakoan."
 msgid "Failed to open URL \"%s\"."
 msgstr "Huts \"%s\" URL-a irekitzerakoan."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:138
-msgid "Web Browser"
-msgstr "Web Nabigatzailea"
+#~ msgid "Select an Icon"
+#~ msgstr "Ikonoa hautatu"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:170
-msgid "Mail Reader"
-msgstr "Posta Bezeroa"
+#~ msgid "Default Web Browser"
+#~ msgstr "Lehenetsiriko Web Nabigatzailea"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:211
-msgid "Terminal Emulator"
-msgstr "Terminal Emuladorea"
+#~ msgid "Default Mail Reader"
+#~ msgstr "Lehenetsiriko Posta Bezeroa"
 
-#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
-msgid "aterm"
-msgstr "aterm"
-
-#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
-msgid "Encompass"
-msgstr "Encompass"
-
-#: ../exo-helper/helpers/links.desktop.in.in.h:1
-msgid "Links Text Browser"
-msgstr "Links Testu Nabigatzailea"
-
-#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-msgid "Lynx Text Browser"
-msgstr "Lynx Testu Nabigatzailea"
-
-#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
-msgid "Netscape Navigator"
-msgstr "Netscape Navigator"
-
-#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
-msgid "NXterm"
-msgstr "NXterm"
-
-#: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
-msgid "RXVT Unicode"
-msgstr "RXVT Unicode"
-
-#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-msgid "W3M Text Browser"
-msgstr "W3M Testu Nabigatzailea"
+#~ msgid "Default Terminal Emulator"
+#~ msgstr "Lehenetsiriko Terminal Emuladorea"

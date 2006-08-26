@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004 os-cillation e.K.
+ * Copyright (c) 2004-2006 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -31,12 +31,14 @@
 
 G_BEGIN_DECLS;
 
-void      exo_gtk_object_destroy_later            (GtkObject      *object);
+void      exo_gtk_object_destroy_later                (GtkObject      *object);
 
-gpointer  exo_gtk_object_ref_sink                 (GtkObject      *object);
+gpointer  exo_gtk_object_ref_sink                     (GtkObject      *object);
 
-void      exo_gtk_radio_action_set_current_value  (GtkRadioAction *action,
-                                                   gint            current_value);
+void      exo_gtk_radio_action_set_current_value      (GtkRadioAction *action,
+                                                       gint            current_value);
+
+void      exo_gtk_file_chooser_add_thumbnail_preview  (GtkFileChooser *chooser);
 
 G_END_DECLS;
 

@@ -558,21 +558,13 @@ exo_icon_view_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      GInterfaceInfo cell_layout_info =
-      {
-        (GInterfaceInitFunc) exo_icon_view_cell_layout_init,
-        NULL,
-        NULL,
-      };
-
       type = _exo_g_type_register_simple (GTK_TYPE_CONTAINER,
                                           "ExoIconView",
                                           sizeof (ExoIconViewClass),
                                           exo_icon_view_class_init,
                                           sizeof (ExoIconView),
                                           exo_icon_view_init);
-
-      g_type_add_interface_static (type, GTK_TYPE_CELL_LAYOUT, &cell_layout_info);
+      _exo_g_type_add_interface_simple (type, GTK_TYPE_CELL_LAYOUT, (GInterfaceInitFunc) exo_icon_view_cell_layout_init);
     }
 
   return type;

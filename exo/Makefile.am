@@ -2,6 +2,7 @@
 
 INCLUDES = 								\
 	-I$(top_srcdir)							\
+	-DDATADIR=\"$(datadir)\"					\
 	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DEXO_COMPILATION						\
 	-DG_LOG_DOMAIN=\"exo\"						\
@@ -14,18 +15,20 @@ lib_LTLIBRARIES = libexo-0.3.la
 libexo_headers =							\
 	exo-binding.h							\
 	exo-cell-renderer-ellipsized-text.h				\
+	exo-cell-renderer-icon.h					\
 	exo-ellipsized-label.h						\
 	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
 	exo-gtk-extensions.h						\
 	exo-gobject-extensions.h					\
 	exo-icon-bar.h							\
+	exo-icon-chooser-dialog.h					\
 	exo-icon-view.h							\
 	exo-md5.h							\
 	exo-pango-extensions.h						\
 	exo-string.h							\
-	exo-toolbars-editor.h						\
 	exo-toolbars-editor-dialog.h					\
+	exo-toolbars-editor.h						\
 	exo-toolbars-model.h						\
 	exo-toolbars-view.h						\
 	exo-tree-view.h							\
@@ -58,6 +61,7 @@ libexo_0_3_la_SOURCES =							\
 	$(libexo_built_sources)						\
 	exo-binding.c							\
 	exo-cell-renderer-ellipsized-text.c				\
+	exo-cell-renderer-icon.c					\
 	exo-config.c							\
 	exo-ellipsized-label.c						\
 	exo-execute.c							\
@@ -65,14 +69,21 @@ libexo_0_3_la_SOURCES =							\
 	exo-gtk-extensions.c						\
 	exo-gobject-extensions.c					\
 	exo-icon-bar.c							\
+	exo-icon-chooser-dialog.c					\
+	exo-icon-chooser-model.c					\
+	exo-icon-chooser-model.h					\
 	exo-icon-view.c							\
 	exo-md5.c							\
 	exo-pango-extensions.c						\
 	exo-private.c							\
 	exo-private.h							\
 	exo-string.c							\
-	exo-toolbars-editor.c						\
+	exo-thumbnail-preview.c						\
+	exo-thumbnail-preview.h						\
+	exo-thumbnail.c							\
+	exo-thumbnail.h							\
 	exo-toolbars-editor-dialog.c					\
+	exo-toolbars-editor.c						\
 	exo-toolbars-model.c						\
 	exo-toolbars-private.c						\
 	exo-toolbars-private.h						\

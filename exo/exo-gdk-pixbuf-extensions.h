@@ -27,25 +27,40 @@
 #ifndef __EXO_GDK_PIXBUF_EXTENSIONS_H__
 #define __EXO_GDK_PIXBUF_EXTENSIONS_H__
 
+#include <exo/exo-config.h>
+
 #include <gdk/gdk.h>
 
 G_BEGIN_DECLS;
 
-GdkPixbuf *exo_gdk_pixbuf_colorize    (const GdkPixbuf *src,
-                                       const GdkColor  *color) G_GNUC_MALLOC;
+GdkPixbuf *exo_gdk_pixbuf_colorize                  (const GdkPixbuf *src,
+                                                     const GdkColor  *color) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-GdkPixbuf *exo_gdk_pixbuf_lucent      (const GdkPixbuf *src,
-                                       guint            percent) G_GNUC_MALLOC;
+GdkPixbuf *exo_gdk_pixbuf_frame                     (const GdkPixbuf *src,
+                                                     const GdkPixbuf *frame,
+                                                     gint             left_offset,
+                                                     gint             top_offset,
+                                                     gint             right_offset,
+                                                     gint             bottom_offset) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-GdkPixbuf *exo_gdk_pixbuf_spotlight   (const GdkPixbuf *src) G_GNUC_MALLOC;
+GdkPixbuf *exo_gdk_pixbuf_lucent                    (const GdkPixbuf *src,
+                                                     guint            percent) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-GdkPixbuf *exo_gdk_pixbuf_scale_down  (GdkPixbuf       *source,
-                                       gboolean         aspect_ratio,
-                                       gint             dest_width,
-                                       gint             dest_height);
+GdkPixbuf *exo_gdk_pixbuf_spotlight                 (const GdkPixbuf *src) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-GdkPixbuf *exo_gdk_pixbuf_scale_ratio (GdkPixbuf       *source,
-                                       gint             dest_size);
+GdkPixbuf *exo_gdk_pixbuf_scale_down                (GdkPixbuf       *source,
+                                                     gboolean         preserve_aspect_ratio,
+                                                     gint             dest_width,
+                                                     gint             dest_height) G_GNUC_WARN_UNUSED_RESULT;
+
+GdkPixbuf *exo_gdk_pixbuf_scale_ratio               (GdkPixbuf       *source,
+                                                     gint             dest_size) G_GNUC_WARN_UNUSED_RESULT;
+
+GdkPixbuf *exo_gdk_pixbuf_new_from_file_at_max_size (const gchar     *filename,
+                                                     gint             max_width,
+                                                     gint             max_height,
+                                                     gboolean         preserve_aspect_ratio,
+                                                     GError         **error) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 G_END_DECLS;
 

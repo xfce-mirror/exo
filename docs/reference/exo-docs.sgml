@@ -5,12 +5,13 @@
 <!ENTITY exo-toolbars-editor SYSTEM "xml/exo-toolbars-editor.xml">
 <!ENTITY exo-toolbars-editor-dialog SYSTEM "xml/exo-toolbars-editor-dialog.xml">
 <!ENTITY exo-toolbars-view SYSTEM "xml/exo-toolbars-view.xml">
-<!ENTITY exo-cell-renderer-ellipsized-text SYSTEM "xml/exo-cell-renderer-ellipsized-text.xml">
-<!ENTITY exo-ellipsized-label SYSTEM "xml/exo-ellipsized-label.xml">
 <!ENTITY exo-icon-bar SYSTEM "xml/exo-icon-bar.xml">
+<!ENTITY exo-icon-chooser-dialog SYSTEM "xml/exo-icon-chooser-dialog.xml">
 <!ENTITY exo-icon-view SYSTEM "xml/exo-icon-view.xml">
 <!ENTITY exo-tree-view SYSTEM "xml/exo-tree-view.xml">
 <!ENTITY exo-wrap-table SYSTEM "xml/exo-wrap-table.xml">
+<!ENTITY exo-cell-renderer-ellipsized-text SYSTEM "xml/exo-cell-renderer-ellipsized-text.xml">
+<!ENTITY exo-cell-renderer-icon SYSTEM "xml/exo-cell-renderer-icon.xml">
 <!ENTITY exo-gdk-pixbuf-extensions SYSTEM "xml/exo-gdk-pixbuf-extensions.xml">
 <!ENTITY exo-gobject-extensions SYSTEM "xml/exo-gobject-extensions.xml">
 <!ENTITY exo-gtk-extensions SYSTEM "xml/exo-gtk-extensions.xml">
@@ -23,11 +24,14 @@
 <!ENTITY exo-url SYSTEM "xml/exo-url.xml">
 <!ENTITY exo-utils SYSTEM "xml/exo-utils.xml">
 <!ENTITY exo-xsession-client SYSTEM "xml/exo-xsession-client.xml">
+<!ENTITY exo-ellipsized-label SYSTEM "xml/exo-ellipsized-label.xml">
 
 <!ENTITY exo-csource SYSTEM "exo-csource.xml">
 
+<!ENTITY visual-index SYSTEM "visual_index.xml">
+
 <!ENTITY version SYSTEM "version.xml">
-<!ENTITY date "August 2005">
+<!ENTITY date "August 2006">
 ]>
 
 <book id="index" lang="en">
@@ -198,14 +202,63 @@
 
   <part id="exo-widgets">
     <title>Additional widgets</title>
+
+    <para>
+      This section describes the additional widgets provided by the <application>exo</application> library. The <link
+      linkend="ExoIconBar">ExoIconBar</link>, <link linkend="ExoIconView">ExoIconView</link> and <link linkend="ExoTreeView">ExoTreeView</link>
+      are views that display data from a <link linkend="GtkTreeModel">GtkTreeModel</link>, and can be seen as extensions to the basic widgets
+      in Gtk+. For example, both <link linkend="ExoIconView">ExoIconView</link> and <link linkend="ExoTreeView">ExoTreeView</link> offer support
+      for single-click mode, which is not provided by their Gtk+ counterparts.
+    </para>
+
+    <para>
+      The <link linkend="ExoIconChooserDialog">ExoIconChooserDialog</link> is a special widget, that presents a dialog to let the user select
+      an icon from the current icon theme or from an image file in the file system. You should use this dialog whenever you want the user to
+      select an icon, instead of just displaying a <link linkend="GtkFileChooserDialog">GtkFileChooserDialog</link>.
+    </para>
+
     &exo-icon-bar;
+    &exo-icon-chooser-dialog;
     &exo-icon-view;
     &exo-tree-view;
     &exo-wrap-table;
   </part>
 
+  <part id="exo-cell-renderers">
+    <title>Additional cell renderers</title>
+
+    <para>
+      Gtk+ contains various cell renderers that are intended to be used with <link linkend="GtkTreeView">GtkTreeView</link>
+      and <link linkend="GtkComboBox">GtkComboBox</link>, but are difficult to use with <link linkend="ExoIconView">ExoIconView</link>
+      (or even <link linkend="GtkIconView">GtkIconView</link>), mainly because the renderers do not follow the state of the view and
+      render appropriate indicators.
+    </para>
+
+    <para>
+      Because of these issues, the <link linkend="ExoCellRendererEllipsizedText">ExoCellRendererEllipsizedText</link> (the name of the
+      class is rather confusing) and the <link linkend="ExoCellRendererIcon">ExoCellRendererIcon</link> classes are provided, which
+      both include a <literal>follow-state</literal> property that tells whether the renderer should follow the state of the view and
+      draw appropriate indicators.
+    </para>
+
+    <para>
+      The <link linkend="ExoCellRendererIcon">ExoCellRendererIcon</link> class should also be preferred over the the <link
+      linkend="GtkCellRendererPixbuf">GtkCellRendererPixbuf</link> class when using named icons or image files because it uses a fixed
+      size for layouting and loads the icons only on-demand (utilizing the thumbnail database whenever possible).
+    </para>
+
+    &exo-cell-renderer-ellipsized-text;
+    &exo-cell-renderer-icon;
+  </part>
+
   <part id="exo-extensions">
     <title>Extensions to existing frameworks</title>
+
+    <para>
+      This section describes extensions to existing frameworks provided by the <application>exo</application>, that range from additional
+      methods for certain classes to specialized functions dealing with <link linkend="GdkPixbuf">GdkPixbuf</link>s.
+    </para>
+
     &exo-gdk-pixbuf-extensions;
     &exo-gobject-extensions;
     &exo-gtk-extensions;
@@ -237,9 +290,13 @@
 
   <part id="exo-deprecated-widgets">
     <title>Deprecated widgets</title>
-    &exo-cell-renderer-ellipsized-text;
     &exo-ellipsized-label;
   </part>
+
+  <chapter>
+    <title>Visual Index</title>
+    &visual-index;
+  </chapter>
 
   <index>
     <title>Index</title>

@@ -6,20 +6,22 @@ A widget that automatically ellipsizes text
 
 <!-- ##### SECTION Long_Description ##### -->
 <para>
-#ExoEllipsizedLabel extends the standard #GtkLabel class present in
-Gtk+ 2.4 with the ability to automatically ellipsize text with
-"...".
+  #ExoEllipsizedLabel extends the standard #GtkLabel class present in
+  Gtk+ 2.4 with the ability to automatically ellipsize text with
+  "...".
 </para>
+
 <para>
-#ExoEllipsizedLabel automatically detects if its running with Gtk+
-2.5 or above and uses the native ellipsizing support of Gtk+ 2.5
-or above in that case. So its safe to use #ExoEllipsizedLabel
-with every Gtk+ version above 2.4.
+  #ExoEllipsizedLabel automatically detects if its running with Gtk+
+  2.5 or above and uses the native ellipsizing support of Gtk+ 2.5
+  or above in that case. So its safe to use #ExoEllipsizedLabel
+  with every Gtk+ version above 2.4.
 </para>
+
 <para>
-As of exo 0.3.1.8, #ExoEllipsizedLabel is deprecated and should not
-be used in newly written code. Instead use #GtkLabel directly, which
-supports the "ellipsize" property since GTK+ 2.6.
+  As of exo 0.3.1.8, #ExoEllipsizedLabel is deprecated and should not
+  be used in newly written code. Instead use #GtkLabel directly, which
+  supports the "ellipsize" property since GTK+ 2.6.
 </para>
 
 <!-- ##### SECTION See_Also ##### -->
@@ -34,7 +36,7 @@ Pango Extensions</link>
 
 <!-- ##### STRUCT ExoEllipsizedLabel ##### -->
 <para>
-
+  The <structname>ExoEllipsizedLabel</structname> struct contains only private fields and should not be directly accessed.
 </para>
 
 

@@ -7,6 +7,13 @@
   (gtype-id "EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT")
 )
 
+(define-object CellRendererIcon
+  (in-module "Exo")
+  (parent "GtkCellRenderer")
+  (c-name "ExoCellRendererIcon")
+  (gtype-id "EXO_TYPE_CELL_RENDERER_ICON")
+)
+
 (define-object EllipsizedLabel
   (in-module "Exo")
   (parent "GtkLabel")
@@ -26,6 +33,7 @@
   (parent "GtkContainer")
   (c-name "ExoIconView")
   (gtype-id "EXO_TYPE_ICON_VIEW")
+  (implements "GtkCellLayout")
 )
 
 (define-object ToolbarsEditor
@@ -116,6 +124,21 @@
 (define-function exo_cell_renderer_ellipsized_text_new
   (c-name "exo_cell_renderer_ellipsized_text_new")
   (is-constructor-of "ExoCellRendererEllipsizedText")
+  (return-type "GtkCellRenderer*")
+)
+
+
+
+;; From ../exo/exo-cell-renderer-icon.h
+
+(define-function exo_cell_renderer_icon_get_type
+  (c-name "exo_cell_renderer_icon_get_type")
+  (return-type "GType")
+)
+
+(define-function exo_cell_renderer_icon_new
+  (c-name "exo_cell_renderer_icon_new")
+  (is-constructor-of "ExoCellRendererIcon")
   (return-type "GtkCellRenderer*")
 )
 
@@ -1488,6 +1511,4 @@
     '("gint" "argc")
   )
 )
-
-
 

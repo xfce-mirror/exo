@@ -28,6 +28,20 @@ provided by the gdk-pixbuf library.
 @Returns: 
 
 
+<!-- ##### FUNCTION exo_gdk_pixbuf_frame ##### -->
+<para>
+
+</para>
+
+@src: 
+@frame: 
+@left_offset: 
+@top_offset: 
+@right_offset: 
+@bottom_offset: 
+@Returns: 
+
+
 <!-- ##### FUNCTION exo_gdk_pixbuf_lucent ##### -->
 <para>
 
@@ -53,11 +67,12 @@ provided by the gdk-pixbuf library.
 </para>
 
 @source: 
-@aspect_ratio: 
+@preserve_aspect_ratio: 
 @dest_width: 
 @dest_height: 
 @Returns: 
 <!-- # Unused Parameters # -->
+@aspect_ratio: 
 @width: 
 @height: 
 
@@ -69,6 +84,19 @@ provided by the gdk-pixbuf library.
 
 @source: 
 @dest_size: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_gdk_pixbuf_new_from_file_at_max_size ##### -->
+<para>
+
+</para>
+
+@filename: 
+@max_width: 
+@max_height: 
+@preserve_aspect_ratio: 
+@error: 
 @Returns: 
 
 

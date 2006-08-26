@@ -578,6 +578,8 @@ exo_wrap_table_get_num_fitting (gint available,
  * Allocates a new #ExoWrapTable.
  *
  * Return value: the newly allocated #ExoWrapTable.
+ *
+ * Since: 0.3.1
  **/
 GtkWidget*
 exo_wrap_table_new (gboolean homogeneous)

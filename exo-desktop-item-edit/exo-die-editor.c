@@ -572,53 +572,12 @@ exo_die_editor_set_property (GObject      *object,
 
 
 static void
-update_preview (GtkFileChooser *chooser,
-                GtkWidget      *image)
-{
-  GdkPixbuf *pixbuf;
-  GdkPixbuf *scaled;
-  gchar     *filename;
-  gint       height;
-  gint       width;
-
-  filename = gtk_file_chooser_get_filename (chooser);
-  pixbuf = (filename != NULL) ? gdk_pixbuf_new_from_file (filename, NULL) : NULL;
-  if (G_LIKELY (pixbuf != NULL))
-    {
-      width = gdk_pixbuf_get_width (pixbuf);
-      height = gdk_pixbuf_get_height (pixbuf);
-      if (G_UNLIKELY (width > 128 || height > 128))
-        {
-          scaled = exo_gdk_pixbuf_scale_ratio (pixbuf, 128);
-          g_object_unref (G_OBJECT (pixbuf));
-          pixbuf = scaled;
-        }
-
-      gtk_file_chooser_set_preview_widget_active (chooser, TRUE);
-      gtk_image_set_from_pixbuf (GTK_IMAGE (image), pixbuf);
-      g_object_unref (G_OBJECT (pixbuf));
-    }
-  else
-    {
-      gtk_file_chooser_set_preview_widget_active (chooser, FALSE);
-    }
-
-  g_free (filename);
-}
-
-
-
-static void
 exo_die_editor_icon_clicked (GtkWidget    *button,
                              ExoDieEditor *editor)
 {
-  GtkFileFilter *filter;
-  GtkIconTheme  *icon_theme;
-  GtkIconInfo   *icon_info;
-  GtkWidget     *toplevel;
-  GtkWidget     *chooser;
-  GtkWidget     *image;
-  gchar         *filename = NULL;
+  GtkWidget *toplevel;
+  GtkWidget *chooser;
+  gchar     *icon;
 
   g_return_if_fail (GTK_IS_BUTTON (button));
   g_return_if_fail (EXO_DIE_IS_EDITOR (editor));
@@ -628,77 +587,29 @@ exo_die_editor_icon_clicked (GtkWidget    *button,
   if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
     return;
 
-  chooser = gtk_file_chooser_dialog_new (_("Select an Icon"),
+  /* allocate the icon chooser dialog */
+  chooser = exo_icon_chooser_dialog_new (_("Select an icon"),
                                          GTK_WINDOW (toplevel),
-                                         GTK_FILE_CHOOSER_ACTION_OPEN,
                                          GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                         GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+                                         GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
                                          NULL);
-  gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), TRUE);
+  gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
+  gtk_dialog_set_alternative_button_order (GTK_DIALOG (chooser),
+                                           GTK_RESPONSE_ACCEPT,
+                                           GTK_RESPONSE_CANCEL,
+                                           -1);
 
-  /* add file chooser filters */
-  filter = gtk_file_filter_new ();
-  gtk_file_filter_set_name (filter, _("All Files"));
-  gtk_file_filter_add_pattern (filter, "*");
-  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), filter);
-
-  filter = gtk_file_filter_new ();
-  gtk_file_filter_set_name (filter, _("Image Files"));
-  gtk_file_filter_add_pixbuf_formats (filter);
-  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), filter);
-  gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (chooser), filter);
-
-  /* add preview widget */
-  image = g_object_new (GTK_TYPE_IMAGE, "height-request", 128 + 2 * 12, "width-request", 128 + 2 * 12, NULL);
-  g_signal_connect (G_OBJECT (chooser), "update-preview", G_CALLBACK (update_preview), image);
-  gtk_file_chooser_set_preview_widget_active (GTK_FILE_CHOOSER (chooser), FALSE);
-  gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), image);
-  gtk_widget_show (image);
-
-  /* use the datadir/pixmaps as default folder */
-  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), DATADIR "/pixmaps");
-
-  /* check if we have an icon set */
+  /* check if we have an icon to set for the chooser */
   if (G_LIKELY (editor->icon != NULL && *editor->icon != '\0'))
-    {
-      /* check the icon type */
-      if (G_LIKELY (g_path_is_absolute (editor->icon)))
-        {
-          /* just use the icon file path */
-          filename = g_strdup (editor->icon);
-        }
-      else
-        {
-          /* determine the appropriate icon theme */
-          icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (chooser));
-
-          /* try to lookup the icon on the theme */
-          icon_info = gtk_icon_theme_lookup_icon (icon_theme, editor->icon, 48, 0);
-          if (G_LIKELY (icon_info != NULL))
-            {
-              /* use the filename from the icon info */
-              filename = g_strdup (gtk_icon_info_get_filename (icon_info));
-
-              /* release the icon info */
-              gtk_icon_info_free (icon_info);
-            }
-        }
-
-      /* setup the currently selected icon file */
-      if (G_LIKELY (filename != NULL && g_path_is_absolute (filename)))
-        gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (chooser), filename);
-
-      /* release the filename */
-      g_free (filename);
-    }
+    exo_icon_chooser_dialog_set_icon (EXO_ICON_CHOOSER_DIALOG (chooser), editor->icon);
 
   /* run the chooser dialog */
   if (gtk_dialog_run (GTK_DIALOG (chooser)) == GTK_RESPONSE_ACCEPT)
     {
-      /* remember the selected file for the icon */
-      filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-      exo_die_editor_set_icon (editor, filename);
-      g_free (filename);
+      /* remember the selected icon from the chooser */
+      icon = exo_icon_chooser_dialog_get_icon (EXO_ICON_CHOOSER_DIALOG (chooser));
+      exo_die_editor_set_icon (editor, icon);
+      g_free (icon);
     }
 
   /* destroy the chooser */

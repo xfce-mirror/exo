@@ -42,6 +42,7 @@
 
 #include <exo/exo-binding.h>
 #include <exo/exo-cell-renderer-ellipsized-text.h>
+#include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-ellipsized-label.h>
 #include <exo/exo-execute.h>
 #include <exo/exo-enum-types.h>
@@ -49,6 +50,7 @@
 #include <exo/exo-gtk-extensions.h>
 #include <exo/exo-gobject-extensions.h>
 #include <exo/exo-icon-bar.h>
+#include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-md5.h>
 #include <exo/exo-pango-extensions.h>

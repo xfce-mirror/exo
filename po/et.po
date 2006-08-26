@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.8beta2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-16 15:27+0200\n"
+"POT-Creation-Date: 2006-08-26 14:01+0200\n"
 "PO-Revision-Date: 2006-04-21 23:06+0300\n"
 "Last-Translator: Peeter Vois <peeter.vois@proekspert.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -15,7 +15,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:782
+#: ../exo/exo-cell-renderer-ellipsized-text.c:138
+#: ../exo/exo-cell-renderer-icon.c:145
+msgid "Follow state"
+msgstr ""
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:139
+#: ../exo/exo-cell-renderer-icon.c:146
+msgid "Render differently based on the selection state."
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:167
+msgid "Icon"
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:168
+msgid "The icon to render."
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:189
+msgid "size"
+msgstr ""
+
+#: ../exo/exo-cell-renderer-icon.c:190
+msgid "The size of the icon to render in pixels."
+msgstr ""
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#, fuzzy, c-format
+msgid "Failed to open file \"%s\": %s"
+msgstr "\"%s\" avamine läks nässu."
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:832
+#, fuzzy, c-format
+msgid "Failed to read file \"%s\": %s"
+msgstr "\"%s\" avamine läks nässu."
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:873
+#, c-format
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:774
 msgid "Orientation"
 msgstr "Orientatsioon"
 
@@ -23,19 +65,19 @@ msgstr "Orientatsioon"
 msgid "The orientation of the iconbar"
 msgstr "Ikooniriba orientatsioon"
 
-#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:791
 msgid "Pixbuf column"
 msgstr "Pildibufri tulp"
 
-#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:792
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Mudeli tulp, mida kasutatakse ikooni pildibuffri võtmiseks"
 
-#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:926
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:918
 msgid "Text column"
 msgstr "Teksti tulp"
 
-#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:919
 msgid "Model column used to retrieve the text from"
 msgstr "Mudeli tulp, mida kasutatakse teksti võtmiseks"
 
@@ -79,122 +121,202 @@ msgstr "Kursori asja piirde värv"
 msgid "Cursor item text color"
 msgstr "Kursori asja teksti värv"
 
-#: ../exo/exo-icon-view.c:650
+#. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
+#: ../exo/exo-icon-chooser-dialog.c:85
+#, fuzzy
+msgid "Action Icons"
+msgstr "Vali rakendus"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
+#: ../exo/exo-icon-chooser-dialog.c:87
+msgid "Animations"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
+#: ../exo/exo-icon-chooser-dialog.c:89
+#, fuzzy
+msgid "Application Icons"
+msgstr "Rakenduse valimise nupp"
+
+#. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
+#: ../exo/exo-icon-chooser-dialog.c:91
+msgid "Menu Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_DEVICES
+#: ../exo/exo-icon-chooser-dialog.c:93
+msgid "Device Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
+#: ../exo/exo-icon-chooser-dialog.c:95
+msgid "Emblems"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMOTES
+#: ../exo/exo-icon-chooser-dialog.c:97
+msgid "Emoticons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
+#: ../exo/exo-icon-chooser-dialog.c:99
+msgid "International Denominations"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
+#: ../exo/exo-icon-chooser-dialog.c:101
+msgid "File Type Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_PLACES
+#: ../exo/exo-icon-chooser-dialog.c:103
+msgid "Location Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_STATUS
+#: ../exo/exo-icon-chooser-dialog.c:105
+#, fuzzy
+msgid "Status Icons"
+msgstr "Vali rakendus"
+
+#. EXO_ICON_CHOOSER_CONTEXT_OTHER
+#: ../exo/exo-icon-chooser-dialog.c:107
+msgid "Uncategorized Icons"
+msgstr ""
+
+#. EXO_ICON_CHOOSER_CONTEXT_ALL
+#: ../exo/exo-icon-chooser-dialog.c:111
+#, fuzzy
+msgid "All Icons"
+msgstr "Tekst _kõigile ikoonidele"
+
+#. EXO_ICON_CHOOSER_CONTEXT_FILE
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+msgid "Image Files"
+msgstr ""
+
+#. setup the header label
+#: ../exo/exo-icon-chooser-dialog.c:205
+#, fuzzy
+msgid "Select _icon from:"
+msgstr "Märkimise moodus"
+
+#: ../exo/exo-icon-view.c:642
 msgid "Column Spacing"
 msgstr "Tulpade vahe"
 
-#: ../exo/exo-icon-view.c:651
+#: ../exo/exo-icon-view.c:643
 msgid "Space which is inserted between grid column"
 msgstr "Ruum võre tulpade vahel"
 
-#: ../exo/exo-icon-view.c:667
+#: ../exo/exo-icon-view.c:659
 msgid "Number of columns"
 msgstr "Tulpade arv"
 
-#: ../exo/exo-icon-view.c:668
+#: ../exo/exo-icon-view.c:660
 msgid "Number of columns to display"
 msgstr "Näidatavate tulpade arv"
 
-#: ../exo/exo-icon-view.c:682
+#: ../exo/exo-icon-view.c:674
 msgid "Enable Search"
 msgstr "Luba otsingud"
 
-#: ../exo/exo-icon-view.c:683
+#: ../exo/exo-icon-view.c:675
 msgid "View allows user to search through columns interactively"
 msgstr "Vaade võimaldab kasutajal otsida läbi tulpade interaktiivselt"
 
-#: ../exo/exo-icon-view.c:700
+#: ../exo/exo-icon-view.c:692
 msgid "Width for each item"
 msgstr "Kõigi asjade laius"
 
-#: ../exo/exo-icon-view.c:701
+#: ../exo/exo-icon-view.c:693
 msgid "The width used for each item"
 msgstr "Iga asja juures kasutatud laius"
 
-#: ../exo/exo-icon-view.c:719
+#: ../exo/exo-icon-view.c:711
 msgid "Layout mode"
 msgstr "Laotuse viis"
 
-#: ../exo/exo-icon-view.c:720
+#: ../exo/exo-icon-view.c:712
 msgid "The layout mode"
 msgstr "Laotuse viis"
 
-#: ../exo/exo-icon-view.c:736
+#: ../exo/exo-icon-view.c:728
 msgid "Margin"
 msgstr "Ääristus"
 
-#: ../exo/exo-icon-view.c:737
+#: ../exo/exo-icon-view.c:729
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Ruum ikoonivaate äärtes"
 
-#: ../exo/exo-icon-view.c:753
+#: ../exo/exo-icon-view.c:745
 msgid "Markup column"
 msgstr "Ülesmärgistuse tulp"
 
-#: ../exo/exo-icon-view.c:754
+#: ../exo/exo-icon-view.c:746
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Mudeli tulp, mida kasutatakse teksti saamiseks kui Pango märgistus on "
 "kasutusel"
 
-#: ../exo/exo-icon-view.c:768
+#: ../exo/exo-icon-view.c:760
 msgid "Icon View Model"
 msgstr "Ikooni vaate mudel"
 
-#: ../exo/exo-icon-view.c:769
+#: ../exo/exo-icon-view.c:761
 msgid "The model for the icon view"
 msgstr "Ikooni vaate mudel"
 
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-view.c:775
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Kuidas asjade tekstid ja ikoonid on asetatud teineteise suhtes"
 
-#: ../exo/exo-icon-view.c:815
+#: ../exo/exo-icon-view.c:807
 msgid "Reorderable"
 msgstr "Ümberjärjestatav"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:808
 msgid "View is reorderable"
 msgstr "Vaade on überjärjestatav"
 
-#: ../exo/exo-icon-view.c:831
+#: ../exo/exo-icon-view.c:823
 msgid "Row Spacing"
 msgstr "Ridade vahe"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:824
 msgid "Space which is inserted between grid rows"
 msgstr "Vahe, mis on võre ridade vahel"
 
-#: ../exo/exo-icon-view.c:846
+#: ../exo/exo-icon-view.c:838
 msgid "Search Column"
 msgstr "otsimise tulp"
 
-#: ../exo/exo-icon-view.c:847
+#: ../exo/exo-icon-view.c:839
 msgid "Model column to search through when searching through item"
 msgstr "Mudeli tulp läbiotsimisel kui otsitakse asjast"
 
-#: ../exo/exo-icon-view.c:861
+#: ../exo/exo-icon-view.c:853
 msgid "Selection mode"
 msgstr "Märkimise moodus"
 
-#: ../exo/exo-icon-view.c:862
+#: ../exo/exo-icon-view.c:854
 msgid "The selection mode"
 msgstr "Märkimise moodus"
 
-#: ../exo/exo-icon-view.c:877 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:869 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Üksiktoksamine"
 
-#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:870 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Et kas saab asju aktiveerida selles vaates üksiktoksamisega"
 
-#: ../exo/exo-icon-view.c:894 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:886 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Üksiktoksamise aeg"
 
-#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:184
+#: ../exo/exo-icon-view.c:887 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -202,29 +324,58 @@ msgstr ""
 "Aja hulk, peale mida asi hiire all märgitakse automaatselt üksiktoksamise "
 "režiimis."
 
-#: ../exo/exo-icon-view.c:910
+#: ../exo/exo-icon-view.c:902
 msgid "Spacing"
 msgstr "Vahemaad"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:903
 msgid "Space which is inserted between cells of an item"
 msgstr "Asja lahtrite vaheline ruum"
 
-#: ../exo/exo-icon-view.c:934
+#: ../exo/exo-icon-view.c:926
 msgid "Selection Box Color"
 msgstr "Märgistamise kasti värv"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:927
 msgid "Color of the selection box"
 msgstr "Märgistamise kasti värv"
 
-#: ../exo/exo-icon-view.c:941
+#: ../exo/exo-icon-view.c:933
 msgid "Selection Box Alpha"
 msgstr "Märgistamise kasti alpha"
 
-#: ../exo/exo-icon-view.c:942
+#: ../exo/exo-icon-view.c:934
 msgid "Opacity of the selection box"
 msgstr "Märgistamise kasti läbipaistmatus"
+
+#: ../exo/exo-thumbnail-preview.c:123
+msgid "Preview"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+#, fuzzy
+msgid "No file selected"
+msgstr "Rakendust pole valitud"
+
+#: ../exo/exo-thumbnail-preview.c:299
+msgid "Block Device"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:304
+msgid "Character Device"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:309
+msgid "Folder"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:314
+msgid "FIFO"
+msgstr ""
+
+#: ../exo/exo-thumbnail-preview.c:319
+msgid "Socket"
+msgstr ""
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
@@ -407,7 +558,6 @@ msgid "Select an Application"
 msgstr "Vali rakendus"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:299
-#: ../exo-desktop-item-edit/exo-die-editor.c:641
 #: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
 msgstr ""
@@ -470,7 +620,7 @@ msgstr ""
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:408
-#: ../exo-desktop-item-edit/exo-die-editor.c:1223
+#: ../exo-desktop-item-edit/exo-die-editor.c:1134
 msgid "No icon"
 msgstr ""
 
@@ -504,14 +654,11 @@ msgstr "X Terminal"
 msgid "Select this option to run the command in a terminal window."
 msgstr ""
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:631
+#. allocate the icon chooser dialog
+#: ../exo-desktop-item-edit/exo-die-editor.c:591
 #, fuzzy
-msgid "Select an Icon"
+msgid "Select an icon"
 msgstr "Vali rakendus"
-
-#: ../exo-desktop-item-edit/exo-die-editor.c:646
-msgid "Image Files"
-msgstr ""
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:50
@@ -992,6 +1139,10 @@ msgstr "Kategooria \"%s\" eelistatud rakenduse käivitamine läks nässu"
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "URL-i \"%s\" avamine läks nässu"
+
+#, fuzzy
+#~ msgid "Select an Icon"
+#~ msgstr "Vali rakendus"
 
 #~ msgid "Default Web Browser"
 #~ msgstr "Esmane neti sirvimisvahend"

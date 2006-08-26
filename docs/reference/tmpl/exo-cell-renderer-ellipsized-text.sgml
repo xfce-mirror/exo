@@ -2,35 +2,25 @@
 ExoCellRendererEllipsizedText
 
 <!-- ##### SECTION Short_Description ##### -->
-Renders text in a cell and optionally ellipsizes the text.
+Renders text in a cell
 
 <!-- ##### SECTION Long_Description ##### -->
 <para>
-The #ExoCellRendererEllipsizedText renders a given text in its
-cell, using the font, color and style information provided by
-its properties (which are actually inherited from #GtkCellRendererText).
-The text will be ellipsized if its too long and the "ellipsize"
-property allows it.
+  The #ExoCellRendererEllipsizedText renders a given text in its cell, using the font, color and
+  style information provided by its properties (which are actually inherited from #GtkCellRendererText).
 </para>
+
 <para>
-#ExoCellRendererEllipsizedText is compatible with Gtk+ 2.5 and
-above in that it automatically detects if #GtkCellRendererText
-has the "ellipsize" property and reuses the built-in functionality
-if available. For Gtk+ 2.4, it uses the <link
-linkend="exo-Extensions-to-Pango">Pango Extensions</link> to
-ellipsize text properly.
-</para>
-<para>
-As of exo 0.3.1.8, #ExoCellRendererEllipsizedText is deprecated and
-should not be used in newly written code. Instead use #GtkCellRendererText
-directly, which supports the "ellipsize" property since GTK+ 2.6.
+  Despite the rather confusing name of this class, it is mainly useful to render text in an #ExoIconView
+  (or a #GtkIconView), which require the renderers to actually draw the state indicators. State indicators
+  will be drawn only if the <link linkend="ExoCellRendererEllipsizedText--follow-state">follow-state</link>
+  property is %TRUE.
 </para>
 
 <!-- ##### SECTION See_Also ##### -->
 <para>
-<ulink url="http://developer.gnome.org/doc/API/2.0/gtk/GtkCellRendererText.html"
-type="http">GtkCellRendererText</ulink>, <link
-linkend="exo-Extensions-to-Pango">Exo Pango Extensions</link>
+  <ulink url="http://developer.gnome.org/doc/API/2.0/gtk/GtkCellRendererText.html" type="http">GtkCellRendererText</ulink>,
+  <link linkend="ExoIconView">ExoIconView</link>
 </para>
 
 <!-- ##### SECTION Stability_Level ##### -->
@@ -38,9 +28,14 @@ linkend="exo-Extensions-to-Pango">Exo Pango Extensions</link>
 
 <!-- ##### STRUCT ExoCellRendererEllipsizedText ##### -->
 <para>
-
+  The <structname>ExoIconCellRendererEllipsizedText</structname> struct contains only private fields and should not be directly accessed.
 </para>
 
+
+<!-- ##### ARG ExoCellRendererEllipsizedText:follow-state ##### -->
+<para>
+
+</para>
 
 <!-- ##### FUNCTION exo_cell_renderer_ellipsized_text_new ##### -->
 <para>

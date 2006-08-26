@@ -90,13 +90,14 @@ dnl *** Check for standard header files ***
 dnl ***************************************
 AC_HEADER_STDC()
 AC_CHECK_HEADERS([assert.h errno.h fcntl.h fnmatch.h libintl.h locale.h math.h \
-                  md5.h md5global.h mmintrin.h regex.h stdarg.h string.h \
+                  md5.h md5global.h mmintrin.h regex.h stdarg.h string.h sys/mman.h \
                   sys/resource.h sys/stat.h sys/time.h sys/types.h sys/wait.h \
                   time.h])
 
 dnl ************************************
 dnl *** Check for standard functions ***
 dnl ************************************
+AC_FUNC_MMAP()
 AC_CHECK_FUNCS([regexec])
 
 dnl ******************************************
@@ -216,15 +217,51 @@ AC_HELP_STRING([--enable-debug=@<:@no/minimum/yes@:>@], [Turn on debugging @<:@d
   [], [enable_debug=libexo_debug_default])
 AC_MSG_CHECKING([whether to enable debugging support])
 if test x"$enable_debug" = x"yes" -o x"$enable_debug" = x"full"; then
-  CFLAGS="$CFLAGS -O0 -g3 -Werror -Wall"
+  dnl Print the result
+  AC_MSG_RESULT([$enable_debug])
+
+  dnl Make sure we detect possible errors (if supported)
+  save_CFLAGS="$CFLAGS"
+  CFLAGS="$CFLAGS -Wall -Werror"
+  AC_MSG_CHECKING([whether $CC accepts -Wall -Werror])
+  AC_COMPILE_IFELSE(AC_LANG_SOURCE([int x;]), [
+    AC_MSG_RESULT([yes])
+  ], [
+    CFLAGS="$save_CFLAGS"
+    AC_MSG_RESULT([no])
+  ])
+
+  dnl Paranoia for --enable-debug=full
+  if test x"$enable_debug" = x"full"; then
+    dnl Enable extensive debugging
+    CFLAGS="$CFLAGS -DG_ENABLE_DEBUG"
+
+    dnl Use -O0 -g3 if the compiler supports it
+    save_CFLAGS="$CFLAGS"
+    CFLAGS="$CFLAGS -O0 -g3"
+    AC_MSG_CHECKING([whether $CC accepts -O0 -g3])
+    AC_COMPILE_IFELSE(AC_LANG_SOURCE([int x;]), [
+      AC_MSG_RESULT([yes])
+    ], [
+      CFLAGS="$save_CFLAGS"
+      AC_MSG_RESULT([no])
+    ])
+  fi
 else
+  dnl Print the result
+  AC_MSG_RESULT([$enable_debug])
+
+  dnl Disable debugging (release build)
+  CFLAGS="$CFLAGS -NDEBUG"
+
+  dnl Disable object cast checks
   CFLAGS="$CFLAGS -DG_DISABLE_CAST_CHECKS"
 
+  dnl Disable all checks for --enable-debug=no
   if test x"$enable_debug" = x"no"; then
     CFLAGS="$CFLAGS -DG_DISABLE_ASSERT -DG_DISABLE_CHECKS"
   fi
 fi
-AC_MSG_RESULT([$enable_debug])
 
 dnl **************************************
 dnl *** Check for linker optimizations ***
@@ -304,6 +341,7 @@ exo-open/Makefile
 exo-support/Makefile
 icons/Makefile
 icons/48x48/Makefile
+pixmaps/Makefile
 po/Makefile.in
 po-doc/Makefile
 python/Makefile

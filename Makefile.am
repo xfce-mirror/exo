@@ -13,6 +13,7 @@ SUBDIRS =								\
 	exo-open							\
 	docs								\
 	icons								\
+	pixmaps								\
 	po								\
 	po-doc								\
 	$(PYTHON_SUBDIR)						\

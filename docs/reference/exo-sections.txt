@@ -104,40 +104,6 @@ exo_toolbars_view_get_type
 
 
 <SECTION>
-<FILE>exo-cell-renderer-ellipsized-text</FILE>
-<TITLE>ExoCellRendererEllipsizedText</TITLE>
-ExoCellRendererEllipsizedText
-exo_cell_renderer_ellipsized_text_new
-<SUBSECTION Standard>
-EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT
-EXO_CELL_RENDERER_ELLIPSIZED_TEXT
-EXO_CELL_RENDERER_ELLIPSIZED_TEXT_CLASS
-EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT
-EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT_CLASS
-EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_CLASS
-<SUBSECTION Private>
-exo_cell_renderer_ellipsized_text_get_type
-</SECTION>
-
-<SECTION>
-<FILE>exo-ellipsized-label</FILE>
-<TITLE>ExoEllipsizedLabel</TITLE>
-ExoEllipsizedLabel
-exo_ellipsized_label_new
-exo_ellipsized_label_get_ellipsize
-exo_ellipsized_label_set_ellipsize
-<SUBSECTION Standard>
-EXO_TYPE_ELLIPSIZED_LABEL
-EXO_ELLIPSIZED_LABEL
-EXO_ELLIPSIZED_LABEL_CLASS
-EXO_IS_ELLIPSIZED_LABEL
-EXO_IS_ELLIPSIZED_LABEL_CLASS
-EXO_ELLIPSIZED_LABEL_GET_CLASS
-<SUBSECTION Private>
-exo_ellipsized_label_get_type
-</SECTION>
-
-<SECTION>
 <FILE>exo-icon-bar</FILE>
 <TITLE>ExoIconBar</TITLE>
 ExoIconBar
@@ -156,6 +122,8 @@ exo_icon_bar_set_active
 exo_icon_bar_get_active_iter
 exo_icon_bar_set_active_iter
 <SUBSECTION Standard>
+ExoIconBarPrivate
+ExoIconBarClass
 EXO_TYPE_ICON_BAR
 EXO_ICON_BAR
 EXO_ICON_BAR_CLASS
@@ -164,6 +132,26 @@ EXO_IS_ICON_BAR_CLASS
 EXO_ICON_BAR_GET_CLASS
 <SUBSECTION Private>
 exo_icon_bar_get_type
+</SECTION>
+
+<SECTION>
+<FILE>exo-icon-chooser-dialog</FILE>
+<TITLE>ExoIconChooserDialog</TITLE>
+ExoIconChooserDialog
+exo_icon_chooser_dialog_new
+exo_icon_chooser_dialog_get_icon
+exo_icon_chooser_dialog_set_icon
+<SUBSECTION Standard>
+ExoIconChooserDialogPrivate
+ExoIconChooserDialogClass
+EXO_TYPE_ICON_CHOOSER_DIALOG
+EXO_ICON_CHOOSER_DIALOG
+EXO_ICON_CHOOSER_DIALOG_CLASS
+EXO_IS_ICON_CHOOSER_DIALOG
+EXO_IS_ICON_CHOOSER_DIALOG_CLASS
+EXO_ICON_CHOOSER_DIALOG_GET_CLASS
+<SUBSECTION Private>
+exo_icon_chooser_dialog_get_type
 </SECTION>
 
 <SECTION>
@@ -301,13 +289,53 @@ exo_wrap_table_get_type
 
 
 <SECTION>
+<FILE>exo-cell-renderer-ellipsized-text</FILE>
+<TITLE>ExoCellRendererEllipsizedText</TITLE>
+ExoCellRendererEllipsizedText
+exo_cell_renderer_ellipsized_text_new
+<SUBSECTION Standard>
+ExoCellRendererEllipsizedTextPrivate
+ExoCellRendererEllipsizedTextClass
+EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT
+EXO_CELL_RENDERER_ELLIPSIZED_TEXT
+EXO_CELL_RENDERER_ELLIPSIZED_TEXT_CLASS
+EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT
+EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT_CLASS
+EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_CLASS
+<SUBSECTION Private>
+exo_cell_renderer_ellipsized_text_get_type
+</SECTION>
+
+<SECTION>
+<FILE>exo-cell-renderer-icon</FILE>
+<TITLE>ExoCellRendererIcon</TITLE>
+ExoCellRendererIcon
+exo_cell_renderer_icon_new
+<SUBSECTION Standard>
+ExoCellRendererIconPrivate
+ExoCellRendererIconClass
+EXO_TYPE_CELL_RENDERER_ICON
+EXO_CELL_RENDERER_ICON
+EXO_CELL_RENDERER_ICON_CLASS
+EXO_IS_CELL_RENDERER_ICON
+EXO_IS_CELL_RENDERER_ICON_CLASS
+EXO_CELL_RENDERER_ICON_GET_CLASS
+<SUBSECTION Private>
+exo_cell_renderer_icon_get_type
+</SECTION>
+
+
+
+<SECTION>
 <FILE>exo-gdk-pixbuf-extensions</FILE>
 <TITLE>Extensions to gdk-pixbuf</TITLE>
 exo_gdk_pixbuf_colorize
+exo_gdk_pixbuf_frame
 exo_gdk_pixbuf_lucent
 exo_gdk_pixbuf_spotlight
 exo_gdk_pixbuf_scale_down
 exo_gdk_pixbuf_scale_ratio
+exo_gdk_pixbuf_new_from_file_at_max_size
 </SECTION>
 
 <SECTION>
@@ -319,8 +347,10 @@ exo_g_value_transform_negate
 <SECTION>
 <FILE>exo-gtk-extensions</FILE>
 <TITLE>Extensions to Gtk</TITLE>
+exo_gtk_object_destroy_later
 exo_gtk_object_ref_sink
 exo_gtk_radio_action_set_current_value
+exo_gtk_file_chooser_add_thumbnail_preview
 </SECTION>
 
 <SECTION>
@@ -447,4 +477,25 @@ EXO_XSESSION_CLIENT_GET_CLASS
 <SUBSECTION Private>
 exo_xsession_client_get_type
 </SECTION>
+
+
+
+<SECTION>
+<FILE>exo-ellipsized-label</FILE>
+<TITLE>ExoEllipsizedLabel</TITLE>
+ExoEllipsizedLabel
+exo_ellipsized_label_new
+exo_ellipsized_label_get_ellipsize
+exo_ellipsized_label_set_ellipsize
+<SUBSECTION Standard>
+EXO_TYPE_ELLIPSIZED_LABEL
+EXO_ELLIPSIZED_LABEL
+EXO_ELLIPSIZED_LABEL_CLASS
+EXO_IS_ELLIPSIZED_LABEL
+EXO_IS_ELLIPSIZED_LABEL_CLASS
+EXO_ELLIPSIZED_LABEL_GET_CLASS
+<SUBSECTION Private>
+exo_ellipsized_label_get_type
+</SECTION>
+
 

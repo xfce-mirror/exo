@@ -51,7 +51,15 @@ exo_mutual_binding_unbind
 #if IN_HEADER(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__)
 #if IN_SOURCE(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_C__)
 exo_cell_renderer_ellipsized_text_get_type G_GNUC_CONST
-exo_cell_renderer_ellipsized_text_new G_GNUC_MALLOC
+exo_cell_renderer_ellipsized_text_new G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+#endif
+#endif
+
+/* ExoCellRendererIcon methods */
+#if IN_HEADER(__EXO_CELL_RENDERER_ICON_H__)
+#if IN_SOURCE(__EXO_CELL_RENDERER_ICON_C__)
+exo_cell_renderer_icon_get_type G_GNUC_CONST
+exo_cell_renderer_icon_new G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 #endif
 #endif
 
@@ -99,11 +107,13 @@ exo_execute_terminal_shell_on_screen
 /* exo-gdk-pixbuf-extensions functions */
 #if IN_HEADER(__EXO_GDK_PIXBUF_EXTENSIONS_H__)
 #if IN_SOURCE(__EXO_GDK_PIXBUF_EXTENSIONS_C__)
-exo_gdk_pixbuf_colorize G_GNUC_MALLOC
-exo_gdk_pixbuf_lucent G_GNUC_MALLOC
-exo_gdk_pixbuf_spotlight G_GNUC_MALLOC
-exo_gdk_pixbuf_scale_down
-exo_gdk_pixbuf_scale_ratio
+exo_gdk_pixbuf_colorize G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_gdk_pixbuf_frame G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_gdk_pixbuf_lucent G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_gdk_pixbuf_spotlight G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_gdk_pixbuf_scale_down G_GNUC_WARN_UNUSED_RESULT
+exo_gdk_pixbuf_scale_ratio G_GNUC_WARN_UNUSED_RESULT
+exo_gdk_pixbuf_new_from_file_at_max_size G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 #endif
 #endif
 
@@ -120,6 +130,7 @@ exo_g_value_transform_negate
 exo_gtk_object_destroy_later
 exo_gtk_object_ref_sink
 exo_gtk_radio_action_set_current_value
+exo_gtk_file_chooser_add_thumbnail_preview
 #endif
 #endif
 
@@ -141,6 +152,28 @@ exo_icon_bar_get_active
 exo_icon_bar_set_active
 exo_icon_bar_get_active_iter
 exo_icon_bar_set_active_iter
+#endif
+#endif
+
+/* ExoIconChooserButton methods */
+#if IN_HEADER(__EXO_ICON_CHOOSER_BUTTON_H__)
+#if IN_SOURCE(__EXO_ICON_CHOOSER_BUTTON_C__)
+exo_icon_chooser_button_get_type G_GNUC_CONST
+exo_icon_chooser_button_new G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_icon_chooser_button_get_icon G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_icon_chooser_button_set_icon
+exo_icon_chooser_button_get_title
+exo_icon_chooser_button_set_title
+#endif
+#endif
+
+/* ExoIconChooserDialog methods */
+#if IN_HEADER(__EXO_ICON_CHOOSER_DIALOG_H__)
+#if IN_SOURCE(__EXO_ICON_CHOOSER_DIALOG_C__)
+exo_icon_chooser_dialog_get_type G_GNUC_CONST
+exo_icon_chooser_dialog_new G_GNUC_MALLOC G_GNUC_NULL_TERMINATED G_GNUC_WARN_UNUSED_RESULT
+exo_icon_chooser_dialog_get_icon G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_icon_chooser_dialog_set_icon
 #endif
 #endif
 

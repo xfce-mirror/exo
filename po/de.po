@@ -8,15 +8,59 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.9svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-16 15:27+0200\n"
-"PO-Revision-Date:  2006-08-16 15:20+0200\n"
+"POT-Creation-Date: 2006-08-26 14:01+0200\n"
+"PO-Revision-Date:  2006-08-26 13:50+0200\n"
 "Last-Translator: Benedikt Meurer <benny@xfce.org>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:782
+#: ../exo/exo-cell-renderer-ellipsized-text.c:138
+#: ../exo/exo-cell-renderer-icon.c:145
+msgid "Follow state"
+msgstr "Zustand folgen"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:139
+#: ../exo/exo-cell-renderer-icon.c:146
+msgid "Render differently based on the selection state."
+msgstr "Abhängig von Zustand zeichnen."
+
+#: ../exo/exo-cell-renderer-icon.c:167
+msgid "Icon"
+msgstr "Symbol"
+
+#: ../exo/exo-cell-renderer-icon.c:168
+msgid "The icon to render."
+msgstr "Das zu zeichnende Symbol."
+
+#: ../exo/exo-cell-renderer-icon.c:189
+msgid "size"
+msgstr "Größe"
+
+#: ../exo/exo-cell-renderer-icon.c:190
+msgid "The size of the icon to render in pixels."
+msgstr "Die Größe in der das Symbol gezeichnet werden soll."
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#, c-format
+msgid "Failed to open file \"%s\": %s"
+msgstr "Konnte »%s« nicht öffnen: %s"
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:832
+#, c-format
+msgid "Failed to read file \"%s\": %s"
+msgstr "Konnte »%s« nicht lesen: %s"
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:873
+#, c-format
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Bild »%s« konnte nicht geladen werden: Grund unbekannt, vermutlich eine "
+"defekte Bilddatei"
+
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:774
 msgid "Orientation"
 msgstr "Orientierung"
 
@@ -24,19 +68,19 @@ msgstr "Orientierung"
 msgid "The orientation of the iconbar"
 msgstr "Die Orientierung der Symbolleiste"
 
-#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:791
 msgid "Pixbuf column"
 msgstr "Pixbuf-Spalte"
 
-#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:792
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Spalte für das Model, von der das Icon Pixbuf geholt werden soll"
 
-#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:926
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:918
 msgid "Text column"
 msgstr "Textspalte"
 
-#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:919
 msgid "Model column used to retrieve the text from"
 msgstr "Spalte für das Model, von der der Text geholt werden soll"
 
@@ -80,152 +124,257 @@ msgstr "Randfarbe für das Cursorelement"
 msgid "Cursor item text color"
 msgstr "Textfarbe für das Cursorelement"
 
-#: ../exo/exo-icon-view.c:650
+#. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
+#: ../exo/exo-icon-chooser-dialog.c:85
+msgid "Action Icons"
+msgstr "Aktionssymbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
+#: ../exo/exo-icon-chooser-dialog.c:87
+msgid "Animations"
+msgstr "Animationen"
+
+#. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
+#: ../exo/exo-icon-chooser-dialog.c:89
+msgid "Application Icons"
+msgstr "Anwendungssymbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
+#: ../exo/exo-icon-chooser-dialog.c:91
+msgid "Menu Icons"
+msgstr "Menüsymbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_DEVICES
+#: ../exo/exo-icon-chooser-dialog.c:93
+msgid "Device Icons"
+msgstr "Gerätesymbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
+#: ../exo/exo-icon-chooser-dialog.c:95
+msgid "Emblems"
+msgstr "Embleme"
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMOTES
+#: ../exo/exo-icon-chooser-dialog.c:97
+msgid "Emoticons"
+msgstr "Emoticons"
+
+#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
+#: ../exo/exo-icon-chooser-dialog.c:99
+msgid "International Denominations"
+msgstr "Internationale Symbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
+#: ../exo/exo-icon-chooser-dialog.c:101
+msgid "File Type Icons"
+msgstr "Dateisymbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_PLACES
+#: ../exo/exo-icon-chooser-dialog.c:103
+msgid "Location Icons"
+msgstr "Ordnersymbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STATUS
+#: ../exo/exo-icon-chooser-dialog.c:105
+msgid "Status Icons"
+msgstr "Statussymbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_OTHER
+#: ../exo/exo-icon-chooser-dialog.c:107
+msgid "Uncategorized Icons"
+msgstr "Andere Symbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ALL
+#: ../exo/exo-icon-chooser-dialog.c:111
+msgid "All Icons"
+msgstr "Alle Symbole"
+
+#. EXO_ICON_CHOOSER_CONTEXT_FILE
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+msgid "Image Files"
+msgstr "Bilddateien"
+
+#. setup the header label
+#: ../exo/exo-icon-chooser-dialog.c:205
+msgid "Select _icon from:"
+msgstr "_Symbol wählen aus:"
+
+#: ../exo/exo-icon-view.c:642
 msgid "Column Spacing"
 msgstr "Spaltenabstand"
 
-#: ../exo/exo-icon-view.c:651
+#: ../exo/exo-icon-view.c:643
 msgid "Space which is inserted between grid column"
 msgstr "Platz, der zwischen Gitterspalten eingefügt wird"
 
-#: ../exo/exo-icon-view.c:667
+#: ../exo/exo-icon-view.c:659
 msgid "Number of columns"
 msgstr "Anzahl Spalten"
 
-#: ../exo/exo-icon-view.c:668
+#: ../exo/exo-icon-view.c:660
 msgid "Number of columns to display"
 msgstr "Anzahl anzuzeigender Spalten"
 
-#: ../exo/exo-icon-view.c:682
+#: ../exo/exo-icon-view.c:674
 msgid "Enable Search"
 msgstr "Suche aktivieren"
 
-#: ../exo/exo-icon-view.c:683
+#: ../exo/exo-icon-view.c:675
 msgid "View allows user to search through columns interactively"
 msgstr "Symbolansicht erlaubt dem Benutzer interaktive Suche"
 
-#: ../exo/exo-icon-view.c:700
+#: ../exo/exo-icon-view.c:692
 msgid "Width for each item"
 msgstr "Breite für jedes Element"
 
-#: ../exo/exo-icon-view.c:701
+#: ../exo/exo-icon-view.c:693
 msgid "The width used for each item"
 msgstr "Die Breite, die für jedes Element verwendet wird"
 
-#: ../exo/exo-icon-view.c:719
+#: ../exo/exo-icon-view.c:711
 msgid "Layout mode"
 msgstr "Layout Modus"
 
-#: ../exo/exo-icon-view.c:720
+#: ../exo/exo-icon-view.c:712
 msgid "The layout mode"
 msgstr "Der Layout Modus"
 
-#: ../exo/exo-icon-view.c:736
+#: ../exo/exo-icon-view.c:728
 msgid "Margin"
 msgstr "Rand"
 
-#: ../exo/exo-icon-view.c:737
+#: ../exo/exo-icon-view.c:729
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Platz, der an den Rändern der Symbolansicht eingefügt wird"
 
-#: ../exo/exo-icon-view.c:753
+#: ../exo/exo-icon-view.c:745
 msgid "Markup column"
 msgstr "Auswahlspalte"
 
-#: ../exo/exo-icon-view.c:754
+#: ../exo/exo-icon-view.c:746
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Modellspalte, anhand derer Text geholt wird, falls die Auszeichungssprache "
 "von Pango verwendet wird"
 
-#: ../exo/exo-icon-view.c:768
+#: ../exo/exo-icon-view.c:760
 msgid "Icon View Model"
 msgstr "Modell zur Symbolansicht"
 
-#: ../exo/exo-icon-view.c:769
+#: ../exo/exo-icon-view.c:761
 msgid "The model for the icon view"
 msgstr "Das Modell für die Symbolansicht"
 
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-view.c:775
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr ""
 "Wie der Text und das Symbol jedes Elements relativ zueinandner angeordnet "
 "werden"
 
-#: ../exo/exo-icon-view.c:815
+#: ../exo/exo-icon-view.c:807
 msgid "Reorderable"
 msgstr "Umordbar"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:808
 msgid "View is reorderable"
 msgstr "Die Ansicht ist umordbar"
 
-#: ../exo/exo-icon-view.c:831
+#: ../exo/exo-icon-view.c:823
 msgid "Row Spacing"
 msgstr "Zeilenabstand"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:824
 msgid "Space which is inserted between grid rows"
 msgstr "Platz, der zwischen Gitterzeilen eingefügt wird"
 
-#: ../exo/exo-icon-view.c:846
+#: ../exo/exo-icon-view.c:838
 msgid "Search Column"
 msgstr "Suchspalte"
 
-#: ../exo/exo-icon-view.c:847
+#: ../exo/exo-icon-view.c:839
 msgid "Model column to search through when searching through item"
 msgstr "Die Spalte im Modell, die durchsucht werden soll"
 
-#: ../exo/exo-icon-view.c:861
+#: ../exo/exo-icon-view.c:853
 msgid "Selection mode"
 msgstr "Auswahlmodus"
 
-#: ../exo/exo-icon-view.c:862
+#: ../exo/exo-icon-view.c:854
 msgid "The selection mode"
 msgstr "Der Auswahlmodus"
 
-#: ../exo/exo-icon-view.c:877 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:869 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Einfacher Klick"
 
-#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:870 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Ob die Objekte bei einem einfachen Klick aktiviert werden sollen"
 
-#: ../exo/exo-icon-view.c:894 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:886 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Einfachklick-Verzögerung"
 
-#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:184
+#: ../exo/exo-icon-view.c:887 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr ""
+"Die Zeitspanne nachdem das Objekt unter dem Mauscursor automatisch "
+"ausgewählt wird, wenn der Einfachklick-Modus aktiviert ist"
 
-#: ../exo/exo-icon-view.c:910
+#: ../exo/exo-icon-view.c:902
 msgid "Spacing"
 msgstr "Abstand"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:903
 msgid "Space which is inserted between cells of an item"
 msgstr "Platz, der zwischen Zellen eines Elements eingefügt wird"
 
-#: ../exo/exo-icon-view.c:934
+#: ../exo/exo-icon-view.c:926
 msgid "Selection Box Color"
 msgstr "Farbe der Auswahlbox"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:927
 msgid "Color of the selection box"
 msgstr "Farbe für die Auswahlbox"
 
-#: ../exo/exo-icon-view.c:941
+#: ../exo/exo-icon-view.c:933
 msgid "Selection Box Alpha"
 msgstr "Alphawert für die Auswahlbox"
 
-#: ../exo/exo-icon-view.c:942
+#: ../exo/exo-icon-view.c:934
 msgid "Opacity of the selection box"
 msgstr "Deckkraft der Auswahlbox"
+
+#: ../exo/exo-thumbnail-preview.c:123
+msgid "Preview"
+msgstr "Vorschau"
+
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+msgid "No file selected"
+msgstr "Keine Datei ausgewählt"
+
+#: ../exo/exo-thumbnail-preview.c:299
+msgid "Block Device"
+msgstr "Blockorientiertes Gerät"
+
+#: ../exo/exo-thumbnail-preview.c:304
+msgid "Character Device"
+msgstr "Zeichenorientiertes Gerät"
+
+#: ../exo/exo-thumbnail-preview.c:309
+msgid "Folder"
+msgstr "Ordner"
+
+#: ../exo/exo-thumbnail-preview.c:314
+msgid "FIFO"
+msgstr "FIFO"
+
+#: ../exo/exo-thumbnail-preview.c:319
+msgid "Socket"
+msgstr "Socket"
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
@@ -407,7 +556,6 @@ msgid "Select an Application"
 msgstr "Anwendung auswählen"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:299
-#: ../exo-desktop-item-edit/exo-die-editor.c:641
 #: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
 msgstr "Alle Dateien"
@@ -470,7 +618,7 @@ msgstr "S_ymbol:"
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:408
-#: ../exo-desktop-item-edit/exo-die-editor.c:1223
+#: ../exo-desktop-item-edit/exo-die-editor.c:1134
 msgid "No icon"
 msgstr "Kein Symbol"
 
@@ -508,13 +656,10 @@ msgstr ""
 "Ist diese Option aktiv, wird der oben angegebene Befehl in einem Terminal-"
 "Fenster ausgeführt."
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:631
-msgid "Select an Icon"
-msgstr "Symbol auswählen"
-
-#: ../exo-desktop-item-edit/exo-die-editor.c:646
-msgid "Image Files"
-msgstr "Bilddateien"
+#. allocate the icon chooser dialog
+#: ../exo-desktop-item-edit/exo-die-editor.c:591
+msgid "Select an icon"
+msgstr "Ein Symbol auswählen"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:50
@@ -535,31 +680,31 @@ msgstr "Verknüpfung ändern"
 
 #: ../exo-desktop-item-edit/main.c:72
 msgid "Create a new desktop file in the given directory"
-msgstr ""
+msgstr "Eine neue Datei im angegebenen Ordner erstellen"
 
 #: ../exo-desktop-item-edit/main.c:73
 msgid "Type of desktop file to create (Application or Link)"
-msgstr ""
+msgstr "Typ der zu erstellenden Datei (Application oder Link)"
 
 #: ../exo-desktop-item-edit/main.c:74
 msgid "Preset name when creating a desktop file"
-msgstr ""
+msgstr "Voreingestellter Name"
 
 #: ../exo-desktop-item-edit/main.c:75
 msgid "Preset comment when creating a desktop file"
-msgstr ""
+msgstr "Voreingestellter Kommentator"
 
 #: ../exo-desktop-item-edit/main.c:76
 msgid "Preset command when creating a launcher"
-msgstr ""
+msgstr "Voreingestellter Befehl für Starter"
 
 #: ../exo-desktop-item-edit/main.c:77
 msgid "Preset URL when creating a link"
-msgstr ""
+msgstr "Voreingestellte URL für Verknüpfungen"
 
 #: ../exo-desktop-item-edit/main.c:78
 msgid "Preset icon when creating a desktop file"
-msgstr ""
+msgstr "Voreingestelltes Symbol"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Print version information and exit"
@@ -992,4 +1137,3 @@ msgstr "Konnte bevorzugte Anwendung aus der Kategorie »%s« nicht ausführen."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Konnte URL »%s« nicht öffnen."
-
