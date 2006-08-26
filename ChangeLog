@@ -1,5 +1,10 @@
 2006-08-26	Benedikt Meurer <benny@xfce.org>
 
+	* configure.in.in: Fix typo, where -NDEBUG was used instead of
+	  -DNDEBUG as preprocessor flag. Bug #2221.
+
+2006-08-26	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-config.h.in: Verify that G_GNUC_NULL_TERMINATED is defined.
 	* exo/exo-private.{c,h}: Add _exo_g_type_add_interface_simple() to
 	  further reduce the number of relocations.

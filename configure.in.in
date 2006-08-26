@@ -252,7 +252,7 @@ else
   AC_MSG_RESULT([$enable_debug])
 
   dnl Disable debugging (release build)
-  CFLAGS="$CFLAGS -NDEBUG"
+  CFLAGS="$CFLAGS -DNDEBUG"
 
   dnl Disable object cast checks
   CFLAGS="$CFLAGS -DG_DISABLE_CAST_CHECKS"
