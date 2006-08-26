@@ -1,5 +1,11 @@
 2006-08-26	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-chooser-dialog.c(CONTEXT_TITLES): Apply patch from
+	  Matt McClinch <mattmcclinch@gmail.com> to fix a warning with older
+	  compilers. Bug #2223.
+
+2006-08-26	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c: Finally fix the layout problem where the
 	  appearance of a scrollbar causes the icons to be laid out again and
 	  again. Thanks to Matt McClinch <mattmcclinch@gmail.com> for the
