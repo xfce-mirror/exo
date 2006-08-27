@@ -1,3 +1,9 @@
+2006-08-27	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-icon-chooser-model.h: Need to include <exo/exo-config.h> to
+	  make sure G_GNUC_WARN_UNUSED_RESULT is defined. Thanks to Enrico
+	  Troeger <enrico.troeger@uvena.de> for the hint.
+
 2006-08-26	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-icon-chooser-dialog.c(CONTEXT_TITLES): Apply patch from

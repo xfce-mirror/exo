@@ -25,6 +25,8 @@
 #ifndef __EXO_ICON_CHOOSER_MODEL_H__
 #define __EXO_ICON_CHOOSER_MODEL_H__
 
+#include <exo/exo-config.h>
+
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS;
