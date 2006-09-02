@@ -1,3 +1,32 @@
+0.3.1.10rc1
+===========
+- Added a new ExoIconChooserDialog widget to pick an icon from either the
+  current icon theme or an image file.
+- Added exo_gtk_file_chooser_add_thumbnail_preview() which adds a thumbnail
+  preview widget to a GtkFileChooser.
+- Added exo_gdk_pixbuf_new_from_at_max_size() to scale down image files while
+  loading them, but never scale up.
+- Added ExoCellRendererIcon as default icon renderer for the ExoIconView.
+- Added support for the rxvt-unicode terminal emulator (Bug #2158).
+- Updated ExoCellRendererEllipsizedText to be used as default text renderer
+  for the ExoIconView.
+- Updated ExoTreeView to add support for rubberband selection (Bug #1996).
+- Updated exo-desktop-item-edit to offer a completion of possible applications
+  from the desktop database in the Name entry field when creating or modifying
+  launchers.
+- Fix a layout problem in ExoIconView where the appearance of a scrollbar
+  causes the icons to be laid out again and again (Bug #2219, Matt McClinch).
+- Fix build with compilers other than gcc (Bug #2252).
+- Use the GSlice allocator where possible to further reduce memory overhead.
+- Update the API documentation, adding a visual index for the available widgets.
+- Updated translations: Michal Varady (cs), Benedikt Meurer and Fabian Nowak
+                        (de), Stavros Giannouris (el), Piarres Beobide (eu),
+			Jari Rahkonen (fi), Maximilian Schleiss (fr), Piotr
+			Maliński and Szymon Kałasz (pl), Tomás Acauan Schertel
+			(pt_BR)
+- New translations: Leandro Regueiro (gl), Dimitri Gogelia (ka)
+
+
 0.3.1.8beta2
 ============
 - Imported the "Xfce Preferred Applications" framework, which allows users to
