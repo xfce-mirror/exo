@@ -611,7 +611,7 @@ exo_tree_view_drag_begin (GtkWidget      *widget,
   tree_view->priv->button_release_activates = FALSE;
 
   /* call the parent's drag begin handler */
-  return (*GTK_WIDGET_CLASS (exo_tree_view_parent_class)->drag_begin) (widget, context);
+  (*GTK_WIDGET_CLASS (exo_tree_view_parent_class)->drag_begin) (widget, context);
 }
 
 
