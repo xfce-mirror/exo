@@ -55,7 +55,7 @@
       <title>Options</title>
       <variablelist>
         <varlistentry>
-          <term><option>-h</option>, <option>--help</option></term>
+          <term><option>-?</option>, <option>--help</option></term>
           <listitem>
             <para>Print brief help and exit.</para>
           </listitem>
@@ -65,6 +65,18 @@
           <term><option>-v</option>, <option>--version</option></term>
           <listitem>
             <para>Print version information and exit.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term><option>--working-directory</option> <parameter>directory</parameter></term>
+          <listitem>
+            <para>
+              When using the <option>--launch</option> option and this option is specified as well, the application will
+              be run in the given <parameter>directory</parameter>. This is primarly useful when running the preferred
+              <emphasis role="bold">TerminalEmulator</emphasis> from another application and you want the command in the
+              terminal window to be run in a specific directory.
+            </para>
           </listitem>
         </varlistentry>
 
