@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.10rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-02 15:53+0200\n"
+"POT-Creation-Date: 2006-09-10 13:35+0200\n"
 "PO-Revision-Date: 2006-05-26 12:00+0300\n"
 "Last-Translator: mantas <mantaz@users.sourceforge.net>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
@@ -505,7 +505,7 @@ msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr ""
 
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
-#: ../exo-open/main.c:100
+#: ../exo-open/main.c:129
 msgid ""
 "Copyright (c) 2005-2006\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -515,7 +515,7 @@ msgid ""
 msgstr ""
 
 #: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:156
-#: ../exo-open/main.c:103
+#: ../exo-open/main.c:132
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -526,7 +526,7 @@ msgid ""
 msgstr ""
 
 #: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:160
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:136
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr ""
@@ -1017,24 +1017,24 @@ msgstr ""
 msgid "X Terminal"
 msgstr ""
 
-#: ../exo-open/main.c:43
+#: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
 msgstr ""
 
-#: ../exo-open/main.c:44
+#: ../exo-open/main.c:60
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr ""
 
-#: ../exo-open/main.c:46
-msgid "  -h, --help                          Print this help message and exit"
+#: ../exo-open/main.c:62
+msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 
-#: ../exo-open/main.c:47
+#: ../exo-open/main.c:63
 msgid ""
 "  -v, --version                       Print version information and exit"
 msgstr ""
 
-#: ../exo-open/main.c:49
+#: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1042,21 +1042,28 @@ msgid ""
 "                                      TYPE is one of the following values."
 msgstr ""
 
-#: ../exo-open/main.c:53
+#: ../exo-open/main.c:69
+msgid ""
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
+"                                      when using the --launch option."
+msgstr ""
+
+#: ../exo-open/main.c:72
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr ""
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:59
+#: ../exo-open/main.c:78
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
 
-#: ../exo-open/main.c:63
+#: ../exo-open/main.c:82
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1065,12 +1072,12 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
 
-#: ../exo-open/main.c:121
+#: ../exo-open/main.c:148
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr ""
 
-#: ../exo-open/main.c:144
+#: ../exo-open/main.c:169
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr ""

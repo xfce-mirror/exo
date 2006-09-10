@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.10rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-02 15:53+0200\n"
+"POT-Creation-Date: 2006-09-10 13:35+0200\n"
 "PO-Revision-Date: 2006-08-29 00:41+0300\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
@@ -508,7 +508,7 @@ msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Lue (nimi, tiedosto)-parit\n"
 
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
-#: ../exo-open/main.c:100
+#: ../exo-open/main.c:129
 msgid ""
 "Copyright (c) 2005-2006\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -523,7 +523,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:156
-#: ../exo-open/main.c:103
+#: ../exo-open/main.c:132
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -539,7 +539,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:160
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:136
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Ilmoitathan ohjelmistovirheet osoitteeseen <%s>.\n"
@@ -1051,24 +1051,25 @@ msgstr "W3M -tekstiselain"
 msgid "X Terminal"
 msgstr "X-pääte"
 
-#: ../exo-open/main.c:43
+#: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
 msgstr "Käyttö: exo-open [URL:t...]"
 
-#: ../exo-open/main.c:44
+#: ../exo-open/main.c:60
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "        exo-open --launch TYYPPI [PARAMETRIT...]"
 
-#: ../exo-open/main.c:46
-msgid "  -h, --help                          Print this help message and exit"
+#: ../exo-open/main.c:62
+#, fuzzy
+msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -h, --help                          Näytä tämä ohjeteksti ja poistu"
 
-#: ../exo-open/main.c:47
+#: ../exo-open/main.c:63
 msgid ""
 "  -v, --version                       Print version information and exit"
 msgstr "  -v, --version                       Näytä versiotiedot ja poistu"
 
-#: ../exo-open/main.c:49
+#: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1079,14 +1080,21 @@ msgstr ""
 "                                      käyttäen valinnaisia PARAMETREJA,\n"
 "                                      kun TYYPPI on joku alla luetelluista."
 
-#: ../exo-open/main.c:53
+#: ../exo-open/main.c:69
+msgid ""
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
+"                                      when using the --launch option."
+msgstr ""
+
+#: ../exo-open/main.c:72
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Komento --launch tukee seuraavia TYYPPEJÄ:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:59
+#: ../exo-open/main.c:78
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1096,7 +1104,7 @@ msgstr ""
 "  MailReader       - Oletusarvoinen sähköpostiohjelma.\n"
 "  TerminalEmulator - Oletusarvoinen pääteohjelma."
 
-#: ../exo-open/main.c:63
+#: ../exo-open/main.c:82
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1109,12 +1117,12 @@ msgstr ""
 "sovelluksen ja antaa sille lisäparametreja (voit esimerkiksi määrittää\n"
 "päätteessä suoritettavan komentorivin)."
 
-#: ../exo-open/main.c:121
+#: ../exo-open/main.c:148
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Oletussovelluksen suorittaminen kategorialle \"%s\" epäonnistui."
 
-#: ../exo-open/main.c:144
+#: ../exo-open/main.c:169
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "URL:n \"%s\" avaaminen epäonnistui."

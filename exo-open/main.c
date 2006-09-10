@@ -37,18 +37,37 @@
 
 
 
+static gboolean opt_help = FALSE;
+static gboolean opt_version = FALSE;
+static gchar   *opt_launch = NULL;
+static gchar   *opt_working_directory = NULL;
+
+static GOptionEntry entries[] =
+{
+  { "help", '?', 0, G_OPTION_ARG_NONE, &opt_help, NULL, NULL, },
+  { "version", 'v', 0, G_OPTION_ARG_NONE, &opt_version, NULL, NULL, },
+  { "launch", 0, 0, G_OPTION_ARG_STRING, &opt_launch, NULL, NULL, },
+  { "working-directory", 0, 0, G_OPTION_ARG_FILENAME, &opt_working_directory, NULL, NULL, },
+  { NULL, },
+};
+
+
+
 static void
 usage (void)
 {
   g_print ("%s\n", _("Usage: exo-open [URLs...]"));
   g_print ("%s\n", _("       exo-open --launch TYPE [PARAMETERs...]"));
   g_print ("\n");
-  g_print ("%s\n", _("  -h, --help                          Print this help message and exit"));
+  g_print ("%s\n", _("  -?, --help                          Print this help message and exit"));
   g_print ("%s\n", _("  -v, --version                       Print version information and exit"));
   g_print ("\n");
   g_print ("%s\n", _("  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
                      "                                      TYPE with the optional PARAMETERs, where\n"
                      "                                      TYPE is one of the following values."));
+  g_print ("\n");
+  g_print ("%s\n", _("  --working-directory DIRECTORY       Default working directory for applications\n"
+                     "                                      when using the --launch option."));
   g_print ("\n");
   g_print ("%s\n", _("The following TYPEs are supported for the --launch command:"));
   g_print ("\n");
@@ -73,28 +92,38 @@ usage (void)
 int
 main (int argc, char **argv)
 {
-  GtkWidget *dialog;
-  GError    *error = NULL;
-  gchar     *parameter;
-  gint       result = EXIT_SUCCESS;
+  GOptionContext *context;
+  GtkWidget      *dialog;
+  GError         *err = NULL;
+  gchar          *parameter;
+  gint            result = EXIT_SUCCESS;
 
 #ifdef GETTEXT_PACKAGE
   /* setup i18n support */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 #endif
 
-  /* initialize Gtk+ */
-  gtk_init (&argc, &argv);
+  /* try to parse the command line parameters */
+  context = g_option_context_new (NULL);
+  g_option_context_set_help_enabled (context, FALSE);
+  g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
+  g_option_context_add_group (context, gtk_get_option_group (TRUE));
+  if (!g_option_context_parse (context, &argc, &argv, &err))
+    {
+      g_fprintf (stderr, "exo-open: %s.\n", err->message);
+      g_error_free (err);
+      return EXIT_FAILURE;
+    }
 
   /* setup default icon for windows */
   gtk_window_set_default_icon_name ("preferences-desktop-default-applications");
 
   /* check what to do */
-  if (argc == 2 && (strcmp (argv[1], "--help") == 0 || strcmp (argv[1], "-h") == 0))
+  if (G_UNLIKELY (opt_help))
     {
       usage ();
     }
-  else if (argc == 2 && (strcmp (argv[1], "--version") == 0 || strcmp (argv[1], "-v") == 0))
+  else if (G_UNLIKELY (opt_version))
     {
       g_print ("%s %s\n\n", g_get_prgname (), PACKAGE_VERSION);
       g_print (_("Copyright (c) 2005-2006\n"
@@ -106,48 +135,43 @@ main (int argc, char **argv)
                  "%s source package.\n\n"), g_get_prgname (), g_get_prgname (), PACKAGE_TARNAME);
       g_print (_("Please report bugs to <%s>.\n"), PACKAGE_BUGREPORT);
     }
-  else if (argc >= 3 && strcmp (argv[1], "--launch") == 0)
+  else if (G_LIKELY (opt_launch != NULL))
     {
       /* combine all specified parameters to one parameter string */
-      parameter = (argc > 3) ? g_strjoinv (" ", argv + 3) : NULL;
+      parameter = (argc > 1) ? g_strjoinv (" ", argv + 1) : NULL;
 
       /* run the preferred application */
-      if (!exo_execute_preferred_application (argv[2], parameter, NULL, NULL, &error))
+      if (!exo_execute_preferred_application (opt_launch, parameter, opt_working_directory, NULL, &err))
         {
           /* display an error dialog */
-          dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL,
-                                           GTK_MESSAGE_ERROR,
-                                           GTK_BUTTONS_CLOSE,
+          dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
                                            _("Failed to launch preferred application for category \"%s\"."),
-                                           argv[2]);
-          gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
+                                           opt_launch);
+          gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", err->message);
           gtk_dialog_run (GTK_DIALOG (dialog));
           gtk_widget_destroy (dialog);
           result = EXIT_FAILURE;
-          g_error_free (error);
+          g_error_free (err);
         }
 
       /* cleanup */
       g_free (parameter);
     }
-  else if (argc >= 2 && strcmp (argv[1], "--launch") != 0)
+  else if (argc > 1)
     {
       /* open all specified urls */
       for (argv += 1; *argv != NULL; ++argv)
         {
-          if (!exo_url_show (*argv, NULL, &error))
+          if (!exo_url_show (*argv, NULL, &err))
             {
               /* display an error dialog */
-              dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL,
-                                               GTK_MESSAGE_ERROR,
-                                               GTK_BUTTONS_CLOSE,
-                                               _("Failed to open URL \"%s\"."),
-                                               *argv);
-              gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
+              dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
+                                               _("Failed to open URL \"%s\"."), *argv);
+              gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", err->message);
               gtk_dialog_run (GTK_DIALOG (dialog));
               gtk_widget_destroy (dialog);
               result = EXIT_FAILURE;
-              g_error_free (error);
+              g_error_free (err);
               break;
             }
         }
