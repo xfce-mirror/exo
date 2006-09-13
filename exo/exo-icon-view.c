@@ -2722,26 +2722,15 @@ exo_icon_view_item_hit_test (ExoIconView      *icon_view,
   GList *l;
   GdkRectangle box;
  
-  if (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS)
+  for (l = icon_view->priv->cell_list; l; l = l->next)
     {
-      for (l = icon_view->priv->cell_list; l; l = l->next)
-        {
-          ExoIconViewCellInfo *info = (ExoIconViewCellInfo *)l->data;
-          
-          if (!info->cell->visible)
-            continue;
-          
-          box = item->box[info->position];
-          
-          if (MIN (x + width, box.x + box.width) - MAX (x, box.x) > 0 &&
-            MIN (y + height, box.y + box.height) - MAX (y, box.y) > 0)
-            return TRUE;
-        }
-    }
-  else
-    {
-      box = item->area;
+      ExoIconViewCellInfo *info = (ExoIconViewCellInfo *)l->data;
       
+      if (!info->cell->visible)
+        continue;
+      
+      box = item->box[info->position];
+
       if (MIN (x + width, box.x + box.width) - MAX (x, box.x) > 0 &&
         MIN (y + height, box.y + box.height) - MAX (y, box.y) > 0)
         return TRUE;

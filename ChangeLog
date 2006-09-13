@@ -1,5 +1,11 @@
 2006-09-13	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-icon-view.c(exo_icon_view_item_hit_test): Revert previous
+	  change as it makes it too easy to accidently select files that you
+	  do not wanted to selected, when in compact list mode.
+
+2006-09-13	Benedikt Meurer <benny@xfce.org>
+
 	* exo/exo-icon-view.c(exo_icon_view_item_hit_test): Apply patch from
 	  Matt McClinch <mattmcclinch@gmail.com> to improve rubberband
 	  selection in compact list mode.
