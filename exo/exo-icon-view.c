@@ -2237,7 +2237,7 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
               icon_view->priv->press_start_y = event->y;
             }
 
-          if (!icon_view->priv->last_single_clicked)
+          if (G_LIKELY (icon_view->priv->last_single_clicked == NULL))
             icon_view->priv->last_single_clicked = item;
 
           /* cancel the current editing, if it exists */
@@ -2274,8 +2274,7 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
                                                    event->x, event->y,
                                                    TRUE,
                                                    NULL);
-
-          if (item && item == icon_view->priv->last_single_clicked)
+          if (G_LIKELY (item != NULL))
             {
               path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
               exo_icon_view_item_activated (icon_view, path);
