@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.1.10rc1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 13:35+0200\n"
-"PO-Revision-Date: 2006-05-15 00:52+0100\n"
+"PO-Revision-Date: 2006-09-18 21:22+0200\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -22,45 +22,44 @@ msgstr ""
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
 msgid "Follow state"
-msgstr ""
+msgstr "Manté l’estat"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:139
 #: ../exo/exo-cell-renderer-icon.c:146
 msgid "Render differently based on the selection state."
-msgstr ""
+msgstr "Representa segons l’estat de selecció."
 
 #: ../exo/exo-cell-renderer-icon.c:167
-#, fuzzy
 msgid "Icon"
-msgstr "_Icona:"
+msgstr "Icona"
 
 #: ../exo/exo-cell-renderer-icon.c:168
 msgid "The icon to render."
-msgstr ""
+msgstr "La icona a representar."
 
 #: ../exo/exo-cell-renderer-icon.c:189
 msgid "size"
-msgstr ""
+msgstr "tamany"
 
 #: ../exo/exo-cell-renderer-icon.c:190
 msgid "The size of the icon to render in pixels."
-msgstr ""
+msgstr "Tamany en píxels de la icona a representar"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:770
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "No s'ha pogut obrir «%s»."
+msgstr "No s'ha pogut obrir «%s»: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:832
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "No s'ha pogut crear «%s»."
+msgstr "No s'ha pogut crear «%s»: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
+msgstr "No s’ha pogut carregar la imatge «%s»: raó desconeguda, probablement el fitxer està corromput."
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:784
 msgid "Orientation"
@@ -128,73 +127,68 @@ msgstr "Cursor amb text de color"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:85
-#, fuzzy
 msgid "Action Icons"
-msgstr "Seleccioneu una icona"
+msgstr "Icones d’accions"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:87
 msgid "Animations"
-msgstr ""
+msgstr "Animacions"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:89
-#, fuzzy
 msgid "Application Icons"
-msgstr "Botó d'elecció d'aplicació"
+msgstr "Icones d’aplicacions"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:91
 msgid "Menu Icons"
-msgstr ""
+msgstr "Icones de menú"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
 #: ../exo/exo-icon-chooser-dialog.c:93
 msgid "Device Icons"
-msgstr ""
+msgstr "Icones de dispositiu"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:95
 msgid "Emblems"
-msgstr ""
+msgstr "Distintius"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:97
-#, fuzzy
 msgid "Emoticons"
-msgstr "Sense icona"
+msgstr "Emoticones"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:99
 msgid "International Denominations"
-msgstr ""
+msgstr "Denominacions internacionals"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:101
 msgid "File Type Icons"
-msgstr ""
+msgstr "Icones de tipus de fitxer"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
 #: ../exo/exo-icon-chooser-dialog.c:103
 msgid "Location Icons"
-msgstr ""
+msgstr "Icones de localització"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:105
-#, fuzzy
 msgid "Status Icons"
-msgstr "Seleccioneu una icona"
+msgstr "Icones d’estat"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Uncategorized Icons"
-msgstr ""
+msgstr "Icones sense catergoria"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:111
-#, fuzzy
 msgid "All Icons"
-msgstr "Text per t_otes les icones"
+msgstr "Totes les icones"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
 #: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
@@ -203,9 +197,8 @@ msgstr "Fitxers d'imatge"
 
 #. setup the header label
 #: ../exo/exo-icon-chooser-dialog.c:205
-#, fuzzy
 msgid "Select _icon from:"
-msgstr "Mode de selecció"
+msgstr "Selecciona l’_icona des de:"
 
 #: ../exo/exo-icon-view.c:652
 msgid "Column Spacing"
@@ -356,32 +349,31 @@ msgstr "Opacitat de la caixa de selecció"
 
 #: ../exo/exo-thumbnail-preview.c:123
 msgid "Preview"
-msgstr ""
+msgstr "Vista prèvia"
 
 #: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
-#, fuzzy
 msgid "No file selected"
-msgstr "No s'ha seleccionat cap aplicació"
+msgstr "No s'ha seleccionat cap fitxer"
 
 #: ../exo/exo-thumbnail-preview.c:299
 msgid "Block Device"
-msgstr ""
+msgstr "Dispositiu de blocs"
 
 #: ../exo/exo-thumbnail-preview.c:304
 msgid "Character Device"
-msgstr ""
+msgstr "Dispositiu de caràcters"
 
 #: ../exo/exo-thumbnail-preview.c:309
 msgid "Folder"
-msgstr ""
+msgstr "Directori"
 
 #: ../exo/exo-thumbnail-preview.c:314
 msgid "FIFO"
-msgstr ""
+msgstr "FIFO"
 
 #: ../exo/exo-thumbnail-preview.c:319
 msgid "Socket"
-msgstr ""
+msgstr "Sòcol"
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
@@ -594,9 +586,9 @@ msgid "Shell Scripts"
 msgstr "Seqüències de shell"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
-#, fuzzy, c-format
+#, c-format
 msgid "Create Launcher <b>%s</b>"
-msgstr "Crea un llançador"
+msgstr "Crea un llançador <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:318
@@ -665,7 +657,6 @@ msgstr ""
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
-#, fuzzy
 msgid "Select an icon"
 msgstr "Seleccioneu una icona"
 
@@ -734,7 +725,7 @@ msgstr "No heu especificat cap fitxer o carpeta"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:225
-#, fuzzy, c-format
+#, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "No es reconeix el tipus de fitxer d'escriptori «%s»"
 
@@ -775,9 +766,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-#, fuzzy
 msgid "Web Browser"
-msgstr "Navegador web Galeon"
+msgstr "Navegador web"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -788,9 +778,8 @@ msgstr ""
 "hiperenllaços i mostrar l'ajuda."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-#, fuzzy
 msgid "Mail Reader"
-msgstr "Client de correu preferit"
+msgstr "Client de correu"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid ""
@@ -808,9 +797,8 @@ msgid "Utilities"
 msgstr "Utilitats"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-#, fuzzy
 msgid "Terminal Emulator"
-msgstr "Emulador de terminal predeterminat"
+msgstr "Emulador de terminal"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
@@ -963,7 +951,7 @@ msgstr "Terminal d'Xfce"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
-msgstr ""
+msgstr "aterm"
 
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
@@ -979,7 +967,7 @@ msgstr "Emulador de Terminal X de Debian"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
-msgstr ""
+msgstr "Encompass"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
@@ -1014,14 +1002,12 @@ msgid "Konqueror Web Browser"
 msgstr "Navegador web Konqueror"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
-#, fuzzy
 msgid "Links Text Browser"
-msgstr "Navegador web Epiphany"
+msgstr "Navegador web de text Links"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-#, fuzzy
 msgid "Lynx Text Browser"
-msgstr "Navegador web Galeon"
+msgstr "Navegador web de text Lynx"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
@@ -1033,15 +1019,15 @@ msgstr "Correu de Mozilla"
 
 #: ../exo-helper/helpers/mutt.desktop.in.in.h:1
 msgid "Mutt"
-msgstr ""
+msgstr "Mutt"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
-msgstr ""
+msgstr "Navegador Netscape"
 
 #: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
 msgid "NXterm"
-msgstr ""
+msgstr "NXterm"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
@@ -1053,11 +1039,11 @@ msgstr "Correu d'Opera"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Sylpheed Claws"
-msgstr ""
+msgstr "Sylpheed Claws"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
-msgstr ""
+msgstr "Sylpheed"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
@@ -1065,12 +1051,11 @@ msgstr "Mozilla Thunderbird"
 
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
-msgstr ""
+msgstr "RXVT Unicode"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-#, fuzzy
 msgid "W3M Text Browser"
-msgstr "Navegador Opera"
+msgstr "Navegador web de text W3M"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -1085,9 +1070,8 @@ msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "        exo-open --launch TIPUS [PARÀMETREs…]"
 
 #: ../exo-open/main.c:62
-#, fuzzy
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -h, --help                          Mostra aquest missatge i surt"
+msgstr "  -?, --help                          Mostra aquest missatge i surt"
 
 #: ../exo-open/main.c:63
 msgid ""
@@ -1113,6 +1097,8 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
+" --working-direcory DIRECTORI           Directori per defecte per les aplica-\n"
+"                                        cions quan s’usa l’opció --launch."
 
 #: ../exo-open/main.c:72
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1155,9 +1141,3 @@ msgstr "No s'ha pogut llançar l'aplicació predeferida de la categoria «%s»."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "No s'ha pogut obrir la URL «%s»"
-
-#~ msgid "Select an Icon"
-#~ msgstr "Seleccioneu una icona"
-
-#~ msgid "Default Web Browser"
-#~ msgstr "Navegador web predeterminat"
