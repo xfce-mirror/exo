@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.1.10rc1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 13:35+0200\n"
-"PO-Revision-Date: 2006-08-27 02:10+0200\n"
+"PO-Revision-Date: 2006-10-09 22:54+0200\n"
 "Last-Translator: Stavros Giannouris <stavrosg2002@freemail.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
 "MIME-Version: 1.0\n"
@@ -55,13 +55,11 @@ msgstr "Η ανάγνωση του αρχείου \"%s\" απέτυχε: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Η φόρτωσης της εικόνας \"%s\" απέτυχε: Ο λόγος είναι άγνωστος, πιθανόν "
-"πρόκειται για κατεστραμμένο αρχείο εικόνας"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Η φόρτωσης της εικόνας \"%s\" απέτυχε: Ο λόγος είναι άγνωστος, πιθανόν πρόκειται για κατεστραμμένο αρχείο εικόνας"
 
-#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:784
+#: ../exo/exo-icon-bar.c:249
+#: ../exo/exo-icon-view.c:784
 msgid "Orientation"
 msgstr "Προσανατολισμός"
 
@@ -69,19 +67,23 @@ msgstr "Προσανατολισμός"
 msgid "The orientation of the iconbar"
 msgstr "Ο προσανατολισμός του Iconbar"
 
-#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:801
+#: ../exo/exo-icon-bar.c:266
+#: ../exo/exo-icon-view.c:801
 msgid "Pixbuf column"
 msgstr "Στήλη Pixbuf"
 
-#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:802
+#: ../exo/exo-icon-bar.c:267
+#: ../exo/exo-icon-view.c:802
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Το μοντέλο στήλης για τη λήψη του pixbuf εικονιδίου"
 
-#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:928
+#: ../exo/exo-icon-bar.c:282
+#: ../exo/exo-icon-view.c:928
 msgid "Text column"
 msgstr "Στήλη κειμένου"
 
-#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:929
+#: ../exo/exo-icon-bar.c:283
+#: ../exo/exo-icon-view.c:929
 msgid "Model column used to retrieve the text from"
 msgstr "Το μοντέλο στήλης για τη λήψη του κειμένου"
 
@@ -101,27 +103,33 @@ msgstr "Ενεργό"
 msgid "Active item index"
 msgstr "Το αντικείμενο που είναι αυτή τη στιγμή ενεργό"
 
-#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319
+#: ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "Χρώμα γεμίσματος ενεργού αντικειμένου"
 
-#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326
+#: ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "Χρώμα περιγράμματος ενεργού αντικειμένου"
 
-#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333
+#: ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "Χρώμα κειμένου ενεργού αντικειμένου"
 
-#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340
+#: ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "Χρώμα γεμίσματος κέρσορα"
 
-#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347
+#: ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "Χρώμα περιγράμματος κέρσορα"
 
-#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354
+#: ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "Χρώμα κειμένου κέρσορα"
 
@@ -163,7 +171,7 @@ msgstr "Φατσούλες"
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:99
 msgid "International Denominations"
-msgstr ""
+msgstr "Διεθνείς ονομασίες"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:101
@@ -191,7 +199,8 @@ msgid "All Icons"
 msgstr "Όλα τα εικονίδια"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Εικόνες"
 
@@ -254,9 +263,7 @@ msgstr "Στήλη επισήμανσης"
 
 #: ../exo/exo-icon-view.c:756
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Το μοντέλο στήλης για τη λήψη του κειμένου, στην περίπτωση χρήσης σήμανσης "
-"Pango"
+msgstr "Το μοντέλο στήλης για τη λήψη του κειμένου, στην περίπτωση χρήσης σήμανσης Pango"
 
 #: ../exo/exo-icon-view.c:770
 msgid "Icon View Model"
@@ -267,10 +274,8 @@ msgid "The model for the icon view"
 msgstr "Το μοντέλο για την προβολή εικονιδίου"
 
 #: ../exo/exo-icon-view.c:785
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"Πως το κείμενο και κάθε στοιχείο τοποθετούνται το ένα σε σχέση με το άλλο"
+msgid "How the text and icon of each item are positioned relative to each other"
+msgstr "Πως το κείμενο και κάθε στοιχείο τοποθετούνται το ένα σε σχέση με το άλλο"
 
 #: ../exo/exo-icon-view.c:817
 msgid "Reorderable"
@@ -304,25 +309,25 @@ msgstr "Λειτουργία επιλογής"
 msgid "The selection mode"
 msgstr "Η λειτουργία επιλογής"
 
-#: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:879
+#: ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Μονό κλικ"
 
-#: ../exo/exo-icon-view.c:880 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Εάν θα ενεργοποιούνται τα αντικείμενα στην προβολή με μονά κλικ"
 
-#: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:896
+#: ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Λήξη χρονικού ορίου για μονό κλικ"
 
-#: ../exo/exo-icon-view.c:897 ../exo/exo-tree-view.c:184
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"Ο χρόνος μετά τον οποίο το αντικείμενο κάτω από τον κέρσορα του ποντικιού θα "
-"επιλεγεί αυτόματα στη λειτουργία μονού κλικ"
+#: ../exo/exo-icon-view.c:897
+#: ../exo/exo-tree-view.c:184
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "Ο χρόνος μετά τον οποίο το αντικείμενο κάτω από τον κέρσορα του ποντικιού θα επιλεγεί αυτόματα στη λειτουργία μονού κλικ"
 
 #: ../exo/exo-icon-view.c:912
 msgid "Spacing"
@@ -352,7 +357,8 @@ msgstr "Αδιαφάνεια κουτιού επιλογής"
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
-#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139
+#: ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "Δεν επιλέχθηκε αρχείο"
 
@@ -373,7 +379,6 @@ msgid "FIFO"
 msgstr "FIFO"
 
 #: ../exo/exo-thumbnail-preview.c:319
-#, fuzzy
 msgid "Socket"
 msgstr "Υποδοχή"
 
@@ -382,12 +387,8 @@ msgid "_Add a new toolbar"
 msgstr "_Προσθήκη μιας νέας εργαλειοθήκης"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Σύρετε ένα αντικείμενο στις εργαλειοθήκες παραπάνω για να το προσθέσετε, και "
-"από τις εργαλειοθήκες στον πίνακα αντικειμένων για να το αφαιρέσετε."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Σύρετε ένα αντικείμενο στις εργαλειοθήκες παραπάνω για να το προσθέσετε, και από τις εργαλειοθήκες στον πίνακα αντικειμένων για να το αφαιρέσετε."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -514,7 +515,8 @@ msgstr "  --name=αναγνωριστικό Όνομα μεταβλητής / μ
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list         Ανάλυση ζευγαριών (όνομα, αρχείο)\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
+#: ../exo-csource/main.c:248
+#: ../exo-desktop-item-edit/main.c:153
 #: ../exo-open/main.c:129
 msgid ""
 "Copyright (c) 2005-2006\n"
@@ -529,7 +531,8 @@ msgstr ""
 "Γραμμένο από τον Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:251 ../exo-desktop-item-edit/main.c:156
+#: ../exo-csource/main.c:251
+#: ../exo-desktop-item-edit/main.c:156
 #: ../exo-open/main.c:132
 #, c-format
 msgid ""
@@ -545,7 +548,8 @@ msgstr ""
 "να βρεθεί μέσα στο πακέτο με τον πηγαίο κώδικα του %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:255 ../exo-desktop-item-edit/main.c:160
+#: ../exo-csource/main.c:255
+#: ../exo-desktop-item-edit/main.c:160
 #: ../exo-open/main.c:136
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -635,14 +639,8 @@ msgid "Use _startup notification"
 msgstr "Χρήση γνω_στοποίηση εκκίνησης"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"Επιλέξτε αυτό για να ενεργοποιήσετε την ειδοποίηση εκκίνησης όταν η εντολή "
-"εκτελείται από τον διαχειριστή αρχείων ή το μενού. Δεν υποστηρίζεται από "
-"όλες τις εφαρμογές."
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Επιλέξτε αυτό για να ενεργοποιήσετε την ειδοποίηση εκκίνησης όταν η εντολή εκτελείται από τον διαχειριστή αρχείων ή το μενού. Δεν υποστηρίζεται από όλες τις εφαρμογές."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -653,9 +651,7 @@ msgstr "Εκτέλεση σε τερματι_κό"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:444
 msgid "Select this option to run the command in a terminal window."
-msgstr ""
-"Επιλογή αυτού του κουτιού για εκτέλεση της εντολής σε ένα παράθυρο "
-"τερματικού."
+msgstr "Επιλογή αυτού του κουτιού για εκτέλεση της εντολής σε ένα παράθυρο τερματικού."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
@@ -819,9 +815,7 @@ msgstr "Η εκκίνηση του αναγνώστη τεκμηρίωσης α�
 #: ../exo-helper/exo-helper-chooser.c:184
 #: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
-msgstr ""
-"Πιέστε το αριστερό πλήκτρο του ποντικιού για να αλλάξετε την επιλεγμένη "
-"εφαρμογή."
+msgstr "Πιέστε το αριστερό πλήκτρο του ποντικιού για να αλλάξετε την επιλεγμένη εφαρμογή."
 
 #: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
@@ -886,8 +880,7 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:610
 msgid "Browse the file system to choose a custom command."
-msgstr ""
-"Περιήγηση του συστήματος αρχείων για την επιλογή της προσαρμοσμένης εντολής."
+msgstr "Περιήγηση του συστήματος αρχείων για την επιλογή της προσαρμοσμένης εντολής."
 
 #: ../exo-helper/exo-helper-chooser.c:793
 msgid "_Other..."
@@ -895,8 +888,7 @@ msgstr "Άλ_λες..."
 
 #: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
-msgstr ""
-"Χρήση προσαρμοσμένης εφαρμογής που δεν περιλαμβάνεται στην παραπάνω λίστα."
+msgstr "Χρήση προσαρμοσμένης εφαρμογής που δεν περιλαμβάνεται στην παραπάνω λίστα."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:141
 msgid "Choose Preferred Application"
@@ -946,8 +938,7 @@ msgstr ""
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr ""
-"Προτιμώμενες εφαρμογές (περιηγητής, αναγνώστης αλληλογραφίας και τερματικό)"
+msgstr "Προτιμώμενες εφαρμογές (περιηγητής, αναγνώστης αλληλογραφίας και τερματικό)"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
@@ -1078,35 +1069,30 @@ msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch ΤΥΠΟΣ [ΠΑΡΑΜΕΤΡΟΙ...]"
 
 #: ../exo-open/main.c:62
-#, fuzzy
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
-"  -h, --help                          Εμφανίζει αυτό το κείμενο βοήθειας"
+msgstr "  -?, --help                          Εμφανίζει αυτό το κείμενο βοήθειας"
 
 #: ../exo-open/main.c:63
-msgid ""
-"  -v, --version                       Print version information and exit"
-msgstr ""
-"  -v, --version                       Εμφανίζει τις πληροφορίες έκδοσης"
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Εμφανίζει τις πληροφορίες έκδοσης"
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch TYPE [ΠΑΡΑΜΕΤΡΟι...]       Εκτέλεση της προτιμώμενης εφαρμογής "
-"του\n"
+"  --launch TYPE [ΠΑΡΑΜΕΤΡΟι...]       Εκτέλεση της προτιμώμενης εφαρμογής του\n"
 "                                      TYPE με τις προαιρετικές ΠΑΡΑΜΕΤΡΟΥς,\n"
 "                                      όπου TYPE είναι ένα από τα παρακάτω."
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
+"  --working-directory ΚΑΤΑΛΟΓΟΣ       Προεπιλεγμένος κατάλογος λειτουργίας\n"
+"                                      εφαρμογής όταν χρησιμοποιείται η επιλογή --launch."
 
 #: ../exo-open/main.c:72
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1142,8 +1128,7 @@ msgstr ""
 #: ../exo-open/main.c:148
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr ""
-"Η εκκίνηση της προτιμώμενης εφαρμογής για την κατηγορία \"%s\" απέτυχε."
+msgstr "Η εκκίνηση της προτιμώμενης εφαρμογής για την κατηγορία \"%s\" απέτυχε."
 
 #: ../exo-open/main.c:169
 #, c-format
@@ -1152,26 +1137,22 @@ msgstr "Το άνοιγμα του URL \"%s\" απέτυχε."
 
 #~ msgid "Select an Icon"
 #~ msgstr "Επιλογή εικονιδίου"
-
 #~ msgid "Default Web Browser"
 #~ msgstr "Προεπιλεγμένος περιηγητής"
-
 #~ msgid ""
 #~ "The preferred place to ellipsize the string, if the cell renderer does "
 #~ "not have enough room to display the entire string, if at all"
 #~ msgstr ""
 #~ "Η προτιμώμενη θέση για τη χρήση αποσιωπητικών στο αλφαριθμητικό, αν το "
 #~ "κελί δεν έχει αρκετό χώρο για να το εμφανίσει ολόκληρο"
-
 #~ msgid "Ellipsize set"
 #~ msgstr "Ορισμός αποσιωπητικών"
-
 #~ msgid "Whether this tag affects the ellipsize mode"
 #~ msgstr "Αν αυτή η ετικέτα επηρεάζει τη χρήση αποσιωπητικών"
-
 #~ msgid ""
 #~ "The preferred place to ellipsize the string, if the label does not have "
 #~ "enough room to display the entire string, if at all"
 #~ msgstr ""
 #~ "Η προτιμώμενη θέση για την αποσιώπηση αλφαριθμητικού, αν η ετικέτα δεν "
 #~ "έχει αρκετό χώρο για την εμφάνιση ολόκληρου του αλφαριθμητικού"
+
