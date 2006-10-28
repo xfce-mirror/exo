@@ -82,14 +82,19 @@ exo_preferred_applications_settings_la_LDFLAGS =			\
 	-module								\
 	-no-undefined
 
+if PLATFORM_WIN32
+exo_preferred_applications_settings_la_LDFLAGS +=			\
+	-export-symbols $(datadir)/xfce4/devel/mcs-manager.def
+endif
+
 exo_preferred_applications_settings_la_SOURCES =			\
 	exo-preferred-applications-settings.c
 
 exo_preferred_applications_settings_la_CFLAGS =				\
-	@XFCE_MCS_MANAGER_CFLAGS@
+	$(XFCE_MCS_MANAGER_CFLAGS)
 
 exo_preferred_applications_settings_la_LIBADD =				\
-	@XFCE_MCS_MANAGER_LIBS@
+	$(XFCE_MCS_MANAGER_LIBS)
 endif
 
 ##
