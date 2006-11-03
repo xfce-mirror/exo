@@ -381,7 +381,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
 
       /* check if we have an SVG icon here */
       filename = gtk_icon_info_get_filename (icon_info);
-      if (g_str_has_suffix (filename, ".svg"))
+      if (filename != NULL && g_str_has_suffix (filename, ".svg"))
         {
           /* loading SVG icons is terribly slow, so we try to use thumbnail instead, and we use the
            * real available cell area directly here, because loading thumbnails involves scaling anyway
