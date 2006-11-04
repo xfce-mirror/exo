@@ -1,3 +1,10 @@
+2006-11-04	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-url.c(exo_url_show_on_screen): Need to escape commata in
+	  URLs passed to web browsers and mail readers, because some of them,
+	  i.e. Firefox and Thunderbird, will otherwise strip offs the part
+	  after the last comma. Bug #2454.
+
 2006-11-03	Benedikt Meurer <benny@xfce.org>
 
 	* exo/exo-url.c: Underscore is a valid character for usernames.
