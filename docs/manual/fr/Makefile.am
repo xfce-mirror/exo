@@ -1,4 +1,4 @@
-# $Id: Makefile.am 20037 2006-10-28 22:13:18Z maximilian $
+# $Id$
 
 SUBDIRS =								\
 	images

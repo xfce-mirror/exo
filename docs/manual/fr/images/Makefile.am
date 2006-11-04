@@ -1,4 +1,4 @@
-# $Id: Makefile.am 20037 2006-10-28 22:10:18Z maximilian $
+# $Id$
 
 imagesdir = $(datadir)/xfce4/doc/fr/images
 images_DATA =								\
