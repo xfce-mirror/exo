@@ -61,9 +61,9 @@
 #define MATCH_BROWSER2  "(www|ftp)[" HOSTCHARS "]*\\.[" HOSTCHARS ".]+(:[0-9]+)?" \
                         "(/[-A-Za-z0-9_$.+!*(),;:@&=?/~#%]*[^]'.}>) \t\r\n,\\\"])?"
 #if !defined(__GLIBC__)
-#define MATCH_MAILER    "(mailto:)?[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+"
+#define MATCH_MAILER    "[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+"
 #else
-#define MATCH_MAILER    "\\<(mailto:)?[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+\\>"
+#define MATCH_MAILER    "\\<[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+\\>"
 #endif
 
 
@@ -219,16 +219,21 @@ exo_url_show_on_screen (const gchar *url,
   _exo_i18n_init ();
 
   /* now, let's see what we have here */
-  if (_exo_url_match (MATCH_BROWSER1, url) || _exo_url_match (MATCH_BROWSER2, url))
+  if (_exo_url_match (MATCH_BROWSER1, url))
     {
       category = "WebBrowser";
     }
-  else if (_exo_url_match (MATCH_MAILER, url))
+  else if (strncmp (url, "mailto:", 7) == 0 || _exo_url_match (MATCH_MAILER, url))
     {
       /* ignore mailto: prefix, as not all mailers can handle it */
-      if (g_str_has_prefix (url, "mailto:"))
-        url += strlen ("mailto:");
+      if (strncmp (url, "mailto:", 7) == 0)
+        url += 7;
       category = "MailReader";
+    }
+  else if (_exo_url_match (MATCH_BROWSER2, url))
+    {
+      /* after MATCH_MAILER, see http://bugzilla.xfce.org/show_bug.cgi?id=2530 for details */
+      category = "WebBrowser";
     }
   else
     {
