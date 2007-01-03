@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2005-2006 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2005-2007 Benedikt Meurer <benny@xfce.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -245,9 +245,10 @@ static void
 print_version (void)
 {
   g_print ("%s %s\n\n", g_get_prgname (), PACKAGE_VERSION);
-  g_print (_("Copyright (c) 2005-2006\n"
+  g_print (_("Copyright (c) %s\n"
              "        os-cillation e.K. All rights reserved.\n\n"
-             "Written by Benedikt Meurer <benny@xfce.org>.\n\n"));
+             "Written by Benedikt Meurer <benny@xfce.org>.\n\n"),
+           "2005-2007");
   g_print (_("%s comes with ABSOLUTELY NO WARRANTY,\n"
              "You may redistribute copies of %s under the terms of\n"
              "the GNU Lesser General Public License which can be found in the\n"
