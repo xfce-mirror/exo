@@ -25,6 +25,9 @@
 #include <sys/mnttab.h>
 #endif
 
+#ifdef HAVE_ERRNO_H
+#include <errno.h>
+#endif
 #ifdef HAVE_FSTAB_H
 #include <fstab.h>
 #endif
