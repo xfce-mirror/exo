@@ -138,7 +138,6 @@ exo_mount_fstab_lookup (const gchar *device_file,
 
 #if defined(HAVE_SETMNTENT) /* Linux */
   struct mntent *mntent;
-  gchar         *resolved;
   FILE          *fp;
 
   /* try to open the fstab file */
@@ -160,26 +159,14 @@ exo_mount_fstab_lookup (const gchar *device_file,
         break;
 
       /* check if this entry matches */
-      if (strcmp (device_file, mntent->mnt_fsname) == 0)
-        {
-          /* exakt match, nice */
-          path = g_strdup (mntent->mnt_dir);
-        }
-      else
-        {
-          /* but maybe the fstab entry is a symlink */
-          resolved = exo_mount_utils_resolve (mntent->mnt_fsname);
-          if (strcmp (device_file, resolved) == 0)
-            path = g_strdup (mntent->mnt_dir);
-          g_free (resolved);
-        }
+      if (exo_mount_utils_is_same_device (device_file, mntent->mnt_fsname))
+        path = g_strdup (mntent->mnt_dir);
     }
 
   /* close the file handle */
   endmntent (fp);
 #elif defined(HAVE_GETMNTENT) /* Solaris */
   struct mnttab mntent;
-  gchar        *resolved;
   FILE         *fp;
 
   /* try to open the fstab file */
@@ -200,46 +187,50 @@ exo_mount_fstab_lookup (const gchar *device_file,
         break;
 
       /* check if this entry matches */
-      if (strcmp (device_file, mntent.mnt_special) == 0)
-        {
-          /* exakt match, nice */
-          path = g_strdup (mntent.mnt_mountp);
-        }
-      else
-        {
-          /* but maybe the fstab entry is a symlink */
-          resolved = exo_mount_utils_resolve (mntent.mnt_special);
-          if (strcmp (device_file, resolved) == 0)
-            path = g_strdup (mntent.mnt_mountp);
-          g_free (resolved);
-        }
+      if (exo_mount_utils_is_same_device (device_file, mntent.mnt_special))
+        path = g_strdup (mntent.mnt_mountp);
     }
 
   /* close the file handle */
   fclose (fp);
-#elif defined(HAVE_GETFSSPEC) /* FreeBSD */
+#elif defined(HAVE_SETFSENT) /* FreeBSD */
   struct fstab *fs;
 
-  /* look up the entry for the device file,
-   * fortunately FreeBSD isn't playing the
-   * weird symlink tricks for most devices,
-   * so we don't need the damn stupid Linux
-   * symlink resolving stuff here...
-   */
-  fs = getfsspec (device_file);
-  if (G_LIKELY (fs != NULL))
+  /* open the fstab file */
+  if (setfsent () == 0)
     {
-      /* check if this is a usable file system */
-      if (strcmp (fs->fs_type, FSTAB_SW) != 0
-#ifdef FSTAB_DP
-          && strcmp (fs->fs_type, FSTAB_DP) != 0
-#endif
-          && strcmp (fs->fs_type, FSTAB_XX) != 0)
-        {
-          /* jap, usable file system */
-          path = g_strdup (fs->fs_file);
-        }
+      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno),
+                   _("Failed to open file \"%s\": %s"), _PATH_FSTAB,
+                   g_strerror (errno));
+      return NULL;
     }
+
+  /* look up an entry for our device file */
+  while (path == NULL)
+    {
+      /* grab the next entry */
+      fs = getfsent ();
+      if (fs == NULL)
+        break;
+
+      /* check if this is a usable file system */
+      if (strcmp (fs->fs_type, FSTAB_SW) == 0
+#ifdef FSTAB_DP
+          || strcmp (fs->fs_type, FSTAB_DP) == 0
+#endif
+          || strcmp (fs->fs_type, FSTAB_XX) == 0)
+        {
+          /* skip this one then */
+          continue;
+        }
+
+      /* check if this entry matches */
+      if (exo_mount_utils_is_same_device (device_file, fs->fs_spec))
+        path = g_strdup (fs->fs_file);
+    }
+
+  /* close the file handle */
+  endfsent ();
 #else
 #error "Add support for your operating system here."
 #endif

@@ -21,6 +21,9 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_SYS_TYPES_H
+#include <sys/types.h>
+#endif
 #ifdef HAVE_SYS_PARAM_H
 #include <sys/param.h>
 #endif
@@ -32,6 +35,9 @@
 #endif
 #ifdef HAVE_SYS_MOUNT_H
 #include <sys/mount.h>
+#endif
+#ifdef HAVE_SYS_STAT_H
+#include <sys/stat.h>
 #endif
 
 #ifdef HAVE_MEMORY_H
@@ -49,19 +55,20 @@
 
 
 
-static void exo_mount_utils_canonicalize_filename (gchar *filename);
-
-
-
-/* borrowed from gtk/gtkfilesystemunix.c in GTK+ on 02/23/2006 */
-static void
+/**
+ * exo_mount_utils_canonicalize_filename:
+ * @filename : an absolute local path.
+ *
+ * Translates the @filename to a canonicalized form.
+ **/
+void
 exo_mount_utils_canonicalize_filename (gchar *filename)
 {
   gboolean last_was_slash = FALSE;
-  gchar   *p = filename;
-  gchar   *q = filename;
+  gchar   *p;
+  gchar   *q;
 
-  while (*p)
+  for (p = q = filename; *p != '\0'; )
     {
       if (*p == G_DIR_SEPARATOR)
         {
@@ -119,65 +126,6 @@ exo_mount_utils_canonicalize_filename (gchar *filename)
 
 
 /**
- * exo_mount_utils_resolve:
- * @device_file     : absolute or relative path to a device file.
- *
- * Resolves the @device_file path, which might be a symbolic link
- * to it's real path. The caller is responsible to free the returned
- * string using g_free() when no longer needed.
- *
- * Return value: the resolved path of the @device_file.
- **/
-gchar*
-exo_mount_utils_resolve (const gchar *device_file)
-{
-  gchar *dirname;
-  gchar *target;
-  gchar *path;
-
-  g_return_val_if_fail (device_file != NULL, NULL);
-
-  /* check if it's an absolute path */
-  if (!g_path_is_absolute (device_file))
-    path = g_build_filename ("/dev", device_file, NULL);
-  else
-    path = g_strdup (device_file);
-
-  /* resolve all present symlinks */
-  while (g_file_test (path, G_FILE_TEST_IS_SYMLINK))
-    {
-      /* use the path, if we cannot resolve a symlink */
-      target = g_file_read_link (path, NULL);
-      if (G_UNLIKELY (target == NULL))
-        break;
-
-      /* check if the link is relative */
-      if (!g_path_is_absolute (target))
-        {
-          /* relative to the current path then */
-          dirname = g_path_get_dirname (path);
-          g_free (path);
-          path = g_build_filename (dirname, target, NULL);
-          g_free (dirname);
-          g_free (target);
-        }
-      else
-        {
-          /* use the absolute target */
-          g_free (path);
-          path = target;
-        }
-    }
-
-  /* canonicalize the path */
-  exo_mount_utils_canonicalize_filename (path);
-
-  return path;
-}
-
-
-
-/**
  * exo_mount_utils_is_mounted:
  * @device_file     : an absolute path to a device file.
  * @readonly_return : if non-%NULL and the device is mounted, this
@@ -193,7 +141,6 @@ exo_mount_utils_is_mounted (const gchar *device_file,
                             gboolean    *readonly_return)
 {
   gboolean result = FALSE;
-  gchar   *resolved;
 
 #if defined(HAVE_SETMNTENT) /* Linux */
   struct mntent *mntent;
@@ -212,14 +159,7 @@ exo_mount_utils_is_mounted (const gchar *device_file,
             break;
 
           /* check if this is the entry we are looking for */
-          result = (strcmp (mntent->mnt_fsname, device_file) == 0);
-          if (G_LIKELY (!result))
-            {
-              /* but maybe the mount entry is a symlink */
-              resolved = exo_mount_utils_resolve (mntent->mnt_fsname);
-              result = (strcmp (resolved, device_file) == 0);
-              g_free (resolved);
-            }
+          result = exo_mount_utils_is_same_device (mntent->mnt_fsname, device_file);
 
           /* check if the device was mounted read-only */
           if (readonly_return != NULL && result)
@@ -245,14 +185,7 @@ exo_mount_utils_is_mounted (const gchar *device_file,
             break;
 
           /* check if this is the entry we are looking for */
-          result = (strcmp (mntent.mnt_special, device_file) == 0);
-          if (G_LIKELY (!result))
-            {
-              /* but maybe the mount entry is a symlink */
-              resolved = exo_mount_utils_resolve (mntent.mnt_special);
-              result = (strcmp (resolved, device_file) == 0);
-              g_free (resolved);
-            }
+          result = exo_mount_utils_is_same_device (mntent.mnt_special, device_file);
 
           /* check if the device was mounted read-only */
           if (readonly_return != NULL && result)
@@ -281,14 +214,7 @@ exo_mount_utils_is_mounted (const gchar *device_file,
       for (n = 0; n < mntsize && !result; ++n)
         {
           /* check if this is the entry we are looking for */
-          result = (strcmp (mntbuf[n].f_mntfromname, device_file) == 0);
-          if (G_LIKELY (!result))
-            {
-              /* but maybe the mount entry is a symlink */
-              resolved = exo_mount_utils_resolve (mntbuf[n].f_mntfromname);
-              result = (strcmp (resolved, device_file) == 0);
-              g_free (resolved);
-            }
+          result = exo_mount_utils_is_same_device (mntbuf[n].f_mntfromname, device_file);
 
           /* check if the device was mounted read-only */
           if (readonly_return != NULL && result)
@@ -303,6 +229,44 @@ exo_mount_utils_is_mounted (const gchar *device_file,
 #endif
 
   return result;
+}
+
+
+
+/**
+ * exo_mount_utils_is_same_device:
+ * @device_file1 : absolute path to the first device file.
+ * @device_file2 : absolute path to the second device file.
+ *
+ * Returns %TRUE if @device_file1 and @device_file2 refer to
+ * the same device (comparing their device major and minor
+ * numbers).
+ *
+ * Return value: %TRUE if @device_file1 and @device_file2
+ *               refer to the same device, %FALSE otherwise.
+ **/
+gboolean
+exo_mount_utils_is_same_device (const gchar *device_file1,
+                                const gchar *device_file2)
+{
+  struct stat statb1;
+  struct stat statb2;
+
+  g_return_val_if_fail (device_file1 != NULL, FALSE);
+  g_return_val_if_fail (device_file2 != NULL, FALSE);
+
+  /* both device file names must be absolute paths */
+  if (!g_path_is_absolute (device_file1) || !g_path_is_absolute (device_file2))
+    return FALSE;
+
+  /* try to stat both device files */
+  if (stat (device_file1, &statb1) < 0 || stat (device_file2, &statb2) < 0)
+    return FALSE;
+
+  /* must be both a character or a block device whose rdev matches */
+  return ((S_ISBLK (statb1.st_mode) && S_ISBLK (statb2.st_mode))
+       || (S_ISCHR (statb1.st_mode) && S_ISCHR (statb1.st_mode)))
+      && (statb1.st_rdev == statb2.st_rdev);
 }
 
 

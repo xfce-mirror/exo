@@ -1,5 +1,14 @@
 2007-01-06	Benedikt Meurer <benny@xfce.org>
 
+	* exo-mount-notify/main.c(signal_io_func): Do not block Thunar's
+	  unmount operation waiting for the last notification to go
+	  away.
+	* configure.in.in, exo-mount/: Be smarter when checking device files
+	  for equality, comparing them by their major/minor device ids instead
+	  of their paths.
+
+2007-01-06	Benedikt Meurer <benny@xfce.org>
+
 	* exo-mount/exo-mount-fstab.c: Add missing <errno.h> include.
 
 2007-01-06	Benedikt Meurer <benny@xfce.org>

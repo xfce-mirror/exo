@@ -168,9 +168,12 @@ main (int argc, char **argv)
       return EXIT_FAILURE;
     }
 
-  /* resolve the device file path */
-  if (G_UNLIKELY (opt_device != NULL))
-    opt_device = exo_mount_utils_resolve (opt_device);
+  /* make sure the device file path is absolute */
+  if (opt_device != NULL && !g_path_is_absolute (opt_device))
+    {
+      /* device is always relative to /dev then */
+      opt_device = g_build_filename ("/dev", opt_device, NULL);
+    }
 
 #ifdef HAVE_HAL
   /* query the device information from the HAL daemon */
@@ -183,9 +186,6 @@ main (int argc, char **argv)
   /* determine the device file from the device struct */
   opt_device = exo_mount_hal_device_get_file (device);
 
-  /* resolve the device file path (again) */
-  opt_device = exo_mount_utils_resolve (opt_device);
-
   /* determine name and icon of the device */
   icon = exo_mount_hal_device_get_icon (device);
   name = exo_mount_hal_device_get_name (device);
@@ -193,6 +193,9 @@ main (int argc, char **argv)
   /* check if the device is most probably a read-only device */
   mounted_readonly = exo_mount_hal_device_is_readonly (device);
 #endif
+
+  /* canonicalize the device file path */
+  exo_mount_utils_canonicalize_filename (opt_device);
 
   /* check if the device is currently mounted */
   mounted = exo_mount_utils_is_mounted (opt_device, &mounted_readonly);
@@ -283,6 +286,16 @@ main (int argc, char **argv)
 
       /* cleanup the PID */
       g_spawn_close_pid (pid);
+    }
+
+  /* if we tried to mount, make sure it's really mounted now */
+  if (err == NULL && (!opt_eject && !opt_unmount)
+      && !exo_mount_utils_is_mounted (opt_device, NULL))
+    {
+      /* although somebody claims that we were successfully, that's not the case */
+      g_set_error (&err, G_FILE_ERROR, G_FILE_ERROR_FAILED,
+                   "Mount operation claims to be successfull, "
+                   "but kernel doesn't list the volume as mounted");
     }
 
   /* check if we failed */

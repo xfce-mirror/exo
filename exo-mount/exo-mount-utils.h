@@ -24,10 +24,13 @@
 
 G_BEGIN_DECLS;
 
-gchar   *exo_mount_utils_resolve    (const gchar *device_file) G_GNUC_INTERNAL G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+void     exo_mount_utils_canonicalize_filename  (gchar       *filename) G_GNUC_INTERNAL;
 
-gboolean exo_mount_utils_is_mounted (const gchar *device_file,
-                                     gboolean    *readonly_return) G_GNUC_INTERNAL;
+gboolean exo_mount_utils_is_mounted             (const gchar *device_file,
+                                                 gboolean    *readonly_return) G_GNUC_INTERNAL;
+
+gboolean exo_mount_utils_is_same_device         (const gchar *device_file1,
+                                                 const gchar *device_file2) G_GNUC_INTERNAL;
 
 G_END_DECLS;
 

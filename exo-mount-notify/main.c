@@ -115,12 +115,15 @@ signal_io_func (GIOChannel  *channel,
           notify_notification_show (notification, NULL);
           g_free (message);
 
-          /* we don't care for the pipe anymore */
-          return FALSE;
+          /* release the notification, so it stays active even
+           * after the process exits, otherwise we'll block
+           * Thunar's unmount operations...
+           */
+          g_object_unref (G_OBJECT (notification));
         }
     }
 
-  /* bring down the notification */
+  /* terminate the process */
   gtk_main_quit ();
 
   return TRUE;

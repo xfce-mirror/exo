@@ -115,7 +115,7 @@ dnl ************************************
 dnl *** Check for standard functions ***
 dnl ************************************
 AC_FUNC_MMAP()
-AC_CHECK_FUNCS([getfsspec getfsstat getmntent regexec setmntent])
+AC_CHECK_FUNCS([getfsstat getmntent regexec setfsent setmntent])
 
 dnl ******************************************
 dnl *** Check for Message Digest functions ***
