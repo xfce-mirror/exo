@@ -285,7 +285,7 @@ msgstr ""
 
 #: ../exo/exo-icon-view.c:847
 msgid "Search Column"
-msgstr ""
+msgstr "Zoek kolom"
 
 #: ../exo/exo-icon-view.c:848
 msgid "Model column to search through when searching through item"
@@ -293,15 +293,15 @@ msgstr ""
 
 #: ../exo/exo-icon-view.c:862
 msgid "Selection mode"
-msgstr ""
+msgstr "Selectie modus"
 
 #: ../exo/exo-icon-view.c:863
 msgid "The selection mode"
-msgstr ""
+msgstr "De selectie modus"
 
 #: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:166
 msgid "Single Click"
-msgstr ""
+msgstr "Enkele klik"
 
 #: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
@@ -371,7 +371,7 @@ msgstr "Socket"
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
-msgstr ""
+msgstr "Een _nieuwe werkbalk toevoegen"
 
 #: ../exo/exo-toolbars-editor.c:230
 msgid ""
@@ -381,11 +381,11 @@ msgstr ""
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
-msgstr ""
+msgstr "Scheidingsteken"
 
 #: ../exo/exo-toolbars-view.c:759
 msgid "Toolbar _Style"
-msgstr ""
+msgstr "Werkbalk _Stijl"
 
 #: ../exo/exo-toolbars-view.c:766
 msgid "_Desktop Default"
@@ -401,19 +401,19 @@ msgstr "Alleen _tekst"
 
 #: ../exo/exo-toolbars-view.c:793
 msgid "Text for _All Icons"
-msgstr ""
+msgstr "Tekst voor _alle pictogrammen"
 
 #: ../exo/exo-toolbars-view.c:802
 msgid "Text for I_mportant Icons"
-msgstr ""
+msgstr "Tekst voor be_langrijke pictogrammen"
 
 #: ../exo/exo-toolbars-view.c:810
 msgid "_Remove Toolbar"
-msgstr ""
+msgstr "Werkbalk ve_rwijderen"
 
 #: ../exo/exo-toolbars-view.c:825
 msgid "Customize Toolbar..."
-msgstr ""
+msgstr "Werkbalk aanpassen..."
 
 #: ../exo/exo-url.c:293
 #, c-format
@@ -473,32 +473,32 @@ msgstr ""
 #: ../exo-csource/main.c:230
 #, c-format
 msgid "Usage: %s [options] [file]\n"
-msgstr ""
+msgstr "Gebruik: %s [opties] [bestand]\n"
 
 #: ../exo-csource/main.c:231
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr ""
+msgstr "       %s [opties] --build-list [[naam bestand]...]\n"
 
 #: ../exo-csource/main.c:233
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr ""
+msgstr "  -h, --help        Print dit help bericht en sluit af\n"
 
 #: ../exo-csource/main.c:234
 msgid "  -v, --version     Print version information and exit\n"
-msgstr ""
+msgstr "  -v, --version     Print versie informatie en sluit af\n"
 
 #: ../exo-csource/main.c:235
 msgid "  --extern          Generate extern symbols\n"
-msgstr ""
+msgstr "  --extern          Genereer externe symbolen\n"
 
 #: ../exo-csource/main.c:236
 msgid "  --static          Generate static symbols\n"
-msgstr ""
+msgstr "  --static          Genereer statische symbolen\n"
 
 #: ../exo-csource/main.c:237
 msgid "  --name=identifier C macro/variable name\n"
-msgstr ""
+msgstr "  --name=identifier C macro/variabele naam\n"
 
 #: ../exo-csource/main.c:238
 msgid "  --build-list      Parse (name, file) pairs\n"
@@ -515,6 +515,11 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. Alle rechten voorbehouden.\n"
+"\n"
+"Geschreven door Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
 
 #: ../exo-csource/main.c:252 ../exo-desktop-item-edit/main.c:157
 #: ../exo-mount/main.c:124 ../exo-mount-notify/main.c:168
@@ -527,13 +532,18 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
+"%s komt met ABSOLUUT GEEN GARANTIE,\n"
+"U mag %s verspreiden volgens de eisen van\n"
+"de GNU Lesser General Public License welke gevonden kan worden\n"
+"in het %s bron pakket.\n"
+"\n"
 
 #: ../exo-csource/main.c:256 ../exo-desktop-item-edit/main.c:161
 #: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:172
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr ""
+msgstr "Meld fouten aub bij <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:290
@@ -573,7 +583,7 @@ msgstr "Shell Scripts"
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
 #, c-format
 msgid "Create Launcher <b>%s</b>"
-msgstr ""
+msgstr "Maak programma-starter <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:318
@@ -624,6 +634,9 @@ msgid ""
 "from the file manager or the menu. Not every application supports startup "
 "notification."
 msgstr ""
+"Selecteer deze optie om opstart notificatie in te schakelen wanneer dit "
+"commando wordt uitgevoerd vanuit het bestandsbeheer of het menu. Niet elk "
+"programma ondersteunt opstart notificatie."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -633,8 +646,11 @@ msgid "Run in _terminal"
 msgstr "Uitvoeren in _terminal"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:444
-msgid "Select this option to run the command in a terminal window."
+msgid ""
+"Select this option to run the command in a terminal window."
 msgstr ""
+"Selecteer deze optie om het commando in een terminal venster"
+"uit te voeren."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
@@ -644,19 +660,19 @@ msgstr "Selecteer een pictogram"
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:50
 msgid "Create Launcher"
-msgstr ""
+msgstr "Maak programma-starter"
 
 #: ../exo-desktop-item-edit/main.c:50
 msgid "Create Link"
-msgstr ""
+msgstr "Maak Snelkoppeling"
 
 #: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Launcher"
-msgstr ""
+msgstr "Programma-starter aanpassen"
 
 #: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Link"
-msgstr ""
+msgstr "Snelkoppeling Aanpassen"
 
 #: ../exo-desktop-item-edit/main.c:72
 msgid "Create a new desktop file in the given directory"
@@ -689,22 +705,21 @@ msgstr ""
 #: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:72
 #: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
-msgstr ""
+msgstr "Print versie informatie en sluit af"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:125
 msgid "[FILE|FOLDER]"
-msgstr ""
+msgstr "[BESTAND|MAP]"
 
 #: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:106
 #: ../exo-mount-notify/main.c:150
-#, fuzzy
 msgid "Failed to open display"
-msgstr "Kan \"%s\" niet openen"
+msgstr "Kan display niet openen"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
-msgstr ""
+msgstr "Geen bestand/map opgegeven"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:226
@@ -715,7 +730,7 @@ msgstr ""
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:246
 msgid "C_reate"
-msgstr ""
+msgstr "M_aken"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:366
@@ -739,7 +754,7 @@ msgstr "Standaard Programma's"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:101
 msgid "Select default applications for various services"
-msgstr ""
+msgstr "Selecteer standaard programma's voor verschillende diensten"
 
 #.
 #. Internet
@@ -769,6 +784,8 @@ msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
+"De standaard Mail Lezer zal worden gebruikt om e-mails\n"
+"te schrijven als je klikt op e-mail adressen."
 
 #.
 #. Utilities
@@ -802,7 +819,7 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:334
 msgid "No application selected"
-msgstr ""
+msgstr "Geen programma geselecteerd"
 
 #: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
@@ -819,37 +836,43 @@ msgstr ""
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:422
 msgid "Select application"
-msgstr ""
+msgstr "Selecteer programma"
 
 #: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
-msgstr ""
+msgstr "Kies een standaard Web Browser"
 
 #: ../exo-helper/exo-helper-chooser.c:536
 msgid "Choose a custom Mail Reader"
-msgstr ""
+msgstr "Kies een standaard Mail Lezer"
 
 #: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
-msgstr ""
+msgstr "Kies een standaard Terminal Emulator"
 
 #: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
+"Kies het programma dat je wilt gebruiken\n"
+"als standaard Web Browser voor Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:543
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
+"Kies het programma dat je wilt gebruiken\n"
+"als standaard Mail Lezer voor Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:544
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
+"Kies het programma dat je wilt gebruiken\n"
+"als standaard Terminal Emulator voor Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:610
 msgid "Browse the file system to choose a custom command."
@@ -857,7 +880,7 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:793
 msgid "_Other..."
-msgstr ""
+msgstr "_Andere..."
 
 #: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
@@ -887,15 +910,15 @@ msgstr ""
 
 #: ../exo-helper/exo-helper.c:404
 msgid "No command specified"
-msgstr ""
+msgstr "Geen commando opgegeven"
 
 #: ../exo-helper/exo-helper.c:740
 msgid "Failed to open helpers.rc for writing"
-msgstr ""
+msgstr "Het openen van helpers.rc om te schrijven is mislukt"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:40
 msgid "Failed to launch exo-preferred-applications"
-msgstr ""
+msgstr "Het starten van exo-preferred-applications is mislukt"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:60
 msgid "Button Label|Preferred Applications"
@@ -1027,7 +1050,7 @@ msgstr "X Terminal"
 
 #: ../exo-mount/exo-mount-fstab.c:112
 msgid "Unknown error"
-msgstr ""
+msgstr "Onbekende fout"
 
 #. generate an appropriate error message
 #. tell the caller that no matching device was found
@@ -1124,39 +1147,39 @@ msgid "Cannot eject and unmount simultaneously"
 msgstr ""
 
 #: ../exo-mount/main.c:306
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to eject \"%s\""
-msgstr "Het maken van \"%s\" is mislukt."
+msgstr "Het uitwerpen van \"%s\" is mislukt."
 
 #: ../exo-mount/main.c:308
 #, fuzzy, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "Kan \"%s\" niet openen"
+msgstr "Kan \"%s\" niet unmounten"
 
 #: ../exo-mount/main.c:310
 #, fuzzy, c-format
 msgid "Failed to mount \"%s\""
-msgstr "Kan \"%s\" niet openen"
+msgstr "Kan \"%s\" niet laden"
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:111
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr ""
+msgstr "Het apparaat \"%s\" kan nu velig worden verwijderd."
 
 #: ../exo-mount-notify/main.c:112
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "Apparaat kan nu veilig worden verwijderd"
 
 #. read-only, just ejecting
 #: ../exo-mount-notify/main.c:221
 msgid "Ejecting device"
-msgstr ""
+msgstr "Apparaat uitwerpen"
 
 #: ../exo-mount-notify/main.c:222
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr ""
+msgstr "Apparaat \"%s\" wordt uitgeworpen. Dit kan even duren."
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:227
@@ -1184,20 +1207,21 @@ msgstr ""
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
-msgstr ""
+msgstr "Gebruik: exo-open [URLs...]"
 
 #: ../exo-open/main.c:60
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
+msgstr "  -?, --help                         Print dit help bericht en sluit af"
 
 #: ../exo-open/main.c:63
 msgid ""
 "  -v, --version                       Print version information and exit"
 msgstr ""
+"  -v, --version                       Print versie informatie en sluit af"
 
 #: ../exo-open/main.c:65
 msgid ""
@@ -1206,6 +1230,9 @@ msgid ""
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
+"  --launch TYPE [PARAMETERs...]       Start het standaard programma voor\n"
+"                                      TYPE met extra opties, waar\n "
+"                                      TYPE een van de volgende waarden is."
 
 #: ../exo-open/main.c:69
 msgid ""
