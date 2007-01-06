@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.12rc2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-03 13:02+0100\n"
+"POT-Creation-Date: 2007-01-06 18:44+0100\n"
 "PO-Revision-Date: 2006-11-03 15:05+0100\n"
 "Last-Translator: Stephan Arts <psyBSD@gmail.com>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -42,7 +42,8 @@ msgstr "grootte"
 msgid "The size of the icon to render in pixels."
 msgstr ""
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:146
+#: ../exo-mount/exo-mount-fstab.c:187
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Het openen van bestand \"%s\" is mislukt: %s"
@@ -504,6 +505,7 @@ msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr ""
 
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:120 ../exo-mount-notify/main.c:164
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -515,6 +517,7 @@ msgid ""
 msgstr ""
 
 #: ../exo-csource/main.c:252 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:124 ../exo-mount-notify/main.c:168
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -526,6 +529,7 @@ msgid ""
 msgstr ""
 
 #: ../exo-csource/main.c:256 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:172
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -682,7 +686,8 @@ msgstr ""
 msgid "Preset icon when creating a desktop file"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:72
+#: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr ""
 
@@ -691,10 +696,11 @@ msgstr ""
 msgid "[FILE|FOLDER]"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:138
-#, c-format
-msgid "Failed to open display: %s"
-msgstr ""
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:106
+#: ../exo-mount-notify/main.c:150
+#, fuzzy
+msgid "Failed to open display"
+msgstr "Kan \"%s\" niet openen"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
@@ -1018,6 +1024,163 @@ msgstr "W3M Tekst Browser"
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
 msgstr "X Terminal"
+
+#: ../exo-mount/exo-mount-fstab.c:112
+msgid "Unknown error"
+msgstr ""
+
+#. generate an appropriate error message
+#. tell the caller that no matching device was found
+#: ../exo-mount/exo-mount-fstab.c:248 ../exo-mount/exo-mount-hal.c:339
+#, c-format
+msgid "Device \"%s\" not found in file system device table"
+msgstr ""
+
+#. definitely not a device that we're able to mount, eject or unmount
+#: ../exo-mount/exo-mount-hal.c:193 ../exo-mount/exo-mount-hal.c:246
+#, c-format
+msgid "Given device \"%s\" is not a volume or drive"
+msgstr ""
+
+#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:616
+#, c-format
+msgid "You are not privileged to eject the volume \"%s\""
+msgstr ""
+
+#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
+#: ../exo-mount/exo-mount-hal.c:621
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being ejected"
+msgstr ""
+
+#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:846
+#, c-format
+msgid "You are not privileged to mount the volume \"%s\""
+msgstr ""
+
+#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:935
+#, c-format
+msgid "You are not privileged to unmount the volume \"%s\""
+msgstr ""
+
+#. TRANSLATORS: An application is blocking a volume from being unmounted.
+#: ../exo-mount/exo-mount-hal.c:940
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being unmounted"
+msgstr ""
+
+#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
+#: ../exo-mount/exo-mount-hal.c:945
+#, c-format
+msgid "The volume \"%s\" was probably mounted manually on the command line"
+msgstr ""
+
+#: ../exo-mount/main.c:63
+msgid "Eject rather than mount"
+msgstr ""
+
+#: ../exo-mount/main.c:64
+msgid "Unmount rather than mount"
+msgstr ""
+
+#: ../exo-mount/main.c:66
+msgid "Mount by HAL device UDI"
+msgstr ""
+
+#: ../exo-mount/main.c:68
+msgid "Mount by HAL device UDI (not supported)"
+msgstr ""
+
+#: ../exo-mount/main.c:70
+msgid "Mount by device file"
+msgstr ""
+
+#: ../exo-mount/main.c:71
+msgid "Don't show any dialogs"
+msgstr ""
+
+#. the caller must specify either a HAL UDI or a device file
+#: ../exo-mount/main.c:136
+msgid "Must specify HAL device UDI or device file"
+msgstr ""
+
+#. the caller must specify EITHER a HAL UDI or a device file
+#: ../exo-mount/main.c:144
+msgid "Must not specify both a HAL device UDI and a device file simultaneously"
+msgstr ""
+
+#: ../exo-mount/main.c:152
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+
+#. the caller must not specify both eject and unmount
+#: ../exo-mount/main.c:167
+msgid "Cannot eject and unmount simultaneously"
+msgstr ""
+
+#: ../exo-mount/main.c:306
+#, fuzzy, c-format
+msgid "Failed to eject \"%s\""
+msgstr "Het maken van \"%s\" is mislukt."
+
+#: ../exo-mount/main.c:308
+#, fuzzy, c-format
+msgid "Failed to unmount \"%s\""
+msgstr "Kan \"%s\" niet openen"
+
+#: ../exo-mount/main.c:310
+#, fuzzy, c-format
+msgid "Failed to mount \"%s\""
+msgstr "Kan \"%s\" niet openen"
+
+#. tell the user that the device can be removed now
+#: ../exo-mount-notify/main.c:111
+#, c-format
+msgid "The device \"%s\" is now safe to remove."
+msgstr ""
+
+#: ../exo-mount-notify/main.c:112
+msgid "Device is now safe to remove"
+msgstr ""
+
+#. read-only, just ejecting
+#: ../exo-mount-notify/main.c:221
+msgid "Ejecting device"
+msgstr ""
+
+#: ../exo-mount-notify/main.c:222
+#, c-format
+msgid "The device \"%s\" is being ejected. This may take some time."
+msgstr ""
+
+#. read-only, just unmounting
+#: ../exo-mount-notify/main.c:227
+msgid "Unmounting device"
+msgstr ""
+
+#: ../exo-mount-notify/main.c:228
+#, c-format
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+
+#. not read-only, writing back data
+#: ../exo-mount-notify/main.c:235
+msgid "Writing data to device"
+msgstr ""
+
+#: ../exo-mount-notify/main.c:236
+#, c-format
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"

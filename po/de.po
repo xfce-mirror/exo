@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.13svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-03 13:02+0100\n"
-"PO-Revision-Date:  2007-01-03 13:02+0100\n"
+"POT-Creation-Date: 2007-01-06 18:44+0100\n"
+"PO-Revision-Date:  2007-01-06 18:02+0100\n"
 "Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,8 @@ msgstr "Größe"
 msgid "The size of the icon to render in pixels."
 msgstr "Die Größe in der das Symbol gezeichnet werden soll."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:146
+#: ../exo-mount/exo-mount-fstab.c:187
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Konnte »%s« nicht öffnen: %s"
@@ -514,6 +515,7 @@ msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      (Name, Datei) Paare parsen\n"
 
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:120 ../exo-mount-notify/main.c:164
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -530,6 +532,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:252 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:124 ../exo-mount-notify/main.c:168
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -546,6 +549,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:256 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:172
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -707,7 +711,8 @@ msgstr "Voreingestellte URL für Verknüpfungen"
 msgid "Preset icon when creating a desktop file"
 msgstr "Voreingestelltes Symbol"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:72
+#: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Programmversion anzeigen und beenden"
 
@@ -716,10 +721,10 @@ msgstr "Programmversion anzeigen und beenden"
 msgid "[FILE|FOLDER]"
 msgstr "[DATEI|ORDNER]"
 
-#: ../exo-desktop-item-edit/main.c:138
-#, c-format
-msgid "Failed to open display: %s"
-msgstr "Konnte Display nicht öffnen: %s"
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:106
+#: ../exo-mount-notify/main.c:150
+msgid "Failed to open display"
+msgstr "Konnte Display nicht öffnen"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
@@ -1064,6 +1069,177 @@ msgstr "W3M Textbrowser"
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
 msgstr "X Terminal"
+
+#: ../exo-mount/exo-mount-fstab.c:112
+msgid "Unknown error"
+msgstr "Unbekannter Fehler"
+
+#. generate an appropriate error message
+#. tell the caller that no matching device was found
+#: ../exo-mount/exo-mount-fstab.c:248 ../exo-mount/exo-mount-hal.c:339
+#, c-format
+msgid "Device \"%s\" not found in file system device table"
+msgstr "Das Gerät »%s« ist nicht in der Datenträgertabelle enthalten"
+
+#. definitely not a device that we're able to mount, eject or unmount
+#: ../exo-mount/exo-mount-hal.c:193 ../exo-mount/exo-mount-hal.c:246
+#, c-format
+msgid "Given device \"%s\" is not a volume or drive"
+msgstr "Das Gerät »%s« ist kein gültiger Datenträger"
+
+#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:616
+#, c-format
+msgid "You are not privileged to eject the volume \"%s\""
+msgstr "Sie sind nicht priviligiert den Datenträger »%s« auszuwerfen"
+
+#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
+#: ../exo-mount/exo-mount-hal.c:621
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being ejected"
+msgstr ""
+"Eine Anwendung verhindert, dass der Datenträger »%s« ausgeworfen werden kann"
+
+#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:846
+#, c-format
+msgid "You are not privileged to mount the volume \"%s\""
+msgstr "Sie sind nicht priviligiert den Datenträger »%s« einzubinden"
+
+#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:935
+#, c-format
+msgid "You are not privileged to unmount the volume \"%s\""
+msgstr "Sie sind nicht priviligiert den Datenträger »%s« auszulösen"
+
+#. TRANSLATORS: An application is blocking a volume from being unmounted.
+#: ../exo-mount/exo-mount-hal.c:940
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being unmounted"
+msgstr ""
+"Eine Anwendung verhindert, dass der Datenträger »%s« ausgeworfen werden kann"
+
+#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
+#: ../exo-mount/exo-mount-hal.c:945
+#, c-format
+msgid "The volume \"%s\" was probably mounted manually on the command line"
+msgstr ""
+"Der Datenträger »%s« wurde möglicherweise von der Kommandozeile aus "
+"eingebunden"
+
+#: ../exo-mount/main.c:63
+msgid "Eject rather than mount"
+msgstr "Auswerfen statt einbinden"
+
+#: ../exo-mount/main.c:64
+msgid "Unmount rather than mount"
+msgstr "Auslösen statt einbinden"
+
+#: ../exo-mount/main.c:66
+msgid "Mount by HAL device UDI"
+msgstr "Einbinden mittels einer HAL Geräte UDI"
+
+#: ../exo-mount/main.c:68
+msgid "Mount by HAL device UDI (not supported)"
+msgstr "Einbinden mittels einer HAL Geräte UDI (nicht unterstützt)"
+
+#: ../exo-mount/main.c:70
+msgid "Mount by device file"
+msgstr "Einbinden mittels einer Gerätedatei"
+
+#: ../exo-mount/main.c:71
+msgid "Don't show any dialogs"
+msgstr "Keine Dialog anzeigen"
+
+#. the caller must specify either a HAL UDI or a device file
+#: ../exo-mount/main.c:136
+msgid "Must specify HAL device UDI or device file"
+msgstr "Entweder muss die HAL Geräte UDI oder die Gerätedatei angegeben werden"
+
+#. the caller must specify EITHER a HAL UDI or a device file
+#: ../exo-mount/main.c:144
+msgid "Must not specify both a HAL device UDI and a device file simultaneously"
+msgstr ""
+"Es dürfen nicht gleichzeitig die HAL Geräte UDI und die Gerätedatei "
+"angegeben werden"
+
+#: ../exo-mount/main.c:152
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+"Datenträger können nicht mittels einer HAL Geräte UDI eingebunden werden, da "
+"diese Version HAL nicht unterstützt"
+
+#. the caller must not specify both eject and unmount
+#: ../exo-mount/main.c:167
+msgid "Cannot eject and unmount simultaneously"
+msgstr "Kann nicht gleichzeitig auslösen und auswerfen"
+
+#: ../exo-mount/main.c:306
+#, c-format
+msgid "Failed to eject \"%s\""
+msgstr "Der Datenträger »%s« konnte nicht ausgeworfen werden"
+
+#: ../exo-mount/main.c:308
+#, c-format
+msgid "Failed to unmount \"%s\""
+msgstr "Der Datenträger »%s« konnte nicht ausgelöst werden"
+
+#: ../exo-mount/main.c:310
+#, c-format
+msgid "Failed to mount \"%s\""
+msgstr "Der Datenträger »%s« konnte nicht eingebunden werden"
+
+#. tell the user that the device can be removed now
+#: ../exo-mount-notify/main.c:111
+#, c-format
+msgid "The device \"%s\" is now safe to remove."
+msgstr "Der Datenträger »%s« kann nun sicher entfernt werden."
+
+#: ../exo-mount-notify/main.c:112
+msgid "Device is now safe to remove"
+msgstr "Datenträger kann entfernt werden"
+
+#. read-only, just ejecting
+#: ../exo-mount-notify/main.c:221
+msgid "Ejecting device"
+msgstr "Datenträger auswerfen"
+
+#: ../exo-mount-notify/main.c:222
+#, c-format
+msgid "The device \"%s\" is being ejected. This may take some time."
+msgstr "Der Datenträger »%s« wird ausgeworfen. Dies kann einen Moment dauern."
+
+#. read-only, just unmounting
+#: ../exo-mount-notify/main.c:227
+msgid "Unmounting device"
+msgstr "Datenträger auslösen"
+
+#: ../exo-mount-notify/main.c:228
+#, c-format
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+"Der Datenträger »%s« wird ausgelöst durch das System. Belassen Sie in dieser "
+"Zeit das Medium im Computer bzw. trennen Sie das Gerät nicht noch vom "
+"Computer."
+
+#. not read-only, writing back data
+#: ../exo-mount-notify/main.c:235
+msgid "Writing data to device"
+msgstr "Daten werden geschrieben"
+
+#: ../exo-mount-notify/main.c:236
+#, c-format
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
+"Einige Daten müssen noch auf den Datenträger »%s« geschrieben werden, bevor "
+"dieser entfernt werden kann. Belassen Sie in dieser Zeit das Medium im "
+"Computer bzw. trennen Sie das Gerät noch nicht vom Computer."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"

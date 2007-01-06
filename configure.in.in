@@ -104,16 +104,18 @@ dnl ***************************************
 dnl *** Check for standard header files ***
 dnl ***************************************
 AC_HEADER_STDC()
-AC_CHECK_HEADERS([assert.h errno.h fcntl.h fnmatch.h libintl.h locale.h math.h \
-                  md5.h md5global.h mmintrin.h regex.h stdarg.h string.h sys/mman.h \
-                  sys/resource.h sys/stat.h sys/time.h sys/types.h sys/wait.h \
-                  time.h])
+AC_CHECK_HEADERS([assert.h errno.h fcntl.h fnmatch.h fstab.h libintl.h \
+                  locale.h math.h md5.h md5global.h mmintrin.h mntent.h \
+                  paths.h regex.h signal.h stdarg.h string.h sys/mman.h \
+                  sys/mnttab.h sys/mount.h sys/param.h sys/resource.h \
+                  sys/stat.h sys/time.h sys/types.h sys/ucred.h \
+                  sys/wait.h time.h])
 
 dnl ************************************
 dnl *** Check for standard functions ***
 dnl ************************************
 AC_FUNC_MMAP()
-AC_CHECK_FUNCS([regexec])
+AC_CHECK_FUNCS([getfsspec getfsstat getmntent regexec setmntent])
 
 dnl ******************************************
 dnl *** Check for Message Digest functions ***
@@ -139,6 +141,16 @@ dnl *** Check for xfce-mcs-manager (optional) ***
 dnl *********************************************
 XDT_CHECK_OPTIONAL_PACKAGE([XFCE_MCS_MANAGER], [xfce-mcs-manager], [4.2.2],
                            [mcs-plugin], [xfce-mcs-manager], [yes])
+
+dnl **************************************
+dnl *** Check for libnotify (optional) ***
+dnl **************************************
+XDT_CHECK_OPTIONAL_PACKAGE([LIBNOTIFY], [libnotify], [0.4.0], [notifications], [Notifications support], [yes])
+
+dnl ********************************
+dnl *** Check for HAL (optional) ***
+dnl ********************************
+XDT_CHECK_OPTIONAL_PACKAGE([HAL], [hal-storage], [0.5.0], [hal], [HAL support], [yes])
 
 dnl *************************
 dnl *** Check for gtk-doc ***
@@ -355,6 +367,8 @@ exo-csource/Makefile
 exo-desktop-item-edit/Makefile
 exo-helper/Makefile
 exo-helper/helpers/Makefile
+exo-mount/Makefile
+exo-mount-notify/Makefile
 exo-open/Makefile
 exo-support/Makefile
 icons/Makefile
@@ -368,3 +382,18 @@ python/examples/Makefile
 tests/Makefile
 tests/data/Makefile
 ])
+
+dnl ***************************
+dnl *** Print configuration ***
+dnl ***************************
+echo
+echo "Build Configuration:"
+echo
+if test x"$HAL_FOUND" = x"yes"; then
+echo "* HAL support:    yes"
+else
+echo "* HAL support:    no"
+fi
+echo "* Debug Support:  $enable_debug"
+echo "* Python Support: $have_python"
+echo

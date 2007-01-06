@@ -135,7 +135,7 @@ main (int argc, char **argv)
         {
           /* no error message, the GUI initialization failed */
           const gchar *display_name = gdk_get_display_arg_name ();
-          s = g_strdup_printf (_("Failed to open display: %s"), (display_name != NULL) ? display_name : " ");
+          s = g_strdup_printf ("%s: %s", _("Failed to open display"), (display_name != NULL) ? display_name : " ");
         }
 
       /* tell the user about it */
