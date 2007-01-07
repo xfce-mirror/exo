@@ -234,9 +234,12 @@ err0: exo_mount_hal_propagate_error (error, &derror);
 
   /* determine the valid mount options from the UDI */
   device->fsoptions = libhal_device_get_property_strlist (hal_context, udi, "volume.mount.valid_options", &derror);
-  if (G_UNLIKELY (device->file == NULL || device->name == NULL || device->fsoptions == NULL))
+
+  /* sanity checking */
+  if (G_UNLIKELY (device->file == NULL || device->name == NULL))
     {
       exo_mount_hal_device_free (device);
+      device = NULL;
       goto err0;
     }
 
@@ -609,33 +612,39 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
 
   /* determine the required mount options */
   options = g_new0 (gchar *, 20);
-  for (m = 0; device->fsoptions[m] != NULL; ++m)
+
+  /* check if we know any valid mount options */
+  if (G_LIKELY (device->fsoptions != NULL))
     {
-      /* this is currently mostly Linux specific noise */
-      if (strcmp (device->fsoptions[m], "uid=") == 0
-          && (strcmp (device->fstype, "vfat") == 0
-           || strcmp (device->fstype, "iso9660") == 0
-           || strcmp (device->fstype, "udf") == 0
-           || device->volume == NULL))
+      /* process all valid mount options */
+      for (m = 0; device->fsoptions[m] != NULL; ++m)
         {
-          options[n++] = g_strdup_printf ("uid=%u", (guint) getuid ());
-        }
-      else if (strcmp (device->fsoptions[m], "shortname=") == 0
-            && strcmp (device->fstype, "vfat") == 0)
-        {
-          options[n++] = g_strdup_printf ("shortname=winnt");
-        }
-      else if (strcmp (device->fsoptions[m], "sync") == 0
-            && device->volume == NULL)
-        {
-          /* non-pollable drive... */
-          options[n++] = g_strdup ("sync");
-        }
-      else if (strcmp (device->fsoptions[m], "longnames") == 0
-            && strcmp (device->fstype, "vfat") == 0)
-        {
-          /* however this one is FreeBSD specific */
-          options[n++] = g_strdup ("longnames");
+          /* this is currently mostly Linux specific noise */
+          if (strcmp (device->fsoptions[m], "uid=") == 0
+              && (strcmp (device->fstype, "vfat") == 0
+               || strcmp (device->fstype, "iso9660") == 0
+               || strcmp (device->fstype, "udf") == 0
+               || device->volume == NULL))
+            {
+              options[n++] = g_strdup_printf ("uid=%u", (guint) getuid ());
+            }
+          else if (strcmp (device->fsoptions[m], "shortname=") == 0
+                && strcmp (device->fstype, "vfat") == 0)
+            {
+              options[n++] = g_strdup_printf ("shortname=winnt");
+            }
+          else if (strcmp (device->fsoptions[m], "sync") == 0
+                && device->volume == NULL)
+            {
+              /* non-pollable drive... */
+              options[n++] = g_strdup ("sync");
+            }
+          else if (strcmp (device->fsoptions[m], "longnames") == 0
+                && strcmp (device->fstype, "vfat") == 0)
+            {
+              /* however this one is FreeBSD specific */
+              options[n++] = g_strdup ("longnames");
+            }
         }
     }
 
@@ -798,8 +807,30 @@ oom:      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, g_strerror (ENOM
         }
       else
         {
-          /* unknown error, use HAL's message */
-          exo_mount_hal_propagate_error (error, &derror);
+          /* try to come up with a useful error message */
+          if (device->volume != NULL && libhal_volume_is_disc (device->volume) && libhal_volume_disc_is_blank (device->volume))
+            {
+              /* TRANSLATORS: User tried to mount blank disc, which is not going to work. */
+              g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED,
+                           _("Blank discs cannot be mounted, use a CD "
+                             "recording application like Xfburn to "
+                             "record audio or data on the disc"));
+            }
+          else if (device->volume != NULL
+              && libhal_volume_is_disc (device->volume)
+              && !libhal_volume_disc_has_data (device->volume)
+              && libhal_volume_disc_has_audio (device->volume))
+            {
+              /* TRANSLATORS: User tried to mount an Audio CD that doesn't contain a data track. */
+              g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED,
+                           _("Audio CDs cannot be mounted, use "
+                             "Xfmedia to play the audio tracks"));
+            }
+          else
+            {
+              /* unknown error, use HAL's message */
+              exo_mount_hal_propagate_error (error, &derror);
+            }
         }
 
       /* release D-Bus error */

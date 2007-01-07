@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.12rc2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-07 17:59+0100\n"
+"POT-Creation-Date: 2007-01-07 23:35+0100\n"
 "PO-Revision-Date: 2006-09-16 11:19+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -763,90 +763,90 @@ msgstr "Nepodařilo se vytvořit \"%s\"."
 msgid "Failed to save \"%s\"."
 msgstr "Nepodařilo se uložit \"%s\"."
 
-#: ../exo-hal/exo-hal.c:341
+#: ../exo-hal/exo-hal.c:346
 #, c-format
 msgid "External %s Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:343
+#: ../exo-hal/exo-hal.c:348
 #, c-format
 msgid "%s Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:352
+#: ../exo-hal/exo-hal.c:357
 msgid "External Floppy Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:354
+#: ../exo-hal/exo-hal.c:359
 msgid "Floppy Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:358
+#: ../exo-hal/exo-hal.c:363
 msgid "Compact Flash Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:362
+#: ../exo-hal/exo-hal.c:367
 msgid "Memory Stick Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:366
+#: ../exo-hal/exo-hal.c:371
 msgid "Smart Media Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:370
+#: ../exo-hal/exo-hal.c:375
 msgid "SD/MMC Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:374
+#: ../exo-hal/exo-hal.c:379
 msgid "Zip Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:378
+#: ../exo-hal/exo-hal.c:383
 msgid "Jaz Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:382
+#: ../exo-hal/exo-hal.c:387
 msgid "Pen Drive"
 msgstr ""
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:391
+#: ../exo-hal/exo-hal.c:396
 #, c-format
 msgid "%s Music Player"
 msgstr ""
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:406
+#: ../exo-hal/exo-hal.c:411
 #, c-format
 msgid "%s Digital Camera"
 msgstr ""
 
 #. last fallback to "Drive"
-#: ../exo-hal/exo-hal.c:429
+#: ../exo-hal/exo-hal.c:434
 msgid "Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:656
+#: ../exo-hal/exo-hal.c:661
 #, c-format
 msgid "Blank %s Disc"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:658
+#: ../exo-hal/exo-hal.c:663
 #, c-format
 msgid "%s Disc"
 msgstr ""
 
 #. special case for pure audio disc
-#: ../exo-hal/exo-hal.c:663
+#: ../exo-hal/exo-hal.c:668
 msgid "Audio CD"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:699
+#: ../exo-hal/exo-hal.c:704
 #, c-format
 msgid "%s Removable Volume"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:701
+#: ../exo-hal/exo-hal.c:706
 #, c-format
 msgid "%s Volume"
 msgstr ""
@@ -1170,49 +1170,59 @@ msgstr ""
 
 #. generate an appropriate error message
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:340
+#: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr ""
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:247
+#: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr ""
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:561
+#: ../exo-mount/exo-mount-hal.c:564
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr ""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:566
+#: ../exo-mount/exo-mount-hal.c:569
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr ""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:791
+#: ../exo-mount/exo-mount-hal.c:800
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr ""
 
+#: ../exo-mount/exo-mount-hal.c:815
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
+msgstr ""
+
+#: ../exo-mount/exo-mount-hal.c:826
+msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
+msgstr ""
+
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:880
+#: ../exo-mount/exo-mount-hal.c:911
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr ""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:885
+#: ../exo-mount/exo-mount-hal.c:916
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr ""
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:890
+#: ../exo-mount/exo-mount-hal.c:921
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr ""

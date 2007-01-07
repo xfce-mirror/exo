@@ -1,5 +1,15 @@
 2007-01-07	Benedikt Meurer <benny@xfce.org>
 
+	* exo-mount/exo-mount-hal.c: Handle blank discs properly. Try to come
+	  up with a usable error message if the user tries to mount a blank
+	  disc or a pure audio disc.
+	* exo-mount/exo-mount-hal.c: Fix crash with certain types of discs.
+	  Bug #2723.
+	* po/libexo-0.3.pot, po/*.po: Merge new strings.
+	* po/de.po: Update german translations.
+
+2007-01-07	Benedikt Meurer <benny@xfce.org>
+
 	* configure.in.in, Makefile.am, exo-hal/: Add utility library exo-hal,
 	  which provides functions to lookup display names and icons for HAL
 	  devices. These functions are used by both exo-mount and Thunar, and
