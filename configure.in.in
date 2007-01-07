@@ -151,6 +151,11 @@ dnl ********************************
 dnl *** Check for HAL (optional) ***
 dnl ********************************
 XDT_CHECK_OPTIONAL_PACKAGE([HAL], [hal-storage], [0.5.0], [hal], [HAL support], [yes])
+if test x"$HAL_FOUND" = x"yes"; then
+  dnl # substituted into exo-hal-0.3.pc
+  HAL_STORAGE_DEPENDENCY="hal-storage"
+fi
+AC_SUBST([HAL_STORAGE_DEPENDENCY])
 
 dnl *************************
 dnl *** Check for gtk-doc ***
@@ -365,6 +370,8 @@ exo/exo-0.3.pc
 exo/exo-config.h
 exo-csource/Makefile
 exo-desktop-item-edit/Makefile
+exo-hal/Makefile
+exo-hal/exo-hal-0.3.pc
 exo-helper/Makefile
 exo-helper/helpers/Makefile
 exo-mount/Makefile

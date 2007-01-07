@@ -1,0 +1,91 @@
+<!-- ##### SECTION Title ##### -->
+HAL Support Functions
+
+<!-- ##### SECTION Short_Description ##### -->
+Miscellaneous Utility Functions for HAL integration
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+  This is an additional library that ships with the <application>exo</application> package and
+  offers support functions for HAL integration, that are used by <command>exo-mount</command>
+  and <command>Thunar</command> to figure out display names and icons to visually
+  present HAL devices to the user. The library may also be used by other components to offer
+  smooth integration between various parts of the desktop, making sure that the same names
+  and icons are used for devices everywhere.
+</para>
+
+<para>
+  Since HAL is currently an optional dependency for Xfce, you should first check whether HAL support is
+  really available by calling the <link linkend="exo-hal-init"><function>exo_hal_init()</function></link>
+  function, which returns <literal>TRUE</literal> if HAL support is available and the other functions will
+  be able to do their work, or <literal>FALSE</literal> if the functions will return hardcoded default
+  values instead. The <link linkend="exo-hal-init"><function>exo_hal_init()</function></link> also takes
+  care of setting up the internationalization support, so make sure you call it first.
+</para>
+
+<para>
+  The HAL support module is not part of the main <filename>exo</filename> library, so you if you want to
+  use any of these functions you will need to explicitly link to the <filename>exo-hal</filename> library.
+  This is done with the <command>pkg-config</command> utility, using <filename>exo-hal-0.3</filename> as
+  the package name.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+  <ulink type="http" url="http://gitweb.freedesktop.org/?p=hal.git;a=blob_plain;f=doc/spec/hal-spec.html">HAL
+  Specification</ulink>
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### FUNCTION exo_hal_init ##### -->
+<para>
+
+</para>
+
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_hal_drive_compute_display_name ##### -->
+<para>
+
+</para>
+
+@context: 
+@drive: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_hal_drive_compute_icon_list ##### -->
+<para>
+
+</para>
+
+@context: 
+@drive: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_hal_volume_compute_display_name ##### -->
+<para>
+
+</para>
+
+@context: 
+@volume: 
+@drive: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_hal_volume_compute_icon_list ##### -->
+<para>
+
+</para>
+
+@context: 
+@volume: 
+@drive: 
+@Returns: 
+
+

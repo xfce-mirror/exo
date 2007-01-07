@@ -34,8 +34,9 @@
 #include <unistd.h>
 #endif
 
-#include <libhal.h>
 #include <libhal-storage.h>
+
+#include <exo-hal/exo-hal.h>
 
 #include <exo-mount/exo-mount-hal.h>
 
@@ -54,8 +55,8 @@ struct _ExoMountHalDevice
   LibHalVolume     *volume;
 
   /* device internals */
-  const gchar      *file;
-  const gchar      *name;
+  gchar            *file;
+  gchar            *name;
 
   /* file system options */
   gchar           **fsoptions;
@@ -207,8 +208,8 @@ err0: exo_mount_hal_propagate_error (error, &derror);
       if (G_LIKELY (device->drive != NULL))
         {
           /* setup the device internals */
-          device->file = libhal_volume_get_device_file (device->volume);
-          device->name = libhal_volume_get_label (device->volume);
+          device->file = g_strdup (libhal_volume_get_device_file (device->volume));
+          device->name = exo_hal_volume_compute_display_name (hal_context, device->volume, device->drive);
 
           /* setup the file system internals */
           device->fstype = libhal_volume_get_fstype (device->volume);
@@ -222,8 +223,8 @@ err0: exo_mount_hal_propagate_error (error, &derror);
       if (G_LIKELY (device->drive != NULL))
         {
           /* setup the device internals */
-          device->file = libhal_drive_get_device_file (device->drive);
-          device->name = libhal_drive_get_model (device->drive);
+          device->file = g_strdup (libhal_drive_get_device_file (device->drive));
+          device->name = exo_hal_drive_compute_display_name (hal_context, device->drive);
 
           /* setup the file system internals */
           device->fstype = "";
@@ -362,6 +363,8 @@ exo_mount_hal_device_free (ExoMountHalDevice *device)
       libhal_free_string_array (device->fsoptions);
       libhal_volume_free (device->volume);
       libhal_drive_free (device->drive);
+      g_free (device->file);
+      g_free (device->name);
       g_free (device->udi);
       g_free (device);
     }
@@ -422,95 +425,37 @@ gchar*
 exo_mount_hal_device_get_icon (ExoMountHalDevice *device)
 {
   GtkIconTheme *icon_theme;
+  gchar        *icon_name = NULL;
+  GList        *icon_list;
+  GList        *lp;
 
   g_return_val_if_fail (device != NULL, NULL);
+
+  /* compute the list of possible icons for the device */
+  icon_list = G_UNLIKELY (device->volume == NULL)
+            ? exo_hal_drive_compute_icon_list (hal_context, device->drive)
+            : exo_hal_volume_compute_icon_list (hal_context, device->volume, device->drive);
 
   /* determine the default icon theme */
   icon_theme = gtk_icon_theme_get_default ();
 
-  /* determine the icon from the type (keep in sync
-   * with thunar-vfs to get consistent icons).
-   */
-  switch (libhal_drive_get_type (device->drive))
-    {
-    case LIBHAL_DRIVE_TYPE_CDROM:
-      /* check which of CD-ROM/DVD we have */
-      switch (libhal_volume_get_disc_type (device->volume))
-        {
-cdrom:  case LIBHAL_VOLUME_DISC_TYPE_CDROM:
-          if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-cdrom"))
-            return g_strdup ("gnome-dev-cdrom");
-          break;
+  /* look for a usable icon in the list */
+  for (lp = icon_list; lp != NULL; lp = lp->next)
+    if (gtk_icon_theme_has_icon (icon_theme, lp->data))
+      {
+        icon_name = g_strdup (lp->data);
+        break;
+      }
 
-        case LIBHAL_VOLUME_DISC_TYPE_CDR:
-          if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-disc-cdr"))
-            return g_strdup ("gnome-dev-disc-cdr");
-          goto cdrom;
+  /* release the icon list */
+  g_list_foreach (icon_list, (GFunc) g_free, NULL);
+  g_list_free (icon_list);
 
-        case LIBHAL_VOLUME_DISC_TYPE_CDRW:
-          if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-disc-cdrw"))
-            return g_strdup ("gnome-dev-disc-cdrw");
-          goto cdrom;
+  /* last fallback is "gnome-dev-removable" */
+  if (G_UNLIKELY (icon_name == NULL))
+    icon_name = g_strdup ("gnome-dev-removable");
 
-dvdrom: case LIBHAL_VOLUME_DISC_TYPE_DVDROM:
-          if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-disc-dvdrom"))
-            return g_strdup ("gnome-dev-disc-dvdrom");
-          else if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-dvd"))
-            return g_strdup ("gnome-dev-dvd");
-          goto cdrom;
-
-        case LIBHAL_VOLUME_DISC_TYPE_DVDRAM:
-          if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-disc-dvdram"))
-            return g_strdup ("gnome-dev-disc-dvdram");
-          goto dvdrom;
-
-dvdr:   case LIBHAL_VOLUME_DISC_TYPE_DVDR:
-          if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-disc-dvdr"))
-            return g_strdup ("gnome-dev-disc-dvdr");
-          goto dvdrom;
-
-        case LIBHAL_VOLUME_DISC_TYPE_DVDRW:
-        case LIBHAL_VOLUME_DISC_TYPE_DVDPLUSRW:
-          if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-disc-dvdrw"))
-            return g_strdup ("gnome-dev-disc-dvdrw");
-          goto dvdrom;
-
-        case LIBHAL_VOLUME_DISC_TYPE_DVDPLUSR:
-          if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-disc-dev-dvdr-plus"))
-            return g_strdup ("gnome-dev-disc-dev-dvdr-plus");
-          goto dvdr;
-
-        default:
-          /* unsupported disc type */
-          break;
-        }
-      break;
-
-    case LIBHAL_DRIVE_TYPE_FLOPPY:
-      if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-floppy"))
-        return g_strdup ("gnome-dev-floppy");
-      break;
-
-    case LIBHAL_DRIVE_TYPE_PORTABLE_AUDIO_PLAYER:
-      if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-ipod"))
-        return g_strdup ("gnome-dev-ipod");
-      break;
-
-    default:
-      /* check if the drive is connected to the USB bus */
-      if (libhal_drive_get_bus (device->drive) == LIBHAL_DRIVE_BUS_USB)
-        {
-          /* we consider the drive to be an USB stick */
-          if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-removable-usb"))
-            return g_strdup ("gnome-dev-removable-usb");
-          else if (gtk_icon_theme_has_icon (icon_theme, "gnome-dev-harddisk-usb"))
-            return g_strdup ("gnome-dev-harddisk-usb");
-        }
-      break;
-    }
-
-  /* generic icon otherwise */
-  return g_strdup ("gnome-fs-blockdev");
+  return icon_name;
 }
 
 

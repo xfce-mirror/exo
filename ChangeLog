@@ -1,3 +1,19 @@
+2007-01-07	Benedikt Meurer <benny@xfce.org>
+
+	* configure.in.in, Makefile.am, exo-hal/: Add utility library exo-hal,
+	  which provides functions to lookup display names and icons for HAL
+	  devices. These functions are used by both exo-mount and Thunar, and
+	  probably additional software in the future. The library is there to
+	  avoid having to duplicate these rather messy functions all over the
+	  place, and to make translators life easier, having to translate them
+	  only in a single place.
+	* docs/reference/: Update the reference manual.
+	* exo-mount/: Use exo-hal to determine the display names and icons for
+	  the HAL devices.
+	* po/POTFILES.in: Add new files here.
+	* po/libexo-0.3.pot, po/*.po: Merge new strings.
+	* po/de.po: Update german translations.
+
 2007-01-06	Benedikt Meurer <benny@xfce.org>
 
 	* exo-mount-notify/main.c(signal_io_func): Do not block Thunar's

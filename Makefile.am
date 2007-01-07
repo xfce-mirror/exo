@@ -13,6 +13,7 @@ SUBDIRS =								\
 	exo-csource							\
 	exo-support							\
 	exo-desktop-item-edit						\
+	exo-hal								\
 	exo-helper							\
 	exo-mount							\
 	$(EXO_MOUNT_NOTIFY_SUBDIR)					\

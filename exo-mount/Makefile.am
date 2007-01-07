@@ -34,13 +34,15 @@ exo_mount_LDFLAGS =							\
 	-no-undefined
 
 exo_mount_DEPENDENCIES =						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la \
+	$(top_builddir)/exo-hal/libexo-hal-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 exo_mount_LDADD =							\
 	$(GTK_LIBS)							\
 	$(HAL_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la \
+	$(top_builddir)/exo-hal/libexo-hal-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
 
 # install apppropriate symlinks
 install-data-local:

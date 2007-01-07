@@ -12,7 +12,7 @@ DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.sgml
 SCAN_OPTIONS=--deprecated-guards="EXO_DISABLE_DEPRECATED"
 
 # The directory containing the source code. Relative to $(srcdir)
-DOC_SOURCE_DIR=../../exo
+DOC_SOURCE_DIR=../..
 
 # Extra options to supply to gtkdoc-mkdb
 MKDB_OPTIONS=--sgml-mode --output-format=xml
@@ -21,8 +21,8 @@ MKDB_OPTIONS=--sgml-mode --output-format=xml
 FIXXREF_OPTIONS=
 
 # Used for dependencies
-HFILE_GLOB=$(top_srcdir)/exo/*.h
-CFILE_GLOB=$(top_srcdir)/exo/*.c
+HFILE_GLOB=$(top_srcdir)/exo/*.h $(top_srcdir)/exo-hal/*.h
+CFILE_GLOB=$(top_srcdir)/exo/*.c $(top_srcdir)/exo-hal/*.c
 
 # Header files to ignore when scanning
 IGNORE_HFILES=
