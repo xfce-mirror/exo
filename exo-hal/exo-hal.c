@@ -310,7 +310,11 @@ exo_hal_drive_compute_display_name (struct LibHalContext_s *context,
       else if ((cdrom_caps & LIBHAL_DRIVE_CDROM_CAPS_DVDRW) != 0
             && (cdrom_caps & LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRW) != 0)
         {
-          if ((cdrom_caps & LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRDL) != 0 || (cdrom_caps & LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRWDL) != 0)
+          if ((cdrom_caps & LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRDL) != 0
+#ifdef HAVE_LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRWDL
+              || (cdrom_caps & LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRWDL) != 0
+#endif
+              )
             second = "/DVD±RW DL";
           else
             second = "/DVD±RW";
@@ -694,7 +698,7 @@ exo_hal_volume_compute_display_name (struct LibHalContext_s *context,
                   if (G_LIKELY (size < n * 10))
                     size_string = g_strdup_printf ("%.01f%c", ((gdouble) size) / ((gdouble) m), UNITS[n]);
                   else
-                    size_string = g_strdup_printf ("%lld%c", size / m, UNITS[n]);
+                    size_string = g_strdup_printf ("%llu%c", size / m, UNITS[n]);
                   break;
                 }
             }

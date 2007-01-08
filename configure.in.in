@@ -154,6 +154,23 @@ XDT_CHECK_OPTIONAL_PACKAGE([HAL], [hal-storage], [0.5.0], [hal], [HAL support], 
 if test x"$HAL_FOUND" = x"yes"; then
   dnl # substituted into exo-hal-0.3.pc
   HAL_STORAGE_DEPENDENCY="hal-storage"
+
+  dnl # Check if LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRWDL is declared
+  save_CFLAGS="$CFLAGS"
+  CFLAGS="$CFLAGS $HAL_CFLAGS"
+  AC_MSG_CHECKING([whether LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRWDL is declared])
+  AC_COMPILE_IFELSE(AC_LANG_SOURCE(
+  [#include <libhal-storage.h>
+    int main (int argc, char **argv) { return LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRWDL; }
+  ]),
+  [
+    AC_DEFINE([HAVE_LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRWDL], [1], [Define if LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRWDL present])
+    AC_MSG_RESULT([yes])
+  ],
+  [
+    AC_MSG_RESULT([no])
+  ])
+  CFLAGS="$save_CFLAGS"
 fi
 AC_SUBST([HAL_STORAGE_DEPENDENCY])
 
