@@ -58,6 +58,7 @@ msgstr "Het lezen van bestand \"%s\" is mislukt: %s"
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
+"Het laden van afbeelding \"%s\" is mislukt: Onbekende reden, waarschijnlijk een corrupte afbeelding"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
@@ -1143,31 +1144,31 @@ msgstr "Onbekende fout"
 #: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr ""
+msgstr "Apparaat \"%s\" is niet gevonden in de bestandssysteem tabel"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
-msgstr ""
+msgstr "Gegeven apparaat \"%s\" is geen volume of schijf"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:564
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr ""
+msgstr "U heeft geen rechten voor het uitwerpen van volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:569
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr ""
+msgstr "Een programma behoed volume \"%s\" voor uitwerpen"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:800
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr ""
+msgstr "U heeft geen rechten voor het aankoppelen van volume \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:815
 msgid ""
@@ -1183,27 +1184,27 @@ msgstr ""
 #: ../exo-mount/exo-mount-hal.c:911
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr ""
+msgstr "U heeft geen rechten voor het loskoppelen van volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:916
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr ""
+msgstr "Een programma behoed volume \"%s\" voor loskoppelen"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:921
-#, c-format
+#, fuzzy, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr ""
+msgstr "Schijf \"%s\" is waarschijnlijk handmatig aangekoppeld via de commando-regel"
 
 #: ../exo-mount/main.c:63
 msgid "Eject rather than mount"
-msgstr ""
+msgstr "Bij voorkeur uitwerpen ipv aankoppelen"
 
 #: ../exo-mount/main.c:64
 msgid "Unmount rather than mount"
-msgstr ""
+msgstr "Bij voorkeur loskoppelen ipv aankoppelen"
 
 #: ../exo-mount/main.c:66
 msgid "Mount by HAL device UDI"
@@ -1215,7 +1216,7 @@ msgstr ""
 
 #: ../exo-mount/main.c:70
 msgid "Mount by device file"
-msgstr ""
+msgstr "Aankoppelen met apparaat bestand"
 
 #: ../exo-mount/main.c:71
 msgid "Don't show any dialogs"
@@ -1240,7 +1241,7 @@ msgstr ""
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:167
 msgid "Cannot eject and unmount simultaneously"
-msgstr ""
+msgstr "Kan niet tegelijk uitwerpen en loskoppelen"
 
 #: ../exo-mount/main.c:319
 #, c-format
@@ -1248,14 +1249,14 @@ msgid "Failed to eject \"%s\""
 msgstr "Het uitwerpen van \"%s\" is mislukt."
 
 #: ../exo-mount/main.c:321
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "Kan \"%s\" niet unmounten"
+msgstr "Kan \"%s\" niet loskoppelen"
 
 #: ../exo-mount/main.c:323
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to mount \"%s\""
-msgstr "Kan \"%s\" niet laden"
+msgstr "Kan \"%s\" niet aankoppelen"
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:111
@@ -1280,7 +1281,7 @@ msgstr "Apparaat \"%s\" wordt uitgeworpen. Dit kan even duren."
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
 msgid "Unmounting device"
-msgstr ""
+msgstr "Ontkoppelen van apparaat"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
