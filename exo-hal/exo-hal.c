@@ -27,6 +27,12 @@
 #ifdef HAVE_LOCALE_H
 #include <locale.h>
 #endif
+#ifdef HAVE_MEMORY_H
+#include <memory.h>
+#endif
+#ifdef HAVE_STRING_H
+#include <string.h>
+#endif
 
 #ifdef HAVE_HAL
 #include <libhal-storage.h>
@@ -232,6 +238,94 @@ exo_hal_init (void)
   /* tell the caller that we do not support HAL */
   return FALSE;
 #endif
+}
+
+
+
+/**
+ * exo_hal_udi_validate:
+ * @udi : the HAL device UDI.
+ * @len : the max number of bytes to validate, or <literal>-1</literal> to go until NUL.
+ * @end : return location for end of valid data.
+ *
+ * Checks that the given range of the @udi is a valid HAL device UDI (i.e. a valid
+ * D-BUS object path name in the D-BUS protocol). Part of the validation ensures
+ * that the @udi contains only ASCII.
+ *
+ * If @end is non-%NULL, then then end of the valid range will be stored there (i.e. the
+ * start of the first invalid character if some bytes were invalid, or the end of the
+ * text being validated otherwise).
+ *
+ * Returns %TRUE if all of @udi was valid. All HAL routines <emphasis>require</emphasis>
+ * valid UDIs as input; so data read from a file or the command line should be checked
+ * with exo_hal_udi_validate() before doing anything else with it.
+ *
+ * Note that exo_hal_udi_validate() is always available, no matter if HAL support was
+ * enabled at compile time.
+ *
+ * Return value: %TRUE if @udi was a valid HAL device UDI.
+ *
+ * Since: 0.3.1.13
+ **/
+gboolean
+exo_hal_udi_validate (const gchar *udi,
+                      gssize       len,
+                      gchar      **end)
+{
+  const gchar *last_slash;
+  const gchar *e;
+  const gchar *s;
+
+  g_return_val_if_fail (udi != NULL, FALSE);
+  g_return_val_if_fail (len >= -1, FALSE);
+
+  /* determine the length if not specified */
+  if (G_LIKELY (len == -1))
+    len = strlen (udi);
+
+  /* let end point to the first character */
+  if (G_UNLIKELY (end != NULL))
+    *end = (gchar *) udi;
+
+  /* empty strings are never valid HAL UDIs */
+  if (G_UNLIKELY (len == 0))
+    return FALSE;
+
+  /* valid HAL device UDIs start with a "/" */
+  if (G_UNLIKELY (*udi != '/'))
+    return FALSE;
+
+  for (last_slash = udi, e = udi + len, s = udi + 1; s != e; ++s)
+    {
+      if (*s == '/')
+        {
+          if ((s - last_slash) < 2)
+            {
+              /* no empty path components allowed */
+              if (G_UNLIKELY (end != NULL))
+                *end = (gchar *) s;
+              return FALSE;
+            }
+          last_slash = s;
+        }
+      else if (!g_ascii_isalnum (*s) && *s != '_')
+        {
+          /* only alphanumeric charaters and '_' */
+          if (G_UNLIKELY (end != NULL))
+            *end = (gchar *) s;
+          return FALSE;
+        }
+    }
+
+  if ((e - last_slash) < 2 && len > 1)
+    {
+      /* trailing slash not allowed unless the string is "/" */
+      if (G_UNLIKELY (end != NULL))
+        *end = (gchar *) last_slash;
+      return FALSE;
+    }
+
+  return TRUE;
 }
 
 

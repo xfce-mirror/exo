@@ -42,6 +42,10 @@ struct LibHalDrive_s;
 
 gboolean exo_hal_init                         (void);
 
+gboolean exo_hal_udi_validate                 (const gchar            *udi,
+                                               gssize                  len,
+                                               gchar                 **end);
+
 gchar   *exo_hal_drive_compute_display_name   (struct LibHalContext_s *context,
                                                struct LibHalDrive_s   *drive) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 GList   *exo_hal_drive_compute_icon_list      (struct LibHalContext_s *context,

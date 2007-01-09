@@ -41,6 +41,8 @@
 
 #include <glib/gstdio.h>
 
+#include <exo-hal/exo-hal.h>
+
 #include <exo-mount/exo-mount-fstab.h>
 #include <exo-mount/exo-mount-hal.h>
 #include <exo-mount/exo-mount-utils.h>
@@ -150,6 +152,15 @@ main (int argc, char **argv)
   if (G_UNLIKELY (opt_hal_udi != NULL))
     {
       g_printerr ("%s: %s.\n", g_get_prgname (), _("Cannot mount by HAL device UDI, because HAL support was disabled for this build"));
+      return EXIT_FAILURE;
+    }
+#else
+  /* make sure the UDI passed in is valid */
+  if (opt_hal_udi != NULL && !exo_hal_udi_validate (opt_hal_udi, -1, NULL))
+    {
+      message = g_strdup_printf (_("The specified UDI \"%s\" is not a valid HAL device UDI"), opt_hal_udi);
+      g_printerr ("%s: %s.\n", g_get_prgname (), message);
+      g_free (message);
       return EXIT_FAILURE;
     }
 #endif

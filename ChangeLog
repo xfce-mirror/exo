@@ -1,3 +1,13 @@
+2007-01-09	Benedikt Meurer <benny@xfce.org>
+
+	* exo-hal/exo-hal.{c,h}: Add utility function exo_hal_udi_validate()
+	  to validate HAL device UDIs (actually D-Bus object paths).
+	* docs/reference/: Update reference manual.
+	* exo-mount/main.c(main): Use exo_hal_udi_validate() to verify HAL
+	  device UDIs passed on the command line.
+	* po/libexo-0.3.pot, po/*.po: Merge new strings.
+	* po/de.po: Update german translations.
+
 2007-01-08	Benedikt Meurer <benny@xfce.org>
 
 	* configure.in.in, exo-hal/exo-hal.c: Fix build with older HAL

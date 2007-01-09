@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.12rc2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-07 23:35+0100\n"
+"POT-Creation-Date: 2007-01-09 23:46+0100\n"
 "PO-Revision-Date: 2006-04-21 23:06+0300\n"
 "Last-Translator: Peeter Vois <peeter.vois@proekspert.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -516,7 +516,7 @@ msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list       otsi (nimi, fail) paare\n"
 
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:120 ../exo-mount-notify/main.c:167
+#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, fuzzy, c-format
 msgid ""
@@ -533,7 +533,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:252 ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:124 ../exo-mount-notify/main.c:171
+#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -550,7 +550,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:256 ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:175
+#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -710,7 +710,7 @@ msgstr ""
 msgid "Preset icon when creating a desktop file"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:72
+#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:74
 #: ../exo-mount-notify/main.c:77
 #, fuzzy
 msgid "Print version information and exit"
@@ -721,7 +721,7 @@ msgstr "  -v, --version    Trüki versioon ja välju\n"
 msgid "[FILE|FOLDER]"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:106
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
 #, fuzzy
 msgid "Failed to open display"
@@ -758,90 +758,90 @@ msgstr "\"%s\" avamine läks nässu."
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" avamine läks nässu."
 
-#: ../exo-hal/exo-hal.c:346
+#: ../exo-hal/exo-hal.c:444
 #, c-format
 msgid "External %s Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:348
+#: ../exo-hal/exo-hal.c:446
 #, c-format
 msgid "%s Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:357
+#: ../exo-hal/exo-hal.c:455
 msgid "External Floppy Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:359
+#: ../exo-hal/exo-hal.c:457
 msgid "Floppy Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:363
+#: ../exo-hal/exo-hal.c:461
 msgid "Compact Flash Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:367
+#: ../exo-hal/exo-hal.c:465
 msgid "Memory Stick Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:371
+#: ../exo-hal/exo-hal.c:469
 msgid "Smart Media Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:375
+#: ../exo-hal/exo-hal.c:473
 msgid "SD/MMC Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:379
+#: ../exo-hal/exo-hal.c:477
 msgid "Zip Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:383
+#: ../exo-hal/exo-hal.c:481
 msgid "Jaz Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:387
+#: ../exo-hal/exo-hal.c:485
 msgid "Pen Drive"
 msgstr ""
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:396
+#: ../exo-hal/exo-hal.c:494
 #, c-format
 msgid "%s Music Player"
 msgstr ""
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:411
+#: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
 msgstr ""
 
 #. last fallback to "Drive"
-#: ../exo-hal/exo-hal.c:434
+#: ../exo-hal/exo-hal.c:532
 msgid "Drive"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:661
+#: ../exo-hal/exo-hal.c:759
 #, c-format
 msgid "Blank %s Disc"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:663
+#: ../exo-hal/exo-hal.c:761
 #, c-format
 msgid "%s Disc"
 msgstr ""
 
 #. special case for pure audio disc
-#: ../exo-hal/exo-hal.c:668
+#: ../exo-hal/exo-hal.c:766
 msgid "Audio CD"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:704
+#: ../exo-hal/exo-hal.c:802
 #, c-format
 msgid "%s Removable Volume"
 msgstr ""
 
-#: ../exo-hal/exo-hal.c:706
+#: ../exo-hal/exo-hal.c:804
 #, c-format
 msgid "%s Volume"
 msgstr ""
@@ -1225,62 +1225,67 @@ msgstr ""
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr ""
 
-#: ../exo-mount/main.c:63
+#: ../exo-mount/main.c:65
 msgid "Eject rather than mount"
 msgstr ""
 
-#: ../exo-mount/main.c:64
+#: ../exo-mount/main.c:66
 msgid "Unmount rather than mount"
 msgstr ""
 
-#: ../exo-mount/main.c:66
+#: ../exo-mount/main.c:68
 msgid "Mount by HAL device UDI"
 msgstr ""
 
-#: ../exo-mount/main.c:68
+#: ../exo-mount/main.c:70
 msgid "Mount by HAL device UDI (not supported)"
 msgstr ""
 
-#: ../exo-mount/main.c:70
+#: ../exo-mount/main.c:72
 msgid "Mount by device file"
 msgstr ""
 
-#: ../exo-mount/main.c:71
+#: ../exo-mount/main.c:73
 msgid "Don't show any dialogs"
 msgstr ""
 
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:136
+#: ../exo-mount/main.c:138
 msgid "Must specify HAL device UDI or device file"
 msgstr ""
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:144
+#: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr ""
 
-#: ../exo-mount/main.c:152
+#: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
 
+#: ../exo-mount/main.c:161
+#, c-format
+msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
+msgstr ""
+
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:167
+#: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
 msgstr ""
 
-#: ../exo-mount/main.c:319
+#: ../exo-mount/main.c:330
 #, fuzzy, c-format
 msgid "Failed to eject \"%s\""
 msgstr "\"%s\" avamine läks nässu."
 
-#: ../exo-mount/main.c:321
+#: ../exo-mount/main.c:332
 #, fuzzy, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "\"%s\" avamine läks nässu."
 
-#: ../exo-mount/main.c:323
+#: ../exo-mount/main.c:334
 #, fuzzy, c-format
 msgid "Failed to mount \"%s\""
 msgstr "\"%s\" avamine läks nässu."
