@@ -205,9 +205,6 @@ main (int argc, char **argv)
   mounted_readonly = exo_mount_hal_device_is_readonly (device);
 #endif
 
-  /* canonicalize the device file path */
-  exo_mount_utils_canonicalize_filename (opt_device);
-
   /* check if the device is currently mounted */
   mounted = exo_mount_utils_is_mounted (opt_device, &mounted_readonly);
   if ((!opt_eject && !opt_unmount && mounted)

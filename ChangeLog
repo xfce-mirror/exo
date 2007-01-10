@@ -1,3 +1,18 @@
+2007-01-10	Benedikt Meurer <benny@xfce.org>
+
+	* exo/exo-md5.c(exo_md5_digest_dup): Fix invalid usage of g_memdup().
+	* exo/exo-mount-point.{c,h}, exo/Makefile.am, exo/exo.symbols,
+	  exo/exo.h: Import new module ExoMountPoint, which handles the
+	  retrieval of active or configured mount points. This was merged
+	  here to avoid duplicating the code in several other applications.
+	  For example, Thunar, exo-mount and thunar-volman included similar
+	  code somehow. The code itself is highly platform-depend and so its
+	  easier to manage it in a central place.
+	* docs/reference/: Update reference manual.
+	* exo-mount/: Use the functions from the ExoMountPoint module.
+	* tests/: Add a test case for the ExoMountPoint module.
+	* po/POTFILES.in: Add new files here.
+
 2007-01-09	Benedikt Meurer <benny@xfce.org>
 
 	* exo-hal/exo-hal.{c,h}: Add utility function exo_hal_udi_validate()

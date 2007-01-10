@@ -1,0 +1,100 @@
+<!-- ##### SECTION Title ##### -->
+Mount Points
+
+<!-- ##### SECTION Short_Description ##### -->
+Functions to query active and configured mount points
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+  This module provides functions to query active and configured mount points from
+  the system. This is commonly required in file and volume management, and hence
+  it was added to the library. For example, <command>exo-mount</command>,
+  <command>Thunar</command> and <command>thunar-volman</command> make use of this.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### ENUM ExoMountPointFlags ##### -->
+<para>
+
+</para>
+
+@EXO_MOUNT_POINT_READ_ONLY: 
+
+<!-- ##### STRUCT ExoMountPoint ##### -->
+<para>
+  Structure to represent a mount point, which can be either an
+  active mount point, queried from the kernel's internal mount
+  table, or a configured mount point queried from the file
+  system table (usually <filename>/etc/fstab</filename> or
+  <filename>/etc/vfstab</filename>).
+</para>
+
+@flags: see #ExoMountPointFlags.
+@device: the device file path.
+@folder: the folder where the device is mounted (or may be mounted).
+@fstype: the type of the file system used for the device.
+
+<!-- ##### FUNCTION exo_mount_point_dup ##### -->
+<para>
+
+</para>
+
+@mount_point: 
+@Returns: 
+
+
+<!-- ##### FUNCTION exo_mount_point_free ##### -->
+<para>
+
+</para>
+
+@mount_point: 
+
+
+<!-- ##### ENUM ExoMountPointMatchMask ##### -->
+<para>
+
+</para>
+
+@EXO_MOUNT_POINT_MATCH_ACTIVE: 
+@EXO_MOUNT_POINT_MATCH_CONFIGURED: 
+@EXO_MOUNT_POINT_MATCH_DEVICE: 
+@EXO_MOUNT_POINT_MATCH_FOLDER: 
+@EXO_MOUNT_POINT_MATCH_FSTYPE: 
+
+<!-- ##### FUNCTION exo_mount_point_list_matched ##### -->
+<para>
+
+</para>
+
+@mask: 
+@device: 
+@folder: 
+@fstype: 
+@error: 
+@Returns: 
+
+
+<!-- ##### MACRO exo_mount_point_list_active ##### -->
+<para>
+
+</para>
+
+@error: 
+
+
+<!-- ##### MACRO exo_mount_point_list_configured ##### -->
+<para>
+
+</para>
+
+@error: 
+
+

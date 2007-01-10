@@ -21,26 +21,12 @@
 #include <config.h>
 #endif
 
-#ifdef HAVE_SYS_MNTTAB_H
-#include <sys/mnttab.h>
-#endif
-
-#ifdef HAVE_ERRNO_H
-#include <errno.h>
-#endif
-#ifdef HAVE_FSTAB_H
-#include <fstab.h>
-#endif
 #ifdef HAVE_MEMORY_H
 #include <memory.h>
-#endif
-#ifdef HAVE_MNTENT_H
-#include <mntent.h>
 #endif
 #ifdef HAVE_PATHS_H
 #include <paths.h>
 #endif
-#include <stdio.h>
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif
@@ -49,15 +35,6 @@
 #include <exo-mount/exo-mount-utils.h>
 
 
-
-/* define _PATH_FSTAB if undefined */
-#ifndef _PATH_FSTAB
-#ifdef sun
-#define _PATH_FSTAB "/etc/vfstab"
-#else
-#define _PATH_FSTAB "/etc/fstab"
-#endif
-#endif
 
 /* define _PATH_MOUNT if undefined */
 #ifndef _PATH_MOUNT
@@ -134,112 +111,33 @@ static gchar*
 exo_mount_fstab_lookup (const gchar *device_file,
                         GError     **error)
 {
-  gchar *path = NULL;
+  GError *err = NULL;
+  GSList *mount_points;
+  gchar  *path = NULL;
 
-#if defined(HAVE_SETMNTENT) /* Linux */
-  struct mntent *mntent;
-  FILE          *fp;
-
-  /* try to open the fstab file */
-  fp = setmntent (_PATH_FSTAB, "r");
-  if (G_UNLIKELY (fp == NULL))
+  /* lookup the configured device in the file system table using the ExoMountPoint module */
+  mount_points = exo_mount_point_list_matched (EXO_MOUNT_POINT_MATCH_CONFIGURED | EXO_MOUNT_POINT_MATCH_DEVICE, device_file, NULL, NULL, &err);
+  if (G_LIKELY (mount_points != NULL))
     {
-      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno),
-                   _("Failed to open file \"%s\": %s"), _PATH_FSTAB,
-                   g_strerror (errno));
+      /* take a copy of the folder path of the first matching mount point */
+      path = g_strdup (((const ExoMountPoint *) mount_points->data)->folder);
+
+      /* cleanup the mount points */
+      g_slist_foreach (mount_points, (GFunc) exo_mount_point_free, NULL);
+      g_slist_free (mount_points);
+    }
+  else if (err == NULL)
+    {
+      /* TRANSLATORS: a device is missing from the file system table (usually /etc/fstab) */
+      g_set_error (&err, G_FILE_ERROR, G_FILE_ERROR_INVAL, _("Device \"%s\" not found in file system device table"), device_file);
+    }
+
+  /* check if we failed */
+  if (G_UNLIKELY (err != NULL))
+    {
+      /* propagate the error */
+      g_propagate_error (error, err);
       return NULL;
-    }
-
-  /* look up an entry for our device file */
-  while (path == NULL)
-    {
-      /* grab the next entry */
-      mntent = getmntent (fp);
-      if (mntent == NULL)
-        break;
-
-      /* check if this entry matches */
-      if (exo_mount_utils_is_same_device (device_file, mntent->mnt_fsname))
-        path = g_strdup (mntent->mnt_dir);
-    }
-
-  /* close the file handle */
-  endmntent (fp);
-#elif defined(HAVE_GETMNTENT) /* Solaris */
-  struct mnttab mntent;
-  FILE         *fp;
-
-  /* try to open the fstab file */
-  fp = fopen (_PATH_FSTAB, "r");
-  if (G_UNLIKELY (fp == NULL))
-    {
-      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno),
-                   _("Failed to open file \"%s\": %s"), _PATH_FSTAB,
-                   g_strerror (errno));
-      return NULL;
-    }
-
-  /* look up an entry for our device file */
-  while (path == NULL)
-    {
-      /* grab the next entry */
-      if (getmntent (fp, &mntent) != 0)
-        break;
-
-      /* check if this entry matches */
-      if (exo_mount_utils_is_same_device (device_file, mntent.mnt_special))
-        path = g_strdup (mntent.mnt_mountp);
-    }
-
-  /* close the file handle */
-  fclose (fp);
-#elif defined(HAVE_SETFSENT) /* FreeBSD */
-  struct fstab *fs;
-
-  /* open the fstab file */
-  if (setfsent () == 0)
-    {
-      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno),
-                   _("Failed to open file \"%s\": %s"), _PATH_FSTAB,
-                   g_strerror (errno));
-      return NULL;
-    }
-
-  /* look up an entry for our device file */
-  while (path == NULL)
-    {
-      /* grab the next entry */
-      fs = getfsent ();
-      if (fs == NULL)
-        break;
-
-      /* check if this is a usable file system */
-      if (strcmp (fs->fs_type, FSTAB_SW) == 0
-#ifdef FSTAB_DP
-          || strcmp (fs->fs_type, FSTAB_DP) == 0
-#endif
-          || strcmp (fs->fs_type, FSTAB_XX) == 0)
-        {
-          /* skip this one then */
-          continue;
-        }
-
-      /* check if this entry matches */
-      if (exo_mount_utils_is_same_device (device_file, fs->fs_spec))
-        path = g_strdup (fs->fs_file);
-    }
-
-  /* close the file handle */
-  endfsent ();
-#else
-#error "Add support for your operating system here."
-#endif
-
-  /* check if we failed to find the entry */
-  if (G_UNLIKELY (path == NULL))
-    {
-      /* generate an appropriate error message */
-      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_INVAL, _("Device \"%s\" not found in file system device table"), device_file);
     }
 
   return path;

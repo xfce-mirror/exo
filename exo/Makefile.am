@@ -25,6 +25,7 @@ libexo_headers =							\
 	exo-icon-chooser-dialog.h					\
 	exo-icon-view.h							\
 	exo-md5.h							\
+	exo-mount-point.h						\
 	exo-pango-extensions.h						\
 	exo-string.h							\
 	exo-toolbars-editor-dialog.h					\
@@ -74,6 +75,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-icon-chooser-model.h					\
 	exo-icon-view.c							\
 	exo-md5.c							\
+	exo-mount-point.c						\
 	exo-pango-extensions.c						\
 	exo-private.c							\
 	exo-private.h							\

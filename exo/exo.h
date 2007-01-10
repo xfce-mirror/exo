@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2006 os-cillation e.K.
+ * Copyright (c) 2004-2007 os-cillation e.K.
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
  *
@@ -53,6 +53,7 @@
 #include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-md5.h>
+#include <exo/exo-mount-point.h>
 #include <exo/exo-pango-extensions.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>

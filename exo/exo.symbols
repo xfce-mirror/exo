@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2005-2006 Benedikt Meurer <benny@xfce.org>.
+ * Copyright (c) 2005-2007 Benedikt Meurer <benny@xfce.org>.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -89,8 +89,9 @@ exo_ellipsized_label_set_ellipsize
 #if IN_HEADER(__EXO_ENUM_TYPES_H__)
 #if IN_SOURCE(__EXO_ENUM_TYPES_C__)
 exo_icon_view_drop_position_get_type G_GNUC_CONST
-exo_toolbars_model_flags_get_type G_GNUC_CONST
 exo_icon_view_layout_mode_get_type G_GNUC_CONST
+exo_mount_point_flags_get_type G_GNUC_CONST
+exo_toolbars_model_flags_get_type G_GNUC_CONST
 #endif
 #endif
 
@@ -152,18 +153,6 @@ exo_icon_bar_get_active
 exo_icon_bar_set_active
 exo_icon_bar_get_active_iter
 exo_icon_bar_set_active_iter
-#endif
-#endif
-
-/* ExoIconChooserButton methods */
-#if IN_HEADER(__EXO_ICON_CHOOSER_BUTTON_H__)
-#if IN_SOURCE(__EXO_ICON_CHOOSER_BUTTON_C__)
-exo_icon_chooser_button_get_type G_GNUC_CONST
-exo_icon_chooser_button_new G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_icon_chooser_button_get_icon G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_icon_chooser_button_set_icon
-exo_icon_chooser_button_get_title
-exo_icon_chooser_button_set_title
 #endif
 #endif
 
@@ -262,6 +251,16 @@ exo_md5_digest_dup G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 exo_md5_digest_free
 exo_md5_digest_hash
 exo_md5_digest_equal
+#endif
+#endif
+
+/* exo-mount-point functions */
+#if IN_HEADER(__EXO_MOUNT_POINT_H__)
+#if IN_SOURCE(__EXO_MOUNT_POINT_C__)
+exo_mount_point_get_type G_GNUC_CONST
+exo_mount_point_dup G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+exo_mount_point_free
+exo_mount_point_list_matched G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 #endif
 #endif
 

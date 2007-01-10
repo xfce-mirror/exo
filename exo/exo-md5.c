@@ -1,6 +1,6 @@
 /* $Id$ */
 /*-
- * Copyright (c) 2004-2006 os-cillation e.K.
+ * Copyright (c) 2004-2007 os-cillation e.K.
  * Copyright (c) 2004      James M. Cape <jcape@ignore-your.tv>
  *
  * Written by Benedikt Meurer <benny@xfce.org>.
@@ -447,9 +447,20 @@ exo_md5_digest_to_str (const ExoMd5Digest *digest)
 ExoMd5Digest*
 exo_md5_digest_dup (const ExoMd5Digest *digest)
 {
-  g_return_val_if_fail (digest != NULL, NULL);
+  ExoMd5Digest *duplicate;
 
-  return g_memdup (digest, sizeof (*digest));
+  if (G_LIKELY (digest != NULL))
+    {
+      /* take a copy of the digest */
+      duplicate = _exo_slice_new (ExoMd5Digest);
+      memcpy (duplicate, digest, sizeof (*digest));
+      return duplicate;
+    }
+  else
+    {
+      /* duplicating NULL yields NULL */
+      return NULL;
+    }
 }
 
 
