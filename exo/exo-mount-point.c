@@ -308,7 +308,7 @@ exo_mount_point_list_match_configured (ExoMountPointMatchMask mask,
   for (;;)
     {
       /* grab the next entry */
-      mntent = getmntent ();
+      mntent = getmntent (fp);
       if (mntent == NULL)
         break;
 
