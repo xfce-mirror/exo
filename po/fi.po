@@ -1,14 +1,14 @@
 # Finnish translations for exo package.
-# Copyright (C) 2004-2006 os-cillation e.K.
+# Copyright (C) 2004-2007 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
-# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2005-2006.
+# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2005-2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.1.12rc2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 23:46+0100\n"
-"PO-Revision-Date: 2006-09-12 16:09+0300\n"
+"POT-Creation-Date: 2007-01-11 12:54+0200\n"
+"PO-Revision-Date: 2007-01-11 13:06+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
 "MIME-Version: 1.0\n"
@@ -41,8 +41,8 @@ msgstr "koko"
 msgid "The size of the icon to render in pixels."
 msgstr "Piirettävän kuvakkeen koko kuvapisteinä."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:148
-#: ../exo-mount/exo-mount-fstab.c:177 ../exo-mount/exo-mount-fstab.c:203
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
+#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Tiedoston \"%s\" avaaminen epäonnistui: %s"
@@ -511,7 +511,7 @@ msgstr "  --build-list      Lue (nimi, tiedosto)-parit\n"
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -519,7 +519,7 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) 2005-2006\n"
+"Copyright (c) %s\n"
 "        os-cillation e.K. Kaikki oikeudet pidätetään.\n"
 "\n"
 "Kirjoittanut Benedikt Meurer <benny@xfce.org>.\n"
@@ -715,9 +715,8 @@ msgstr "[TIEDOSTO|HAKEMISTO]"
 
 #: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
-#, fuzzy
 msgid "Failed to open display"
-msgstr "Näytön avaaminen epäonnistui: %s"
+msgstr "Näytön avaaminen epäonnistui"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
@@ -752,90 +751,90 @@ msgstr "Kohteen \"%s\" tallentaminen epäonnistui."
 #: ../exo-hal/exo-hal.c:444
 #, c-format
 msgid "External %s Drive"
-msgstr ""
+msgstr "Ulkoinen %s-asema"
 
 #: ../exo-hal/exo-hal.c:446
 #, c-format
 msgid "%s Drive"
-msgstr ""
+msgstr "%s-asema"
 
 #: ../exo-hal/exo-hal.c:455
 msgid "External Floppy Drive"
-msgstr ""
+msgstr "Ulkoinen levykeasema"
 
 #: ../exo-hal/exo-hal.c:457
 msgid "Floppy Drive"
-msgstr ""
+msgstr "Levykeasema"
 
 #: ../exo-hal/exo-hal.c:461
 msgid "Compact Flash Drive"
-msgstr ""
+msgstr "Compact Flash -asema"
 
 #: ../exo-hal/exo-hal.c:465
 msgid "Memory Stick Drive"
-msgstr ""
+msgstr "Memory Stick -asema"
 
 #: ../exo-hal/exo-hal.c:469
 msgid "Smart Media Drive"
-msgstr ""
+msgstr "Smart Media -asema"
 
 #: ../exo-hal/exo-hal.c:473
 msgid "SD/MMC Drive"
-msgstr ""
+msgstr "SD/MMC-asema"
 
 #: ../exo-hal/exo-hal.c:477
 msgid "Zip Drive"
-msgstr ""
+msgstr "Zip-asema"
 
 #: ../exo-hal/exo-hal.c:481
 msgid "Jaz Drive"
-msgstr ""
+msgstr "Jaz-asema"
 
 #: ../exo-hal/exo-hal.c:485
 msgid "Pen Drive"
-msgstr ""
+msgstr "Muistitikku"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:494
 #, c-format
 msgid "%s Music Player"
-msgstr ""
+msgstr "Musiikkisoitin %s"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
-msgstr ""
+msgstr "Digitaalikamera %s"
 
 #. last fallback to "Drive"
 #: ../exo-hal/exo-hal.c:532
 msgid "Drive"
-msgstr ""
+msgstr "Asema"
 
 #: ../exo-hal/exo-hal.c:759
 #, c-format
 msgid "Blank %s Disc"
-msgstr ""
+msgstr "Tyhjä %s-levy"
 
 #: ../exo-hal/exo-hal.c:761
 #, c-format
 msgid "%s Disc"
-msgstr ""
+msgstr "%s-levy"
 
 #. special case for pure audio disc
 #: ../exo-hal/exo-hal.c:766
 msgid "Audio CD"
-msgstr ""
+msgstr "Audio-CD"
 
 #: ../exo-hal/exo-hal.c:802
 #, c-format
 msgid "%s Removable Volume"
-msgstr ""
+msgstr "Irotettava taltio %s"
 
 #: ../exo-hal/exo-hal.c:804
 #, c-format
 msgid "%s Volume"
-msgstr ""
+msgstr "Taltio %s"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -1146,158 +1145,162 @@ msgstr "W3M -tekstiselain"
 msgid "X Terminal"
 msgstr "X-pääte"
 
-#: ../exo-mount/exo-mount-fstab.c:115
+#: ../exo-mount/exo-mount-fstab.c:92
 msgid "Unknown error"
-msgstr ""
+msgstr "Tuntematon virhe"
 
-#. generate an appropriate error message
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:343
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr ""
+msgstr "Laitetta \"%s\" ei löydy tiedostojärjestelmätaulukosta"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
-msgstr ""
+msgstr "Määritetty laite \"%s\" ei ole taltio tai asema"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:564
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr ""
+msgstr "Sinulla ei ole oikeuksia taltion \"%s\" poistamiseen"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:569
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr ""
+msgstr "Sovellus estää taltion \"%s\" poistamisen"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:800
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr ""
+msgstr "Sinulla ei ole oikeuksia taltion \"%s\" liittämiseen"
 
 #: ../exo-mount/exo-mount-hal.c:815
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
+"Tyhjiä levyjä ei voi liittää. Tallenna levylle ääntä tai tiedostoja CD:n\n"
+"kirjoitussovelluksen (esim. Xfburn) avulla."
 
 #: ../exo-mount/exo-mount-hal.c:826
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr ""
+msgstr "Audio-CD:tä ei voi liittää. Kuuntele ääniraitoja Xfmedialla."
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:911
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr ""
+msgstr "Sinulla ei ole oikeuksia taltion \"%s\" irrottamiseen"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:916
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr ""
+msgstr "Sovellus estää taltion \"%s\" irrottamisen"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:921
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr ""
+msgstr "Taltio \"%s\" on varmaankin liitetty manuaalisesti komentoriviltä"
 
 #: ../exo-mount/main.c:65
 msgid "Eject rather than mount"
-msgstr ""
+msgstr "Poista, älä liitä"
 
 #: ../exo-mount/main.c:66
 msgid "Unmount rather than mount"
-msgstr ""
+msgstr "Irrota, älä liitä"
 
 #: ../exo-mount/main.c:68
 msgid "Mount by HAL device UDI"
-msgstr ""
+msgstr "Liitä HAL:in laite-UDI:n perusteella"
 
 #: ../exo-mount/main.c:70
 msgid "Mount by HAL device UDI (not supported)"
-msgstr ""
+msgstr "Liitä HAL:in laite-UDI:n perusteella (ei tuettu)"
 
 #: ../exo-mount/main.c:72
 msgid "Mount by device file"
-msgstr ""
+msgstr "Liitä laitetiedoston perusteella"
 
 #: ../exo-mount/main.c:73
 msgid "Don't show any dialogs"
-msgstr ""
+msgstr "Älä näytä dialogeja"
 
 #. the caller must specify either a HAL UDI or a device file
 #: ../exo-mount/main.c:138
 msgid "Must specify HAL device UDI or device file"
-msgstr ""
+msgstr "Määritettävä HAL:in laite-UDI tai laitetiedosto"
 
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr ""
+msgstr "Määritettävä joko HAL:in laite-UDI tai laitetiedosto, ei molempia"
 
 #: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
+"Ei voi liittää HAL:in laite-UDI:n perusteella, koska sovellusta ei käännetty "
+"HAL-tuella"
 
 #: ../exo-mount/main.c:161
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr ""
+msgstr "Määritetty UDI \"%s\" ei ole kelvollinen HAL:in laite-UDI"
 
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
-msgstr ""
+msgstr "Ei voi poistaa ja irrottaa samanaikaisesti"
 
-#: ../exo-mount/main.c:330
-#, fuzzy, c-format
+#: ../exo-mount/main.c:327
+#, c-format
 msgid "Failed to eject \"%s\""
-msgstr "Kohteen \"%s\" luominen epäonnistui."
+msgstr "Kohteen \"%s\" poistaminen epäonnistui."
 
-#: ../exo-mount/main.c:332
-#, fuzzy, c-format
+#: ../exo-mount/main.c:329
+#, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "Kohteen \"%s\" avaaminen epäonnistui."
+msgstr "Kohteen \"%s\" irrottaminen epäonnistui."
 
-#: ../exo-mount/main.c:334
-#, fuzzy, c-format
+#: ../exo-mount/main.c:331
+#, c-format
 msgid "Failed to mount \"%s\""
-msgstr "Kohteen \"%s\" avaaminen epäonnistui."
+msgstr "Kohteen \"%s\" liittäminen epäonnistui."
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:111
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr ""
+msgstr "Laitteen \"%s\" voi nyt poistaa turvallisesti."
 
 #: ../exo-mount-notify/main.c:112
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "Laitteen voi nyt poistaa turvallisesti"
 
 #. read-only, just ejecting
 #: ../exo-mount-notify/main.c:224
 msgid "Ejecting device"
-msgstr ""
+msgstr "Poistetaan taltio"
 
 #: ../exo-mount-notify/main.c:225
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr ""
+msgstr "Taltiota poistetaan laitteesta \"%s\". Tämä voi kestää hieman."
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
 msgid "Unmounting device"
-msgstr ""
+msgstr "Irrotetaan laite"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
@@ -1305,11 +1308,13 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
+"Laitetta \"%s\" irrotetaan järjestelmästä. Älä poista taltiota asemasta tai "
+"laitetta järjestelmästä."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
 msgid "Writing data to device"
-msgstr ""
+msgstr "Kirjoitetaan tietoa laitteelle"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
@@ -1317,6 +1322,8 @@ msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
 msgstr ""
+"Laitteelle \"%s\" täytyy kirjoittaa tietoa ennen sen poistamista. Älä poista "
+"taltiota asemasta tai laitetta järjestelmästä."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
