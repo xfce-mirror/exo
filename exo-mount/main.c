@@ -309,7 +309,10 @@ main (int argc, char **argv)
   /* check if we failed */
   if (G_UNLIKELY (err != NULL))
     {
-err0: /* check if we should display an error dialog */
+#ifdef HAVE_HAL
+err0:
+#endif
+      /* check if we should display an error dialog */
       if (G_LIKELY (!opt_noui))
         {
           /* make sure we can display a name */
