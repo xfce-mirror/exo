@@ -201,6 +201,7 @@ err0:     exo_mount_hal_propagate_error (error, &derror);
       else if (G_UNLIKELY (n_volume_udis < 1))
         {
           /* no match, we cannot handle that device */
+          libhal_free_string_array (volume_udis);
           goto err1;
         }
 

@@ -1,5 +1,10 @@
 2007-01-15	Benedikt Meurer <benny@xfce.org>
 
+	* exo-mount/exo-mount-hal.c(exo_mount_hal_device_from_udi): Release
+	  string array properly.
+
+2007-01-15	Benedikt Meurer <benny@xfce.org>
+
 	* exo-mount/exo-mount-hal.c(exo_mount_hal_device_from_udi): Allow
 	  to use the drive UDIs for CD-ROMs, which don't implement the
 	  Volume interface, but have atleast one associated, that
