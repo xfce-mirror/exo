@@ -164,6 +164,9 @@ exo_mount_hal_device_from_udi (const gchar *udi,
   ExoMountHalDevice *device = NULL;
   DBusError          derror;
   gchar            **interfaces;
+  gchar            **volume_udis;
+  gchar             *volume_udi = NULL;
+  gint               n_volume_udis;
   gint               n;
 
   g_return_val_if_fail (udi != NULL, NULL);
@@ -176,12 +179,38 @@ exo_mount_hal_device_from_udi (const gchar *udi,
   /* initialize D-Bus error */
   dbus_error_init (&derror);
 
+again:
   /* determine the info.interfaces property of the device */
   interfaces = libhal_device_get_property_strlist (hal_context, udi, "info.interfaces", &derror);
   if (G_UNLIKELY (interfaces == NULL))
     {
-err0: exo_mount_hal_propagate_error (error, &derror);
-      goto out;
+      /* reset D-Bus error */
+      dbus_error_free (&derror);
+
+      /* release any previous volume UDI */
+      g_free (volume_udi);
+      volume_udi = NULL;
+
+      /* ok, but maybe we have a volume whose parent is identified by the udi */
+      volume_udis = libhal_manager_find_device_string_match (hal_context, "info.parent", udi, &n_volume_udis, &derror);
+      if (G_UNLIKELY (volume_udis == NULL))
+        {
+err0:     exo_mount_hal_propagate_error (error, &derror);
+          goto out;
+        }
+      else if (G_UNLIKELY (n_volume_udis < 1))
+        {
+          /* no match, we cannot handle that device */
+          goto err1;
+        }
+
+      /* use the first volume UDI... */
+      volume_udi = g_strdup (volume_udis[0]);
+      libhal_free_string_array (volume_udis);
+
+      /* ..and try again using that UDI */
+      udi = (const gchar *) volume_udi;
+      goto again;
     }
 
   /* verify that we have a mountable device here */
@@ -191,7 +220,7 @@ err0: exo_mount_hal_propagate_error (error, &derror);
   if (G_UNLIKELY (interfaces[n] == NULL))
     {
       /* definitely not a device that we're able to mount, eject or unmount */
-      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%s\" is not a volume or drive"), udi);
+err1: g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%s\" is not a volume or drive"), udi);
       goto out;
     }
 
@@ -255,6 +284,7 @@ err0: exo_mount_hal_propagate_error (error, &derror);
 out:
   /* cleanup */
   libhal_free_string_array (interfaces);
+  g_free (volume_udi);
 
   return device;
 }
