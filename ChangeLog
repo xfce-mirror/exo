@@ -1,3 +1,9 @@
+2007-01-15	Benedikt Meurer <benny@xfce.org>
+
+	* exo-hal/exo-hal.c(exo_hal_volume_compute_display_name): Fix
+	  compilation on adm64, using G_GUINT64_FORMAT instead of assuming
+	  it's llu. Bug #2758.
+
 2007-01-11	Benedikt Meurer <benny@xfce.org>
 
 	* exo-mount/main.c(main): Fix unused label if HAL is not available.

@@ -792,7 +792,7 @@ exo_hal_volume_compute_display_name (struct LibHalContext_s *context,
                   if (G_LIKELY (size < n * 10))
                     size_string = g_strdup_printf ("%.01f%c", ((gdouble) size) / ((gdouble) m), UNITS[n]);
                   else
-                    size_string = g_strdup_printf ("%llu%c", size / m, UNITS[n]);
+                    size_string = g_strdup_printf ("%" G_GUINT64_FORMAT "%c", size / m, UNITS[n]);
                   break;
                 }
             }
