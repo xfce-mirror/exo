@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.1.12rc2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-09 23:46+0100\n"
-"PO-Revision-Date: 2006-08-28 13:00+0200\n"
+"PO-Revision-Date: 2007-01-16 01:00+0200\n"
 "Last-Translator: Szymon Kałasz <szymon_maestro@gazeta.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -783,7 +783,7 @@ msgstr "Nośnik Smart Media"
 
 #: ../exo-hal/exo-hal.c:473
 msgid "SD/MMC Drive"
-msgstr ""
+msgstr "Nośnik SD/MMC"
 
 #: ../exo-hal/exo-hal.c:477
 msgid "Zip Drive"
@@ -807,7 +807,7 @@ msgstr "%s Odtwarzacz Multimedialny"
 #: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
-msgstr "% Kamera Cyfrowa"
+msgstr "%s Kamera Cyfrowa"
 
 #. last fallback to "Drive"
 #: ../exo-hal/exo-hal.c:532
@@ -1246,23 +1246,25 @@ msgstr "Podaj HALowskie UDI dla urządzenia lub wskaż plik urządzenia"
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr ""
+msgstr "Nie można podawać jednocześnie pliku urządzenia i jego HALowego UDI"
 
 #: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
+"Nie można montować poprzez UDI systemu HAL, ponieważ obsługa HAL została "
+"uaktywniona w tej kompilacji programu"
 
 #: ../exo-mount/main.c:161
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr ""
+msgstr "Podany UDI \"%s\" nie jest prawidłowym UDI urządzenia HAL"
 
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
-msgstr ""
+msgstr "Nie można jednocześnie wysunąć i odmontować"
 
 #: ../exo-mount/main.c:330
 #, c-format
@@ -1283,26 +1285,26 @@ msgstr "Nie udało się zamontować \"%s\""
 #: ../exo-mount-notify/main.c:111
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr ""
+msgstr "Urządzenie \"%s\" może być teraz bezpiecznie odłączone."
 
 #: ../exo-mount-notify/main.c:112
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "Urządzenie może być teraz bezpiecznie odłączone."
 
 #. read-only, just ejecting
 #: ../exo-mount-notify/main.c:224
 msgid "Ejecting device"
-msgstr ""
+msgstr "Wysuwanie urządzenia"
 
 #: ../exo-mount-notify/main.c:225
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr ""
+msgstr "Urządzenie \"%s\" jest wysuwane. To może chwilę potrwać."
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
 msgid "Unmounting device"
-msgstr ""
+msgstr "Odmontowywanie urządzenia"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
@@ -1310,11 +1312,13 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
+"Urządzenie \"%s\" jest odmontowywane z systemu. Proszę nie odłączać "
+"urządzenia ani nie wyjmować nośnika."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
 msgid "Writing data to device"
-msgstr ""
+msgstr "Zapisywanie danych na urządzeniu"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
@@ -1322,6 +1326,8 @@ msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
 msgstr ""
+"Pewne dane muszą zostać zapisane na urządzeniu \"%s\" przed odłączeniem. "
+"Proszę nie odłączać urządzenia ani nie wyjmować nośnika."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
