@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libexo 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-03 13:02+0100\n"
-"PO-Revision-Date: 2007-01-11 20:42+0300\n"
+"POT-Creation-Date: 2007-01-09 23:46+0100\n"
+"PO-Revision-Date: 2007-01-12 01:53+0300\n"
 "Last-Translator: Alexander Nyakhaychyk <nyakhaychyk@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,9 @@ msgid "The size of the icon to render in pixels."
 msgstr "Памер значкі для адлюстраваньня ў піксэлях."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:770
+#: ../exo-mount/exo-mount-fstab.c:148
+#: ../exo-mount/exo-mount-fstab.c:177
+#: ../exo-mount/exo-mount-fstab.c:203
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Немагчыма адчыніць файл \"%s\": %s"
@@ -515,6 +518,8 @@ msgstr "  --build-list      Аналіз пар (назва, файл)\n"
 
 #: ../exo-csource/main.c:248
 #: ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122
+#: ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -532,6 +537,8 @@ msgstr ""
 
 #: ../exo-csource/main.c:252
 #: ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126
+#: ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -549,6 +556,8 @@ msgstr ""
 
 #: ../exo-csource/main.c:256
 #: ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130
+#: ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -703,6 +712,8 @@ msgid "Preset icon when creating a desktop file"
 msgstr "Задае значку новага desktop-файла"
 
 #: ../exo-desktop-item-edit/main.c:79
+#: ../exo-mount/main.c:74
+#: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Друкуе зьвесткі пра вэрсію"
 
@@ -712,9 +723,10 @@ msgid "[FILE|FOLDER]"
 msgstr "[ФАЙЛ|ТЭЧКА]"
 
 #: ../exo-desktop-item-edit/main.c:138
-#, c-format
-msgid "Failed to open display: %s"
-msgstr "Немагчыма адчыніць дысплэй: %s"
+#: ../exo-mount/main.c:108
+#: ../exo-mount-notify/main.c:153
+msgid "Failed to open display"
+msgstr "Немагчыма адкрыць дысплэй"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
@@ -739,17 +751,105 @@ msgstr "Выбар назвы файла"
 #: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Немагчыма стварыць  \"%s\"."
+msgstr "Немагчыма стварыць \"%s\"."
 
 #: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Немагчыма захаваць \"%s\"."
 
+#: ../exo-hal/exo-hal.c:444
+#, c-format
+msgid "External %s Drive"
+msgstr "Вонкавая прылада %s"
+
+#: ../exo-hal/exo-hal.c:446
+#, c-format
+msgid "%s Drive"
+msgstr "Прылада %s"
+
+#: ../exo-hal/exo-hal.c:455
+msgid "External Floppy Drive"
+msgstr "Вонкавы дыскавод"
+
+#: ../exo-hal/exo-hal.c:457
+msgid "Floppy Drive"
+msgstr "Дыскавод"
+
+#: ../exo-hal/exo-hal.c:461
+msgid "Compact Flash Drive"
+msgstr "Compact Flash"
+
+#: ../exo-hal/exo-hal.c:465
+msgid "Memory Stick Drive"
+msgstr "Memory Stick"
+
+#: ../exo-hal/exo-hal.c:469
+msgid "Smart Media Drive"
+msgstr "Smart Media"
+
+#: ../exo-hal/exo-hal.c:473
+msgid "SD/MMC Drive"
+msgstr "SD/MMC"
+
+#: ../exo-hal/exo-hal.c:477
+msgid "Zip Drive"
+msgstr "Zip дыскавод"
+
+#: ../exo-hal/exo-hal.c:481
+msgid "Jaz Drive"
+msgstr "Jaz дыскавод"
+
+#: ../exo-hal/exo-hal.c:485
+msgid "Pen Drive"
+msgstr "Pen Drive"
+
+#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
+#: ../exo-hal/exo-hal.c:494
+#, c-format
+msgid "%s Music Player"
+msgstr "Музычны плэер %s"
+
+#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
+#: ../exo-hal/exo-hal.c:509
+#, c-format
+msgid "%s Digital Camera"
+msgstr "Лічбавая фотакамэра %s"
+
+#. last fallback to "Drive"
+#: ../exo-hal/exo-hal.c:532
+msgid "Drive"
+msgstr "Прылада"
+
+#: ../exo-hal/exo-hal.c:759
+#, c-format
+msgid "Blank %s Disc"
+msgstr "Чысты дыск %s"
+
+#: ../exo-hal/exo-hal.c:761
+#, c-format
+msgid "%s Disc"
+msgstr "Дыск %s"
+
+#. special case for pure audio disc
+#: ../exo-hal/exo-hal.c:766
+msgid "Audio CD"
+msgstr "Аўдыё дыск"
+
+#: ../exo-hal/exo-hal.c:802
+#, c-format
+msgid "%s Removable Volume"
+msgstr "Зьменны том %s"
+
+#: ../exo-hal/exo-hal.c:804
+#, c-format
+msgid "%s Volume"
+msgstr "Том %s"
+
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
-msgstr "Пераважные дастасаваньні"
+msgstr "Пераважныя дастасаваньні"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:101
 msgid "Select default applications for various services"
@@ -772,7 +872,7 @@ msgid ""
 "hyperlinks and display help contents."
 msgstr ""
 "Пераважны Гартач Сеціва будзе выкарыстоўвацца для\n"
-"адчыненьня гіпэрспасылак і адлюстраваньня даведкі."
+"адкрыцьця гіпэрспасылак і адлюстраваньня даведкі."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
 msgid "Mail Reader"
@@ -784,7 +884,7 @@ msgid ""
 "emails when you click on email addresses."
 msgstr ""
 "Пераважны паштовы кліент будзе выкарыстоўвацца для\n"
-"стварэньня лістоў калі вы націсьніце на электронны адрас."
+"стварэньня лістоў, калі вы націсьніце на электронны адрас."
 
 #.
 #. Utilities
@@ -795,7 +895,7 @@ msgstr "Дробязі"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
 msgid "Terminal Emulator"
-msgstr "Эмулятар тэрміналу"
+msgstr "Эмулятар тэрмінала"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
@@ -807,7 +907,7 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid "Failed to open the documentation browser."
-msgstr "Немагчыма адчыніць гартач дакумэнтацыі."
+msgstr "Немагчыма адкрыць гартач дакумэнтацыі."
 
 #: ../exo-helper/exo-helper-chooser.c:184
 #: ../exo-helper/exo-helper-chooser.c:191
@@ -820,7 +920,7 @@ msgstr "Кнопка выбару дастасаваньня"
 
 #: ../exo-helper/exo-helper-chooser.c:334
 msgid "No application selected"
-msgstr "Дастасаваньне ня вылучана"
+msgstr "Дастасаваньне ня вылучанае"
 
 #: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
@@ -832,7 +932,7 @@ msgstr "Немагчыма задаць прадвызначаны паштов�
 
 #: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
-msgstr "Немагчыма задаць прадвызначаны эмулятар тэрміналу"
+msgstr "Немагчыма задаць прадвызначаны эмулятар тэрмінала"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:422
@@ -841,7 +941,7 @@ msgstr "Вылучыць дастасаваньне"
 
 #: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
-msgstr "Вылучыць іншы гартач сеціва"
+msgstr "Вылучыць іншы гартач Сеціва"
 
 #: ../exo-helper/exo-helper-chooser.c:536
 msgid "Choose a custom Mail Reader"
@@ -849,7 +949,7 @@ msgstr "Вылучыць іншы паштовы кліент"
 
 #: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
-msgstr "Вылучыць іншы эмулятар тэрміналу"
+msgstr "Вылучыць іншы эмулятар тэрмінала"
 
 #: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
@@ -885,7 +985,7 @@ msgstr "_Іншае..."
 
 #: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
-msgstr "Выкарыстоўваць іншае дастасаваньне, якое ня ўключана ў гэты сьпіс."
+msgstr "Выкарыстоўваць іншае дастасаваньне, ня ўключанае ў гэты сьпіс."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:141
 msgid "Choose Preferred Application"
@@ -896,7 +996,7 @@ msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
 msgstr ""
-"Калі ласка, абярыце пераважны гартач\n"
+"Калі ласка, абярыце пераважны гартач,\n"
 "затым пстрыкніце кнопку Добра для працягу."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:286
@@ -904,7 +1004,7 @@ msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
-"Калі ласка, абярыце пераважны паштовы кліент\n"
+"Калі ласка, абярыце пераважны паштовы кліент,\n"
 "затым пстрыкніце кнопку Добра для працягу."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:288
@@ -912,7 +1012,7 @@ msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
-"Калі ласка, абярыце пераважны эмулятар тэрмінала\n"
+"Калі ласка, абярыце пераважны эмулятар тэрмінала,\n"
 "затым пстрыкніце кнопку Добра для працягу."
 
 #: ../exo-helper/exo-helper.c:404
@@ -921,7 +1021,7 @@ msgstr "Загад ня вызначаны"
 
 #: ../exo-helper/exo-helper.c:740
 msgid "Failed to open helpers.rc for writing"
-msgstr "Немагчыма адчыніць helpers.rc для запісу"
+msgstr "Немагчыма адкрыць helpers.rc для запісу"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:40
 msgid "Failed to launch exo-preferred-applications"
@@ -933,7 +1033,7 @@ msgstr "Пераважныя дастасаваньні"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Пераважныя дастасаваньні (Гартач Сеціва, паштовы кліент і эмулятар тэрміналу)"
+msgstr "Пераважныя дастасаваньні (Гартач Сеціва, паштовы кліент і эмулятар тэрмінала)"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
@@ -957,7 +1057,7 @@ msgstr "Прадвызначаны Гартач у Debian"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr "Эмулятар X тэрміналу Debian"
+msgstr "Эмулятар X-тэрмінала Debian"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -969,7 +1069,7 @@ msgstr "Гартач Сеціва Epiphany"
 
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr "Эмулятар тэрміналу Enlightened"
+msgstr "Эмулятар тэрмінала Enlightened"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Novell Evolution"
@@ -1053,7 +1153,173 @@ msgstr "Тэкставы гартач W3M"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
-msgstr "X Тэрмінал"
+msgstr "X-тэрмінал"
+
+#: ../exo-mount/exo-mount-fstab.c:115
+msgid "Unknown error"
+msgstr "Невядомая памылка"
+
+#. generate an appropriate error message
+#. tell the caller that no matching device was found
+#: ../exo-mount/exo-mount-fstab.c:242
+#: ../exo-mount/exo-mount-hal.c:343
+#, c-format
+msgid "Device \"%s\" not found in file system device table"
+msgstr "Прылада \"%s\" ня знойдзена ў табліцы прыладаў сыстэмы"
+
+#. definitely not a device that we're able to mount, eject or unmount
+#: ../exo-mount/exo-mount-hal.c:194
+#: ../exo-mount/exo-mount-hal.c:250
+#, c-format
+msgid "Given device \"%s\" is not a volume or drive"
+msgstr "Зададзеная прылада \"%s\" не зьяўляецца носьбітам інфармацыі"
+
+#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:564
+#, c-format
+msgid "You are not privileged to eject the volume \"%s\""
+msgstr "Вы ня маеце правоў, каб вызваліць том \"%s\""
+
+#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
+#: ../exo-mount/exo-mount-hal.c:569
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being ejected"
+msgstr "Праграма перашкаджае вызваленьню тома \"%s\""
+
+#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:800
+#, c-format
+msgid "You are not privileged to mount the volume \"%s\""
+msgstr "Вы ня маеце правоў, каб прымантаваць том \"%s\""
+
+#: ../exo-mount/exo-mount-hal.c:815
+msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+msgstr "Немагчыма прымантаваць чысты дыск. Для запісу дыскаў карыстайцеся праграмамі накшталт Xfburn."
+
+#: ../exo-mount/exo-mount-hal.c:826
+msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
+msgstr "Немагчыма прымантаваць аўдыё дыскі; выкарыстоўвайце Xfmdia для прайграваньня аўдыё запісаў"
+
+#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:911
+#, c-format
+msgid "You are not privileged to unmount the volume \"%s\""
+msgstr "Вы ня маеце правоў, каб адмантаваць том \"%s\""
+
+#. TRANSLATORS: An application is blocking a volume from being unmounted.
+#: ../exo-mount/exo-mount-hal.c:916
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being unmounted"
+msgstr "Дастасаваньне перашкаджае адмантаваньню тома \"%s\""
+
+#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
+#: ../exo-mount/exo-mount-hal.c:921
+#, c-format
+msgid "The volume \"%s\" was probably mounted manually on the command line"
+msgstr "Том \"%s\", верагодна, быў прымантаваны самастойна праз загадны радок"
+
+#: ../exo-mount/main.c:65
+msgid "Eject rather than mount"
+msgstr "Вызваліць замест адмантаваньня"
+
+#: ../exo-mount/main.c:66
+msgid "Unmount rather than mount"
+msgstr "Адмантаваць замест прымантаваньня"
+
+#: ../exo-mount/main.c:68
+msgid "Mount by HAL device UDI"
+msgstr "Мантаваньне праз HAL i UDI прылады"
+
+#: ../exo-mount/main.c:70
+msgid "Mount by HAL device UDI (not supported)"
+msgstr "Мантаваньне праз HAL i UDI прылады (не падтрымліваецца)"
+
+#: ../exo-mount/main.c:72
+msgid "Mount by device file"
+msgstr "Мантаваньне праз файл прылады"
+
+#: ../exo-mount/main.c:73
+msgid "Don't show any dialogs"
+msgstr "Не паказваць ніякіх дыялёгаў"
+
+#. the caller must specify either a HAL UDI or a device file
+#: ../exo-mount/main.c:138
+msgid "Must specify HAL device UDI or device file"
+msgstr "Вы мусіце задаць UDI прылады для HAL альбо файл прылады"
+
+#. the caller must specify EITHER a HAL UDI or a device file
+#: ../exo-mount/main.c:146
+msgid "Must not specify both a HAL device UDI and a device file simultaneously"
+msgstr "Нельга адначасова задаваць файл прылады і UDI прылады"
+
+#: ../exo-mount/main.c:154
+msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+msgstr "Немагчыма прымантаваць праз UDI прылады для HAL, бо падтрымка HAL адсутнічае ў гэтай зборцы"
+
+#: ../exo-mount/main.c:161
+#, c-format
+msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
+msgstr "Зададзены UDI \"%s\" не зьяўляецца рэчаісным UDI прылады для HAL"
+
+#. the caller must not specify both eject and unmount
+#: ../exo-mount/main.c:178
+msgid "Cannot eject and unmount simultaneously"
+msgstr "Немагчыма адначасова вызваліць і адмантаваць прыладу"
+
+#: ../exo-mount/main.c:330
+#, c-format
+msgid "Failed to eject \"%s\""
+msgstr "Немагчыма вызваліць \"%s\""
+
+#: ../exo-mount/main.c:332
+#, c-format
+msgid "Failed to unmount \"%s\""
+msgstr "Немагчыма адмантаваць \"%s\""
+
+#: ../exo-mount/main.c:334
+#, c-format
+msgid "Failed to mount \"%s\""
+msgstr "Немагчыма прымантаваць \"%s\""
+
+#. tell the user that the device can be removed now
+#: ../exo-mount-notify/main.c:111
+#, c-format
+msgid "The device \"%s\" is now safe to remove."
+msgstr "Прыладу  \"%s\" можна ўжо бясьпечна вызваліць."
+
+#: ../exo-mount-notify/main.c:112
+msgid "Device is now safe to remove"
+msgstr "Зараз можна бясьпечна вызваліць прыладу"
+
+#. read-only, just ejecting
+#: ../exo-mount-notify/main.c:224
+msgid "Ejecting device"
+msgstr "Вызваленьне прылады"
+
+#: ../exo-mount-notify/main.c:225
+#, c-format
+msgid "The device \"%s\" is being ejected. This may take some time."
+msgstr "Прылада \"%s\" будзе вызвалена. На гэта можа спатрэбіцца нейкі час."
+
+#. read-only, just unmounting
+#: ../exo-mount-notify/main.c:230
+msgid "Unmounting device"
+msgstr "Адмантоўваньне прылады"
+
+#: ../exo-mount-notify/main.c:231
+#, c-format
+msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+msgstr "Прылада \"%s\" будзе адмантавана. Калі ласка, не адключайце прыладу альбо не вызваляйце носьбіт."
+
+#. not read-only, writing back data
+#: ../exo-mount-notify/main.c:238
+msgid "Writing data to device"
+msgstr "Запіс даных на прыладу"
+
+#: ../exo-mount-notify/main.c:239
+#, c-format
+msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+msgstr "Ёсьць даныя, якія трэба запісаць на прыладу  \"%s\", перш чым яе можна будзе вызваліць. Калі ласка, не адключайце прыладу альбо не вызваляйце носьбіт."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1114,20 +1380,20 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
-"Калі вы не задаяце опцыю --launch, exo-open адчыніць усе URLы\n"
+"Калі вы не задаяце опцыю --launch, exo-open адкрые ўсе URLы\n"
 "з дапамогай пераважных дастасаваньняў. Інакш, калі вы задаяце\n"
-"опцыю --launch, вы можаце вылучыць пераважнае дастасаваньне\n"
-"ў якім жадаеце адкрыць іх, але й перадаць дадатковыя парамэтры.\n"
+"опцыю --launch, вы можаце вылучыць пераважнае дастасаваньне,\n"
+"у якім жадаеце іх адкрыць, і перадаць дадатковыя парамэтры.\n"
 "Напрыклад, для TerminalEmulator вы можаце задаць загад для\n"
 "выкананьня ў тэрмінале."
 
 #: ../exo-open/main.c:149
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Немагчыма запусьціць  пераважнае дастасаваньне для катэгорыі \"%s\"."
+msgstr "Немагчыма запусьціць пераважнае дастасаваньне для катэгорыі \"%s\"."
 
 #: ../exo-open/main.c:170
 #, c-format
 msgid "Failed to open URL \"%s\"."
-msgstr "Немагчыма адчыніць URL \"%s\""
+msgstr "Немагчыма адкрыць URL \"%s\"."
 
