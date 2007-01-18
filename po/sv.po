@@ -28,38 +28,38 @@ msgid "Render differently based on the selection state."
 msgstr ""
 
 #: ../exo/exo-cell-renderer-icon.c:167
-#, fuzzy
 msgid "Icon"
-msgstr "_Ikon:"
+msgstr "Ikon:"
 
 #: ../exo/exo-cell-renderer-icon.c:168
 msgid "The icon to render."
-msgstr ""
+msgstr "Ikonen att rendera"
 
 #: ../exo/exo-cell-renderer-icon.c:189
 msgid "size"
-msgstr ""
+msgstr "storlek"
 
 #: ../exo/exo-cell-renderer-icon.c:190
 msgid "The size of the icon to render in pixels."
-msgstr ""
+msgstr "Storleken för ikonen att rendera, angivet i pixlar."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:148
 #: ../exo-mount/exo-mount-fstab.c:177 ../exo-mount/exo-mount-fstab.c:203
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Kunde inte öppna \"%s\"."
+msgstr "Kunde inte öppna \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:832
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Kunde inte skapa \"%s\"."
+msgstr "Kunde inte läsa från \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
+"Kunde inte ladda bilden \"%s\": Okänd anledning, antagligen är den korrupt"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
@@ -127,73 +127,68 @@ msgstr ""
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:85
-#, fuzzy
 msgid "Action Icons"
-msgstr "Välj en ikon"
+msgstr "Händelseikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:87
 msgid "Animations"
-msgstr ""
+msgstr "Animationer"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:89
-#, fuzzy
 msgid "Application Icons"
-msgstr "Programväljarknapp"
+msgstr "Programikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:91
 msgid "Menu Icons"
-msgstr ""
+msgstr "Menyikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
 #: ../exo/exo-icon-chooser-dialog.c:93
 msgid "Device Icons"
-msgstr ""
+msgstr "Enhetsikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:95
 msgid "Emblems"
-msgstr ""
+msgstr "Emblem"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:97
-#, fuzzy
 msgid "Emoticons"
-msgstr "Ingen ikon"
+msgstr "Smileys"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:99
 msgid "International Denominations"
-msgstr ""
+msgstr "Internationella Beteckningar"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:101
 msgid "File Type Icons"
-msgstr ""
+msgstr "Filtypsikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
 #: ../exo/exo-icon-chooser-dialog.c:103
 msgid "Location Icons"
-msgstr ""
+msgstr "Platsikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:105
-#, fuzzy
 msgid "Status Icons"
-msgstr "Välj en ikon"
+msgstr "Statusikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Uncategorized Icons"
-msgstr ""
+msgstr "Okategoriserade ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:111
-#, fuzzy
 msgid "All Icons"
-msgstr "Text för _alla ikoner"
+msgstr "Alla ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
 #: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
@@ -202,9 +197,8 @@ msgstr "Bildfiler"
 
 #. setup the header label
 #: ../exo/exo-icon-chooser-dialog.c:205
-#, fuzzy
 msgid "Select _icon from:"
-msgstr "Markeringsläge"
+msgstr "Välj _ikon bland:"
 
 #: ../exo/exo-icon-view.c:651
 msgid "Column Spacing"
@@ -356,9 +350,8 @@ msgid "Preview"
 msgstr ""
 
 #: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
-#, fuzzy
 msgid "No file selected"
-msgstr "Inget program valt"
+msgstr "Ingen fil vald"
 
 #: ../exo/exo-thumbnail-preview.c:299
 msgid "Block Device"
@@ -370,7 +363,7 @@ msgstr ""
 
 #: ../exo/exo-thumbnail-preview.c:309
 msgid "Folder"
-msgstr ""
+msgstr "Katalog"
 
 #: ../exo/exo-thumbnail-preview.c:314
 msgid "FIFO"
@@ -520,7 +513,7 @@ msgstr ""
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -528,8 +521,8 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) 2005-2006\n"
-"        os-cillation e.K. Alla rätter reserverade.\n"
+"Copyright (c) %s\n"
+"        os-cillation e.K. Alla rättigheter reserverade.\n"
 "\n"
 "Skrivet av Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
@@ -589,9 +582,9 @@ msgid "Shell Scripts"
 msgstr "Shellscript"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
-#, fuzzy, c-format
+#, c-format
 msgid "Create Launcher <b>%s</b>"
-msgstr "Skapa programstartare"
+msgstr "Skapa programstartare <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:318
@@ -627,7 +620,7 @@ msgstr "Ingen ikon"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:419
 msgid "Options:"
-msgstr "Inställningar:"
+msgstr "Alternativ:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -644,7 +637,7 @@ msgid ""
 msgstr ""
 "Välj den här inställningen för att aktivera uppstartsnotifiering när "
 "kommandot körs från filhanteraren eller menyn. Inte alla program stödjer "
-"uppstarts-notifiering."
+"startsnotifiering."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -660,7 +653,6 @@ msgstr ""
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
-#, fuzzy
 msgid "Select an icon"
 msgstr "Välj en ikon"
 
@@ -717,13 +709,12 @@ msgstr "Visa versionsinformation och avsluta"
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:125
 msgid "[FILE|FOLDER]"
-msgstr ""
+msgstr "[FIL|KATALOG]"
 
 #: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
-#, fuzzy
 msgid "Failed to open display"
-msgstr "Kunde inte öppna display: %s."
+msgstr "Kunde inte öppna display"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
@@ -731,9 +722,9 @@ msgstr "Ingen fil eller katalog angavs"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:226
-#, fuzzy, c-format
+#, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Filformatet som '%s' är i stödjs inte"
+msgstr "Filtypen \"%s\" stödjs inte"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:246
@@ -860,9 +851,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-#, fuzzy
 msgid "Web Browser"
-msgstr "Webbläsaren Galeon"
+msgstr "Webbläsare"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -874,9 +864,8 @@ msgstr ""
 "hjälp."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-#, fuzzy
 msgid "Mail Reader"
-msgstr "Standardmejlklient"
+msgstr "Mejlklient"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid ""
@@ -895,9 +884,8 @@ msgid "Utilities"
 msgstr "Hjälpmedel"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-#, fuzzy
 msgid "Terminal Emulator"
-msgstr "Standardterminalemulator"
+msgstr "Terminalemulator"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
@@ -1098,14 +1086,12 @@ msgid "Konqueror Web Browser"
 msgstr "Webbläsaren Konqueror"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
-#, fuzzy
 msgid "Links Text Browser"
-msgstr "Webbläsaren Epiphany"
+msgstr "Textwebbläsaren Links"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-#, fuzzy
 msgid "Lynx Text Browser"
-msgstr "Webbläsaren Galeon"
+msgstr "Textwebbläsaren Lynx"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
@@ -1152,9 +1138,8 @@ msgid "RXVT Unicode"
 msgstr ""
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-#, fuzzy
 msgid "W3M Text Browser"
-msgstr "Webbläsaren Opera"
+msgstr "Textwebbläsaren W3M"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -1162,156 +1147,162 @@ msgstr ""
 
 #: ../exo-mount/exo-mount-fstab.c:115
 msgid "Unknown error"
-msgstr ""
+msgstr "Okänt fel"
 
 #. generate an appropriate error message
 #. tell the caller that no matching device was found
 #: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr ""
+msgstr "Enheten \"%s\" hittades inte i filsystem-enhetstabellen"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
-msgstr ""
+msgstr "Enheten \"%s\" är inte en volym eller enhet"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:564
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr ""
+msgstr "Du har inte tillåtelse att mata ut volymen \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:569
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr ""
+msgstr "Ett program förhindrar att volymen \"%s\" matas ut"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:800
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr ""
+msgstr "Du har inte tillåtelse att montera volymen \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:815
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
+"Tomma diskar kan inte monteras, använd ett cdbränningsprogram som Xfburn för "
+"för att lägga ljud eller data på disken"
 
 #: ../exo-mount/exo-mount-hal.c:826
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
+"Ljud-CD-skivor kan inte monteras, använd Xfmeda för att spela ljudspåren"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:911
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr ""
+msgstr "Du har inte tillåtelse att avmontera volymen \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:916
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr ""
+msgstr "Ett program förhindrar att volymen \"%s\" avmonteras"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:921
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr ""
+msgstr "Volymen \"%s\" monterades antagligen manuellt från kommandoraden"
 
 #: ../exo-mount/main.c:65
 msgid "Eject rather than mount"
-msgstr ""
+msgstr "Mata ut istället för montera"
 
 #: ../exo-mount/main.c:66
 msgid "Unmount rather than mount"
-msgstr ""
+msgstr "Avmontera istället för att montera"
 
 #: ../exo-mount/main.c:68
 msgid "Mount by HAL device UDI"
-msgstr ""
+msgstr "Montera efter HAL enhets-UDI"
 
 #: ../exo-mount/main.c:70
 msgid "Mount by HAL device UDI (not supported)"
-msgstr ""
+msgstr "Montera efter HAL enhets-UDI (stödjs ej)"
 
 #: ../exo-mount/main.c:72
 msgid "Mount by device file"
-msgstr ""
+msgstr "Montera efter enhetsfil"
 
 #: ../exo-mount/main.c:73
 msgid "Don't show any dialogs"
-msgstr ""
+msgstr "Visa inga dialogrutor"
 
 #. the caller must specify either a HAL UDI or a device file
 #: ../exo-mount/main.c:138
 msgid "Must specify HAL device UDI or device file"
-msgstr ""
+msgstr "En HAL enhets-UDI eller enhetsfil måste anges"
 
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr ""
+"Det är inte tillåtet att samtidigt ange en HAL enhets-UDI och en enhetsfil"
 
 #: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
+"Kan inte montera efter HAL enhets-UDI, eftersom stöd för HAL avaktiverades "
+"vid kompileringen"
 
 #: ../exo-mount/main.c:161
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr ""
+msgstr "Den angivna UDIn \"%s\" är inte en giltig HAL enhets-UDI"
 
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
-msgstr ""
+msgstr "Kan inte samtidigt mata ut och avmontera"
 
 #: ../exo-mount/main.c:330
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to eject \"%s\""
 msgstr "Kunde inte skapa \"%s\"."
 
 #: ../exo-mount/main.c:332
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "Kunde inte öppna \"%s\"."
+msgstr "Kunde inte avmontera \"%s\"."
 
 #: ../exo-mount/main.c:334
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to mount \"%s\""
-msgstr "Kunde inte öppna \"%s\"."
+msgstr "Kunde inte montera \"%s\"."
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:111
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr ""
+msgstr "Enheten \"%s\" kan nu kopplas från utan risk för fel."
 
 #: ../exo-mount-notify/main.c:112
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "Enheten kan nu kopplas från"
 
 #. read-only, just ejecting
 #: ../exo-mount-notify/main.c:224
 msgid "Ejecting device"
-msgstr ""
+msgstr "Matar ut enhet"
 
 #: ../exo-mount-notify/main.c:225
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr ""
+msgstr "Enheten \"%s\" matas just nu ut. Detta kan ta ett tag,"
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
 msgid "Unmounting device"
-msgstr ""
+msgstr "Avmonterar enhet"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
@@ -1323,7 +1314,7 @@ msgstr ""
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
 msgid "Writing data to device"
-msgstr ""
+msgstr "Skrivet data till enhet"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
@@ -1331,6 +1322,8 @@ msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
 msgstr ""
+"Det finns data som behöver skrivas till enheten \"%s\" innan den kan kopplas "
+"från. Var god koppla ej från enheten eller ta ur mediet."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1341,10 +1334,10 @@ msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TYP [PARAMETRAR...]"
 
 #: ../exo-open/main.c:62
-#, fuzzy
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
-"  -h, --help                          Visa det här meddelandet och avsluta"
+"  -?, --help                          Visa det här hjälpmeddelandet och "
+"avsluta"
 
 #: ../exo-open/main.c:63
 msgid ""
@@ -1412,12 +1405,3 @@ msgstr "Kunde inte starta det föredragna programmet för kategorin \"%s\"."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Kunde inte öppna URL-en \"%s\"."
-
-#~ msgid "Failed to open display: %s"
-#~ msgstr "Kunde inte öppna display: %s."
-
-#~ msgid "Select an Icon"
-#~ msgstr "Välj en ikon"
-
-#~ msgid "Default Web Browser"
-#~ msgstr "Standardwebbläsare"
