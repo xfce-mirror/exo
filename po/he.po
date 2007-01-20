@@ -1,20 +1,21 @@
-# translation of libexo-0.3_he.po to Hebrew
+# translation of he.po to Hebrew
 # Copyright (C) 2006 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
-# Dotan Kamber <kamberd@yahoo.com>, 2006.
 #
+# Dotan Kamber <kamberd@yahoo.com>, 2006.
+# Yuval Tanny <tanai@int.gov.il>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: exo 0.3.1.12rc2\n"
+"Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-09 23:46+0100\n"
-"PO-Revision-Date: 2006-11-25 04:59+0200\n"
+"PO-Revision-Date: 2007-01-19 14:50+0200\n"
 "Last-Translator: Yuval Tanny <tanai@int.gov.il>\n"
 "Language-Team: Hebrew\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
@@ -55,8 +56,7 @@ msgstr "כשל בקריאת הקובץ \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "כשל בטעינת התמונה \"%s\": סיבה לא ידועה, כנראה התמונה פגומה"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
@@ -263,8 +263,7 @@ msgid "The model for the icon view"
 msgstr "הדוגמה לתצוגת-סמלים"
 
 #: ../exo/exo-icon-view.c:784
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr "כיצד מסודרים זה ביחס לזה הכיתוב והסמל של כל פריט"
 
 #: ../exo/exo-icon-view.c:816
@@ -509,7 +508,7 @@ msgstr "  --build-list      Parse (name, file) pairs\n"
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -517,7 +516,7 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) 2005-2006\n"
+"Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
@@ -712,9 +711,8 @@ msgstr "[FILE|FOLDER]"
 
 #: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
-#, fuzzy
 msgid "Failed to open display"
-msgstr "Failed to open display: %s"
+msgstr "Failed to open display"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
@@ -749,90 +747,90 @@ msgstr "Failed to save \"%s\"."
 #: ../exo-hal/exo-hal.c:444
 #, c-format
 msgid "External %s Drive"
-msgstr ""
+msgstr "כונן %s חיצוני"
 
 #: ../exo-hal/exo-hal.c:446
 #, c-format
 msgid "%s Drive"
-msgstr ""
+msgstr "כונן %s"
 
 #: ../exo-hal/exo-hal.c:455
 msgid "External Floppy Drive"
-msgstr ""
+msgstr "כונן תקליטונים חיצוני"
 
 #: ../exo-hal/exo-hal.c:457
 msgid "Floppy Drive"
-msgstr ""
+msgstr "כונן תקליטונים"
 
 #: ../exo-hal/exo-hal.c:461
 msgid "Compact Flash Drive"
-msgstr ""
+msgstr "כונן Compact Flash"
 
 #: ../exo-hal/exo-hal.c:465
 msgid "Memory Stick Drive"
-msgstr ""
+msgstr "כונן Memory Stick"
 
 #: ../exo-hal/exo-hal.c:469
 msgid "Smart Media Drive"
-msgstr ""
+msgstr "כונן Smart Media"
 
 #: ../exo-hal/exo-hal.c:473
 msgid "SD/MMC Drive"
-msgstr ""
+msgstr "כונן SD/MMC"
 
 #: ../exo-hal/exo-hal.c:477
 msgid "Zip Drive"
-msgstr ""
+msgstr "כונן Zip"
 
 #: ../exo-hal/exo-hal.c:481
 msgid "Jaz Drive"
-msgstr ""
+msgstr "כונן Jaz"
 
 #: ../exo-hal/exo-hal.c:485
 msgid "Pen Drive"
-msgstr ""
+msgstr "כונן עט"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:494
 #, c-format
 msgid "%s Music Player"
-msgstr ""
+msgstr "נגן מוזיקה %s"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
-msgstr ""
+msgstr "מצלמה דיגיטלית %s"
 
 #. last fallback to "Drive"
 #: ../exo-hal/exo-hal.c:532
 msgid "Drive"
-msgstr ""
+msgstr "כונן"
 
 #: ../exo-hal/exo-hal.c:759
 #, c-format
 msgid "Blank %s Disc"
-msgstr ""
+msgstr "תקליטור %s ריק"
 
 #: ../exo-hal/exo-hal.c:761
 #, c-format
 msgid "%s Disc"
-msgstr ""
+msgstr "תקליטור %s"
 
 #. special case for pure audio disc
 #: ../exo-hal/exo-hal.c:766
 msgid "Audio CD"
-msgstr ""
+msgstr "תקליטור שמע"
 
 #: ../exo-hal/exo-hal.c:802
 #, c-format
 msgid "%s Removable Volume"
-msgstr ""
+msgstr "כרך בר הוצאה %s"
 
 #: ../exo-hal/exo-hal.c:804
 #, c-format
 msgid "%s Volume"
-msgstr ""
+msgstr "כרך %s"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -1145,38 +1143,38 @@ msgstr "X Terminal"
 
 #: ../exo-mount/exo-mount-fstab.c:115
 msgid "Unknown error"
-msgstr ""
+msgstr "שגיאה לא ידועה"
 
 #. generate an appropriate error message
 #. tell the caller that no matching device was found
 #: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr ""
+msgstr "התקן \"%s\" לא נמצא בטבלת ההתקנים"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
-msgstr ""
+msgstr "ההתקן \"%s\" הנתון הוא לא כונן או כרך"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:564
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr ""
+msgstr "אין לך הרשאות להוציא את הכרך \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:569
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr ""
+msgstr "קיים יישום אשר מונע את הוצאת הכרך \"%s\""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:800
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr ""
+msgstr "אין לך הרשאות לעגון את הכרך \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:815
 msgid ""
@@ -1328,10 +1326,8 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Print this help message and exit"
 
 #: ../exo-open/main.c:63
-msgid ""
-"  -v, --version                       Print version information and exit"
-msgstr ""
-"  -v, --version                       Print version information and exit"
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Print version information and exit"
 
 #: ../exo-open/main.c:65
 msgid ""
@@ -1396,12 +1392,3 @@ msgstr "כשל בשיגור היישום המועדף לקבוצה \"%s\"."
 msgid "Failed to open URL \"%s\"."
 msgstr "כשל בפתיחת כתובת \"%s\"."
 
-#~ msgid "Failed to open display: %s"
-#~ msgstr "Failed to open display: %s"
-
-#, fuzzy
-#~ msgid "Select an Icon"
-#~ msgstr "בחירת יישום"
-
-#~ msgid "Default Web Browser"
-#~ msgstr "ברירת המחדל לדפדפן אינטרנט"
