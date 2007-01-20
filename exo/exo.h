@@ -23,10 +23,6 @@
 #ifndef __EXO_H__
 #define __EXO_H__
 
-#ifndef EXO_API_SUBJECT_TO_CHANGE
-#error "Please define EXO_API_SUBJECT_TO_CHANGE to acknoledge your understanding that libexo hasn't reached 1.0 and is subject to API churn. See the README for a full explanation."
-#endif
-
 /* be sure to have i18n macros available and libintl.h included! */
 #if defined(GETTEXT_PACKAGE)
 #include <glib/gi18n-lib.h>

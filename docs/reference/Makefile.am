@@ -48,7 +48,6 @@ content_files = 							\
 # CFLAGS and LDFLAGS for compiling scan program. Only needed
 # if $(DOC_MODULE).types is non-empty.
 INCLUDES =	 							\
-	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-I$(top_srcdir) 						\
 	-I$(top_builddir) 						\
 	$(GTK_CFLAGS)							\

@@ -3,7 +3,6 @@
 INCLUDES = 								\
 	-I$(top_srcdir)							\
 	-DDATADIR=\"$(datadir)\"					\
-	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DEXO_COMPILATION						\
 	-DG_LOG_DOMAIN=\"exo\"						\
 	-DLIBEXECDIR=\"$(libexecdir)\"					\

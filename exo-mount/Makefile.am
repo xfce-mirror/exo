@@ -3,7 +3,6 @@
 INCLUDES = 								\
 	-I$(top_srcdir)							\
 	-DDBUS_API_SUBJECT_TO_CHANGE					\
-	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DG_LOG_DOMAIN=\"exo-mount\"					\
 	-DLIBEXECDIR=\"$(libexecdir)\"					\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"			\

@@ -2,7 +2,6 @@
 
 INCLUDES = 								\
 	-I$(top_srcdir)							\
-	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DG_LOG_DOMAIN=\"exo-open\"					\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 

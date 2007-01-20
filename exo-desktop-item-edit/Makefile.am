@@ -5,7 +5,6 @@ INCLUDES = 								\
 	-I$(top_srcdir)							\
 	-DBINDIR=\"$(bindir)\"						\
 	-DDATADIR=\"$(datadir)\"					\
-	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DG_LOG_DOMAIN=\"exo-desktop-item-edit\"			\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 

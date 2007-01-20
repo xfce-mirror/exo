@@ -16,7 +16,6 @@ exobindingsdir = $(pyexecdir)/exo-$(LIBEXO_VERSION_API)
 exobindings_LTLIBRARIES = _exo.la
 
 _exo_la_CFLAGS =							\
-	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-I$(top_srcdir)							\
 	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)						\

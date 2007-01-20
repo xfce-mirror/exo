@@ -1,3 +1,30 @@
+0.3.2
+=====
+- Further clean up the ExoIconView code and add several small optimization.
+- Import exo-mount utility to drop the dependency on other mount utilities,
+  like pmount and gnome-mount, that don't work reliably, and were often the
+  cause of trouble when mounting in Thunar.
+- Add optional mount notify tool, which notifies the user that a device/media
+  is begin unmounted by the system and gives a hint when the device/media can
+  be disconnected/removed.
+- Add exo-hal library, which provides several HAL related utility functions
+  that have been deprecated in libhal-storage, but are required by several
+  modules.
+- Import ExoMountPoint module, which provides platform independent access to
+  the configured and currently active mount points. This is required by other
+  modules like exo-mount and thunar-vfs (for the trash implementation).
+- Fix crash with certain kinds of discs (Bug #2723).
+- Detect complex mailto:-URIs properly (Bug #2530).
+- Fix compilation on amd64 (Bug #2758).
+- Fix a few memory leaks.
+- Updated translations: Pau Rul-lan Ferragut (ca), Michal Várady (cs), Benedikt
+                        Meurer (de), Stavros Giannouris (el), Piarres Beobide
+			(eu), Piotr Maliński and Szymon Kałasz (pl), Andrey
+			Fedoseev (ru), Alexander Toresson (sv).
+- New translations: Alexander Nyakhaychyk (be), Geraint Rowlands (cy), Pavle
+                    Jonoski (mk), Stephan Arts (nl), Amanpreet Singh Alam (pa).
+
+
 0.3.1.12rc2
 ===========
 - Added a --working-directory command line switch to exo-open, which primarily

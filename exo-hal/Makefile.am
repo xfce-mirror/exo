@@ -3,7 +3,6 @@
 INCLUDES = 								\
 	-I$(top_srcdir)							\
 	-DDBUS_API_SUBJECT_TO_CHANGE					\
-	-DEXO_API_SUBJECT_TO_CHANGE					\
 	-DG_LOG_DOMAIN=\"exo-hal\"					\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
