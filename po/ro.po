@@ -1,63 +1,65 @@
 # Romanian translation for the exo library.
 # Copyright (C) 2006 Free Software Foundation
 # This file is distributed under the same license as the exo package.
-# Mişu Moldovan <dumol@gnome.ro>, 2006.
+# Mişu Moldovan <dumol@gnome.ro>, 2006-2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-09 23:46+0100\n"
-"PO-Revision-Date: 2006-06-04 22:41+0300\n"
+"PO-Revision-Date: 2007-01-21 04:44+0200\n"
 "Last-Translator: Mişu Moldovan <dumol@gnome.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3;plural=(n==1?0:(n==0||((n%100)>0&&(n%100)<20))?1:2)\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
 msgid "Follow state"
-msgstr ""
+msgstr "Urmează starea"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:139
 #: ../exo/exo-cell-renderer-icon.c:146
 msgid "Render differently based on the selection state."
-msgstr ""
+msgstr "Desenează diferit în funcţie de starea selecţiei"
 
 #: ../exo/exo-cell-renderer-icon.c:167
-#, fuzzy
 msgid "Icon"
-msgstr "_Iconiţă"
+msgstr "Iconiţă"
 
 #: ../exo/exo-cell-renderer-icon.c:168
 msgid "The icon to render."
-msgstr ""
+msgstr "Iconiţă de afişat."
 
 #: ../exo/exo-cell-renderer-icon.c:189
 msgid "size"
-msgstr ""
+msgstr "dimensiuni"
 
 #: ../exo/exo-cell-renderer-icon.c:190
 msgid "The size of the icon to render in pixels."
-msgstr ""
+msgstr "Dimensiunile în pixeli ale iconiţei de afişat."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:148
 #: ../exo-mount/exo-mount-fstab.c:177 ../exo-mount/exo-mount-fstab.c:203
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Nu s-a putut deschide „%s”."
+msgstr "Nu s-a putut deschide fişierul „%s”: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:832
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Nu s-a putut crea „%s”"
+msgstr "Nu s-a putut citi fişierul „%s”: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
+"Nu s-a putut încărca imaginea „%s”: motiv necunoscut, probabil un fişier "
+"imagine corupt"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
@@ -125,73 +127,68 @@ msgstr "Culoare text cursor"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:85
-#, fuzzy
 msgid "Action Icons"
-msgstr "Selectaţi o iconiţă"
+msgstr "Iconiţe acţiuni"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:87
 msgid "Animations"
-msgstr ""
+msgstr "Animaţii"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:89
-#, fuzzy
 msgid "Application Icons"
-msgstr "Buton selector de aplicaţii"
+msgstr "Iconiţe aplicaţii"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:91
 msgid "Menu Icons"
-msgstr ""
+msgstr "Iconiţe meniuri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
 #: ../exo/exo-icon-chooser-dialog.c:93
 msgid "Device Icons"
-msgstr ""
+msgstr "Iconiţe dispozitive"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:95
 msgid "Emblems"
-msgstr ""
+msgstr "Embleme"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:97
-#, fuzzy
 msgid "Emoticons"
-msgstr "Fără iconiţă"
+msgstr "Emoticoniţe"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:99
 msgid "International Denominations"
-msgstr ""
+msgstr "Denominări internaţionale"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:101
 msgid "File Type Icons"
-msgstr ""
+msgstr "Iconiţe tipuri fişiere"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
 #: ../exo/exo-icon-chooser-dialog.c:103
 msgid "Location Icons"
-msgstr ""
+msgstr "Iconiţe locaţii"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:105
-#, fuzzy
 msgid "Status Icons"
-msgstr "Selectaţi o iconiţă"
+msgstr "Iconiţe statusuri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Uncategorized Icons"
-msgstr ""
+msgstr "Iconiţe necategorisite"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:111
-#, fuzzy
 msgid "All Icons"
-msgstr "Text pentru to_ate iconiţele"
+msgstr "Toate iconiţele"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
 #: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
@@ -200,9 +197,8 @@ msgstr "Fişiere imagine"
 
 #. setup the header label
 #: ../exo/exo-icon-chooser-dialog.c:205
-#, fuzzy
 msgid "Select _icon from:"
-msgstr "Mod de selectare"
+msgstr "Selectare _iconiţă din:"
 
 #: ../exo/exo-icon-view.c:651
 msgid "Column Spacing"
@@ -259,9 +255,8 @@ msgstr "Coloană markup"
 
 #: ../exo/exo-icon-view.c:755
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Model de coloană utilizat pentru extragerea textului când se utilizează "
-"markup Pango"
+msgstr "Model de coloană utilizat pentru extragerea textului când se "
+"utilizează markup Pango"
 
 #: ../exo/exo-icon-view.c:769
 msgid "Icon View Model"
@@ -311,15 +306,15 @@ msgstr "Modul de selectare"
 
 #: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:166
 msgid "Single Click"
-msgstr "Click simplu"
+msgstr "Clic simplu"
 
 #: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
-msgstr "Specifică dacă itemii vizualizării pot fi activaţi cu un click simplu"
+msgstr "Specifică dacă itemii vizualizării pot fi activaţi cu un clic simplu"
 
 #: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
-msgstr "Limită de timp pentru click simplu"
+msgstr "Limită de timp pentru clic simplu"
 
 #: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:184
 msgid ""
@@ -327,7 +322,7 @@ msgid ""
 "selected automatically in single click mode"
 msgstr ""
 "Durata minimă pentru selectarea automată a itemului aflat sub cursor când se "
-"utilizează click simplu"
+"utilizează clic simplu"
 
 #: ../exo/exo-icon-view.c:911
 msgid "Spacing"
@@ -355,32 +350,31 @@ msgstr "Opacitate a cutiei de selectare"
 
 #: ../exo/exo-thumbnail-preview.c:123
 msgid "Preview"
-msgstr ""
+msgstr "Previzualizare"
 
 #: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
-#, fuzzy
 msgid "No file selected"
-msgstr "Nu aţi selectat nici o aplicaţie"
+msgstr "Nici un fişier nu e selectat"
 
 #: ../exo/exo-thumbnail-preview.c:299
 msgid "Block Device"
-msgstr ""
+msgstr "Dispozitiv de tip block"
 
 #: ../exo/exo-thumbnail-preview.c:304
 msgid "Character Device"
-msgstr ""
+msgstr "Dispozitiv de tip caracter"
 
 #: ../exo/exo-thumbnail-preview.c:309
 msgid "Folder"
-msgstr ""
+msgstr "Dosar"
 
 #: ../exo/exo-thumbnail-preview.c:314
 msgid "FIFO"
-msgstr ""
+msgstr "FIFO"
 
 #: ../exo/exo-thumbnail-preview.c:319
 msgid "Socket"
-msgstr ""
+msgstr "Socket"
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
@@ -404,7 +398,7 @@ msgstr "_Stil bară cu unelte"
 
 #: ../exo/exo-toolbars-view.c:766
 msgid "_Desktop Default"
-msgstr "Setări _desktop"
+msgstr "Preferinţe _desktop"
 
 #: ../exo/exo-toolbars-view.c:775
 msgid "_Icons only"
@@ -522,7 +516,7 @@ msgstr "  --build-list      Prelucrează perechile de nume/fişiere\n"
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -530,7 +524,7 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Drepturi de autor © 2005-2006\n"
+"Drepturi de autor © %s\n"
 "        os-cillation e.K. Toate drepturile rezervate.\n"
 "\n"
 "Scris de Benedikt Meurer <benny@xfce.org>.\n"
@@ -596,9 +590,9 @@ msgid "Shell Scripts"
 msgstr "Scripturi shell"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
-#, fuzzy, c-format
+#, c-format
 msgid "Create Launcher <b>%s</b>"
-msgstr "Creare lansator"
+msgstr "Creare lansator <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:318
@@ -666,9 +660,8 @@ msgstr "Selectaţi această opţiune pentru a executa comanda într-un terminal"
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
-#, fuzzy
 msgid "Select an icon"
-msgstr "Selectaţi o iconiţă"
+msgstr "Selectare iconiţă"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:50
@@ -727,24 +720,23 @@ msgstr "[FIŞIER|DIRECTOR]"
 
 #: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
-#, fuzzy
 msgid "Failed to open display"
-msgstr "Nu s-a putut deschide ecranul: %s"
+msgstr "Nu s-a putut deschide ecranul"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
-msgstr "Nu s-a specificat un fişier ori director"
+msgstr "Nu s-a specificat un fişier ori dosar"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:226
-#, fuzzy, c-format
+#, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Tip nesuportat de fişier desktop „%s”"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:246
 msgid "C_reate"
-msgstr "C_reează"
+msgstr "_Creează"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:366
@@ -764,90 +756,90 @@ msgstr "Nu s-a putut salva „%s”"
 #: ../exo-hal/exo-hal.c:444
 #, c-format
 msgid "External %s Drive"
-msgstr ""
+msgstr "Unitate externă %s"
 
 #: ../exo-hal/exo-hal.c:446
 #, c-format
 msgid "%s Drive"
-msgstr ""
+msgstr "Unitate %s"
 
 #: ../exo-hal/exo-hal.c:455
 msgid "External Floppy Drive"
-msgstr ""
+msgstr "Unitate externă de dischetă"
 
 #: ../exo-hal/exo-hal.c:457
 msgid "Floppy Drive"
-msgstr ""
+msgstr "Unitate de dischetă"
 
 #: ../exo-hal/exo-hal.c:461
 msgid "Compact Flash Drive"
-msgstr ""
+msgstr "Unitate Compact Flash"
 
 #: ../exo-hal/exo-hal.c:465
 msgid "Memory Stick Drive"
-msgstr ""
+msgstr "Unitate Memory Stick"
 
 #: ../exo-hal/exo-hal.c:469
 msgid "Smart Media Drive"
-msgstr ""
+msgstr "Unitate Smart Media"
 
 #: ../exo-hal/exo-hal.c:473
 msgid "SD/MMC Drive"
-msgstr ""
+msgstr "Unitate SD/MMC"
 
 #: ../exo-hal/exo-hal.c:477
 msgid "Zip Drive"
-msgstr ""
+msgstr "Unitate Zip"
 
 #: ../exo-hal/exo-hal.c:481
 msgid "Jaz Drive"
-msgstr ""
+msgstr "Unitate Jaz"
 
 #: ../exo-hal/exo-hal.c:485
 msgid "Pen Drive"
-msgstr ""
+msgstr "Unitate Stick"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:494
 #, c-format
 msgid "%s Music Player"
-msgstr ""
+msgstr "Redare audio %s"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
-msgstr ""
+msgstr "Cameră digitală %s"
 
 #. last fallback to "Drive"
 #: ../exo-hal/exo-hal.c:532
 msgid "Drive"
-msgstr ""
+msgstr "Unitate"
 
 #: ../exo-hal/exo-hal.c:759
 #, c-format
 msgid "Blank %s Disc"
-msgstr ""
+msgstr "Disc %s gol"
 
 #: ../exo-hal/exo-hal.c:761
 #, c-format
 msgid "%s Disc"
-msgstr ""
+msgstr "Disc %s"
 
 #. special case for pure audio disc
 #: ../exo-hal/exo-hal.c:766
 msgid "Audio CD"
-msgstr ""
+msgstr "CD audio"
 
 #: ../exo-hal/exo-hal.c:802
 #, c-format
 msgid "%s Removable Volume"
-msgstr ""
+msgstr "Volum movibil %s"
 
 #: ../exo-hal/exo-hal.c:804
 #, c-format
 msgid "%s Volume"
-msgstr ""
+msgstr "Volum %s"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -866,9 +858,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-#, fuzzy
 msgid "Web Browser"
-msgstr "Navigatorul Galeon"
+msgstr "Navigator web"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -879,9 +870,8 @@ msgstr ""
 "adresele de internet şi a afişa informaţiile de ajutor."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-#, fuzzy
 msgid "Mail Reader"
-msgstr "Client de mail implicit"
+msgstr "Client de mail"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid ""
@@ -889,7 +879,7 @@ msgid ""
 "emails when you click on email addresses."
 msgstr ""
 "Clientul de mail implicit va fi utilizat pentru\n"
-"compunerea mailurilor la un click pe o adresă de mail."
+"compunerea mailurilor la un clic pe o adresă de mail."
 
 #.
 #. Utilities
@@ -899,9 +889,8 @@ msgid "Utilities"
 msgstr "Utilitare"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-#, fuzzy
 msgid "Terminal Emulator"
-msgstr "Terminal implicit"
+msgstr "Emulator terminal"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
@@ -918,7 +907,7 @@ msgstr "Nu s-a putut deschide navigatorul pentru documentaţie."
 #: ../exo-helper/exo-helper-chooser.c:184
 #: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
-msgstr "Cu un click stânga puteţi schimba aplicaţia selectată."
+msgstr "Cu un clic stânga puteţi schimba aplicaţia selectată."
 
 #: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
@@ -943,7 +932,7 @@ msgstr "Nu s-a putut seta emulatorul de terminal implicit"
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:422
 msgid "Select application"
-msgstr "Selectaţi aplicaţia"
+msgstr "Selectaţi o aplicaţie"
 
 #: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
@@ -1023,7 +1012,7 @@ msgstr ""
 
 #: ../exo-helper/exo-helper.c:404
 msgid "No command specified"
-msgstr "Nu s-a specificat nici o comandă"
+msgstr "Nu s-a specificat o comandă"
 
 #: ../exo-helper/exo-helper.c:740
 msgid "Failed to open helpers.rc for writing"
@@ -1052,7 +1041,7 @@ msgstr "Terminal Xfce"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
-msgstr ""
+msgstr "aterm"
 
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
@@ -1068,7 +1057,7 @@ msgstr "Terminalul standard Debian"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
-msgstr ""
+msgstr "Encompass"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
@@ -1103,14 +1092,12 @@ msgid "Konqueror Web Browser"
 msgstr "Navigatorul Konqueror"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
-#, fuzzy
 msgid "Links Text Browser"
-msgstr "Navigatorul Epiphany"
+msgstr "Navigatorul text Links"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-#, fuzzy
 msgid "Lynx Text Browser"
-msgstr "Navigatorul Galeon"
+msgstr "Navigatorul text Lynx"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
@@ -1122,15 +1109,15 @@ msgstr "Mozilla Mail"
 
 #: ../exo-helper/helpers/mutt.desktop.in.in.h:1
 msgid "Mutt"
-msgstr ""
+msgstr "Mutt"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
-msgstr ""
+msgstr "Netscape Navigator"
 
 #: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
 msgid "NXterm"
-msgstr ""
+msgstr "NXterm"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
@@ -1142,11 +1129,11 @@ msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Sylpheed Claws"
-msgstr ""
+msgstr "Sylpheed Claws"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
-msgstr ""
+msgstr "Sylpheed"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
@@ -1154,12 +1141,11 @@ msgstr "Mozilla Thunderbird"
 
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
-msgstr ""
+msgstr "RXVT Unicode"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-#, fuzzy
 msgid "W3M Text Browser"
-msgstr "Navigatorul Opera"
+msgstr "Navigatorul text W3M"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -1167,156 +1153,160 @@ msgstr "Terminalul Xterm"
 
 #: ../exo-mount/exo-mount-fstab.c:115
 msgid "Unknown error"
-msgstr ""
+msgstr "Eroare necunoscută"
 
 #. generate an appropriate error message
 #. tell the caller that no matching device was found
 #: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr ""
+msgstr "Dispozitivul „%s” nu a fost găsit în tabela de dispozitive a sistemului de fişiere"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
-msgstr ""
+msgstr "Dispozitivul dat „%s” nu este un volum sau o unitate"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:564
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr ""
+msgstr "Nu aveţi drepturile necesare pentru a ejecta volumul „%s”"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:569
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr ""
+msgstr "O aplicaţie împiedică ejectarea volumului „%s”"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:800
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr ""
+msgstr "Nu aveţi drepturile necesare pentru a monta volumul „%s”"
 
 #: ../exo-mount/exo-mount-hal.c:815
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
+"Discurile goale nu pot fi montate. Utilizaţi o aplicaţie de scris CD-uri "
+"precum Xfburn pentru a înregistra piste audio sau date pe disc"
 
 #: ../exo-mount/exo-mount-hal.c:826
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr ""
+msgstr "CD-urile audio nu pot fi montate, utilizaţi Xfmedia pentru a reda pistele audio"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:911
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr ""
+msgstr "Nu aveţi drepturile necesare pentru a demonta volumul „%s”"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:916
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr ""
+msgstr "O aplicaţie previne demontarea volumului „%s”"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:921
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr ""
+msgstr "Volumul „%s” a fost probabil montat manual în linia de comandă"
 
 #: ../exo-mount/main.c:65
 msgid "Eject rather than mount"
-msgstr ""
+msgstr "Ejectează mai degrabă decât a monta"
 
 #: ../exo-mount/main.c:66
 msgid "Unmount rather than mount"
-msgstr ""
+msgstr "Demontează mai degrabă decât a monta"
 
 #: ../exo-mount/main.c:68
 msgid "Mount by HAL device UDI"
-msgstr ""
+msgstr "Montează după UDI-ul dispozitivului HAL"
 
 #: ../exo-mount/main.c:70
 msgid "Mount by HAL device UDI (not supported)"
-msgstr ""
+msgstr "Montează după UDI-ul dispozitivului HAL (nesuportat)"
 
 #: ../exo-mount/main.c:72
 msgid "Mount by device file"
-msgstr ""
+msgstr "Montează după fişierul dispozitiv"
 
 #: ../exo-mount/main.c:73
 msgid "Don't show any dialogs"
-msgstr ""
+msgstr "Nu arăta nici un dialog"
 
 #. the caller must specify either a HAL UDI or a device file
 #: ../exo-mount/main.c:138
 msgid "Must specify HAL device UDI or device file"
-msgstr ""
+msgstr "Trebuie specificat UDI-ul dispozitivului HAL sau fişierul dispozitiv"
 
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr ""
+msgstr "Nu trebuie specificat simultan UDI-ul dispozitivului HAL şi un fişier dispozitiv"
 
 #: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
+"Nu s-a putut monta după UDI-ul dispozitivului HAL pentru că suportul HAL "
+"nu a fost inclus la compilare"
 
 #: ../exo-mount/main.c:161
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr ""
+msgstr "UDI-ul specificat „%s” nu este un UDI valid de dispozitiv HAL"
 
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
-msgstr ""
+msgstr "Nu se poate ejecta şi demonta în acelaşi timp"
 
 #: ../exo-mount/main.c:330
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to eject \"%s\""
-msgstr "Nu s-a putut crea „%s”"
+msgstr "Nu s-a putut ejecta „%s”"
 
 #: ../exo-mount/main.c:332
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "Nu s-a putut deschide „%s”."
+msgstr "Nu s-a putut demonta „%s”."
 
 #: ../exo-mount/main.c:334
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to mount \"%s\""
-msgstr "Nu s-a putut deschide „%s”."
+msgstr "Nu s-a putut monta „%s”."
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:111
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr ""
+msgstr "Dispozitivul „%s” poate fi demontat în siguranţă acum."
 
 #: ../exo-mount-notify/main.c:112
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "Dispozitivul poate fi demontat în siguranţă acum"
 
 #. read-only, just ejecting
 #: ../exo-mount-notify/main.c:224
 msgid "Ejecting device"
-msgstr ""
+msgstr "Se ejectează dispozitivul"
 
 #: ../exo-mount-notify/main.c:225
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr ""
+msgstr "Dispozitivul „%s” a fost ejectat. S-ar putea să dureze puţin."
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
 msgid "Unmounting device"
-msgstr ""
+msgstr "Se demontează dispozitivul"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
@@ -1324,11 +1314,13 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
+"Dispozitivul „%s” este în curs de demontare din sistem. Nu scoateţi mediul "
+"de stocare şi nu deconectaţi unitatea."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
 msgid "Writing data to device"
-msgstr ""
+msgstr "Se scriu datele pe dispozitiv"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
@@ -1336,6 +1328,8 @@ msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
 msgstr ""
+"Există date ce trebuie scrise pe dispozitivul „%s” înainte ca acesta să "
+"poată fi scos. Nu scoateţi mediul de stocare şi nu deconectaţi unitatea."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1346,10 +1340,9 @@ msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TIP [PARAMETRI...]"
 
 #: ../exo-open/main.c:62
-#, fuzzy
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
-"  -h, --help                          Arată acest mesaj de ajutor şi ieşi"
+"  -?, --help                          Arată acest mesaj de ajutor şi ieşi"
 
 #: ../exo-open/main.c:63
 msgid ""
@@ -1374,6 +1367,9 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
+"  --working-directory DIRECTORY       Director de lucru implicit pentru "
+"aplicaţii\n"
+"                                      când se utilizează opţiunea „--launch”."
 
 #: ../exo-open/main.c:72
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1416,11 +1412,3 @@ msgstr "Nu s-a putut lansa aplicaţia preferată pentru categoria „%s”."
 msgid "Failed to open URL \"%s\"."
 msgstr "Nu s-a putut deschide URL-ul „%s”."
 
-#~ msgid "Failed to open display: %s"
-#~ msgstr "Nu s-a putut deschide ecranul: %s"
-
-#~ msgid "Select an Icon"
-#~ msgstr "Selectaţi o iconiţă"
-
-#~ msgid "Default Web Browser"
-#~ msgstr "Navigator web implicit"
