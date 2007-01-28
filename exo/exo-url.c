@@ -207,6 +207,7 @@ exo_url_show_on_screen (const gchar *url,
   gchar       *local_path;
   gchar       *command;
   gchar       *uri;
+  gchar       *quoted_url;
   gint         status;
 
   g_return_val_if_fail (url != NULL, FALSE);
@@ -260,10 +261,13 @@ exo_url_show_on_screen (const gchar *url,
             }
           else
             {
+              /* make a shell quoted url to pass to other applications */
+              quoted_url = g_shell_quote(local_path);
+
               /* but since we have a local file here, maybe the org.xfce.FileManager can open it? */
               command = g_strdup_printf ("dbus-send --print-reply --dest=org.xfce.FileManager "
                                          "/org/xfce/FileManager org.xfce.FileManager.Launch "
-                                         "string:\"%s\" string:\"%s\"", local_path, display_name);
+                                         "string:%s string:\"%s\"", quoted_url, display_name);
               result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
               g_free (command);
 
@@ -271,7 +275,7 @@ exo_url_show_on_screen (const gchar *url,
               if (G_UNLIKELY (!result))
                 {
                   /* but hey, we know that Thunar can open local files, so give it a go */
-                  command = g_strdup_printf ("Thunar --display=\"%s\" \"%s\"", display_name, local_path);
+                  command = g_strdup_printf ("Thunar --display=\"%s\" %s", display_name, quoted_url);
                   result = g_spawn_command_line_async (command, NULL);
                   g_free (command);
                 }
@@ -280,7 +284,7 @@ exo_url_show_on_screen (const gchar *url,
               if (G_UNLIKELY (!result))
                 {
                   /* gnome-open is also worth a try, since it uses the standard applications database */
-                  command = g_strdup_printf ("env DISPLAY=\"%s\" gnome-open \"%s\"", display_name, local_path);
+                  command = g_strdup_printf ("env DISPLAY=\"%s\" gnome-open %s", display_name, quoted_url);
                   result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
                   g_free (command);
                 }
@@ -292,6 +296,9 @@ exo_url_show_on_screen (const gchar *url,
                   g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
                                _("Unable to open \"%s\""), local_path);
                 }
+
+                /* release the quoted_url as it is no longer needed */
+                g_free(quoted_url);
             }
 
           /* release the local path and the display name */
@@ -302,10 +309,16 @@ exo_url_show_on_screen (const gchar *url,
           return result;
         }
 
+      /* make a shell quoted url to pass to other applications */
+      quoted_url = g_shell_quote(url);
+
       /* not a local path, and not something that we support, but maybe gnome-open knows what to do */
-      command = g_strdup_printf ("env DISPLAY=\"%s\" gnome-open \"%s\"", display_name, url);
+      command = g_strdup_printf ("env DISPLAY=\"%s\" gnome-open %s", display_name, quoted_url);
       result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
       g_free (command);
+
+      /* release the quoted_url as it is no longer needed */
+      g_free(quoted_url);
 
       /* check if gnome-open handled the URL */
       if (G_UNLIKELY (!result))

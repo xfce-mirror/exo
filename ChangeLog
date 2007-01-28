@@ -1,5 +1,11 @@
 2007-01-28	Benedikt Meurer <benny@xfce.org>
 
+	* exo/exo-url.c(exo_url_show_on_screen): Apply patch from Peter de
+	  Ridder <pc.ridder@zonnet.nl> to quote URLs properly prior to
+	  passing them to external programs. Bug #2791.
+
+2007-01-28	Benedikt Meurer <benny@xfce.org>
+
 	* configure.in.in: Bump required HAL version to 0.5.7. Bug #2828.
 
 2007-01-20	Benedikt Meurer <benny@xfce.org>
