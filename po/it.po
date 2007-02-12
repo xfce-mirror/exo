@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 23:46+0100\n"
+"POT-Creation-Date: 2007-02-12 19:47+0100\n"
 "PO-Revision-Date: 2007-01-14 12:16+0100\n"
 "Last-Translator: Dario <dariolinux@tiscali.it>\n"
 "Language-Team: Italiano\n"
@@ -45,8 +45,8 @@ msgstr "dimensione"
 msgid "The size of the icon to render in pixels."
 msgstr "La dimensione dell'icona da renderizzare in pixel."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:148
-#: ../exo-mount/exo-mount-fstab.c:177 ../exo-mount/exo-mount-fstab.c:203
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
+#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Errore nell'apertura del file \"%s\": %s"
@@ -58,7 +58,8 @@ msgstr "Errore nella lettura del file \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
 "Errore nel caricamento dell'immagine \"%s\": Ragione sconosciuta, "
 "probabilmente il file immagine è corrotto"
@@ -256,7 +257,8 @@ msgstr "Colonna di markup"
 
 #: ../exo/exo-icon-view.c:755
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Modello di colonna usato per ottenere il testo se si usa il markup Pango"
+msgstr ""
+"Modello di colonna usato per ottenere il testo se si usa il markup Pango"
 
 #: ../exo/exo-icon-view.c:769
 msgid "Icon View Model"
@@ -267,7 +269,8 @@ msgid "The model for the icon view"
 msgstr "Il modello per la vista ad icone"
 
 #: ../exo/exo-icon-view.c:784
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr ""
 "Come il testo e l'icona di ogni elemento sono posizionati relativamente a "
 "loro"
@@ -310,7 +313,8 @@ msgstr "Singolo Click"
 
 #: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
-msgstr "Quando gli elementi nella vista possono essere attivati con un singolo click"
+msgstr ""
+"Quando gli elementi nella vista possono essere attivati con un singolo click"
 
 #: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
@@ -424,17 +428,17 @@ msgstr "_Rimuovi la barra degli strumenti"
 msgid "Customize Toolbar..."
 msgstr "Personalizza la barra degli strumenti..."
 
-#: ../exo/exo-url.c:293
+#: ../exo/exo-url.c:297
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Impossibile aprire \"%s\""
 
-#: ../exo/exo-url.c:315
+#: ../exo/exo-url.c:328
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "L'URL \"%s\" non è supportato"
 
-#: ../exo/exo-url.c:401
+#: ../exo/exo-url.c:414
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Fallimento nell'apertura di \"%s\"."
@@ -911,7 +915,8 @@ msgstr "Errore nell'apertura del browser di documenti."
 #: ../exo-helper/exo-helper-chooser.c:184
 #: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
-msgstr "Premi il pulsante sinistro del mouse per cambiare l'applicazione selezionata."
+msgstr ""
+"Premi il pulsante sinistro del mouse per cambiare l'applicazione selezionata."
 
 #: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
@@ -1133,8 +1138,9 @@ msgid "Opera Mail"
 msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Sylpheed Claws"
-msgstr "Sylpheed Claws"
+#, fuzzy
+msgid "Claws Mail"
+msgstr "Mozilla Mail"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1156,68 +1162,76 @@ msgstr "Browser Testuale W3M"
 msgid "X Terminal"
 msgstr "Terminale X"
 
-#: ../exo-mount/exo-mount-fstab.c:115
+#: ../exo-mount/exo-mount-fstab.c:92
 msgid "Unknown error"
 msgstr "Errore sconosciuto"
 
-#. generate an appropriate error message
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr "Il dispositivo \"%s\" non è stato trovato nella tabella del file system del dispositivo"
+msgstr ""
+"Il dispositivo \"%s\" non è stato trovato nella tabella del file system del "
+"dispositivo"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Il dispositivo \"%s\" non è né un volume né un drive"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:564
+#: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Non hai i permessi per espellere il volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:569
+#: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Un applicazione impedisce di espellere il volume \"%s\""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:800
+#: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Non hai i permessi per montare il volume \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:815
+#: ../exo-mount/exo-mount-hal.c:846
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
-msgstr "I dischi vergini non possono essere montati, usa un programma di masterizzazione come Xfburn per registrare audio o dati sul disco"
+msgstr ""
+"I dischi vergini non possono essere montati, usa un programma di "
+"masterizzazione come Xfburn per registrare audio o dati sul disco"
 
-#: ../exo-mount/exo-mount-hal.c:826
+#: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "I CD audio non possono essere montati, usa Xfmedia per riprodurre le tracce audio"
+msgstr ""
+"I CD audio non possono essere montati, usa Xfmedia per riprodurre le tracce "
+"audio"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:911
+#: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Non hai i permessi per smontare il volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:916
+#: ../exo-mount/exo-mount-hal.c:947
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Un applicazione impedisce lo smontaggio del volume \"%s\""
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:921
+#: ../exo-mount/exo-mount-hal.c:952
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr "Il volume \"%s\" è stato probabilmente montato manualmente dalla linea di comando"
+msgstr ""
+"Il volume \"%s\" è stato probabilmente montato manualmente dalla linea di "
+"comando"
 
 #: ../exo-mount/main.c:65
 msgid "Eject rather than mount"
@@ -1251,13 +1265,17 @@ msgstr "Bisogna specificare un UDI HAL o un file di dispositivo"
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "Non bisogna specificare contemporaneamente un HAL UDI e un file di dispositivo"
+msgstr ""
+"Non bisogna specificare contemporaneamente un HAL UDI e un file di "
+"dispositivo"
 
 #: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
-msgstr "Impossibile montare attraverso un HAL device UDI perché non è stato compilato il supporto per HAL"
+msgstr ""
+"Impossibile montare attraverso un HAL device UDI perché non è stato "
+"compilato il supporto per HAL"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1302,7 +1320,9 @@ msgstr "Espulsione del dispositivo"
 #: ../exo-mount-notify/main.c:225
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr "Espulsione del dispositivo \"%s\" in corso. Quest'operazione può richiedere un pò di tempo."
+msgstr ""
+"Espulsione del dispositivo \"%s\" in corso. Quest'operazione può richiedere "
+"un pò di tempo."
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
@@ -1314,7 +1334,9 @@ msgstr "Smontaggio del dispositivo"
 msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
-msgstr "Il dispositivo \"%s\" è stato smontato dal sistema. Per favore, non rimuovere il disco e non disconnettere il drive."
+msgstr ""
+"Il dispositivo \"%s\" è stato smontato dal sistema. Per favore, non "
+"rimuovere il disco e non disconnettere il drive."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
@@ -1326,7 +1348,9 @@ msgstr "Scrittura dati sul dispositivo"
 msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
-msgstr "Ci sono dati che necessitano di essere scritti sul disco \"%s\" prima della rimozione. Per favore non espellere il disco e non disconnettere il drive"
+msgstr ""
+"Ci sono dati che necessitano di essere scritti sul disco \"%s\" prima della "
+"rimozione. Per favore non espellere il disco e non disconnettere il drive"
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1343,7 +1367,8 @@ msgstr ""
 "esce"
 
 #: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
+msgid ""
+"  -v, --version                       Print version information and exit"
 msgstr ""
 "  -v, --version                       Stampa le informazioni di versione ed "
 "esce"
@@ -1404,10 +1429,13 @@ msgstr ""
 #: ../exo-open/main.c:149
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Errore nell'esecuzione dell'applicazione preferita per la categoria \"%s\"."
+msgstr ""
+"Errore nell'esecuzione dell'applicazione preferita per la categoria \"%s\"."
 
 #: ../exo-open/main.c:170
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Errore nell'apertura dell'URL \"%s\"."
 
+#~ msgid "Sylpheed Claws"
+#~ msgstr "Sylpheed Claws"

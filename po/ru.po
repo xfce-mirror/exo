@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 23:46+0100\n"
+"POT-Creation-Date: 2007-02-12 19:47+0100\n"
 "PO-Revision-Date: 2007-01-17 21:35+0600\n"
 "Last-Translator: Andrey Fedoseev <andrey.fedoseev@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -42,8 +42,8 @@ msgstr "размер"
 msgid "The size of the icon to render in pixels."
 msgstr "Размер отображаемого значка в пикселах."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:148
-#: ../exo-mount/exo-mount-fstab.c:177 ../exo-mount/exo-mount-fstab.c:203
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
+#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Не удалось открыть файл \"%s\": %s"
@@ -419,17 +419,17 @@ msgstr "_Удалить панель"
 msgid "Customize Toolbar..."
 msgstr "Настроить панель"
 
-#: ../exo/exo-url.c:293
+#: ../exo/exo-url.c:297
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Невозможно открыть  \"%s\""
 
-#: ../exo/exo-url.c:315
+#: ../exo/exo-url.c:328
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "URL \"%s\" не поддерживается"
 
-#: ../exo/exo-url.c:401
+#: ../exo/exo-url.c:414
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Не удалось открыть \"%s\"."
@@ -1128,8 +1128,9 @@ msgid "Opera Mail"
 msgstr "Почтовая программа Opera"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Sylpheed Claws"
-msgstr "Sylpheed Claws"
+#, fuzzy
+msgid "Claws Mail"
+msgstr "Почтовая программа Mozilla"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1151,69 +1152,69 @@ msgstr "Текстовый браузер W3M"
 msgid "X Terminal"
 msgstr "X терминал"
 
-#: ../exo-mount/exo-mount-fstab.c:115
+#: ../exo-mount/exo-mount-fstab.c:92
 msgid "Unknown error"
 msgstr "Неизвестная ошибка"
 
-#. generate an appropriate error message
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Устройство \"%s\" не найдено таблице файловых систем"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Указанное устройство \"%s\" не является томом или приводом"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:564
+#: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "У вас нет прав на извлечение тома \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:569
+#: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Есть приложение, которое препятствует извлечению тома \"%s\""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:800
+#: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "У вас нет прав на монтирование тома \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:815
+#: ../exo-mount/exo-mount-hal.c:846
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
-"Пустые диски не могут быть смонтированы. Используйтся программу для записи CD, "
-"такую как Xfburn, для записи аудио-дисков или дисков с данными"
+"Пустые диски не могут быть смонтированы. Используйтся программу для записи "
+"CD, такую как Xfburn, для записи аудио-дисков или дисков с данными"
 
-#: ../exo-mount/exo-mount-hal.c:826
+#: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
 "Аудио-диски не могут быть смонтированы. Используйте Xfmedia, чтобы "
 "проигрывать их"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:911
+#: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "У вас нет прав на размонтирование тома \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:916
+#: ../exo-mount/exo-mount-hal.c:947
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Есть приложение, которое препятствует размонтированию тома \"%s\""
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:921
+#: ../exo-mount/exo-mount-hal.c:952
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Возможно, том \"%s\" был смонтирован через командную строку"
@@ -1416,3 +1417,6 @@ msgstr "Не удалось запустить предпочитаемое пр
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Не удалось открыть URL \"%s\"."
+
+#~ msgid "Sylpheed Claws"
+#~ msgstr "Sylpheed Claws"

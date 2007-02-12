@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 23:46+0100\n"
+"POT-Creation-Date: 2007-02-12 19:47+0100\n"
 "PO-Revision-Date: 2007-01-14 13:40+0100\n"
 "Last-Translator: Pau Ruŀlan Ferragut <paurullan@bulma.net>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n > 1);"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
@@ -44,8 +44,8 @@ msgstr "tamany"
 msgid "The size of the icon to render in pixels."
 msgstr "Tamany en píxels de la icona a representar"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:148
-#: ../exo-mount/exo-mount-fstab.c:177 ../exo-mount/exo-mount-fstab.c:203
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
+#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "No s’ha pogut obrir «%s»: %s"
@@ -59,7 +59,9 @@ msgstr "No s’ha pogut crear «%s»: %s"
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "No s’ha pogut carregar la imatge «%s»: raó desconeguda; probablement el fitxer està corromput."
+msgstr ""
+"No s’ha pogut carregar la imatge «%s»: raó desconeguda; probablement el "
+"fitxer està corromput."
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
@@ -424,17 +426,17 @@ msgstr "_Suprimir barra d’eines"
 msgid "Customize Toolbar..."
 msgstr "Personalitza barra d’eines…"
 
-#: ../exo/exo-url.c:293
+#: ../exo/exo-url.c:297
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "No s’ha pogut obrir «%s»"
 
-#: ../exo/exo-url.c:315
+#: ../exo/exo-url.c:328
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "No es permet l’ús d’URLs com «%s»"
 
-#: ../exo/exo-url.c:401
+#: ../exo/exo-url.c:414
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "No s’ha pogut obrir «%s»."
@@ -728,7 +730,7 @@ msgstr "No s’ha pogut obrir la pantalla"
 msgid "No file/folder specified"
 msgstr "No heu especificat cap fitxer o carpeta"
 
-#. tell the user that we don’t support the type
+#. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:226
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
@@ -1131,8 +1133,9 @@ msgid "Opera Mail"
 msgstr "Correu d’Opera"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Sylpheed Claws"
-msgstr "Sylpheed Claws"
+#, fuzzy
+msgid "Claws Mail"
+msgstr "Correu de Mozilla"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1154,65 +1157,69 @@ msgstr "Navegador web de text W3M"
 msgid "X Terminal"
 msgstr "Terminal X"
 
-#: ../exo-mount/exo-mount-fstab.c:115
+#: ../exo-mount/exo-mount-fstab.c:92
 msgid "Unknown error"
 msgstr "Error desconegut"
 
-#. generate an appropriate error message
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr "No s’ha pogut trobar dispositiu «%s» a la taula de dispositius del sistema"
+msgstr ""
+"No s’ha pogut trobar dispositiu «%s» a la taula de dispositius del sistema"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "El dispositiu «%s» no és un volum o unitat"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:564
+#: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "No teniu suficients permisos per expulsar el volum «%s»"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:569
+#: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Alguna aplicació està impedint que el volum «%s» pugui ser expulsat"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:800
+#: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "No teniu permisos suficients per muntar el volum «%s»"
 
-#: ../exo-mount/exo-mount-hal.c:815
+#: ../exo-mount/exo-mount-hal.c:846
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
-msgstr "Els discs en blanc no es poden montar. Useu alguna aplicació com Xfburn per gravar so o dades al disc"
+msgstr ""
+"Els discs en blanc no es poden montar. Useu alguna aplicació com Xfburn per "
+"gravar so o dades al disc"
 
-#: ../exo-mount/exo-mount-hal.c:826
+#: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "Els CD d’audio no es poden montar; useu Xfmedia per reproduir peces d’audio"
+msgstr ""
+"Els CD d’audio no es poden montar; useu Xfmedia per reproduir peces d’audio"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:911
+#: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "No teniu permisos per desmountar el volum «%s»"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:916
+#: ../exo-mount/exo-mount-hal.c:947
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Alguna aplicació està impedint que el volum «%s» pugui ser desmuntat"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:921
+#: ../exo-mount/exo-mount-hal.c:952
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "El volum «%s» probablement fou mountat des de la línea d’ordres"
@@ -1249,13 +1256,16 @@ msgstr "Heu d’especificar una configuració HAL o un fitxer de dispositiu"
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "No heu d’especificar una configuració HAL o un fitxer de dispositiu alhora"
+msgstr ""
+"No heu d’especificar una configuració HAL o un fitxer de dispositiu alhora"
 
 #: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
-msgstr "No s’ha pogut muntar mitjançant HAL perquè fou deshabilitat per aquesta compilació"
+msgstr ""
+"No s’ha pogut muntar mitjançant HAL perquè fou deshabilitat per aquesta "
+"compilació"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1312,7 +1322,9 @@ msgstr "S’està desmuntant el dispositiu"
 msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
-msgstr "S’està desmuntant el dispositiu «%s». Si us plau no extregueu el mitjà o desconnecteu la unitat."
+msgstr ""
+"S’està desmuntant el dispositiu «%s». Si us plau no extregueu el mitjà o "
+"desconnecteu la unitat."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
@@ -1324,7 +1336,9 @@ msgstr "S’està escrivint al dispositiu"
 msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
-msgstr "Hi ha dades pendents per escriure al dispositiu «%s» abans d’extreurer-lo. Si us plau no extregueu el mitjà o desconnecteu la unitat."
+msgstr ""
+"Hi ha dades pendents per escriure al dispositiu «%s» abans d’extreurer-lo. "
+"Si us plau no extregueu el mitjà o desconnecteu la unitat."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1384,8 +1398,9 @@ msgstr ""
 "  TerminalEmulator - L’emulador de terminal preferit."
 
 #: ../exo-open/main.c:82
+#, fuzzy
 msgid ""
-"If you don’t specify the --launch option, exo-open will open all specified\n"
+"If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
@@ -1408,3 +1423,5 @@ msgstr "No s’ha pogut llançar l’aplicació predeferida de la categoria «%s
 msgid "Failed to open URL \"%s\"."
 msgstr "No s’ha pogut obrir la URL «%s»"
 
+#~ msgid "Sylpheed Claws"
+#~ msgstr "Sylpheed Claws"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-11 12:54+0200\n"
+"POT-Creation-Date: 2007-02-12 19:47+0100\n"
 "PO-Revision-Date: 2007-01-11 13:06+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
@@ -419,17 +419,17 @@ msgstr "_Poista välinepalkki"
 msgid "Customize Toolbar..."
 msgstr "Mukauta välinepalkkia..."
 
-#: ../exo/exo-url.c:293
+#: ../exo/exo-url.c:297
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Kohdetta \"%s\" ei voi avata"
 
-#: ../exo/exo-url.c:315
+#: ../exo/exo-url.c:328
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "URL:ia \"%s\" ei tueta"
 
-#: ../exo/exo-url.c:401
+#: ../exo/exo-url.c:414
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Kohteen \"%s\" avaaminen epäonnistui."
@@ -1122,8 +1122,9 @@ msgid "Opera Mail"
 msgstr "Opera sähköposti"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Sylpheed Claws"
-msgstr "Sylpheed Claws"
+#, fuzzy
+msgid "Claws Mail"
+msgstr "Mozilla sähköposti"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1151,36 +1152,36 @@ msgstr "Tuntematon virhe"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:343
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Laitetta \"%s\" ei löydy tiedostojärjestelmätaulukosta"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Määritetty laite \"%s\" ei ole taltio tai asema"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:564
+#: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Sinulla ei ole oikeuksia taltion \"%s\" poistamiseen"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:569
+#: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Sovellus estää taltion \"%s\" poistamisen"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:800
+#: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Sinulla ei ole oikeuksia taltion \"%s\" liittämiseen"
 
-#: ../exo-mount/exo-mount-hal.c:815
+#: ../exo-mount/exo-mount-hal.c:846
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
@@ -1188,24 +1189,24 @@ msgstr ""
 "Tyhjiä levyjä ei voi liittää. Tallenna levylle ääntä tai tiedostoja CD:n\n"
 "kirjoitussovelluksen (esim. Xfburn) avulla."
 
-#: ../exo-mount/exo-mount-hal.c:826
+#: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr "Audio-CD:tä ei voi liittää. Kuuntele ääniraitoja Xfmedialla."
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:911
+#: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Sinulla ei ole oikeuksia taltion \"%s\" irrottamiseen"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:916
+#: ../exo-mount/exo-mount-hal.c:947
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Sovellus estää taltion \"%s\" irrottamisen"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:921
+#: ../exo-mount/exo-mount-hal.c:952
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Taltio \"%s\" on varmaankin liitetty manuaalisesti komentoriviltä"
@@ -1262,17 +1263,17 @@ msgstr "Määritetty UDI \"%s\" ei ole kelvollinen HAL:in laite-UDI"
 msgid "Cannot eject and unmount simultaneously"
 msgstr "Ei voi poistaa ja irrottaa samanaikaisesti"
 
-#: ../exo-mount/main.c:327
+#: ../exo-mount/main.c:330
 #, c-format
 msgid "Failed to eject \"%s\""
 msgstr "Kohteen \"%s\" poistaminen epäonnistui."
 
-#: ../exo-mount/main.c:329
+#: ../exo-mount/main.c:332
 #, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "Kohteen \"%s\" irrottaminen epäonnistui."
 
-#: ../exo-mount/main.c:331
+#: ../exo-mount/main.c:334
 #, c-format
 msgid "Failed to mount \"%s\""
 msgstr "Kohteen \"%s\" liittäminen epäonnistui."
@@ -1402,6 +1403,9 @@ msgstr "Oletussovelluksen suorittaminen kategorialle \"%s\" epäonnistui."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "URL:n \"%s\" avaaminen epäonnistui."
+
+#~ msgid "Sylpheed Claws"
+#~ msgstr "Sylpheed Claws"
 
 #~ msgid "Failed to open display: %s"
 #~ msgstr "Näytön avaaminen epäonnistui: %s"

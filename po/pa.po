@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 23:46+0100\n"
+"POT-Creation-Date: 2007-02-12 19:47+0100\n"
 "PO-Revision-Date: 2007-01-25 12:59+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
@@ -44,8 +44,8 @@ msgstr "ਸਾਇਜ਼"
 msgid "The size of the icon to render in pixels."
 msgstr ""
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:148
-#: ../exo-mount/exo-mount-fstab.c:177 ../exo-mount/exo-mount-fstab.c:203
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
+#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "ਫਾਇਲ \"%s\" ਖੋਲ੍ਹਣ ਲਈ ਫੇਲ੍ਹ: %s"
@@ -57,8 +57,10 @@ msgstr "ਫਾਇਲ \"%s\" ਪੜ੍ਹਨ ਲਈ ਫੇਲ੍ਹ: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "ਚਿੱਤਰ \"%s\" ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ: ਅਣਜਾਣ ਕਾਰਨ, ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਨਿਕਾਰਾ ਚਿੱਤਰ ਫਾਇਲ ਹੋਵੇ"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"ਚਿੱਤਰ \"%s\" ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ: ਅਣਜਾਣ ਕਾਰਨ, ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਨਿਕਾਰਾ ਚਿੱਤਰ ਫਾਇਲ ਹੋਵੇ"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
@@ -264,7 +266,8 @@ msgid "The model for the icon view"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:784
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:816
@@ -415,17 +418,17 @@ msgstr "ਟੂਲਬਾਰ ਹਟਾਓ(_R)"
 msgid "Customize Toolbar..."
 msgstr "ਕਸਟਮਾਈਜ਼ ਟੂਲ-ਬਾਰ..."
 
-#: ../exo/exo-url.c:293
+#: ../exo/exo-url.c:297
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "\"%s\" ਖੋਲ੍ਹਣ ਲਈ ਅਸਫ਼ਲ"
 
-#: ../exo/exo-url.c:315
+#: ../exo/exo-url.c:328
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "URL \"%s\" ਸਹਿਯੋਗੀ ਨਹੀਂ"
 
-#: ../exo/exo-url.c:401
+#: ../exo/exo-url.c:414
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "\"%s\" ਖੋਲ੍ਹਣ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
@@ -1099,8 +1102,9 @@ msgid "Opera Mail"
 msgstr "ਓਪਰਾ ਮੇਲ"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Sylpheed Claws"
-msgstr "Sylpheed Claws"
+#, fuzzy
+msgid "Claws Mail"
+msgstr "ਮੌਜੀਲਾ ਮੇਲ"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1122,67 +1126,67 @@ msgstr "W3M ਟੈਕਸਟ ਬਰਾਊਜ਼ਰ"
 msgid "X Terminal"
 msgstr "X ਟਰਮੀਨਲ"
 
-#: ../exo-mount/exo-mount-fstab.c:115
+#: ../exo-mount/exo-mount-fstab.c:92
 msgid "Unknown error"
 msgstr "ਅਣਜਾਣ ਗਲਤੀ"
 
-#. generate an appropriate error message
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "ਜੰਤਰ \"%s\" ਫਾਇਲ ਸਿਸਟਮ ਡੀਵਾਇਸ ਟੇਬਲ ਵਿੱਚ ਨਹੀਂ ਲੱਭਿਆ"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "ਦਿੱਤਾ ਜੰਤਰ \"%s\" ਇੱਕ ਵਾਲੀਅਮ ਜਾਂ ਡਰਾਇਵ ਨਹੀਂ ਹੈ"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:564
+#: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "ਤੁਹਾਨੂੰ \"%s\" ਬਾਹਰ ਕੱਢਣ ਦਾ ਅਧਿਕਾਰ ਨਹੀਂ ਹੈ"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:569
+#: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "ਇੱਕ ਐਪਲੀਕੇਸ਼ਨ \"%s\" ਵਾਲੀਅਮ ਨੂੰ ਬਾਹਰ ਕੱਢਣ ਤੋਂ ਰੋਕ ਰਿਹਾ ਹੈ"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:800
+#: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "ਤੁਹਾਨੂੰ \"%s\" ਮਾਊਟ ਕਰਨ ਦਾ ਅਧਿਕਾਰ ਨਹੀਂ ਹੈ"
 
-#: ../exo-mount/exo-mount-hal.c:815
+#: ../exo-mount/exo-mount-hal.c:846
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
-"ਖਾਲੀ ਡਿਸਕਾਂ ਨੂੰ ਮਾਊਂਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ, CD ਰਿਕਾਰਡ ਕਰਨ ਵਾਲੇ ਐਪਲੀਕੇਸ਼ਨ, ਜਿਵੇਂ ਕਿ Xfburn "
-" ਆਦਿ ਨੂੰ ਆਡੀਓ ਜਾਂ ਡਾਟਾ ਡਿਸਕ ਲਿਖਣ ਲਈ ਵਰਤੋਂ"
+"ਖਾਲੀ ਡਿਸਕਾਂ ਨੂੰ ਮਾਊਂਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ, CD ਰਿਕਾਰਡ ਕਰਨ ਵਾਲੇ ਐਪਲੀਕੇਸ਼ਨ, ਜਿਵੇਂ ਕਿ "
+"Xfburn  ਆਦਿ ਨੂੰ ਆਡੀਓ ਜਾਂ ਡਾਟਾ ਡਿਸਕ ਲਿਖਣ ਲਈ ਵਰਤੋਂ"
 
-#: ../exo-mount/exo-mount-hal.c:826
+#: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr "ਆਡੀਓ CD ਮਾਊਟ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ, ਆਡੀਓ ਟਰੈਕ ਚਲਾਉਣ ਲਈ Xfmedia ਵਰਤੋਂ"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:911
+#: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "ਵਾਲੀਅਮ \"%s\" ਨੂੰ ਅਣ-ਮਾਊਂਟ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਅਧਿਕਾਰ ਨਹੀਂ ਹੈ"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:916
+#: ../exo-mount/exo-mount-hal.c:947
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "ਇੱਕ ਐਪਲੀਕੇਸ਼ਨ ਵਾਲੀਅਮ \"%s\" ਨੂੰ ਅਣ-ਮਾਊਂਟ ਕਰਨ ਤੋਂ ਰੋਕ ਰਹੀ ਹੈ"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:921
+#: ../exo-mount/exo-mount-hal.c:952
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr ""
@@ -1297,8 +1301,8 @@ msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
 msgstr ""
-"ਕੁਝ ਡਾਟਾ ਹੈ, ਜਿਸ ਨੂੰ ਜੰਤਰ \"%s\" ਉੱਤੇ ਹਟਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਲਿਖਿਆ ਜਾਣਾ ਹੈ। ਇਸਕਰਕੇ ਮੀਡਿਆ ਨੂੰ "
-"ਹਟਾ ਨਾ ਜਾਂ ਡਰਾਇਵ ਦਾ ਕੁਨੈਕਸ਼ਨ ਖਤਮ ਨਾ ਕਰੋ।"
+"ਕੁਝ ਡਾਟਾ ਹੈ, ਜਿਸ ਨੂੰ ਜੰਤਰ \"%s\" ਉੱਤੇ ਹਟਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਲਿਖਿਆ ਜਾਣਾ ਹੈ। ਇਸਕਰਕੇ ਮੀਡਿਆ ਨੂੰ ਹਟਾ "
+"ਨਾ ਜਾਂ ਡਰਾਇਵ ਦਾ ਕੁਨੈਕਸ਼ਨ ਖਤਮ ਨਾ ਕਰੋ।"
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1313,8 +1317,10 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Print this help message and exit"
 
 #: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Print version information and exit"
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr ""
+"  -v, --version                       Print version information and exit"
 
 #: ../exo-open/main.c:65
 msgid ""
@@ -1374,3 +1380,5 @@ msgstr ""
 msgid "Failed to open URL \"%s\"."
 msgstr "URL \"%s\" ਖੋਲ੍ਹਣ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
+#~ msgid "Sylpheed Claws"
+#~ msgstr "Sylpheed Claws"

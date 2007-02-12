@@ -7,14 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 23:46+0100\n"
+"POT-Creation-Date: 2007-02-12 19:47+0100\n"
 "PO-Revision-Date: 2007-01-21 04:44+0200\n"
 "Last-Translator: Mişu Moldovan <dumol@gnome.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3;plural=(n==1?0:(n==0||((n%100)>0&&(n%100)<20))?1:2)\n"
+"Plural-Forms: nplurals=3;plural=(n==1?0:(n==0||((n%100)>0&&(n%100)<20))?"
+"1:2)\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
@@ -42,8 +43,8 @@ msgstr "dimensiuni"
 msgid "The size of the icon to render in pixels."
 msgstr "Dimensiunile în pixeli ale iconiţei de afişat."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo-mount/exo-mount-fstab.c:148
-#: ../exo-mount/exo-mount-fstab.c:177 ../exo-mount/exo-mount-fstab.c:203
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
+#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Nu s-a putut deschide fişierul „%s”: %s"
@@ -255,8 +256,9 @@ msgstr "Coloană markup"
 
 #: ../exo/exo-icon-view.c:755
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Model de coloană utilizat pentru extragerea textului când se "
-"utilizează markup Pango"
+msgstr ""
+"Model de coloană utilizat pentru extragerea textului când se utilizează "
+"markup Pango"
 
 #: ../exo/exo-icon-view.c:769
 msgid "Icon View Model"
@@ -424,17 +426,17 @@ msgstr "Şter_gere bară cu unelte"
 msgid "Customize Toolbar..."
 msgstr "Personalizare bară cu unelte..."
 
-#: ../exo/exo-url.c:293
+#: ../exo/exo-url.c:297
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Nu se poate deschide „%s”"
 
-#: ../exo/exo-url.c:315
+#: ../exo/exo-url.c:328
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "URL-ul „%s” nu este suportat"
 
-#: ../exo/exo-url.c:401
+#: ../exo/exo-url.c:414
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Nu s-a putut deschide „%s”."
@@ -1128,8 +1130,9 @@ msgid "Opera Mail"
 msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Sylpheed Claws"
-msgstr "Sylpheed Claws"
+#, fuzzy
+msgid "Claws Mail"
+msgstr "Mozilla Mail"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1151,42 +1154,44 @@ msgstr "Navigatorul text W3M"
 msgid "X Terminal"
 msgstr "Terminalul Xterm"
 
-#: ../exo-mount/exo-mount-fstab.c:115
+#: ../exo-mount/exo-mount-fstab.c:92
 msgid "Unknown error"
 msgstr "Eroare necunoscută"
 
-#. generate an appropriate error message
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:242 ../exo-mount/exo-mount-hal.c:343
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr "Dispozitivul „%s” nu a fost găsit în tabela de dispozitive a sistemului de fişiere"
+msgstr ""
+"Dispozitivul „%s” nu a fost găsit în tabela de dispozitive a sistemului de "
+"fişiere"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:194 ../exo-mount/exo-mount-hal.c:250
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Dispozitivul dat „%s” nu este un volum sau o unitate"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:564
+#: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Nu aveţi drepturile necesare pentru a ejecta volumul „%s”"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:569
+#: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "O aplicaţie împiedică ejectarea volumului „%s”"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:800
+#: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Nu aveţi drepturile necesare pentru a monta volumul „%s”"
 
-#: ../exo-mount/exo-mount-hal.c:815
+#: ../exo-mount/exo-mount-hal.c:846
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
@@ -1194,24 +1199,26 @@ msgstr ""
 "Discurile goale nu pot fi montate. Utilizaţi o aplicaţie de scris CD-uri "
 "precum Xfburn pentru a înregistra piste audio sau date pe disc"
 
-#: ../exo-mount/exo-mount-hal.c:826
+#: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "CD-urile audio nu pot fi montate, utilizaţi Xfmedia pentru a reda pistele audio"
+msgstr ""
+"CD-urile audio nu pot fi montate, utilizaţi Xfmedia pentru a reda pistele "
+"audio"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:911
+#: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Nu aveţi drepturile necesare pentru a demonta volumul „%s”"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:916
+#: ../exo-mount/exo-mount-hal.c:947
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "O aplicaţie previne demontarea volumului „%s”"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:921
+#: ../exo-mount/exo-mount-hal.c:952
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Volumul „%s” a fost probabil montat manual în linia de comandă"
@@ -1248,15 +1255,17 @@ msgstr "Trebuie specificat UDI-ul dispozitivului HAL sau fişierul dispozitiv"
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "Nu trebuie specificat simultan UDI-ul dispozitivului HAL şi un fişier dispozitiv"
+msgstr ""
+"Nu trebuie specificat simultan UDI-ul dispozitivului HAL şi un fişier "
+"dispozitiv"
 
 #: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
-"Nu s-a putut monta după UDI-ul dispozitivului HAL pentru că suportul HAL "
-"nu a fost inclus la compilare"
+"Nu s-a putut monta după UDI-ul dispozitivului HAL pentru că suportul HAL nu "
+"a fost inclus la compilare"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1412,3 +1421,5 @@ msgstr "Nu s-a putut lansa aplicaţia preferată pentru categoria „%s”."
 msgid "Failed to open URL \"%s\"."
 msgstr "Nu s-a putut deschide URL-ul „%s”."
 
+#~ msgid "Sylpheed Claws"
+#~ msgstr "Sylpheed Claws"

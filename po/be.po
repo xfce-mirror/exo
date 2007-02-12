@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 23:46+0100\n"
+"POT-Creation-Date: 2007-02-12 19:47+0100\n"
 "PO-Revision-Date: 2007-01-12 01:53+0300\n"
 "Last-Translator: Alexander Nyakhaychyk <nyakhaychyk@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -41,10 +41,8 @@ msgstr "памер"
 msgid "The size of the icon to render in pixels."
 msgstr "Памер значкі для адлюстраваньня ў піксэлях."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770
-#: ../exo-mount/exo-mount-fstab.c:148
-#: ../exo-mount/exo-mount-fstab.c:177
-#: ../exo-mount/exo-mount-fstab.c:203
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
+#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Немагчыма адчыніць файл \"%s\": %s"
@@ -56,11 +54,12 @@ msgstr "Немагчыма перачытаць файл  \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Немагчыма загрузіць відарыс \"%s\": прычына невядома, магчыма файл пашкоджаны"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Немагчыма загрузіць відарыс \"%s\": прычына невядома, магчыма файл пашкоджаны"
 
-#: ../exo/exo-icon-bar.c:249
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
 msgstr "Арыентацыя"
 
@@ -68,23 +67,19 @@ msgstr "Арыентацыя"
 msgid "The orientation of the iconbar"
 msgstr "Арыентацыя панэлі значак"
 
-#: ../exo/exo-icon-bar.c:266
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:800
 msgid "Pixbuf column"
 msgstr "Слупок са значкамі"
 
-#: ../exo/exo-icon-bar.c:267
-#: ../exo/exo-icon-view.c:801
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:801
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Мадэль слупка, якая выкарыстоўваецца для атрыманьня значак з"
 
-#: ../exo/exo-icon-bar.c:282
-#: ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:927
 msgid "Text column"
 msgstr "Тэкставы слупок"
 
-#: ../exo/exo-icon-bar.c:283
-#: ../exo/exo-icon-view.c:928
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:928
 msgid "Model column used to retrieve the text from"
 msgstr "Мадэль слупка для атрыманьня тэксту з"
 
@@ -104,33 +99,27 @@ msgstr "Актыўны"
 msgid "Active item index"
 msgstr "Індэкс актыўнага элемэнта"
 
-#: ../exo/exo-icon-bar.c:319
-#: ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "Колер заліўкі актыўнага элемэнта"
 
-#: ../exo/exo-icon-bar.c:326
-#: ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "Колер мяжы актыўнага элемэнта"
 
-#: ../exo/exo-icon-bar.c:333
-#: ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "Колер тэксту актыўнага элемэнта"
 
-#: ../exo/exo-icon-bar.c:340
-#: ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "Колер запаўненьня элемэнта курсора"
 
-#: ../exo/exo-icon-bar.c:347
-#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "Колер мяжы элемэнта курсора"
 
-#: ../exo/exo-icon-bar.c:354
-#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "Колер тэксту элемэнта курсора"
 
@@ -200,8 +189,7 @@ msgid "All Icons"
 msgstr "Усе значкі"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115
-#: ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Файлы зь відарысамі"
 
@@ -264,7 +252,8 @@ msgstr "Слупок разьметкі"
 
 #: ../exo/exo-icon-view.c:755
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Мадэль слупка для атрыманьня тэксту, калі выкарыстоўваецца Pango разьметка"
+msgstr ""
+"Мадэль слупка для атрыманьня тэксту, калі выкарыстоўваецца Pango разьметка"
 
 #: ../exo/exo-icon-view.c:769
 msgid "Icon View Model"
@@ -275,7 +264,8 @@ msgid "The model for the icon view"
 msgstr "Мадэль для значак"
 
 #: ../exo/exo-icon-view.c:784
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr "Пазыцыя тэксту і значкі адносна адзін аднаго"
 
 #: ../exo/exo-icon-view.c:816
@@ -310,25 +300,25 @@ msgstr "Рэжым вылучэньня"
 msgid "The selection mode"
 msgstr "Рэжым вылучэньня"
 
-#: ../exo/exo-icon-view.c:878
-#: ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Самотная пстрычка"
 
-#: ../exo/exo-icon-view.c:879
-#: ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Ці мусяць элемэнты віджэта быць актывізаванымі самотнымі пстрычкамі"
 
-#: ../exo/exo-icon-view.c:895
-#: ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Затрымка самотнай пстрычкі"
 
-#: ../exo/exo-icon-view.c:896
-#: ../exo/exo-tree-view.c:184
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "Прамежак часу, пасьля якога элемэнт пад курсорам мышы будзе вылучаны аўтаматычна як пры самотнай пстрычке"
+#: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:184
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Прамежак часу, пасьля якога элемэнт пад курсорам мышы будзе вылучаны "
+"аўтаматычна як пры самотнай пстрычке"
 
 #: ../exo/exo-icon-view.c:911
 msgid "Spacing"
@@ -358,8 +348,7 @@ msgstr "Празрыстасьць вакна вылучэньня"
 msgid "Preview"
 msgstr "Перадпрагляд"
 
-#: ../exo/exo-thumbnail-preview.c:139
-#: ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "Файл ня вылучаны"
 
@@ -388,8 +377,12 @@ msgid "_Add a new toolbar"
 msgstr "Д_адаць новую панэль"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "Перацягніце элемэнт на панэль каб дадаць яго. Каб выдаліць яго з панэлі, перацягніце яго адтуль сюды."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Перацягніце элемэнт на панэль каб дадаць яго. Каб выдаліць яго з панэлі, "
+"перацягніце яго адтуль сюды."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -427,17 +420,17 @@ msgstr "В_ыдаліць панэль"
 msgid "Customize Toolbar..."
 msgstr "Наладка панэлі сродкаў..."
 
-#: ../exo/exo-url.c:293
+#: ../exo/exo-url.c:297
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Немагчыма адчыніць \"%s\""
 
-#: ../exo/exo-url.c:315
+#: ../exo/exo-url.c:328
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "URL \"%s\" не падтрымліваецца"
 
-#: ../exo/exo-url.c:401
+#: ../exo/exo-url.c:414
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Немагчыма адчыніць \"%s\"."
@@ -516,10 +509,8 @@ msgstr "  --name=ідэнтыфікатар Сі макрас/зьменная\n
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Аналіз пар (назва, файл)\n"
 
-#: ../exo-csource/main.c:248
-#: ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122
-#: ../exo-mount-notify/main.c:167
+#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -535,10 +526,8 @@ msgstr ""
 "Стваральнік: Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:252
-#: ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126
-#: ../exo-mount-notify/main.c:171
+#: ../exo-csource/main.c:252 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -554,10 +543,8 @@ msgstr ""
 "ў зыходным кодзе пакета %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:256
-#: ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130
-#: ../exo-mount-notify/main.c:175
+#: ../exo-csource/main.c:256 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -647,8 +634,14 @@ msgid "Use _startup notification"
 msgstr "Ін_фармаваньне пра запуск"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "Вылучыце гэтую опцыю, каб уключыць інфармаваньне пра запуск дастасаваньня ў кіраўніку файлаў ці праз мэню. Ня кожнае дастасаваньне падтрымлівае інфармаваньне пра запуск."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Вылучыце гэтую опцыю, каб уключыць інфармаваньне пра запуск дастасаваньня ў "
+"кіраўніку файлаў ці праз мэню. Ня кожнае дастасаваньне падтрымлівае "
+"інфармаваньне пра запуск."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -711,8 +704,7 @@ msgstr "Задае URL новага desktop-файла"
 msgid "Preset icon when creating a desktop file"
 msgstr "Задае значку новага desktop-файла"
 
-#: ../exo-desktop-item-edit/main.c:79
-#: ../exo-mount/main.c:74
+#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:74
 #: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Друкуе зьвесткі пра вэрсію"
@@ -722,8 +714,7 @@ msgstr "Друкуе зьвесткі пра вэрсію"
 msgid "[FILE|FOLDER]"
 msgstr "[ФАЙЛ|ТЭЧКА]"
 
-#: ../exo-desktop-item-edit/main.c:138
-#: ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
 msgid "Failed to open display"
 msgstr "Немагчыма адкрыць дысплэй"
@@ -1033,7 +1024,8 @@ msgstr "Пераважныя дастасаваньні"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Пераважныя дастасаваньні (Гартач Сеціва, паштовы кліент і эмулятар тэрмінала)"
+msgstr ""
+"Пераважныя дастасаваньні (Гартач Сеціва, паштовы кліент і эмулятар тэрмінала)"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
@@ -1132,8 +1124,9 @@ msgid "Opera Mail"
 msgstr "Паштовы кліент Opera"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Sylpheed Claws"
-msgstr "Sylpheed Claws"
+#, fuzzy
+msgid "Claws Mail"
+msgstr "Паштовы кліент Mozilla"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1155,65 +1148,69 @@ msgstr "Тэкставы гартач W3M"
 msgid "X Terminal"
 msgstr "X-тэрмінал"
 
-#: ../exo-mount/exo-mount-fstab.c:115
+#: ../exo-mount/exo-mount-fstab.c:92
 msgid "Unknown error"
 msgstr "Невядомая памылка"
 
-#. generate an appropriate error message
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:242
-#: ../exo-mount/exo-mount-hal.c:343
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Прылада \"%s\" ня знойдзена ў табліцы прыладаў сыстэмы"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:194
-#: ../exo-mount/exo-mount-hal.c:250
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Зададзеная прылада \"%s\" не зьяўляецца носьбітам інфармацыі"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:564
+#: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Вы ня маеце правоў, каб вызваліць том \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:569
+#: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Праграма перашкаджае вызваленьню тома \"%s\""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:800
+#: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Вы ня маеце правоў, каб прымантаваць том \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:815
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
-msgstr "Немагчыма прымантаваць чысты дыск. Для запісу дыскаў карыстайцеся праграмамі накшталт Xfburn."
+#: ../exo-mount/exo-mount-hal.c:846
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
+msgstr ""
+"Немагчыма прымантаваць чысты дыск. Для запісу дыскаў карыстайцеся праграмамі "
+"накшталт Xfburn."
 
-#: ../exo-mount/exo-mount-hal.c:826
+#: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "Немагчыма прымантаваць аўдыё дыскі; выкарыстоўвайце Xfmdia для прайграваньня аўдыё запісаў"
+msgstr ""
+"Немагчыма прымантаваць аўдыё дыскі; выкарыстоўвайце Xfmdia для прайграваньня "
+"аўдыё запісаў"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:911
+#: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Вы ня маеце правоў, каб адмантаваць том \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:916
+#: ../exo-mount/exo-mount-hal.c:947
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Дастасаваньне перашкаджае адмантаваньню тома \"%s\""
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:921
+#: ../exo-mount/exo-mount-hal.c:952
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Том \"%s\", верагодна, быў прымантаваны самастойна праз загадны радок"
@@ -1253,8 +1250,12 @@ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "Нельга адначасова задаваць файл прылады і UDI прылады"
 
 #: ../exo-mount/main.c:154
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
-msgstr "Немагчыма прымантаваць праз UDI прылады для HAL, бо падтрымка HAL адсутнічае ў гэтай зборцы"
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+"Немагчыма прымантаваць праз UDI прылады для HAL, бо падтрымка HAL адсутнічае "
+"ў гэтай зборцы"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1308,8 +1309,12 @@ msgstr "Адмантоўваньне прылады"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
-msgstr "Прылада \"%s\" будзе адмантавана. Калі ласка, не адключайце прыладу альбо не вызваляйце носьбіт."
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+"Прылада \"%s\" будзе адмантавана. Калі ласка, не адключайце прыладу альбо не "
+"вызваляйце носьбіт."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
@@ -1318,8 +1323,12 @@ msgstr "Запіс даных на прыладу"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
-msgstr "Ёсьць даныя, якія трэба запісаць на прыладу  \"%s\", перш чым яе можна будзе вызваліць. Калі ласка, не адключайце прыладу альбо не вызваляйце носьбіт."
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
+"Ёсьць даныя, якія трэба запісаць на прыладу  \"%s\", перш чым яе можна будзе "
+"вызваліць. Калі ласка, не адключайце прыладу альбо не вызваляйце носьбіт."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1334,22 +1343,27 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Друкуе гэтыя зьвесткі"
 
 #: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
+msgid ""
+"  -v, --version                       Print version information and exit"
 msgstr "  -v, --version                       Друкуе зьвесткі пра вэрсію"
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch ТЫП [ПАРАМЭТРЫ...]         Запускае пераважнае дастасаваньне\n"
-"                                      адмысловага ТЫПУ з пазначанымі ПАРАМЭТРАМІ,\n"
-"                                      дзе ТЫП мае адно з некалькіх значэньняў."
+"                                      адмысловага ТЫПУ з пазначанымі "
+"ПАРАМЭТРАМІ,\n"
+"                                      дзе ТЫП мае адно з некалькіх "
+"значэньняў."
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
 "  --working-directory ДЫРЭКТОРЫЯ       Прадвызначаная працоўная дырэкторыя\n"
@@ -1397,3 +1411,5 @@ msgstr "Немагчыма запусьціць пераважнае даста�
 msgid "Failed to open URL \"%s\"."
 msgstr "Немагчыма адкрыць URL \"%s\"."
 
+#~ msgid "Sylpheed Claws"
+#~ msgstr "Sylpheed Claws"
