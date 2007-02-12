@@ -108,14 +108,14 @@ AC_CHECK_HEADERS([assert.h errno.h fcntl.h fnmatch.h fstab.h libintl.h \
                   locale.h math.h md5.h md5global.h mmintrin.h mntent.h \
                   paths.h regex.h signal.h stdarg.h string.h sys/mman.h \
                   sys/mnttab.h sys/mount.h sys/param.h sys/resource.h \
-                  sys/stat.h sys/time.h sys/types.h sys/ucred.h \
+                  sys/statvfs.h sys/stat.h sys/time.h sys/types.h sys/ucred.h \
                   sys/wait.h time.h])
 
 dnl ************************************
 dnl *** Check for standard functions ***
 dnl ************************************
 AC_FUNC_MMAP()
-AC_CHECK_FUNCS([getfsstat getmntent regexec setfsent setmntent])
+AC_CHECK_FUNCS([getfsstat getmntent getvfsstat regexec setfsent setmntent])
 
 dnl ******************************************
 dnl *** Check for Message Digest functions ***
