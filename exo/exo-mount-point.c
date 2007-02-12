@@ -53,13 +53,13 @@
 #ifdef HAVE_MEMORY_H
 #include <memory.h>
 #endif
+#include <stdio.h>  /* Solaris 2.8 needs this before mntent.h */
 #ifdef HAVE_MNTENT_H
 #include <mntent.h>
 #endif
 #ifdef HAVE_PATHS_H
 #include <paths.h>
 #endif
-#include <stdio.h>
 #ifdef HAVE_STDLIB_H
 #include <stdlib.h>
 #endif
@@ -230,7 +230,7 @@ exo_mount_point_list_match_active (ExoMountPointMatchMask mask,
   FILE         *fp;
 
   /* try to open the /etc/mnttab file */
-  fp = setmntent ("/etc/mnttab", "r");
+  fp = fopen ("/etc/mnttab", "r");
   if (G_UNLIKELY (fp == NULL))
     {
       g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno),
