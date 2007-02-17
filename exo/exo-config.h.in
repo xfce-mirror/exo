@@ -29,7 +29,7 @@
 
 #include <glib-object.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_MAJOR_VERSION @LIBEXO_VERSION_MAJOR@
 #define EXO_MINOR_VERSION @LIBEXO_VERSION_MINOR@
@@ -69,10 +69,8 @@ const gchar *exo_check_version (guint required_major,
 #endif /* __GNUC__ */
 #endif /* !defined(G_GNUC_WARN_UNUSED_RESULT) */
 
-/* with newer GObject versions it's possible to avoid the unnecessary
- * copying of the name, nick and blurb settings for GParamSpec's.
- */
-#if defined(G_PARAM_STATIC_NAME) && defined(G_PARAM_STATIC_NICK) && defined(G_PARAM_STATIC_BLURB)
+/* with GObject >= 2.7.0, copying name, nick and blurb can be avoided */
+#if GLIB_CHECK_VERSION(2,7,0)
 #define EXO_PARAM_READABLE  (G_PARAM_READABLE \
                            | G_PARAM_STATIC_NAME \
                            | G_PARAM_STATIC_NICK \
@@ -91,7 +89,7 @@ const gchar *exo_check_version (guint required_major,
 #define EXO_PARAM_READWRITE (G_PARAM_READWRITE)
 #endif
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_CONFIG_H__ */
 
