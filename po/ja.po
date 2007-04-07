@@ -1,16 +1,16 @@
 # $Id$
 #
 # Japanese translations for exo package.
-# Copyright (C) 2004-2006 os-cillation e.K.
+# Copyright (C) 2004-2007 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
-# Daichi Kawahata <daichi@xfce.org>, 2005-2006.
+# Daichi Kawahata <daichi@xfce.org>, 2005-2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-12 19:47+0100\n"
-"PO-Revision-Date: 2006-06-10 23:30+0900\n"
+"PO-Revision-Date: 2007-04-07 18:48+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -28,38 +28,39 @@ msgid "Render differently based on the selection state."
 msgstr ""
 
 #: ../exo/exo-cell-renderer-icon.c:167
-#, fuzzy
 msgid "Icon"
-msgstr "アイコン(_I):"
+msgstr "アイコン"
 
 #: ../exo/exo-cell-renderer-icon.c:168
 msgid "The icon to render."
-msgstr ""
+msgstr "表示するアイコンです。"
 
 #: ../exo/exo-cell-renderer-icon.c:189
 msgid "size"
-msgstr ""
+msgstr "サイズ"
 
 #: ../exo/exo-cell-renderer-icon.c:190
 msgid "The size of the icon to render in pixels."
-msgstr ""
+msgstr "表示するアイコンのサイズです (ピクセル単位)。"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
-#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
-#, fuzzy, c-format
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
+#, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "「%s」を開くのに失敗しました。"
+msgstr "ファイル「%s」を開けませんでした: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:832
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "「%s」を作成するのに失敗しました。"
+msgstr "ファイル「%s」を読み込めませんでした: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
+"画像「%s」のロードに失敗しました: 理由は不明ですが、恐らく画像ファイルが破損"
+"しています"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
@@ -143,41 +144,38 @@ msgstr "カーソル・アイテムの文字色"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:85
-#, fuzzy
 msgid "Action Icons"
-msgstr "アイコンを選択してください"
+msgstr "アクション・アイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:87
 msgid "Animations"
-msgstr ""
+msgstr "アニメーション"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:89
-#, fuzzy
 msgid "Application Icons"
-msgstr "アプリケーション選択ボタン"
+msgstr "アプリケーション・アイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:91
 msgid "Menu Icons"
-msgstr ""
+msgstr "メニュー・アイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
 #: ../exo/exo-icon-chooser-dialog.c:93
 msgid "Device Icons"
-msgstr ""
+msgstr "デバイス・アイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:95
 msgid "Emblems"
-msgstr ""
+msgstr "エンブレム"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:97
-#, fuzzy
 msgid "Emoticons"
-msgstr "アイコンはありません"
+msgstr "エモティコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:99
@@ -187,41 +185,37 @@ msgstr ""
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:101
 msgid "File Type Icons"
-msgstr ""
+msgstr "ファイルタイプ・アイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
 #: ../exo/exo-icon-chooser-dialog.c:103
 msgid "Location Icons"
-msgstr ""
+msgstr "位置アイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:105
-#, fuzzy
 msgid "Status Icons"
-msgstr "アイコンを選択してください"
+msgstr "ステータス・アイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Uncategorized Icons"
-msgstr ""
+msgstr "未分類のアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:111
-#, fuzzy
 msgid "All Icons"
-msgstr "全アイコンに文字を添える(_A)"
+msgstr "全てのアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
 #: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "画像ファイル"
 
-# NOTE: GObject property
 #. setup the header label
 #: ../exo/exo-icon-chooser-dialog.c:205
-#, fuzzy
 msgid "Select _icon from:"
-msgstr "選択モード"
+msgstr "アイコンを選択(_I):"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:651
@@ -408,32 +402,31 @@ msgstr "選択ボックスの透明度です。"
 
 #: ../exo/exo-thumbnail-preview.c:123
 msgid "Preview"
-msgstr ""
+msgstr "プレビュー"
 
 #: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
-#, fuzzy
 msgid "No file selected"
-msgstr "アプリケーションは選択されていません"
+msgstr "ファイルは選択されていません"
 
 #: ../exo/exo-thumbnail-preview.c:299
 msgid "Block Device"
-msgstr ""
+msgstr "ブロック型デバイス"
 
 #: ../exo/exo-thumbnail-preview.c:304
 msgid "Character Device"
-msgstr ""
+msgstr "キャラクタ型デバイス"
 
 #: ../exo/exo-thumbnail-preview.c:309
 msgid "Folder"
-msgstr ""
+msgstr "フォルダ"
 
 #: ../exo/exo-thumbnail-preview.c:314
 msgid "FIFO"
-msgstr ""
+msgstr "名前付きパイプ"
 
 #: ../exo/exo-thumbnail-preview.c:319
 msgid "Socket"
-msgstr ""
+msgstr "ソケット"
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
@@ -585,7 +578,7 @@ msgstr "  --build-list      解析する (名前, ファイルの) ペアです\
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -593,7 +586,7 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) 2005-2006\n"
+"Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
 "\n"
 "Benedikt Meurer <benny@xfce.org> が製作しました。\n"
@@ -659,9 +652,9 @@ msgid "Shell Scripts"
 msgstr "シェルスクリプト"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
-#, fuzzy, c-format
+#, c-format
 msgid "Create Launcher <b>%s</b>"
-msgstr "ランチャーを作成"
+msgstr "ランチャー <b>%s</b> を作成"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:318
@@ -730,7 +723,6 @@ msgstr ""
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
-#, fuzzy
 msgid "Select an icon"
 msgstr "アイコンを選択してください"
 
@@ -791,9 +783,8 @@ msgstr "[ファイル|フォルダ]"
 
 #: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
-#, fuzzy
 msgid "Failed to open display"
-msgstr "ディスプレイを開くのに失敗しました: %s"
+msgstr "ディスプレイを開くのに失敗しました"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
@@ -801,9 +792,9 @@ msgstr "ファイル/フォルダが指定されていません"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:226
-#, fuzzy, c-format
+#, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "タイプ「%s」はデスクトップファイルでサポートされません"
+msgstr "タイプ「%s」はデスクトップファイルとしてサポートされません"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:246
@@ -818,100 +809,100 @@ msgstr "ファイル名を選択してください"
 #: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "「%s」を作成するのに失敗しました。"
+msgstr "「%s」を作成できませんでした。"
 
 #: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "「%s」を保存するのに失敗しました。"
+msgstr "「%s」を保存できませんでした。"
 
 #: ../exo-hal/exo-hal.c:444
 #, c-format
 msgid "External %s Drive"
-msgstr ""
+msgstr "外付け %s ドライブ"
 
 #: ../exo-hal/exo-hal.c:446
 #, c-format
 msgid "%s Drive"
-msgstr ""
+msgstr "%s ドライブ"
 
 #: ../exo-hal/exo-hal.c:455
 msgid "External Floppy Drive"
-msgstr ""
+msgstr "外付けフロッピードライブ"
 
 #: ../exo-hal/exo-hal.c:457
 msgid "Floppy Drive"
-msgstr ""
+msgstr "フロッピードライブ"
 
 #: ../exo-hal/exo-hal.c:461
 msgid "Compact Flash Drive"
-msgstr ""
+msgstr "コンパクトフラッシュドライブ"
 
 #: ../exo-hal/exo-hal.c:465
 msgid "Memory Stick Drive"
-msgstr ""
+msgstr "メモリースティックドライブ"
 
 #: ../exo-hal/exo-hal.c:469
 msgid "Smart Media Drive"
-msgstr ""
+msgstr "スマートメディアドライブ"
 
 #: ../exo-hal/exo-hal.c:473
 msgid "SD/MMC Drive"
-msgstr ""
+msgstr "SD/MMC ドライブ"
 
 #: ../exo-hal/exo-hal.c:477
 msgid "Zip Drive"
-msgstr ""
+msgstr "Zip ドライブ"
 
 #: ../exo-hal/exo-hal.c:481
 msgid "Jaz Drive"
-msgstr ""
+msgstr "Jaz ドライブ"
 
 #: ../exo-hal/exo-hal.c:485
 msgid "Pen Drive"
-msgstr ""
+msgstr "Pen ドライブ"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:494
 #, c-format
 msgid "%s Music Player"
-msgstr ""
+msgstr "%s 音楽プレイヤー"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
-msgstr ""
+msgstr "%s デジタルカメラ"
 
 #. last fallback to "Drive"
 #: ../exo-hal/exo-hal.c:532
 msgid "Drive"
-msgstr ""
+msgstr "ドライブ"
 
 #: ../exo-hal/exo-hal.c:759
 #, c-format
 msgid "Blank %s Disc"
-msgstr ""
+msgstr "空の %s ディスク"
 
 #: ../exo-hal/exo-hal.c:761
 #, c-format
 msgid "%s Disc"
-msgstr ""
+msgstr "%s ディスク"
 
 #. special case for pure audio disc
 #: ../exo-hal/exo-hal.c:766
 msgid "Audio CD"
-msgstr ""
+msgstr "オーディオCD"
 
 #: ../exo-hal/exo-hal.c:802
 #, c-format
 msgid "%s Removable Volume"
-msgstr ""
+msgstr "%s 取り外し可能なボリューム"
 
 #: ../exo-hal/exo-hal.c:804
 #, c-format
 msgid "%s Volume"
-msgstr ""
+msgstr "%s ボリューム"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -930,9 +921,8 @@ msgid "Internet"
 msgstr "インターネット"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:138
-#, fuzzy
 msgid "Web Browser"
-msgstr "Galeon ウェブブラウザー"
+msgstr "ウェブブラウザー"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid ""
@@ -944,9 +934,8 @@ msgstr ""
 "使われます。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
-#, fuzzy
 msgid "Mail Reader"
-msgstr "標準のメーラー"
+msgstr "メーラー"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid ""
@@ -965,7 +954,6 @@ msgid "Utilities"
 msgstr "ユーティリティ"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
-#, fuzzy
 msgid "Terminal Emulator"
 msgstr "ターミナル"
 
@@ -1120,13 +1108,13 @@ msgstr "Xfce ターミナル"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
-msgstr ""
+msgstr "aterm"
 
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
 
-# FIXME:
+# FIXME: wtf
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
 msgstr "Debian Sensible ブラウザー"
@@ -1137,13 +1125,13 @@ msgstr "Debian X ターミナルエミュレーター"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
-msgstr ""
+msgstr "Encompass"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
 msgstr "Epiphany ウェブブラウザー"
 
-# FIXME: aka `eterm'
+# NOTE: aka `eterm'
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
 msgstr "Enlightened ターミナルエミュレーター"
@@ -1173,14 +1161,12 @@ msgid "Konqueror Web Browser"
 msgstr "Konqueror ウェブブラウザー"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
-#, fuzzy
 msgid "Links Text Browser"
-msgstr "Epiphany ウェブブラウザー"
+msgstr "Links テキストブラウザー"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-#, fuzzy
 msgid "Lynx Text Browser"
-msgstr "Galeon ウェブブラウザー"
+msgstr "Lynx テキストブラウザー"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
@@ -1196,11 +1182,11 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
-msgstr ""
+msgstr "Netscape Navigator"
 
 #: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
 msgid "NXterm"
-msgstr ""
+msgstr "NXterm"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
@@ -1211,9 +1197,8 @@ msgid "Opera Mail"
 msgstr "Opera メール"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-#, fuzzy
 msgid "Claws Mail"
-msgstr "Mozilla メール"
+msgstr "Claws メール"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1225,12 +1210,11 @@ msgstr "Mozilla Thunderbird"
 
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
-msgstr ""
+msgstr "RXVT Unicode"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-#, fuzzy
 msgid "W3M Text Browser"
-msgstr "Opera ブラウザー"
+msgstr "W3M テキストブラウザー"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -1238,66 +1222,69 @@ msgstr "X ターミナル"
 
 #: ../exo-mount/exo-mount-fstab.c:92
 msgid "Unknown error"
-msgstr ""
+msgstr "不明なエラー"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
 #: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr ""
+msgstr "ファイルシステムのデバイステーブルに「%s」がありません"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
-msgstr ""
+msgstr "指定されたデバイス「%s」はボリュームでもドライブでもありません"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr ""
+msgstr "ボリューム「%s」を取り出す権限がありません"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr ""
+msgstr "アプリケーションが使用中ですので「%s」を取り出せません"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr ""
+msgstr "ボリューム「%s」をマウントする権限がありません"
 
 #: ../exo-mount/exo-mount-hal.c:846
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
+"空のディスクはマウントできません。このディスクに音楽やデータを記録するには "
+"Xfburn のような CD レコーディングアプリケーションを使用してください。"
 
 #: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
+"音楽 CD はマウントできません。曲を再生するには Xfmedia を使用してください。"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr ""
+msgstr "ボリューム「%s」のマウントを解除する権限がありません"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:947
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr ""
+msgstr "アプリケーションが使用中ですので「%s」のマウントを解除できません"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:952
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr ""
+msgstr "ボリューム「%s」は恐らくコマンド行から手動でマウントされています"
 
 #: ../exo-mount/main.c:65
 msgid "Eject rather than mount"
@@ -1309,85 +1296,87 @@ msgstr ""
 
 #: ../exo-mount/main.c:68
 msgid "Mount by HAL device UDI"
-msgstr ""
+msgstr "HALデバイスUDIでマウント"
 
 #: ../exo-mount/main.c:70
 msgid "Mount by HAL device UDI (not supported)"
-msgstr ""
+msgstr "HALデバイスUDIでマウント (未対応)"
 
 #: ../exo-mount/main.c:72
 msgid "Mount by device file"
-msgstr ""
+msgstr "デバイスファイルでマウント"
 
 #: ../exo-mount/main.c:73
 msgid "Don't show any dialogs"
-msgstr ""
+msgstr "ダイアログを表示しない"
 
 #. the caller must specify either a HAL UDI or a device file
 #: ../exo-mount/main.c:138
 msgid "Must specify HAL device UDI or device file"
-msgstr ""
+msgstr "HALデバイスUDIかデバイスファイルを指定する必要があります"
 
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr ""
+msgstr "HALデバイスUDIとデバイスファイルを同時に指定することはできません"
 
 #: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
+"このビルドではHALサポートが無効になっているため、HALデバイスUDIでマウントでき"
+"ません。"
 
 #: ../exo-mount/main.c:161
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr ""
+msgstr "指定されたUDI「%s」は適切なHALデバイスUDIではありません"
 
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
-msgstr ""
+msgstr "取り出しとマウント解除を同時に行うことはできません"
 
 #: ../exo-mount/main.c:330
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to eject \"%s\""
-msgstr "「%s」を作成するのに失敗しました。"
+msgstr "「%s」を取り出すのに失敗しました。"
 
 #: ../exo-mount/main.c:332
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "「%s」を開くのに失敗しました。"
+msgstr "「%s」のマウント解除に失敗しました。"
 
 #: ../exo-mount/main.c:334
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to mount \"%s\""
-msgstr "「%s」を開くのに失敗しました。"
+msgstr "「%s」のマウントに失敗しました。"
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:111
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr ""
+msgstr "デバイス「%s」を安全に取り外す準備ができました。"
 
 #: ../exo-mount-notify/main.c:112
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "デバイスは安全に取り外せます。"
 
 #. read-only, just ejecting
 #: ../exo-mount-notify/main.c:224
 msgid "Ejecting device"
-msgstr ""
+msgstr "デバイスを取り出しています"
 
 #: ../exo-mount-notify/main.c:225
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr ""
+msgstr "デバイス「%s」を取り出しています。しばらく時間がかかるかもしれません。"
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
 msgid "Unmounting device"
-msgstr ""
+msgstr "デバイスのマウントを解除しています"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
@@ -1395,11 +1384,13 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
+"デバイス「%s」はシステムによってマウントを解除されています。メディアを取り出"
+"したりドライブを外したりしないでください。"
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
 msgid "Writing data to device"
-msgstr ""
+msgstr "デバイスにデータを書き込んでいます"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
@@ -1407,6 +1398,8 @@ msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
 msgstr ""
+"デバイス「%s」が取り出される前に書き込む必要のあるデータがあります。メディア"
+"を取り出したりドライブを外したりしないでください。"
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1417,10 +1410,9 @@ msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "または: exo-open --launch タイプ [パラメーター(複数可)...]"
 
 #: ../exo-open/main.c:62
-#, fuzzy
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
-"  -h, --help                          このメッセージを表示して終了します"
+"  -?, --help                          このメッセージを表示して終了します"
 
 #: ../exo-open/main.c:63
 msgid ""
@@ -1487,15 +1479,3 @@ msgstr "タイプが「%s」のファイルを開くアプリケーションの�
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "URL「%s」を開くのに失敗しました。"
-
-#~ msgid "Sylpheed Claws"
-#~ msgstr "Sylpheed Claws"
-
-#~ msgid "Failed to open display: %s"
-#~ msgstr "ディスプレイを開くのに失敗しました: %s"
-
-#~ msgid "Select an Icon"
-#~ msgstr "アイコンを選択してください"
-
-#~ msgid "Default Web Browser"
-#~ msgstr "標準のウェブブラウザー"
