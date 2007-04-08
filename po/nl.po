@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-12 19:47+0100\n"
 "PO-Revision-Date: 2006-11-03 15:05+0100\n"
-"Last-Translator: Stephan Arts <psyBSD@gmail.com>\n"
+"Last-Translator: Stephan Arts <stephan@xfce.org>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -242,7 +242,7 @@ msgstr ""
 
 #: ../exo/exo-icon-view.c:737
 msgid "Margin"
-msgstr ""
+msgstr "Marges"
 
 #: ../exo/exo-icon-view.c:738
 msgid "Space which is inserted at the edges of the icon view"
@@ -250,7 +250,7 @@ msgstr ""
 
 #: ../exo/exo-icon-view.c:754
 msgid "Markup column"
-msgstr ""
+msgstr "Opmaak kolom"
 
 #: ../exo/exo-icon-view.c:755
 msgid "Model column used to retrieve the text if using Pango markup"
@@ -352,12 +352,14 @@ msgid "No file selected"
 msgstr "Geen bestand geselecteerd"
 
 #: ../exo/exo-thumbnail-preview.c:299
+#, fuzzy
 msgid "Block Device"
-msgstr ""
+msgstr "Blok Apparaat"
 
 #: ../exo/exo-thumbnail-preview.c:304
+#, fuzzy
 msgid "Character Device"
-msgstr ""
+msgstr "Karakter Apparaat"
 
 #: ../exo/exo-thumbnail-preview.c:309
 msgid "Folder"
@@ -458,19 +460,19 @@ msgstr ""
 
 #: ../exo/exo-xsession-client.c:143
 msgid "Window group"
-msgstr ""
+msgstr "Venster groep"
 
 #: ../exo/exo-xsession-client.c:144
 msgid "Window group leader"
-msgstr ""
+msgstr "Venster groep leider"
 
 #: ../exo/exo-xsession-client.c:154
 msgid "Restart command"
-msgstr ""
+msgstr "Herstart commando"
 
 #: ../exo/exo-xsession-client.c:155
 msgid "Session restart command"
-msgstr ""
+msgstr "Sessie herstart commando"
 
 #: ../exo-csource/main.c:230
 #, c-format
@@ -503,8 +505,9 @@ msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier C macro/variabele naam\n"
 
 #: ../exo-csource/main.c:238
+#, fuzzy
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr ""
+msgstr "  --build-list     Parse (naam, bestand) paren\n"
 
 #: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
@@ -749,91 +752,103 @@ msgstr "Het opslaan van \"%s\" is mislukt."
 
 #: ../exo-hal/exo-hal.c:444
 #, c-format
+#, fuzzy
 msgid "External %s Drive"
-msgstr ""
+msgstr "Externe %s Drive"
 
 #: ../exo-hal/exo-hal.c:446
 #, c-format
+#, fuzzy
 msgid "%s Drive"
-msgstr ""
+msgstr "%s Drive"
 
 #: ../exo-hal/exo-hal.c:455
+#, fuzzy
 msgid "External Floppy Drive"
-msgstr ""
+msgstr "Externe Floppy Drive"
 
 #: ../exo-hal/exo-hal.c:457
+#, fuzzy
 msgid "Floppy Drive"
-msgstr ""
+msgstr "Floppy Drive"
 
 #: ../exo-hal/exo-hal.c:461
+#, fuzzy
 msgid "Compact Flash Drive"
-msgstr ""
+msgstr "Compact Flash Lezer"
 
 #: ../exo-hal/exo-hal.c:465
+#, fuzzy
 msgid "Memory Stick Drive"
-msgstr ""
+msgstr "Memory Stick Lezer"
 
 #: ../exo-hal/exo-hal.c:469
+#, fuzzy
 msgid "Smart Media Drive"
-msgstr ""
+msgstr "Smart Media Lexer"
 
 #: ../exo-hal/exo-hal.c:473
+#, fuzzy
 msgid "SD/MMC Drive"
-msgstr ""
+msgstr "SD/MMC Lezer"
 
 #: ../exo-hal/exo-hal.c:477
+#, fuzzy
 msgid "Zip Drive"
-msgstr ""
+msgstr "Zip Drive"
 
 #: ../exo-hal/exo-hal.c:481
+#, fuzzy
 msgid "Jaz Drive"
-msgstr ""
+msgstr "Jaz Drive"
 
 #: ../exo-hal/exo-hal.c:485
+#, fuzzy
 msgid "Pen Drive"
-msgstr ""
+msgstr "Pen Drive"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:494
 #, c-format
 msgid "%s Music Player"
-msgstr ""
+msgstr "%s Muziek Speler"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
-msgstr ""
+msgstr "%s Digitale Camera"
 
 #. last fallback to "Drive"
 #: ../exo-hal/exo-hal.c:532
+#, fuzzy
 msgid "Drive"
-msgstr ""
+msgstr "Drive"
 
 #: ../exo-hal/exo-hal.c:759
 #, c-format
 msgid "Blank %s Disc"
-msgstr ""
+msgstr "Lege %s Schijf"
 
 #: ../exo-hal/exo-hal.c:761
 #, c-format
 msgid "%s Disc"
-msgstr ""
+msgstr "%s Schijf"
 
 #. special case for pure audio disc
 #: ../exo-hal/exo-hal.c:766
 msgid "Audio CD"
-msgstr ""
+msgstr "Audio CD"
 
 #: ../exo-hal/exo-hal.c:802
 #, c-format
 msgid "%s Removable Volume"
-msgstr ""
+msgstr "%s Verwisselbaar Medium"
 
 #: ../exo-hal/exo-hal.c:804
 #, c-format
 msgid "%s Volume"
-msgstr ""
+msgstr "%s Medium"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -880,7 +895,7 @@ msgstr ""
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:198
 msgid "Utilities"
-msgstr ""
+msgstr "Voorzieningen"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:211
 msgid "Terminal Emulator"
@@ -1113,9 +1128,8 @@ msgid "Opera Mail"
 msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-#, fuzzy
 msgid "Claws Mail"
-msgstr "Mozilla Mail"
+msgstr "Claws Mail"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
