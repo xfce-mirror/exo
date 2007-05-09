@@ -40,6 +40,7 @@ rpm: dist
 EXTRA_DIST =								\
 	AUTHORS								\
 	COPYING								\
+	COPYING.LIB							\
 	ChangeLog							\
 	HACKING								\
 	INSTALL								\
