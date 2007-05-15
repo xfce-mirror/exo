@@ -1,0 +1,1426 @@
+# Norwegian Bokmal translations for PACKAGE package.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Terje Uriansrud <ter@operamail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: exo 0.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-02-12 19:47+0100\n"
+"PO-Revision-Date: 2007-05-12 17:42+0200\n"
+"Last-Translator: Terje Uriansrud <ter@operamail.com>\n"
+"Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:138
+#: ../exo/exo-cell-renderer-icon.c:145
+msgid "Follow state"
+msgstr "Følg tilstand"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:139
+#: ../exo/exo-cell-renderer-icon.c:146
+msgid "Render differently based on the selection state."
+msgstr "Tegn forskjellig basert på valgt tilstand."
+
+#: ../exo/exo-cell-renderer-icon.c:167
+msgid "Icon"
+msgstr "Ikon"
+
+#: ../exo/exo-cell-renderer-icon.c:168
+msgid "The icon to render."
+msgstr "Ikonet som skal tegnes"
+
+#: ../exo/exo-cell-renderer-icon.c:189
+msgid "size"
+msgstr "størrelse"
+
+#: ../exo/exo-cell-renderer-icon.c:190
+msgid "The size of the icon to render in pixels."
+msgstr "Størrelsen på ikonet som skal tegnes angitt i piksler."
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
+#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
+#, c-format
+msgid "Failed to open file \"%s\": %s"
+msgstr "Klarte ikke åpne filen \"%s\": %s"
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:832
+#, c-format
+msgid "Failed to read file \"%s\": %s"
+msgstr "Klarte ikke lese fra file \"%s\": %s"
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:873
+#, c-format
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Klarte ikke laste bilde \"%s\": Ukjent årsak, antakeligvis er filen korrupt."
+
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
+msgid "Orientation"
+msgstr "Orientering"
+
+#: ../exo/exo-icon-bar.c:250
+msgid "The orientation of the iconbar"
+msgstr "Orientering av ikonverktøylinje"
+
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:800
+msgid "Pixbuf column"
+msgstr "Pixbufkolonne"
+
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:801
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "Modellkolonne som pixbuf hentes fra"
+
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:927
+msgid "Text column"
+msgstr "Tekstkolonne"
+
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:928
+msgid "Model column used to retrieve the text from"
+msgstr "Modellkolonne some tekst hentes fra"
+
+#: ../exo/exo-icon-bar.c:295
+msgid "Icon Bar Model"
+msgstr "Ikon verktøylinje modell"
+
+#: ../exo/exo-icon-bar.c:296
+msgid "Model for the icon bar"
+msgstr "Modell for ikonverktøylinjen"
+
+#: ../exo/exo-icon-bar.c:312
+msgid "Active"
+msgstr "Aktiv"
+
+#: ../exo/exo-icon-bar.c:313
+msgid "Active item index"
+msgstr "Aktivt element indeks"
+
+#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
+msgid "Active item fill color"
+msgstr "Aktivt element fyllfarge"
+
+#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
+msgid "Active item border color"
+msgstr "Aktivt element kantfarge"
+
+#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
+msgid "Active item text color"
+msgstr "Aktivt element tekstfarge"
+
+#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
+msgid "Cursor item fill color"
+msgstr "Pekerelement fyllfarge"
+
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
+msgid "Cursor item border color"
+msgstr "Pekerelement kantfarge"
+
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
+msgid "Cursor item text color"
+msgstr "Pekerelement tekstfarge"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
+#: ../exo/exo-icon-chooser-dialog.c:85
+msgid "Action Icons"
+msgstr "Aksjonsikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
+#: ../exo/exo-icon-chooser-dialog.c:87
+msgid "Animations"
+msgstr "Animasjoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
+#: ../exo/exo-icon-chooser-dialog.c:89
+msgid "Application Icons"
+msgstr "Programikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
+#: ../exo/exo-icon-chooser-dialog.c:91
+msgid "Menu Icons"
+msgstr "Menyikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_DEVICES
+#: ../exo/exo-icon-chooser-dialog.c:93
+msgid "Device Icons"
+msgstr "Enhetsikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
+#: ../exo/exo-icon-chooser-dialog.c:95
+msgid "Emblems"
+msgstr "Emblemer"
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMOTES
+#: ../exo/exo-icon-chooser-dialog.c:97
+msgid "Emoticons"
+msgstr "Smileys"
+
+#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
+#: ../exo/exo-icon-chooser-dialog.c:99
+msgid "International Denominations"
+msgstr "Internasjonale benevnelser"
+
+#. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
+#: ../exo/exo-icon-chooser-dialog.c:101
+msgid "File Type Icons"
+msgstr "Filtypeikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_PLACES
+#: ../exo/exo-icon-chooser-dialog.c:103
+msgid "Location Icons"
+msgstr "Plasseringsikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STATUS
+#: ../exo/exo-icon-chooser-dialog.c:105
+msgid "Status Icons"
+msgstr "Statusikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_OTHER
+#: ../exo/exo-icon-chooser-dialog.c:107
+msgid "Uncategorized Icons"
+msgstr "Ikke kategoriserte ikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ALL
+#: ../exo/exo-icon-chooser-dialog.c:111
+msgid "All Icons"
+msgstr "Alle ikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_FILE
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+msgid "Image Files"
+msgstr "Bildefiler"
+
+#. setup the header label
+#: ../exo/exo-icon-chooser-dialog.c:205
+msgid "Select _icon from:"
+msgstr "Velg _ikon fra:"
+
+#: ../exo/exo-icon-view.c:651
+msgid "Column Spacing"
+msgstr "Kolonne mellomrom"
+
+#: ../exo/exo-icon-view.c:652
+msgid "Space which is inserted between grid column"
+msgstr "Mellomrom som plasseres mellom kolonnegitter"
+
+#: ../exo/exo-icon-view.c:668
+msgid "Number of columns"
+msgstr "Antall kolonner"
+
+#: ../exo/exo-icon-view.c:669
+msgid "Number of columns to display"
+msgstr "Vis antall kolonner"
+
+#: ../exo/exo-icon-view.c:683
+msgid "Enable Search"
+msgstr "Tillat søk"
+
+#: ../exo/exo-icon-view.c:684
+msgid "View allows user to search through columns interactively"
+msgstr "Tillat bruker å søke gjennom kolonner interaktivt"
+
+#: ../exo/exo-icon-view.c:701
+msgid "Width for each item"
+msgstr "Bredde for hvert element"
+
+#: ../exo/exo-icon-view.c:702
+msgid "The width used for each item"
+msgstr "Bredde brukt for hvert element"
+
+#: ../exo/exo-icon-view.c:720
+msgid "Layout mode"
+msgstr "Utseendemodus"
+
+#: ../exo/exo-icon-view.c:721
+msgid "The layout mode"
+msgstr "Utseendemodus"
+
+#: ../exo/exo-icon-view.c:737
+msgid "Margin"
+msgstr "Marg"
+
+#: ../exo/exo-icon-view.c:738
+msgid "Space which is inserted at the edges of the icon view"
+msgstr "Mellomrom som legges langs kantene for ikonvisning"
+
+#: ../exo/exo-icon-view.c:754
+msgid "Markup column"
+msgstr "Merke kolonne"
+
+#: ../exo/exo-icon-view.c:755
+msgid "Model column used to retrieve the text if using Pango markup"
+msgstr "Modellkolonne brukt for å hente tekst om Pango benyttes"
+
+#: ../exo/exo-icon-view.c:769
+msgid "Icon View Model"
+msgstr "Ikonvisningsmodell"
+
+#: ../exo/exo-icon-view.c:770
+msgid "The model for the icon view"
+msgstr "Modellen for ikonvisning"
+
+#: ../exo/exo-icon-view.c:784
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"Hvordan tekst og ikoner for hvert element er posisjonert i forhold til "
+"hverandre"
+
+#: ../exo/exo-icon-view.c:816
+msgid "Reorderable"
+msgstr "Kan forandre rekkefølge"
+
+#: ../exo/exo-icon-view.c:817
+msgid "View is reorderable"
+msgstr "Visning kan forandre rekkefølge "
+
+#: ../exo/exo-icon-view.c:832
+msgid "Row Spacing"
+msgstr "Radmellomrom"
+
+#: ../exo/exo-icon-view.c:833
+msgid "Space which is inserted between grid rows"
+msgstr "Mellomrom benyttet mellom rutenettrader"
+
+#: ../exo/exo-icon-view.c:847Utseendemodus
+msgid "Search Column"
+msgstr "Søkekolonne"
+
+#: ../exo/exo-icon-view.c:848
+msgid "Model column to search through when searching through item"
+msgstr "Modellkolonne å søke gjennom ved søk etter element"
+
+#: ../exo/exo-icon-view.c:862
+msgid "Selection mode"
+msgstr "Velgermodus"
+
+#: ../exo/exo-icon-view.c:863
+msgid "The selection mode"
+msgstr "Velgermodus"
+
+#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:166
+msgid "Single Click"
+msgstr "Enkeltklikk"
+
+#: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:167
+msgid "Whether the items in the view can be activated with single clicks"
+msgstr "Om elementene i visningen kan aktiveres med enkeltklikk"
+
+#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:183
+msgid "Single Click Timeout"
+msgstr "Enkeltklikk tidsgrense"
+
+#: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:184
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Tiden det tar før et element under musepekeren blir valgt automatisk "
+"i enkeltklikkmodus."
+
+#: ../exo/exo-icon-view.c:911
+msgid "Spacing"
+msgstr "Mellomrom"
+
+#: ../exo/exo-icon-view.c:912
+msgid "Space which is inserted between cells of an item"
+msgstr "Mellomrom som brukes mellom celler i et element"
+
+#: ../exo/exo-icon-view.c:935
+msgid "Selection Box Color"
+msgstr "Valgboks farge"
+
+#: ../exo/exo-icon-view.c:936
+msgid "Color of the selection box"
+msgstr "Fargen til valgboksen"
+
+#: ../exo/exo-icon-view.c:942
+msgid "Selection Box Alpha"
+msgstr "Valgboks alpha"
+
+#: ../exo/exo-icon-view.c:943
+msgid "Opacity of the selection box"
+msgstr "Valgboksens gjennomsiktighet"
+
+#: ../exo/exo-thumbnail-preview.c:123
+msgid "Preview"
+msgstr "Forhåndsvisning"
+
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+msgid "No file selected"
+msgstr "Ingen fil er valgt"
+
+#: ../exo/exo-thumbnail-preview.c:299
+msgid "Block Device"
+msgstr "Blokkfil"
+
+#: ../exo/exo-thumbnail-preview.c:304
+msgid "Character Device"
+msgstr "Karakterenhet"
+
+#: ../exo/exo-thumbnail-preview.c:309
+msgid "Folder"
+msgstr "Mappe"
+
+#: ../exo/exo-thumbnail-preview.c:314
+msgid "FIFO"
+msgstr "FIFO"
+
+#: ../exo/exo-thumbnail-preview.c:319
+msgid "Socket"
+msgstr "sokkel"
+
+#: ../exo/exo-toolbars-editor-dialog.c:126
+msgid "_Add a new toolbar"
+msgstr "_Legg til ny verktøylinje"
+
+#: ../exo/exo-toolbars-editor.c:230
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Dra et element til verktøylinjen for å legge til, eller fra verktøylinjen "
+"til elementlisten for å fjerne det"
+
+#: ../exo/exo-toolbars-editor.c:543
+msgid "Separator"
+msgstr "Skille"
+
+#: ../exo/exo-toolbars-view.c:759
+msgid "Toolbar _Style"
+msgstr "Verktøylinje _stil"
+
+#: ../exo/exo-toolbars-view.c:766
+msgid "_Desktop Default"
+msgstr "_Skrivebordstandard"
+
+#: ../exo/exo-toolbars-view.c:775
+msgid "_Icons only"
+msgstr "Bare _ikoner"
+
+#: ../exo/exo-toolbars-view.c:784
+msgid "_Text only"
+msgstr "Bare _tekst"
+
+#: ../exo/exo-toolbars-view.c:793
+msgid "Text for _All Icons"
+msgstr "Tekst for _alle ikoner"
+
+#: ../exo/exo-toolbars-view.c:802
+msgid "Text for I_mportant Icons"
+msgstr "Tekst for _viktige ikoner"
+
+#: ../exo/exo-toolbars-view.c:810
+msgid "_Remove Toolbar"
+msgstr "_Fjerne verktøylinje"
+
+#: ../exo/exo-toolbars-view.c:825
+msgid "Customize Toolbar..."
+msgstr "Tilpass verktøylinje ..."
+
+#: ../exo/exo-url.c:297
+#, c-format
+msgid "Unable to open \"%s\""
+msgstr "Klarte ikke åpne \"%s\""
+
+#: ../exo/exo-url.c:328
+#, c-format
+msgid "The URL \"%s\" is not supported"
+msgstr "Url \"%s\" er ikke støttet"
+
+#: ../exo/exo-url.c:414
+#, c-format
+msgid "Failed to open \"%s\"."
+msgstr "Klarte ikke åpne \"%s\"."
+
+#: ../exo/exo-wrap-table.c:160
+msgid "Column spacing"
+msgstr "Kolonnemellomrom"
+
+#: ../exo/exo-wrap-table.c:161
+msgid "The amount of space between two consecutive columns"
+msgstr "Mengden rom mellom to påfølgende kolonner"
+
+#: ../exo/exo-wrap-table.c:175
+msgid "Row spacing"
+msgstr "Radmellomorom"
+
+#: ../exo/exo-wrap-table.c:176
+msgid "The amount of space between two consecutive rows"
+msgstr "Mengden rom mellom to påfølgende rader"
+
+#: ../exo/exo-wrap-table.c:190
+msgid "Homogeneous"
+msgstr "Homogen"
+
+#: ../exo/exo-wrap-table.c:191
+msgid "Whether the children should be all the same size"
+msgstr "Om alle underoppføringer skal være samme størrelse"
+
+#: ../exo/exo-xsession-client.c:143
+msgid "Window group"
+msgstr "Vindusgruppe"
+
+#: ../exo/exo-xsession-client.c:144
+msgid "Window group leader"
+msgstr "Vindu gruppeleder"
+
+#: ../exo/exo-xsession-client.c:154
+msgid "Restart command"
+msgstr "Omstart kommando"
+
+#: ../exo/exo-xsession-client.c:155
+msgid "Session restart command"
+msgstr "Økt omstartkommando"
+
+#: ../exo-csource/main.c:230
+#, c-format
+msgid "Usage: %s [options] [file]\n"
+msgstr "Bruk: %s [opsjoner] [fil]\n"
+
+#: ../exo-csource/main.c:231
+#, c-format
+msgid "       %s [options] --build-list [[name file]...]\n"
+msgstr "       %s [opsjoner] --build-list [[navn fil]...]\n"
+
+#: ../exo-csource/main.c:233
+msgid "  -h, --help        Print this help message and exit\n"
+msgstr "  -h, --help        Skriv ut denne hjelpen og avslutt\n"
+
+#: ../exo-csource/main.c:234
+msgid "  -v, --version     Print version information and exit\n"
+msgstr "  -v, --version     Skriv ut versjonsinformasjon og avslutt\n"
+
+#: ../exo-csource/main.c:235
+msgid "  --extern          Generate extern symbols\n"
+msgstr "  --extern          Generer eksterne symboler\n"
+
+#: ../exo-csource/main.c:236
+msgid "  --static          Generate static symbols\n"
+msgstr "  --static          Generer statiske symboler\n"
+
+#: ../exo-csource/main.c:237
+msgid "  --name=identifier C macro/variable name\n"
+msgstr "  --name=identifikator C makroo/variabelnavn\n"
+
+#: ../exo-csource/main.c:238
+msgid "  --build-list      Parse (name, file) pairs\n"
+msgstr "  --build-list      Parse (navn, fil) par\n"
+
+#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
+#: ../exo-open/main.c:129
+#, c-format
+msgid ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. Alle rettigheter reservert.\n"
+"\n"
+"Skrevet av Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+
+#: ../exo-csource/main.c:252 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
+#: ../exo-open/main.c:133
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr ""
+"%s kommer med ABSOLUTT INGEN GARANTI,\n"
+"Du kan redistribuere kopier av %s under betingelsene i\n"
+"GNU Lesser General Public Lisens som kan finnes i %s kildekode pakken.\n"
+"\n"
+
+#: ../exo-csource/main.c:256 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
+#: ../exo-open/main.c:137
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "Rapporter programfeil til <%s>.\n"
+
+#. allocate the file chooser
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:290
+msgid "Select an Application"
+msgstr "Velg et program"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:299
+#: ../exo-helper/exo-helper-chooser.c:432
+msgid "All Files"
+msgstr "Alle filer"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-helper/exo-helper-chooser.c:437
+msgid "Executable Files"
+msgstr "Kjørbare filer"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:319
+#: ../exo-helper/exo-helper-chooser.c:452
+msgid "Perl Scripts"
+msgstr "Perlskript"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:325
+#: ../exo-helper/exo-helper-chooser.c:458
+msgid "Python Scripts"
+msgstr "Pythonscript"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:331
+#: ../exo-helper/exo-helper-chooser.c:464
+msgid "Ruby Scripts"
+msgstr "Rubyskript"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:337
+#: ../exo-helper/exo-helper-chooser.c:470
+msgid "Shell Scripts"
+msgstr "Skallskript"
+
+#: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
+#, c-format
+msgid "Create Launcher <b>%s</b>"
+msgstr "Lag ny snarvei <b>%s</b>"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, 
+#. make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:318
+msgid "_Name:"
+msgstr "_Navn:"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, 
+#. make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:336
+msgid "C_omment:"
+msgstr "K_ommentar:"
+
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to 
+#. avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:354
+msgid "Comm_and:"
+msgstr "Komm_ando."
+
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid 
+#. mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:371
+msgid "_URL:"
+msgstr "_Url:"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, 
+#. make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:389
+msgid "_Icon:"
+msgstr "_Ikon:"
+
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create 
+#. Link" dialog if no icon selected
+#. setup a label to tell that no icon was selected
+#: ../exo-desktop-item-edit/exo-die-editor.c:408
+#: ../exo-desktop-item-edit/exo-die-editor.c:1134
+msgid "No icon"
+msgstr "Uten ikon"
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:419
+msgid "Options:"
+msgstr "Valg:"
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make 
+#. sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations 
+#. in Thunar and xfce4-panel.
+#.
+#: ../exo-desktop-item-edit/exo-die-editor.c:430
+msgid "Use _startup notification"
+msgstr "Bruk _oppstartsvarsel"
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:431
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Velg dette valget for å aktivere oppstartsvarsel når kommandoen kjøres "
+"fra filbehandleren eller fra menyen. Ikke alle programmer støtter "
+"oppstartsvarsel."
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure 
+#. to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in 
+#. Thunar and xfce4-panel.
+#.
+#: ../exo-desktop-item-edit/exo-die-editor.c:443
+msgid "Run in _terminal"
+msgstr "Kjør i _terminal"
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:444
+msgid "Select this option to run the command in a terminal window."
+msgstr "Velg denne for å kjøre kommandoen i et terminalvindu."
+
+#. allocate the icon chooser dialog
+#: ../exo-desktop-item-edit/exo-die-editor.c:591
+msgid "Select an icon"
+msgstr "Velg et ikon"
+
+#. --- constants ---
+#: ../exo-desktop-item-edit/main.c:50
+msgid "Create Launcher"
+msgstr "Lag ny snarvei"
+
+#: ../exo-desktop-item-edit/main.c:50
+msgid "Create Link"
+msgstr "Lag ny lenke"
+
+#: ../exo-desktop-item-edit/main.c:51
+msgid "Edit Launcher"
+msgstr "Rediger snarvei"
+
+#: ../exo-desktop-item-edit/main.c:51
+msgid "Edit Link"
+msgstr "Rediger lenke"
+
+#: ../exo-desktop-item-edit/main.c:72
+msgid "Create a new desktop file in the given directory"
+msgstr "Lag en ny desktop-fil i gitt katalog"
+
+#: ../exo-desktop-item-edit/main.c:73
+msgid "Type of desktop file to create (Application or Link)"
+msgstr "Type desktop-fil som skal lages (program eller lenke)"
+
+#: ../exo-desktop-item-edit/main.c:74
+msgid "Preset name when creating a desktop file"
+msgstr "Standard navn for nye desktop-filer"
+
+#: ../exo-desktop-item-edit/main.c:75
+msgid "Preset comment when creating a desktop file"
+msgstr "Standard kommentar for nye desktop-filer"
+
+#: ../exo-desktop-item-edit/main.c:76
+msgid "Preset command when creating a launcher"
+msgstr "Standard kommando for nye snarveier"
+
+#: ../exo-desktop-item-edit/main.c:77
+msgid "Preset URL when creating a link"
+msgstr "Standard Url for nye lenker"
+
+#: ../exo-desktop-item-edit/main.c:78
+msgid "Preset icon when creating a desktop file"
+msgstr "Standard ikon for nye dekstop-filer"
+
+#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:74
+#: ../exo-mount-notify/main.c:77
+msgid "Print version information and exit"
+msgstr "Skriv ut versjonsinformasjon og avslutt"
+
+#. initialize Gtk+
+#: ../exo-desktop-item-edit/main.c:125
+msgid "[FILE|FOLDER]"
+msgstr "[FIL|MAPPE]"
+
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
+#: ../exo-mount-notify/main.c:153
+msgid "Failed to open display"
+msgstr "Klarte ikke åpne skjerm"
+
+#: ../exo-desktop-item-edit/main.c:168
+msgid "No file/folder specified"
+msgstr "Ingen fil/mappe er angitt"
+
+#. tell the user that we don't support the type
+#: ../exo-desktop-item-edit/main.c:226
+#, c-format
+msgid "Unsupported desktop file type \"%s\""
+msgstr "Ikke støttet desktop-filtype \"%s\""
+
+#. add the "Create"/"Save" button (as default)
+#: ../exo-desktop-item-edit/main.c:246
+msgid "C_reate"
+msgstr "_Lag ny"
+
+#. create failed, ask the user to specify a file name
+#: ../exo-desktop-item-edit/main.c:366
+msgid "Choose filename"
+msgstr "Velg filnavn"
+
+#: ../exo-desktop-item-edit/main.c:420
+#, c-format
+msgid "Failed to create \"%s\"."
+msgstr "Klarte ikke lage \"%s\"."
+
+#: ../exo-desktop-item-edit/main.c:420
+#, c-format
+msgid "Failed to save \"%s\"."
+msgstr "Klarte ikke lagre \"%s\"."
+
+#: ../exo-hal/exo-hal.c:444
+#, c-format
+msgid "External %s Drive"
+msgstr "Eksternt %s drev"
+
+#: ../exo-hal/exo-hal.c:446
+#, c-format
+msgid "%s Drive"
+msgstr "%s drev"
+
+#: ../exo-hal/exo-hal.c:455
+msgid "External Floppy Drive"
+msgstr "Ekstern diskettstasjon"
+
+#: ../exo-hal/exo-hal.c:457
+msgid "Floppy Drive"
+msgstr "Diskettstasjon"
+
+#: ../exo-hal/exo-hal.c:461
+msgid "Compact Flash Drive"
+msgstr "Compactflash enhet"
+
+#: ../exo-hal/exo-hal.c:465
+msgid "Memory Stick Drive"
+msgstr "Minnepinne enhet"
+
+#: ../exo-hal/exo-hal.c:469
+msgid "Smart Media Drive"
+msgstr "Smartmedia enhet"
+
+#: ../exo-hal/exo-hal.c:473
+msgid "SD/MMC Drive"
+msgstr "SD/MMC enhet"
+
+#: ../exo-hal/exo-hal.c:477
+msgid "Zip Drive"
+msgstr "Zip enhet"
+
+#: ../exo-hal/exo-hal.c:481
+msgid "Jaz Drive"
+msgstr "Jaz enhet"
+
+#: ../exo-hal/exo-hal.c:485
+msgid "Pen Drive"
+msgstr "Pinne enhet"
+
+#. TRANSLATORS: This string requires special care as %s may be
+#. the empty string. Trailing/leading whitespace will be removed.
+#: ../exo-hal/exo-hal.c:494
+#, c-format
+msgid "%s Music Player"
+msgstr "%s Musikkavspiller"
+
+#. TRANSLATORS: This string requires special care as %s may be
+#.the empty string. Trailing/leading whitespace will be removed.
+#: ../exo-hal/exo-hal.c:509
+#, c-format
+msgid "%s Digital Camera"
+msgstr "%s Digitalt kamera"
+
+#. last fallback to "Drive"
+#: ../exo-hal/exo-hal.c:532
+msgid "Drive"
+msgstr "Enhet"
+
+#: ../exo-hal/exo-hal.c:759
+#, c-format
+msgid "Blank %s Disc"
+msgstr "Tom %s plate"
+
+#: ../exo-hal/exo-hal.c:761
+#, c-format
+msgid "%s Disc"
+msgstr "%s plate"
+
+#. special case for pure audio disc
+#: ../exo-hal/exo-hal.c:766
+msgid "Audio CD"
+msgstr "Lyddisk"
+
+#: ../exo-hal/exo-hal.c:802
+#, c-format
+msgid "%s Removable Volume"
+msgstr "%s Avmonterbar enhet"
+
+#: ../exo-hal/exo-hal.c:804
+#, c-format
+msgid "%s Volume"
+msgstr "%s  enhet"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:100
+#: ../exo-helper/exo-preferred-applications.desktop.in.h:1
+msgid "Preferred Applications"
+msgstr "Prefererte programmer"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
+msgid "Select default applications for various services"
+msgstr "Velg standardprogram for forskjellige oppgaver"
+
+#.
+#. Internet
+#.
+#: ../exo-helper/exo-helper-chooser-dialog.c:125
+msgid "Internet"
+msgstr "Internett"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:138
+msgid "Web Browser"
+msgstr "Nettleser"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:146
+msgid ""
+"The preferred Web Browser will be used to open\n"
+"hyperlinks and display help contents."
+msgstr ""
+"Den prefererte nettleseren brukes for å åpne\n"
+"lenker og vise hjelpeinnhold."
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:170
+msgid "Mail Reader"
+msgstr "Epostleser"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:178
+msgid ""
+"The preferred Mail Reader will be used to compose\n"
+"emails when you click on email addresses."
+msgstr ""
+"Den prefererte epostleseren brukes for å skrive\n"
+"epost når du klikker på epostadresser."
+
+#.
+#. Utilities
+#.
+#: ../exo-helper/exo-helper-chooser-dialog.c:198
+msgid "Utilities"
+msgstr "Verktøy"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:211
+msgid "Terminal Emulator"
+msgstr "Terminalemulator"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:219
+msgid ""
+"The preferred Terminal Emulator will be used to\n"
+"run commands that require a CLI environment."
+msgstr ""
+"Den prefererte terminalemulatoren vil bli brukt til å kjøre\n"
+"kommandoer som krever et CLI (kommandolinjegrensesnitt) miljø."
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:258
+msgid "Failed to open the documentation browser."
+msgstr "Klarte ikke åpne dokumentleseren"
+
+#: ../exo-helper/exo-helper-chooser.c:184
+#: ../exo-helper/exo-helper-chooser.c:191
+msgid "Press left mouse button to change the selected application."
+msgstr "Bruk venstre museknapp for å endre valgt program."
+
+#: ../exo-helper/exo-helper-chooser.c:190
+msgid "Application Chooser Button"
+msgstr "Programvelgerknapp"
+
+#: ../exo-helper/exo-helper-chooser.c:334
+msgid "No application selected"
+msgstr "Ingen program valgt"
+
+#: ../exo-helper/exo-helper-chooser.c:350
+msgid "Failed to set default Web Browser"
+msgstr "Klarte ikke sette standard nettleser"
+
+#: ../exo-helper/exo-helper-chooser.c:351
+msgid "Failed to set default Mail Reader"
+msgstr "Klarte ikke sette standard epostleser"
+
+#: ../exo-helper/exo-helper-chooser.c:352
+msgid "Failed to set default Terminal Emulator"
+msgstr "Klarte ikke sette standard terminalemulator"
+
+#. allocate the chooser
+#: ../exo-helper/exo-helper-chooser.c:422
+msgid "Select application"
+msgstr "Velg program"
+
+#: ../exo-helper/exo-helper-chooser.c:535
+msgid "Choose a custom Web Browser"
+msgstr "Velg din egen nettleser"
+
+#: ../exo-helper/exo-helper-chooser.c:536
+msgid "Choose a custom Mail Reader"
+msgstr "Velg din egen epostleser"
+
+#: ../exo-helper/exo-helper-chooser.c:537
+msgid "Choose a custom Terminal Emulator"
+msgstr "Velg din egen terminalemulator"
+
+#: ../exo-helper/exo-helper-chooser.c:542
+msgid ""
+"Specify the application you want to use\n"
+"as default Web Browser for Xfce:"
+msgstr ""
+"Velg programmet du ønsker å bruke som\n"
+"standard nettleser i Xfce:"
+
+#: ../exo-helper/exo-helper-chooser.c:543
+msgid ""
+"Specify the application you want to use\n"
+"as default Mail Reader for Xfce:"
+msgstr ""
+"Velg programmet du ønsker å bruke som\n"
+"standard epostleser i Xfce:"
+
+#: ../exo-helper/exo-helper-chooser.c:544
+msgid ""
+"Specify the application you want to use\n"
+"as default Terminal Emulator for Xfce:"
+msgstr ""
+"Velg programmet du ønsker å bruke som\n"
+"standard teminalemulering i Xfce:"
+
+#: ../exo-helper/exo-helper-chooser.c:610
+msgid "Browse the file system to choose a custom command."
+msgstr "Bla gjennom filsystemet for å velge kommando."
+
+#: ../exo-helper/exo-helper-chooser.c:793
+msgid "_Other..."
+msgstr "_Andre ..."
+
+#: ../exo-helper/exo-helper-chooser.c:794
+msgid "Use a custom application which is not included in the above list."
+msgstr "Bruk selvvalgt program som ikke ligger i listen ovenfor"
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:141
+msgid "Choose Preferred Application"
+msgstr "Velg preferert program"
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:284
+msgid ""
+"Please choose your preferred Web\n"
+"Browser now and click OK to proceed."
+msgstr ""
+"Velg din prefererte nettleser nå\n"
+"og klikk OK for å fortsette."
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:286
+msgid ""
+"Please choose your preferred Mail Reader\n"
+"now and click OK to proceed."
+msgstr ""
+"Velg din prefererte epostleser nå\n"
+"og klikk OK for å fortsette."
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:288
+msgid ""
+"Please choose your preferred Terminal\n"
+"Emulator now and click OK to proceed."
+msgstr ""
+"Velg din prefererte teminalemulator nå\n"
+"og klikk OK for å fortsette."
+
+#: ../exo-helper/exo-helper.c:404
+msgid "No command specified"
+msgstr "Ingen kommando er angitt"
+
+#: ../exo-helper/exo-helper.c:740
+msgid "Failed to open helpers.rc for writing"
+msgstr "Klarte ikke åpne helpers.rc for skriving"
+
+#: ../exo-helper/exo-preferred-applications-settings.c:40
+msgid "Failed to launch exo-preferred-applications"
+msgstr "Klarte ikke starte exo-prefereed-applications"
+
+#: ../exo-helper/exo-preferred-applications-settings.c:60
+msgid "Button Label|Preferred Applications"
+msgstr "Prefererte programmer"
+
+#: ../exo-helper/exo-preferred-applications.desktop.in.h:2
+msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
+msgstr "Prefererte programmer (Nettleser, epostleser og terminalemulering)"
+
+#: ../exo-helper/exo-preferred-applications.desktop.in.h:3
+msgid "Xfce 4 Preferred Applications"
+msgstr "Xfce 4 Prefererte programmer"
+
+#: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
+msgid "Xfce Terminal"
+msgstr "Xfce Terminal"
+
+#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
+msgid "aterm"
+msgstr "aterm"
+
+#: ../exo-helper/helpers/balsa.desktop.in.in.h:1
+msgid "Balsa"
+msgstr "Balse"
+
+#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
+msgid "Debian Sensible Browser"
+msgstr "Debian Sensible Browser"
+
+#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
+msgid "Debian X Terminal Emulator"
+msgstr "Debian X Terminalemulator"
+
+#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
+msgid "Encompass"
+msgstr "Encompass"
+
+#: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
+msgid "Epiphany Web Browser"
+msgstr "Epiphany nettleser"
+
+#: ../exo-helper/helpers/eterm.desktop.in.in.h:1
+msgid "Enlightened Terminal Emulator"
+msgstr "Enlightened Terminalemulator"
+
+#: ../exo-helper/helpers/evolution.desktop.in.in.h:1
+msgid "Novell Evolution"
+msgstr "Novell Evolution"
+
+#: ../exo-helper/helpers/firefox.desktop.in.in.h:1
+msgid "Mozilla Firefox"
+msgstr "Mozilla Firefox"
+
+#: ../exo-helper/helpers/galeon.desktop.in.in.h:1
+msgid "Galeon Web Browser"
+msgstr "Galeon nettleser"
+
+#: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
+msgid "GNOME Terminal"
+msgstr "GNOME terminal"
+
+#: ../exo-helper/helpers/kmail.desktop.in.in.h:1
+msgid "KMail"
+msgstr "KMail"
+
+#: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
+msgid "Konqueror Web Browser"
+msgstr "Konqueror nettleser"
+
+#: ../exo-helper/helpers/links.desktop.in.in.h:1
+msgid "Links Text Browser"
+msgstr "Links tekstnettleser"
+
+#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
+msgid "Lynx Text Browser"
+msgstr "Lynx tekstnettleser"
+
+#: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
+msgid "Mozilla Browser"
+msgstr "Mozilla nettleser"
+
+#: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
+msgid "Mozilla Mail"
+msgstr "Mozilla Mail"
+
+#: ../exo-helper/helpers/mutt.desktop.in.in.h:1
+msgid "Mutt"
+msgstr "Mutt"
+
+#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
+msgid "Netscape Navigator"
+msgstr "Netscape Navigator"
+
+#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
+msgid "NXterm"
+msgstr "NXterm"
+
+#: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
+msgid "Opera Browser"
+msgstr "Opera nettleser"
+
+#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
+msgid "Opera Mail"
+msgstr "Opera Epost"
+
+#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
+msgid "Claws Mail"
+msgstr "Claws Epost"
+
+#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
+msgid "Sylpheed"
+msgstr "Sylpheed"
+
+#: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
+msgid "Mozilla Thunderbird"
+msgstr "Mozilla Thunderbird"
+
+#: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
+msgid "RXVT Unicode"
+msgstr "RXVT Unicode"
+
+#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
+msgid "W3M Text Browser"
+msgstr "W3M tekstnettleser"
+
+#: ../exo-helper/helpers/xterm.desktop.in.in.h:1
+msgid "X Terminal"
+msgstr "X Terminal"
+
+#: ../exo-mount/exo-mount-fstab.c:92
+msgid "Unknown error"
+msgstr "Ukjent feil"
+
+#. TRANSLATORS: a device is missing from the file system table
+#. (usually /etc/fstab)
+#. tell the caller that no matching device was found
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
+#, c-format
+msgid "Device \"%s\" not found in file system device table"
+msgstr "Enheten \"%s\" ble ikke funnet i systemets enhetstabell"
+
+#. definitely not a device that we're able to mount, eject or unmount
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#, c-format
+msgid "Given device \"%s\" is not a volume or drive"
+msgstr "Enheten \"%s\" er ikke et dataomrpde eller stasjon"
+
+#. TRANSLATORS: The user tried to eject a device although he's not
+#. privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:595
+#, c-format
+msgid "You are not privileged to eject the volume \"%s\""
+msgstr "Du har ikke rettigheter til å løse ut enheten \"%s\""
+
+#. TRANSLATORS: An application is blocking a mounted volume from
+#. being ejected.
+#: ../exo-mount/exo-mount-hal.c:600
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being ejected"
+msgstr "Et program forhindrer enheten \"%s\" fra å løses ut"
+
+#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:831
+#, c-format
+msgid "You are not privileged to mount the volume \"%s\""
+msgstr "Du har ikke rettigheter til å montere enheten \"%s\""
+
+#: ../exo-mount/exo-mount-hal.c:846
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
+msgstr ""
+"Tomt media kan ikke monteres, bruk et CD-brenne program som Xfburn til "
+"å lagre musikk eller data på disken"
+
+#: ../exo-mount/exo-mount-hal.c:857
+msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
+msgstr "Lydcd kan ikke monteres, bruk Xfmedia for å spille lydsporene"
+
+#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:942
+#, c-format
+msgid "You are not privileged to unmount the volume \"%s\""
+msgstr "Du har ikke rettigheter til å demontere enheten \"%s\""
+
+#. TRANSLATORS: An application is blocking a volume from being unmounted.
+#: ../exo-mount/exo-mount-hal.c:947
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being unmounted"
+msgstr "Et program forhindrer at enheten \"%s\" kan demonteres"
+
+#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
+#: ../exo-mount/exo-mount-hal.c:952
+#, c-format
+msgid "The volume \"%s\" was probably mounted manually on the command line"
+msgstr "Enheten \"%s\" er antakelig montert manuelt via kommandolinjen"
+
+#: ../exo-mount/main.c:65
+msgid "Eject rather than mount"
+msgstr "Løs ut istedet for montering"
+
+#: ../exo-mount/main.c:66
+msgid "Unmount rather than mount"
+msgstr "Demonter istedet for montering"
+
+#: ../exo-mount/main.c:68
+msgid "Mount by HAL device UDI"
+msgstr "Monter med HAL enhet UDI"
+
+#: ../exo-mount/main.c:70
+msgid "Mount by HAL device UDI (not supported)"
+msgstr "Montering med HAL enhets UDI (ikke støttet)"
+
+#: ../exo-mount/main.c:72
+msgid "Mount by device file"
+msgstr "Monter med enhetsfil"
+
+#: ../exo-mount/main.c:73
+msgid "Don't show any dialogs"
+msgstr "Ikke vis noe bilde"
+
+#. the caller must specify either a HAL UDI or a device file
+#: ../exo-mount/main.c:138
+msgid "Must specify HAL device UDI or device file"
+msgstr "Må spesifisere HAL enhets UDI eller enhetsfil"
+
+#. the caller must specify EITHER a HAL UDI or a device file
+#: ../exo-mount/main.c:146
+msgid "Must not specify both a HAL device UDI and a device file simultaneously"
+msgstr "Kan ikke angi både HAL enhets UDI og en enhetsfil samtidig"
+
+#: ../exo-mount/main.c:154
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+"Kan ikke montere med HAL enhets UDI fordi HAL støtte var deaktivert for "
+"dette bygget"
+
+#: ../exo-mount/main.c:161
+#, c-format
+msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
+msgstr "Den angitte UDI \"%s\" er ikke en gyldig HAL enhets UDI"
+
+#. the caller must not specify both eject and unmount
+#: ../exo-mount/main.c:178
+msgid "Cannot eject and unmount simultaneously"
+msgstr "Kan ikke løse ut og demontere samtidig"
+
+#: ../exo-mount/main.c:330
+#, c-format
+msgid "Failed to eject \"%s\""
+msgstr "Klarte ikke å løse ut \"%s\""
+
+#: ../exo-mount/main.c:332
+#, c-format
+msgid "Failed to unmount \"%s\""
+msgstr "Klarte ikke å demontere \"%s\""
+
+#: ../exo-mount/main.c:334
+#, c-format
+msgid "Failed to mount \"%s\""
+msgstr "Klarte ikke montere \"%s\""
+
+#. tell the user that the device can be removed now
+#: ../exo-mount-notify/main.c:111
+#, c-format
+msgid "The device \"%s\" is now safe to remove."
+msgstr "Enheten \"%s\" kan nå trygt frakobles."
+
+#: ../exo-mount-notify/main.c:112
+msgid "Device is now safe to remove"
+msgstr "Enheten kan nå trygt frakobles"
+
+#. read-only, just ejecting
+#: ../exo-mount-notify/main.c:224
+msgid "Ejecting device"
+msgstr "Løser ut enhet"
+
+#: ../exo-mount-notify/main.c:225
+#, c-format
+msgid "The device \"%s\" is being ejected. This may take some time."
+msgstr "Enheten \"%s\" løses nå ut. Dette kan ta litt tid."
+
+#. read-only, just unmounting
+#: ../exo-mount-notify/main.c:230
+msgid "Unmounting device"
+msgstr "Demontere enhet"
+
+#: ../exo-mount-notify/main.c:231
+#, c-format
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+"Enheten \"%s\" demonteres nå av systemet. Ikke fjerne eller koble "
+"fra enheten."
+
+#. not read-only, writing back data
+#: ../exo-mount-notify/main.c:238
+msgid "Writing data to device"
+msgstr "Skirver data til enheten"
+
+#: ../exo-mount-notify/main.c:239
+#, c-format
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
+"Date må skrives til enheten \"%s\" før den kan frakobles. Ikke frakoble "
+"mediet eller fjern enheten"
+
+#: ../exo-open/main.c:59
+msgid "Usage: exo-open [URLs...]"
+msgstr "Bruk: exo-open [url'er...]"
+
+#: ../exo-open/main.c:60
+msgid "       exo-open --launch TYPE [PARAMETERs...]"
+msgstr "       exo-open --launch TYPE [PARAMETERs...]"
+
+#: ../exo-open/main.c:62
+msgid "  -?, --help                          Print this help message and exit"
+msgstr "  -?, --help                          Skriv ut denne meldingen og "
+"avslutt"
+
+#: ../exo-open/main.c:63
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr ""
+"  -v, --version                       Skriv ut versjonsinformasjon og avslutt"
+
+#: ../exo-open/main.c:65
+msgid ""
+"  --launch TYPE [PARAMETRE...]        Launch the preferred application of\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
+"                                      TYPE is one of the following values."
+msgstr ""
+"  --launch TYPE [PARAMETRE...]        Start det prefererte programmet av\n"
+"                                      TYPE med valgfrie PARAMETRE, "
+"hvor\n"
+"                                      TYPE er en av følgende typer."
+
+#: ../exo-open/main.c:69
+msgid ""
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
+"                                      when using the --launch option."
+msgstr ""
+"  --working-directory MAPPE           Standard arbeidsmappe for "
+"programmer\n"
+"                                      ved bruk av --launch opsjonen."
+
+#: ../exo-open/main.c:72
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr "Følgende typer er støttet for --launch kommandoen:"
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser,
+#. MailReader, TerminalEmulator),
+#. * since the exo-helper utility will not accept localized TYPEs.
+#.
+#: ../exo-open/main.c:78
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+"  WebBrowser       - Preferert nettleser.\n"
+"  MailReader       - Preferert epostleser.\n"
+"  TerminalEmulator - Preferert teminalemulator."
+
+#: ../exo-open/main.c:82
+msgid ""
+"If you don't specify the --launch option, exo-open will open all specified\n"
+"URLs with their preferred URL handlers. Else, if you specify the --launch\n"
+"option, you can select which preferred application you want to run, and\n"
+"pass additional parameters to the application (i.e. for TerminalEmulator\n"
+"you can pass the command line that should be run in the terminal)."
+msgstr ""
+"Hvis du ikke angir --launch opsjonen vil exo-open åpne alle spesifiserte\n"
+"Url'er med deres prefererte Url håndterere. Hvis du spesifierer --launch\n"
+"opsjonen kan du velge hvilket preferert program du vil kjøre og i tillegg\n"
+"sende parametre til programmet (feks for terminalemulatoren kan du sende\n"
+"kommandoene som skal kjøres i terminalvinduet)."
+
+#: ../exo-open/main.c:149
+#, c-format
+msgid "Failed to launch preferred application for category \"%s\"."
+msgstr "Klarte ikke å starte preferert program for kategorien \"%s\"."
+
+#: ../exo-open/main.c:170
+#, c-format
+msgid "Failed to open URL \"%s\"."
+msgstr "Klarte ikke åone Url \"%s\"."
