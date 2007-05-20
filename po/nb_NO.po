@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-12 19:47+0100\n"
+"POT-Creation-Date: 2007-05-20 13:45+0200\n"
 "PO-Revision-Date: 2007-05-12 17:42+0200\n"
 "Last-Translator: Terje Uriansrud <ter@operamail.com>\n"
 "Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
@@ -42,8 +42,8 @@ msgstr "størrelse"
 msgid "The size of the icon to render in pixels."
 msgstr "Størrelsen på ikonet som skal tegnes angitt i piksler."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
-#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Klarte ikke åpne filen \"%s\": %s"
@@ -286,7 +286,7 @@ msgstr "Radmellomrom"
 msgid "Space which is inserted between grid rows"
 msgstr "Mellomrom benyttet mellom rutenettrader"
 
-#: ../exo/exo-icon-view.c:847Utseendemodus
+#: ../exo/exo-icon-view.c:847
 msgid "Search Column"
 msgstr "Søkekolonne"
 
@@ -319,8 +319,8 @@ msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr ""
-"Tiden det tar før et element under musepekeren blir valgt automatisk "
-"i enkeltklikkmodus."
+"Tiden det tar før et element under musepekeren blir valgt automatisk i "
+"enkeltklikkmodus."
 
 #: ../exo/exo-icon-view.c:911
 msgid "Spacing"
@@ -477,41 +477,49 @@ msgstr "Omstart kommando"
 msgid "Session restart command"
 msgstr "Økt omstartkommando"
 
-#: ../exo-csource/main.c:230
+#: ../exo-csource/main.c:283
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Bruk: %s [opsjoner] [fil]\n"
 
-#: ../exo-csource/main.c:231
+#: ../exo-csource/main.c:284
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [opsjoner] --build-list [[navn fil]...]\n"
 
-#: ../exo-csource/main.c:233
+#: ../exo-csource/main.c:286
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Skriv ut denne hjelpen og avslutt\n"
 
-#: ../exo-csource/main.c:234
+#: ../exo-csource/main.c:287
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --version     Skriv ut versjonsinformasjon og avslutt\n"
 
-#: ../exo-csource/main.c:235
+#: ../exo-csource/main.c:288
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Generer eksterne symboler\n"
 
-#: ../exo-csource/main.c:236
+#: ../exo-csource/main.c:289
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Generer statiske symboler\n"
 
-#: ../exo-csource/main.c:237
+#: ../exo-csource/main.c:290
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifikator C makroo/variabelnavn\n"
 
-#: ../exo-csource/main.c:238
+#: ../exo-csource/main.c:291
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Parse (navn, fil) par\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
+#: ../exo-csource/main.c:292
+msgid "  --strip-comments  Remove comments from XML files\n"
+msgstr ""
+
+#: ../exo-csource/main.c:293
+msgid "  --strip-content   Remove node contents from XML files\n"
+msgstr ""
+
+#: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
@@ -528,7 +536,7 @@ msgstr ""
 "Skrevet av Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:252 ../exo-desktop-item-edit/main.c:157
+#: ../exo-csource/main.c:307 ../exo-desktop-item-edit/main.c:157
 #: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
@@ -544,7 +552,7 @@ msgstr ""
 "GNU Lesser General Public Lisens som kan finnes i %s kildekode pakken.\n"
 "\n"
 
-#: ../exo-csource/main.c:256 ../exo-desktop-item-edit/main.c:161
+#: ../exo-csource/main.c:311 ../exo-desktop-item-edit/main.c:161
 #: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
@@ -591,38 +599,32 @@ msgstr "Skallskript"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Lag ny snarvei <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, 
-#. make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:318
 msgid "_Name:"
 msgstr "_Navn:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, 
-#. make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:336
 msgid "C_omment:"
 msgstr "K_ommentar:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to 
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:354
 msgid "Comm_and:"
 msgstr "Komm_ando."
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid 
-#. mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:371
 msgid "_URL:"
 msgstr "_Url:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, 
-#. make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Ikon:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create 
-#. Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:408
 #: ../exo-desktop-item-edit/exo-die-editor.c:1134
@@ -633,10 +635,8 @@ msgstr "Uten ikon"
 msgid "Options:"
 msgstr "Valg:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make 
-#. sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations 
-#. in Thunar and xfce4-panel.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:430
 msgid "Use _startup notification"
@@ -648,14 +648,12 @@ msgid ""
 "from the file manager or the menu. Not every application supports startup "
 "notification."
 msgstr ""
-"Velg dette valget for å aktivere oppstartsvarsel når kommandoen kjøres "
-"fra filbehandleren eller fra menyen. Ikke alle programmer støtter "
+"Velg dette valget for å aktivere oppstartsvarsel når kommandoen kjøres fra "
+"filbehandleren eller fra menyen. Ikke alle programmer støtter "
 "oppstartsvarsel."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure 
-#. to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in 
-#. Thunar and xfce4-panel.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:443
 msgid "Run in _terminal"
@@ -806,15 +804,13 @@ msgstr "Jaz enhet"
 msgid "Pen Drive"
 msgstr "Pinne enhet"
 
-#. TRANSLATORS: This string requires special care as %s may be
-#. the empty string. Trailing/leading whitespace will be removed.
+#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:494
 #, c-format
 msgid "%s Music Player"
 msgstr "%s Musikkavspiller"
 
-#. TRANSLATORS: This string requires special care as %s may be
-#.the empty string. Trailing/leading whitespace will be removed.
+#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
@@ -1163,8 +1159,7 @@ msgstr "X Terminal"
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
-#. TRANSLATORS: a device is missing from the file system table
-#. (usually /etc/fstab)
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
 #: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
@@ -1177,15 +1172,13 @@ msgstr "Enheten \"%s\" ble ikke funnet i systemets enhetstabell"
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Enheten \"%s\" er ikke et dataomrpde eller stasjon"
 
-#. TRANSLATORS: The user tried to eject a device although he's not
-#. privileged to do so.
+#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Du har ikke rettigheter til å løse ut enheten \"%s\""
 
-#. TRANSLATORS: An application is blocking a mounted volume from
-#. being ejected.
+#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
@@ -1202,8 +1195,8 @@ msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
-"Tomt media kan ikke monteres, bruk et CD-brenne program som Xfburn til "
-"å lagre musikk eller data på disken"
+"Tomt media kan ikke monteres, bruk et CD-brenne program som Xfburn til å "
+"lagre musikk eller data på disken"
 
 #: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
@@ -1325,8 +1318,8 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
-"Enheten \"%s\" demonteres nå av systemet. Ikke fjerne eller koble "
-"fra enheten."
+"Enheten \"%s\" demonteres nå av systemet. Ikke fjerne eller koble fra "
+"enheten."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
@@ -1352,8 +1345,8 @@ msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          Skriv ut denne meldingen og "
-"avslutt"
+msgstr ""
+"  -?, --help                          Skriv ut denne meldingen og avslutt"
 
 #: ../exo-open/main.c:63
 msgid ""
@@ -1362,15 +1355,15 @@ msgstr ""
 "  -v, --version                       Skriv ut versjonsinformasjon og avslutt"
 
 #: ../exo-open/main.c:65
+#, fuzzy
 msgid ""
-"  --launch TYPE [PARAMETRE...]        Launch the preferred application of\n"
+"  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TYPE [PARAMETRE...]        Start det prefererte programmet av\n"
-"                                      TYPE med valgfrie PARAMETRE, "
-"hvor\n"
+"                                      TYPE med valgfrie PARAMETRE, hvor\n"
 "                                      TYPE er en av følgende typer."
 
 #: ../exo-open/main.c:69
@@ -1379,16 +1372,14 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory MAPPE           Standard arbeidsmappe for "
-"programmer\n"
+"  --working-directory MAPPE           Standard arbeidsmappe for programmer\n"
 "                                      ved bruk av --launch opsjonen."
 
 #: ../exo-open/main.c:72
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Følgende typer er støttet for --launch kommandoen:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser,
-#. MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
 #: ../exo-open/main.c:78

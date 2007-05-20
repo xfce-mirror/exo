@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-12 19:47+0100\n"
+"POT-Creation-Date: 2007-05-20 13:45+0200\n"
 "PO-Revision-Date: 2006-11-02 18:35+0000\n"
 "Last-Translator: Geraint Rowlands <ansbaradigeidfran@gmail.com>\n"
 "Language-Team: Welsh <xfce-i18n@xfce.org>\n"
@@ -41,8 +41,8 @@ msgstr "maint"
 msgid "The size of the icon to render in pixels."
 msgstr "Maint yr eicon i'w lunio mewn picselau"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
-#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Methwyd agor ffeil\"%s\": %s"
@@ -474,41 +474,49 @@ msgstr "Gorchymyn ailddechrau"
 msgid "Session restart command"
 msgstr "Gorchymyn ailddrechrau sesiwn"
 
-#: ../exo-csource/main.c:230
+#: ../exo-csource/main.c:283
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Defnyss: %s [opsiynau] [ffeil]\n"
 
-#: ../exo-csource/main.c:231
+#: ../exo-csource/main.c:284
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [opsiynau] --build-list [[enw ffeil]...]\n"
 
-#: ../exo-csource/main.c:233
+#: ../exo-csource/main.c:286
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Argraffu'r neges help yma a gorffen\n"
 
-#: ../exo-csource/main.c:234
+#: ../exo-csource/main.c:287
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --version     Argraffu gwybodaeth fersiwn a gorffen\n"
 
-#: ../exo-csource/main.c:235
+#: ../exo-csource/main.c:288
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Creu symbolau allanol\n"
 
-#: ../exo-csource/main.c:236
+#: ../exo-csource/main.c:289
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Creu symbolau sefydlog\n"
 
-#: ../exo-csource/main.c:237
+#: ../exo-csource/main.c:290
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=dynodwr macro C/enw newidyn\n"
 
-#: ../exo-csource/main.c:238
+#: ../exo-csource/main.c:291
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Dadansoddi parau (enw, ffeil)\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
+#: ../exo-csource/main.c:292
+msgid "  --strip-comments  Remove comments from XML files\n"
+msgstr ""
+
+#: ../exo-csource/main.c:293
+msgid "  --strip-content   Remove node contents from XML files\n"
+msgstr ""
+
+#: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, fuzzy, c-format
@@ -525,7 +533,7 @@ msgstr ""
 "Ysgrifennwyd gan Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:252 ../exo-desktop-item-edit/main.c:157
+#: ../exo-csource/main.c:307 ../exo-desktop-item-edit/main.c:157
 #: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
@@ -541,7 +549,7 @@ msgstr ""
 "Trwydded Lai y Cyhoedd Cyffredinol GNU a ganfyddir ym\n"
 "mhecyn tardd %s\n"
 
-#: ../exo-csource/main.c:256 ../exo-desktop-item-edit/main.c:161
+#: ../exo-csource/main.c:311 ../exo-desktop-item-edit/main.c:161
 #: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format

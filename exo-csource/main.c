@@ -1,6 +1,7 @@
 /* $Id$ */
 /*-
  * Copyright (c) 2005-2007 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2007      Nick Schermer <nick@xfce.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -59,6 +60,8 @@ static void print_version (void);
 
 /* --- variables --- */
 static gboolean gen_buildlist = FALSE;
+static gboolean gen_stripcomments = FALSE;
+static gboolean gen_stripcontent = FALSE;
 static gchar   *gen_linkage = "static ";
 static gchar   *gen_varname = "my_data";
 
@@ -120,9 +123,19 @@ parse_args (gint    *argc_p,
           gen_buildlist = TRUE;
           argv[n] = NULL;
         }
+      else if (strcmp (argv[n], "--strip-comments") == 0)
+        {
+          gen_stripcomments = TRUE;
+          argv[n] = NULL;
+        }
+      else if (strcmp (argv[n], "--strip-content") == 0)
+        {
+          gen_stripcontent = TRUE;
+          argv[n] = NULL;
+        }
     }
 
-  for (m = 0, n = 1; n < argc; ++n) 
+  for (m = 0, n = 1; n < argc; ++n)
     {
       if (m > 0)
         {
@@ -152,10 +165,12 @@ print_csource (FILE        *fp,
 {
   const guint8 *p = (const guint8 *) data;
   gboolean      pad = FALSE;
+  gboolean      inside_comment = FALSE;
+  gboolean      inside_content = TRUE;
   gint          column = 0;
+  guint         real_length = 0;
 
   g_fprintf (fp, "/* automatically generated from %s */\n", filename);
-  g_fprintf (fp, "%sconst unsigned %s_length = %uu;\n", gen_linkage, gen_varname, (guint) length);
   g_fprintf (fp, "#ifdef __SUNPRO_C\n");
   g_fprintf (fp, "#pragma align 4 (%s)\n", gen_varname);
   g_fprintf (fp, "#endif\n");
@@ -173,6 +188,41 @@ print_csource (FILE        *fp,
         {
           g_fprintf (fp, "\"\n  \"");
           column = 0;
+        }
+
+      /* strip XML/HTML comments */
+      if (gen_stripcomments)
+        {
+          /* skip comments */
+          if (length >= 4 && p[0] == '<' && p[1] == '!' && p[2] == '-' && p[3] == '-')
+            {
+              inside_comment = TRUE;
+              length -= 3;
+              p += 3;
+              continue;
+            }
+          else if (inside_comment)
+            {
+              /* check for end of comment */
+              if (length >= 3 && p[0] == '-' && p[1] == '-' && p[2] == '>')
+                {
+                  inside_comment = FALSE;
+                  length -= 2;
+                  p += 2;
+                }
+              continue;
+            }
+        }
+
+      /* strip XML content (the stuff between the nodes) */
+      if (gen_stripcontent)
+        {
+          if (!inside_content && *p == '>')
+            inside_content = TRUE;
+          else if (inside_content && *p == '<')
+            inside_content = FALSE;
+          else if (inside_content)
+            continue;
         }
 
       if (*p == '\"')
@@ -217,9 +267,12 @@ print_csource (FILE        *fp,
           column += g_fprintf (fp, "\\%03o", (guint) *p);
           pad = TRUE;
         }
+
+      real_length++;
     }
 
-  g_fprintf (fp, "\"\n};\n\n\n");
+  g_fprintf (fp, "\"\n};\n\n");
+  g_fprintf (fp, "%sconst unsigned %s_length = %uu;\n\n", gen_linkage, gen_varname, real_length);
 }
 
 
@@ -236,6 +289,8 @@ print_usage (void)
   g_print (_("  --static          Generate static symbols\n"));
   g_print (_("  --name=identifier C macro/variable name\n"));
   g_print (_("  --build-list      Parse (name, file) pairs\n"));
+  g_print (_("  --strip-comments  Remove comments from XML files\n"));
+  g_print (_("  --strip-content   Remove node contents from XML files\n"));
   g_print ("\n");
 }
 
@@ -289,7 +344,7 @@ main (int argc, char **argv)
       if (G_UNLIKELY (argc != 2))
         {
           print_usage ();
-          exit (EXIT_FAILURE);
+          return EXIT_FAILURE;
         }
 
 #ifdef G_OS_WIN32
@@ -303,7 +358,7 @@ main (int argc, char **argv)
           g_fprintf (stderr, "%s: Failed to load \"%s\": %s\n",
                      g_get_prgname (), filename, error->message);
           g_error_free (error);
-          exit (EXIT_FAILURE);
+          return EXIT_FAILURE;
         }
 
       print_csource (stdout, data, length, filename);
@@ -331,7 +386,7 @@ main (int argc, char **argv)
                   g_fprintf (stderr, "%s: Failed to load \"%s\": %s\n",
                              g_get_prgname (), filename, error->message);
                   g_error_free (error);
-                  exit (EXIT_FAILURE);
+                  return EXIT_FAILURE;
                 }
 
               print_csource (stdout, data, length, filename);

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-12 19:47+0100\n"
+"POT-Creation-Date: 2007-05-20 13:45+0200\n"
 "PO-Revision-Date: 2007-02-23 21:39+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi <punjabi-l10n@lists.sf.net>\n"
@@ -44,8 +44,8 @@ msgstr "ਸਾਈਜ਼"
 msgid "The size of the icon to render in pixels."
 msgstr "ਰੈਡਰ ਕਰਨ ਵਾਸਤੇ ਆਈਕਾਨ ਦਾ ਸਾਈਜ਼ ਪਿਕਸਲ 'ਚ।"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:205
-#: ../exo/exo-mount-point.c:234 ../exo/exo-mount-point.c:392
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "ਫਾਇਲ \"%s\" ਖੋਲ੍ਹਣ ਲਈ ਫੇਲ੍ਹ: %s"
@@ -57,10 +57,10 @@ msgstr "ਫਾਇਲ \"%s\" ਪੜ੍ਹਨ ਲਈ ਫੇਲ੍ਹ: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
-"ਚਿੱਤਰ \"%s\" ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ: ਅਣਜਾਣ ਕਾਰਨ, ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਨਿਕਾਰਾ "
-"ਚਿੱਤਰ ਫਾਇਲ ਹੋਵੇ"
+"ਚਿੱਤਰ \"%s\" ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ: ਅਣਜਾਣ ਕਾਰਨ, ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਨਿਕਾਰਾ ਚਿੱਤਰ ਫਾਇਲ ਹੋਵੇ"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
@@ -266,7 +266,8 @@ msgid "The model for the icon view"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:784
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:816
@@ -472,41 +473,49 @@ msgstr "ਰੀ-ਸਟਾਰਟ ਕਮਾਂਡ"
 msgid "Session restart command"
 msgstr "ਸ਼ੈਸ਼ਨ ਰੀ-ਸਟਾਰਟ ਕਮਾਂਡ"
 
-#: ../exo-csource/main.c:230
+#: ../exo-csource/main.c:283
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "ਵਰਤੋਂ: %s [options] [file]\n"
 
-#: ../exo-csource/main.c:231
+#: ../exo-csource/main.c:284
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [options] --build-list [[name file]...]\n"
 
-#: ../exo-csource/main.c:233
+#: ../exo-csource/main.c:286
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Print this help message and exit\n"
 
-#: ../exo-csource/main.c:234
+#: ../exo-csource/main.c:287
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --version     Print version information and exit\n"
 
-#: ../exo-csource/main.c:235
+#: ../exo-csource/main.c:288
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Generate extern symbols\n"
 
-#: ../exo-csource/main.c:236
+#: ../exo-csource/main.c:289
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Generate static symbols\n"
 
-#: ../exo-csource/main.c:237
+#: ../exo-csource/main.c:290
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier C macro/variable name\n"
 
-#: ../exo-csource/main.c:238
+#: ../exo-csource/main.c:291
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Parse (name, file) pairs\n"
 
-#: ../exo-csource/main.c:248 ../exo-desktop-item-edit/main.c:153
+#: ../exo-csource/main.c:292
+msgid "  --strip-comments  Remove comments from XML files\n"
+msgstr ""
+
+#: ../exo-csource/main.c:293
+msgid "  --strip-content   Remove node contents from XML files\n"
+msgstr ""
+
+#: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
@@ -523,7 +532,7 @@ msgstr ""
 "Benedikt Meurer <benny@xfce.org> ਨੇ ਲਿਖਿਆ\n"
 "\n"
 
-#: ../exo-csource/main.c:252 ../exo-desktop-item-edit/main.c:157
+#: ../exo-csource/main.c:307 ../exo-desktop-item-edit/main.c:157
 #: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
@@ -535,7 +544,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../exo-csource/main.c:256 ../exo-desktop-item-edit/main.c:161
+#: ../exo-csource/main.c:311 ../exo-desktop-item-edit/main.c:161
 #: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
@@ -1290,8 +1299,8 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
-"ਜੰਤਰ \"%s\" ਨੂੰ ਸਿਸਟਮ ਵਲੋਂ ਅਣ-ਮਾਊਂਟ ਕੀਤਾ ਗਿਆ ਹੈ। ਮੀਡਿਆ ਨੂੰ ਨਾ ਹਟਾਓ ਜਾਂ "
-"ਡਰਾਇਵ ਦਾ ਕੁਨੈਕਸ਼ਨ ਖਤਮ ਨਾ ਕਰੋ।"
+"ਜੰਤਰ \"%s\" ਨੂੰ ਸਿਸਟਮ ਵਲੋਂ ਅਣ-ਮਾਊਂਟ ਕੀਤਾ ਗਿਆ ਹੈ। ਮੀਡਿਆ ਨੂੰ ਨਾ ਹਟਾਓ ਜਾਂ ਡਰਾਇਵ ਦਾ ਕੁਨੈਕਸ਼ਨ "
+"ਖਤਮ ਨਾ ਕਰੋ।"
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
@@ -1320,8 +1329,10 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Print this help message and exit"
 
 #: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Print version information and exit"
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr ""
+"  -v, --version                       Print version information and exit"
 
 #: ../exo-open/main.c:65
 msgid ""
@@ -1380,4 +1391,3 @@ msgstr ""
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "URL \"%s\" ਖੋਲ੍ਹਣ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
-

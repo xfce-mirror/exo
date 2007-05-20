@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libexo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 23:46+0100\n"
+"POT-Creation-Date: 2007-05-20 13:45+0200\n"
 "PO-Revision-Date: 2007-02-11 02:15+0200\n"
 "Last-Translator: Mohamed Magdy <alnokta@yahoo.com>\n"
 "Language-Team: Arabeyes Translation & Documentation <admin@arabeyes.org>\n"
@@ -37,10 +37,8 @@ msgstr "حجم"
 msgid "The size of the icon to render in pixels."
 msgstr ""
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770
-#: ../exo-mount/exo-mount-fstab.c:148
-#: ../exo-mount/exo-mount-fstab.c:177
-#: ../exo-mount/exo-mount-fstab.c:203
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr ""
@@ -52,11 +50,11 @@ msgstr ""
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:249
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
 msgstr ""
 
@@ -64,23 +62,19 @@ msgstr ""
 msgid "The orientation of the iconbar"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:266
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:800
 msgid "Pixbuf column"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:267
-#: ../exo/exo-icon-view.c:801
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:801
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:282
-#: ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:927
 msgid "Text column"
 msgstr "عمود نص"
 
-#: ../exo/exo-icon-bar.c:283
-#: ../exo/exo-icon-view.c:928
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:928
 msgid "Model column used to retrieve the text from"
 msgstr ""
 
@@ -100,33 +94,27 @@ msgstr "نشط"
 msgid "Active item index"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:319
-#: ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:326
-#: ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:333
-#: ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:340
-#: ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:347
-#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr ""
 
-#: ../exo/exo-icon-bar.c:354
-#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr ""
 
@@ -196,8 +184,7 @@ msgid "All Icons"
 msgstr ""
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115
-#: ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr ""
 
@@ -271,7 +258,8 @@ msgid "The model for the icon view"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:784
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:816
@@ -306,24 +294,22 @@ msgstr ""
 msgid "The selection mode"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:878
-#: ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:879
-#: ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:895
-#: ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:896
-#: ../exo/exo-tree-view.c:184
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+#: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:184
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:911
@@ -354,8 +340,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: ../exo/exo-thumbnail-preview.c:139
-#: ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr ""
 
@@ -384,7 +369,9 @@ msgid "_Add a new toolbar"
 msgstr ""
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
 msgstr ""
 
 #: ../exo/exo-toolbars-editor.c:543
@@ -423,17 +410,17 @@ msgstr ""
 msgid "Customize Toolbar..."
 msgstr ""
 
-#: ../exo/exo-url.c:293
+#: ../exo/exo-url.c:297
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr ""
 
-#: ../exo/exo-url.c:315
+#: ../exo/exo-url.c:328
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr ""
 
-#: ../exo/exo-url.c:401
+#: ../exo/exo-url.c:414
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr ""
@@ -478,44 +465,50 @@ msgstr ""
 msgid "Session restart command"
 msgstr ""
 
-#: ../exo-csource/main.c:230
+#: ../exo-csource/main.c:283
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr ""
 
-#: ../exo-csource/main.c:231
+#: ../exo-csource/main.c:284
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr ""
 
-#: ../exo-csource/main.c:233
+#: ../exo-csource/main.c:286
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr ""
 
-#: ../exo-csource/main.c:234
+#: ../exo-csource/main.c:287
 msgid "  -v, --version     Print version information and exit\n"
 msgstr ""
 
-#: ../exo-csource/main.c:235
+#: ../exo-csource/main.c:288
 msgid "  --extern          Generate extern symbols\n"
 msgstr ""
 
-#: ../exo-csource/main.c:236
+#: ../exo-csource/main.c:289
 msgid "  --static          Generate static symbols\n"
 msgstr ""
 
-#: ../exo-csource/main.c:237
+#: ../exo-csource/main.c:290
 msgid "  --name=identifier C macro/variable name\n"
 msgstr ""
 
-#: ../exo-csource/main.c:238
+#: ../exo-csource/main.c:291
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr ""
 
-#: ../exo-csource/main.c:248
-#: ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122
-#: ../exo-mount-notify/main.c:167
+#: ../exo-csource/main.c:292
+msgid "  --strip-comments  Remove comments from XML files\n"
+msgstr ""
+
+#: ../exo-csource/main.c:293
+msgid "  --strip-content   Remove node contents from XML files\n"
+msgstr ""
+
+#: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -526,10 +519,8 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../exo-csource/main.c:252
-#: ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126
-#: ../exo-mount-notify/main.c:171
+#: ../exo-csource/main.c:307 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -540,10 +531,8 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../exo-csource/main.c:256
-#: ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130
-#: ../exo-mount-notify/main.c:175
+#: ../exo-csource/main.c:311 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -633,7 +622,10 @@ msgid "Use _startup notification"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
 msgstr ""
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
@@ -697,8 +689,7 @@ msgstr ""
 msgid "Preset icon when creating a desktop file"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:79
-#: ../exo-mount/main.c:74
+#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:74
 #: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr ""
@@ -708,8 +699,7 @@ msgstr ""
 msgid "[FILE|FOLDER]"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:138
-#: ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
 msgid "Failed to open display"
 msgstr ""
@@ -1100,7 +1090,7 @@ msgid "Opera Mail"
 msgstr ""
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Sylpheed Claws"
+msgid "Claws Mail"
 msgstr ""
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
@@ -1123,65 +1113,65 @@ msgstr ""
 msgid "X Terminal"
 msgstr ""
 
-#: ../exo-mount/exo-mount-fstab.c:115
+#: ../exo-mount/exo-mount-fstab.c:92
 msgid "Unknown error"
 msgstr ""
 
-#. generate an appropriate error message
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:242
-#: ../exo-mount/exo-mount-hal.c:343
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr ""
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:194
-#: ../exo-mount/exo-mount-hal.c:250
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr ""
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:564
+#: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr ""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:569
+#: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr ""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:800
+#: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr ""
 
-#: ../exo-mount/exo-mount-hal.c:815
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+#: ../exo-mount/exo-mount-hal.c:846
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
 msgstr ""
 
-#: ../exo-mount/exo-mount-hal.c:826
+#: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:911
+#: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr ""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:916
+#: ../exo-mount/exo-mount-hal.c:947
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr ""
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:921
+#: ../exo-mount/exo-mount-hal.c:952
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr ""
@@ -1221,7 +1211,9 @@ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr ""
 
 #: ../exo-mount/main.c:154
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
 msgstr ""
 
 #: ../exo-mount/main.c:161
@@ -1276,7 +1268,9 @@ msgstr ""
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
 msgstr ""
 
 #. not read-only, writing back data
@@ -1286,7 +1280,9 @@ msgstr ""
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
 msgstr ""
 
 #: ../exo-open/main.c:59
@@ -1302,19 +1298,22 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 
 #: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
+msgid ""
+"  -v, --version                       Print version information and exit"
 msgstr ""
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
 
@@ -1350,4 +1349,3 @@ msgstr ""
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr ""
-
