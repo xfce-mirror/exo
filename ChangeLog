@@ -1,5 +1,12 @@
 2007-05-22	Benedikt Meurer <benny@xfce.org>
 
+	* configure.in.in, exo/exo-string.{c,h}, exo/exo.symbols: Add new
+	  function exo_strdup_strftime(), which is an UTF-8 aware wrapper
+	  for strftime().
+	* docs/reference/: Update reference manual.
+
+2007-05-22	Benedikt Meurer <benny@xfce.org>
+
 	* configure.in.in: Prefer -lmd over -lmd5.
 	* docs/reference/: Update reference manual.
 

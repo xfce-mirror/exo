@@ -124,6 +124,26 @@ dnl ******************************************
 AC_SEARCH_LIBS([MD5Init], [md md5 c], \
                [AC_DEFINE([HAVE_MD5INIT], [1], [Define if MD5Init present])])
 
+dnl ***************************************
+dnl *** Check for strftime() extensions ***
+dnl ***************************************
+AC_TRY_RUN([
+  #include <string.h>
+  #include <time.h>
+  int
+  main (int argc, char **argv)
+  {
+    struct tm tm;
+    char      buffer[16];
+    tm.tm_year = 81;
+    if (strftime (buffer, 16, "%EY", &tm) == 4 && strcmp (buffer, "1981") == 0)
+      return 0;
+    return 1;
+  }
+], [
+  AC_DEFINE([HAVE_STRFTIME_EXTENSION], 1, [Define if strftime supports %E and %O modifiers.])
+])
+
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
