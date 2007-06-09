@@ -1,5 +1,5 @@
-# Brazilian Portuguese translation for the libexo package.
-# Copyright (C) 2004-2006 os-cillation e.K.
+# Brazilian Portuguese translation of the libexo package.
+# Copyright (C) 2004-2007 os-cillation e.K.
 # This file is distributed under the same license as the libexo package.
 # Joao Pedrosa <joaopedrosa@gmail.com>, 2005.
 # Adriano Winter Bess <awbess@gmail.com>, 2006.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-20 13:45+0200\n"
-"PO-Revision-Date: 2007-06-03 21:02-0300\n"
+"PO-Revision-Date: 2007-06-07 14:46-0300\n"
 "Last-Translator: Pablo Lerina <pabloalr@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,6 @@ msgstr ""
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
-#, fuzzy
 msgid "Follow state"
 msgstr "Seguir estado"
 
@@ -523,18 +522,18 @@ msgstr "  --build-list      Interpreta pares (nome, arquivo)\n"
 
 #: ../exo-csource/main.c:292
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr ""
+msgstr " --strip-comments Remove comentarios de arquivos XML\n"
 
 #: ../exo-csource/main.c:293
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr ""
+msgstr " --strip-content Remove nodos de conteúdo de arquivos XML\n"
 
 #: ../exo-csource/main.c:303
 #: ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122
 #: ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -542,7 +541,7 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) 2005-2006\n"
+"Copyright (c) %s\n"
 "        os-cillation e.K. Todos os direitos reservados.\n"
 "\n"
 "Escrito por Benedikt Meurer <benny@xfce.org>.\n"
@@ -831,9 +830,8 @@ msgstr "Câmera Digital %s"
 
 #. last fallback to "Drive"
 #: ../exo-hal/exo-hal.c:532
-#, fuzzy
 msgid "Drive"
-msgstr "Drive"
+msgstr "Unidade"
 
 #: ../exo-hal/exo-hal.c:759
 #, c-format
