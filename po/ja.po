@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: exo 0.3.2\n"
+"Project-Id-Version: exo 0.3.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-20 13:45+0200\n"
-"PO-Revision-Date: 2007-04-07 18:48+0900\n"
+"PO-Revision-Date: 2007-05-27 20:42+0900\n"
 "Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
 msgid "Follow state"
-msgstr ""
+msgstr "状況に応じる"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:139
 #: ../exo/exo-cell-renderer-icon.c:146
 msgid "Render differently based on the selection state."
-msgstr ""
+msgstr "選択状況に応じて異なった描画を行います。"
 
 #: ../exo/exo-cell-renderer-icon.c:167
 msgid "Icon"
@@ -573,15 +573,15 @@ msgstr "  --name=identifier C マクロ/変数名\n"
 
 #: ../exo-csource/main.c:291
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list      解析する (名前, ファイルの) ペアです\n"
+msgstr "  --build-list      解析する (名前、ファイルの) ペアを指定します\n"
 
 #: ../exo-csource/main.c:292
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr ""
+msgstr "  --strip-comments  XML ファイルからコメントを削除します\n"
 
 #: ../exo-csource/main.c:293
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr ""
+msgstr "  --strip-content   XML ファイルからノード情報を削除します\n"
 
 #: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
@@ -1446,6 +1446,9 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
+" --working-directory フォルダ        --launch オプションを使用した時の\n"
+"                                     アプリケーションの既定の作業フォルダを\n"
+"                                     指定します。"
 
 #: ../exo-open/main.c:72
 msgid "The following TYPEs are supported for the --launch command:"
