@@ -40,9 +40,6 @@
 #ifdef HAVE_SYS_MOUNT_H
 #include <sys/mount.h>
 #endif
-#ifdef HAVE_SYS_MNTTAB_H
-#include <sys/mnttab.h>
-#endif
 
 #ifdef HAVE_ERRNO_H
 #include <errno.h>
@@ -65,6 +62,9 @@
 #endif
 #ifdef HAVE_STRING_H
 #include <string.h>
+#endif
+#ifdef HAVE_SYS_MNTTAB_H
+#include <sys/mnttab.h> /* Solaris need stdio.h first */
 #endif
 
 #include <exo/exo-mount-point.h>
