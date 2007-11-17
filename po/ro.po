@@ -1,5 +1,5 @@
 # Romanian translation for the exo library.
-# Copyright (C) 2006 Free Software Foundation
+# Copyright (C) 2006-2007 Free Software Foundation
 # This file is distributed under the same license as the exo package.
 # Mişu Moldovan <dumol@gnome.ro>, 2006-2007.
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-20 13:45+0200\n"
-"PO-Revision-Date: 2007-01-21 04:44+0200\n"
+"PO-Revision-Date: 2007-11-16 23:23+0200\n"
 "Last-Translator: Mişu Moldovan <dumol@gnome.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -159,7 +159,7 @@ msgstr "Embleme"
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:97
 msgid "Emoticons"
-msgstr "Emoticoniţe"
+msgstr "Iconiţe simbolice"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:99
@@ -517,11 +517,11 @@ msgstr "  --build-list      Prelucrează perechile de nume/fişiere\n"
 
 #: ../exo-csource/main.c:292
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr ""
+msgstr "  --strip-comments  Şterge comentariile din fişierele XML\n"
 
 #: ../exo-csource/main.c:293
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr ""
+msgstr "  --strip-content   Şterge conţinutul nodurilor din fişierele XML\n"
 
 #: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
@@ -844,7 +844,7 @@ msgstr "CD audio"
 #: ../exo-hal/exo-hal.c:802
 #, c-format
 msgid "%s Removable Volume"
-msgstr "Volum movibil %s"
+msgstr "Volum amovibil %s"
 
 #: ../exo-hal/exo-hal.c:804
 #, c-format
@@ -877,7 +877,7 @@ msgid ""
 "hyperlinks and display help contents."
 msgstr ""
 "Navigatorul implicit va fi utilizat pentru a deschide\n"
-"adresele de internet şi a afişa informaţiile de ajutor."
+"adresele web şi a afişa informaţiile de ajutor."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:170
 msgid "Mail Reader"
@@ -1138,7 +1138,6 @@ msgid "Opera Mail"
 msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-#, fuzzy
 msgid "Claws Mail"
 msgstr "Mozilla Mail"
 
@@ -1171,9 +1170,8 @@ msgstr "Eroare necunoscută"
 #: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr ""
-"Dispozitivul „%s” nu a fost găsit în tabela de dispozitive a sistemului de "
-"fişiere"
+msgstr "Dispozitivul „%s” nu a fost găsit în tabela de dispozitive a "
+"sistemului de fişiere"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
@@ -1209,9 +1207,8 @@ msgstr ""
 
 #: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr ""
-"CD-urile audio nu pot fi montate, utilizaţi Xfmedia pentru a reda pistele "
-"audio"
+msgstr "CD-urile audio nu pot fi montate, utilizaţi Xfmedia pentru a reda "
+"pistele audio"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:942
@@ -1263,8 +1260,7 @@ msgstr "Trebuie specificat UDI-ul dispozitivului HAL sau fişierul dispozitiv"
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr ""
-"Nu trebuie specificat simultan UDI-ul dispozitivului HAL şi un fişier "
+msgstr "Nu trebuie specificat simultan UDI-ul dispozitivului HAL şi un fişier "
 "dispozitiv"
 
 #: ../exo-mount/main.c:154
@@ -1318,7 +1314,7 @@ msgstr "Se ejectează dispozitivul"
 #: ../exo-mount-notify/main.c:225
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr "Dispozitivul „%s” a fost ejectat. S-ar putea să dureze puţin."
+msgstr "Dispozitivul „%s” a fost ejectat, aşteptaţi puţin."
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
@@ -1359,12 +1355,12 @@ msgstr "       exo-open --launch TIP [PARAMETRI...]"
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
-"  -?, --help                          Arată acest mesaj de ajutor şi ieşi"
+"  -?, --help                          Arată acest mesaj de ajutor"
 
 #: ../exo-open/main.c:63
 msgid ""
 "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Arată versiunea curentă şi ieşi"
+msgstr "  -v, --version                       Arată versiunea curentă"
 
 #: ../exo-open/main.c:65
 msgid ""
@@ -1376,7 +1372,7 @@ msgstr ""
 "  --launch TIP [PARAMETRI...]         Porneşte aplicaţiile preferate de\n"
 "                                      tipul TIP cu parametri PARAMETRI, "
 "unde\n"
-"                                      TIP are una din următoarele valori:"
+"                                      TIP are una din valorile următoare."
 
 #: ../exo-open/main.c:69
 msgid ""
@@ -1429,5 +1425,3 @@ msgstr "Nu s-a putut lansa aplicaţia preferată pentru categoria „%s”."
 msgid "Failed to open URL \"%s\"."
 msgstr "Nu s-a putut deschide URL-ul „%s”."
 
-#~ msgid "Sylpheed Claws"
-#~ msgstr "Sylpheed Claws"
