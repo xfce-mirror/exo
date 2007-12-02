@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-20 13:45+0200\n"
-"PO-Revision-Date:  2007-05-20 13:44+0100\n"
-"Last-Translator: Benedikt Meurer <benny@xfce.org>\n"
+"POT-Creation-Date: 2007-11-06 21:31+0100\n"
+"PO-Revision-Date:  2007-12-01 17:29+0000\n"
+"Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,7 +76,9 @@ msgstr "Pixbuf-Spalte"
 
 #: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:801
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Spalte für das Model, von der das Icon Pixbuf geholt werden soll"
+msgstr ""
+"Spalte für das Modell, von welcher der Bildspeicher fuer das Symbol "
+"geholt werden soll"
 
 #: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:927
 msgid "Text column"
@@ -316,7 +318,7 @@ msgstr "Ob die Objekte bei einem einfachen Klick aktiviert werden sollen"
 
 #: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
-msgstr "Einfachklick-Verzögerung"
+msgstr "Verzögerung bei Einfachklick"
 
 #: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:184
 msgid ""
@@ -489,37 +491,45 @@ msgstr "Aufruf: %s [Optionen] [Dateien]\n"
 #: ../exo-csource/main.c:284
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "        %s [Optionen] --build-list [[Name Datei]...]\n"
+msgstr "       %s [Optionen] --build-list [[Name Datei]...]\n"
 
 #: ../exo-csource/main.c:286
+#, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Diesen Hilfetext anzeigen und beenden\n"
 
 #: ../exo-csource/main.c:287
+#, c-format
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --verison     Programmversion anzeigen\n"
 
 #: ../exo-csource/main.c:288
+#, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Externe Symbole erzeugen\n"
 
 #: ../exo-csource/main.c:289
+#, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Statische Symbole erzeugen\n"
 
 #: ../exo-csource/main.c:290
+#, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier C Variablenname\n"
 
 #: ../exo-csource/main.c:291
+#, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      (Name, Datei) Paare parsen\n"
 
 #: ../exo-csource/main.c:292
+#, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Kommentare aus XML Dateien entfernen\n"
 
 #: ../exo-csource/main.c:293
+#, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Knoteninhalte aus XML Dateien entfernen\n"
 
@@ -551,7 +561,7 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
-"%s kommt mit ABSOLUT KEINER GEWÄHR,\n"
+"%s kommt ABSOLUT OHNE GEWÄHR,\n"
 "Sie können Kopien von %s verbreiten unter den Begriffen der\n"
 "GNU Lesser General Public License, die im Quellpaket von\n"
 "%s gefunden werden kann.\n"
@@ -743,7 +753,7 @@ msgstr "Keine Datei und kein Ordner angegeben"
 #: ../exo-desktop-item-edit/main.c:226
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Nicht unterstützter Dateitype »%s«"
+msgstr "Nicht unterstützter Dateityp »%s«"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:246
@@ -846,12 +856,12 @@ msgstr "Audio-CD"
 #: ../exo-hal/exo-hal.c:802
 #, c-format
 msgid "%s Removable Volume"
-msgstr "%s entfernbarer Datenträger"
+msgstr "Entfernbarer Datenträger »%s«"
 
 #: ../exo-hal/exo-hal.c:804
 #, c-format
 msgid "%s Volume"
-msgstr "%s Datenträger"
+msgstr "%si-Datenträger"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -1028,10 +1038,12 @@ msgstr ""
 "und klicken Sie auf OK, um fortzufahren."
 
 #: ../exo-helper/exo-helper.c:404
+#, c-format
 msgid "No command specified"
 msgstr "Kein Befehl angegeben"
 
 #: ../exo-helper/exo-helper.c:740
+#, c-format
 msgid "Failed to open helpers.rc for writing"
 msgstr "Konnte »helpers.rc« nicht zum Schreiben öffnen"
 
@@ -1050,6 +1062,98 @@ msgstr "Bevorzugte Anwendungen (Webbrowser, E-Mail-Programm und Terminal)"
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
 msgstr "Xfce 4 Bevorzugte Anwendungen"
+
+#: ../exo-helper/main.c:42
+msgid "Failed to execute default Web Browser"
+msgstr "Konnte den bevorzugten Webbrowser nicht ausführen"
+
+#: ../exo-helper/main.c:43
+msgid "Failed to execute default Mail Reader"
+msgstr "Konnte das bevorzugte E-Mail-Programm nicht ausführen"
+
+#: ../exo-helper/main.c:44
+msgid "Failed to execute default Terminal Emulator"
+msgstr "Konnte das bevorzugte Terminal-Programm nicht ausführen"
+
+#: ../exo-helper/main.c:52
+msgid "Usage: exo-helper [OPTION...]"
+msgstr "Aufruf: exo-helper [OPTION...]"
+
+#: ../exo-helper/main.c:54
+msgid "  -h, --help                          Print this help message and exit"
+msgstr ""
+"  -h, --help                          Diesen Hilfetext anzeigen und beenden"
+
+#: ../exo-helper/main.c:55 ../exo-open/main.c:63
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr ""
+"  -v, --version                       Programmversion anzeigen und beenden"
+
+#: ../exo-helper/main.c:57
+msgid ""
+"  --configure                         Open the Preferred Applications\n"
+"                                      configuration dialog"
+msgstr ""
+
+#: ../exo-helper/main.c:60
+msgid ""
+"  --launch TYPE [PARAMETER]           Launch the default helper of TYPE\n"
+"                                      with the optional PARAMETER, where\n"
+"                                      TYPE is one of the following values."
+msgstr ""
+"  --launch TYP [PARAMETER...]         Die bevorzugte Anwendunge für TYP\n"
+"                                      mit den optionalen PARAMETERn "
+"starten,\n"
+"                                      wobei TYP einen der folgenden Werte\n"
+"                                      annehmen kann."
+
+#: ../exo-helper/main.c:64 ../exo-open/main.c:72
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr "Die folgenden TYPen für --launch werden derzeit unterstützt:"
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. * since the exo-helper utility will not accept localized TYPEs.
+#.
+#: ../exo-helper/main.c:70 ../exo-open/main.c:78
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+"  WebBrowser       - Der bevorzugte Webbrowser.\n"
+"  MailReader       - Das bevorzugte E-mail-Programm.\n"
+"  TerminalEmulator - Das bevorzugte Terminal-Programm."
+
+#: ../exo-helper/main.c:114
+#, c-format
+msgid "Invalid helper type \"%s\""
+msgstr "Ungültiger Helfertyp »%s«"
+
+#: ../exo-helper/main.c:158
+#, c-format
+msgid ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
+"\n"
+"Please report bugs to <%s>.\n"
+msgstr ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. Alle Rechte vorbehalten.\n"
+"\n"
+"Entwickelt von Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Erezeugt für Gtk+-%d.%d.%d, unter Gtk+-%d.%d.%d.\n"
+"\n"
+"Bitte melden Sie Fehler an <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1157,7 +1261,7 @@ msgstr "Mozilla Thunderbird"
 
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
-msgstr "RXVT-Unicode"
+msgstr "Unicode-RXVT"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
@@ -1168,6 +1272,7 @@ msgid "X Terminal"
 msgstr "X-Terminal"
 
 #: ../exo-mount/exo-mount-fstab.c:92
+#, c-format
 msgid "Unknown error"
 msgstr "Unbekannter Fehler"
 
@@ -1188,7 +1293,7 @@ msgstr "Das Gerät »%s« ist kein gültiger Datenträger"
 #: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr "Sie sind nicht priviligiert, den Datenträger »%s« auszuwerfen"
+msgstr "Sie sind nicht dazu berechtigt, den Datenträger »%s« auszuwerfen"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:600
@@ -1201,9 +1306,10 @@ msgstr ""
 #: ../exo-mount/exo-mount-hal.c:831
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr "Sie sind nicht priviligiert, den Datenträger »%s« einzubinden"
+msgstr "Sie sind nicht dazu berechtigt, den Datenträger »%s« einzubinden"
 
 #: ../exo-mount/exo-mount-hal.c:846
+#, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
@@ -1213,6 +1319,7 @@ msgstr ""
 "zu brennen"
 
 #: ../exo-mount/exo-mount-hal.c:857
+#, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
 "Audio-CDs können nicht eingebunden werden. Benutzen Sie stattdessen Xfmedia, "
@@ -1222,7 +1329,7 @@ msgstr ""
 #: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "Sie sind nicht priviligiert, den Datenträger »%s« auszuhängen"
+msgstr "Sie sind nicht dazu brechtigt, den Datenträger »%s« auszuhängen"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:947
@@ -1373,12 +1480,6 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          Diesen Hilfetext anzeigen und beenden"
 
-#: ../exo-open/main.c:63
-msgid ""
-"  -v, --version                       Print version information and exit"
-msgstr ""
-"  -v, --version                       Programmversion anzeigen und beenden"
-
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
@@ -1401,23 +1502,6 @@ msgstr ""
 "  --working-directory VERZEICHNIS     Startverzeichnis für Anwendungen, die "
 "via\n"
 "                                      --launch gestartet werden."
-
-#: ../exo-open/main.c:72
-msgid "The following TYPEs are supported for the --launch command:"
-msgstr "Die folgenden TYPen für --launch werden derzeit unterstützt:"
-
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
-#. * since the exo-helper utility will not accept localized TYPEs.
-#.
-#: ../exo-open/main.c:78
-msgid ""
-"  WebBrowser       - The preferred Web Browser.\n"
-"  MailReader       - The preferred Mail Reader.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"  WebBrowser       - Der bevorzugte Webbrowser.\n"
-"  MailReader       - Das bevorzugte Email-Programm.\n"
-"  TerminalEmulator - Das bevorzugte Terminal-Programm."
 
 #: ../exo-open/main.c:82
 msgid ""
