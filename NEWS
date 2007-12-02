@@ -1,3 +1,22 @@
+0.3.4
+=====
+- Add option to exo-csource to strip comments from XML prior to embedding
+  them into binaries (Bug #3094).
+- Fix compilation on Solaris 2.8 (Bug #2798).
+- Fix compilation on NetBSD (Bug #2808).
+- Properly quote URLs prior to passing them to external programs (Bug #2791).
+- Bump required HAL version to 0.5.7 (Bug #2828).
+- Updated translations: Alexander Nyakhaychyk (be), Pau Rul-lan Ferragut (ca),
+                        Benedikt Meurer and Nico Schümann (de), Jeff Bailes
+                        (en_GB), Piarres Beobide (eu), Jari Rahkonen (fi), Mike
+                        Massonnet (fr), Daichi Kawahata (ja), Peter Maassen and
+                        Stephan Arts (nl), Pablo Lerina and Og Maciel (pt_BR),
+                        Mişu Moldovan (ro)
+- New translations: Mohamed Magdy (ar), Terje Uriansrud (nb_NO), Rihards
+                    Priedītis (lv), Nuno Miguel (pt_PT), ﻢﺤﻣﺩ ﻊﻠﻳ ﺎﻠﻤﻜﻳ (ur),
+                    Hydonsingore Cia (zh_TW), Besnik Bleta (sq)
+
+
 0.3.2
 =====
 - Further clean up the ExoIconView code and add several small optimization.
@@ -19,8 +38,8 @@
 - Fix a few memory leaks.
 - Updated translations: Pau Rul-lan Ferragut (ca), Michal Várady (cs), Benedikt
                         Meurer (de), Stavros Giannouris (el), Piarres Beobide
-			(eu), Piotr Maliński and Szymon Kałasz (pl), Andrey
-			Fedoseev (ru), Alexander Toresson (sv).
+                        (eu), Piotr Maliński and Szymon Kałasz (pl), Andrey
+                        Fedoseev (ru), Alexander Toresson (sv).
 - New translations: Alexander Nyakhaychyk (be), Geraint Rowlands (cy), Pavle
                     Jonoski (mk), Stephan Arts (nl), Amanpreet Singh Alam (pa).
 
@@ -38,9 +57,9 @@
   mail reader, as some helper applications, namely Firefox and Thunderbird,
   cannot handle URLs with commata (#2454).
 - Updated translations: Pau Rul-lan Ferragut (ca), Michal Várady (cs), Benedikt
-			Meurer (de), Piarres Beobide (eu), Jari Rahkonen (fi),
-			Maximilian Schleiss (fr), Piotr Maliński (pl), Adriano
-			Winter Bess (pt_BR), Andrey Fedoseev (ru)
+                        Meurer (de), Piarres Beobide (eu), Jari Rahkonen (fi),
+                        Maximilian Schleiss (fr), Piotr Maliński (pl), Adriano
+                        Winter Bess (pt_BR), Andrey Fedoseev (ru)
 - New translations: Sonam Pelden (dz), Dario DOE (it)
 
 
@@ -66,10 +85,10 @@
 - Use the GSlice allocator where possible to further reduce memory overhead.
 - Update the API documentation, adding a visual index for the available widgets.
 - Updated translations: Michal Varady (cs), Benedikt Meurer and Fabian Nowak
-			(de), Stavros Giannouris (el), Piarres Beobide (eu),
-			Jari Rahkonen (fi), Maximilian Schleiss (fr), Piotr
-			Maliński and Szymon Kałasz (pl), Tomás Acauan Schertel
-			(pt_BR)
+                        (de), Stavros Giannouris (el), Piarres Beobide (eu),
+                        Jari Rahkonen (fi), Maximilian Schleiss (fr), Piotr
+                        Maliński and Szymon Kałasz (pl), Tomás Acauan Schertel
+                        (pt_BR)
 - New translations: Leandro Regueiro (gl), Dimitri Gogelia (ka)
 
 
@@ -114,12 +133,12 @@
 - Support three different levels of debugging support (yes/minimum/no).
 - New translations: Pau Rul·lan Ferragut (ca), Michal Várady (cs), Stavros
                     Giannouris (el), Dwayne Bailey (en_GB), Patricio Carr (es),
-		    Peeter Vois (et), Piarres Beobide (eu), Jari Rahkonen
+                    Peeter Vois (et), Piarres Beobide (eu), Jari Rahkonen
                     (fi), Stephane Roy (fr), Dotan Kamber (he), Szervác Attila
-		    (hu), Daichi Kawahata (ja), Piotr Maliński (pl), Adriano
-		    Winter Bess (pt_BR), Joao Pedrosa (pt_BR), Mişu Moldovan
-		    (ro), Andrey Fedoseev (ru), Maxim Zenin (ru), Alexander
-		    Toresson (sv)
+                    (hu), Daichi Kawahata (ja), Piotr Maliński (pl), Adriano
+                    Winter Bess (pt_BR), Joao Pedrosa (pt_BR), Mişu Moldovan
+                    (ro), Andrey Fedoseev (ru), Maxim Zenin (ru), Alexander
+                    Toresson (sv)
 
 
 0.3.0

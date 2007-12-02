@@ -74,4 +74,7 @@ if MAINTAINER_MODE
 	xsltproc -nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
 endif
 
+# required for gtk-doc
+dist-hook: all
+
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
