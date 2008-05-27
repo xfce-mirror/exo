@@ -4,14 +4,15 @@
 # Copyright (C) 2004-2007 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
 # Daichi Kawahata <daichi@xfce.org>, 2005-2007.
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-20 13:45+0200\n"
-"PO-Revision-Date: 2007-05-27 20:42+0900\n"
-"Last-Translator: Daichi Kawahata <daichi@xfce.org>\n"
+"PO-Revision-Date: 2008-05-19 00:34+0900\n"
+"Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,8 +44,10 @@ msgstr "サイズ"
 msgid "The size of the icon to render in pixels."
 msgstr "表示するアイコンのサイズです (ピクセル単位)。"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
-#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
+#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#: ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237
+#: ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "ファイル「%s」を開けませんでした: %s"
@@ -56,14 +59,12 @@ msgstr "ファイル「%s」を読み込めませんでした: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"画像「%s」のロードに失敗しました: 理由は不明ですが、恐らく画像ファイルが破損"
-"しています"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "画像「%s」のロードに失敗しました: 理由は不明ですが、恐らく画像ファイルが破損しています"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-bar.c:249
+#: ../exo/exo-icon-view.c:783
 msgid "Orientation"
 msgstr "方向"
 
@@ -73,22 +74,26 @@ msgid "The orientation of the iconbar"
 msgstr "アイコンバーが延びる方向です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:266
+#: ../exo/exo-icon-view.c:800
 msgid "Pixbuf column"
 msgstr "ピクセルバッファ欄"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:801
+#: ../exo/exo-icon-bar.c:267
+#: ../exo/exo-icon-view.c:801
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "アイコンのピクセルバッファを取得するために使用されるモデル欄です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:282
+#: ../exo/exo-icon-view.c:927
 msgid "Text column"
 msgstr "文字欄"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:928
+#: ../exo/exo-icon-bar.c:283
+#: ../exo/exo-icon-view.c:928
 msgid "Model column used to retrieve the text from"
 msgstr "文字を取得するために使用されるモデル欄です。"
 
@@ -113,32 +118,38 @@ msgid "Active item index"
 msgstr "有効アイテムのインデックス"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319
+#: ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "有効アイテムの塗潰し色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326
+#: ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "有効アイテムの枠の色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333
+#: ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "有効アイテムの文字色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340
+#: ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "カーソル・アイテムの塗潰し色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347
+#: ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "カーソル・アイテムの枠の色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354
+#: ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "カーソル・アイテムの文字色"
 
@@ -180,7 +191,7 @@ msgstr "エモティコン"
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:99
 msgid "International Denominations"
-msgstr ""
+msgstr "国際単位"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:101
@@ -208,7 +219,8 @@ msgid "All Icons"
 msgstr "全てのアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "画像ファイル"
 
@@ -285,8 +297,7 @@ msgstr "マークアップ欄"
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:755
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Pango のマークアップが使用されている場合に文字を取得するためのモデル欄です。"
+msgstr "Pango のマークアップが使用されている場合に文字を取得するためのモデル欄です。"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:769
@@ -300,11 +311,8 @@ msgstr "アイコン表示のためのモデルです。"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:784
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"それぞれのアイテムの文字とアイコンがお互いにどの位置に置かれるかを選択しま"
-"す。"
+msgid "How the text and icon of each item are positioned relative to each other"
+msgstr "それぞれのアイテムの文字とアイコンがお互いにどの位置に置かれるかを選択します。"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:816
@@ -347,28 +355,28 @@ msgid "The selection mode"
 msgstr "選択モードです。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:878
+#: ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "シングルクリック"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:879
+#: ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "表示されているアイテムを一回のクリックで有効にするかどうかです。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:895
+#: ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "シングルクリックのタイムアウト"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:184
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"シングルクリックモードの時にマウスカーソルの下にあるアイテムが自動的に選択状"
-"態になるまでの時間です。"
+#: ../exo/exo-icon-view.c:896
+#: ../exo/exo-tree-view.c:184
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "シングルクリックモードの時にマウスカーソルの下にあるアイテムが自動的に選択状態になるまでの時間です。"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:911
@@ -404,7 +412,8 @@ msgstr "選択ボックスの透明度です。"
 msgid "Preview"
 msgstr "プレビュー"
 
-#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139
+#: ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "ファイルは選択されていません"
 
@@ -433,12 +442,8 @@ msgid "_Add a new toolbar"
 msgstr "新しいツールバーを追加(_A)"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"追加するにはアイテムをツールバーの上にドラッグしてください、ツールバーからド"
-"ラッグすると削除されます。"
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "追加するにはアイテムをツールバーの上にドラッグしてください、ツールバーからドラッグすると削除されます。"
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -583,8 +588,10 @@ msgstr "  --strip-comments  XML ファイルからコメントを削除します
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   XML ファイルからノード情報を削除します\n"
 
-#: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
+#: ../exo-csource/main.c:303
+#: ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122
+#: ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -600,8 +607,10 @@ msgstr ""
 "Benedikt Meurer <benny@xfce.org> が製作しました。\n"
 "\n"
 
-#: ../exo-csource/main.c:307 ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
+#: ../exo-csource/main.c:307
+#: ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126
+#: ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -617,8 +626,10 @@ msgstr ""
 "%s source package.\n"
 "\n"
 
-#: ../exo-csource/main.c:311 ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
+#: ../exo-csource/main.c:311
+#: ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130
+#: ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -708,14 +719,8 @@ msgid "Use _startup notification"
 msgstr "起動通知を行う(_S)"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"このオプションを選択すると、ファイルマネージャーやメニューからコマンドが実行"
-"される時に起動通知を行います。全てのアプリケーションが起動通知に対応している"
-"わけではありません。"
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "このオプションを選択すると、ファイルマネージャーやメニューからコマンドが実行される時に起動通知を行います。全てのアプリケーションが起動通知に対応しているわけではありません。"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -726,8 +731,7 @@ msgstr "ターミナルで実行する(_T)"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:444
 msgid "Select this option to run the command in a terminal window."
-msgstr ""
-"このオプションを有効にすると、コマンドはターミナルウィンドウで実行されます。"
+msgstr "このオプションを有効にすると、コマンドはターミナルウィンドウで実行されます。"
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
@@ -779,7 +783,8 @@ msgstr "リンクを作成する場合のプリセットURL"
 msgid "Preset icon when creating a desktop file"
 msgstr "デスクトップファイルを作成する場合のプリセットアイコン"
 
-#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:74
+#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-mount/main.c:74
 #: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
@@ -789,7 +794,8 @@ msgstr "バージョン情報を表示して終了する"
 msgid "[FILE|FOLDER]"
 msgstr "[ファイル|フォルダ]"
 
-#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138
+#: ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
 msgid "Failed to open display"
 msgstr "ディスプレイを開くのに失敗しました"
@@ -981,9 +987,7 @@ msgstr "標準の文書ブラウザーを設定するのに失敗しました"
 #: ../exo-helper/exo-helper-chooser.c:184
 #: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
-msgstr ""
-"選択されているアプリケーションを変更するにはマウスの左ボタンをクリックしてく"
-"ださい。"
+msgstr "選択されているアプリケーションを変更するにはマウスの左ボタンをクリックしてください。"
 
 #: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
@@ -1234,13 +1238,15 @@ msgstr "不明なエラー"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:132
+#: ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "ファイルシステムのデバイステーブルに「%s」がありません"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:224
+#: ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "指定されたデバイス「%s」はボリュームでもドライブでもありません"
@@ -1264,17 +1270,12 @@ msgid "You are not privileged to mount the volume \"%s\""
 msgstr "ボリューム「%s」をマウントする権限がありません"
 
 #: ../exo-mount/exo-mount-hal.c:846
-msgid ""
-"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
-"record audio or data on the disc"
-msgstr ""
-"空のディスクはマウントできません。このディスクに音楽やデータを記録するには "
-"Xfburn のような CD レコーディングアプリケーションを使用してください。"
+msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+msgstr "空のディスクはマウントできません。このディスクに音楽やデータを記録するには Xfburn のような CD レコーディングアプリケーションを使用してください。"
 
 #: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr ""
-"音楽 CD はマウントできません。曲を再生するには Xfmedia を使用してください。"
+msgstr "音楽 CD はマウントできません。曲を再生するには Xfmedia を使用してください。"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:942
@@ -1296,11 +1297,11 @@ msgstr "ボリューム「%s」は恐らくコマンド行から手動でマウ�
 
 #: ../exo-mount/main.c:65
 msgid "Eject rather than mount"
-msgstr ""
+msgstr "マウントせずにイジェクトします"
 
 #: ../exo-mount/main.c:66
 msgid "Unmount rather than mount"
-msgstr ""
+msgstr "マウントせずにアンマウントします"
 
 #: ../exo-mount/main.c:68
 msgid "Mount by HAL device UDI"
@@ -1329,12 +1330,8 @@ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "HALデバイスUDIとデバイスファイルを同時に指定することはできません"
 
 #: ../exo-mount/main.c:154
-msgid ""
-"Cannot mount by HAL device UDI, because HAL support was disabled for this "
-"build"
-msgstr ""
-"このビルドではHALサポートが無効になっているため、HALデバイスUDIでマウントでき"
-"ません。"
+msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+msgstr "このビルドではHALサポートが無効になっているため、HALデバイスUDIでマウントできません。"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1388,12 +1385,8 @@ msgstr "デバイスのマウントを解除しています"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
-msgid ""
-"The device \"%s\" is being unmounted by the system. Please do not remove the "
-"media or disconnect the drive."
-msgstr ""
-"デバイス「%s」はシステムによってマウントを解除されています。メディアを取り出"
-"したりドライブを外したりしないでください。"
+msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+msgstr "デバイス「%s」はシステムによってマウントを解除されています。メディアを取り出したりドライブを外したりしないでください。"
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
@@ -1402,12 +1395,8 @@ msgstr "デバイスにデータを書き込んでいます"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
-msgid ""
-"There is data that needs to be written to the device \"%s\" before it can be "
-"removed. Please do not remove the media or disconnect the drive."
-msgstr ""
-"デバイス「%s」が取り出される前に書き込む必要のあるデータがあります。メディア"
-"を取り出したりドライブを外したりしないでください。"
+msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+msgstr "デバイス「%s」が取り出される前に書き込む必要のあるデータがあります。メディアを取り出したりドライブを外したりしないでください。"
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1419,20 +1408,16 @@ msgstr "または: exo-open --launch タイプ [パラメーター(複数可)...
 
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
-"  -?, --help                          このメッセージを表示して終了します"
+msgstr "  -?, --help                          このメッセージを表示して終了します"
 
 #: ../exo-open/main.c:63
-msgid ""
-"  -v, --version                       Print version information and exit"
-msgstr ""
-"  -v, --version                       バージョン情報を表示して終了します"
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       バージョン情報を表示して終了します"
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch タイプ [パラメーター...]   任意の「パラメーター(複数可)」と\n"
@@ -1442,8 +1427,7 @@ msgstr ""
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
 " --working-directory フォルダ        --launch オプションを使用した時の\n"
@@ -1490,3 +1474,4 @@ msgstr "タイプが「%s」のファイルを開くアプリケーションの�
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "URL「%s」を開くのに失敗しました。"
+
