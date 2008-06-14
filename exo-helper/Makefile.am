@@ -67,36 +67,6 @@ desktop_DATA =								\
 @INTLTOOL_DESKTOP_RULE@
 
 ##
-## Build MCS plugin if xfce-mcs-manager is present. The MCS plugin is
-## really just a wrapper for exo-preferred-applications (remember, MCS
-## must die!).
-##
-if HAVE_XFCE_MCS_MANAGER
-pluginsdir = $(libdir)/xfce4/mcs-plugins
-plugins_LTLIBRARIES =							\
-	exo-preferred-applications-settings.la
-
-exo_preferred_applications_settings_la_LDFLAGS =			\
-	-avoid-version							\
-	-module								\
-	-no-undefined
-
-if PLATFORM_WIN32
-exo_preferred_applications_settings_la_LDFLAGS +=			\
-	-export-symbols $(datadir)/xfce4/devel/mcs-manager.def
-endif
-
-exo_preferred_applications_settings_la_SOURCES =			\
-	exo-preferred-applications-settings.c
-
-exo_preferred_applications_settings_la_CFLAGS =				\
-	$(XFCE_MCS_MANAGER_CFLAGS)
-
-exo_preferred_applications_settings_la_LIBADD =				\
-	$(XFCE_MCS_MANAGER_LIBS)
-endif
-
-##
 ## Rules to auto-generate built sources
 ##
 ## This is a bit tricky with automake, and non-trivial to implement. The
