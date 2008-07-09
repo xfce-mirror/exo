@@ -1,0 +1,1500 @@
+# Ukrainian translation of  libexo.
+# Copyright (C) 2008 Dmitry Nikitin
+# This file is distributed under the same license as the libexo package.
+#
+# Dmitry Nikitin <luckas_fb@mail.ru>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version:  libexo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-09 12:08+0000\n"
+"PO-Revision-Date: 2008-07-08 13:39+0300\n"
+"Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
+"Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:138
+#: ../exo/exo-cell-renderer-icon.c:145
+msgid "Follow state"
+msgstr "Наступний стан"
+
+#: ../exo/exo-cell-renderer-ellipsized-text.c:139
+#: ../exo/exo-cell-renderer-icon.c:146
+msgid "Render differently based on the selection state."
+msgstr "Інакше відображення базоване на поточному стані."
+
+#: ../exo/exo-cell-renderer-icon.c:167
+msgid "Icon"
+msgstr "Значок"
+
+#: ../exo/exo-cell-renderer-icon.c:168
+msgid "The icon to render."
+msgstr "Відображення значка."
+
+#: ../exo/exo-cell-renderer-icon.c:189
+msgid "size"
+msgstr "розмір"
+
+#: ../exo/exo-cell-renderer-icon.c:190
+msgid "The size of the icon to render in pixels."
+msgstr "Розмір відображуваного значка у пікселях."
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
+#, c-format
+msgid "Failed to open file \"%s\": %s"
+msgstr "Помилка відкриття файлу \"%s\": %s"
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:832
+#, c-format
+msgid "Failed to read file \"%s\": %s"
+msgstr "Помилка читання з файлу \"%s\": %s"
+
+#: ../exo/exo-gdk-pixbuf-extensions.c:873
+#, c-format
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Неможливо завантажити малюнок \"%s\": Невідома причина, можливо пошкоджений "
+"файл малюнку"
+
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
+msgid "Orientation"
+msgstr "Орієнтація"
+
+#: ../exo/exo-icon-bar.c:250
+msgid "The orientation of the iconbar"
+msgstr "Орієнтація панелі запуску"
+
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:800
+msgid "Pixbuf column"
+msgstr "Стовпчик Pixbuf"
+
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:801
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "Модель стовпчика використовувана для отримання значка pixbuf з"
+
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:927
+msgid "Text column"
+msgstr "Текстового стовпчика"
+
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:928
+msgid "Model column used to retrieve the text from"
+msgstr "Модель стовпчика використовувана для отримання тексту з"
+
+#: ../exo/exo-icon-bar.c:295
+msgid "Icon Bar Model"
+msgstr "Модель панелі запуску"
+
+#: ../exo/exo-icon-bar.c:296
+msgid "Model for the icon bar"
+msgstr "Модель для панелі запуску"
+
+#: ../exo/exo-icon-bar.c:312
+msgid "Active"
+msgstr "Активна"
+
+#: ../exo/exo-icon-bar.c:313
+msgid "Active item index"
+msgstr "Активний заголовок елемента"
+
+#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
+msgid "Active item fill color"
+msgstr "Активний колір заповнення елемента"
+
+#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
+msgid "Active item border color"
+msgstr "Активний колір обрамлення елемента"
+
+#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
+msgid "Active item text color"
+msgstr "Активний колір тексту елемента"
+
+#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
+msgid "Cursor item fill color"
+msgstr "Колір заповнення елемента під курсором"
+
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
+msgid "Cursor item border color"
+msgstr "Колір обрамлення елемента під курсором"
+
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
+msgid "Cursor item text color"
+msgstr "Колір тексту елемента під курсором"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
+#: ../exo/exo-icon-chooser-dialog.c:85
+msgid "Action Icons"
+msgstr "Значки дій"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
+#: ../exo/exo-icon-chooser-dialog.c:87
+msgid "Animations"
+msgstr "Анімації"
+
+#. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
+#: ../exo/exo-icon-chooser-dialog.c:89
+msgid "Application Icons"
+msgstr "Значки програм"
+
+#. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
+#: ../exo/exo-icon-chooser-dialog.c:91
+msgid "Menu Icons"
+msgstr "Значки меню"
+
+#. EXO_ICON_CHOOSER_CONTEXT_DEVICES
+#: ../exo/exo-icon-chooser-dialog.c:93
+msgid "Device Icons"
+msgstr "Значки пристроїв"
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
+#: ../exo/exo-icon-chooser-dialog.c:95
+msgid "Emblems"
+msgstr "Емблеми"
+
+#. EXO_ICON_CHOOSER_CONTEXT_EMOTES
+#: ../exo/exo-icon-chooser-dialog.c:97
+msgid "Emoticons"
+msgstr "Смайли"
+
+#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
+#: ../exo/exo-icon-chooser-dialog.c:99
+msgid "International Denominations"
+msgstr "Міжнародні назви"
+
+#. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
+#: ../exo/exo-icon-chooser-dialog.c:101
+msgid "File Type Icons"
+msgstr "Значки типів файлів"
+
+#. EXO_ICON_CHOOSER_CONTEXT_PLACES
+#: ../exo/exo-icon-chooser-dialog.c:103
+msgid "Location Icons"
+msgstr "Значки місцезнаходження"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STATUS
+#: ../exo/exo-icon-chooser-dialog.c:105
+msgid "Status Icons"
+msgstr "Значки статусу"
+
+#. EXO_ICON_CHOOSER_CONTEXT_OTHER
+#: ../exo/exo-icon-chooser-dialog.c:107
+msgid "Uncategorized Icons"
+msgstr "Значки без категорій"
+
+#. EXO_ICON_CHOOSER_CONTEXT_ALL
+#: ../exo/exo-icon-chooser-dialog.c:111
+msgid "All Icons"
+msgstr "Всі значки"
+
+#. EXO_ICON_CHOOSER_CONTEXT_FILE
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+msgid "Image Files"
+msgstr "Файли картинок"
+
+#. setup the header label
+#: ../exo/exo-icon-chooser-dialog.c:205
+msgid "Select _icon from:"
+msgstr "Вибрати _значок з:"
+
+#: ../exo/exo-icon-view.c:651
+msgid "Column Spacing"
+msgstr "Відстань між стовпчиками"
+
+#: ../exo/exo-icon-view.c:652
+msgid "Space which is inserted between grid column"
+msgstr "Проміжок вставлений між сіткою стовпчиків"
+
+#: ../exo/exo-icon-view.c:668
+msgid "Number of columns"
+msgstr "Кількість стовпчиків"
+
+#: ../exo/exo-icon-view.c:669
+msgid "Number of columns to display"
+msgstr "Кількість стовпчиків для показу"
+
+#: ../exo/exo-icon-view.c:683
+msgid "Enable Search"
+msgstr "Дозволити пошук"
+
+#: ../exo/exo-icon-view.c:684
+msgid "View allows user to search through columns interactively"
+msgstr "Перегляд дозволів користувача для пошуку через стовпчики інтерактивно"
+
+#: ../exo/exo-icon-view.c:701
+msgid "Width for each item"
+msgstr "Ширина кожного елемента"
+
+#: ../exo/exo-icon-view.c:702
+msgid "The width used for each item"
+msgstr "Ширина використовувана для кожного елемента"
+
+#: ../exo/exo-icon-view.c:720
+msgid "Layout mode"
+msgstr "Режим розкладки"
+
+#: ../exo/exo-icon-view.c:721
+msgid "The layout mode"
+msgstr "Режим розкладки"
+
+#: ../exo/exo-icon-view.c:737
+msgid "Margin"
+msgstr "Поле"
+
+#: ../exo/exo-icon-view.c:738
+msgid "Space which is inserted at the edges of the icon view"
+msgstr "Простір введений на краї перегляду значка"
+
+#: ../exo/exo-icon-view.c:754
+msgid "Markup column"
+msgstr "Стовпчик відміток"
+
+#: ../exo/exo-icon-view.c:755
+msgid "Model column used to retrieve the text if using Pango markup"
+msgstr ""
+"Модель стовпчиків, що використовується для отримання тексту якщо "
+"застосовується маркування Pango"
+
+#: ../exo/exo-icon-view.c:769
+msgid "Icon View Model"
+msgstr "Режим перегляду значками"
+
+#: ../exo/exo-icon-view.c:770
+msgid "The model for the icon view"
+msgstr "Режим перегляду у вигляді значків"
+
+#: ../exo/exo-icon-view.c:784
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr "Як текст і значок кожного елемента розташовується відповідно до іншого"
+
+#: ../exo/exo-icon-view.c:816
+msgid "Reorderable"
+msgstr "Можливість впорядкування"
+
+#: ../exo/exo-icon-view.c:817
+msgid "View is reorderable"
+msgstr "Перегляд впорядкований"
+
+#: ../exo/exo-icon-view.c:832
+msgid "Row Spacing"
+msgstr "Відстань між рядками"
+
+#: ../exo/exo-icon-view.c:833
+msgid "Space which is inserted between grid rows"
+msgstr "Проміжок, що вставляється між сусідніми рядками"
+
+#: ../exo/exo-icon-view.c:847
+msgid "Search Column"
+msgstr "Пошук у стовпчиках"
+
+#: ../exo/exo-icon-view.c:848
+msgid "Model column to search through when searching through item"
+msgstr "Модель стовпчика для пошуку з допомогою пошуку елемента"
+
+#: ../exo/exo-icon-view.c:862
+msgid "Selection mode"
+msgstr "Режим вибору"
+
+#: ../exo/exo-icon-view.c:863
+msgid "The selection mode"
+msgstr "Режим вибору"
+
+#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:166
+msgid "Single Click"
+msgstr "Одинарне клацання"
+
+#: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:167
+msgid "Whether the items in the view can be activated with single clicks"
+msgstr "Можливість активації перегляду елементів одинарним клацанням мишки"
+
+#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:183
+msgid "Single Click Timeout"
+msgstr "Затримка разового клацання"
+
+#: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:184
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Інтервал часу після якого елемент під курсором мишки буде вибрано "
+"автоматично в режимі одинарного клацання"
+
+#: ../exo/exo-icon-view.c:911
+msgid "Spacing"
+msgstr "Проміжки"
+
+#: ../exo/exo-icon-view.c:912
+msgid "Space which is inserted between cells of an item"
+msgstr "Проміжок який вставляється між клітинками елемента"
+
+#: ../exo/exo-icon-view.c:935
+msgid "Selection Box Color"
+msgstr "Вибір кольору блоку"
+
+#: ../exo/exo-icon-view.c:936
+msgid "Color of the selection box"
+msgstr "Колір виділеного блоку"
+
+#: ../exo/exo-icon-view.c:942
+msgid "Selection Box Alpha"
+msgstr "Вибір прозорості блоку"
+
+#: ../exo/exo-icon-view.c:943
+msgid "Opacity of the selection box"
+msgstr "Прозорість виділеного блоку"
+
+#: ../exo/exo-thumbnail-preview.c:123
+msgid "Preview"
+msgstr "Попередній перегляд"
+
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+msgid "No file selected"
+msgstr "Не вибрано файл"
+
+#: ../exo/exo-thumbnail-preview.c:299
+msgid "Block Device"
+msgstr "Блочні пристрої"
+
+#: ../exo/exo-thumbnail-preview.c:304
+msgid "Character Device"
+msgstr "Пристрої вводу"
+
+#: ../exo/exo-thumbnail-preview.c:309
+msgid "Folder"
+msgstr "Теки"
+
+#: ../exo/exo-thumbnail-preview.c:314
+msgid "FIFO"
+msgstr "FIFO"
+
+#: ../exo/exo-thumbnail-preview.c:319
+msgid "Socket"
+msgstr "Сокет"
+
+#: ../exo/exo-toolbars-editor-dialog.c:126
+msgid "_Add a new toolbar"
+msgstr "_Додати нову панель"
+
+#: ../exo/exo-toolbars-editor.c:230
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Перетягніть елемент на панелі вище щоб додати його, або з панелей в таблицю "
+"елементів щоб його видалити."
+
+#: ../exo/exo-toolbars-editor.c:543
+msgid "Separator"
+msgstr "Роздільник"
+
+#: ../exo/exo-toolbars-view.c:759
+msgid "Toolbar _Style"
+msgstr "_Стиль панелі"
+
+#: ../exo/exo-toolbars-view.c:766
+msgid "_Desktop Default"
+msgstr "Типовий робочий ст_іл"
+
+#: ../exo/exo-toolbars-view.c:775
+msgid "_Icons only"
+msgstr "Тільки _значки"
+
+#: ../exo/exo-toolbars-view.c:784
+msgid "_Text only"
+msgstr "Тільки _текст"
+
+#: ../exo/exo-toolbars-view.c:793
+msgid "Text for _All Icons"
+msgstr "Текст для _всіх значків"
+
+#: ../exo/exo-toolbars-view.c:802
+msgid "Text for I_mportant Icons"
+msgstr "Текст для в_ажливих значків"
+
+#: ../exo/exo-toolbars-view.c:810
+msgid "_Remove Toolbar"
+msgstr "_Видалити панель"
+
+#: ../exo/exo-toolbars-view.c:825
+msgid "Customize Toolbar..."
+msgstr "Налаштувати панель..."
+
+#: ../exo/exo-url.c:297
+#, c-format
+msgid "Unable to open \"%s\""
+msgstr "Неможливо відкрити \"%s\""
+
+#: ../exo/exo-url.c:328
+#, c-format
+msgid "The URL \"%s\" is not supported"
+msgstr "Посилання URL \"%s\" не підтримується"
+
+#: ../exo/exo-url.c:414
+#, c-format
+msgid "Failed to open \"%s\"."
+msgstr "Помилка відкриття \"%s\"."
+
+#: ../exo/exo-wrap-table.c:160
+msgid "Column spacing"
+msgstr "Проміжок між стовпчиками"
+
+#: ../exo/exo-wrap-table.c:161
+msgid "The amount of space between two consecutive columns"
+msgstr "Проміжок між двома сусідніми стовпчиками"
+
+#: ../exo/exo-wrap-table.c:175
+msgid "Row spacing"
+msgstr "Проміжок між рядками"
+
+#: ../exo/exo-wrap-table.c:176
+msgid "The amount of space between two consecutive rows"
+msgstr "Проміжок між двома сусідніми рядками"
+
+#: ../exo/exo-wrap-table.c:190
+msgid "Homogeneous"
+msgstr "Однорідні"
+
+#: ../exo/exo-wrap-table.c:191
+msgid "Whether the children should be all the same size"
+msgstr "Можливість всіх дочірніх елементів набувати однакового розміру"
+
+#: ../exo/exo-xsession-client.c:143
+msgid "Window group"
+msgstr "Група вікна"
+
+#: ../exo/exo-xsession-client.c:144
+msgid "Window group leader"
+msgstr "Керівник групи вікна"
+
+#: ../exo/exo-xsession-client.c:154
+msgid "Restart command"
+msgstr "Команда перезавантаження"
+
+#: ../exo/exo-xsession-client.c:155
+msgid "Session restart command"
+msgstr "Команда перезавантаження сеансу"
+
+#: ../exo-csource/main.c:283
+#, c-format
+msgid "Usage: %s [options] [file]\n"
+msgstr "Використання: %s [параметри  ] [файл]\n"
+
+#: ../exo-csource/main.c:284
+#, c-format
+msgid "       %s [options] --build-list [[name file]...]\n"
+msgstr "       %s [опції  ] --build-list [[назва файл]...]\n"
+
+#: ../exo-csource/main.c:286
+#, c-format
+msgid "  -h, --help        Print this help message and exit\n"
+msgstr "  -h, --help        Вивід цього повідомлення і вихід \n"
+
+#: ../exo-csource/main.c:287
+#, c-format
+msgid "  -v, --version     Print version information and exit\n"
+msgstr "  -v, --version     Вивід інформації про версію і вихід\n"
+
+#: ../exo-csource/main.c:288
+#, c-format
+msgid "  --extern          Generate extern symbols\n"
+msgstr "  --extern          Генерувати зовнішні    \n"
+
+#: ../exo-csource/main.c:289
+#, c-format
+msgid "  --static          Generate static symbols\n"
+msgstr "  --static          Генерувати статичні    \n"
+
+#: ../exo-csource/main.c:290
+#, c-format
+msgid "  --name=identifier C macro/variable name\n"
+msgstr "  --name=ідентифік. C глоб./змінної назви\n"
+
+#: ../exo-csource/main.c:291
+#, c-format
+msgid "  --build-list      Parse (name, file) pairs\n"
+msgstr "  --build-list      Аналіз пари (назва файл)\n"
+
+#: ../exo-csource/main.c:292
+#, c-format
+msgid "  --strip-comments  Remove comments from XML files\n"
+msgstr "  --strip-comments  Видалення коментарів XML файлу\n"
+
+#: ../exo-csource/main.c:293
+#, c-format
+msgid "  --strip-content   Remove node contents from XML files\n"
+msgstr "  --strip-content   Видалити вузлів змісту з XML файлів\n"
+
+#: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
+#: ../exo-open/main.c:129
+#, c-format
+msgid ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr ""
+"Copyright (c) %s\n"
+"        os-cillation e.K.Всі права застережено\n"
+"\n"
+"Написано   Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+
+#: ../exo-csource/main.c:307 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
+#: ../exo-open/main.c:133
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr ""
+"%s постачається БЕЗ БУДЬ-ЯКОЇ ГАРАНТІЇ,\n"
+"Ви можете поширювати копії %s на умовах\n"
+"ліцензії GNU Lesser General Public License, яку можна знайти\n"
+"у пакеті текстів програми %s.\n"
+"\n"
+
+#: ../exo-csource/main.c:311 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
+#: ../exo-open/main.c:137
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "Повідомлення про помилки для <%s>.\n"
+
+#. allocate the file chooser
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:290
+msgid "Select an Application"
+msgstr "Вибрати програму"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:299
+#: ../exo-helper/exo-helper-chooser.c:432
+msgid "All Files"
+msgstr "Всі файли"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-helper/exo-helper-chooser.c:437
+msgid "Executable Files"
+msgstr "Виконувані файли"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:319
+#: ../exo-helper/exo-helper-chooser.c:452
+msgid "Perl Scripts"
+msgstr "Сценарії Perl"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:325
+#: ../exo-helper/exo-helper-chooser.c:458
+msgid "Python Scripts"
+msgstr "Сценарії Python"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:331
+#: ../exo-helper/exo-helper-chooser.c:464
+msgid "Ruby Scripts"
+msgstr "Сценарії Ruby"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:337
+#: ../exo-helper/exo-helper-chooser.c:470
+msgid "Shell Scripts"
+msgstr "Сценарії Shell"
+
+#: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
+#, c-format
+msgid "Create Launcher <b>%s</b>"
+msgstr "Створити ярлик запуску <b>%s</b>"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:318
+msgid "_Name:"
+msgstr "_Назва:"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:336
+msgid "C_omment:"
+msgstr "К_оментар:"
+
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:354
+msgid "Comm_and:"
+msgstr "Ком_анда:"
+
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:371
+msgid "_URL:"
+msgstr "_Посилання URL:"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:389
+msgid "_Icon:"
+msgstr "_Значок:"
+
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. setup a label to tell that no icon was selected
+#: ../exo-desktop-item-edit/exo-die-editor.c:408
+#: ../exo-desktop-item-edit/exo-die-editor.c:1134
+msgid "No icon"
+msgstr "Без значка"
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:419
+msgid "Options:"
+msgstr "Параметри:"
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
+#: ../exo-desktop-item-edit/exo-die-editor.c:430
+msgid "Use _startup notification"
+msgstr "Використовувати пов_ідомлення про запуск"
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:431
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Виберіть цей параметр для повідомлення про запуск коли команду запущено   з "
+"менеджеру файлів або з меню. Не кожна програма підтримує повідомлення   про "
+"запуск  ."
+
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
+#: ../exo-desktop-item-edit/exo-die-editor.c:443
+msgid "Run in _terminal"
+msgstr "Запустити в _терміналі"
+
+#: ../exo-desktop-item-edit/exo-die-editor.c:444
+msgid "Select this option to run the command in a terminal window."
+msgstr "Виберіть цей параметр для запуску команди у вікні терміналу."
+
+#. allocate the icon chooser dialog
+#: ../exo-desktop-item-edit/exo-die-editor.c:591
+msgid "Select an icon"
+msgstr "Виберіть значок"
+
+#. --- constants ---
+#: ../exo-desktop-item-edit/main.c:50
+msgid "Create Launcher"
+msgstr "Створити ярлик запуску"
+
+#: ../exo-desktop-item-edit/main.c:50
+msgid "Create Link"
+msgstr "Створити посилання"
+
+#: ../exo-desktop-item-edit/main.c:51
+msgid "Edit Launcher"
+msgstr "Редагувати ярлик запуску"
+
+#: ../exo-desktop-item-edit/main.c:51
+msgid "Edit Link"
+msgstr "Редагувати посилання"
+
+#: ../exo-desktop-item-edit/main.c:72
+msgid "Create a new desktop file in the given directory"
+msgstr "Створити новий файл desktop в поточній теці"
+
+#: ../exo-desktop-item-edit/main.c:73
+msgid "Type of desktop file to create (Application or Link)"
+msgstr "Тип файлу desktop для створення (Програма чи посилання)"
+
+#: ../exo-desktop-item-edit/main.c:74
+msgid "Preset name when creating a desktop file"
+msgstr "Введіть назву створюваного файлу desktop"
+
+#: ../exo-desktop-item-edit/main.c:75
+msgid "Preset comment when creating a desktop file"
+msgstr "Введіть коментар для створюваного файлу desktop"
+
+#: ../exo-desktop-item-edit/main.c:76
+msgid "Preset command when creating a launcher"
+msgstr "Введіть команду для створюваного ярлика запуску"
+
+#: ../exo-desktop-item-edit/main.c:77
+msgid "Preset URL when creating a link"
+msgstr "Введіть адресу URL для створюваного посилання"
+
+#: ../exo-desktop-item-edit/main.c:78
+msgid "Preset icon when creating a desktop file"
+msgstr "Виберіть значок для створюваного файлу desktop"
+
+#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:74
+#: ../exo-mount-notify/main.c:77
+msgid "Print version information and exit"
+msgstr "Надрукувати інформацію про версію і вийти"
+
+#. initialize Gtk+
+#: ../exo-desktop-item-edit/main.c:125
+msgid "[FILE|FOLDER]"
+msgstr "[FILE|FOLDER]"
+
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
+#: ../exo-mount-notify/main.c:153
+msgid "Failed to open display"
+msgstr "Помилка відкриття дисплею"
+
+#: ../exo-desktop-item-edit/main.c:168
+msgid "No file/folder specified"
+msgstr "Не визначено файлу/теки"
+
+#. tell the user that we don't support the type
+#: ../exo-desktop-item-edit/main.c:226
+#, c-format
+msgid "Unsupported desktop file type \"%s\""
+msgstr "Неправильний тип файлу desktop \"%s\""
+
+#. add the "Create"/"Save" button (as default)
+#: ../exo-desktop-item-edit/main.c:246
+msgid "C_reate"
+msgstr "С_творити"
+
+#. create failed, ask the user to specify a file name
+#: ../exo-desktop-item-edit/main.c:366
+msgid "Choose filename"
+msgstr "Вибрати назву файлу"
+
+#: ../exo-desktop-item-edit/main.c:420
+#, c-format
+msgid "Failed to create \"%s\"."
+msgstr "Помилка при створені \"%s\"."
+
+#: ../exo-desktop-item-edit/main.c:420
+#, c-format
+msgid "Failed to save \"%s\"."
+msgstr "Помилка при збережені \"%s\"."
+
+#: ../exo-hal/exo-hal.c:444
+#, c-format
+msgid "External %s Drive"
+msgstr "Зовнішній %s носій"
+
+#: ../exo-hal/exo-hal.c:446
+#, c-format
+msgid "%s Drive"
+msgstr "%s носій"
+
+#: ../exo-hal/exo-hal.c:455
+msgid "External Floppy Drive"
+msgstr "Зовнішній дисковод"
+
+#: ../exo-hal/exo-hal.c:457
+msgid "Floppy Drive"
+msgstr "Дисковод"
+
+#: ../exo-hal/exo-hal.c:461
+msgid "Compact Flash Drive"
+msgstr "Носій Compact Flash"
+
+#: ../exo-hal/exo-hal.c:465
+msgid "Memory Stick Drive"
+msgstr "Носій Memory Stick"
+
+#: ../exo-hal/exo-hal.c:469
+msgid "Smart Media Drive"
+msgstr "Носій Smart Media"
+
+#: ../exo-hal/exo-hal.c:473
+msgid "SD/MMC Drive"
+msgstr "Носій SD/MMC"
+
+#: ../exo-hal/exo-hal.c:477
+msgid "Zip Drive"
+msgstr "Носій Zip"
+
+#: ../exo-hal/exo-hal.c:481
+msgid "Jaz Drive"
+msgstr "Носій Jaz"
+
+#: ../exo-hal/exo-hal.c:485
+msgid "Pen Drive"
+msgstr "Носій Pen"
+
+#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
+#: ../exo-hal/exo-hal.c:494
+#, c-format
+msgid "%s Music Player"
+msgstr "%s Музичний програвач"
+
+#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
+#: ../exo-hal/exo-hal.c:509
+#, c-format
+msgid "%s Digital Camera"
+msgstr "%s Цифрова камера"
+
+#. last fallback to "Drive"
+#: ../exo-hal/exo-hal.c:532
+msgid "Drive"
+msgstr "Носій"
+
+#: ../exo-hal/exo-hal.c:759
+#, c-format
+msgid "Blank %s Disc"
+msgstr "Чистий %s диск"
+
+#: ../exo-hal/exo-hal.c:761
+#, c-format
+msgid "%s Disc"
+msgstr "Диск %s"
+
+#. special case for pure audio disc
+#: ../exo-hal/exo-hal.c:766
+msgid "Audio CD"
+msgstr "Аудіо диск"
+
+#: ../exo-hal/exo-hal.c:802
+#, c-format
+msgid "%s Removable Volume"
+msgstr "З'ємний том %s"
+
+#: ../exo-hal/exo-hal.c:804
+#, c-format
+msgid "%s Volume"
+msgstr "%s розділ"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:100
+#: ../exo-helper/exo-preferred-applications.desktop.in.h:1
+msgid "Preferred Applications"
+msgstr "Типові програми"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
+msgid "Select default applications for various services"
+msgstr "Виберіть типову програму для відповідного сервісу"
+
+#.
+#. Internet
+#.
+#: ../exo-helper/exo-helper-chooser-dialog.c:125
+msgid "Internet"
+msgstr "Інтернет"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:138
+msgid "Web Browser"
+msgstr "Переглядач Web"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:146
+msgid ""
+"The preferred Web Browser will be used to open\n"
+"hyperlinks and display help contents."
+msgstr ""
+"Типовий переглядач WEB використовується для \n"
+"відкриття гіперпосилань і відображення довідки."
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:170
+msgid "Mail Reader"
+msgstr "Поштовий клієнт"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:178
+msgid ""
+"The preferred Mail Reader will be used to compose\n"
+"emails when you click on email addresses."
+msgstr ""
+"Типовий Поштовий клієнт використовується для   \n"
+"створення повідомлень при виборі email адрес."
+
+#.
+#. Utilities
+#.
+#: ../exo-helper/exo-helper-chooser-dialog.c:198
+msgid "Utilities"
+msgstr "Утиліти"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:211
+msgid "Terminal Emulator"
+msgstr "Емулятор терміналу"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:219
+msgid ""
+"The preferred Terminal Emulator will be used to\n"
+"run commands that require a CLI environment."
+msgstr ""
+"Типовий Емулятор терміналу буде використаний \n"
+"для команд, що потребують CLI середовища."
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:258
+msgid "Failed to open the documentation browser."
+msgstr "Помилка відкриття документації переглядача."
+
+#: ../exo-helper/exo-helper-chooser.c:184
+#: ../exo-helper/exo-helper-chooser.c:191
+msgid "Press left mouse button to change the selected application."
+msgstr "Натисніть ліву кнопку мишки для вибору потрібної програми."
+
+#: ../exo-helper/exo-helper-chooser.c:190
+msgid "Application Chooser Button"
+msgstr "Кнопка вибору програми"
+
+#: ../exo-helper/exo-helper-chooser.c:334
+msgid "No application selected"
+msgstr "Немає вибраної програми"
+
+#: ../exo-helper/exo-helper-chooser.c:350
+msgid "Failed to set default Web Browser"
+msgstr "Помилка вибору типового переглядача Web"
+
+#: ../exo-helper/exo-helper-chooser.c:351
+msgid "Failed to set default Mail Reader"
+msgstr "Помилка вибору типового Поштового клієнта"
+
+#: ../exo-helper/exo-helper-chooser.c:352
+msgid "Failed to set default Terminal Emulator"
+msgstr "Помилка вибору типового Емулятора терміналу"
+
+#. allocate the chooser
+#: ../exo-helper/exo-helper-chooser.c:422
+msgid "Select application"
+msgstr "Виберіть програму"
+
+#: ../exo-helper/exo-helper-chooser.c:535
+msgid "Choose a custom Web Browser"
+msgstr "Виберіть довільний Переглядач Web"
+
+#: ../exo-helper/exo-helper-chooser.c:536
+msgid "Choose a custom Mail Reader"
+msgstr "Виберіть довільний Поштовий клієнт"
+
+#: ../exo-helper/exo-helper-chooser.c:537
+msgid "Choose a custom Terminal Emulator"
+msgstr "Виберіть довільний Емулятор терміналу"
+
+#: ../exo-helper/exo-helper-chooser.c:542
+msgid ""
+"Specify the application you want to use\n"
+"as default Web Browser for Xfce:"
+msgstr ""
+"Призначте програму, яка використовуватиметься\n"
+"як типовий Переглядач Web для Xfce:"
+
+#: ../exo-helper/exo-helper-chooser.c:543
+msgid ""
+"Specify the application you want to use\n"
+"as default Mail Reader for Xfce:"
+msgstr ""
+"Призначте програму, яка використовуватиметься\n"
+"як типовий Поштовий клієнт Xfce:"
+
+#: ../exo-helper/exo-helper-chooser.c:544
+msgid ""
+"Specify the application you want to use\n"
+"as default Terminal Emulator for Xfce:"
+msgstr ""
+"Призначте програму, яка використовуватиметься\n"
+"як типовий Емулятор терміналу для Xfce:"
+
+#: ../exo-helper/exo-helper-chooser.c:610
+msgid "Browse the file system to choose a custom command."
+msgstr "Оглянути файлову систему для вибору довільної команди."
+
+#: ../exo-helper/exo-helper-chooser.c:793
+msgid "_Other..."
+msgstr "_Інше..."
+
+#: ../exo-helper/exo-helper-chooser.c:794
+msgid "Use a custom application which is not included in the above list."
+msgstr "Використовувати довільну програму, котра не включена до списку вище."
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:141
+msgid "Choose Preferred Application"
+msgstr "Вибір типових програм"
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:284
+msgid ""
+"Please choose your preferred Web\n"
+"Browser now and click OK to proceed."
+msgstr ""
+"Виберіть типовий Переглядач\n"
+"WEB і натисніть OK для продовження."
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:286
+msgid ""
+"Please choose your preferred Mail Reader\n"
+"now and click OK to proceed."
+msgstr ""
+"Виберіть типовий Поштовий\n"
+"клієнт і натисніть OK для продовження."
+
+#: ../exo-helper/exo-helper-launcher-dialog.c:288
+msgid ""
+"Please choose your preferred Terminal\n"
+"Emulator now and click OK to proceed."
+msgstr ""
+"Виберіть типовий Емулятор\n"
+"терміналу і натисніть OK для продовження."
+
+#: ../exo-helper/exo-helper.c:404
+#, c-format
+msgid "No command specified"
+msgstr "Команду не призначено"
+
+#: ../exo-helper/exo-helper.c:740
+#, c-format
+msgid "Failed to open helpers.rc for writing"
+msgstr "Помилка відкриття helpers.rc для запису"
+
+#: ../exo-helper/exo-preferred-applications.desktop.in.h:2
+msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
+msgstr ""
+"Улюблені програми (переглядач Web, переглядач пошти та емулятор терміналу)"
+
+#: ../exo-helper/exo-preferred-applications.desktop.in.h:3
+msgid "Xfce 4 Preferred Applications"
+msgstr "Улюблені програми Xfce 4"
+
+#: ../exo-helper/main.c:42
+msgid "Failed to execute default Web Browser"
+msgstr "Помилка під час запуску типового переглядача Web"
+
+#: ../exo-helper/main.c:43
+msgid "Failed to execute default Mail Reader"
+msgstr "Помилка під час запуску типового поштового клієнта"
+
+#: ../exo-helper/main.c:44
+msgid "Failed to execute default Terminal Emulator"
+msgstr "Помилка під час запуску типового емулятора терміналу"
+
+#: ../exo-helper/main.c:52
+msgid "Usage: exo-helper [OPTION...]"
+msgstr "Використання: exo-open [ПАРАМЕТР...]"
+
+#: ../exo-helper/main.c:54
+msgid "  -h, --help                          Print this help message and exit"
+msgstr "  -?, --help                          Вивести цей текст та вийти"
+
+#: ../exo-helper/main.c:55 ../exo-open/main.c:63
+msgid ""
+"  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Вивести інформацію про версію "
+
+#: ../exo-helper/main.c:57
+msgid ""
+"  --configure                         Open the Preferred Applications\n"
+"                                      configuration dialog"
+msgstr ""
+"  --configure                         Відкрити діалог налаштування\n"
+"                                      стандартних програм"
+
+#: ../exo-helper/main.c:60
+msgid ""
+"  --launch TYPE [PARAMETER]           Launch the default helper of TYPE\n"
+"                                      with the optional PARAMETER, where\n"
+"                                      TYPE is one of the following values."
+msgstr ""
+"  --launch ТИП [ПАРАМЕТРИ  ...]       Запустити улюблену програму        \n"
+"                                      ТИП з необов'язковими ПАРАМЕТРАМИ, \n"
+"                                      де ТИП це одне з наступних значень."
+
+#: ../exo-helper/main.c:64 ../exo-open/main.c:72
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr "Наступні ТИПИ підтримуються для --launch команди:"
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. * since the exo-helper utility will not accept localized TYPEs.
+#.
+#: ../exo-helper/main.c:70 ../exo-open/main.c:78
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+"  WebBrowser       - Улюблений переглядач Web.\n"
+"  MailReader       - Улюблений переглядач пошти.\n"
+"  TerminalEmulator - Улюблений емулятор терміналу."
+
+#: ../exo-helper/main.c:114
+#, c-format
+msgid "Invalid helper type \"%s\""
+msgstr "Неправильний тип улюбленої програми \"%s\""
+
+#: ../exo-helper/main.c:158
+#, c-format
+msgid ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
+"\n"
+"Please report bugs to <%s>.\n"
+msgstr ""
+"%s (Xfce %s)\n"
+"\n"
+"Авторське право (c) 2003-2006\n"
+"        os-cillation e.K. Усі права застережено.\n"
+"\n"
+"Автор Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Зібрано з Gtk+-%d.%d.%d, виконується з Gtk+-%d.%d.%d.\n"
+"\n"
+"Сповістіть про помилку <%s>.\n"
+
+#: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
+msgid "Xfce Terminal"
+msgstr "Термінал Xfce"
+
+#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
+msgid "aterm"
+msgstr "aterm"
+
+#: ../exo-helper/helpers/balsa.desktop.in.in.h:1
+msgid "Balsa"
+msgstr "Balsa"
+
+#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
+msgid "Debian Sensible Browser"
+msgstr "Переглядач Debian"
+
+#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
+msgid "Debian X Terminal Emulator"
+msgstr "Емулятор терміналу Debian X"
+
+#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
+msgid "Encompass"
+msgstr "Переглядач Encompass"
+
+#: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
+msgid "Epiphany Web Browser"
+msgstr "Переглядач Web Epiphany"
+
+#: ../exo-helper/helpers/eterm.desktop.in.in.h:1
+msgid "Enlightened Terminal Emulator"
+msgstr "Емулятор терміналу Enlightened"
+
+#: ../exo-helper/helpers/evolution.desktop.in.in.h:1
+msgid "Novell Evolution"
+msgstr "Переглядач пошти Novell Evolution"
+
+#: ../exo-helper/helpers/firefox.desktop.in.in.h:1
+msgid "Mozilla Firefox"
+msgstr "Переглядач Mozilla Firefox"
+
+#: ../exo-helper/helpers/galeon.desktop.in.in.h:1
+msgid "Galeon Web Browser"
+msgstr "Переглядач Web Galeon"
+
+#: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
+msgid "GNOME Terminal"
+msgstr "Термінал GNOME"
+
+#: ../exo-helper/helpers/kmail.desktop.in.in.h:1
+msgid "KMail"
+msgstr "Переглядач пошти KMail"
+
+#: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
+msgid "Konqueror Web Browser"
+msgstr "Переглядач Web Konqueror"
+
+#: ../exo-helper/helpers/links.desktop.in.in.h:1
+msgid "Links Text Browser"
+msgstr "Переглядач Links текстовий"
+
+#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
+msgid "Lynx Text Browser"
+msgstr "Переглядач Lynx текстовий"
+
+#: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
+msgid "Mozilla Browser"
+msgstr "Переглядач Mozilla"
+
+#: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
+msgid "Mozilla Mail"
+msgstr "Переглядач пошти Mozilla Mail"
+
+#: ../exo-helper/helpers/mutt.desktop.in.in.h:1
+msgid "Mutt"
+msgstr "Переглядач пошти Mutt"
+
+#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
+msgid "Netscape Navigator"
+msgstr "Переглядач Netscape Navigator"
+
+#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
+msgid "NXterm"
+msgstr "Термінал NXterm"
+
+#: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
+msgid "Opera Browser"
+msgstr "Переглядач Opera"
+
+#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
+msgid "Opera Mail"
+msgstr "Переглядач пошти Opera Mail"
+
+#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
+msgid "Claws Mail"
+msgstr "Переглядач пошти Claws Mail"
+
+#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
+msgid "Sylpheed"
+msgstr "Переглядач пошти Sylpheed"
+
+#: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
+msgid "Mozilla Thunderbird"
+msgstr "Переглядач пошти Mozilla Thunderbird"
+
+#: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
+msgid "RXVT Unicode"
+msgstr "Термінал RXVT Unicode"
+
+#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
+msgid "W3M Text Browser"
+msgstr "Переглядач W3M текстовий"
+
+#: ../exo-helper/helpers/xterm.desktop.in.in.h:1
+msgid "X Terminal"
+msgstr "Термінал X"
+
+#: ../exo-mount/exo-mount-fstab.c:92
+#, c-format
+msgid "Unknown error"
+msgstr "Невідома помилка"
+
+#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
+#. tell the caller that no matching device was found
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
+#, c-format
+msgid "Device \"%s\" not found in file system device table"
+msgstr "Пристрій \"%s\" не знайдено в таблиці пристроїв файлової системи"
+
+#. definitely not a device that we're able to mount, eject or unmount
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#, c-format
+msgid "Given device \"%s\" is not a volume or drive"
+msgstr "Отриманий пристрій \"%s\" не є розділом або диском"
+
+#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:595
+#, c-format
+msgid "You are not privileged to eject the volume \"%s\""
+msgstr "Ви не маєте прав на здійснення витягування тому \"%s\""
+
+#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
+#: ../exo-mount/exo-mount-hal.c:600
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being ejected"
+msgstr "Якась із програм забороняє викидання розділу \"%s\""
+
+#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:831
+#, c-format
+msgid "You are not privileged to mount the volume \"%s\""
+msgstr "Ви не маєте прав на монтування розділу \"%s\""
+
+#: ../exo-mount/exo-mount-hal.c:846
+#, c-format
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
+msgstr ""
+"Чисті диски не можуть бути змонтовані, використовуйте програму запису дисків "
+"таку як Xfburn для запису аудіо чи дисків з даними"
+
+#: ../exo-mount/exo-mount-hal.c:857
+#, c-format
+msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
+msgstr ""
+"Аудіо диски не можуть бути змонтовані, використовуйте Xfmedia для "
+"програвання аудіо треків"
+
+#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:942
+#, c-format
+msgid "You are not privileged to unmount the volume \"%s\""
+msgstr "Ви не маєте прав на демонтування розділу \"%s\""
+
+#. TRANSLATORS: An application is blocking a volume from being unmounted.
+#: ../exo-mount/exo-mount-hal.c:947
+#, c-format
+msgid "An application is preventing the volume \"%s\" from being unmounted"
+msgstr "Якась із програм забороняє демонтування розділу \"%s\""
+
+#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
+#: ../exo-mount/exo-mount-hal.c:952
+#, c-format
+msgid "The volume \"%s\" was probably mounted manually on the command line"
+msgstr "Розділ \"%s\" можна спробувати змонтувати вручну через командний рядок"
+
+#: ../exo-mount/main.c:65
+msgid "Eject rather than mount"
+msgstr "Висування важливіше монтування"
+
+#: ../exo-mount/main.c:66
+msgid "Unmount rather than mount"
+msgstr "Демонтування важливіше монтування"
+
+#: ../exo-mount/main.c:68
+msgid "Mount by HAL device UDI"
+msgstr "Монтувати за допомогою ідентифікатора HAL UDI пристрою"
+
+#: ../exo-mount/main.c:70
+msgid "Mount by HAL device UDI (not supported)"
+msgstr "Монтування за допомогою HAL UDI пристрою (не підтримується)"
+
+#: ../exo-mount/main.c:72
+msgid "Mount by device file"
+msgstr "Монтування за допомогою файла пристрою"
+
+#: ../exo-mount/main.c:73
+msgid "Don't show any dialogs"
+msgstr "Не показувати ніяких діалогів"
+
+#. the caller must specify either a HAL UDI or a device file
+#: ../exo-mount/main.c:138
+msgid "Must specify HAL device UDI or device file"
+msgstr "Повинні призначити пристрій HAL UDI або файл пристрою"
+
+#. the caller must specify EITHER a HAL UDI or a device file
+#: ../exo-mount/main.c:146
+msgid "Must not specify both a HAL device UDI and a device file simultaneously"
+msgstr "Не треба призначати HAL пристрій UDI і файл пристрою одночасно"
+
+#: ../exo-mount/main.c:154
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+"Неможливо змонтувати через HAL пристрій UDI, оскільки відсутня підтримка HAL "
+"у цьому випуску"
+
+#: ../exo-mount/main.c:161
+#, c-format
+msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
+msgstr "Призначений UDI \"%s\" не є правильним пристроєм HAL UDI"
+
+#. the caller must not specify both eject and unmount
+#: ../exo-mount/main.c:178
+msgid "Cannot eject and unmount simultaneously"
+msgstr "Неможливо одночасно витягнути і демонтувати"
+
+#: ../exo-mount/main.c:330
+#, c-format
+msgid "Failed to eject \"%s\""
+msgstr "Неможливо витягнути \"%s\""
+
+#: ../exo-mount/main.c:332
+#, c-format
+msgid "Failed to unmount \"%s\""
+msgstr "Неможливо демонтувати \"%s\""
+
+#: ../exo-mount/main.c:334
+#, c-format
+msgid "Failed to mount \"%s\""
+msgstr "Неможливо монтувати \"%s\""
+
+#. tell the user that the device can be removed now
+#: ../exo-mount-notify/main.c:111
+#, c-format
+msgid "The device \"%s\" is now safe to remove."
+msgstr "Пристрій \"%s\" заборонено до видалення."
+
+#: ../exo-mount-notify/main.c:112
+msgid "Device is now safe to remove"
+msgstr "Пристрій зараз заборонено до видалення"
+
+#. read-only, just ejecting
+#: ../exo-mount-notify/main.c:224
+msgid "Ejecting device"
+msgstr "Висування пристрою"
+
+#: ../exo-mount-notify/main.c:225
+#, c-format
+msgid "The device \"%s\" is being ejected. This may take some time."
+msgstr "Пристрій \"%s\" буде витягнуто. Це може зайняти деякий час."
+
+#. read-only, just unmounting
+#: ../exo-mount-notify/main.c:230
+msgid "Unmounting device"
+msgstr "Демонтування пристрою"
+
+#: ../exo-mount-notify/main.c:231
+#, c-format
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+"Пристрій \"%s\" буде демонтований системою. Будь-ласка видаліть медіа-диск "
+"або відключіть диск."
+
+#. not read-only, writing back data
+#: ../exo-mount-notify/main.c:238
+msgid "Writing data to device"
+msgstr "Запис даних на пристрій"
+
+#: ../exo-mount-notify/main.c:239
+#, c-format
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
+"Ще є дані для запису на пристрій \"%s\" перед тим як його буде видалено.Будь-"
+"ласка не видаляйте медіа-диск та не відключайте диск."
+
+#: ../exo-open/main.c:59
+msgid "Usage: exo-open [URLs...]"
+msgstr "Використання: exo-open [посилання URLs...]"
+
+#: ../exo-open/main.c:60
+msgid "       exo-open --launch TYPE [PARAMETERs...]"
+msgstr "       exo-open --launch ТИП [ПАРАМЕТРИ  ...]"
+
+#: ../exo-open/main.c:62
+msgid "  -?, --help                          Print this help message and exit"
+msgstr "  -?, --help                          Надрукувати цей текст і вийти   "
+
+#: ../exo-open/main.c:65
+msgid ""
+"  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
+"                                      TYPE is one of the following values."
+msgstr ""
+"  --launch ТИП [ПАРАМЕТРИ  ...]       Запустити улюблену програму        \n"
+"                                      ТИП з необов'язковими ПАРАМЕТРАМИ, "
+"де   \n"
+"                                      ТИП це одне з наступних значень.    "
+
+#: ../exo-open/main.c:69
+msgid ""
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
+"                                      when using the --launch option."
+msgstr ""
+"  --working-directory ТЕКА            Типова робоча тека для "
+"програм             \n"
+"                                      коли викор.    --launch опція. "
+
+#: ../exo-open/main.c:82
+msgid ""
+"If you don't specify the --launch option, exo-open will open all specified\n"
+"URLs with their preferred URL handlers. Else, if you specify the --launch\n"
+"option, you can select which preferred application you want to run, and\n"
+"pass additional parameters to the application (i.e. for TerminalEmulator\n"
+"you can pass the command line that should be run in the terminal)."
+msgstr ""
+"Якщо ви не зазначили --launch опцію, exo-open буде відкривати всі    \n"
+"URLs з їхніми визначеними URL handlers. Інакше, якщо зазначено   --launch\n"
+"опцію, Ви можете вибрати яку улюблену програму Ви бажаєте запустити і  \n"
+"передати додаткові параметри для програми (таких як для Емулятора       \n"
+"терміналу передати стрічку команд які варто запустити в терміналі)"
+
+#: ../exo-open/main.c:149
+#, c-format
+msgid "Failed to launch preferred application for category \"%s\"."
+msgstr "Неможливо запустити улюблену програму для категорії \"%s\"."
+
+#: ../exo-open/main.c:170
+#, c-format
+msgid "Failed to open URL \"%s\"."
+msgstr "Неможливо відкрити посилання URL \"%s\"."
+
+#~ msgid "Failed to launch exo-preferred-applications"
+#~ msgstr "Невдача запуску спеціалізованих програм exo"
+
+#~ msgid "Button Label|Preferred Applications"
+#~ msgstr "Улюблені програми"
