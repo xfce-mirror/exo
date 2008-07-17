@@ -221,6 +221,8 @@ print_csource (FILE        *fp,
             inside_content = TRUE;
           else if (inside_content && *p == '<')
             inside_content = FALSE;
+          else if (inside_content && !g_ascii_isspace (*p))
+            inside_content = FALSE;
           else if (inside_content)
             continue;
         }
