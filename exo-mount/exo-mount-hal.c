@@ -547,9 +547,19 @@ exo_mount_hal_device_eject (ExoMountHalDevice *device,
   DBusMessage  *message;
   DBusMessage  *result;
   DBusError     derror;
+  const gchar  *backing_udi = NULL;
 
   g_return_val_if_fail (device != NULL, FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  /* see if the udi is a crypto fs, in which case we'll have to tear down the crypto layer. */
+  backing_udi = libhal_volume_crypto_get_backing_volume_udi(device->volume);
+
+  if (backing_udi)
+    {
+    /* never eject a LUKS-encrypted device */
+    return exo_mount_hal_device_unmount(device, error);
+  }
 
   /* allocate the D-Bus message for the "Eject" method */
   message = dbus_message_new_method_call ("org.freedesktop.Hal", device->udi, "org.freedesktop.Hal.Device.Volume", "Eject");
@@ -873,6 +883,71 @@ oom:      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, g_strerror (ENOM
 }
 
 
+static gboolean
+exo_mount_teardown_crypto_volume(const gchar *udi, GError **error)
+{
+  DBusMessage *message = NULL;
+  DBusMessage *result = NULL;
+  DBusError derror;
+
+  message = dbus_message_new_method_call ("org.freedesktop.Hal", udi,
+              "org.freedesktop.Hal.Device.Volume.Crypto",
+              "Teardown");
+
+  if (G_UNLIKELY (message == NULL))
+    {
+      /* out of memory */
+oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, g_strerror (ENOMEM));
+      return FALSE;
+    }
+
+  if (!dbus_message_append_args (message,
+               DBUS_TYPE_INVALID)) {
+      dbus_message_unref (message);
+      goto oom;
+  }
+
+  dbus_error_init (&derror);
+
+  result = dbus_connection_send_with_reply_and_block (dbus_connection, message, -1, &derror);
+  if (G_LIKELY (result != NULL))
+    {
+      /* check if an error was returned */
+      if (dbus_message_get_type (result) == DBUS_MESSAGE_TYPE_ERROR)
+        dbus_set_error_from_message (&derror, result);
+
+      /* release the result */
+      dbus_message_unref (result);
+    }
+
+  /* release the message */
+  dbus_message_unref (message);
+
+  if (G_UNLIKELY (dbus_error_is_set (&derror)))
+    {
+      /* try to translate the error appropriately */
+      if (strcmp (derror.name, "org.freedesktop.Hal.Device.Volume.PermissionDenied") == 0)
+        {
+          /* TRANSLATORS: The user tried to eject a device although he's not privileged to do so. */
+          g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("You are not privileged to teardown the crypto layer"));
+        }
+      else if (strcmp (derror.name, "org.freedesktop.Hal.Device.Volume.Busy") == 0)
+        {
+          /* TRANSLATORS: An application is blocking a mounted volume from being ejected. */
+          g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("An application is preventing the crypto layer from being torn down"));
+        }
+      else
+        {
+          /* no precise error message, use the HAL one */
+          exo_mount_hal_propagate_error (error, &derror);
+        }
+
+      /* release the DBus error */
+      dbus_error_free (&derror);
+      return FALSE;
+    }
+    return TRUE;
+}
 
 
 /**
@@ -894,9 +969,13 @@ exo_mount_hal_device_unmount (ExoMountHalDevice *device,
   DBusMessage  *message;
   DBusMessage  *result;
   DBusError     derror;
+  const gchar  *backing_udi = NULL;
 
   g_return_val_if_fail (device != NULL, FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  /* see if the udi is a crypto fs, in which case we'll have to teardown the crypto layer. */
+  backing_udi = libhal_volume_crypto_get_backing_volume_udi(device->volume);
 
   /* allocate the D-Bus message for the "Unmount" method */
   message = dbus_message_new_method_call ("org.freedesktop.Hal", device->udi, "org.freedesktop.Hal.Device.Volume", "Unmount");
@@ -955,7 +1034,7 @@ oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, g_strerror (ENOMEM))
         {
           /* Ups, volume not mounted, we succeed! */
           dbus_error_free (&derror);
-          return TRUE;
+          goto finish;
         }
       else
         {
@@ -968,6 +1047,11 @@ oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, g_strerror (ENOMEM))
       return FALSE;
     }
 
+finish:
+  if (G_UNLIKELY(backing_udi != NULL))
+    {
+      return exo_mount_teardown_crypto_volume(backing_udi, error);
+    }
   return TRUE;
 }
 
