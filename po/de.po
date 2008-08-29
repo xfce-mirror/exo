@@ -2,15 +2,15 @@
 # Copyright (C) 2004-2007 os-cillation e.K.
 # This file is distributed under the same license as the libexo package.
 # Benedikt Meurer <benny@xfce.org>, 2004-2007.
-# Fabian Nowak <timystery@arcor.de>, 2006.
+# Fabian Nowak <timystery@arcor.de>, 2006,2008.
 # Nico Schümann <nico@prog.nico22.de>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-06 21:31+0100\n"
-"PO-Revision-Date:  2007-12-01 17:29+0000\n"
+"POT-Creation-Date: 2008-08-21 21:25+0200\n"
+"PO-Revision-Date:  2008-08-21 21:29+0200\n"
 "Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -77,8 +77,8 @@ msgstr "Pixbuf-Spalte"
 #: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:801
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr ""
-"Spalte für das Modell, von welcher der Bildspeicher fuer das Symbol "
-"geholt werden soll"
+"Spalte für das Modell, von welcher der Bildspeicher fuer das Symbol geholt "
+"werden soll"
 
 #: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:927
 msgid "Text column"
@@ -483,57 +483,57 @@ msgstr "Befehl zum Neustart"
 msgid "Session restart command"
 msgstr "Befehl zum Neustart der Sitzung"
 
-#: ../exo-csource/main.c:283
+#: ../exo-csource/main.c:285
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Aufruf: %s [Optionen] [Dateien]\n"
 
-#: ../exo-csource/main.c:284
+#: ../exo-csource/main.c:286
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [Optionen] --build-list [[Name Datei]...]\n"
 
-#: ../exo-csource/main.c:286
+#: ../exo-csource/main.c:288
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Diesen Hilfetext anzeigen und beenden\n"
 
-#: ../exo-csource/main.c:287
+#: ../exo-csource/main.c:289
 #, c-format
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --verison     Programmversion anzeigen\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:290
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Externe Symbole erzeugen\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:291
 #, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Statische Symbole erzeugen\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:292
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier C Variablenname\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:293
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      (Name, Datei) Paare parsen\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:294
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Kommentare aus XML Dateien entfernen\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:295
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Knoteninhalte aus XML Dateien entfernen\n"
 
-#: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
+#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
@@ -550,7 +550,7 @@ msgstr ""
 "Entwickelt von Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:307 ../exo-desktop-item-edit/main.c:157
+#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
 #: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
@@ -567,7 +567,7 @@ msgstr ""
 "%s gefunden werden kann.\n"
 "\n"
 
-#: ../exo-csource/main.c:311 ../exo-desktop-item-edit/main.c:161
+#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
 #: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
@@ -1047,14 +1047,6 @@ msgstr "Kein Befehl angegeben"
 msgid "Failed to open helpers.rc for writing"
 msgstr "Konnte »helpers.rc« nicht zum Schreiben öffnen"
 
-#: ../exo-helper/exo-preferred-applications-settings.c:40
-msgid "Failed to launch exo-preferred-applications"
-msgstr "Konnte exo-preferred-applications nicht ausführen"
-
-#: ../exo-helper/exo-preferred-applications-settings.c:60
-msgid "Button Label|Preferred Applications"
-msgstr "Bevorzugte Anwendungen"
-
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Bevorzugte Anwendungen (Webbrowser, E-Mail-Programm und Terminal)"
@@ -1095,6 +1087,8 @@ msgid ""
 "  --configure                         Open the Preferred Applications\n"
 "                                      configuration dialog"
 msgstr ""
+"  --configure                         Den Dialoog für die bevorzugten\n"
+"                                      Anwendungen öffnen"
 
 #: ../exo-helper/main.c:60
 msgid ""
@@ -1290,25 +1284,25 @@ msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Das Gerät »%s« ist kein gültiger Datenträger"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:595
+#: ../exo-mount/exo-mount-hal.c:605
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Sie sind nicht dazu berechtigt, den Datenträger »%s« auszuwerfen"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:600
+#: ../exo-mount/exo-mount-hal.c:610
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr ""
 "Eine Anwendung verhindert, dass der Datenträger »%s« ausgeworfen werden kann"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:831
+#: ../exo-mount/exo-mount-hal.c:841
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Sie sind nicht dazu berechtigt, den Datenträger »%s« einzubinden"
 
-#: ../exo-mount/exo-mount-hal.c:846
+#: ../exo-mount/exo-mount-hal.c:856
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1318,28 +1312,41 @@ msgstr ""
 "Brennsoftware, wie zum Beispiel Xfburn, um Daten oder Musik auf den Rohling "
 "zu brennen"
 
-#: ../exo-mount/exo-mount-hal.c:857
+#: ../exo-mount/exo-mount-hal.c:867
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
 "Audio-CDs können nicht eingebunden werden. Benutzen Sie stattdessen Xfmedia, "
 "um die Audio-Tracks abzuspielen"
 
+#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:932
+#, c-format
+msgid "You are not privileged to teardown the crypto layer"
+msgstr "Sie sind nicht dazu berechtigt, die Verschlüsselungsschicht herunterzunehmen"
+
+#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
+#: ../exo-mount/exo-mount-hal.c:937
+#, c-format
+msgid "An application is preventing the crypto layer from being torn down"
+msgstr ""
+"Eine Anwendung verhindert, dass die Verschlüsselungsschicht heruntergenommen wird"
+
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:942
+#: ../exo-mount/exo-mount-hal.c:1021
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Sie sind nicht dazu brechtigt, den Datenträger »%s« auszuhängen"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:947
+#: ../exo-mount/exo-mount-hal.c:1026
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr ""
 "Eine Anwendung verhindert, dass der Datenträger »%s« ausgeworfen werden kann"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:952
+#: ../exo-mount/exo-mount-hal.c:1031
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr ""
@@ -1448,8 +1455,8 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
-"Der Datenträger »%s« wird durch das System ausgehängt. Belassen Sie in "
-"dieser Zeit das Medium im Computer bzw. trennen Sie das Gerät nicht noch vom "
+"Der Datenträger »%s« wird durch das System ausgehängt. Belassen Sie in dieser "
+"Zeit das Medium im Computer bzw. trennen Sie das Gerät nicht noch vom "
 "Computer."
 
 #. not read-only, writing back data
@@ -1527,6 +1534,12 @@ msgstr "Konnte bevorzugte Anwendung aus der Kategorie »%s« nicht ausführen."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Konnte URL »%s« nicht öffnen."
+
+#~ msgid "Failed to launch exo-preferred-applications"
+#~ msgstr "Konnte exo-preferred-applications nicht ausführen"
+
+#~ msgid "Button Label|Preferred Applications"
+#~ msgstr "Bevorzugte Anwendungen"
 
 #~ msgid "Sylpheed Claws"
 #~ msgstr "Sylpheed Claws"
