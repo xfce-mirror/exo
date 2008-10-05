@@ -1,20 +1,26 @@
+# translation of ru.po to Russian
 # Russian translation for exo package.
 # Copyright (C) 2004-2006 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
-# Andrey Fedoseev <andrey.fedoseev@gmail.com>, 2006.
-# Maxim Zenin <webmechanics@gmail.com>, 2006
 #
+#
+# Andrey Fedoseev <andrey.fedoseev@gmail.com>, 2006.
+# Maxim Zenin <webmechanics@gmail.com>, 2006.
+# Andrey Fedoseev <andrey.fedoseev@gmail.com>, 2008.
+# NIkitaBelobrov <qvzqvz@gmail.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: exo 0.3.4\n"
+"Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-20 13:45+0200\n"
-"PO-Revision-Date: 2007-01-17 21:35+0600\n"
-"Last-Translator: Andrey Fedoseev <andrey.fedoseev@gmail.com>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"PO-Revision-Date: 2008-09-23 22:19+0400\n"
+"Last-Translator: NIkitaBelobrov <qvzqvz@gmail.com>\n"
+"Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
@@ -55,11 +61,8 @@ msgstr "Не удалось прочитать файл \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Не удалось открыть файл изображения \"%s\": Причина неизвестна, возможно "
-"файл повреждён"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Не удалось открыть файл изображения \"%s\": Причина неизвестна, возможно файл повреждён"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
@@ -71,27 +74,27 @@ msgstr "Ориентация панели значков"
 
 #: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:800
 msgid "Pixbuf column"
-msgstr ""
+msgstr "Колонка pixbuf"
 
 #: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:801
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr ""
+msgstr "Колонка модели, используемая для получения pixbuf иконки"
 
 #: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:927
 msgid "Text column"
-msgstr ""
+msgstr "Текстовая колонка"
 
 #: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:928
 msgid "Model column used to retrieve the text from"
-msgstr ""
+msgstr "Колонка модели, используемая для получения текста"
 
 #: ../exo/exo-icon-bar.c:295
 msgid "Icon Bar Model"
-msgstr ""
+msgstr "Модель панели иконок"
 
 #: ../exo/exo-icon-bar.c:296
 msgid "Model for the icon bar"
-msgstr ""
+msgstr "Модель для панели иконок"
 
 #: ../exo/exo-icon-bar.c:312
 msgid "Active"
@@ -250,32 +253,31 @@ msgstr "Отступы от края иконок"
 
 #: ../exo/exo-icon-view.c:754
 msgid "Markup column"
-msgstr ""
+msgstr "Колонка разметки"
 
 #: ../exo/exo-icon-view.c:755
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
+msgstr "Колонка модели, используемая для получения текста при использовании разметки Pango"
 
 #: ../exo/exo-icon-view.c:769
 msgid "Icon View Model"
-msgstr ""
+msgstr "Модель представления иконок"
 
 #: ../exo/exo-icon-view.c:770
 msgid "The model for the icon view"
-msgstr ""
+msgstr "Модель для представления иконок"
 
 #: ../exo/exo-icon-view.c:784
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr "Расположение текста и значков относительно друг друга"
 
 #: ../exo/exo-icon-view.c:816
 msgid "Reorderable"
-msgstr ""
+msgstr "Можно переупорядочить"
 
 #: ../exo/exo-icon-view.c:817
 msgid "View is reorderable"
-msgstr ""
+msgstr "Представление можно переупорядочить"
 
 #: ../exo/exo-icon-view.c:832
 msgid "Row Spacing"
@@ -283,15 +285,15 @@ msgstr "Отступы строк"
 
 #: ../exo/exo-icon-view.c:833
 msgid "Space which is inserted between grid rows"
-msgstr "Отступы строк"
+msgstr "Отступы между строк"
 
 #: ../exo/exo-icon-view.c:847
 msgid "Search Column"
-msgstr ""
+msgstr "Колонка поиска"
 
 #: ../exo/exo-icon-view.c:848
 msgid "Model column to search through when searching through item"
-msgstr ""
+msgstr "Колонка модели в которой осуществлять поиск при поиске в элементах"
 
 #: ../exo/exo-icon-view.c:862
 msgid "Selection mode"
@@ -317,9 +319,7 @@ msgstr "Таймаут одиночного клика"
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr ""
-"Промежуток времени в режиме одиночного клика, после которого элемент под "
-"курсором мыши будет выбран"
+msgstr "Промежуток времени в режиме одиночного клика, после которого элемент под курсором мыши будет выбран"
 
 #: ../exo/exo-icon-view.c:911
 msgid "Spacing"
@@ -452,11 +452,11 @@ msgstr "Расстояние между соседними строками"
 
 #: ../exo/exo-wrap-table.c:190
 msgid "Homogeneous"
-msgstr ""
+msgstr "Однородный"
 
 #: ../exo/exo-wrap-table.c:191
 msgid "Whether the children should be all the same size"
-msgstr ""
+msgstr "Должны ли все потомки быть одного размера"
 
 #: ../exo/exo-xsession-client.c:143
 msgid "Window group"
@@ -510,11 +510,11 @@ msgstr "  --build-list      Разбор пар \"имя-файл\"\n"
 
 #: ../exo-csource/main.c:292
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr ""
+msgstr "  --strip-comments  Удалить комментарии из XML файлов\n"
 
 #: ../exo-csource/main.c:293
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr ""
+msgstr "  --strip-content   Удалить содержимое узлов (node) из XML файлов\n"
 
 #: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
@@ -645,10 +645,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr ""
-"Используйте этот параметр, чтобы включить уведомление о запуске, когда "
-"команда запускается из файлового менеджера или меню. Не все приложения "
-"поддерживают уведомление о запуске."
+msgstr "Используйте этот параметр, чтобы включить уведомление о запуске, когда команда запускается из файлового менеджера или меню. Учтите, что не все приложения поддерживают уведомление о запуске."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -907,7 +904,7 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid "Failed to open the documentation browser."
-msgstr "Невозможно открыть ПО просмотра документации"
+msgstr "Невозможно открыть приложение просмотра документации"
 
 #: ../exo-helper/exo-helper-chooser.c:184
 #: ../exo-helper/exo-helper-chooser.c:191
@@ -924,15 +921,15 @@ msgstr "Приложение не выбрано"
 
 #: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
-msgstr "Невозможно открыть ПО просмотра web"
+msgstr "Невозможно открыть web-браузер"
 
 #: ../exo-helper/exo-helper-chooser.c:351
 msgid "Failed to set default Mail Reader"
-msgstr "Невозможно открыть ПО чтения электронной почты"
+msgstr "Невозможно открыть приложение для чтения электронной почты"
 
 #: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
-msgstr "Невозможно открыть ПО терминала"
+msgstr "Невозможно открыть эмулятор терминала"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:422
@@ -941,15 +938,15 @@ msgstr "Выбрать приложение"
 
 #: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
-msgstr "Выберите ПО просмотра web"
+msgstr "Выберите web-браузер"
 
 #: ../exo-helper/exo-helper-chooser.c:536
 msgid "Choose a custom Mail Reader"
-msgstr "Выберите ПО чтения электронной почты"
+msgstr "Выберите приложение для чтения электронной почты"
 
 #: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
-msgstr "Выберите ПО терминала"
+msgstr "Выберите эмулятор терминала"
 
 #: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
@@ -987,7 +984,7 @@ msgstr "_Другой..."
 
 #: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
-msgstr "Использовать другое приложение, которое не входит в этот список."
+msgstr "Использовать другое приложение, не из этого списка."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:141
 msgid "Choose Preferred Application"
@@ -1023,7 +1020,7 @@ msgstr "Не указан комментарий"
 
 #: ../exo-helper/exo-helper.c:740
 msgid "Failed to open helpers.rc for writing"
-msgstr "Не удалось открыть helpers.rc для записи"
+msgstr "Не удалось открыть файл helpers.rc для записи"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:40
 msgid "Failed to launch exo-preferred-applications"
@@ -1031,7 +1028,7 @@ msgstr "Не удалось запустить exo-preferred-applications"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:60
 msgid "Button Label|Preferred Applications"
-msgstr "Предпочтитаемые приложения"
+msgstr "Предпочитаемые приложения"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
@@ -1057,7 +1054,7 @@ msgstr "Balsa"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
-msgstr ""
+msgstr "Обозреватель Debian"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
@@ -1136,9 +1133,8 @@ msgid "Opera Mail"
 msgstr "Почтовая программа Opera"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-#, fuzzy
 msgid "Claws Mail"
-msgstr "Почтовая программа Mozilla"
+msgstr "Перехватывать почту"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1200,7 +1196,7 @@ msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
-"Пустые диски не могут быть смонтированы. Используйтся программу для записи "
+"Пустые диски не могут быть смонтированы. Используется программу для записи "
 "CD, такую как Xfburn, для записи аудио-дисков или дисков с данными"
 
 #: ../exo-mount/exo-mount-hal.c:857
@@ -1277,7 +1273,7 @@ msgstr "Указанный UDI \"%s\" не является верным UDI у�
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
-msgstr "Нельзя одновременно извлесь и размонтировать"
+msgstr "Нельзя одновременно извлечь и размонтировать"
 
 #: ../exo-mount/main.c:330
 #, c-format
@@ -1298,7 +1294,7 @@ msgstr "Не удалось смонтировать \"%s\"."
 #: ../exo-mount-notify/main.c:111
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr "Усторойство \"%s\" готово в безопасному извлечению."
+msgstr "Устройство \"%s\" готово в безопасному извлечению."
 
 #: ../exo-mount-notify/main.c:112
 msgid "Device is now safe to remove"
@@ -1325,7 +1321,7 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
-"Идёт размонтирование уйстроства \"%s\". Пожалуйста, не извлекайте диск или "
+"Идёт размонтирование устройства \"%s\". Пожалуйста, не извлекайте диск или "
 "накопитель."
 
 #. not read-only, writing back data
@@ -1357,10 +1353,8 @@ msgstr ""
 "выйти"
 
 #: ../exo-open/main.c:63
-msgid ""
-"  -v, --version                       Print version information and exit"
-msgstr ""
-"  -v, --version                       Вывести информацию о версии и выйти"
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Вывести информацию о версии и выйти"
 
 #: ../exo-open/main.c:65
 msgid ""
@@ -1413,7 +1407,7 @@ msgstr ""
 "адреса с помощью установленных для них обработчиков. Если вы укажете\n"
 "параметр --launch, то вы сможете выбрать приложения, которые должны\n"
 "быть запущены, и передать дополнительные параметры этим приложениям\n"
-"(напр. вы можете передать эмулятору терминала команду, которая должна\n"
+"(например, вы можете передать эмулятору терминала команду, которая должна\n"
 "быть запущена в командной строке)."
 
 #: ../exo-open/main.c:149
@@ -1426,5 +1420,3 @@ msgstr "Не удалось запустить предпочитаемое пр
 msgid "Failed to open URL \"%s\"."
 msgstr "Не удалось открыть URL \"%s\"."
 
-#~ msgid "Sylpheed Claws"
-#~ msgstr "Sylpheed Claws"
