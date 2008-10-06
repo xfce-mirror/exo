@@ -1,3 +1,9 @@
+2008-08-05	Brian Tarricone <bjt23@cornell.edu>
+
+	* exo/exo-utils.h: Move the exo_atomic_inc()/exo_atomic_dec() inline
+	  function decls into the #ifdef to fix compilation on non-x86
+	  platforms (bug 4387).
+
 2008-08-30	Jannis Pohlmann <jannis@xfce.org>
 
 	* autogen.sh: Do not print errors when trying to detect the 
