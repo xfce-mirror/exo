@@ -21,6 +21,7 @@ desktop_in_in_files =							\
 	konqueror.desktop.in.in						\
 	links.desktop.in.in						\
 	lynx.desktop.in.in						\
+	midori.desktop.in.in						\
 	mozilla-browser.desktop.in.in					\
 	mozilla-mailer.desktop.in.in					\
 	mutt.desktop.in.in						\
