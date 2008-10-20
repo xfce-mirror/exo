@@ -507,7 +507,7 @@ exo_mutual_binding_new_with_negation (GObject     *object1,
 void
 exo_mutual_binding_unbind (ExoMutualBinding *binding)
 {
-  g_signal_handler_disconnect (binding->direct.dst_object, binding->direct.handler);
+  g_signal_handler_disconnect (binding->reverse.dst_object, binding->direct.handler);
 }
 
 
