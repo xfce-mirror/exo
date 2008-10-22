@@ -38,6 +38,8 @@ GType      exo_helper_chooser_dialog_get_type (void) G_GNUC_CONST;
 
 GtkWidget *exo_helper_chooser_dialog_new      (void) G_GNUC_MALLOC;
 
+GtkWidget *exo_helper_chooser_dialog_get_plug_child (ExoHelperChooserDialog *dialog);
+
 G_END_DECLS;
 
 #endif /* !__EXO_HELPER_CHOOSER_DIALOG_H__ */

@@ -46,35 +46,6 @@ static const gchar *CATEGORY_EXEC_ERRORS[] =
 
 
 
-static void
-usage (void)
-{
-  g_print ("%s\n", _("Usage: exo-helper [OPTION...]"));
-  g_print ("\n");
-  g_print ("%s\n", _("  -h, --help                          Print this help message and exit"));
-  g_print ("%s\n", _("  -v, --version                       Print version information and exit"));
-  g_print ("\n");
-  g_print ("%s\n", _("  --configure                         Open the Preferred Applications\n"
-                     "                                      configuration dialog"));
-  g_print ("\n");
-  g_print ("%s\n", _("  --launch TYPE [PARAMETER]           Launch the default helper of TYPE\n"
-                     "                                      with the optional PARAMETER, where\n"
-                     "                                      TYPE is one of the following values."));
-  g_print ("\n");
-  g_print ("%s\n", _("The following TYPEs are supported for the --launch command:"));
-  g_print ("\n");
-
-  /* Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
-   * since the exo-helper utility will not accept localized TYPEs.
-   */
-  g_print ("%s\n", _("  WebBrowser       - The preferred Web Browser.\n"
-                     "  MailReader       - The preferred Mail Reader.\n"
-                     "  TerminalEmulator - The preferred Terminal Emulator."));
-  g_print ("\n");
-}
-
-
-
 int
 main (int argc, char **argv)
 {
@@ -85,6 +56,21 @@ main (int argc, char **argv)
   GError            *error = NULL;
   gint               result = EXIT_SUCCESS;
 
+  gboolean           opt_version = FALSE;
+  gboolean           opt_configure = FALSE;
+  gchar             *opt_launch_type = NULL;
+  GdkNativeWindow    opt_socket_id = 0;
+
+  GOptionContext    *opt_ctx;
+  GOptionGroup      *gtk_option_group;
+  GOptionEntry       option_entries[] = {
+    { "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &opt_version, N_("Print version information and exit"), NULL, },
+    { "configure", 'c', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &opt_configure, N_("Open the Preferred Applications\nconfiguration dialog"), NULL, },
+    { "launch", 'l', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &opt_launch_type, N_("Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."), N_("TYPE [PARAMETER]"), },
+    { "socket-id", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &opt_socket_id, N_("Settings manager socket"), N_("SOCKET ID"), },
+    { NULL, },
+  };
+
   /* sanity check helper categories */
   g_assert (EXO_HELPER_N_CATEGORIES == G_N_ELEMENTS (CATEGORY_EXEC_ERRORS));
 
@@ -93,6 +79,35 @@ main (int argc, char **argv)
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 #endif
 
+  /* set up options */
+  opt_ctx = g_option_context_new (NULL);
+
+  gtk_option_group = gtk_get_option_group (FALSE);
+  g_option_context_add_group (opt_ctx, gtk_option_group);
+
+  g_option_context_add_main_entries (opt_ctx, option_entries, NULL);
+  /* Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+   * since the exo-helper utility will not accept localized TYPEs.
+   */
+  g_option_context_set_description (opt_ctx,
+                                    _("The following TYPEs are supported for the --launch command:\n\n"
+                                      "  WebBrowser       - The preferred Web Browser.\n"
+                                      "  MailReader       - The preferred Mail Reader.\n"
+                                      "  TerminalEmulator - The preferred Terminal Emulator."));
+
+  if (!g_option_context_parse (opt_ctx, &argc, &argv, &error))
+    {
+      if (G_LIKELY (error)) {
+            g_printerr ("%s: %s.\n", G_LOG_DOMAIN, error->message);
+            g_printerr (_("Type '%s --help' for usage."), G_LOG_DOMAIN);
+            g_printerr ("\n");
+            g_error_free (error);
+        } else
+            g_error ("Unable to open display.");
+
+        return EXIT_FAILURE;
+    }
+
   /* initialize Gtk+ */
   gtk_init (&argc, &argv);
 
@@ -100,18 +115,38 @@ main (int argc, char **argv)
   gtk_window_set_default_icon_name ("preferences-desktop-default-applications");
 
   /* check for the action to perform */
-  if (argc == 2 && strcmp (argv[1], "--configure") == 0)
+  if (opt_configure == TRUE)
     {
       dialog = exo_helper_chooser_dialog_new ();
-      gtk_dialog_run (GTK_DIALOG (dialog));
+
+      if (opt_socket_id != 0)
+        {
+          GtkWidget *plug, *plug_child;
+
+          plug = gtk_plug_new (opt_socket_id);
+          gtk_widget_show (plug);
+          g_signal_connect (plug, "delete-event", G_CALLBACK (gtk_main_quit), NULL);
+
+          plug_child = exo_helper_chooser_dialog_get_plug_child (EXO_HELPER_CHOOSER_DIALOG (dialog));
+          gtk_widget_reparent (plug_child, plug);
+          gtk_widget_show (plug_child);
+
+          gtk_main ();
+          gtk_widget_destroy (plug);
+        }
+      else
+        {
+          gtk_dialog_run (GTK_DIALOG (dialog));
+        }
+
       gtk_widget_destroy (dialog);
     }
-  else if ((argc == 3 || argc == 4) && strcmp (argv[1], "--launch") == 0)
+  else if (opt_launch_type != NULL)
     {
       /* try to parse the type */
-      if (!exo_helper_category_from_string (argv[2], &category))
+      if (!exo_helper_category_from_string (opt_launch_type, &category))
         {
-          g_warning (_("Invalid helper type \"%s\""), argv[2]);
+          g_warning (_("Invalid helper type \"%s\""), opt_launch_type);
           return EXIT_FAILURE;
         }
 
@@ -136,7 +171,7 @@ main (int argc, char **argv)
       if (G_LIKELY (helper != NULL))
         {
           /* try to execute the helper with the given parameter */
-          if (!exo_helper_execute (helper, NULL, (argc > 3) ? argv[3] : NULL, &error))
+          if (!exo_helper_execute (helper, NULL, (argc > 1) ? argv[1] : NULL, &error))
             {
               dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
                                                "%s.", _(CATEGORY_EXEC_ERRORS[category]));
@@ -149,11 +184,7 @@ main (int argc, char **argv)
           g_object_unref (G_OBJECT (helper));
         }
     }
-  else if (argc == 2 && strcmp (argv[1], "--help") == 0)
-    {
-      usage ();
-    }
-  else if (argc == 2 && strcmp (argv[1], "--version") == 0)
+  else if (opt_version == TRUE)
     {
       g_print (_("%s (Xfce %s)\n\n"
                  "Copyright (c) 2003-2006\n"
@@ -169,8 +200,10 @@ main (int argc, char **argv)
   else
     {
       result = EXIT_FAILURE;
-      usage ();
+      g_printerr (g_option_context_get_help (opt_ctx, FALSE, NULL));
     }
+
+  g_option_context_free (opt_ctx);
 
   return result;
 }

@@ -42,6 +42,8 @@ struct _ExoHelperChooserDialogClass
 struct _ExoHelperChooserDialog
 {
   XfceTitledDialog __parent__;
+
+  GtkWidget       *plug_child;
 };
 
 
@@ -88,6 +90,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   GtkWidget      *button;
   GtkWidget      *frame;
   GtkWidget      *label;
+  GtkWidget      *topcontainer;
   GtkWidget      *vbox;
   GtkWidget      *box;
 
@@ -107,9 +110,14 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (GTK_DIALOG (chooser_dialog)->action_area), button, TRUE);
   gtk_widget_show (button);
 
+  topcontainer = gtk_alignment_new (0.0, 0.0, 1.0, 1.0);
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->vbox), topcontainer, TRUE, TRUE, 0);
+  gtk_widget_show (topcontainer);
+  chooser_dialog->plug_child = topcontainer;
+
   notebook = gtk_notebook_new ();
   gtk_container_set_border_width (GTK_CONTAINER (notebook), 6);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->vbox), notebook, TRUE, TRUE, 0);
+  gtk_container_add (GTK_CONTAINER (topcontainer), notebook);
   gtk_widget_show (notebook);
 
   /* allocate shared bold label attributes */
@@ -276,6 +284,21 @@ GtkWidget*
 exo_helper_chooser_dialog_new (void)
 {
   return g_object_new (EXO_TYPE_HELPER_CHOOSER_DIALOG, NULL);
+}
+
+
+/**
+ * exo_helper_chooser_dialog_get_plug_child:
+ * @dialog: A #ExoHelperChooserDialog.
+ *
+ * Gets the non-window toplevel container of the dialog.
+ *
+ * Return value: a non-window #GtkWidget.
+ **/
+GtkWidget *
+exo_helper_chooser_dialog_get_plug_child (ExoHelperChooserDialog *dialog)
+{
+  return dialog->plug_child;
 }
 
 

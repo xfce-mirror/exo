@@ -9,4 +9,4 @@
 # Browser, Mail Reader and Terminal Emulator.
 #
 
-exec @libexecdir@/exo-helper-@LIBEXO_VERSION_MAJOR@.@LIBEXO_VERSION_MINOR@ --configure
+exec @libexecdir@/exo-helper-@LIBEXO_VERSION_MAJOR@.@LIBEXO_VERSION_MINOR@ --configure "$@"

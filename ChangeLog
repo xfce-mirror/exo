@@ -1,3 +1,17 @@
+2008-10-22	Brian Tarricone <bjt23@cornell.edu>
+
+	* configure.in.in: Add 'svn' version tag.
+	* exo-helper/exo-helper-chooser-dialog.[ch]: Add function to
+	  retrieve the toplevel container beneath the GtkDialog's
+	  GtkVBox.
+	* exo-helper/exo-preferred-applications.desktop.in: Add
+	  X-XfcePluggable and X-XfceHelpFile keys.
+	* exo-helper/exo-preferred-applications.in: Pass any extra
+	  command-line arguments on to exo-helper-0.3.
+	* exo-helper/main.c: Use GOption framework for parsing the
+	  command line.  Add --socket-id parameter so the dialog can
+	  be embedded in the settings manager.
+
 2008-10-10	Jannis Pohlmann <jannis@xfce.org>
 
 	* exo-helper/helpers/Makefile.am, 
