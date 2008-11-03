@@ -219,8 +219,11 @@ exo_url_show_on_screen (const gchar *url,
    */
   _exo_i18n_init ();
 
+  /* try to conver the URL into a local path */
+  local_path = _exo_url_to_local_path (url);
+
   /* now, let's see what we have here */
-  if ((local_path = _exo_url_to_local_path (url)) != NULL)
+  if (local_path != NULL)
     {
       /* determine the display name for the screen */
       display_name = gdk_screen_make_display_name (screen);

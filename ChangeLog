@@ -1,9 +1,14 @@
 2008-11-03	Jannis Pohlmann <jannis@xfce.org>
 
-	* exo/exo-url.c: Check whether the given URL can be transformed into 
-	  a local filename before going through the regular expressions for 
-	  email addresses and browser URLs. Also don't allow additional 
-	  characters before and after email addresses and browser URLs. This 
+	* exo/exo-url.c: Split up assignment and conditional into separate 
+	  lines to make the code more readable.
+
+2008-11-03	Jannis Pohlmann <jannis@xfce.org>
+
+	* exo/exo-url.c: Check whether the given URL can be transformed into
+	  a local filename before going through the regular expressions for
+	  email addresses and browser URLs. Also don't allow additional
+	  characters before and after email addresses and browser URLs. This
 	  handles filenames with @ properly and should fix bug #4330.
 
 2008-10-22	Brian Tarricone <bjt23@cornell.edu>
