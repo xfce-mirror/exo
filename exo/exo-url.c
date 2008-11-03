@@ -56,14 +56,14 @@
 #define PASSCHARS       "-A-Za-z0-9,?;.:/!%$^*&~\"#'"
 #define HOSTCHARS       "-A-Za-z0-9"
 #define USER            "[" USERCHARS "]+(:["PASSCHARS "]+)?"
-#define MATCH_BROWSER1  "((file|https?|ftps?)://(" USER "@)?)[" HOSTCHARS ".]+(:[0-9]+)?" \
-                        "(/[-A-Za-z0-9_$.+!*(),;:@&=?/~#%]*[^]'.}>) \t\r\n,\\\"])?"
-#define MATCH_BROWSER2  "(www|ftp)[" HOSTCHARS "]*\\.[" HOSTCHARS ".]+(:[0-9]+)?" \
-                        "(/[-A-Za-z0-9_$.+!*(),;:@&=?/~#%]*[^]'.}>) \t\r\n,\\\"])?"
+#define MATCH_BROWSER1  "^((file|https?|ftps?)://(" USER "@)?)[" HOSTCHARS ".]+(:[0-9]+)?" \
+                        "(/[-A-Za-z0-9_$.+!*(),;:@&=?/~#%]*[^]'.}>) \t\r\n,\\\"])?$"
+#define MATCH_BROWSER2  "^(www|ftp)[" HOSTCHARS "]*\\.[" HOSTCHARS ".]+(:[0-9]+)?" \
+                        "(/[-A-Za-z0-9_$.+!*(),;:@&=?/~#%]*[^]'.}>) \t\r\n,\\\"])?$"
 #if !defined(__GLIBC__)
-#define MATCH_MAILER    "[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+"
+#define MATCH_MAILER    "^[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+$"
 #else
-#define MATCH_MAILER    "\\<[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+\\>"
+#define MATCH_MAILER    "^\\<[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+\\>$"
 #endif
 
 
@@ -220,7 +220,75 @@ exo_url_show_on_screen (const gchar *url,
   _exo_i18n_init ();
 
   /* now, let's see what we have here */
-  if (_exo_url_match (MATCH_BROWSER1, url))
+  if ((local_path = _exo_url_to_local_path (url)) != NULL)
+    {
+      /* determine the display name for the screen */
+      display_name = gdk_screen_make_display_name (screen);
+      
+      /* check if we have a local HTML file here */
+      if (fnmatch ("*.xhtml", local_path, FNM_CASEFOLD) == 0
+          || fnmatch ("*.htm", local_path, FNM_CASEFOLD) == 0
+          || fnmatch ("*.html", local_path, FNM_CASEFOLD) == 0)
+        {
+          /* transform the path to a file:-URI */
+          uri = g_filename_to_uri (local_path, NULL, error);
+          if (G_LIKELY (uri != NULL))
+            {
+              /* try to execute the file:-URI in a web browser */
+              result = exo_execute_preferred_application_on_screen ("WebBrowser", uri, NULL, envp, screen, error);
+              g_free (uri);
+            }
+        }
+      else
+        {
+          /* make a shell quoted url to pass to other applications */
+          quoted_url = g_shell_quote(local_path);
+
+          /* but since we have a local file here, maybe the org.xfce.FileManager can open it? */
+          command = g_strdup_printf ("dbus-send --print-reply --dest=org.xfce.FileManager "
+                                     "/org/xfce/FileManager org.xfce.FileManager.Launch "
+                                     "string:%s string:\"%s\"", quoted_url, display_name);
+          result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
+          g_free (command);
+
+          /* check if it's handled now */
+          if (G_UNLIKELY (!result))
+            {
+              /* but hey, we know that Thunar can open local files, so give it a go */
+              command = g_strdup_printf ("Thunar --display=\"%s\" %s", display_name, quoted_url);
+              result = g_spawn_command_line_async (command, NULL);
+              g_free (command);
+            }
+
+          /* check if it's handled now */
+          if (G_UNLIKELY (!result))
+            {
+              /* gnome-open is also worth a try, since it uses the standard applications database */
+              command = g_strdup_printf ("env DISPLAY=\"%s\" gnome-open %s", display_name, quoted_url);
+              result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
+              g_free (command);
+            }
+
+          /* check if it's handled now */
+          if (G_UNLIKELY (!result))
+            {
+              /* ok, we tried everything, but no luck, tell the user that we failed */
+              g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
+                           _("Unable to open \"%s\""), local_path);
+            }
+
+            /* release the quoted_url as it is no longer needed */
+            g_free(quoted_url);
+        }
+
+      /* release the local path and the display name */
+      g_free (display_name);
+      g_free (local_path);
+
+      /* and we're done */
+      return result;
+    }
+  else if (_exo_url_match (MATCH_BROWSER1, url))
     {
       category = "WebBrowser";
     }
@@ -240,74 +308,6 @@ exo_url_show_on_screen (const gchar *url,
     {
       /* determine the display name for the screen */
       display_name = gdk_screen_make_display_name (screen);
-
-      /* check if we can translate the URL to a local path */
-      local_path = _exo_url_to_local_path (url);
-      if (G_LIKELY (local_path != NULL))
-        {
-          /* check if we have a local HTML file here */
-          if (fnmatch ("*.xhtml", local_path, FNM_CASEFOLD) == 0
-              || fnmatch ("*.htm", local_path, FNM_CASEFOLD) == 0
-              || fnmatch ("*.html", local_path, FNM_CASEFOLD) == 0)
-            {
-              /* transform the path to a file:-URI */
-              uri = g_filename_to_uri (local_path, NULL, error);
-              if (G_LIKELY (uri != NULL))
-                {
-                  /* try to execute the file:-URI in a web browser */
-                  result = exo_execute_preferred_application_on_screen ("WebBrowser", uri, NULL, envp, screen, error);
-                  g_free (uri);
-                }
-            }
-          else
-            {
-              /* make a shell quoted url to pass to other applications */
-              quoted_url = g_shell_quote(local_path);
-
-              /* but since we have a local file here, maybe the org.xfce.FileManager can open it? */
-              command = g_strdup_printf ("dbus-send --print-reply --dest=org.xfce.FileManager "
-                                         "/org/xfce/FileManager org.xfce.FileManager.Launch "
-                                         "string:%s string:\"%s\"", quoted_url, display_name);
-              result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
-              g_free (command);
-
-              /* check if it's handled now */
-              if (G_UNLIKELY (!result))
-                {
-                  /* but hey, we know that Thunar can open local files, so give it a go */
-                  command = g_strdup_printf ("Thunar --display=\"%s\" %s", display_name, quoted_url);
-                  result = g_spawn_command_line_async (command, NULL);
-                  g_free (command);
-                }
-
-              /* check if it's handled now */
-              if (G_UNLIKELY (!result))
-                {
-                  /* gnome-open is also worth a try, since it uses the standard applications database */
-                  command = g_strdup_printf ("env DISPLAY=\"%s\" gnome-open %s", display_name, quoted_url);
-                  result = (g_spawn_command_line_sync (command, NULL, NULL, &status, NULL) && status == 0);
-                  g_free (command);
-                }
-
-              /* check if it's handled now */
-              if (G_UNLIKELY (!result))
-                {
-                  /* ok, we tried everything, but no luck, tell the user that we failed */
-                  g_set_error (error, EXO_URL_ERROR, EXO_URL_ERROR_NOT_SUPPORTED,
-                               _("Unable to open \"%s\""), local_path);
-                }
-
-                /* release the quoted_url as it is no longer needed */
-                g_free(quoted_url);
-            }
-
-          /* release the local path and the display name */
-          g_free (display_name);
-          g_free (local_path);
-
-          /* and we're done */
-          return result;
-        }
 
       /* make a shell quoted url to pass to other applications */
       quoted_url = g_shell_quote(url);
