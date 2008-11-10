@@ -3560,7 +3560,6 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
   GtkStateType         state;
   GdkRectangle         cell_area;
   gboolean             rtl;
-  cairo_t             *cr;
   GList               *lp;
 
   if (G_UNLIKELY (icon_view->priv->model == NULL))
@@ -3574,31 +3573,6 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
     {
       flags = GTK_CELL_RENDERER_SELECTED;
       state = GTK_WIDGET_HAS_FOCUS (icon_view) ? GTK_STATE_SELECTED : GTK_STATE_ACTIVE;
-
-      for (lp = icon_view->priv->cell_list; lp != NULL; lp = lp->next)
-        {
-          info = EXO_ICON_VIEW_CELL_INFO (lp->data);
-
-          if (G_UNLIKELY (!info->cell->visible))
-            continue;
-
-          exo_icon_view_get_cell_area (icon_view, item, info, &cell_area);
-
-          /* FIXME We hardwire background drawing behind text cell renderers
-           * here. This is ugly, but it's done to be consistent with 
-           * GtkIconView */
-          if (GTK_IS_CELL_RENDERER_TEXT (info->cell))
-            {
-              cr = gdk_cairo_create (drawable);
-              gdk_cairo_set_source_color (cr, &GTK_WIDGET (icon_view)->style->base[state]);
-              cairo_rectangle (cr, 
-                               x - item->area.x + cell_area.x,
-                               y - item->area.y + cell_area.y,
-                               cell_area.width, cell_area.height);
-              cairo_fill (cr);
-              cairo_destroy (cr);
-            }
-        }
     }
   else
     {
