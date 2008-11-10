@@ -43,8 +43,6 @@
 
 
 
-#if !defined(HAVE_MD5INIT) || !defined(HAVE_MD5_H)
-
 /*
  * This code implements the MD5 message-digest algorithm.
  * The algorithm is due to Ron Rivest. The original code was
@@ -64,6 +62,8 @@ struct _MD5_CTX {
 	guint32 in[16];
 };
 
+
+
 #if G_BYTE_ORDER == G_BIG_ENDIAN
 static void
 byteSwap (guint32 *buf, unsigned words)
@@ -79,6 +79,8 @@ byteSwap (guint32 *buf, unsigned words)
 #else
 #define byteSwap(buf,words)
 #endif
+
+
 
 /*
  * Start MD5 accumulation. Set bit count to 0 and buffer to mysterious
@@ -96,7 +98,11 @@ MD5Init (MD5_CTX *ctx)
 	ctx->bytes[1] = 0;
 }
 
+
+
 /* The four core functions - F1 is optimized somewhat */
+
+
 
 /* #define F1(x, y, z) (x & y | ~x & z) */
 #define F1(x, y, z) (z ^ (x & (y ^ z)))
@@ -107,6 +113,8 @@ MD5Init (MD5_CTX *ctx)
 /* This is the central step in the MD5 algorithm. */
 #define MD5STEP(f,w,x,y,z,in,s) \
 	 (w += f(x,y,z) + in, w = (w<<s | w>>(32-s)) + x)
+
+
 
 /*
  * The core of the MD5 algorithm, this alters an existing MD5 hash to
@@ -197,6 +205,8 @@ MD5Transform (guint32 buf[4], guint32 const in[16])
 	buf[3] += d;
 }
 
+
+
 /*
  * Update context to reflect the concatenation of another buffer full
  * of bytes.
@@ -237,6 +247,8 @@ MD5Update (MD5_CTX *ctx, md5byte const *buf, unsigned len)
 	memcpy(ctx->in, buf, len);
 }
 
+
+
 /*
  * Final wrapup - pad to 64-byte boundary with the bit pattern 
  * 1 0* (64-bit count of bits processed, MSB-first)
@@ -273,17 +285,6 @@ MD5Final (unsigned char digest[16], MD5_CTX *ctx)
 
   memcpy (digest, ctx->buf, 16);
 }
-
-#else
-
-/* RedHat AS, Fedora */
-#ifdef HAVE_MD5GLOBAL_H
-#include <md5global.h>
-#endif
-
-#include <md5.h>
-
-#endif  /* !defined (HAVE_MD5INIT) */
 
 
 
