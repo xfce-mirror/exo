@@ -1,5 +1,6 @@
 /* $Id$ */
 /*-
+ * Copyright (c) 2008       Jannis Pohlmann <jannis@xfce.org>
  * Copyright (c) 2004-2006  os-cillation e.K.
  * Copyright (c) 2002,2004  Anders Carlsson <andersca@gnu.org>
  *
@@ -396,6 +397,7 @@ struct _ExoIconViewCellInfo
   GtkCellLayoutDataFunc func;
   gpointer              func_data;
   GDestroyNotify        destroy;
+  gboolean              is_text;
 };
 
 struct _ExoIconViewChild
@@ -3560,7 +3562,12 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
   GtkStateType         state;
   GdkRectangle         cell_area;
   gboolean             rtl;
+  cairo_t             *cr;
   GList               *lp;
+  gint                 x0;
+  gint                 y0;
+  gint                 x1;
+  gint                 y1;
 
   if (G_UNLIKELY (icon_view->priv->model == NULL))
     return;
@@ -3573,6 +3580,49 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
     {
       flags = GTK_CELL_RENDERER_SELECTED;
       state = GTK_WIDGET_HAS_FOCUS (icon_view) ? GTK_STATE_SELECTED : GTK_STATE_ACTIVE;
+
+      /* FIXME We hardwire background drawing behind text cell renderers
+       * here. This is ugly, but it's done to be consistent with GtkIconView. 
+       * The additional info->is_text attribute is used for performance 
+       * optimization and should be removed alongside the following code. */
+
+      cr = gdk_cairo_create (drawable);
+
+      for (lp = icon_view->priv->cell_list; lp != NULL; lp = lp->next)
+        {
+          info = EXO_ICON_VIEW_CELL_INFO (lp->data);
+
+          if (G_UNLIKELY (!info->cell->visible))
+            continue;
+
+          if (info->is_text)
+            {
+              exo_icon_view_get_cell_area (icon_view, item, info, &cell_area);
+
+              x0 = x - item->area.x + cell_area.x;
+              y0 = x - item->area.x + cell_area.y;
+              x1 = x0 + cell_area.width;
+              y1 = y0 + cell_area.height;
+
+              cairo_move_to (cr, x0 + 5, y0);
+              cairo_line_to (cr, x1 - 5, y0);
+              cairo_curve_to (cr, x1 - 5, y0, x1, y0, x1, y0 + 5);
+              cairo_line_to (cr, x1, y1 - 5);
+              cairo_curve_to (cr, x1, y1 - 5, x1, y1, x1 - 5, y1);
+              cairo_line_to (cr, x0 + 5, y1);
+              cairo_curve_to (cr, x0 + 5, y1, x0, y1, x0, y1 - 5);
+              cairo_line_to (cr, x0, y0 + 5);
+              cairo_curve_to (cr, x0, y0 + 5, x0, y0, x0 + 5, y0);
+
+              gdk_cairo_set_source_color (cr, &GTK_WIDGET (icon_view)->style->base[state]);
+
+              cairo_fill (cr);
+            }
+        }
+
+      cairo_destroy (cr);
+
+      /* FIXME Ugly code ends here */
     }
   else
     {
@@ -4648,6 +4698,7 @@ exo_icon_view_cell_layout_pack_start (GtkCellLayout   *layout,
   info->expand = expand ? TRUE : FALSE;
   info->pack = GTK_PACK_START;
   info->position = icon_view->priv->n_cells;
+  info->is_text = GTK_IS_CELL_RENDERER_TEXT (renderer);
   
   icon_view->priv->cell_list = g_list_append (icon_view->priv->cell_list, info);
   icon_view->priv->n_cells++;
@@ -4676,6 +4727,7 @@ exo_icon_view_cell_layout_pack_end (GtkCellLayout   *layout,
   info->expand = expand ? TRUE : FALSE;
   info->pack = GTK_PACK_END;
   info->position = icon_view->priv->n_cells;
+  info->is_text = GTK_IS_CELL_RENDERER_TEXT (renderer);
 
   icon_view->priv->cell_list = g_list_append (icon_view->priv->cell_list, info);
   icon_view->priv->n_cells++;

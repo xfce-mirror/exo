@@ -1,3 +1,9 @@
+2008-11-11	Jannis Pohlmann <jannis@xfce.org>
+
+	* exo/exo-icon-view.c: Add hack for drawing the background of text 
+	  renderers inside the icon view. GtkIconView uses a similar hack, but
+	  this should really be fixed in GtkCellRendererText.
+
 2008-11-10	Jannis Pohlmann <jannis@xfce.org>
 
 	* exo/exo-icon-view.c: Revert accidently committed painting code.
