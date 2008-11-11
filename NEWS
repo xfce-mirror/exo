@@ -2,7 +2,14 @@
 ======
 - Make Preferred Applications dialog pluggable into the new settings
   manager.
-
+- Draw the background for text renderers inside the icon view. This is
+  just a workaround inspired by GtkIconView and should be removed later.
+- Get rid of external MD5 functions (Bug #4595).
+- Fix compile against GLib < 2.14.
+- Fix directory names with "@" being treated as URLs (Bug #4330).
+- Updated translations: Michal Varady (cs), Piarres Beobide (eu), 
+  Abel Martín (es), Jari Rahkonen (fi), Terje Uriansrud (nb_NO),
+  Gökmen Görgen (tr).
 
 0.3.91
 ======
@@ -19,7 +26,8 @@
 ======
 - Include preferred apps dialog in the new settings manager.
 - Add support for mounting and unmounting encrypted volumes. (Bug #3349)
-- Don't strip text between nodes with --strip-content, this will make stripping work on glade files.
+- Don't strip text between nodes with --strip-content, this will make stripping
+  work on glade files.
 
 0.3.4
 =====
