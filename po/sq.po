@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-20 13:45+0200\n"
-"PO-Revision-Date: 2008-10-25 09:29+0200\n"
+"PO-Revision-Date: 2008-11-04 22:22+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -40,26 +40,26 @@ msgstr "madhësi"
 msgid "The size of the icon to render in pixels."
 msgstr "Madhësia në piksel e ikonës që duhet vizatuar."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770
-#: ../exo/exo-mount-point.c:208
-#: ../exo/exo-mount-point.c:237
-#: ../exo/exo-mount-point.c:425
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Dështova në hapjen e kartelës \"%s\": %s"
+msgstr "Dështoi në hapjen e kartelës \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:832
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Dështova në leximin e kartelës \"%s\": %s"
+msgstr "Dështoi në leximin e kartelës \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Dështova në ngarkimin e pamjes \"%s\": Arsye e panjohur, mundet kartelë e dëmtuar pamjeje"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Dështoi në ngarkimin e pamjes \"%s\": Arsye e panjohur, mundet kartelë e "
+"dëmtuar pamjeje"
 
-#: ../exo/exo-icon-bar.c:249
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
 msgstr "Orientim"
 
@@ -67,23 +67,19 @@ msgstr "Orientim"
 msgid "The orientation of the iconbar"
 msgstr "Drejtimi i shtyllës së ikonave"
 
-#: ../exo/exo-icon-bar.c:266
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:800
 msgid "Pixbuf column"
 msgstr "Shtyllë \"pixbuf\""
 
-#: ../exo/exo-icon-bar.c:267
-#: ../exo/exo-icon-view.c:801
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:801
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Shtyllë model e përdorur për të pasur \"pixbuf\" ikone prej"
 
-#: ../exo/exo-icon-bar.c:282
-#: ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:927
 msgid "Text column"
 msgstr "Shtyllë teksti"
 
-#: ../exo/exo-icon-bar.c:283
-#: ../exo/exo-icon-view.c:928
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:928
 msgid "Model column used to retrieve the text from"
 msgstr "Shtyllë model e përdorur për të marrë tekst prej"
 
@@ -103,33 +99,27 @@ msgstr "Veprues"
 msgid "Active item index"
 msgstr "Tregues objektesh vepruesa"
 
-#: ../exo/exo-icon-bar.c:319
-#: ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "Ngjyrë mbushjeje objekti veprues"
 
-#: ../exo/exo-icon-bar.c:326
-#: ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "Ngjyrë ane objekti veprues"
 
-#: ../exo/exo-icon-bar.c:333
-#: ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "Ngjyrë teksti objekti veprues"
 
-#: ../exo/exo-icon-bar.c:340
-#: ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "Ngjyrë mbushjeje elementi kursori"
 
-#: ../exo/exo-icon-bar.c:347
-#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "Ngjyrë ane objekti kursori"
 
-#: ../exo/exo-icon-bar.c:354
-#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "Ngjyrë teksti elementi kursori"
 
@@ -199,8 +189,7 @@ msgid "All Icons"
 msgstr "Tërë Ikonat"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115
-#: ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Kartela Pamje"
 
@@ -231,7 +220,8 @@ msgstr "Mundëso Kërkim"
 
 #: ../exo/exo-icon-view.c:684
 msgid "View allows user to search through columns interactively"
-msgstr "Pamja i lejon përdoruesit të kërkoj nëpër shtylla në mënyrë ndërvepruese"
+msgstr ""
+"Pamja i lejon përdoruesit të kërkojë nëpër shtylla në mënyrë ndërvepruese"
 
 #: ../exo/exo-icon-view.c:701
 msgid "Width for each item"
@@ -263,7 +253,9 @@ msgstr "Shtyllë \"markup\""
 
 #: ../exo/exo-icon-view.c:755
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Shtyllë model e përdorur për marrjen e tekstit nëse përdoret formë shënimesh Pango"
+msgstr ""
+"Shtyllë model e përdorur për marrjen e tekstit nëse përdoret formë shënimesh "
+"Pango"
 
 #: ../exo/exo-icon-view.c:769
 msgid "Icon View Model"
@@ -274,8 +266,11 @@ msgid "The model for the icon view"
 msgstr "Modeli për pamjen e ikonës"
 
 #: ../exo/exo-icon-view.c:784
-msgid "How the text and icon of each item are positioned relative to each other"
-msgstr "Në çfarë mënyre teksti dhe ikona e secilit objekt vendosen në lidhje me njëri tjetrin"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"Në çfarë mënyre teksti dhe ikona e secilit objekt vendosen në lidhje me "
+"njëri tjetrin"
 
 #: ../exo/exo-icon-view.c:816
 msgid "Reorderable"
@@ -309,25 +304,25 @@ msgstr "Mënyrë përzgjedhjeje"
 msgid "The selection mode"
 msgstr "Mënyra përzgjedhje"
 
-#: ../exo/exo-icon-view.c:878
-#: ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:878 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Klikim Njësh"
 
-#: ../exo/exo-icon-view.c:879
-#: ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:879 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Në mund të aktivizohen a jo me klikime njëshe objektet në parje"
 
-#: ../exo/exo-icon-view.c:895
-#: ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:895 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Kohëmbarim për Klikim Njësh"
 
-#: ../exo/exo-icon-view.c:896
-#: ../exo/exo-tree-view.c:184
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "Sasia e kohës pas së cilës objekti nën kursorin e miut do të përzgjidhet vetvetiu sipas mënyrës klikim njësh"
+#: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:184
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Sasia e kohës pas së cilës objekti nën kursorin e miut do të përzgjidhet "
+"vetvetiu sipas mënyrës klikim njësh"
 
 #: ../exo/exo-icon-view.c:911
 msgid "Spacing"
@@ -357,8 +352,7 @@ msgstr "Patejdukshmëri kutie përzgjedhjeje"
 msgid "Preview"
 msgstr "Paraparje"
 
-#: ../exo/exo-thumbnail-preview.c:139
-#: ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "Nuk u përzgjodh kartelë"
 
@@ -389,8 +383,12 @@ msgid "_Add a new toolbar"
 msgstr "_Shto panel të ri"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "Për ta shtuar, tërhiqni një objekt te panelet më sipër, dhe për ta hequr, prej paneleve te tabela e objekteve."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Për ta shtuar, tërhiqni një objekt te panelet më sipër, dhe për ta hequr, "
+"prej paneleve te tabela e objekteve."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -431,7 +429,7 @@ msgstr "Përshtasni Panelin..."
 #: ../exo/exo-url.c:297
 #, c-format
 msgid "Unable to open \"%s\""
-msgstr "I pazoti të hap \"%s\""
+msgstr "I pazoti të hapë \"%s\""
 
 #: ../exo/exo-url.c:328
 #, c-format
@@ -441,7 +439,7 @@ msgstr "URL-ja \"%s\" nuk mbulohet"
 #: ../exo/exo-url.c:414
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Dështova në hapjen e \"%s\"."
+msgstr "Dështoi në hapjen e \"%s\"."
 
 #: ../exo/exo-wrap-table.c:160
 msgid "Column spacing"
@@ -525,10 +523,8 @@ msgstr "  --strip-comments  Hiq komentet prej kartelash XML\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Hiq lëndë nyjesh prej kartelash XML\n"
 
-#: ../exo-csource/main.c:303
-#: ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122
-#: ../exo-mount-notify/main.c:167
+#: ../exo-csource/main.c:303 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -544,10 +540,8 @@ msgstr ""
 "Shkruajtur nga Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:307
-#: ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126
-#: ../exo-mount-notify/main.c:171
+#: ../exo-csource/main.c:307 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -563,14 +557,12 @@ msgstr ""
 "gjendet në paketën burim të %-s.\n"
 "\n"
 
-#: ../exo-csource/main.c:311
-#: ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130
-#: ../exo-mount-notify/main.c:175
+#: ../exo-csource/main.c:311 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "Ju lutem raportoni të meta te <%s>.\n"
+msgstr "Ju lutem njoftoni të meta te <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:290
@@ -656,8 +648,14 @@ msgid "Use _startup notification"
 msgstr "Përdor njoftime _nisjesh"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "Përzgjidhni këtë mundësi për të aktivizuar njoftim në nisje kur urdhri xhirohet prej përgjegjësit të kartelave ose prej menuje. Jo çdo zbatim mbulon njoftim në nisje."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Përzgjidhni këtë mundësi për të aktivizuar njoftim në nisje kur urdhri "
+"xhirohet prej përgjegjësit të kartelave ose prej menuje. Jo çdo zbatim "
+"mbulon njoftim në nisje."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -720,8 +718,7 @@ msgstr "Paracakto URL kur krijohet lidhje"
 msgid "Preset icon when creating a desktop file"
 msgstr "Paracakto ikonë kur krijohet kartelë desktopi"
 
-#: ../exo-desktop-item-edit/main.c:79
-#: ../exo-mount/main.c:74
+#: ../exo-desktop-item-edit/main.c:79 ../exo-mount/main.c:74
 #: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Shtyp të dhëna versioni dhe dil"
@@ -731,11 +728,10 @@ msgstr "Shtyp të dhëna versioni dhe dil"
 msgid "[FILE|FOLDER]"
 msgstr "[KARTELË|DOSJE]"
 
-#: ../exo-desktop-item-edit/main.c:138
-#: ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
 msgid "Failed to open display"
-msgstr "Dështova në hapje ekrani"
+msgstr "Dështoi në hapje ekrani"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
@@ -760,12 +756,12 @@ msgstr "Zgjidhni emër kartele"
 #: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Dështova në krijimin e \"%s\"."
+msgstr "Dështoi në krijimin e \"%s\"."
 
 #: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Dështova në ruajtjen e \"%s\"."
+msgstr "Dështoi në ruajtjen e \"%s\"."
 
 #: ../exo-hal/exo-hal.c:444
 #, c-format
@@ -916,12 +912,13 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid "Failed to open the documentation browser."
-msgstr "Dështova në hapjen e shfletuesit të dokumentacionit."
+msgstr "Dështoi në hapjen e shfletuesit të dokumentacionit."
 
 #: ../exo-helper/exo-helper-chooser.c:184
 #: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
-msgstr "Shtypni butonin e majtë të miut për të ndryshuar zbatimin e përzgjedhur."
+msgstr ""
+"Shtypni butonin e majtë të miut për të ndryshuar zbatimin e përzgjedhur."
 
 #: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
@@ -933,15 +930,15 @@ msgstr "Pa përzgjedhje zbatimi"
 
 #: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
-msgstr "Dështova në caktimin e Shfletuesit Web parazgjedhje"
+msgstr "Dështoi në caktimin e Shfletuesit Web parazgjedhje"
 
 #: ../exo-helper/exo-helper-chooser.c:351
 msgid "Failed to set default Mail Reader"
-msgstr "Dështova në caktimin e Lexuesit të Postës parazgjedhje"
+msgstr "Dështoi në caktimin e Lexuesit të Postës parazgjedhje"
 
 #: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
-msgstr "Dështova në caktimin e Emuluesit të Terminalit parazgjedhje"
+msgstr "Dështoi në caktimin e Emuluesit të Terminalit parazgjedhje"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:422
@@ -1030,11 +1027,11 @@ msgstr "Pa urdhër të përcaktuar"
 
 #: ../exo-helper/exo-helper.c:740
 msgid "Failed to open helpers.rc for writing"
-msgstr "Dështova në hapjen e helpers.rc për shkrim"
+msgstr "Dështoi në hapjen e helpers.rc për shkrim"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:40
 msgid "Failed to launch exo-preferred-applications"
-msgstr "Dështova në nisjen e exo-preferred-applications"
+msgstr "Dështoi në nisjen e exo-preferred-applications"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:60
 msgid "Button Label|Preferred Applications"
@@ -1042,7 +1039,8 @@ msgstr "Etiketë Butoni|Zbatime të Parapëlqyer"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Zbatime të Parapëlqyer (Shfletues Web, Lexues Poste dhe Emulues Terminali)"
+msgstr ""
+"Zbatime të Parapëlqyer (Shfletues Web, Lexues Poste dhe Emulues Terminali)"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
@@ -1170,15 +1168,14 @@ msgstr "Gabim i panjohur"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132
-#: ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr "Nuk u gjet pajisje \"%s\" në tabelën e pajisjeve të sistemit të kartelave"
+msgstr ""
+"Nuk u gjet pajisje \"%s\" në tabelën e pajisjeve të sistemit të kartelave"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224
-#: ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Pajisja e dhënë \"%s\" nuk është një vëllim apo \"drive\""
@@ -1202,12 +1199,18 @@ msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Nuk keni privilegjin e montimit të vëllimit \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:846
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
-msgstr "Nuk mund të montohen disqe të zbrazët, përdorni një zbatim për shkrim në CD, si fjala vjen Xfburn për të regjistruar audio apo për të hedhur të dhëna në disk"
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
+msgstr ""
+"Nuk mund të montohen disqe të zbrazët, përdorni një zbatim për shkrim në CD, "
+"si fjala vjen Xfburn për të regjistruar audio apo për të hedhur të dhëna në "
+"disk"
 
 #: ../exo-mount/exo-mount-hal.c:857
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "Nuk mund të montohen CD audio, përdorni Xfmedia për të luajtur gjurmë audio"
+msgstr ""
+"Nuk mund të montohen CD audio, përdorni Xfmedia për të luajtur gjurmë audio"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:942
@@ -1259,11 +1262,17 @@ msgstr "Duhet treguar një pajisje HAL UDI ose kartelë pajisjeje"
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "Nuk duhen dhënë në të njëjtën kohë edhe një pajisje HAL UDI, edhe një kartelë pajisjeje"
+msgstr ""
+"Nuk duhen dhënë në të njëjtën kohë edhe një pajisje HAL UDI, edhe një "
+"kartelë pajisjeje"
 
 #: ../exo-mount/main.c:154
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
-msgstr "Nuk montoj dot përmes pajisjeje HAL UDI, ngaqë mbulimi për HAL është çaktivizuar për këtë formim të libexo-s"
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+"Nuk montohet dot përmes pajisjeje HAL UDI, ngaqë mbulimi për HAL është "
+"çaktivizuar për këtë formim të libexo-s"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1273,22 +1282,22 @@ msgstr "UDI \"%s\" e dhënë nuk është pajisje e vlefshme HAL UDI"
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
-msgstr "NUk mund të nxjerr dhe njëkohësisht edhe të montoj"
+msgstr "Nuk mundet të nxjerrë dhe të montojë njëkohësisht"
 
 #: ../exo-mount/main.c:330
 #, c-format
 msgid "Failed to eject \"%s\""
-msgstr "Dështova në nxjerrjen e \"%s\""
+msgstr "Dështoi në nxjerrjen e \"%s\""
 
 #: ../exo-mount/main.c:332
 #, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "Dështova në çmontimin e \"%s\""
+msgstr "Dështoi në çmontimin e \"%s\""
 
 #: ../exo-mount/main.c:334
 #, c-format
 msgid "Failed to mount \"%s\""
-msgstr "Dështova në montimin e \"%s\""
+msgstr "Dështoi në montimin e \"%s\""
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:111
@@ -1313,22 +1322,30 @@ msgstr "Pajisja \"%s\" po nxirret. Kjo mund të hajë ca kohë."
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
 msgid "Unmounting device"
-msgstr "Po çomntoj pajisje"
+msgstr "Po çmonton pajisje"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
-msgstr "Pajisja \"%s\" po çmontohet prej sistemit. Ju lutem mos e hiqni median e as mos shkëpusni \"drive\"-in."
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+"Pajisja \"%s\" po çmontohet prej sistemit. Ju lutem mos e hiqni median e as "
+"mos shkëpusni \"drive\"-in."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
 msgid "Writing data to device"
-msgstr "Po shkruaj të dhëna te pajisja"
+msgstr "Po shkruhen të dhëna te pajisja"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
-msgstr "Ka të dhëna që lypset të shkruhen te pajisja \"%s\" para se kjo të hiqet.Ju lutem mos e hiqni median e as mos shkëpusni \"drive\"-in."
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
+"Ka të dhëna që lypset të shkruhen te pajisja \"%s\" para se kjo të hiqet.Ju "
+"lutem mos e hiqni median e as mos shkëpusni \"drive\"-in."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1340,16 +1357,19 @@ msgstr "       exo-open --launch TIP [PARAMETËRa...]"
 
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --ndihmë                          Shtyp këtë mesazh ndihme dhe dil"
+msgstr ""
+"  -?, --ndihmë                          Shtyp këtë mesazh ndihme dhe dil"
 
 #: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
+msgid ""
+"  -v, --version                       Print version information and exit"
 msgstr " -v, --version         Shtyp të dhëna versioni dhe dil"
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TIP [PARAMETËR...]       Nis zbatimin e parapëlqyer për\n"
@@ -1358,10 +1378,12 @@ msgstr ""
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DREJTORI       Drejtoria punuese parazgjedhjepër zbatimet\n"
+"  --working-directory DREJTORI       Drejtoria punuese parazgjedhjepër "
+"zbatimet\n"
 "                                      kur përdoret mundësia --launch."
 
 #: ../exo-open/main.c:72
@@ -1392,16 +1414,16 @@ msgstr ""
 "Nëse s'përcaktoni mundësinë --launch, exo-open do të hapë tërë URLtë\n"
 "e treguara me dorëza e tyre të parapëlqyera. Përndryshe, nëse përcaktoni\n"
 "mundësinë --launch, mund të përzgjidhni cilin zbatim të parapëlqyer doni të\n"
-"të xhirohet, dhe t'i kaloni edhe parametra shtesë zbatimit (p.sh. for TerminalEmulator\n"
+"të xhirohet, dhe t'i kaloni edhe parametra shtesë zbatimit (p.sh. for "
+"TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 
 #: ../exo-open/main.c:149
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Dështova në nisjen e zbatimit parazgjedhje për kategorinë \"%s\"."
+msgstr "Dështoi në nisjen e zbatimit parazgjedhje për kategorinë \"%s\"."
 
 #: ../exo-open/main.c:170
 #, c-format
 msgid "Failed to open URL \"%s\"."
-msgstr "Dështova në hapjen e URL-së \"%s\"."
-
+msgstr "Dështoi në hapjen e URL-së \"%s\"."
