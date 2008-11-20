@@ -56,10 +56,7 @@
 #define PASSCHARS       "-A-Za-z0-9,?;.:/!%$^*&~\"#'"
 #define HOSTCHARS       "-A-Za-z0-9"
 #define USER            "[" USERCHARS "]+(:["PASSCHARS "]+)?"
-#define MATCH_BROWSER1  "^((file|https?|ftps?)://(" USER "@)?)[" HOSTCHARS ".]+(:[0-9]+)?" \
-                        "(/[-A-Za-z0-9_$.+!*(),;:@&=?/~#%]*[^]'.}>) \t\r\n,\\\"])?$"
-#define MATCH_BROWSER2  "^(www|ftp)[" HOSTCHARS "]*\\.[" HOSTCHARS ".]+(:[0-9]+)?" \
-                        "(/[-A-Za-z0-9_$.+!*(),;:@&=?/~#%]*[^]'.}>) \t\r\n,\\\"])?$"
+#define MATCH_BROWSER   "^(([^:/?#]+)://)?([^/?#])([^?#]*)(\\?([^#]*))?(#(.*))?"
 #if !defined(__GLIBC__)
 #define MATCH_MAILER    "^[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+$"
 #else
@@ -143,11 +140,14 @@ static gchar*
 _exo_url_to_local_path (const gchar *url)
 {
   gchar *current_dir;
-  gchar *path;
+  gchar *path = NULL;
 
-  /* transform a file:-URI to a local path */
-  path = g_filename_from_uri (url, NULL, NULL);
-  if (G_LIKELY (path == NULL))
+  if (g_str_has_prefix (url, "file://"))
+    {
+      /* transform a file:-URI to a local path */
+      path = g_filename_from_uri (url, NULL, NULL);
+    }
+  else
     {
       /* check if url is an absolute path */
       if (g_path_is_absolute (url))
@@ -161,15 +161,15 @@ _exo_url_to_local_path (const gchar *url)
           current_dir = g_get_current_dir ();
           path = g_build_filename (current_dir, url, NULL);
           g_free (current_dir);
-        }
-    }
 
-  /* verify that a file of the given name exists */
-  if (!g_file_test (path, G_FILE_TEST_EXISTS))
-    {
-      /* no local path then! */
-      g_free (path);
-      path = NULL;
+          /* verify that a file of the given name exists */
+          if (!g_file_test (path, G_FILE_TEST_EXISTS))
+            {
+              /* no local path then! */
+              g_free (path);
+              path = NULL;
+            }
+        }
     }
 
   return path;
@@ -291,10 +291,6 @@ exo_url_show_on_screen (const gchar *url,
       /* and we're done */
       return result;
     }
-  else if (_exo_url_match (MATCH_BROWSER1, url))
-    {
-      category = "WebBrowser";
-    }
   else if (strncmp (url, "mailto:", 7) == 0 || _exo_url_match (MATCH_MAILER, url))
     {
       /* ignore mailto: prefix, as not all mailers can handle it */
@@ -302,9 +298,8 @@ exo_url_show_on_screen (const gchar *url,
         url += 7;
       category = "MailReader";
     }
-  else if (_exo_url_match (MATCH_BROWSER2, url))
+  else if (_exo_url_match (MATCH_BROWSER, url))
     {
-      /* after MATCH_MAILER, see http://bugzilla.xfce.org/show_bug.cgi?id=2530 for details */
       category = "WebBrowser";
     }
   else

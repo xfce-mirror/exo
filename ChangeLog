@@ -1,3 +1,15 @@
+2008-11-20	Jannis Pohlmann <jannis@xfce.org>
+
+	* exo/exo-url.c (_exo_url_to_local_path, exo_url_show_on_screen): 
+	  Modify _exo_url_to_local_path() so that it converts file:// URIs to
+	  paths, does not touch absolute paths and converts relative paths to
+	  absolute paths only if they exist in the local filesystem. Set 
+	  relative paths to NULL otherwise. 
+	  Replace the two regular expression for browser URIs by a more 
+	  generic one and try to open URIs in the following order: file 
+	  manager, email client and web browser as a last option.
+	  Alltogether this should fix bug #4627.
+
 2008-11-11	Jannis Pohlmann <jannis@xfce.org>
 
 	* NEWS: Update NEWS file for the upcoming beta2 release.
