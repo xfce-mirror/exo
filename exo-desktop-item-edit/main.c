@@ -76,7 +76,7 @@ static GOptionEntry option_entries[] =
   { "command", 0, 0, G_OPTION_ARG_STRING, &opt_command, N_ ("Preset command when creating a launcher"), NULL, },
   { "url", 0, 0, G_OPTION_ARG_STRING, &opt_url, N_ ("Preset URL when creating a link"), NULL, },
   { "icon", 0, 0, G_OPTION_ARG_STRING, &opt_icon, N_ ("Preset icon when creating a desktop file"), NULL, },
-  { "version", 'v', 0, G_OPTION_ARG_NONE, &opt_version, N_ ("Print version information and exit"), NULL, },
+  { "version", 'V', 0, G_OPTION_ARG_NONE, &opt_version, N_ ("Print version information and exit"), NULL, },
   { "xid", 0, G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_INT, &opt_xid, NULL, NULL, },
   { NULL, },
 };

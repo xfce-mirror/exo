@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-20 13:45+0200\n"
+"POT-Creation-Date: 2008-11-22 12:34+0100\n"
 "PO-Revision-Date: 2008-11-01 22:35+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -45,10 +45,8 @@ msgstr "velikost"
 msgid "The size of the icon to render in pixels."
 msgstr "Velikost vykreslené ikony v obrazových bodech."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770
-#: ../exo/exo-mount-point.c:208
-#: ../exo/exo-mount-point.c:237
-#: ../exo/exo-mount-point.c:425
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Nepodařilo se otevřít soubor \"%s\": %s"
@@ -60,11 +58,13 @@ msgstr "Nepodařilo se vytvořit soubor \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Nepodařilo se načíst obrázek \"%s\". Důvod není znám, pravděpodobně je soubor s obrázkem poškozen"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Nepodařilo se načíst obrázek \"%s\". Důvod není znám, pravděpodobně je "
+"soubor s obrázkem poškozen"
 
-#: ../exo/exo-icon-bar.c:249
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:785
 msgid "Orientation"
 msgstr "Orientace"
 
@@ -72,23 +72,19 @@ msgstr "Orientace"
 msgid "The orientation of the iconbar"
 msgstr "Orientace panelu ikon"
 
-#: ../exo/exo-icon-bar.c:266
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:802
 msgid "Pixbuf column"
 msgstr "Sloupec pixbuf"
 
-#: ../exo/exo-icon-bar.c:267
-#: ../exo/exo-icon-view.c:801
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:803
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Sloupec modelu používaný pro získání pixbufu ikony z"
 
-#: ../exo/exo-icon-bar.c:282
-#: ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:929
 msgid "Text column"
 msgstr "Textový sloupec"
 
-#: ../exo/exo-icon-bar.c:283
-#: ../exo/exo-icon-view.c:928
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:930
 msgid "Model column used to retrieve the text from"
 msgstr "Sloupec modelu používaný pro získání textu z"
 
@@ -108,33 +104,27 @@ msgstr "Aktivní"
 msgid "Active item index"
 msgstr "Index aktivních položek"
 
-#: ../exo/exo-icon-bar.c:319
-#: ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "Barva výplně aktivních položek"
 
-#: ../exo/exo-icon-bar.c:326
-#: ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "Barva okraje aktivních položek"
 
-#: ../exo/exo-icon-bar.c:333
-#: ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "Barva textu aktivních položek"
 
-#: ../exo/exo-icon-bar.c:340
-#: ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "Barva výplně položek, nad kterými se nachází kurzor"
 
-#: ../exo/exo-icon-bar.c:347
-#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "Barva okrajů položek, nad kterými se nachází kurzor"
 
-#: ../exo/exo-icon-bar.c:354
-#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "Barva textu položek, nad kterými se nachází kurzor"
 
@@ -204,8 +194,7 @@ msgid "All Icons"
 msgstr "Všechny ikony"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115
-#: ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Obrázky"
 
@@ -214,147 +203,149 @@ msgstr "Obrázky"
 msgid "Select _icon from:"
 msgstr "Vybrat _ikonu z:"
 
-#: ../exo/exo-icon-view.c:651
+#: ../exo/exo-icon-view.c:653
 msgid "Column Spacing"
 msgstr "Šířka sloupce"
 
-#: ../exo/exo-icon-view.c:652
+#: ../exo/exo-icon-view.c:654
 msgid "Space which is inserted between grid column"
 msgstr "Prostor, který je vložen mezi sloupce"
 
-#: ../exo/exo-icon-view.c:668
+#: ../exo/exo-icon-view.c:670
 msgid "Number of columns"
 msgstr "Počet sloupců"
 
-#: ../exo/exo-icon-view.c:669
+#: ../exo/exo-icon-view.c:671
 msgid "Number of columns to display"
 msgstr "Počet sloupců ke zobrazení"
 
-#: ../exo/exo-icon-view.c:683
+#: ../exo/exo-icon-view.c:685
 msgid "Enable Search"
 msgstr "Povolit hledání"
 
-#: ../exo/exo-icon-view.c:684
+#: ../exo/exo-icon-view.c:686
 msgid "View allows user to search through columns interactively"
 msgstr "Pohled umožní uživateli interaktivně hledat ve sloupcích"
 
-#: ../exo/exo-icon-view.c:701
+#: ../exo/exo-icon-view.c:703
 msgid "Width for each item"
 msgstr "Šířka pro každou položku"
 
-#: ../exo/exo-icon-view.c:702
+#: ../exo/exo-icon-view.c:704
 msgid "The width used for each item"
 msgstr "Šířka použitá pro každou položku"
 
-#: ../exo/exo-icon-view.c:720
+#: ../exo/exo-icon-view.c:722
 msgid "Layout mode"
 msgstr "Režim rozvržení"
 
-#: ../exo/exo-icon-view.c:721
+#: ../exo/exo-icon-view.c:723
 msgid "The layout mode"
 msgstr "Režim rozvržení"
 
-#: ../exo/exo-icon-view.c:737
+#: ../exo/exo-icon-view.c:739
 msgid "Margin"
 msgstr "Okraj"
 
-#: ../exo/exo-icon-view.c:738
+#: ../exo/exo-icon-view.c:740
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Prostor vložený na okraje ikonového zobrazení"
 
-#: ../exo/exo-icon-view.c:754
+#: ../exo/exo-icon-view.c:756
 msgid "Markup column"
 msgstr "Označit sloupec"
 
-#: ../exo/exo-icon-view.c:755
+#: ../exo/exo-icon-view.c:757
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Sloupec modelu používaný pro získání textu, pokud se používají značky Pango"
+msgstr ""
+"Sloupec modelu používaný pro získání textu, pokud se používají značky Pango"
 
-#: ../exo/exo-icon-view.c:769
+#: ../exo/exo-icon-view.c:771
 msgid "Icon View Model"
 msgstr "Model ikonového pohledu"
 
-#: ../exo/exo-icon-view.c:770
+#: ../exo/exo-icon-view.c:772
 msgid "The model for the icon view"
 msgstr "Model pro ikonový pohled"
 
-#: ../exo/exo-icon-view.c:784
-msgid "How the text and icon of each item are positioned relative to each other"
+#: ../exo/exo-icon-view.c:786
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr "Jak jsou text a ikony každé položky navzájem relativně umístěny"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:818
 msgid "Reorderable"
 msgstr "Přeuspořádatelný"
 
-#: ../exo/exo-icon-view.c:817
+#: ../exo/exo-icon-view.c:819
 msgid "View is reorderable"
 msgstr "Pohled je přeuspořádatelný"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:834
 msgid "Row Spacing"
 msgstr "Výšky řádků"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:835
 msgid "Space which is inserted between grid rows"
 msgstr "Prostor, který je vložen mezi mřížku řádků"
 
-#: ../exo/exo-icon-view.c:847
+#: ../exo/exo-icon-view.c:849
 msgid "Search Column"
 msgstr "Sloupec hledání"
 
-#: ../exo/exo-icon-view.c:848
+#: ../exo/exo-icon-view.c:850
 msgid "Model column to search through when searching through item"
 msgstr "Model sloupce pro vyhledávání při hledání v položce"
 
-#: ../exo/exo-icon-view.c:862
+#: ../exo/exo-icon-view.c:864
 msgid "Selection mode"
 msgstr "Režim výběru"
 
-#: ../exo/exo-icon-view.c:863
+#: ../exo/exo-icon-view.c:865
 msgid "The selection mode"
 msgstr "Režim výběru"
 
-#: ../exo/exo-icon-view.c:878
-#: ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:880 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Jednoduché kliknutí"
 
-#: ../exo/exo-icon-view.c:879
-#: ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:881 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Zda mohou být zobrazené položky aktivovány jednoduchým kliknutím"
 
-#: ../exo/exo-icon-view.c:895
-#: ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:897 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Vypršení limitu pro jednoduché kliknutí"
 
-#: ../exo/exo-icon-view.c:896
-#: ../exo/exo-tree-view.c:184
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "Množství času, po kterém se položka pod kurzorem myši v módu jednoduchého kliknutí sama označí"
+#: ../exo/exo-icon-view.c:898 ../exo/exo-tree-view.c:184
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Množství času, po kterém se položka pod kurzorem myši v módu jednoduchého "
+"kliknutí sama označí"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:913
 msgid "Spacing"
 msgstr "Rozestupy"
 
-#: ../exo/exo-icon-view.c:912
+#: ../exo/exo-icon-view.c:914
 msgid "Space which is inserted between cells of an item"
 msgstr "Prostor mezi buňkami položek"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:937
 msgid "Selection Box Color"
 msgstr "Barva obdélníku výběru"
 
-#: ../exo/exo-icon-view.c:936
+#: ../exo/exo-icon-view.c:938
 msgid "Color of the selection box"
 msgstr "Barva obdélníku výběru"
 
-#: ../exo/exo-icon-view.c:942
+#: ../exo/exo-icon-view.c:944
 msgid "Selection Box Alpha"
 msgstr "Alfa obdélníku výběru"
 
-#: ../exo/exo-icon-view.c:943
+#: ../exo/exo-icon-view.c:945
 msgid "Opacity of the selection box"
 msgstr "Neprůhlednost obdélníku výběru"
 
@@ -362,8 +353,7 @@ msgstr "Neprůhlednost obdélníku výběru"
 msgid "Preview"
 msgstr "Náhled"
 
-#: ../exo/exo-thumbnail-preview.c:139
-#: ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "Není vybrán žádný soubor"
 
@@ -392,8 +382,12 @@ msgid "_Add a new toolbar"
 msgstr "Přid_at nový panel nástrojů"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "Položku přidáte na panel nástrojů tak, že ji přetáhnete z tabulky nástrojů. Opačným postupem ji odstraníte."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Položku přidáte na panel nástrojů tak, že ji přetáhnete z tabulky nástrojů. "
+"Opačným postupem ji odstraníte."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -431,17 +425,17 @@ msgstr "Odebrat panel nástrojů"
 msgid "Customize Toolbar..."
 msgstr "Upravit panel nástrojů"
 
-#: ../exo/exo-url.c:297
+#: ../exo/exo-url.c:280
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Nelze otevřít \"%s\""
 
-#: ../exo/exo-url.c:328
+#: ../exo/exo-url.c:326
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "Adresa URL \"%s\" není podporovaná"
 
-#: ../exo/exo-url.c:414
+#: ../exo/exo-url.c:412
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Nepodařilo se otevřít \"%s\"."
@@ -486,52 +480,58 @@ msgstr "Příkaz pro opakované spuštění"
 msgid "Session restart command"
 msgstr "Příkaz pro opakované spuštění relace"
 
-#: ../exo-csource/main.c:283
+#: ../exo-csource/main.c:285
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Použití: %s [volby] [soubor]\n"
 
-#: ../exo-csource/main.c:284
+#: ../exo-csource/main.c:286
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [volby] --build-list [[název souboru]...]\n"
 
-#: ../exo-csource/main.c:286
+#: ../exo-csource/main.c:288
+#, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Zobrazí tuto nápovědu a ukončí se\n"
 
-#: ../exo-csource/main.c:287
-msgid "  -v, --version     Print version information and exit\n"
-msgstr "  -v, --version     Zobrazí informaci o verzi a ukončí se\n"
+#: ../exo-csource/main.c:289
+#, c-format
+msgid "  -V, --version     Print version information and exit\n"
+msgstr "  -V, --version     Zobrazí informaci o verzi a ukončí se\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:290
+#, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Generuje extern symboly\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:291
+#, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Generuje statické symboly\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:292
+#, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier Název proměnné nebo makra jazyka C\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:293
+#, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Parsovací páry (název, soubor)\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:294
+#, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Odstraní komentáře ze souborů XML\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:295
+#, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Odstraní obsah uzlů ze souborů XML\n"
 
-#: ../exo-csource/main.c:303
-#: ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122
-#: ../exo-mount-notify/main.c:167
+#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -547,10 +547,8 @@ msgstr ""
 "Napsal Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:307
-#: ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126
-#: ../exo-mount-notify/main.c:171
+#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -566,10 +564,8 @@ msgstr ""
 "přiložené u zdrojového balíčku aplikace %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:311
-#: ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130
-#: ../exo-mount-notify/main.c:175
+#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -659,8 +655,14 @@ msgid "Use _startup notification"
 msgstr "Použít oznámení při _spuštění"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "Zvolte tuto možnost pro povolení oznámení při spuštění, pokud je příkaz spouštěn ze správce souborů nebo z hlavní nabídky. Ne každá aplikace podporuje oznámení při startu ."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Zvolte tuto možnost pro povolení oznámení při spuštění, pokud je příkaz "
+"spouštěn ze správce souborů nebo z hlavní nabídky. Ne každá aplikace "
+"podporuje oznámení při startu ."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -731,9 +733,8 @@ msgstr ""
 "Přednastavená ikona při vytváření souboru na\n"
 "                              ploše"
 
-#: ../exo-desktop-item-edit/main.c:79
-#: ../exo-mount/main.c:74
-#: ../exo-mount-notify/main.c:77
+#: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
+#: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Zobrazí informace o verzi a ukončí se"
 
@@ -742,8 +743,7 @@ msgstr "Zobrazí informace o verzi a ukončí se"
 msgid "[FILE|FOLDER]"
 msgstr "[SOUBOR|ADRESÁŘ]"
 
-#: ../exo-desktop-item-edit/main.c:138
-#: ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
 msgid "Failed to open display"
 msgstr "Nepodařilo se otevřít displej"
@@ -866,27 +866,27 @@ msgstr "Vyjmutelný svazek %s"
 msgid "%s Volume"
 msgstr "Svazek %s"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:100
+#: ../exo-helper/exo-helper-chooser-dialog.c:103
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Upřednostňované aplikace"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
+#: ../exo-helper/exo-helper-chooser-dialog.c:104
 msgid "Select default applications for various services"
 msgstr "Vyberte si výchozí aplikace pro různé služby"
 
 #.
 #. Internet
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:125
+#: ../exo-helper/exo-helper-chooser-dialog.c:133
 msgid "Internet"
 msgstr "Internet"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:138
+#: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid "Web Browser"
 msgstr "Webový prohlížeč"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:146
+#: ../exo-helper/exo-helper-chooser-dialog.c:154
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
@@ -894,11 +894,11 @@ msgstr ""
 "Zvolený webový prohlížeč bude používán jako vý-\n"
 "chozí pro otevírání odkazů a surfování po webu."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:170
+#: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid "Mail Reader"
 msgstr "E-mailový klient"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:178
+#: ../exo-helper/exo-helper-chooser-dialog.c:186
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
@@ -910,15 +910,15 @@ msgstr ""
 #.
 #. Utilities
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:198
+#: ../exo-helper/exo-helper-chooser-dialog.c:206
 msgid "Utilities"
 msgstr "Nástroje"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:211
+#: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "Terminal Emulator"
 msgstr "Emulátor terminálu"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:219
+#: ../exo-helper/exo-helper-chooser-dialog.c:227
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
@@ -927,7 +927,7 @@ msgstr ""
 "výchozí pro aplikace, které využívají textové\n"
 "prostředí CLI (Command Line Interface)"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:258
+#: ../exo-helper/exo-helper-chooser-dialog.c:266
 msgid "Failed to open the documentation browser."
 msgstr "Nepodařilo se otevřít prohlížeč dokumentace"
 
@@ -1038,28 +1038,112 @@ msgstr ""
 "a klikněte na tlačítko OK."
 
 #: ../exo-helper/exo-helper.c:404
+#, c-format
 msgid "No command specified"
 msgstr "Nebyl zadán žádný příkaz"
 
 #: ../exo-helper/exo-helper.c:740
+#, c-format
 msgid "Failed to open helpers.rc for writing"
 msgstr "Nepodařilo se otevřít soubor helpers.rc pro zápis"
 
-#: ../exo-helper/exo-preferred-applications-settings.c:40
-msgid "Failed to launch exo-preferred-applications"
-msgstr "Nepodařilo se spustit program exo-preferred-applications"
-
-#: ../exo-helper/exo-preferred-applications-settings.c:60
-msgid "Button Label|Preferred Applications"
-msgstr "Upřednostňované aplikace"
-
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Upřednostňované aplikace (webový prohlížeč, e-mailový klient a emulátor terminálu)"
+msgstr ""
+"Upřednostňované aplikace (webový prohlížeč, e-mailový klient a emulátor "
+"terminálu)"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
 msgstr "Upřednostňované aplikace prostředí Xfce 4"
+
+#: ../exo-helper/main.c:42
+#, fuzzy
+msgid "Failed to execute default Web Browser"
+msgstr "Nepodařilo se nastavit výchozí webový prohlížeč"
+
+#: ../exo-helper/main.c:43
+#, fuzzy
+msgid "Failed to execute default Mail Reader"
+msgstr "Nepodařilo se nastavit výchozí e-mailový klient"
+
+#: ../exo-helper/main.c:44
+#, fuzzy
+msgid "Failed to execute default Terminal Emulator"
+msgstr "Nepodařilo se nastavit výchozí emulátor terminálu"
+
+#: ../exo-helper/main.c:68
+#, fuzzy
+msgid ""
+"Open the Preferred Applications\n"
+"configuration dialog"
+msgstr "Upřednostňované aplikace prostředí Xfce 4"
+
+#: ../exo-helper/main.c:69
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
+"one of the following values."
+msgstr ""
+
+#: ../exo-helper/main.c:69
+msgid "TYPE [PARAMETER]"
+msgstr ""
+
+#: ../exo-helper/main.c:70
+msgid "Settings manager socket"
+msgstr ""
+
+#: ../exo-helper/main.c:70
+msgid "SOCKET ID"
+msgstr ""
+
+#: ../exo-helper/main.c:93
+#, fuzzy
+msgid ""
+"The following TYPEs are supported for the --launch command:\n"
+"\n"
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+"  WebBrowser       - Zvolený webový prohlížeč.\n"
+"  MailReader       - Zvolený e-mailový klient.\n"
+"  TerminalEmulator - Zvolený emulátor terminálu."
+
+#: ../exo-helper/main.c:102
+#, c-format
+msgid "Type '%s --help' for usage."
+msgstr ""
+
+#: ../exo-helper/main.c:149
+#, fuzzy, c-format
+msgid "Invalid helper type \"%s\""
+msgstr "Nelze otevřít \"%s\""
+
+#: ../exo-helper/main.c:189
+#, fuzzy, c-format
+msgid ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
+"\n"
+"Please report bugs to <%s>.\n"
+msgstr ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. Všechna práva vyhrazena.\n"
+"\n"
+"Napsal Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+
+#: ../exo-helper/main.c:206
+#, c-format
+msgid "Unknown helper arguments.\n"
+msgstr ""
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1125,6 +1209,10 @@ msgstr "Textový prohlížeč Links"
 msgid "Lynx Text Browser"
 msgstr "Textový prohlížeč Lynx"
 
+#: ../exo-helper/helpers/midori.desktop.in.in.h:1
+msgid "Midori"
+msgstr ""
+
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
 msgstr "Mozilla Browser"
@@ -1178,64 +1266,83 @@ msgid "X Terminal"
 msgstr "X Terminál"
 
 #: ../exo-mount/exo-mount-fstab.c:92
+#, c-format
 msgid "Unknown error"
 msgstr "Neznámá chyba"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132
-#: ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Zařízení \"%s\" nebylo nalezeno v tabulce systémových zařízení"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224
-#: ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Zařízení \"%s\" není svazkem nebo jednotkou"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:595
+#: ../exo-mount/exo-mount-hal.c:605
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Nejste oprávněni vysunout svazek \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:600
+#: ../exo-mount/exo-mount-hal.c:610
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Aplikace zabraňuje vysunutí svazku \"%s\""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:831
+#: ../exo-mount/exo-mount-hal.c:841
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Nejste oprávněni připojit svazek \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:846
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
-msgstr "Prázdné disky nemohou být připojeny, pro záznam dat nebo hudby na disk použijte například aplikaci Xfburn"
+#: ../exo-mount/exo-mount-hal.c:856
+#, c-format
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
+msgstr ""
+"Prázdné disky nemohou být připojeny, pro záznam dat nebo hudby na disk "
+"použijte například aplikaci Xfburn"
 
-#: ../exo-mount/exo-mount-hal.c:857
+#: ../exo-mount/exo-mount-hal.c:867
+#, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "Nelze připojit hudební CD, pro přehrání zvukových stop použijte aplikaci Xfmedia"
+msgstr ""
+"Nelze připojit hudební CD, pro přehrání zvukových stop použijte aplikaci "
+"Xfmedia"
+
+#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:932
+#, fuzzy, c-format
+msgid "You are not privileged to teardown the crypto layer"
+msgstr "Nejste oprávněni připojit svazek \"%s\""
+
+#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
+#: ../exo-mount/exo-mount-hal.c:937
+#, fuzzy, c-format
+msgid "An application is preventing the crypto layer from being torn down"
+msgstr "Aplikace zabraňuje odpojení svazku  \"%s\""
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:942
+#: ../exo-mount/exo-mount-hal.c:1021
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Nejste oprávněni odpojit svazek \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:947
+#: ../exo-mount/exo-mount-hal.c:1026
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Aplikace zabraňuje odpojení svazku  \"%s\""
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:952
+#: ../exo-mount/exo-mount-hal.c:1031
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Svazek \"%s\" byl pravděpodobně připojen ručně z příkazové řádky"
@@ -1275,8 +1382,12 @@ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "Nesmíte specifikovat číslo UDI zařízení HAL a soubor zařízení najednou"
 
 #: ../exo-mount/main.c:154
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
-msgstr "Zařízení HAL nelze připojit pomocí čísla UDI, protože podpora HAL nebyla v tomto sestavení povolena"
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+"Zařízení HAL nelze připojit pomocí čísla UDI, protože podpora HAL nebyla v "
+"tomto sestavení povolena"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1330,8 +1441,12 @@ msgstr "Odpojuji zařízení"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
-msgstr "Zařízení \"%s\" je odpojováno od systému. Nevyjímejte médium ani neodpojujte jednotku."
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+"Zařízení \"%s\" je odpojováno od systému. Nevyjímejte médium ani neodpojujte "
+"jednotku."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
@@ -1340,8 +1455,12 @@ msgstr "Zapisuji data na jednotku"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
-msgstr "Před vyjmutím je třeba zapsat data na jednotku \"%s\". Nevyjímejte médium ani neodpojujte jednotku."
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
+"Před vyjmutím je třeba zapsat data na jednotku \"%s\". Nevyjímejte médium "
+"ani neodpojujte jednotku."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1353,16 +1472,20 @@ msgstr "       exo-open --launch TYP [PARAMETRY...]"
 
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -h, --help                          Zobrazí tuto nápovědu a ukončí se"
+msgstr ""
+"  -h, --help                          Zobrazí tuto nápovědu a ukončí se"
 
 #: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Zobrazí informace o verzi a ukončí se"
+msgid ""
+"  -V, --version                       Print version information and exit"
+msgstr ""
+"  -V, --version                       Zobrazí informace o verzi a ukončí se"
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TYP [PARAMETRY...]         Spustí upřednostňovanou aplikaci typu\n"
@@ -1371,7 +1494,8 @@ msgstr ""
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
 "  --working-directory ADRESÁŘ         Výchozí pracovní adresář pro aplikace\n"
@@ -1402,10 +1526,13 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
-"Nezadáte-li volbu --launch, exo-open otevře všechny specifikované adresy URL\n"
+"Nezadáte-li volbu --launch, exo-open otevře všechny specifikované adresy "
+"URL\n"
 "aplikací zvolenou podle tvaru adresy URL. Pokud však zadáte volbu --launch,\n"
-"budete moci vybrat, kterou aplikaci chcete spustit a zadat dodatečné parametry\n"
-"pro aplikace (např. pro TerminalEmulator můžete zadat příkaz, který se provede\n"
+"budete moci vybrat, kterou aplikaci chcete spustit a zadat dodatečné "
+"parametry\n"
+"pro aplikace (např. pro TerminalEmulator můžete zadat příkaz, který se "
+"provede\n"
 "v nově otevřeném okně terminálu."
 
 #: ../exo-open/main.c:149
@@ -1418,12 +1545,20 @@ msgstr "Nepodařilo se spustit předvolenou aplikaci kategorie \"%s\"."
 msgid "Failed to open URL \"%s\"."
 msgstr "Nepodařilo se otevřít adresu URL \"%s\"."
 
+#~ msgid "Failed to launch exo-preferred-applications"
+#~ msgstr "Nepodařilo se spustit program exo-preferred-applications"
+
+#~ msgid "Button Label|Preferred Applications"
+#~ msgstr "Upřednostňované aplikace"
+
 #~ msgid "Sylpheed Claws"
 #~ msgstr "Sylpheed Claws"
+
 #~ msgid "Failed to open display: %s"
 #~ msgstr "Nepodařilo se otevřít displej: %s"
+
 #~ msgid "Select an Icon"
 #~ msgstr "Vyberte si ikonu"
+
 #~ msgid "Default Web Browser"
 #~ msgstr "Výchozí webový prohlížeč"
-

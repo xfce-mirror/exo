@@ -71,7 +71,7 @@ static GOptionEntry entries[] =
 #endif
   { "device", 'd', 0, G_OPTION_ARG_FILENAME, &opt_device, N_ ("Mount by device file"), NULL, },
   { "no-ui", 'n', 0, G_OPTION_ARG_NONE, &opt_noui, N_ ("Don't show any dialogs"), NULL, },
-  { "version", 'v', 0, G_OPTION_ARG_NONE, &opt_version, N_ ("Print version information and exit"), NULL, },
+  { "version", 'V', 0, G_OPTION_ARG_NONE, &opt_version, N_ ("Print version information and exit"), NULL, },
   { NULL, },
 };
 

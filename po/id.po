@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-20 13:45+0200\n"
+"POT-Creation-Date: 2008-11-22 12:34+0100\n"
 "PO-Revision-Date: 2008-06-05 05:24+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
@@ -41,10 +41,8 @@ msgstr "ukuran"
 msgid "The size of the icon to render in pixels."
 msgstr "Ukuran ikon untuk render dalam piksel."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770
-#: ../exo/exo-mount-point.c:208
-#: ../exo/exo-mount-point.c:237
-#: ../exo/exo-mount-point.c:425
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Gagal membuka berkas \"%s\": %s"
@@ -56,11 +54,13 @@ msgstr "Gagal membaca berkas \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Gagal memuat gambar \"%s\": Alasan tidak diketahui, kemungkinan berkas gambar yang korup"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Gagal memuat gambar \"%s\": Alasan tidak diketahui, kemungkinan berkas "
+"gambar yang korup"
 
-#: ../exo/exo-icon-bar.c:249
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:785
 msgid "Orientation"
 msgstr "Orientasi"
 
@@ -68,23 +68,19 @@ msgstr "Orientasi"
 msgid "The orientation of the iconbar"
 msgstr "Orientasi dari batang ikon"
 
-#: ../exo/exo-icon-bar.c:266
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:802
 msgid "Pixbuf column"
 msgstr "Kolom pixbuf"
 
-#: ../exo/exo-icon-bar.c:267
-#: ../exo/exo-icon-view.c:801
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:803
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Kolom model yang digunakan untuk mengambil pixbuf ikon dari"
 
-#: ../exo/exo-icon-bar.c:282
-#: ../exo/exo-icon-view.c:927
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:929
 msgid "Text column"
 msgstr "Kolom teks"
 
-#: ../exo/exo-icon-bar.c:283
-#: ../exo/exo-icon-view.c:928
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:930
 msgid "Model column used to retrieve the text from"
 msgstr "Kolom model yang digunakan untuk mengambil teks dari"
 
@@ -104,33 +100,27 @@ msgstr "Aktif"
 msgid "Active item index"
 msgstr "Indeks item aktif"
 
-#: ../exo/exo-icon-bar.c:319
-#: ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "Warna isi item aktif"
 
-#: ../exo/exo-icon-bar.c:326
-#: ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "Warna batas item aktif"
 
-#: ../exo/exo-icon-bar.c:333
-#: ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "Warna teks item aktif"
 
-#: ../exo/exo-icon-bar.c:340
-#: ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "Warna isi item kursor"
 
-#: ../exo/exo-icon-bar.c:347
-#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "Warna batas item kursor"
 
-#: ../exo/exo-icon-bar.c:354
-#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "Warna teks item kursor"
 
@@ -200,8 +190,7 @@ msgid "All Icons"
 msgstr "Semua Ikon"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115
-#: ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Berkas Gambar"
 
@@ -210,147 +199,152 @@ msgstr "Berkas Gambar"
 msgid "Select _icon from:"
 msgstr "Pilih _icon dari:"
 
-#: ../exo/exo-icon-view.c:651
+#: ../exo/exo-icon-view.c:653
 msgid "Column Spacing"
 msgstr "Jarak Antar Kolom"
 
-#: ../exo/exo-icon-view.c:652
+#: ../exo/exo-icon-view.c:654
 msgid "Space which is inserted between grid column"
 msgstr "Ruangan yang akan disisipkan di antara baris dalam kotak-kotak"
 
-#: ../exo/exo-icon-view.c:668
+#: ../exo/exo-icon-view.c:670
 msgid "Number of columns"
 msgstr "Jumlah kolom"
 
-#: ../exo/exo-icon-view.c:669
+#: ../exo/exo-icon-view.c:671
 msgid "Number of columns to display"
 msgstr "Jumlah kolom yang ditampilkan"
 
-#: ../exo/exo-icon-view.c:683
+#: ../exo/exo-icon-view.c:685
 msgid "Enable Search"
 msgstr "Aktifkan Cari"
 
-#: ../exo/exo-icon-view.c:684
+#: ../exo/exo-icon-view.c:686
 msgid "View allows user to search through columns interactively"
-msgstr "Tampilan mengizinkan pengguna untuk mencari dalam kolom secara interaktif"
+msgstr ""
+"Tampilan mengizinkan pengguna untuk mencari dalam kolom secara interaktif"
 
-#: ../exo/exo-icon-view.c:701
+#: ../exo/exo-icon-view.c:703
 msgid "Width for each item"
 msgstr "Lebar untuk tiap item"
 
-#: ../exo/exo-icon-view.c:702
+#: ../exo/exo-icon-view.c:704
 msgid "The width used for each item"
 msgstr "Lebar yang digunakan untuk tiap item"
 
-#: ../exo/exo-icon-view.c:720
+#: ../exo/exo-icon-view.c:722
 msgid "Layout mode"
 msgstr "Mode tata letak"
 
-#: ../exo/exo-icon-view.c:721
+#: ../exo/exo-icon-view.c:723
 msgid "The layout mode"
 msgstr "Mode tata letak"
 
-#: ../exo/exo-icon-view.c:737
+#: ../exo/exo-icon-view.c:739
 msgid "Margin"
 msgstr "Batas"
 
-#: ../exo/exo-icon-view.c:738
+#: ../exo/exo-icon-view.c:740
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Ruangan yang akan disisipkan pada sisi tampilan ikon"
 
-#: ../exo/exo-icon-view.c:754
+#: ../exo/exo-icon-view.c:756
 msgid "Markup column"
 msgstr "Kolom markah"
 
-#: ../exo/exo-icon-view.c:755
+#: ../exo/exo-icon-view.c:757
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Kolom model yang digunakan untuk mengambil teks jika menggunakan markah Pango"
+msgstr ""
+"Kolom model yang digunakan untuk mengambil teks jika menggunakan markah Pango"
 
-#: ../exo/exo-icon-view.c:769
+#: ../exo/exo-icon-view.c:771
 msgid "Icon View Model"
 msgstr "Model Tampilan Ikon"
 
-#: ../exo/exo-icon-view.c:770
+#: ../exo/exo-icon-view.c:772
 msgid "The model for the icon view"
 msgstr "Model untuk tampilan ikon"
 
-#: ../exo/exo-icon-view.c:784
-msgid "How the text and icon of each item are positioned relative to each other"
-msgstr "Cara teks dan ikon untuk setiap item diletakkan secara relatif terhadap satu sama lain"
+#: ../exo/exo-icon-view.c:786
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"Cara teks dan ikon untuk setiap item diletakkan secara relatif terhadap satu "
+"sama lain"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:818
 msgid "Reorderable"
 msgstr "Dapat diurut kembali"
 
-#: ../exo/exo-icon-view.c:817
+#: ../exo/exo-icon-view.c:819
 msgid "View is reorderable"
 msgstr "Tampilan dapat diurut kembali"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:834
 msgid "Row Spacing"
 msgstr "Jarak Antar Baris"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:835
 msgid "Space which is inserted between grid rows"
 msgstr "Ruangan yang akan disisipkan di antara baris dalam kotak-kotak"
 
-#: ../exo/exo-icon-view.c:847
+#: ../exo/exo-icon-view.c:849
 msgid "Search Column"
 msgstr "Kolom Cari"
 
-#: ../exo/exo-icon-view.c:848
+#: ../exo/exo-icon-view.c:850
 msgid "Model column to search through when searching through item"
 msgstr "Kolom model tempat mencari saat mencari dalam item"
 
-#: ../exo/exo-icon-view.c:862
+#: ../exo/exo-icon-view.c:864
 msgid "Selection mode"
 msgstr "Mode seleksi"
 
-#: ../exo/exo-icon-view.c:863
+#: ../exo/exo-icon-view.c:865
 msgid "The selection mode"
 msgstr "Mode seleksi"
 
-#: ../exo/exo-icon-view.c:878
-#: ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:880 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Klik Tunggal"
 
-#: ../exo/exo-icon-view.c:879
-#: ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:881 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Apakah item di tampilan dapat diaktivasi dengan klik tunggal"
 
-#: ../exo/exo-icon-view.c:895
-#: ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:897 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Waktu Klik Tunggal"
 
-#: ../exo/exo-icon-view.c:896
-#: ../exo/exo-tree-view.c:184
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "Jumlah waktu yang dibutuhkan kursor tetikus untuk secara otomatis memilih item pada mode klik tunggal"
+#: ../exo/exo-icon-view.c:898 ../exo/exo-tree-view.c:184
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Jumlah waktu yang dibutuhkan kursor tetikus untuk secara otomatis memilih "
+"item pada mode klik tunggal"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:913
 msgid "Spacing"
 msgstr "Spasi"
 
-#: ../exo/exo-icon-view.c:912
+#: ../exo/exo-icon-view.c:914
 msgid "Space which is inserted between cells of an item"
 msgstr "Ruangan yang akan disisipkan di antara sel pada item"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:937
 msgid "Selection Box Color"
 msgstr "Warna Kotak Pilihan"
 
-#: ../exo/exo-icon-view.c:936
+#: ../exo/exo-icon-view.c:938
 msgid "Color of the selection box"
 msgstr "Warna kotak pilihan"
 
-#: ../exo/exo-icon-view.c:942
+#: ../exo/exo-icon-view.c:944
 msgid "Selection Box Alpha"
 msgstr "Kotak Pilihan Alfa"
 
-#: ../exo/exo-icon-view.c:943
+#: ../exo/exo-icon-view.c:945
 msgid "Opacity of the selection box"
 msgstr "Opasitas kotak pilihan"
 
@@ -358,8 +352,7 @@ msgstr "Opasitas kotak pilihan"
 msgid "Preview"
 msgstr "Pratayang"
 
-#: ../exo/exo-thumbnail-preview.c:139
-#: ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "Tak ada berkas terpilih"
 
@@ -388,8 +381,12 @@ msgid "_Add a new toolbar"
 msgstr "Tambah batang alat baru (_A)"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "Tarik item ke batang alat di atas untuk menambahkannya, dari batang alat di tabel item untuk menghapusnya."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Tarik item ke batang alat di atas untuk menambahkannya, dari batang alat di "
+"tabel item untuk menghapusnya."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -427,17 +424,17 @@ msgstr "Hapus Batang Alat (_R)"
 msgid "Customize Toolbar..."
 msgstr "Suaikan Batang Alat..."
 
-#: ../exo/exo-url.c:297
+#: ../exo/exo-url.c:280
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Tak dapat membuka \"%s\""
 
-#: ../exo/exo-url.c:328
+#: ../exo/exo-url.c:326
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "URL \"%s\" tidak didukung"
 
-#: ../exo/exo-url.c:414
+#: ../exo/exo-url.c:412
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Gagal membuka \"%s\"."
@@ -482,52 +479,58 @@ msgstr "Perintah start ulang "
 msgid "Session restart command"
 msgstr "Perintah start ulang sesi"
 
-#: ../exo-csource/main.c:283
+#: ../exo-csource/main.c:285
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Penggunaan: %s [opsi] [berkas]\n"
 
-#: ../exo-csource/main.c:284
+#: ../exo-csource/main.c:286
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [opsi] --build-list [[nama berkas]...]\n"
 
-#: ../exo-csource/main.c:286
+#: ../exo-csource/main.c:288
+#, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Cetak pesan bantuan ini dan keluar\n"
 
-#: ../exo-csource/main.c:287
-msgid "  -v, --version     Print version information and exit\n"
-msgstr "  -v, --version     Cetak informasi versi dan keluar\n"
+#: ../exo-csource/main.c:289
+#, c-format
+msgid "  -V, --version     Print version information and exit\n"
+msgstr "  -V, --version     Cetak informasi versi dan keluar\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:290
+#, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Bangkitkan simbol eksternal\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:291
+#, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Bangkitkan simbol statik\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:292
+#, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier nama makro/variabel C\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:293
+#, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Parse (nama, berkas) pasangan\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:294
+#, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Hapus komentar dari berkas XML\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:295
+#, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "   --strip-content   Hapus isi node dari berkas XML\n"
 
-#: ../exo-csource/main.c:303
-#: ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122
-#: ../exo-mount-notify/main.c:167
+#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -543,10 +546,8 @@ msgstr ""
 "Ditulis oleh Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:307
-#: ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126
-#: ../exo-mount-notify/main.c:171
+#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -562,10 +563,8 @@ msgstr ""
 "paket sumber %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:311
-#: ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130
-#: ../exo-mount-notify/main.c:175
+#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -655,8 +654,14 @@ msgid "Use _startup notification"
 msgstr "Gunakan pemberitahuan hidupkan (_s)"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "Pilih opsi ini untuk mengaktifkan pemberitahuan hidupkan ketika perintah dijalankan dari manajer berkas atau menu. Tidak semua aplikasi mendukung pemberitahuan hidupkan."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Pilih opsi ini untuk mengaktifkan pemberitahuan hidupkan ketika perintah "
+"dijalankan dari manajer berkas atau menu. Tidak semua aplikasi mendukung "
+"pemberitahuan hidupkan."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -719,9 +724,8 @@ msgstr "Preset URL ketika membuat tautan"
 msgid "Preset icon when creating a desktop file"
 msgstr "Preset ikon ketika membuat berkas destop"
 
-#: ../exo-desktop-item-edit/main.c:79
-#: ../exo-mount/main.c:74
-#: ../exo-mount-notify/main.c:77
+#: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
+#: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Cetak informasi versi dan keluar"
 
@@ -730,8 +734,7 @@ msgstr "Cetak informasi versi dan keluar"
 msgid "[FILE|FOLDER]"
 msgstr "FOLDER"
 
-#: ../exo-desktop-item-edit/main.c:138
-#: ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:153
 msgid "Failed to open display"
 msgstr "Gagal membuka tampilan"
@@ -854,27 +857,27 @@ msgstr "%s Volume Dapat Dilepas"
 msgid "%s Volume"
 msgstr "%s Volume"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:100
+#: ../exo-helper/exo-helper-chooser-dialog.c:103
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Aplikasi Kesukaan"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
+#: ../exo-helper/exo-helper-chooser-dialog.c:104
 msgid "Select default applications for various services"
 msgstr "Pilih aplikasi standar untuk berbagai layanan"
 
 #.
 #. Internet
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:125
+#: ../exo-helper/exo-helper-chooser-dialog.c:133
 msgid "Internet"
 msgstr "Internet"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:138
+#: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid "Web Browser"
 msgstr "Peramban Web"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:146
+#: ../exo-helper/exo-helper-chooser-dialog.c:154
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
@@ -882,11 +885,11 @@ msgstr ""
 "Peramban Web terpilih akan digunakan untuk membuka\n"
 "hipertaut dan menayangkan isi bantuan."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:170
+#: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid "Mail Reader"
 msgstr "Pembaca Surat"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:178
+#: ../exo-helper/exo-helper-chooser-dialog.c:186
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
@@ -897,15 +900,15 @@ msgstr ""
 #.
 #. Utilities
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:198
+#: ../exo-helper/exo-helper-chooser-dialog.c:206
 msgid "Utilities"
 msgstr "Utilitas"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:211
+#: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "Terminal Emulator"
 msgstr "Emulator Terminal"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:219
+#: ../exo-helper/exo-helper-chooser-dialog.c:227
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
@@ -914,7 +917,7 @@ msgstr ""
 "menjalankan perintah yang membutuhkan lingkungan\n"
 "antarmuka baris perintah (CLI)."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:258
+#: ../exo-helper/exo-helper-chooser-dialog.c:266
 msgid "Failed to open the documentation browser."
 msgstr "Gagal membuka peramban dokumentasi."
 
@@ -1025,20 +1028,14 @@ msgstr ""
 "sekarang dan klik OK untuk melanjutkan."
 
 #: ../exo-helper/exo-helper.c:404
+#, c-format
 msgid "No command specified"
 msgstr "Tidak ada perintah ditentukan"
 
 #: ../exo-helper/exo-helper.c:740
+#, c-format
 msgid "Failed to open helpers.rc for writing"
 msgstr "Gagal membuka helpers.rc untuk menulis"
-
-#: ../exo-helper/exo-preferred-applications-settings.c:40
-msgid "Failed to launch exo-preferred-applications"
-msgstr "Gagal menjalankan exo-preferred-applications"
-
-#: ../exo-helper/exo-preferred-applications-settings.c:60
-msgid "Button Label|Preferred Applications"
-msgstr "Aplikasi Kesukaan"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
@@ -1047,6 +1044,94 @@ msgstr "Aplikasi Disukai (Peramban Web, Pembaca Surat dan Emulator Terminal)"
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
 msgstr "Aplikasi Kesukaan Xfce 4"
+
+#: ../exo-helper/main.c:42
+#, fuzzy
+msgid "Failed to execute default Web Browser"
+msgstr "Gagal mengatur Peramban Web standar"
+
+#: ../exo-helper/main.c:43
+#, fuzzy
+msgid "Failed to execute default Mail Reader"
+msgstr "Gagal mengatur Pembaca Surat standar"
+
+#: ../exo-helper/main.c:44
+#, fuzzy
+msgid "Failed to execute default Terminal Emulator"
+msgstr "Gagal mengatur Emulator Terminal standar"
+
+#: ../exo-helper/main.c:68
+#, fuzzy
+msgid ""
+"Open the Preferred Applications\n"
+"configuration dialog"
+msgstr "Aplikasi Kesukaan Xfce 4"
+
+#: ../exo-helper/main.c:69
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
+"one of the following values."
+msgstr ""
+
+#: ../exo-helper/main.c:69
+msgid "TYPE [PARAMETER]"
+msgstr ""
+
+#: ../exo-helper/main.c:70
+msgid "Settings manager socket"
+msgstr ""
+
+#: ../exo-helper/main.c:70
+msgid "SOCKET ID"
+msgstr ""
+
+#: ../exo-helper/main.c:93
+#, fuzzy
+msgid ""
+"The following TYPEs are supported for the --launch command:\n"
+"\n"
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+"  WebBrowser       - Peramban Web kesukaan.\n"
+"  MailReader       - Pembaca Surat kesukaan.\n"
+"  TerminalEmulator - Emulator Terminal kesukaan."
+
+#: ../exo-helper/main.c:102
+#, c-format
+msgid "Type '%s --help' for usage."
+msgstr ""
+
+#: ../exo-helper/main.c:149
+#, fuzzy, c-format
+msgid "Invalid helper type \"%s\""
+msgstr "Tak dapat membuka \"%s\""
+
+#: ../exo-helper/main.c:189
+#, fuzzy, c-format
+msgid ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
+"\n"
+"Please report bugs to <%s>.\n"
+msgstr ""
+"Hak Cipta (c) %s\n"
+"        os-cillation e.K. Hak cipta dilindungi undang-undang.\n"
+"\n"
+"Ditulis oleh Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+
+#: ../exo-helper/main.c:206
+#, c-format
+msgid "Unknown helper arguments.\n"
+msgstr ""
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1112,6 +1197,10 @@ msgstr "Peramban Teks Links"
 msgid "Lynx Text Browser"
 msgstr "Peramban Teks Lynx"
 
+#: ../exo-helper/helpers/midori.desktop.in.in.h:1
+msgid "Midori"
+msgstr ""
+
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
 msgstr "Peramban Mozilla"
@@ -1165,64 +1254,81 @@ msgid "X Terminal"
 msgstr "Terminal X"
 
 #: ../exo-mount/exo-mount-fstab.c:92
+#, c-format
 msgid "Unknown error"
 msgstr "Galat tidak dikenal"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132
-#: ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Divais \"%s\" tidak ditemukan di tabel divais sistem berkas"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224
-#: ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Divasi \"%s\" yang diberikan bukan volume atau penggerak"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:595
+#: ../exo-mount/exo-mount-hal.c:605
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Anda tidak diizinkan untuk mengeluarkan volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:600
+#: ../exo-mount/exo-mount-hal.c:610
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Sebuah aplikasi mencegah volume \"%s\" untuk dikeluarkan"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:831
+#: ../exo-mount/exo-mount-hal.c:841
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Anda tidak diizinkan untuk mount volume \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:846
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
-msgstr "Cakram kosong tak dapat dimount, gunakan aplikasi perekam CD seperti Xfburn untuk merekam audio atau data di cakram"
+#: ../exo-mount/exo-mount-hal.c:856
+#, c-format
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
+msgstr ""
+"Cakram kosong tak dapat dimount, gunakan aplikasi perekam CD seperti Xfburn "
+"untuk merekam audio atau data di cakram"
 
-#: ../exo-mount/exo-mount-hal.c:857
+#: ../exo-mount/exo-mount-hal.c:867
+#, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr "CD Audio tak dapat dimount, gunakan Xfmedia untuk memutar jalur audio"
 
+#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
+#: ../exo-mount/exo-mount-hal.c:932
+#, fuzzy, c-format
+msgid "You are not privileged to teardown the crypto layer"
+msgstr "Anda tidak diizinkan untuk mount volume \"%s\""
+
+#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
+#: ../exo-mount/exo-mount-hal.c:937
+#, fuzzy, c-format
+msgid "An application is preventing the crypto layer from being torn down"
+msgstr "Sebuah aplikasi mencegah volume \"%s\" untuk dilepas mount"
+
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:942
+#: ../exo-mount/exo-mount-hal.c:1021
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Anda tidak diizinkan untuk melepas mount volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:947
+#: ../exo-mount/exo-mount-hal.c:1026
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Sebuah aplikasi mencegah volume \"%s\" untuk dilepas mount"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:952
+#: ../exo-mount/exo-mount-hal.c:1031
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Volume \"%s\" mungkin dimount secara manual pada baris perintah"
@@ -1262,8 +1368,12 @@ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "Jangan menentukan UDI divais HAL dan berkas divais secara bersamaan"
 
 #: ../exo-mount/main.c:154
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
-msgstr "Tak dapat mount dengan UDI divais HAL, karena dukungan HAL dinonaktifkan untuk bangunan ini"
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+"Tak dapat mount dengan UDI divais HAL, karena dukungan HAL dinonaktifkan "
+"untuk bangunan ini"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1308,7 +1418,8 @@ msgstr "Keluarkan divais"
 #: ../exo-mount-notify/main.c:225
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr "Divais \"%s\" sedang dikeluarkan. Ini mungkin memakan waktu beberapa saat."
+msgstr ""
+"Divais \"%s\" sedang dikeluarkan. Ini mungkin memakan waktu beberapa saat."
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:230
@@ -1317,8 +1428,12 @@ msgstr "Melepas mount divais"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
-msgstr "Divais \"%s\" sedang dilepas mount oleh sistem. Tolong jangan mengeluarkan media atau mencabut penggerak."
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+"Divais \"%s\" sedang dilepas mount oleh sistem. Tolong jangan mengeluarkan "
+"media atau mencabut penggerak."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
@@ -1327,8 +1442,12 @@ msgstr "Menulis data ke divais"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
-msgstr "Ada data yang perlu ditulis ke divais \"%s\" sebelum divais dapat dikeluarkan. Tolong jangan mengeluarkan media atau mencabut penggerak."
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
+"Ada data yang perlu ditulis ke divais \"%s\" sebelum divais dapat "
+"dikeluarkan. Tolong jangan mengeluarkan media atau mencabut penggerak."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1340,28 +1459,35 @@ msgstr "       exo-open --launch TIPE [PARAMETER...]"
 
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          Cetak pesan bantuan ini dan keluar"
+msgstr ""
+"  -?, --help                          Cetak pesan bantuan ini dan keluar"
 
 #: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Cetak informasi versi dan keluar"
+msgid ""
+"  -V, --version                       Print version information and exit"
+msgstr "  -V, --version                       Cetak informasi versi dan keluar"
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TIPE [PARAMETER...]       Jalankan aplikasi kesukaan dari\n"
-"                                       TIPE dengan opsi tambahan PARAMETERs,dimana\n"
-"                                       TIPE merupakan salah satu nilai berikut."
+"                                       TIPE dengan opsi tambahan PARAMETERs,"
+"dimana\n"
+"                                       TIPE merupakan salah satu nilai "
+"berikut."
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DIREKTORI       Direktori kerja standar untuk aplikasi\n"
+"  --working-directory DIREKTORI       Direktori kerja standar untuk "
+"aplikasi\n"
 "                                       ketika menggunakan opsi --launch."
 
 #: ../exo-open/main.c:72
@@ -1392,7 +1518,8 @@ msgstr ""
 "Jika anda tidak menentukan opsi --launch, exo-open akan membuka semua\n"
 "URL yang ditentukan dengan penanganan URL kesukaan mereka. Atau, jika\n"
 "anda menentukan opsi --launch, anda dapat memilih aplikasi kesukaan yang\n"
-"ingin anda jalankan, dan meneruskan parameter tambahan ke aplikasi (misalnya\n"
+"ingin anda jalankan, dan meneruskan parameter tambahan ke aplikasi "
+"(misalnya\n"
 "untuk TerminalEmulator anda dapat meneruskan baris perintah yang seharusnya\n"
 "berjalan di terminal)."
 
@@ -1406,3 +1533,8 @@ msgstr "Gagal menjalankan aplikasi kesukaan untuk kategori \"%s\"."
 msgid "Failed to open URL \"%s\"."
 msgstr "Gagal membuka URL \"%s\"."
 
+#~ msgid "Failed to launch exo-preferred-applications"
+#~ msgstr "Gagal menjalankan exo-preferred-applications"
+
+#~ msgid "Button Label|Preferred Applications"
+#~ msgstr "Aplikasi Kesukaan"

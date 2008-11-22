@@ -86,7 +86,7 @@ parse_args (gint    *argc_p,
           exit (EXIT_SUCCESS);
         }
       else if (strcmp (argv[n], "--version") == 0
-          || strcmp (argv[n], "-v") == 0)
+          || strcmp (argv[n], "-V") == 0)
         {
           print_version ();
           exit (EXIT_SUCCESS);
@@ -286,7 +286,7 @@ print_usage (void)
   g_print (_("       %s [options] --build-list [[name file]...]\n"), g_get_prgname ());
   g_print ("\n");
   g_print (_("  -h, --help        Print this help message and exit\n"));
-  g_print (_("  -v, --version     Print version information and exit\n"));
+  g_print (_("  -V, --version     Print version information and exit\n"));
   g_print (_("  --extern          Generate extern symbols\n"));
   g_print (_("  --static          Generate static symbols\n"));
   g_print (_("  --name=identifier C macro/variable name\n"));

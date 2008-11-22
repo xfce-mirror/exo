@@ -74,7 +74,7 @@ static GOptionEntry entries[] =
   { "icon", 'i', 0, G_OPTION_ARG_STRING, &opt_icon, NULL, NULL, },
   { "name", 'n', 0, G_OPTION_ARG_STRING, &opt_name, NULL, NULL, },
   { "readonly", 'r', 0, G_OPTION_ARG_NONE, &opt_readonly, NULL, NULL, },
-  { "version", 'v', 0, G_OPTION_ARG_NONE, &opt_version, N_ ("Print version information and exit"), NULL, },
+  { "version", 'V', 0, G_OPTION_ARG_NONE, &opt_version, N_ ("Print version information and exit"), NULL, },
   { NULL, },
 };
 

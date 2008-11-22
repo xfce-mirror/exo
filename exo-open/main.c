@@ -45,7 +45,7 @@ static gchar   *opt_working_directory = NULL;
 static GOptionEntry entries[] =
 {
   { "help", '?', 0, G_OPTION_ARG_NONE, &opt_help, NULL, NULL, },
-  { "version", 'v', 0, G_OPTION_ARG_NONE, &opt_version, NULL, NULL, },
+  { "version", 'V', 0, G_OPTION_ARG_NONE, &opt_version, NULL, NULL, },
   { "launch", 0, 0, G_OPTION_ARG_STRING, &opt_launch, NULL, NULL, },
   { "working-directory", 0, 0, G_OPTION_ARG_FILENAME, &opt_working_directory, NULL, NULL, },
   { NULL, },
@@ -60,7 +60,7 @@ usage (void)
   g_print ("%s\n", _("       exo-open --launch TYPE [PARAMETERs...]"));
   g_print ("\n");
   g_print ("%s\n", _("  -?, --help                          Print this help message and exit"));
-  g_print ("%s\n", _("  -v, --version                       Print version information and exit"));
+  g_print ("%s\n", _("  -V, --version                       Print version information and exit"));
   g_print ("\n");
   g_print ("%s\n", _("  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
                      "                                      TYPE with the optional PARAMETERs, where\n"
