@@ -131,6 +131,9 @@ main (int argc, char **argv)
           gtk_widget_reparent (plug_child, plug);
           gtk_widget_show (plug_child);
 
+          /* End startup notification */
+          gdk_notify_startup_complete ();
+
           gtk_main ();
           gtk_widget_destroy (plug);
         }
