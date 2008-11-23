@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-22 12:34+0100\n"
+"POT-Creation-Date: 2008-11-23 16:06+0100\n"
 "PO-Revision-Date: 2008-11-04 22:22+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -1044,10 +1044,6 @@ msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr ""
 "Zbatime të Parapëlqyer (Shfletues Web, Lexues Poste dhe Emulues Terminali)"
 
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:3
-msgid "Xfce 4 Preferred Applications"
-msgstr "Zbatime të Parapëlqyera Xfce 4"
-
 #: ../exo-helper/main.c:42
 #, fuzzy
 msgid "Failed to execute default Web Browser"
@@ -1071,21 +1067,21 @@ msgid ""
 msgstr "Zbatime të Parapëlqyera Xfce 4"
 
 #: ../exo-helper/main.c:69
+msgid "Settings manager socket"
+msgstr ""
+
+#: ../exo-helper/main.c:69
+msgid "SOCKET ID"
+msgstr ""
+
+#: ../exo-helper/main.c:71
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
 msgstr ""
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "TYPE [PARAMETER]"
-msgstr ""
-
-#: ../exo-helper/main.c:70
-msgid "Settings manager socket"
-msgstr ""
-
-#: ../exo-helper/main.c:70
-msgid "SOCKET ID"
 msgstr ""
 
 #: ../exo-helper/main.c:93
@@ -1106,12 +1102,12 @@ msgstr ""
 msgid "Type '%s --help' for usage."
 msgstr ""
 
-#: ../exo-helper/main.c:149
+#: ../exo-helper/main.c:152
 #, fuzzy, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "I pazoti të hapë \"%s\""
 
-#: ../exo-helper/main.c:189
+#: ../exo-helper/main.c:192
 #, fuzzy, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1131,7 +1127,7 @@ msgstr ""
 "Shkruajtur nga Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-helper/main.c:206
+#: ../exo-helper/main.c:209
 #, c-format
 msgid "Unknown helper arguments.\n"
 msgstr ""
@@ -1536,6 +1532,9 @@ msgstr "Dështoi në nisjen e zbatimit parazgjedhje për kategorinë \"%s\"."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Dështoi në hapjen e URL-së \"%s\"."
+
+#~ msgid "Xfce 4 Preferred Applications"
+#~ msgstr "Zbatime të Parapëlqyera Xfce 4"
 
 #~ msgid "Failed to launch exo-preferred-applications"
 #~ msgstr "Dështoi në nisjen e exo-preferred-applications"

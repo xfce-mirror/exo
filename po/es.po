@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-22 12:34+0100\n"
+"POT-Creation-Date: 2008-11-23 16:06+0100\n"
 "PO-Revision-Date: 2008-11-16 19:09+0100\n"
 "Last-Translator: Abel Martín <abel.martin.ruiz@gmail.com>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
@@ -1051,10 +1051,6 @@ msgstr ""
 "Aplicaciones favoritas (navegador web, lector de correo y emulador de "
 "terminal)"
 
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:3
-msgid "Xfce 4 Preferred Applications"
-msgstr "Aplicaciones favoritas de Xfce 4"
-
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
 msgstr "Fallo al ejecutar el navegador web por defecto"
@@ -1076,6 +1072,14 @@ msgstr ""
 "de aplicaciones favoritas"
 
 #: ../exo-helper/main.c:69
+msgid "Settings manager socket"
+msgstr "Socket del gestor de configuración"
+
+#: ../exo-helper/main.c:69
+msgid "SOCKET ID"
+msgstr "SOCKET ID"
+
+#: ../exo-helper/main.c:71
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1083,17 +1087,9 @@ msgstr ""
 "Lanzar la aplicación auxiliar para TIPO con el PARÁMETRO opcional, donde "
 "TIPO es uno de los siguientes valores."
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "TYPE [PARAMETER]"
 msgstr "TIPO [PARÁMETRO]"
-
-#: ../exo-helper/main.c:70
-msgid "Settings manager socket"
-msgstr "Socket del gestor de configuración"
-
-#: ../exo-helper/main.c:70
-msgid "SOCKET ID"
-msgstr "SOCKET ID"
 
 #: ../exo-helper/main.c:93
 msgid ""
@@ -1113,12 +1109,12 @@ msgstr ""
 msgid "Type '%s --help' for usage."
 msgstr "Escriba '%s --help' para ver opciones de uso."
 
-#: ../exo-helper/main.c:149
+#: ../exo-helper/main.c:152
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Tipo de aplicación auxiliar \"%s\" no válido"
 
-#: ../exo-helper/main.c:189
+#: ../exo-helper/main.c:192
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1143,7 +1139,7 @@ msgstr ""
 "\n"
 "Por favor, informe de fallos a <%s>.\n"
 
-#: ../exo-helper/main.c:206
+#: ../exo-helper/main.c:209
 #, c-format
 msgid "Unknown helper arguments.\n"
 msgstr "Argumentos para la aplicación auxiliar desconocidos.\n"
@@ -1555,6 +1551,9 @@ msgstr "Fallo al lanzar la aplicación favorita para la categoría \"%s\"."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Fallo al abrir la URL \"%s\"."
+
+#~ msgid "Xfce 4 Preferred Applications"
+#~ msgstr "Aplicaciones favoritas de Xfce 4"
 
 #~ msgid "Failed to launch exo-preferred-applications"
 #~ msgstr "Fallo al lanzar exo-preferred-applications"

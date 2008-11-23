@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-22 12:34+0100\n"
+"POT-Creation-Date: 2008-11-23 16:06+0100\n"
 "PO-Revision-Date: 2007-01-14 12:16+0100\n"
 "Last-Translator: Dario <dariolinux@tiscali.it>\n"
 "Language-Team: Italiano\n"
@@ -1051,10 +1051,6 @@ msgstr ""
 "Applicazioni Preferite (Browser Web, Lettore di E-Mail ed Emulatore di "
 "Terminale)"
 
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:3
-msgid "Xfce 4 Preferred Applications"
-msgstr "Applicazioni Preferite di Xfce 4"
-
 #: ../exo-helper/main.c:42
 #, fuzzy
 msgid "Failed to execute default Web Browser"
@@ -1078,21 +1074,21 @@ msgid ""
 msgstr "Applicazioni Preferite di Xfce 4"
 
 #: ../exo-helper/main.c:69
+msgid "Settings manager socket"
+msgstr ""
+
+#: ../exo-helper/main.c:69
+msgid "SOCKET ID"
+msgstr ""
+
+#: ../exo-helper/main.c:71
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
 msgstr ""
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "TYPE [PARAMETER]"
-msgstr ""
-
-#: ../exo-helper/main.c:70
-msgid "Settings manager socket"
-msgstr ""
-
-#: ../exo-helper/main.c:70
-msgid "SOCKET ID"
 msgstr ""
 
 #: ../exo-helper/main.c:93
@@ -1113,12 +1109,12 @@ msgstr ""
 msgid "Type '%s --help' for usage."
 msgstr ""
 
-#: ../exo-helper/main.c:149
+#: ../exo-helper/main.c:152
 #, fuzzy, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Impossibile aprire \"%s\""
 
-#: ../exo-helper/main.c:189
+#: ../exo-helper/main.c:192
 #, fuzzy, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1138,7 +1134,7 @@ msgstr ""
 "Scritto da Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-helper/main.c:206
+#: ../exo-helper/main.c:209
 #, c-format
 msgid "Unknown helper arguments.\n"
 msgstr ""
@@ -1553,6 +1549,9 @@ msgstr ""
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Errore nell'apertura dell'URL \"%s\"."
+
+#~ msgid "Xfce 4 Preferred Applications"
+#~ msgstr "Applicazioni Preferite di Xfce 4"
 
 #~ msgid "Failed to launch exo-preferred-applications"
 #~ msgstr "Errore nell'esecuzione delle appplicazioni preferite exo"

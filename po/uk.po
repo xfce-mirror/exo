@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  libexo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-22 12:34+0100\n"
+"POT-Creation-Date: 2008-11-23 16:06+0100\n"
 "PO-Revision-Date: 2008-07-08 13:39+0300\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -1040,10 +1040,6 @@ msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr ""
 "Улюблені програми (переглядач Web, переглядач пошти та емулятор терміналу)"
 
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:3
-msgid "Xfce 4 Preferred Applications"
-msgstr "Улюблені програми Xfce 4"
-
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
 msgstr "Помилка під час запуску типового переглядача Web"
@@ -1064,6 +1060,14 @@ msgid ""
 msgstr "Улюблені програми Xfce 4"
 
 #: ../exo-helper/main.c:69
+msgid "Settings manager socket"
+msgstr ""
+
+#: ../exo-helper/main.c:69
+msgid "SOCKET ID"
+msgstr ""
+
+#: ../exo-helper/main.c:71
 #, fuzzy
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
@@ -1073,16 +1077,8 @@ msgstr ""
 "                                      ТИП з необов'язковими ПАРАМЕТРАМИ, \n"
 "                                      де ТИП це одне з наступних значень."
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "TYPE [PARAMETER]"
-msgstr ""
-
-#: ../exo-helper/main.c:70
-msgid "Settings manager socket"
-msgstr ""
-
-#: ../exo-helper/main.c:70
-msgid "SOCKET ID"
 msgstr ""
 
 #: ../exo-helper/main.c:93
@@ -1103,12 +1099,12 @@ msgstr ""
 msgid "Type '%s --help' for usage."
 msgstr ""
 
-#: ../exo-helper/main.c:149
+#: ../exo-helper/main.c:152
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Неправильний тип улюбленої програми \"%s\""
 
-#: ../exo-helper/main.c:189
+#: ../exo-helper/main.c:192
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1133,7 +1129,7 @@ msgstr ""
 "\n"
 "Сповістіть про помилку <%s>.\n"
 
-#: ../exo-helper/main.c:206
+#: ../exo-helper/main.c:209
 #, c-format
 msgid "Unknown helper arguments.\n"
 msgstr ""
@@ -1534,6 +1530,9 @@ msgstr "Неможливо запустити улюблену програму 
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Неможливо відкрити посилання URL \"%s\"."
+
+#~ msgid "Xfce 4 Preferred Applications"
+#~ msgstr "Улюблені програми Xfce 4"
 
 #~ msgid "Usage: exo-helper [OPTION...]"
 #~ msgstr "Використання: exo-open [ПАРАМЕТР...]"
