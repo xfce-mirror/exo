@@ -66,9 +66,9 @@ main (int argc, char **argv)
   GOptionEntry       option_entries[] = {
     { "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &opt_version, N_("Print version information and exit"), NULL, },
     { "configure", 'c', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &opt_configure, N_("Open the Preferred Applications\nconfiguration dialog"), NULL, },
-    { "launch", 'l', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &opt_launch_type, N_("Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."), N_("TYPE [PARAMETER]"), },
     { "socket-id", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &opt_socket_id, N_("Settings manager socket"), N_("SOCKET ID"), },
     { NULL, },
+    { "launch", 'l', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &opt_launch_type, N_("Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."), N_("TYPE [PARAMETER]"), },
   };
 
   /* sanity check helper categories */

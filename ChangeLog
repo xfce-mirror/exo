@@ -1,5 +1,13 @@
 2008-11-23	Jannis Pohlmann <jannis@xfce.org>
 
+	* exo-helper/exo-preferred-applications.desktop.in: Remove GenericName and
+	  the "Xfce 4" prefix from the Name field.
+	* exo-helper/main.c: Change order of the command line parameters so 
+	  that --launch is at the very bottom of the list (directly above the
+	  launch type explanations.
+
+2008-11-23	Jannis Pohlmann <jannis@xfce.org>
+
 	* exo-helper/main.c (main): Stop startup notification once the plug is
 	  created and the dialog content has been moved into the plug.
 
