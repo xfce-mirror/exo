@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version:  libexo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-23 16:06+0100\n"
-"PO-Revision-Date: 2008-07-08 13:39+0300\n"
+"PO-Revision-Date: 2008-11-24 12:00+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -55,8 +55,7 @@ msgstr "Помилка читання з файлу \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
 "Неможливо завантажити малюнок \"%s\": Невідома причина, можливо пошкоджений "
 "файл малюнку"
@@ -267,8 +266,7 @@ msgid "The model for the icon view"
 msgstr "Режим перегляду у вигляді значків"
 
 #: ../exo/exo-icon-view.c:786
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr "Як текст і значок кожного елемента розташовується відповідно до іншого"
 
 #: ../exo/exo-icon-view.c:818
@@ -1037,8 +1035,7 @@ msgstr "Помилка відкриття helpers.rc для запису"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr ""
-"Улюблені програми (переглядач Web, переглядач пошти та емулятор терміналу)"
+msgstr "Улюблені програми (переглядач Web, переглядач пошти та емулятор терміналу)"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
@@ -1053,36 +1050,34 @@ msgid "Failed to execute default Terminal Emulator"
 msgstr "Помилка під час запуску типового емулятора терміналу"
 
 #: ../exo-helper/main.c:68
-#, fuzzy
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr "Улюблені програми Xfce 4"
+msgstr ""
+"Відкрити діалог налаштування\n"
+"улюблених програм"
 
 #: ../exo-helper/main.c:69
 msgid "Settings manager socket"
-msgstr ""
+msgstr "Сокет Менеджера властивостей"
 
 #: ../exo-helper/main.c:69
 msgid "SOCKET ID"
-msgstr ""
+msgstr "ID сокета"
 
 #: ../exo-helper/main.c:71
-#, fuzzy
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
 msgstr ""
-"  --launch ТИП [ПАРАМЕТРИ  ...]       Запустити улюблену програму        \n"
-"                                      ТИП з необов'язковими ПАРАМЕТРАМИ, \n"
-"                                      де ТИП це одне з наступних значень."
+"Запустити типовий конфігуратор ТИПу з опціями ПАРАМЕТРИ, де ТИП це є одне із "
+"наступних значень."
 
 #: ../exo-helper/main.c:71
 msgid "TYPE [PARAMETER]"
-msgstr ""
+msgstr "ТИП [ПАРАМЕТР]"
 
 #: ../exo-helper/main.c:93
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1090,14 +1085,16 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"Наступні ТИПи підтримувані командами --launch:\n"
+"\n"
 "  WebBrowser       - Улюблений переглядач Web.\n"
-"  MailReader       - Улюблений переглядач пошти.\n"
+"  MailReader       -Улюблений переглядач пошти.\n"
 "  TerminalEmulator - Улюблений емулятор терміналу."
 
 #: ../exo-helper/main.c:102
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr ""
+msgstr "Наберіть '%s --help' для використання."
 
 #: ../exo-helper/main.c:152
 #, c-format
@@ -1132,7 +1129,7 @@ msgstr ""
 #: ../exo-helper/main.c:209
 #, c-format
 msgid "Unknown helper arguments.\n"
-msgstr ""
+msgstr "Невідомі аргументи конф.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1200,7 +1197,7 @@ msgstr "Переглядач Lynx текстовий"
 
 #: ../exo-helper/helpers/midori.desktop.in.in.h:1
 msgid "Midori"
-msgstr ""
+msgstr "Мідорі"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
@@ -1308,15 +1305,15 @@ msgstr ""
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:932
-#, fuzzy, c-format
+#, c-format
 msgid "You are not privileged to teardown the crypto layer"
-msgstr "Ви не маєте прав на монтування розділу \"%s\""
+msgstr "Ви не маєте прав для відміни шару криптографії"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:937
-#, fuzzy, c-format
+#, c-format
 msgid "An application is preventing the crypto layer from being torn down"
-msgstr "Якась із програм забороняє демонтування розділу \"%s\""
+msgstr "Якась програма запобігає руйнуванню шару криптографії"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1021
@@ -1464,8 +1461,7 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Надрукувати цей текст і вийти   "
 
 #: ../exo-open/main.c:63
-msgid ""
-"  -V, --version                       Print version information and exit"
+msgid "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Вивести інформацію про версію "
 
 #: ../exo-open/main.c:65
@@ -1531,25 +1527,3 @@ msgstr "Неможливо запустити улюблену програму 
 msgid "Failed to open URL \"%s\"."
 msgstr "Неможливо відкрити посилання URL \"%s\"."
 
-#~ msgid "Xfce 4 Preferred Applications"
-#~ msgstr "Улюблені програми Xfce 4"
-
-#~ msgid "Usage: exo-helper [OPTION...]"
-#~ msgstr "Використання: exo-open [ПАРАМЕТР...]"
-
-#~ msgid ""
-#~ "  -h, --help                          Print this help message and exit"
-#~ msgstr "  -?, --help                          Вивести цей текст та вийти"
-
-#~ msgid ""
-#~ "  --configure                         Open the Preferred Applications\n"
-#~ "                                      configuration dialog"
-#~ msgstr ""
-#~ "  --configure                         Відкрити діалог налаштування\n"
-#~ "                                      стандартних програм"
-
-#~ msgid "Failed to launch exo-preferred-applications"
-#~ msgstr "Невдача запуску спеціалізованих програм exo"
-
-#~ msgid "Button Label|Preferred Applications"
-#~ msgstr "Улюблені програми"
