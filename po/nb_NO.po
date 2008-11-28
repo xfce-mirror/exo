@@ -2,14 +2,15 @@
 # Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Terje Uriansrud <ter@operamail.com>, 2007.
+# Terje Uriansrud <terje@uriansrud.net>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-23 16:06+0100\n"
+"POT-Creation-Date: 2008-11-27 01:23+0100\n"
 "PO-Revision-Date: 2007-05-12 17:42+0200\n"
-"Last-Translator: Terje Uriansrud <ter@operamail.com>\n"
+"Last-Translator: Terje Uriansrud <terje@uriansrud.net>\n"
 "Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1038,47 +1039,44 @@ msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Prefererte programmer (Nettleser, epostleser og terminalemulering)"
 
 #: ../exo-helper/main.c:42
-#, fuzzy
 msgid "Failed to execute default Web Browser"
-msgstr "Klarte ikke sette standard nettleser"
+msgstr "Klarte ikke starte standard nettleser"
 
 #: ../exo-helper/main.c:43
-#, fuzzy
 msgid "Failed to execute default Mail Reader"
-msgstr "Klarte ikke sette standard epostleser"
+msgstr "Klarte ikke starte standard epostleser"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
 msgid "Failed to execute default Terminal Emulator"
-msgstr "Klarte ikke sette standard terminalemulator"
+msgstr "Klarte ikke starte standard terminalemulator"
 
 #: ../exo-helper/main.c:68
-#, fuzzy
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr "Xfce 4 Prefererte programmer"
+msgstr "Åpne preferert programkonfigurasjonsvindu"
 
 #: ../exo-helper/main.c:69
 msgid "Settings manager socket"
-msgstr ""
+msgstr "Innstillingsbehandlersokkel"
 
 #: ../exo-helper/main.c:69
 msgid "SOCKET ID"
-msgstr ""
+msgstr "SOKKEL-ID"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:70
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
 msgstr ""
+"Start standard hjelper av TYPE med valgfritt PARAMETER, hvor TYPE er en av "
+"følgende verdier."
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
-msgstr ""
+msgstr "TYPE [PARAMETER]"
 
 #: ../exo-helper/main.c:93
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1086,6 +1084,8 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"Følgende typer er støttet for --launch kommandoen:\n"
+"\n"
 "  WebBrowser       - Preferert nettleser.\n"
 "  MailReader       - Preferert epostleser.\n"
 "  TerminalEmulator - Preferert teminalemulator."
@@ -1093,15 +1093,15 @@ msgstr ""
 #: ../exo-helper/main.c:102
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr ""
+msgstr "Skriv '%s --help' for bruksinstruksjoner"
 
 #: ../exo-helper/main.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Klarte ikke åpne \"%s\""
+msgstr "Ugyldig hjelpertype \"%s\""
 
 #: ../exo-helper/main.c:192
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s (Xfce %s)\n"
 "\n"
@@ -1114,16 +1114,21 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr ""
-"Copyright (c) %s\n"
+"%s (Xfce %s)\n"
+"\n"
+"Opphavsrettt (c) 2003-2006\n"
 "        os-cillation e.K. Alle rettigheter reservert.\n"
 "\n"
 "Skrevet av Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
+"Bygget med Gtk+-%d.%d.%d, kjører Gtk+-%d.%d.%d.\n"
+"\n"
+"Rapporter feil til <%s>.\n"
 
 #: ../exo-helper/main.c:209
 #, c-format
 msgid "Unknown helper arguments.\n"
-msgstr ""
+msgstr "Ukjent hjelperargumenter.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1135,7 +1140,7 @@ msgstr "aterm"
 
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
-msgstr "Balse"
+msgstr "Balsa"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
@@ -1191,7 +1196,7 @@ msgstr "Lynx tekstnettleser"
 
 #: ../exo-helper/helpers/midori.desktop.in.in.h:1
 msgid "Midori"
-msgstr ""
+msgstr "Midori"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
@@ -1297,15 +1302,15 @@ msgstr "Lydcd kan ikke monteres, bruk Xfmedia for å spille lydsporene"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:932
-#, fuzzy, c-format
+#, c-format
 msgid "You are not privileged to teardown the crypto layer"
-msgstr "Du har ikke rettigheter til å montere enheten \"%s\""
+msgstr "Du har ikke rettigheter til ta ned krypto-laget"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:937
-#, fuzzy, c-format
+#, c-format
 msgid "An application is preventing the crypto layer from being torn down"
-msgstr "Et program forhindrer at enheten \"%s\" kan demonteres"
+msgstr "Et program forhindrer at krypto-laget kan tas ned"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1021
