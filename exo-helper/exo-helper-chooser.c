@@ -742,7 +742,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
 
   /* append menu items for all available helpers */
   helpers = exo_helper_database_get_all (chooser->database, chooser->category);
-  for (lp = helpers; lp != NULL; lp = lp->next)
+  for (lp = helpers, icon = NULL; lp != NULL; lp = lp->next)
     {
       /* determine the helper */
       helper = EXO_HELPER (lp->data);

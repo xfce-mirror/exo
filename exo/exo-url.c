@@ -201,7 +201,7 @@ exo_url_show_on_screen (const gchar *url,
                         GError     **error)
 {
   const gchar *category = NULL;
-  gboolean     result;
+  gboolean     result = FALSE;
   GString     *escaped_url;
   gchar       *display_name;
   gchar       *local_path;

@@ -83,8 +83,10 @@ static GOptionEntry entries[] =
 static void
 signal_func (int signo)
 {
+  gint ignore;
+
   /* SIGUSR1 means success */
-  write (signal_fds[1], (signo == SIGUSR1) ? "U" : "K", 1);
+  ignore = write (signal_fds[1], (signo == SIGUSR1) ? "U" : "K", 1);
 }
 
 

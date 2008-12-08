@@ -91,7 +91,7 @@ struct _ExoIconChooserModel
   GObject       __parent__;
   GtkIconTheme *icon_theme;
   GList        *items;
-  guint         stamp;
+  gint          stamp;
 };
 
 struct _ExoIconChooserModelItem

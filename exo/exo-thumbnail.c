@@ -99,10 +99,10 @@ exo_thumbnail_load (const gchar *thumbnail_path,
 
       /* verify both the URI and the mtime for the thumbnail */
       if (G_UNLIKELY (thumbnail_uri == NULL || thumbnail_mtime == NULL || strcmp (thumbnail_uri, uri) != 0
-                   || (mtime != (time_t) -1 && strtoul (thumbnail_mtime, NULL, 10) != mtime)))
+                   || (mtime != (time_t) -1 && strtoul (thumbnail_mtime, NULL, 10) != (gulong) mtime)))
         {
           /* the thumbnail is invalid */
-          g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOENT, g_strerror (ENOENT));
+          g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOENT, "%s", g_strerror (ENOENT));
           g_object_unref (G_OBJECT (thumbnail));
           thumbnail = NULL;
         }
@@ -140,7 +140,7 @@ exo_thumbnail_save (GdkPixbuf   *thumbnail,
       tmp_fd = g_mkstemp (tmp_path);
       if (G_UNLIKELY (tmp_fd < 0))
         {
-          g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), g_strerror (errno));
+          g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), "%s", g_strerror (errno));
           g_free (tmp_path);
           return FALSE;
         }
@@ -160,7 +160,7 @@ exo_thumbnail_save (GdkPixbuf   *thumbnail,
       if (succeed && g_rename (tmp_path, thumbnail_path) < 0)
         {
           /* set an error and unlink the temporary file */
-          g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), g_strerror (errno));
+          g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), "%s", g_strerror (errno));
           g_unlink (tmp_path);
           succeed = FALSE;
         }
@@ -208,7 +208,7 @@ _exo_thumbnail_get_for_file (const gchar     *filename,
   if (stat (filename, &statb) < 0)
     {
       /* we cannot recover from here */
-      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), g_strerror (errno));
+      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), "%s", g_strerror (errno));
     }
   else
     {

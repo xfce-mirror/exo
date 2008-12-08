@@ -266,7 +266,7 @@ exo_xsession_client_filter (GdkXEvent *xevent,
   if (xev->type == ClientMessage
       && xev->message_type == client->priv->wm_protocols
       && xev->format == 32
-      && xev->data.l[0] == client->priv->wm_save_yourself)
+      && xev->data.l[0] == (glong) client->priv->wm_save_yourself)
     {
       g_signal_emit (G_OBJECT (client), client_signals[SAVE_YOURSELF], 0);
       return GDK_FILTER_REMOVE;

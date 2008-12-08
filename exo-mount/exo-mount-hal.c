@@ -566,7 +566,7 @@ exo_mount_hal_device_eject (ExoMountHalDevice *device,
   if (G_UNLIKELY (message == NULL))
     {
       /* out of memory */
-oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, g_strerror (ENOMEM));
+oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, "%s", g_strerror (ENOMEM));
       return FALSE;
     }
 
@@ -719,7 +719,7 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
       message = dbus_message_new_method_call ("org.freedesktop.Hal", device->udi, "org.freedesktop.Hal.Device.Volume", "Mount");
       if (G_UNLIKELY (message == NULL))
         {
-oom:      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, g_strerror (ENOMEM));
+oom:      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, "%s", g_strerror (ENOMEM));
           g_strfreev (options);
           g_free (mount_point);
           g_free (fstype);
@@ -897,7 +897,7 @@ exo_mount_teardown_crypto_volume(const gchar *udi, GError **error)
   if (G_UNLIKELY (message == NULL))
     {
       /* out of memory */
-oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, g_strerror (ENOMEM));
+oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, "%s", g_strerror (ENOMEM));
       return FALSE;
     }
 
@@ -982,7 +982,7 @@ exo_mount_hal_device_unmount (ExoMountHalDevice *device,
   if (G_UNLIKELY (message == NULL))
     {
       /* out of memory */
-oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, g_strerror (ENOMEM));
+oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, "%s", g_strerror (ENOMEM));
       return FALSE;
     }
 

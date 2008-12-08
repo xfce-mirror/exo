@@ -474,7 +474,7 @@ struct _ExoIconViewPrivate
   ExoIconViewItem *last_single_clicked;
 
   GList *cell_list;
-  guint n_cells;
+  gint n_cells;
 
   gint cursor_cell;
 
@@ -1627,7 +1627,7 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   GdkRectangle            event_area = event->area;
   ExoIconView            *icon_view = EXO_ICON_VIEW (widget);
   GtkTreePath            *path;
-  GdkRectangle            rubber_rect;
+  GdkRectangle            rubber_rect = { 0, };
   const GList            *lp;
   gint                    event_area_last;
   gint                    dest_index = -1;
@@ -2317,7 +2317,7 @@ exo_icon_view_button_release_event (GtkWidget      *widget,
   ExoIconView     *icon_view = EXO_ICON_VIEW (widget);
   GtkTreePath     *path;
   
-  if (icon_view->priv->pressed_button == event->button)
+  if (icon_view->priv->pressed_button == (gint) event->button)
     {
       /* check if we're in single click mode */
       if (G_UNLIKELY (icon_view->priv->single_click && (event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) == 0))
@@ -3194,7 +3194,7 @@ exo_icon_view_layout_cols (ExoIconView *icon_view,
   GList *icons = icon_view->priv->items;
   GList *items;
   gint   col = 0;
-  gint   rows;
+  gint   rows = 0;
 
   *x = icon_view->priv->margin;
 
@@ -3233,7 +3233,7 @@ exo_icon_view_layout_rows (ExoIconView *icon_view,
   GList *icons = icon_view->priv->items;
   GList *items;
   gint   row = 0;
-  gint   cols;
+  gint   cols = 0;
   
   *y = icon_view->priv->margin;
 

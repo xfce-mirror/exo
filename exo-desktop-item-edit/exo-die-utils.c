@@ -148,7 +148,7 @@ exo_die_g_key_file_save (GKeyFile    *key_file,
       else
         {
           /* base is not a directory, cannot save */
-          g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (ENOTDIR), g_strerror (ENOTDIR));
+          g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (ENOTDIR), "%s", g_strerror (ENOTDIR));
           return FALSE;
         }
     }
@@ -170,7 +170,7 @@ exo_die_g_key_file_save (GKeyFile    *key_file,
   fp = fopen (filename, "w");
   if (G_UNLIKELY (fp == NULL))
     {
-      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), g_strerror (errno));
+      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), "%s", g_strerror (errno));
       g_free (filename);
       g_free (data);
       return FALSE;
@@ -179,7 +179,7 @@ exo_die_g_key_file_save (GKeyFile    *key_file,
   /* try to write the data to the file */
   if (fwrite (data, data_length, 1, fp) != 1)
     {
-      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), g_strerror (errno));
+      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), "%s", g_strerror (errno));
       g_free (filename);
       g_free (data);
       fclose (fp);
