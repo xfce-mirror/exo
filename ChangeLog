@@ -1,5 +1,10 @@
 2008-12-08	Nick Schermer <nick@xfce.org>
 
+	* exo/exo-icon-view.c: Don't setup bindings for shift+n and shift+p
+	  so type-ahead search works as expected. Bug #4633.
+
+2008-12-08	Nick Schermer <nick@xfce.org>
+
 	* Fix all compiler warnings and fix some possibly uninitialized variables.
 
 2008-11-23	Jannis Pohlmann <jannis@xfce.org>

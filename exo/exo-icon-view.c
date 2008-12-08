@@ -4025,7 +4025,12 @@ exo_icon_view_add_move_binding (GtkBindingSet  *binding_set,
 {
   
   gtk_binding_entry_add_signal (binding_set, keyval, modmask, "move-cursor", 2, G_TYPE_ENUM, step, G_TYPE_INT, count);
-  gtk_binding_entry_add_signal (binding_set, keyval, GDK_SHIFT_MASK, "move-cursor", 2, G_TYPE_ENUM, step, G_TYPE_INT, count);
+  
+  /* skip shift+n and shift+p because this blocks type-ahead search.
+   * see http://bugzilla.xfce.org/show_bug.cgi?id=4633
+   */
+  if (G_LIKELY (keyval != GDK_p && keyval != GDK_n))
+    gtk_binding_entry_add_signal (binding_set, keyval, GDK_SHIFT_MASK, "move-cursor", 2, G_TYPE_ENUM, step, G_TYPE_INT, count);
 
   if ((modmask & GDK_CONTROL_MASK) != GDK_CONTROL_MASK)
     {
