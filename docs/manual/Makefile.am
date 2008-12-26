@@ -1,11 +1,10 @@
-# $Id$
+SUBDIRS =				\
+	C					\
+	fr					\
+	id					\
+	ja					\
+	pt_BR				\
+	tr
 
-SUBDIRS =								\
-	C								\
-	fr								\
-	ja
-
-EXTRA_DIST =								\
+EXTRA_DIST =				\
 	xfce-nochunk.xsl
-
-# vi:set ts=8 sw=8 noet ai nocindent:
