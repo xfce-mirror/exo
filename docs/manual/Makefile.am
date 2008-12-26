@@ -1,10 +1,7 @@
 SUBDIRS =				\
 	C					\
 	fr					\
-	id					\
-	ja					\
-	pt_BR				\
-	tr
+	ja
 
 EXTRA_DIST =				\
 	xfce-nochunk.xsl
