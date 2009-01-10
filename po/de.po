@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-23 16:06+0100\n"
+"POT-Creation-Date: 2009-01-10 23:57+0100\n"
 "PO-Revision-Date:  2008-11-23 16:07+0100\n"
 "Last-Translator: Jannis Pohlmann <jannis@xfce.org>\n"
 "Language-Team: German <xfce-i18n-de@xfce.org>\n"
@@ -61,8 +61,8 @@ msgstr "Konnte die Datei »%s« nicht lesen: %s"
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
-"Das Bild »%s« konnte aus unbekanntem Grund nicht geladen werden. "
-"Vermutlich ist die Datei beschädigt"
+"Das Bild »%s« konnte aus unbekanntem Grund nicht geladen werden. Vermutlich "
+"ist die Datei beschädigt"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:785
 msgid "Orientation"
@@ -500,6 +500,7 @@ msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Diesen Hilfetext anzeigen und beenden\n"
 
 #: ../exo-csource/main.c:289
+#, c-format
 msgid "  -V, --version     Print version information and exit\n"
 msgstr "  -V, --version     Programmversion anzeigen und beenden\n"
 
@@ -534,7 +535,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Knoteninhalte aus XML-Dateien entfernen\n"
 
 #: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:167
+#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:169
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -551,7 +552,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:171
+#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:173
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -567,7 +568,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:175
+#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:177
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -740,7 +741,7 @@ msgid "[FILE|FOLDER]"
 msgstr "[DATEI|ORDNER]"
 
 #: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
-#: ../exo-mount-notify/main.c:153
+#: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "Konnte Anzeige nicht öffnen"
 
@@ -1071,7 +1072,7 @@ msgstr "Socket zum Einbinden des Dialogs in ein anderes Programm"
 msgid "SOCKET ID"
 msgstr "SOCKET-NUMMER"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:70
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1079,7 +1080,7 @@ msgstr ""
 "Das bevorzugte Programm für TYP mit dem optionalen PARAMETER starten, wobei "
 "TYP einer der folgenden Werte ist."
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
 msgstr "TYP [PARAMETER]"
 
@@ -1418,31 +1419,31 @@ msgid "Failed to mount \"%s\""
 msgstr "Der Datenträger »%s« konnte nicht eingebunden werden"
 
 #. tell the user that the device can be removed now
-#: ../exo-mount-notify/main.c:111
+#: ../exo-mount-notify/main.c:113
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
 msgstr "Der Datenträger »%s« kann nun sicher entfernt werden."
 
-#: ../exo-mount-notify/main.c:112
+#: ../exo-mount-notify/main.c:114
 msgid "Device is now safe to remove"
 msgstr "Der Datenträger kann nun sicher entfernt werden"
 
 #. read-only, just ejecting
-#: ../exo-mount-notify/main.c:224
+#: ../exo-mount-notify/main.c:226
 msgid "Ejecting device"
 msgstr "Werfe Datenträger aus"
 
-#: ../exo-mount-notify/main.c:225
+#: ../exo-mount-notify/main.c:227
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
 msgstr "Der Datenträger »%s« wird ausgeworfen. Dies kann einen Moment dauern."
 
 #. read-only, just unmounting
-#: ../exo-mount-notify/main.c:230
+#: ../exo-mount-notify/main.c:232
 msgid "Unmounting device"
 msgstr "Hänge Datenträger aus"
 
-#: ../exo-mount-notify/main.c:231
+#: ../exo-mount-notify/main.c:233
 #, c-format
 msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
@@ -1453,11 +1454,11 @@ msgstr ""
 "Computer."
 
 #. not read-only, writing back data
-#: ../exo-mount-notify/main.c:238
+#: ../exo-mount-notify/main.c:240
 msgid "Writing data to device"
 msgstr "Daten werden auf den Datenträger geschrieben"
 
-#: ../exo-mount-notify/main.c:239
+#: ../exo-mount-notify/main.c:241
 #, c-format
 msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
