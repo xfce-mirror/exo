@@ -1,3 +1,20 @@
+0.3.93
+======
+- Don't setup bindings for <Shift>n and <Shift>p in ExoIconView so that
+  type-ahead search works as expected (bug #4633).
+- Remove GenericName and "Xfce 4" prefix from 
+  exo-preferred-applications.desktop.
+- Stop startup notification once the plug is created and the helper 
+  settings dialog content has been moved into the plug.
+- Use -V instead of -v as short parameter for --version.
+- Improve handling of URIs in exo-open (bug #4627).
+- Updated translations: ca (Carles Muños Gorriz), cs (Michal Varady),
+  de (Fabian Nowak, Jannis Pohlmann), es (Abel Martín), eu (Piarres 
+  Beobide), fi (Jari Rahkonen), fr (Maximilian Schleiss), hu (Szervác 
+  Attila), id (Andhika Padmawan), ja (Nobuhiro Iwamatsu), nb_NO (Terje
+  Uriansrud), pt_BR (Og Maciel), sq (Besnik Bleta), sv (Daniel 
+  Nylander), tr (Eren Turkay).
+
 0.3.92
 ======
 - Make Preferred Applications dialog pluggable into the new settings
