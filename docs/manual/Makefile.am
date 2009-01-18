@@ -1,5 +1,6 @@
 SUBDIRS =				\
 	C					\
+	es					\
 	fr					\
 	id					\
 	ja					\
