@@ -224,8 +224,8 @@ msgstr "Activer la recherche"
 #: ../exo/exo-icon-view.c:686
 msgid "View allows user to search through columns interactively"
 msgstr ""
-"Cette zone permet à l'utilisateur de rechercher parmi les colonnes de manière "
-"interactive"
+"Cette zone permet à l'utilisateur de rechercher parmi les colonnes de "
+"manière interactive"
 
 #: ../exo/exo-icon-view.c:703
 msgid "Width for each item"
@@ -258,8 +258,8 @@ msgstr "Colonne pour le balisage"
 #: ../exo/exo-icon-view.c:757
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
-"Colonne du model où prendre le texte, dans le cas où le balisage Pango"
-" est utilisé."
+"Colonne du model où prendre le texte, dans le cas où le balisage Pango est "
+"utilisé."
 
 #: ../exo/exo-icon-view.c:771
 msgid "Icon View Model"
@@ -272,8 +272,7 @@ msgstr "Le modèle pour la zone d'icônes"
 #: ../exo/exo-icon-view.c:786
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"Comment positionner le texte et l'icône l'un par rapport à l'autre"
+msgstr "Comment positionner le texte et l'icône l'un par rapport à l'autre"
 
 #: ../exo/exo-icon-view.c:818
 msgid "Reorderable"
@@ -297,8 +296,8 @@ msgstr "Colonne de recherche"
 
 #: ../exo/exo-icon-view.c:850
 msgid "Model column to search through when searching through item"
-msgstr "Colonne du model où effectuer la recherche quand un élément est"
-" recherché"
+msgstr ""
+"Colonne du model où effectuer la recherche quand un élément est recherché"
 
 #: ../exo/exo-icon-view.c:864
 msgid "Selection mode"
@@ -502,7 +501,8 @@ msgstr "  -h, --help        Afficher ce message d'aide et quitter\n"
 #: ../exo-csource/main.c:289
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version     Afficher les informations sur la version et quitter\n"
+msgstr ""
+"  -V, --version     Afficher les informations sur la version et quitter\n"
 
 #: ../exo-csource/main.c:290
 #, c-format
@@ -678,8 +678,8 @@ msgstr "Exécuter dans _terminal"
 #: ../exo-desktop-item-edit/exo-die-editor.c:444
 msgid "Select this option to run the command in a terminal window."
 msgstr ""
-"Sélectionner cette option pour exécuter la commande dans une fenêtre "
-"d'un terminal."
+"Sélectionner cette option pour exécuter la commande dans une fenêtre d'un "
+"terminal."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
@@ -1278,8 +1278,8 @@ msgstr "Erreur inconnue"
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr ""
-"Le périphérique \"%s\" n'a pas été trouvé dans la table des périphériques "
-"du système"
+"Le périphérique \"%s\" n'a pas été trouvé dans la table des périphériques du "
+"système"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
@@ -1304,7 +1304,8 @@ msgstr "Une application empêche l'éjection du volume \"%s\""
 #: ../exo-mount/exo-mount-hal.c:841
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr "Vous n'avez pas les privilèges nécessaires pour monter le volume \"%s\""
+msgstr ""
+"Vous n'avez pas les privilèges nécessaires pour monter le volume \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:856
 #, c-format
@@ -1389,8 +1390,9 @@ msgstr "Spécifier l'UDI HAL du périphérique ou son fichier de périphérique"
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "Il n'est pas possible de spécifier à la fois l'UDI  du périphérique"
-" HAL et le fichier de périphérique"
+msgstr ""
+"Il n'est pas possible de spécifier à la fois l'UDI  du périphérique HAL et "
+"le fichier de périphérique"
 
 #: ../exo-mount/main.c:154
 msgid ""
@@ -1429,7 +1431,8 @@ msgstr "Impossible de monter \"%s\""
 #: ../exo-mount-notify/main.c:113
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr "Le périphérique \"%s\" peut maintenant être déconnecté en toute sécurité."
+msgstr ""
+"Le périphérique \"%s\" peut maintenant être déconnecté en toute sécurité."
 
 #: ../exo-mount-notify/main.c:114
 msgid "Device is now safe to remove"
@@ -1492,8 +1495,8 @@ msgstr ""
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
-"  -V, --version                       Afficher les informations sur la version "
-"et quitter"
+"  -V, --version                       Afficher les informations sur la "
+"version et quitter"
 
 #: ../exo-open/main.c:65
 msgid ""
@@ -1502,9 +1505,11 @@ msgid ""
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch TYPE [PARAMÈTREs...]       Lancer l'application favorite pour TYPE\n"
+"  --launch TYPE [PARAMÈTREs...]       Lancer l'application favorite pour "
+"TYPE\n"
 "                                      avec les PARAMÈTREs optionnels,\n"
-"                                      où TYPE est l'une des valeurs suivantes."
+"                                      où TYPE est l'une des valeurs "
+"suivantes."
 
 #: ../exo-open/main.c:69
 msgid ""
@@ -1512,8 +1517,8 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DIRECTORY       Répertoire de travail par défaut "
-"pour les applications\n"
+"  --working-directory DIRECTORY       Répertoire de travail par défaut pour "
+"les applications\n"
 "                                      quand l'option --launch est utilisée."
 
 #: ../exo-open/main.c:72
@@ -1546,7 +1551,8 @@ msgstr ""
 "spécifiées avec leur lanceurs d'URL favori. Sinon, si vous spécifiez "
 "l'option\n"
 "--launch, vous pouvez sélectionner avec quelle application favorite vous\n"
-"voulez les lancer, et passer des paramètres additionnels à cette application\n"
+"voulez les lancer, et passer des paramètres additionnels à cette "
+"application\n"
 "(ie. pour TerminalEmulator vous pouvez passer la ligne de commande qui\n"
 "devrait être exécutée dans le Terminal)."
 
