@@ -45,8 +45,10 @@ msgstr "boyut"
 msgid "The size of the icon to render in pixels."
 msgstr "Farklılaştırılacak simgenin piksel cinsinden değeri."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
-#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
+#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#: ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237
+#: ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "\"%s\" dosyası açılamadı: %s"
@@ -58,12 +60,11 @@ msgstr "\"%s\" dosyası okunamadı: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"\"%s\" kalıbı yüklenemedi: Bilinmeyen neden, büyük olasılıkla bozuk dosya"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "\"%s\" kalıbı yüklenemedi: Bilinmeyen neden, büyük olasılıkla bozuk dosya"
 
-#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:785
+#: ../exo/exo-icon-bar.c:249
+#: ../exo/exo-icon-view.c:785
 msgid "Orientation"
 msgstr "Uyumlaştırma"
 
@@ -71,19 +72,23 @@ msgstr "Uyumlaştırma"
 msgid "The orientation of the iconbar"
 msgstr "Simge çubuğunun uyumlaştırılması"
 
-#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:802
+#: ../exo/exo-icon-bar.c:266
+#: ../exo/exo-icon-view.c:802
 msgid "Pixbuf column"
 msgstr "Pixbuf dikeci"
 
-#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:803
+#: ../exo/exo-icon-bar.c:267
+#: ../exo/exo-icon-view.c:803
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Pixbuf simgesini yeniden düzenlemek amacıyla kullanılan model dikeci"
 
-#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:929
+#: ../exo/exo-icon-bar.c:282
+#: ../exo/exo-icon-view.c:929
 msgid "Text column"
 msgstr "Metin dikeci"
 
-#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:930
+#: ../exo/exo-icon-bar.c:283
+#: ../exo/exo-icon-view.c:930
 msgid "Model column used to retrieve the text from"
 msgstr "Metin formunu yeniden düzenlemek amacıyla kullanılan model dikeci"
 
@@ -103,27 +108,33 @@ msgstr "Etkin"
 msgid "Active item index"
 msgstr "Etkin öğe içeriği"
 
-#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319
+#: ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "Etkin öğe dolgu rengi"
 
-#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326
+#: ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "Etkin öğe kenar rengi"
 
-#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333
+#: ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "Etkin öğe metin rengi"
 
-#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340
+#: ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "İmleç öğesi dolgu rengi"
 
-#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347
+#: ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "İmleç öğesi kenar rengi"
 
-#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354
+#: ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "İmleç öğesi metin rengi"
 
@@ -193,7 +204,8 @@ msgid "All Icons"
 msgstr "Bütün Simgeler"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Kalıp Dosyaları"
 
@@ -256,9 +268,7 @@ msgstr "Biçimleme dikeci"
 
 #: ../exo/exo-icon-view.c:757
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Pango biçimlemesi kullanılırken metni yeniden düzenlemek amacıyla kullanılan "
-"model dikeci"
+msgstr "Pango biçimlemesi kullanılırken metni yeniden düzenlemek amacıyla kullanılan model dikeci"
 
 #: ../exo/exo-icon-view.c:771
 msgid "Icon View Model"
@@ -269,11 +279,8 @@ msgid "The model for the icon view"
 msgstr "Simge görünümü için model"
 
 #: ../exo/exo-icon-view.c:786
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"Her bir öğenin metin ve simgesinin birbiriyle ilişkili olarak nasıl "
-"konumlandırılacağı"
+msgid "How the text and icon of each item are positioned relative to each other"
+msgstr "Her bir öğenin metin ve simgesinin birbiriyle ilişkili olarak nasıl konumlandırılacağı"
 
 #: ../exo/exo-icon-view.c:818
 msgid "Reorderable"
@@ -307,25 +314,25 @@ msgstr "Seçim modu"
 msgid "The selection mode"
 msgstr "Seçim modu"
 
-#: ../exo/exo-icon-view.c:880 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Tek Tıklama"
 
-#: ../exo/exo-icon-view.c:881 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:881
+#: ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Görünen öğeler için etkinleştirilmiş tek tıklama"
 
-#: ../exo/exo-icon-view.c:897 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:897
+#: ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Tek Tıklama Zaman Aşımı"
 
-#: ../exo/exo-icon-view.c:898 ../exo/exo-tree-view.c:184
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"Tek tıklama modundayken fare imlecinin altındaki öğenin otomatik olarak "
-"seçilmesinden sonraki geçen zaman"
+#: ../exo/exo-icon-view.c:898
+#: ../exo/exo-tree-view.c:184
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "Tek tıklama modundayken fare imlecinin altındaki öğenin otomatik olarak seçilmesinden sonraki geçen zaman"
 
 #: ../exo/exo-icon-view.c:913
 msgid "Spacing"
@@ -355,7 +362,8 @@ msgstr "Seçim Kutusunun Saydamsızlığı"
 msgid "Preview"
 msgstr "Önizleme"
 
-#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139
+#: ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "Seçili dosya yok"
 
@@ -384,12 +392,8 @@ msgid "_Add a new toolbar"
 msgstr "Yeni bir _araç çubuğu ekle"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Bir öğeyi eklemek için onu araç çubuklarının üzerine; kaldırmak içinse araç "
-"çubuklarından dışarıya sürükleyin."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Bir öğeyi eklemek için onu araç çubuklarının üzerine; kaldırmak içinse araç çubuklarından dışarıya sürükleyin."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -532,8 +536,10 @@ msgstr "  --strip-comments  Yorumları XML dosyalarından kaldır\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Düğüm bileşenlerini XML dosyalarından kaldır\n"
 
-#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:169
+#: ../exo-csource/main.c:305
+#: ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122
+#: ../exo-mount-notify/main.c:169
 #: ../exo-open/main.c:129
 #, c-format
 msgid ""
@@ -549,8 +555,10 @@ msgstr ""
 "Benedikt Meurer tarafından yazılmıştır, <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:173
+#: ../exo-csource/main.c:309
+#: ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126
+#: ../exo-mount-notify/main.c:173
 #: ../exo-open/main.c:133
 #, c-format
 msgid ""
@@ -567,8 +575,10 @@ msgstr ""
 "lisanslanmıştır.\n"
 "\n"
 
-#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:177
+#: ../exo-csource/main.c:313
+#: ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130
+#: ../exo-mount-notify/main.c:177
 #: ../exo-open/main.c:137
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -658,25 +668,19 @@ msgid "Use _startup notification"
 msgstr "_Sistem açılış bildirimini kullan"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"Komut, dosya yöneticisi veya menüden çalışırken sistem açılış bildirimini "
-"etkinleştirmek için bu seçeneği seçin; fakat her uygulama, sistem açılış "
-"bildirimini desteklememektedir."
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Komut, dosya yöneticisi veya menüden çalışırken sistem açılış bildirimini etkinleştirmek için bu seçeneği seçin; fakat her uygulama, sistem açılış bildirimini desteklememektedir."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:443
 msgid "Run in _terminal"
-msgstr "_Terminalde çalıştır"
+msgstr "_Uçbirimde çalıştır"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:444
 msgid "Select this option to run the command in a terminal window."
-msgstr "Komutu terminal penceresinde çalıştırmak için bu seçeneği seçin."
+msgstr "Komutu uçbirim penceresinde çalıştırmak için bu seçeneği seçin."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
@@ -728,8 +732,10 @@ msgstr "Bir bağlantı oluşturulurken, önceden belirlenmiş bağlantı adresi"
 msgid "Preset icon when creating a desktop file"
 msgstr "Bir masaüstü dosyası oluşturulurken, önceden belirlenmiş simge"
 
-#: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
+#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-helper/main.c:67
+#: ../exo-mount/main.c:74
+#: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Sürüm bilgisini yazdır ve çık"
 
@@ -738,7 +744,8 @@ msgstr "Sürüm bilgisini yazdır ve çık"
 msgid "[FILE|FOLDER]"
 msgstr "[FILE|FOLDER]"
 
-#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138
+#: ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "Görüntü açılamadı"
@@ -910,14 +917,14 @@ msgstr "Yardımcı Araçlar"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "Terminal Emulator"
-msgstr "Terminal Öykünücüsü"
+msgstr "Uçbirim Öykünücüsü"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:227
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
-"Tercih edilen terminal öykünücüsü, CLI ortamı için\n"
+"Tercih edilen uçbirim öykünücüsü, CLI ortamı için\n"
 "gerekli olan komutları çalıştırmada kullanılacak."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:266
@@ -947,7 +954,7 @@ msgstr "Öntanımlı Eposta Okuyucusu ayarlanamadı"
 
 #: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
-msgstr "Öntanımlı Terminal Öykünücüsü ayarlanamadı"
+msgstr "Öntanımlı Uçbirim Öykünücüsü ayarlanamadı"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:422
@@ -964,7 +971,7 @@ msgstr "Özel bir Eposta Okuyucusu seçin"
 
 #: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
-msgstr "Özel bir Terminal Öykünücüsü seçin"
+msgstr "Özel bir Uçbirim Öykünücüsü seçin"
 
 #: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
@@ -987,7 +994,7 @@ msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
-"Xfce için öntanımlı Terminal Öykünücüsü olarak\n"
+"Xfce için öntanımlı Uçbirim Öykünücüsü olarak\n"
 "kullanmak üzere, bir uygulama belirtin:"
 
 #: ../exo-helper/exo-helper-chooser.c:610
@@ -1027,7 +1034,7 @@ msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
-"Lütfen şimdi tercih ettiğiniz Terminal Öykünücüsü'nü seçin\n"
+"Lütfen şimdi tercih ettiğiniz Uçbirim Öykünücüsü'nü seçin\n"
 "ve devam etmek için TAMAM'ı tıklayın."
 
 #: ../exo-helper/exo-helper.c:404
@@ -1042,52 +1049,45 @@ msgstr "helpers.rc, yazılacak şekilde açılamadı"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr ""
-"Tercih Edilen Uygulamalar (İnternet Tarayıcısı, Eposta Okuyucusu ve Terminal "
-"Öykünücüsü)"
+msgstr "Tercih Edilen Uygulamalar (İnternet Tarayıcısı, Eposta Okuyucusu ve Uçbirim Öykünücüsü)"
 
 #: ../exo-helper/main.c:42
-#, fuzzy
 msgid "Failed to execute default Web Browser"
-msgstr "Öntanımlı İnternet Tarayıcısı ayarlanamadı"
+msgstr "Öntanımlı internet tarayıcısı başlatılamadı"
 
 #: ../exo-helper/main.c:43
-#, fuzzy
 msgid "Failed to execute default Mail Reader"
-msgstr "Öntanımlı Eposta Okuyucusu ayarlanamadı"
+msgstr "Öntanımlı eposta okuyucu başlatılamadı"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
 msgid "Failed to execute default Terminal Emulator"
-msgstr "Öntanımlı Terminal Öykünücüsü ayarlanamadı"
+msgstr "Öntanımlı Uçbirim Öykünücüsü başlatılamadı"
 
 #: ../exo-helper/main.c:68
-#, fuzzy
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr "Xfce 4 Tercih Edilen Uygulamalar"
+msgstr ""
+"Tercih Edilen Uygulamaları aç\n"
+"Yapılandırma penceresi"
 
 #: ../exo-helper/main.c:69
 msgid "Settings manager socket"
-msgstr ""
+msgstr "Ayarlar yöneticisi yuvası"
 
 #: ../exo-helper/main.c:69
 msgid "SOCKET ID"
-msgstr ""
+msgstr "YUVA ID'si"
 
 #: ../exo-helper/main.c:70
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
-msgstr ""
+msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgstr "Aşağıdaki TİPlerden birinin öntanımlı yardımcısını, seçenekli PARAMETRE'lerle başlat."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
-msgstr ""
+msgstr "TİP [PARAMETRE]"
 
 #: ../exo-helper/main.c:93
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1095,22 +1095,24 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  İnternet Tarayıcısı    - Tercih edilen İnternet Tarayıcısı.\n"
-"  Eposta Okuyucusu       - Tercih edilen Eposta Okuyucusu.\n"
-"  Terminal Öykünücüsü    - Tercih edilen Terminal Öykünücüsü."
+"--launch komutunun desteklediği KİP'ler:\n"
+"\n"
+"  WebBrowser       - Tercih edilen İnternet Tarayıcısı.\n"
+"  MailReader       - Tercih edilen Eposta Okuyucusu.\n"
+"  TerminalEmulator - Tercih edilen Uçbirim Öykünücüsü."
 
 #: ../exo-helper/main.c:102
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr ""
+msgstr "Kullanım bilgisi için '%s --help' yazın."
 
 #: ../exo-helper/main.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Açmak için uygun değil: \"%s\""
+msgstr "Geçersiz yardım tipi, \"%s\""
 
 #: ../exo-helper/main.c:192
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s (Xfce %s)\n"
 "\n"
@@ -1123,20 +1125,25 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr ""
-"Copyright (c) %s\n"
+"%s (Xfce %s)\n"
+"\n"
+"Telif hakkı (c) 2003-2006\n"
 "        os-cillation e.K. Tüm hakları saklıdır.\n"
 "\n"
 "Benedikt Meurer tarafından yazılmıştır, <benny@xfce.org>.\n"
 "\n"
+"Gtk+-%d.%d.%d ile inşa edilmiştir, Gtk+-%d.%d.%d ile çalıştırılıyor.\n"
+"\n"
+"Hataları lütfen <%s> adresine bildirin.\n"
 
 #: ../exo-helper/main.c:209
 #, c-format
 msgid "Unknown helper arguments.\n"
-msgstr ""
+msgstr "Bilinmeyen yardımcı argümanlar.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
-msgstr "Xfce Terminal"
+msgstr "Xfce Uçbirim"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1152,7 +1159,7 @@ msgstr "Debian Sensible Browser"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr "Debian X Terminal Öykünücüsü"
+msgstr "Debian X Uçbirim Öykünücüsü"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -1164,7 +1171,7 @@ msgstr "Epiphany Web Browser"
 
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr "Enlightened Terminal Emulator"
+msgstr "Enlightened Uçbirim Öykünücüsü"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Novell Evolution"
@@ -1180,7 +1187,7 @@ msgstr "Galeon Web Browser"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
-msgstr "GNOME Terminal"
+msgstr "GNOME Uçbirim"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1200,7 +1207,7 @@ msgstr "Lynx Text Browser"
 
 #: ../exo-helper/helpers/midori.desktop.in.in.h:1
 msgid "Midori"
-msgstr ""
+msgstr "Midori"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
@@ -1252,7 +1259,7 @@ msgstr "W3M Text Browser"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
-msgstr "X Terminal"
+msgstr "X Uçbirimi"
 
 #: ../exo-mount/exo-mount-fstab.c:92
 #, c-format
@@ -1261,13 +1268,15 @@ msgstr "Bilinmeyen hata"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:132
+#: ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "\"%s\" sürücüsü, dosya sistemi sürücü tablosunda bulunamadı"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:224
+#: ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Verilen \"%s\" sürücüsü, bir sürücü veya geçerli bir birim değil"
@@ -1292,30 +1301,25 @@ msgstr "\"%s\" sürücüsünü ayarlamak için gerekli izniniz yok"
 
 #: ../exo-mount/exo-mount-hal.c:856
 #, c-format
-msgid ""
-"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
-"record audio or data on the disc"
-msgstr ""
-"Boş diskler bağlanamadı, diske bir veri veya ses kaydetmek için Xfburn gibi "
-"bir CD yazdırma uygulaması kullanın"
+msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+msgstr "Boş diskler bağlanamadı, diske bir veri veya ses kaydetmek için Xfburn gibi bir CD yazdırma uygulaması kullanın"
 
 #: ../exo-mount/exo-mount-hal.c:867
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr ""
-"Ses CD'si bağlanılamadı, ses izlerini oynatabilmek için Xfmedia kullanın."
+msgstr "Ses CD'si bağlanılamadı, ses izlerini oynatabilmek için Xfmedia kullanın."
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:932
-#, fuzzy, c-format
+#, c-format
 msgid "You are not privileged to teardown the crypto layer"
-msgstr "\"%s\" sürücüsünü ayarlamak için gerekli izniniz yok"
+msgstr "Gizli katmanın bağlantısını kesmek için yeterli izniniz yok"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:937
-#, fuzzy, c-format
+#, c-format
 msgid "An application is preventing the crypto layer from being torn down"
-msgstr "Bir uygulama, \"%s\" sürücüsünün bağlantısının kesilmesini engelliyor"
+msgstr "Bir uygulama, gizli katmanın bağlantısının kesilmesini engelliyor"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1021
@@ -1367,16 +1371,11 @@ msgstr "HAL sürücüsü UDI ya da sürücüsü dosyası belirtilmeli"
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr ""
-"Eşzamanlı olarak hem bir HAL sürücüsü UDI hem de sürücü dosyası belirtilmeli "
+msgstr "Eşzamanlı olarak hem bir HAL sürücüsü UDI hem de sürücü dosyası belirtilmeli "
 
 #: ../exo-mount/main.c:154
-msgid ""
-"Cannot mount by HAL device UDI, because HAL support was disabled for this "
-"build"
-msgstr ""
-"HAL sürücüsü UDI bağlanılamıyor, çünkü bu yapı için HAL desteği "
-"etkinleştirilmemiş"
+msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+msgstr "HAL sürücüsü UDI bağlanılamıyor, çünkü bu yapı için HAL desteği etkinleştirilmemiş"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1430,12 +1429,8 @@ msgstr "Sürücü bağlanılamıyor"
 
 #: ../exo-mount-notify/main.c:233
 #, c-format
-msgid ""
-"The device \"%s\" is being unmounted by the system. Please do not remove the "
-"media or disconnect the drive."
-msgstr ""
-"\"%s\" sürücüsü sistem tarafından bağlanılamadı. Lütfen ortamı kaldırmayın "
-"ya da sürücüyle bağlantıyı kesmeyin."
+msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+msgstr "\"%s\" sürücüsü sistem tarafından bağlanılamadı. Lütfen ortamı kaldırmayın ya da sürücüyle bağlantıyı kesmeyin."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:240
@@ -1444,12 +1439,8 @@ msgstr "Veriler sürücüye yazılıyor"
 
 #: ../exo-mount-notify/main.c:241
 #, c-format
-msgid ""
-"There is data that needs to be written to the device \"%s\" before it can be "
-"removed. Please do not remove the media or disconnect the drive."
-msgstr ""
-"Kaldırılmadan önce \"%s\" sürücüsüne yazılması gereken veri var. Lütfen "
-"ortamı kaldırmayın ve sürücüyle bağlantıyı kesmeyin."
+msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+msgstr "Kaldırılmadan önce \"%s\" sürücüsüne yazılması gereken veri var. Lütfen ortamı kaldırmayın ve sürücüyle bağlantıyı kesmeyin."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1464,15 +1455,13 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Bu mesajı yazdır ve çık"
 
 #: ../exo-open/main.c:63
-msgid ""
-"  -V, --version                       Print version information and exit"
+msgid "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Sürüm bilgisini yazdır ve çık"
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TÜR [PARAMETREler...]      TÜR'e karşılık gelen uygulamayı,\n"
@@ -1480,12 +1469,10 @@ msgstr ""
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DIRECTORY       --launch seçeneğinin kullanıldığı, "
-"uygulamaların\n"
+"  --working-directory DIRECTORY       --launch seçeneğinin kullanıldığı, uygulamaların\n"
 "                                        öntanımlı çalışma dizini."
 
 #: ../exo-open/main.c:72
@@ -1501,9 +1488,9 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  İnternet Tarayıcısı    - Tercih edilen İnternet Tarayıcısı.\n"
-"  Eposta Okuyucusu       - Tercih edilen Eposta Okuyucusu.\n"
-"  Terminal Öykünücüsü    - Tercih edilen Terminal Öykünücüsü."
+"  WebBrowser       - Tercih edilen İnternet Tarayıcısı.\n"
+"  MailReader       - Tercih edilen Eposta Okuyucusu.\n"
+"  TerminalEmulator - Tercih edilen Uçbirim Öykünücüsü."
 
 #: ../exo-open/main.c:82
 msgid ""
@@ -1516,10 +1503,8 @@ msgstr ""
 "Eğer --launch seçeneğini belirlemezseniz, exo-open tüm belirtilmiş bağlantı\n"
 "adreslerini, kendi tercih ettiği bağlantı işleyicileri ile açacak. Ama bu\n"
 "seçeneği belirtirseniz, hangi uygulamayla beraber açmak istediğinizi ve\n"
-"istediğiniz uygulamayla ilgili parametreleri de seçebilirsiniz (örneğin "
-"Terminal\n"
-"Öykünücüsü için, terminalde çalıştırılmış biçimde komut satırını geçmek "
-"gibi)."
+"istediğiniz uygulamayla ilgili parametreleri de seçebilirsiniz (örneğin Uçbirim\n"
+"Öykünücüsü için, uçbirimde çalıştırılmış biçimde komut satırını geçmek gibi)."
 
 #: ../exo-open/main.c:149
 #, c-format
@@ -1533,9 +1518,8 @@ msgstr "\"%s\" bağlantısı açılamadı."
 
 #~ msgid "Xfce 4 Preferred Applications"
 #~ msgstr "Xfce 4 Tercih Edilen Uygulamalar"
-
 #~ msgid "Failed to launch exo-preferred-applications"
 #~ msgstr "exo-preferred-applications başlatılamadı"
-
 #~ msgid "Button Label|Preferred Applications"
 #~ msgstr "Buton EtiketilTercih Edilen Uygulamalar"
+
