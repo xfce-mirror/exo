@@ -3,6 +3,7 @@ SUBDIRS =				\
 	es					\
 	fr					\
 	id					\
+	it					\
 	ja					\
 	pt_BR				\
 	tr

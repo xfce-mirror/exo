@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY date "April 2006">
+<!ENTITY version "@PACKAGE_VERSION@">
+]>
+<article id="exo-preferred-applications" lang="it">
+
+
+  <!-- Header -->
+  <articleinfo>
+    <title>Applicazioni preferite di Xfce4</title>
+
+    <pubdate>&date;</pubdate>
+
+    <copyright>
+      <year>2004</year>
+      <year>2005</year>
+      <year>2006</year>
+      <holder>Benedikt Meurer</holder>
+    </copyright>
+
+    <legalnotice id="legalnotice">
+      <para>È garantito il permesso di copiare, distribuire e/o modificare questo documento nel rispetto dei termini della GNU Free Documentation License versione 1.1 o qualsiasi versione successiva pubblicata dalla Free Software Foundation; senza sezioni invarianti, senza testo di copertina all'inizio e alla fine. Il testo completo della licenza è disponibile sul sito della <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.</para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <firstname>Benedikt</firstname>
+        <surname>Meurer</surname>
+        <affiliation>
+          <address><email>benny@xfce.org</email></address>
+        </affiliation>
+      </author>
+    </authorgroup>
+
+    <releaseinfo>Questo manuale descrive la versione @PACKAGE_VERSION@ della struttura di <emphasis>applicazioni preferite di Xfce</emphasis> e i suoi componenti.</releaseinfo>
+  </articleinfo>
+
+
+  <!-- Content -->
+  <sect1 id="intro">
+    <title>Introduzione</title>
+
+    <para>Nella serie di versioni 4.x dell'ambiente grafico Xfce, non era possibile, per l'utente, impostare in modo semplice le proprie applicazioni preferite (per esempio il browser web da utilizzare per l'apertura dei collegamenti ipertestuali). La struttura per le <emphasis>applicazioni preferite di Xfce</emphasis> è stata introdotta nella versione 4.3 di Xfce proprio per porre rimedio a questa limitazione fornendo all'utente un modo semplice per impostare il proprio browser web, il lettore di email e l'emulatore di terminale.</para>
+  </sect1>
+
+
+  <sect1 id="configuration">
+    <title>Configurazione</title>
+
+    <para>La finestra di configurazione è accessibile premendo il pulsante <guibutton>Applicazioni preferite</guibutton> presente nel <ulink type="http" url="xfce-mcs-manager.html#manager-dialog">gestore di impostazioni di Xfce</ulink>. La finestra di configurazione è suddivisa in due pagine che saranno descritte nelle sezioni seguenti. </para>
+
+    <sect2 id="configuration-internet">
+      <title>Applicazioni internet</title>
+
+      <para>La prima pagina della finestra di configurazione, permette di selezionare il browser web e il lettore di email preferiti. Il browser web selezionato verrà utilizzato per aprire i collegamenti ipertestuali che vengono selezionati e per visualizzare la documentazione, mentre il lettore di email verrà utilizzato per la composizione delle mail.</para>
+
+      <figure id="configuration-internet-figure">
+        <title>Applicazioni internet</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/exo-preferred-applications-internet.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Selezionare le applicazioni internet</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>Per selezionare un browser web diverso da quello predefinito, fare clic sul pulsante presente nella sezione <guilabel>browser web predefinito</guilabel>; verrà visualizzato un elenco di browser web trovati nel proprio sistema, come mostrato in <xref linkend="configuration-webbrowser-menu"/>.</para>
+
+      <figure id="configuration-webbrowser-menu">
+        <title>Selezionare il browser web</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/exo-preferred-applications-webbrowser-menu.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Selezionare il browser web</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>Se il browser web che si sta cercando non viene automaticamente riconosciuto dal sistema, è possibile selezionare il pulsante <guimenu><guimenuitem>Altro...</guimenuitem></guimenu> dal menu a comparsa; verrà mostrata una finestra di dialogo in cui sarà richiesto di inserire il comando per il browser web personalizzato, come mostrato in <xref linkend="configuration-webbrowser-custom"/>.</para>
+
+      <figure id="configuration-webbrowser-custom">
+        <title>Specificare un browser web personalizzato</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/exo-preferred-applications-webbrowser-custom.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Specificare un browser web personalizzato</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>Il marcatore speciale <literal>%s</literal> nel comando, verrà sostituito con l'URL nel momento in cui si farà clic su un collegamento ipertestuale. Quando si esegue solamente il browser web preferito senza alcun URL (per esempio utilizzando il comando <command>exo-open --launch WebBrowser</command>), verrà utilizzato solo il file binario del comando specificato e i parametri saranno ignorati. Nell'esempio precedente, con il browser web personalizzato <command>mywebbrowser "%s"</command>, il comando <command>mywebbrowser</command> verrà utilizzato per aprire il browser web senza alcun URL.</para>
+    </sect2>
+
+    <sect2 id="configuration-utilities">
+      <title>Altre applicazioni</title>
+
+      <para>La prima pagina della finestra di configurazione, permette di selezionare l'emulatore di terminale preferito. Questo verrà utilizzato all'interno dell'ambiente Xfce per lanciare le applicazioni che necessitano di essere eseguite all'interno di un ambiente CLI (Command Line Interface = interfaccia da linea di comando)</para>
+
+      <figure id="configuration-utilities-figure">
+        <title>Altre applicazioni</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/exo-preferred-applications-utilities.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase>Selezionare altre applicazioni</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>Per i comandi personalizzati del terminale, il marcatore speciale <literal>%s</literal> verrà sostituito con l'applicazione da eseguire nel terminale. Diversamente, si applica la stessa regola come descritta in <xref linkend="configuration-internet"/>.</para>
+    </sect2>
+  </sect1>
+
+
+  <sect1 id="exo-open">
+    <title>exo-open</title>
+
+    <para>È anche fornita una semplice interfaccia per la struttura di gestione delle <emphasis>applicazioni preferite di Xfce</emphasis>, denominata <application>exo-open</application>.. Gli utenti e gli sviluppatori possono utilizzare questa utilità per avviare le applicazioni preferite di una certa categoria o per aprire dei collegamenti con il manipolatore predefinito di URL.</para>
+
+    <para><application>exo-open</application> supporta due modalità operative: la prima avvia semplicemente l'applicazione preferita per una certa categoria, eventualmente trasferendo un parametro (la definizione esatta del termine <emphasis>parameter</emphasis> dipende dalla categoria). Per esempio, per avviare il comando <command>mutt</command> nell'emulatore di terminale preferito, si dovrà usare:</para>
+
+<screen>exo-open --launch TerminalEmulator mutt</screen>
+
+    <para>mentre per aprire il browser web preferito, verrà utilizzato il seguente comando:</para>
+
+<screen>exo-open --launch WebBrowser</screen>
+
+    <para>La seconda modalità supportata da <application>exo-open</application>, apre tutti i parametri che gli vengono forniti con il manipolatore predefinito di URL. In questo contesto per URL si intendono sia i collegamenti completamente qualificati (per esempio <literal>http://www.xfce.org/</literal> o <literal>mailto:xfce4-dev@xfce.org</literal>) sia i percorsi locali (per esempio <literal>/home/dude/myfile.txt</literal>). Per esempio, per aprire  <literal>/home/dude/file1.mp3</literal> e <literal>/home/dude/file2.txt</literal> nell'applicazione predefinita, si potrà utilizzare il seguente comando:</para>
+
+<screen>exo-open /home/dude/file1.mp3 /home/dude/file2.txt</screen>
+
+    <para>Per avviare la composizione di una mail da inviare alla lista di discussione <ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce4-dev">xfce4-dev</ulink>, si può digitare:</para>
+
+<screen>exo-open mailto:xfce4-dev@xfce.org</screen>
+  </sect1>
+
+
+  <sect1 id="copyright">
+    <title>Informazioni</title>
+
+    <para>La struttura e i componenti per le <emphasis>applicazioni preferite di Xfce</emphasis> sono stati scritti da Benedikt Meurer (<email>benny@xfce.org</email>) per l'ambiente grafico Xfce. Per maggiori informazioni, visitare il <ulink url="http://www.xfce.org" type="http">sito ufficiale di Xfce</ulink>.</para>
+
+    <para>Per segnalare un problema o per proporre dei suggerimenti inerenti questo software o questo manuale, utilizzare il <ulink type="http" url="http://bugzilla.xfce.org/">sistema di tracciamento bug di Xfce</ulink> (prodotto: <literal>libexo</literal>, componente: <literal>assistente</literal>).</para>
+
+    <para>Se si hanno domande relative all'utilizzo o all'installazione di questo pacchetto, rivolgersi alla <ulink url="http://foo-projects.org/mailman/listinfo/xfce" type="http">mailing list di xfce</ulink>. Le discussioni relative allo sviluppo si svolgono nella mailing list <ulink url="http://foo-projects.org/mailman/listinfo/xfce4-dev" type="http">xfce4-dev</ulink>.</para>
+
+     <para>Questo programma è distribuito nel rispetto dei termini della licenza GNU GPL (General Public License) come pubblicata dalla Free Software Foundation, sia questa la versione 2 o (a propria scelta) una qualsiasi versione successiva</para>
+
+    <para>Con il programma dovrebbe essere stata anche fornita una copia della GNU General Public License; se così non fosse, scrivere alla: Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.</para>
+  </sect1>
+  
+</article>
