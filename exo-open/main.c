@@ -95,8 +95,10 @@ main (int argc, char **argv)
   GOptionContext *context;
   GtkWidget      *dialog;
   GError         *err = NULL;
-  gchar          *parameter;
+  gchar          *parameter, *quoted;
   gint            result = EXIT_SUCCESS;
+  GString        *join;
+  guint           i;
 
 #ifdef GETTEXT_PACKAGE
   /* setup i18n support */
@@ -138,8 +140,27 @@ main (int argc, char **argv)
     }
   else if (G_LIKELY (opt_launch != NULL))
     {
-      /* combine all specified parameters to one parameter string */
-      parameter = (argc > 1) ? g_strjoinv (" ", argv + 1) : NULL;
+      if (argc > 1)
+        {
+          /* combine all specified parameters to one parameter string */
+          join = g_string_new (NULL);
+          for (i = 1; argv[i] != NULL; i++)
+            {
+              /* separate the arguments */
+              if (i > 1)
+                join = g_string_append_c (join, ' ');
+
+              /* append the quoted argument */
+              quoted = g_shell_quote (argv[i]);
+              join = g_string_append (join, quoted);
+              g_free (quoted);
+            }
+          parameter = g_string_free (join, FALSE);
+        }
+      else
+        {
+          parameter = NULL;
+        }
 
       /* run the preferred application */
       if (!exo_execute_preferred_application (opt_launch, parameter, opt_working_directory, NULL, &err))
