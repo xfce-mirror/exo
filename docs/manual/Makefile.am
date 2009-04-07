@@ -1,7 +1,9 @@
 SUBDIRS =				\
 	C					\
+	da					\
 	es					\
 	fr					\
+	gl					\
 	id					\
 	it					\
 	ja					\
