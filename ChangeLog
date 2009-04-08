@@ -1,3 +1,11 @@
+2009-04-08	Jannis Pohlmann <jannis@xfce.org>
+
+	* configure.in.in, docs/manual/da/images/, docs/manual/gl/images/: Fix
+	  broken build due to incomplete integration of the Danish and Galician
+	  manual translations.
+	* exo-helper/exo-helper-launcher-dialog.c: Add gettext() call around
+	  two strings which are already as translatable with N_() (bug #5203).
+
 2009-02-24  Stephan Arts <stephan@xfce.org>
 
 	* == Released 0.3.100 ==

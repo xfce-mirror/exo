@@ -296,7 +296,7 @@ exo_helper_launcher_dialog_set_category (ExoHelperLauncherDialog *launcher_dialo
   g_return_if_fail (category >= 0 && category < EXO_HELPER_N_CATEGORIES);
 
   /* setup the new label text */
-  gtk_label_set_text (GTK_LABEL (launcher_dialog->label), MESSAGES[category]);
+  gtk_label_set_text (GTK_LABEL (launcher_dialog->label), gettext (MESSAGES[category]));
 
   /* apply the new category */
   launcher_dialog->category = category;
