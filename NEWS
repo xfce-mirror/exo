@@ -1,6 +1,10 @@
-0.3.xxx
+0.3.101
 =======
 - Quote arguments passed to exo-open (bug #5132).
+- Add gettext() call around two strings which are already as translatable with 
+  N_() (bug #5203).
+- Fix broken build due to incomplete integration of the Danish and Galician 
+  manual translations.
 
 0.3.100
 =======
