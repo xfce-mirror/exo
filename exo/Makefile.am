@@ -96,6 +96,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-xsession-client.c
 
 libexo_0_3_la_CFLAGS =							\
+	$(GIO_CFLAGS)							\
 	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
@@ -106,6 +107,7 @@ libexo_0_3_la_LDFLAGS =							\
 	-no-undefined
 
 libexo_0_3_la_LIBADD =							\
+	$(GIO_LIBS)							\
 	$(GTK_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)
 

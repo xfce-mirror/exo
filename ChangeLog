@@ -1,3 +1,11 @@
+2009-04-13	Jannis Pohlmann <jannis@xfce.org>
+
+	* configure.in.in, docs/reference/tmpl/exo-cell-renderer-icon.sgml,
+	  exo/Makefile.am, exo/exo-cell-renderer-icon.c: Add GIO to the 
+	  dependencies and bump GLib to 2.16, GTK+ to 2.14. Add "gicon" 
+	  property to ExoCellRendererIcon. It benefits from the same SVG 
+	  speedup as the icon property.
+
 2009-04-12  Stephan Arts <stephan@xfce.org>
 
 	* == Released 0.3.101 ==

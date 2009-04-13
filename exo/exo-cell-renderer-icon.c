@@ -1,6 +1,7 @@
 /* $Id$ */
 /*-
  * Copyright (c) 2005-2006 Benedikt Meurer <benny@xfce.org>.
+ * Copyright (c) 2009 Jannis Pohlmann <jannis@xfce.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,6 +23,8 @@
 #include <config.h>
 #endif
 
+#include <gio/gio.h>
+
 #include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-gdk-pixbuf-extensions.h>
 #include <exo/exo-private.h>
@@ -40,6 +43,7 @@ enum
   PROP_0,
   PROP_FOLLOW_STATE,
   PROP_ICON,
+  PROP_GICON,
   PROP_SIZE,
 };
 
@@ -77,6 +81,7 @@ struct _ExoCellRendererIconPrivate
   guint  follow_state : 1;
   guint  icon_static : 1;
   gchar *icon;
+  GIcon *gicon;
   gint   size;
 };
 
@@ -170,6 +175,25 @@ exo_cell_renderer_icon_class_init (ExoCellRendererIconClass *klass)
                                                         EXO_PARAM_READWRITE));
 
   /**
+   * ExoCellRendererIcon:gicon:
+   *
+   * The #GIcon to render. May also be %NULL in which case no icon will be 
+   * rendered for the cell.
+   *
+   * Currently only #GThemedIcon<!---->s are supported which are loaded 
+   * using the current icon theme.
+   *
+   * Since: 0.4.0
+   **/
+  g_object_class_install_property (gobject_class,
+                                   PROP_GICON,
+                                   g_param_spec_object ("gicon",
+                                                        _("GIcon"),
+                                                        _("The GIcon to render."),
+                                                        G_TYPE_ICON,
+                                                        EXO_PARAM_READWRITE));
+
+  /**
    * ExoCellRendererIcon:size:
    *
    * The size in pixel at which to render the icon. This is also the fixed
@@ -203,6 +227,10 @@ exo_cell_renderer_icon_finalize (GObject *object)
   if (!priv->icon_static)
     g_free (priv->icon);
 
+  /* free the GICon */
+  if (priv->gicon != NULL)
+    g_object_unref (priv->gicon);
+
   (*G_OBJECT_CLASS (exo_cell_renderer_icon_parent_class)->finalize) (object);
 }
 
@@ -224,6 +252,10 @@ exo_cell_renderer_icon_get_property (GObject    *object,
 
     case PROP_ICON:
       g_value_set_string (value, priv->icon);
+      break;
+
+    case PROP_GICON:
+      g_value_set_object (value, priv->gicon);
       break;
 
     case PROP_SIZE:
@@ -262,6 +294,12 @@ exo_cell_renderer_icon_set_property (GObject      *object,
       priv->icon = (icon == NULL) ? "" : (gchar *) icon;
       if (!priv->icon_static)
         priv->icon = g_strdup (priv->icon);
+      break;
+
+    case PROP_GICON:
+      if (priv->gicon != NULL)
+        g_object_unref (priv->gicon);
+      priv->gicon = g_value_dup_object (value);
       break;
 
     case PROP_SIZE:
@@ -340,42 +378,54 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   GdkPixbuf                        *icon;
   GdkPixbuf                        *temp;
   GError                           *err = NULL;
-  gchar                            *display_name;
+  gchar                            *display_name = NULL;
   gint                             *icon_sizes;
   gint                              icon_size;
   gint                              n;
 
   /* verify that we have an icon */
-  if (G_UNLIKELY (priv->icon == NULL))
+  if (G_UNLIKELY (priv->icon == NULL && priv->gicon == NULL))
     return;
 
   /* icon may be either an image file or a named icon */
-  if (g_path_is_absolute (priv->icon))
+  if (priv->icon != NULL && g_path_is_absolute (priv->icon))
     {
       /* load the icon via the thumbnail database */
       icon = _exo_thumbnail_get_for_file (priv->icon, (priv->size > 128) ? EXO_THUMBNAIL_SIZE_LARGE : EXO_THUMBNAIL_SIZE_NORMAL, &err);
     }
-  else
+  else if (priv->icon != NULL || priv->gicon != NULL)
     {
       /* determine the best icon size (GtkIconTheme is somewhat messy scaling up small icons) */
       icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (widget));
-      icon_sizes = gtk_icon_theme_get_icon_sizes (icon_theme, priv->icon);
-      for (icon_size = -1, n = 0; icon_sizes[n] != 0; ++n)
+
+      if (priv->icon != NULL)
         {
-          /* we can use any size if scalable, because we load the file directly */
-          if (icon_sizes[n] == -1)
+          icon_sizes = gtk_icon_theme_get_icon_sizes (icon_theme, priv->icon);
+          for (icon_size = -1, n = 0; icon_sizes[n] != 0; ++n)
+            {
+              /* we can use any size if scalable, because we load the file directly */
+              if (icon_sizes[n] == -1)
+                icon_size = priv->size;
+              else if (icon_sizes[n] > icon_size && icon_sizes[n] <= priv->size)
+                icon_size = icon_sizes[n];
+            }
+          g_free (icon_sizes);
+
+          /* if we don't know any icon sizes at all, the icon is probably not present */
+          if (G_UNLIKELY (icon_size < 0))
             icon_size = priv->size;
-          else if (icon_sizes[n] > icon_size && icon_sizes[n] <= priv->size)
-            icon_size = icon_sizes[n];
+
+          /* lookup the icon in the icon theme */
+          icon_info = gtk_icon_theme_lookup_icon (icon_theme, priv->icon, icon_size, 0);
         }
-      g_free (icon_sizes);
+      else if (priv->gicon != NULL)
+        {
+          icon_info = gtk_icon_theme_lookup_by_gicon (icon_theme,
+                                                      priv->gicon, 
+                                                      priv->size, 
+                                                      GTK_ICON_LOOKUP_USE_BUILTIN);
+        }
 
-      /* if we don't know any icon sizes at all, the icon is probably not present */
-      if (G_UNLIKELY (icon_size < 0))
-        icon_size = priv->size;
-
-      /* lookup the icon in the icon theme */
-      icon_info = gtk_icon_theme_lookup_icon (icon_theme, priv->icon, icon_size, 0);
       if (G_UNLIKELY (icon_info == NULL))
         return;
 
@@ -401,9 +451,23 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   if (G_UNLIKELY (icon == NULL))
     {
       /* better let the user know whats going on, might be surprising otherwise */
-      display_name = g_filename_display_name (priv->icon);
-      g_warning ("Failed to load \"%s\": %s", display_name, err->message);
-      g_free (display_name);
+      if (G_LIKELY (priv->icon != NULL))
+        {
+          display_name = g_filename_display_name (priv->icon);
+        }
+      else if (G_UNLIKELY (priv->gicon != NULL 
+                           && g_object_class_find_property (G_OBJECT_GET_CLASS (priv->gicon),
+                                                            "name")))
+        {
+          g_object_get (priv->gicon, "name", &display_name, NULL);
+        }
+
+      if (display_name != NULL)
+        {
+          g_warning ("Failed to load \"%s\": %s", display_name, err->message);
+          g_free (display_name);
+        }
+
       g_error_free (err);
       return;
     }
