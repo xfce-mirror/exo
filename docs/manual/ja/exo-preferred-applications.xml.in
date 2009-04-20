@@ -17,7 +17,7 @@
       <year>2005</year>
       <year>2006</year>
       <holder>Benedikt Meurer</holder>
-    </copyright><copyright><year>2006.</year><holder>Daichi Kawahata (daichi@xfce.org)</holder></copyright><copyright><year>2009</year><holder>Masato Hashimoto (cabezon.hashimoto@gmail.com)</holder></copyright>
+    </copyright><copyright><year>2006.</year><holder>Daichi Kawahata (daichi@xfce.org)</holder></copyright><copyright><year>2009</year><holder>Masato Hashimoto (hashimo@xfce.org)</holder></copyright>
 
     <legalnotice id="legalnotice">
       <para>フリーソフトウェア財団が公表する GNU フリー文書利用許諾契約書の第1.1版、あるいはそれ以降のいずれかの版の条件下において、この文書の複製、配布および/または変更が許可されます。変更出来ない箇所、表紙文および裏表紙文があってはいけません。この利用許諾契約書の全文は<ulink type="http" url="http://www.gnu.org/">フリーソフトウェア財団</ulink>から取得する事ができます。</para>
@@ -101,7 +101,7 @@
         </screenshot>
       </figure>
 
-      <para>コマンドの特殊マーカー <literal>%s</literal> はハイパーリンクをクリックしたときにその URL に置き換えられます。例えば設定したウェブブラウザを URL 指定無しで起動だけしたい場合は、パラメタを指定せずにコマンド <command>exo-open --launch WebBrowser</command> を使用します。上の例では、カスタムウェブブラウザとして <command>mywebbrowser "%s"</command> が指定されていますが、<command>mywebbrowser</command> が URL を開かずに起動されます。</para>
+      <para>コマンドの特殊マーカー <literal>%s</literal> はハイパーリンクをクリックしたときにその URL に置き換えられます。ただし、コマンド <command>exo-open --launch WebBrowser</command> をパラメタを指定せずに実行した場合、すなわちお気に入りのウェブブラウザを URL 指定無しで起動した場合は、パラメタは無視されます。従って、上の例では、カスタムウェブブラウザとして <command>mywebbrowser "%s"</command> が指定されていますが、URL を指定しなければ <command>mywebbrowser</command> が URL を開かずに起動されます。</para>
     </sect2>
 
     <sect2 id="configuration-utilities">
