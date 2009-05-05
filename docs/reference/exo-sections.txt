@@ -327,6 +327,53 @@ exo_cell_renderer_icon_get_type
 
 
 <SECTION>
+<FILE>exo-job</FILE>
+<TITLE>ExoJob</TITLE>
+ExoJob
+exo_job_launch
+exo_job_cancel
+exo_job_is_cancelled
+exo_job_get_cancellable
+exo_job_set_error_if_cancelled
+exo_job_emit
+exo_job_info_message
+exo_job_percent
+<SUBSECTION Standard>
+ExoJobPrivate
+ExoJobClass
+EXO_TYPE_JOB
+EXO_JOB
+EXO_JOB_CLASS
+EXO_IS_JOB
+EXO_IS_JOB_CLASS
+EXO_JOB_GET_CLASS
+<SUBSECTION Private>
+exo_job_get_type
+</SECTION>
+
+
+
+<SECTION>
+<FILE>exo-simple-job</FILE>
+<TITLE>ExoSimpleJob</TITLE>
+ExoSimpleJob
+ExoSimpleJobFunc
+exo_simple_job_launch
+<SUBSECTION Standard>
+ExoSimpleJobClass
+EXO_TYPE_SIMPLE_JOB
+EXO_SIMPLE_JOB
+EXO_SIMPLE_JOB_CLASS
+EXO_IS_SIMPLE_JOB
+EXO_IS_SIMPLE_JOB_CLASS
+EXO_SIMPLE_JOB_GET_CLASS
+<SUBSECTION Private>
+exo_simple_job_get_type
+</SECTION>
+
+
+
+<SECTION>
 <FILE>exo-gdk-pixbuf-extensions</FILE>
 <TITLE>Extensions to gdk-pixbuf</TITLE>
 exo_gdk_pixbuf_colorize

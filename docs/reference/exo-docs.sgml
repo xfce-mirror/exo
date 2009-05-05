@@ -12,6 +12,8 @@
 <!ENTITY exo-wrap-table SYSTEM "xml/exo-wrap-table.xml">
 <!ENTITY exo-cell-renderer-ellipsized-text SYSTEM "xml/exo-cell-renderer-ellipsized-text.xml">
 <!ENTITY exo-cell-renderer-icon SYSTEM "xml/exo-cell-renderer-icon.xml">
+<!ENTITY exo-job SYSTEM "xml/exo-job.xml">
+<!ENTITY exo-simple-job SYSTEM "xml/exo-simple-job.xml">
 <!ENTITY exo-gdk-pixbuf-extensions SYSTEM "xml/exo-gdk-pixbuf-extensions.xml">
 <!ENTITY exo-gobject-extensions SYSTEM "xml/exo-gobject-extensions.xml">
 <!ENTITY exo-gtk-extensions SYSTEM "xml/exo-gtk-extensions.xml">
@@ -50,6 +52,11 @@
       <holder>os-cillation e.K.</holder>
     </copyright>
 
+    <copyright>
+      <year>2009</year>
+      <holder>Xfce Development Team</holder>
+    </copyright>
+
     <legalnotice id="legalnotice">
       <para>
         Permission is granted to copy, distribute and/or modify this document
@@ -70,6 +77,13 @@
           <orgname>os-cillation</orgname>
           <orgdiv>System development</orgdiv>
           <jobtitle>Software developer</jobtitle>
+        </affiliation>
+      </author>
+      <author>
+        <firstname>Jannis</firstname>
+        <surname>Pohlmann</surname>
+        <affiliation>
+          <address><email>jannis@xfce.org</email></address>
         </affiliation>
       </author>
     </authorgroup>
@@ -252,6 +266,22 @@
 
     &exo-cell-renderer-ellipsized-text;
     &exo-cell-renderer-icon;
+  </part>
+
+  <part id="exo-jobs">
+    <title>Framework for threaded/asynchronous jobs</title>
+
+    <para>
+      <link linkend="ExoJob">ExoJob</link> provides a simple way to deal with threaded/asynchronous operations (called jobs here).
+      It can be used to wrap any kind of blocking function calls like file operations or web service communication. It can be
+      subclassed to add additional signals for progress information or password requests. 
+      <link linkend="ExoSimpleJob">ExoSimpleJob</link> is useful in situations where you don't need additional signals. It takes
+      a <link linkend="ExoSimpleJobFunc">ExoSimpleJobFunc</link> callback and creates a job so one doesn't have to subclass
+      <link linkend="ExoJob">ExoJob</link> just to execute a single function asynchronously.
+    </para>
+
+    &exo-job;
+    &exo-simple-job;
   </part>
 
   <part id="exo-extensions">

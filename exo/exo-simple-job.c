@@ -163,8 +163,8 @@ exo_simple_job_execute (ExoJob  *job,
  * @...            : a list of #GType and parameter pairs (exactly
  *                   @n_param_values pairs) that are passed to @func.
  *
- * Allocates a new #ExoSimpleJob, which executes the specified
- * @func with the specified parameters. 
+ * Allocates a new #ExoJob which executes the specified @func with 
+ * the specified parameters. 
  *
  * An example could be:
  *

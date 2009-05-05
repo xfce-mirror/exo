@@ -1,9 +1,20 @@
 2009-05-05	Jannis Pohlmann <jannis@xfce.org>
 
+	* configure.in.in: Add hint that we'll need to update library version 
+	  information before the next release, due to the added APIs.
+	* docs/reference/exo-docs.sgml, 
+	  docs/reference/tmpl/exo-simple-job.sgml, 
+	  docs/reference/tmpl/exo-job.sgml, docs/reference/exo-sections.txt: 
+	  Add new section for ExoJob and ExoSimpleJob.
+	* exo/exo-job.c, exo/exo-simple-job.c: Improve the API documentation 
+	  and associate class methods with the signals of ExoJob.
+
+2009-05-05	Jannis Pohlmann <jannis@xfce.org>
+
 	* docs/reference/exo.types, exo/Makefile.am, exo/exo-job.{c,h}, 
 	  exo/exo-simple-job.{c,h}, exo/exo.h: Add ExoJob and ExoSimpleJob. 
-		They come from Thunar and can be used to wrap threaded/asynchronous
-		operations with objects that support signals and subclassing.
+	  They come from Thunar and can be used to wrap threaded/asynchronous
+	  operations with objects that support signals and subclassing.
 
 2009-04-13	Jannis Pohlmann <jannis@xfce.org>
 
