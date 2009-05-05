@@ -1,3 +1,10 @@
+2009-05-05	Jannis Pohlmann <jannis@xfce.org>
+
+	* docs/reference/exo.types, exo/Makefile.am, exo/exo-job.{c,h}, 
+	  exo/exo-simple-job.{c,h}, exo/exo.h: Add ExoJob and ExoSimpleJob. 
+		They come from Thunar and can be used to wrap threaded/asynchronous
+		operations with objects that support signals and subclassing.
+
 2009-04-13	Jannis Pohlmann <jannis@xfce.org>
 
 	* configure.in.in, docs/reference/tmpl/exo-cell-renderer-icon.sgml,

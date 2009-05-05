@@ -23,6 +23,8 @@ libexo_headers =							\
 	exo-icon-bar.h							\
 	exo-icon-chooser-dialog.h					\
 	exo-icon-view.h							\
+	exo-job.h							\
+	exo-simple-job.h						\
 	exo-md5.h							\
 	exo-mount-point.h						\
 	exo-pango-extensions.h						\
@@ -73,6 +75,9 @@ libexo_0_3_la_SOURCES =							\
 	exo-icon-chooser-model.c					\
 	exo-icon-chooser-model.h					\
 	exo-icon-view.c							\
+	exo-job.c							\
+	exo-job.h							\
+	exo-simple-job.c						\
 	exo-md5.c							\
 	exo-mount-point.c						\
 	exo-pango-extensions.c						\
