@@ -110,6 +110,7 @@ main (int argc, char **argv)
   g_option_context_set_help_enabled (context, FALSE);
   g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
   g_option_context_add_group (context, gtk_get_option_group (TRUE));
+  g_option_context_set_ignore_unknown_options (context, TRUE);
   if (!g_option_context_parse (context, &argc, &argv, &err))
     {
       g_fprintf (stderr, "exo-open: %s.\n", err->message);
