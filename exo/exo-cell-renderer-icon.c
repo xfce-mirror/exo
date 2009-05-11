@@ -374,8 +374,8 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   GdkRectangle                      draw_area;
   GtkStateType                      state;
   const gchar                      *filename;
-  GtkIconInfo                      *icon_info;
-  GdkPixbuf                        *icon;
+  GtkIconInfo                      *icon_info = NULL;
+  GdkPixbuf                        *icon = NULL;
   GdkPixbuf                        *temp;
   GError                           *err = NULL;
   gchar                            *display_name = NULL;

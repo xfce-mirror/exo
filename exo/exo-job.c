@@ -600,7 +600,7 @@ exo_job_info_message (ExoJob      *job,
   gchar  *message;
 
   _exo_return_if_fail (EXO_IS_JOB (job));
-  _exo_return_if_fail (message != NULL);
+  _exo_return_if_fail (format != NULL);
 
   va_start (var_args, format);
   message = g_strdup_vprintf (format, var_args);
