@@ -631,3 +631,17 @@ exo_job_percent (ExoJob *job,
   exo_job_emit (job, job_signals[PERCENT], 0, percent);
 }
 
+
+
+
+gboolean
+exo_job_send_to_mainloop (ExoJob        *job,
+                          GSourceFunc    func,
+                          gpointer       user_data,
+                          GDestroyNotify destroy_notify)
+{
+  _exo_return_val_if_fail (EXO_IS_JOB (job), FALSE);
+  
+  return g_io_scheduler_job_send_to_mainloop (job->priv->scheduler_job, func, user_data,
+                                              destroy_notify);
+}

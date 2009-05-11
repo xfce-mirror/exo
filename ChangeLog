@@ -1,3 +1,12 @@
+2009-05-12	Jannis Pohlmann <jannis@xfce.org>
+
+	* docs/reference/exo-sections.txt, docs/reference/tmpl/exo-job.sgml: 
+	  Update sections.
+	* docs/reference/exo-open.xml: Fix typo spotted by Yves-Alexis.
+	* exo/exo-job.{c,h}: Add new function exo_job_send_to_mainloop() which
+	  is a simple wrapper around g_io_scheduler_job_send_to_mainloop(). I
+	  don't want to expose any the GIO scheduling internals.
+
 2009-05-11	Nick Schermer <nick@xfce.org>
 
 	* exo/exo-job.c, exo/exo-cell-renderer-icon.c: Fix compiler warnings.

@@ -68,21 +68,25 @@ struct _ExoJob
 
 GType           exo_job_get_type               (void) G_GNUC_CONST;
 
-ExoJob         *exo_job_launch                 (ExoJob       *job);
-void            exo_job_cancel                 (ExoJob       *job);
-gboolean        exo_job_is_cancelled           (const ExoJob *job);
-GCancellable   *exo_job_get_cancellable        (const ExoJob *job);
-gboolean        exo_job_set_error_if_cancelled (ExoJob       *job,
-                                                GError      **error);
-void            exo_job_emit                   (ExoJob       *job,
-                                                guint         signal_id,
-                                                GQuark        signal_detail,
+ExoJob         *exo_job_launch                 (ExoJob        *job);
+void            exo_job_cancel                 (ExoJob        *job);
+gboolean        exo_job_is_cancelled           (const ExoJob  *job);
+GCancellable   *exo_job_get_cancellable        (const ExoJob  *job);
+gboolean        exo_job_set_error_if_cancelled (ExoJob        *job,
+                                                GError       **error);
+void            exo_job_emit                   (ExoJob        *job,
+                                                guint          signal_id,
+                                                GQuark         signal_detail,
                                                 ...);
-void            exo_job_info_message           (ExoJob       *job,
-                                                const gchar  *format,
+void            exo_job_info_message           (ExoJob        *job,
+                                                const gchar   *format,
                                                 ...);
-void            exo_job_percent                (ExoJob       *job,
-                                                gdouble       percent);
+void            exo_job_percent                (ExoJob        *job,
+                                                gdouble        percent);
+gboolean        exo_job_send_to_mainloop       (ExoJob        *job,
+                                                GSourceFunc    func,
+                                                gpointer       user_data,
+                                                GDestroyNotify destroy_notify);
 
 G_END_DECLS
 
