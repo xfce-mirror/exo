@@ -1,17 +1,3 @@
-2009-05-14	Jannis Pohlmann <jannis@xfce.org>
-
-	* configure.in.in, Makefile.am, exo-thumbnailers/Makefile.am,
-	  exo-thumbnailers/exo-generic-thumbnailer.{c,h},
-	  exo-thumbnailers/exo-thumbnailer-service-dbus.xml,
-	  exo-thumbnailers/exu-thumbnailer-service-main.c,
-	  exo-thumbnailers/exo-thumbnailer-service.{c,h}: Initial import of a
-	  raw skeleton for the implementation of the Thumbnailer Specification.
-	  ExoGenericThumbnailer implements org.freedesktop.thumbnailer.Generic and
-	  ExoThumbnailerService is the D-Bus service that establishes the D-Bus
-	  connection and makes sure the thumbnailer service always runs only once.
-	  There seems to be something wrong right now, though. I can't get the
-	  service to be recognized by D-Bus properly at all ...
-
 2009-05-12	Jannis Pohlmann <jannis@xfce.org>
 
 	* docs/reference/exo-sections.txt, docs/reference/tmpl/exo-job.sgml: 

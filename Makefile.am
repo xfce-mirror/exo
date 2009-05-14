@@ -18,7 +18,6 @@ SUBDIRS =								\
 	exo-mount							\
 	$(EXO_MOUNT_NOTIFY_SUBDIR)					\
 	exo-open							\
-	exo-thumbnailers						\
 	docs								\
 	icons								\
 	pixmaps								\
