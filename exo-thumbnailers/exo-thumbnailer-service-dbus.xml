@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/org/freedesktop/Thumbnailer">
+  <interface name="org.freedesktop.thumbnailer.Generic">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="exo_generic_thumbnailer"/>
+    <annotation name="org.freedesktop.DBus.GLib.ClientCSymbol" value="exo_thumbnailer_proxy"/>
+
+    <method name="Queue">
+      <arg type="as" name="uris" direction="in" />
+      <arg type="as" name="mime_hints" direction="in" />
+      <arg type="u" name="handle_to_unqueue" direction="in" />
+      <arg type="u" name="handle" direction="out" />
+    </method>
+
+    <method name="Test">
+    </method>
+  </interface>
+</node>
