@@ -1,14 +1,14 @@
 # Danish translation of libexo.
 # Copyright (c) 2004-2007 os-cillation.
 # This file is distributed under the same license as the libexo package.
-# Per Kongstad <p_kongstad@op.pl>, 2008.
+# Per Kongstad <p_kongstad@op.pl>, 2008, 09.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Libexo 0.3.92\n"
+"Project-Id-Version: Libexo 0.3.101\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-05 22:04+0200\n"
-"PO-Revision-Date: 2008-11-26 23:05+0100\n"
+"PO-Revision-Date: 2009-07-02 10:54+0100\n"
 "Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -37,14 +37,12 @@ msgid "The icon to render."
 msgstr "Ikonet der skal renderes."
 
 #: ../exo/exo-cell-renderer-icon.c:191
-#, fuzzy
 msgid "GIcon"
-msgstr "Ikon"
+msgstr "G-ikon"
 
 #: ../exo/exo-cell-renderer-icon.c:192
-#, fuzzy
 msgid "The GIcon to render."
-msgstr "Ikonet der skal renderes."
+msgstr "G-ikonet der skal renderes."
 
 #: ../exo/exo-cell-renderer-icon.c:213
 msgid "size"
@@ -54,8 +52,10 @@ msgstr "størrelse"
 msgid "The size of the icon to render in pixels."
 msgstr "Størrelsen af ikonet der skal renderes i pixels."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
-#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
+#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#: ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237
+#: ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Kunne ikke åbne filen \"%s\": %s"
@@ -67,13 +67,11 @@ msgstr "Kunne ikke læse fil \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Kunne ikke indlæse billede \"%s\": Ukendt fejl, højst sandsynligt en ødelagt "
-"billedfil"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Kunne ikke indlæse billede \"%s\": Ukendt fejl, højst sandsynligt en ødelagt billedfil"
 
-#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:785
+#: ../exo/exo-icon-bar.c:249
+#: ../exo/exo-icon-view.c:785
 msgid "Orientation"
 msgstr "Orientering"
 
@@ -81,19 +79,23 @@ msgstr "Orientering"
 msgid "The orientation of the iconbar"
 msgstr "Orienteringen af ikonbjælken"
 
-#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:802
+#: ../exo/exo-icon-bar.c:266
+#: ../exo/exo-icon-view.c:802
 msgid "Pixbuf column"
 msgstr "Pixbuf-kolonne"
 
-#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:803
+#: ../exo/exo-icon-bar.c:267
+#: ../exo/exo-icon-view.c:803
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Modelkolonne som bliver brugt til at hente ikon-pixbuf fra"
 
-#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:929
+#: ../exo/exo-icon-bar.c:282
+#: ../exo/exo-icon-view.c:929
 msgid "Text column"
 msgstr "Tekstkolonne"
 
-#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:930
+#: ../exo/exo-icon-bar.c:283
+#: ../exo/exo-icon-view.c:930
 msgid "Model column used to retrieve the text from"
 msgstr "Modelkolonne som bliver brugt til at hente teksten fra"
 
@@ -113,27 +115,33 @@ msgstr "Aktiv"
 msgid "Active item index"
 msgstr "Aktivt elementindeks"
 
-#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319
+#: ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "Fyldfarve for aktivt element"
 
-#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326
+#: ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "Kantfarve for aktivt element"
 
-#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333
+#: ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "Tekstfarve for aktivt element"
 
-#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340
+#: ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "Fyldfarve for markørelement"
 
-#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347
+#: ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "Kantfarve for markørelement"
 
-#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354
+#: ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "Tekstfarve for markørelement"
 
@@ -203,7 +211,8 @@ msgid "All Icons"
 msgstr "Alle ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Billedfiler"
 
@@ -266,9 +275,7 @@ msgstr "Opmærkningskolonne"
 
 #: ../exo/exo-icon-view.c:757
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Modelkolonne som bliver brugt til at hente teksten, hvis der bliver brugt "
-"Pango-opmærkning"
+msgstr "Modelkolonne som bliver brugt til at hente teksten, hvis der bliver brugt Pango-opmærkning"
 
 #: ../exo/exo-icon-view.c:771
 msgid "Icon View Model"
@@ -279,10 +286,8 @@ msgid "The model for the icon view"
 msgstr "Modellen der bruges til ikonvisning"
 
 #: ../exo/exo-icon-view.c:786
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"Hvordan hvert elements tekst og ikoner er placeret i forhold til hinanden"
+msgid "How the text and icon of each item are positioned relative to each other"
+msgstr "Hvordan hvert elements tekst og ikoner er placeret i forhold til hinanden"
 
 #: ../exo/exo-icon-view.c:818
 msgid "Reorderable"
@@ -316,25 +321,25 @@ msgstr "Markeringstilstand"
 msgid "The selection mode"
 msgstr "Markeringstilstanden"
 
-#: ../exo/exo-icon-view.c:880 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Enkeltklik"
 
-#: ../exo/exo-icon-view.c:881 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:881
+#: ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Om elementerne i visningen kan aktiveres med enkeltklik"
 
-#: ../exo/exo-icon-view.c:897 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:897
+#: ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Tidsgrænse for enkeltklik"
 
-#: ../exo/exo-icon-view.c:898 ../exo/exo-tree-view.c:184
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"Hvor lang tid der skal gå, inden elementet under musemarkøren bliver valgt "
-"automatisk i enkeltklikstilstand"
+#: ../exo/exo-icon-view.c:898
+#: ../exo/exo-tree-view.c:184
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "Hvor lang tid der skal gå, inden elementet under musemarkøren bliver valgt automatisk i enkeltklikstilstand"
 
 #: ../exo/exo-icon-view.c:913
 msgid "Spacing"
@@ -364,7 +369,8 @@ msgstr "Gennemsigtigheden (alpha) af markeringsboksen"
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139
+#: ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "Ingen fil valgt"
 
@@ -393,12 +399,8 @@ msgid "_Add a new toolbar"
 msgstr "_Tilføj ny værktøjsbjælke"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Træk et element til værktøjsbjælken ovenfor for at tilføje det, fra "
-"værktøjsbjælkerne i elementtabellen for at fjerne det."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Træk et element til værktøjsbjælken ovenfor for at tilføje det, fra værktøjsbjælkerne i elementtabellen for at fjerne det."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -541,8 +543,10 @@ msgstr "  --strip-comments  Fjern kommentarer fra XML-filer\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Fjern knudeindhold fra XML-filer (node)\n"
 
-#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:169
+#: ../exo-csource/main.c:305
+#: ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122
+#: ../exo-mount-notify/main.c:169
 #: ../exo-open/main.c:131
 #, c-format
 msgid ""
@@ -558,8 +562,10 @@ msgstr ""
 "Skrevet af Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:173
+#: ../exo-csource/main.c:309
+#: ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126
+#: ../exo-mount-notify/main.c:173
 #: ../exo-open/main.c:135
 #, c-format
 msgid ""
@@ -575,8 +581,10 @@ msgstr ""
 "%s-kildepakken.\n"
 "\n"
 
-#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:177
+#: ../exo-csource/main.c:313
+#: ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130
+#: ../exo-mount-notify/main.c:177
 #: ../exo-open/main.c:139
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -666,14 +674,8 @@ msgid "Use _startup notification"
 msgstr "Brug op_startsbesked"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"Vælg denne indstilling for at slå opstartsbesked til, når kommandoen bliver "
-"kørt fra filhåndteringen eller menuen. Ikke alle programmer understøtter "
-"dette."
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Vælg denne indstilling for at slå opstartsbesked til, når kommandoen bliver kørt fra filhåndteringen eller menuen. Ikke alle programmer understøtter dette."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -736,8 +738,10 @@ msgstr "Foruddefineret URL når man opretter en henvisning"
 msgid "Preset icon when creating a desktop file"
 msgstr "Foruddefineret ikon når man opretter en skrivebordsfil"
 
-#: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
+#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-helper/main.c:67
+#: ../exo-mount/main.c:74
+#: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Udskriv versionsinformation og afslut"
 
@@ -746,7 +750,8 @@ msgstr "Udskriv versionsinformation og afslut"
 msgid "[FILE|FOLDER]"
 msgstr "[FIL|MAPPE]"
 
-#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138
+#: ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "Kunne ikke åbne skærm"
@@ -1081,12 +1086,8 @@ msgid "SOCKET ID"
 msgstr "SOKKEL-ID"
 
 #: ../exo-helper/main.c:70
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
-msgstr ""
-"Start standardhjælpen af TYPE med mulige PARAMETRE, hvor TYPE er en af "
-"følgende værdier."
+msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgstr "Start standardhjælpen af TYPE med mulige PARAMETRE, hvor TYPE er en af følgende værdier."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
@@ -1273,13 +1274,15 @@ msgstr "Ukendt fejl"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:132
+#: ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Kunne ikke finde enheden \"%s\" i filsystemets enhedstabel"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:224
+#: ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Valgte enhed \"%s\" er ikke et arkiv eller drev"
@@ -1304,12 +1307,8 @@ msgstr "Du har ikke rettigheder til at montere arkivet \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:856
 #, c-format
-msgid ""
-"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
-"record audio or data on the disc"
-msgstr ""
-"Blanke medier kan ikke monteres, brug et cd-brænderprogram som Xfburn til at "
-"brænde lyd eller data på mediet"
+msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+msgstr "Blanke medier kan ikke monteres, brug et cd-brænderprogram som Xfburn til at brænde lyd eller data på mediet"
 
 #: ../exo-mount/exo-mount-hal.c:867
 #, c-format
@@ -1381,12 +1380,8 @@ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "Der må ikke angives både HAL-enheds UDI og enhedsfil på samme tid"
 
 #: ../exo-mount/main.c:154
-msgid ""
-"Cannot mount by HAL device UDI, because HAL support was disabled for this "
-"build"
-msgstr ""
-"Kan ikke montere med HAL-enheds UDI, da HAL-understøttelse var slået fra, da "
-"dette program blev kompileret"
+msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+msgstr "Kan ikke montere med HAL-enheds UDI, da HAL-understøttelse var slået fra, da dette program blev kompileret"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1440,12 +1435,8 @@ msgstr "Afmonterer enhed"
 
 #: ../exo-mount-notify/main.c:233
 #, c-format
-msgid ""
-"The device \"%s\" is being unmounted by the system. Please do not remove the "
-"media or disconnect the drive."
-msgstr ""
-"Enheden \"%s\" bliver afmonteret af systemet. Fjern venligst ikke mediet "
-"eller drevet."
+msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+msgstr "Enheden \"%s\" bliver afmonteret af systemet. Fjern venligst ikke mediet eller drevet."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:240
@@ -1454,12 +1445,8 @@ msgstr "Skriver data til enhed"
 
 #: ../exo-mount-notify/main.c:241
 #, c-format
-msgid ""
-"There is data that needs to be written to the device \"%s\" before it can be "
-"removed. Please do not remove the media or disconnect the drive."
-msgstr ""
-"Der er data som skal skrives til enheden \"%s\" før den kan fjernes. Fjern "
-"venligst ikke mediet eller drevet."
+msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+msgstr "Der er data som skal skrives til enheden \"%s\" før den kan fjernes. Fjern venligst ikke mediet eller drevet."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1471,20 +1458,16 @@ msgstr "       exo-open --launch TYPE [PARAMETRE...]"
 
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
-"  -?, --help                          Udskriv denne hjælpbesked og afslut"
+msgstr "  -?, --help                          Udskriv denne hjælpbesked og afslut"
 
 #: ../exo-open/main.c:63
-msgid ""
-"  -V, --version                       Print version information and exit"
-msgstr ""
-"  -V, --version                       Udskriv versionsinformation og afslut"
+msgid "  -V, --version                       Print version information and exit"
+msgstr "  -V, --version                       Udskriv versionsinformation og afslut"
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TYPE [PARAMETRE...]        Start foretrukne program for\n"
@@ -1493,8 +1476,7 @@ msgstr ""
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
 "  --working-directory DIRECTORY       Standardarbejdsmappe for programmer\n"
@@ -1526,8 +1508,7 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
 "Hvis du ikke angiver tilvalget --launch, vil exo-open åbne alle angivne\n"
-"URL'er med deres foretrukne URL-håndtering. Ellers, hvis du angiver "
-"tilvalget --launch\n"
+"URL'er med deres foretrukne URL-håndtering. Ellers, hvis du angiver tilvalget --launch\n"
 ", kan du vælge hvilket foretrukket program du ønsker at køre og angive\n"
 "yderligere argumenter til programmet (f.eks. for TerminalEmulator\n"
 "kan du angive kommandolinje som skal køres i terminalen)."
@@ -1544,3 +1525,4 @@ msgstr "Kunne ikke åbne URL'en \"%s\"."
 
 #~ msgid "Xfce 4 Preferred Applications"
 #~ msgstr "Foretrukne programmer til Xfce 4"
+
