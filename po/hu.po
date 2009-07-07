@@ -1,14 +1,14 @@
 # Hungarian translation of libexo-0.3
 # Copyright (C) 2009, Free Software Foundation, Inc.
 # This file is distributed under the same license as the libexo-0.3 package.
-#
+# SZERVÁC Attila <sas at 321 dot hu>, 2006, 2007, 2008, 2009.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 13:54+0200\n"
-"PO-Revision-Date: 2009-06-09 03:10+0200\n"
+"POT-Creation-Date: 2009-07-07 15:05+0200\n"
+"PO-Revision-Date: 2009-07-07 15:05+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
 "MIME-Version: 1.0\n"
@@ -18,28 +18,36 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
-#: ../exo/exo-cell-renderer-icon.c:145
+#: ../exo/exo-cell-renderer-icon.c:150
 msgid "Follow state"
 msgstr "Állapot követése"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:139
-#: ../exo/exo-cell-renderer-icon.c:146
+#: ../exo/exo-cell-renderer-icon.c:151
 msgid "Render differently based on the selection state."
 msgstr "Megjelenítés a kijelölés állapotától függően."
 
-#: ../exo/exo-cell-renderer-icon.c:167
+#: ../exo/exo-cell-renderer-icon.c:172
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../exo/exo-cell-renderer-icon.c:168
+#: ../exo/exo-cell-renderer-icon.c:173
 msgid "The icon to render."
 msgstr "A megjelenítendő ikon."
 
-#: ../exo/exo-cell-renderer-icon.c:189
+#: ../exo/exo-cell-renderer-icon.c:191
+msgid "GIcon"
+msgstr "GIcon"
+
+#: ../exo/exo-cell-renderer-icon.c:192
+msgid "The GIcon to render."
+msgstr "A megjelenítendő GIcon."
+
+#: ../exo/exo-cell-renderer-icon.c:213
 msgid "size"
 msgstr "méret"
 
-#: ../exo/exo-cell-renderer-icon.c:190
+#: ../exo/exo-cell-renderer-icon.c:214
 msgid "The size of the icon to render in pixels."
 msgstr "A megjelenítendő ikon mérete képpontban."
 
@@ -57,7 +65,9 @@ msgstr "A fájl („%s”) olvasása meghiúsult: %s"
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "A fájl („%s”) betöltése meghiúsult: az ok ismeretlen, valószínűleg megsérült a fájl"
+msgstr ""
+"A fájl („%s”) betöltése meghiúsult: az ok ismeretlen, valószínűleg megsérült "
+"a fájl"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:785
 msgid "Orientation"
@@ -316,7 +326,9 @@ msgstr "Egyszeres kattintás időkorlátja"
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr "Az egérkurzor alatti elem ennyi idő után automatikusan kijelölésre kerül egyszeres kattintás módban"
+msgstr ""
+"Az egérkurzor alatti elem ennyi idő után automatikusan kijelölésre kerül "
+"egyszeres kattintás módban"
 
 #: ../exo/exo-icon-view.c:913
 msgid "Spacing"
@@ -378,7 +390,9 @@ msgstr "Új _eszköztár hozzáadása"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr "Húzzon egy elemet a fenti eszköztárakra a felvételéhez, az eszköztárakról az elemtáblába az eltávolításához."
+msgstr ""
+"Húzzon egy elemet a fenti eszköztárakra a felvételéhez, az eszköztárakról az "
+"elemtáblába az eltávolításához."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -523,7 +537,7 @@ msgstr "  --strip-content   Csomópont tartalmának eltávolítása XML fájlokb
 
 #: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:169
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:132
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -540,7 +554,7 @@ msgstr ""
 
 #: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
 #: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:173
-#: ../exo-open/main.c:135
+#: ../exo-open/main.c:136
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -550,12 +564,13 @@ msgid ""
 "\n"
 msgstr ""
 "A(z) %s programra NINCS SEMMILYEN GARANCIA.\n"
-"A(z) %s másolatai továbbterjeszthetők a GNU Lesser General Public License\n feltételei szerint, amely megtalálható a(z) %s forráscsomagban.\n"
+"A(z) %s másolatai továbbterjeszthetők a GNU Lesser General Public License\n"
+" feltételei szerint, amely megtalálható a(z) %s forráscsomagban.\n"
 "\n"
 
 #: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
 #: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:177
-#: ../exo-open/main.c:139
+#: ../exo-open/main.c:140
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "A hibákat a következő címen jelentse: <%s>.\n"
@@ -648,7 +663,10 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Válassza ezt a lehetőséget indítási értesítés használatához a parancs fájlkezelőből vagy a menüből való futtatásakor. Nem minden alkalmazás támogatja az indítási értesítést."
+msgstr ""
+"Válassza ezt a lehetőséget indítási értesítés használatához a parancs "
+"fájlkezelőből vagy a menüből való futtatásakor. Nem minden alkalmazás "
+"támogatja az indítási értesítést."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -1059,7 +1077,9 @@ msgstr "FOGLALATAZONOSÍTÓ"
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
-msgstr "Az alapértelmezett segédprogram elindítása a TÍPUSHOZ, az elhagyható PARAMÉTERREL, ahol a TÍPUS a következők egyike."
+msgstr ""
+"Az alapértelmezett segédprogram elindítása a TÍPUSHOZ, az elhagyható "
+"PARAMÉTERREL, ahol a TÍPUS a következők egyike."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
@@ -1280,12 +1300,16 @@ msgstr "Nincs jogosultsága a kötet („%s”) csatolására"
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
-msgstr "Az üres lemezek nem csatolhatók, ehelyett egy CD-író alkalmazás (például az Xfburn) használatával adatokat vagy hangot rögzíthet rá"
+msgstr ""
+"Az üres lemezek nem csatolhatók, ehelyett egy CD-író alkalmazás (például az "
+"Xfburn) használatával adatokat vagy hangot rögzíthet rá"
 
 #: ../exo-mount/exo-mount-hal.c:867
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "A hang CD-k nem csatolhatók, az Xfmedia használatával lejátszhatja a hangsávokat"
+msgstr ""
+"A hang CD-k nem csatolhatók, az Xfmedia használatával lejátszhatja a "
+"hangsávokat"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:932
@@ -1355,7 +1379,9 @@ msgstr "Nem adhat meg egyszerre HAL eszköz UDI-t és eszközfájlt is"
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
-msgstr "Nem lehet HAL eszköz UDI szerint csatolni, mert a HAL támogatás nem engedélyezett"
+msgstr ""
+"Nem lehet HAL eszköz UDI szerint csatolni, mert a HAL támogatás nem "
+"engedélyezett"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1412,7 +1438,9 @@ msgstr "Eszköz leválasztása"
 msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
-msgstr "Az eszköz („%s”) leválasztása folyamatban. Ne távolítsa el az adathordozót és ne kapcsolja le a meghajtót."
+msgstr ""
+"Az eszköz („%s”) leválasztása folyamatban. Ne távolítsa el az adathordozót "
+"és ne kapcsolja le a meghajtót."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:240
@@ -1424,7 +1452,9 @@ msgstr "Adatok írása az eszközre"
 msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
-msgstr "Adatokat kell az eszközre („%s”) írni annak eltávolítása előtt. Ne távolítsa el az adathordozót és ne kapcsolja le a meghajtót."
+msgstr ""
+"Adatokat kell az eszközre („%s”) írni annak eltávolítása előtt. Ne távolítsa "
+"el az adathordozót és ne kapcsolja le a meghajtót."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1451,7 +1481,8 @@ msgid ""
 msgstr ""
 "  --launch TÍPUS [PARAMÉTEREK…]       Az adott TÍPUSÚ alapértelmezett\n"
 "                                      alkalmazás indítása a PARAMÉTEREKKEL,\n"
-"                                      ahol a TÍPUS a következő értékek egyike."
+"                                      ahol a TÍPUS a következő értékek "
+"egyike."
 
 #: ../exo-open/main.c:69
 msgid ""
@@ -1459,7 +1490,8 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory KÖNYVTÁR      Alkalmazások alapértelmezett munkakönyvtára\n"
+"  --working-directory KÖNYVTÁR      Alkalmazások alapértelmezett "
+"munkakönyvtára\n"
 "                                    a --launch kapcsolóval való indításkor."
 
 #: ../exo-open/main.c:72
@@ -1487,18 +1519,20 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
-"Ha nem adja meg a --launch kapcsolót, az exo-open az összes megadott URL címet\n"
+"Ha nem adja meg a --launch kapcsolót, az exo-open az összes megadott URL "
+"címet\n"
 "megnyitja az alapértelmezett URL kezelővel. Egyébként a --launch kapcsoló\n"
-"megadásakor kiválaszthatja a futtatandó alapértelmezett alkalmazást és további\n"
+"megadásakor kiválaszthatja a futtatandó alapértelmezett alkalmazást és "
+"további\n"
 "paramétereket adhat meg az alkalmazásnak (például a TerminalEmulator\n"
 "esetén átadhatja a terminálban futtatandó parancssort)."
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:171
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "A kategória („%s”) alapértelmezett alkalmazásának indítása meghiúsult."
 
-#: ../exo-open/main.c:191
+#: ../exo-open/main.c:192
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Az URL („%s”) megnyitása meghiúsult."
