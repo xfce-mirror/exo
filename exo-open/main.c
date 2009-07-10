@@ -36,6 +36,16 @@
 #include <exo/exo.h>
 
 
+/**
+ * For testing this code the following commands should work:
+ * 
+ * exo-open --launch WebBrowser http://xfce.org (bug #5461).
+ * exo-open http://xfce.org
+ * exo-open --launch TerminalEmulator ./script.sh 'something with a space' 'nospace' (bug #5132).
+ * exo-open --launch TerminalEmulator ssh -l username some.host.com
+ **/
+
+
 
 static gboolean opt_help = FALSE;
 static gboolean opt_version = FALSE;
@@ -143,6 +153,8 @@ main (int argc, char **argv)
     {
       if (argc > 1)
         {
+          /* NOTE: see the comment at the top of this document! */
+
           /* combine all specified parameters to one parameter string */
           join = g_string_new (NULL);
           for (i = 1; argv[i] != NULL; i++)
@@ -150,11 +162,18 @@ main (int argc, char **argv)
               /* separate the arguments */
               if (i > 1)
                 join = g_string_append_c (join, ' ');
-
-              /* append the quoted argument */
-              quoted = g_shell_quote (argv[i]);
-              join = g_string_append (join, quoted);
-              g_free (quoted);
+              
+              /* only quote arguments with spaces */
+              if (strchr (argv[i], ' ') != NULL)
+                {
+                  quoted = g_shell_quote (argv[i]);
+                  join = g_string_append (join, quoted);
+                  g_free (quoted);
+                }
+              else
+                {
+                  join = g_string_append (join, argv[i]);
+                }
             }
           parameter = g_string_free (join, FALSE);
         }
@@ -162,6 +181,10 @@ main (int argc, char **argv)
         {
           parameter = NULL;
         }
+
+#ifndef NDEBUG
+      g_message ("launch=%s, wd=%s, parameters (%d)=%s", opt_launch, opt_working_directory, argc, parameter);
+#endif
 
       /* run the preferred application */
       if (!exo_execute_preferred_application (opt_launch, parameter, opt_working_directory, NULL, &err))
