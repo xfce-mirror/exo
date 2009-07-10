@@ -36,6 +36,7 @@
 #include <exo/exo.h>
 
 
+
 /**
  * For testing this code the following commands should work:
  * 
@@ -43,6 +44,8 @@
  * exo-open http://xfce.org
  * exo-open --launch TerminalEmulator ./script.sh 'something with a space' 'nospace' (bug #5132).
  * exo-open --launch TerminalEmulator ssh -l username some.host.com
+ * xfterm4 -e ssh -l ssh -l username some.host.com (bug #5301, this generates line below)
+ *   exo-open --launch TerminalEmulator 'ssh -l username some.host.com'
  **/
 
 
@@ -163,8 +166,10 @@ main (int argc, char **argv)
               if (i > 1)
                 join = g_string_append_c (join, ' ');
               
-              /* only quote arguments with spaces */
-              if (strchr (argv[i], ' ') != NULL)
+              /* only quote arguments with spaces if there are multiple
+               * arguments to be merged, this is a bit of magic to make
+               * common cares work property, see sample above with xfrun4 */
+              if (argc > 2 && strchr (argv[i], ' ') != NULL)
                 {
                   quoted = g_shell_quote (argv[i]);
                   join = g_string_append (join, quoted);
