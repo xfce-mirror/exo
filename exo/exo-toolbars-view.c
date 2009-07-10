@@ -92,7 +92,7 @@ static void         exo_toolbars_view_drag_data_get             (GtkWidget      
                                                                  GdkDragContext       *context,
                                                                  GtkSelectionData     *selection_data,
                                                                  guint                 info,
-                                                                 guint32               time,
+                                                                 guint32               drag_time,
                                                                  ExoToolbarsView      *view);
 static GtkWidget   *exo_toolbars_view_create_item_from_action   (ExoToolbarsView      *view,
                                                                  const gchar          *action_name,
@@ -110,7 +110,7 @@ static void         exo_toolbars_view_drag_data_received        (GtkWidget      
                                                                  gint                  y,
                                                                  GtkSelectionData     *selection_data,
                                                                  guint                 info,
-                                                                 guint                 time,
+                                                                 guint                 drag_time,
                                                                  ExoToolbarsView      *view);
 static void         exo_toolbars_view_context_menu              (GtkWidget            *toolbar,
                                                                  gint                  x,
@@ -122,17 +122,17 @@ static gboolean     exo_toolbars_view_drag_drop                 (GtkWidget      
                                                                  GdkDragContext       *context,
                                                                  gint                  x,
                                                                  gint                  y,
-                                                                 guint                 time,
+                                                                 guint                 drag_time,
                                                                  ExoToolbarsView      *view);
 static gboolean     exo_toolbars_view_drag_motion               (GtkWidget            *toolbar,
                                                                  GdkDragContext       *context,
                                                                  gint                  x,
                                                                  gint                  y,
-                                                                 guint                 time,
+                                                                 guint                 drag_time,
                                                                  ExoToolbarsView      *view);
 static void         exo_toolbars_view_drag_leave                (GtkWidget            *toolbar,
                                                                  GdkDragContext       *context,
-                                                                 guint                 time,
+                                                                 guint                 drag_time,
                                                                  ExoToolbarsView      *view);
 static GtkWidget   *exo_toolbars_view_create_dock               (ExoToolbarsView      *view);
 static void         exo_toolbars_view_toolbar_added             (ExoToolbarsModel     *model,
@@ -174,7 +174,7 @@ struct _ExoToolbarsViewPrivate
 
 static const GtkTargetEntry dst_targets[] =
 {
-  { EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
+  { (gchar *) EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
 };
 
 static GObjectClass *exo_toolbars_view_parent_class;
@@ -480,7 +480,7 @@ exo_toolbars_view_drag_data_get (GtkWidget        *item,
                                  GdkDragContext   *context,
                                  GtkSelectionData *selection_data,
                                  guint             info,
-                                 guint32           time,
+                                 guint32           drag_time,
                                  ExoToolbarsView  *view)
 {
   const gchar *type;
@@ -643,7 +643,7 @@ exo_toolbars_view_drag_data_received (GtkWidget         *toolbar,
                                       gint               y,
                                       GtkSelectionData  *selection_data,
                                       guint              info,
-                                      guint              time,
+                                      guint              drag_time,
                                       ExoToolbarsView   *view)
 {
   GdkAtom target;
@@ -682,7 +682,7 @@ exo_toolbars_view_drag_data_received (GtkWidget         *toolbar,
       else
         exo_toolbars_model_add_item (view->priv->model, toolbar_position, item_position, id, type);
 
-      gtk_drag_finish (context, TRUE, context->action == GDK_ACTION_MOVE, time);
+      gtk_drag_finish (context, TRUE, context->action == GDK_ACTION_MOVE, drag_time);
     }
 
   g_free (type);
@@ -741,7 +741,7 @@ exo_toolbars_view_context_menu (GtkWidget       *toolbar,
                                 ExoToolbarsView *view)
 {
   ExoToolbarsModelFlags flags;
-  GtkToolbarStyle       style = -1;
+  gint                  style = -1;
   GtkWidget            *submenu;
   GtkWidget            *menu;
   GtkWidget            *item;
@@ -856,7 +856,7 @@ exo_toolbars_view_drag_drop (GtkWidget        *widget,
                              GdkDragContext   *context,
                              gint              x,
                              gint              y,
-                             guint             time,
+                             guint             drag_time,
                              ExoToolbarsView  *view)
 {
   GdkAtom target;
@@ -864,7 +864,7 @@ exo_toolbars_view_drag_drop (GtkWidget        *widget,
   target = gtk_drag_dest_find_target (widget, context, NULL);
   if (G_LIKELY (target != GDK_NONE))
     {
-      gtk_drag_get_data (widget, context, target, time);
+      gtk_drag_get_data (widget, context, target, drag_time);
       return TRUE;
     }
 
@@ -880,7 +880,7 @@ exo_toolbars_view_drag_motion (GtkWidget        *toolbar,
                                GdkDragContext   *context,
                                gint              x,
                                gint              y,
-                               guint             time,
+                               guint             drag_time,
                                ExoToolbarsView  *view)
 {
   ExoToolbarsModelFlags flags;
@@ -888,7 +888,7 @@ exo_toolbars_view_drag_motion (GtkWidget        *toolbar,
   gboolean              is_item;
   GdkAtom               target;
   gint                  toolbar_position;
-  gint                  index;
+  gint                  idx;
 
   source = gtk_drag_get_source_widget (context);
   if (G_LIKELY (source != NULL))
@@ -902,7 +902,7 @@ exo_toolbars_view_drag_motion (GtkWidget        *toolbar,
 
       if ((flags & EXO_TOOLBARS_MODEL_ACCEPT_ITEMS_ONLY) != 0 && !is_item)
         {
-          gdk_drag_status (context, 0, time);
+          gdk_drag_status (context, 0, drag_time);
           return FALSE;
         }
 
@@ -913,7 +913,7 @@ exo_toolbars_view_drag_motion (GtkWidget        *toolbar,
   target = gtk_drag_dest_find_target (toolbar, context, NULL);
   if (G_UNLIKELY (target == GDK_NONE))
     {
-      gdk_drag_status (context, 0, time);
+      gdk_drag_status (context, 0, drag_time);
       return FALSE;
     }
 
@@ -929,18 +929,18 @@ exo_toolbars_view_drag_motion (GtkWidget        *toolbar,
       view->priv->target_toolbar = toolbar;
       view->priv->pending = TRUE;
 
-      gtk_drag_get_data (toolbar, context, target, time);
+      gtk_drag_get_data (toolbar, context, target, drag_time);
     }
 
   if (view->priv->dragged_item != NULL && view->priv->editing)
     {
-      index = gtk_toolbar_get_drop_index (GTK_TOOLBAR (toolbar), x, y);
+      idx = gtk_toolbar_get_drop_index (GTK_TOOLBAR (toolbar), x, y);
       gtk_toolbar_set_drop_highlight_item (GTK_TOOLBAR (toolbar),
                                            GTK_TOOL_ITEM (view->priv->dragged_item),
-                                           index);
+                                           idx);
     }
 
-  gdk_drag_status (context, context->suggested_action, time);
+  gdk_drag_status (context, context->suggested_action, drag_time);
 
   return TRUE;
 }
@@ -950,7 +950,7 @@ exo_toolbars_view_drag_motion (GtkWidget        *toolbar,
 static void
 exo_toolbars_view_drag_leave (GtkWidget       *toolbar,
                               GdkDragContext  *context,
-                              guint            time,
+                              guint            drag_time,
                               ExoToolbarsView *view)
 {
   if (view->priv->target_toolbar == toolbar)

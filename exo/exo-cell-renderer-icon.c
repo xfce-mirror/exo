@@ -291,7 +291,7 @@ exo_cell_renderer_icon_set_property (GObject      *object,
         g_free (priv->icon);
       icon = g_value_get_string (value);
       priv->icon_static = (value->data[1].v_uint & G_VALUE_NOCOPY_CONTENTS) ? TRUE : FALSE;
-      priv->icon = (icon == NULL) ? "" : (gchar *) icon;
+      priv->icon = (gchar *) ((icon == NULL) ? "" : icon);
       if (!priv->icon_static)
         priv->icon = g_strdup (priv->icon);
       break;

@@ -145,7 +145,7 @@ main (int argc, char **argv)
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
   /* initialize GTK+ */
-  if (!gtk_init_with_args (&argc, &argv, "Xfce Mount Notify", entries, GETTEXT_PACKAGE, &err))
+  if (!gtk_init_with_args (&argc, &argv, (gchar *) "Xfce Mount Notify", entries, (gchar *) GETTEXT_PACKAGE, &err))
     {
       /* check if we have an error message */
       if (G_LIKELY (err == NULL))
@@ -180,7 +180,7 @@ main (int argc, char **argv)
 
   /* icon defaults to "gnome-dev-harddisk" */
   if (G_UNLIKELY (opt_icon == NULL || *opt_icon == '\0'))
-    opt_icon = "gnome-dev-harddisk";
+    opt_icon = (gchar *) "gnome-dev-harddisk";
 
   /* make sure that a device name was specified */
   if (G_UNLIKELY (opt_name == NULL || *opt_name == '\0'))

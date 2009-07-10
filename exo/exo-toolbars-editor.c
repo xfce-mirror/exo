@@ -71,7 +71,7 @@ static void       exo_toolbars_editor_drag_data_get       (GtkWidget            
                                                            GdkDragContext         *context,
                                                            GtkSelectionData       *selection_data,
                                                            guint                   info,
-                                                           guint32                 time,
+                                                           guint32                 drag_time,
                                                            ExoToolbarsEditor      *editor);
 static GtkWidget *exo_toolbars_editor_create_item         (ExoToolbarsEditor      *editor,
                                                            GtkWidget              *image,
@@ -97,7 +97,7 @@ struct _ExoToolbarsEditorPrivate
 
 static const GtkTargetEntry targets[] =
 {
-  { EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
+  { (gchar *) EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
 };
 
 
@@ -311,7 +311,7 @@ exo_toolbars_editor_drag_data_get (GtkWidget          *item,
                                    GdkDragContext     *context,
                                    GtkSelectionData   *selection_data,
                                    guint               info,
-                                   guint32             time,
+                                   guint32             drag_time,
                                    ExoToolbarsEditor  *editor)
 {
   const gchar *target;

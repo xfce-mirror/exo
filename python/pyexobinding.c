@@ -211,7 +211,7 @@ pyexo_binding_init (PyExoBinding *self,
                     PyObject     *kwargs)
 {
 
-  static gchar *kwlist[] = { "src_object", "src_property", "dst_object", "dst_property", "transform_func", NULL };
+  const gchar  *kwlist[] = { "src_object", "src_property", "dst_object", "dst_property", "transform_func", NULL };
   const gchar  *src_property;
   const gchar  *dst_property;
   PyObject     *transform_func = Py_None;
@@ -222,7 +222,7 @@ pyexo_binding_init (PyExoBinding *self,
   gchar        *message;
 
   /* parse the constructor arguments */
-  if (!PyArg_ParseTupleAndKeywords (args, kwargs, "OsOs|O:Binding.__init__", kwlist,
+  if (!PyArg_ParseTupleAndKeywords (args, kwargs, "OsOs|O:Binding.__init__", (gchar **) kwlist,
                                     &src_object, &src_property, &dst_object, &dst_property,
                                     &transform_func))
     {
@@ -419,7 +419,7 @@ pyexo_mutual_binding_init (PyExoMutualBinding *self,
                            PyObject           *args,
                            PyObject           *kwargs)
 {
-  static gchar *kwlist[] = { "src_object", "src_property", "dst_object", "dst_property", "transform_func", "reverse_transform_func", NULL };
+  const gchar  *kwlist[] = { "src_object", "src_property", "dst_object", "dst_property", "transform_func", "reverse_transform_func", NULL };
   const gchar  *src_property;
   const gchar  *dst_property;
   PyObject     *rtransform_func = Py_None;
@@ -431,7 +431,7 @@ pyexo_mutual_binding_init (PyExoMutualBinding *self,
   gchar        *message;
 
   /* parse the constructor arguments */
-  if (!PyArg_ParseTupleAndKeywords (args, kwargs, "OsOs|OO:MutualBinding.__init__", kwlist,
+  if (!PyArg_ParseTupleAndKeywords (args, kwargs, "OsOs|OO:MutualBinding.__init__", (gchar **) kwlist,
                                     &src_object, &src_property, &dst_object, &dst_property,
                                     &transform_func, &rtransform_func))
     {

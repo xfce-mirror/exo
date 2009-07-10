@@ -98,7 +98,7 @@ stamp-exo-helper-enum-types.h: $(exo_helper_headers) Makefile
 
 exo-helper-enum-types.c: $(exo_helper_headers) Makefile
 	( cd $(srcdir) && glib-mkenums \
-		--fhead "#undef GTK_DISABLE_DEPRECATED\n#define GTK_ENABLE_BROKEN\n#include <exo-helper/exo-helper.h>\n" \
+		--fhead "#undef GTK_DISABLE_DEPRECATED\n#define GTK_ENABLE_BROKEN\n#include <exo-helper/exo-helper.h>\n\n#include \"exo-helper-enum-types.h\"" \
 		--fprod "\n/* enumerations from \"@filename@\" */" \
 		--vhead "GType\n@enum_name@_get_type (void)\n{\n\tstatic GType type = 0;\n\tif (type == 0) {\n\tstatic const G@Type@Value values[] = {"\
 		--vprod "\t{ @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \

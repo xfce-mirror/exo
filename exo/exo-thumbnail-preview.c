@@ -266,7 +266,7 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
   GdkPixbuf  *thumbnail;
   gchar      *icon_name = NULL;
   gchar      *size_name = NULL;
-  gchar      *basename;
+  gchar      *displayname;
   gchar      *filename;
   gchar      *slash;
 
@@ -332,16 +332,16 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
             }
 
           /* determine the basename from the filename */
-          basename = g_filename_display_basename (filename);
+          displayname = g_filename_display_basename (filename);
         }
       else
         {
           /* determine the basename from the URI */
           slash = strrchr (uri, '/');
           if (G_LIKELY (slash != NULL && slash[1] != '\0'))
-            basename = g_filename_display_name (slash + 1);
+            displayname = g_filename_display_name (slash + 1);
           else
-            basename = g_filename_display_name (uri);
+            displayname = g_filename_display_name (uri);
         }
 
       /* check if we have an icon-name */
@@ -378,10 +378,10 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
         }
 
       /* setup the name label */
-      gtk_label_set_text (GTK_LABEL (thumbnail_preview->name_label), basename);
+      gtk_label_set_text (GTK_LABEL (thumbnail_preview->name_label), displayname);
 
       /* cleanup */
-      g_free (basename);
+      g_free (displayname);
       g_free (filename);
     }
 

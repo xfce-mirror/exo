@@ -81,7 +81,6 @@ exo_helper_category_to_string (ExoHelperCategory category)
   gchar      *string;
 
   g_return_val_if_fail (category < EXO_HELPER_N_CATEGORIES, NULL);
-  g_return_val_if_fail (category >= 0, NULL);
 
   klass = g_type_class_ref (EXO_TYPE_HELPER_CATEGORY);
   string = g_strdup (klass->values[category].value_nick);

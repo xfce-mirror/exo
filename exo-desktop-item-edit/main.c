@@ -44,6 +44,9 @@
 #include <gdk/gdkx.h>
 #endif
 
+/* string with fallback spoort */
+#define STR_FB(string,fallback) ((string != NULL && *string != '\0') ? string : fallback)
+
 
 
 /* --- constants --- */
@@ -56,12 +59,12 @@ static const gchar *ICON_NAMES[] = { "applications-other", "applications-interne
 /* --- globals --- */
 static gboolean opt_create_new = FALSE;
 static gboolean opt_version = FALSE;
-static gchar   *opt_type = "Application";
-static gchar   *opt_name = "";
-static gchar   *opt_comment = "";
-static gchar   *opt_command = "";
-static gchar   *opt_url = "";
-static gchar   *opt_icon = "";
+static gchar   *opt_type = NULL;
+static gchar   *opt_name = NULL;
+static gchar   *opt_comment = NULL;
+static gchar   *opt_command = NULL;
+static gchar   *opt_url = NULL;
+static gchar   *opt_icon = NULL;
 static gint     opt_xid = 0;
 
 
@@ -100,7 +103,7 @@ main (int argc, char **argv)
   GKeyFile        *key_file;
   GError          *error = NULL;
   gchar           *filename;
-  gchar           *basename;
+  gchar           *currentname;
   gchar           *dirname;
   gchar           *value;
   gchar           *s;
@@ -122,7 +125,7 @@ main (int argc, char **argv)
     g_thread_init (NULL);
 
   /* initialize Gtk+ */
-  if (!gtk_init_with_args (&argc, &argv, _("[FILE|FOLDER]"), option_entries, GETTEXT_PACKAGE, &error))
+  if (!gtk_init_with_args (&argc, &argv, _("[FILE|FOLDER]"), option_entries, (gchar *)GETTEXT_PACKAGE, &error))
     {
       /* determine the error message */
       if (G_UNLIKELY (error != NULL))
@@ -135,7 +138,7 @@ main (int argc, char **argv)
         {
           /* no error message, the GUI initialization failed */
           const gchar *display_name = gdk_get_display_arg_name ();
-          s = g_strdup_printf ("%s: %s", _("Failed to open display"), (display_name != NULL) ? display_name : " ");
+          s = g_strdup_printf ("%s: %s", _("Failed to open display"), STR_FB (display_name, " "));
         }
 
       /* tell the user about it */
@@ -178,21 +181,21 @@ main (int argc, char **argv)
       /* generic stuff */
       g_key_file_set_value (key_file, "Desktop Entry", "Version", "1.0");
       g_key_file_set_value (key_file, "Desktop Entry", "Encoding", "UTF-8");
-      g_key_file_set_value (key_file, "Desktop Entry", "Type", opt_type);
-      g_key_file_set_value (key_file, "Desktop Entry", "Name", opt_name);
-      g_key_file_set_value (key_file, "Desktop Entry", "Comment", opt_comment);
+      g_key_file_set_value (key_file, "Desktop Entry", "Type", STR_FB (opt_type, "Application"));
+      g_key_file_set_value (key_file, "Desktop Entry", "Name", STR_FB (opt_name, ""));
+      g_key_file_set_value (key_file, "Desktop Entry", "Comment", STR_FB (opt_comment, ""));
 
       /* type specific stuff */
       if (exo_str_is_equal (opt_type, "Link"))
         {
-          g_key_file_set_value (key_file, "Desktop Entry", "Icon", (*opt_icon != '\0') ? opt_icon : "gnome-fs-bookmark");
-          g_key_file_set_value (key_file, "Desktop Entry", "URL", opt_url);
+          g_key_file_set_value (key_file, "Desktop Entry", "Icon", STR_FB (opt_icon, "gnome-fs-bookmark"));
+          g_key_file_set_value (key_file, "Desktop Entry", "URL", STR_FB (opt_url, ""));
         }
       else
         {
           g_key_file_set_value (key_file, "Desktop Entry", "Categories", "Application;");
-          g_key_file_set_value (key_file, "Desktop Entry", "Exec", opt_command);
-          g_key_file_set_value (key_file, "Desktop Entry", "Icon", opt_icon);
+          g_key_file_set_value (key_file, "Desktop Entry", "Exec", STR_FB (opt_command, ""));
+          g_key_file_set_value (key_file, "Desktop Entry", "Icon", STR_FB (opt_icon, ""));
         }
     }
   else
@@ -383,10 +386,10 @@ main (int argc, char **argv)
           else if (g_path_is_absolute (filename))
             {
               dirname = g_path_get_dirname (filename);
-              basename = g_path_get_basename (filename);
+              currentname = g_path_get_basename (filename);
               gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), dirname);
-              gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), basename);
-              g_free (basename);
+              gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), currentname);
+              g_free (currentname);
               g_free (dirname);
             }
 

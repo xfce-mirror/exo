@@ -89,7 +89,7 @@ void            exo_icon_bar_set_orientation    (ExoIconBar     *icon_bar,
 
 gint            exo_icon_bar_get_active         (ExoIconBar     *icon_bar);
 void            exo_icon_bar_set_active         (ExoIconBar     *icon_bar,
-                                                 gint            index);
+                                                 gint            idx);
 
 gboolean        exo_icon_bar_get_active_iter    (ExoIconBar     *icon_bar,
                                                  GtkTreeIter    *iter);

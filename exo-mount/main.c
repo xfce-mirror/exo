@@ -98,7 +98,7 @@ main (int argc, char **argv)
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
   /* initialize GTK+ */
-  if (!gtk_init_with_args (&argc, &argv, "Xfce mount", entries, GETTEXT_PACKAGE, &err))
+  if (!gtk_init_with_args (&argc, &argv, (gchar *) "Xfce mount", entries, (gchar *) GETTEXT_PACKAGE, &err))
     {
       /* check if we have an error message */
       if (G_LIKELY (err == NULL))

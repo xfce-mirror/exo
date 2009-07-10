@@ -27,7 +27,7 @@
 #include "pyexo.h"
 
 
-
+G_MODULE_EXPORT void init_exo (void);
 /* mark internal symbols with G_GNUC_INTERNAL */
 void exo_add_constants    (PyObject    *module,
                            const gchar *strip_prefix) G_GNUC_INTERNAL;
@@ -109,7 +109,7 @@ pygtk_tree_path_to_pyobject (GtkTreePath *path)
 
 
 
-DL_EXPORT(void)
+G_MODULE_EXPORT void
 init_exo (void)
 {
   PyObject *d;

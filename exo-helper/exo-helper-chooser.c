@@ -833,7 +833,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
 GtkWidget*
 exo_helper_chooser_new (ExoHelperCategory category)
 {
-  g_return_val_if_fail (category >= 0 && category < EXO_HELPER_N_CATEGORIES, NULL);
+  g_return_val_if_fail (category < EXO_HELPER_N_CATEGORIES, NULL);
   return g_object_new (EXO_TYPE_HELPER_CHOOSER, "category", category, NULL);
 }
 
@@ -869,7 +869,7 @@ exo_helper_chooser_set_category (ExoHelperChooser *chooser,
                                  ExoHelperCategory category)
 {
   g_return_if_fail (EXO_IS_HELPER_CHOOSER (chooser));
-  g_return_if_fail (category >= 0 && category < EXO_HELPER_N_CATEGORIES);
+  g_return_if_fail (category < EXO_HELPER_N_CATEGORIES);
 
   /* apply the new category */
   chooser->category = category;

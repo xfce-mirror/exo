@@ -244,7 +244,7 @@ exo_helper_launcher_dialog_notify_is_valid (ExoHelperChooser        *chooser,
 GtkWidget*
 exo_helper_launcher_dialog_new (ExoHelperCategory category)
 {
-  g_return_val_if_fail (category >= 0 && category < EXO_HELPER_N_CATEGORIES, NULL);
+  g_return_val_if_fail (category < EXO_HELPER_N_CATEGORIES, NULL);
   return g_object_new (EXO_TYPE_HELPER_LAUNCHER_DIALOG, "category", category, NULL);
 }
 
@@ -293,7 +293,7 @@ exo_helper_launcher_dialog_set_category (ExoHelperLauncherDialog *launcher_dialo
   g_assert (EXO_HELPER_N_CATEGORIES == G_N_ELEMENTS (MESSAGES));
 
   g_return_if_fail (EXO_IS_HELPER_LAUNCHER_DIALOG (launcher_dialog));
-  g_return_if_fail (category >= 0 && category < EXO_HELPER_N_CATEGORIES);
+  g_return_if_fail (category < EXO_HELPER_N_CATEGORIES);
 
   /* setup the new label text */
   gtk_label_set_text (GTK_LABEL (launcher_dialog->label), gettext (MESSAGES[category]));

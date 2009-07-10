@@ -354,7 +354,7 @@ exo_gdk_pixbuf_lucent (const GdkPixbuf *src,
   gint       i, j;
 
   g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
-  g_return_val_if_fail (percent >= 0 && percent <= 100, NULL);
+  g_return_val_if_fail ((gint) percent >= 0 && percent <= 100, NULL);
 
   /* determine source parameters */
   width = gdk_pixbuf_get_width (src);

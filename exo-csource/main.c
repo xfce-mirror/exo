@@ -59,11 +59,11 @@ static void print_version (void);
 
 
 /* --- variables --- */
-static gboolean gen_buildlist = FALSE;
-static gboolean gen_stripcomments = FALSE;
-static gboolean gen_stripcontent = FALSE;
-static gchar   *gen_linkage = "static ";
-static gchar   *gen_varname = "my_data";
+static gboolean     gen_buildlist = FALSE;
+static gboolean     gen_stripcomments = FALSE;
+static gboolean     gen_stripcontent = FALSE;
+static const gchar *gen_linkage = "static ";
+static const gchar *gen_varname = "my_data";
 
 
 

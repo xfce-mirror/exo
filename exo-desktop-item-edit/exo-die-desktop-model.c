@@ -288,17 +288,17 @@ exo_die_desktop_model_get_path (GtkTreeModel *tree_model,
                                 GtkTreeIter  *iter)
 {
   ExoDieDesktopModel *desktop_model = EXO_DIE_DESKTOP_MODEL (tree_model);
-  gint                index;
+  gint                idx;
 
   g_return_val_if_fail (EXO_DIE_IS_DESKTOP_MODEL (desktop_model), NULL);
   g_return_val_if_fail (iter->stamp == desktop_model->stamp, NULL);
 
   /* determine the index of the iter */
-  index = g_slist_position (desktop_model->items, iter->user_data);
-  if (G_UNLIKELY (index < 0))
+  idx = g_slist_position (desktop_model->items, iter->user_data);
+  if (G_UNLIKELY (idx < 0))
     return NULL;
 
-  return gtk_tree_path_new_from_indices (index, -1);
+  return gtk_tree_path_new_from_indices (idx, -1);
 }
 
 

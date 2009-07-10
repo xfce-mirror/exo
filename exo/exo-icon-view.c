@@ -306,31 +306,31 @@ static void exo_icon_view_drag_data_get    (GtkWidget        *widget,
                                             GdkDragContext   *context,
                                             GtkSelectionData *selection_data,
                                             guint             info,
-                                            guint             time);
+                                            guint             drag_time);
 static void exo_icon_view_drag_data_delete (GtkWidget        *widget,
                                             GdkDragContext   *context);
 
 /* Target side drag signals */
 static void     exo_icon_view_drag_leave         (GtkWidget        *widget,
                                                   GdkDragContext   *context,
-                                                  guint             time);
+                                                  guint             drag_time);
 static gboolean exo_icon_view_drag_motion        (GtkWidget        *widget,
                                                   GdkDragContext   *context,
                                                   gint              x,
                                                   gint              y,
-                                                  guint             time);
+                                                  guint             drag_time);
 static gboolean exo_icon_view_drag_drop          (GtkWidget        *widget,
                                                   GdkDragContext   *context,
                                                   gint              x,
                                                   gint              y,
-                                                  guint             time);
+                                                  guint             drag_time);
 static void     exo_icon_view_drag_data_received (GtkWidget        *widget,
                                                   GdkDragContext   *context,
                                                   gint              x,
                                                   gint              y,
                                                   GtkSelectionData *selection_data,
                                                   guint             info,
-                                                  guint             time);
+                                                  guint             drag_time);
 static gboolean exo_icon_view_maybe_begin_drag   (ExoIconView      *icon_view,
                                                   GdkEventMotion   *event);
 
@@ -456,7 +456,7 @@ struct _ExoIconViewPrivate
   gint layout_idle_id;
   
   gboolean doing_rubberband;
-  gint rubberband_x1, rubberband_y1;
+  gint rubberband_x_1, rubberband_y_1;
   gint rubberband_x2, rubberband_y2;
   GdkGC *rubberband_border_gc;
   GdkGC *rubberband_fill_gc;
@@ -1676,10 +1676,10 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   if (G_UNLIKELY (priv->doing_rubberband))
     {
       /* calculate the rubberband area */
-      rubber_rect.x = MIN (priv->rubberband_x1, priv->rubberband_x2);
-      rubber_rect.y = MIN (priv->rubberband_y1, priv->rubberband_y2);
-      rubber_rect.width = ABS (priv->rubberband_x1 - priv->rubberband_x2) + 1;
-      rubber_rect.height = ABS (priv->rubberband_y1 - priv->rubberband_y2) + 1;
+      rubber_rect.x = MIN (priv->rubberband_x_1, priv->rubberband_x2);
+      rubber_rect.y = MIN (priv->rubberband_y_1, priv->rubberband_y2);
+      rubber_rect.width = ABS (priv->rubberband_x_1 - priv->rubberband_x2) + 1;
+      rubber_rect.height = ABS (priv->rubberband_y_1 - priv->rubberband_y2) + 1;
 
       /* we take advantage of double-buffering here and use only a single
        * draw_rectangle() operation w/o having to take care of clipping.
@@ -1827,7 +1827,7 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
   ExoIconView     *icon_view = EXO_ICON_VIEW (widget);
   GdkCursor       *cursor;
   gint             size;
-  gint             abs;
+  gint             abso;
   
   exo_icon_view_maybe_begin_drag (icon_view, event);
 
@@ -1837,7 +1837,7 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
 
       if (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS)
         {
-          abs = event->y - icon_view->priv->height *
+          abso = event->y - icon_view->priv->height *
              (icon_view->priv->vadjustment->value /
              (icon_view->priv->vadjustment->upper -
               icon_view->priv->vadjustment->lower));
@@ -1846,7 +1846,7 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
         }
       else
         {
-          abs = event->x - icon_view->priv->width *
+          abso = event->x - icon_view->priv->width *
              (icon_view->priv->hadjustment->value /
              (icon_view->priv->hadjustment->upper -
               icon_view->priv->hadjustment->lower));
@@ -1854,12 +1854,12 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
           size = widget->allocation.width;
         }
 
-      if (abs < 0 || abs > size)
+      if (abso < 0 || abso > size)
         {
-          if (abs < 0)
-            icon_view->priv->scroll_value_diff = abs;
+          if (abso < 0)
+            icon_view->priv->scroll_value_diff = abso;
           else
-            icon_view->priv->scroll_value_diff = abs - size;
+            icon_view->priv->scroll_value_diff = abso - size;
           icon_view->priv->event_last_x = event->x;
           icon_view->priv->event_last_y = event->y;
 
@@ -2531,19 +2531,19 @@ exo_icon_view_update_rubberband (gpointer data)
   x = MAX (x, 0);
   y = MAX (y, 0);
 
-  old_area.x = MIN (icon_view->priv->rubberband_x1,
+  old_area.x = MIN (icon_view->priv->rubberband_x_1,
                     icon_view->priv->rubberband_x2);
-  old_area.y = MIN (icon_view->priv->rubberband_y1,
+  old_area.y = MIN (icon_view->priv->rubberband_y_1,
                     icon_view->priv->rubberband_y2);
   old_area.width = ABS (icon_view->priv->rubberband_x2 -
-                        icon_view->priv->rubberband_x1) + 1;
+                        icon_view->priv->rubberband_x_1) + 1;
   old_area.height = ABS (icon_view->priv->rubberband_y2 -
-                         icon_view->priv->rubberband_y1) + 1;
+                         icon_view->priv->rubberband_y_1) + 1;
   
-  new_area.x = MIN (icon_view->priv->rubberband_x1, x);
-  new_area.y = MIN (icon_view->priv->rubberband_y1, y);
-  new_area.width = ABS (x - icon_view->priv->rubberband_x1) + 1;
-  new_area.height = ABS (y - icon_view->priv->rubberband_y1) + 1;
+  new_area.x = MIN (icon_view->priv->rubberband_x_1, x);
+  new_area.y = MIN (icon_view->priv->rubberband_y_1, y);
+  new_area.width = ABS (x - icon_view->priv->rubberband_x_1) + 1;
+  new_area.height = ABS (y - icon_view->priv->rubberband_y_1) + 1;
 
   invalid_region = gdk_region_rectangle (&old_area);
   gdk_region_union_with_rect (invalid_region, &new_area);
@@ -2597,8 +2597,8 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
       item->selected_before_rubberbanding = item->selected;
     }
 
-  icon_view->priv->rubberband_x1 = x;
-  icon_view->priv->rubberband_y1 = y;
+  icon_view->priv->rubberband_x_1 = x;
+  icon_view->priv->rubberband_y_1 = y;
   icon_view->priv->rubberband_x2 = x;
   icon_view->priv->rubberband_y2 = y;
 
@@ -2689,10 +2689,10 @@ exo_icon_view_update_rubberband_selection (ExoIconView *icon_view)
   gint             height;
   
   /* determine the new rubberband area */
-  x = MIN (icon_view->priv->rubberband_x1, icon_view->priv->rubberband_x2);
-  y = MIN (icon_view->priv->rubberband_y1, icon_view->priv->rubberband_y2);
-  width = ABS (icon_view->priv->rubberband_x1 - icon_view->priv->rubberband_x2);
-  height = ABS (icon_view->priv->rubberband_y1 - icon_view->priv->rubberband_y2);
+  x = MIN (icon_view->priv->rubberband_x_1, icon_view->priv->rubberband_x2);
+  y = MIN (icon_view->priv->rubberband_y_1, icon_view->priv->rubberband_y2);
+  width = ABS (icon_view->priv->rubberband_x_1 - icon_view->priv->rubberband_x2);
+  height = ABS (icon_view->priv->rubberband_y_1 - icon_view->priv->rubberband_y2);
   
   /* check all items */
   for (lp = icon_view->priv->items; lp != NULL; lp = lp->next)
@@ -3564,10 +3564,10 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
   gboolean             rtl;
   cairo_t             *cr;
   GList               *lp;
-  gint                 x0;
-  gint                 y0;
-  gint                 x1;
-  gint                 y1;
+  gint                 x_0;
+  gint                 y_0;
+  gint                 x_1;
+  gint                 y_1;
 
   if (G_UNLIKELY (icon_view->priv->model == NULL))
     return;
@@ -3599,20 +3599,20 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
             {
               exo_icon_view_get_cell_area (icon_view, item, info, &cell_area);
 
-              x0 = x - item->area.x + cell_area.x;
-              y0 = x - item->area.x + cell_area.y;
-              x1 = x0 + cell_area.width;
-              y1 = y0 + cell_area.height;
+              x_0 = x - item->area.x + cell_area.x;
+              y_0 = x - item->area.x + cell_area.y;
+              x_1 = x_0 + cell_area.width;
+              y_1 = y_0 + cell_area.height;
 
-              cairo_move_to (cr, x0 + 5, y0);
-              cairo_line_to (cr, x1 - 5, y0);
-              cairo_curve_to (cr, x1 - 5, y0, x1, y0, x1, y0 + 5);
-              cairo_line_to (cr, x1, y1 - 5);
-              cairo_curve_to (cr, x1, y1 - 5, x1, y1, x1 - 5, y1);
-              cairo_line_to (cr, x0 + 5, y1);
-              cairo_curve_to (cr, x0 + 5, y1, x0, y1, x0, y1 - 5);
-              cairo_line_to (cr, x0, y0 + 5);
-              cairo_curve_to (cr, x0, y0 + 5, x0, y0, x0 + 5, y0);
+              cairo_move_to (cr, x_0 + 5, y_0);
+              cairo_line_to (cr, x_1 - 5, y_0);
+              cairo_curve_to (cr, x_1 - 5, y_0, x_1, y_0, x_1, y_0 + 5);
+              cairo_line_to (cr, x_1, y_1 - 5);
+              cairo_curve_to (cr, x_1, y_1 - 5, x_1, y_1, x_1 - 5, y_1);
+              cairo_line_to (cr, x_0 + 5, y_1);
+              cairo_curve_to (cr, x_0 + 5, y_1, x_0, y_1, x_0, y_1 - 5);
+              cairo_line_to (cr, x_0, y_0 + 5);
+              cairo_curve_to (cr, x_0, y_0 + 5, x_0, y_0, x_0 + 5, y_0);
 
               gdk_cairo_set_source_color (cr, &GTK_WIDGET (icon_view)->style->base[state]);
 
@@ -3888,15 +3888,15 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
                             ExoIconView  *icon_view)
 {
   ExoIconViewItem *item;
-  gint             index;
+  gint             idx;
   
-  index = gtk_tree_path_get_indices (path)[0];
+  idx = gtk_tree_path_get_indices (path)[0];
 
   /* allocate the new item */
   item = _exo_slice_new0 (ExoIconViewItem);
   item->iter = *iter;
   item->area.width = -1;
-  icon_view->priv->items = g_list_insert (icon_view->priv->items, item, index);
+  icon_view->priv->items = g_list_insert (icon_view->priv->items, item, idx);
   
   /* recalculate the layout */
   exo_icon_view_queue_layout (icon_view);
@@ -6577,7 +6577,7 @@ get_dest_row (GdkDragContext *context)
 static gboolean
 check_model_dnd (GtkTreeModel *model,
                  GType         required_iface,
-                 const gchar  *signal)
+                 const gchar  *_signal)
 {
   if (model == NULL || !G_TYPE_CHECK_INSTANCE_TYPE ((model), required_iface))
     {
@@ -6591,7 +6591,7 @@ check_model_dnd (GtkTreeModel *model,
                  "your handler should do. (gtkiconview.c is in the GTK+ source "
                  "code.) If you're using GTK+ from a language other than C, "
                  "there may be a more natural way to override default handlers, e.g. via derivation.",
-                 signal, g_type_name (required_iface), signal);
+                 _signal, g_type_name (required_iface), _signal);
       return FALSE;
     }
   else
@@ -6933,7 +6933,7 @@ exo_icon_view_drag_data_get (GtkWidget        *widget,
                              GdkDragContext   *context,
                              GtkSelectionData *selection_data,
                              guint             info,
-                             guint             time)
+                             guint             drag_time)
 {
   ExoIconView *icon_view;
   GtkTreeModel *model;
@@ -7008,7 +7008,7 @@ exo_icon_view_drag_data_delete (GtkWidget      *widget,
 static void
 exo_icon_view_drag_leave (GtkWidget      *widget,
                           GdkDragContext *context,
-                          guint           time)
+                          guint           drag_time)
 {
   ExoIconView *icon_view;
 
@@ -7027,7 +7027,7 @@ exo_icon_view_drag_motion (GtkWidget      *widget,
                            GdkDragContext *context,
                            gint            x,
                            gint            y,
-                           guint           time)
+                           guint           drag_time)
 {
   ExoIconViewDropPosition pos;
   GdkDragAction           suggested_action = 0;
@@ -7047,7 +7047,7 @@ exo_icon_view_drag_motion (GtkWidget      *widget,
   if (path == NULL && !empty)
     {
       /* Can't drop here. */
-      gdk_drag_status (context, 0, time);
+      gdk_drag_status (context, 0, drag_time);
     }
   else
     {
@@ -7060,12 +7060,12 @@ exo_icon_view_drag_motion (GtkWidget      *widget,
            * determining whether to accept the drop
            */
           set_status_pending (context, suggested_action);
-          gtk_drag_get_data (widget, context, target, time);
+          gtk_drag_get_data (widget, context, target, drag_time);
         }
       else
         {
           set_status_pending (context, 0);
-          gdk_drag_status (context, suggested_action, time);
+          gdk_drag_status (context, suggested_action, drag_time);
         }
     }
 
@@ -7080,7 +7080,7 @@ exo_icon_view_drag_drop (GtkWidget      *widget,
                          GdkDragContext *context,
                          gint            x,
                          gint            y,
-                         guint           time)
+                         guint           drag_time)
 {
   ExoIconView *icon_view;
   GtkTreePath *path;
@@ -7123,7 +7123,7 @@ exo_icon_view_drag_drop (GtkWidget      *widget,
 
   if (target != GDK_NONE)
     {
-      gtk_drag_get_data (widget, context, target, time);
+      gtk_drag_get_data (widget, context, target, drag_time);
       return TRUE;
     }
   else
@@ -7137,7 +7137,7 @@ exo_icon_view_drag_data_received (GtkWidget        *widget,
                                   gint              y,
                                   GtkSelectionData *selection_data,
                                   guint             info,
-                                  guint             time)
+                                  guint             drag_time)
 {
   GtkTreePath *path;
   gboolean accepted = FALSE;
@@ -7178,7 +7178,7 @@ exo_icon_view_drag_data_received (GtkWidget        *widget,
             suggested_action = 0;
         }
 
-      gdk_drag_status (context, suggested_action, time);
+      gdk_drag_status (context, suggested_action, drag_time);
 
       if (path)
         gtk_tree_path_free (path);
@@ -7208,7 +7208,7 @@ exo_icon_view_drag_data_received (GtkWidget        *widget,
   gtk_drag_finish (context,
                    accepted,
                    (context->action == GDK_ACTION_MOVE),
-                   time);
+                   drag_time);
 
   gtk_tree_path_free (dest_row);
 
@@ -7525,7 +7525,7 @@ exo_icon_view_create_drag_icon (ExoIconView *icon_view,
   GdkPixmap   *drawable;
   GdkGC       *gc;
   GList       *lp;
-  gint         index;
+  gint         idx;
 
   g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), NULL);
   g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, NULL);
@@ -7534,12 +7534,12 @@ exo_icon_view_create_drag_icon (ExoIconView *icon_view,
   if (G_UNLIKELY (!GTK_WIDGET_REALIZED (icon_view)))
     return NULL;
 
-  index = gtk_tree_path_get_indices (path)[0];
+  idx = gtk_tree_path_get_indices (path)[0];
 
   for (lp = icon_view->priv->items; lp != NULL; lp = lp->next) 
     {
       ExoIconViewItem *item = lp->data;
-      if (G_UNLIKELY (index == g_list_index (icon_view->priv->items, item)))
+      if (G_UNLIKELY (idx == g_list_index (icon_view->priv->items, item)))
         {
           drawable = gdk_pixmap_new (icon_view->priv->bin_window,
                                      item->area.width + 2,
@@ -7616,7 +7616,7 @@ exo_icon_view_set_reorderable (ExoIconView *icon_view,
 {
   static const GtkTargetEntry item_targets[] =
   {
-    { "GTK_TREE_MODEL_ROW", GTK_TARGET_SAME_WIDGET, 0, },
+    { (gchar *) "GTK_TREE_MODEL_ROW", GTK_TARGET_SAME_WIDGET, 0, },
   };
 
   g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));

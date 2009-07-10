@@ -1303,10 +1303,10 @@ exo_icon_bar_row_changed (GtkTreeModel *model,
                           ExoIconBar   *icon_bar)
 {
   ExoIconBarItem  *item;
-  gint             index;
+  gint             idx;
 
-  index = gtk_tree_path_get_indices (path)[0];
-  item = g_list_nth (icon_bar->priv->items, index)->data;
+  idx = gtk_tree_path_get_indices (path)[0];
+  item = g_list_nth (icon_bar->priv->items, idx)->data;
   exo_icon_bar_item_invalidate (item);
   gtk_widget_queue_resize (GTK_WIDGET (icon_bar));
 }
@@ -1321,18 +1321,18 @@ exo_icon_bar_row_inserted (GtkTreeModel *model,
 {
   ExoIconBarItem  *item;
   GList           *lp;
-  gint             index;
+  gint             idx;
 
-  index = gtk_tree_path_get_indices (path)[0];
+  idx = gtk_tree_path_get_indices (path)[0];
   item = exo_icon_bar_item_new ();
 
   if ((gtk_tree_model_get_flags (icon_bar->priv->model) & GTK_TREE_MODEL_ITERS_PERSIST) != 0)
     item->iter = *iter;
-  item->index = index;
+  item->index = idx;
 
-  icon_bar->priv->items = g_list_insert (icon_bar->priv->items, item, index);
+  icon_bar->priv->items = g_list_insert (icon_bar->priv->items, item, idx);
 
-  for (lp = g_list_nth (icon_bar->priv->items, index + 1); lp != NULL; lp = lp->next)
+  for (lp = g_list_nth (icon_bar->priv->items, idx + 1); lp != NULL; lp = lp->next)
     {
       item = lp->data;
       item->index++;
@@ -1353,10 +1353,10 @@ exo_icon_bar_row_deleted (GtkTreeModel *model,
   gboolean        active = FALSE;
   GList          *lnext;
   GList          *lp;
-  gint            index;
+  gint            idx;
 
-  index = gtk_tree_path_get_indices (path)[0];
-  lp = g_list_nth (icon_bar->priv->items, index);
+  idx = gtk_tree_path_get_indices (path)[0];
+  lp = g_list_nth (icon_bar->priv->items, idx);
   item = lp->data;
 
   if (item == icon_bar->priv->active_item)
@@ -1766,17 +1766,17 @@ exo_icon_bar_get_active (ExoIconBar *icon_bar)
  **/
 void
 exo_icon_bar_set_active (ExoIconBar *icon_bar,
-                         gint        index)
+                         gint        idx)
 {
   g_return_if_fail (EXO_IS_ICON_BAR (icon_bar));
-  g_return_if_fail (index == -1 || g_list_nth (icon_bar->priv->items, index) != NULL);
+  g_return_if_fail (idx == -1 || g_list_nth (icon_bar->priv->items, idx) != NULL);
 
-  if ((icon_bar->priv->active_item == NULL && index == -1)
-      || (icon_bar->priv->active_item != NULL && index == icon_bar->priv->active_item->index))
+  if ((icon_bar->priv->active_item == NULL && idx == -1)
+      || (icon_bar->priv->active_item != NULL && idx == icon_bar->priv->active_item->index))
     return;
 
-  if (G_UNLIKELY (index >= 0))
-    icon_bar->priv->active_item = g_list_nth (icon_bar->priv->items, index)->data;
+  if (G_UNLIKELY (idx >= 0))
+    icon_bar->priv->active_item = g_list_nth (icon_bar->priv->items, idx)->data;
   else
     icon_bar->priv->active_item = NULL;
 

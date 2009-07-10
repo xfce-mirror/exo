@@ -873,7 +873,7 @@ exo_helper_database_set_custom (ExoHelperDatabase *database,
   XfceRc *rc;
   gchar **argv;
   gchar  *category_string;
-  gchar  *basename;
+  gchar  *name;
   gchar  *cmdline;
   gchar  *file;
   gchar   spec[256];
@@ -910,10 +910,10 @@ exo_helper_database_set_custom (ExoHelperDatabase *database,
       if (g_shell_parse_argv (cmdline, NULL, &argv, NULL))
         {
           /* use the basename for Name and Icon */
-          basename = g_path_get_basename (*argv);
-          xfce_rc_write_entry (rc, "Icon", basename);
-          xfce_rc_write_entry (rc, "Name", basename);
-          g_free (basename);
+          name = g_path_get_basename (*argv);
+          xfce_rc_write_entry (rc, "Icon", name);
+          xfce_rc_write_entry (rc, "Name", name);
+          g_free (name);
 
           /* use only the binary for the Commands */
           xfce_rc_write_entry (rc, "X-XFCE-Commands", *argv);

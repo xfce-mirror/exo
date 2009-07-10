@@ -332,7 +332,7 @@ exo_xsession_client_set_group (ExoXsessionClient *client,
                                GdkWindow         *leader)
 {
 #ifdef GDK_WINDOWING_X11
-  static char *atom_names[2] = { "WM_PROTOCOLS", "WM_SAVE_YOURSELF" };
+  const char  *atom_names[2] = { "WM_PROTOCOLS", "WM_SAVE_YOURSELF" };
   Atom         atoms[2];
   Atom        *protocols;
   Atom        *protocols_custom;
@@ -376,7 +376,7 @@ exo_xsession_client_set_group (ExoXsessionClient *client,
 
   if (leader != NULL)
     {
-      XInternAtoms (GDK_DRAWABLE_XDISPLAY (leader), atom_names, 2, False, atoms);
+      XInternAtoms (GDK_DRAWABLE_XDISPLAY (leader), (char **) atom_names, 2, False, atoms);
       client->priv->wm_protocols = atoms[0];
       client->priv->wm_save_yourself = atoms[1];
 

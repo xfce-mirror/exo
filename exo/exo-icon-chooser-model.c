@@ -47,7 +47,7 @@ static void               exo_icon_chooser_model_finalize           (GObject    
 static GtkTreeModelFlags  exo_icon_chooser_model_get_flags          (GtkTreeModel              *tree_model);
 static gint               exo_icon_chooser_model_get_n_columns      (GtkTreeModel              *tree_model);
 static GType              exo_icon_chooser_model_get_column_type    (GtkTreeModel              *tree_model,
-                                                                     gint                       index);
+                                                                     gint                       idx);
 static gboolean           exo_icon_chooser_model_get_iter           (GtkTreeModel              *tree_model,
                                                                      GtkTreeIter               *iter,
                                                                      GtkTreePath               *path);
@@ -225,9 +225,9 @@ exo_icon_chooser_model_get_n_columns (GtkTreeModel *tree_model)
 
 static GType
 exo_icon_chooser_model_get_column_type (GtkTreeModel *tree_model,
-                                        gint          index)
+                                        gint          idx)
 {
-  switch (index)
+  switch (idx)
     {
     case EXO_ICON_CHOOSER_MODEL_COLUMN_CONTEXT:
       return G_TYPE_UINT;
@@ -273,15 +273,15 @@ exo_icon_chooser_model_get_path (GtkTreeModel *tree_model,
                                  GtkTreeIter  *iter)
 {
   ExoIconChooserModel *model = EXO_ICON_CHOOSER_MODEL (tree_model);
-  gint                 index;
+  gint                 idx;
 
   _exo_return_val_if_fail (EXO_IS_ICON_CHOOSER_MODEL (model), NULL);
   _exo_return_val_if_fail (iter->stamp == model->stamp, NULL);
 
   /* lookup the list item in the icon list */
-  index = g_list_position (model->items, iter->user_data);
-  if (G_LIKELY (index >= 0))
-    return gtk_tree_path_new_from_indices (index, -1);
+  idx = g_list_position (model->items, iter->user_data);
+  if (G_LIKELY (idx >= 0))
+    return gtk_tree_path_new_from_indices (idx, -1);
 
   return NULL;
 }
