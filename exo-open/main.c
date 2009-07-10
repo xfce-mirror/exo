@@ -41,6 +41,7 @@
  * For testing this code the following commands should work:
  * 
  * exo-open --launch WebBrowser http://xfce.org (bug #5461).
+ * exo-open --launch WebBrowser http://xfce.org bugs.xfce.org 'http://www.google.com/search?q=what is a space' 'http://wiki.xfce.org'
  * exo-open http://xfce.org
  * exo-open --launch TerminalEmulator ./script.sh 'something with a space' 'nospace' (bug #5132).
  * exo-open --launch TerminalEmulator ssh -l username some.host.com
