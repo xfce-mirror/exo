@@ -106,15 +106,15 @@ exo_execute_preferred_application_on_screen (const gchar *category,
                                              GError     **error)
 {
   gchar *argv[5];
-  gint   argc = 0;
+  gint         argc = 0;
 
   g_return_val_if_fail (category != NULL, FALSE);
   g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   /* generate the argument vector */
-  argv[argc++] = (gchar *) LIBEXECDIR "/exo-helper-" LIBEXO_VERSION_API;
-  argv[argc++] = (gchar *) "--launch";
+  argv[argc++] = LIBEXECDIR "/exo-helper-" LIBEXO_VERSION_API;
+  argv[argc++] = "--launch";
   argv[argc++] = (gchar *) category;
 
   /* append parameter if given */

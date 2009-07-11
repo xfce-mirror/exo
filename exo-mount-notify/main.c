@@ -140,18 +140,19 @@ main (int argc, char **argv)
   GIOChannel  *channel;
   GError      *err = NULL;
   gchar       *message;
+  const gchar *display_name;
 
   /* initialize the i18n support */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
   /* initialize GTK+ */
-  if (!gtk_init_with_args (&argc, &argv, (gchar *) "Xfce Mount Notify", entries, (gchar *) GETTEXT_PACKAGE, &err))
+  if (!gtk_init_with_args (&argc, &argv, "Xfce Mount Notify", entries, GETTEXT_PACKAGE, &err))
     {
       /* check if we have an error message */
       if (G_LIKELY (err == NULL))
         {
           /* no error message, the GUI initialization failed */
-          const gchar *display_name = gdk_get_display_arg_name ();
+          display_name = gdk_get_display_arg_name ();
           g_fprintf (stderr, "exo-mount-notify: %s: %s\n", _("Failed to open display"), (display_name != NULL) ? display_name : " ");
         }
       else
@@ -180,7 +181,7 @@ main (int argc, char **argv)
 
   /* icon defaults to "gnome-dev-harddisk" */
   if (G_UNLIKELY (opt_icon == NULL || *opt_icon == '\0'))
-    opt_icon = (gchar *) "gnome-dev-harddisk";
+    opt_icon = "gnome-dev-harddisk";
 
   /* make sure that a device name was specified */
   if (G_UNLIKELY (opt_name == NULL || *opt_name == '\0'))

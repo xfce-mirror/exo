@@ -125,7 +125,7 @@ main (int argc, char **argv)
     g_thread_init (NULL);
 
   /* initialize Gtk+ */
-  if (!gtk_init_with_args (&argc, &argv, _("[FILE|FOLDER]"), option_entries, (gchar *)GETTEXT_PACKAGE, &error))
+  if (!gtk_init_with_args (&argc, &argv, _("[FILE|FOLDER]"), option_entries, GETTEXT_PACKAGE, &error))
     {
       /* determine the error message */
       if (G_UNLIKELY (error != NULL))

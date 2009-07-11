@@ -7616,7 +7616,7 @@ exo_icon_view_set_reorderable (ExoIconView *icon_view,
 {
   static const GtkTargetEntry item_targets[] =
   {
-    { (gchar *) "GTK_TREE_MODEL_ROW", GTK_TARGET_SAME_WIDGET, 0, },
+    { "GTK_TREE_MODEL_ROW", GTK_TARGET_SAME_WIDGET, 0, },
   };
 
   g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));

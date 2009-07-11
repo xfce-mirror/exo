@@ -174,7 +174,7 @@ struct _ExoToolbarsViewPrivate
 
 static const GtkTargetEntry dst_targets[] =
 {
-  { (gchar *) EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
+  { EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
 };
 
 static GObjectClass *exo_toolbars_view_parent_class;

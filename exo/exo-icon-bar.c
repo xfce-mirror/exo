@@ -1759,10 +1759,10 @@ exo_icon_bar_get_active (ExoIconBar *icon_bar)
 /**
  * exo_icon_bar_set_active:
  * @icon_bar  : An #ExoIconBar.
- * @index     : An index in the model passed during construction,
+ * @idx       : An index in the model passed during construction,
  *              or -1 to have no active item.
  *
- * Sets the active item of @icon_bar to be the item at @index.
+ * Sets the active item of @icon_bar to be the item at @idx.
  **/
 void
 exo_icon_bar_set_active (ExoIconBar *icon_bar,

@@ -97,7 +97,7 @@ struct _ExoToolbarsEditorPrivate
 
 static const GtkTargetEntry targets[] =
 {
-  { (gchar *) EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
+  { EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
 };
 
 
