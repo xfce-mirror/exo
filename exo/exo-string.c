@@ -93,10 +93,8 @@ gboolean
 exo_str_is_equal (const gchar *a,
                   const gchar *b)
 {
-  if (a == NULL && b == NULL)
-    return TRUE;
-  else if (a == NULL || b == NULL)
-    return FALSE;
+  if (a == NULL || b == NULL)
+    return (a == b);
 
   while (*a == *b++)
     if (*a++ == '\0')
