@@ -467,7 +467,7 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
   for (itp = items; itp != NULL; itp = itp->next)
     {
       /* allocate a model item for the icon... */
-      item = _exo_slice_new (ExoIconChooserModelItem);
+      item = g_slice_new (ExoIconChooserModelItem);
       item->context = EXO_ICON_CHOOSER_CONTEXT_OTHER;
       item->icon_name = itp->data;
       item->display_name = NULL;
@@ -545,7 +545,7 @@ exo_icon_chooser_model_item_free (ExoIconChooserModelItem *item)
   g_free (item->icon_name);
 
   /* release the item */
-  _exo_slice_free (ExoIconChooserModelItem, item);
+  g_slice_free (ExoIconChooserModelItem, item);
 }
 
 

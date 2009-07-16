@@ -1244,7 +1244,7 @@ exo_icon_bar_item_new (void)
 {
   ExoIconBarItem *item;
 
-  item = _exo_slice_new0 (ExoIconBarItem);
+  item = g_slice_new0 (ExoIconBarItem);
   item->width = -1;
   item->height = -1;
 
@@ -1256,7 +1256,7 @@ exo_icon_bar_item_new (void)
 static void
 exo_icon_bar_item_free (ExoIconBarItem *item)
 {
-  _exo_slice_free (ExoIconBarItem, item);
+  g_slice_free (ExoIconBarItem, item);
 }
 
 

@@ -122,7 +122,7 @@ exo_binding_on_disconnect (gpointer  data,
   if (link->dst_object != NULL)
     g_object_weak_unref (link->dst_object, exo_binding_on_dst_object_destroy, binding);
 
-  _exo_slice_free (ExoBinding, binding);
+  g_slice_free (ExoBinding, binding);
 }
 
 
@@ -146,7 +146,7 @@ exo_mutual_binding_on_disconnect_object1 (gpointer  data,
         binding->base.destroy (binding->direct.user_data);
       binding->direct.dst_object = NULL;
       g_signal_handler_disconnect (object2, binding->reverse.handler);
-      _exo_slice_free (ExoMutualBinding, binding);
+      g_slice_free (ExoMutualBinding, binding);
     }
 }
 
@@ -282,7 +282,7 @@ exo_binding_new_full (GObject            *src_object,
                                 transform,
                                 user_data);
 
-  binding = _exo_slice_new (ExoBinding);
+  binding = g_slice_new (ExoBinding);
   binding->src_object = src_object;
   binding->base.destroy = destroy_notify;
 
@@ -432,7 +432,7 @@ exo_mutual_binding_new_full (GObject            *object1,
                                 transform,
                                 user_data);
 
-  binding = _exo_slice_new (ExoMutualBinding);
+  binding = g_slice_new (ExoMutualBinding);
   binding->base.destroy = destroy_notify;
 
   exo_binding_link_init (&binding->direct,

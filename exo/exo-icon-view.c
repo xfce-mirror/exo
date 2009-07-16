@@ -1939,7 +1939,7 @@ exo_icon_view_remove (GtkContainer *container,
         {
           icon_view->priv->children = g_list_delete_link (icon_view->priv->children, lp);
           gtk_widget_unparent (widget);
-          _exo_slice_free (ExoIconViewChild, child);
+          g_slice_free (ExoIconViewChild, child);
           return;
         }
     }
@@ -2003,7 +2003,7 @@ exo_icon_view_put (ExoIconView     *icon_view,
   ExoIconViewChild *child;
   
   /* allocate the new child */
-  child = _exo_slice_new (ExoIconViewChild);
+  child = g_slice_new (ExoIconViewChild);
   child->widget = widget;
   child->item = item;
   child->cell = cell;
@@ -3893,7 +3893,7 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
   idx = gtk_tree_path_get_indices (path)[0];
 
   /* allocate the new item */
-  item = _exo_slice_new0 (ExoIconViewItem);
+  item = g_slice_new0 (ExoIconViewItem);
   item->iter = *iter;
   item->area.width = -1;
   icon_view->priv->items = g_list_insert (icon_view->priv->items, item, idx);
@@ -3953,7 +3953,7 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
   icon_view->priv->items = g_list_delete_link (icon_view->priv->items, list);
 
   /* release the item */
-  _exo_slice_free (ExoIconViewItem, item);
+  g_slice_free (ExoIconViewItem, item);
 
   /* recalculate the layout */
   exo_icon_view_queue_layout (icon_view);
@@ -4679,7 +4679,7 @@ free_cell_info (ExoIconViewCellInfo *info)
 
   free_cell_attributes (info);
   g_object_unref (G_OBJECT (info->cell));
-  _exo_slice_free (ExoIconViewCellInfo, info);
+  g_slice_free (ExoIconViewCellInfo, info);
 }
 
 
@@ -4698,7 +4698,7 @@ exo_icon_view_cell_layout_pack_start (GtkCellLayout   *layout,
   g_object_ref (renderer);
   gtk_object_sink (GTK_OBJECT (renderer));
 
-  info = _exo_slice_new0 (ExoIconViewCellInfo);
+  info = g_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
   info->expand = expand ? TRUE : FALSE;
   info->pack = GTK_PACK_START;
@@ -4727,7 +4727,7 @@ exo_icon_view_cell_layout_pack_end (GtkCellLayout   *layout,
   g_object_ref (renderer);
   gtk_object_sink (GTK_OBJECT (renderer));
 
-  info = _exo_slice_new0 (ExoIconViewCellInfo);
+  info = g_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
   info->expand = expand ? TRUE : FALSE;
   info->pack = GTK_PACK_END;
@@ -5285,7 +5285,7 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       for (lp = icon_view->priv->items; lp != NULL; lp = lp->next)
         {
           g_free (EXO_ICON_VIEW_ITEM (lp->data)->box);
-          _exo_slice_free (ExoIconViewItem, lp->data);
+          g_slice_free (ExoIconViewItem, lp->data);
         }
       g_list_free (icon_view->priv->items);
       icon_view->priv->items = NULL;
@@ -5355,7 +5355,7 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
         {
           do
             {
-              item = _exo_slice_new0 (ExoIconViewItem);
+              item = g_slice_new0 (ExoIconViewItem);
               item->iter = iter;
               item->area.width = -1;
               items = g_list_prepend (items, item);
@@ -6513,7 +6513,7 @@ dest_row_free (gpointer data)
   DestRow *dr = (DestRow *)data;
 
   gtk_tree_row_reference_free (dr->dest_row);
-  _exo_slice_free (DestRow, dr);
+  g_slice_free (DestRow, dr);
 }
 
 static void
@@ -6533,7 +6533,7 @@ set_dest_row (GdkDragContext *context,
       return;
     }
   
-  dr = _exo_slice_new0 (DestRow);
+  dr = g_slice_new0 (DestRow);
      
   dr->dest_row = gtk_tree_row_reference_new (model, dest_row);
   dr->empty_view_drop = empty_view_drop;

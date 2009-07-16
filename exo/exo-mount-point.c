@@ -175,7 +175,7 @@ match_device_by_path:
     }
 
   /* allocate an ExoMountPoint, we matched */
-  mount_point = _exo_slice_new (ExoMountPoint);
+  mount_point = g_slice_new (ExoMountPoint);
   mount_point->flags = real_read_only ? EXO_MOUNT_POINT_READ_ONLY : 0;
   mount_point->device = g_strdup (real_device);
   mount_point->folder = g_strdup (real_folder);
@@ -469,7 +469,7 @@ exo_mount_point_dup (const ExoMountPoint *mount_point)
 
   if (G_LIKELY (mount_point != NULL))
     {
-      duplicate = _exo_slice_new (ExoMountPoint);
+      duplicate = g_slice_new (ExoMountPoint);
       duplicate->flags = mount_point->flags;
       duplicate->device = g_strdup (mount_point->device);
       duplicate->folder = g_strdup (mount_point->folder);
@@ -502,7 +502,7 @@ exo_mount_point_free (ExoMountPoint *mount_point)
       g_free (mount_point->device);
       g_free (mount_point->folder);
       g_free (mount_point->fstype);
-      _exo_slice_free (ExoMountPoint, mount_point);
+      g_slice_free (ExoMountPoint, mount_point);
     }
 }
 

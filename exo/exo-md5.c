@@ -335,7 +335,7 @@ exo_str_get_md5_digest (const gchar *contents)
 
   g_return_val_if_fail (contents != NULL, NULL);
 
-  digest = _exo_slice_new (ExoMd5Digest);
+  digest = g_slice_new (ExoMd5Digest);
   get_md5 (contents, digest->digest);
 
   return digest;
@@ -388,7 +388,7 @@ exo_md5_str_to_digest (const gchar *str_digest)
   g_return_val_if_fail (str_digest != NULL, NULL);
   g_return_val_if_fail (strlen (str_digest) == 32, NULL);
 
-  digest = _exo_slice_new (ExoMd5Digest);
+  digest = g_slice_new (ExoMd5Digest);
   for (n = 0; n < 16; ++n)
     {
       digest->digest[n] =
@@ -453,7 +453,7 @@ exo_md5_digest_dup (const ExoMd5Digest *digest)
   if (G_LIKELY (digest != NULL))
     {
       /* take a copy of the digest */
-      duplicate = _exo_slice_new (ExoMd5Digest);
+      duplicate = g_slice_new (ExoMd5Digest);
       memcpy (duplicate, digest, sizeof (*digest));
       return duplicate;
     }
@@ -476,7 +476,7 @@ exo_md5_digest_dup (const ExoMd5Digest *digest)
 void
 exo_md5_digest_free (ExoMd5Digest *digest)
 {
-  _exo_slice_free (ExoMd5Digest, digest);
+  g_slice_free (ExoMd5Digest, digest);
 }
 
 

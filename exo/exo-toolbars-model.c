@@ -464,7 +464,7 @@ exo_toolbars_item_new (const gchar *id,
 {
   ExoToolbarsItem *item;
 
-  item = _exo_slice_new (ExoToolbarsItem);
+  item = g_slice_new (ExoToolbarsItem);
   item->id = g_strdup (id);
   item->type = g_strdup (type);
   item->is_separator = is_separator;
@@ -485,12 +485,12 @@ exo_toolbars_toolbar_free (ExoToolbarsToolbar *toolbar)
       item = lp->data;
       g_free (item->type);
       g_free (item->id);
-      _exo_slice_free (ExoToolbarsItem, item);
+      g_slice_free (ExoToolbarsItem, item);
     }
   
   g_list_free (toolbar->items);
   g_free (toolbar->name);
-  _exo_slice_free (ExoToolbarsToolbar, toolbar);
+  g_slice_free (ExoToolbarsToolbar, toolbar);
 }
 
 
@@ -1183,7 +1183,7 @@ exo_toolbars_model_add_toolbar (ExoToolbarsModel *model,
   g_return_val_if_fail (EXO_IS_TOOLBARS_MODEL (model), -1);
   g_return_val_if_fail (name != NULL, -1);
 
-  toolbar = _exo_slice_new (ExoToolbarsToolbar);
+  toolbar = g_slice_new (ExoToolbarsToolbar);
   toolbar->name = g_strdup (name);
   toolbar->items = NULL;
   toolbar->flags = 0;
@@ -1279,7 +1279,7 @@ exo_toolbars_model_remove_item (ExoToolbarsModel *model,
   toolbar->items = g_list_remove (toolbar->items, item);
   g_free (item->type);
   g_free (item->id);
-  _exo_slice_free (ExoToolbarsItem, item);
+  g_slice_free (ExoToolbarsItem, item);
 
   g_signal_emit (G_OBJECT (model), toolbars_model_signals[ITEM_REMOVED],
                  0, toolbar_position, item_position);
