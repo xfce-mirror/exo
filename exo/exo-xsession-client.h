@@ -29,7 +29,7 @@
 
 #include <gdk/gdk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoXsessionClientPrivate ExoXsessionClientPrivate;
 typedef struct _ExoXsessionClientClass   ExoXsessionClientClass;
@@ -76,6 +76,6 @@ void               exo_xsession_client_set_restart_command  (ExoXsessionClient  
                                                              gchar             **argv,
                                                              gint                argc);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_XSESSION_CLIENT_H__ */

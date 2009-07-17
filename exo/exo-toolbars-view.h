@@ -30,7 +30,7 @@
 
 #include <exo/exo-toolbars-model.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_TYPE_TOOLBARS_VIEW            (exo_toolbars_view_get_type ())
 #define EXO_TOOLBARS_VIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_TOOLBARS_VIEW, ExoToolbarsView))
@@ -84,6 +84,6 @@ GtkUIManager     *exo_toolbars_view_get_ui_manager  (ExoToolbarsView      *view)
 void              exo_toolbars_view_set_ui_manager  (ExoToolbarsView      *view,
                                                      GtkUIManager         *ui_manager);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_TOOLBARS_VIEW_H__ */

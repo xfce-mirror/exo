@@ -30,7 +30,7 @@
 
 #include <exo/exo-toolbars-view.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_TYPE_TOOLBARS_EDITOR            (exo_toolbars_editor_get_type ())
 #define EXO_TOOLBARS_EDITOR(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_TOOLBARS_EDITOR, ExoToolbarsEditor))
@@ -75,6 +75,6 @@ GtkUIManager     *exo_toolbars_editor_get_ui_manager  (ExoToolbarsEditor  *edito
 void              exo_toolbars_editor_set_ui_manager  (ExoToolbarsEditor  *editor,
                                                        GtkUIManager       *ui_manager);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_TOOLBARS_EDITOR_H__ */

@@ -23,7 +23,7 @@
 
 #include <exo/exo.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_DIE_TYPE_EDITOR_MODE (exo_die_editor_mode_get_type ())
 
@@ -40,6 +40,6 @@ typedef enum
 
 GType exo_die_editor_mode_get_type (void) G_GNUC_CONST;
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_DIE_ENUM_TYPES_H__ */

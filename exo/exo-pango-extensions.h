@@ -33,7 +33,7 @@
 
 #include <pango/pango.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 /* define ExoPangoEllipsizeMode for backward compatibility */
 typedef PangoEllipsizeMode ExoPangoEllipsizeMode;
@@ -51,7 +51,7 @@ gboolean exo_pango_layout_set_text_ellipsized (PangoLayout       *layout,
                                                gint               width,
                                                PangoEllipsizeMode mode);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_PANGO_EXTENSIONS_H__ */
 

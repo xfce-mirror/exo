@@ -68,16 +68,15 @@ new_pixbuf_from_widget (GtkWidget *widget)
 
   icon_width = DEFAULT_ICON_WIDTH;
 
-  if (!gtk_icon_size_lookup_for_settings (gtk_settings_get_default (), 
-					  GTK_ICON_SIZE_LARGE_TOOLBAR,
-					  NULL, 
-					  &icon_height))
+  if (!gtk_icon_size_lookup_for_settings (gtk_settings_get_default (),
+                                          GTK_ICON_SIZE_LARGE_TOOLBAR,
+                                          NULL, &icon_height))
     {
       icon_height = DEFAULT_ICON_HEIGHT;
     }
 
   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  
+
   gtk_container_add (GTK_CONTAINER (window), widget);
   gtk_widget_realize (window);
   gtk_widget_show (widget);
@@ -99,7 +98,7 @@ new_pixbuf_from_widget (GtkWidget *widget)
   allocation.height = icon_height;
   gtk_widget_size_allocate (window, &allocation);
   gtk_widget_size_request (window, &requisition);
-  
+
   /* Create a pixmap */
   pixmap = gdk_pixmap_new (GDK_DRAWABLE (window->window), icon_width, icon_height, -1);
   gdk_drawable_set_colormap (GDK_DRAWABLE (pixmap), gtk_widget_get_colormap (window));
@@ -108,10 +107,10 @@ new_pixbuf_from_widget (GtkWidget *widget)
   gtk_widget_ensure_style (window);
   g_assert (window->style);
   g_assert (window->style->font_desc);
-  
+
   fake_expose_widget (window, pixmap);
   fake_expose_widget (widget, pixmap);
-  
+
   pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, icon_width, icon_height);
   gdk_pixbuf_get_from_drawable (pixbuf, pixmap, NULL, 0, 0, 0, 0, icon_width, icon_height);
 
@@ -222,9 +221,9 @@ _exo_toolbars_find_action (GtkUIManager *ui_manager,
 #pragma align 4 (drag_cursor_data)
 #endif
 #ifdef __GNUC__
-static const guint8 drag_cursor_data[] __attribute__ ((__aligned__ (4))) = 
+static const guint8 drag_cursor_data[] __attribute__ ((__aligned__ (4))) =
 #else
-static const guint8 drag_cursor_data[] = 
+static const guint8 drag_cursor_data[] =
 #endif
 { ""
   /* Pixbuf magic (0x47646b50) */

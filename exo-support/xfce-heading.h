@@ -23,7 +23,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _XfceHeadingPrivate XfceHeadingPrivate;
 typedef struct _XfceHeadingClass   XfceHeadingClass;
@@ -77,6 +77,6 @@ G_CONST_RETURN gchar *xfce_heading_get_title     (XfceHeading *heading);
 void                  xfce_heading_set_title     (XfceHeading *heading,
                                                   const gchar *title);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__XFCE_HEADING_H__ */

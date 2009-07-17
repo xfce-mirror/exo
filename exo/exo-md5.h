@@ -30,7 +30,7 @@
 
 #include <exo/exo-config.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_TYPE_MD5_DIGEST (exo_md5_digest_get_type ())
 
@@ -55,6 +55,6 @@ guint         exo_md5_digest_hash     (gconstpointer       digest);
 gboolean      exo_md5_digest_equal    (gconstpointer       digest1,
                                        gconstpointer       digest2);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_MD5_H__ */

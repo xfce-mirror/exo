@@ -39,7 +39,7 @@
 
 /**
  * For testing this code the following commands should work:
- * 
+ *
  * exo-open --launch WebBrowser http://xfce.org (bug #5461).
  * exo-open --launch WebBrowser http://xfce.org bugs.xfce.org 'http://www.google.com/search?q=what is a space' 'http://wiki.xfce.org'
  * exo-open http://xfce.org
@@ -166,7 +166,7 @@ main (int argc, char **argv)
               /* separate the arguments */
               if (i > 1)
                 join = g_string_append_c (join, ' ');
-              
+
               /* only quote arguments with spaces if there are multiple
                * arguments to be merged, this is a bit of magic to make
                * common cares work property, see sample above with xfrun4 */

@@ -22,12 +22,12 @@
 
 #include <exo-helper/exo-helper.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 gboolean exo_helper_category_from_string (const gchar       *string,
-                                          ExoHelperCategory *category_return) G_GNUC_INTERNAL;
-gchar   *exo_helper_category_to_string   (ExoHelperCategory  category) G_GNUC_INTERNAL G_GNUC_MALLOC;
+                                          ExoHelperCategory *category_return);
+gchar   *exo_helper_category_to_string   (ExoHelperCategory  category) G_GNUC_MALLOC;
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_HELPER_UTILS_H__ */

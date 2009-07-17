@@ -27,7 +27,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoTreeViewPrivate ExoTreeViewPrivate;
 typedef struct _ExoTreeViewClass   ExoTreeViewClass;
@@ -77,6 +77,6 @@ guint      exo_tree_view_get_single_click_timeout (const ExoTreeView *tree_view)
 void       exo_tree_view_set_single_click_timeout (ExoTreeView       *tree_view,
                                                    guint              single_click_timeout);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_TREE_VIEW_H__ */

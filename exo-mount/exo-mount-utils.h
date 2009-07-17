@@ -22,11 +22,11 @@
 
 #include <exo/exo.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 gboolean exo_mount_utils_is_mounted (const gchar *device_file,
-                                     gboolean    *readonly_return) G_GNUC_INTERNAL;
+                                     gboolean    *readonly_return);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_MOUNT_UTILS_H__ */

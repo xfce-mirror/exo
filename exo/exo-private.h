@@ -31,7 +31,7 @@
 
 #include <glib/gi18n-lib.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 /* support macros for debugging */
 #ifndef NDEBUG
@@ -68,22 +68,11 @@ G_BEGIN_DECLS;
 #define g_value_get_object(v)   (((const GValue *) (v))->data[0].v_pointer)
 #endif
 
-void  _exo_i18n_init                    (void) G_GNUC_INTERNAL;
+G_GNUC_INTERNAL void  _exo_i18n_init                    (void);
 
-void  _exo_gtk_widget_send_focus_change (GtkWidget         *widget,
-                                         gboolean           in) G_GNUC_INTERNAL;
+G_GNUC_INTERNAL void  _exo_gtk_widget_send_focus_change (GtkWidget         *widget,
+                                                         gboolean           in);
 
-GType _exo_g_type_register_simple       (GType              type_parent,
-                                         const gchar       *type_name_static,
-                                         guint              class_size,
-                                         gpointer           class_init,
-                                         guint              instance_size,
-                                         gpointer           instance_init) G_GNUC_INTERNAL;
-
-void  _exo_g_type_add_interface_simple  (GType              instance_type,
-                                         GType              interface_type,
-                                         GInterfaceInitFunc interface_init_func) G_GNUC_INTERNAL;
-
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_PRIVATE_H__ */

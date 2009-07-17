@@ -64,8 +64,6 @@ enum
 
 
 
-static void            exo_icon_bar_class_init            (ExoIconBarClass  *klass);
-static void            exo_icon_bar_init                  (ExoIconBar       *icon_bar);
 static void            exo_icon_bar_destroy               (GtkObject        *object);
 static void            exo_icon_bar_finalize              (GObject          *object);
 static void            exo_icon_bar_get_property          (GObject          *object,
@@ -179,28 +177,11 @@ struct _ExoIconBarPrivate
 
 
 
-static GObjectClass *exo_icon_bar_parent_class;
-static guint         icon_bar_signals[LAST_SIGNAL];
+static guint icon_bar_signals[LAST_SIGNAL];
 
 
 
-GType
-exo_icon_bar_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_CONTAINER,
-                                          "ExoIconBar",
-                                          sizeof (ExoIconBarClass),
-                                          exo_icon_bar_class_init,
-                                          sizeof (ExoIconBar),
-                                          exo_icon_bar_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoIconBar, exo_icon_bar, GTK_TYPE_CONTAINER)
 
 
 
@@ -212,8 +193,6 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
   GObjectClass   *gobject_class;
 
   g_type_class_add_private (klass, sizeof (ExoIconBarPrivate));
-
-  exo_icon_bar_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_icon_bar_finalize;
@@ -846,7 +825,7 @@ exo_icon_bar_set_adjustments (ExoIconBar    *icon_bar,
       gtk_object_sink (GTK_OBJECT (icon_bar->priv->vadjustment));
 
       g_signal_connect (icon_bar->priv->vadjustment, "value_changed",
-			                  G_CALLBACK (exo_icon_bar_adjustment_changed), icon_bar);
+                        G_CALLBACK (exo_icon_bar_adjustment_changed), icon_bar);
       need_adjust = TRUE;
     }
 
@@ -1469,7 +1448,7 @@ exo_icon_bar_new_with_model (GtkTreeModel *model)
  *
  * Returns the model the #ExoIconBar is based on. Returns %NULL if
  * the model is unset.
- * 
+ *
  * Return value: A #GtkTreeModel, or %NULL if none is currently being used.
  **/
 GtkTreeModel*

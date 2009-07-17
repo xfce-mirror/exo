@@ -41,7 +41,6 @@
 
 
 
-static void     exo_simple_job_class_init (ExoSimpleJobClass *klass);
 static void     exo_simple_job_finalize   (GObject           *object);
 static gboolean exo_simple_job_execute    (ExoJob            *job,
                                            GError           **error);
@@ -62,45 +61,28 @@ struct _ExoSimpleJob
 
 
 
-static GObjectClass *exo_simple_job_parent_class;
-
-
-
-GType
-exo_simple_job_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = g_type_register_static_simple (EXO_TYPE_JOB, 
-                                            "ExoSimpleJob",
-                                            sizeof (ExoSimpleJobClass),
-                                            (GClassInitFunc) exo_simple_job_class_init,
-                                            sizeof (ExoSimpleJob),
-                                            NULL, 
-                                            0);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoSimpleJob, exo_simple_job, EXO_TYPE_JOB)
 
 
 
 static void
 exo_simple_job_class_init (ExoSimpleJobClass *klass)
 {
-  ExoJobClass *exojob_class;
-  GObjectClass   *gobject_class;
-
-  /* determine the parent type class */
-  exo_simple_job_parent_class = g_type_class_peek_parent (klass);
+  ExoJobClass  *exojob_class;
+  GObjectClass *gobject_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_simple_job_finalize;
 
   exojob_class = EXO_JOB_CLASS (klass);
   exojob_class->execute = exo_simple_job_execute;
+}
+
+
+
+static void
+exo_simple_job_init (ExoSimpleJob *simple_job)
+{
 }
 
 
@@ -136,7 +118,7 @@ exo_simple_job_execute (ExoJob  *job,
     {
       g_assert (err != NULL || exo_job_is_cancelled (job));
 
-      /* set error if the job was cancelled. otherwise just propagate 
+      /* set error if the job was cancelled. otherwise just propagate
        * the results of the processing function */
       if (exo_job_set_error_if_cancelled (job, error))
         {
@@ -163,8 +145,8 @@ exo_simple_job_execute (ExoJob  *job,
  * @...            : a list of #GType and parameter pairs (exactly
  *                   @n_param_values pairs) that are passed to @func.
  *
- * Allocates a new #ExoJob which executes the specified @func with 
- * the specified parameters. 
+ * Allocates a new #ExoJob which executes the specified @func with
+ * the specified parameters.
  *
  * An example could be:
  *

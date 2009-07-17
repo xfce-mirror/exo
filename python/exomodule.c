@@ -29,9 +29,9 @@
 
 G_MODULE_EXPORT void init_exo (void);
 /* mark internal symbols with G_GNUC_INTERNAL */
-void exo_add_constants    (PyObject    *module,
-                           const gchar *strip_prefix) G_GNUC_INTERNAL;
-void exo_register_classes (PyObject    *d) G_GNUC_INTERNAL;
+G_GNUC_INTERNAL void exo_add_constants    (PyObject    *module,
+                                           const gchar *strip_prefix);
+G_GNUC_INTERNAL void exo_register_classes (PyObject    *d);
 
 extern PyMethodDef exo_functions[];
 
@@ -47,14 +47,14 @@ pygtk_tree_path_from_pyobject (PyObject *object)
   if (PyString_Check(object))
     {
       GtkTreePath *path;
-      
+
       path = gtk_tree_path_new_from_string (PyString_AsString (object));
       return path;
     }
   else if (PyInt_Check(object))
     {
       GtkTreePath *path;
-      
+
       path = gtk_tree_path_new();
       gtk_tree_path_append_index(path, PyInt_AsLong(object));
       return path;
@@ -63,7 +63,7 @@ pygtk_tree_path_from_pyobject (PyObject *object)
     {
       GtkTreePath *path;
       guint len, i;
-      
+
       len = PyTuple_Size(object);
       if (len < 1)
         return NULL;
@@ -73,7 +73,7 @@ pygtk_tree_path_from_pyobject (PyObject *object)
         {
           PyObject *item = PyTuple_GetItem(object, i);
           gint index = PyInt_AsLong(item);
-          
+
           if (PyErr_Occurred())
             {
               gtk_tree_path_free(path);
@@ -85,7 +85,7 @@ pygtk_tree_path_from_pyobject (PyObject *object)
 
       return path;
     }
-  
+
   return NULL;
 }
 #endif

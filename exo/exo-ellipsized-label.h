@@ -32,7 +32,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_TYPE_ELLIPSIZED_LABEL            (exo_ellipsized_label_get_type ())
 #define EXO_ELLIPSIZED_LABEL(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_ELLIPSIZED_LABEL, ExoEllipsizedLabel))
@@ -66,7 +66,7 @@ PangoEllipsizeMode exo_ellipsized_label_get_ellipsize (ExoEllipsizedLabel *label
 void               exo_ellipsized_label_set_ellipsize (ExoEllipsizedLabel *label,
                                                        PangoEllipsizeMode  ellipsize);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_ELLIPSIZED_LABEL_H__ */
 

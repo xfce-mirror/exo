@@ -552,7 +552,7 @@ exo_mount_point_list_matched (ExoMountPointMatchMask mask,
   g_return_val_if_fail ((mask & EXO_MOUNT_POINT_MATCH_FSTYPE) == 0 || fstype != NULL, NULL);
   g_return_val_if_fail (error == NULL || *error == NULL, NULL);
 
-#if defined(HAVE_GETFSSTAT) && !defined(HAVE_GETMNTENT) && !defined(HAVE_SETMNTENT) 
+#if defined(HAVE_GETFSSTAT) && !defined(HAVE_GETMNTENT) && !defined(HAVE_SETMNTENT)
   /* getfsstat(2) is really thread-safe, so we can skip locking there */
   if ((mask & EXO_MOUNT_POINT_MATCH_CONFIGURED) == EXO_MOUNT_POINT_MATCH_CONFIGURED)
 #endif
@@ -566,7 +566,7 @@ exo_mount_point_list_matched (ExoMountPointMatchMask mask,
                ? exo_mount_point_list_match_active (mask, device, folder, fstype, error)
                : exo_mount_point_list_match_configured (mask, device, folder, fstype, error);
 
-#if defined(HAVE_GETFSSTAT) && !defined(HAVE_GETMNTENT) && !defined(HAVE_SETMNTENT) 
+#if defined(HAVE_GETFSSTAT) && !defined(HAVE_GETMNTENT) && !defined(HAVE_SETMNTENT)
   /* getfsstat(2) is really thread-safe, so we can skip locking there */
   if ((mask & EXO_MOUNT_POINT_MATCH_CONFIGURED) == EXO_MOUNT_POINT_MATCH_CONFIGURED)
 #endif

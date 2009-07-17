@@ -43,7 +43,6 @@ enum
 
 
 
-static void exo_cell_renderer_ellipsized_text_class_init    (ExoCellRendererEllipsizedTextClass *klass);
 static void exo_cell_renderer_ellipsized_text_get_property  (GObject                            *object,
                                                              guint                               prop_id,
                                                              GValue                             *value,
@@ -76,27 +75,7 @@ struct _ExoCellRendererEllipsizedTextPrivate
 
 
 
-static GObjectClass *exo_cell_renderer_ellipsized_text_parent_class;
-
-
-
-GType
-exo_cell_renderer_ellipsized_text_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_CELL_RENDERER_TEXT,
-                                          "ExoCellRendererEllipsizedText",
-                                          sizeof (ExoCellRendererEllipsizedTextClass),
-                                          exo_cell_renderer_ellipsized_text_class_init,
-                                          sizeof (ExoCellRendererEllipsizedText),
-                                          NULL);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoCellRendererEllipsizedText, exo_cell_renderer_ellipsized_text, GTK_TYPE_CELL_RENDERER_TEXT)
 
 
 
@@ -105,9 +84,6 @@ exo_cell_renderer_ellipsized_text_class_init (ExoCellRendererEllipsizedTextClass
 {
   GtkCellRendererClass *gtkcell_renderer_class;
   GObjectClass         *gobject_class;
-
-  /* determine the parent type class */
-  exo_cell_renderer_ellipsized_text_parent_class = g_type_class_peek_parent (klass);
 
   /* add our private data to the type's instances */
   g_type_class_add_private (klass, sizeof (ExoCellRendererEllipsizedTextPrivate));
@@ -139,6 +115,13 @@ exo_cell_renderer_ellipsized_text_class_init (ExoCellRendererEllipsizedTextClass
                                                          _("Render differently based on the selection state."),
                                                          FALSE,
                                                          EXO_PARAM_READWRITE));
+}
+
+
+
+static void
+exo_cell_renderer_ellipsized_text_init (ExoCellRendererEllipsizedText *text)
+{
 }
 
 

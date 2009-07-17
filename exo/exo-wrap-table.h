@@ -28,7 +28,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoWrapTablePrivate ExoWrapTablePrivate;
 typedef struct _ExoWrapTableClass   ExoWrapTableClass;
@@ -76,6 +76,6 @@ gboolean   exo_wrap_table_get_homogeneous (const ExoWrapTable *table);
 void       exo_wrap_table_set_homogeneous (ExoWrapTable       *table,
                                            gboolean            homogeneous);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_WRAP_TABLE_H__ */

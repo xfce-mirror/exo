@@ -49,7 +49,6 @@ enum
 
 
 
-static void exo_cell_renderer_icon_class_init   (ExoCellRendererIconClass *klass);
 static void exo_cell_renderer_icon_finalize     (GObject                  *object);
 static void exo_cell_renderer_icon_get_property (GObject                  *object,
                                                  guint                     prop_id,
@@ -87,27 +86,7 @@ struct _ExoCellRendererIconPrivate
 
 
 
-static GObjectClass *exo_cell_renderer_icon_parent_class;
-
-
-
-GType
-exo_cell_renderer_icon_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_CELL_RENDERER,
-                                          "ExoCellRendererIcon",
-                                          sizeof (ExoCellRendererIconClass),
-                                          exo_cell_renderer_icon_class_init,
-                                          sizeof (ExoCellRendererIcon),
-                                          NULL);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoCellRendererIcon, exo_cell_renderer_icon, GTK_TYPE_CELL_RENDERER)
 
 
 
@@ -116,9 +95,6 @@ exo_cell_renderer_icon_class_init (ExoCellRendererIconClass *klass)
 {
   GtkCellRendererClass *gtkcell_renderer_class;
   GObjectClass         *gobject_class;
-
-  /* determine the parent type class */
-  exo_cell_renderer_icon_parent_class = g_type_class_peek_parent (klass);
 
   /* add our private data to the type's instances */
   g_type_class_add_private (klass, sizeof (ExoCellRendererIconPrivate));
@@ -177,10 +153,10 @@ exo_cell_renderer_icon_class_init (ExoCellRendererIconClass *klass)
   /**
    * ExoCellRendererIcon:gicon:
    *
-   * The #GIcon to render. May also be %NULL in which case no icon will be 
+   * The #GIcon to render. May also be %NULL in which case no icon will be
    * rendered for the cell.
    *
-   * Currently only #GThemedIcon<!---->s are supported which are loaded 
+   * Currently only #GThemedIcon<!---->s are supported which are loaded
    * using the current icon theme.
    *
    * Since: 0.4.0
@@ -214,6 +190,13 @@ exo_cell_renderer_icon_class_init (ExoCellRendererIconClass *klass)
                                                      _("The size of the icon to render in pixels."),
                                                      1, G_MAXINT, 48,
                                                      EXO_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+}
+
+
+
+static void
+exo_cell_renderer_icon_init (ExoCellRendererIcon *icon_undocked)
+{
 }
 
 
@@ -421,8 +404,8 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
       else if (priv->gicon != NULL)
         {
           icon_info = gtk_icon_theme_lookup_by_gicon (icon_theme,
-                                                      priv->gicon, 
-                                                      priv->size, 
+                                                      priv->gicon,
+                                                      priv->size,
                                                       GTK_ICON_LOOKUP_USE_BUILTIN);
         }
 
@@ -455,7 +438,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         {
           display_name = g_filename_display_name (priv->icon);
         }
-      else if (G_UNLIKELY (priv->gicon != NULL 
+      else if (G_UNLIKELY (priv->gicon != NULL
                            && g_object_class_find_property (G_OBJECT_GET_CLASS (priv->gicon),
                                                             "name")))
         {

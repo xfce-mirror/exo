@@ -29,7 +29,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoIconChooserDialogPrivate ExoIconChooserDialogPrivate;
 typedef struct _ExoIconChooserDialogClass   ExoIconChooserDialogClass;
@@ -73,6 +73,6 @@ gchar     *exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_
 gboolean   exo_icon_chooser_dialog_set_icon (ExoIconChooserDialog *icon_chooser_dialog,
                                              const gchar          *icon);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_ICON_CHOOSER_DIALOG_H__ */

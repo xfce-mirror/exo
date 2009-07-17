@@ -23,7 +23,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _XfceTitledDialogPrivate XfceTitledDialogPrivate;
 typedef struct _XfceTitledDialogClass   XfceTitledDialogClass;
@@ -70,6 +70,6 @@ G_CONST_RETURN gchar *xfce_titled_dialog_get_subtitle     (XfceTitledDialog *tit
 void                  xfce_titled_dialog_set_subtitle     (XfceTitledDialog *titled_dialog,
                                                            const gchar      *subtitle);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__XFCE_TITLED_DIALOG_H__ */

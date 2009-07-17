@@ -44,7 +44,7 @@ exo_pango_ellipsize_mode_get_type (void)
  * @string : The string to ellipsize.
  * @width  : The maximal width for the @layout.
  * @mode   : The ellipsize mode.
- * 
+ *
  * Truncates a string if required to fit in @width and sets it on the
  * layout. Truncation involves removing characters from the start, middle or end
  * respectively and replacing them with "...". Algorithm is a bit

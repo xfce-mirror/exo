@@ -29,7 +29,7 @@
 
 #include <exo/exo-config.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 gchar                *exo_str_elide_underscores  (const gchar     *text) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
@@ -55,6 +55,6 @@ G_CONST_RETURN gchar *exo_intern_static_string   (const gchar     *string);
 #define I_(string) (exo_intern_static_string ((string)))
 #endif
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_STRING_H__ */

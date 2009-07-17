@@ -45,8 +45,6 @@ enum
 
 
 
-static void     exo_die_editor_class_init     (ExoDieEditorClass  *klass);
-static void     exo_die_editor_init           (ExoDieEditor       *editor);
 static void     exo_die_editor_finalize       (GObject            *object);
 static void     exo_die_editor_get_property   (GObject            *object,
                                                guint               prop_id,
@@ -93,36 +91,7 @@ struct _ExoDieEditor
 
 
 
-static GObjectClass *exo_die_editor_parent_class;
-
-
-
-GType
-exo_die_editor_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoDieEditorClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_die_editor_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoDieEditor),
-        0,
-        (GInstanceInitFunc) exo_die_editor_init,
-        NULL,
-      };
-
-      type = g_type_register_static (GTK_TYPE_TABLE, I_("ExoDieEditor"), &info, 0);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoDieEditor, exo_die_editor, GTK_TYPE_TABLE)
 
 
 
@@ -130,9 +99,6 @@ static void
 exo_die_editor_class_init (ExoDieEditorClass *klass)
 {
   GObjectClass *gobject_class;
-
-  /* determine the parent type class */
-  exo_die_editor_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_die_editor_finalize;
@@ -408,7 +374,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   label = gtk_label_new (_("No icon"));
   gtk_container_add (GTK_CONTAINER (editor->icon_button), label);
   gtk_widget_show (label);
-  
+
   row += 1;
 
   /* add an empty row to get some spacing before the options */

@@ -27,7 +27,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_URL_ERROR (exo_url_error_quark ())
 GQuark exo_url_error_quark (void) G_GNUC_CONST;
@@ -35,7 +35,7 @@ GQuark exo_url_error_quark (void) G_GNUC_CONST;
 /**
  * ExoUrlError:
  * @EXO_URL_ERROR_NOT_SUPPORTED : a given URL is not supported.
- * 
+ *
  * The errors that can be returned due to bad parameters being
  * passed to exo_url_show() or exo_url_show_on_screen().
  **/
@@ -57,6 +57,6 @@ void     exo_url_about_dialog_hook  (GtkAboutDialog *about_dialog,
                                      const gchar    *link,
                                      gpointer        user_data);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_URL_H__ */

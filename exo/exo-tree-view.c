@@ -45,8 +45,6 @@ enum
 
 
 
-static void     exo_tree_view_class_init                    (ExoTreeViewClass *klass);
-static void     exo_tree_view_init                          (ExoTreeView      *tree_view);
 static void     exo_tree_view_finalize                      (GObject          *object);
 static void     exo_tree_view_get_property                  (GObject          *object,
                                                              guint             prop_id,
@@ -97,27 +95,7 @@ struct _ExoTreeViewPrivate
 
 
 
-static GObjectClass *exo_tree_view_parent_class;
-
-
-
-GType
-exo_tree_view_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_TREE_VIEW,
-                                          "ExoTreeView",
-                                          sizeof (ExoTreeViewClass),
-                                          exo_tree_view_class_init,
-                                          sizeof (ExoTreeView),
-                                          exo_tree_view_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoTreeView, exo_tree_view, GTK_TYPE_TREE_VIEW)
 
 
 
@@ -130,9 +108,6 @@ exo_tree_view_class_init (ExoTreeViewClass *klass)
 
   /* add our private data to the class */
   g_type_class_add_private (klass, sizeof (ExoTreeViewPrivate));
-
-  /* determine our parent type class */
-  exo_tree_view_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_tree_view_finalize;

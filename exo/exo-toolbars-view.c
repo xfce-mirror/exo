@@ -67,8 +67,6 @@ enum
 
 
 
-static void         exo_toolbars_view_class_init            (ExoToolbarsViewClass *klass);
-static void         exo_toolbars_view_init                  (ExoToolbarsView      *view);
 static void         exo_toolbars_view_finalize              (GObject              *object);
 static void         exo_toolbars_view_get_property          (GObject              *object,
                                                              guint                 prop_id,
@@ -177,28 +175,11 @@ static const GtkTargetEntry dst_targets[] =
   { EXO_TOOLBARS_ITEM_TYPE, GTK_TARGET_SAME_APP, 0 },
 };
 
-static GObjectClass *exo_toolbars_view_parent_class;
-static guint         toolbars_view_signals[LAST_SIGNAL];
+static guint  toolbars_view_signals[LAST_SIGNAL];
 
 
 
-GType
-exo_toolbars_view_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_VBOX,
-                                          "ExoToolbarsView",
-                                          sizeof (ExoToolbarsViewClass),
-                                          exo_toolbars_view_class_init,
-                                          sizeof (ExoToolbarsView),
-                                          exo_toolbars_view_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoToolbarsView, exo_toolbars_view, GTK_TYPE_VBOX)
 
 
 
@@ -211,8 +192,6 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
   _exo_i18n_init ();
 
   g_type_class_add_private (klass, sizeof (ExoToolbarsViewPrivate));
-
-  exo_toolbars_view_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_toolbars_view_finalize;

@@ -30,7 +30,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_TYPE_TOOLBARS_MODEL             (exo_toolbars_model_get_type ())
 #define EXO_TOOLBARS_MODEL(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_TOOLBARS_MODEL, ExoToolbarsModel))
@@ -180,6 +180,6 @@ gint                  exo_toolbars_model_n_toolbars     (ExoToolbarsModel      *
 const gchar          *exo_toolbars_model_toolbar_nth    (ExoToolbarsModel      *model,
                                                          gint                   toolbar_position);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_TOOLBARS_MODEL_H__ */

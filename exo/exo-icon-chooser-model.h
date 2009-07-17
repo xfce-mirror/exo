@@ -29,12 +29,12 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoIconChooserModelClass ExoIconChooserModelClass;
 typedef struct _ExoIconChooserModel      ExoIconChooserModel;
 
-#define EXO_TYPE_ICON_CHOOSER_MODEL             (_exo_icon_chooser_model_get_type ())
+#define EXO_TYPE_ICON_CHOOSER_MODEL             (exo_icon_chooser_model_get_type ())
 #define EXO_ICON_CHOOSER_MODEL(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_ICON_CHOOSER_MODEL, ExoIconChooserModel))
 #define EXO_ICON_CHOOSER_MODEL_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), EXO_TYPE_ICON_CHOOSER_MODEL, ExoIconChooserModelClass))
 #define EXO_IS_ICON_CHOOSER_MODEL(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EXO_TYPE_ICON_CHOOSER_MODEL))
@@ -86,15 +86,15 @@ typedef enum
   EXO_ICON_CHOOSER_MODEL_N_COLUMNS,
 } ExoIconChooserModelColumn;
 
-GType                _exo_icon_chooser_model_get_type               (void) G_GNUC_CONST G_GNUC_INTERNAL;
+G_GNUC_INTERNAL GType                  exo_icon_chooser_model_get_type                (void) G_GNUC_CONST;
 
-ExoIconChooserModel *_exo_icon_chooser_model_get_for_widget         (GtkWidget           *widget) G_GNUC_INTERNAL G_GNUC_WARN_UNUSED_RESULT;
-ExoIconChooserModel *_exo_icon_chooser_model_get_for_icon_theme     (GtkIconTheme        *icon_theme) G_GNUC_INTERNAL G_GNUC_WARN_UNUSED_RESULT;
+G_GNUC_INTERNAL ExoIconChooserModel   *_exo_icon_chooser_model_get_for_widget         (GtkWidget           *widget) G_GNUC_WARN_UNUSED_RESULT;
+G_GNUC_INTERNAL ExoIconChooserModel   *_exo_icon_chooser_model_get_for_icon_theme     (GtkIconTheme        *icon_theme) G_GNUC_WARN_UNUSED_RESULT;
 
-gboolean             _exo_icon_chooser_model_get_iter_for_icon_name (ExoIconChooserModel *model,
-                                                                     GtkTreeIter         *iter,
-                                                                     const gchar         *icon_name) G_GNUC_INTERNAL;
+G_GNUC_INTERNAL gboolean               _exo_icon_chooser_model_get_iter_for_icon_name (ExoIconChooserModel *model,
+                                                                                       GtkTreeIter         *iter,
+                                                                                       const gchar         *icon_name) ;
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_ICON_CHOOSER_MODEL_H__ */

@@ -29,7 +29,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoCellRendererIconPrivate ExoCellRendererIconPrivate;
 typedef struct _ExoCellRendererIconClass   ExoCellRendererIconClass;
@@ -66,6 +66,6 @@ GType            exo_cell_renderer_icon_get_type (void) G_GNUC_CONST;
 
 GtkCellRenderer *exo_cell_renderer_icon_new      (void) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_CELL_RENDERER_ICON_H__ */

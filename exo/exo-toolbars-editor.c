@@ -56,8 +56,6 @@ enum
 
 
 
-static void       exo_toolbars_editor_class_init          (ExoToolbarsEditorClass *klass);
-static void       exo_toolbars_editor_init                (ExoToolbarsEditor      *editor);
 static void       exo_toolbars_editor_finalize            (GObject                *object);
 static void       exo_toolbars_editor_get_property        (GObject                *object,
                                                            guint                   prop_id,
@@ -102,27 +100,7 @@ static const GtkTargetEntry targets[] =
 
 
 
-static GObjectClass *exo_toolbars_editor_parent_class;
-
-
-
-GType
-exo_toolbars_editor_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_VBOX,
-                                          "ExoToolbarsEditor",
-                                          sizeof (ExoToolbarsEditorClass),
-                                          exo_toolbars_editor_class_init,
-                                          sizeof (ExoToolbarsEditor),
-                                          exo_toolbars_editor_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoToolbarsEditor, exo_toolbars_editor, GTK_TYPE_VBOX)
 
 
 
@@ -132,8 +110,6 @@ exo_toolbars_editor_class_init (ExoToolbarsEditorClass *klass)
   GObjectClass *gobject_class;
 
   g_type_class_add_private (klass, sizeof (ExoToolbarsEditorPrivate));
-  
-  exo_toolbars_editor_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_toolbars_editor_finalize;
@@ -571,7 +547,7 @@ GtkWidget*
 exo_toolbars_editor_new (GtkUIManager *ui_manager)
 {
   g_return_val_if_fail (GTK_IS_UI_MANAGER (ui_manager), NULL);
-  
+
   return g_object_new (EXO_TYPE_TOOLBARS_EDITOR,
                        "ui-manager", ui_manager,
                        NULL);

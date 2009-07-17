@@ -27,7 +27,7 @@
 
 #include <exo/exo-config.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 /**
  * ExoMountPointFlags:
@@ -128,6 +128,6 @@ GSList        *exo_mount_point_list_matched (ExoMountPointMatchMask mask,
  **/
 #define exo_mount_point_list_configured(error) (exo_mount_point_list_matched (EXO_MOUNT_POINT_MATCH_CONFIGURED, NULL, NULL, NULL, (error)))
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_MOUNT_POINT_H__ */

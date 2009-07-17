@@ -36,8 +36,6 @@ enum
 
 
 
-static void exo_helper_launcher_dialog_class_init       (ExoHelperLauncherDialogClass *klass);
-static void exo_helper_launcher_dialog_init             (ExoHelperLauncherDialog      *launcher_dialog);
 static void exo_helper_launcher_dialog_get_property     (GObject                      *object,
                                                          guint                         prop_id,
                                                          GValue                       *value,
@@ -66,32 +64,7 @@ struct _ExoHelperLauncherDialog
 
 
 
-GType
-exo_helper_launcher_dialog_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoHelperLauncherDialogClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_helper_launcher_dialog_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoHelperLauncherDialog),
-        0,
-        (GInstanceInitFunc) exo_helper_launcher_dialog_init,
-        NULL,
-      };
-
-      type = g_type_register_static (GTK_TYPE_DIALOG, I_("ExoHelperLauncherDialog"), &info, 0);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoHelperLauncherDialog, exo_helper_launcher_dialog, GTK_TYPE_DIALOG)
 
 
 

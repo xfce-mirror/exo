@@ -43,8 +43,6 @@ enum
 
 
 
-static void exo_die_command_entry_class_init      (ExoDieCommandEntryClass  *klass);
-static void exo_die_command_entry_init            (ExoDieCommandEntry       *command_entry);
 static void exo_die_command_entry_finalize        (GObject                  *object);
 static void exo_die_command_entry_get_property    (GObject                  *object,
                                                    guint                     prop_id,
@@ -80,36 +78,7 @@ struct _ExoDieCommandEntry
 
 
 
-static GObjectClass *exo_die_command_entry_parent_class;
-
-
-
-GType
-exo_die_command_entry_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoDieCommandEntryClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_die_command_entry_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoDieCommandEntry),
-        0,
-        (GInstanceInitFunc) exo_die_command_entry_init,
-        NULL,
-      };
-
-      type = g_type_register_static (GTK_TYPE_HBOX, I_("ExoDieCommandEntry"), &info, 0);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoDieCommandEntry, exo_die_command_entry, GTK_TYPE_HBOX)
 
 
 
@@ -118,9 +87,6 @@ exo_die_command_entry_class_init (ExoDieCommandEntryClass *klass)
 {
   GtkWidgetClass *gtkwidget_class;
   GObjectClass   *gobject_class;
-
-  /* determine the parent type class */
-  exo_die_command_entry_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_die_command_entry_finalize;

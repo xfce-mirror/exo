@@ -75,8 +75,6 @@ enum
 
 
 
-static void             exo_toolbars_model_class_init           (ExoToolbarsModelClass  *klass);
-static void             exo_toolbars_model_init                 (ExoToolbarsModel       *model);
 static void             exo_toolbars_model_finalize             (GObject                *object);
 static gboolean         exo_toolbars_model_real_add_item        (ExoToolbarsModel       *model,
                                                                  gint                    toolbar_position,
@@ -136,35 +134,18 @@ typedef XFCE_GENERIC_STACK(UiParserState) UiParserStack;
 struct _UiParser
 {
   UiParserStack     *stack;
-  
+
   ExoToolbarsModel  *model;
   gint               toolbar_position;
 };
 
 
 
-static GObjectClass *exo_toolbars_model_parent_class;
-static guint         toolbars_model_signals[LAST_SIGNAL];
+static guint toolbars_model_signals[LAST_SIGNAL];
 
 
 
-GType
-exo_toolbars_model_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (G_TYPE_OBJECT,
-                                          "ExoToolbarsModel",
-                                          sizeof (ExoToolbarsModelClass),
-                                          exo_toolbars_model_class_init,
-                                          sizeof (ExoToolbarsModel),
-                                          exo_toolbars_model_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoToolbarsModel, exo_toolbars_model, G_TYPE_OBJECT)
 
 
 
@@ -188,8 +169,6 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
   GObjectClass *gobject_class;
 
   g_type_class_add_private (klass, sizeof (ExoToolbarsModelPrivate));
-
-  exo_toolbars_model_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_toolbars_model_finalize;
@@ -381,7 +360,7 @@ exo_toolbars_model_real_add_item (ExoToolbarsModel *model,
   g_return_val_if_fail (EXO_IS_TOOLBARS_MODEL (model), FALSE);
   g_return_val_if_fail (type != NULL, FALSE);
   g_return_val_if_fail (id != NULL, FALSE);
-  
+
   if (!exo_toolbars_model_has_action (model, id))
     {
       g_warning ("Tried to add action \"%s\" to an ExoToolbarsModel, "
@@ -487,7 +466,7 @@ exo_toolbars_toolbar_free (ExoToolbarsToolbar *toolbar)
       g_free (item->id);
       g_slice_free (ExoToolbarsItem, item);
     }
-  
+
   g_list_free (toolbar->items);
   g_free (toolbar->name);
   g_slice_free (ExoToolbarsToolbar, toolbar);
@@ -642,7 +621,7 @@ end_element_handler (GMarkupParseContext  *context,
       if (!exo_str_is_equal (element_name, "separator"))
         goto unknown_element;
       break;
-      
+
     default:
       goto unknown_element;
     }
@@ -693,7 +672,7 @@ exo_toolbars_model_set_actions (ExoToolbarsModel      *model,
                                 guint                  n_actions)
 {
   guint n;
-  
+
   g_return_if_fail (EXO_IS_TOOLBARS_MODEL (model));
   g_return_if_fail (actions != NULL);
 
@@ -964,7 +943,7 @@ exo_toolbars_model_unset_style (ExoToolbarsModel *model,
                                 gint              toolbar_position)
 {
   ExoToolbarsToolbar *toolbar;
-  
+
   g_return_if_fail (EXO_IS_TOOLBARS_MODEL (model));
 
   toolbar = g_list_nth_data (model->priv->toolbars, toolbar_position);
@@ -985,7 +964,7 @@ exo_toolbars_model_unset_style (ExoToolbarsModel *model,
  * @model             : An #ExoToolbarsModel.
  * @toolbar_position  : The index of a toolbar in @model.
  *
- * Returns the #ExoToolbarsModelFlags associated with the 
+ * Returns the #ExoToolbarsModelFlags associated with the
  * toolbar at @toolbar_position.
  *
  * Return value: The #ExoToolbarsModelFlags associated
@@ -1195,7 +1174,7 @@ exo_toolbars_model_add_toolbar (ExoToolbarsModel *model,
 
   toolbar_index = g_list_index (model->priv->toolbars, toolbar);
   g_signal_emit (G_OBJECT (model), toolbars_model_signals[TOOLBAR_ADDED],
-                 0, toolbar_index); 
+                 0, toolbar_index);
 
   return toolbar_index;
 }
@@ -1302,7 +1281,7 @@ exo_toolbars_model_remove_toolbar (ExoToolbarsModel *model,
   ExoToolbarsToolbar *toolbar;
 
   g_return_if_fail (EXO_IS_TOOLBARS_MODEL (model));
-  
+
   toolbar = g_list_nth_data (model->priv->toolbars, toolbar_position);
   g_return_if_fail (toolbar != NULL);
 
@@ -1365,7 +1344,7 @@ exo_toolbars_model_item_nth (ExoToolbarsModel *model,
 {
   ExoToolbarsToolbar *toolbar;
   ExoToolbarsItem    *item;
-  
+
   g_return_if_fail (EXO_IS_TOOLBARS_MODEL (model));
 
   toolbar = g_list_nth_data (model->priv->toolbars, toolbar_position);

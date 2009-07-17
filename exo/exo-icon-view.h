@@ -30,7 +30,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoIconViewPrivate    ExoIconViewPrivate;
 typedef struct _ExoIconViewClass      ExoIconViewClass;
@@ -142,7 +142,7 @@ struct _ExoIconViewClass
   void     (*set_scroll_adjustments)    (ExoIconView     *icon_view,
                                          GtkAdjustment   *hadjustment,
                                          GtkAdjustment   *vadjustment);
-  
+
   /* signals */
   void     (*item_activated)            (ExoIconView     *icon_view,
                                          GtkTreePath     *path);
@@ -206,19 +206,19 @@ void                  exo_icon_view_set_item_width            (ExoIconView      
                                                                gint                      item_width);
 
 gint                  exo_icon_view_get_spacing               (const ExoIconView        *icon_view);
-void                  exo_icon_view_set_spacing               (ExoIconView              *icon_view, 
+void                  exo_icon_view_set_spacing               (ExoIconView              *icon_view,
                                                                gint                      spacing);
 
 gint                  exo_icon_view_get_row_spacing           (const ExoIconView        *icon_view);
-void                  exo_icon_view_set_row_spacing           (ExoIconView              *icon_view, 
+void                  exo_icon_view_set_row_spacing           (ExoIconView              *icon_view,
                                                                gint                      row_spacing);
 
 gint                  exo_icon_view_get_column_spacing        (const ExoIconView        *icon_view);
-void                  exo_icon_view_set_column_spacing        (ExoIconView              *icon_view, 
+void                  exo_icon_view_set_column_spacing        (ExoIconView              *icon_view,
                                                                gint                      column_spacing);
 
 gint                  exo_icon_view_get_margin                (const ExoIconView        *icon_view);
-void                  exo_icon_view_set_margin                (ExoIconView              *icon_view, 
+void                  exo_icon_view_set_margin                (ExoIconView              *icon_view,
                                                                gint                      margin);
 
 GtkSelectionMode      exo_icon_view_get_selection_mode        (const ExoIconView        *icon_view);
@@ -340,7 +340,7 @@ void                          exo_icon_view_set_search_position_func  (ExoIconVi
                                                                        ExoIconViewSearchPositionFunc search_position_func,
                                                                        gpointer                      search_position_data,
                                                                        GDestroyNotify                search_position_destroy);
- 
-G_END_DECLS;
+
+G_END_DECLS
 
 #endif /* __EXO_ICON_VIEW_H__ */

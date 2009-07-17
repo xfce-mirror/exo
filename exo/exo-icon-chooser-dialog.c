@@ -50,8 +50,6 @@
 
 
 
-static void     exo_icon_chooser_dialog_class_init        (ExoIconChooserDialogClass  *klass);
-static void     exo_icon_chooser_dialog_init              (ExoIconChooserDialog       *icon_chooser_dialog);
 static void     exo_icon_chooser_dialog_style_set         (GtkWidget                  *widget,
                                                            GtkStyle                   *previous_style);
 static void     exo_icon_chooser_dialog_screen_changed    (GtkWidget                  *widget,
@@ -117,27 +115,7 @@ static const gchar CONTEXT_TITLES[][28] =
 
 
 
-static GObjectClass *exo_icon_chooser_dialog_parent_class;
-
-
-
-GType
-exo_icon_chooser_dialog_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_DIALOG,
-                                          "ExoIconChooserDialog",
-                                          sizeof (ExoIconChooserDialogClass),
-                                          exo_icon_chooser_dialog_class_init,
-                                          sizeof (ExoIconChooserDialog),
-                                          exo_icon_chooser_dialog_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoIconChooserDialog, exo_icon_chooser_dialog, GTK_TYPE_DIALOG)
 
 
 
@@ -150,9 +128,6 @@ exo_icon_chooser_dialog_class_init (ExoIconChooserDialogClass *klass)
 
   /* add our private data to the type's instances */
   g_type_class_add_private (klass, sizeof (ExoIconChooserDialogPrivate));
-
-  /* determine the parent type class */
-  exo_icon_chooser_dialog_parent_class = g_type_class_peek_parent (klass);
 
   gtkwidget_class = GTK_WIDGET_CLASS (klass);
   gtkwidget_class->style_set = exo_icon_chooser_dialog_style_set;

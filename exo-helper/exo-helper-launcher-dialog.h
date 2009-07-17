@@ -22,7 +22,7 @@
 
 #include <exo-helper/exo-helper.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoHelperLauncherDialogClass ExoHelperLauncherDialogClass;
 typedef struct _ExoHelperLauncherDialog      ExoHelperLauncherDialog;
@@ -42,6 +42,6 @@ ExoHelperCategory exo_helper_launcher_dialog_get_category (const ExoHelperLaunch
 void              exo_helper_launcher_dialog_set_category (ExoHelperLauncherDialog       *launcher_dialog,
                                                            ExoHelperCategory              category);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_HELPER_LAUNCHER_DIALOG_H__ */

@@ -27,7 +27,7 @@
 
 #include <gdk/gdk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 gboolean exo_execute_preferred_application            (const gchar *category,
                                                        const gchar *parameter,
@@ -51,6 +51,6 @@ gboolean exo_execute_terminal_shell_on_screen         (const gchar *command_line
                                                        GdkScreen   *screen,
                                                        GError     **error);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_EXECUTE_H__ */

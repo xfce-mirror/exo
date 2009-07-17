@@ -29,7 +29,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 void      exo_gtk_object_destroy_later                (GtkObject      *object);
 
@@ -40,6 +40,6 @@ void      exo_gtk_radio_action_set_current_value      (GtkRadioAction *action,
 
 void      exo_gtk_file_chooser_add_thumbnail_preview  (GtkFileChooser *chooser);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_GTK_EXTENSIONS_H__ */

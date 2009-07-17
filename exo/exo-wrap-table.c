@@ -46,8 +46,6 @@ enum
 
 
 
-static void exo_wrap_table_class_init         (ExoWrapTableClass  *klass);
-static void exo_wrap_table_init               (ExoWrapTable       *table);
 static void exo_wrap_table_get_property       (GObject            *object,
                                                guint               prop_id,
                                                GValue             *value,
@@ -94,27 +92,7 @@ struct _ExoWrapTablePrivate
 
 
 
-static GObjectClass *exo_wrap_table_parent_class;
-
-
-
-GType
-exo_wrap_table_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_CONTAINER,
-                                          "ExoWrapTable",
-                                          sizeof (ExoWrapTableClass),
-                                          exo_wrap_table_class_init,
-                                          sizeof (ExoWrapTable),
-                                          exo_wrap_table_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoWrapTable, exo_wrap_table, GTK_TYPE_CONTAINER)
 
 
 
@@ -127,9 +105,6 @@ exo_wrap_table_class_init (ExoWrapTableClass *klass)
 
   /* add our private data to the class */
   g_type_class_add_private (klass, sizeof (ExoWrapTablePrivate));
-
-  /* determine our parent type class */
-  exo_wrap_table_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->get_property = exo_wrap_table_get_property;
@@ -627,7 +602,7 @@ exo_wrap_table_set_col_spacing (ExoWrapTable *table,
                                 guint         col_spacing)
 {
   g_return_if_fail (EXO_IS_WRAP_TABLE (table));
-  
+
   if (G_LIKELY (table->priv->col_spacing != col_spacing))
     {
       table->priv->col_spacing = col_spacing;

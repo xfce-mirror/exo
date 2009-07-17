@@ -27,7 +27,7 @@
 
 #include <glib.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 void                    exo_noop        (void) G_GNUC_PURE;
 gint                    exo_noop_one    (void) G_GNUC_PURE;
@@ -82,6 +82,6 @@ exo_atomic_dec (gint *value)
 
 #endif /* (G_CAN_INLINE && __GNUC__ && __i386__ && __OPTIMIZE__) || __EXO_UTILS_C__ */
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_UTILS_H__ */

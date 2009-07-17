@@ -49,7 +49,6 @@
 
 
 
-static void       exo_helper_class_init (ExoHelperClass *klass);
 static void       exo_helper_finalize   (GObject        *object);
 static ExoHelper *exo_helper_new        (const gchar    *id,
                                          XfceRc         *rc);
@@ -77,36 +76,7 @@ struct _ExoHelper
 
 
 
-static GObjectClass *exo_helper_parent_class;
-
-
-
-GType
-exo_helper_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoHelperClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_helper_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoHelper),
-        0,
-        NULL,
-        NULL,
-      };
-
-      type = g_type_register_static (G_TYPE_OBJECT, I_("ExoHelper"), &info, 0);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoHelper, exo_helper, G_TYPE_OBJECT)
 
 
 
@@ -115,11 +85,15 @@ exo_helper_class_init (ExoHelperClass *klass)
 {
   GObjectClass *gobject_class;
 
-  /* determine the parent type class */
-  exo_helper_parent_class = g_type_class_peek_parent (klass);
-
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_helper_finalize;
+}
+
+
+
+static void
+exo_helper_init (ExoHelper *helpers)
+{
 }
 
 
@@ -485,8 +459,6 @@ exo_helper_execute (ExoHelper   *helper,
 
 
 
-static void       exo_helper_database_class_init  (ExoHelperDatabaseClass *klass);
-static void       exo_helper_database_init        (ExoHelperDatabase      *database);
 static void       exo_helper_database_finalize    (GObject                *object);
 static ExoHelper *exo_helper_database_lookup      (ExoHelperDatabase      *database,
                                                    ExoHelperCategory       category,
@@ -507,36 +479,7 @@ struct _ExoHelperDatabase
 
 
 
-static GObjectClass *exo_helper_database_parent_class;
-
-
-
-GType
-exo_helper_database_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoHelperDatabaseClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_helper_database_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoHelperDatabase),
-        0,
-        (GInstanceInitFunc) exo_helper_database_init,
-        NULL,
-      };
-
-      type = g_type_register_static (G_TYPE_OBJECT, I_("ExoHelperDatabase"), &info, 0);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoHelperDatabase, exo_helper_database, G_TYPE_OBJECT)
 
 
 
@@ -544,9 +487,6 @@ static void
 exo_helper_database_class_init (ExoHelperDatabaseClass *klass)
 {
   GObjectClass *gobject_class;
-
-  /* determine the parent type class */
-  exo_helper_database_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_helper_database_finalize;

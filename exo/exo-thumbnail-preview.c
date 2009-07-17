@@ -45,7 +45,6 @@
 
 
 
-static void exo_thumbnail_preview_init      (ExoThumbnailPreview *thumbnail_preview);
 static void exo_thumbnail_preview_style_set (GtkWidget           *ebox,
                                              GtkStyle            *previous_style,
                                              ExoThumbnailPreview *thumbnail_preview);
@@ -67,22 +66,13 @@ struct _ExoThumbnailPreview
 
 
 
-GType
-_exo_thumbnail_preview_get_type (void)
+G_DEFINE_TYPE (ExoThumbnailPreview, exo_thumbnail_preview, GTK_TYPE_FRAME)
+
+
+
+static void
+exo_thumbnail_preview_class_init (ExoThumbnailPreviewClass *klass)
 {
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_FRAME,
-                                          "ExoThumbnailPreview",
-                                          sizeof (ExoThumbnailPreviewClass),
-                                          NULL,
-                                          sizeof (ExoThumbnailPreview),
-                                          exo_thumbnail_preview_init);
-    }
-
-  return type;
 }
 
 

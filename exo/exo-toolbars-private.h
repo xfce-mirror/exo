@@ -30,17 +30,17 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
-GdkPixbuf *_exo_toolbars_new_separator_pixbuf (void) G_GNUC_INTERNAL G_GNUC_MALLOC;
-GtkWidget *_exo_toolbars_new_separator_image  (void) G_GNUC_INTERNAL G_GNUC_MALLOC;
+G_GNUC_INTERNAL GdkPixbuf *_exo_toolbars_new_separator_pixbuf (void) G_GNUC_MALLOC;
+G_GNUC_INTERNAL GtkWidget *_exo_toolbars_new_separator_image  (void) G_GNUC_MALLOC;
 
-GtkAction *_exo_toolbars_find_action          (GtkUIManager *ui_manager,
-                                               const gchar  *name) G_GNUC_INTERNAL;
+G_GNUC_INTERNAL GtkAction *_exo_toolbars_find_action          (GtkUIManager *ui_manager,
+                                                               const gchar  *name);
 
-void       _exo_toolbars_set_drag_cursor      (GtkWidget    *widget) G_GNUC_INTERNAL;
-void       _exo_toolbars_unset_drag_cursor    (GtkWidget    *widget) G_GNUC_INTERNAL;
+G_GNUC_INTERNAL void       _exo_toolbars_set_drag_cursor      (GtkWidget    *widget);
+G_GNUC_INTERNAL void       _exo_toolbars_unset_drag_cursor    (GtkWidget    *widget);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_TOOLBARS_PRIVATE_H__ */

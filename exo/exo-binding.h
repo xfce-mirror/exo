@@ -30,7 +30,7 @@
 
 #include <glib-object.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoBindingBase    ExoBindingBase;
 typedef struct _ExoBindingLink    ExoBindingLink;
@@ -108,6 +108,6 @@ ExoMutualBinding  *exo_mutual_binding_new_with_negation (GObject            *obj
                                                          const gchar        *property2);
 void               exo_mutual_binding_unbind            (ExoMutualBinding   *binding);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_BINDING_H__ */

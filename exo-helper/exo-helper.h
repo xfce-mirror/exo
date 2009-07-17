@@ -22,7 +22,7 @@
 
 #include <exo/exo.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef enum /*< enum,prefix=EXO_HELPER >*/
 {
@@ -80,6 +80,6 @@ void                exo_helper_database_set_custom      (ExoHelperDatabase *data
                                                          ExoHelperCategory  category,
                                                          const gchar       *command);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_HELPER_H__ */

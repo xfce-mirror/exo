@@ -85,7 +85,7 @@ struct _XfceHeadingPrivate
 
 
 
-G_DEFINE_TYPE (XfceHeading, xfce_heading, GTK_TYPE_WIDGET);
+G_DEFINE_TYPE (XfceHeading, xfce_heading, GTK_TYPE_WIDGET)
 
 
 
@@ -485,7 +485,7 @@ xfce_heading_make_layout (XfceHeading *heading)
 }
 
 
-  
+
 static GdkPixbuf*
 xfce_heading_make_pixbuf (XfceHeading *heading)
 {

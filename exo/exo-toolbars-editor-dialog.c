@@ -46,8 +46,6 @@
 
 
 
-static void exo_toolbars_editor_dialog_class_init   (ExoToolbarsEditorDialogClass *klass);
-static void exo_toolbars_editor_dialog_init         (ExoToolbarsEditorDialog      *dialog);
 static void exo_toolbars_editor_dialog_add_toolbar  (ExoToolbarsEditorDialog      *dialog);
 
 
@@ -59,23 +57,7 @@ struct _ExoToolbarsEditorDialogPrivate
 
 
 
-GType
-exo_toolbars_editor_dialog_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (GTK_TYPE_DIALOG,
-                                          "ExoToolbarsEditorDialog",
-                                          sizeof (ExoToolbarsEditorDialogClass),
-                                          exo_toolbars_editor_dialog_class_init,
-                                          sizeof (ExoToolbarsEditorDialog),
-                                          exo_toolbars_editor_dialog_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoToolbarsEditorDialog, exo_toolbars_editor_dialog, GTK_TYPE_DIALOG)
 
 
 
@@ -118,7 +100,7 @@ exo_toolbars_editor_dialog_init (ExoToolbarsEditorDialog *dialog)
   hbox = gtk_hbox_new (FALSE, 2);
   gtk_container_add (GTK_CONTAINER (align), hbox);
   gtk_widget_show (hbox);
-  
+
   image = gtk_image_new_from_stock (GTK_STOCK_ADD, GTK_ICON_SIZE_BUTTON);
   gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
   gtk_widget_show (image);

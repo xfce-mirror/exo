@@ -35,9 +35,7 @@ enum
 
 
 
-static void               exo_die_command_model_class_init            (ExoDieCommandModelClass  *klass);
 static void               exo_die_command_model_tree_model_init       (GtkTreeModelIface        *iface);
-static void               exo_die_command_model_init                  (ExoDieCommandModel       *command_model);
 static void               exo_die_command_model_finalize              (GObject                  *object);
 static GtkTreeModelFlags  exo_die_command_model_get_flags             (GtkTreeModel             *tree_model);
 static gint               exo_die_command_model_get_n_columns         (GtkTreeModel             *tree_model);
@@ -93,45 +91,12 @@ struct _ExoDieCommandModel
 
 
 
-static GObjectClass *exo_die_command_model_parent_class;
-static guint         command_model_signals[LAST_SIGNAL];
+static guint command_model_signals[LAST_SIGNAL];
 
 
 
-GType
-exo_die_command_model_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoDieCommandModelClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_die_command_model_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoDieCommandModel),
-        0,
-        (GInstanceInitFunc) exo_die_command_model_init,
-        NULL,
-      };
-
-      static const GInterfaceInfo tree_model_info =
-      {
-        (GInterfaceInitFunc) exo_die_command_model_tree_model_init,
-        NULL,
-        NULL,
-      };
-
-      type = g_type_register_static (G_TYPE_OBJECT, I_("ExoDieCommandModel"), &info, 0);
-      g_type_add_interface_static (type, GTK_TYPE_TREE_MODEL, &tree_model_info);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE_WITH_CODE (ExoDieCommandModel, exo_die_command_model, G_TYPE_OBJECT,
+    G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL, exo_die_command_model_tree_model_init))
 
 
 
@@ -139,9 +104,6 @@ static void
 exo_die_command_model_class_init (ExoDieCommandModelClass *klass)
 {
   GObjectClass *gobject_class;
-
-  /* determine the parent type class */
-  exo_die_command_model_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_die_command_model_finalize;

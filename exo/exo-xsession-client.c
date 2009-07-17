@@ -62,8 +62,6 @@ enum
 
 
 
-static void             exo_xsession_client_class_init    (ExoXsessionClientClass *klass);
-static void             exo_xsession_client_init          (ExoXsessionClient      *client);
 static void             exo_xsession_client_dispose       (GObject                *object);
 static void             exo_xsession_client_get_property  (GObject                *object,
                                                            guint                   prop_id,
@@ -92,28 +90,11 @@ struct _ExoXsessionClientPrivate
 
 
 
-static GObjectClass *exo_xsession_client_parent_class;
-static guint         client_signals[LAST_SIGNAL];
+static guint client_signals[LAST_SIGNAL];
 
 
 
-GType
-exo_xsession_client_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (G_TYPE_OBJECT,
-                                          "ExoXsessionClient",
-                                          sizeof (ExoXsessionClientClass),
-                                          exo_xsession_client_class_init,
-                                          sizeof (ExoXsessionClient),
-                                          exo_xsession_client_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoXsessionClient, exo_xsession_client, G_TYPE_OBJECT)
 
 
 
@@ -126,8 +107,6 @@ exo_xsession_client_class_init (ExoXsessionClientClass *klass)
   _exo_i18n_init ();
 
   g_type_class_add_private (klass, sizeof (ExoXsessionClientPrivate));
-
-  exo_xsession_client_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->dispose = exo_xsession_client_dispose;
@@ -161,7 +140,7 @@ exo_xsession_client_class_init (ExoXsessionClientClass *klass)
    * @client  : An #ExoXsessionClient.
    *
    * This signal is emitted when @client receives a %WM_SAVE_YOURSELF
-   * message from the session manager or the window manager on the 
+   * message from the session manager or the window manager on the
    * specified client leader window.
    **/
   client_signals[SAVE_YOURSELF] =
@@ -417,7 +396,7 @@ exo_xsession_client_set_group (ExoXsessionClient *client,
  *            to or %NULL.
  *
  * Retrieves the restart command previously set on @client. The
- * result is stored in @argv and should be freed using 
+ * result is stored in @argv and should be freed using
  * g_strfreev() when no longer needed.
  *
  * See exo_xsession_client_set_restart_command() for further

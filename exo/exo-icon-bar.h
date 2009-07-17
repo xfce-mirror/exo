@@ -29,7 +29,7 @@
 
 #include <gtk/gtk.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_TYPE_ICON_BAR             (exo_icon_bar_get_type ())
 #define EXO_ICON_BAR(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_ICON_BAR, ExoIconBar))
@@ -96,7 +96,7 @@ gboolean        exo_icon_bar_get_active_iter    (ExoIconBar     *icon_bar,
 void            exo_icon_bar_set_active_iter    (ExoIconBar     *icon_bar,
                                                  GtkTreeIter    *iter);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_ICON_BAR_H__ */
 

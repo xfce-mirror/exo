@@ -44,8 +44,6 @@ enum
 
 
 
-static void exo_helper_chooser_class_init   (ExoHelperChooserClass  *klass);
-static void exo_helper_chooser_init         (ExoHelperChooser       *chooser);
 static void exo_helper_chooser_finalize     (GObject                *object);
 static void exo_helper_chooser_get_property (GObject                *object,
                                              guint                   prop_id,
@@ -82,36 +80,7 @@ struct _ExoHelperChooser
 
 
 
-static GObjectClass *exo_helper_chooser_parent_class;
-
-
-
-GType
-exo_helper_chooser_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      static const GTypeInfo info =
-      {
-        sizeof (ExoHelperChooserClass),
-        NULL,
-        NULL,
-        (GClassInitFunc) exo_helper_chooser_class_init,
-        NULL,
-        NULL,
-        sizeof (ExoHelperChooser),
-        0,
-        (GInstanceInitFunc) exo_helper_chooser_init,
-        NULL,
-      };
-
-      type = g_type_register_static (GTK_TYPE_ALIGNMENT, I_("ExoHelperChooser"), &info, 0);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoHelperChooser, exo_helper_chooser, GTK_TYPE_ALIGNMENT)
 
 
 
@@ -119,9 +88,6 @@ static void
 exo_helper_chooser_class_init (ExoHelperChooserClass *klass)
 {
   GObjectClass *gobject_class;
-
-  /* determine the parent type class */
-  exo_helper_chooser_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_helper_chooser_finalize;
@@ -589,7 +555,7 @@ menu_activate_other (GtkWidget        *item,
   gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
   gtk_widget_show (vbox);
 
-  label = g_object_new (GTK_TYPE_LABEL, 
+  label = g_object_new (GTK_TYPE_LABEL,
                         "label", _(BROWSE_MESSAGES[chooser->category]),
                         "xalign", 0.0,
                         "yalign", 0.0,
@@ -746,7 +712,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
     {
       /* determine the helper */
       helper = EXO_HELPER (lp->data);
-      
+
       /* add a menu item for the helper */
       item = gtk_image_menu_item_new_with_label (exo_helper_get_name (helper));
       g_object_set_data_full (G_OBJECT (item), I_("exo-helper"), helper, g_object_unref);

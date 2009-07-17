@@ -186,7 +186,7 @@ exo_gdk_pixbuf_colorize (const GdkPixbuf *src,
               *pixdst++ = (*pixsrc++ * red_value) >> 8;
               *pixdst++ = (*pixsrc++ * green_value) >> 8;
               *pixdst++ = (*pixsrc++ * blue_value) >> 8;
-              
+
               if (has_alpha)
                 *pixdst++ = *pixsrc++;
             }
@@ -211,7 +211,7 @@ draw_frame_row (const GdkPixbuf *frame_image,
   gint remaining_width;
   gint slab_width;
   gint h_offset;
-  
+
   for (h_offset = 0, remaining_width = target_width; remaining_width > 0; h_offset += slab_width, remaining_width -= slab_width)
     {
       slab_width = (remaining_width > source_width) ? source_width : remaining_width;
@@ -234,7 +234,7 @@ draw_frame_column (const GdkPixbuf *frame_image,
   gint remaining_height;
   gint slab_height;
   gint v_offset;
-  
+
   for (v_offset = 0, remaining_height = target_height; remaining_height > 0; v_offset += slab_height, remaining_height -= slab_height)
     {
       slab_height = (remaining_height > source_height) ? source_height : remaining_height;
@@ -463,7 +463,7 @@ exo_gdk_pixbuf_spotlight (const GdkPixbuf *src)
   /* determine src/dst row strides */
   dst_row_stride = gdk_pixbuf_get_rowstride (dst);
   src_row_stride = gdk_pixbuf_get_rowstride (src);
-  
+
 #if defined(__GNUC__) && defined(__MMX__)
   /* check if there's a good reason to use MMX */
   if (G_LIKELY (has_alpha && dst_row_stride == width * 4 && src_row_stride == width * 4 && (width * height) % 2 == 0))
@@ -526,7 +526,7 @@ exo_gdk_pixbuf_spotlight (const GdkPixbuf *src)
         {
           pixdst = dst_pixels + i * dst_row_stride;
           pixsrc = src_pixels + i * src_row_stride;
-      
+
           for (j = width; j > 0; --j)
             {
               *pixdst++ = lighten_channel (*pixsrc++);

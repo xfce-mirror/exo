@@ -56,7 +56,7 @@ exo_str_elide_underscores (const gchar *text)
   gchar       *t;
 
   g_return_val_if_fail (text != NULL, NULL);
-  
+
   result = g_malloc (strlen (text) + 1);
 
   for (s = text, t = result; *s != '\0'; ++s)
@@ -224,7 +224,7 @@ exo_strdup_strftime (const gchar     *format,
   converted = g_locale_from_utf8 (format, -1, NULL, NULL, NULL);
   if (G_UNLIKELY (converted == NULL))
     return NULL;
-  
+
   /* start processing the format */
   string = g_string_new ("");
   remainder = converted;
@@ -285,8 +285,8 @@ exo_strdup_strftime (const gchar     *format,
               g_warning ("Unfinished %%%c modifier passed to exo_strdup_strftime", modifier);
               break;
             }
-        } 
-      
+        }
+
       if (strchr (C_STANDARD_STRFTIME_CHARACTERS, *remainder) == NULL)
         g_warning ("exo_strdup_strftime does not support non-standard escape code %%%c", *remainder);
 
@@ -340,7 +340,7 @@ exo_strdup_strftime (const gchar     *format,
       /* add this piece */
       g_string_append (string, piece);
     }
-  
+
   /* Convert the string back into UTF-8 */
   result = g_locale_to_utf8 (string->str, -1, NULL, NULL, NULL);
 
@@ -388,12 +388,12 @@ exo_strndupv (gchar **strv,
 /**
  * exo_intern_string:
  * @string: a string
- * 
+ *
  * Returns a canonical representation for @string. Interned strings can
  * be compared for equality by comparing the pointers, instead of using strcmp()
  * or exo_str_is_equal(). exo_intern_string() takes a copy of the @string for its
  * internal usage, so @string does not need to be static.
- * 
+ *
  * Return value: a canonical representation for the string
  *
  * Since: 0.3.1.1
@@ -413,12 +413,12 @@ exo_intern_string (const gchar *string)
 /**
  * exo_intern_static_string:
  * @string: a static string
- * 
+ *
  * Returns a canonical representation for @string. Interned strings can
  * be compared for equality by comparing the pointers, instead of using strcmp()
  * or exo_str_is_equal(). exo_intern_static_string() does not copy the string,
- * therefore @string must not be freed or modified. 
- * 
+ * therefore @string must not be freed or modified.
+ *
  * Return value: a canonical representation for the string
  *
  * Since: 0.3.1.1

@@ -703,7 +703,7 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
 
   /* make sure that the mount point is usable (i.e. does not contain G_DIR_SEPARATOR's) */
   mount_point = (mount_point != NULL && *mount_point != '\0')
-              ? exo_str_replace (mount_point, G_DIR_SEPARATOR_S, "_") 
+              ? exo_str_replace (mount_point, G_DIR_SEPARATOR_S, "_")
               : g_strdup ("");
 
   /* let HAL guess the fstype */
@@ -731,7 +731,7 @@ oom:      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, "%s", g_strerror
                                      DBUS_TYPE_STRING, &mount_point,
                                      DBUS_TYPE_STRING, &fstype,
                                      DBUS_TYPE_ARRAY, DBUS_TYPE_STRING, &options, n,
-				                             DBUS_TYPE_INVALID))
+                                     DBUS_TYPE_INVALID))
         {
           dbus_message_unref (message);
           goto oom;
@@ -835,7 +835,7 @@ oom:      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, "%s", g_strerror
   if (dbus_error_is_set (&derror))
     {
       /* try to translate the error appropriately */
-      if (strcmp (derror.name, "org.freedesktop.Hal.Device.Volume.PermissionDenied") == 0) 
+      if (strcmp (derror.name, "org.freedesktop.Hal.Device.Volume.PermissionDenied") == 0)
         {
           /* TRANSLATORS: User tried to mount a volume, but is not privileged to do so. */
           g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("You are not privileged to mount the volume \"%s\""), device->name);
@@ -1015,7 +1015,7 @@ oom:  g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, "%s", g_strerror (EN
   if (G_UNLIKELY (dbus_error_is_set (&derror)))
     {
       /* try to translate the error appropriately */
-      if (strcmp (derror.name, "org.freedesktop.Hal.Device.Volume.PermissionDenied") == 0) 
+      if (strcmp (derror.name, "org.freedesktop.Hal.Device.Volume.PermissionDenied") == 0)
         {
           /* TRANSLATORS: User tried to unmount a volume, but is not privileged to do so. */
           g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("You are not privileged to unmount the volume \"%s\""), device->name);

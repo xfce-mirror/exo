@@ -22,7 +22,7 @@
 
 #include <exo-helper/exo-helper.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_TYPE_HELPER_CHOOSER            (exo_helper_chooser_get_type ())
 #define EXO_HELPER_CHOOSER(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_HELPER_CHOOSER, ExoHelperChooser))
@@ -44,6 +44,6 @@ void               exo_helper_chooser_set_category  (ExoHelperChooser       *cho
 
 gboolean           exo_helper_chooser_get_is_valid  (const ExoHelperChooser *chooser);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_HELPER_CHOOSER_H__ */

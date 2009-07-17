@@ -40,9 +40,7 @@ typedef struct _ExoIconChooserModelItem ExoIconChooserModelItem;
 
 
 
-static void               exo_icon_chooser_model_class_init         (ExoIconChooserModelClass  *klass);
 static void               exo_icon_chooser_model_tree_model_init    (GtkTreeModelIface         *iface);
-static void               exo_icon_chooser_model_init               (ExoIconChooserModel       *model);
 static void               exo_icon_chooser_model_finalize           (GObject                   *object);
 static GtkTreeModelFlags  exo_icon_chooser_model_get_flags          (GtkTreeModel              *tree_model);
 static gint               exo_icon_chooser_model_get_n_columns      (GtkTreeModel              *tree_model);
@@ -118,28 +116,10 @@ static const gchar CONTEXT_NAMES[][14] =
   "Status",         /* EXO_ICON_CHOOSER_CONTEXT_STATUS */
 };
 
-static GObjectClass *exo_icon_chooser_model_parent_class;
 
 
-
-GType
-_exo_icon_chooser_model_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = _exo_g_type_register_simple (G_TYPE_OBJECT,
-                                          "ExoIconChooserModel",
-                                          sizeof (ExoIconChooserModelClass),
-                                          exo_icon_chooser_model_class_init,
-                                          sizeof (ExoIconChooserModel),
-                                          exo_icon_chooser_model_init);
-      _exo_g_type_add_interface_simple (type, GTK_TYPE_TREE_MODEL, (GInterfaceInitFunc) exo_icon_chooser_model_tree_model_init);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE_WITH_CODE (ExoIconChooserModel, exo_icon_chooser_model, G_TYPE_OBJECT,
+  G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL, exo_icon_chooser_model_tree_model_init))
 
 
 
@@ -147,9 +127,6 @@ static void
 exo_icon_chooser_model_class_init (ExoIconChooserModelClass *klass)
 {
   GObjectClass *gobject_class;
-
-  /* determine the parent type class */
-  exo_icon_chooser_model_parent_class = g_type_class_peek_parent (klass);
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_icon_chooser_model_finalize;
@@ -373,7 +350,7 @@ exo_icon_chooser_model_iter_children (GtkTreeModel *tree_model,
       iter->user_data = model->items;
       return TRUE;
     }
-  
+
   return FALSE;
 }
 

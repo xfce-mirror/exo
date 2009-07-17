@@ -29,11 +29,11 @@
 
 #include <glib-object.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 gboolean  exo_g_value_transform_negate  (const GValue *src_value,
                                          GValue       *dst_value);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_GOBJECT_EXTENSIONS_H__ */

@@ -22,30 +22,30 @@
 
 #include <exo/exo.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoMountHalDevice ExoMountHalDevice;
 
 ExoMountHalDevice *exo_mount_hal_device_from_udi    (const gchar       *udi,
-                                                     GError           **error) G_GNUC_INTERNAL G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+                                                     GError           **error) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 ExoMountHalDevice *exo_mount_hal_device_from_file   (const gchar       *file,
-                                                     GError           **error) G_GNUC_INTERNAL G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+                                                     GError           **error) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-void               exo_mount_hal_device_free        (ExoMountHalDevice *device) G_GNUC_INTERNAL;
+void               exo_mount_hal_device_free        (ExoMountHalDevice *device);
 
-gchar             *exo_mount_hal_device_get_file    (ExoMountHalDevice *device) G_GNUC_INTERNAL G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
-gchar             *exo_mount_hal_device_get_name    (ExoMountHalDevice *device) G_GNUC_INTERNAL G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
-gchar             *exo_mount_hal_device_get_icon    (ExoMountHalDevice *device) G_GNUC_INTERNAL G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+gchar             *exo_mount_hal_device_get_file    (ExoMountHalDevice *device) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+gchar             *exo_mount_hal_device_get_name    (ExoMountHalDevice *device) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+gchar             *exo_mount_hal_device_get_icon    (ExoMountHalDevice *device) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-gboolean           exo_mount_hal_device_is_readonly (ExoMountHalDevice *device) G_GNUC_INTERNAL;
+gboolean           exo_mount_hal_device_is_readonly (ExoMountHalDevice *device);
 
 gboolean           exo_mount_hal_device_eject       (ExoMountHalDevice *device,
-                                                     GError           **error) G_GNUC_INTERNAL;
+                                                     GError           **error);
 gboolean           exo_mount_hal_device_mount       (ExoMountHalDevice *device,
-                                                     GError           **error) G_GNUC_INTERNAL;
+                                                     GError           **error);
 gboolean           exo_mount_hal_device_unmount     (ExoMountHalDevice *device,
-                                                     GError           **error) G_GNUC_INTERNAL;
+                                                     GError           **error);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_MOUNT_HAL_H__ */

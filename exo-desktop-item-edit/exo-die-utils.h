@@ -23,18 +23,18 @@
 
 #include <exo/exo.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 void      exo_die_g_key_file_set_locale_value (GKeyFile    *key_file,
                                                const gchar *group,
                                                const gchar *key,
-                                               const gchar *value) G_GNUC_INTERNAL;
+                                               const gchar *value);
 
 gboolean  exo_die_g_key_file_save             (GKeyFile    *key_file,
                                                gboolean     create,
                                                const gchar *base,
-                                               GError     **error) G_GNUC_INTERNAL;
+                                               GError     **error);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_DIE_UTILS_H__ */

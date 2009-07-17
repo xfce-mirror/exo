@@ -30,7 +30,7 @@
 
 #include <exo/exo-toolbars-model.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 #define EXO_TYPE_TOOLBARS_EDITOR_DIALOG             (exo_toolbars_editor_dialog_get_type ())
 #define EXO_TOOLBARS_EDITOR_DIALOG(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_TOOLBARS_EDITOR_DIALOG, ExoToolbarsEditorDialog))
@@ -65,6 +65,6 @@ GType      exo_toolbars_editor_dialog_get_type       (void) G_GNUC_CONST;
 GtkWidget *exo_toolbars_editor_dialog_new_with_model (GtkUIManager     *ui_manager,
                                                       ExoToolbarsModel *model);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_TOOLBARS_EDITOR_DIALOG_H__ */

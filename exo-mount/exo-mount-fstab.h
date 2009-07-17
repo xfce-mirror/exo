@@ -22,19 +22,19 @@
 
 #include <exo/exo.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
-gboolean exo_mount_fstab_contains (const gchar *device_file) G_GNUC_INTERNAL;
+gboolean exo_mount_fstab_contains (const gchar *device_file);
 
 gboolean exo_mount_fstab_eject    (const gchar *device_file,
-                                   GError     **error) G_GNUC_INTERNAL;
+                                   GError     **error);
 
 gboolean exo_mount_fstab_mount    (const gchar *device_file,
-                                   GError     **error) G_GNUC_INTERNAL;
+                                   GError     **error);
 
 gboolean exo_mount_fstab_unmount  (const gchar *device_file,
-                                   GError     **error) G_GNUC_INTERNAL;
+                                   GError     **error);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_MOUNT_FSTAB_H__ */

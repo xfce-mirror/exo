@@ -28,9 +28,9 @@ headers
 #include "pyexo.h"
 
 /* mark internal symbols with G_GNUC_INTERNAL */
-void exo_add_constants    (PyObject    *module,
-                           const gchar *strip_prefix) G_GNUC_INTERNAL;
-void exo_register_classes (PyObject    *d) G_GNUC_INTERNAL;
+G_GNUC_INTERNAL void exo_add_constants    (PyObject    *module,
+                                           const gchar *strip_prefix);
+G_GNUC_INTERNAL void exo_register_classes (PyObject    *d);
 
 %%
 modulename exo

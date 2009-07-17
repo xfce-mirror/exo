@@ -61,7 +61,7 @@ verify (const gchar *path,
       dp = (const guint8 *) data;
       cp = (const guint8 *) contents;
 
-      for (n = 0; n < contents_length; ++n) 
+      for (n = 0; n < contents_length; ++n)
         if (dp[n] != cp[n])
           {
             g_warning ("Contents for \"%s\" differ: data[%u]=0x%02x, contents[%u]=0x%02x",

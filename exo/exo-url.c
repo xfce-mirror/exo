@@ -187,7 +187,7 @@ _exo_url_to_local_path (const gchar *url)
  * @error  : return location for errors or %NULL.
  *
  * Tries to find a suitable handler for @url in the list of
- * preferred application categories and runs that handler 
+ * preferred application categories and runs that handler
  * with @url on @screen.
  *
  * Return value: %TRUE on success, %FALSE on error.
@@ -227,7 +227,7 @@ exo_url_show_on_screen (const gchar *url,
     {
       /* determine the display name for the screen */
       display_name = gdk_screen_make_display_name (screen);
-      
+
       /* check if we have a local HTML file here */
       if (fnmatch ("*.xhtml", local_path, FNM_CASEFOLD) == 0
           || fnmatch ("*.htm", local_path, FNM_CASEFOLD) == 0
@@ -390,7 +390,7 @@ exo_url_about_dialog_hook (GtkAboutDialog *about_dialog,
   GtkWidget *message;
   GdkScreen *screen;
   GError    *error = NULL;
-  
+
   g_return_if_fail (GTK_IS_ABOUT_DIALOG (about_dialog));
   g_return_if_fail (link != NULL);
 

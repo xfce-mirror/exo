@@ -22,7 +22,7 @@
 
 #include <exo-helper/exo-helper-chooser.h>
 
-G_BEGIN_DECLS;
+G_BEGIN_DECLS
 
 typedef struct _ExoHelperChooserDialogClass ExoHelperChooserDialogClass;
 typedef struct _ExoHelperChooserDialog      ExoHelperChooserDialog;
@@ -40,6 +40,6 @@ GtkWidget *exo_helper_chooser_dialog_new      (void) G_GNUC_MALLOC;
 
 GtkWidget *exo_helper_chooser_dialog_get_plug_child (ExoHelperChooserDialog *dialog);
 
-G_END_DECLS;
+G_END_DECLS
 
 #endif /* !__EXO_HELPER_CHOOSER_DIALOG_H__ */
