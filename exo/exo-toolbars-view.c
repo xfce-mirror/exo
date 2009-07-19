@@ -528,8 +528,11 @@ set_item_drag_source (ExoToolbarsModel  *model,
       id = "separator";
 
       pixbuf = _exo_toolbars_new_separator_pixbuf ();
-      gtk_drag_source_set_icon_pixbuf (item, pixbuf);
-      g_object_unref (G_OBJECT (pixbuf));
+      if (G_LIKELY (pixbuf != NULL))
+        {
+          gtk_drag_source_set_icon_pixbuf (item, pixbuf);
+          g_object_unref (G_OBJECT (pixbuf));
+        }
     }
   else
     {
@@ -540,8 +543,11 @@ set_item_drag_source (ExoToolbarsModel  *model,
         stock_id = g_strdup (GTK_STOCK_DND);
 
       pixbuf = gtk_widget_render_icon (item, stock_id, GTK_ICON_SIZE_LARGE_TOOLBAR, NULL);
-      gtk_drag_source_set_icon_pixbuf (item, pixbuf);
-      g_object_unref (G_OBJECT (pixbuf));
+      if (G_LIKELY (pixbuf != NULL))
+        {
+          gtk_drag_source_set_icon_pixbuf (item, pixbuf);
+          g_object_unref (G_OBJECT (pixbuf));
+        }
 
       g_free (stock_id);
     }

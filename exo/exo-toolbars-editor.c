@@ -340,12 +340,14 @@ event_box_realize (GtkWidget *widget,
     {
       gtk_image_get_stock (image, &stock_id, NULL);
       pixbuf = gtk_widget_render_icon (widget, stock_id, GTK_ICON_SIZE_LARGE_TOOLBAR, NULL);
-      gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
+      if (G_LIKELY (pixbuf != NULL))
+        gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
     }
   else if (type == GTK_IMAGE_PIXBUF)
     {
       pixbuf = gtk_image_get_pixbuf (image);
-      gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
+      if (G_LIKELY (pixbuf != NULL))
+        gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
     }
 }
 
