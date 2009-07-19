@@ -316,12 +316,14 @@ event_box_realize (GtkWidget *widget,
     {
       gtk_image_get_stock (image, &stock_id, NULL);
       pixbuf = gtk_widget_render_icon (widget, stock_id, GTK_ICON_SIZE_LARGE_TOOLBAR, NULL);
-      gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
+      if (G_LIKELY (pixbuf != NULL))
+        gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
     }
   else if (type == GTK_IMAGE_PIXBUF)
     {
       pixbuf = gtk_image_get_pixbuf (image);
-      gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
+      if (G_LIKELY (pixbuf != NULL))
+        gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
     }
 }
 
@@ -367,6 +369,8 @@ exo_toolbars_editor_create_item (ExoToolbarsEditor  *editor,
 
   text_no_mnemonic = exo_str_elide_underscores (text);
   label = gtk_label_new (text_no_mnemonic);
+  gtk_widget_set_tooltip_text (ebox, text_no_mnemonic);
+  gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
   gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, TRUE, 0);
   g_free (text_no_mnemonic);
   gtk_widget_show (label);
