@@ -1102,6 +1102,9 @@ exo_toolbars_view_construct (ExoToolbarsView *view)
   if (view->priv->model == NULL || view->priv->ui_manager == NULL)
     return;
 
+  /* ensure there are no pending updates before getting the widgets */
+  gtk_ui_manager_ensure_update (view->priv->ui_manager);
+
   n_toolbars = exo_toolbars_model_n_toolbars (view->priv->model);
   for (i = 0; i < n_toolbars; ++i)
     {
