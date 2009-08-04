@@ -4980,7 +4980,7 @@ exo_icon_view_get_item_at_pos (const ExoIconView *icon_view,
                                GtkTreePath      **path,
                                GtkCellRenderer  **cell)
 {
-  ExoIconViewCellInfo *info;
+  ExoIconViewCellInfo *info = NULL;
   ExoIconViewItem     *item;
 
   g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), FALSE);
