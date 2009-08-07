@@ -202,7 +202,6 @@ exo_url_show_on_screen (const gchar *url,
 {
   const gchar *category = NULL;
   gboolean     result = FALSE;
-  GString     *escaped_url;
   gchar       *display_name;
   gchar       *local_path;
   gchar       *command;
@@ -332,22 +331,8 @@ exo_url_show_on_screen (const gchar *url,
       return result;
     }
 
-  /* need to escape commata, otherwise firefox and several other helpers cannot handle the URL,
-   * see http://bugzilla.xfce.org/show_bug.cgi?id=2454 for a description of the problem.
-   */
-  escaped_url = g_string_sized_new (128);
-  for (; *url != '\0'; ++url)
-    {
-      if (*url == ',')
-        g_string_append (escaped_url, "%2C");
-      else
-        g_string_append_c (escaped_url, *url);
-    }
-
   /* oki doki then, let's open it */
-  result = exo_execute_preferred_application_on_screen (category, escaped_url->str, NULL, envp, screen, error);
-  g_string_free (escaped_url, TRUE);
-  return result;
+  return exo_execute_preferred_application_on_screen (category, url, NULL, envp, screen, error);
 }
 
 
