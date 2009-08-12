@@ -136,7 +136,7 @@ exo_die_command_entry_init (ExoDieCommandEntry *command_entry)
   GtkWidget *image;
 
   /* setup the box */
-  gtk_box_set_spacing (GTK_BOX (command_entry), 3);
+  gtk_box_set_spacing (GTK_BOX (command_entry), 6);
 
   /* allocate the command model */
   command_entry->model = exo_die_command_model_new ();
@@ -155,7 +155,7 @@ exo_die_command_entry_init (ExoDieCommandEntry *command_entry)
   gtk_box_pack_start (GTK_BOX (command_entry), button, FALSE, FALSE, 0);
   gtk_widget_show (button);
 
-  image = gtk_image_new_from_stock (GTK_STOCK_OPEN, GTK_ICON_SIZE_BUTTON);
+  image = gtk_image_new_from_stock (GTK_STOCK_OPEN, GTK_ICON_SIZE_MENU);
   gtk_container_add (GTK_CONTAINER (button), image);
   gtk_widget_show (image);
 

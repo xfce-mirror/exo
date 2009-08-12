@@ -78,7 +78,6 @@ struct _ExoDieEditor
   GtkTable         __parent__;
   GtkWidget       *name_entry;
   GtkWidget       *icon_button;
-  GtkTooltips     *tooltips;
   ExoDieEditorMode mode;
   gchar           *name;
   gchar           *comment;
@@ -258,7 +257,6 @@ exo_die_editor_init (ExoDieEditor *editor)
   GtkWidget *align;
   GtkWidget *entry;
   GtkWidget *label;
-  gchar     *text;
   gint       row;
 
   /* start with sane defaults */
@@ -269,10 +267,6 @@ exo_die_editor_init (ExoDieEditor *editor)
   editor->name = g_strdup ("");
   editor->url = g_strdup ("");
 
-  /* allocate the shared tooltips */
-  editor->tooltips = gtk_tooltips_new ();
-  exo_gtk_object_ref_sink (GTK_OBJECT (editor->tooltips));
-
   /* configure the table */
   gtk_table_resize (GTK_TABLE (editor), 8, 2);
   gtk_table_set_col_spacings (GTK_TABLE (editor), 12);
@@ -281,13 +275,11 @@ exo_die_editor_init (ExoDieEditor *editor)
   row = 0;
 
   /* TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts */
-  text = g_strdup_printf ("<b>%s</b>", _("_Name:"));
-  label = gtk_label_new_with_mnemonic (text);
+  label = gtk_label_new_with_mnemonic (_("_Name:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
   gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
   gtk_widget_show (label);
-  g_free (text);
 
   editor->name_entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (editor->name_entry), TRUE);
@@ -299,13 +291,11 @@ exo_die_editor_init (ExoDieEditor *editor)
   row += 1;
 
   /* TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts */
-  text = g_strdup_printf ("<b>%s</b>", _("C_omment:"));
-  label = gtk_label_new_with_mnemonic (text);
+  label = gtk_label_new_with_mnemonic (_("C_omment:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
   gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
   gtk_widget_show (label);
-  g_free (text);
 
   entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
@@ -317,13 +307,11 @@ exo_die_editor_init (ExoDieEditor *editor)
   row += 1;
 
   /* TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts */
-  text = g_strdup_printf ("<b>%s</b>", _("Comm_and:"));
-  label = gtk_label_new_with_mnemonic (text);
+  label = gtk_label_new_with_mnemonic (_("Comm_and:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (label), "visible", exo_die_true_if_application, NULL, NULL);
   gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
-  g_free (text);
 
   entry = exo_die_command_entry_new ();
   exo_mutual_binding_new (G_OBJECT (editor), "command", G_OBJECT (entry), "text");
@@ -334,13 +322,11 @@ exo_die_editor_init (ExoDieEditor *editor)
   row += 1;
 
   /* TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts */
-  text = g_strdup_printf ("<b>%s</b>", _("_URL:"));
-  label = gtk_label_new_with_mnemonic (text);
+  label = gtk_label_new_with_mnemonic (_("_URL:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (label), "visible", exo_die_true_if_link, NULL, NULL);
   gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
-  g_free (text);
 
   entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
@@ -352,13 +338,11 @@ exo_die_editor_init (ExoDieEditor *editor)
   row += 1;
 
   /* TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts */
-  text = g_strdup_printf ("<b>%s</b>", _("_Icon:"));
-  label = gtk_label_new_with_mnemonic (text);
+  label = gtk_label_new_with_mnemonic (_("_Icon:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
   gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
   gtk_widget_show (label);
-  g_free (text);
 
   align = gtk_alignment_new (0.0f, 0.5f, 0.0f, 0.0f);
   gtk_table_attach (GTK_TABLE (editor), align, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
@@ -377,26 +361,19 @@ exo_die_editor_init (ExoDieEditor *editor)
 
   row += 1;
 
-  /* add an empty row to get some spacing before the options */
-  gtk_table_set_row_spacing (GTK_TABLE (editor), row, 18);
-
-  row += 1;
-
-  text = g_strdup_printf ("<b>%s</b>", _("Options:"));
-  label = gtk_label_new_with_mnemonic (text);
+  label = gtk_label_new (_("Options:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (label), "visible", exo_die_true_if_application, NULL, NULL);
   gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
-  g_free (text);
 
   /* TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
    *              and sync your translations with the translations in Thunar and xfce4-panel.
    */
   button = gtk_check_button_new_with_mnemonic (_("Use _startup notification"));
-  gtk_tooltips_set_tip (editor->tooltips, button, _("Select this option to enable startup notification when the command "
-                                                    "is run from the file manager or the menu. Not every application supports "
-                                                    "startup notification."), NULL);
+  gtk_widget_set_tooltip_text (button, _("Select this option to enable startup notification when the command "
+                                         "is run from the file manager or the menu. Not every application supports "
+                                         "startup notification."));
   exo_mutual_binding_new (G_OBJECT (editor), "snotify", G_OBJECT (button), "active");
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (button), "visible", exo_die_true_if_application, NULL, NULL);
   gtk_table_attach (GTK_TABLE (editor), button, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
@@ -407,7 +384,7 @@ exo_die_editor_init (ExoDieEditor *editor)
    *              and sync your translations with the translations in Thunar and xfce4-panel.
    */
   button = gtk_check_button_new_with_mnemonic (_("Run in _terminal"));
-  gtk_tooltips_set_tip (editor->tooltips, button, _("Select this option to run the command in a terminal window."), NULL);
+  gtk_widget_set_tooltip_text (button, _("Select this option to run the command in a terminal window."));
   exo_mutual_binding_new (G_OBJECT (editor), "terminal", G_OBJECT (button), "active");
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (button), "visible", exo_die_true_if_application, NULL, NULL);
   gtk_table_attach (GTK_TABLE (editor), button, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
@@ -421,7 +398,6 @@ exo_die_editor_finalize (GObject *object)
   ExoDieEditor *editor = EXO_DIE_EDITOR (object);
 
   /* cleanup */
-  g_object_unref (G_OBJECT (editor->tooltips));
   g_free (editor->command);
   g_free (editor->comment);
   g_free (editor->icon);

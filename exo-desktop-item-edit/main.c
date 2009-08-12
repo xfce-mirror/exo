@@ -242,7 +242,7 @@ main (int argc, char **argv)
                                                 NULL, GTK_DIALOG_NO_SEPARATOR,
                                                 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
                                                 NULL);
-  gtk_window_set_default_size (GTK_WINDOW (dialog), 450, 400);
+  gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 375);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), ICON_NAMES[mode]);
 
   /* add the "Create"/"Save" button (as default) */
@@ -373,9 +373,7 @@ main (int argc, char **argv)
                                                  GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
                                                  NULL);
           gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), TRUE);
-#if GTK_CHECK_VERSION(2,8,0)
           gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
-#endif
 
           /* if base is a folder, enter the folder */
           if (g_file_test (filename, G_FILE_TEST_IS_DIR))
