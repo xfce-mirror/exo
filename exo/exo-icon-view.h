@@ -181,18 +181,6 @@ GtkTreeModel         *exo_icon_view_get_model                 (const ExoIconView
 void                  exo_icon_view_set_model                 (ExoIconView              *icon_view,
                                                                GtkTreeModel             *model);
 
-#ifndef EXO_DISABLE_DEPRECATED
-gint                  exo_icon_view_get_text_column           (const ExoIconView        *icon_view);
-void                  exo_icon_view_set_text_column           (ExoIconView              *icon_view,
-                                                               gint                      column);
-gint                  exo_icon_view_get_markup_column         (const ExoIconView        *icon_view);
-void                  exo_icon_view_set_markup_column         (ExoIconView              *icon_view,
-                                                               gint                      column);
-gint                  exo_icon_view_get_pixbuf_column         (const ExoIconView        *icon_view);
-void                  exo_icon_view_set_pixbuf_column         (ExoIconView              *icon_view,
-                                                               gint                      column);
-#endif
-
 GtkOrientation        exo_icon_view_get_orientation           (const ExoIconView        *icon_view);
 void                  exo_icon_view_set_orientation           (ExoIconView              *icon_view,
                                                                GtkOrientation            orientation);

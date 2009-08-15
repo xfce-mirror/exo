@@ -3,16 +3,16 @@
 SUBDIRS =								\
 	examples
 
-defsdir = $(datadir)/pygtk/2.0/defs/exo-$(LIBEXO_VERSION_API)
+defsdir = $(datadir)/pygtk/2.0/defs/exo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR)
 defs_DATA = exo.defs
 
 pyexodir = $(pythondir)
 pyexo_PYTHON = pyexo.py
 
-exomoduledir = $(pyexecdir)/exo-$(LIBEXO_VERSION_API)/exo
+exomoduledir = $(pyexecdir)/exo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR)/exo
 exomodule_PYTHON = __init__.py
 
-exobindingsdir = $(pyexecdir)/exo-$(LIBEXO_VERSION_API)
+exobindingsdir = $(pyexecdir)/exo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR)
 exobindings_LTLIBRARIES = _exo.la
 
 _exo_la_CFLAGS =							\

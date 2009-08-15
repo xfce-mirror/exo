@@ -69,25 +69,10 @@ const gchar *exo_check_version (guint required_major,
 #endif /* __GNUC__ */
 #endif /* !defined(G_GNUC_WARN_UNUSED_RESULT) */
 
-/* with GObject >= 2.7.0, copying name, nick and blurb can be avoided */
-#if GLIB_CHECK_VERSION(2,7,0)
-#define EXO_PARAM_READABLE  (G_PARAM_READABLE \
-                           | G_PARAM_STATIC_NAME \
-                           | G_PARAM_STATIC_NICK \
-                           | G_PARAM_STATIC_BLURB)
-#define EXO_PARAM_WRITABLE  (G_PARAM_WRITABLE \
-                           | G_PARAM_STATIC_NAME \
-                           | G_PARAM_STATIC_NICK \
-                           | G_PARAM_STATIC_BLURB)
-#define EXO_PARAM_READWRITE (G_PARAM_READWRITE \
-                           | G_PARAM_STATIC_NAME \
-                           | G_PARAM_STATIC_NICK \
-                           | G_PARAM_STATIC_BLURB)
-#else
-#define EXO_PARAM_READABLE  (G_PARAM_READABLE)
-#define EXO_PARAM_WRITABLE  (G_PARAM_WRITABLE)
-#define EXO_PARAM_READWRITE (G_PARAM_READWRITE)
-#endif
+/* shorter macros for the GParamSpecs with static strings */
+#define EXO_PARAM_READABLE  (G_PARAM_READABLE | G_PARAM_STATIC_STRINGS)
+#define EXO_PARAM_WRITABLE  (G_PARAM_WRITABLE | G_PARAM_STATIC_STRINGS)
+#define EXO_PARAM_READWRITE (G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS)
 
 G_END_DECLS
 

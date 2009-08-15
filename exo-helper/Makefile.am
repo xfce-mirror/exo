@@ -11,7 +11,7 @@ INCLUDES = 								\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 libexec_PROGRAMS =							\
-	exo-helper-0.3
+	exo-helper-1
 
 exo_helper_built_sources =						\
 	exo-helper-enum-types.c						\
@@ -20,7 +20,7 @@ exo_helper_built_sources =						\
 exo_helper_headers =							\
 	exo-helper.h
 
-exo_helper_0_3_SOURCES =						\
+exo_helper_1_SOURCES =						\
 	$(exo_helper_built_sources)					\
 	$(exo_helper_headers)						\
 	exo-helper-chooser-dialog.c					\
@@ -34,19 +34,19 @@ exo_helper_0_3_SOURCES =						\
 	exo-helper.c							\
 	main.c
 
-exo_helper_0_3_CFLAGS =							\
+exo_helper_1_CFLAGS =							\
 	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
-exo_helper_0_3_DEPENDENCIES =						\
+exo_helper_1_DEPENDENCIES =						\
 	$(top_builddir)/exo-support/libexo-support.la			\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
-exo_helper_0_3_LDADD =							\
+exo_helper_1_LDADD =							\
 	$(GTK_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(top_builddir)/exo-support/libexo-support.la			\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 bin_SCRIPTS =								\
 	exo-preferred-applications

@@ -75,16 +75,6 @@ exo_check_version
 #endif
 #endif
 
-/* ExoEllipsizedLabel methods */
-#if IN_HEADER(__EXO_ELLIPSIZED_LABEL_H__)
-#if IN_SOURCE(__EXO_ELLIPSIZED_LABEL_C__)
-exo_ellipsized_label_get_type G_GNUC_CONST
-exo_ellipsized_label_new G_GNUC_MALLOC
-exo_ellipsized_label_get_ellipsize
-exo_ellipsized_label_set_ellipsize
-#endif
-#endif
-
 /* exo-enum-types functions */
 #if IN_HEADER(__EXO_ENUM_TYPES_H__)
 #if IN_SOURCE(__EXO_ENUM_TYPES_C__)
@@ -129,8 +119,6 @@ exo_g_value_transform_negate
 #if IN_HEADER(__EXO_GTK_EXTENSIONS_H__)
 #if IN_SOURCE(__EXO_GTK_EXTENSIONS_C__)
 exo_gtk_object_destroy_later
-exo_gtk_object_ref_sink
-exo_gtk_radio_action_set_current_value
 exo_gtk_file_chooser_add_thumbnail_preview
 #endif
 #endif
@@ -174,12 +162,6 @@ exo_icon_view_new
 exo_icon_view_new_with_model
 exo_icon_view_get_model
 exo_icon_view_set_model
-exo_icon_view_get_text_column
-exo_icon_view_set_text_column
-exo_icon_view_get_markup_column
-exo_icon_view_set_markup_column
-exo_icon_view_get_pixbuf_column
-exo_icon_view_set_pixbuf_column
 exo_icon_view_get_orientation
 exo_icon_view_set_orientation
 exo_icon_view_get_columns
@@ -239,21 +221,6 @@ exo_icon_view_set_search_position_func
 #endif
 #endif
 
-/* exo-md5 functions */
-#if IN_HEADER(__EXO_MD5_H__)
-#if IN_SOURCE(__EXO_MD5_C__)
-exo_md5_digest_get_type G_GNUC_CONST
-exo_str_get_md5_digest G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_str_get_md5_str G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_md5_str_to_digest G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_md5_digest_to_str G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_md5_digest_dup G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_md5_digest_free
-exo_md5_digest_hash
-exo_md5_digest_equal
-#endif
-#endif
-
 /* exo-mount-point functions */
 #if IN_HEADER(__EXO_MOUNT_POINT_H__)
 #if IN_SOURCE(__EXO_MOUNT_POINT_C__)
@@ -280,14 +247,6 @@ exo_atomic_dec
 #endif
 #endif
 
-/* exo-pango-extensions functions */
-#if IN_HEADER(__EXO_PANGO_EXTENSIONS_H__)
-#if IN_SOURCE(__EXO_PANGO_EXTENSIONS_C__)
-exo_pango_ellipsize_mode_get_type G_GNUC_CONST
-exo_pango_layout_set_text_ellipsized
-#endif
-#endif
-
 /* exo-string functions */
 #if IN_HEADER(__EXO_STRING_H__)
 #if IN_SOURCE(__EXO_STRING_C__)
@@ -296,8 +255,6 @@ exo_str_is_equal
 exo_str_replace G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 exo_strdup_strftime G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 exo_strndupv G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_intern_string
-exo_intern_static_string
 #endif
 #endif
 

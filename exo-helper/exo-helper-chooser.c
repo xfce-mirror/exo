@@ -141,7 +141,7 @@ exo_helper_chooser_init (ExoHelperChooser *chooser)
   chooser->database = exo_helper_database_get ();
 
   chooser->tooltips = gtk_tooltips_new ();
-  exo_gtk_object_ref_sink (GTK_OBJECT (chooser->tooltips));
+  g_object_ref_sink (G_OBJECT (chooser->tooltips));
 
   gtk_widget_push_composite_child ();
 
@@ -690,7 +690,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
 
   /* allocate a new menu */
   menu = gtk_menu_new ();
-  exo_gtk_object_ref_sink (GTK_OBJECT (menu));
+  g_object_ref_sink (G_OBJECT (menu));
   gtk_menu_set_screen (GTK_MENU (menu), gtk_widget_get_screen (button));
 
   /* set Atk popup-window relation for the menu */

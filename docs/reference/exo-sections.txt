@@ -164,12 +164,6 @@ exo_icon_view_new
 exo_icon_view_new_with_model
 exo_icon_view_get_model
 exo_icon_view_set_model
-exo_icon_view_get_text_column
-exo_icon_view_set_text_column
-exo_icon_view_get_markup_column
-exo_icon_view_set_markup_column
-exo_icon_view_get_pixbuf_column
-exo_icon_view_set_pixbuf_column
 exo_icon_view_get_orientation
 exo_icon_view_set_orientation
 exo_icon_view_get_columns
@@ -396,23 +390,8 @@ exo_g_value_transform_negate
 <FILE>exo-gtk-extensions</FILE>
 <TITLE>Extensions to Gtk</TITLE>
 exo_gtk_object_destroy_later
-exo_gtk_object_ref_sink
-exo_gtk_radio_action_set_current_value
 exo_gtk_file_chooser_add_thumbnail_preview
 </SECTION>
-
-<SECTION>
-<FILE>exo-pango-extensions</FILE>
-<TITLE>Extensions to Pango</TITLE>
-ExoPangoEllipsizeMode
-exo_pango_layout_set_text_ellipsized
-<SUBSECTION Standard>
-EXO_TYPE_PANGO_ELLIPSIZE_MODE
-<SUBSECTION Private>
-exo_pango_ellipsize_mode_get_type
-</SECTION>
-
-
 
 <SECTION>
 <FILE>exo-config</FILE>
@@ -454,24 +433,6 @@ exo_execute_terminal_shell_on_screen
 </SECTION>
 
 <SECTION>
-<FILE>exo-md5</FILE>
-<TITLE>MD5 functions</TITLE>
-ExoMd5Digest
-exo_str_get_md5_digest
-exo_str_get_md5_str
-exo_md5_str_to_digest
-exo_md5_digest_to_str
-exo_md5_digest_dup
-exo_md5_digest_free
-exo_md5_digest_hash
-exo_md5_digest_equal
-<SUBSECTION Standard>
-EXO_TYPE_MD5_DIGEST
-<SUBSECTION Private>
-exo_md5_digest_get_type
-</SECTION>
-
-<SECTION>
 <FILE>exo-mount-point</FILE>
 <TITLE>Mount Points</TITLE>
 ExoMountPointFlags
@@ -492,8 +453,6 @@ exo_str_is_equal
 exo_str_replace
 exo_strdup_strftime
 exo_strndupv
-exo_intern_string
-exo_intern_static_string
 I_
 </SECTION>
 
@@ -551,25 +510,3 @@ EXO_XSESSION_CLIENT_GET_CLASS
 <SUBSECTION Private>
 exo_xsession_client_get_type
 </SECTION>
-
-
-
-<SECTION>
-<FILE>exo-ellipsized-label</FILE>
-<TITLE>ExoEllipsizedLabel</TITLE>
-ExoEllipsizedLabel
-exo_ellipsized_label_new
-exo_ellipsized_label_get_ellipsize
-exo_ellipsized_label_set_ellipsize
-<SUBSECTION Standard>
-EXO_TYPE_ELLIPSIZED_LABEL
-EXO_ELLIPSIZED_LABEL
-EXO_ELLIPSIZED_LABEL_CLASS
-EXO_IS_ELLIPSIZED_LABEL
-EXO_IS_ELLIPSIZED_LABEL_CLASS
-EXO_ELLIPSIZED_LABEL_GET_CLASS
-<SUBSECTION Private>
-exo_ellipsized_label_get_type
-</SECTION>
-
-

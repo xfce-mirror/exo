@@ -9,7 +9,8 @@ dnl
 dnl ***************************
 dnl *** Version information ***
 dnl ***************************
-m4_define([libexo_verinfo], [5:0:5]) dnl Needs to be set to [6:0:6] before the next release!
+m4_define([libexo_verinfo], [0:0:0])
+m4_define([libexo_version_api], [1])
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [3])
 m4_define([libexo_version_micro], [101])
@@ -51,14 +52,14 @@ AC_SUBST([LIBEXO_VERINFO])
 dnl ****************************
 dnl *** Subst libexo version ***
 dnl ****************************
+LIBEXO_VERSION_API=libexo_version_api()
 LIBEXO_VERSION_MAJOR=libexo_version_major()
 LIBEXO_VERSION_MINOR=libexo_version_minor()
 LIBEXO_VERSION_MICRO=libexo_version_micro()
-LIBEXO_VERSION_API=$LIBEXO_VERSION_MAJOR.$LIBEXO_VERSION_MINOR
+AC_SUBST([LIBEXO_VERSION_API])
 AC_SUBST([LIBEXO_VERSION_MAJOR])
 AC_SUBST([LIBEXO_VERSION_MINOR])
 AC_SUBST([LIBEXO_VERSION_MICRO])
-AC_SUBST([LIBEXO_VERSION_API])
 
 dnl *******************************
 dnl *** Check for UNIX variants ***
@@ -162,7 +163,7 @@ dnl *** Check for HAL (optional) ***
 dnl ********************************
 XDT_CHECK_OPTIONAL_PACKAGE([HAL], [hal-storage], [0.5.7], [hal], [HAL support], [yes])
 if test x"$HAL_FOUND" = x"yes"; then
-  dnl # substituted into exo-hal-0.3.pc
+  dnl # substituted into exo-hal-1.pc
   HAL_STORAGE_DEPENDENCY="hal-storage"
 
   dnl # Check if LIBHAL_DRIVE_CDROM_CAPS_DVDPLUSRWDL is declared
@@ -414,12 +415,12 @@ docs/reference/Makefile
 docs/reference/version.xml
 exo.spec
 exo/Makefile
-exo/exo-0.3.pc
+exo/exo-1.pc
 exo/exo-config.h
 exo-csource/Makefile
 exo-desktop-item-edit/Makefile
 exo-hal/Makefile
-exo-hal/exo-hal-0.3.pc
+exo-hal/exo-hal-1.pc
 exo-helper/Makefile
 exo-helper/helpers/Makefile
 exo-mount/Makefile

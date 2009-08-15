@@ -1343,20 +1343,12 @@ exo_icon_view_set_property (GObject      *object,
       exo_icon_view_set_margin (icon_view, g_value_get_int (value));
       break;
 
-    case PROP_MARKUP_COLUMN:
-      exo_icon_view_set_markup_column (icon_view, g_value_get_int (value));
-      break;
-
     case PROP_MODEL:
       exo_icon_view_set_model (icon_view, g_value_get_object (value));
       break;
 
     case PROP_ORIENTATION:
       exo_icon_view_set_orientation (icon_view, g_value_get_enum (value));
-      break;
-
-    case PROP_PIXBUF_COLUMN:
-      exo_icon_view_set_pixbuf_column (icon_view, g_value_get_int (value));
       break;
 
     case PROP_REORDERABLE:
@@ -1385,10 +1377,6 @@ exo_icon_view_set_property (GObject      *object,
 
     case PROP_SPACING:
       exo_icon_view_set_spacing (icon_view, g_value_get_int (value));
-      break;
-
-    case PROP_TEXT_COLUMN:
-      exo_icon_view_set_text_column (icon_view, g_value_get_int (value));
       break;
 
     case PROP_LAYOUT_MODE:
@@ -5463,206 +5451,6 @@ update_pixbuf_cell (ExoIconView *icon_view)
                                         "pixbuf", icon_view->priv->pixbuf_column,
                                         NULL);
     }
-}
-
-
-
-/**
- * exo_icon_view_get_text_column:
- * @icon_view: A #ExoIconView.
- *
- * Returns the column with text for @icon_view.
- *
- * Returns: the text column, or -1 if it's unset.
- *
- * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
- *             now implements #GtkCellLayout.
- */
-gint
-exo_icon_view_get_text_column (const ExoIconView *icon_view)
-{
-  g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), -1);
-  return icon_view->priv->text_column;
-}
-
-
-
-/**
- * exo_icon_view_set_text_column:
- * @icon_view: A #ExoIconView.
- * @column: A column in the currently used model.
- *
- * Sets the column with text for @icon_view to be @column. The text
- * column must be of type #G_TYPE_STRING.
- *
- * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
- *             now implements #GtkCellLayout.
- **/
-void
-exo_icon_view_set_text_column (ExoIconView *icon_view,
-                               gint         column)
-{
-  GType column_type;
-
-  if (G_UNLIKELY (column == icon_view->priv->text_column))
-    return;
-
-  if (column == -1)
-    {
-      icon_view->priv->text_column = -1;
-    }
-  else
-    {
-      if (icon_view->priv->model != NULL)
-        {
-          column_type = gtk_tree_model_get_column_type (icon_view->priv->model, column);
-          g_return_if_fail (column_type == G_TYPE_STRING);
-        }
-
-      icon_view->priv->text_column = column;
-    }
-
-  exo_icon_view_stop_editing (icon_view, TRUE);
-
-  update_text_cell (icon_view);
-
-  exo_icon_view_invalidate_sizes (icon_view);
-
-  g_object_notify (G_OBJECT (icon_view), "text-column");
-}
-
-
-
-/**
- * exo_icon_view_get_markup_column:
- * @icon_view: A #ExoIconView.
- *
- * Returns the column with markup text for @icon_view.
- *
- * Returns: the markup column, or -1 if it's unset.
- *
- * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
- *             now implements #GtkCellLayout.
- */
-gint
-exo_icon_view_get_markup_column (const ExoIconView *icon_view)
-{
-  g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), -1);
-  return icon_view->priv->markup_column;
-}
-
-
-
-/**
- * exo_icon_view_set_markup_column:
- * @icon_view : A #ExoIconView.
- * @column    : A column in the currently used model.
- *
- * Sets the column with markup information for @icon_view to be
- * @column. The markup column must be of type #G_TYPE_STRING.
- * If the markup column is set to something, it overrides
- * the text column set by exo_icon_view_set_text_column().
- *
- * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
- *             now implements #GtkCellLayout.
- **/
-void
-exo_icon_view_set_markup_column (ExoIconView *icon_view,
-                                 gint         column)
-{
-  if (G_UNLIKELY (column == icon_view->priv->markup_column))
-    return;
-
-  if (column == -1)
-    icon_view->priv->markup_column = -1;
-  else
-    {
-      if (icon_view->priv->model != NULL)
-        {
-          GType column_type;
-
-          column_type = gtk_tree_model_get_column_type (icon_view->priv->model, column);
-
-          g_return_if_fail (column_type == G_TYPE_STRING);
-        }
-
-      icon_view->priv->markup_column = column;
-    }
-
-  exo_icon_view_stop_editing (icon_view, TRUE);
-
-  update_text_cell (icon_view);
-
-  exo_icon_view_invalidate_sizes (icon_view);
-
-  g_object_notify (G_OBJECT (icon_view), "markup-column");
-}
-
-
-
-/**
- * exo_icon_view_get_pixbuf_column:
- * @icon_view : A #ExoIconView.
- *
- * Returns the column with pixbufs for @icon_view.
- *
- * Returns: the pixbuf column, or -1 if it's unset.
- *
- * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
- *             now implements #GtkCellLayout.
- */
-gint
-exo_icon_view_get_pixbuf_column (const ExoIconView *icon_view)
-{
-  g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), -1);
-  return icon_view->priv->pixbuf_column;
-}
-
-
-
-/**
- * exo_icon_view_set_pixbuf_column:
- * @icon_view : A #ExoIconView.
- * @column    : A column in the currently used model.
- *
- * Sets the column with pixbufs for @icon_view to be @column. The pixbuf
- * column must be of type #GDK_TYPE_PIXBUF
- *
- * Deprecated: Use the more powerful #GtkCellRenderer<!---->s instead, as #ExoIconView
- *             now implements #GtkCellLayout.
- **/
-void
-exo_icon_view_set_pixbuf_column (ExoIconView *icon_view,
-                                 gint         column)
-{
-  GType column_type;
-
-  if (G_UNLIKELY (column == icon_view->priv->pixbuf_column))
-    return;
-
-  if (column == -1)
-    {
-      icon_view->priv->pixbuf_column = -1;
-    }
-  else
-    {
-      if (icon_view->priv->model != NULL)
-        {
-          column_type = gtk_tree_model_get_column_type (icon_view->priv->model, column);
-          g_return_if_fail (column_type == GDK_TYPE_PIXBUF);
-        }
-
-      icon_view->priv->pixbuf_column = column;
-    }
-
-  exo_icon_view_stop_editing (icon_view, TRUE);
-
-  update_pixbuf_cell (icon_view);
-
-  exo_icon_view_invalidate_sizes (icon_view);
-
-  g_object_notify (G_OBJECT (icon_view), "pixbuf-column");
-
 }
 
 

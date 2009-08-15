@@ -32,45 +32,15 @@
 
 G_BEGIN_DECLS
 
-typedef struct _ExoBindingBase    ExoBindingBase;
-typedef struct _ExoBindingLink    ExoBindingLink;
 typedef struct _ExoBinding        ExoBinding;
 typedef struct _ExoMutualBinding  ExoMutualBinding;
+
+
 
 typedef gboolean  (*ExoBindingTransform)  (const GValue *src_value,
                                            GValue       *dst_value,
                                            gpointer      user_data);
 
-struct _ExoBindingBase
-{
-  GDestroyNotify  destroy;
-};
-
-struct _ExoBindingLink
-{
-  GObject             *dst_object;
-  GParamSpec          *dst_pspec;
-  gulong               dst_handler; /* only set for mutual bindings */
-  gulong               handler;
-  ExoBindingTransform  transform;
-  gpointer             user_data;
-};
-
-struct _ExoBinding
-{
-  /*< private >*/
-  GObject         *src_object;
-  ExoBindingBase   base;
-  ExoBindingLink   link;
-};
-
-struct _ExoMutualBinding
-{
-  /*< private >*/
-  ExoBindingBase  base;
-  ExoBindingLink  direct;
-  ExoBindingLink  reverse;
-};
 
 
 ExoBinding        *exo_binding_new                      (GObject            *src_object,

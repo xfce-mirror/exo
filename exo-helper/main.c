@@ -203,11 +203,8 @@ main (int argc, char **argv)
   else
     {
       result = EXIT_FAILURE;
-#if GLIB_CHECK_VERSION(2, 14, 0)
+
       g_printerr ("%s", g_option_context_get_help (opt_ctx, FALSE, NULL));
-#else
-      g_printerr (_("Unknown helper arguments.\n"));
-#endif
     }
 
   g_option_context_free (opt_ctx);

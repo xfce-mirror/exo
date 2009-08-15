@@ -52,7 +52,6 @@
 #include <libxfce4util/libxfce4util.h>
 
 #include <exo/exo-gdk-pixbuf-extensions.h>
-#include <exo/exo-md5.h>
 #include <exo/exo-private.h>
 #include <exo/exo-thumbnail.h>
 #include <exo/exo-alias.h>
@@ -217,7 +216,7 @@ _exo_thumbnail_get_for_file (const gchar     *filename,
       if (G_LIKELY (uri != NULL))
         {
           /* determine the filename of the thumbnail */
-          md5 = exo_str_get_md5_str (uri);
+          md5 = g_compute_checksum_for_string (G_CHECKSUM_MD5, uri, -1);
           name = g_strconcat (md5, ".png", NULL);
           g_free (md5);
 
@@ -280,7 +279,7 @@ _exo_thumbnail_get_for_uri (const gchar     *uri,
   _exo_return_val_if_fail (uri != NULL, NULL);
 
   /* determine the filename of the thumbnail */
-  md5 = exo_str_get_md5_str (uri);
+  md5 = g_compute_checksum_for_string (G_CHECKSUM_MD5, uri, -1);
   name = g_strconcat (md5, ".png", NULL);
   g_free (md5);
 

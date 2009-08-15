@@ -6,31 +6,31 @@ INCLUDES = 								\
 	-DG_LOG_DOMAIN=\"exo-hal\"					\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
-libexohalincludedir = $(includedir)/exo-0.3/exo-hal
+libexohalincludedir = $(includedir)/exo-1/exo-hal
 libexohalinclude_HEADERS = exo-hal.h
 
 lib_LTLIBRARIES =							\
-	libexo-hal-0.3.la
+	libexo-hal-1.la
 
-libexo_hal_0_3_la_SOURCES =						\
+libexo_hal_1_la_SOURCES =						\
 	$(libexohalinclude_HEADERS)					\
 	exo-hal.c
 
-libexo_hal_0_3_la_CFLAGS =						\
+libexo_hal_1_la_CFLAGS =						\
 	$(GLIB_CFLAGS)							\
 	$(HAL_CFLAGS)
 
-libexo_hal_0_3_la_LDFLAGS =						\
+libexo_hal_1_la_LDFLAGS =						\
 	-export-dynamic							\
 	-version-info $(LIBEXO_VERINFO)					\
 	-export-symbols-regex "^[^_].*"					\
 	-no-undefined
 
-libexo_hal_0_3_la_LIBADD =						\
+libexo_hal_1_la_LIBADD =						\
 	$(GLIB_LIBS)							\
 	$(HAL_LIBS)
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = exo-hal-0.3.pc
+pkgconfig_DATA = exo-hal-$(LIBEXO_VERSION_API).pc
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

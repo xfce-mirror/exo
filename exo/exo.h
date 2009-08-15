@@ -39,7 +39,6 @@
 #include <exo/exo-binding.h>
 #include <exo/exo-cell-renderer-ellipsized-text.h>
 #include <exo/exo-cell-renderer-icon.h>
-#include <exo/exo-ellipsized-label.h>
 #include <exo/exo-execute.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-gdk-pixbuf-extensions.h>
@@ -49,9 +48,7 @@
 #include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-job.h>
-#include <exo/exo-md5.h>
 #include <exo/exo-mount-point.h>
-#include <exo/exo-pango-extensions.h>
 #include <exo/exo-simple-job.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>

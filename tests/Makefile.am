@@ -37,10 +37,10 @@ test_exo_mount_point_CFLAGS =						\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_mount_point_DEPENDENCIES =					\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_mount_point_LDADD =						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_noop_SOURCES =							\
 	test-exo-noop.c
@@ -50,10 +50,10 @@ test_exo_noop_CFLAGS =							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_noop_DEPENDENCIES =						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_noop_LDADD =							\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_string_SOURCES =						\
 	test-exo-string.c
@@ -63,10 +63,10 @@ test_exo_string_CFLAGS =						\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_string_DEPENDENCIES =						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_string_LDADD =							\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 noinst_PROGRAMS =							\
 	test-exo-icon-chooser-dialog					\
@@ -80,10 +80,10 @@ test_exo_icon_chooser_dialog_CFLAGS =					\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_icon_chooser_dialog_DEPENDENCIES =				\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_icon_chooser_dialog_LDADD =					\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_wrap_table_SOURCES =						\
 	test-exo-wrap-table.c
@@ -93,10 +93,10 @@ test_exo_wrap_table_CFLAGS =						\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_wrap_table_DEPENDENCIES =					\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_wrap_table_LDADD =						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 DISTCLEANFILES = test-exo-csource-data.c
 BUILT_SOURCES = test-exo-csource-data.c

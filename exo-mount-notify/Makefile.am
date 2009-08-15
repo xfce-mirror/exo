@@ -6,20 +6,20 @@ INCLUDES = 								\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 libexec_PROGRAMS =							\
-	exo-mount-notify-0.3
+	exo-mount-notify-1
 
-exo_mount_notify_0_3_SOURCES =						\
+exo_mount_notify_1_SOURCES =						\
 	main.c
 
-exo_mount_notify_0_3_CFLAGS =						\
+exo_mount_notify_1_CFLAGS =						\
 	$(GTK_CFLAGS)							\
 	$(LIBNOTIFY_CFLAGS)						\
 	$(LIBXFCE4UTIL_CFLAGS)
 
-exo_mount_notify_0_3_LDFLAGS =						\
+exo_mount_notify_1_LDFLAGS =						\
 	-no-undefined
 
-exo_mount_notify_0_3_LDADD =						\
+exo_mount_notify_1_LDADD =						\
 	$(GTK_LIBS)							\
 	$(LIBNOTIFY_LIBS)						\
 	$(LIBXFCE4UTIL_LIBS)

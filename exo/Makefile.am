@@ -9,13 +9,12 @@ INCLUDES = 								\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"			\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
-lib_LTLIBRARIES = libexo-0.3.la
+lib_LTLIBRARIES = libexo-1.la
 
 libexo_headers =							\
 	exo-binding.h							\
 	exo-cell-renderer-ellipsized-text.h				\
 	exo-cell-renderer-icon.h					\
-	exo-ellipsized-label.h						\
 	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
 	exo-gtk-extensions.h						\
@@ -25,9 +24,7 @@ libexo_headers =							\
 	exo-icon-view.h							\
 	exo-job.h							\
 	exo-simple-job.h						\
-	exo-md5.h							\
 	exo-mount-point.h						\
-	exo-pango-extensions.h						\
 	exo-string.h							\
 	exo-toolbars-editor-dialog.h					\
 	exo-toolbars-editor.h						\
@@ -50,7 +47,7 @@ libexo_built_sources =							\
 	exo-marshal.c							\
 	exo-marshal.h
 
-libexoincludedir = $(includedir)/exo-0.3/exo
+libexoincludedir = $(includedir)/exo-1/exo
 
 libexoinclude_HEADERS =							\
 	$(libexo_built_public_sources)					\
@@ -58,14 +55,13 @@ libexoinclude_HEADERS =							\
 	exo.h								\
 	exo-config.h
 
-libexo_0_3_la_SOURCES =							\
+libexo_1_la_SOURCES =							\
 	$(libexoinclude_HEADERS)					\
 	$(libexo_built_sources)						\
 	exo-binding.c							\
 	exo-cell-renderer-ellipsized-text.c				\
 	exo-cell-renderer-icon.c					\
 	exo-config.c							\
-	exo-ellipsized-label.c						\
 	exo-execute.c							\
 	exo-gdk-pixbuf-extensions.c					\
 	exo-gtk-extensions.c						\
@@ -78,9 +74,7 @@ libexo_0_3_la_SOURCES =							\
 	exo-job.c							\
 	exo-job.h							\
 	exo-simple-job.c						\
-	exo-md5.c							\
 	exo-mount-point.c						\
-	exo-pango-extensions.c						\
 	exo-private.c							\
 	exo-private.h							\
 	exo-string.c							\
@@ -100,24 +94,24 @@ libexo_0_3_la_SOURCES =							\
 	exo-wrap-table.c						\
 	exo-xsession-client.c
 
-libexo_0_3_la_CFLAGS =							\
+libexo_1_la_CFLAGS =							\
 	$(GIO_CFLAGS)							\
 	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
-libexo_0_3_la_LDFLAGS =							\
+libexo_1_la_LDFLAGS =							\
 	-export-dynamic							\
 	-version-info $(LIBEXO_VERINFO)					\
 	-export-symbols-regex "^[^_].*"					\
 	-no-undefined
 
-libexo_0_3_la_LIBADD =							\
+libexo_1_la_LIBADD =							\
 	$(GIO_LIBS)							\
 	$(GTK_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = exo-0.3.pc
+pkgconfig_DATA = exo-$(LIBEXO_VERSION_API).pc
 
 
 ##

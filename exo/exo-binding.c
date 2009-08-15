@@ -30,6 +30,31 @@
 #include <exo/exo-private.h>
 #include <exo/exo-alias.h>
 
+typedef struct
+{
+  GObject             *dst_object;
+  GParamSpec          *dst_pspec;
+  gulong               dst_handler; /* only set for mutual bindings */
+  gulong               handler;
+  ExoBindingTransform  transform;
+  gpointer             user_data;
+}
+ExoBindingLink;
+
+struct _ExoBinding
+{
+  GObject         *src_object;
+  GDestroyNotify   destroy;
+  ExoBindingLink   link;
+};
+
+struct _ExoMutualBinding
+{
+  GDestroyNotify  destroy;
+  ExoBindingLink  direct;
+  ExoBindingLink  reverse;
+};
+
 
 
 static void
@@ -116,8 +141,8 @@ exo_binding_on_disconnect (gpointer  data,
 
   binding = (ExoBinding *) (((gchar *) link) - G_STRUCT_OFFSET (ExoBinding, link));
 
-  if (binding->base.destroy != NULL)
-    binding->base.destroy (link->user_data);
+  if (binding->destroy != NULL)
+    binding->destroy (link->user_data);
 
   if (link->dst_object != NULL)
     g_object_weak_unref (link->dst_object, exo_binding_on_dst_object_destroy, binding);
@@ -142,8 +167,8 @@ exo_mutual_binding_on_disconnect_object1 (gpointer  data,
   object2 = binding->direct.dst_object;
   if (object2 != NULL)
     {
-      if (binding->base.destroy != NULL)
-        binding->base.destroy (binding->direct.user_data);
+      if (binding->destroy != NULL)
+        binding->destroy (binding->direct.user_data);
       binding->direct.dst_object = NULL;
       g_signal_handler_disconnect (object2, binding->reverse.handler);
       g_slice_free (ExoMutualBinding, binding);
@@ -284,7 +309,7 @@ exo_binding_new_full (GObject            *src_object,
 
   binding = g_slice_new (ExoBinding);
   binding->src_object = src_object;
-  binding->base.destroy = destroy_notify;
+  binding->destroy = destroy_notify;
 
   exo_binding_link_init (&binding->link,
                          src_object,
@@ -433,7 +458,7 @@ exo_mutual_binding_new_full (GObject            *object1,
                                 user_data);
 
   binding = g_slice_new (ExoMutualBinding);
-  binding->base.destroy = destroy_notify;
+  binding->destroy = destroy_notify;
 
   exo_binding_link_init (&binding->direct,
                          object1,

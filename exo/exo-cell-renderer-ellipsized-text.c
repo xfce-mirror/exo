@@ -239,11 +239,7 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer     *renderer,
   ExoCellRendererEllipsizedTextPrivate *priv = EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_PRIVATE (renderer);
   GdkRectangle                          text_area;
   GtkStateType                          state;
-#if !GTK_CHECK_VERSION(2,8,0)
-  GdkPoint                              points[8];
-#else
   cairo_t                              *cr;
-#endif
   gint                                  focus_line_width;
   gint                                  focus_padding;
   gint                                  text_height;
@@ -307,7 +303,6 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer     *renderer,
               x1 = x0 + text_width;
               y1 = y0 + text_height;
 
-#if GTK_CHECK_VERSION(2,8,0)
               /* Cairo produces nicer results than using a polygon
                * and so we use it directly if possible.
                */
@@ -324,20 +319,6 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer     *renderer,
               gdk_cairo_set_source_color (cr, &widget->style->base[state]);
               cairo_fill (cr);
               cairo_destroy (cr);
-#else
-              /* calculate a (more or less rounded) polygon */
-              points[0].x = x0 + 2; points[0].y = y0;
-              points[1].x = x1 - 2; points[1].y = y0;
-              points[2].x = x1;     points[2].y = y0 + 2;
-              points[3].x = x1;     points[3].y = y1 - 2;
-              points[4].x = x1 - 2; points[4].y = y1;
-              points[5].x = x0 + 2; points[5].y = y1;
-              points[6].x = x0;     points[6].y = y1 - 2;
-              points[7].x = x0;     points[7].y = y0 + 2;
-
-              /* render the indicator */
-              gdk_draw_polygon (window, widget->style->base_gc[state], TRUE, points, G_N_ELEMENTS (points));
-#endif
             }
 
           /* draw the focus indicator */

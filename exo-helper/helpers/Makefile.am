@@ -42,7 +42,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 libexec_SCRIPTS =							\
-	exo-compose-mail-0.3
+	exo-compose-mail-$(LIBEXO_VERSION_API)
 
 DISTCLEANFILES =							\
 	$(desktop_in_files)						\
@@ -51,6 +51,6 @@ DISTCLEANFILES =							\
 EXTRA_DIST =								\
 	$(defaults_DATA)						\
 	$(desktop_in_in_files)						\
-	exo-compose-mail-0.3
+	exo-compose-mail-$(LIBEXO_VERSION_API)
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

@@ -17,18 +17,15 @@
 <!ENTITY exo-gdk-pixbuf-extensions SYSTEM "xml/exo-gdk-pixbuf-extensions.xml">
 <!ENTITY exo-gobject-extensions SYSTEM "xml/exo-gobject-extensions.xml">
 <!ENTITY exo-gtk-extensions SYSTEM "xml/exo-gtk-extensions.xml">
-<!ENTITY exo-pango-extensions SYSTEM "xml/exo-pango-extensions.xml">
 <!ENTITY exo-config SYSTEM "xml/exo-config.xml">
 <!ENTITY exo-binding SYSTEM "xml/exo-binding.xml">
 <!ENTITY exo-execute SYSTEM "xml/exo-execute.xml">
-<!ENTITY exo-md5 SYSTEM "xml/exo-md5.xml">
 <!ENTITY exo-mount-point SYSTEM "xml/exo-mount-point.xml">
 <!ENTITY exo-string SYSTEM "xml/exo-string.xml">
 <!ENTITY exo-url SYSTEM "xml/exo-url.xml">
 <!ENTITY exo-utils SYSTEM "xml/exo-utils.xml">
 <!ENTITY exo-hal SYSTEM "xml/exo-hal.xml">
 <!ENTITY exo-xsession-client SYSTEM "xml/exo-xsession-client.xml">
-<!ENTITY exo-ellipsized-label SYSTEM "xml/exo-ellipsized-label.xml">
 
 <!ENTITY exo-csource SYSTEM "exo-csource.xml">
 
@@ -295,7 +292,6 @@
     &exo-gdk-pixbuf-extensions;
     &exo-gobject-extensions;
     &exo-gtk-extensions;
-    &exo-pango-extensions;
   </part>
 
   <part id="exo-miscelleanous">
@@ -303,7 +299,6 @@
     &exo-config;
     &exo-binding;
     &exo-execute;
-    &exo-md5;
     &exo-mount-point;
     &exo-string;
     &exo-url;
@@ -323,10 +318,11 @@
     &exo-csource;
   </part>
 
+  <!--
   <part id="exo-deprecated-widgets">
     <title>Deprecated widgets</title>
-    &exo-ellipsized-label;
   </part>
+  -->
 
   <chapter>
     <title>Visual Index</title>

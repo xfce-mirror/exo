@@ -14,13 +14,6 @@
   (gtype-id "EXO_TYPE_CELL_RENDERER_ICON")
 )
 
-(define-object EllipsizedLabel
-  (in-module "Exo")
-  (parent "GtkLabel")
-  (c-name "ExoEllipsizedLabel")
-  (gtype-id "EXO_TYPE_ELLIPSIZED_LABEL")
-)
-
 (define-object IconBar
   (in-module "Exo")
   (parent "GtkContainer")
@@ -144,39 +137,6 @@
 
 
 
-;; From ../exo/exo-ellipsized-label.h
-
-(define-function exo_ellipsized_label_get_type
-  (c-name "exo_ellipsized_label_get_type")
-  (return-type "GType")
-)
-
-(define-function exo_ellipsized_label_new
-  (c-name "exo_ellipsized_label_new")
-  (is-constructor-of "ExoEllipsizedLabel")
-  (return-type "GtkWidget*")
-  (parameters
-    '("const-gchar*" "text")
-  )
-)
-
-(define-method get_ellipsize
-  (of-object "ExoEllipsizedLabel")
-  (c-name "exo_ellipsized_label_get_ellipsize")
-  (return-type "ExoPangoEllipsizeMode")
-)
-
-(define-method set_ellipsize
-  (of-object "ExoEllipsizedLabel")
-  (c-name "exo_ellipsized_label_set_ellipsize")
-  (return-type "none")
-  (parameters
-    '("ExoPangoEllipsizeMode" "ellipsize")
-  )
-)
-
-
-
 ;; From ../exo/exo-enum-types.h
 
 (define-function exo_icon_view_drop_position_get_type
@@ -184,10 +144,6 @@
   (return-type "GType")
 )
 
-(define-function exo_pango_ellipsize_mode_get_type
-  (c-name "exo_pango_ellipsize_mode_get_type")
-  (return-type "GType")
-)
 
 (define-function exo_toolbars_model_flags_get_type
   (c-name "exo_toolbars_model_flags_get_type")
@@ -447,51 +403,6 @@
   (return-type "none")
   (parameters
     '("GtkTreeModel*" "model")
-  )
-)
-
-(define-method get_text_column
-  (of-object "ExoIconView")
-  (c-name "exo_icon_view_get_text_column")
-  (return-type "gint")
-)
-
-(define-method set_text_column
-  (of-object "ExoIconView")
-  (c-name "exo_icon_view_set_text_column")
-  (return-type "none")
-  (parameters
-    '("gint" "column")
-  )
-)
-
-(define-method get_markup_column
-  (of-object "ExoIconView")
-  (c-name "exo_icon_view_get_markup_column")
-  (return-type "gint")
-)
-
-(define-method set_markup_column
-  (of-object "ExoIconView")
-  (c-name "exo_icon_view_set_markup_column")
-  (return-type "none")
-  (parameters
-    '("gint" "column")
-  )
-)
-
-(define-method get_pixbuf_column
-  (of-object "ExoIconView")
-  (c-name "exo_icon_view_get_pixbuf_column")
-  (return-type "gint")
-)
-
-(define-method set_pixbuf_column
-  (of-object "ExoIconView")
-  (c-name "exo_icon_view_set_pixbuf_column")
-  (return-type "none")
-  (parameters
-    '("gint" "column")
   )
 )
 

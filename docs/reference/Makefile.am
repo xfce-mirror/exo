@@ -54,7 +54,7 @@ INCLUDES =	 							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 GTKDOC_LIBS =  								\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 include $(top_srcdir)/gtk-doc.make
 

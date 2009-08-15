@@ -20,6 +20,6 @@ exo_open_LDFLAGS =							\
 
 exo_open_LDADD =							\
 	$(GTK_LIBS)							\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_MAJOR).$(LIBEXO_VERSION_MINOR).la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

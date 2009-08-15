@@ -46,14 +46,7 @@ gchar                *exo_strdup_strftime        (const gchar     *format,
 gchar               **exo_strndupv               (gchar          **strv,
                                                   gint             num) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-G_CONST_RETURN gchar *exo_intern_string          (const gchar     *string);
-G_CONST_RETURN gchar *exo_intern_static_string   (const gchar     *string);
-
-#if GLIB_CHECK_VERSION(2,9,0)
 #define I_(string) (g_intern_static_string ((string)))
-#else
-#define I_(string) (exo_intern_static_string ((string)))
-#endif
 
 G_END_DECLS
 
