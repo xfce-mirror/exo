@@ -44,7 +44,7 @@ gchar                *exo_strdup_strftime        (const gchar     *format,
                                                   const struct tm *tm) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 gchar               **exo_strndupv               (gchar          **strv,
-                                                  gint             num) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+                                                  guint            num) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 #define I_(string) (g_intern_static_string ((string)))
 

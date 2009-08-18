@@ -356,29 +356,36 @@ exo_strdup_strftime (const gchar     *format,
 /**
  * exo_strndupv:
  * @strv  : String vector to duplicate.
- * @num   : Number of strings in @strv to
- *          duplicate.
+ * @num   : Number of strings in @strv to duplicate.
  *
- * Creates a new string vector containing the
- * first @n elements of @strv.
+ * Creates a new string vector containing the first @n elements
+ * of @strv. If called on a %NULL value or @num is 0, exo_strndupv()
+ * simply returns %NULL.
  *
- * Return value: The new string vector. Should be
- *               freed using g_strfreev() when no
+ * Return value: A new NULL-terminated array of strings or %NULL.
+ *               Should be freed using g_strfreev() when no
  *               longer needed.
  **/
 gchar**
 exo_strndupv (gchar **strv,
-              gint    num)
+              guint   num)
 {
   gchar **result;
+  guint   i;
 
-  g_return_val_if_fail (strv != NULL, NULL);
-  g_return_val_if_fail (num >= 0, NULL);
+  /* return null when there is nothing to copy */
+  if (G_UNLIKELY (strv == NULL || num == 0))
+    return NULL;
 
+  /* duplicate the first @num string */
   result = g_new (gchar *, num + 1);
-  result[num--] = NULL;
-  for (; num >= 0; --num)
-    result[num] = g_strdup (strv[num]);
+  for (i = 0; strv[i] != NULL && i < num; i++)
+    result[i] = g_strdup (strv[i]);
+  result[i] = NULL;
+
+  /* resize the string if we allocated too much space */
+  if (G_UNLIKELY (num > i))
+    result = g_renew (gchar *, result, i + 1);
 
   return result;
 }
