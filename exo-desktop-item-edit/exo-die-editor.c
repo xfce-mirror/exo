@@ -542,7 +542,7 @@ exo_die_editor_icon_clicked (GtkWidget    *button,
                                            -1);
 
   /* check if we have an icon to set for the chooser */
-  if (G_LIKELY (editor->icon != NULL && *editor->icon != '\0'))
+  if (G_LIKELY (!exo_str_is_empty (editor->icon)))
     exo_icon_chooser_dialog_set_icon (EXO_ICON_CHOOSER_DIALOG (chooser), editor->icon);
 
   /* run the chooser dialog */
@@ -631,7 +631,7 @@ exo_die_editor_cell_data_func (GtkCellLayout   *cell_layout,
       /* try to load the icon from the file */
       pixbuf = gdk_pixbuf_new_from_file (icon, NULL);
     }
-  else if (icon != NULL && *icon != '\0')
+  else if (!exo_str_is_empty (icon))
     {
       /* determine the appropriate icon theme */
       icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (editor)));
@@ -699,10 +699,12 @@ exo_die_editor_get_complete (ExoDieEditor *editor)
   switch (editor->mode)
     {
     case EXO_DIE_EDITOR_MODE_APPLICATION:
-      return (*editor->name != '\0' && *editor->command != '\0');
+      return (!exo_str_is_empty (editor->name)
+              && !exo_str_is_empty (editor->command));
 
     case EXO_DIE_EDITOR_MODE_LINK:
-      return (*editor->name != '\0' && *editor->url != '\0');
+      return (!exo_str_is_empty (editor->name)
+              && !exo_str_is_empty (editor->url));
 
     default:
       g_assert_not_reached ();
@@ -1040,7 +1042,7 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
           /* try to load the icon from the file */
           pixbuf = gdk_pixbuf_new_from_file (icon, NULL);
         }
-      else if (icon != NULL && *icon != '\0')
+      else if (!exo_str_is_empty (icon))
         {
           /* determine the appropriate icon theme */
           icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (editor)));

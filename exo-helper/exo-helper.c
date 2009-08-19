@@ -184,13 +184,13 @@ exo_helper_new (const gchar *id,
 
   /* determine the name of the helper */
   str = xfce_rc_read_entry (rc, "Name", NULL);
-  if (G_UNLIKELY (str == NULL || *str == '\0'))
+  if (G_UNLIKELY (exo_str_is_empty (str)))
     goto failed;
   helper->name = g_strdup (str);
 
   /* determine the icon of the helper */
   str = xfce_rc_read_entry_untranslated (rc, "Icon", NULL);
-  if (G_LIKELY (str != NULL && *str != '\0'))
+  if (G_LIKELY (!exo_str_is_empty (str)))
     helper->icon = g_strdup (str);
 
   /* determine the commands */
@@ -820,7 +820,7 @@ exo_helper_database_set_custom (ExoHelperDatabase *database,
 
   g_return_if_fail (EXO_IS_HELPER_DATABASE (database));
   g_return_if_fail (category < EXO_HELPER_N_CATEGORIES);
-  g_return_if_fail (command != NULL && *command != '\0');
+  g_return_if_fail (!exo_str_is_empty (command));
 
   /* determine the spec for the custom helper */
   category_string = exo_helper_category_to_string (category);

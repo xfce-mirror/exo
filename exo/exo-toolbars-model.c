@@ -158,7 +158,7 @@ _exo_accumulator_STRING (GSignalInvocationHint *hint,
   const gchar *retval;
   retval = g_value_get_string (handler_return);
   g_value_set_string (return_accu, retval);
-  return (retval == NULL || *retval == '\0');
+  return exo_str_is_empty (retval);
 }
 
 

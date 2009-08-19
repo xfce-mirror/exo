@@ -42,7 +42,7 @@
 #include <glib/gstdio.h>
 
 #include <exo-hal/exo-hal.h>
-
+#include <exo/exo.h>
 #include <exo-mount/exo-mount-fstab.h>
 #include <exo-mount/exo-mount-hal.h>
 #include <exo-mount/exo-mount-utils.h>
@@ -215,7 +215,7 @@ main (int argc, char **argv)
     }
 
   /* check if a name was found */
-  if (G_UNLIKELY (name == NULL || *name == '\0'))
+  if (G_UNLIKELY (exo_str_is_empty (name)))
     {
       /* release the previous name */
       g_free (name);
@@ -238,7 +238,7 @@ main (int argc, char **argv)
         {
           nargv[n++] = g_strdup ("--eject");
         }
-      if (icon != NULL && *icon != '\0')
+      if (!exo_str_is_empty (icon))
         {
           nargv[n++] = g_strdup ("--icon");
           nargv[n++] = g_strdup (icon);

@@ -102,10 +102,10 @@ _wrap_exo_execute_preferred_application (PyObject *self,
       return NULL;
     }
 
-  if (working_directory != NULL && *working_directory == '\0')
+  if (exo_str_is_empty (working_directory))
     working_directory = NULL;
 
-  if (parameter != NULL && *parameter == '\0')
+  if (exo_str_is_empty (parameter))
     parameter = NULL;
 
   /* determine the screen */
@@ -177,7 +177,7 @@ _wrap_exo_execute_terminal_shell (PyObject *self,
       return NULL;
     }
 
-  if (working_directory != NULL && *working_directory == '\0')
+  if (exo_str_is_empty (working_directory))
     working_directory = NULL;
 
   /* determine the screen */

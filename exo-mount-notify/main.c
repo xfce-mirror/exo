@@ -43,7 +43,7 @@
 #include <libnotify/notify.h>
 
 #include <glib/gstdio.h>
-
+#include <exo/exo.h>
 #include <gtk/gtk.h>
 
 /* make sure all defines are present */
@@ -180,11 +180,11 @@ main (int argc, char **argv)
     }
 
   /* icon defaults to "gnome-dev-harddisk" */
-  if (G_UNLIKELY (opt_icon == NULL || *opt_icon == '\0'))
+  if (G_UNLIKELY (exo_str_is_empty (opt_icon)))
     opt_icon = "gnome-dev-harddisk";
 
   /* make sure that a device name was specified */
-  if (G_UNLIKELY (opt_name == NULL || *opt_name == '\0'))
+  if (G_UNLIKELY (exo_str_is_empty (opt_name)))
     {
       /* the caller must specify a usable device name */
       g_printerr ("%s: %s.\n", g_get_prgname (), "Must specify a device name");

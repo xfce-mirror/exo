@@ -702,7 +702,7 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
     }
 
   /* make sure that the mount point is usable (i.e. does not contain G_DIR_SEPARATOR's) */
-  mount_point = (mount_point != NULL && *mount_point != '\0')
+  mount_point = !exo_str_is_empty (mount_point)
               ? exo_str_replace (mount_point, G_DIR_SEPARATOR_S, "_")
               : g_strdup ("");
 
