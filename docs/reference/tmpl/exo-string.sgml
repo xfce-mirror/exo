@@ -36,6 +36,17 @@ Stable
 @Returns: 
 
 
+
+<!-- ##### MACRO exo_str_is_empty ##### -->
+<para>
+  Macro to check if a string is %NULL or empty. You should prefer
+  this function over strlen (str) == 0.
+</para>
+
+@string: a string
+@Returns: %TRUE if @str is %NULL or "".
+
+
 <!-- ##### FUNCTION exo_str_replace ##### -->
 <para>
 

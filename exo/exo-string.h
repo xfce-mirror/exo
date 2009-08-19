@@ -48,6 +48,8 @@ gchar               **exo_strndupv               (gchar          **strv,
 
 #define I_(string) (g_intern_static_string ((string)))
 
+#define exo_str_is_empty(string) ((string) == NULL || *(string) == '\0')
+
 G_END_DECLS
 
 #endif /* !__EXO_STRING_H__ */
