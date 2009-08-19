@@ -1,6 +1,5 @@
-/* $Id$ */
-/*-
- * Copyright (c) 2005 Benedikt Meurer <benny@xfce.org>
+/*
+ * Copyright (c) 2009 Nick Schermer <nick@xfce.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -30,46 +29,133 @@
 
 
 
-static const struct
+static void
+test_str_elide_underscores (void)
 {
-  const gchar *str;
-  const gchar *pattern;
-  const gchar *replacement;
-  const gchar *result;
-} REPLACE_TESTS[] =
+  gchar *res;
+
+  res = exo_str_elide_underscores ("this_is_a_sample");
+  g_assert_cmpstr (res, ==, "thisisasample");
+  g_free (res);
+
+  res = exo_str_elide_underscores ("m__nemonic");
+  g_assert_cmpstr (res, ==, "m_nemonic");
+  g_free (res);
+}
+
+
+
+static void
+test_str_is_equal (void)
 {
-  /* Test empty pattern */
-  { "Hello World", "", "World", "Hello World", },
+  const gchar *p = "cde";
 
-  /* Test replace first word */
-  { "Hello World", "Hello", "Holla", "Holla World", },
+  /* comparison that should return FALSE */
+  g_assert (!exo_str_is_equal ("a", NULL));
+  g_assert (!exo_str_is_equal (NULL, "b"));
+  g_assert (!exo_str_is_equal ("a", "abcde"));
+  g_assert (!exo_str_is_equal (p, "a"));
 
-  /* Test replace last workd */
-  { "Hello World", "World", "Dlrow", "Hello Dlrow", },
-
-  /* Test multiple replacement */
-  { "This is a test case for testing", "test", "toast", "This is a toast case for toasting", },
-};
-
+  /* comparison that should return TRUE */
+  g_assert (exo_str_is_equal (NULL, NULL));
+  g_assert (exo_str_is_equal ("test", "test"));
+  g_assert (exo_str_is_equal (p, p));
+}
 
 
-int
-main (int argc, char **argv)
+
+static void
+test_str_is_empty (void)
 {
-  gchar *result;
-  guint  n;
+  const gchar *p;
 
-  for (n = 0; n < G_N_ELEMENTS (REPLACE_TESTS); ++n)
-    {
-      result = exo_str_replace (REPLACE_TESTS[n].str, REPLACE_TESTS[n].pattern, REPLACE_TESTS[n].replacement);
-      if (!exo_str_is_equal (result, REPLACE_TESTS[n].result))
-        {
-          g_print ("exo_str_replace(\"%s\",\"%s\",\"%s\") = \"%s\", but \"%s\" was expected\n",
-                   REPLACE_TESTS[n].str, REPLACE_TESTS[n].pattern, REPLACE_TESTS[n].replacement,
-                   result, REPLACE_TESTS[n].result);
-        }
-      g_free (result);
-    }
+  p = NULL;
+  g_assert (exo_str_is_empty (p));
 
-  return EXIT_SUCCESS;
+  p = "";
+  g_assert (exo_str_is_empty (p));
+
+  p = "a";
+  g_assert (!exo_str_is_empty (p));
+}
+
+
+
+static void
+test_str_replace (void)
+{
+  gchar       *res;
+  const gchar *test = "You should eat fruits every day.";
+
+  res = exo_str_replace (test, "fruits", "pizza");
+  g_assert_cmpstr (res, ==, "You should eat pizza every day.");
+  g_free (res);
+
+  res = exo_str_replace (test, " fruits every day", NULL);
+  g_assert_cmpstr (res, ==, "You should eat.");
+  g_free (res);
+
+  res = exo_str_replace (NULL, NULL, NULL);
+  g_assert (res == NULL);
+
+  res = exo_str_replace (test, NULL, NULL);
+  g_assert_cmpstr (res, ==, test);
+  g_free (res);
+}
+
+
+
+static void
+test_strdup_strftime (void)
+{
+  /* TODO */
+}
+
+
+
+static void
+test_strndupv (void)
+{
+  gchar **res, **input;
+  guint   i;
+
+  input = g_strsplit ("v,w,x,y,z", ",", -1);
+
+  res = exo_strndupv (input, 2);
+  g_assert_cmpuint (g_strv_length (res), ==, 2);
+  for (i = 0; i < g_strv_length (res); i++)
+    g_assert_cmpstr (res[i], ==, input[i]);
+  g_strfreev (res);
+
+  res = exo_strndupv (input, 500);
+  g_assert_cmpuint (g_strv_length (res), ==, g_strv_length (input));
+  for (i = 0; i < g_strv_length (res); i++)
+    g_assert_cmpstr (res[i], ==, input[i]);
+  g_strfreev (res);
+
+  res = exo_strndupv (input, 0);
+  g_assert (res == NULL);
+
+  res = exo_strndupv (NULL, 2);
+  g_assert (res == NULL);
+
+  g_strfreev (input);
+}
+
+
+
+gint
+main (gint    argc,
+      gchar **argv)
+{
+  g_test_init (&argc, &argv, NULL);
+
+  g_test_add_func ("/string/test-str-elide-underscores", test_str_elide_underscores);
+  g_test_add_func ("/string/test-str-is-equal", test_str_is_equal);
+  g_test_add_func ("/string/test-str-is-empty", test_str_is_empty);
+  g_test_add_func ("/string/test-str-replace", test_str_replace);
+  g_test_add_func ("/string/test-strdup-strftime", test_strdup_strftime);
+  g_test_add_func ("/string/test-strndupv", test_strndupv);
+
+  return g_test_run ();
 }

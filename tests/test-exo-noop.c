@@ -1,6 +1,5 @@
-/* $Id$ */
-/*-
- * Copyright (c) 2005 Benedikt Meurer <benny@xfce.org>
+/*
+ * Copyright (c) 2009 Nick Schermer <nick@xfce.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,9 +21,6 @@
 #include <config.h>
 #endif
 
-#ifdef HAVE_ASSERT_H
-#include <assert.h>
-#endif
 #ifdef HAVE_STDLIB_H
 #include <stdlib.h>
 #endif
@@ -33,15 +29,57 @@
 
 
 
-int
-main (int argc, char **argv)
+static void
+test_noop_one (void)
 {
-  /* verify the results */
-  assert (exo_noop_one () == 1);
-  assert (exo_noop_zero () == 0);
-  assert (exo_noop_null () == NULL);
-  assert (exo_noop_true () == TRUE);
-  assert (exo_noop_false () == FALSE);
+  g_assert (exo_noop_one () == 1);
+}
 
-  return EXIT_SUCCESS;
+
+
+static void
+test_noop_zero (void)
+{
+  g_assert (exo_noop_zero () == 0);
+}
+
+
+
+static void
+test_noop_null (void)
+{
+  g_assert (exo_noop_null () == NULL);
+}
+
+
+
+static void
+test_noop_true (void)
+{
+  g_assert (exo_noop_true () == TRUE);
+}
+
+
+
+static void
+test_noop_false (void)
+{
+  g_assert (exo_noop_false () == FALSE);
+}
+
+
+
+gint
+main (gint    argc,
+      gchar **argv)
+{
+  g_test_init (&argc, &argv, NULL);
+
+  g_test_add_func ("/noop/test-noop-one", test_noop_one);
+  g_test_add_func ("/noop/test-noop-zero", test_noop_zero);
+  g_test_add_func ("/noop/test-noop-null", test_noop_null);
+  g_test_add_func ("/noop/test-noop-true", test_noop_true);
+  g_test_add_func ("/noop/test-noop-false", test_noop_false);
+
+  return g_test_run ();
 }
