@@ -118,11 +118,13 @@ exo_str_is_equal (const gchar *a,
  * g_free() when no longer needed.
  *
  * Note that @pattern and @replacement don't need to be of the
- * same size.
+ * same size. If @replacement is %NULL, the pattern will be
+ * removed from the string.
  *
  * Return value: a newly allocated copy of @str where all
  *               occurances of @pattern are replaced with
- *               @replacement.
+ *               @replacement. Or %NULL if @str and/or @pattern
+ *               is %NULL.
  *
  * Since: 0.3.1.1
  **/
@@ -134,16 +136,14 @@ exo_str_replace (const gchar *str,
   const gchar *s, *p;
   GString     *result;
 
-  g_return_val_if_fail (str != NULL, NULL);
-  g_return_val_if_fail (pattern != NULL, NULL);
-  g_return_val_if_fail (replacement != NULL, NULL);
-
-  /* empty patterns are kinda useless, so we just return a copy of str */
-  if (G_UNLIKELY (*pattern == '\0'))
+  /* an empty string or pattern is useless, so just
+   * return a copy of str */
+  if (G_UNLIKELY (exo_str_is_empty (str)
+      || exo_str_is_empty (pattern)))
     return g_strdup (str);
 
   /* allocate the result string */
-  result = g_string_new (NULL);
+  result = g_string_sized_new (strlen (str));
 
   /* process the input string */
   while (*str != '\0')
@@ -155,10 +155,11 @@ exo_str_replace (const gchar *str,
             if (*p == '\0' || *s == '\0')
               break;
 
-          /* check if the pattern matches */
+          /* check if the pattern fully matched */
           if (G_LIKELY (*p == '\0'))
             {
-              g_string_append (result, replacement);
+              if (G_LIKELY (!exo_str_is_empty (replacement)))
+                g_string_append (result, replacement);
               str = s;
               continue;
             }
