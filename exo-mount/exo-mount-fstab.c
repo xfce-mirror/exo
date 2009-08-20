@@ -36,13 +36,6 @@
 
 
 
-/* define _PATH_MOUNT if undefined */
-#ifndef _PATH_MOUNT
-#define _PATH_MOUNT "/bin/mount"
-#endif
-
-
-
 static gboolean exo_mount_fstab_exec   (const gchar *command,
                                         const gchar *argument,
                                         GError     **error);
@@ -242,7 +235,7 @@ exo_mount_fstab_mount (const gchar *device_file,
     return FALSE;
 
   /* try to mount the device */
-  result = exo_mount_fstab_exec (_PATH_MOUNT, mount_point, error);
+  result = exo_mount_fstab_exec (PATH_MOUNT, mount_point, error);
 
   /* cleanup */
   g_free (mount_point);
@@ -270,8 +263,6 @@ exo_mount_fstab_unmount (const gchar *device_file,
 {
   gboolean result;
   gchar   *mount_point;
-  gchar   *dirname;
-  gchar   *command;
 
   g_return_val_if_fail (g_path_is_absolute (device_file), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
@@ -281,17 +272,11 @@ exo_mount_fstab_unmount (const gchar *device_file,
   if (G_UNLIKELY (mount_point == NULL))
     return FALSE;
 
-  /* determine umount from _PATH_MOUNT */
-  dirname = g_path_get_dirname (_PATH_MOUNT);
-  command = g_build_filename (dirname, "umount", NULL);
-  g_free (dirname);
-
   /* try to mount the device */
-  result = exo_mount_fstab_exec (command, mount_point, error);
+  result = exo_mount_fstab_exec (PATH_UMOUNT, mount_point, error);
 
   /* cleanup */
   g_free (mount_point);
-  g_free (command);
 
   return result;
 }

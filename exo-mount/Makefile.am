@@ -6,7 +6,9 @@ INCLUDES = 								\
 	-DG_LOG_DOMAIN=\"exo-mount\"					\
 	-DLIBEXECDIR=\"$(libexecdir)\"					\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"			\
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
+	-DPATH_MOUNT=\"$(PATH_MOUNT)\"					\
+	-DPATH_UMOUNT=\"$(PATH_UMOUNT)\"
 
 bin_PROGRAMS =								\
 	exo-mount
