@@ -94,6 +94,14 @@ AC_PROG_INTLTOOL([0.31], [no-xml])
 AC_PROG_LIBTOOL()
 AC_CHECK_PROGS([PERL], [perl5 perl])
 
+dnl ************************************************
+dnl *** Loopup hardcoded paths we use internally ***
+dnl ************************************************
+AC_PATH_PROG([PATH_MOUNT], [mount], [/bin/mount])
+AC_PATH_PROG([PATH_UMOUNT], [umount], [/bin/umount])
+AC_SUBST([PATH_MOUNT])
+AC_SUBST([PATH_UMOUNT])
+
 dnl ***************************************
 dnl *** Check for required Perl modules ***
 dnl ***************************************
