@@ -253,32 +253,6 @@ exo_mount_point_list_match_active (ExoMountPointMatchMask mask,
 
   /* close the file handle */
   fclose (fp);
-#elif defined(HAVE_GETFSSTAT) /* FreeBSD, OpenBSD, DragonFly, older NetBSD */
-  struct statfs *mntbuf = NULL;
-  glong          bufsize = 0;
-  gint           mntsize;
-  gint           n;
-
-  /* determine the number of active mount points */
-  mntsize = getfsstat (NULL, 0, MNT_NOWAIT);
-  if (G_LIKELY (mntsize > 0))
-    {
-      /* allocate a new buffer */
-      bufsize = (mntsize + 4) * sizeof (*mntbuf);
-      mntbuf = (struct statfs *) malloc (bufsize);
-
-      /* determine the mount point for the device file */
-      mntsize = getfsstat (mntbuf, bufsize, MNT_NOWAIT);
-      for (n = 0; n < mntsize; ++n)
-        {
-          /* check if we have a match here */
-          exo_mount_point_add_if_matches (mask, device, folder, fstype, mntbuf[n].f_mntfromname, mntbuf[n].f_mntonname,
-                                          mntbuf[n].f_fstypename, ((mntbuf[n].f_flags & MNT_RDONLY) != 0), &mount_points);
-        }
-
-      /* release the buffer */
-      free (mntbuf);
-    }
 #elif defined(HAVE_GETVFSSTAT) /* Newer NetBSD */
   struct statvfs *mntbuf = NULL;
   glong           bufsize = 0;
@@ -304,6 +278,32 @@ exo_mount_point_list_match_active (ExoMountPointMatchMask mask,
                                           mntbuf[n].f_fstypename,
                                           ((mntbuf[n].f_flag & MNT_RDONLY) != 0),
                                           &mount_points);
+        }
+
+      /* release the buffer */
+      free (mntbuf);
+    }
+#elif defined(HAVE_GETFSSTAT) /* FreeBSD, OpenBSD, DragonFly, older NetBSD */
+  struct statfs *mntbuf = NULL;
+  glong          bufsize = 0;
+  gint           mntsize;
+  gint           n;
+
+  /* determine the number of active mount points */
+  mntsize = getfsstat (NULL, 0, MNT_NOWAIT);
+  if (G_LIKELY (mntsize > 0))
+    {
+      /* allocate a new buffer */
+      bufsize = (mntsize + 4) * sizeof (*mntbuf);
+      mntbuf = (struct statfs *) malloc (bufsize);
+
+      /* determine the mount point for the device file */
+      mntsize = getfsstat (mntbuf, bufsize, MNT_NOWAIT);
+      for (n = 0; n < mntsize; ++n)
+        {
+          /* check if we have a match here */
+          exo_mount_point_add_if_matches (mask, device, folder, fstype, mntbuf[n].f_mntfromname, mntbuf[n].f_mntonname,
+                                          mntbuf[n].f_fstypename, ((mntbuf[n].f_flags & MNT_RDONLY) != 0), &mount_points);
         }
 
       /* release the buffer */
