@@ -221,6 +221,22 @@ exo_icon_view_set_search_position_func
 #endif
 #endif
 
+/* exo-job functions */
+#if IN_HEADER(__EXO_JOB_H__)
+#if IN_SOURCE(__EXO_JOB_C__)
+exo_job_cancel
+exo_job_emit
+exo_job_get_cancellable
+exo_job_get_type G_GNUC_CONST
+exo_job_info_message
+exo_job_is_cancelled
+exo_job_launch
+exo_job_percent
+exo_job_send_to_mainloop
+exo_job_set_error_if_cancelled
+#endif
+#endif
+
 /* exo-mount-point functions */
 #if IN_HEADER(__EXO_MOUNT_POINT_H__)
 #if IN_SOURCE(__EXO_MOUNT_POINT_C__)
@@ -244,6 +260,14 @@ exo_noop_false G_GNUC_PURE
 exo_atomic_inc
 exo_atomic_dec
 #endif
+#endif
+#endif
+
+/* exo-simple-job functions */
+#if IN_HEADER(__EXO_SIMPLE_JOB_H__)
+#if IN_SOURCE(__EXO_SIMPLE_JOB_C__)
+exo_simple_job_get_type G_GNUC_CONST
+exo_simple_job_launch G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 #endif
 #endif
 

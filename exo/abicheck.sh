@@ -20,5 +20,5 @@
 #
 
 cpp -P -DINCLUDE_INTERNAL_SYMBOLS -DINCLUDE_VARIABLES -DALL_FILES ${srcdir:-.}/exo.symbols | sed -e '/^$/d' -e 's/ EXO_GNUC.*$//' -e 's/ G_GNUC.*$//' -e 's/ PRIVATE//' | sort > expected-abi
-nm -D .libs/libexo-0.3.so | grep " T\|R " | cut -d ' ' -f 3 | grep -v '^_.*' | sort > actual-abi
+nm -D .libs/libexo-1.so | grep " T\|R " | cut -d ' ' -f 3 | grep -v '^_.*' | sort > actual-abi
 diff -u expected-abi actual-abi && rm expected-abi actual-abi

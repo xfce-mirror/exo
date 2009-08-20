@@ -31,6 +31,7 @@
 #include <exo/exo-job.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -622,3 +623,9 @@ exo_job_send_to_mainloop (ExoJob        *job,
   return g_io_scheduler_job_send_to_mainloop (job->priv->scheduler_job, func, user_data,
                                               destroy_notify);
 }
+
+
+
+
+#define __EXO_JOB_C__
+#include <exo/exo-aliasdef.c>

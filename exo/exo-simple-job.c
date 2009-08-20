@@ -38,6 +38,7 @@
 #include <exo/exo-job.h>
 #include <exo/exo-private.h>
 #include <exo/exo-simple-job.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -200,3 +201,7 @@ exo_simple_job_launch (ExoSimpleJobFunc func,
   /* launch the job */
   return exo_job_launch (EXO_JOB (simple_job));
 }
+
+
+#define __EXO_SIMPLE_JOB_C__
+#include <exo/exo-aliasdef.c>
