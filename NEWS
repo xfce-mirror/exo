@@ -6,6 +6,10 @@
 - Make sure the ui-manager is up2date when creating the exo toolbar.
 - Fix possible segfault in exo_icon_view_get_item_at_pos (bug #5633).
 - Do not escape commas in urls (bug #5654).
+- Lookup the hardcoded paths for (u)mount during configure (bug #3717).
+- Fix missing include for strftime (bug #3751).
+- Prefer getvfsstat over getfsstat (bug #3718).
+- Don't abort if python is not found (bug #3751).
 
 0.3.101
 =======
