@@ -63,14 +63,14 @@ exo-preferred-applications.pot: $(docdir)/C/exo-preferred-applications.xml.in
 
 update-po: Makefile exo-preferred-applications.pot
 	@echo "*** Updating PO ***"
-	langs=`sed -e '/^#/d' $(srcdir)/LINGUAS`; \
+	langs=`cd "$(srcdir)/" 2>/dev/null && ls *.po 2>/dev/null | awk 'BEGIN { FS="."; ORS=" " } { print $$1 }'`; \
 	for lang in $$langs; do \
 		$(XML2PO) -u $$lang.po $(docdir)/C/exo-preferred-applications.xml.in; \
 	done
 
 update-xml: Makefile exo-preferred-applications.pot
 	@echo "*** Updating XML ***"
-	langs=`sed -e '/^#/d' $(srcdir)/LINGUAS`; \
+	langs=`cd "$(srcdir)/" 2>/dev/null && ls *.po 2>/dev/null | awk 'BEGIN { FS="."; ORS=" " } { print $$1 }'`; \
 	for lang in $$langs; do \
 		if test -n $(docdir)/$$lang; then \
 			mkdir -p $(docdir)/$$lang; \
