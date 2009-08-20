@@ -1,6 +1,6 @@
 # $Id$
 
-imagesdir = $(datadir)/xfce4/doc/C/images
+imagesdir = $(datadir)/xfce4/doc/gl/images
 images_DATA =								\
 	exo-preferred-applications-internet.png				\
 	exo-preferred-applications-utilities.png			\
