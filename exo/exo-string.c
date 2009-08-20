@@ -30,6 +30,9 @@
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif
+#ifdef HAVE_TIME_H
+#include <time.h>
+#endif
 
 #include <exo/exo-string.h>
 #include <exo/exo-alias.h>
