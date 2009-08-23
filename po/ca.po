@@ -1,372 +1,373 @@
-# Urdu translation of libexo-0.3.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Muhammad Ali Makki <makki.ma@gmai.com>, 2009.
+# translation of ca.po to Catalan
+# Catalan translations for exo package.
+# Copyright (C) 2004-2006 os-cillation e.K.
+# This file is distributed under the same license as the exo package.
+# Pau Ruŀlan Ferragut <paurullan@bulma.net> 2005, 2006, 2007
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006, 2008-2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libexo-0.3\n"
+"Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-08 13:54+0200\n"
-"PO-Revision-Date: 2009-04-27 22:55+0500\n"
-"Last-Translator: Muhammad Ali Makki <makki.ma@gmail.com>\n"
-"Language-Team: Urdu <makki.ma@gmail.com>\n"
+"PO-Revision-Date: 2009-08-23 10:35+0100\n"
+"Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
+"Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Language: Urdu\n"
-"X-Poedit-Country: PAKISTAN\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
 msgid "Follow state"
-msgstr "متبع حالت"
+msgstr "Manté l'estat"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:139
 #: ../exo/exo-cell-renderer-icon.c:146
 msgid "Render differently based on the selection state."
-msgstr "انتخابی حالت کو مد نظر رکھتے ہوئے مختلف طور پر رینڈر کریں"
+msgstr "Representa segons l'estat de selecció."
 
 #: ../exo/exo-cell-renderer-icon.c:167
 msgid "Icon"
-msgstr "آئکن"
+msgstr "Icona"
 
 #: ../exo/exo-cell-renderer-icon.c:168
 msgid "The icon to render."
-msgstr "آئکن برائے رینڈر."
+msgstr "La icona a representar."
 
 #: ../exo/exo-cell-renderer-icon.c:189
 msgid "size"
-msgstr "حجم"
+msgstr "mida"
 
 #: ../exo/exo-cell-renderer-icon.c:190
 msgid "The size of the icon to render in pixels."
-msgstr "پکسل میں رینڈر کے لیے آئکن کا حجم."
+msgstr "La mida en píxels de la icona a representar."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
 #: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "فائل کھولنے میں ناکامی \"%s\": %s"
+msgstr "No s'ha pogut obrir «%s»: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:832
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "فائل پڑھنے میں ناکامی \"%s\": %s"
+msgstr "No s'ha pogut crear «%s»: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "تصویر \"%s\" لوڈ نہیں ہوسکی: نامعلوم وجہ، تصویر فائل خراب ہوسکتی ہے"
+msgstr ""
+"No s'ha pogut carregar la imatge «%s»: raó desconeguda; probablement el "
+"fitxer està corromput."
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:785
 msgid "Orientation"
-msgstr "جہتیابی"
+msgstr "Orientació"
 
 #: ../exo/exo-icon-bar.c:250
 msgid "The orientation of the iconbar"
-msgstr "آئکن پٹی کی جہتیابی"
+msgstr "Orientació de la barra d'icones"
 
 #: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:802
 msgid "Pixbuf column"
-msgstr "Pixbuf کالم"
+msgstr "Columna de memòria de píxel"
 
 #: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:803
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "نمونہ کالم pixbuf آئکن کو حاصل کرنے کے لیے استعمال ہوتا ہے از"
+msgstr "Columna del model d'on obtenir la icona de la memòria de píxel"
 
 #: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:929
 msgid "Text column"
-msgstr "متن کالم"
+msgstr "Columna de text"
 
 #: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:930
 msgid "Model column used to retrieve the text from"
-msgstr "نمونہ کالم متن حاصل کرنے کے لیے استعمال ہوتا ہے از"
+msgstr "Columna del model d'on obtenir el text"
 
 #: ../exo/exo-icon-bar.c:295
 msgid "Icon Bar Model"
-msgstr "آئکن پٹی ماڈل"
+msgstr "Model de barra d'icones"
 
 #: ../exo/exo-icon-bar.c:296
 msgid "Model for the icon bar"
-msgstr "آئکن پٹی کے لیے ماڈل"
+msgstr "Model per la barra d'icones"
 
 #: ../exo/exo-icon-bar.c:312
 msgid "Active"
-msgstr "فعال"
+msgstr "Actiu"
 
 #: ../exo/exo-icon-bar.c:313
 msgid "Active item index"
-msgstr "فعال عنصر فہرست"
+msgstr "Activa element d'índex"
 
 #: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
-msgstr "فعال عنصر کا بھرائی رنگ"
+msgstr "Activa element emplenat de color"
 
 #: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
-msgstr "فعال عنصر کا بارڈر رنگ"
+msgstr "Activa element amb vora de color"
 
 #: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
-msgstr "فعال عنصر کا متن رنگ"
+msgstr "Activa element amd text de color"
 
 #: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
-msgstr "کرسر عنصر کا بھرائی رنگ"
+msgstr "Cursor emplenat de color"
 
 #: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
-msgstr "کرسر عنصر کا بارڈر رنگ"
+msgstr "Cursor amb vora de color"
 
 #: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
-msgstr "کرسر عنصر کا متن رنگ"
+msgstr "Cursor amb text de color"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:85
 msgid "Action Icons"
-msgstr "آئکن حرکت"
+msgstr "Icones d'accions"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:87
 msgid "Animations"
-msgstr "متحرکات"
+msgstr "Animacions"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:89
 msgid "Application Icons"
-msgstr "اطلاقیہ آئکن"
+msgstr "Icones d'aplicacions"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:91
 msgid "Menu Icons"
-msgstr "مینیو آئکن"
+msgstr "Icones de menú"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
 #: ../exo/exo-icon-chooser-dialog.c:93
 msgid "Device Icons"
-msgstr "ڈوائس آئکن"
+msgstr "Icones de dispositiu"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:95
 msgid "Emblems"
-msgstr "علامات"
+msgstr "Distintius"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:97
 msgid "Emoticons"
-msgstr "اموٹیکنز"
+msgstr "Emoticones"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:99
 msgid "International Denominations"
-msgstr "عالمی شناخت"
+msgstr "Denominacions internacionals"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:101
 msgid "File Type Icons"
-msgstr "فائل قسم آئکن"
+msgstr "Icones de tipus de fitxer"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
 #: ../exo/exo-icon-chooser-dialog.c:103
 msgid "Location Icons"
-msgstr "مقام آئکن"
+msgstr "Icones de llocs"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Status Icons"
-msgstr "حالت آئکن"
+msgstr "Icones d'estat"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Uncategorized Icons"
-msgstr "بے زمرہ آئکن"
+msgstr "Icones sense categoria"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:111
 msgid "All Icons"
-msgstr "تمام آئکن"
+msgstr "Totes les icones"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
 #: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
-msgstr "تصویر فائل"
+msgstr "Fitxers d'imatge"
 
 #. setup the header label
 #: ../exo/exo-icon-chooser-dialog.c:205
 msgid "Select _icon from:"
-msgstr "م_نتخب آئکن از:"
+msgstr "Tria l'_icona de:"
 
 #: ../exo/exo-icon-view.c:653
 msgid "Column Spacing"
-msgstr "کالم خلا"
+msgstr "Espaiat entre columnes"
 
 #: ../exo/exo-icon-view.c:654
 msgid "Space which is inserted between grid column"
-msgstr "خلا جو grid کالم کے درمیان ڈالا جائے گا"
+msgstr "L'espai inserit entre les columnes d'una graella"
 
 #: ../exo/exo-icon-view.c:670
 msgid "Number of columns"
-msgstr "کالموں کی تعداد"
+msgstr "Número de columnes"
 
 #: ../exo/exo-icon-view.c:671
 msgid "Number of columns to display"
-msgstr "ظاہر ہونے والے کالموں کی تعداد"
+msgstr "El nombre de columnes a mostrar"
 
 #: ../exo/exo-icon-view.c:685
 msgid "Enable Search"
-msgstr "تلاش فعال کریں"
+msgstr "Habilita la cerca"
 
 #: ../exo/exo-icon-view.c:686
 msgid "View allows user to search through columns interactively"
-msgstr "منظر صارف کو کالم کے درمیان فعال طور پر تلاش کی صلاحیت دیتا ہے"
+msgstr ""
+"Vista que permet a l'usuari buscar de manera interactiva mitjançant columnes"
 
 #: ../exo/exo-icon-view.c:703
 msgid "Width for each item"
-msgstr "ہر عنصر کی چوڑائی"
+msgstr "Amplada de cada element"
 
 #: ../exo/exo-icon-view.c:704
 msgid "The width used for each item"
-msgstr "چوڑائی جو ہر عنصر کے لیے استعمال ہوگی"
+msgstr "L'amplada utilitzada per cada element"
 
 #: ../exo/exo-icon-view.c:722
 msgid "Layout mode"
-msgstr "خاکہ طرز"
+msgstr "Mode del format"
 
 #: ../exo/exo-icon-view.c:723
 msgid "The layout mode"
-msgstr "خاکہ طرز"
+msgstr "El mode del format"
 
 #: ../exo/exo-icon-view.c:739
 msgid "Margin"
-msgstr "مارجن"
+msgstr "Marge"
 
 #: ../exo/exo-icon-view.c:740
 msgid "Space which is inserted at the edges of the icon view"
-msgstr "خلا جو آئکن منظر کے کناروں پر ڈالا جائے گا"
+msgstr "Espai inserit a les vores de la vista d'icones"
 
 #: ../exo/exo-icon-view.c:756
 msgid "Markup column"
-msgstr "کالم نشان زدہ کریں"
+msgstr "Columna d'etiquetatge"
 
 #: ../exo/exo-icon-view.c:757
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
-"اگر Pango markup استعمال کیا جائے تو نمونہ کالم متن کے حصول کے لیے استعمال "
-"کیا جاتا ہے"
+"Columna del model d'on obtenir el text si es fa servir el marcatge Pango"
 
 #: ../exo/exo-icon-view.c:771
 msgid "Icon View Model"
-msgstr "آئکن منظر ماڈل"
+msgstr "Model de vista d'icones"
 
 #: ../exo/exo-icon-view.c:772
 msgid "The model for the icon view"
-msgstr "آئکن منظر کے لیے ماڈل"
+msgstr "El model per la vista d'icones"
 
 #: ../exo/exo-icon-view.c:786
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
-msgstr "کس طرح ہر عنصر کی آئکن اور متن ایک دوسرے سے متعلق جگہ لیں گے"
+msgstr "Posicionament relatiu entre el text i la icona de cada element"
 
 #: ../exo/exo-icon-view.c:818
 msgid "Reorderable"
-msgstr "پھر قابلِ ترتیب"
+msgstr "Reordenable"
 
 #: ../exo/exo-icon-view.c:819
 msgid "View is reorderable"
-msgstr "منظر پھر قابلِ ترتیب ہے"
+msgstr "Vista és reordenable"
 
 #: ../exo/exo-icon-view.c:834
 msgid "Row Spacing"
-msgstr "سطر خلا"
+msgstr "Espaiat de files"
 
 #: ../exo/exo-icon-view.c:835
 msgid "Space which is inserted between grid rows"
-msgstr "خلا جو grid سطور کے درمیان ڈالا جائے گا"
+msgstr "L'espai inserit entre les files d'una graella"
 
 #: ../exo/exo-icon-view.c:849
 msgid "Search Column"
-msgstr "تلاش کالم"
+msgstr "Cerca columna"
 
 #: ../exo/exo-icon-view.c:850
 msgid "Model column to search through when searching through item"
-msgstr "عنصر میں سے تلاشنے کے لیے نمونہ کا کالم"
+msgstr "Model de columnes per buscar quan es busqui mitjançant elements"
 
 #: ../exo/exo-icon-view.c:864
 msgid "Selection mode"
-msgstr "انتخاب طرز"
+msgstr "Mode de selecció"
 
 #: ../exo/exo-icon-view.c:865
 msgid "The selection mode"
-msgstr "انتخاب طرز"
+msgstr "El mode de selecció"
 
 #: ../exo/exo-icon-view.c:880 ../exo/exo-tree-view.c:166
 msgid "Single Click"
-msgstr "ایک کلک"
+msgstr "Clic senzill"
 
 #: ../exo/exo-icon-view.c:881 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
-msgstr "ایک کلک طرز میں عناصر کس طرح فعال ہوں گے"
+msgstr "Si els elements de la vista poden ser activats amb un sol clic"
 
 #: ../exo/exo-icon-view.c:897 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
-msgstr "ایک کلک کا انتہائی وقت"
+msgstr "Temps d'espera pel clic senzill"
 
 #: ../exo/exo-icon-view.c:898 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr ""
-"ایک کلک طرز کا وہ انتہائی وقت جس میں کسی عنصر پر ماؤس کرسر لے جانے پر وہ خود "
-"بخود منتخب ہوجائے گا"
+"El temps que transcorrerà quan el cursor estigui sobre un element que s'hagi "
+"seleccionat automàticament al mode de clic senzill."
 
 #: ../exo/exo-icon-view.c:913
 msgid "Spacing"
-msgstr "خلا"
+msgstr "Espaiat"
 
 #: ../exo/exo-icon-view.c:914
 msgid "Space which is inserted between cells of an item"
-msgstr "خلا جو عنصر کے خلیے کے درمیان ڈالا جائے گا"
+msgstr "Espai inserit entre les ceŀles de cada element"
 
 #: ../exo/exo-icon-view.c:937
 msgid "Selection Box Color"
-msgstr "انتخاب بکس رنگ"
+msgstr "Color de caixa de selecció"
 
 #: ../exo/exo-icon-view.c:938
 msgid "Color of the selection box"
-msgstr "انتخاب بکس کا رنگ"
+msgstr "El color de la caixa de selecció"
 
 #: ../exo/exo-icon-view.c:944
 msgid "Selection Box Alpha"
-msgstr "انتخاب بکس الفا"
+msgstr "Alfa de la caixa de selecció"
 
 #: ../exo/exo-icon-view.c:945
 msgid "Opacity of the selection box"
-msgstr "انتخاب بکس کی کثافت"
+msgstr "Opacitat de la caixa de selecció"
 
 #: ../exo/exo-thumbnail-preview.c:123
 msgid "Preview"
-msgstr "معائنہ"
+msgstr "Vista prèvia"
 
 #: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
-msgstr "کوئی فائل منتخب نہیں"
+msgstr "No s'ha seleccionat cap fitxer"
 
 #: ../exo/exo-thumbnail-preview.c:299
 msgid "Block Device"
-msgstr "بلاک ڈیوائس"
+msgstr "Dispositiu de blocs"
 
 #: ../exo/exo-thumbnail-preview.c:304
 msgid "Character Device"
-msgstr "رموز ڈیوائس"
+msgstr "Dispositiu de caràcters"
 
 #: ../exo/exo-thumbnail-preview.c:309
 msgid "Folder"
-msgstr "فولڈر"
+msgstr "Directori"
 
 #: ../exo/exo-thumbnail-preview.c:314
 msgid "FIFO"
@@ -374,160 +375,161 @@ msgstr "FIFO"
 
 #: ../exo/exo-thumbnail-preview.c:319
 msgid "Socket"
-msgstr "ساکٹ"
+msgstr "Sòcol"
 
 #: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
-msgstr "_نئی اوزار پٹی شامل کریں"
+msgstr "_Afegeix una barra d'eines nova"
 
 #: ../exo/exo-toolbars-editor.c:230
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
 msgstr ""
-"عنصر کو شامل کرنے کے لیے اوپر اوزار کی پٹی میں اسے ڈریگ کرکے چھوڑیں، ختم "
-"کرنے کے لیے اوزار کی پٹی سے ڈریگ کرکے عناصر ٹیبل میں چھوڑیں."
+"Arrossega un element a les barres d'eines superiors per a afegir-lo. "
+"Arrossegueu-lo des de les barres d'eines a la taula d'elements per a "
+"suprimir-lo."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
-msgstr "جداگار"
+msgstr "Separador"
 
 #: ../exo/exo-toolbars-view.c:759
 msgid "Toolbar _Style"
-msgstr "اوزار پٹی کا ان_داز"
+msgstr "E_stil de la barra d'eines"
 
 #: ../exo/exo-toolbars-view.c:766
 msgid "_Desktop Default"
-msgstr "_ڈیسک ٹاپ طے شدہ"
+msgstr "_Escriptori predeterminat"
 
 #: ../exo/exo-toolbars-view.c:775
 msgid "_Icons only"
-msgstr "صرف آئکن"
+msgstr "Només _icones"
 
 #: ../exo/exo-toolbars-view.c:784
 msgid "_Text only"
-msgstr "صرف متن"
+msgstr "Només _text"
 
 #: ../exo/exo-toolbars-view.c:793
 msgid "Text for _All Icons"
-msgstr "متن برائے ت_مام آئکن"
+msgstr "Text per t_otes les icones"
 
 #: ../exo/exo-toolbars-view.c:802
 msgid "Text for I_mportant Icons"
-msgstr "خاص آئکن کا متن"
+msgstr "Text per les icones i_mportants"
 
 #: ../exo/exo-toolbars-view.c:810
 msgid "_Remove Toolbar"
-msgstr "اوزار پ_ٹی حذف کریں"
+msgstr "_Suprimir barra d'eines"
 
 #: ../exo/exo-toolbars-view.c:825
 msgid "Customize Toolbar..."
-msgstr "اوزار پٹی مختص کریں..."
+msgstr "Personalitza barra d'eines…"
 
 #: ../exo/exo-url.c:280
 #, c-format
 msgid "Unable to open \"%s\""
-msgstr "\"%s\" کو کھولنا ممکن نہیں"
+msgstr "No s'ha pogut obrir «%s»"
 
 #: ../exo/exo-url.c:326
 #, c-format
 msgid "The URL \"%s\" is not supported"
-msgstr "ربط \"%s\" کی معاونت نہیں ہے"
+msgstr "No es permet l'ús d'URLs com «%s»"
 
 #: ../exo/exo-url.c:412
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr " \"%s\" کھولنے میں ناکامی"
+msgstr "No s'ha pogut obrir «%s»."
 
 #: ../exo/exo-wrap-table.c:160
 msgid "Column spacing"
-msgstr "کالم خلا"
+msgstr "Espaiat entre columnes"
 
 #: ../exo/exo-wrap-table.c:161
 msgid "The amount of space between two consecutive columns"
-msgstr "دو متواتر کالم کے درمیان خلا کی مقدار"
+msgstr "L'espai deixat entre dues columnes consecutives"
 
 #: ../exo/exo-wrap-table.c:175
 msgid "Row spacing"
-msgstr "سطر خلا"
+msgstr "Espaiat entre files"
 
 #: ../exo/exo-wrap-table.c:176
 msgid "The amount of space between two consecutive rows"
-msgstr "دو متواتر سطور کے درمیان خلا کی مقدرا"
+msgstr "L'espai deixat entre dues files consecutives"
 
 #: ../exo/exo-wrap-table.c:190
 msgid "Homogeneous"
-msgstr "ہومو جینئس"
+msgstr "Homogeni"
 
 #: ../exo/exo-wrap-table.c:191
 msgid "Whether the children should be all the same size"
-msgstr "کب تمام چھوٹوں کو ایک حجم کا ہونا چاہیے"
+msgstr "Si tots els fills han de tenir la mateixa mida"
 
 #: ../exo/exo-xsession-client.c:143
 msgid "Window group"
-msgstr "ونڈو گروپ"
+msgstr "Grup de finestres"
 
 #: ../exo/exo-xsession-client.c:144
 msgid "Window group leader"
-msgstr "ونڈو گروپ لیڈر"
+msgstr "Finestra principal del grup"
 
 #: ../exo/exo-xsession-client.c:154
 msgid "Restart command"
-msgstr "ری سٹارٹ کمانڈ"
+msgstr "Reinicia ordre"
 
 #: ../exo/exo-xsession-client.c:155
 msgid "Session restart command"
-msgstr "نشست ری سٹارٹ کمانڈ"
+msgstr "Ordre per reiniciar la sessió"
 
 #: ../exo-csource/main.c:285
 #, c-format
 msgid "Usage: %s [options] [file]\n"
-msgstr "استعمال: %s [اختیار] [فائل]\n"
+msgstr "Ús: %s [opcions] [fitxer]\n"
 
 #: ../exo-csource/main.c:286
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [اختیارات] --بلڈ-لسٹ [[فائل کا نام]...]\n"
+msgstr "       %s [opcions] --build-list [nom del fitxer]\n"
 
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --ہدایت        ہدایت پیغام طبع کرکے برخاست کریں\n"
+msgstr "  -h, --help        Mostra aquest missatge i surt\n"
 
 #: ../exo-csource/main.c:289
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --ورژن    ورژن کی معلومات پرنٹ کرکے اخراج کریں\n"
+msgstr "  -V, --version     Mostra la versió i surt\n"
 
 #: ../exo-csource/main.c:290
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
-msgstr "  --خارجی          خارجی رموز جنریٹ کریں\n"
+msgstr "  --extern          Genera símbols externs\n"
 
 #: ../exo-csource/main.c:291
 #, c-format
 msgid "  --static          Generate static symbols\n"
-msgstr "  --ساکن          ساکن رموز جنریٹ کریں\n"
+msgstr " --static           Genera símbols estàtics\n"
 
 #: ../exo-csource/main.c:292
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=identifier C ماکرو/ویریئبل کا نام\n"
+msgstr "  --name=identifier nom de la macro de C\n"
 
 #: ../exo-csource/main.c:293
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list      حرفی تجزی (نام, فائل) حرفی تجزیہ\n"
+msgstr "  --build-list      Analitza parelles (nom, fitxer)\n"
 
 #: ../exo-csource/main.c:294
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "  --strip-comments  تبصرے XML فائلوں سے حذف کرتے ہیں\n"
+msgstr "  --strip-comments  Treu els comentaris del fitxers XML\n"
 
 #: ../exo-csource/main.c:295
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   XML فائلوں سے node مواد حذف کرتے ہیں\n"
+msgstr "  --strip-content  Treu els continguts del nodes dels fitxers XML\n"
 
 #: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
 #: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:169
@@ -540,10 +542,10 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"کاپی رائٹ (c) %s\n"
-"        os-cillation e.K. تمام حقوق محفوظ ہیں\n"
+"Copyright (c) %s\n"
+"          os-cillation e.K. Tots els drets reservats.\n"
 "\n"
-"لکھا گیا از Benedikt Meurer <benny@xfce.org>.\n"
+"Escrit per Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
 #: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
@@ -557,10 +559,10 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
-"%s مکمل طور پر بغیر کسی ضمانت کے پیش کیا جاتا ہے\n"
-"آپ %s کی کاپیاں زیرِ شرائط برائے\n"
-"GNU جنرل پبلک لائسنس جو\n"
-"%s کے مصدر پیکج موجود ہے.\n"
+"%s ve sense CAP TIPUS DE GARANTIA,\n"
+"Podeu redistribuir còpies de %s baix els termes de\n"
+"la GNU Lesser General Public License, la qual podeu trobar al\n"
+"paquet de codi font de %s.\n"
 "\n"
 
 #: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
@@ -568,90 +570,90 @@ msgstr ""
 #: ../exo-open/main.c:139
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "بگ رپورٹ کریں تا <%s>.\n"
+msgstr "Envieu els errors a <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:290
 msgid "Select an Application"
-msgstr "اطلاقیہ منتخب کریں"
+msgstr "Seleccioneu una aplicació"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:299
 #: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
-msgstr "تمام فائلیں"
+msgstr "Tots els fitxers"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
 #: ../exo-helper/exo-helper-chooser.c:437
 msgid "Executable Files"
-msgstr "اطلاقی فائلیں"
+msgstr "Fitxer executables"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:319
 #: ../exo-helper/exo-helper-chooser.c:452
 msgid "Perl Scripts"
-msgstr "پرل سکرپٹ"
+msgstr "Seqüències en Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:325
 #: ../exo-helper/exo-helper-chooser.c:458
 msgid "Python Scripts"
-msgstr "پائتھن سکرپٹ"
+msgstr "Seqüències en Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:331
 #: ../exo-helper/exo-helper-chooser.c:464
 msgid "Ruby Scripts"
-msgstr "روبی سکرپٹ"
+msgstr "Seqüències en Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:337
 #: ../exo-helper/exo-helper-chooser.c:470
 msgid "Shell Scripts"
-msgstr "شیل سکرپٹ"
+msgstr "Seqüències de shell"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
 #, c-format
 msgid "Create Launcher <b>%s</b>"
-msgstr "<b>%s</b> لاؤنچر بنائیں"
+msgstr "Crea un llançador <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:318
 msgid "_Name:"
-msgstr "ن_ام:"
+msgstr "_Nom:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:336
 msgid "C_omment:"
-msgstr "تبص_رہ:"
+msgstr "Co_mentari:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:354
 msgid "Comm_and:"
-msgstr "کم_انڈ:"
+msgstr "_Ordre:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:371
 msgid "_URL:"
-msgstr "ربط:"
+msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
-msgstr "آئ_کن:"
+msgstr "_Icona:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:408
 #: ../exo-desktop-item-edit/exo-die-editor.c:1134
 msgid "No icon"
-msgstr "بلا آئکن"
+msgstr "Sense icona"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:419
 msgid "Options:"
-msgstr "اختیارات:"
+msgstr "Opcions:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:430
 msgid "Use _startup notification"
-msgstr "آغاز اط_لاعیہ استعمال کریں"
+msgstr "Empra noti_ficació d'inicialització"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
 msgid ""
@@ -659,423 +661,430 @@ msgid ""
 "from the file manager or the menu. Not every application supports startup "
 "notification."
 msgstr ""
-"سٹارٹ اپ انتباہ کے لیے یہ آپشن منتخب کریں جب کمانڈ فائل منیجر یا مینیو سے "
-"چلائی جائے. نوٹ کریں کہ ہر اطلاقیہ سٹارٹ اپ انتباہ کی معاونت نہیں رکھتا."
+"Seleccioneu aquesta opció per habilitar la notificació d'inicialització quan "
+"l'ordre s'executi des de el gestor de fitxers o el menú. No totes les "
+"aplicacions notifiquen la seva inicialització. "
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:443
 msgid "Run in _terminal"
-msgstr "ٹ_رمنل میں چلائیں"
+msgstr "Executa en un _terminal"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:444
 msgid "Select this option to run the command in a terminal window."
-msgstr "کمانڈ ٹرمنل ونڈو میں چلانے کے لیے آپشن منتخب کریں."
+msgstr ""
+"Seleccioneu aquesta opció per executar una ordre en una finestra de terminal."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
 msgid "Select an icon"
-msgstr "آئکن منتخب کریں"
+msgstr "Seleccioneu una icona"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:50
 msgid "Create Launcher"
-msgstr "لاؤنچر بنائیں"
+msgstr "Crea un llançador"
 
 #: ../exo-desktop-item-edit/main.c:50
 msgid "Create Link"
-msgstr "ربط بنائیں"
+msgstr "Crea un enllaç"
 
 #: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Launcher"
-msgstr "لاؤنچر مدون کریں"
+msgstr "Edita el llançador"
 
 #: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Link"
-msgstr "ربط مدون کریں"
+msgstr "Edita l'enllaç"
 
 #: ../exo-desktop-item-edit/main.c:72
 msgid "Create a new desktop file in the given directory"
-msgstr "دی گئی ڈائریکٹری میں نئی ڈیسک ٹاپ فائل بنائیں"
+msgstr "Crea un nou fitxer d'escriptori en el directori especificat"
 
 #: ../exo-desktop-item-edit/main.c:73
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "بنانے کے لیے ڈیسک ٹاپ فائل کی قسم (اطلاقیہ یا ربط)"
+msgstr "Tipus de fitxer d'escriptori a crear (aplicació o enllaç)"
 
 #: ../exo-desktop-item-edit/main.c:74
 msgid "Preset name when creating a desktop file"
-msgstr "جب ڈیسک ٹاپ فائل بنائی جائے پہلے نام سیٹ کریں"
+msgstr "Preselecciona el nom de creació de fitxers d'escriptori"
 
 #: ../exo-desktop-item-edit/main.c:75
 msgid "Preset comment when creating a desktop file"
-msgstr "جب ڈیسک ٹاپ فائل بنائی جائے پہلے کمانڈ سیٹ کریں"
+msgstr "Preselecciona el comentari de creació de fitxers d'escriptori"
 
 #: ../exo-desktop-item-edit/main.c:76
 msgid "Preset command when creating a launcher"
-msgstr "جب لاؤنچر بنايا جائے پہلے کمانڈ سیٹ کریں"
+msgstr "Preselecciona l'ordre de creació de llançadors"
 
 #: ../exo-desktop-item-edit/main.c:77
 msgid "Preset URL when creating a link"
-msgstr "جب ربط بنایا جائے پہلے URL کو سیٹ کریں"
+msgstr "Preselecciona la URL de creació d'enllaços"
 
 #: ../exo-desktop-item-edit/main.c:78
 msgid "Preset icon when creating a desktop file"
-msgstr "جب ڈیسک ٹاپ فائل بنائی جائے پہلے آئکن کو سیٹ کریں"
+msgstr "Preselecciona la icona de creació de fitxers d'escriptori"
 
 #: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
 #: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
-msgstr "ورژن معلومات طبع کریں اور برخاست کریں"
+msgstr "Imprimeix informació sobre la versió i surt"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:125
 msgid "[FILE|FOLDER]"
-msgstr "[فائل|فولڈر]"
+msgstr "[FITXER|CARPETA]"
 
 #: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
 #: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
-msgstr "منظر کھولنے میں ناکامی"
+msgstr "No s'ha pogut obrir la pantalla"
 
 #: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
-msgstr "کوئی فائل/فولڈر متعین نہیں"
+msgstr "No heu especificat cap fitxer o carpeta"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:226
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "فائل \"%s\" کی معاونت نہیں ہے"
+msgstr "No es reconeix el tipus de fitxer d'escriptori «%s»"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:246
 msgid "C_reate"
-msgstr "ب_نائیں"
+msgstr "C_rea"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:366
 msgid "Choose filename"
-msgstr "فائل کا نام متعین کریں"
+msgstr "Trieu un nom de fitxer"
 
 #: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "\"%s\" کو بنانے میں ناکامی"
+msgstr "No s'ha pogut crear «%s»."
 
 #: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "\"%s\" کو محفوظ کرنے میں ناکامی"
+msgstr "No s'ha pogut desar «%s»."
 
 #: ../exo-hal/exo-hal.c:444
 #, c-format
 msgid "External %s Drive"
-msgstr "خارجی %s ڈرائیو"
+msgstr "Unitat externa %s"
 
 #: ../exo-hal/exo-hal.c:446
 #, c-format
 msgid "%s Drive"
-msgstr "%s ڈرائیو"
+msgstr "Unitat %s"
 
 #: ../exo-hal/exo-hal.c:455
 msgid "External Floppy Drive"
-msgstr "خارجی فلاپی ڈرائیو"
+msgstr "Unitat externa de disquet"
 
 #: ../exo-hal/exo-hal.c:457
 msgid "Floppy Drive"
-msgstr "فلاپی ڈرائیو"
+msgstr "Disquet"
 
 #: ../exo-hal/exo-hal.c:461
 msgid "Compact Flash Drive"
-msgstr "کومپیکٹ فلیش ڈرائیو"
+msgstr "Medi Compact Flash"
 
 #: ../exo-hal/exo-hal.c:465
 msgid "Memory Stick Drive"
-msgstr "میموری سٹک ڈرائیو"
+msgstr "Memòria portàtil"
 
 #: ../exo-hal/exo-hal.c:469
 msgid "Smart Media Drive"
-msgstr "سمارٹ میڈیا ڈرائیو"
+msgstr "Smart Media"
 
 #: ../exo-hal/exo-hal.c:473
 msgid "SD/MMC Drive"
-msgstr "SD/MMC ڈرائیو"
+msgstr "Medi SD/MMC"
 
 #: ../exo-hal/exo-hal.c:477
 msgid "Zip Drive"
-msgstr "Zip ڈرائیو"
+msgstr "Unitat Zip"
 
 #: ../exo-hal/exo-hal.c:481
 msgid "Jaz Drive"
-msgstr "Jaz ڈرائیو"
+msgstr "Unitat Jaz"
 
 #: ../exo-hal/exo-hal.c:485
 msgid "Pen Drive"
-msgstr "Pen ڈرائیو"
+msgstr "Unitat de clauer"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:494
 #, c-format
 msgid "%s Music Player"
-msgstr "%s موسیقی پلیئر"
+msgstr "Reproductor de música %s"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
-msgstr "%s برقی کیمرا"
+msgstr "Càmera digital %s"
 
 #. last fallback to "Drive"
 #: ../exo-hal/exo-hal.c:532
 msgid "Drive"
-msgstr "ڈرائیو"
+msgstr "Unitat"
 
 #: ../exo-hal/exo-hal.c:759
 #, c-format
 msgid "Blank %s Disc"
-msgstr "خالی %s ڈسک"
+msgstr "Disc en blanc %s"
 
 #: ../exo-hal/exo-hal.c:761
 #, c-format
 msgid "%s Disc"
-msgstr "%s ڈسک"
+msgstr "Disc %s"
 
 #. special case for pure audio disc
 #: ../exo-hal/exo-hal.c:766
 msgid "Audio CD"
-msgstr "صوتی سی ڈی"
+msgstr "CD d'àudio"
 
 #: ../exo-hal/exo-hal.c:802
 #, c-format
 msgid "%s Removable Volume"
-msgstr "%s قابلِ اخراج حجم"
+msgstr "Volum extraïble %s"
 
 #: ../exo-hal/exo-hal.c:804
 #, c-format
 msgid "%s Volume"
-msgstr "%s حجم"
+msgstr "Volum %s"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:103
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
-msgstr "مجوزہ اطلاقیے"
+msgstr "Aplicacions preferides"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:104
 msgid "Select default applications for various services"
-msgstr "مختلف خدمات کے لیے طے شدہ اطلاقیے منتخب کریں"
+msgstr "Seleccioneu les aplicacions per defecte de diversos serveis"
 
 #.
 #. Internet
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:133
 msgid "Internet"
-msgstr "انٹرنیٹ"
+msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:146
 msgid "Web Browser"
-msgstr "ویب براؤزر"
+msgstr "Navegador web"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:154
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr ""
-"مجوزہ ویب براؤزر روابط اور ہدایات کا مواد\n"
-"کھولنے اور دیکھنے کے لیے استعمال ہوگا."
+"El navegador web preferit s'usarà per obrir els\n"
+"hiperenllaços i mostrar l'ajuda."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid "Mail Reader"
-msgstr "میل ریڈر"
+msgstr "Client de correu"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:186
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
-"ای میل روابط پر کلک کرنے پر ای میل لکھنے کے لیے\n"
-"مجوزہ ای میل پروگرام استعمال کیا جائے گا."
+"El client de correu preferit s'usarà per redactar\n"
+"correus quan faceu clic sobre una adreça"
 
 #.
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:206
 msgid "Utilities"
-msgstr "سہولیات"
+msgstr "Utilitats"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "Terminal Emulator"
-msgstr "ٹرمنل ایمولیٹر"
+msgstr "Emulador de terminal"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:227
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
-"مجوزہ ٹرمنل ایمولیٹر کو ان کمانڈز کو چلانے کے لیے\n"
-"استعمال کیا جائے گا جنہیں CLI ماحول کی ضرورت ہے."
+"L'emulador de terminal preferit s'usarà per executar\n"
+"ordres dins un entorn de línia d'ordres."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:266
 msgid "Failed to open the documentation browser."
-msgstr "دستاویزات براؤزر کھولنے میں ناکامی."
+msgstr "No s'ha pogut obrir el navegador per la documentació."
 
 #: ../exo-helper/exo-helper-chooser.c:184
 #: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
-msgstr "منتخب کردہ اطلاقیوں کو بدلنے کے لیے ماؤس کا بایاں بٹن دبائیں."
+msgstr ""
+"Premeu el botó esquerra del ratolí per canviar l'aplicació seleccionada."
 
 #: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
-msgstr "اطلاقیہ منتخب کار بٹن"
+msgstr "Botó d'elecció d'aplicació"
 
 #: ../exo-helper/exo-helper-chooser.c:334
 msgid "No application selected"
-msgstr "کوئی اطلاقیہ منتخب نہیں کیا گیا"
+msgstr "No s'ha seleccionat cap aplicació"
 
 #: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
-msgstr "طے شدہ براؤزر متعین کرنے میں ناکامی"
+msgstr "No s'ha pogut definir el navegador web predeterminat"
 
 #: ../exo-helper/exo-helper-chooser.c:351
 msgid "Failed to set default Mail Reader"
-msgstr "طے شدہ میل ریڈر متعین کرنے میں ناکامی"
+msgstr "No s'ha pogut definir el client de correu predeterminat"
 
 #: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
-msgstr "طے شدہ ٹرمنل ایمولیٹر متعین کرنے میں ناکامی"
+msgstr "No s'ha pogut definir l'emulador de terminal predeterminat"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:422
 msgid "Select application"
-msgstr "اطلاقیہ منتخب کریں"
+msgstr "Seleccioni l'aplicació"
 
 #: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
-msgstr "مخصوص ویب براؤزر منتخب کریں"
+msgstr "Escolliu un navegador web"
 
 #: ../exo-helper/exo-helper-chooser.c:536
 msgid "Choose a custom Mail Reader"
-msgstr "مخصوص میل ریڈر منتخب کریں"
+msgstr "Escolliu un client de correu"
 
 #: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
-msgstr "مخصوص ٹرمنل  ایمولیٹر منتخب کریں"
+msgstr "Escolliu un emulador de terminal"
 
 #: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
-"چلانے کے لیے اطلاقیہ متعین کریں\n"
-"بطور Xfce طے شدہ براؤزر:"
+"Especifiqueu l'aplicació que voleu emprar\n"
+"com a navegador web pel Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:543
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
-"استعمال کے لیے اطلاقیہ منتخب کریں\n"
-"بطور طے شدہ ایکسفس میل ریڈر:"
+"Especifiqueu l'aplicació que voleu usar\n"
+"com a client de correu pel Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:544
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
-"ایکسفس کے لیے طے شدہ\n"
-"ٹرمنل ایمولیٹر منتخب کریں:"
+"Especifiqueu l'aplicació que voleu usar\n"
+"com a emulador de terminal pel Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:610
 msgid "Browse the file system to choose a custom command."
-msgstr "مختص کمانڈ کے انتخاب کے لیے فائل سسٹم براؤز کریں."
+msgstr "Navega pel sistema de fitxer per escollir una ordre."
 
 #: ../exo-helper/exo-helper-chooser.c:793
 msgid "_Other..."
-msgstr "_دیگر..."
+msgstr "_Altres…"
 
 #: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
-msgstr "کوئی مختص اطلاقیہ استعمال کریں جو اوپر فہرست میں نہیں ہے."
+msgstr "Usa una aplicació que no està inclosa a la llista anterior."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:141
 msgid "Choose Preferred Application"
-msgstr "مجوزہ اطلاقیے منتخب کریں"
+msgstr "Tria l'aplicació preferida"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:284
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
 msgstr ""
-"اپنا مجوزہ ویب براؤزر منتخب کریں\n"
-"اور آگے بڑھنے کے لیے ٹھیک ہے پر کلک کریں."
+"Trieu el navegador web preferit \n"
+"i premeu «D'acord» per seguir."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:286
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
-"اپنا مجوزہ ای میل ریڈر منتخب کریں\n"
-"اور آگے بڑھیں."
+"Per favor trieu el client de correu\n"
+"preferit i premeu «D'acord» per seguir"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:288
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
-"اپنا مجوزہ ٹرمنل ایمولیٹر منتخب\n"
-"کریں اور ٹھیک ہے سے آگے بڑھیں"
+"Per favor trieu l'emulador de terminal\n"
+"preferit i premeu «D'acord» per seguir"
 
 #: ../exo-helper/exo-helper.c:404
 #, c-format
 msgid "No command specified"
-msgstr "کوئی کمانڈ متعین نہیں کی گئی"
+msgstr "No heu especificat cap ordre"
 
 #: ../exo-helper/exo-helper.c:740
 #, c-format
 msgid "Failed to open helpers.rc for writing"
-msgstr "لکھنے کے لیے helpers.rc کو کھولنے میں ناکامی"
+msgstr "No s'ha pogut obrir helpers.rc per escriptura"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "مجوزہ اطلاقیے (ویب براؤزر، ای میل ریڈر، اور ٹرمنل ایمولیٹر)"
+msgstr ""
+"Aplicacions preferides (navegador web, lector de correu i emulador de "
+"terminal)"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
-msgstr "طے شدہ ویب براؤسر چلانے میں ناکامی"
+msgstr "No s'ha pogut executar el navegador web per defecte"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
-msgstr "طے شدہ ڈاک مطالعہ گاہ چلانے میں ناکامی"
+msgstr "No s'ha pogut executar el lector de correus per defecte"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
-msgstr "طے شدہ ٹرمنل ایمولیٹر متعین کرنے میں ناکامی"
+msgstr "No s'ha pogut executar l'emulador de terminal per defecte"
 
 #: ../exo-helper/main.c:68
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr "ترجیح شدہ اطلاقیوں کو تشکیل دینے کا مکالمہ کھولیں"
+msgstr ""
+"Obre les aplicacions preferides\n"
+"diàleg de configuració"
 
 #: ../exo-helper/main.c:69
 msgid "Settings manager socket"
-msgstr "ترتیبات منیجر ساکٹ"
+msgstr "Sòcol del gestor d'ajustaments"
 
 #: ../exo-helper/main.c:69
 msgid "SOCKET ID"
-msgstr "ساکٹ آئی ڈی"
+msgstr "SÒCOL ID"
 
 #: ../exo-helper/main.c:70
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
 msgstr ""
-"نوعیت TYPE کا طے شدہ معاون کار بمع اختیاری PARAMETER کے ساتھ چلائیں، جہاں "
-"TYPE ذیل کی قدروں میں سے ایک قدر ہے"
+"Llança l'aplicació per defecte del TIPUS amb els PARÀMETREs opcionals, on "
+"TIPUS és un dels següents valors."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
-msgstr "TYPE [PARAMETER]"
+msgstr "TIPUS [PARÀMETRE]"
 
 #: ../exo-helper/main.c:93
 msgid ""
@@ -1085,21 +1094,21 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"کمانڈ چلانے کے لیے مندرجہ ذیل انواع کی معاونت ہے:\n"
+"Els següents TIPUS es poden emprar amb l'ordre --launch:\n"
 "\n"
-"  WebBrowser       - مجوزہ ویب براؤزر.\n"
-"  MailReader       - مجوزہ ای میل ریڈر.\n"
-"  TerminalEmulator - مجوزہ ٹرمنل ایمولیٹر."
+"  WebBrowser       - El navegador web preferit.\n"
+"  MailReader       - El client de correu preferit.\n"
+"  TerminalEmulator - L'emulador de terminal preferit."
 
 #: ../exo-helper/main.c:102
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr "استعمال کے لئے ٹائپ کریں '%s --help'."
+msgstr "Feu «%s --help» per veure l'ús."
 
 #: ../exo-helper/main.c:152
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "غیرموزوں معاون کار نوعیت \"%s\""
+msgstr "El tipus d'aplicació no és vàlida «%s»"
 
 #: ../exo-helper/main.c:192
 #, c-format
@@ -1115,177 +1124,178 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr ""
-"%s (ایکسفس %s)\n"
+"%s (Xfce %s)\n"
 "\n"
-"کاپی رائٹ (c) 2003-2006\n"
-"        os-cillation e.K. تمام حقوق محفوظ ہیں.\n"
+"Copyright (c) 2003-2006\n"
+"          os-cillation e.K. Tots els drets reservats.\n"
 "\n"
-"تحریر کردہ از Benedikt Meurer <benny@xfce.org>.\n"
+"Escrit per Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-"تیار کردہ بمع Gtk+-%d.%d.%d, چل رہا ہے Gtk+-%d.%d.%d.\n"
+"Construït amb Gtk+-%d.%d.%d, executant Gtk+-%d.%d.%d.\n"
 "\n"
-"براہ مہربانی اغلاط کی اطلاع <%s> کو دیں.\n"
+"Envieu els errors a <%s>.\n"
 
 #: ../exo-helper/main.c:209
 #, c-format
 msgid "Unknown helper arguments.\n"
-msgstr "نامعلوم امدادی دلائل.\n"
+msgstr "Paràmetres de l'aplicació desconeguts.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
-msgstr "اکسفس ٹرمنل"
+msgstr "Terminal de Xfce"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
-msgstr "اٹرم"
+msgstr "aterm"
 
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
-msgstr "بالسا"
+msgstr "Balsa"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
-msgstr "ڈیبین سینسبل براؤزر"
+msgstr "Navegador sensible de Debian"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr "ڈبین X ٹرمنل ایمولیٹر"
+msgstr "Emulador de Terminal X de Debian"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
-msgstr "اینکمپاس"
+msgstr "Encompass"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
-msgstr "اپپفنی ویب براؤزر"
+msgstr "Navegador web Epiphany"
 
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr "انلائیٹینڈ ٹرمنل ایمولیٹر"
+msgstr "Emulador de terminal Enlightened"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Novell Evolution"
-msgstr "نوول ایولوشن"
+msgstr "Novell Evolution"
 
 #: ../exo-helper/helpers/firefox.desktop.in.in.h:1
 msgid "Mozilla Firefox"
-msgstr "موزیلا فائر فاکس"
+msgstr "Mozilla Firefox"
 
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
-msgstr "گیلیئن ویب براؤزر"
+msgstr "Navegador web Galeon"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
-msgstr "گنوم ٹرمنل"
+msgstr "Terminal del GNOME"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
-msgstr "کے میل"
+msgstr "KMail"
 
 #: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
 msgid "Konqueror Web Browser"
-msgstr "کنکرر ویب براؤزر"
+msgstr "Navegador web Konqueror"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
 msgid "Links Text Browser"
-msgstr "روابط متن براؤزر"
+msgstr "Navegador web de text Links"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
 msgid "Lynx Text Browser"
-msgstr "Lynx متن براؤزر"
+msgstr "Navegador web de text Lynx"
 
 #: ../exo-helper/helpers/midori.desktop.in.in.h:1
 msgid "Midori"
-msgstr "میڈوری"
+msgstr "Midori"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
-msgstr "موزیلا براؤزر"
+msgstr "Navegador Mozilla"
 
 #: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
 msgid "Mozilla Mail"
-msgstr "موزیلا میل"
+msgstr "Correu de Mozilla"
 
 #: ../exo-helper/helpers/mutt.desktop.in.in.h:1
 msgid "Mutt"
-msgstr "مُٹ"
+msgstr "Mutt"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
-msgstr "نیٹ سکیپ نیویگیٹر"
+msgstr "Navegador Netscape"
 
 #: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
 msgid "NXterm"
-msgstr "نیکسٹرم"
+msgstr "NXterm"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
-msgstr "اوپرا براؤزر"
+msgstr "Navegador Opera"
 
 #: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
 msgid "Opera Mail"
-msgstr "اوپرا میل"
+msgstr "Correu d'Opera"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
-msgstr "کلاؤز میل"
+msgstr "Claws"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
-msgstr "سیلفیڈ"
+msgstr "Sylpheed"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
-msgstr "موزیلا تھنڈربرڈ"
+msgstr "Mozilla Thunderbird"
 
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
-msgstr "RXVT یونیکوڈ"
+msgstr "RXVT Unicode"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
-msgstr "W3M متن براؤزر"
+msgstr "Navegador web de text W3M"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
-msgstr "ایکس ٹرمنل"
+msgstr "Terminal X"
 
 #: ../exo-mount/exo-mount-fstab.c:92
 #, c-format
 msgid "Unknown error"
-msgstr "نا معلوم غلطی"
+msgstr "Error desconegut"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
 #: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr "فائل سسٹم کی ڈیوائس ٹیبل میں ڈیوائس \"%s\" نہیں پائی گئی"
+msgstr ""
+"No s'ha pogut trobar dispositiu «%s» a la taula de dispositius del sistema"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
-msgstr "دی گئی ڈیوائس \"%s\" حجم یا ڈرائیو نہیں ہے"
+msgstr "El dispositiu «%s» no és un volum o unitat"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:605
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr "آپ کے پاس حجم \"%s\" کو نکالنے کے اختیارات نہیں ہیں"
+msgstr "No teniu suficients permisos per expulsar el volum «%s»"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:610
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr "کسی اطلاقیے نے حجم \"%s\" کو نکلنے سے روکا ہوا ہے"
+msgstr "Alguna aplicació està impedint que el volum «%s» pugui ser expulsat"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:841
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr "آپ کے پاس حجم \"%s\" کو ماؤنٹ کرنے کے اختیارات نہیں ہیں"
+msgstr "No teniu permisos suficients per muntar el volum «%s»"
 
 #: ../exo-mount/exo-mount-hal.c:856
 #, c-format
@@ -1293,137 +1303,138 @@ msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
-"خالی سی ڈی ماؤنٹ نہیں کی جاسکتی، سی ڈی پر صوتی یا مواد ریکارڈنگ کے لیے کوئی "
-"سی ڈی ریکارڈنگ اطلاقیہ استعمال کریں جیسے ایک ایف برن"
+"Els discs en blanc no es poden montar. Useu alguna aplicació com Xfburn per "
+"gravar so o dades al disc"
 
 #: ../exo-mount/exo-mount-hal.c:867
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
-"صوتی سیڈیاں ماؤنٹ نہیں کی جاسکتیں، صوتی ٹریک چلانے کے لیے ایک ایف میڈیا کا "
-"استعمال کریں"
+"Els CD d'àudio no es poden muntar; useu Xfmedia per reproduir les pistes "
+"d'àudio"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:932
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
-msgstr "آپ کے پاس ڈیوائس کو نکالنے کے اختیارات نہیں ہیں"
+msgstr "No teniu permisos suficients per apagar la capa criptogràfica"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:937
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
-msgstr "ایک پروگرام حجم کو ان ماؤنٹ کرنے سے روک رہا ہے"
+msgstr "Alguna aplicació impedeix que la capa criptogràfica s'apagui"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1021
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "آپ کے پاس حجم \"%s\" کو ان ماؤنٹ کرنے کے اختیارات نہیں ہیں"
+msgstr "No teniu permisos per desmountar el volum «%s»"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:1026
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr "کوئی اطلاقیہ حجم \"%s\" کو ان ماؤنٹ ہونے سے روک رہا ہے"
+msgstr "Alguna aplicació està impedint que el volum «%s» pugui ser desmuntat"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:1031
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr "ممکن ہے کہ حجم \"%s\" کو کمانڈ لائن سے ماؤنٹ کیا گیا ہو"
+msgstr "El volum «%s» probablement fou muntat des de la línia d'ordres"
 
 #: ../exo-mount/main.c:65
 msgid "Eject rather than mount"
-msgstr "ماؤنٹ کی بجائے نکالیں"
+msgstr "Expulsa enlloc de muntar"
 
 #: ../exo-mount/main.c:66
 msgid "Unmount rather than mount"
-msgstr "ماؤنٹ کی بجائے ان ماؤنٹ کریں"
+msgstr "Desmunta enlloc de muntar"
 
 #: ../exo-mount/main.c:68
 msgid "Mount by HAL device UDI"
-msgstr "HAL سے ماؤنٹ ڈیوائس UDI"
+msgstr "Munta amb el HAL"
 
 #: ../exo-mount/main.c:70
 msgid "Mount by HAL device UDI (not supported)"
-msgstr "HAL سے ماؤنٹ ڈیوائس UDI (معاونت نہیں ہے)"
+msgstr "Munta amb el HAL (no suportat)"
 
 #: ../exo-mount/main.c:72
 msgid "Mount by device file"
-msgstr "ڈیوائس فائل سے ماؤنٹ کریں"
+msgstr "Munta amb el fitxer de dispositus"
 
 #: ../exo-mount/main.c:73
 msgid "Don't show any dialogs"
-msgstr "کوئی ڈائیلاگ ظاہر مت کریں"
+msgstr "No mostris cap diàleg"
 
 #. the caller must specify either a HAL UDI or a device file
 #: ../exo-mount/main.c:138
 msgid "Must specify HAL device UDI or device file"
-msgstr "ڈیوائس فائل یا HAL ڈیوائس UDI متعین کرنا لازمی ہے"
+msgstr "Heu d'especificar una configuració HAL o un fitxer de dispositiu"
 
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "لازم ہے کہ ڈیوائس فائل یا HAL ڈیوائس UDI ایک ساتھ منتخب نہ کی جائیں"
+msgstr ""
+"No heu d'especificar una configuració HAL o un fitxer de dispositiu alhora"
 
 #: ../exo-mount/main.c:154
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
-"HAL ڈیوائس UDI سے ماؤنٹ نہیں کیا جاسکتا، کیونکہ HAL کی معاونت اس بلڈ کے لیے "
-"معطل کردی گئی ہے"
+"No s'ha pogut muntar mitjançant HAL perquè fou deshabilitat per aquesta "
+"compilació"
 
 #: ../exo-mount/main.c:161
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr "متعین کردہ UDI \"%s\" غیر صالح HAL UDI ڈیوائس ہے"
+msgstr "L'adreça UDI «%s» no és un dispositiu HAL vàlid"
 
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
-msgstr "تسلسل کے ساتھ نکالا اور ان ماؤنٹ نہیں کیا جاسکتا"
+msgstr "No es pot expulsar i desmuntar alhora"
 
 #: ../exo-mount/main.c:330
 #, c-format
 msgid "Failed to eject \"%s\""
-msgstr "نکالنے میں ناکامی \"%s\""
+msgstr "No s'ha pogut expulsar «%s»"
 
 #: ../exo-mount/main.c:332
 #, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "\"%s\" کو ماؤنٹ کرنے میں ناکامی"
+msgstr "No s'ha pogut desmuntar «%s»"
 
 #: ../exo-mount/main.c:334
 #, c-format
 msgid "Failed to mount \"%s\""
-msgstr "\"%s\" کو ماؤنٹ نہیں کیا جاسکتا"
+msgstr "No s'ha pogut muntar «%s»"
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:113
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr "آلہ \"%s\" کو اب بحفاظت نکالا جاسکتا ہے."
+msgstr "El dispositiu «%s» ja es pot extreure."
 
 #: ../exo-mount-notify/main.c:114
 msgid "Device is now safe to remove"
-msgstr "آلہ اب بہ حفاظت نکالا جاسکتا ہے."
+msgstr "El dispositiu ja es pot extreure"
 
 #. read-only, just ejecting
 #: ../exo-mount-notify/main.c:226
 msgid "Ejecting device"
-msgstr "آلہ کو نکالا جارہا ہے"
+msgstr "Expulsant dispositiu"
 
 #: ../exo-mount-notify/main.c:227
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr "ڈیوائس \"%s\" کو نکالا جارہا ہے. اس میں کچھ وقت لگ سکتا ہے."
+msgstr "S'està expulsant el dispositiu «%s». Això pot tardar una mica."
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:232
 msgid "Unmounting device"
-msgstr "آلہ ان ماؤنٹ کیا جارہا ہے"
+msgstr "S'està desmuntant el dispositiu"
 
 #: ../exo-mount-notify/main.c:233
 #, c-format
@@ -1431,13 +1442,13 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
-"نظام ڈیوائس \"%s\" کو ان ماؤنٹ کر رہا ہے. برائے مہربانی میڈیا کو غیر متصل نہ "
-"کریں اور نا ہی نکالیں."
+"S'està desmuntant el dispositiu «%s». No extragueu el mitjà o desconnecteu de "
+"el dispositiu."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:240
 msgid "Writing data to device"
-msgstr "ألہ پر مواد لکھا جارہا ہے"
+msgstr "S'està escrivint al dispositiu"
 
 #: ../exo-mount-notify/main.c:241
 #, c-format
@@ -1445,26 +1456,25 @@ msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
 msgstr ""
-"نکالنے سے پہلے ڈرائیو \"%s\" میں لکھنے کے لیے مواد موجود ہے. برائے مہربانی "
-"ڈرائیو کو نکالیں یا منقطع مت کریں."
+"Hi ha dades pendents per escriure al dispositiu «%s» abans que es pugui "
+"extreure. No extragueu el mitjà o desconnecteu el dispositiu."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
-msgstr "استعمال: exo-open [URLs...]"
+msgstr "Ús: exo-open [URLs…]"
 
 #: ../exo-open/main.c:60
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr "       exo-کھولیں --لاؤنچ TYPE [PARAMETERs...]"
+msgstr "    exo-open --launch TIPUS [PARÀMETREs…]"
 
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
-"  -?, --ہدایات                          ہدایت پیغام طبع کرکے برخاست کریں"
+msgstr "  -?, --help                          Mostra aquest missatge i surt"
 
 #: ../exo-open/main.c:63
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr "  -v, --ورژن                       ورژن معلومات طبع کرکے برخاست کریں"
+msgstr "  -V, --version                       Mostra la versió i surt"
 
 #: ../exo-open/main.c:65
 msgid ""
@@ -1473,10 +1483,11 @@ msgid ""
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch TYPE [PARAMETERs...]       مجوزہ اطلاقیہ چلائیں برائے\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
-"                                      TYPE is one of the following values."
+"  --launch TIPUS [PARÀMETREs…]        Llença l'aplicació preferida del "
+"TIPUS\n"
+"                                      amb els PARÀMETREs opcionals, on "
+"TIPUS\n"
+"                                      és un dels valors següents."
 
 #: ../exo-open/main.c:69
 msgid ""
@@ -1484,13 +1495,13 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DIRECTORY       اطلاقیوں کے لیے طے شدہ ورکنگ "
-"ڈائریکٹری\n"
-"                                      جب استعمال کیا جائے --لاؤنچ آپشن."
+" --working-direcory DIRECTORI         Directori per defecte per les "
+"aplicacions\n"
+"                                      quan s'empra l'opció --launch."
 
 #: ../exo-open/main.c:72
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr "مندرجہ ذیل اقسام TYPEs معاونت رکھتے ہیں --لاؤنچ کمانڈ کے لیے:"
+msgstr "Els següents TIPUS són els suportats per l'ordre --launch:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
@@ -1501,9 +1512,9 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  WebBrowser       - مجوزہ ویب براؤزر.\n"
-"  MailReader       - مجوزہ ای میل ریڈر.\n"
-"  TerminalEmulator - مجوزہ ٹرمنل ایمولیٹر."
+"  WebBrowser       - El navegador web preferit.\n"
+"  MailReader       - El client de correu preferit.\n"
+"  TerminalEmulator - L'emulador de terminal preferit."
 
 #: ../exo-open/main.c:82
 msgid ""
@@ -1513,29 +1524,34 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
-"اگر آپ نے --launch option متعین نہیں کیا تو exo-open تمام روابط کو ان\n"
-"ان کے مجوزہ روابط ہینڈلر میں کھول دے گا ما سوائے اگر آپ نے لاؤنچ آپشن\n"
-"متعین کیا تو آپ اپنے مجوزہ اطلاقیوں کو چلانے کے لیے منتخب کرسکتے ہیں\n"
-"اور اطلاقیہ کے اضافی پرامیٹرز کو پاس کر سکتے ہیں جیسے (i.e. برائے "
-"TerminalEmulator\n"
-"آپ کمانڈ لائن کو پاس کرسکتے ہیں جنہیں ٹرمنل میں چلنا چاہیے.)"
+"Si no especifiqueu l'opció --launch, exo-open obrirà les URL especificades\n"
+"amb els identificadors preferits per URL. D'altre manera, si voleu\n"
+"especificar l'opció --launch podreu seleccionar l'aplicació preferida a\n"
+"executar. També podreu passar paràmetres addicionals per l'aplicació (per\n"
+"exemple, a TerminalEmulator podeu decidir que l'ordre sigui executada\n"
+"sobre una terminal)."
 
 #: ../exo-open/main.c:170
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "زمرہ \"%s\" کے متعلقہ اطلاقیہ کو چلانے میں ناکامی."
+msgstr "No s'ha pogut llançar l'aplicació preferida de la categoria «%s»."
 
 #: ../exo-open/main.c:191
 #, c-format
 msgid "Failed to open URL \"%s\"."
-msgstr "ربط کھولنے میں ناکامی \"%s\"."
+msgstr "No s'ha pogut obrir la URL «%s»"
 
-#, fuzzy
+#~ msgid "GIcon"
+#~ msgstr "GIcon"
+
+#~ msgid "The GIcon to render."
+#~ msgstr "El GIcon a dibuixar."
+
 #~ msgid "Xfce 4 Preferred Applications"
-#~ msgstr "مجوزہ اطلاقیے"
+#~ msgstr "Aplicacions preferides de Xfce 4"
 
 #~ msgid "Failed to launch exo-preferred-applications"
-#~ msgstr "exo-مجوزہ اطلاقیہ کو چلانے میں ناکامی"
+#~ msgstr "No s'ha pogut llançar aplicacions-preferides-exo"
 
 #~ msgid "Button Label|Preferred Applications"
-#~ msgstr "مجوزہ اطلاقیے"
+#~ msgstr "Aplicacions preferides"
