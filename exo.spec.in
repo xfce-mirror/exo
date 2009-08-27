@@ -1,5 +1,5 @@
 Summary:		Application library for the Xfce desktop environment
-Name:			@PACKAGE_TARNAME@@LIBEXO_VERSION_API@
+Name:			@PACKAGE_TARNAME@
 Version:		@PACKAGE_VERSION@
 Release:		1
 License:		LGPL
@@ -11,7 +11,6 @@ Requires:		gtk2 >= @GTK_REQUIRED_VERSION@
 Requires:		libxfce4util >= @LIBXFCE4UTIL_REQUIRED_VERSION@
 BuildRequires:		gtk2-devel >= @GTK_REQUIRED_VERSION@
 BuildRequires:		libxfce4util-devel >= @LIBXFCE4UTIL_REQUIRED_VERSION@
-BuildRequires:		xfce-mcs-manager >= @XFCE_MCS_MANAGER_REQUIRED_VERSION@
 BuildRequires:		gtk-doc
 
 %description
@@ -29,7 +28,7 @@ Static libraries and header files for the exo library.
 %setup -q
 
 %build
-%configure --enable-final --enable-gtk-doc --disable-python --enable-xfce-mcs-manager --enable-xsltproc
+%configure --enable-final --enable-gtk-doc --disable-python --enable-xsltproc
 make
 
 %install
@@ -57,15 +56,17 @@ fi
 %files
 %defattr(-,root,root)
 %{_bindir}/exo-desktop-item-edit
+%{_bindir}/exo-eject
+%{_bindir}/exo-mount
 %{_bindir}/exo-open
 %{_bindir}/exo-preferred-applications
+%{_bindir}/exo-unmount
 %{_datadir}/applications
 %{_datadir}/icons
 %{_datadir}/locale
 %{_datadir}/pixmaps
 %{_datadir}/xfce4
 %{_libdir}/lib*.so.*
-%{_libdir}/xfce4/mcs-plugins/*
 %{_libexecdir}
 %{_mandir}/man1/exo-open.*
 %{_sysconfdir}
