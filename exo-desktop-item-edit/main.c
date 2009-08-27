@@ -180,7 +180,6 @@ main (int argc, char **argv)
     {
       /* generic stuff */
       g_key_file_set_value (key_file, "Desktop Entry", "Version", "1.0");
-      g_key_file_set_value (key_file, "Desktop Entry", "Encoding", "UTF-8");
       g_key_file_set_value (key_file, "Desktop Entry", "Type", STR_FB (opt_type, "Application"));
       g_key_file_set_value (key_file, "Desktop Entry", "Name", STR_FB (opt_name, ""));
       g_key_file_set_value (key_file, "Desktop Entry", "Comment", STR_FB (opt_comment, ""));
@@ -193,7 +192,6 @@ main (int argc, char **argv)
         }
       else
         {
-          g_key_file_set_value (key_file, "Desktop Entry", "Categories", "Application;");
           g_key_file_set_value (key_file, "Desktop Entry", "Exec", STR_FB (opt_command, ""));
           g_key_file_set_value (key_file, "Desktop Entry", "Icon", STR_FB (opt_icon, ""));
         }
