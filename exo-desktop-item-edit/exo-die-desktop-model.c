@@ -702,11 +702,15 @@ exo_die_desktop_model_match_func (GtkEntryCompletion *completion,
   desktop_item = g_slist_nth_data (iter->user_data, 0);
 
   /* check if the name matches */
-  normalized = g_utf8_normalize (desktop_item->name, -1, G_NORMALIZE_ALL);
-  casefolded = g_utf8_casefold (normalized, -1);
-  matches = (strstr (casefolded, key) != NULL);
-  g_free (casefolded);
-  g_free (normalized);
+  if (G_LIKELY (desktop_item->name != NULL))
+    {
+      normalized = g_utf8_normalize (desktop_item->name, -1, G_NORMALIZE_ALL);
+      casefolded = g_utf8_casefold (normalized, -1);
+      if (G_LIKELY (casefolded != NULL && key != NULL))
+        matches = (strstr (casefolded, key) != NULL);
+      g_free (casefolded);
+      g_free (normalized);
+    }
 
   /* check if no hit yet */
   if (G_LIKELY (!matches && desktop_item->comment != NULL))
@@ -714,7 +718,8 @@ exo_die_desktop_model_match_func (GtkEntryCompletion *completion,
       /* also check the comment then */
       normalized = g_utf8_normalize (desktop_item->comment, -1, G_NORMALIZE_ALL);
       casefolded = g_utf8_casefold (normalized, -1);
-      matches = (strstr (casefolded, key) != NULL);
+      if (G_LIKELY (casefolded != NULL && key != NULL))
+        matches = (strstr (casefolded, key) != NULL);
       g_free (casefolded);
       g_free (normalized);
     }
