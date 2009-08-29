@@ -35,6 +35,10 @@ void      exo_gtk_object_destroy_later                (GtkObject      *object);
 
 void      exo_gtk_file_chooser_add_thumbnail_preview  (GtkFileChooser *chooser);
 
+void      exo_gtk_url_about_dialog_hook               (GtkAboutDialog *about,
+                                                       const gchar    *link,
+                                                       gpointer        data);
+
 G_END_DECLS
 
 #endif /* !__EXO_GTK_EXTENSIONS_H__ */

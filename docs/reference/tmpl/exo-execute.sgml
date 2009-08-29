@@ -15,10 +15,9 @@ Execute preferred applications
 </para>
 <para>
   On the other hand if you need to display an URL (i.e. you want to point
-  the user to the website of your application), you should use exo_url_show()
-  or exo_url_show_on_screen() from the <link
-  linkend="exo-Opening-URLs">exo-url</link> module instead, as they will
-  try to automatically determine the appropriate viewer for a given URL.
+  the user to the website of your application), you should use gtk_show_uri()
+  instead, as it will try to automatically determine the appropriate
+  viewer for a given URI.
 </para>
 
 <!-- ##### SECTION See_Also ##### -->

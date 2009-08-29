@@ -2,7 +2,6 @@ exo/exo-binding.c
 exo/exo-cell-renderer-ellipsized-text.c
 exo/exo-cell-renderer-icon.c
 exo/exo-config.c
-exo/exo-ellipsized-label.c
 exo/exo-execute.c
 exo/exo-gdk-pixbuf-extensions.c
 exo/exo-gobject-extensions.c
@@ -11,10 +10,10 @@ exo/exo-icon-bar.c
 exo/exo-icon-chooser-dialog.c
 exo/exo-icon-chooser-model.c
 exo/exo-icon-view.c
-exo/exo-md5.c
+exo/exo-job.c
 exo/exo-mount-point.c
-exo/exo-pango-extensions.c
 exo/exo-private.c
+exo/exo-simple-job.c
 exo/exo-string.c
 exo/exo-thumbnail-preview.c
 exo/exo-thumbnail.c
@@ -24,7 +23,6 @@ exo/exo-toolbars-model.c
 exo/exo-toolbars-private.c
 exo/exo-toolbars-view.c
 exo/exo-tree-view.c
-exo/exo-url.c
 exo/exo-utils.c
 exo/exo-wrap-table.c
 exo/exo-xsession-client.c
@@ -47,6 +45,7 @@ exo-helper/exo-helper.c
 exo-helper/exo-preferred-applications.desktop.in
 exo-helper/main.c
 exo-helper/helpers/Terminal.desktop.in.in
+exo-helper/helpers/Thunar.desktop.in.in
 exo-helper/helpers/aterm.desktop.in.in
 exo-helper/helpers/balsa.desktop.in.in
 exo-helper/helpers/debian-sensible-browser.desktop.in.in
@@ -66,10 +65,12 @@ exo-helper/helpers/midori.desktop.in.in
 exo-helper/helpers/mozilla-browser.desktop.in.in
 exo-helper/helpers/mozilla-mailer.desktop.in.in
 exo-helper/helpers/mutt.desktop.in.in
+exo-helper/helpers/nautilus.desktop.in.in
 exo-helper/helpers/netscape-navigator.desktop.in.in
 exo-helper/helpers/nxterm.desktop.in.in
 exo-helper/helpers/opera-browser.desktop.in.in
 exo-helper/helpers/opera-mailer.desktop.in.in
+exo-helper/helpers/pcmanfm.desktop.in.in
 exo-helper/helpers/sylpheed-claws.desktop.in.in
 exo-helper/helpers/sylpheed.desktop.in.in
 exo-helper/helpers/thunderbird.desktop.in.in

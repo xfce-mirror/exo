@@ -95,7 +95,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   GtkWidget      *box;
 
   /* verify category settings */
-  g_assert (EXO_HELPER_N_CATEGORIES == 3);
+  g_assert (EXO_HELPER_N_CATEGORIES == 4);
 
   gtk_dialog_add_button (GTK_DIALOG (chooser_dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
   gtk_dialog_set_has_separator (GTK_DIALOG (chooser_dialog), FALSE);
@@ -208,6 +208,38 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox, label);
   gtk_widget_show (label);
   gtk_widget_show (vbox);
+
+  /*
+     File Manager
+   */
+  frame = g_object_new (GTK_TYPE_FRAME, "border-width", 0, "shadow-type", GTK_SHADOW_NONE, NULL);
+  gtk_box_pack_start (GTK_BOX (vbox), frame, FALSE, TRUE, 0);
+  gtk_widget_show (frame);
+
+  label = g_object_new (GTK_TYPE_LABEL, "attributes", attr_list_bold, "label", _("File Manager"), NULL);
+  gtk_frame_set_label_widget (GTK_FRAME (frame), label);
+  gtk_widget_show (label);
+
+  box = g_object_new (GTK_TYPE_VBOX, "border-width", 12, "spacing", 12, NULL);
+  gtk_container_add (GTK_CONTAINER (frame), box);
+  gtk_widget_show (box);
+
+  label = gtk_label_new (_("The preferred File Manager will be used to\n"
+                           "browse the contents of folders."));
+  gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.0f);
+  gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
+  gtk_widget_show (label);
+
+  chooser = exo_helper_chooser_new (EXO_HELPER_FILEMANAGER);
+  gtk_box_pack_start (GTK_BOX (box), chooser, FALSE, FALSE, 0);
+  gtk_widget_show (chooser);
+
+  /* set Atk label relation for the chooser */
+  object = gtk_widget_get_accessible (chooser);
+  relations = atk_object_ref_relation_set (gtk_widget_get_accessible (label));
+  relation = atk_relation_new (&object, 1, ATK_RELATION_LABEL_FOR);
+  atk_relation_set_add (relations, relation);
+  g_object_unref (G_OBJECT (relation));
 
   /*
      Terminal Emulator

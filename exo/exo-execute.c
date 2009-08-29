@@ -106,7 +106,7 @@ exo_execute_preferred_application_on_screen (const gchar *category,
                                              GError     **error)
 {
   gchar *argv[5];
-  gint         argc = 0;
+  gint   argc = 0;
 
   g_return_val_if_fail (category != NULL, FALSE);
   g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);

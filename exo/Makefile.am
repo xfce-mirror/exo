@@ -31,7 +31,6 @@ libexo_headers =							\
 	exo-toolbars-model.h						\
 	exo-toolbars-view.h						\
 	exo-tree-view.h							\
-	exo-url.h							\
 	exo-utils.h							\
 	exo-wrap-table.h						\
 	exo-xsession-client.h
@@ -89,7 +88,6 @@ libexo_1_la_SOURCES =							\
 	exo-toolbars-private.h						\
 	exo-toolbars-view.c						\
 	exo-tree-view.c							\
-	exo-url.c							\
 	exo-utils.c							\
 	exo-wrap-table.c						\
 	exo-xsession-client.c

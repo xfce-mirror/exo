@@ -41,6 +41,7 @@ static const gchar *CATEGORY_EXEC_ERRORS[] =
 {
   N_("Failed to execute default Web Browser"),
   N_("Failed to execute default Mail Reader"),
+  N_("Failed to execute default File Manager"),
   N_("Failed to execute default Terminal Emulator"),
 };
 
@@ -86,13 +87,15 @@ main (int argc, char **argv)
   g_option_context_add_group (opt_ctx, gtk_option_group);
 
   g_option_context_add_main_entries (opt_ctx, option_entries, NULL);
-  /* Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
-   * since the exo-helper utility will not accept localized TYPEs.
+  /* Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+   * FileManager and TerminalEmulator), since the exo-helper utility will
+   * not accept localized TYPEs.
    */
   g_option_context_set_description (opt_ctx,
                                     _("The following TYPEs are supported for the --launch command:\n\n"
                                       "  WebBrowser       - The preferred Web Browser.\n"
                                       "  MailReader       - The preferred Mail Reader.\n"
+                                      "  FileManager      - The preferred File Manager.\n"
                                       "  TerminalEmulator - The preferred Terminal Emulator."));
 
   if (!g_option_context_parse (opt_ctx, &argc, &argv, &error))
@@ -165,6 +168,10 @@ main (int argc, char **argv)
           if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_OK)
             helper = exo_helper_database_get_default (database, category);
           gtk_widget_destroy (dialog);
+
+          /* iterate the mainloop until the dialog is fully destroyed */
+          while (gtk_events_pending ())
+            gtk_main_iteration ();
         }
 
       /* release our reference on the database */

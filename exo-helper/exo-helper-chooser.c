@@ -315,6 +315,7 @@ menu_activate (GtkWidget        *item,
   {
     N_("Failed to set default Web Browser"),
     N_("Failed to set default Mail Reader"),
+    N_("Failed to set default File Manager"),
     N_("Failed to set default Terminal Emulator"),
   };
 
@@ -500,6 +501,7 @@ menu_activate_other (GtkWidget        *item,
   {
     N_("Choose a custom Web Browser"),
     N_("Choose a custom Mail Reader"),
+    N_("Choose a custom File Manager"),
     N_("Choose a custom Terminal Emulator"),
   };
 
@@ -507,6 +509,7 @@ menu_activate_other (GtkWidget        *item,
   {
     N_("Specify the application you want to use\nas default Web Browser for Xfce:"),
     N_("Specify the application you want to use\nas default Mail Reader for Xfce:"),
+    N_("Specify the application you want to use\nas default File Manager for Xfce:"),
     N_("Specify the application you want to use\nas default Terminal Emulator for Xfce:"),
   };
 
@@ -522,7 +525,8 @@ menu_activate_other (GtkWidget        *item,
   GtkWidget   *button;
 
   /* sanity check the category values */
-  g_assert (EXO_HELPER_N_CATEGORIES == 3);
+  g_assert (EXO_HELPER_N_CATEGORIES == G_N_ELEMENTS (BROWSE_TITLES));
+  g_assert (EXO_HELPER_N_CATEGORIES == G_N_ELEMENTS (BROWSE_MESSAGES));
 
   toplevel = gtk_widget_get_toplevel (GTK_WIDGET (chooser));
 

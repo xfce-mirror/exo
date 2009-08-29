@@ -143,7 +143,9 @@ init_exo (void)
 
 #undef REGISTER_TYPE
 
-  /* use exo-url for about dialogs by default */
-  gtk_about_dialog_set_email_hook (exo_url_about_dialog_hook, NULL, NULL);
-  gtk_about_dialog_set_url_hook (exo_url_about_dialog_hook, NULL, NULL);
+#if GTK_CHECK_VERSION (2, 18, 0)
+  /* use exo about dialog hook by default */
+  gtk_about_dialog_set_email_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
+  gtk_about_dialog_set_url_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
+#endif
 }

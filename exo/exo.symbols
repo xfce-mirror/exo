@@ -120,6 +120,7 @@ exo_g_value_transform_negate
 #if IN_SOURCE(__EXO_GTK_EXTENSIONS_C__)
 exo_gtk_object_destroy_later
 exo_gtk_file_chooser_add_thumbnail_preview
+exo_gtk_url_about_dialog_hook
 #endif
 #endif
 
@@ -356,15 +357,6 @@ exo_tree_view_get_single_click
 exo_tree_view_set_single_click
 exo_tree_view_get_single_click_timeout
 exo_tree_view_set_single_click_timeout
-#endif
-#endif
-
-#if IN_HEADER(__EXO_URL_H__)
-#if IN_SOURCE(__EXO_URL_C__)
-exo_url_error_quark G_GNUC_CONST
-exo_url_show
-exo_url_show_on_screen
-exo_url_about_dialog_hook
 #endif
 #endif
 

@@ -37,8 +37,13 @@
 
 
 
+#define MATCH_BROWSER "^(([^:/?#]+)://)?([^/?#])([^?#]*)(\\?([^#]*))?(#(.*))?"
+#define MATCH_MAILER  "^[a-z0-9][a-z0-9_.-]*@[a-z0-9][a-z0-9-]*(\\.[a-z0-9][a-z0-9-]*)+$"
+
+
+
 /**
- * For testing this code the following commands should work:
+ * For testing this code, the following commands should work:
  *
  * exo-open --launch WebBrowser http://xfce.org (bug #5461).
  * exo-open --launch WebBrowser http://xfce.org bugs.xfce.org 'http://www.google.com/search?q=what is a space' 'http://wiki.xfce.org'
@@ -51,10 +56,10 @@
 
 
 
-static gboolean opt_help = FALSE;
-static gboolean opt_version = FALSE;
-static gchar   *opt_launch = NULL;
-static gchar   *opt_working_directory = NULL;
+static gboolean  opt_help = FALSE;
+static gboolean  opt_version = FALSE;
+static gchar    *opt_launch = NULL;
+static gchar    *opt_working_directory = NULL;
 
 static GOptionEntry entries[] =
 {
@@ -91,6 +96,7 @@ usage (void)
    */
   g_print ("%s\n", _("  WebBrowser       - The preferred Web Browser.\n"
                      "  MailReader       - The preferred Mail Reader.\n"
+                     "  FileManager      - The preferred File Manager.\n"
                      "  TerminalEmulator - The preferred Terminal Emulator."));
   g_print ("\n");
   g_print ("%s\n", _("If you don't specify the --launch option, exo-open will open all specified\n"
@@ -99,6 +105,60 @@ usage (void)
                      "pass additional parameters to the application (i.e. for TerminalEmulator\n"
                      "you can pass the command line that should be run in the terminal)."));
   g_print ("\n");
+}
+
+
+
+static gboolean
+exo_open_looks_like_an_uri (const gchar *string)
+{
+  const gchar *s = string;
+
+  /* <scheme> starts with an alpha character */
+  if (g_ascii_isalpha (*s))
+    {
+      /* <scheme> continues with (alpha | digit | "+" | "-" | ".")* */
+      for (++s; g_ascii_isalnum (*s) || *s == '+' || *s == '-' || *s == '.'; ++s);
+
+      /* <scheme> must be followed by ":" */
+      return (*s == ':');
+    }
+
+  return FALSE;
+}
+
+
+
+static const gchar *
+exo_open_find_scheme (const gchar *string)
+{
+  gboolean  exists;
+  gchar    *current_dir, *path;
+
+  /* is an absolute path, return file uri */
+  if (g_path_is_absolute (string))
+    return "file://";
+
+  /* treat it like a relative path */
+  current_dir = g_get_current_dir ();
+  path = g_build_filename (current_dir, string, NULL);
+  g_free (current_dir);
+
+  /* verify that a file of the given name exists */
+  exists = g_file_test (path, G_FILE_TEST_EXISTS);
+  g_free (path);
+  if (exists)
+    return "file://";
+
+  /* regular expression to check if it looks like an email address */
+  if (g_regex_match_simple (MATCH_MAILER, string, G_REGEX_CASELESS, 0))
+    return "mailto:";
+
+  /* regular expression to check if it looks like an url */
+  if (g_regex_match_simple (MATCH_BROWSER, string, G_REGEX_CASELESS, 0))
+    return "http://";
+
+  return NULL;
 }
 
 
@@ -113,6 +173,8 @@ main (int argc, char **argv)
   gint            result = EXIT_SUCCESS;
   GString        *join;
   guint           i;
+  gchar          *uri;
+  const gchar    *scheme;
 
 #ifdef GETTEXT_PACKAGE
   /* setup i18n support */
@@ -212,20 +274,48 @@ main (int argc, char **argv)
   else if (argc > 1)
     {
       /* open all specified urls */
-      for (argv += 1; *argv != NULL; ++argv)
+      for (argv += 1; result == EXIT_SUCCESS && *argv != NULL; ++argv)
         {
-          if (!exo_url_show (*argv, NULL, &err))
+          if (exo_open_looks_like_an_uri (*argv))
+            {
+              /* use the argument directly */
+              uri = g_strdup (*argv);
+            }
+          else
+            {
+              /* try to find a valid scheme */
+              scheme = exo_open_find_scheme (*argv);
+              if (G_LIKELY (scheme != NULL))
+                uri = g_strconcat (scheme, *argv, NULL);
+              else
+                uri = NULL;
+            }
+
+          if (uri == NULL)
             {
               /* display an error dialog */
               dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
-                                               _("Failed to open URL \"%s\"."), *argv);
-              gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", err->message);
+                                               _("Unable to detect the URI-scheme of \"%s\"."), *argv);
               gtk_dialog_run (GTK_DIALOG (dialog));
               gtk_widget_destroy (dialog);
+
               result = EXIT_FAILURE;
-              g_error_free (err);
-              break;
             }
+          else if (!gtk_show_uri (NULL, uri, 0, &err))
+            {
+              /* display an error dialog */
+              dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
+                                               _("Failed to open URI \"%s\"."), uri);
+              gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", err->message);
+              g_error_free (err);
+              gtk_dialog_run (GTK_DIALOG (dialog));
+              gtk_widget_destroy (dialog);
+
+              result = EXIT_FAILURE;
+            }
+
+          /* cleanup */
+          g_free (uri);
         }
     }
   else

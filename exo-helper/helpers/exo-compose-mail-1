@@ -81,7 +81,7 @@ if ($style eq 'mozilla') {
 	$body and $command .= ",body='$body'";
 
 	# and add the parameters to the argv
-	push (@argv, '--compose');
+	push (@argv, '-compose');
 	push (@argv, $command);
 }
 elsif ($style eq 'mozilla-remote') {

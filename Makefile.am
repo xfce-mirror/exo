@@ -13,6 +13,7 @@ SUBDIRS =								\
 	exo-csource							\
 	exo-support							\
 	exo-desktop-item-edit						\
+	exo-gio-module							\
 	exo-hal								\
 	exo-helper							\
 	exo-mount							\
@@ -62,6 +63,7 @@ DISTCLEANFILES =							\
 DISTCHECK_CONFIGURE_FLAGS =						\
 	--enable-gtk-doc						\
 	--enable-xml2po							\
-	--enable-xsltproc
+	--enable-xsltproc						\
+	--with-gio-module-dir=distcheck
 
 # vi:set ts=8 sw=8 noet ai nocindent:

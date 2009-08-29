@@ -6,6 +6,7 @@ defaults_DATA = helpers.rc
 desktopdir = $(datadir)/xfce4/helpers
 desktop_in_in_files =							\
 	Terminal.desktop.in.in						\
+	Thunar.desktop.in.in						\
 	aterm.desktop.in.in						\
 	balsa.desktop.in.in						\
 	debian-sensible-browser.desktop.in.in				\
@@ -25,10 +26,12 @@ desktop_in_in_files =							\
 	mozilla-browser.desktop.in.in					\
 	mozilla-mailer.desktop.in.in					\
 	mutt.desktop.in.in						\
+	nautilus.desktop.in.in						\
 	netscape-navigator.desktop.in.in				\
 	nxterm.desktop.in.in						\
 	opera-browser.desktop.in.in					\
 	opera-mailer.desktop.in.in					\
+	pcmanfm.desktop.in.in						\
 	sylpheed.desktop.in.in						\
 	sylpheed-claws.desktop.in.in					\
 	thunderbird.desktop.in.in					\

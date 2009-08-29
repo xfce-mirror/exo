@@ -258,6 +258,8 @@ exo_helper_launcher_dialog_set_category (ExoHelperLauncherDialog *launcher_dialo
        "Browser now and click OK to proceed."),
     N_("Please choose your preferred Mail Reader\n"
        "now and click OK to proceed."),
+    N_("Please choose your preferred File Manager\n"
+       "now and click OK to proceed."),
     N_("Please choose your preferred Terminal\n"
        "Emulator now and click OK to proceed."),
   };

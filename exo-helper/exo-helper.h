@@ -28,6 +28,7 @@ typedef enum /*< enum,prefix=EXO_HELPER >*/
 {
   EXO_HELPER_WEBBROWSER,        /*< nick=WebBrowser >*/
   EXO_HELPER_MAILREADER,        /*< nick=MailReader >*/
+  EXO_HELPER_FILEMANAGER,       /*< nick=FileManager >*/
   EXO_HELPER_TERMINALEMULATOR,  /*< nick=TerminalEmulator >*/
   EXO_HELPER_N_CATEGORIES,      /*< skip >*/
 } ExoHelperCategory;

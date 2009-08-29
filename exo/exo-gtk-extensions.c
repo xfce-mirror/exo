@@ -24,6 +24,10 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_STRING_H
+#include <string.h>
+#endif
+
 #include <exo/exo-gtk-extensions.h>
 #include <exo/exo-private.h>
 #include <exo/exo-thumbnail-preview.h>
@@ -127,6 +131,91 @@ exo_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
 
   /* initially update the preview, in case the file chooser is already setup */
   update_preview (chooser, EXO_THUMBNAIL_PREVIEW (thumbnail_preview));
+}
+
+
+
+/**
+ * exo_gtk_url_about_dialog_hook:
+ * @about_dialog : the #GtkAboutDialog in which the user activated a link.
+ * @link         : the link, mail or web address, to open.
+ * @user_data    : user data that was passed when the function was
+ *                 registered with gtk_about_dialog_set_email_hook()
+ *                 or gtk_about_dialog_set_url_hook(). This is currently
+ *                 unused within the context of this function, so you
+ *                 can safely pass %NULL when registering this hook
+ *                 with #GtkAboutDialog.
+ *
+ * This is a convenience function, which can be registered with #GtkAboutDialog,
+ * to open links clicked by the user in #GtkAboutDialog<!---->s.
+ *
+ * All you need to do is to register this hook with gtk_about_dialog_set_url_hook()
+ * and gtk_about_dialog_set_email_hook(). This can be done prior to calling
+ * gtk_show_about_dialog(), for example:
+ *
+ * <informalexample><programlisting>
+ * static void show_about_dialog (void)
+ * {
+ *   gtk_about_dialog_set_email_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
+ *   gtk_about_dialog_set_url_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
+ *   gtk_show_about_dialog (.....);
+ * }
+ * </programlisting></informalexample>
+ *
+ * This function is not needed when you use Gtk 2.18 or later, because from
+ * that version this is implemented by default.
+ *
+ * Since: 0.5.0
+ **/
+void
+exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
+                               const gchar    *link,
+                               gpointer        user_data)
+{
+  GtkWidget *message;
+  GdkScreen *screen;
+  GError    *error = NULL;
+  gchar     *uri, *escaped;
+
+  g_return_if_fail (GTK_IS_ABOUT_DIALOG (about_dialog));
+  g_return_if_fail (link != NULL);
+
+  /* simple check if this is an email address */
+  if (!g_str_has_prefix (link, "mailto:") && strchr (link, '@') != NULL)
+    {
+      escaped = g_uri_escape_string (link, NULL, FALSE);
+      uri = g_strdup_printf ("mailto:%s", escaped);
+      g_free (escaped);
+    }
+  else
+    {
+      uri = g_strdup (link);
+    }
+
+  /* determine the screen from the about dialog */
+  screen = gtk_widget_get_screen (GTK_WIDGET (about_dialog));
+
+  /* try to open the url on the given screen */
+  if (!gtk_show_uri (screen, uri, gtk_get_current_event_time (), &error))
+    {
+      /* make sure to initialize i18n support first,
+       * so we'll see a translated message.
+       */
+      _exo_i18n_init ();
+
+      /* display an error message to tell the user that we were unable to open the link */
+      message = gtk_message_dialog_new (GTK_WINDOW (about_dialog),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
+                                        _("Failed to open \"%s\"."), uri);
+      gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (message), "%s.", error->message);
+      gtk_dialog_run (GTK_DIALOG (message));
+      gtk_widget_destroy (message);
+      g_error_free (error);
+    }
+
+  /* cleanup */
+  g_free (uri);
 }
 
 

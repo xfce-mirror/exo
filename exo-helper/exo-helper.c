@@ -347,17 +347,18 @@ exo_helper_execute (ExoHelper   *helper,
                     const gchar *parameter,
                     GError     **error)
 {
-  GTimeVal previous;
-  GTimeVal current;
-  gboolean succeed = FALSE;
-  GError  *err = NULL;
-  gchar  **commands;
-  gchar  **argv;
-  gchar   *command;
-  guint    n;
-  gint     status;
-  gint     result;
-  gint     pid;
+  GTimeVal      previous;
+  GTimeVal      current;
+  gboolean      succeed = FALSE;
+  GError       *err = NULL;
+  gchar       **commands;
+  gchar       **argv;
+  gchar        *command;
+  guint         n;
+  gint          status;
+  gint          result;
+  gint          pid;
+  const gchar  *real_parameter = parameter;
 
   // FIXME: startup-notification
 
@@ -369,8 +370,12 @@ exo_helper_execute (ExoHelper   *helper,
   if (G_UNLIKELY (screen == NULL))
     screen = gdk_screen_get_default ();
 
+  /* strip the mailto part if needed */
+  if (real_parameter != NULL && g_str_has_prefix (real_parameter, "mailto:"))
+    real_parameter = parameter + 7;
+
   /* determine the command set to use */
-  commands = (parameter != NULL) ? helper->commands_with_parameter : helper->commands;
+  commands = !exo_str_is_empty (real_parameter) ? helper->commands_with_parameter : helper->commands;
 
   /* verify that we have atleast one command */
   if (G_UNLIKELY (*commands == NULL))
@@ -386,7 +391,7 @@ exo_helper_execute (ExoHelper   *helper,
       g_clear_error (&err);
 
       /* parse the command */
-      command = (parameter != NULL) ? exo_str_replace (commands[n], "%s", parameter) : g_strdup (commands[n]);
+      command = !exo_str_is_empty (real_parameter) ? exo_str_replace (commands[n], "%s", real_parameter) : g_strdup (commands[n]);
       succeed = g_shell_parse_argv (command, NULL, &argv, &err);
       g_free (command);
 

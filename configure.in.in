@@ -157,9 +157,27 @@ dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.16.0])
 XDT_CHECK_PACKAGE([GIO], [gio-2.0], [2.16.0])
+XDT_CHECK_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.16.0])
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.14.0])
 XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.16.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.2])
+
+dnl ****************************
+dnl *** GIO modules location ***
+dnl ****************************
+AC_ARG_WITH([gio-module-dir],
+            [AC_HELP_STRING([--with-gio-module-dir=PATH],
+                            [Specify where to install the exo gio module (default=autodetect)])],
+            [gio_module_dir="$withval"])
+if test x"$gio_module_dir" = x""; then
+  GIOMODULEDIR="`$PKG_CONFIG gio-2.0 --variable giomoduledir`"
+elif test x"$gio_module_dir" = x"distcheck"; then
+  GIOMODULEDIR=""
+else
+  GIOMODULEDIR="$gio_module_dir"
+fi
+AC_SUBST([GIOMODULEDIR])
+AM_CONDITIONAL([HAVE_GIO_MODULEDIR], [test x"$GIOMODULEDIR" != x""])
 
 dnl **************************************
 dnl *** Check for libnotify (optional) ***
@@ -247,7 +265,7 @@ if test x"$enable_python" != x"no"; then
     if test x"$enable_python" = x"yes"; then
       AC_MSG_ERROR([Building python explicitly requested, but cannot build python bindings])
     else
-      AC_MSG_WARN([Couldn't find either PyGTK or the Python headers, not building Python bindings])
+      AC_MSG_WARN([Could not find either PyGTK or the Python headers, not building Python bindings])
     fi
   fi
 fi
@@ -358,7 +376,7 @@ esac
 dnl ****************************************
 dnl *** Check for ELF visibility support ***
 dnl ****************************************
-AC_ARG_ENABLE([visibility], AC_HELP_STRING([--disable-visibility], [Don't use ELF visibility attributes]), [], [enable_visibility=yes])
+AC_ARG_ENABLE([visibility], AC_HELP_STRING([--disable-visibility], [Do not use ELF visibility attributes]), [], [enable_visibility=yes])
 have_gnuc_visibility=no
 if test x"$enable_visibility" != x"no"; then
   dnl Check whether the compiler supports the visibility attribute
@@ -427,6 +445,7 @@ exo/exo-1.pc
 exo/exo-config.h
 exo-csource/Makefile
 exo-desktop-item-edit/Makefile
+exo-gio-module/Makefile
 exo-hal/Makefile
 exo-hal/exo-hal-1.pc
 exo-helper/Makefile
@@ -458,6 +477,7 @@ echo "* HAL support:    yes"
 else
 echo "* HAL support:    no"
 fi
+echo "* GIO Module Dir: $GIOMODULEDIR"
 echo "* Debug Support:  $enable_debug"
 echo "* Python Support: $have_python"
 echo

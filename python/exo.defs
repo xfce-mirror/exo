@@ -1285,31 +1285,6 @@
 
 
 
-;; From ../exo/exo-url.h
-
-(define-function url_show
-  (c-name "exo_url_show")
-  (return-type "gboolean")
-  (parameters
-    '("const-gchar*" "url")
-    '("gchar**" "envp")
-    '("GError**" "error")
-  )
-)
-
-(define-function url_show_on_screen
-  (c-name "exo_url_show_on_screen")
-  (return-type "gboolean")
-  (parameters
-    '("const-gchar*" "url")
-    '("gchar**" "envp")
-    '("GdkScreen*" "screen")
-    '("GError**" "error")
-  )
-)
-
-
-
 ;; From ../exo/exo-wrap-table.h
 
 (define-function exo_wrap_table_get_type

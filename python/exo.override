@@ -66,7 +66,6 @@ ignore
   exo_icon_view_selected_foreach
   exo_toolbars_editor_new
   exo_toolbars_view_new
-  exo_url_show_on_screen
 
 %%
 override exo_execute_preferred_application kwargs
@@ -493,72 +492,3 @@ _wrap_exo_xsession_client_set_restart_command (PyGObject *self,
   Py_INCREF (Py_None);
   return Py_None;
 }
-
-%%
-override exo_url_show kwargs
-static PyObject*
-_wrap_exo_url_show (PyObject *self,
-                    PyObject *args,
-                    PyObject *kwargs)
-{
-  static gchar *kwlist[] = { "url", "environment", "screen", NULL };
-  const gchar  *url;
-  GdkScreen    *screen;
-  PyObject     *sequence = Py_None;
-  PyObject     *item = Py_None;
-  GError       *error = NULL;
-  gchar       **envp = NULL;
-  gint          n;
-
-  if (!PyArg_ParseTupleAndKeywords (args, kwargs, "s|OO:show_url",
-                                    kwlist, &url, &sequence, &item))
-    return NULL;
-
-  /* validate parameters */
-  if (sequence != Py_None && !PySequence_Check (sequence))
-    {
-      PyErr_SetString (PyExc_TypeError, "environment must be a sequence or None");
-      return NULL;
-    }
-  else if (item != Py_None && !pygobject_check (item, &PyGdkScreen_Type))
-    {
-      PyErr_SetString (PyExc_TypeError, "screen must be a gtk.gdk.Screen or None");
-      return NULL;
-    }
-
-  /* determine the screen */
-  screen = (item != Py_None) ? GDK_SCREEN (pygobject_get (item)) : gdk_screen_get_default ();
-
-  if (G_UNLIKELY (sequence != Py_None))
-    {
-      envp = g_new0 (gchar *, PySequence_Length (sequence) + 1);
-      for (n = 0; n < PySequence_Length (sequence); ++n)
-        {
-          item = PySequence_GetItem (sequence, n);
-          Py_DECREF (item);
-
-          if (!PyString_Check (item) && !PyUnicode_Check (item))
-            {
-              PyErr_SetString (PyExc_TypeError, "sequence item not a string or unicode object");
-              g_strfreev (envp);
-              return NULL;
-            }
-
-          envp[n] = g_strdup (PyString_AsString (item));
-        }
-    }
-
-  /* try to open the specified URL */
-  exo_url_show_on_screen (url, envp, screen, &error);
-
-  /* release the environment */
-  g_strfreev (envp);
-
-  /* check for errors */
-  if (pyg_error_check (&error))
-    return NULL;
-
-  Py_INCREF (Py_None);
-  return Py_None;
-}
-
