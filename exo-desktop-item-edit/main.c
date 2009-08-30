@@ -137,8 +137,8 @@ main (int argc, char **argv)
       else
         {
           /* no error message, the GUI initialization failed */
-          const gchar *display_name = gdk_get_display_arg_name ();
-          s = g_strdup_printf ("%s: %s", _("Failed to open display"), STR_FB (display_name, " "));
+          s = g_strdup_printf ("%s: %s", _("Failed to open display"),
+                               STR_FB (gdk_get_display_arg_name (), " "));
         }
 
       /* tell the user about it */
@@ -179,21 +179,29 @@ main (int argc, char **argv)
   if (G_LIKELY (opt_create_new))
     {
       /* generic stuff */
-      g_key_file_set_value (key_file, "Desktop Entry", "Version", "1.0");
-      g_key_file_set_value (key_file, "Desktop Entry", "Type", STR_FB (opt_type, "Application"));
-      g_key_file_set_value (key_file, "Desktop Entry", "Name", STR_FB (opt_name, ""));
-      g_key_file_set_value (key_file, "Desktop Entry", "Comment", STR_FB (opt_comment, ""));
+      g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                            G_KEY_FILE_DESKTOP_KEY_VERSION, "1.0");
+      g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                            G_KEY_FILE_DESKTOP_KEY_TYPE, STR_FB (opt_type, "Application"));
+      g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                            G_KEY_FILE_DESKTOP_KEY_NAME, STR_FB (opt_name, ""));
+      g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                            G_KEY_FILE_DESKTOP_KEY_COMMENT, STR_FB (opt_comment, ""));
 
       /* type specific stuff */
-      if (exo_str_is_equal (opt_type, "Link"))
+      if (exo_str_is_equal (opt_type, G_KEY_FILE_DESKTOP_TYPE_LINK))
         {
-          g_key_file_set_value (key_file, "Desktop Entry", "Icon", STR_FB (opt_icon, "gnome-fs-bookmark"));
-          g_key_file_set_value (key_file, "Desktop Entry", "URL", STR_FB (opt_url, ""));
+          g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, "gnome-fs-bookmark"));
+          g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                G_KEY_FILE_DESKTOP_KEY_URL, STR_FB (opt_url, ""));
         }
       else
         {
-          g_key_file_set_value (key_file, "Desktop Entry", "Exec", STR_FB (opt_command, ""));
-          g_key_file_set_value (key_file, "Desktop Entry", "Icon", STR_FB (opt_icon, ""));
+          g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                G_KEY_FILE_DESKTOP_KEY_EXEC, STR_FB (opt_command, ""));
+          g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, ""));
         }
     }
   else
@@ -209,7 +217,8 @@ main (int argc, char **argv)
     }
 
   /* determine the type of the desktop file */
-  value = g_key_file_get_string (key_file, "Desktop Entry", "Type", &error);
+  value = g_key_file_get_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                 G_KEY_FILE_DESKTOP_KEY_TYPE, &error);
   if (G_UNLIKELY (value == NULL))
     {
       /* we cannot continue without a type */
@@ -259,17 +268,20 @@ main (int argc, char **argv)
   gtk_widget_show (editor);
 
   /* setup the name */
-  value = g_key_file_get_locale_string (key_file, "Desktop Entry", "Name", NULL, NULL);
+  value = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                        G_KEY_FILE_DESKTOP_KEY_NAME, NULL, NULL);
   exo_die_editor_set_name (EXO_DIE_EDITOR (editor), (value != NULL) ? value : "");
   g_free (value);
 
   /* setup the comment */
-  value = g_key_file_get_locale_string (key_file, "Desktop Entry", "Comment", NULL, NULL);
+  value = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                        G_KEY_FILE_DESKTOP_KEY_COMMENT, NULL, NULL);
   exo_die_editor_set_comment (EXO_DIE_EDITOR (editor), (value != NULL) ? value : "");
   g_free (value);
 
   /* setup the icon (automatically fixing broken icons) */
-  value = g_key_file_get_locale_string (key_file, "Desktop Entry", "Icon", NULL, NULL);
+  value = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                        G_KEY_FILE_DESKTOP_KEY_ICON, NULL, NULL);
   if (value != NULL && !g_path_is_absolute (value))
     {
       /* check if this is an invalid icon declaration */
@@ -285,18 +297,24 @@ main (int argc, char **argv)
     {
     case EXO_DIE_EDITOR_MODE_APPLICATION:
       /* setup the command */
-      value = g_key_file_get_string (key_file, "Desktop Entry", "Exec", NULL);
+      value = g_key_file_get_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                     G_KEY_FILE_DESKTOP_KEY_EXEC, NULL);
       exo_die_editor_set_command (EXO_DIE_EDITOR (editor), (value != NULL) ? value : "");
       g_free (value);
 
       /* setup launcher options */
-      exo_die_editor_set_snotify (EXO_DIE_EDITOR (editor), g_key_file_get_boolean (key_file, "Desktop Entry", "StartupNotify", NULL));
-      exo_die_editor_set_terminal (EXO_DIE_EDITOR (editor), g_key_file_get_boolean (key_file, "Desktop Entry", "Terminal", NULL));
+      exo_die_editor_set_snotify (EXO_DIE_EDITOR (editor),
+          g_key_file_get_boolean (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                  G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY, NULL));
+      exo_die_editor_set_terminal (EXO_DIE_EDITOR (editor),
+          g_key_file_get_boolean (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                  G_KEY_FILE_DESKTOP_KEY_TERMINAL, NULL));
       break;
 
     case EXO_DIE_EDITOR_MODE_LINK:
       /* setup the URL */
-      value = g_key_file_get_string (key_file, "Desktop Entry", "URL", NULL);
+      value = g_key_file_get_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                     G_KEY_FILE_DESKTOP_KEY_URL, NULL);
       exo_die_editor_set_url (EXO_DIE_EDITOR (editor), (value != NULL) ? value : "");
       g_free (value);
       break;
@@ -331,25 +349,39 @@ main (int argc, char **argv)
   if (response == GTK_RESPONSE_ACCEPT)
     {
       /* save common values (localized if possible) */
-      exo_die_g_key_file_set_locale_value (key_file, "Desktop Entry", "Name", exo_die_editor_get_name (EXO_DIE_EDITOR (editor)));
-      exo_die_g_key_file_set_locale_value (key_file, "Desktop Entry", "Icon", exo_die_editor_get_icon (EXO_DIE_EDITOR (editor)));
-      exo_die_g_key_file_set_locale_value (key_file, "Desktop Entry", "Comment", exo_die_editor_get_comment (EXO_DIE_EDITOR (editor)));
+      exo_die_g_key_file_set_locale_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                           G_KEY_FILE_DESKTOP_KEY_NAME,
+                                           exo_die_editor_get_name (EXO_DIE_EDITOR (editor)));
+      exo_die_g_key_file_set_locale_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                           G_KEY_FILE_DESKTOP_KEY_ICON,
+                                           exo_die_editor_get_icon (EXO_DIE_EDITOR (editor)));
+      exo_die_g_key_file_set_locale_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                           G_KEY_FILE_DESKTOP_KEY_COMMENT,
+                                           exo_die_editor_get_comment (EXO_DIE_EDITOR (editor)));
 
       /* save mode specific stuff */
       switch (mode)
         {
         case EXO_DIE_EDITOR_MODE_APPLICATION:
           /* save the new command */
-          g_key_file_set_string (key_file, "Desktop Entry", "Exec", exo_die_editor_get_command (EXO_DIE_EDITOR (editor)));
+          g_key_file_set_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                 G_KEY_FILE_DESKTOP_KEY_EXEC,
+                                 exo_die_editor_get_command (EXO_DIE_EDITOR (editor)));
 
           /* save the new launcher options */
-          g_key_file_set_boolean (key_file, "Desktop Entry", "Terminal", exo_die_editor_get_terminal (EXO_DIE_EDITOR (editor)));
-          g_key_file_set_boolean (key_file, "Desktop Entry", "StartupNotify", exo_die_editor_get_snotify (EXO_DIE_EDITOR (editor)));
+          g_key_file_set_boolean (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                 G_KEY_FILE_DESKTOP_KEY_TERMINAL,
+                                 exo_die_editor_get_terminal (EXO_DIE_EDITOR (editor)));
+          g_key_file_set_boolean (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                 G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY,
+                                 exo_die_editor_get_snotify (EXO_DIE_EDITOR (editor)));
           break;
 
         case EXO_DIE_EDITOR_MODE_LINK:
           /* save the new URL */
-          g_key_file_set_string (key_file, "Desktop Entry", "URL", exo_die_editor_get_url (EXO_DIE_EDITOR (editor)));
+          g_key_file_set_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                 G_KEY_FILE_DESKTOP_KEY_URL,
+                                 exo_die_editor_get_url (EXO_DIE_EDITOR (editor)));
           break;
 
         default:
