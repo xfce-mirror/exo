@@ -86,34 +86,34 @@ exo_die_g_key_file_set_locale_value (GKeyFile    *key_file,
 gboolean
 exo_die_g_key_file_save (GKeyFile    *key_file,
                          gboolean     create,
-                         const gchar *base,
+                         GFile       *base,
                          GError     **error)
 {
-  gsize  data_length;
-  gchar *filename;
-  gchar *data;
-  gchar *name;
-  gchar *s;
-  FILE  *fp;
-  gint   n;
+  GFileType  file_type;
+  GFile     *file;
+  gchar     *name, *s;
+  gchar     *filename, *data;
+  gsize      length;
+  gboolean   result;
+  guint      n;
 
-  g_return_val_if_fail (base != NULL, FALSE);
+  g_return_val_if_fail (G_IS_FILE (base), FALSE);
   g_return_val_if_fail (key_file != NULL, FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   /* check if we should create a new file */
   if (G_LIKELY (create))
     {
-      /* check base */
-      if (g_file_test (base, G_FILE_TEST_IS_REGULAR))
+      file_type = g_file_query_file_type (base, G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL);
+      if (file_type == G_FILE_TYPE_REGULAR)
         {
-          /* we can override an existing file */
-          filename = g_strdup (base);
+          file = g_object_ref (G_OBJECT (base));
         }
-      else if (g_file_test (base, G_FILE_TEST_IS_DIR))
+      else if (file_type == G_FILE_TYPE_DIRECTORY)
         {
           /* determine the desktop entry name */
-          name = g_key_file_get_locale_string (key_file, "Desktop Entry", "Name", NULL, NULL);
+          name = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                               G_KEY_FILE_DESKTOP_KEY_NAME, NULL, NULL);
           if (G_UNLIKELY (name == NULL))
             name = g_strdup ("launcher");
 
@@ -122,76 +122,63 @@ exo_die_g_key_file_save (GKeyFile    *key_file,
             if (G_IS_DIR_SEPARATOR (*s) || *s == '.')
               *s = '_';
 
-          /* try to transform name to local encoding */
-          s = g_filename_from_utf8 (name, -1, NULL, NULL, NULL);
-          if (G_LIKELY (s != NULL))
-            {
-              /* use the local name */
-              g_free (name);
-              name = s;
-            }
-
-          /* try to come up with a unique file name */
-          filename = g_strconcat (base, G_DIR_SEPARATOR_S, name, ".desktop", NULL);
-          for (n = 0; g_file_test (filename, G_FILE_TEST_EXISTS); ++n)
+          /* create a unique filename */
+          filename = g_strconcat (name, ".desktop", NULL);
+          file = g_file_get_child_for_display_name (base, filename, error);
+          for (n = 0; file != NULL && g_file_query_exists (file, NULL); n++)
             {
               /* release the previous name */
               g_free (filename);
+              g_object_unref (G_OBJECT (file));
 
               /* generate a new file name */
-              filename = g_strdup_printf ("%s%s%s%d.desktop", base, G_DIR_SEPARATOR_S, name, n);
+              filename = g_strdup_printf ("%s%d.desktop", name, n);
+              file = g_file_get_child_for_display_name (base, filename, error);
             }
 
-          /* release the name */
+          /* cleanup */
+          g_free (filename);
           g_free (name);
+
+          if (G_UNLIKELY (file == NULL))
+            return FALSE;
         }
       else
         {
           /* base is not a directory, cannot save */
-          g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (ENOTDIR), "%s", g_strerror (ENOTDIR));
+          g_set_error_literal (error, G_FILE_ERROR, g_file_error_from_errno (ENOTDIR),
+                               _("File location is not a regular file or directory"));
           return FALSE;
         }
     }
   else
     {
-      /* base is the filename */
-      filename = g_strdup (base);
+      /* base is the file */
+      file = g_object_ref (G_OBJECT (base));
     }
 
   /* determine the data for the key file */
-  data = g_key_file_to_data (key_file, &data_length, error);
+  data = g_key_file_to_data (key_file, &length, error);
   if (G_UNLIKELY (data == NULL))
     {
-      g_free (filename);
+      g_object_unref (G_OBJECT (file));
       return FALSE;
     }
 
-  /* try to open the file for writing */
-  fp = fopen (filename, "w");
-  if (G_UNLIKELY (fp == NULL))
-    {
-      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), "%s", g_strerror (errno));
-      g_free (filename);
-      g_free (data);
-      return FALSE;
-    }
-
-  /* try to write the data to the file */
-  if (fwrite (data, data_length, 1, fp) != 1)
-    {
-      g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno), "%s", g_strerror (errno));
-      g_free (filename);
-      g_free (data);
-      fclose (fp);
-      return FALSE;
-    }
+  /* write the contents to the file */
+  result = g_file_replace_contents (file, data, length, NULL, FALSE,
+#if GLIB_CHECK_VERSION (2, 20, 0)
+                                    G_FILE_CREATE_REPLACE_DESTINATION,
+#else
+                                    G_FILE_CREATE_NONE,
+#endif
+                                    NULL, NULL, error);
 
   /* cleanup */
-  g_free (filename);
   g_free (data);
-  fclose (fp);
+  g_object_unref (G_OBJECT (file));
 
-  return TRUE;
+  return result;
 }
 
 

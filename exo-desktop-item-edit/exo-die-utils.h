@@ -22,6 +22,7 @@
 #define __EXO_DIE_UTILS_H__
 
 #include <exo/exo.h>
+#include <gio/gio.h>
 
 G_BEGIN_DECLS
 
@@ -32,7 +33,7 @@ void      exo_die_g_key_file_set_locale_value (GKeyFile    *key_file,
 
 gboolean  exo_die_g_key_file_save             (GKeyFile    *key_file,
                                                gboolean     create,
-                                               const gchar *base,
+                                               GFile       *base,
                                                GError     **error);
 
 G_END_DECLS
