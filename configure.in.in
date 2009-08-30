@@ -150,7 +150,7 @@ AC_TRY_RUN([
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
-XDT_I18N([@LINGUAS@], [libexo-libexo_version_major().libexo_version_minor()])
+XDT_I18N([@LINGUAS@], [exo-libexo_version_api()])
 
 dnl ***********************************
 dnl *** Check for required packages ***
