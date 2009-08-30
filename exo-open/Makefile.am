@@ -13,13 +13,18 @@ exo_open_SOURCES =							\
 
 exo_open_CFLAGS =							\
 	$(GTK_CFLAGS)							\
-	$(LIBXFCE4UTIL_CFLAGS)
+	$(LIBXFCE4UTIL_CFLAGS)						\
+	$(GIO_CFLAGS)							\
+	$(GIO_UNIX_CFLAGS)
 
 exo_open_LDFLAGS =							\
 	-no-undefined
 
 exo_open_LDADD =							\
 	$(GTK_LIBS)							\
+	$(LIBXFCE4UTIL_LIBS)						\
+	$(GIO_LIBS)							\
+	$(GIO_UNIX_LIBS)						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

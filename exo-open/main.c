@@ -32,7 +32,8 @@
 #endif
 
 #include <glib/gstdio.h>
-
+#include <gio/gio.h>
+#include <gio/gdesktopappinfo.h>
 #include <exo/exo.h>
 
 
@@ -50,8 +51,12 @@
  * exo-open http://xfce.org
  * exo-open --launch TerminalEmulator ./script.sh 'something with a space' 'nospace' (bug #5132).
  * exo-open --launch TerminalEmulator ssh -l username some.host.com
- * xfterm4 -e ssh -l ssh -l username some.host.com (bug #5301, this generates line below)
+ *
+ * xfterm4 -e ssh -l username some.host.com (bug #5301, this generates line below)
  *   exo-open --launch TerminalEmulator 'ssh -l username some.host.com'
+ *
+ * exo-open /some/path/to/a/file.desktop
+ * exo-open somerelativefile
  **/
 
 
@@ -110,6 +115,60 @@ usage (void)
 
 
 static gboolean
+exo_open_launch_desktop_file (const gchar *arg)
+{
+  GFile           *gfile;
+  gchar           *contents;
+  gsize            length;
+  gboolean         result;
+  GKeyFile        *key_file;
+  GDesktopAppInfo *appinfo;
+
+  /* try to open a file from the arguments */
+  gfile = g_file_new_for_commandline_arg (arg);
+  if (G_UNLIKELY (gfile == NULL))
+    return FALSE;
+
+  /* load the contents of the file */
+  result = g_file_load_contents (gfile, NULL, &contents, &length, NULL, NULL);
+  g_object_unref (G_OBJECT (gfile));
+  if (G_UNLIKELY (!result || length == 0))
+    return FALSE;
+
+  /* create the key file */
+  key_file = g_key_file_new ();
+  result = g_key_file_load_from_data (key_file, contents, length, G_KEY_FILE_NONE, NULL);
+  g_free (contents);
+  if (G_UNLIKELY (!result))
+    {
+      g_key_file_free (key_file);
+      return FALSE;
+    }
+
+  /* create the appinfo */
+  appinfo = g_desktop_app_info_new_from_keyfile (key_file);
+  g_key_file_free (key_file);
+  if (G_UNLIKELY (appinfo == NULL))
+    return FALSE;
+
+  /* try to launch a (non-hidden) desktop file */
+  if (G_LIKELY (!g_desktop_app_info_get_is_hidden (appinfo)))
+    result = g_app_info_launch (G_APP_INFO (appinfo), NULL, NULL, NULL);
+  else
+    result = FALSE;
+
+#ifndef NDEBUG
+  g_debug ("launching desktop file %s", result ? "succeeded" : "failed");
+#endif
+
+  g_object_unref (G_OBJECT (appinfo));
+
+  return result;
+}
+
+
+
+static gboolean
 exo_open_looks_like_an_uri (const gchar *string)
 {
   const gchar *s = string;
@@ -129,15 +188,16 @@ exo_open_looks_like_an_uri (const gchar *string)
 
 
 
-static const gchar *
+static gchar *
 exo_open_find_scheme (const gchar *string)
 {
-  gboolean  exists;
-  gchar    *current_dir, *path;
+  gchar *current_dir;
+  gchar *uri;
+  gchar *path;
 
   /* is an absolute path, return file uri */
   if (g_path_is_absolute (string))
-    return "file://";
+    return g_strconcat ("file://", string, NULL);
 
   /* treat it like a relative path */
   current_dir = g_get_current_dir ();
@@ -145,18 +205,21 @@ exo_open_find_scheme (const gchar *string)
   g_free (current_dir);
 
   /* verify that a file of the given name exists */
-  exists = g_file_test (path, G_FILE_TEST_EXISTS);
+  if (g_file_test (path, G_FILE_TEST_EXISTS))
+    {
+       uri = g_strconcat ("file://", path, NULL);
+       g_free (path);
+       return uri;
+    }
   g_free (path);
-  if (exists)
-    return "file://";
 
   /* regular expression to check if it looks like an email address */
   if (g_regex_match_simple (MATCH_MAILER, string, G_REGEX_CASELESS, 0))
-    return "mailto:";
+    return g_strconcat ("mailto:", string, NULL);
 
   /* regular expression to check if it looks like an url */
   if (g_regex_match_simple (MATCH_BROWSER, string, G_REGEX_CASELESS, 0))
-    return "http://";
+    return g_strconcat ("http://", string, NULL);
 
   return NULL;
 }
@@ -166,15 +229,14 @@ exo_open_find_scheme (const gchar *string)
 int
 main (int argc, char **argv)
 {
-  GOptionContext *context;
-  GtkWidget      *dialog;
-  GError         *err = NULL;
-  gchar          *parameter, *quoted;
-  gint            result = EXIT_SUCCESS;
-  GString        *join;
-  guint           i;
-  gchar          *uri;
-  const gchar    *scheme;
+  GOptionContext  *context;
+  GtkWidget       *dialog;
+  GError          *err = NULL;
+  gchar           *parameter, *quoted;
+  gint             result = EXIT_SUCCESS;
+  GString         *join;
+  guint            i;
+  gchar           *uri;
 
 #ifdef GETTEXT_PACKAGE
   /* setup i18n support */
@@ -251,7 +313,7 @@ main (int argc, char **argv)
         }
 
 #ifndef NDEBUG
-      g_message ("launch=%s, wd=%s, parameters (%d)=%s", opt_launch, opt_working_directory, argc, parameter);
+      g_debug ("launch=%s, wd=%s, parameters (%d)=%s", opt_launch, opt_working_directory, argc, parameter);
 #endif
 
       /* run the preferred application */
@@ -276,20 +338,26 @@ main (int argc, char **argv)
       /* open all specified urls */
       for (argv += 1; result == EXIT_SUCCESS && *argv != NULL; ++argv)
         {
-          if (exo_open_looks_like_an_uri (*argv))
+          if (g_str_has_suffix (*argv, ".desktop")
+              && exo_open_launch_desktop_file (*argv))
+            {
+              /* successfully launched a desktop file */
+              continue;
+            }
+          else if (exo_open_looks_like_an_uri (*argv))
             {
               /* use the argument directly */
               uri = g_strdup (*argv);
             }
           else
             {
-              /* try to find a valid scheme */
-              scheme = exo_open_find_scheme (*argv);
-              if (G_LIKELY (scheme != NULL))
-                uri = g_strconcat (scheme, *argv, NULL);
-              else
-                uri = NULL;
+              /* try to build a valid uri */
+              uri = exo_open_find_scheme (*argv);
             }
+
+#ifndef NDEBUG
+          g_debug ("opening the following uri: %s", uri);
+#endif
 
           if (uri == NULL)
             {
