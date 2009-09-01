@@ -1,12 +1,10 @@
 ## Process this file with automake to produce Makefile.in
 
-AUTOMAKE_OPTIONS = 1.6
-
 # The name of the module.
 DOC_MODULE=exo
 
 # The top-level SGML file.
-DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.sgml
+DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.xml
 
 # Extra options to supply to gtkdoc-scan
 SCAN_OPTIONS=--deprecated-guards="EXO_DISABLE_DEPRECATED"
@@ -15,7 +13,7 @@ SCAN_OPTIONS=--deprecated-guards="EXO_DISABLE_DEPRECATED"
 DOC_SOURCE_DIR=../..
 
 # Extra options to supply to gtkdoc-mkdb
-MKDB_OPTIONS=--sgml-mode --output-format=xml
+MKDB_OPTIONS=--output-format=xml --sgml-mode --name-space=exo
 
 # Extra options to supply to gtkdoc-fixref
 FIXXREF_OPTIONS=
@@ -43,7 +41,7 @@ HTML_IMAGES =								\
 content_files = 							\
 	exo-csource.xml							\
 	version.xml							\
-	visual_index.xml
+	visual-index.xml
 
 # CFLAGS and LDFLAGS for compiling scan program. Only needed
 # if $(DOC_MODULE).types is non-empty.

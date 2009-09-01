@@ -1,44 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
-               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
-<!ENTITY exo-toolbars-model SYSTEM "xml/exo-toolbars-model.xml">
-<!ENTITY exo-toolbars-editor SYSTEM "xml/exo-toolbars-editor.xml">
-<!ENTITY exo-toolbars-editor-dialog SYSTEM "xml/exo-toolbars-editor-dialog.xml">
-<!ENTITY exo-toolbars-view SYSTEM "xml/exo-toolbars-view.xml">
-<!ENTITY exo-icon-bar SYSTEM "xml/exo-icon-bar.xml">
-<!ENTITY exo-icon-chooser-dialog SYSTEM "xml/exo-icon-chooser-dialog.xml">
-<!ENTITY exo-icon-view SYSTEM "xml/exo-icon-view.xml">
-<!ENTITY exo-tree-view SYSTEM "xml/exo-tree-view.xml">
-<!ENTITY exo-wrap-table SYSTEM "xml/exo-wrap-table.xml">
-<!ENTITY exo-cell-renderer-ellipsized-text SYSTEM "xml/exo-cell-renderer-ellipsized-text.xml">
-<!ENTITY exo-cell-renderer-icon SYSTEM "xml/exo-cell-renderer-icon.xml">
-<!ENTITY exo-job SYSTEM "xml/exo-job.xml">
-<!ENTITY exo-simple-job SYSTEM "xml/exo-simple-job.xml">
-<!ENTITY exo-gdk-pixbuf-extensions SYSTEM "xml/exo-gdk-pixbuf-extensions.xml">
-<!ENTITY exo-gobject-extensions SYSTEM "xml/exo-gobject-extensions.xml">
-<!ENTITY exo-gtk-extensions SYSTEM "xml/exo-gtk-extensions.xml">
-<!ENTITY exo-config SYSTEM "xml/exo-config.xml">
-<!ENTITY exo-binding SYSTEM "xml/exo-binding.xml">
-<!ENTITY exo-execute SYSTEM "xml/exo-execute.xml">
-<!ENTITY exo-mount-point SYSTEM "xml/exo-mount-point.xml">
-<!ENTITY exo-string SYSTEM "xml/exo-string.xml">
-<!ENTITY exo-utils SYSTEM "xml/exo-utils.xml">
-<!ENTITY exo-hal SYSTEM "xml/exo-hal.xml">
-<!ENTITY exo-xsession-client SYSTEM "xml/exo-xsession-client.xml">
-
-<!ENTITY exo-csource SYSTEM "exo-csource.xml">
-
-<!ENTITY visual-index SYSTEM "visual_index.xml">
-
-<!ENTITY version SYSTEM "version.xml">
-<!ENTITY date "January 2007">
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+                      "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
 ]>
 
 <book id="index" lang="en">
   <bookinfo>
-    <title>exo Reference Manual</title>
-    <releaseinfo>Version &version;</releaseinfo>
-    <pubdate>&date;</pubdate>
+    <title>Exo Reference Manual</title>
+    <releaseinfo>Version <xi:include href="version.xml" parse="text"/></releaseinfo>
+    <pubdate>September 2009</pubdate>
 
     <copyright>
       <year>2004</year>
@@ -207,10 +178,10 @@
       component into a <structname>GtkDialog</structname>.
     </para>
 
-    &exo-toolbars-model;
-    &exo-toolbars-editor;
-    &exo-toolbars-editor-dialog;
-    &exo-toolbars-view;
+    <xi:include href="xml/exo-toolbars-model.xml"/>
+    <xi:include href="xml/exo-toolbars-editor.xml"/>
+    <xi:include href="xml/exo-toolbars-editor-dialog.xml"/>
+    <xi:include href="xml/exo-toolbars-view.xml"/>
   </part>
 
   <part id="exo-widgets">
@@ -230,11 +201,11 @@
       select an icon, instead of just displaying a <link linkend="GtkFileChooserDialog">GtkFileChooserDialog</link>.
     </para>
 
-    &exo-icon-bar;
-    &exo-icon-chooser-dialog;
-    &exo-icon-view;
-    &exo-tree-view;
-    &exo-wrap-table;
+    <xi:include href="xml/exo-icon-bar.xml"/>
+    <xi:include href="xml/exo-icon-chooser-dialog.xml"/>
+    <xi:include href="xml/exo-icon-view.xml"/>
+    <xi:include href="xml/exo-tree-view.xml"/>
+    <xi:include href="xml/exo-wrap-table.xml"/>
   </part>
 
   <part id="exo-cell-renderers">
@@ -260,8 +231,8 @@
       size for layouting and loads the icons only on-demand (utilizing the thumbnail database whenever possible).
     </para>
 
-    &exo-cell-renderer-ellipsized-text;
-    &exo-cell-renderer-icon;
+    <xi:include href="xml/exo-cell-renderer-ellipsized-text.xml"/>
+    <xi:include href="xml/exo-cell-renderer-icon.xml"/>
   </part>
 
   <part id="exo-jobs">
@@ -276,8 +247,8 @@
       <link linkend="ExoJob">ExoJob</link> just to execute a single function asynchronously.
     </para>
 
-    &exo-job;
-    &exo-simple-job;
+    <xi:include href="xml/exo-job.xml"/>
+    <xi:include href="xml/exo-simple-job.xml"/>
   </part>
 
   <part id="exo-extensions">
@@ -288,21 +259,21 @@
       methods for certain classes to specialized functions dealing with <link linkend="GdkPixbuf">GdkPixbuf</link>s.
     </para>
 
-    &exo-gdk-pixbuf-extensions;
-    &exo-gobject-extensions;
-    &exo-gtk-extensions;
+    <xi:include href="xml/exo-gdk-pixbuf-extensions.xml"/>
+    <xi:include href="xml/exo-gobject-extensions.xml"/>
+    <xi:include href="xml/exo-gtk-extensions.xml"/>
   </part>
 
   <part id="exo-miscelleanous">
     <title>Miscelleanous</title>
-    &exo-config;
-    &exo-binding;
-    &exo-execute;
-    &exo-mount-point;
-    &exo-string;
-    &exo-utils;
-    &exo-hal;
-    &exo-xsession-client;
+    <xi:include href="xml/exo-config.xml"/>
+    <xi:include href="xml/exo-binding.xml"/>
+    <xi:include href="xml/exo-execute.xml"/>
+    <xi:include href="xml/exo-mount-point.xml"/>
+    <xi:include href="xml/exo-string.xml"/>
+    <xi:include href="xml/exo-utils.xml"/>
+    <xi:include href="xml/exo-hal.xml"/>
+    <xi:include href="xml/exo-xsession-client.xml"/>
   </part>
 
   <part id="exo-tools">
@@ -313,7 +284,7 @@
       <application>exo</application> library.
     </para>
 
-    &exo-csource;
+    <xi:include href="exo-csource.xml"/>
   </part>
 
   <!--
@@ -324,7 +295,7 @@
 
   <chapter>
     <title>Visual Index</title>
-    &visual-index;
+    <xi:include href="visual-index.xml"/>
   </chapter>
 
   <index>
