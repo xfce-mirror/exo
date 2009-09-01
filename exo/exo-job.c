@@ -33,9 +33,32 @@
 #include <exo/exo-string.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-job
+ * @title: ExoJob
+ * @short_description: Base class for threaded/asynchronous jobs
+ * @include: exo/exo.h
+ * @see_also: <link linkend="ExoSimpleJob">ExoSimpleJob</link>
+ *
+ * <link linkend="ExoJob">ExoJob</link> is an abstract base class
+ * intended to wrap threaded/asynchronous operations (called jobs here).
+ * It was written because the ways of dealing with threads provided by
+ * GLib were too low-level and not exactly object-oriented.
+ *
+ * It can be used to wrap any kind of long-running or possibly-blocking
+ * operation, like file operations or communication with web services.
+ * The benefit of using <link linkend="ExoJob">ExoJob</link> is that you
+ * get an object associated with an operation. After creating the job
+ * you can connect to signals like <link linkend="ExoJob::error">"error"
+ * </link> or <link linkend="ExoJob::percent">"percent"</link>. This
+ * design integrates very well in the usual object-oriented design of
+ * applications based on GLib.
+ **/
 
 
-#define EXO_JOB_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_JOB, ExoJobPrivate))
+
+#define EXO_JOB_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_JOB, ExoJobPrivate))
 
 
 
@@ -210,7 +233,7 @@ exo_job_finalize (GObject *object)
  * Finishes the execution of an operation by propagating errors
  * from the @result into @error.
  *
- * Return value: %TRUE if there was no error during the operation,
+ * Returns: %TRUE if there was no error during the operation,
  *               %FALSE otherwise.
  **/
 static gboolean
@@ -272,8 +295,7 @@ exo_job_async_ready (GObject      *object,
  * operation associated with the job. It basically calls the
  * ExoJobClass#execute function.
  *
- * Return value: %FALSE, to stop the thread at the end of the
- *               operation.
+ * Returns: %FALSE, to stop the thread at the end of the operation.
  **/
 static gboolean
 exo_job_scheduler_job_func (GIOSchedulerJob *scheduler_job,
@@ -314,7 +336,7 @@ exo_job_scheduler_job_func (GIOSchedulerJob *scheduler_job,
  * Called from the main loop of the application to emit the signal
  * specified by the @user_data.
  *
- * Return value: %FALSE, to keep the function from being called
+ * Returns: %FALSE, to keep the function from being called
  *               multiple times in a row.
  **/
 static gboolean
@@ -420,7 +442,7 @@ exo_job_finished (ExoJob *job)
  * returned #ExoJob in order to be notified on errors, progress updates
  * and the end of the operation.
  *
- * Return value: the @job itself.
+ * Returns: the @job itself.
  **/
 ExoJob *
 exo_job_launch (ExoJob *job)
@@ -475,7 +497,7 @@ exo_job_cancel (ExoJob *job)
  * Checks whether @job was previously cancelled
  * by a call to exo_job_cancel().
  *
- * Return value: %TRUE if @job is cancelled.
+ * Returns: %TRUE if @job is cancelled.
  **/
 gboolean
 exo_job_is_cancelled (const ExoJob *job)
@@ -492,8 +514,8 @@ exo_job_is_cancelled (const ExoJob *job)
  *
  * Returns the #GCancellable that can be used to cancel the @job.
  *
- * Return value: the #GCancellable associated with the @job. It
- *               is owned by the @job and must not be released.
+ * Returns: the #GCancellable associated with the @job. It
+ *          is owned by the @job and must not be released.
  **/
 GCancellable *
 exo_job_get_cancellable (const ExoJob *job)
@@ -517,8 +539,7 @@ exo_job_get_cancellable (const ExoJob *job)
  * g_cancellable_set_error_if_cancelled (cancellable, error);
  * </programlisting></informalexample>
  *
- * Return value: %TRUE if the job was cancelled and @error is now set,
- *               %FALSE otherwise.
+ * Returns: %TRUE if the job was cancelled and @error is now set, %FALSE otherwise.
  **/
 gboolean
 exo_job_set_error_if_cancelled (ExoJob  *job,
@@ -535,7 +556,7 @@ exo_job_set_error_if_cancelled (ExoJob  *job,
  * @job           : an #ExoJob.
  * @signal_id     : the signal id.
  * @signal_detail : the signal detail.
- * ...            : a list of parameters to be passed to the signal,
+ * @Varargs       : a list of parameters to be passed to the signal,
  *                  followed by a location for the return value. If the
  *                  return type of the signal is G_TYPE_NONE, the return
  *                  value location can be omitted.
@@ -562,9 +583,9 @@ exo_job_emit (ExoJob *job,
 
 /**
  * exo_job_info_message:
- * @job    : an #ExoJob.
- * @format : a format string.
- * ...     : parameters for the format string.
+ * @job     : an #ExoJob.
+ * @format  : a format string.
+ * @Varargs : parameters for the format string.
  *
  * Generates and emits an "info-message" signal and sends it to the
  * application's main loop.
@@ -611,7 +632,18 @@ exo_job_percent (ExoJob *job,
 
 
 
-
+/**
+ * exo_job_send_to_mainloop:
+ * @job            : an #ExoJob.
+ * @func           : a #GSourceFunc callback that will be called in the main thread.
+ * @user_data      : data to pass to @func.
+ * @destroy_notify : a #GDestroyNotify for @user_data, or %NULL.
+ *
+ * This functions schedules the @job to be run in the main loop (main thread),
+ * waiting for the result (and thus blocking the I/O job).
+ *
+ * Returns: The return value of @func.
+ **/
 gboolean
 exo_job_send_to_mainloop (ExoJob        *job,
                           GSourceFunc    func,

@@ -31,9 +31,28 @@
 #include <exo/exo-thumbnail.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-cell-renderer-icon
+ * @title: ExoCellRendererIcon
+ * @short_description: Renders an icon in a cell
+ * @include: exo/exo.h
+ * @see_also: <link linkend="ExoIconView">ExoIconView</link>
+ *
+ * An #ExoCellRendererIcon can be used to render an icon in a cell. It
+ * allows to render either a named icon, which is looked up using the
+ * #GtkIconTheme, or an image file loaded from the file system. The icon
+ * name or absolute path to the image file is set via the
+ * <link linkend="ExoCellRendererIcon--icon">icon</link> property.
+ *
+ * To support the <link linkend="ExoIconView">ExoIconView</link> (and <link
+ * linkend="GtkIconView">GtkIconView</link>), #ExoCellRendererIcon supports
+ * rendering icons based on the state of the view if the
+ * <link linkend="ExoCellRendererIcon--follow-state">follow-state</link>
+ * property is set.
+ **/
 
-
-#define EXO_CELL_RENDERER_ICON_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_CELL_RENDERER_ICON, ExoCellRendererIconPrivate))
+#define EXO_CELL_RENDERER_ICON_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_CELL_RENDERER_ICON, ExoCellRendererIconPrivate))
 
 
 
@@ -539,7 +558,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
  * cell renderer to an icon name in the model, thus rendering a different icon in each row
  * of the #GtkTreeView.
  *
- * Return value: the newly allocated #ExoCellRendererIcon.
+ * Returns: the newly allocated #ExoCellRendererIcon.
  *
  * Since: 0.3.1.9
  **/

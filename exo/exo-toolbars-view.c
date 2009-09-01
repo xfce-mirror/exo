@@ -40,13 +40,22 @@
 #include <exo/exo-toolbars-view.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-toolbars-view
+ * @title: ExoToolbarsView
+ * @short_description: Widget for displaying toolbars
+ * @include: exo/exo.h
+ * @see_also: #ExoToolbarsEditor, #ExoToolbarsEditorDialog, #ExoToolbarsModel
+ *
+ * A widget that displays toolbars as described in a #ExoToolbarsModel object.
+ **/
+
 
 
 #define MIN_TOOLBAR_HEIGHT  20
 
-
-
-#define EXO_TOOLBARS_VIEW_GET_PRIVATE(obj)  (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_TOOLBARS_VIEW, ExoToolbarsViewPrivate))
+#define EXO_TOOLBARS_VIEW_GET_PRIVATE(obj)  (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+   EXO_TYPE_TOOLBARS_VIEW, ExoToolbarsViewPrivate))
 
 
 
@@ -1167,7 +1176,7 @@ exo_toolbars_view_deconstruct (ExoToolbarsView *view)
  *
  * Creates a new #ExoToolbarsView.
  *
- * Return value: A newly created #ExoToolbarsView.
+ * Returns: A newly created #ExoToolbarsView.
  **/
 GtkWidget*
 exo_toolbars_view_new (GtkUIManager *ui_manager)
@@ -1189,7 +1198,7 @@ exo_toolbars_view_new (GtkUIManager *ui_manager)
  * Creates a new #ExoToolbarsView and associates it with
  * @model.
  *
- * Return value: A newly created #ExoToolbarsView.
+ * Returns: A newly created #ExoToolbarsView.
  **/
 GtkWidget*
 exo_toolbars_view_new_with_model (GtkUIManager      *ui_manager,
@@ -1210,7 +1219,9 @@ exo_toolbars_view_new_with_model (GtkUIManager      *ui_manager,
  * exo_toolbars_view_get_editing:
  * @view  : An #ExoToolbarsView.
  *
- * Return value: %TRUE if @view is currently being edited, else %FALSE.
+ * Gets wether @view is currently being edited.
+ *
+ * Returns: %TRUE if @view is currently being edited, else %FALSE.
  **/
 gboolean
 exo_toolbars_view_get_editing (ExoToolbarsView *view)
@@ -1290,7 +1301,7 @@ exo_toolbars_view_set_editing (ExoToolbarsView *view,
  * Returns the #ExoToolbarsModel currently associated with
  * @view or %NULL if @view has no model.
  *
- * Return value: The #ExoToolbarsModel associated with @view.
+ * Returns: The #ExoToolbarsModel associated with @view.
  **/
 ExoToolbarsModel*
 exo_toolbars_view_get_model (ExoToolbarsView *view)
@@ -1305,6 +1316,9 @@ exo_toolbars_view_get_model (ExoToolbarsView *view)
  * exo_toolbars_view_set_model:
  * @view  : An #ExoToolbarsView.
  * @model : An #ExoToolbarsModel or %NULL.
+ *
+ * Set the #ExoToolbarsModel currently associated with
+ * @view or %NULL to disconnect from the active model.
  **/
 void
 exo_toolbars_view_set_model (ExoToolbarsView  *view,
@@ -1368,8 +1382,10 @@ exo_toolbars_view_set_model (ExoToolbarsView  *view,
  * exo_toolbars_view_get_ui_manager:
  * @view        : An #ExoToolbarsView.
  *
- * Return value: The #GtkUIManager associated with @view or
- *               %NULL.
+ * Returns the #GtkUIManager currently associated with @view or %NULL is
+ * no ui-manager has been set.
+ *
+ * Returns: The #GtkUIManager associated with @view or %NULL.
  **/
 GtkUIManager*
 exo_toolbars_view_get_ui_manager (ExoToolbarsView *view)
@@ -1384,6 +1400,9 @@ exo_toolbars_view_get_ui_manager (ExoToolbarsView *view)
  * exo_toolbars_view_set_ui_manager:
  * @view        : An #ExoToolbarsView.
  * @ui_manager  : A #GtkUIManager or %NULL.
+ *
+ * Set the #GtkUIManager currently associated with @view or %NULL
+ * to disconnect from the current ui-manager.
  **/
 void
 exo_toolbars_view_set_ui_manager (ExoToolbarsView *view,

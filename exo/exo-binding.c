@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2004-2006 os-cillation e.K.
  * Copyright (c) 2004      Victor Porton (http://ex-code.com/~porton/)
@@ -30,6 +29,55 @@
 #include <exo/exo-private.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-binding
+ * @title: Binding Properties Functions
+ * @short_description: Functions used to bind two object properties together
+ * @include: exo/exo.h
+ * @see_also: <ulink url="http://library.gnome.org/devel/gobject/stable/">
+ *            GObject Reference Manual</ulink>,
+ *            <link linkend="exo-Extensions-to-GObject">Extensions to GObject</link>
+ *
+ * Binding properties is synchronizing values of several properties,
+ * so that when one of the bound properties changes, the other
+ * bound properties are automatically changed to the new value as
+ * well. These functions eliminate the need to write property
+ * change notification callbacks manually. It also increases the
+ * reliability of your project as you don't need to repeat similar
+ * code (and errors) manually.
+ *
+ * Both uni-directional and mutual
+ * bindings are supported and you can specify functions to perform
+ * explicit transformation of values if required. Multiple properties
+ * can be bound together in a complex way and infinite loops are
+ * eliminated automatically.
+ *
+ * For example, lets say, your program has a #GtkEntry widget that allows
+ * the user to enter some text for the program, but this entry widget should
+ * only be sensitive if a #GtkCheckButton is active.
+ *
+ * <example>
+ * <title>Connecting a <structname>GtkCheckButton</structname> and a
+ * <structname>GtkEntry</structname></title>
+ * <programlisting>
+ * {
+ *   GtkWidget *button;
+ *   GtkWidget *entry;
+ *
+ *   button = gtk_check_button_new_with_label ("Activate me");
+ *   entry = gtk_entry_new ();
+ *
+ *   exo_binding_new (G_OBJECT (button), "active",
+ *                    G_OBJECT (entry), "sensitive");
+ * }
+ * </programlisting>
+ * </example>
+ *
+ * As you can see, all you need to do is to call one function to connect
+ * the sensitivity of the entry widget with the state of the check
+ * button. No need to write signal handlers for this purpose any more.
+ **/
+
 typedef struct
 {
   GObject             *dst_object;
@@ -41,6 +89,12 @@ typedef struct
 }
 ExoBindingLink;
 
+/**
+ * ExoBinding:
+ *
+ * Opaque structure representing a one-way binding between two properties.
+ * It is automatically removed if one of the bound objects is finalized.
+ **/
 struct _ExoBinding
 {
   GObject         *src_object;
@@ -48,6 +102,12 @@ struct _ExoBinding
   ExoBindingLink   link;
 };
 
+/**
+ * ExoMutualBinding:
+ *
+ * Opaque structure representing a mutual binding between two properties.
+ * It is automatically freed if one of the bound objects is finalized.
+ **/
 struct _ExoMutualBinding
 {
   GDestroyNotify  destroy;
@@ -231,10 +291,10 @@ exo_binding_link_init (ExoBindingLink     *link,
 
 /**
  * exo_binding_new:
- * @src_object    : The source #GObject.
- * @src_property  : The name of the property to bind from.
- * @dst_object    : The destination #GObject.
- * @dst_property  : The name of the property to bind to.
+ * @src_object:   The source #GObject.
+ * @src_property: The name of the property to bind from.
+ * @dst_object:   The destination #GObject.
+ * @dst_property: The name of the property to bind to.
  *
  * One-way binds @src_property in @src_object to @dst_property
  * in @dst_object.
@@ -242,8 +302,8 @@ exo_binding_link_init (ExoBindingLink     *link,
  * Before binding the value of @dst_property is set to the
  * value of @src_property.
  *
- * Return value: The descriptor of the binding. It is automatically
- *               removed if one of the objects is finalized.
+ * Returns: The descriptor of the binding. It is automatically
+ *          removed if one of the objects is finalized.
  **/
 ExoBinding*
 exo_binding_new (GObject      *src_object,
@@ -260,14 +320,13 @@ exo_binding_new (GObject      *src_object,
 
 /**
  * exo_binding_new_full:
- * @src_object      : The source #GObject.
- * @src_property    : The name of the property to bind from.
- * @dst_object      : The destination #GObject.
- * @dst_property    : The name of the property to bind to.
- * @transform       : Transformation function or %NULL.
- * @destroy_notify  : Callback function that is called on
- *                    disconnection with @user_data or %NULL.
- * @user_data       : User data associated with the binding.
+ * @src_object:     The source #GObject.
+ * @src_property:   The name of the property to bind from.
+ * @dst_object:     The destination #GObject.
+ * @dst_property:   The name of the property to bind to.
+ * @transform:      Transformation function or %NULL.
+ * @destroy_notify: Callback function that is called on disconnection with @user_data or %NULL.
+ * @user_data:      User data associated with the binding.
  *
  * One-way binds @src_property in @src_object to @dst_property
  * in @dst_object.
@@ -275,8 +334,8 @@ exo_binding_new (GObject      *src_object,
  * Before binding the value of @dst_property is set to the
  * value of @src_property.
  *
- * Return value: The descriptor of the binding. It is automatically
- *               removed if one of the objects is finalized.
+ * Returns: The descriptor of the binding. It is automatically
+ *          removed if one of the objects is finalized.
  **/
 ExoBinding*
 exo_binding_new_full (GObject            *src_object,
@@ -329,15 +388,15 @@ exo_binding_new_full (GObject            *src_object,
 
 /**
  * exo_binding_new_with_negation:
- * @src_object    : The source #GObject.
- * @src_property  : The name of the property to bind from.
- * @dst_object    : The destination #GObject.
- * @dst_property  : The name of the property to bind to.
+ * @src_object:   The source #GObject.
+ * @src_property: The name of the property to bind from.
+ * @dst_object:   The destination #GObject.
+ * @dst_property: The name of the property to bind to.
  *
  * Convenience function for binding with boolean negation of value.
  *
- * Return value: The descriptor of the binding. It is automatically
- *               removed if one of the objects is finalized.
+ * Returns: The descriptor of the binding. It is automatically
+ *          removed if one of the objects is finalized.
  **/
 ExoBinding*
 exo_binding_new_with_negation (GObject      *src_object,
@@ -374,18 +433,18 @@ exo_binding_unbind (ExoBinding *binding)
 
 /**
  * exo_mutual_binding_new:
- * @object1   : The first #GObject.
- * @property1 : The first property to bind.
- * @object2   : The second #GObject.
- * @property2 : The second property to bind.
+ * @object1:   The first #GObject.
+ * @property1: The first property to bind.
+ * @object2:   The second #GObject.
+ * @property2: The second property to bind.
  *
  * Mutually binds values of two properties.
  *
  * Before binding the value of @property2 is set to the value
  * of @property1.
  *
- * Return value: The descriptor of the binding. It is automatically
- *               removed if one of the objects is finalized.
+ * Returns: The descriptor of the binding. It is automatically
+ *          removed if one of the objects is finalized.
  **/
 ExoMutualBinding*
 exo_mutual_binding_new (GObject     *object1,
@@ -402,15 +461,14 @@ exo_mutual_binding_new (GObject     *object1,
 
 /**
  * exo_mutual_binding_new_full:
- * @object1           : The first #GObject.
- * @property1         : The first property to bind.
- * @object2           : The second #GObject.
- * @property2         : The second property to bind.
- * @transform         : Transformation function or %NULL.
- * @reverse_transform : The inverse transformation function or %NULL.
- * @destroy_notify    : Callback function called on disconnection with
- *                      @user_data as argument or %NULL.
- * @user_data         : User data associated with the binding.
+ * @object1:           The first #GObject.
+ * @property1:         The first property to bind.
+ * @object2:           The second #GObject.
+ * @property2:         The second property to bind.
+ * @transform:         Transformation function or %NULL.
+ * @reverse_transform: The inverse transformation function or %NULL.
+ * @destroy_notify:    Callback function called on disconnection with @user_data as argument or %NULL.
+ * @user_data:         User data associated with the binding.
  *
  * Mutually binds values of two properties.
  *
@@ -421,8 +479,8 @@ exo_mutual_binding_new (GObject     *object1,
  * %NULL or non-%NULL. If they are non-%NULL, they should be reverse
  * in each other.
  *
- * Return value: The descriptor of the binding. It is automatically
- *               removed if one of the objects is finalized.
+ * Returns: The descriptor of the binding. It is automatically
+ *          removed if one of the objects is finalized.
  **/
 ExoMutualBinding*
 exo_mutual_binding_new_full (GObject            *object1,
@@ -493,15 +551,15 @@ exo_mutual_binding_new_full (GObject            *object1,
 
 /**
  * exo_mutual_binding_new_with_negation:
- * @object1   : The first #GObject.
- * @property1 : The first property to bind.
- * @object2   : The second #GObject.
- * @property2 : The second property to bind.
+ * @object1:   The first #GObject.
+ * @property1: The first property to bind.
+ * @object2:   The second #GObject.
+ * @property2: The second property to bind.
  *
  * Convenience function for binding with boolean negation of value.
  *
- * Return value: The descriptor of the binding. It is automatically removed
- *               if one of the objects if finalized.
+ * Returns: The descriptor of the binding. It is automatically removed
+ *          if one of the objects if finalized.
  **/
 ExoMutualBinding*
 exo_mutual_binding_new_with_negation (GObject     *object1,

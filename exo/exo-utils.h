@@ -42,6 +42,17 @@ gboolean                exo_noop_false  (void) G_GNUC_PURE;
 G_INLINE_FUNC void      exo_atomic_inc  (gint *value);
 G_INLINE_FUNC gboolean  exo_atomic_dec  (gint *value);
 
+/**
+ * exo_atomic_inc:
+ * @value : a pointer to the integer value to increment.
+ *
+ * Increments the integer at @value by one in an
+ * atomic fashion.  The advantage over using
+ * g_atomic_int_inc() is that calls to this
+ * function can be inlined.
+ *
+ * Since : 0.3.1
+ **/
 G_INLINE_FUNC void
 exo_atomic_inc (gint *value)
 {
@@ -54,6 +65,20 @@ exo_atomic_inc (gint *value)
 #endif
 }
 
+/**
+ * exo_atomic_dec:
+ * @value : a pointer to the integer value to decrement.
+ *
+ * Decrements the integer at @value by one in an atomic
+ * fashion and returns %TRUE if the @value dropped to
+ * zero by this operation, else %FALSE. The advantage
+ * over using g_atomic_int_dec() is that calls to this
+ * function can be inlined.
+ *
+ * Returns: %TRUE if @value dropped to zero, else %FALSE.
+ *
+ * Since : 0.3.1
+ **/
 G_INLINE_FUNC gboolean
 exo_atomic_dec (gint *value)
 {

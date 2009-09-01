@@ -41,9 +41,98 @@
 #include <gdk/gdkx.h>
 #endif
 
+/**
+ * SECTION: exo-xsession-client
+ * @title: ExoXsessionClient
+ * @short_description: Lightweight session management support
+ * @include: exo/exo.h
+ *
+ * This module provides application developers with lightweight
+ * session management functions, based on the X11R5 session management
+ * protocol. The X11R5 session management protocol is very limited in
+ * its functionality and flexibility compared to the newer X11R6
+ * session management protocol (XSMP), but - on the other hand - offers several
+ * advantages for applications that do not need the complicated features
+ * of the XSMP. Most importantly, the setup is much easier and
+ * faster than with XSMP, because no special actions must be taken.
+ *
+ * So, in case your application is simple in its session management
+ * requirements, e.g. it only needs to tell the session manager
+ * its restart command, you may want to use the #ExoXsessionClient
+ * instead of a full featured XSMP client.
+ *
+ * Lets say, for example, you are developing a text editor, which
+ * should provide basic session management support, limited to
+ * proper restarting all editor windows that where left open
+ * when you logged off the X session. In case the user was editing
+ * a file when logging off, the same file should be opened in the
+ * window on next startup.
+ *
+ * <example>
+ * <title>Texteditor with <structname>ExoXsessionClient</structname></title>
+ * <programlisting>
+ * static gchar *open_file_name = NULL;
+ *
+ * static void
+ * save_yourself (ExoXsessionClient *client)
+ * {
+ *   gchar *argv[2];
+ *
+ *   if (open_file_name != NULL)
+ *     {
+ *       argv[0] = "myeditor";
+ *       argv[1] = open_file_name;
+ *
+ *       exo_xsession_client_set_restart_command (client, argv, 2);
+ *     }
+ *   else
+ *     {
+ *       argv[0] = "myeditor";
+ *
+ *       exo_xsession_client_set_restart_command (client, argv, 1);
+ *     }
+ * }
+ *
+ * // ...
+ *
+ * int
+ * main (int argc, char **argv)
+ * {
+ *   ExoXsessionClient *client;
+ *   GdkDisplay        *display;
+ *   GdkWindow         *leader;
+ *   GtkWidget         *window;
+ *
+ *   gtk_init (&amp;argc, &amp;argv);
+ *
+ *   if (argc > 1)
+ *     open_file_name = argv[1];
+ *
+ *   // create the main window
+ *   window = create_window ();
+ *
+ *   // setup the session client
+ *   display = gtk_widget_get_display (window);
+ *   leader = gdk_display_get_default_group (display);
+ *   client = exo_xsession_client_new_with_group (leader);
+ *   g_signal_connect (G_OBJECT (client), "save-yourself",
+ *                     G_CALLBACK (save_yourself), NULL);
+ *
+ *   // ...
+ * }
+ * </programlisting>
+ * </example>
+ *
+ * This example demonstrates the basic handling of #ExoXsessionClient. It is
+ * oversimplified, but we hope you get the point. The rule of thumb is, use
+ * #ExoXsessionClient if you can store all session data in the restart command,
+ * else use a full-featured XSMP client.
+ **/
 
 
-#define EXO_XSESSION_CLIENT_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_XSESSION_CLIENT, ExoXsessionClientPrivate))
+
+#define EXO_XSESSION_CLIENT_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_XSESSION_CLIENT, ExoXsessionClientPrivate))
 
 
 
@@ -264,7 +353,7 @@ exo_xsession_client_filter (GdkXEvent *xevent,
  * Creates a new #ExoXsessionClient and associates it
  * with the group, which is lead by @leader.
  *
- * Return value: A newly allocated #ExoXsessionClient.
+ * Returns: A newly allocated #ExoXsessionClient.
  **/
 ExoXsessionClient*
 exo_xsession_client_new_with_group (GdkWindow *leader)
@@ -286,9 +375,8 @@ exo_xsession_client_new_with_group (GdkWindow *leader)
  * the @client is associated or %NULL if @client is not
  * associated with any group.
  *
- * Return value: The client leader window of the group
- *               with which @client is associated or
- *               %NULL.
+ * Returns: The client leader window of the group with which @client is
+ *          associated or %NULL.
  **/
 GdkWindow*
 exo_xsession_client_get_group (ExoXsessionClient *client)
@@ -402,7 +490,7 @@ exo_xsession_client_set_group (ExoXsessionClient *client,
  * See exo_xsession_client_set_restart_command() for further
  * explanation.
  *
- * Return value: %TRUE on success, else %FALSE.
+ * Returns: %TRUE on success, else %FALSE.
  **/
 gboolean
 exo_xsession_client_get_restart_command (ExoXsessionClient  *client,

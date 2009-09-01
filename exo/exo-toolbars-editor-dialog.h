@@ -53,6 +53,12 @@ struct _ExoToolbarsEditorDialogClass
   void  (*reserved4)  (void);
 };
 
+/**
+ * ExoToolbarsEditorDialog:
+ *
+ * The #ExoToolbarsEditorDialog struct contains only private fields and
+ * should not be directly accessed.
+ **/
 struct _ExoToolbarsEditorDialog
 {
   GtkDialog                       __parent__;

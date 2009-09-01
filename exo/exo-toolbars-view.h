@@ -58,6 +58,12 @@ struct _ExoToolbarsViewClass
   void  (*reserved4)      (void);
 };
 
+/**
+ * ExoToolbarsView:
+ *
+ * The #ExoToolbarsView struct contains only private fields and should
+ * not be directly accessed.
+ **/
 struct _ExoToolbarsView
 {
   GtkVBox __parent__;

@@ -146,7 +146,7 @@ style_set (GtkWidget *image)
  * Creates a new #GdkPixbuf with the picture
  * of a vertical separator.
  *
- * Return value : A #GdkPixbuf.
+ * Returns: A #GdkPixbuf.
  **/
 GdkPixbuf*
 _exo_toolbars_new_separator_pixbuf (void)
@@ -169,7 +169,7 @@ _exo_toolbars_new_separator_pixbuf (void)
  * Creates a #GtkImage with the picture of a
  * vertical separator in it.
  *
- * Return value : A #GtkImage.
+ * Returns: A #GtkImage.
  **/
 GtkWidget*
 _exo_toolbars_new_separator_image (void)
@@ -191,8 +191,7 @@ _exo_toolbars_new_separator_image (void)
  * @ui_manager  : A #GtkUIManager.
  * @name        : The name of an action in @ui_manager.
  *
- * Return value : The last #GtkAction named @name in @ui_manager
- *                or %NULL.
+ * Returns: The last #GtkAction named @name in @ui_manager or %NULL.
  **/
 GtkAction*
 _exo_toolbars_find_action (GtkUIManager *ui_manager,

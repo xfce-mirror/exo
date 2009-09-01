@@ -58,6 +58,12 @@ struct _ExoJobClass
                               gdouble      percent);
 };
 
+/**
+ * ExoJob:
+ *
+ * The #ExoJob struct contains only private fields and should not be
+ * directly accessed.
+ **/
 struct _ExoJob
 {
   GObject __parent__;

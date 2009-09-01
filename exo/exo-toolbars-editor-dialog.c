@@ -40,9 +40,20 @@
 #include <exo/exo-toolbars-editor-dialog.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-toolbars-editor-dialog
+ * @title: ExoToolbarsEditorDialog
+ * @short_description: Dialog to edit toolbars
+ * @include: exo/exo.h
+ * @see_also: #ExoToolbarsEditor
+ *
+ * Provides an easy-to-use wrapper for the #ExoToolbarsEditor widget.
+ **/
 
 
-#define EXO_TOOLBARS_EDITOR_DIALOG_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_TOOLBARS_EDITOR_DIALOG, ExoToolbarsEditorDialogPrivate))
+
+#define EXO_TOOLBARS_EDITOR_DIALOG_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_TOOLBARS_EDITOR_DIALOG, ExoToolbarsEditorDialogPrivate))
 
 
 
@@ -143,7 +154,7 @@ exo_toolbars_editor_dialog_add_toolbar (ExoToolbarsEditorDialog *dialog)
  * Creates a new #ExoToolbarsEditorDialog that is associated with
  * @ui_manager and @model.
  *
- * Return value: A new #ExoToolbarsEditorDialog.
+ * Returns: A new #ExoToolbarsEditorDialog.
  **/
 GtkWidget*
 exo_toolbars_editor_dialog_new_with_model (GtkUIManager     *ui_manager,

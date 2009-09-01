@@ -28,11 +28,29 @@
 #include <exo/exo-private.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-cell-renderer-ellipsized-text
+ * @title: ExoCellRendererEllipsizedText
+ * @short_description: Renders text in a cell
+ * @include: exo/exo.h
+ * @see_also: <ulink url="http://library.gnome.org/devel/gtk/stable/GtkCellRendererText.html"
+ *            type="http">GtkCellRendererText</ulink>,
+ *            <link linkend="ExoIconView">ExoIconView</link>
+ *
+ * The #ExoCellRendererEllipsizedText renders a given text in its cell,
+ * using the font, color and style information provided by its properties
+ * (which are actually inherited from #GtkCellRendererText).
+ *
+ * Despite the rather confusing name of this class, it is mainly useful
+ * to render text in an #ExoIconView (or a #GtkIconView), which require
+ * the renderers to actually draw the state indicators. State indicators
+ * will be drawn only if the
+ * <link linkend="ExoCellRendererEllipsizedText--follow-state">follow-state</link>
+ * property is %TRUE.
+ **/
 
-
-#define EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT, ExoCellRendererEllipsizedTextPrivate))
-
-
+#define EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT, ExoCellRendererEllipsizedTextPrivate))
 
 /* Property identifiers */
 enum
@@ -344,7 +362,7 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer     *renderer,
  * which can be set globally via g_object_set(). Also, with #GtkCellLayout and #GtkTreeViewColumn, you
  * can bind a property to a value in a #GtkTreeModel.
  *
- * Return value: the newly allocated #ExoCellRendererEllipsizedText.
+ * Returns: the newly allocated #ExoCellRendererEllipsizedText.
  **/
 GtkCellRenderer*
 exo_cell_renderer_ellipsized_text_new (void)

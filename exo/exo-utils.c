@@ -28,6 +28,19 @@
 #include <exo/exo-utils.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-utils
+ * @title: Miscellaneous Utility Functions
+ * @short_description: Various utility functions
+ * @include: exo/exo.h
+ * @see_also: <ulink type="http" url="http://library.gnome.org/devel/glib/stable/glib-Atomic-Operations.html">
+ *            GLib Atomic Operations</ulink>
+ *
+ * This module contains various utility functions that extend the basic
+ * utility functions provided by the <ulink type="http"
+ * url="http://library.gnome.org/devel/glib/stable/">GLib</ulink> library.
+ **/
+
 
 
 /**
@@ -57,7 +70,7 @@ exo_noop (void)
  * returns %1, but don't want to perform any other
  * actions.
  *
- * Return value: the integer value %1.
+ * Returns: the integer value %1.
  *
  * Since: 0.3.1
  **/
@@ -78,7 +91,7 @@ exo_noop_one (void)
  * returns %0, but don't want to perform any other
  * actions.
  *
- * Return value: the integer value %0.
+ * Returns: the integer value %0.
  *
  * Since: 0.3.1
  **/
@@ -99,7 +112,7 @@ exo_noop_zero (void)
  * returns %NULL, but don't want to perform any
  * other actions.
  *
- * Return value: a %NULL pointer.
+ * Returns: a %NULL pointer.
  *
  * Since: 0.3.1
  **/
@@ -120,7 +133,7 @@ exo_noop_null (void)
  * returns %TRUE, but don't want to perform any
  * other actions.
  *
- * Return value: the boolean value %TRUE.
+ * Returns: the boolean value %TRUE.
  *
  * Since: 0.3.1
  **/
@@ -141,7 +154,7 @@ exo_noop_true (void)
  * returns %FALSE, but don't want to perform any
  * other actions.
  *
- * Return value: the boolean value %FALSE.
+ * Returns: the boolean value %FALSE.
  *
  * Since: 0.3.1
  **/

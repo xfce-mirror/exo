@@ -43,6 +43,15 @@ typedef struct _ExoToolbarsModelPrivate ExoToolbarsModelPrivate;
 typedef struct _ExoToolbarsModelClass   ExoToolbarsModelClass;
 typedef struct _ExoToolbarsModel        ExoToolbarsModel;
 
+/**
+ * ExoToolbarsModelFlags:
+ * @EXO_TOOLBARS_MODEL_NOT_REMOVABLE     : Not possible to remove items from the model.
+ * @EXO_TOOLBARS_MODEL_ACCEPT_ITEMS_ONLY : Only accept new item, dragging items around
+ *                                         is disabled.
+ * @EXO_TOOLBARS_MODEL_OVERRIDE_STYLE    : If set, the #ExoToolbarsModel
+ *                                         accepts a custom #GtkToolbarStyle. See
+ *                                         exo_toolbars_model_set_style().
+ */
 typedef enum
 {
   EXO_TOOLBARS_MODEL_NOT_REMOVABLE      = 1 << 0,
@@ -50,6 +59,12 @@ typedef enum
   EXO_TOOLBARS_MODEL_OVERRIDE_STYLE     = 1 << 2,
 } ExoToolbarsModelFlags;
 
+
+/**
+ * EXO_TOOLBARS_ITEM_TYPE:
+ *
+ * The string used for drag-and-drop in the toolbars editor/model.
+ **/
 #define EXO_TOOLBARS_ITEM_TYPE "application/x-exo-toolbars-item"
 
 struct _ExoToolbarsModelClass
@@ -96,6 +111,12 @@ struct _ExoToolbarsModelClass
   void   (*reserved8)  (void);
 };
 
+/**
+ * ExoToolbarsModel:
+ *
+ * The #ExoToolbarsModel struct contains only private fields and should
+ * not be directly accessed.
+ **/
 struct _ExoToolbarsModel
 {
   GObject                  __parent__;

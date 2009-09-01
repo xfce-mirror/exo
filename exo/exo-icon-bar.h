@@ -42,6 +42,11 @@ typedef struct _ExoIconBarPrivate ExoIconBarPrivate;
 typedef struct _ExoIconBarClass   ExoIconBarClass;
 typedef struct _ExoIconBar        ExoIconBar;
 
+/**
+ * ExoIconBarClass:
+ * @set_scroll_adjustments : Used internally to make the ExoIconBar scrollable.
+ * @selection_changed      : This signal is emitted whenever the currently selected icon changes.
+ **/
 struct _ExoIconBarClass
 {
   GtkContainerClass __parent__;
@@ -52,12 +57,19 @@ struct _ExoIconBarClass
                                     GtkAdjustment *vadjustment);
   void  (*selection_changed)       (ExoIconBar *icon_bar);
 
+  /*< private >*/
   void  (*reserved1) (void);
   void  (*reserved2) (void);
   void  (*reserved3) (void);
   void  (*reserved4) (void);
 };
 
+/**
+ * ExoIconBar:
+ *
+ * The #ExoIconBar struct contains only private fields and should not
+ * be directly accessed.
+ **/
 struct _ExoIconBar
 {
   GtkContainer       __parent__;

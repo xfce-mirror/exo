@@ -33,6 +33,21 @@
 #include <exo/exo-thumbnail-preview.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-gtk-extensions
+ * @title: Extensions to Gtk+
+ * @short_description: Miscelleanous extensions to the Gtk+ library
+ * @include: exo/exo.h
+ *
+ * Various additional functions to the core API provided by the Gtk+ library.
+ *
+ * For example, exo_gtk_file_chooser_add_thumbnail_preview() is a
+ * convenience method to add a thumbnail based preview widget to a
+ * #GtkFileChooser, which will display a preview of the selected file if
+ * either a thumbnail is available or a thumbnail could be generated using
+ * the GdkPixbuf library.
+ **/
+
 
 
 static gboolean
@@ -156,8 +171,11 @@ exo_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
  * <informalexample><programlisting>
  * static void show_about_dialog (void)
  * {
+ * #if !GTK_CHECK_VERSION (2, 18, 0)
  *   gtk_about_dialog_set_email_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
  *   gtk_about_dialog_set_url_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
+ * #endif
+ *
  *   gtk_show_about_dialog (.....);
  * }
  * </programlisting></informalexample>

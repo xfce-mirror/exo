@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2004 os-cillation e.K.
  * Copyright (c) 2004 Victor Porton (http://ex-code.com/~porton/)
@@ -32,11 +31,23 @@
 
 G_BEGIN_DECLS
 
-typedef struct _ExoBinding        ExoBinding;
-typedef struct _ExoMutualBinding  ExoMutualBinding;
+typedef struct _ExoBinding       ExoBinding;
+typedef struct _ExoMutualBinding ExoMutualBinding;
 
-
-
+/**
+ * ExoBindingTransform:
+ * @src_value : Value to transform.
+ * @dst_value : Value to store the result of the transformation into.
+ * @user_data : User data supplied at binding creation.
+ *
+ * Function type used for binding transformation functions.
+ *
+ * Accomplished transformation from @src_value to @dst_value.
+ * @src_value and @dst_value are already initialized before
+ * this function gets called.
+ *
+ * Returns: %FALSE if transformation failed, else %TRUE.
+ **/
 typedef gboolean  (*ExoBindingTransform)  (const GValue *src_value,
                                            GValue       *dst_value,
                                            gpointer      user_data);

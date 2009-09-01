@@ -72,6 +72,19 @@
 #include <exo/exo-string.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-mount-point
+ * @title: Mount Points
+ * @short_description: Functions to query active and configured mount points
+ * @include: exo/exo.h
+ *
+ * This module provides functions to query active and configured mount
+ * points from the system. This is commonly required in file and volume
+ * management, and hence it was added to the library. For example,
+ * <command>exo-mount</command>, <command>Thunar</command> and
+ * <command>thunar-volman</command> make use of this.
+ **/
+
 
 
 /* define _PATH_FSTAB if undefined */
@@ -458,7 +471,7 @@ exo_mount_point_get_type (void)
  * point using exo_mount_point_free() when no longer
  * needed.
  *
- * Return value: a copy of the specified @mount_point.
+ * Returns: a copy of the specified @mount_point.
  *
  * Since: 0.3.1.13
  **/
@@ -534,7 +547,7 @@ exo_mount_point_free (ExoMountPoint *mount_point)
  * </programlisting></informalexample>
  * when no longer needed.
  *
- * Return value: the list of matching #ExoMountPoint<!---->s.
+ * Returns: the list of matching #ExoMountPoint<!---->s.
  *
  * Since: 0.3.1.13
  **/

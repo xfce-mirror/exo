@@ -44,9 +44,23 @@
 #include <exo/exo-private.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-icon-chooser-dialog
+ * @title: ExoIconChooserDialog
+ * @short_description: Dialog to select icons
+ * @include: exo/exo.h
+ * @see_also: <ulink type="http" href="http://library.gnome.org/devel/gtk/stable/GtkIconTheme.html">
+ *            GtkIconTheme</ulink>
+ *
+ * The #ExoIconChooserDialog class provides an easy to use dialog to ask
+ * the user to select either a named icon from the selected icon theme,
+ * or an image file from the local file system.
+ **/
 
 
-#define EXO_ICON_CHOOSER_DIALOG_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_ICON_CHOOSER_DIALOG, ExoIconChooserDialogPrivate))
+
+#define EXO_ICON_CHOOSER_DIALOG_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_ICON_CHOOSER_DIALOG, ExoIconChooserDialogPrivate))
 
 
 
@@ -462,7 +476,7 @@ exo_icon_chooser_dialog_selection_changed (ExoIconChooserDialog *icon_chooser_di
  *
  * Creates a new #ExoIconChooserDialog. This function is analogous to gtk_dialog_new_with_buttons().
  *
- * Return value: a new #ExoIconChooserDialog.
+ * Returns: a new #ExoIconChooserDialog.
  *
  * Since: 0.3.1.9
  **/
@@ -511,7 +525,7 @@ exo_icon_chooser_dialog_new (const gchar *title,
  *
  * The caller is responsible to free the returned string using g_free() when no longer needed.
  *
- * Return value: the currently selected icon for @icon_chooser_dialog or %NULL if no icon is selected.
+ * Returns: the currently selected icon for @icon_chooser_dialog or %NULL if no icon is selected.
  *
  * Since: 0.3.1.9
  **/
@@ -568,8 +582,8 @@ exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_dialog)
  * Preselects the specified @icon in the @icon_chooser_dialog, and returns %TRUE if the
  * @icon was successfully selected.
  *
- * Return value: %TRUE if the @icon was successfully preselected in the @icon_chooser_dialog,
- *               %FALSE otherwise.
+ * Returns: %TRUE if the @icon was successfully preselected in the @icon_chooser_dialog,
+ *          %FALSE otherwise.
  *
  * Since: 0.3.1.9
  **/

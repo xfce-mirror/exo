@@ -27,6 +27,18 @@
 #include <exo/exo-gobject-extensions.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-gobject-extensions
+ * @title: Extensions to GObject
+ * @short_description: Miscelleanous extensions to the gdk-pixbuf library
+ * @include: exo/exo.h
+ * @see_also: <ulink url="http://library.gnome.org/devel/gobject/stable/">
+ *            GObject Reference Manual</ulink>
+ *
+ * This facility includes several functions to extend the basic
+ * functionality provided by the GObject library.
+ **/
+
 
 
 /**
@@ -40,7 +52,7 @@
  * This function is mostly useful for binding boolean properties
  * with inversing.
  *
- * Return value: %TRUE on successful transformation.
+ * Returns: %TRUE on successful transformation.
  **/
 gboolean
 exo_g_value_transform_negate (const GValue  *src_value,

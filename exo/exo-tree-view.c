@@ -29,9 +29,23 @@
 #include <exo/exo-utils.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-tree-view
+ * @title: ExoTreeView
+ * @short_description: An improved version of #GtkTreeView
+ * @include: exo/exo.h
+ *
+ * The #ExoTreeView class derives from #GtkTreeView and extends it with
+ * the ability to activate rows using single button clicks instead of
+ * the default double button clicks. It also works around a few shortcomings
+ * of #GtkTreeView, i.e. #ExoTreeView allows the user to drag around multiple
+ * selected rows.
+ **/
 
 
-#define EXO_TREE_VIEW_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_TREE_VIEW, ExoTreeViewPrivate))
+
+#define EXO_TREE_VIEW_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_TREE_VIEW, ExoTreeViewPrivate))
 
 
 
@@ -738,7 +752,7 @@ exo_tree_view_single_click_timeout_destroy (gpointer user_data)
  *
  * Allocates a new #ExoTreeView instance.
  *
- * Return value: the newly allocated #ExoTreeView.
+ * Returns: the newly allocated #ExoTreeView.
  *
  * Since: 0.3.1.3
  **/
@@ -756,7 +770,7 @@ exo_tree_view_new (void)
  *
  * Returns %TRUE if @tree_view is in single-click mode, else %FALSE.
  *
- * Return value: whether @tree_view is in single-click mode.
+ * Returns: whether @tree_view is in single-click mode.
  *
  * Since: 0.3.1.3
  **/
@@ -803,7 +817,7 @@ exo_tree_view_set_single_click (ExoTreeView *tree_view,
  * in single click mode. A value of %0 means that the behavior
  * is disabled and the user must alter the selection manually.
  *
- * Return value: the single click autoselect timeout or %0 if
+ * Returns: the single click autoselect timeout or %0 if
  *               the behavior is disabled.
  *
  * Since: 0.3.1.5

@@ -535,7 +535,7 @@ exo_icon_chooser_model_item_free (ExoIconChooserModelItem *item)
  * caller is responsible to free the returned object using g_object_unref()
  * when no longer needed.
  *
- * Return value: an #ExoIconChooserModel for the @widget.
+ * Returns: an #ExoIconChooserModel for the @widget.
  *
  * Since: 0.3.1.9
  **/
@@ -563,7 +563,7 @@ _exo_icon_chooser_model_get_for_widget (GtkWidget *widget)
  * caller is responsible to free the returned object using g_object_unref()
  * when no longer needed.
  *
- * Return value: an #ExoIconChooserModel for the @icon_theme.
+ * Returns: an #ExoIconChooserModel for the @icon_theme.
  *
  * Since: 0.3.1.9
  **/
@@ -607,7 +607,7 @@ _exo_icon_chooser_model_get_for_icon_theme (GtkIconTheme *icon_theme)
  * Looks up the #GtkTreeIter for the @icon_name in the @model and returns %TRUE if the
  * @icon_name was found, %FALSE otherwise.
  *
- * Return value: %TRUE if the iterator for @icon_name was found, %FALSE otherwise.
+ * Returns: %TRUE if the iterator for @icon_name was found, %FALSE otherwise.
  *
  * Since: 0.3.1.9
  **/

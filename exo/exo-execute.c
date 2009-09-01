@@ -25,6 +25,25 @@
 #include <exo/exo-execute.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-execute
+ * @title: Executing Applications
+ * @short_description: Execute preferred applications
+ * @include: exo/exo.h
+ * @see_also: gtk_show_uri()
+ *
+ * This module provides functions to execute certain kinds of applications,
+ * for which users can select their preferred ones. For example, whenever
+ * you need to run a command in a terminal emulator from within your
+ * application you should use exo_execute_terminal_shell() or
+ * exo_execute_terminal_shell_on_screen() to make sure you run the user's
+ * preferred terminal emulator.
+ * On the other hand if you need to display an URL (i.e. you want to point
+ * the user to the website of your application), you should use gtk_show_uri()
+ * instead, as it will try to automatically determine the appropriate
+ * viewer for a given URI.
+ **/
+
 
 
 /**
@@ -47,7 +66,7 @@
  * that if the execution fails at a later stage, the library will popup
  * an error dialog to inform the user that the execution failed.
  *
- * Return value: %TRUE on success, else %FALSE.
+ * Returns: %TRUE on success, else %FALSE.
  *
  * Since: 0.3.1.3
  **/
@@ -93,7 +112,7 @@ exo_execute_preferred_application (const gchar *category,
  * that if the execution fails at a later stage, the library will popup
  * an error dialog to inform the user that the execution failed.
  *
- * Return value: %TRUE on success, else %FALSE.
+ * Returns: %TRUE on success, else %FALSE.
  *
  * Since: 0.3.1.3
  **/
@@ -147,7 +166,7 @@ exo_execute_preferred_application_on_screen (const gchar *category,
  * fails at a later stage, the library will popup an error dialog to
  * inform the user that the execution failed.
  *
- * Return value: %TRUE on success, else %FALSE.
+ * Returns: %TRUE on success, else %FALSE.
  *
  * Since: 0.3.1.3
  **/
@@ -189,7 +208,7 @@ exo_execute_terminal_shell (const gchar *command_line,
  * fails at a later stage, the library will popup an error dialog to
  * inform the user that the execution failed.
  *
- * Return value: %TRUE on success, else %FALSE.
+ * Returns: %TRUE on success, else %FALSE.
  *
  * Since: 0.3.1.3
  **/

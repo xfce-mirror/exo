@@ -68,7 +68,7 @@ typedef void (*ExoIconViewForeachFunc) (ExoIconView *icon_view,
  * entered by the user. Note the return value is reversed from what you would normally
  * expect, though it has some similarity to strcmp() returning 0 for equal strings.
  *
- * Return value: %FALSE if the row matches, %TRUE otherwise.
+ * Returns: %FALSE if the row matches, %TRUE otherwise.
  **/
 typedef gboolean (*ExoIconViewSearchEqualFunc) (GtkTreeModel *model,
                                                 gint          column,

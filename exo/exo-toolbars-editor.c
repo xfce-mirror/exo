@@ -41,9 +41,25 @@
 #include <exo/exo-toolbars-private.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-toolbars-editor
+ * @title: ExoToolbarsEditor
+ * @short_description: Widget to edit toolbars
+ * @include: exo/exo.h
+ * @see_also: #ExoToolbarsEditorDialog
+ *
+ * #ExoToolbarsEditor is a widget that allows the user to edit toolbars
+ * used within your application by simply dragging and dropping toolbar
+ * items between the editor widget and the toolbar widgets.
+ *
+ * Most applications should simply use the #ExoToolbarsEditorDialog
+ * class, which includes an #ExoToolbarsEditor as main widget.
+ **/
 
 
-#define EXO_TOOLBARS_EDITOR_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_TOOLBARS_EDITOR, ExoToolbarsEditorPrivate))
+
+#define EXO_TOOLBARS_EDITOR_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_TOOLBARS_EDITOR, ExoToolbarsEditorPrivate))
 
 
 
@@ -545,7 +561,7 @@ exo_toolbars_editor_update (ExoToolbarsEditor *editor)
  * You should probably use exo_toolbars_editor_new_with_model()
  * instead.
  *
- * Return value: A new #ExoToolbarsEditor.
+ * Returns: A new #ExoToolbarsEditor.
  **/
 GtkWidget*
 exo_toolbars_editor_new (GtkUIManager *ui_manager)
@@ -570,7 +586,7 @@ exo_toolbars_editor_new (GtkUIManager *ui_manager)
  * #ExoToolbarsModel here or the function will
  * fail.
  *
- * Return value: A new #ExoToolbarsEditor.
+ * Returns: A new #ExoToolbarsEditor.
  **/
 GtkWidget*
 exo_toolbars_editor_new_with_model (GtkUIManager     *ui_manager,
@@ -595,7 +611,7 @@ exo_toolbars_editor_new_with_model (GtkUIManager     *ui_manager,
  * with @editor or %NULL if no #ExoToolbarsModel is
  * currently associated with @editor.
  *
- * Return value: An #ExoToolbarsModel or %NULL.
+ * Returns: An #ExoToolbarsModel or %NULL.
  **/
 ExoToolbarsModel*
 exo_toolbars_editor_get_model (ExoToolbarsEditor *editor)
@@ -668,7 +684,7 @@ exo_toolbars_editor_set_model (ExoToolbarsEditor *editor,
  * @editor or %NULL if no user interface
  * manager is associated with @editor currently.
  *
- * Return value: A #GtkUIManager or %NULL.
+ * Returns: A #GtkUIManager or %NULL.
  **/
 GtkUIManager*
 exo_toolbars_editor_get_ui_manager (ExoToolbarsEditor *editor)

@@ -44,6 +44,18 @@ typedef enum /*< flags >*/
 
 #define EXO_TYPE_MOUNT_POINT (exo_mount_point_get_type ())
 
+/**
+ * ExoMountPoint:
+ * @flags  : see #ExoMountPointFlags.
+ * @device : the device file path.
+ * @folder : the folder where the device is mounted (or may be mounted).
+ * @fstype : the type of the file system used for the device.
+ *
+ * Structure to represent a mount point, which can be either an active
+ * mount point, queried from the kernel's internal mount table, or a
+ * configured mount point queried from the file system table (usually
+ * <filename>/etc/fstab</filename> or <filename>/etc/vfstab</filename>).
+ **/
 typedef struct _ExoMountPoint ExoMountPoint;
 struct _ExoMountPoint
 {
@@ -101,7 +113,7 @@ GSList        *exo_mount_point_list_matched (ExoMountPointMatchMask mask,
  * </programlisting></informalexample>
  * when no longer needed.
  *
- * Return value: the list of currently active mount points.
+ * Returns: the list of currently active mount points.
  *
  * Since: 0.3.1.13
  **/
@@ -122,7 +134,7 @@ GSList        *exo_mount_point_list_matched (ExoMountPointMatchMask mask,
  * </programlisting></informalexample>
  * when no longer needed.
  *
- * Return value: the list of configured mount points.
+ * Returns: the list of configured mount points.
  *
  * Since: 0.3.1.13
  **/

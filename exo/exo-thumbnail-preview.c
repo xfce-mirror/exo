@@ -165,7 +165,7 @@ exo_thumbnail_preview_style_set (GtkWidget           *ebox,
  *
  * Allocates a new #ExoThumbnailPreview instance.
  *
- * Return value: the newly allocated #ExoThumbnailPreview.
+ * Returns: the newly allocated #ExoThumbnailPreview.
  **/
 GtkWidget*
 _exo_thumbnail_preview_new (void)

@@ -29,9 +29,23 @@
 #include <exo/exo-wrap-table.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-wrap-table
+ * @title: ExoWrapTable
+ * @short_description: A container widget with automatic child layouting
+ * @include: exo/exo.h
+ *
+ * The #ExoWrapTable class layouts its children automatically
+ * according to the available width allocated to the container
+ * class.
+ *
+ * Since: 0.3.1
+ **/
 
 
-#define EXO_WRAP_TABLE_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_WRAP_TABLE, ExoWrapTablePrivate))
+
+#define EXO_WRAP_TABLE_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_WRAP_TABLE, ExoWrapTablePrivate))
 
 
 
@@ -552,7 +566,7 @@ exo_wrap_table_get_num_fitting (gint available,
  *
  * Allocates a new #ExoWrapTable.
  *
- * Return value: the newly allocated #ExoWrapTable.
+ * Returns: the newly allocated #ExoWrapTable.
  *
  * Since: 0.3.1
  **/
@@ -573,8 +587,7 @@ exo_wrap_table_new (gboolean homogeneous)
  * Returns the amount of space between consecutive
  * columns in @table.
  *
- * Return value: the amount of space between
- *               consecutive columns.
+ * Returns: the amount of space between consecutive columns.
  *
  * Since: 0.3.1
  **/
@@ -620,8 +633,7 @@ exo_wrap_table_set_col_spacing (ExoWrapTable *table,
  * Returns the amount of space between consecutive
  * rows in @table.
  *
- * Return value: the amount of space between
- *               consecutive rows in @table.
+ * Returns: the amount of space between consecutive rows in @table.
  *
  * Since: 0.3.1
  **/
@@ -667,8 +679,7 @@ exo_wrap_table_set_row_spacing (ExoWrapTable *table,
  * Returns whether the table cells are all constrained
  * to the same width and height.
  *
- * Return value: %TRUE if the cells are all constrained
- *               to the same size.
+ * Returns: %TRUE if the cells are all constrained to the same size.
  *
  * Since: 0.3.1
  **/

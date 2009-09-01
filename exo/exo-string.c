@@ -37,6 +37,16 @@
 #include <exo/exo-string.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-string
+ * @title: String Utility Functions
+ * @short_description: Various string-related functions
+ * @include: exo/exo.h
+ *
+ * This section describes a number of utility functions for
+ * manipulating strings.
+ **/
+
 
 
 /**
@@ -46,9 +56,8 @@
  * Returns a copy of @text with all mnemonic underscores
  * stripped off.
  *
- * Return value: A copy of @text without underscores. The
- *               returned string must be freed when no
- *               longer required.
+ * Returns: A copy of @text without underscores. The returned string
+ *          must be freed when no longer required.
  **/
 gchar*
 exo_str_elide_underscores (const gchar *text)
@@ -90,7 +99,7 @@ exo_str_elide_underscores (const gchar *text)
  *
  * You should always prefer this function over strcmp().
  *
- * Return value: %TRUE if @a equals @b, else %FALSE.
+ * Returns: %TRUE if @a equals @b, else %FALSE.
  **/
 gboolean
 exo_str_is_equal (const gchar *a,
@@ -124,10 +133,9 @@ exo_str_is_equal (const gchar *a,
  * same size. If @replacement is %NULL, the pattern will be
  * removed from the string.
  *
- * Return value: a newly allocated copy of @str where all
- *               occurances of @pattern are replaced with
- *               @replacement. Or %NULL if @str and/or @pattern
- *               is %NULL.
+ * Returns: a newly allocated copy of @str where all occurances of
+ *          @pattern are replaced with @replacement. Or %NULL if
+ *          @str and/or @pattern is %NULL.
  *
  * Since: 0.3.1.1
  **/
@@ -197,7 +205,7 @@ exo_str_replace (const gchar *str,
  * warning, so it's easy to notice use of the extensions without
  * testing with multiple versions of the library.
  *
- * Return value: a newly allocated string containing the formatted date/time.
+ * Returns: a newly allocated string containing the formatted date/time.
  *
  * Since: 0.3.3
  **/
@@ -366,9 +374,8 @@ exo_strdup_strftime (const gchar     *format,
  * of @strv. If called on a %NULL value or @num is 0, exo_strndupv()
  * simply returns %NULL.
  *
- * Return value: A new NULL-terminated array of strings or %NULL.
- *               Should be freed using g_strfreev() when no
- *               longer needed.
+ * Returns: A new NULL-terminated array of strings or %NULL.
+ *          Should be freed using g_strfreev() when no longer needed.
  **/
 gchar**
 exo_strndupv (gchar **strv,

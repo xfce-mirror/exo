@@ -56,6 +56,12 @@ struct _ExoTreeViewClass
   void (*reserved8) (void);
 };
 
+/**
+ * ExoTreeView:
+ *
+ * The #ExoIconView struct contains only private fields and should
+ * not be directly accessed.
+ **/
 struct _ExoTreeView
 {
   /*< private >*/

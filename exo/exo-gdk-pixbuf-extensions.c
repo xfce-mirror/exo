@@ -74,6 +74,16 @@
 #define _O_BINARY 0
 #endif
 
+/**
+ * SECTION: exo-gdk-pixbuf-extensions
+ * @title: Extensions to gdk-pixbuf
+ * @short_description: Miscelleanous extensions to the gdk-pixbuf library
+ * @include: exo/exo.h
+ *
+ * This facility includes several functions to extend the basic functionality
+ * provided by the gdk-pixbuf library.
+ **/
+
 
 
 /**
@@ -87,7 +97,7 @@
  * The caller is responsible to free the returned object
  * using g_object_unref() when no longer needed.
  *
- * Return value: the colorized #GdkPixbuf.
+ * Returns: the colorized #GdkPixbuf.
  *
  * Since: 0.3.1.3
  **/
@@ -257,7 +267,7 @@ draw_frame_column (const GdkPixbuf *frame_image,
  *
  * The caller is responsible to free the returned #GdkPixbuf using g_object_unref().
  *
- * Return value: the framed version of @src.
+ * Returns: the framed version of @src.
  *
  * Since: 0.3.1.9
  **/
@@ -334,7 +344,7 @@ exo_gdk_pixbuf_frame (const GdkPixbuf *src,
  * The caller is responsible to free the returned object
  * using g_object_unref() when no longer needed.
  *
- * Return value: a translucent version of @src.
+ * Returns: a translucent version of @src.
  *
  * Since: 0.3.1.3
  **/
@@ -437,7 +447,7 @@ lighten_channel (guchar cur_value)
  * The caller is responsible to free the returned
  * pixbuf using #g_object_unref().
  *
- * Return value: the lightened version of @src.
+ * Returns: the lightened version of @src.
  *
  * Since: 0.3.1.3
  **/
@@ -563,7 +573,7 @@ exo_gdk_pixbuf_spotlight (const GdkPixbuf *src)
  * The caller is responsible to free the returned #GdkPixbuf
  * using g_object_unref() when no longer needed.
  *
- * Return value: the resulting #GdkPixbuf.
+ * Returns: the resulting #GdkPixbuf.
  *
  * Since: 0.3.1.1
  **/
@@ -615,7 +625,7 @@ exo_gdk_pixbuf_scale_down (GdkPixbuf *source,
  * Scales @source to @dest_size while preserving the aspect ratio of
  * @source.
  *
- * Return value: A newly created #GdkPixbuf.
+ * Returns: A newly created #GdkPixbuf.
  **/
 GdkPixbuf*
 exo_gdk_pixbuf_scale_ratio (GdkPixbuf *source,
@@ -713,23 +723,31 @@ size_prepared (GdkPixbufLoader  *loader,
 
 /**
  * exo_gdk_pixbuf_new_from_file_at_max_size:
- * @filename              : name of the file to load, in the GLib file name encoding.
+ * @filename              : name of the file to load, in the GLib file
+ *                          name encoding.
  * @max_width             : the maximum width of the loaded image.
  * @max_height            : the maximum height of the loaded image.
- * @preserve_aspect_ratio : %TRUE to preserve the image's aspect ratio while scaling to fit into @max_width and @max_height.
+ * @preserve_aspect_ratio : %TRUE to preserve the image's aspect ratio
+ *                          while scaling to fit into @max_width and @max_height.
  * @error                 : return location for errors or %NULL.
  *
- * Creates a new #GdkPixbuf by loading an image from the file at @filename. The file format is detected automatically. If %NULL
- * is returned, then @error will be set. Possible errors are in the #GDK_PIXBUF_ERROR and #G_FILE_ERROR domains. If the image
- * dimensions exceed @max_width or @max_height, the image will be scaled down to fit into the dimensions, optionally preserving
- * the image's aspect ratio. The image may still be larger, depending on the loader.
+ * Creates a new #GdkPixbuf by loading an image from the file at
+ * @filename. The file format is detected automatically. If %NULL is
+ * returned, then @error will be set. Possible errors are in the
+ * #GDK_PIXBUF_ERROR and #G_FILE_ERROR domains. If the image dimensions
+ * exceed @max_width or @max_height, the image will be scaled down to
+ * fit into the dimensions, optionally preservingthe image's aspect
+ * ratio. The image may still be larger, depending on the loader.
  *
- * The advantage of using this function over gdk_pixbuf_new_from_file_at_scale() is that images will never be scaled up, which
- * would otherwise result in ugly images.
+ * The advantage of using this function over
+ * gdk_pixbuf_new_from_file_at_scale() is that images will never be
+ * scaled up, whichwould otherwise result in ugly images.
  *
- * Return value: a newly created #GdkPixbuf with a reference count or 1, or %NULL if any of several error conditions occurred:
- *               the file could not be opened, there was no loader for the file's format, there was not enough memory to allocate
- *               the buffer for the image, or the image file contained invalid data.
+ * Returns: a newly created #GdkPixbuf with a reference count or 1, or
+ *          %NULL if any of several error conditions occurred: the file
+ *          could not be opened, there was no loader for the file's format,
+ *          there was not enough memory to allocate the buffer for the
+ *          image, or the image file contained invalid data.
  *
  * Since: 0.3.1.9
  **/

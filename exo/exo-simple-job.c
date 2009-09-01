@@ -40,6 +40,16 @@
 #include <exo/exo-simple-job.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-simple-job
+ * @title: ExoSimpleJob
+ * @short_description: FIXME
+ * @include: exo/exo.h
+ * @see_also:
+ *
+ * FIXME
+ **/
+
 
 
 static void     exo_simple_job_finalize   (GObject           *object);
@@ -53,6 +63,12 @@ struct _ExoSimpleJobClass
   ExoJobClass __parent__;
 };
 
+/**
+ * ExoSimpleJob:
+ *
+ * The #ExoSimpleJob struct contains only private fields and should not be
+ * directly accessed.
+ **/
 struct _ExoSimpleJob
 {
   ExoJob           __parent__;
@@ -158,7 +174,7 @@ exo_simple_job_execute (ExoJob  *job,
  * The caller is responsible to release the returned object using
  * g_object_unref() when no longer needed.
  *
- * Return value: the launched #ExoJob.
+ * Returns: the launched #ExoJob.
  **/
 ExoJob*
 exo_simple_job_launch (ExoSimpleJobFunc func,

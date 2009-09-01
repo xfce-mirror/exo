@@ -50,6 +50,12 @@ struct _ExoCellRendererEllipsizedTextClass
   GtkCellRendererTextClass __parent__;
 };
 
+/**
+ * ExoCellRendererEllipsizedText:
+ *
+ * The #ExoIconCellRendererEllipsizedText
+ * struct contains only private fields and should not be directly accessed.
+ **/
 struct _ExoCellRendererEllipsizedText
 {
   /*< private >*/

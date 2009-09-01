@@ -56,6 +56,12 @@ struct _ExoCellRendererIconClass
   void (*reserved6) (void);
 };
 
+/**
+ * ExoCellRendererIcon:
+ *
+ * The #ExoIconChooserDialog struct contains only private fields and
+ * should not be directly accessed.
+ **/
 struct _ExoCellRendererIcon
 {
   /*< private >*/

@@ -39,9 +39,21 @@
 #include <exo/exo-toolbars-private.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-toolbars-model
+ * @title: ExoToolbarsModel
+ * @short_description: The toolbars backend used by #ExoToolbarsView
+ * @include: exo/exo.h
+ * @see_also: #ExoToolbarsView, #ExoToolbarsEditor, #ExoToolbarsEditorDialog
+ *
+ * The #ExoToolbarsModel class includes the basic functionality to
+ * manage editable toolbars.
+ **/
 
 
-#define EXO_TOOLBARS_MODEL_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_TOOLBARS_MODEL, ExoToolbarsModelPrivate))
+
+#define EXO_TOOLBARS_MODEL_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+    EXO_TYPE_TOOLBARS_MODEL, ExoToolbarsModelPrivate))
 
 
 
@@ -646,7 +658,7 @@ unknown_element:
  * you created an #ExoToolbarsModel to set the list of actions,
  * that should be available from the toolbars.
  *
- * Return value: A newly created #ExoToolbarsModel.
+ * Returns: A newly created #ExoToolbarsModel.
  **/
 ExoToolbarsModel*
 exo_toolbars_model_new (void)
@@ -703,7 +715,7 @@ exo_toolbars_model_set_actions (ExoToolbarsModel      *model,
  *
  * Returns the list of valid actions for @model.
  *
- * Return value: The list of valid actions for @model.
+ * Returns: The list of valid actions for @model.
  **/
 gchar**
 exo_toolbars_model_get_actions (ExoToolbarsModel *model)
@@ -723,8 +735,8 @@ exo_toolbars_model_get_actions (ExoToolbarsModel *model)
  * Parses a file containing a toolbars UI definition and merges it with
  * the current contents of @model.
  *
- * Return value: %TRUE if the data was successfully loaded from the file
- *               specified by @filename, else %FALSE.
+ * Returns: %TRUE if the data was successfully loaded from the file
+ *          specified by @filename, else %FALSE.
  **/
 gboolean
 exo_toolbars_model_load_from_file (ExoToolbarsModel *model,
@@ -782,8 +794,7 @@ exo_toolbars_model_load_from_file (ExoToolbarsModel *model,
  * Stores the UI definition of the contents of @model to the file
  * specified by @filename.
  *
- * Return value: %TRUE if saving was successfully, else %FALSE is
- *               returned.
+ * Returns: %TRUE if saving was successfully, else %FALSE is returned.
  **/
 gboolean
 exo_toolbars_model_save_to_file (ExoToolbarsModel *model,
@@ -875,8 +886,7 @@ exo_toolbars_model_save_to_file (ExoToolbarsModel *model,
  * %EXO_TOOLBARS_MODEL_OVERRIDE_STYLE is set for the
  * toolbar.
  *
- * Return value: The #GtkToolbarStyle associated with
- *               @toolbar_position.
+ * Returns: The #GtkToolbarStyle associated with @toolbar_position.
  **/
 GtkToolbarStyle
 exo_toolbars_model_get_style (ExoToolbarsModel *model,
@@ -967,8 +977,7 @@ exo_toolbars_model_unset_style (ExoToolbarsModel *model,
  * Returns the #ExoToolbarsModelFlags associated with the
  * toolbar at @toolbar_position.
  *
- * Return value: The #ExoToolbarsModelFlags associated
- *               with @toolbar_position.
+ * Returns: The #ExoToolbarsModelFlags associated with @toolbar_position.
  **/
 ExoToolbarsModelFlags
 exo_toolbars_model_get_flags (ExoToolbarsModel *model,
@@ -1018,9 +1027,11 @@ exo_toolbars_model_set_flags (ExoToolbarsModel      *model,
 /**
  * exo_toolbars_model_get_item_type:
  * @model       : An #ExoToolbarsModel.
- * @dnd_type    :
+ * @dnd_type    : FIXME.
  *
- * Return value :
+ * FIXME.
+ *
+ * Returns: FIXME.
  **/
 gchar*
 exo_toolbars_model_get_item_type (ExoToolbarsModel *model,
@@ -1037,10 +1048,12 @@ exo_toolbars_model_get_item_type (ExoToolbarsModel *model,
 /**
  * exo_toolbars_model_get_item_id:
  * @model       : An #ExoToolbarsModel.
- * @type        :
- * @name        :
+ * @type        : FIXME.
+ * @name        : FIXME.
  *
- * Return value :
+ * FIXME.
+ *
+ * Returns: FIXME.
  **/
 gchar*
 exo_toolbars_model_get_item_id (ExoToolbarsModel *model,
@@ -1058,10 +1071,12 @@ exo_toolbars_model_get_item_id (ExoToolbarsModel *model,
 /**
  * exo_toolbars_model_get_item_data:
  * @model       : An #ExoToolbarsModel.
- * @type        :
- * @id          :
+ * @type        : FIXME.
+ * @id          : FIXME.
  *
- * Return value :
+ * FIXME.
+ *
+ * Returns: FIXME.
  **/
 gchar*
 exo_toolbars_model_get_item_data (ExoToolbarsModel *model,
@@ -1088,7 +1103,7 @@ exo_toolbars_model_get_item_data (ExoToolbarsModel *model,
  * where @id has to be a valid action name for @model, that was previously
  * set with exo_toolbars_model_set_actions().
  *
- * Return value: %TRUE if the item was added successfully, else %FALSE.
+ * Returns: %TRUE if the item was added successfully, else %FALSE.
  **/
 gboolean
 exo_toolbars_model_add_item (ExoToolbarsModel      *model,
@@ -1149,7 +1164,7 @@ exo_toolbars_model_add_separator (ExoToolbarsModel *model,
  * inserted at the specified position. Emits the ::toolbar-added
  * signal.
  *
- * Return value: The real position of the new toolbar in @model.
+ * Returns: The real position of the new toolbar in @model.
  **/
 gint
 exo_toolbars_model_add_toolbar (ExoToolbarsModel *model,
@@ -1304,7 +1319,7 @@ exo_toolbars_model_remove_toolbar (ExoToolbarsModel *model,
  *
  * Returns the number of items in the specified toolbar.
  *
- * Return value: The number of items in the specified toolbar.
+ * Returns: The number of items in the specified toolbar.
  **/
 gint
 exo_toolbars_model_n_items (ExoToolbarsModel *model,
@@ -1372,7 +1387,7 @@ exo_toolbars_model_item_nth (ExoToolbarsModel *model,
  * Returns the number of toolbars currently
  * managed by @model.
  *
- * Return value: The number of toolbars in @model.
+ * Returns: The number of toolbars in @model.
  **/
 gint
 exo_toolbars_model_n_toolbars (ExoToolbarsModel *model)
@@ -1391,8 +1406,7 @@ exo_toolbars_model_n_toolbars (ExoToolbarsModel *model)
  * Returns the name of the toolbar at @toolbar_position in
  * @model.
  *
- * Return value: The name of the toolbar at @toolbar_position
- *               in @model.
+ * Returns: The name of the toolbar at @toolbar_position in @model.
  **/
 const gchar*
 exo_toolbars_model_toolbar_nth (ExoToolbarsModel *model,

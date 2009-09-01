@@ -42,6 +42,40 @@
 
 #include <exo-hal/exo-hal.h>
 
+/**
+ * SECTION: exo-hal
+ * @title: HAL Support Functions
+ * @short_description: Miscellaneous Utility Functions for HAL integration
+ * @include: exo-hal/exo-hal.h
+ * @see_also: <ulink type="http" url="http://gitweb.freedesktop.org/?p=hal.git;a=blob_plain;f=doc/spec/hal-spec.html">
+ *            HAL Specification</ulink>
+ *
+ * This is an additional library that ships with the
+ * <application>exo</application> package and offers support functions
+ * for HAL integration, that are used by <command>exo-mount</command>
+ * and <command>Thunar</command> to figure out display names and icons
+ * to visually present HAL devices to the user. The library may also be
+ * used by other components to offer smooth integration between various
+ * parts of the desktop, making sure that the same names and icons are
+ * used for devices everywhere.
+ *
+ * Since HAL is currently an optional dependency for Xfce, you should
+ * first check whether HAL support is really available by calling the
+ * <link linkend="exo-hal-init"><function>exo_hal_init()</function></link>
+ * function, which returns <literal>TRUE</literal> if HAL support is
+ * available and the other functions will be able to do their work, or
+ * <literal>FALSE</literal> if the functions will return hardcoded default
+ * values instead. The <link linkend="exo-hal-init">
+ * <function>exo_hal_init()</function></link> also takes care of setting
+ * up the internationalization support, so make sure you call it first.
+ *
+ * The HAL support module is not part of the main <filename>exo</filename>
+ * library, so you if you want to use any of these functions you will
+ * need to explicitly link to the <filename>exo-hal</filename> library.
+ * This is done with the <command>pkg-config</command> utility, using
+ * <filename>exo-hal-1</filename> as the package name.
+ **/
+
 
 
 #ifdef HAVE_HAL

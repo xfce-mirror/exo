@@ -31,6 +31,56 @@
 #include <exo/exo-string.h>
 #include <exo/exo-alias.h>
 
+/**
+ * SECTION: exo-icon-bar
+ * @title: ExoIconBar
+ * @short_description: A widget for displaying icon bars
+ * @include: exo/exo.h
+ * @see_also: <ulink url="http://library.gnome.org/devel/gtk/stable/GtkTreeModel.html">
+ *            GtkTreeModel</ulink>,
+ *            <ulink url="http://library.gnome.org/devel/gtk/stable/TreeWidget.html">
+ *            Tree and List Widget Overview</ulink>
+ *
+ * A widget that displays any object that implements the #GtkTreeModel interface
+ * in an icon bar.
+ *
+ * <example>
+ * <title>
+ *   Creating a new <structname>ExoIconBar</structname> with a <structname>GtkListStore</structname>
+ * </title>
+ * <programlisting>
+ * enum
+ * {
+ *   PIXBUF_COLUMN,
+ *   STRING_COLUMN,
+ *   N_COLUMNS,
+ * };
+ *
+ * {
+ *   GtkListStore *store;
+ *   GtkWidget    *bar;
+ *
+ *   // make a new list store
+ *   store = gtk_list_store_new (N_COLUMNS, GDK_TYPE_PIXBUF, G_TYPE_STRING);
+ *
+ *   // fill the store with data
+ *   fill_store (store);
+ *
+ *   // create the icon bar
+ *   bar = exo_icon_bar_new_with_model (GTK_TREE_MODEL (store));
+ *   exo_icon_bar_set_pixbuf_column (EXO_ICON_BAR (bar), PIXBUF_COLUMN);
+ *   exo_icon_bar_set_text_column (EXO_ICON_BAR (bar), TEXT_COLUMN);
+ *   gtk_widget_show (bar);
+ *
+ *   // the icon bar keeps a reference on the store now
+ *   g_object_unref (G_OBJECT (store));
+ *
+ *   // add the bar to your GUI now...
+ * }
+ * </programlisting>
+ * </example>
+ **/
+
 
 
 #define MINIMUM_ICON_ITEM_WIDTH 32
@@ -1410,7 +1460,9 @@ exo_icon_bar_rows_reordered (GtkTreeModel *model,
 /**
  * exo_icon_bar_new:
  *
- * Return value: a newly allocated #ExoIconBar.
+ * Creates a new #ExoIconBar without model.
+ *
+ * Returns: a newly allocated #ExoIconBar.
  **/
 GtkWidget*
 exo_icon_bar_new (void)
@@ -1427,8 +1479,7 @@ exo_icon_bar_new (void)
  * Creates a new #ExoIconBar and associates it with
  * @model.
  *
- * Return value: a newly allocated #ExoIconBar, which
- *               is associated with @model.
+ * Returns: a newly allocated #ExoIconBar, which is associated with @model.
  **/
 GtkWidget*
 exo_icon_bar_new_with_model (GtkTreeModel *model)
@@ -1449,7 +1500,7 @@ exo_icon_bar_new_with_model (GtkTreeModel *model)
  * Returns the model the #ExoIconBar is based on. Returns %NULL if
  * the model is unset.
  *
- * Return value: A #GtkTreeModel, or %NULL if none is currently being used.
+ * Returns: A #GtkTreeModel, or %NULL if none is currently being used.
  **/
 GtkTreeModel*
 exo_icon_bar_get_model (ExoIconBar *icon_bar)
@@ -1560,7 +1611,7 @@ exo_icon_bar_set_model (ExoIconBar    *icon_bar,
  *
  * Returns the column with pixbufs for @icon_bar.
  *
- * Return value: the pixbuf column, or -1 if it's unset.
+ * Returns: the pixbuf column, or -1 if it's unset.
  **/
 gint
 exo_icon_bar_get_pixbuf_column (ExoIconBar *icon_bar)
@@ -1618,7 +1669,7 @@ exo_icon_bar_set_pixbuf_column (ExoIconBar *icon_bar,
  *
  * Returns the column with text for @icon_bar.
  *
- * Return value: the text column, or -1 if it's unset.
+ * Returns: the text column, or -1 if it's unset.
  **/
 gint
 exo_icon_bar_get_text_column (ExoIconBar *icon_bar)
@@ -1678,7 +1729,7 @@ exo_icon_bar_set_text_column (ExoIconBar *icon_bar,
  * Retrieves the current orientation of the toolbar. See
  * exo_icon_bar_set_orientation().
  *
- * Return value: The orientation of @icon_bar.
+ * Returns: The orientation of @icon_bar.
  **/
 GtkOrientation
 exo_icon_bar_get_orientation (ExoIconBar *icon_bar)
@@ -1720,8 +1771,8 @@ exo_icon_bar_set_orientation (ExoIconBar    *icon_bar,
  * Returns the index of the currently active item, or -1 if there's no
  * active item.
  *
- * Return value: An integer which is the index of the currently active item,
- *               or -1 if there's no active item.
+ * Returns: An integer which is the index of the currently active item,
+ *          or -1 if there's no active item.
  **/
 gint
 exo_icon_bar_get_active (ExoIconBar *icon_bar)
@@ -1773,7 +1824,7 @@ exo_icon_bar_set_active (ExoIconBar *icon_bar,
  *
  * Sets @iter to point to the current active item, if it exists.
  *
- * Return value: %TRUE if @iter was set.
+ * Returns: %TRUE if @iter was set.
  **/
 gboolean
 exo_icon_bar_get_active_iter (ExoIconBar  *icon_bar,

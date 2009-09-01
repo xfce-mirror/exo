@@ -184,7 +184,7 @@ exo_thumbnail_save (GdkPixbuf   *thumbnail,
  *
  * The caller is responsible to free the returned pixbuf using g_object_unref() when no longer needed.
  *
- * Return value: the #GdkPixbuf for the thumbnail of @filename or %NULL in case of an error.
+ * Returns: the #GdkPixbuf for the thumbnail of @filename or %NULL in case of an error.
  **/
 GdkPixbuf*
 _exo_thumbnail_get_for_file (const gchar     *filename,
@@ -262,7 +262,7 @@ _exo_thumbnail_get_for_file (const gchar     *filename,
  * Similar to _exo_thumbnail_get_for_file(), but does not try to generate
  * a thumbnail if no valid thumbnail is found.
  *
- * Return value: the thumbnail for the @uri or %NULL.
+ * Returns: the thumbnail for the @uri or %NULL.
  **/
 GdkPixbuf*
 _exo_thumbnail_get_for_uri (const gchar     *uri,

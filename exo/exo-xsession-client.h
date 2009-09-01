@@ -53,6 +53,12 @@ struct _ExoXsessionClientClass
   void (*reserved2) (void);
 };
 
+/**
+ * ExoXsessionClient:
+ *
+ * The ExoXsessionClient struct contains only private fields and should
+ * not be directly accessed.
+ **/
 struct _ExoXsessionClient
 {
   GObject __parent__;

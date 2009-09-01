@@ -53,6 +53,12 @@ struct _ExoWrapTableClass
   void (*reserved4) (void);
 };
 
+/**
+ * ExoWrapTable:
+ *
+ *  The #ExoWrapTable struct contains only private fields
+* and should not be directly accessed.
+ **/
 struct _ExoWrapTable
 {
   /*< private >*/
