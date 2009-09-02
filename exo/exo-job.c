@@ -43,16 +43,16 @@
  * <link linkend="ExoJob">ExoJob</link> is an abstract base class
  * intended to wrap threaded/asynchronous operations (called jobs here).
  * It was written because the ways of dealing with threads provided by
- * GLib were too low-level and not exactly object-oriented.
+ * GLib are not exactly object-oriented.
  *
  * It can be used to wrap any kind of long-running or possibly-blocking
- * operation, like file operations or communication with web services.
- * The benefit of using <link linkend="ExoJob">ExoJob</link> is that you
- * get an object associated with an operation. After creating the job
- * you can connect to signals like <link linkend="ExoJob::error">"error"
+ * operation like file operations or communication with web services.
+ * The benefit of using <link linkend="ExoJob">ExoJob</link> is that one
+ * gets an object associated with each operation. After creating the job
+ * the caller can connect to signals like <link linkend="ExoJob::error">"error"
  * </link> or <link linkend="ExoJob::percent">"percent"</link>. This
- * design integrates very well in the usual object-oriented design of
- * applications based on GLib.
+ * design integrates very well with the usual object-oriented design of
+ * applications based on GObject.
  **/
 
 
@@ -131,7 +131,16 @@ exo_job_class_init (ExoJobClass *klass)
    * @job   : an #ExoJob.
    * @error : a #GError describing the cause.
    *
-   * Emitted whenever an error occurs while executing the @job.
+   * Emitted whenever an error occurs while executing the @job. This signal
+   * may not be emitted from within #ExoJob subclasses. If a subclass wants
+   * to emit an "error" signal (and thereby terminate the operation), it has
+   * to fill the #GError structure and abort from its execute() method. 
+   * #ExoJob will automatically emit the "error" signal when the #GError is 
+   * filled after the execute() method has finished.
+   *
+   * Callers interested in whether the @job was cancelled can connect to
+   * the "cancelled" signal of the #GCancellable returned from 
+   * exo_job_get_cancellable().
    **/
   job_signals[ERROR] =
     g_signal_new (I_("error"),
@@ -148,7 +157,9 @@ exo_job_class_init (ExoJobClass *klass)
    *
    * This signal will be automatically emitted once the @job finishes
    * its execution, no matter whether @job completed successfully or
-   * was cancelled by the user.
+   * was cancelled by the user. It may not be emitted by subclasses of
+   * #ExoJob as it is automatically emitted by #ExoJob after the execute()
+   * method has finished.
    **/
   job_signals[FINISHED] =
     g_signal_new (I_("finished"),
@@ -164,8 +175,8 @@ exo_job_class_init (ExoJobClass *klass)
    * @job     : an #ExoJob.
    * @message : information to be displayed about @job.
    *
-   * This signal is emitted to display information about the * @job.
-   * Examples of messages are "Preparing..." or "Cleaning up...".
+   * This signal is emitted to display information about the status of 
+   * the @job. Examples of messages are "Preparing..." or "Cleaning up...".
    *
    * The @message is garanteed to contain valid UTF-8, so it can be
    * displayed by #GtkWidget<!---->s out of the box.
@@ -184,9 +195,9 @@ exo_job_class_init (ExoJobClass *klass)
    * @job     : an #ExoJob.
    * @percent : the percentage of completeness.
    *
-   * This signal is emitted to present the state of the overall
-   * progress. The @percent value is garantied to be in the range 0.0
-   * to 100.0.
+   * This signal is emitted to present the overall progress of the 
+   * operation. The @percent value is garantied to be a value between 
+   * 0.0 and 100.0.
    **/
   job_signals[PERCENT] =
     g_signal_new (I_("percent"),
@@ -216,7 +227,9 @@ exo_job_finalize (GObject *object)
 {
   ExoJob *job = EXO_JOB (object);
 
-  exo_job_cancel (job);
+  if (job->priv->running)
+    exo_job_cancel (job);
+
   g_object_unref (job->priv->cancellable);
 
   (*G_OBJECT_CLASS (exo_job_parent_class)->finalize) (object);
@@ -234,7 +247,7 @@ exo_job_finalize (GObject *object)
  * from the @result into @error.
  *
  * Returns: %TRUE if there was no error during the operation,
- *               %FALSE otherwise.
+ *          %FALSE otherwise.
  **/
 static gboolean
 exo_job_finish (ExoJob             *job,
@@ -273,7 +286,7 @@ exo_job_async_ready (GObject      *object,
     {
       g_assert (error != NULL);
 
-      /* don't treat cancellation as an error for now */
+      /* don't treat cancellation as an error */
       if (error->code != G_IO_ERROR_CANCELLED)
         exo_job_error (job, error);
 
@@ -281,6 +294,8 @@ exo_job_async_ready (GObject      *object,
     }
 
   exo_job_finished (job);
+
+  job->priv->running = FALSE;
 }
 
 
@@ -293,7 +308,7 @@ exo_job_async_ready (GObject      *object,
  *
  * This function is called by the #GIOScheduler to execute the
  * operation associated with the job. It basically calls the
- * ExoJobClass#execute function.
+ * execute() function of #ExoJobClass.
  *
  * Returns: %FALSE, to stop the thread at the end of the operation.
  **/
@@ -312,7 +327,7 @@ exo_job_scheduler_job_func (GIOSchedulerJob *scheduler_job,
 
   success = (*EXO_JOB_GET_CLASS (job)->execute) (job, &error);
 
-  /* TODO why was this necessary again? */
+  /* TODO why was this necessary again? GIO uses this too, for some reason. */
   g_io_scheduler_job_send_to_mainloop (scheduler_job, (GSourceFunc) gtk_false,
                                        NULL, NULL);
 
@@ -337,7 +352,7 @@ exo_job_scheduler_job_func (GIOSchedulerJob *scheduler_job,
  * specified by the @user_data.
  *
  * Returns: %FALSE, to keep the function from being called
- *               multiple times in a row.
+ *          multiple times in a row.
  **/
 static gboolean
 exo_job_emit_valist_in_mainloop (gpointer user_data)
@@ -361,9 +376,8 @@ exo_job_emit_valist_in_mainloop (gpointer user_data)
  *                  return type of the signal is G_TYPE_NONE, the return
  *                  value location can be omitted.
  *
- * Send a the signal with the given @signal_id and @signal_detail to the
- * main loop of the application and waits for the listeners to handle
- * it.
+ * Sends a the signal with the given @signal_id and @signal_detail to the
+ * main loop of the application and waits for listeners to handle it.
  **/
 static void
 exo_job_emit_valist (ExoJob *job,
@@ -438,8 +452,8 @@ exo_job_finished (ExoJob *job)
  * @job : an #ExoJob.
  *
  * This functions schedules the @job to be run as soon as possible, in
- * a separate thread. The caller can then connect to the signals of the
- * returned #ExoJob in order to be notified on errors, progress updates
+ * a separate thread. The caller can connect to signals of the @job prior
+ * or after this call in order to be notified on errors, progress updates
  * and the end of the operation.
  *
  * Returns: the @job itself.
@@ -480,12 +494,17 @@ exo_job_launch (ExoJob *job)
  * after the cancellation of @job, it may still emit signals, so you
  * must take care of disconnecting all handlers appropriately if you
  * cannot handle signals after cancellation.
+ *
+ * Calling this function when the @job has not been launched yet or
+ * when it has already finished will have no effect.
  **/
 void
 exo_job_cancel (ExoJob *job)
 {
   _exo_return_if_fail (EXO_IS_JOB (job));
-  g_cancellable_cancel (job->priv->cancellable);
+
+  if (job->priv->running)
+    g_cancellable_cancel (job->priv->cancellable);
 }
 
 
@@ -539,7 +558,8 @@ exo_job_get_cancellable (const ExoJob *job)
  * g_cancellable_set_error_if_cancelled (cancellable, error);
  * </programlisting></informalexample>
  *
- * Returns: %TRUE if the job was cancelled and @error is now set, %FALSE otherwise.
+ * Returns: %TRUE if the job was cancelled and @error is now set, 
+ *          %FALSE otherwise.
  **/
 gboolean
 exo_job_set_error_if_cancelled (ExoJob  *job,
@@ -561,7 +581,7 @@ exo_job_set_error_if_cancelled (ExoJob  *job,
  *                  return type of the signal is G_TYPE_NONE, the return
  *                  value location can be omitted.
  *
- * Sends the signal with @signal_id and @signal_id to the application's
+ * Sends the signal with @signal_id and @signal_detail to the application's
  * main loop and waits for listeners to handle it.
  **/
 void
@@ -626,7 +646,7 @@ exo_job_percent (ExoJob *job,
 {
   _exo_return_if_fail (EXO_IS_JOB (job));
 
-  percent = MAX (0.0, MIN (100.0, percent));
+  percent = CLAMP (percent, 0.0, 100.0);
   exo_job_emit (job, job_signals[PERCENT], 0, percent);
 }
 
@@ -639,8 +659,8 @@ exo_job_percent (ExoJob *job,
  * @user_data      : data to pass to @func.
  * @destroy_notify : a #GDestroyNotify for @user_data, or %NULL.
  *
- * This functions schedules the @job to be run in the main loop (main thread),
- * waiting for the result (and thus blocking the I/O job).
+ * This functions schedules @func to be run in the main loop (main thread),
+ * waiting for the result (and blocking the job in the meantime).
  *
  * Returns: The return value of @func.
  **/

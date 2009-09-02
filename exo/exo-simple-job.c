@@ -43,11 +43,14 @@
 /**
  * SECTION: exo-simple-job
  * @title: ExoSimpleJob
- * @short_description: FIXME
+ * @short_description: Simple interface to execute functions asynchronously
  * @include: exo/exo.h
- * @see_also:
+ * @see_also: <link linkend="ExoJob">ExoJob</link>
  *
- * FIXME
+ * <link linkend="ExoSimpleJob">ExoSimpleJob</link> can be used to execute
+ * functions asynchronously in an #ExoJob wrapper object. It is easier to
+ * use than the #GThread system and provides basic signals to follow the
+ * progress of an operation.
  **/
 
 
@@ -71,9 +74,9 @@ struct _ExoSimpleJobClass
  **/
 struct _ExoSimpleJob
 {
-  ExoJob           __parent__;
   ExoSimpleJobFunc func;
   GValueArray     *param_values;
+  ExoJob           __parent__;
 };
 
 
@@ -168,11 +171,69 @@ exo_simple_job_execute (ExoJob  *job,
  * An example could be:
  *
  * <informalexample><programlisting>
- * exo_simple_job_launch (list_directory_job, 1, G_TYPE_FILE, file);
+ * static gboolean 
+ * list_directory (ExoJob      *job,
+ *                 GValueArray *param_values,
+ *                 GError     **error)
+ * {
+ *   GFileEnumerator *enumerator;
+ *   GFileInfo       *info;
+ *   GError          *err = NULL;
+ *   GFile           *directory;
+ *
+ *   if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
+ *     return FALSE;
+ *
+ *   directory = g_value_get_object (g_value_array_get_nth (param_values, 0));
+ *
+ *   enumerator = g_file_enumerate_children (directory, 
+ *                                           "standard::display-name",
+ *                                           G_FILE_QUERY_INFO_NONE,
+ *                                           exo_job_get_cancellable (job),
+ *                                           &err);
+ *
+ *   if (err != NULL) 
+ *     {
+ *       g_propagate_error (error, err);
+ *       return FALSE;
+ *     }
+ *
+ *   while (TRUE)
+ *     {
+ *       info = g_file_enumerator_next_file (enumerator, 
+ *                                           exo_job_get_cancellable (job),
+ *                                           &err);
+ *
+ *       if (info == NULL)
+ *         break;
+ *
+ *       exo_job_info_message (job, _("Child: %s"), 
+ *                             g_file_info_get_display_name (info));
+ *
+ *       g_object_unref (info);
+ *     }
+ *
+ *   g_object_unref (enumerator);
+ *
+ *   if (err != NULL)
+ *     {
+ *       g_propagate_error (error, err);
+ *       return FALSE;
+ *     }
+ *   else
+ *     {
+ *       return TRUE;
+ *     }
+ * }
+ *
+ * ...
+ *
+ * GFile *file = g_file_new_for_path ("/home/user");
+ * exo_simple_job_launch (list_directory, 1, G_TYPE_FILE, file);
  * </programlisting></informalexample>
  *
- * The caller is responsible to release the returned object using
- * g_object_unref() when no longer needed.
+ * The caller is responsible to release the returned #ExoJob object 
+ * using g_object_unref() when no longer needed.
  *
  * Returns: the launched #ExoJob.
  **/
