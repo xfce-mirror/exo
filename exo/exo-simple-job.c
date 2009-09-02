@@ -229,7 +229,9 @@ exo_simple_job_execute (ExoJob  *job,
  * ...
  *
  * GFile *file = g_file_new_for_path ("/home/user");
- * exo_simple_job_launch (list_directory, 1, G_TYPE_FILE, file);
+ * ExoJob *job = exo_simple_job_launch (list_directory, 1, G_TYPE_FILE, file);
+ * g_signal_connect (job, "info-message", G_CALLBACK (update_some_widget), widget);
+ * g_signal_connect (job, "finished", G_CALLBACK (unref_the_job_object), NULL);
  * </programlisting></informalexample>
  *
  * The caller is responsible to release the returned #ExoJob object 
