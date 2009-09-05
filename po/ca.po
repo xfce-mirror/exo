@@ -10,13 +10,16 @@ msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-30 17:50+0200\n"
-"PO-Revision-Date: 2009-08-23 10:35+0100\n"
+"PO-Revision-Date: 2009-09-05 13:20+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
-"Language-Team: Catalan\n"
+"Language-Team: Catalan <Catalan <xfce-i18n@xfce.org>>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-Country: ANDORRA\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:114
 #: ../exo/exo-cell-renderer-icon.c:126
@@ -746,26 +749,26 @@ msgid "No file/folder specified"
 msgstr "No heu especificat cap fitxer o carpeta"
 
 #: ../exo-desktop-item-edit/main.c:217
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "No s'ha pogut obrir «%s»: %s"
+msgstr "No s'ha pogut carregar el contingutde  «%s»: %s"
 
 #: ../exo-desktop-item-edit/main.c:222
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr ""
+msgstr "El fitxer «%s» no conté dades"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "No s'ha pogut obrir «%s»: %s"
+msgstr "No s'ha pogut analitzar el contingut de «%s»: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:247
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "El fitxer «%s» no te clau de tipus"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:257
@@ -930,16 +933,15 @@ msgstr "Utilitats"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "File Manager"
-msgstr ""
+msgstr "Gestor de fitxers"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:227
-#, fuzzy
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
-"El navegador web preferit s'usarà per obrir els\n"
-"hiperenllaços i mostrar l'ajuda."
+"El gestor de fitxers preferit s'usarà per\n"
+"veure el contingut de les carpetes."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:251
 msgid "Terminal Emulator"
@@ -980,9 +982,8 @@ msgid "Failed to set default Mail Reader"
 msgstr "No s'ha pogut definir el client de correu predeterminat"
 
 #: ../exo-helper/exo-helper-chooser.c:318
-#, fuzzy
 msgid "Failed to set default File Manager"
-msgstr "No s'ha pogut definir el client de correu predeterminat"
+msgstr "No s'ha pogut definir el gestor de fitxers predeterminat"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Terminal Emulator"
@@ -1002,9 +1003,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "Escolliu un client de correu"
 
 #: ../exo-helper/exo-helper-chooser.c:504
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "Escolliu un client de correu"
+msgstr "Escolliu un gestor de fitxers"
 
 #: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Terminal Emulator"
@@ -1016,32 +1016,31 @@ msgid ""
 "as default Web Browser for Xfce:"
 msgstr ""
 "Especifiqueu l'aplicació que voleu emprar\n"
-"com a navegador web pel Xfce:"
+"com a navegador web de Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
-"Especifiqueu l'aplicació que voleu usar\n"
-"com a client de correu pel Xfce:"
+"Especifiqueu l'aplicació que voleu emprar\n"
+"com a client de correu de Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
-#, fuzzy
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
-"Especifiqueu l'aplicació que voleu usar\n"
-"com a client de correu pel Xfce:"
+"Especifiqueu l'aplicació que voleu emprar\n"
+"com a gestor de fitxers de Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
-"Especifiqueu l'aplicació que voleu usar\n"
-"com a emulador de terminal pel Xfce:"
+"Especifiqueu l'aplicació que voleu emprar\n"
+"com a emulador de terminal de Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
@@ -1076,13 +1075,12 @@ msgstr ""
 "preferit i premeu «D'acord» per seguir"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:261
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
-"Per favor trieu el client de correu\n"
-"preferit i premeu «D'acord» per seguir"
+"Per favor trieu el gestor de fitxers\n"
+"preferit i premeu «D'acord» per seguir."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:263
 msgid ""
@@ -1117,9 +1115,8 @@ msgid "Failed to execute default Mail Reader"
 msgstr "No s'ha pogut executar el lector de correus per defecte"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "No s'ha pogut executar el lector de correus per defecte"
+msgstr "No s'ha pogut executar el gestor de fitxers per defecte"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
@@ -1154,7 +1151,6 @@ msgid "TYPE [PARAMETER]"
 msgstr "TIPUS [PARÀMETRE]"
 
 #: ../exo-helper/main.c:95
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1167,6 +1163,7 @@ msgstr ""
 "\n"
 "  WebBrowser       - El navegador web preferit.\n"
 "  MailReader       - El client de correu preferit.\n"
+"  FileManager      - El gestor de fitxers preferit.\n"
 "  TerminalEmulator - L'emulador de terminal preferit."
 
 #: ../exo-helper/main.c:105
@@ -1210,7 +1207,7 @@ msgstr "Terminal de Xfce"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
-msgstr ""
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1290,7 +1287,7 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
 msgid "Nautilus"
-msgstr ""
+msgstr "Nautilus"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
@@ -1310,7 +1307,7 @@ msgstr "Correu d'Opera"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr ""
+msgstr "Gestor de fitxers PCMan"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1583,7 +1580,6 @@ msgstr "Els següents TIPUS són els suportats per l'ordre --launch:"
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
 #: ../exo-open/main.c:102
-#, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1592,6 +1588,7 @@ msgid ""
 msgstr ""
 "  WebBrowser       - El navegador web preferit.\n"
 "  MailReader       - El client de correu preferit.\n"
+"  FileManager      - El gestir de fitxers preferit.\n"
 "  TerminalEmulator - L'emulador de terminal preferit."
 
 #: ../exo-open/main.c:107
@@ -1617,12 +1614,12 @@ msgstr "No s'ha pogut llançar l'aplicació preferida de la categoria «%s»."
 #: ../exo-open/main.c:366
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "No s'ha pogut detectar l'esquema URI de «%s»."
 
 #: ../exo-open/main.c:376
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "No s'ha pogut obrir la URL «%s»"
+msgstr "No s'ha pogut obrir la URL «%s»."
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "No s'ha pogut obrir «%s»"
