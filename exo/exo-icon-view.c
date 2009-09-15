@@ -466,7 +466,6 @@ struct _ExoIconViewPrivate
   GtkAdjustment *vadjustment;
 
   gint layout_idle_id;
-  gint scroll_idle_id;
 
   gboolean doing_rubberband;
   gint rubberband_x_1, rubberband_y_1;
@@ -1230,10 +1229,6 @@ exo_icon_view_finalize (GObject *object)
   if (G_UNLIKELY (icon_view->priv->single_click_timeout_id != 0))
     g_source_remove (icon_view->priv->single_click_timeout_id);
 
-  /* kill the scroll idle source */
-  if (G_UNLIKELY (icon_view->priv->scroll_idle_id != 0))
-    g_source_remove (icon_view->priv->scroll_idle_id);
-
   /* kill the layout idle source (it's important to have this last!) */
   if (G_UNLIKELY (icon_view->priv->layout_idle_id != 0))
     g_source_remove (icon_view->priv->layout_idle_id);
@@ -1626,6 +1621,28 @@ exo_icon_view_expose_event (GtkWidget      *widget,
    */
   if (G_UNLIKELY (priv->layout_idle_id != 0))
     return FALSE;
+
+  /* scroll to the previously remembered path (if any) */
+  if (G_UNLIKELY (priv->scroll_to_path != NULL))
+    {
+      /* grab the path from the reference and invalidate the reference */
+      path = gtk_tree_row_reference_get_path (priv->scroll_to_path);
+      gtk_tree_row_reference_free (priv->scroll_to_path);
+      priv->scroll_to_path = NULL;
+
+      /* check if the reference was still valid */
+      if (G_LIKELY (path != NULL))
+        {
+          /* try to scroll again */
+          exo_icon_view_scroll_to_path (icon_view, path,
+                                        priv->scroll_to_use_align,
+                                        priv->scroll_to_row_align,
+                                        priv->scroll_to_col_align);
+
+          /* release the path */
+          gtk_tree_path_free (path);
+        }
+    }
 
   /* check if we need to draw a drag indicator */
   exo_icon_view_get_drag_dest_item (icon_view, &path, &dest_pos);
@@ -5400,8 +5417,6 @@ update_text_cell (ExoIconView *icon_view)
     }
 }
 
-
-
 static void
 update_pixbuf_cell (ExoIconView *icon_view)
 {
@@ -5747,46 +5762,6 @@ exo_icon_view_set_cursor (ExoIconView     *icon_view,
 
 
 
-static gboolean
-scroll_delayed (gpointer user_data)
-{
-  ExoIconView *icon_view = user_data;
-  GtkTreePath *path;
-
-  _exo_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), FALSE);
-  
-  /* schedule the scrolling again if the window still isn't realized or 
-   * the layouting still is not finished */
-  if (!GTK_WIDGET_REALIZED (GTK_WIDGET (icon_view)) || icon_view->priv->layout_idle_id != 0)
-    return TRUE;
-  
-  /* scroll to the previously remembered path (if any) */
-  if (G_UNLIKELY (icon_view->priv->scroll_to_path != NULL))
-    {
-      /* grab the path from the reference and invalidate the reference */
-      path = gtk_tree_row_reference_get_path (icon_view->priv->scroll_to_path);
-      gtk_tree_row_reference_free (icon_view->priv->scroll_to_path);
-      icon_view->priv->scroll_to_path = NULL;
-
-      /* check if the reference was still valid */
-      if (G_LIKELY (path != NULL))
-        {
-          /* try to scroll again */
-          exo_icon_view_scroll_to_path (icon_view, path,
-                                        icon_view->priv->scroll_to_use_align,
-                                        icon_view->priv->scroll_to_row_align,
-                                        icon_view->priv->scroll_to_col_align);
-
-          /* release the path */
-          gtk_tree_path_free (path);
-        }
-    }
-
-  return FALSE;
-}
-
-
-
 /**
  * exo_icon_view_scroll_to_path:
  * @icon_view: A #ExoIconView.
@@ -5828,10 +5803,6 @@ exo_icon_view_scroll_to_path (ExoIconView *icon_view,
   /* Delay scrolling if either not realized or pending layout() */
   if (!GTK_WIDGET_REALIZED (icon_view) || icon_view->priv->layout_idle_id != 0)
     {
-      /* drop previous scroll idle handler */
-      if (G_UNLIKELY (icon_view->priv->scroll_idle_id != 0))
-        g_source_remove (icon_view->priv->scroll_idle_id);
-
       /* release the previous scroll_to_path reference */
       if (G_UNLIKELY (icon_view->priv->scroll_to_path != NULL))
         gtk_tree_row_reference_free (icon_view->priv->scroll_to_path);
@@ -5841,11 +5812,6 @@ exo_icon_view_scroll_to_path (ExoIconView *icon_view,
       icon_view->priv->scroll_to_use_align = use_align;
       icon_view->priv->scroll_to_row_align = row_align;
       icon_view->priv->scroll_to_col_align = col_align;
-
-      /* schedule an idle handler to scroll to the given path */
-      icon_view->priv->scroll_idle_id = g_idle_add_full (G_PRIORITY_LOW, 
-                                                         scroll_delayed, icon_view, 
-                                                         NULL);
     }
   else
     {
