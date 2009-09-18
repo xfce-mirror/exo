@@ -5,18 +5,19 @@
 #
 # Rihards Prieditis <rprieditis@inbox.lv>, 2007.
 # Rihards Prieditis <RPrieditis@gmail.com>, 2008.
+# Rihards Prieditis <rprieditis@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-30 17:50+0200\n"
-"PO-Revision-Date: 2009-05-01 18:32+0300\n"
-"Last-Translator: Rihards Priedītis <rprieditis@gmail.com>\n"
-"Language-Team: Latvian <RPrieditis@gmail.com>\n"
+"PO-Revision-Date: 2009-09-18 17:02+0100\n"
+"Last-Translator: Rihards Prieditis <rprieditis@gmail.com>\n"
+"Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 "X-Poedit-Language: Latvian\n"
@@ -41,14 +42,12 @@ msgid "The icon to render."
 msgstr "Attēlojamā ikona."
 
 #: ../exo/exo-cell-renderer-icon.c:167
-#, fuzzy
 msgid "GIcon"
-msgstr "Ikona"
+msgstr "GIkona"
 
 #: ../exo/exo-cell-renderer-icon.c:168
-#, fuzzy
 msgid "The GIcon to render."
-msgstr "Attēlojamā ikona."
+msgstr "Attēlojamā GIcon."
 
 #: ../exo/exo-cell-renderer-icon.c:189
 msgid "size"
@@ -80,7 +79,7 @@ msgstr ""
 #: ../exo/exo-gtk-extensions.c:210
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Neizdevās atvērt \"%s\""
+msgstr "Neizdevās atvērt \"%s\"."
 
 #: ../exo/exo-icon-bar.c:228 ../exo/exo-icon-view.c:763
 msgid "Orientation"
@@ -416,7 +415,7 @@ msgstr "Rīkjoslas _stils"
 
 #: ../exo/exo-toolbars-view.c:751
 msgid "_Desktop Default"
-msgstr "Noklusētā _darbavirsma"
+msgstr "Noklusētā darbvirsma"
 
 #: ../exo/exo-toolbars-view.c:760
 msgid "_Icons only"
@@ -476,16 +475,16 @@ msgstr "Logu grupas līderis"
 
 #: ../exo/exo-xsession-client.c:133
 msgid "Restart command"
-msgstr "Restarta komanda"
+msgstr "Atiestates komanda"
 
 #: ../exo/exo-xsession-client.c:134
 msgid "Session restart command"
-msgstr "Sesijas restarta komanda"
+msgstr "Sesijas atiestates komanda"
 
 #: ../exo-csource/main.c:285
 #, c-format
 msgid "Usage: %s [options] [file]\n"
-msgstr "Lietojums: %s [opcijas] [fails]\n"
+msgstr "Izmantošana: %s [opcijas] [fails]\n"
 
 #: ../exo-csource/main.c:286
 #, c-format
@@ -702,19 +701,19 @@ msgstr "Rediģēt saiti"
 
 #: ../exo-desktop-item-edit/main.c:76
 msgid "Create a new desktop file in the given directory"
-msgstr "Izveidot jaunu darbavirsmas failu, dotajā direktorijā"
+msgstr "Izveidot jaunu darbvirsmas failu, dotajā direktorijā"
 
 #: ../exo-desktop-item-edit/main.c:77
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Veidojamā darbavirsmas faila tips (lietotne vai saite)"
+msgstr "Veidojamā darbvirsmas faila tips (lietotne vai saite)"
 
 #: ../exo-desktop-item-edit/main.c:78
 msgid "Preset name when creating a desktop file"
-msgstr "Noklusētais nosaukums, kad veido darbavirsmas failu"
+msgstr "Noklusētais nosaukums, kad veido darbvirsmas failu"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Preset comment when creating a desktop file"
-msgstr "Noklusētais komentārs, kad veido darbavirsmas failu"
+msgstr "Noklusētais komentārs, kad veido darbvirsmas failu"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Preset command when creating a launcher"
@@ -726,7 +725,7 @@ msgstr "Noklusētais URL, kad veido saiti"
 
 #: ../exo-desktop-item-edit/main.c:82
 msgid "Preset icon when creating a desktop file"
-msgstr "Noklusētā ikona, kad veido darbavirsmas failu"
+msgstr "Noklusētā ikona, kad veido darbvirsmas failu"
 
 #: ../exo-desktop-item-edit/main.c:83 ../exo-helper/main.c:68
 #: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
@@ -748,33 +747,31 @@ msgstr "Neizdevās atvērt displeju"
 msgid "No file/folder specified"
 msgstr "Nav norādīts fails/mape"
 
-#: ../exo-desktop-item-edit/main.c:217
-#, fuzzy, c-format
+#: ../exo-desktop-item-edit/main.c:217, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Neizdevās atvērt failu \"%s\": %s"
+msgstr "Neizdevās ielādēt saturu no \"%s\": %s"
 
 #: ../exo-desktop-item-edit/main.c:222
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr ""
+msgstr "Fails \"%s\" nesatur nekādus datus"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:235
-#, fuzzy, c-format
+#: ../exo-desktop-item-edit/main.c:235, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Neizdevās atvērt failu \"%s\": %s"
+msgstr "Neizdevās parsēt saturu \"%s\": %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:247
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "Failam \"%s\" nav tipa atslēga"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:257
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Darbavirsmas faila tips \"%s\" netiek atbalstīts"
+msgstr "Darbvirsmas faila tips \"%s\" netiek atbalstīts"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:273
@@ -933,16 +930,15 @@ msgstr "Sīkprogrammas"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "File Manager"
-msgstr ""
+msgstr "Faila pārvaldnieks"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:227
-#, fuzzy
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
-"Vēlamais tīmekļa pārlūks, kurš tiks izmantots, lai\n"
-"vērtu hipersaites un attēlotu palīdzības saturu."
+"Vēlamais failu pārvaldnieks, kurš tiks izmantots, lai\n"
+"pārvaldītu mapju saturu."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:251
 msgid "Terminal Emulator"
@@ -982,9 +978,8 @@ msgid "Failed to set default Mail Reader"
 msgstr "Neizdevās uzstādīt noklusēto pasta lasītāju"
 
 #: ../exo-helper/exo-helper-chooser.c:318
-#, fuzzy
 msgid "Failed to set default File Manager"
-msgstr "Neizdevās uzstādīt noklusēto pasta lasītāju"
+msgstr "Neizdevās uzstādīt noklusēto failu pārvaldnieku"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Terminal Emulator"
@@ -1004,9 +999,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "Norādiet pasta lasītāju"
 
 #: ../exo-helper/exo-helper-chooser.c:504
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "Norādiet pasta lasītāju"
+msgstr "Norādiet pielāgoto failu pārvaldnieku"
 
 #: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Terminal Emulator"
@@ -1029,13 +1023,12 @@ msgstr ""
 "kā noklusēto pasta lasītāju:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
-#, fuzzy
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
 "Norādiet lietotni, kuru vēlaties izmantot,\n"
-"kā noklusēto pasta lasītāju:"
+"kā noklusēto failu pārvaldnieku:"
 
 #: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
@@ -1078,12 +1071,11 @@ msgstr ""
 "un apstipriniet, lai turpinātu."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:261
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
-"Lūdzu norādiet savu vēlamo pasta lasītāju\n"
+"Lūdzu norādiet savu vēlamo failu pārvaldnieku\n"
 "un apstipriniet, lai turpinātu."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:263
@@ -1118,9 +1110,8 @@ msgid "Failed to execute default Mail Reader"
 msgstr "Neizdevās izpildīt noklusēto Pasta lasītāju"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "Neizdevās izpildīt noklusēto Pasta lasītāju"
+msgstr "Neizdevās izpildīt noklusēto Failu pārvaldnieku"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
@@ -1155,7 +1146,6 @@ msgid "TYPE [PARAMETER]"
 msgstr "TIPS [PARAMETRI]"
 
 #: ../exo-helper/main.c:95
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1166,9 +1156,10 @@ msgid ""
 msgstr ""
 "Sekojoši TIPI tiek atbalstīti ar --launch komandu:\n"
 "\n"
-"  WebBrowser       - Vēlamais tīmekļa pārlūks.\n"
-"  MailReader       - Vēlamais pasta lasītājs.\n"
-"  TerminalEmulator - Vēlamais termināla emulators."
+"  WebBrowser        - Vēlamais tīmekļa pārlūks.\n"
+"  MailReader           - Vēlamais pasta lasītājs.\n"
+"  FileManager          - Vēlamais failu pārvaldnieks"
+"  TerminalEmulator  - Vēlamais termināla emulators."
 
 #: ../exo-helper/main.c:105
 #, c-format
@@ -1197,11 +1188,11 @@ msgstr ""
 "%s (Xfce %s)\n"
 "\n"
 "Autortiesības (c) 2003-2006\n"
-"        os-cillation e.K. Visas tiesibas paturētas.\n"
+"        os-cillation e.K. Visas tiesības paturētas.\n"
 "\n"
 "Autors Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-"Būvēts ar Gtk+-%d.%d.%d, skrejošais Gtk+-%d.%d.%d.\n"
+"Būvēts ar Gtk+-%d.%d.%d, skrien Gtk+-%d.%d.%d.\n"
 "\n"
 "Lūdzu, ziņojiet par kļūdām uz <%s>.\n"
 
@@ -1211,7 +1202,7 @@ msgstr "Xfce termināls"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
-msgstr ""
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1291,7 +1282,7 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
 msgid "Nautilus"
-msgstr ""
+msgstr "Nautilus"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
@@ -1311,7 +1302,7 @@ msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr ""
+msgstr "PCMan failu pārvaldnieks"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1457,7 +1448,7 @@ msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
-"Nevar montēt pēc HAL iekārtas UDI, jo HAL atbalsts ir atspējots šai būvējumā"
+"Nevar montēt pēc HAL iekārtas UDI, jo HAL atbalsts ir izslēgts šai būvējumā"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1560,7 +1551,7 @@ msgid ""
 msgstr ""
 "  --launch TIPS [PARAMETRI...]       Palaist vēlamo TIPA lietotni\n"
 "                                      ar neobligātiem PARAMETRIEM, kur TIPS\n"
-"                                      ir kāda no sekojošām vērtibām."
+"                                      ir kāda no sekojošām vērtībām."
 
 #: ../exo-open/main.c:93
 msgid ""
@@ -1580,7 +1571,6 @@ msgstr "--lunch komandas atbalstītie TIPI:"
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
 #: ../exo-open/main.c:102
-#, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1589,6 +1579,7 @@ msgid ""
 msgstr ""
 "  WebBrowser       - Vēlamais tīmekļa pārlūks.\n"
 "  MailReader       - Vēlamais pasta lasītājs.\n"
+"  FileManager       - Vēlamais failu pārvaldnieks.\n"
 "  TerminalEmulator - Vēlamais termināla emulators."
 
 #: ../exo-open/main.c:107
@@ -1613,7 +1604,7 @@ msgstr "Neizdevās palaist vēlamo aplikāciju no kategorijas \"%s\"."
 #: ../exo-open/main.c:366
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "Nevar noteikt URI-shēmu priekš \"%s\"."
 
 #: ../exo-open/main.c:376
 #, fuzzy, c-format
