@@ -69,7 +69,7 @@ static KnownSchemes known_schemes[] =
 {
   { "^(https?|ftps|gopher)$", "WebBrowser" },
   { "^mailto$",               "MailReader" },
-  { "^(file|trash)$",         "FileManager" }
+  { "^(file|trash|ssh)$",     "FileManager" }
 };
 
 
