@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-30 17:50+0200\n"
-"PO-Revision-Date: 2009-04-14 22:13+0100\n"
+"POT-Creation-Date: 2009-05-05 22:04+0200\n"
+"PO-Revision-Date: 2009-09-19 12:31+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,519 +20,484 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:114
-#: ../exo/exo-cell-renderer-icon.c:126
-#, fuzzy
+#: ../exo/exo-cell-renderer-ellipsized-text.c:138
+#: ../exo/exo-cell-renderer-icon.c:150
 msgid "Follow state"
 msgstr "Seguir o estado"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:115
-#: ../exo/exo-cell-renderer-icon.c:127
+#: ../exo/exo-cell-renderer-ellipsized-text.c:139
+#: ../exo/exo-cell-renderer-icon.c:151
 msgid "Render differently based on the selection state."
-msgstr ""
+msgstr "Debuxar de xeito diferente baseándose no estado de selección."
 
-#: ../exo/exo-cell-renderer-icon.c:148
+#: ../exo/exo-cell-renderer-icon.c:172
 msgid "Icon"
 msgstr "Icona"
 
-#: ../exo/exo-cell-renderer-icon.c:149
-#, fuzzy
+#: ../exo/exo-cell-renderer-icon.c:173
 msgid "The icon to render."
-msgstr "O ID de inventario da icona de inventario para renderizar"
+msgstr "A icona a debuxar."
 
-#: ../exo/exo-cell-renderer-icon.c:167
-#, fuzzy
+#: ../exo/exo-cell-renderer-icon.c:191
 msgid "GIcon"
-msgstr "Icona"
+msgstr "GIcon"
 
-#: ../exo/exo-cell-renderer-icon.c:168
-#, fuzzy
+#: ../exo/exo-cell-renderer-icon.c:192
 msgid "The GIcon to render."
-msgstr "O ID de inventario da icona de inventario para renderizar"
+msgstr ""
 
-#: ../exo/exo-cell-renderer-icon.c:189
+#: ../exo/exo-cell-renderer-icon.c:213
 msgid "size"
 msgstr "tamaño"
 
-#: ../exo/exo-cell-renderer-icon.c:190
+#: ../exo/exo-cell-renderer-icon.c:214
 msgid "The size of the icon to render in pixels."
-msgstr ""
+msgstr "O tamaño en píxeles da icona a debuxar."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
-#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
-#, fuzzy, c-format
+#: ../exo/exo-gdk-pixbuf-extensions.c:770
+#: ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237
+#: ../exo/exo-mount-point.c:425
+#, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Fallo ao abrir o ficheiro '%s': %s"
+msgstr "Produciuse un erro ao abrir o ficheiro \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:832
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Fallo ao ler o ficheiro '%s': %s"
+msgstr "Produciuse un erro ao ler o ficheiro \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
-#, fuzzy, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Non se puido cargar a imaxe '%s': o motivo é descoñecido, probabelmente o "
-"ficheiro gráfico está corrupto"
-
-#: ../exo/exo-gtk-extensions.c:210
 #, c-format
-msgid "Failed to open \"%s\"."
-msgstr "Fallo ó abrir \"%s\"."
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Produciuse un erro ao cargar a imaxe \"%s\": o motivo é descoñecido, é probable que o ficheiro de imaxe estea corrompido"
 
-#: ../exo/exo-icon-bar.c:228 ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-bar.c:249
+#: ../exo/exo-icon-view.c:785
 msgid "Orientation"
 msgstr "Orientación"
 
-#: ../exo/exo-icon-bar.c:229
-#, fuzzy
+#: ../exo/exo-icon-bar.c:250
 msgid "The orientation of the iconbar"
-msgstr "Orientación da páxina:"
+msgstr "A orientación da barra de iconas"
 
-#: ../exo/exo-icon-bar.c:245 ../exo/exo-icon-view.c:780
-#, fuzzy
+#: ../exo/exo-icon-bar.c:266
+#: ../exo/exo-icon-view.c:802
 msgid "Pixbuf column"
 msgstr "Columna de pixbuf"
 
-#: ../exo/exo-icon-bar.c:246 ../exo/exo-icon-view.c:781
+#: ../exo/exo-icon-bar.c:267
+#: ../exo/exo-icon-view.c:803
 #, fuzzy
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Columna modelo usada para recuperar o pixbuf da icona"
 
-#: ../exo/exo-icon-bar.c:261 ../exo/exo-icon-view.c:907
-#, fuzzy
+#: ../exo/exo-icon-bar.c:282
+#: ../exo/exo-icon-view.c:929
 msgid "Text column"
 msgstr "Columna de texto"
 
-#: ../exo/exo-icon-bar.c:262 ../exo/exo-icon-view.c:908
+#: ../exo/exo-icon-bar.c:283
+#: ../exo/exo-icon-view.c:930
 #, fuzzy
 msgid "Model column used to retrieve the text from"
 msgstr "Columna modelo usada para recuperar o texto"
 
-#: ../exo/exo-icon-bar.c:274
-#, fuzzy
+#: ../exo/exo-icon-bar.c:295
 msgid "Icon Bar Model"
-msgstr "Modelo de visualización de icona"
+msgstr ""
 
-#: ../exo/exo-icon-bar.c:275
-#, fuzzy
+#: ../exo/exo-icon-bar.c:296
 msgid "Model for the icon bar"
-msgstr "O modelo para a visualización de icona"
+msgstr "O modelo da barra de iconas"
 
-#: ../exo/exo-icon-bar.c:291
-#, fuzzy
+#: ../exo/exo-icon-bar.c:312
 msgid "Active"
 msgstr "Activo"
 
-#: ../exo/exo-icon-bar.c:292
-#, fuzzy
+#: ../exo/exo-icon-bar.c:313
 msgid "Active item index"
-msgstr "O elemento que está activo actualmente"
+msgstr ""
 
-#: ../exo/exo-icon-bar.c:298 ../exo/exo-icon-bar.c:299
-#, fuzzy
+#: ../exo/exo-icon-bar.c:319
+#: ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
-msgstr "Encher coa cor de _primeiro plano"
+msgstr "Cor de recheo do elemento activo"
 
-#: ../exo/exo-icon-bar.c:305 ../exo/exo-icon-bar.c:306
-#, fuzzy
+#: ../exo/exo-icon-bar.c:326
+#: ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
-msgstr "A cor do bordo da caixa realzada"
+msgstr "Cor do bordo do elemento activo"
 
-#: ../exo/exo-icon-bar.c:312 ../exo/exo-icon-bar.c:313
-#, fuzzy
+#: ../exo/exo-icon-bar.c:333
+#: ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
-msgstr "Escolla a cor de texto do terminal"
+msgstr "Cor do texto do elemento activo"
 
-#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
-#, fuzzy
+#: ../exo/exo-icon-bar.c:340
+#: ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
-msgstr "Encher coa cor de _primeiro plano"
+msgstr "Cor de recheo do elemento do cursor"
 
-#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
-#, fuzzy
+#: ../exo/exo-icon-bar.c:347
+#: ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
-msgstr "A cor do bordo da caixa realzada"
+msgstr "Cor do bordo do elemento do cursor"
 
-#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
-#, fuzzy
+#: ../exo/exo-icon-bar.c:354
+#: ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
-msgstr "Escolla a cor de texto do terminal"
+msgstr "Cor do texto do elemento do cursor"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:83
-#, fuzzy
+#: ../exo/exo-icon-chooser-dialog.c:85
 msgid "Action Icons"
-msgstr "Actualizar as iconas"
+msgstr "Iconas das accións"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:85
+#: ../exo/exo-icon-chooser-dialog.c:87
 msgid "Animations"
 msgstr "Animacións"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:87
-#, fuzzy
+#: ../exo/exo-icon-chooser-dialog.c:89
 msgid "Application Icons"
-msgstr "Actualizar as iconas"
+msgstr "Iconas das aplicacións"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:89
-#, fuzzy
+#: ../exo/exo-icon-chooser-dialog.c:91
 msgid "Menu Icons"
-msgstr "Actualizar as iconas"
+msgstr "Iconas de menú"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:91
-#, fuzzy
+#: ../exo/exo-icon-chooser-dialog.c:93
 msgid "Device Icons"
-msgstr "Actualizar as iconas"
+msgstr "Iconas de dispositivo"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:93
+#: ../exo/exo-icon-chooser-dialog.c:95
 msgid "Emblems"
 msgstr "Emblemas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:95
-#, fuzzy
+#: ../exo/exo-icon-chooser-dialog.c:97
 msgid "Emoticons"
-msgstr "Sen icona"
+msgstr "Emoticonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:97
-#, fuzzy
+#: ../exo/exo-icon-chooser-dialog.c:99
 msgid "International Denominations"
-msgstr "Internacional dos EUA"
+msgstr "Denominacións internacionais"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:99
+#: ../exo/exo-icon-chooser-dialog.c:101
 msgid "File Type Icons"
 msgstr "Iconas de tipo de ficheiro"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:101
-#, fuzzy
+#: ../exo/exo-icon-chooser-dialog.c:103
 msgid "Location Icons"
-msgstr "Actualizar as iconas"
+msgstr ""
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:103
+#: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Status Icons"
 msgstr "Iconas de estado"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:105
-#, fuzzy
+#: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Uncategorized Icons"
-msgstr "Actualizar as iconas"
+msgstr "Iconas sen categoría"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:109
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "All Icons"
 msgstr "Tódalas iconas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:113 ../exo/exo-icon-chooser-dialog.c:237
+#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Ficheiros de imaxe"
 
 #. setup the header label
-#: ../exo/exo-icon-chooser-dialog.c:180
-#, fuzzy
+#: ../exo/exo-icon-chooser-dialog.c:205
 msgid "Select _icon from:"
-msgstr "Seleccionar unha icona personalizada"
+msgstr "Seleccionar a _icona en:"
 
-#: ../exo/exo-icon-view.c:631
-#, fuzzy
+#: ../exo/exo-icon-view.c:653
 msgid "Column Spacing"
 msgstr "Espazamento de columna"
 
-#: ../exo/exo-icon-view.c:632
-#, fuzzy
+#: ../exo/exo-icon-view.c:654
 msgid "Space which is inserted between grid column"
-msgstr "Espazo que se introduce entre as filas da grade"
+msgstr "Espazo que se introduce entre as filas da reixa"
 
-#: ../exo/exo-icon-view.c:648
+#: ../exo/exo-icon-view.c:670
 msgid "Number of columns"
 msgstr "Número de columnas"
 
-#: ../exo/exo-icon-view.c:649
-#, fuzzy
+#: ../exo/exo-icon-view.c:671
 msgid "Number of columns to display"
 msgstr "O número de columnas que se mostran"
 
-#: ../exo/exo-icon-view.c:663
+#: ../exo/exo-icon-view.c:685
 msgid "Enable Search"
 msgstr "Activar a busca"
 
-#: ../exo/exo-icon-view.c:664
-#, fuzzy
+#: ../exo/exo-icon-view.c:686
 msgid "View allows user to search through columns interactively"
-msgstr ""
-"A visualización permite aos usuarios buscar de modo interactivo a través das "
-"columnas"
+msgstr "A visualización permite aos usuarios buscar de modo interactivo nas columnas"
 
-#: ../exo/exo-icon-view.c:681
+#: ../exo/exo-icon-view.c:703
 msgid "Width for each item"
 msgstr "Ancho de cada elemento"
 
-#: ../exo/exo-icon-view.c:682
+#: ../exo/exo-icon-view.c:704
 msgid "The width used for each item"
 msgstr "O ancho usado para cada elemento"
 
-#: ../exo/exo-icon-view.c:700
-#, fuzzy
+#: ../exo/exo-icon-view.c:722
 msgid "Layout mode"
-msgstr "Modo de _visualización"
+msgstr "Modo de disposición"
 
-#: ../exo/exo-icon-view.c:701
-#, fuzzy
+#: ../exo/exo-icon-view.c:723
 msgid "The layout mode"
-msgstr "Modo de _visualización"
+msgstr "O modo de disposición"
 
-#: ../exo/exo-icon-view.c:717
+#: ../exo/exo-icon-view.c:739
 msgid "Margin"
 msgstr "Marxe"
 
-#: ../exo/exo-icon-view.c:718
-#, fuzzy
+#: ../exo/exo-icon-view.c:740
 msgid "Space which is inserted at the edges of the icon view"
-msgstr "Espazo que se insire nos bordos da visualización de icona"
+msgstr "Espazo que se insire nas beiras da vista da icona"
 
-#: ../exo/exo-icon-view.c:734
+#: ../exo/exo-icon-view.c:756
 #, fuzzy
 msgid "Markup column"
 msgstr "Columna de marcación"
 
-#: ../exo/exo-icon-view.c:735
+#: ../exo/exo-icon-view.c:757
 #, fuzzy
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Columna modelo usada para recuperar o texto se se emprega a marcación Pango"
+msgstr "Columna modelo usada para recuperar o texto se se emprega a marcación Pango"
 
-#: ../exo/exo-icon-view.c:749
-#, fuzzy
+#: ../exo/exo-icon-view.c:771
 msgid "Icon View Model"
-msgstr "Modelo de visualización de icona"
+msgstr "Modelo de visualización das iconas"
 
-#: ../exo/exo-icon-view.c:750
-#, fuzzy
+#: ../exo/exo-icon-view.c:772
 msgid "The model for the icon view"
-msgstr "O modelo para a visualización de icona"
+msgstr "O modelo para a visualización das iconas"
 
-#: ../exo/exo-icon-view.c:764
-#, fuzzy
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"Como se sitúan o texto e a icona de cada elemento en relación un ao outro"
+#: ../exo/exo-icon-view.c:786
+msgid "How the text and icon of each item are positioned relative to each other"
+msgstr "Como se sitúan o texto e maila icona de cada elemento en relación un ao outro"
 
-#: ../exo/exo-icon-view.c:796
+#: ../exo/exo-icon-view.c:818
 msgid "Reorderable"
 msgstr "Reordenable"
 
-#: ../exo/exo-icon-view.c:797
+#: ../exo/exo-icon-view.c:819
 msgid "View is reorderable"
 msgstr "A vista é reordenable"
 
-#: ../exo/exo-icon-view.c:812
+#: ../exo/exo-icon-view.c:834
 msgid "Row Spacing"
 msgstr "Espazamento de fila"
 
-#: ../exo/exo-icon-view.c:813
-#, fuzzy
+#: ../exo/exo-icon-view.c:835
 msgid "Space which is inserted between grid rows"
-msgstr "Espazo que se introduce entre as filas da grade"
+msgstr "Espazo que se introduce entre as filas da reixa"
 
-#: ../exo/exo-icon-view.c:827
+#: ../exo/exo-icon-view.c:849
 msgid "Search Column"
 msgstr "Columna de busca"
 
-#: ../exo/exo-icon-view.c:828
+#: ../exo/exo-icon-view.c:850
 msgid "Model column to search through when searching through item"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:842
+#: ../exo/exo-icon-view.c:864
 msgid "Selection mode"
 msgstr "Modo de selección"
 
-#: ../exo/exo-icon-view.c:843
+#: ../exo/exo-icon-view.c:865
 msgid "The selection mode"
 msgstr "O modo de selección"
 
-#: ../exo/exo-icon-view.c:858 ../exo/exo-tree-view.c:141
+#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Un só clic"
 
-#: ../exo/exo-icon-view.c:859 ../exo/exo-tree-view.c:142
+#: ../exo/exo-icon-view.c:881
+#: ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
-msgstr ""
+msgstr "Os elementos da vista poden ser activados cun só clic"
 
-#: ../exo/exo-icon-view.c:875 ../exo/exo-tree-view.c:158
-#, fuzzy
+#: ../exo/exo-icon-view.c:897
+#: ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
-msgstr "<b>Tempo de espera do duplo clic</b>"
+msgstr "Tempo de espera do clic único"
 
-#: ../exo/exo-icon-view.c:876 ../exo/exo-tree-view.c:159
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
+#: ../exo/exo-icon-view.c:898
+#: ../exo/exo-tree-view.c:184
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "A cantidade de tempo despois da cal se seleccionará automaticamente o elemento que está baixo o cursor do rato no modo dun só clic"
 
-#: ../exo/exo-icon-view.c:891
+#: ../exo/exo-icon-view.c:913
 msgid "Spacing"
 msgstr "Espazamento"
 
-#: ../exo/exo-icon-view.c:892
+#: ../exo/exo-icon-view.c:914
 msgid "Space which is inserted between cells of an item"
 msgstr "Espazo que se introduce entre as celas dun elemento"
 
-#: ../exo/exo-icon-view.c:915
-#, fuzzy
+#: ../exo/exo-icon-view.c:937
 msgid "Selection Box Color"
 msgstr "Cor da caixa de selección"
 
-#: ../exo/exo-icon-view.c:916
-#, fuzzy
+#: ../exo/exo-icon-view.c:938
 msgid "Color of the selection box"
 msgstr "Cor da caixa de selección"
 
-#: ../exo/exo-icon-view.c:922
-#, fuzzy
+#: ../exo/exo-icon-view.c:944
 msgid "Selection Box Alpha"
 msgstr "Alfa da caixa de selección"
 
-#: ../exo/exo-icon-view.c:923
-#, fuzzy
+#: ../exo/exo-icon-view.c:945
 msgid "Opacity of the selection box"
 msgstr "Opacidade da caixa de selección"
 
-#: ../exo/exo-thumbnail-preview.c:114
+#: ../exo/exo-thumbnail-preview.c:123
 msgid "Preview"
 msgstr "Previsualización"
 
-#: ../exo/exo-thumbnail-preview.c:130 ../exo/exo-thumbnail-preview.c:272
+#: ../exo/exo-thumbnail-preview.c:139
+#: ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "Non se seleccionou ningún ficheiro"
 
-#: ../exo/exo-thumbnail-preview.c:290
+#: ../exo/exo-thumbnail-preview.c:299
 msgid "Block Device"
 msgstr "Dispositivo de bloques"
 
-#: ../exo/exo-thumbnail-preview.c:295
+#: ../exo/exo-thumbnail-preview.c:304
 msgid "Character Device"
 msgstr "Dispositivo de caracteres"
 
-#: ../exo/exo-thumbnail-preview.c:300
+#: ../exo/exo-thumbnail-preview.c:309
 msgid "Folder"
 msgstr "Cartafol"
 
-#: ../exo/exo-thumbnail-preview.c:305
+#: ../exo/exo-thumbnail-preview.c:314
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../exo/exo-thumbnail-preview.c:310
-#, fuzzy
+#: ../exo/exo-thumbnail-preview.c:319
 msgid "Socket"
-msgstr "Entrada de conectador"
+msgstr "Conectador"
 
-#: ../exo/exo-toolbars-editor-dialog.c:108
-#, fuzzy
+#: ../exo/exo-toolbars-editor-dialog.c:126
 msgid "_Add a new toolbar"
-msgstr "_Engadir unha nova barra de ferramentas"
+msgstr "_Engadir unha barra de ferramentas nova"
 
-#: ../exo/exo-toolbars-editor.c:206
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
+#: ../exo/exo-toolbars-editor.c:230
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Arrastre un elemento enriba das barras de ferramentas para engadilo, arrástreo dende as barras de ferramentas para eliminalo."
 
-#: ../exo/exo-toolbars-editor.c:523
+#: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
 msgstr "Separador"
 
-#: ../exo/exo-toolbars-view.c:744
-#, fuzzy
+#: ../exo/exo-toolbars-view.c:759
 msgid "Toolbar _Style"
-msgstr "Estilo da barra de ferramentas"
+msgstr "E_stilo da barra de ferramentas"
 
-#: ../exo/exo-toolbars-view.c:751
-#, fuzzy
+#: ../exo/exo-toolbars-view.c:766
 msgid "_Desktop Default"
-msgstr "Usar o predeterminado do escritorio (%s)"
+msgstr "_Predeterminado do escritorio"
 
-#: ../exo/exo-toolbars-view.c:760
+#: ../exo/exo-toolbars-view.c:775
 msgid "_Icons only"
 msgstr "Só _iconas"
 
-#: ../exo/exo-toolbars-view.c:769
+#: ../exo/exo-toolbars-view.c:784
 msgid "_Text only"
 msgstr "Só _texto"
 
-#: ../exo/exo-toolbars-view.c:778
-#, fuzzy
+#: ../exo/exo-toolbars-view.c:793
 msgid "Text for _All Icons"
-msgstr "Texto e iconas grandes"
+msgstr "Texto en tód_alas iconas"
 
-#: ../exo/exo-toolbars-view.c:787
-#, fuzzy
+#: ../exo/exo-toolbars-view.c:802
 msgid "Text for I_mportant Icons"
-msgstr "Texto e iconas grandes"
+msgstr "Texto nas iconas i_mportantes"
 
-#: ../exo/exo-toolbars-view.c:795
+#: ../exo/exo-toolbars-view.c:810
 msgid "_Remove Toolbar"
 msgstr "Elimina_r a barra de ferramentas"
 
-#: ../exo/exo-toolbars-view.c:810
+#: ../exo/exo-toolbars-view.c:825
 msgid "Customize Toolbar..."
 msgstr "Personalizar a barra de ferramentas..."
 
-#: ../exo/exo-wrap-table.c:135
+#: ../exo/exo-url.c:280
+#, c-format
+msgid "Unable to open \"%s\""
+msgstr "Non se puido abrir \"%s\""
+
+#: ../exo/exo-url.c:326
+#, c-format
+msgid "The URL \"%s\" is not supported"
+msgstr "O URL \"%s\" non está soportado"
+
+#: ../exo/exo-url.c:412
+#, c-format
+msgid "Failed to open \"%s\"."
+msgstr "Fallo ó abrir \"%s\"."
+
+#: ../exo/exo-wrap-table.c:160
 msgid "Column spacing"
 msgstr "Espazamento de columna"
 
-#: ../exo/exo-wrap-table.c:136
+#: ../exo/exo-wrap-table.c:161
 msgid "The amount of space between two consecutive columns"
 msgstr "A cantidade de espazo entre dúas columnas consecutivas"
 
-#: ../exo/exo-wrap-table.c:150
+#: ../exo/exo-wrap-table.c:175
 msgid "Row spacing"
 msgstr "Espazamento de fila"
 
-#: ../exo/exo-wrap-table.c:151
+#: ../exo/exo-wrap-table.c:176
 msgid "The amount of space between two consecutive rows"
 msgstr "A cantidade de espazo entre dúas filas consecutivas"
 
-#: ../exo/exo-wrap-table.c:165
+#: ../exo/exo-wrap-table.c:190
 msgid "Homogeneous"
 msgstr "Homoxéneo"
 
-#: ../exo/exo-wrap-table.c:166
-#, fuzzy
+#: ../exo/exo-wrap-table.c:191
 msgid "Whether the children should be all the same size"
-msgstr "Se todos os fillos deben ser do mesmo tamaño"
+msgstr "Indica se todos os fillos deben ser do mesmo tamaño"
 
-#: ../exo/exo-xsession-client.c:122
+#: ../exo/exo-xsession-client.c:143
 msgid "Window group"
 msgstr "Grupo de ventás"
 
-#: ../exo/exo-xsession-client.c:123
-#, fuzzy
+#: ../exo/exo-xsession-client.c:144
 msgid "Window group leader"
-msgstr "Líder do grupo: %lu\n"
+msgstr ""
 
-#: ../exo/exo-xsession-client.c:133
-#, fuzzy
+#: ../exo/exo-xsession-client.c:154
 msgid "Restart command"
-msgstr "_Cancelar comando"
+msgstr "Comando de reinicio"
 
-#: ../exo/exo-xsession-client.c:134
-#, fuzzy
+#: ../exo/exo-xsession-client.c:155
 msgid "Session restart command"
-msgstr "Opcións de Liña de Comandos"
+msgstr "Comando de reinicio da sesión"
 
 #: ../exo-csource/main.c:285
 #, c-format
@@ -540,53 +505,55 @@ msgid "Usage: %s [options] [file]\n"
 msgstr "Uso: %s [opcións] [ficheiro]\n"
 
 #: ../exo-csource/main.c:286
-#, fuzzy, c-format
+#, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "Ordenar os ficheiros por nome"
+msgstr "       %s [opcións] --build-list [[nome ficheiro]...]\n"
 
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr ""
+msgstr "  -h, --help        Mostra esta mensaxe de axuda e sae\n"
 
 #: ../exo-csource/main.c:289
-#, fuzzy, c-format
+#, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "Mostrar información da versión e saír"
+msgstr "  -V, --version     Mostrar a información da versión e saír\n"
 
 #: ../exo-csource/main.c:290
-#, fuzzy, c-format
+#, c-format
 msgid "  --extern          Generate extern symbols\n"
-msgstr "Mostrar tódolos símbolos"
+msgstr ""
 
 #: ../exo-csource/main.c:291
-#, fuzzy, c-format
+#, c-format
 msgid "  --static          Generate static symbols\n"
-msgstr "Mostrar tódolos símbolos"
+msgstr ""
 
 #: ../exo-csource/main.c:292
-#, fuzzy, c-format
+#, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr "Nome de variable baleira no ficheiro de contorno %s"
+msgstr ""
 
 #: ../exo-csource/main.c:293
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr ""
+msgstr "  --build-list      Analiza pares (nome, ficheiro)\n"
 
 #: ../exo-csource/main.c:294
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr ""
+msgstr "  --strip-comments  Elimina os comentarios de ficheiros XML\n"
 
 #: ../exo-csource/main.c:295
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr ""
+msgstr "  --strip-content   Elimina os nodos de contido de ficheiros XML\n"
 
-#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:156
-#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:170
-#: ../exo-open/main.c:270
+#: ../exo-csource/main.c:305
+#: ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:122
+#: ../exo-mount-notify/main.c:169
+#: ../exo-open/main.c:131
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -601,9 +568,11 @@ msgstr ""
 "Escrito por Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:160
-#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:174
-#: ../exo-open/main.c:274
+#: ../exo-csource/main.c:309
+#: ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:126
+#: ../exo-mount-notify/main.c:173
+#: ../exo-open/main.c:135
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -612,247 +581,226 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
+"%s ven sen NINGÚN TIPO DE GARANTIA,\n"
+"Pode redistribuír copias de %s baixo os termos da\n"
+"GNU Lesser General Public License a cal se pode atopar no\n"
+"paquete de código fonte de %s.\n"
+"\n"
 
-#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:164
-#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:178
-#: ../exo-open/main.c:278
+#: ../exo-csource/main.c:313
+#: ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:130
+#: ../exo-mount-notify/main.c:177
+#: ../exo-open/main.c:139
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Por favor, comuníquelle os erros a <%s>.\n"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:256
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:290
 msgid "Select an Application"
 msgstr "Seleccione unha aplicación"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:265
-#: ../exo-helper/exo-helper-chooser.c:399
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:299
+#: ../exo-helper/exo-helper-chooser.c:432
 msgid "All Files"
 msgstr "Tódolos ficheiros"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:270
-#: ../exo-helper/exo-helper-chooser.c:404
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-helper/exo-helper-chooser.c:437
 msgid "Executable Files"
 msgstr "Ficheiros executables"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:285
-#: ../exo-helper/exo-helper-chooser.c:419
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:319
+#: ../exo-helper/exo-helper-chooser.c:452
 msgid "Perl Scripts"
 msgstr "Scripts en Perl"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:291
-#: ../exo-helper/exo-helper-chooser.c:425
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:325
+#: ../exo-helper/exo-helper-chooser.c:458
 msgid "Python Scripts"
 msgstr "Scripts en Python"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:297
-#: ../exo-helper/exo-helper-chooser.c:431
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:331
+#: ../exo-helper/exo-helper-chooser.c:464
 msgid "Ruby Scripts"
 msgstr "Scripts en Ruby"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:303
-#: ../exo-helper/exo-helper-chooser.c:437
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:337
+#: ../exo-helper/exo-helper-chooser.c:470
 msgid "Shell Scripts"
 msgstr "Scripts de shell"
 
-#: ../exo-desktop-item-edit/exo-die-desktop-model.c:285
+#: ../exo-desktop-item-edit/exo-die-desktop-model.c:326
 #, c-format
 msgid "Create Launcher <b>%s</b>"
 msgstr "Crear un iniciador <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:278
+#: ../exo-desktop-item-edit/exo-die-editor.c:318
 msgid "_Name:"
 msgstr "_Nome:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:294
+#: ../exo-desktop-item-edit/exo-die-editor.c:336
 msgid "C_omment:"
 msgstr "C_omentario:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:310
+#: ../exo-desktop-item-edit/exo-die-editor.c:354
 msgid "Comm_and:"
 msgstr "Com_ando:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:325
+#: ../exo-desktop-item-edit/exo-die-editor.c:371
 msgid "_URL:"
 msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:341
+#: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Icona:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: ../exo-desktop-item-edit/exo-die-editor.c:358
-#: ../exo-desktop-item-edit/exo-die-editor.c:1078
+#: ../exo-desktop-item-edit/exo-die-editor.c:408
+#: ../exo-desktop-item-edit/exo-die-editor.c:1134
 msgid "No icon"
 msgstr "Sen icona"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:364
+#: ../exo-desktop-item-edit/exo-die-editor.c:419
 msgid "Options:"
 msgstr "Opcións:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
-#: ../exo-desktop-item-edit/exo-die-editor.c:373
-#, fuzzy
+#: ../exo-desktop-item-edit/exo-die-editor.c:430
 msgid "Use _startup notification"
-msgstr "Usar sons de notificación"
+msgstr "Usar notificación de _inicio"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:374
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
+#: ../exo-desktop-item-edit/exo-die-editor.c:431
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Seleccione esta opción para activar a notificación de inicio cando o comando se executa dende o xestor de ficheiros ou dende o menú. Non tódalas aplicacións soportan a notificación de inicio."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
-#: ../exo-desktop-item-edit/exo-die-editor.c:386
-#, fuzzy
+#: ../exo-desktop-item-edit/exo-die-editor.c:443
 msgid "Run in _terminal"
-msgstr "Executar nun _terminal"
+msgstr "Executar nunha _terminal"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:387
+#: ../exo-desktop-item-edit/exo-die-editor.c:444
 msgid "Select this option to run the command in a terminal window."
-msgstr ""
-"Seleccione esta opción para executar o comando nunha ventá de terminal."
+msgstr "Seleccione esta opción para executar o comando nunha ventá de terminal."
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:533
+#: ../exo-desktop-item-edit/exo-die-editor.c:591
 msgid "Select an icon"
 msgstr "Seleccionar unha icona"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:50
 msgid "Create Launcher"
 msgstr "Crear un iniciador"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:50
 msgid "Create Link"
 msgstr "Crear unha ligazón"
 
-#: ../exo-desktop-item-edit/main.c:55
+#: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Launcher"
 msgstr "Modificar un iniciador"
 
-#: ../exo-desktop-item-edit/main.c:55
+#: ../exo-desktop-item-edit/main.c:51
 msgid "Edit Link"
 msgstr "Modificar unha ligazón"
 
-#: ../exo-desktop-item-edit/main.c:76
+#: ../exo-desktop-item-edit/main.c:72
 msgid "Create a new desktop file in the given directory"
-msgstr ""
+msgstr "Crear un novo ficheiro desktop no directorio"
+
+#: ../exo-desktop-item-edit/main.c:73
+msgid "Type of desktop file to create (Application or Link)"
+msgstr "Tipo de ficheiro desktop que se vai crear (Aplicación ou Ligazón)"
+
+#: ../exo-desktop-item-edit/main.c:74
+msgid "Preset name when creating a desktop file"
+msgstr "Nome predefinido ao crear un ficheiro desktop"
+
+#: ../exo-desktop-item-edit/main.c:75
+msgid "Preset comment when creating a desktop file"
+msgstr "Comentario predefinido ao crear un ficheiro desktop"
+
+#: ../exo-desktop-item-edit/main.c:76
+msgid "Preset command when creating a launcher"
+msgstr "Comando predefinido ao crear un iniciador"
 
 #: ../exo-desktop-item-edit/main.c:77
-msgid "Type of desktop file to create (Application or Link)"
-msgstr ""
+msgid "Preset URL when creating a link"
+msgstr "URL predefinido ao crear unha ligazón"
 
 #: ../exo-desktop-item-edit/main.c:78
-msgid "Preset name when creating a desktop file"
-msgstr ""
+msgid "Preset icon when creating a desktop file"
+msgstr "Icona predefinida ao crear un ficheiro desktop"
 
 #: ../exo-desktop-item-edit/main.c:79
-msgid "Preset comment when creating a desktop file"
-msgstr ""
-
-#: ../exo-desktop-item-edit/main.c:80
-msgid "Preset command when creating a launcher"
-msgstr ""
-
-#: ../exo-desktop-item-edit/main.c:81
-msgid "Preset URL when creating a link"
-msgstr ""
-
-#: ../exo-desktop-item-edit/main.c:82
-msgid "Preset icon when creating a desktop file"
-msgstr ""
-
-#: ../exo-desktop-item-edit/main.c:83 ../exo-helper/main.c:68
-#: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
+#: ../exo-helper/main.c:67
+#: ../exo-mount/main.c:74
+#: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Amosar a información da versión e saír"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:132
+#: ../exo-desktop-item-edit/main.c:125
 msgid "[FILE|FOLDER]"
 msgstr "[FICHEIRO|CARTAFOL]"
 
-#. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:144 ../exo-mount/main.c:108
-#: ../exo-mount-notify/main.c:156
-#, fuzzy
+#: ../exo-desktop-item-edit/main.c:138
+#: ../exo-mount/main.c:108
+#: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
-msgstr "Fallo ao abrir a pantalla do sistema de ventás X '%s'\n"
+msgstr "Produciuse un erro ao abrir a pantalla"
 
-#: ../exo-desktop-item-edit/main.c:171
-#, fuzzy
+#: ../exo-desktop-item-edit/main.c:168
 msgid "No file/folder specified"
-msgstr "Non se especificou un <template> en '%s'"
-
-#: ../exo-desktop-item-edit/main.c:217
-#, fuzzy, c-format
-msgid "Failed to load contents from \"%s\": %s"
-msgstr "Fallo ao abrir o ficheiro '%s': %s"
-
-#: ../exo-desktop-item-edit/main.c:222
-#, c-format
-msgid "The file \"%s\" contains no data"
-msgstr ""
-
-#. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:235
-#, fuzzy, c-format
-msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Fallo ao abrir o ficheiro '%s': %s"
-
-#. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:247
-#, c-format
-msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "Non se especificou ningún ficheiro/directorio"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:257
-#, fuzzy, c-format
+#: ../exo-desktop-item-edit/main.c:226
+#, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Tipo de ficheiro de paleta descoñecido: %s"
+msgstr "Ficheiro desktop de tipo \"%s\" non soportado"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:273
+#: ../exo-desktop-item-edit/main.c:246
 msgid "C_reate"
 msgstr "C_rear"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:413
+#: ../exo-desktop-item-edit/main.c:366
 msgid "Choose filename"
 msgstr "Escolla o nome de ficheiro"
 
-#: ../exo-desktop-item-edit/main.c:471
+#: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Erro ó crear \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:471
+#: ../exo-desktop-item-edit/main.c:420
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Fallo ó gardar \"%s\"."
 
 #: ../exo-hal/exo-hal.c:444
-#, fuzzy, c-format
+#, c-format
 msgid "External %s Drive"
-msgstr "Dispositivo aberto"
+msgstr "Unidade %s externa"
 
 #: ../exo-hal/exo-hal.c:446
-#, fuzzy, c-format
+#, c-format
 msgid "%s Drive"
-msgstr "Dispositivo %s"
+msgstr "Unidade %s"
 
 #: ../exo-hal/exo-hal.c:455
 msgid "External Floppy Drive"
@@ -863,24 +811,20 @@ msgid "Floppy Drive"
 msgstr "Disqueteira"
 
 #: ../exo-hal/exo-hal.c:461
-#, fuzzy
 msgid "Compact Flash Drive"
-msgstr "Dispositivo Compact Flash"
+msgstr "Unidade Compact Flash"
 
 #: ../exo-hal/exo-hal.c:465
-#, fuzzy
 msgid "Memory Stick Drive"
-msgstr "Dispositivo Memory Stick "
+msgstr "Unidade Memory Stick"
 
 #: ../exo-hal/exo-hal.c:469
-#, fuzzy
 msgid "Smart Media Drive"
-msgstr "Dispositivo Smart Media"
+msgstr "Unidade Smart Media"
 
 #: ../exo-hal/exo-hal.c:473
-#, fuzzy
 msgid "SD/MMC Drive"
-msgstr "Dispositivo SD/MMC"
+msgstr "Unidade SD/MMC"
 
 #: ../exo-hal/exo-hal.c:477
 msgid "Zip Drive"
@@ -891,21 +835,20 @@ msgid "Jaz Drive"
 msgstr "Unidade Jaz"
 
 #: ../exo-hal/exo-hal.c:485
-#, fuzzy
 msgid "Pen Drive"
 msgstr "Memoria USB"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:494
-#, fuzzy, c-format
+#, c-format
 msgid "%s Music Player"
-msgstr "Reprodutor de música %s %s"
+msgstr "Reprodutor de música %s"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:509
-#, fuzzy, c-format
+#, c-format
 msgid "%s Digital Camera"
-msgstr "Cámara dixital %s %s"
+msgstr "Cámara dixital %s"
 
 #. last fallback to "Drive"
 #: ../exo-hal/exo-hal.c:532
@@ -913,9 +856,9 @@ msgid "Drive"
 msgstr "Unidade"
 
 #: ../exo-hal/exo-hal.c:759
-#, fuzzy, c-format
+#, c-format
 msgid "Blank %s Disc"
-msgstr "Disco en branco"
+msgstr "Disco %s baleiro"
 
 #: ../exo-hal/exo-hal.c:761
 #, c-format
@@ -944,7 +887,7 @@ msgstr "Aplicacións preferidas"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:104
 msgid "Select default applications for various services"
-msgstr ""
+msgstr "Seleccionar as aplicacións predeterminadas para diferentes servizos"
 
 #.
 #. Internet
@@ -962,6 +905,8 @@ msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr ""
+"O navegador web preferido hase usar para abrir\n"
+"hiperligazóns e mostrar o contido da axuda."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
 msgid "Mail Reader"
@@ -972,6 +917,9 @@ msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
+"O Lector de correo preferido hase usar para escribir\n"
+"mensaxes de correo-e cando prema nunha ligazón\n"
+"de correo electrónico."
 
 #.
 #. Utilities
@@ -981,85 +929,65 @@ msgid "Utilities"
 msgstr "Utilidades"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
-msgid "File Manager"
-msgstr ""
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:227
-msgid ""
-"The preferred File Manager will be used to\n"
-"browse the contents of folders."
-msgstr ""
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:251
 msgid "Terminal Emulator"
 msgstr "Emulador de terminal"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:259
+#: ../exo-helper/exo-helper-chooser-dialog.c:227
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
+"O emulador de terminal preferido hase usar\n"
+"para executar os comandos que requiren un\n"
+"contorno CLI."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:298
-#, fuzzy
+#: ../exo-helper/exo-helper-chooser-dialog.c:266
 msgid "Failed to open the documentation browser."
-msgstr ""
-"Fallou ao abrir o navegador para mostrar:\n"
-"%s"
+msgstr "Produciuse un erro ao abrir o navegador da documentación."
 
-#: ../exo-helper/exo-helper-chooser.c:150
-#: ../exo-helper/exo-helper-chooser.c:157
+#: ../exo-helper/exo-helper-chooser.c:184
+#: ../exo-helper/exo-helper-chooser.c:191
 msgid "Press left mouse button to change the selected application."
-msgstr ""
+msgstr "Prema co botón esquerdo do rato para cambiar a aplicación seleccionada."
 
-#: ../exo-helper/exo-helper-chooser.c:156
+#: ../exo-helper/exo-helper-chooser.c:190
 msgid "Application Chooser Button"
 msgstr "Botón do selector de aplicacións"
 
-#: ../exo-helper/exo-helper-chooser.c:300
+#: ../exo-helper/exo-helper-chooser.c:334
 msgid "No application selected"
 msgstr "Non se seleccionou ningunha aplicación"
 
-#: ../exo-helper/exo-helper-chooser.c:316
+#: ../exo-helper/exo-helper-chooser.c:350
 msgid "Failed to set default Web Browser"
-msgstr ""
+msgstr "Produciuse un erro ao definir o Navegador web predeterminado"
 
-#: ../exo-helper/exo-helper-chooser.c:317
+#: ../exo-helper/exo-helper-chooser.c:351
 msgid "Failed to set default Mail Reader"
-msgstr ""
+msgstr "Produciuse un erro ao definir o Lector de correo predeterminado"
 
-#: ../exo-helper/exo-helper-chooser.c:318
-#, fuzzy
-msgid "Failed to set default File Manager"
-msgstr "Fallo ó executar o Navegador Web predeterminado"
-
-#: ../exo-helper/exo-helper-chooser.c:319
+#: ../exo-helper/exo-helper-chooser.c:352
 msgid "Failed to set default Terminal Emulator"
-msgstr ""
+msgstr "Produciuse un erro ao definir o Emulador de terminal predeterminado"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Select application"
 msgstr "Seleccione unha aplicación"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:535
 msgid "Choose a custom Web Browser"
 msgstr "Escolla un Navegador Web personalizado"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:536
 msgid "Choose a custom Mail Reader"
 msgstr "Escolla un Lector de Correo personalizado"
 
-#: ../exo-helper/exo-helper-chooser.c:504
-#, fuzzy
-msgid "Choose a custom File Manager"
-msgstr "Escolla un Lector de Correo personalizado"
-
-#: ../exo-helper/exo-helper-chooser.c:505
+#: ../exo-helper/exo-helper-chooser.c:537
 msgid "Choose a custom Terminal Emulator"
 msgstr "Escolla un Emulador de Terminal personalizado"
 
-#: ../exo-helper/exo-helper-chooser.c:510
+#: ../exo-helper/exo-helper-chooser.c:542
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
@@ -1067,22 +995,16 @@ msgstr ""
 "Especifique a aplicación que quere usar coma\n"
 "Navegador Web predeterminado para Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:511
+#: ../exo-helper/exo-helper-chooser.c:543
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
+"Especifique a aplicación que desexa usar\n"
+"como Lector de correo predeterminado\n"
+"en Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:512
-#, fuzzy
-msgid ""
-"Specify the application you want to use\n"
-"as default File Manager for Xfce:"
-msgstr ""
-"Especifique a aplicación que quere usar coma\n"
-"Navegador Web predeterminado para Xfce:"
-
-#: ../exo-helper/exo-helper-chooser.c:513
+#: ../exo-helper/exo-helper-chooser.c:544
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
@@ -1090,59 +1012,59 @@ msgstr ""
 "Especifique a aplicación que quere usar coma\n"
 "Emulador de Terminal predeterminado para Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:580
+#: ../exo-helper/exo-helper-chooser.c:610
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "Examine o sistema de ficheiros para escoller un comando personalizado."
 
-#: ../exo-helper/exo-helper-chooser.c:763
+#: ../exo-helper/exo-helper-chooser.c:793
 msgid "_Other..."
 msgstr "_Outro..."
 
-#: ../exo-helper/exo-helper-chooser.c:764
+#: ../exo-helper/exo-helper-chooser.c:794
 msgid "Use a custom application which is not included in the above list."
-msgstr ""
+msgstr "Usar unha aplicación personalizada que non está incluída na lista de enriba."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:114
+#: ../exo-helper/exo-helper-launcher-dialog.c:141
 msgid "Choose Preferred Application"
 msgstr "Escolla aplicación preferida"
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:257
+#: ../exo-helper/exo-helper-launcher-dialog.c:284
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
 msgstr ""
+"Escolla o seu Navegador web preferido\n"
+"e prema en Aceptar para continuar."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:259
+#: ../exo-helper/exo-helper-launcher-dialog.c:286
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
+"Escolla o seu Lecto de correo preferido\n"
+"e prema en Aceptar para continuar."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:261
-msgid ""
-"Please choose your preferred File Manager\n"
-"now and click OK to proceed."
-msgstr ""
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:263
+#: ../exo-helper/exo-helper-launcher-dialog.c:288
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
+"Escolla o seu Emulador de terminal preferido\n"
+"e prema en Aceptar para continuar."
 
-#: ../exo-helper/exo-helper.c:383
+#: ../exo-helper/exo-helper.c:404
 #, c-format
 msgid "No command specified"
 msgstr "Non se especificou ningún comando"
 
-#: ../exo-helper/exo-helper.c:685
-#, fuzzy, c-format
+#: ../exo-helper/exo-helper.c:740
+#, c-format
 msgid "Failed to open helpers.rc for writing"
-msgstr "Fallo ao abrir o ficheiro '%s' para escritura: fdopen() fallou: %s"
+msgstr "Produciuse un erro ao abrir helpers.rc para escritura"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr ""
+msgstr "Aplicacións preferidas (Navegador web, Lector de correo e Emulador de terminal)"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
@@ -1150,65 +1072,61 @@ msgstr "Fallo ó executar o Navegador Web predeterminado"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
-msgstr ""
+msgstr "Produciuse un erro ao executar o Lector de correo predeterminado"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
-msgid "Failed to execute default File Manager"
-msgstr "Fallo ó executar o Navegador Web predeterminado"
-
-#: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
-msgstr ""
+msgstr "Produciuse un erro ao executar o Emulador de terminal predeterminado"
 
-#: ../exo-helper/main.c:69
-#, fuzzy
+#: ../exo-helper/main.c:68
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr "Ir ao diálogo de aplicacións preferidas"
+msgstr ""
+"Abrir o diálogo de configuración\n"
+"das Aplicacións preferidas"
 
-#: ../exo-helper/main.c:70
-#, fuzzy
+#: ../exo-helper/main.c:69
 msgid "Settings manager socket"
-msgstr "Erro creando o socket: %s"
+msgstr "Conectador do xestor de configuración"
 
-#: ../exo-helper/main.c:70
-#, fuzzy
+#: ../exo-helper/main.c:69
 msgid "SOCKET ID"
-msgstr "O ID é incorrecto!"
-
-#: ../exo-helper/main.c:71
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
 msgstr ""
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:70
+msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgstr "Inicia o asistente predeterminado de TIPO cos PARÁMETROS opcionais, onde TIPO é un dos seguintes valores."
+
+#: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
 msgstr "TIPO [PARAMETRO]"
 
-#: ../exo-helper/main.c:95
+#: ../exo-helper/main.c:93
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
-"  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"O comando --launch soporta os seguintes TIPOS:\n"
+"\n"
+"  WebBrowser       - O navegador web preferido.\n"
+"  MailReader       - O lector de correo preferido.\n"
+"  TerminalEmulator - O emulador de terminal preferido."
 
-#: ../exo-helper/main.c:105
-#, fuzzy, c-format
+#: ../exo-helper/main.c:102
+#, c-format
 msgid "Type '%s --help' for usage."
-msgstr "%s. Vexa --help para a información de uso.\n"
+msgstr "Escriba '%s --help' para ver o modo de uso."
 
-#: ../exo-helper/main.c:155
-#, fuzzy, c-format
+#: ../exo-helper/main.c:152
+#, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "O tipo de transporte non é válido '%d'"
+msgstr "Tipo de asistente incorrecto \"%s\""
 
-#: ../exo-helper/main.c:199
+#: ../exo-helper/main.c:192
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1222,14 +1140,25 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. Tódolos dereitos reservados.\n"
+"\n"
+"Escrito por Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Compilado con Gtk+-%d.%d.%d, executando Gtk+-%d.%d.%d.\n"
+"\n"
+"Comuníquelle os erros a <%s>.\n"
+
+#: ../exo-helper/main.c:209
+#, c-format
+msgid "Unknown helper arguments.\n"
+msgstr "Argumentos descoñecidos para o asistente.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
 msgstr "Terminal de Xfce"
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr ""
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1240,14 +1169,12 @@ msgid "Balsa"
 msgstr "Balsa"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
-#, fuzzy
 msgid "Debian Sensible Browser"
-msgstr "Navegador sensible de Debian"
+msgstr ""
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
-#, fuzzy
 msgid "Debian X Terminal Emulator"
-msgstr "Emulador de terminal de Debian"
+msgstr "Emulador de terminal para as X de Debian"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -1258,9 +1185,8 @@ msgid "Epiphany Web Browser"
 msgstr "Navegador Web Epiphany"
 
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
-#, fuzzy
 msgid "Enlightened Terminal Emulator"
-msgstr "Emulador de terminal de Debian"
+msgstr "Enlightened Terminal Emulator"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Novell Evolution"
@@ -1287,14 +1213,12 @@ msgid "Konqueror Web Browser"
 msgstr "Navegador Web Konqueror"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
-#, fuzzy
 msgid "Links Text Browser"
-msgstr "Usar navegador _web"
+msgstr "Navegador en modo texto Links"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-#, fuzzy
 msgid "Lynx Text Browser"
-msgstr "Usar navegador _web"
+msgstr "Navegador en modo texto Lynx"
 
 #: ../exo-helper/helpers/midori.desktop.in.in.h:1
 msgid "Midori"
@@ -1305,17 +1229,12 @@ msgid "Mozilla Browser"
 msgstr "Navegador Mozilla"
 
 #: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
-#, fuzzy
 msgid "Mozilla Mail"
 msgstr "Mozilla Mail"
 
 #: ../exo-helper/helpers/mutt.desktop.in.in.h:1
 msgid "Mutt"
 msgstr "Mutt"
-
-#: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
-msgid "Nautilus"
-msgstr ""
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
@@ -1330,16 +1249,10 @@ msgid "Opera Browser"
 msgstr "Navegador Opera"
 
 #: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
-#, fuzzy
 msgid "Opera Mail"
-msgstr "Correo do Evolution"
-
-#: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
-msgid "PCMan File Manager"
-msgstr ""
+msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-#, fuzzy
 msgid "Claws Mail"
 msgstr "Claws Mail"
 
@@ -1352,66 +1265,64 @@ msgid "Mozilla Thunderbird"
 msgstr "Mozilla Thunderbird"
 
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
-#, fuzzy
 msgid "RXVT Unicode"
-msgstr " (Unicode inválido)"
+msgstr "RXVT Unicode"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-#, fuzzy
 msgid "W3M Text Browser"
-msgstr "Usar navegador _web"
+msgstr "Navegador en modo texto W3M"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
 msgstr "Terminal X"
 
-#: ../exo-mount/exo-mount-fstab.c:85
+#: ../exo-mount/exo-mount-fstab.c:92
 #, c-format
 msgid "Unknown error"
 msgstr "Erro descoñecido"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:132
+#: ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr ""
+msgstr "O dispositivo \"%s\" non se atopa na táboa de sistema de ficheiros"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:224
+#: ../exo-mount/exo-mount-hal.c:280
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
-msgstr ""
+msgstr "O dispositivo indicado \"%s\" non é un volume ou unha unidade"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:605
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr ""
+msgstr "Non ten privilexios para expulsar o volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:610
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr ""
+msgstr "Unha aplicación está impedindo que o volume \"%s\" poida ser expulsado"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:841
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr ""
+msgstr "Non ten privilexios para montar o volume \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:856
 #, c-format
-msgid ""
-"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
-"record audio or data on the disc"
-msgstr ""
+msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+msgstr "Os discos baleiros non se poden montar, use unha aplicación de gravación de CDs como Xfburn para gravar son ou datos no disco"
 
 #: ../exo-mount/exo-mount-hal.c:867
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr ""
+msgstr "Os CDs de son non se poden montar, use Xfmedia para reproducir as pistas de son"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:932
@@ -1429,42 +1340,39 @@ msgstr ""
 #: ../exo-mount/exo-mount-hal.c:1021
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr ""
+msgstr "Non ten privilexios para desmontar o volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:1026
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr ""
+msgstr "Unha aplicación está impedindo que o volume  \"%s\" poida ser desmontado"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:1031
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr ""
+msgstr "O volume \"%s\" probablemente foi montado a man na liña de comandos"
 
 #: ../exo-mount/main.c:65
-#, fuzzy
 msgid "Eject rather than mount"
-msgstr "a montaxe non implementa a expulsión"
+msgstr ""
 
 #: ../exo-mount/main.c:66
-#, fuzzy
 msgid "Unmount rather than mount"
-msgstr "a montaxe non implementa o desmontado"
+msgstr ""
 
 #: ../exo-mount/main.c:68
 msgid "Mount by HAL device UDI"
-msgstr ""
+msgstr "Montar por UDI de dispositivo HAL"
 
 #: ../exo-mount/main.c:70
 msgid "Mount by HAL device UDI (not supported)"
-msgstr ""
+msgstr "Montar por UDI de dispositivo HAL (non soportado)"
 
 #: ../exo-mount/main.c:72
-#, fuzzy
 msgid "Mount by device file"
-msgstr "Ficheiro DXF escrito por pstoedit"
+msgstr "Montar usando o ficheiro de dispositivo"
 
 #: ../exo-mount/main.c:73
 msgid "Don't show any dialogs"
@@ -1473,28 +1381,27 @@ msgstr "Non mostrar ningún diálogo"
 #. the caller must specify either a HAL UDI or a device file
 #: ../exo-mount/main.c:138
 msgid "Must specify HAL device UDI or device file"
-msgstr ""
+msgstr "Debe especificar a UDI de dispositivo HAL ou o ficheiro de dispositivo"
 
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr ""
+msgstr "Non se deben especificar á vez unha UDI de dispositivo HAL e un ficheiro de dispositivo"
 
 #: ../exo-mount/main.c:154
-msgid ""
-"Cannot mount by HAL device UDI, because HAL support was disabled for this "
-"build"
-msgstr ""
+msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+msgstr "Non se pode montar usando a UDI de dispositivo HAL debido a que nesta compilación se desactivou o soporte de HAL"
 
+# UDI=Uniform Driver Interface
 #: ../exo-mount/main.c:161
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr ""
+msgstr "A UDI \"%s\" especificada non é unha UDI de dispositivo HAL válida"
 
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:178
 msgid "Cannot eject and unmount simultaneously"
-msgstr ""
+msgstr "Non se pode desmontar e expulsar á vez"
 
 #: ../exo-mount/main.c:330
 #, c-format
@@ -1515,128 +1422,114 @@ msgstr "Fallo ó montar \"%s\""
 #: ../exo-mount-notify/main.c:113
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr ""
+msgstr "O dispositivo \"%s\" xa se pode extraer de xeito seguro."
 
 #: ../exo-mount-notify/main.c:114
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "O dispositivo xa se pode extraer de xeito seguro"
 
 #. read-only, just ejecting
-#: ../exo-mount-notify/main.c:227
+#: ../exo-mount-notify/main.c:226
 msgid "Ejecting device"
 msgstr "Expulsando o dispositivo"
 
-#: ../exo-mount-notify/main.c:228
+#: ../exo-mount-notify/main.c:227
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr ""
+msgstr "Estase expulsando o dispositivo \"%s\". Isto pode levar algún tempo."
 
 #. read-only, just unmounting
-#: ../exo-mount-notify/main.c:233
+#: ../exo-mount-notify/main.c:232
 msgid "Unmounting device"
 msgstr "Desmontando o dispositivo"
 
-#: ../exo-mount-notify/main.c:234
+#: ../exo-mount-notify/main.c:233
 #, c-format
-msgid ""
-"The device \"%s\" is being unmounted by the system. Please do not remove the "
-"media or disconnect the drive."
-msgstr ""
+msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+msgstr "O sistema está desmontando o dispositivo \"%s\". Non extraia o soporte nin desconecte a unidade."
 
 #. not read-only, writing back data
-#: ../exo-mount-notify/main.c:241
+#: ../exo-mount-notify/main.c:240
 msgid "Writing data to device"
 msgstr "Escribindo os datos no dispositivo"
 
-#: ../exo-mount-notify/main.c:242
+#: ../exo-mount-notify/main.c:241
 #, c-format
-msgid ""
-"There is data that needs to be written to the device \"%s\" before it can be "
-"removed. Please do not remove the media or disconnect the drive."
-msgstr ""
+msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+msgstr "Hai datos que teñen que escribirse no dispositivo \"%s\" antes de extraelo. Non extraia o soporte nin desconecte a unidade."
 
-#: ../exo-open/main.c:83
+#: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
 msgstr "Uso: exo-open [URLs...]"
 
-#: ../exo-open/main.c:84
+#: ../exo-open/main.c:60
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TIPO [PARAMETROS...]"
 
-#: ../exo-open/main.c:86
+#: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
+msgstr "  -?, --help                          Mostra esta mensaxe de axuda e sae"
 
-#: ../exo-open/main.c:87
-msgid ""
-"  -V, --version                       Print version information and exit"
-msgstr ""
-"  -V, --version                       Mostra a información da versión e sae"
+#: ../exo-open/main.c:63
+msgid "  -V, --version                       Print version information and exit"
+msgstr "  -V, --version                       Mostra a información da versión e sae"
 
-#: ../exo-open/main.c:89
+#: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
+"  --launch TIPO [PARÁMETROS...]        Iniciar a aplicación preferida de\n"
+"                                      TIPO cos PARÁMETROS opcionais, onde TIPO é\n"
+"                                      un dos seguintes valores."
 
-#: ../exo-open/main.c:93
+#: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
+"  --working-directory DIRECTORIO      Directorio de traballo\n"
+"                                      predeterminado para as aplicacións iniciadas\n"
+"                                      ca opción --launch."
 
-#: ../exo-open/main.c:96
+#: ../exo-open/main.c:72
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr ""
+msgstr "O comando --launch soporta os seguintes TIPOS:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:102
+#: ../exo-open/main.c:78
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
-"  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"  WebBrowser       - O navegador web preferido.\n"
+"  MailReader       - O lector de correo preferido.\n"
+"  TerminalEmulator - O emulador de terminal preferido."
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:82
+#, fuzzy
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "Se non especifica a opción --launch, exo-open abrirá tódalas URLs especificadas cos seus           preferidos. "
 
-#: ../exo-open/main.c:324
+#: ../exo-open/main.c:170
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr ""
+msgstr "Produciuse un erro ao iniciar a aplicación preferida da categoría \"%s\"."
 
-#: ../exo-open/main.c:366
+#: ../exo-open/main.c:191
 #, c-format
-msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
-
-#: ../exo-open/main.c:376
-#, fuzzy, c-format
-msgid "Failed to open URI \"%s\"."
+msgid "Failed to open URL \"%s\"."
 msgstr "Produciuse un erro ó abrir o URL \"%s\"."
-
-#~ msgid "Unable to open \"%s\""
-#~ msgstr "Non se puido abrir \"%s\""
-
-#, fuzzy
-#~ msgid "The URL \"%s\" is not supported"
-#~ msgstr "O protocolo %s non está soportado."
-
-#, fuzzy
-#~ msgid "Unknown helper arguments.\n"
-#~ msgstr "Info dos _argumentos de función"
 
 #~ msgid "Button Label|Preferred Applications"
 #~ msgstr "Aplicacións Preferidas"
+
