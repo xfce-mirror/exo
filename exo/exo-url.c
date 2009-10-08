@@ -149,8 +149,10 @@ _exo_url_to_local_path (const gchar *url)
     }
   else
     {
-      /* check if url is an absolute path */
-      if (g_path_is_absolute (url))
+      /* check if url is an absolute path or trash uri (ie. something we
+       * can send directly to the file manager) */
+      if (g_path_is_absolute (url)
+          || g_str_has_prefix (url, "trash://"))
         {
           /* well, we got our path then */
           path = g_strdup (url);
@@ -227,10 +229,12 @@ exo_url_show_on_screen (const gchar *url,
       /* determine the display name for the screen */
       display_name = gdk_screen_make_display_name (screen);
       
-      /* check if we have a local HTML file here */
-      if (fnmatch ("*.xhtml", local_path, FNM_CASEFOLD) == 0
-          || fnmatch ("*.htm", local_path, FNM_CASEFOLD) == 0
-          || fnmatch ("*.html", local_path, FNM_CASEFOLD) == 0)
+      /* check if we have a local HTML file here that is not
+       * in the trash */
+      if (!g_str_has_prefix (url, "trash://")
+          && (fnmatch ("*.xhtml", local_path, FNM_CASEFOLD) == 0
+              || fnmatch ("*.htm", local_path, FNM_CASEFOLD) == 0
+              || fnmatch ("*.html", local_path, FNM_CASEFOLD) == 0))
         {
           /* transform the path to a file:-URI */
           uri = g_filename_to_uri (local_path, NULL, error);
