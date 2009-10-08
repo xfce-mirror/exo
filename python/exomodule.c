@@ -32,6 +32,7 @@
 void exo_add_constants    (PyObject    *module,
                            const gchar *strip_prefix) G_GNUC_INTERNAL;
 void exo_register_classes (PyObject    *d) G_GNUC_INTERNAL;
+DL_EXPORT(void) init_exo (void);
 
 extern PyMethodDef exo_functions[];
 
@@ -106,7 +107,6 @@ pygtk_tree_path_to_pyobject (GtkTreePath *path)
   return ret;
 }
 #endif
-
 
 
 DL_EXPORT(void)

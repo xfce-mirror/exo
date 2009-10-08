@@ -186,7 +186,8 @@ stamp-exo-marshal.h: exo-marshal.list Makefile
 	&& echo timestamp > $(@F)
 
 exo-marshal.c: exo-marshal.list Makefile
-	( cd $(srcdir) && glib-genmarshal \
+	echo "#include <exo/exo-marshal.h>" > xgen-emc \
+	&& ( cd $(srcdir) && glib-genmarshal \
 		--prefix=_exo_marshal \
 		--body exo-marshal.list ) >> xgen-emc \
 	&& cp xgen-emc exo-marshal.c \
