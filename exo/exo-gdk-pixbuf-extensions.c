@@ -88,10 +88,10 @@
 
 /**
  * exo_gdk_pixbuf_colorize:
- * @src   : the source #GdkPixbuf.
- * @color : the new color.
+ * @source : the source #GdkPixbuf.
+ * @color  : the new color.
  *
- * Creates a new #GdkPixbuf based on @src, which is
+ * Creates a new #GdkPixbuf based on @source, which is
  * colorized to @color.
  *
  * The caller is responsible to free the returned object
@@ -102,7 +102,7 @@
  * Since: 0.3.1.3
  **/
 GdkPixbuf*
-exo_gdk_pixbuf_colorize (const GdkPixbuf *src,
+exo_gdk_pixbuf_colorize (const GdkPixbuf *source,
                          const GdkColor  *color)
 {
   GdkPixbuf *dst;
@@ -114,23 +114,23 @@ exo_gdk_pixbuf_colorize (const GdkPixbuf *src,
   gint       i;
 
   /* determine source parameters */
-  width = gdk_pixbuf_get_width (src);
-  height = gdk_pixbuf_get_height (src);
-  has_alpha = gdk_pixbuf_get_has_alpha (src);
+  width = gdk_pixbuf_get_width (source);
+  height = gdk_pixbuf_get_height (source);
+  has_alpha = gdk_pixbuf_get_has_alpha (source);
 
   /* allocate the destination pixbuf */
-  dst = gdk_pixbuf_new (gdk_pixbuf_get_colorspace (src), has_alpha, gdk_pixbuf_get_bits_per_sample (src), width, height);
+  dst = gdk_pixbuf_new (gdk_pixbuf_get_colorspace (source), has_alpha, gdk_pixbuf_get_bits_per_sample (source), width, height);
 
   /* determine row strides on src/dst */
   dst_row_stride = gdk_pixbuf_get_rowstride (dst);
-  src_row_stride = gdk_pixbuf_get_rowstride (src);
+  src_row_stride = gdk_pixbuf_get_rowstride (source);
 
 #if defined(__GNUC__) && defined(__MMX__)
   /* check if there's a good reason to use MMX */
   if (G_LIKELY (has_alpha && dst_row_stride == width * 4 && src_row_stride == width * 4 && (width * height) % 2 == 0))
     {
       __m64 *pixdst = (__m64 *) gdk_pixbuf_get_pixels (dst);
-      __m64 *pixsrc = (__m64 *) gdk_pixbuf_get_pixels (src);
+      __m64 *pixsrc = (__m64 *) gdk_pixbuf_get_pixels (source);
       __m64  alpha_mask = _mm_set_pi8 (0xff, 0, 0, 0, 0xff, 0, 0, 0);
       __m64  color_factor = _mm_set_pi16 (0, color->blue, color->green, color->red);
       __m64  zero = _mm_setzero_si64 ();
@@ -178,7 +178,7 @@ exo_gdk_pixbuf_colorize (const GdkPixbuf *src,
 #endif
     {
       guchar *dst_pixels = gdk_pixbuf_get_pixels (dst);
-      guchar *src_pixels = gdk_pixbuf_get_pixels (src);
+      guchar *src_pixels = gdk_pixbuf_get_pixels (source);
       guchar *pixdst;
       guchar *pixsrc;
       gint    red_value = color->red / 255.0;
@@ -256,23 +256,23 @@ draw_frame_column (const GdkPixbuf *frame_image,
 
 /**
  * exo_gdk_pixbuf_frame:
- * @src           : the source #GdkPixbuf.
+ * @source        : the source #GdkPixbuf.
  * @frame         : the frame #GdkPixbuf.
  * @left_offset   : the left frame offset.
  * @top_offset    : the top frame offset.
  * @right_offset  : the right frame offset.
  * @bottom_offset : the bottom frame offset.
  *
- * Embeds @src in @frame and returns the result as new #GdkPixbuf.
+ * Embeds @source in @frame and returns the result as new #GdkPixbuf.
  *
  * The caller is responsible to free the returned #GdkPixbuf using g_object_unref().
  *
- * Returns: the framed version of @src.
+ * Returns: the framed version of @source.
  *
  * Since: 0.3.1.9
  **/
 GdkPixbuf*
-exo_gdk_pixbuf_frame (const GdkPixbuf *src,
+exo_gdk_pixbuf_frame (const GdkPixbuf *source,
                       const GdkPixbuf *frame,
                       gint             left_offset,
                       gint             top_offset,
@@ -288,10 +288,10 @@ exo_gdk_pixbuf_frame (const GdkPixbuf *src,
   gint       src_height;
 
   g_return_val_if_fail (GDK_IS_PIXBUF (frame), NULL);
-  g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
+  g_return_val_if_fail (GDK_IS_PIXBUF (source), NULL);
 
-  src_width = gdk_pixbuf_get_width (src);
-  src_height = gdk_pixbuf_get_height (src);
+  src_width = gdk_pixbuf_get_width (source);
+  src_height = gdk_pixbuf_get_height (source);
 
   frame_width = gdk_pixbuf_get_width (frame);
   frame_height = gdk_pixbuf_get_height (frame);
@@ -303,7 +303,7 @@ exo_gdk_pixbuf_frame (const GdkPixbuf *src,
   dst = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, dst_width, dst_height);
 
   /* fill the destination if the source has an alpha channel */
-  if (G_UNLIKELY (gdk_pixbuf_get_has_alpha (src)))
+  if (G_UNLIKELY (gdk_pixbuf_get_has_alpha (source)))
     gdk_pixbuf_fill (dst, 0xffffffff);
 
   /* draw the left top cornder and top row */
@@ -326,7 +326,7 @@ exo_gdk_pixbuf_frame (const GdkPixbuf *src,
                      dst_width - right_offset, dst, top_offset, right_offset);
 
   /* copy the source pixbuf into the framed area */
-  gdk_pixbuf_copy_area (src, 0, 0, src_width, src_height, dst, left_offset, top_offset);
+  gdk_pixbuf_copy_area (source, 0, 0, src_width, src_height, dst, left_offset, top_offset);
 
   return dst;
 }
@@ -335,21 +335,21 @@ exo_gdk_pixbuf_frame (const GdkPixbuf *src,
 
 /**
  * exo_gdk_pixbuf_lucent:
- * @src     : the source #GdkPixbuf.
+ * @source  : the source #GdkPixbuf.
  * @percent : the percentage of translucency.
  *
- * Returns a version of @src, whose pixels translucency is
- * @percent of the original @src pixels.
+ * Returns a version of @source, whose pixels translucency is
+ * @percent of the original @source pixels.
  *
  * The caller is responsible to free the returned object
  * using g_object_unref() when no longer needed.
  *
- * Returns: a translucent version of @src.
+ * Returns: a translucent version of @source.
  *
  * Since: 0.3.1.3
  **/
 GdkPixbuf*
-exo_gdk_pixbuf_lucent (const GdkPixbuf *src,
+exo_gdk_pixbuf_lucent (const GdkPixbuf *source,
                        guint            percent)
 {
   GdkPixbuf *dst;
@@ -363,26 +363,26 @@ exo_gdk_pixbuf_lucent (const GdkPixbuf *src,
   gint       height;
   gint       i, j;
 
-  g_return_val_if_fail (GDK_IS_PIXBUF (src), NULL);
+  g_return_val_if_fail (GDK_IS_PIXBUF (source), NULL);
   g_return_val_if_fail ((gint) percent >= 0 && percent <= 100, NULL);
 
   /* determine source parameters */
-  width = gdk_pixbuf_get_width (src);
-  height = gdk_pixbuf_get_height (src);
+  width = gdk_pixbuf_get_width (source);
+  height = gdk_pixbuf_get_height (source);
 
   /* allocate the destination pixbuf */
-  dst = gdk_pixbuf_new (gdk_pixbuf_get_colorspace (src), TRUE, gdk_pixbuf_get_bits_per_sample (src), width, height);
+  dst = gdk_pixbuf_new (gdk_pixbuf_get_colorspace (source), TRUE, gdk_pixbuf_get_bits_per_sample (source), width, height);
 
   /* determine row strides on src/dst */
   dst_row_stride = gdk_pixbuf_get_rowstride (dst);
-  src_row_stride = gdk_pixbuf_get_rowstride (src);
+  src_row_stride = gdk_pixbuf_get_rowstride (source);
 
   /* determine pixels on src/dst */
   dst_pixels = gdk_pixbuf_get_pixels (dst);
-  src_pixels = gdk_pixbuf_get_pixels (src);
+  src_pixels = gdk_pixbuf_get_pixels (source);
 
   /* check if the source already contains an alpha channel */
-  if (G_LIKELY (gdk_pixbuf_get_has_alpha (src)))
+  if (G_LIKELY (gdk_pixbuf_get_has_alpha (source)))
     {
       for (i = height; --i >= 0; )
         {
@@ -439,20 +439,20 @@ lighten_channel (guchar cur_value)
 
 /**
  * exo_gdk_pixbuf_spotlight:
- * @src : the source #GdkPixbuf.
+ * @source : the source #GdkPixbuf.
  *
- * Creates a lightened version of @src, suitable for
+ * Creates a lightened version of @source, suitable for
  * prelit state display of icons.
  *
  * The caller is responsible to free the returned
  * pixbuf using #g_object_unref().
  *
- * Returns: the lightened version of @src.
+ * Returns: the lightened version of @source.
  *
  * Since: 0.3.1.3
  **/
 GdkPixbuf*
-exo_gdk_pixbuf_spotlight (const GdkPixbuf *src)
+exo_gdk_pixbuf_spotlight (const GdkPixbuf *source)
 {
   GdkPixbuf *dst;
   gboolean   has_alpha;
@@ -463,23 +463,23 @@ exo_gdk_pixbuf_spotlight (const GdkPixbuf *src)
   gint       i;
 
   /* determine source parameters */
-  width = gdk_pixbuf_get_width (src);
-  height = gdk_pixbuf_get_height (src);
-  has_alpha = gdk_pixbuf_get_has_alpha (src);
+  width = gdk_pixbuf_get_width (source);
+  height = gdk_pixbuf_get_height (source);
+  has_alpha = gdk_pixbuf_get_has_alpha (source);
 
   /* allocate the destination pixbuf */
-  dst = gdk_pixbuf_new (gdk_pixbuf_get_colorspace (src), has_alpha, gdk_pixbuf_get_bits_per_sample (src), width, height);
+  dst = gdk_pixbuf_new (gdk_pixbuf_get_colorspace (source), has_alpha, gdk_pixbuf_get_bits_per_sample (source), width, height);
 
   /* determine src/dst row strides */
   dst_row_stride = gdk_pixbuf_get_rowstride (dst);
-  src_row_stride = gdk_pixbuf_get_rowstride (src);
+  src_row_stride = gdk_pixbuf_get_rowstride (source);
 
 #if defined(__GNUC__) && defined(__MMX__)
   /* check if there's a good reason to use MMX */
   if (G_LIKELY (has_alpha && dst_row_stride == width * 4 && src_row_stride == width * 4 && (width * height) % 2 == 0))
     {
       __m64 *pixdst = (__m64 *) gdk_pixbuf_get_pixels (dst);
-      __m64 *pixsrc = (__m64 *) gdk_pixbuf_get_pixels (src);
+      __m64 *pixsrc = (__m64 *) gdk_pixbuf_get_pixels (source);
       __m64  alpha_mask = _mm_set_pi8 (0xff, 0, 0, 0, 0xff, 0, 0, 0);
       __m64  twentyfour = _mm_set_pi8 (0, 24, 24, 24, 0, 24, 24, 24);
       __m64  zero = _mm_setzero_si64 ();
@@ -527,7 +527,7 @@ exo_gdk_pixbuf_spotlight (const GdkPixbuf *src)
 #endif
     {
       guchar *dst_pixels = gdk_pixbuf_get_pixels (dst);
-      guchar *src_pixels = gdk_pixbuf_get_pixels (src);
+      guchar *src_pixels = gdk_pixbuf_get_pixels (source);
       guchar *pixdst;
       guchar *pixsrc;
       gint    j;

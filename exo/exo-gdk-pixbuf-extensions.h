@@ -33,20 +33,20 @@
 
 G_BEGIN_DECLS
 
-GdkPixbuf *exo_gdk_pixbuf_colorize                  (const GdkPixbuf *src,
+GdkPixbuf *exo_gdk_pixbuf_colorize                  (const GdkPixbuf *source,
                                                      const GdkColor  *color) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-GdkPixbuf *exo_gdk_pixbuf_frame                     (const GdkPixbuf *src,
+GdkPixbuf *exo_gdk_pixbuf_frame                     (const GdkPixbuf *source,
                                                      const GdkPixbuf *frame,
                                                      gint             left_offset,
                                                      gint             top_offset,
                                                      gint             right_offset,
                                                      gint             bottom_offset) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-GdkPixbuf *exo_gdk_pixbuf_lucent                    (const GdkPixbuf *src,
+GdkPixbuf *exo_gdk_pixbuf_lucent                    (const GdkPixbuf *source,
                                                      guint            percent) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-GdkPixbuf *exo_gdk_pixbuf_spotlight                 (const GdkPixbuf *src) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+GdkPixbuf *exo_gdk_pixbuf_spotlight                 (const GdkPixbuf *source) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 GdkPixbuf *exo_gdk_pixbuf_scale_down                (GdkPixbuf       *source,
                                                      gboolean         preserve_aspect_ratio,
