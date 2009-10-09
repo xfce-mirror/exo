@@ -100,7 +100,7 @@ main (int argc, char **argv)
   /* initialize the i18n support */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
-  /* unset the CTYPE so we get a reliable when setting the iocharset */
+  /* unset the CTYPE so we get the native charset for iocharset */
   setlocale (LC_CTYPE, "");
 
   /* initialize GTK+ */
