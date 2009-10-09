@@ -335,6 +335,12 @@ if test x"$have_gnuc_visibility" = x"yes"; then
 fi
 AM_CONDITIONAL([HAVE_GNUC_VISIBILITY], [test x"$have_gnuc_visibility" = x"yes"])
 
+dnl *************************************
+dnl *** Compensate for broken gtk-doc ***
+dnl *************************************
+XDT_SUPPORTED_FLAGS([GTK_DOC_EXTRA_CFLAGS], [-Wno-sign-compare])
+AC_SUBST([GTK_DOC_EXTRA_CFLAGS])
+
 AC_OUTPUT([
 Makefile
 docs/Makefile
