@@ -61,6 +61,7 @@ struct _ExoMountHalDevice
   /* file system options */
   gchar           **fsoptions;
   const gchar      *fstype;
+  gchar            *altfstype;
   LibHalVolumeUsage fsusage;
 };
 
@@ -168,6 +169,7 @@ exo_mount_hal_device_from_udi (const gchar *udi,
   gchar             *volume_udi = NULL;
   gint               n_volume_udis;
   gint               n;
+  gchar             *key;
 
   g_return_val_if_fail (udi != NULL, NULL);
   g_return_val_if_fail (error == NULL || *error == NULL, NULL);
@@ -243,6 +245,7 @@ err1: g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%
 
           /* setup the file system internals */
           device->fstype = libhal_volume_get_fstype (device->volume);
+          device->altfstype = libhal_device_get_property_string (hal_context, udi, "volume.fstype.alternative.preferred", NULL);
           device->fsusage = libhal_volume_get_fsusage (device->volume);
         }
     }
@@ -263,7 +266,16 @@ err1: g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%
     }
 
   /* determine the valid mount options from the UDI */
-  device->fsoptions = libhal_device_get_property_strlist (hal_context, udi, "volume.mount.valid_options", &derror);
+  if (device->altfstype != NULL)
+    {
+      key = g_strdup_printf ("volume.mount.%s.valid_options", device->altfstype);
+      device->fsoptions = libhal_device_get_property_strlist (hal_context, udi, key, &derror);
+      g_free (key);
+    }
+  else
+    {
+      device->fsoptions = libhal_device_get_property_strlist (hal_context, udi, "volume.mount.valid_options", &derror);
+    }
 
   /* sanity checking */
   if (G_UNLIKELY (device->file == NULL || device->name == NULL))
@@ -400,6 +412,7 @@ exo_mount_hal_device_free (ExoMountHalDevice *device)
       g_free (device->file);
       g_free (device->name);
       g_free (device->udi);
+      g_free (device->altfstype);
       g_free (device);
     }
 }
@@ -645,6 +658,7 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
   gchar       *mount_point;
   gchar      **options;
   gchar       *fstype;
+  const gchar *fs;
   gchar       *s;
   gint         m, n = 0;
 
@@ -654,6 +668,13 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
   /* determine the required mount options */
   options = g_new0 (gchar *, 20);
 
+  /* determin the fsoptions based on the preferrer alternative
+   * fstype if we have one */
+  if (G_UNLIKELY (device->altfstype != NULL))
+    fs = device->altfstype;
+  else
+    fs = device->fstype;
+
   /* check if we know any valid mount options */
   if (G_LIKELY (device->fsoptions != NULL))
     {
@@ -662,15 +683,17 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
         {
           /* this is currently mostly Linux specific noise */
           if (strcmp (device->fsoptions[m], "uid=") == 0
-              && (strcmp (device->fstype, "vfat") == 0
-               || strcmp (device->fstype, "iso9660") == 0
-               || strcmp (device->fstype, "udf") == 0
+              && (strcmp (fs, "vfat") == 0
+               || strcmp (fs, "iso9660") == 0
+               || strcmp (fs, "udf") == 0
+               || strcmp (fs, "ntfs") == 0
+               || strcmp (fs, "ntfs-3g") == 0
                || device->volume == NULL))
             {
               options[n++] = g_strdup_printf ("uid=%u", (guint) getuid ());
             }
           else if (strcmp (device->fsoptions[m], "shortname=") == 0
-                && strcmp (device->fstype, "vfat") == 0)
+                && strcmp (fs, "vfat") == 0)
             {
               options[n++] = g_strdup_printf ("shortname=winnt");
             }
@@ -681,10 +704,16 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
               options[n++] = g_strdup ("sync");
             }
           else if (strcmp (device->fsoptions[m], "longnames") == 0
-                && strcmp (device->fstype, "vfat") == 0)
+                && strcmp (fs, "vfat") == 0)
             {
               /* however this one is FreeBSD specific */
               options[n++] = g_strdup ("longnames");
+            }
+          else if (strcmp (device->fsoptions[m], "umask=") == 0
+                   && strcmp (fs, "ntfs-3g") == 0)
+            {
+              /* we need to pass umask=0077 to ntfs-g3 or else it gets 0777 perms */
+              options[n++] = g_strdup_printf ("umask=0077");
             }
         }
     }
@@ -706,8 +735,11 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
               ? exo_str_replace (mount_point, G_DIR_SEPARATOR_S, "_")
               : g_strdup ("");
 
-  /* let HAL guess the fstype */
-  fstype = g_strdup ("");
+  /* let HAL guess the fstype, unless we have an alternative preferred fstype */
+  if (G_UNLIKELY (device->altfstype != NULL))
+    fstype = g_strdup (device->altfstype);
+  else
+    fstype = g_strdup ("");
 
   /* setup the D-Bus error */
   dbus_error_init (&derror);
