@@ -147,6 +147,88 @@ exo_mount_hal_propagate_error (GError   **error,
 
 
 
+static gint
+exo_mount_hal_udi_is_volume (const gchar  *udi,
+                             GError      **error)
+{
+  gchar     **interfaces;
+  DBusError   derror;
+  guint       n;
+  gint        is_volume = -1;
+
+  g_return_val_if_fail (udi != NULL, -1);
+  g_return_val_if_fail (error == NULL || *error == NULL, -1);
+
+  /* initialize D-Bus error */
+  dbus_error_init (&derror);
+
+  /* determine the info.interfaces property of the device */
+  interfaces = libhal_device_get_property_strlist (hal_context, udi, "info.interfaces", &derror);
+  if (G_LIKELY (interfaces != NULL))
+    {
+      /* verify that we have a mountable device here */
+      for (is_volume = 0, n = 0; is_volume == 0 && interfaces[n] != NULL; ++n)
+        if (strcmp (interfaces[n], "org.freedesktop.Hal.Device.Volume") == 0)
+          is_volume = 1;
+      libhal_free_string_array (interfaces);
+    }
+  else
+    {
+      exo_mount_hal_propagate_error (error, &derror);
+    }
+
+  return is_volume;
+}
+
+
+
+static gchar *
+exo_mount_hal_get_volume_udi (const gchar  *udi,
+                              GError      **error)
+{
+  DBusError  derror;
+  gint       result;
+  gchar     *volume_udi = NULL;
+  gchar    **parent_udis;
+  gint       n, n_parent_udis;
+
+  g_return_val_if_fail (udi != NULL, NULL);
+  g_return_val_if_fail (error == NULL || *error == NULL, NULL);
+
+  result = exo_mount_hal_udi_is_volume (udi, error);
+  if (G_LIKELY (result == 1))
+    {
+      /* this udi is a valid volume */
+      volume_udi = g_strdup (udi);
+    }
+  else if (result == 0)
+    {
+      /* initialize D-Bus error */
+      dbus_error_init (&derror);
+
+      /* ok, but maybe we have a volume whose parent is identified by the udi */
+      parent_udis = libhal_manager_find_device_string_match (hal_context, "info.parent", udi, &n_parent_udis, &derror);
+      if (G_LIKELY (parent_udis != NULL))
+        {
+          for (n = 0; n < n_parent_udis; n++)
+            {
+              /* check if this udi is a volume, or one of its parents */
+              volume_udi = exo_mount_hal_get_volume_udi (parent_udis[n], error);
+              if (volume_udi != NULL || *error != NULL)
+                break;
+            }
+        }
+      else
+        {
+          exo_mount_hal_propagate_error (error, &derror);
+        }
+    }
+
+  return volume_udi;
+}
+
+
+
 /**
  * exo_mount_hal_device_from_udi:
  * @udi   : UDI of a volume or drive.
@@ -164,11 +246,7 @@ exo_mount_hal_device_from_udi (const gchar *udi,
 {
   ExoMountHalDevice *device = NULL;
   DBusError          derror;
-  gchar            **interfaces;
-  gchar            **volume_udis;
-  gchar             *volume_udi = NULL;
-  gint               n_volume_udis;
-  gint               n;
+  gchar             *volume_udi;
   gchar             *key;
 
   g_return_val_if_fail (udi != NULL, NULL);
@@ -178,61 +256,20 @@ exo_mount_hal_device_from_udi (const gchar *udi,
   if (!exo_mount_hal_init (error))
     return NULL;
 
-  /* initialize D-Bus error */
-  dbus_error_init (&derror);
-
-again:
-  /* determine the info.interfaces property of the device */
-  interfaces = libhal_device_get_property_strlist (hal_context, udi, "info.interfaces", &derror);
-  if (G_UNLIKELY (interfaces == NULL))
+  /* find the volume udi for this udi (either this udi or one of its parents) */
+  volume_udi = exo_mount_hal_get_volume_udi (udi, error);
+  if (G_UNLIKELY (volume_udi == NULL))
     {
-      /* reset D-Bus error */
-      dbus_error_free (&derror);
-
-      /* release any previous volume UDI */
-      g_free (volume_udi);
-      volume_udi = NULL;
-
-      /* ok, but maybe we have a volume whose parent is identified by the udi */
-      volume_udis = libhal_manager_find_device_string_match (hal_context, "info.parent", udi, &n_volume_udis, &derror);
-      if (G_UNLIKELY (volume_udis == NULL))
-        {
-err0:     exo_mount_hal_propagate_error (error, &derror);
-          goto out;
-        }
-      else if (G_UNLIKELY (n_volume_udis < 1))
-        {
-          /* no match, we cannot handle that device */
-          libhal_free_string_array (volume_udis);
-          goto err1;
-        }
-
-      /* use the first volume UDI... */
-      volume_udi = g_strdup (volume_udis[0]);
-      libhal_free_string_array (volume_udis);
-
-      /* ..and try again using that UDI */
-      udi = (const gchar *) volume_udi;
-      goto again;
-    }
-
-  /* verify that we have a mountable device here */
-  for (n = 0; interfaces[n] != NULL; ++n)
-    if (strcmp (interfaces[n], "org.freedesktop.Hal.Device.Volume") == 0)
-      break;
-  if (G_UNLIKELY (interfaces[n] == NULL))
-    {
-      /* definitely not a device that we're able to mount, eject or unmount */
-err1: g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%s\" is not a volume or drive"), udi);
-      goto out;
+err0: g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%s\" is not a volume or drive"), udi);
+      return NULL;
     }
 
   /* setup the device struct */
   device = g_new0 (ExoMountHalDevice, 1);
-  device->udi = g_strdup (udi);
+  device->udi = volume_udi;
 
   /* check if we have a volume here */
-  device->volume = libhal_volume_from_udi (hal_context, udi);
+  device->volume = libhal_volume_from_udi (hal_context, device->udi);
   if (G_LIKELY (device->volume != NULL))
     {
       /* determine the storage drive for the volume */
@@ -245,14 +282,14 @@ err1: g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%
 
           /* setup the file system internals */
           device->fstype = libhal_volume_get_fstype (device->volume);
-          device->altfstype = libhal_device_get_property_string (hal_context, udi, "volume.fstype.alternative.preferred", NULL);
+          device->altfstype = libhal_device_get_property_string (hal_context, device->udi, "volume.fstype.alternative.preferred", NULL);
           device->fsusage = libhal_volume_get_fsusage (device->volume);
         }
     }
   else
     {
       /* check if we have a drive here (i.e. floppy) */
-      device->drive = libhal_drive_from_udi (hal_context, udi);
+      device->drive = libhal_drive_from_udi (hal_context, device->udi);
       if (G_LIKELY (device->drive != NULL))
         {
           /* setup the device internals */
@@ -265,23 +302,25 @@ err1: g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%
         }
     }
 
+  /* initialize D-Bus error */
+  dbus_error_init (&derror);
+
   /* determine the valid mount options from the UDI */
   if (device->altfstype != NULL)
     {
       key = g_strdup_printf ("volume.mount.%s.valid_options", device->altfstype);
-      device->fsoptions = libhal_device_get_property_strlist (hal_context, udi, key, &derror);
+      device->fsoptions = libhal_device_get_property_strlist (hal_context, device->udi, key, &derror);
       g_free (key);
     }
   else
     {
-      device->fsoptions = libhal_device_get_property_strlist (hal_context, udi, "volume.mount.valid_options", &derror);
+      device->fsoptions = libhal_device_get_property_strlist (hal_context, device->udi, "volume.mount.valid_options", &derror);
     }
 
   /* sanity checking */
   if (G_UNLIKELY (device->file == NULL || device->name == NULL))
     {
       exo_mount_hal_device_free (device);
-      device = NULL;
       goto err0;
     }
 
@@ -289,15 +328,10 @@ err1: g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%
   if (G_LIKELY (device->drive == NULL))
     {
       /* definitely not a device that we're able to mount, eject or unmount */
-      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%s\" is not a volume or drive"), udi);
+      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Given device \"%s\" is not a volume or drive"), device->udi);
       exo_mount_hal_device_free (device);
       device = NULL;
     }
-
-out:
-  /* cleanup */
-  libhal_free_string_array (interfaces);
-  g_free (volume_udi);
 
   return device;
 }
