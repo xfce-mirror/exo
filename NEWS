@@ -1,3 +1,13 @@
+0.3.103
+=======
+- Use the update-preview signal for updating the preview (bug #5133)
+- Add support for iocharset in exo-mount (bug #4294).
+- Make mounting NTFS drives work in exo-mount (bug #4532).
+- Open trash:// uris with the file manager (bug #5777).
+- Fix some small compiler warnings.
+- Switch the build files to use GIT.
+- Updated translation: ca (Carles Muñoz Gorriz)
+
 0.3.102
 =======
 - Allow all arguments in the terminal parameters (part of bug #5301).
@@ -14,39 +24,39 @@
 0.3.101
 =======
 - Quote arguments passed to exo-open (bug #5132).
-- Add gettext() call around two strings which are already as translatable with 
+- Add gettext() call around two strings which are already as translatable with
   N_() (bug #5203).
-- Fix broken build due to incomplete integration of the Danish and Galician 
+- Fix broken build due to incomplete integration of the Danish and Galician
   manual translations.
 
 0.3.100
 =======
-- Updated translations: ro (Mișu Moldovan), el (Stavros Giannouris), 
+- Updated translations: ro (Mișu Moldovan), el (Stavros Giannouris),
   es (Abel Martín), gl (Leandro Requeiro), zh_CN (Chris K. Zhang),
-  pl (Piotr Sokół), en_GB (Jeff Bailes), fr (Mike Massonnet), 
+  pl (Piotr Sokół), en_GB (Jeff Bailes), fr (Mike Massonnet),
   tr (Eren Türkay)
 
 0.3.99.1
 ========
-- Updated translations: da (Lars Chrisitan Jensen, Per Kongstad), 
-  es (Abel Martín), fr (Maximilian Schleiss, Mike Massonnet), 
+- Updated translations: da (Lars Chrisitan Jensen, Per Kongstad),
+  es (Abel Martín), fr (Maximilian Schleiss, Mike Massonnet),
   id (Andhika Padmawan), pt_BR (Og Maciel, tr (Gökmen Görgen).
 
 0.3.93
 ======
 - Don't setup bindings for <Shift>n and <Shift>p in ExoIconView so that
   type-ahead search works as expected (bug #4633).
-- Remove GenericName and "Xfce 4" prefix from 
+- Remove GenericName and "Xfce 4" prefix from
   exo-preferred-applications.desktop.
-- Stop startup notification once the plug is created and the helper 
+- Stop startup notification once the plug is created and the helper
   settings dialog content has been moved into the plug.
 - Use -V instead of -v as short parameter for --version.
 - Improve handling of URIs in exo-open (bug #4627).
 - Updated translations: ca (Carles Muños Gorriz), cs (Michal Varady),
-  de (Fabian Nowak, Jannis Pohlmann), es (Abel Martín), eu (Piarres 
-  Beobide), fi (Jari Rahkonen), fr (Maximilian Schleiss), hu (Szervác 
+  de (Fabian Nowak, Jannis Pohlmann), es (Abel Martín), eu (Piarres
+  Beobide), fi (Jari Rahkonen), fr (Maximilian Schleiss), hu (Szervác
   Attila), id (Andhika Padmawan), ja (Nobuhiro Iwamatsu), nb_NO (Terje
-  Uriansrud), pt_BR (Og Maciel), sq (Besnik Bleta), sv (Daniel 
+  Uriansrud), pt_BR (Og Maciel), sq (Besnik Bleta), sv (Daniel
   Nylander), tr (Eren Turkay).
 
 0.3.92
@@ -58,7 +68,7 @@
 - Get rid of external MD5 functions (Bug #4595).
 - Fix compile against GLib < 2.14.
 - Fix directory names with "@" being treated as URLs (Bug #4330).
-- Updated translations: Michal Varady (cs), Piarres Beobide (eu), 
+- Updated translations: Michal Varady (cs), Piarres Beobide (eu),
   Abel Martín (es), Jari Rahkonen (fi), Terje Uriansrud (nb_NO),
   Gökmen Görgen (tr).
 
@@ -251,13 +261,13 @@
   the Gtk style changes.
 - libexo is fully internationalized now. German translations are already
   available.
-- The ExoToolbarsView class has been changed to provide a "Customize 
+- The ExoToolbarsView class has been changed to provide a "Customize
   Toolbars..." menu item together with the other items and to emit a
   signal "customize".
 - ExoPropertyProxy has been replaced by ExoBinding, which is based on
   the GObject Binding Properties implementation available from
   http://ex-code.com/glib-bind/. ExoBinding is way more powerful and
-  easier to handle than ExoPropertyProxy. ExoBinding contains some 
+  easier to handle than ExoPropertyProxy. ExoBinding contains some
   improvements over GBinding; for example, GBinding can run into an
   endless loop, when you bind properties of type GBoxed, whereas
   ExoBinding doesn't suffer from this problem.
