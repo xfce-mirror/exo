@@ -661,6 +661,7 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
   const gchar *fs;
   gchar       *s;
   gint         m, n = 0;
+  const gchar *charset;
 
   g_return_val_if_fail (device != NULL, FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
@@ -713,7 +714,18 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
                    && strcmp (fs, "ntfs-3g") == 0)
             {
               /* we need to pass umask=0077 to ntfs-g3 or else it gets 0777 perms */
-              options[n++] = g_strdup_printf ("umask=0077");
+              options[n++] = g_strdup ("umask=0077");
+            }
+          else if (strcmp (device->fsoptions[m], "iocharset=") == 0)
+            {
+              /* get the charset from a variable set by the user or glib */
+              charset = g_getenv ("EXO_MOUNT_IOCHARSET");
+              if (G_LIKELY (charset == NULL))
+                if (g_get_charset (&charset))
+                  charset = "utf8";
+
+              if (G_LIKELY (charset != NULL && *charset != '\0'))
+                options[n++] = g_strdup_printf ("iocharset=%s", charset);
             }
         }
     }

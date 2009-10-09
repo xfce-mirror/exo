@@ -38,6 +38,9 @@
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif
+#ifdef HAVE_LOCALE_H
+#include <locale.h>
+#endif
 
 #include <glib/gstdio.h>
 
@@ -96,6 +99,9 @@ main (int argc, char **argv)
 
   /* initialize the i18n support */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+
+  /* unset the CTYPE so we get a reliable when setting the iocharset */
+  setlocale (LC_CTYPE, "");
 
   /* initialize GTK+ */
   if (!gtk_init_with_args (&argc, &argv, "Xfce mount", entries, GETTEXT_PACKAGE, &err))
