@@ -142,7 +142,7 @@ exo_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
   gtk_widget_show (thumbnail_preview);
 
   /* update the preview as necessary */
-  g_signal_connect_object (G_OBJECT (chooser), "selection-changed", G_CALLBACK (update_preview), thumbnail_preview, 0);
+  g_signal_connect (G_OBJECT (chooser), "update-preview", G_CALLBACK (update_preview), thumbnail_preview);
 
   /* initially update the preview, in case the file chooser is already setup */
   update_preview (chooser, EXO_THUMBNAIL_PREVIEW (thumbnail_preview));
