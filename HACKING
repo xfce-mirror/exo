@@ -16,7 +16,7 @@ Please and send a patch against a recent version of this package. Patches
 against the Subversion trunk branch are most preferable. You can always
 access the trunk branch from 
 
-  http://svn.xfce.org/listing.php?repname=xfce4&path=/libexo/#/libexo/
+  http://git.xfce.org/xfce/exo/
 
 
 Feature requests
@@ -50,11 +50,10 @@ Release process
   6) Unset libexo_version_tag in configure.in.in and reset it after the
      release is done.
   7) Verify that make dist works.
-  8) "svn commit" the changes.
-  9) Create a simple tag for the release,
-      "svn copy https://xfce.org/svn/xfce/libexo/trunk
-                https://xfce.org/svn/xfce/libexo/tags/exo-X.Y.Ztag"
-     where X.Y.Z is the version number and tag is the version tag, i.e. beta1.
+  8) Commit the changes.
+  9) Create a simple tag for the release:
+      git tag -a exo-X.Y.Z
+      git push --tags
  10) Upload the tarballs to os-cillation ftp
  11) Upload the tarballs to os-works
  12) Upload the tarballs to Berlios
