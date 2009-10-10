@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 13:54+0200\n"
+"POT-Creation-Date: 2009-10-10 17:50+0200\n"
 "PO-Revision-Date: 2007-01-19 14:50+0200\n"
 "Last-Translator: Yuval Tanny <tanai@int.gov.il>\n"
 "Language-Team: Hebrew\n"
@@ -382,53 +382,53 @@ msgstr ""
 "גרירת פריט אל סרגלי הכלים מעלה תוסיף אותו וגרירת פריט מסרגלי הכלים בטבלת "
 "הפריטים תסיר אותו"
 
-#: ../exo/exo-toolbars-editor.c:543
+#: ../exo/exo-toolbars-editor.c:545
 msgid "Separator"
 msgstr "קו מפריד"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:765
 msgid "Toolbar _Style"
 msgstr "_סגנון סרגל כלים"
 
-#: ../exo/exo-toolbars-view.c:766
+#: ../exo/exo-toolbars-view.c:772
 msgid "_Desktop Default"
 msgstr "_ברירת המחדל של שולחן העבודה"
 
-#: ../exo/exo-toolbars-view.c:775
+#: ../exo/exo-toolbars-view.c:781
 msgid "_Icons only"
 msgstr "_סמלים בלבד"
 
-#: ../exo/exo-toolbars-view.c:784
+#: ../exo/exo-toolbars-view.c:790
 msgid "_Text only"
 msgstr "_כיתוב בלבד"
 
-#: ../exo/exo-toolbars-view.c:793
+#: ../exo/exo-toolbars-view.c:799
 msgid "Text for _All Icons"
 msgstr "כיתוב לכל _הסמלים"
 
-#: ../exo/exo-toolbars-view.c:802
+#: ../exo/exo-toolbars-view.c:808
 msgid "Text for I_mportant Icons"
 msgstr "כיתוב לסמלים _חשובים"
 
-#: ../exo/exo-toolbars-view.c:810
+#: ../exo/exo-toolbars-view.c:816
 msgid "_Remove Toolbar"
 msgstr "ה_סרת סרגל כלים"
 
-#: ../exo/exo-toolbars-view.c:825
+#: ../exo/exo-toolbars-view.c:831
 msgid "Customize Toolbar..."
 msgstr "התאם סרגל כלים..."
 
-#: ../exo/exo-url.c:280
+#: ../exo/exo-url.c:283
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "אין אפשרות לפתוח \"%s\""
 
-#: ../exo/exo-url.c:326
+#: ../exo/exo-url.c:329
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "הכתובת  \"%s\" אינה נתמכת"
 
-#: ../exo/exo-url.c:412
+#: ../exo/exo-url.c:401
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "כשל בפתיחת \"%s\"."
@@ -524,8 +524,8 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr ""
 
 #: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:169
-#: ../exo-open/main.c:131
+#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:169
+#: ../exo-open/main.c:146
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -541,8 +541,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:173
-#: ../exo-open/main.c:135
+#: ../exo-mount/main.c:132 ../exo-mount-notify/main.c:173
+#: ../exo-open/main.c:150
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -558,8 +558,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:177
-#: ../exo-open/main.c:139
+#: ../exo-mount/main.c:136 ../exo-mount-notify/main.c:177
+#: ../exo-open/main.c:154
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "נא לדווח על באגים ל- <%s>.\n"
@@ -718,7 +718,7 @@ msgid "Preset icon when creating a desktop file"
 msgstr "קבע מראש סמל כאשר יוצרים קובץ שולחן עבודה"
 
 #: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
+#: ../exo-mount/main.c:77 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Print version information and exit"
 
@@ -727,7 +727,7 @@ msgstr "Print version information and exit"
 msgid "[FILE|FOLDER]"
 msgstr "[FILE|FOLDER]"
 
-#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:114
 #: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "Failed to open display"
@@ -1242,145 +1242,145 @@ msgstr "הדפדפן הטקסטואלי W2M"
 msgid "X Terminal"
 msgstr "X Terminal"
 
-#: ../exo-mount/exo-mount-fstab.c:92
+#: ../exo-mount/exo-mount-fstab.c:85
 #, c-format
 msgid "Unknown error"
 msgstr "שגיאה לא ידועה"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:420
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "התקן \"%s\" לא נמצא בטבלת ההתקנים"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "ההתקן \"%s\" הנתון הוא לא כונן או כרך"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:605
+#: ../exo-mount/exo-mount-hal.c:652
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "אין לך הרשאות להוציא את הכרך \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:610
+#: ../exo-mount/exo-mount-hal.c:657
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "קיים יישום אשר מונע את הוצאת הכרך \"%s\""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:841
+#: ../exo-mount/exo-mount-hal.c:919
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "אין לך הרשאות לעגון את הכרך \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:856
+#: ../exo-mount/exo-mount-hal.c:934
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
 
-#: ../exo-mount/exo-mount-hal.c:867
+#: ../exo-mount/exo-mount-hal.c:945
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:932
+#: ../exo-mount/exo-mount-hal.c:1010
 #, fuzzy, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "אין לך הרשאות לעגון את הכרך \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:937
+#: ../exo-mount/exo-mount-hal.c:1015
 #, fuzzy, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "קיים יישום אשר מונע את הוצאת הכרך \"%s\""
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1021
+#: ../exo-mount/exo-mount-hal.c:1099
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr ""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1026
+#: ../exo-mount/exo-mount-hal.c:1104
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr ""
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1031
+#: ../exo-mount/exo-mount-hal.c:1109
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr ""
 
-#: ../exo-mount/main.c:65
+#: ../exo-mount/main.c:68
 msgid "Eject rather than mount"
 msgstr ""
 
-#: ../exo-mount/main.c:66
+#: ../exo-mount/main.c:69
 msgid "Unmount rather than mount"
 msgstr ""
 
-#: ../exo-mount/main.c:68
+#: ../exo-mount/main.c:71
 msgid "Mount by HAL device UDI"
 msgstr ""
 
-#: ../exo-mount/main.c:70
+#: ../exo-mount/main.c:73
 msgid "Mount by HAL device UDI (not supported)"
 msgstr ""
 
-#: ../exo-mount/main.c:72
+#: ../exo-mount/main.c:75
 msgid "Mount by device file"
 msgstr ""
 
-#: ../exo-mount/main.c:73
+#: ../exo-mount/main.c:76
 msgid "Don't show any dialogs"
 msgstr ""
 
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:138
+#: ../exo-mount/main.c:144
 msgid "Must specify HAL device UDI or device file"
 msgstr ""
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:146
+#: ../exo-mount/main.c:152
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr ""
 
-#: ../exo-mount/main.c:154
+#: ../exo-mount/main.c:160
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
 
-#: ../exo-mount/main.c:161
+#: ../exo-mount/main.c:167
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 msgstr ""
 
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:178
+#: ../exo-mount/main.c:184
 msgid "Cannot eject and unmount simultaneously"
 msgstr ""
 
-#: ../exo-mount/main.c:330
+#: ../exo-mount/main.c:336
 #, fuzzy, c-format
 msgid "Failed to eject \"%s\""
 msgstr "Failed to create \"%s\"."
 
-#: ../exo-mount/main.c:332
+#: ../exo-mount/main.c:338
 #, fuzzy, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "כשל בפתיחת \"%s\"."
 
-#: ../exo-mount/main.c:334
+#: ../exo-mount/main.c:340
 #, fuzzy, c-format
 msgid "Failed to mount \"%s\""
 msgstr "כשל בפתיחת \"%s\"."
@@ -1429,25 +1429,25 @@ msgid ""
 "removed. Please do not remove the media or disconnect the drive."
 msgstr ""
 
-#: ../exo-open/main.c:59
+#: ../exo-open/main.c:73
 msgid "Usage: exo-open [URLs...]"
 msgstr "Usage: exo-open [URLs...]"
 
-#: ../exo-open/main.c:60
+#: ../exo-open/main.c:74
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
-#: ../exo-open/main.c:62
+#: ../exo-open/main.c:76
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Print this help message and exit"
 
-#: ../exo-open/main.c:63
+#: ../exo-open/main.c:77
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Print version information and exit"
 
-#: ../exo-open/main.c:65
+#: ../exo-open/main.c:79
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1459,7 +1459,7 @@ msgstr ""
 "where\n"
 "                                      TYPE is one of the following values."
 
-#: ../exo-open/main.c:69
+#: ../exo-open/main.c:83
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1469,14 +1469,14 @@ msgstr ""
 "applications\n"
 "                                      when using the --launch option."
 
-#: ../exo-open/main.c:72
+#: ../exo-open/main.c:86
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "The following TYPEs are supported for the --launch command:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:78
+#: ../exo-open/main.c:92
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1486,7 +1486,7 @@ msgstr ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 
-#: ../exo-open/main.c:82
+#: ../exo-open/main.c:96
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1500,12 +1500,12 @@ msgstr ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:200
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "כשל בשיגור היישום המועדף לקבוצה \"%s\"."
 
-#: ../exo-open/main.c:191
+#: ../exo-open/main.c:221
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "כשל בפתיחת כתובת \"%s\"."

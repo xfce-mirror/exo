@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 13:54+0200\n"
+"POT-Creation-Date: 2009-10-10 17:50+0200\n"
 "PO-Revision-Date: 2008-11-23 00:27+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -389,53 +389,53 @@ msgstr ""
 "Položku přidejte na panel nástrojů přetažením z tabulky nástrojů. Opačným "
 "postupem ji odeberte."
 
-#: ../exo/exo-toolbars-editor.c:543
+#: ../exo/exo-toolbars-editor.c:545
 msgid "Separator"
 msgstr "Oddělovač"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:765
 msgid "Toolbar _Style"
 msgstr "_Styl panelu nástrojů"
 
-#: ../exo/exo-toolbars-view.c:766
+#: ../exo/exo-toolbars-view.c:772
 msgid "_Desktop Default"
 msgstr "Vý_chozí"
 
-#: ../exo/exo-toolbars-view.c:775
+#: ../exo/exo-toolbars-view.c:781
 msgid "_Icons only"
 msgstr "Pouze _ikony"
 
-#: ../exo/exo-toolbars-view.c:784
+#: ../exo/exo-toolbars-view.c:790
 msgid "_Text only"
 msgstr "Pouze _text"
 
-#: ../exo/exo-toolbars-view.c:793
+#: ../exo/exo-toolbars-view.c:799
 msgid "Text for _All Icons"
 msgstr "Text u _všech ikon"
 
-#: ../exo/exo-toolbars-view.c:802
+#: ../exo/exo-toolbars-view.c:808
 msgid "Text for I_mportant Icons"
 msgstr "Text u _důležitých ikon"
 
-#: ../exo/exo-toolbars-view.c:810
+#: ../exo/exo-toolbars-view.c:816
 msgid "_Remove Toolbar"
 msgstr "_Odebrat panel nástrojů"
 
-#: ../exo/exo-toolbars-view.c:825
+#: ../exo/exo-toolbars-view.c:831
 msgid "Customize Toolbar..."
 msgstr "Upravit panel nástrojů..."
 
-#: ../exo/exo-url.c:280
+#: ../exo/exo-url.c:283
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Nelze otevřít \"%s\""
 
-#: ../exo/exo-url.c:326
+#: ../exo/exo-url.c:329
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "Adresa URL \"%s\" není podporovaná"
 
-#: ../exo/exo-url.c:412
+#: ../exo/exo-url.c:401
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Nepodařilo se otevřít \"%s\"."
@@ -531,8 +531,8 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Odstraní obsah uzlů ze souborů XML\n"
 
 #: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:169
-#: ../exo-open/main.c:131
+#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:169
+#: ../exo-open/main.c:146
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -548,8 +548,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:173
-#: ../exo-open/main.c:135
+#: ../exo-mount/main.c:132 ../exo-mount-notify/main.c:173
+#: ../exo-open/main.c:150
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -565,8 +565,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:177
-#: ../exo-open/main.c:139
+#: ../exo-mount/main.c:136 ../exo-mount-notify/main.c:177
+#: ../exo-open/main.c:154
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Prosíme, hlaste chyby na <%s>.\n"
@@ -734,7 +734,7 @@ msgstr ""
 "                              ploše"
 
 #: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
+#: ../exo-mount/main.c:77 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Zobrazí informace o verzi a ukončí se"
 
@@ -743,7 +743,7 @@ msgstr "Zobrazí informace o verzi a ukončí se"
 msgid "[FILE|FOLDER]"
 msgstr "[SOUBOR|SLOŽKA]"
 
-#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:114
 #: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "Nepodařilo se otevřít displej"
@@ -1267,43 +1267,43 @@ msgstr "Textový prohlížeč W3M"
 msgid "X Terminal"
 msgstr "X Terminál"
 
-#: ../exo-mount/exo-mount-fstab.c:92
+#: ../exo-mount/exo-mount-fstab.c:85
 #, c-format
 msgid "Unknown error"
 msgstr "Neznámá chyba"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:420
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Zařízení \"%s\" nebylo nalezeno v tabulce systémových zařízení"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Zařízení \"%s\" není svazkem nebo jednotkou"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:605
+#: ../exo-mount/exo-mount-hal.c:652
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Nejste oprávněni vysunout svazek \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:610
+#: ../exo-mount/exo-mount-hal.c:657
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Aplikace zabraňuje vysunutí svazku \"%s\""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:841
+#: ../exo-mount/exo-mount-hal.c:919
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Nejste oprávněni připojit svazek \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:856
+#: ../exo-mount/exo-mount-hal.c:934
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1312,7 +1312,7 @@ msgstr ""
 "Prázdné disky nemohou být připojeny, pro záznam dat nebo hudby na disk "
 "použijte například aplikaci Xfburn"
 
-#: ../exo-mount/exo-mount-hal.c:867
+#: ../exo-mount/exo-mount-hal.c:945
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
@@ -1320,70 +1320,70 @@ msgstr ""
 "Xfmedia"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:932
+#: ../exo-mount/exo-mount-hal.c:1010
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "Nejste oprávněni k vypnutí šifrovací vrstvy"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:937
+#: ../exo-mount/exo-mount-hal.c:1015
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "Aplikace zabraňuje vypnutí šifrovací vrstvy"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1021
+#: ../exo-mount/exo-mount-hal.c:1099
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Nejste oprávněni odpojit svazek \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1026
+#: ../exo-mount/exo-mount-hal.c:1104
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Aplikace zabraňuje odpojení svazku \"%s\""
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1031
+#: ../exo-mount/exo-mount-hal.c:1109
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Svazek \"%s\" byl pravděpodobně připojen ručně z příkazové řádky"
 
-#: ../exo-mount/main.c:65
+#: ../exo-mount/main.c:68
 msgid "Eject rather than mount"
 msgstr "Upřednostnit vysunutí před připojením"
 
-#: ../exo-mount/main.c:66
+#: ../exo-mount/main.c:69
 msgid "Unmount rather than mount"
 msgstr "Upřednostnit odpojení před připojením"
 
-#: ../exo-mount/main.c:68
+#: ../exo-mount/main.c:71
 msgid "Mount by HAL device UDI"
 msgstr "Připojit pomocí čísla UDI zařízení HAL"
 
-#: ../exo-mount/main.c:70
+#: ../exo-mount/main.c:73
 msgid "Mount by HAL device UDI (not supported)"
 msgstr "Připojit pomocí čísla UDI zařízení HAL (nepodporováno)"
 
-#: ../exo-mount/main.c:72
+#: ../exo-mount/main.c:75
 msgid "Mount by device file"
 msgstr "Připojit souborem zařízení"
 
-#: ../exo-mount/main.c:73
+#: ../exo-mount/main.c:76
 msgid "Don't show any dialogs"
 msgstr "Nezobrazovat dialogy"
 
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:138
+#: ../exo-mount/main.c:144
 msgid "Must specify HAL device UDI or device file"
 msgstr "Musíte specifikovat číslo UDI zařízení HAL nebo soubor zařízení"
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:146
+#: ../exo-mount/main.c:152
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "Nesmíte specifikovat číslo UDI zařízení HAL a soubor zařízení najednou"
 
-#: ../exo-mount/main.c:154
+#: ../exo-mount/main.c:160
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
@@ -1391,27 +1391,27 @@ msgstr ""
 "Zařízení HAL nelze připojit pomocí čísla UDI, protože podpora HAL nebyla v "
 "tomto sestavení povolena"
 
-#: ../exo-mount/main.c:161
+#: ../exo-mount/main.c:167
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 msgstr "Zadané číslo UDI \"%s\" není platné číslo UDI zařízení HAL"
 
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:178
+#: ../exo-mount/main.c:184
 msgid "Cannot eject and unmount simultaneously"
 msgstr "Nelze vysunout a odpojit najednou"
 
-#: ../exo-mount/main.c:330
+#: ../exo-mount/main.c:336
 #, c-format
 msgid "Failed to eject \"%s\""
 msgstr "Nepodařilo se vysunout \"%s\""
 
-#: ../exo-mount/main.c:332
+#: ../exo-mount/main.c:338
 #, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "Nepodařilo se odpojit \"%s\""
 
-#: ../exo-mount/main.c:334
+#: ../exo-mount/main.c:340
 #, c-format
 msgid "Failed to mount \"%s\""
 msgstr "Nepodařilo se připojit \"%s\""
@@ -1464,26 +1464,26 @@ msgstr ""
 "Před vyjmutím je třeba zapsat data na jednotku \"%s\". Nevyjímejte médium "
 "ani neodpojujte jednotku."
 
-#: ../exo-open/main.c:59
+#: ../exo-open/main.c:73
 msgid "Usage: exo-open [URLs...]"
 msgstr "Použití: exo-open [AdresyURL...]"
 
-#: ../exo-open/main.c:60
+#: ../exo-open/main.c:74
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TYP [PARAMETRY...]"
 
-#: ../exo-open/main.c:62
+#: ../exo-open/main.c:76
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -h, --help                          Zobrazí tuto nápovědu a ukončí se"
 
-#: ../exo-open/main.c:63
+#: ../exo-open/main.c:77
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Zobrazí informace o verzi a ukončí se"
 
-#: ../exo-open/main.c:65
+#: ../exo-open/main.c:79
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1494,7 +1494,7 @@ msgstr ""
 "                                      TYP s volitelnými PARAMETRY, kde\n"
 "                                      TYP je jedna hodnot uvedených níže."
 
-#: ../exo-open/main.c:69
+#: ../exo-open/main.c:83
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1503,14 +1503,14 @@ msgstr ""
 "  --working-directory ADRESÁŘ         Výchozí pracovní adresář pro aplikace\n"
 "                                      při použití přepínače --launch."
 
-#: ../exo-open/main.c:72
+#: ../exo-open/main.c:86
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Při použití přepínače --launch jsou podporovány následující TYPy:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:78
+#: ../exo-open/main.c:92
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1520,7 +1520,7 @@ msgstr ""
 "  MailReader       - Zvolený e-mailový klient.\n"
 "  TerminalEmulator - Zvolený emulátor terminálu."
 
-#: ../exo-open/main.c:82
+#: ../exo-open/main.c:96
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1537,12 +1537,12 @@ msgstr ""
 "provede\n"
 "v nově otevřeném okně terminálu."
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:200
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Nepodařilo se spustit předvolenou aplikaci kategorie \"%s\"."
 
-#: ../exo-open/main.c:191
+#: ../exo-open/main.c:221
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Nepodařilo se otevřít adresu URL \"%s\"."

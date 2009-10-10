@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 13:54+0200\n"
+"POT-Creation-Date: 2009-10-10 17:50+0200\n"
 "PO-Revision-Date: 2007-05-12 17:42+0200\n"
 "Last-Translator: Terje Uriansrud <terje@uriansrud.net>\n"
 "Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
@@ -387,53 +387,53 @@ msgstr ""
 "Dra et element til verktøylinjen for å legge til, eller fra verktøylinjen "
 "til elementlisten for å fjerne det"
 
-#: ../exo/exo-toolbars-editor.c:543
+#: ../exo/exo-toolbars-editor.c:545
 msgid "Separator"
 msgstr "Skille"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:765
 msgid "Toolbar _Style"
 msgstr "Verktøylinje _stil"
 
-#: ../exo/exo-toolbars-view.c:766
+#: ../exo/exo-toolbars-view.c:772
 msgid "_Desktop Default"
 msgstr "_Skrivebordstandard"
 
-#: ../exo/exo-toolbars-view.c:775
+#: ../exo/exo-toolbars-view.c:781
 msgid "_Icons only"
 msgstr "Bare _ikoner"
 
-#: ../exo/exo-toolbars-view.c:784
+#: ../exo/exo-toolbars-view.c:790
 msgid "_Text only"
 msgstr "Bare _tekst"
 
-#: ../exo/exo-toolbars-view.c:793
+#: ../exo/exo-toolbars-view.c:799
 msgid "Text for _All Icons"
 msgstr "Tekst for _alle ikoner"
 
-#: ../exo/exo-toolbars-view.c:802
+#: ../exo/exo-toolbars-view.c:808
 msgid "Text for I_mportant Icons"
 msgstr "Tekst for _viktige ikoner"
 
-#: ../exo/exo-toolbars-view.c:810
+#: ../exo/exo-toolbars-view.c:816
 msgid "_Remove Toolbar"
 msgstr "_Fjerne verktøylinje"
 
-#: ../exo/exo-toolbars-view.c:825
+#: ../exo/exo-toolbars-view.c:831
 msgid "Customize Toolbar..."
 msgstr "Tilpass verktøylinje ..."
 
-#: ../exo/exo-url.c:280
+#: ../exo/exo-url.c:283
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Klarte ikke åpne \"%s\""
 
-#: ../exo/exo-url.c:326
+#: ../exo/exo-url.c:329
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "Url \"%s\" er ikke støttet"
 
-#: ../exo/exo-url.c:412
+#: ../exo/exo-url.c:401
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Klarte ikke åpne \"%s\"."
@@ -529,8 +529,8 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Fjern nodeinnhold fra XML filer\n"
 
 #: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:169
-#: ../exo-open/main.c:131
+#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:169
+#: ../exo-open/main.c:146
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -546,8 +546,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:173
-#: ../exo-open/main.c:135
+#: ../exo-mount/main.c:132 ../exo-mount-notify/main.c:173
+#: ../exo-open/main.c:150
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -562,8 +562,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:177
-#: ../exo-open/main.c:139
+#: ../exo-mount/main.c:136 ../exo-mount-notify/main.c:177
+#: ../exo-open/main.c:154
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Rapporter programfeil til <%s>.\n"
@@ -723,7 +723,7 @@ msgid "Preset icon when creating a desktop file"
 msgstr "Standard ikon for nye dekstop-filer"
 
 #: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
+#: ../exo-mount/main.c:77 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Skriv ut versjonsinformasjon og avslutt"
 
@@ -732,7 +732,7 @@ msgstr "Skriv ut versjonsinformasjon og avslutt"
 msgid "[FILE|FOLDER]"
 msgstr "[FIL|MAPPE]"
 
-#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:114
 #: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "Klarte ikke åpne skjerm"
@@ -1250,43 +1250,43 @@ msgstr "W3M tekstnettleser"
 msgid "X Terminal"
 msgstr "X Terminal"
 
-#: ../exo-mount/exo-mount-fstab.c:92
+#: ../exo-mount/exo-mount-fstab.c:85
 #, c-format
 msgid "Unknown error"
 msgstr "Ukjent feil"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:420
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Enheten \"%s\" ble ikke funnet i systemets enhetstabell"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Enheten \"%s\" er ikke et dataomrpde eller stasjon"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:605
+#: ../exo-mount/exo-mount-hal.c:652
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Du har ikke rettigheter til å løse ut enheten \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:610
+#: ../exo-mount/exo-mount-hal.c:657
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Et program forhindrer enheten \"%s\" fra å løses ut"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:841
+#: ../exo-mount/exo-mount-hal.c:919
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Du har ikke rettigheter til å montere enheten \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:856
+#: ../exo-mount/exo-mount-hal.c:934
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1295,76 +1295,76 @@ msgstr ""
 "Tomt media kan ikke monteres, bruk et CD-brenne program som Xfburn til å "
 "lagre musikk eller data på disken"
 
-#: ../exo-mount/exo-mount-hal.c:867
+#: ../exo-mount/exo-mount-hal.c:945
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr "Lydcd kan ikke monteres, bruk Xfmedia for å spille lydsporene"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:932
+#: ../exo-mount/exo-mount-hal.c:1010
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "Du har ikke rettigheter til ta ned krypto-laget"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:937
+#: ../exo-mount/exo-mount-hal.c:1015
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "Et program forhindrer at krypto-laget kan tas ned"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1021
+#: ../exo-mount/exo-mount-hal.c:1099
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Du har ikke rettigheter til å demontere enheten \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1026
+#: ../exo-mount/exo-mount-hal.c:1104
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Et program forhindrer at enheten \"%s\" kan demonteres"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1031
+#: ../exo-mount/exo-mount-hal.c:1109
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Enheten \"%s\" er antakelig montert manuelt via kommandolinjen"
 
-#: ../exo-mount/main.c:65
+#: ../exo-mount/main.c:68
 msgid "Eject rather than mount"
 msgstr "Løs ut istedet for montering"
 
-#: ../exo-mount/main.c:66
+#: ../exo-mount/main.c:69
 msgid "Unmount rather than mount"
 msgstr "Demonter istedet for montering"
 
-#: ../exo-mount/main.c:68
+#: ../exo-mount/main.c:71
 msgid "Mount by HAL device UDI"
 msgstr "Monter med HAL enhet UDI"
 
-#: ../exo-mount/main.c:70
+#: ../exo-mount/main.c:73
 msgid "Mount by HAL device UDI (not supported)"
 msgstr "Montering med HAL enhets UDI (ikke støttet)"
 
-#: ../exo-mount/main.c:72
+#: ../exo-mount/main.c:75
 msgid "Mount by device file"
 msgstr "Monter med enhetsfil"
 
-#: ../exo-mount/main.c:73
+#: ../exo-mount/main.c:76
 msgid "Don't show any dialogs"
 msgstr "Ikke vis noe bilde"
 
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:138
+#: ../exo-mount/main.c:144
 msgid "Must specify HAL device UDI or device file"
 msgstr "Må spesifisere HAL enhets UDI eller enhetsfil"
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:146
+#: ../exo-mount/main.c:152
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "Kan ikke angi både HAL enhets UDI og en enhetsfil samtidig"
 
-#: ../exo-mount/main.c:154
+#: ../exo-mount/main.c:160
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
@@ -1372,27 +1372,27 @@ msgstr ""
 "Kan ikke montere med HAL enhets UDI fordi HAL støtte var deaktivert for "
 "dette bygget"
 
-#: ../exo-mount/main.c:161
+#: ../exo-mount/main.c:167
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 msgstr "Den angitte UDI \"%s\" er ikke en gyldig HAL enhets UDI"
 
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:178
+#: ../exo-mount/main.c:184
 msgid "Cannot eject and unmount simultaneously"
 msgstr "Kan ikke løse ut og demontere samtidig"
 
-#: ../exo-mount/main.c:330
+#: ../exo-mount/main.c:336
 #, c-format
 msgid "Failed to eject \"%s\""
 msgstr "Klarte ikke å løse ut \"%s\""
 
-#: ../exo-mount/main.c:332
+#: ../exo-mount/main.c:338
 #, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "Klarte ikke å demontere \"%s\""
 
-#: ../exo-mount/main.c:334
+#: ../exo-mount/main.c:340
 #, c-format
 msgid "Failed to mount \"%s\""
 msgstr "Klarte ikke montere \"%s\""
@@ -1445,26 +1445,26 @@ msgstr ""
 "Data må skrives til enheten \"%s\" før den kan frakobles. Ikke frakoble "
 "mediet eller fjern enheten"
 
-#: ../exo-open/main.c:59
+#: ../exo-open/main.c:73
 msgid "Usage: exo-open [URLs...]"
 msgstr "Bruk: exo-open [url'er...]"
 
-#: ../exo-open/main.c:60
+#: ../exo-open/main.c:74
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
-#: ../exo-open/main.c:62
+#: ../exo-open/main.c:76
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          Skriv ut denne meldingen og avslutt"
 
-#: ../exo-open/main.c:63
+#: ../exo-open/main.c:77
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Skriv ut versjonsinformasjon og avslutt"
 
-#: ../exo-open/main.c:65
+#: ../exo-open/main.c:79
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1475,7 +1475,7 @@ msgstr ""
 "                                      TYPE med valgfrie PARAMETRE, hvor\n"
 "                                      TYPE er en av følgende typer."
 
-#: ../exo-open/main.c:69
+#: ../exo-open/main.c:83
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1484,14 +1484,14 @@ msgstr ""
 "  --working-directory MAPPE           Standard arbeidsmappe for programmer\n"
 "                                      ved bruk av --launch opsjonen."
 
-#: ../exo-open/main.c:72
+#: ../exo-open/main.c:86
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Følgende typer er støttet for --launch kommandoen:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:78
+#: ../exo-open/main.c:92
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1501,7 +1501,7 @@ msgstr ""
 "  MailReader       - Preferert epostleser.\n"
 "  TerminalEmulator - Preferert teminalemulator."
 
-#: ../exo-open/main.c:82
+#: ../exo-open/main.c:96
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1515,12 +1515,12 @@ msgstr ""
 "sende parametre til programmet (feks for terminalemulatoren kan du sende\n"
 "kommandoene som skal kjøres i terminalvinduet)."
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:200
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Klarte ikke å starte preferert program for kategorien \"%s\"."
 
-#: ../exo-open/main.c:191
+#: ../exo-open/main.c:221
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Klarte ikke åone Url \"%s\"."

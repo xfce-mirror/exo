@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 13:54+0200\n"
+"POT-Creation-Date: 2009-10-10 17:50+0200\n"
 "PO-Revision-Date: 2009-04-15 21:45+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -441,53 +441,53 @@ msgstr ""
 "追加するにはアイテムをツールバーの上にドラッグしてください、ツールバーからド"
 "ラッグすると削除されます。"
 
-#: ../exo/exo-toolbars-editor.c:543
+#: ../exo/exo-toolbars-editor.c:545
 msgid "Separator"
 msgstr "セパレータ"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:765
 msgid "Toolbar _Style"
 msgstr "ツールバーのスタイル(_S)"
 
-#: ../exo/exo-toolbars-view.c:766
+#: ../exo/exo-toolbars-view.c:772
 msgid "_Desktop Default"
 msgstr "デスクトップのデフォルト(_D)"
 
-#: ../exo/exo-toolbars-view.c:775
+#: ../exo/exo-toolbars-view.c:781
 msgid "_Icons only"
 msgstr "アイコンのみ(_I)"
 
-#: ../exo/exo-toolbars-view.c:784
+#: ../exo/exo-toolbars-view.c:790
 msgid "_Text only"
 msgstr "文字のみ(_T)"
 
-#: ../exo/exo-toolbars-view.c:793
+#: ../exo/exo-toolbars-view.c:799
 msgid "Text for _All Icons"
 msgstr "全アイコンに文字を添える(_A)"
 
-#: ../exo/exo-toolbars-view.c:802
+#: ../exo/exo-toolbars-view.c:808
 msgid "Text for I_mportant Icons"
 msgstr "重要アイコンに文字を添える(_M)"
 
-#: ../exo/exo-toolbars-view.c:810
+#: ../exo/exo-toolbars-view.c:816
 msgid "_Remove Toolbar"
 msgstr "ツールバーを削除(_R)"
 
-#: ../exo/exo-toolbars-view.c:825
+#: ../exo/exo-toolbars-view.c:831
 msgid "Customize Toolbar..."
 msgstr "ツールバーのカスタマイズ..."
 
-#: ../exo/exo-url.c:280
+#: ../exo/exo-url.c:283
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "\"%s\" を開けません"
 
-#: ../exo/exo-url.c:326
+#: ../exo/exo-url.c:329
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "URL \"%s\" はサポートされていません"
 
-#: ../exo/exo-url.c:412
+#: ../exo/exo-url.c:401
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "\"%s\" を開けませんでした。"
@@ -593,8 +593,8 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   XML ファイルからノード情報を削除します\n"
 
 #: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122 ../exo-mount-notify/main.c:169
-#: ../exo-open/main.c:131
+#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:169
+#: ../exo-open/main.c:146
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -610,8 +610,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126 ../exo-mount-notify/main.c:173
-#: ../exo-open/main.c:135
+#: ../exo-mount/main.c:132 ../exo-mount-notify/main.c:173
+#: ../exo-open/main.c:150
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -627,8 +627,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130 ../exo-mount-notify/main.c:177
-#: ../exo-open/main.c:139
+#: ../exo-mount/main.c:136 ../exo-mount-notify/main.c:177
+#: ../exo-open/main.c:154
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "バグは <%s> まで報告してください。\n"
@@ -789,7 +789,7 @@ msgid "Preset icon when creating a desktop file"
 msgstr "デスクトップファイルを作成する場合のプリセットアイコン"
 
 #: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:74 ../exo-mount-notify/main.c:77
+#: ../exo-mount/main.c:77 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
 
@@ -798,7 +798,7 @@ msgstr "バージョン情報を表示して終了する"
 msgid "[FILE|FOLDER]"
 msgstr "[ファイル|フォルダ]"
 
-#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:114
 #: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "ディスプレイを開けませんでした"
@@ -1328,43 +1328,43 @@ msgstr "W3M テキストブラウザ"
 msgid "X Terminal"
 msgstr "X ターミナル"
 
-#: ../exo-mount/exo-mount-fstab.c:92
+#: ../exo-mount/exo-mount-fstab.c:85
 #, c-format
 msgid "Unknown error"
 msgstr "不明なエラー"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:420
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "ファイルシステムのデバイステーブルに \"%s\" がありません"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "指定されたデバイス \"%s\" はボリュームでもドライブでもありません"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:605
+#: ../exo-mount/exo-mount-hal.c:652
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "ボリューム \"%s\" を取り出す権限がありません"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:610
+#: ../exo-mount/exo-mount-hal.c:657
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "アプリケーションが使用中のため \"%s\" を取り出せません"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:841
+#: ../exo-mount/exo-mount-hal.c:919
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "ボリューム \"%s\" をマウントする権限がありません"
 
-#: ../exo-mount/exo-mount-hal.c:856
+#: ../exo-mount/exo-mount-hal.c:934
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1373,77 +1373,77 @@ msgstr ""
 "空のディスクはマウントできません。このディスクに音楽やデータを記録するには "
 "Xfburn のような CD レコーディングアプリケーションを使用してください。"
 
-#: ../exo-mount/exo-mount-hal.c:867
+#: ../exo-mount/exo-mount-hal.c:945
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr ""
 "音楽 CD はマウントできません。音楽を再生するには Xfmedia を使用してください。"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:932
+#: ../exo-mount/exo-mount-hal.c:1010
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "暗号化レイヤの解析を行う権限がありません"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:937
+#: ../exo-mount/exo-mount-hal.c:1015
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "アプリケーションが使用中のため暗号化レイヤの解析ができません"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1021
+#: ../exo-mount/exo-mount-hal.c:1099
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "ボリューム \"%s\" のマウントを解除する権限がありません"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1026
+#: ../exo-mount/exo-mount-hal.c:1104
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "アプリケーションが使用中のため \"%s\" のマウントを解除できません"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1031
+#: ../exo-mount/exo-mount-hal.c:1109
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "ボリューム \"%s\" は恐らくコマンドラインから手動でマウントされています"
 
-#: ../exo-mount/main.c:65
+#: ../exo-mount/main.c:68
 msgid "Eject rather than mount"
 msgstr "マウントせずにイジェクトする"
 
-#: ../exo-mount/main.c:66
+#: ../exo-mount/main.c:69
 msgid "Unmount rather than mount"
 msgstr "マウントせずにマウント解除する"
 
-#: ../exo-mount/main.c:68
+#: ../exo-mount/main.c:71
 msgid "Mount by HAL device UDI"
 msgstr "HAL デバイス UDI でマウントする"
 
-#: ../exo-mount/main.c:70
+#: ../exo-mount/main.c:73
 msgid "Mount by HAL device UDI (not supported)"
 msgstr "HAL デバイス UDI でマウントする (未対応)"
 
-#: ../exo-mount/main.c:72
+#: ../exo-mount/main.c:75
 msgid "Mount by device file"
 msgstr "デバイスファイルでマウントする"
 
-#: ../exo-mount/main.c:73
+#: ../exo-mount/main.c:76
 msgid "Don't show any dialogs"
 msgstr "ダイアログを表示しない"
 
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:138
+#: ../exo-mount/main.c:144
 msgid "Must specify HAL device UDI or device file"
 msgstr "HAL デバイス UDI かデバイスファイルを指定する必要があります"
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:146
+#: ../exo-mount/main.c:152
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "HAL デバイス UDI とデバイスファイルを同時に指定することはできません"
 
-#: ../exo-mount/main.c:154
+#: ../exo-mount/main.c:160
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
@@ -1451,27 +1451,27 @@ msgstr ""
 "このビルドでは HAL サポートが無効になっているため、HAL デバイス UDI でマウン"
 "トできません。"
 
-#: ../exo-mount/main.c:161
+#: ../exo-mount/main.c:167
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 msgstr "指定された UDI \"%s\" は適切な HAL デバイス UDI ではありません"
 
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:178
+#: ../exo-mount/main.c:184
 msgid "Cannot eject and unmount simultaneously"
 msgstr "取り出しとマウント解除を同時に行うことはできません"
 
-#: ../exo-mount/main.c:330
+#: ../exo-mount/main.c:336
 #, c-format
 msgid "Failed to eject \"%s\""
 msgstr "\"%s\" を取り出しに失敗しました。"
 
-#: ../exo-mount/main.c:332
+#: ../exo-mount/main.c:338
 #, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "\"%s\" のマウント解除に失敗しました。"
 
-#: ../exo-mount/main.c:334
+#: ../exo-mount/main.c:340
 #, c-format
 msgid "Failed to mount \"%s\""
 msgstr "\"%s\" のマウントに失敗しました。"
@@ -1525,24 +1525,24 @@ msgstr ""
 "デバイス \"%s\" が取り出される前に書き込む必要のあるデータがあります。メディ"
 "アを取り出したりドライブを外したりしないでください。"
 
-#: ../exo-open/main.c:59
+#: ../exo-open/main.c:73
 msgid "Usage: exo-open [URLs...]"
 msgstr "使用法: exo-open [URL...]"
 
-#: ../exo-open/main.c:60
+#: ../exo-open/main.c:74
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "または: exo-open --launch TYPE [PARAMETERs...]"
 
-#: ../exo-open/main.c:62
+#: ../exo-open/main.c:76
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          このメッセージを表示して終了する"
 
-#: ../exo-open/main.c:63
+#: ../exo-open/main.c:77
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -v, --version                       バージョン情報を表示して終了する"
 
-#: ../exo-open/main.c:65
+#: ../exo-open/main.c:79
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1554,7 +1554,7 @@ msgstr ""
 "は\n"
 "                                      以下を参照。"
 
-#: ../exo-open/main.c:69
+#: ../exo-open/main.c:83
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1564,14 +1564,14 @@ msgstr ""
 "                                     アプリケーションの既定の作業フォルダを\n"
 "                                     指定する。"
 
-#: ../exo-open/main.c:72
+#: ../exo-open/main.c:86
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "次の TYPE が --launch コマンドでサポートされます:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:78
+#: ../exo-open/main.c:92
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1581,7 +1581,7 @@ msgstr ""
 "  MailReader       - お気に入りのメーラー。\n"
 "  TerminalEmulator - お気に入りのターミナルエミュレータ。"
 
-#: ../exo-open/main.c:82
+#: ../exo-open/main.c:96
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1595,12 +1595,12 @@ msgstr ""
 "アプリケーションにいくつかのパラメータを渡せます (TerminalEmulator には、\n"
 "ターミナル内で実行する必要のあるコマンド行を渡せます)。"
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:200
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "タイプが \"%s\" のファイルを開くアプリケーションの実行に失敗しました。"
 
-#: ../exo-open/main.c:191
+#: ../exo-open/main.c:221
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "URL \"%s\" を開けませんでした。"

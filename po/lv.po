@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-08 13:54+0200\n"
+"POT-Creation-Date: 2009-10-10 17:50+0200\n"
 "PO-Revision-Date: 2009-05-01 18:31+0300\n"
 "Last-Translator: Rihards Priedītis <rprieditis@gmail.com>\n"
 "Language-Team: Latvian <RPrieditis@gmail.com>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2)\n"
 "X-Poedit-Language: Latvian\n"
 "X-Poedit-Country: Latvia\n"
 
@@ -47,10 +48,8 @@ msgstr "izmērs"
 msgid "The size of the icon to render in pixels."
 msgstr "Attēlojamās ikonas izmērs pikseļos."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770
-#: ../exo/exo-mount-point.c:208
-#: ../exo/exo-mount-point.c:237
-#: ../exo/exo-mount-point.c:425
+#: ../exo/exo-gdk-pixbuf-extensions.c:770 ../exo/exo-mount-point.c:208
+#: ../exo/exo-mount-point.c:237 ../exo/exo-mount-point.c:425
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Neizdevās atvērt failu \"%s\": %s"
@@ -62,11 +61,13 @@ msgstr "Neizdevās nolasīt failu \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Neizdevās ielādēt attēlu \"%s\": Iemesls nav zināms, iespējams attēla fails ir bojāts"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Neizdevās ielādēt attēlu \"%s\": Iemesls nav zināms, iespējams attēla fails "
+"ir bojāts"
 
-#: ../exo/exo-icon-bar.c:249
-#: ../exo/exo-icon-view.c:785
+#: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:785
 msgid "Orientation"
 msgstr "Novietojums"
 
@@ -74,23 +75,19 @@ msgstr "Novietojums"
 msgid "The orientation of the iconbar"
 msgstr "Ikonjoslas novietojums"
 
-#: ../exo/exo-icon-bar.c:266
-#: ../exo/exo-icon-view.c:802
+#: ../exo/exo-icon-bar.c:266 ../exo/exo-icon-view.c:802
 msgid "Pixbuf column"
 msgstr "Pixbuf kolonna"
 
-#: ../exo/exo-icon-bar.c:267
-#: ../exo/exo-icon-view.c:803
+#: ../exo/exo-icon-bar.c:267 ../exo/exo-icon-view.c:803
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Izmantota modeļa kolonna, lai iegūtu ikonas pixbuf no"
 
-#: ../exo/exo-icon-bar.c:282
-#: ../exo/exo-icon-view.c:929
+#: ../exo/exo-icon-bar.c:282 ../exo/exo-icon-view.c:929
 msgid "Text column"
 msgstr "Teksta kolonna"
 
-#: ../exo/exo-icon-bar.c:283
-#: ../exo/exo-icon-view.c:930
+#: ../exo/exo-icon-bar.c:283 ../exo/exo-icon-view.c:930
 msgid "Model column used to retrieve the text from"
 msgstr "Izmantota modeļa kolonna, lai iegūtu tekstu no"
 
@@ -110,33 +107,27 @@ msgstr "Aktīvs"
 msgid "Active item index"
 msgstr "Aktīvā vienuma indeks"
 
-#: ../exo/exo-icon-bar.c:319
-#: ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:319 ../exo/exo-icon-bar.c:320
 msgid "Active item fill color"
 msgstr "Aktīvā vienuma aizpildījuma krāsa"
 
-#: ../exo/exo-icon-bar.c:326
-#: ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:326 ../exo/exo-icon-bar.c:327
 msgid "Active item border color"
 msgstr "Aktīvā vienuma robežu krāsa"
 
-#: ../exo/exo-icon-bar.c:333
-#: ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:333 ../exo/exo-icon-bar.c:334
 msgid "Active item text color"
 msgstr "Aktīvā vienuma teksta krāsa"
 
-#: ../exo/exo-icon-bar.c:340
-#: ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340 ../exo/exo-icon-bar.c:341
 msgid "Cursor item fill color"
 msgstr "Kursora vienuma aizpildījuma krāsa"
 
-#: ../exo/exo-icon-bar.c:347
-#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Cursor item border color"
 msgstr "Kursora vienuma robežu krāsa"
 
-#: ../exo/exo-icon-bar.c:354
-#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Cursor item text color"
 msgstr "Kursora vienuma teksta krāsa"
 
@@ -206,8 +197,7 @@ msgid "All Icons"
 msgstr "Visas ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:115
-#: ../exo/exo-icon-chooser-dialog.c:262
+#: ../exo/exo-icon-chooser-dialog.c:115 ../exo/exo-icon-chooser-dialog.c:262
 msgid "Image Files"
 msgstr "Attēlu faili"
 
@@ -281,7 +271,8 @@ msgid "The model for the icon view"
 msgstr "Modelis ikonu skatam"
 
 #: ../exo/exo-icon-view.c:786
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr "Kā teksts un ikona tiek novietoti attiecībā viens pret otru"
 
 #: ../exo/exo-icon-view.c:818
@@ -316,25 +307,25 @@ msgstr "Atlases režīms"
 msgid "The selection mode"
 msgstr "Atlases režīms"
 
-#: ../exo/exo-icon-view.c:880
-#: ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:880 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Viens klikšķis"
 
-#: ../exo/exo-icon-view.c:881
-#: ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:881 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Vai skatā esošie vienumi ir aktivizējami ar vienu klikšķi"
 
-#: ../exo/exo-icon-view.c:897
-#: ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:897 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Viena klikšķa noildze"
 
-#: ../exo/exo-icon-view.c:898
-#: ../exo/exo-tree-view.c:184
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "Laika daudzums, pēc kura vienums zem kursora, tiks automātiski iekrāsots, viena klikšķa režīmā"
+#: ../exo/exo-icon-view.c:898 ../exo/exo-tree-view.c:184
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Laika daudzums, pēc kura vienums zem kursora, tiks automātiski iekrāsots, "
+"viena klikšķa režīmā"
 
 #: ../exo/exo-icon-view.c:913
 msgid "Spacing"
@@ -364,8 +355,7 @@ msgstr "Atlases lodziņa necaurspīdība"
 msgid "Preview"
 msgstr "Priekšskatījums"
 
-#: ../exo/exo-thumbnail-preview.c:139
-#: ../exo/exo-thumbnail-preview.c:281
+#: ../exo/exo-thumbnail-preview.c:139 ../exo/exo-thumbnail-preview.c:281
 msgid "No file selected"
 msgstr "Neviens fails nav atlasīts"
 
@@ -394,56 +384,60 @@ msgid "_Add a new toolbar"
 msgstr "_Pievienot jaunu rīkjoslu"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "Velciet vienumu uz augšējām rīkjoslām, lai pievienotu, vai no rīkjoslām, uz vienumu tabulas, lai aizvāktu."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Velciet vienumu uz augšējām rīkjoslām, lai pievienotu, vai no rīkjoslām, uz "
+"vienumu tabulas, lai aizvāktu."
 
-#: ../exo/exo-toolbars-editor.c:543
+#: ../exo/exo-toolbars-editor.c:545
 msgid "Separator"
 msgstr "Atdalītājs"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:765
 msgid "Toolbar _Style"
 msgstr "Rīkjoslas _stils"
 
-#: ../exo/exo-toolbars-view.c:766
+#: ../exo/exo-toolbars-view.c:772
 msgid "_Desktop Default"
 msgstr "Noklusētā _darbavirsma"
 
-#: ../exo/exo-toolbars-view.c:775
+#: ../exo/exo-toolbars-view.c:781
 msgid "_Icons only"
 msgstr "Tikai _ikonas"
 
-#: ../exo/exo-toolbars-view.c:784
+#: ../exo/exo-toolbars-view.c:790
 msgid "_Text only"
 msgstr "Tikai _tekstu"
 
-#: ../exo/exo-toolbars-view.c:793
+#: ../exo/exo-toolbars-view.c:799
 msgid "Text for _All Icons"
 msgstr "Tekstu _visām ikonām"
 
-#: ../exo/exo-toolbars-view.c:802
+#: ../exo/exo-toolbars-view.c:808
 msgid "Text for I_mportant Icons"
 msgstr "Tekstu svarī_gajām ikonām"
 
-#: ../exo/exo-toolbars-view.c:810
+#: ../exo/exo-toolbars-view.c:816
 msgid "_Remove Toolbar"
 msgstr "_Noņemt rīkjoslu"
 
-#: ../exo/exo-toolbars-view.c:825
+#: ../exo/exo-toolbars-view.c:831
 msgid "Customize Toolbar..."
 msgstr "Pielāgot rīkjoslu..."
 
-#: ../exo/exo-url.c:280
+#: ../exo/exo-url.c:283
 #, c-format
 msgid "Unable to open \"%s\""
 msgstr "Nevarēja atvērt \"%s\""
 
-#: ../exo/exo-url.c:326
+#: ../exo/exo-url.c:329
 #, c-format
 msgid "The URL \"%s\" is not supported"
 msgstr "URL \"%s\" netiek atbalstīts"
 
-#: ../exo/exo-url.c:412
+#: ../exo/exo-url.c:401
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Neizdevās atvērt \"%s\""
@@ -538,11 +532,9 @@ msgstr "  --strip-comments  Dzēš komentārus no XML failiem\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Dzēš mezglu saturu XML failos\n"
 
-#: ../exo-csource/main.c:305
-#: ../exo-desktop-item-edit/main.c:153
-#: ../exo-mount/main.c:122
-#: ../exo-mount-notify/main.c:169
-#: ../exo-open/main.c:131
+#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:153
+#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:169
+#: ../exo-open/main.c:146
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -557,11 +549,9 @@ msgstr ""
 "Autors Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:309
-#: ../exo-desktop-item-edit/main.c:157
-#: ../exo-mount/main.c:126
-#: ../exo-mount-notify/main.c:173
-#: ../exo-open/main.c:135
+#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:157
+#: ../exo-mount/main.c:132 ../exo-mount-notify/main.c:173
+#: ../exo-open/main.c:150
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -576,11 +566,9 @@ msgstr ""
 "\n"
 "\n"
 
-#: ../exo-csource/main.c:313
-#: ../exo-desktop-item-edit/main.c:161
-#: ../exo-mount/main.c:130
-#: ../exo-mount-notify/main.c:177
-#: ../exo-open/main.c:139
+#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:161
+#: ../exo-mount/main.c:136 ../exo-mount-notify/main.c:177
+#: ../exo-open/main.c:154
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Lūdzu ziņojiet par kļūdām uz <%s>.\n"
@@ -669,8 +657,14 @@ msgid "Use _startup notification"
 msgstr "Izmantot _sāknēšanas paziņošanu"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "Izvēlaties šo opciju, lai ieslēgtu sāknēšanas paziņošanu, kad komanda tiek palaista no failu pārvaldnieka, vai izvēlnes. Ne visas lietotnes atbalsta sāknēšanas paziņošanu."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Izvēlaties šo opciju, lai ieslēgtu sāknēšanas paziņošanu, kad komanda tiek "
+"palaista no failu pārvaldnieka, vai izvēlnes. Ne visas lietotnes atbalsta "
+"sāknēšanas paziņošanu."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -681,7 +675,8 @@ msgstr "Palaist _terminālī"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:444
 msgid "Select this option to run the command in a terminal window."
-msgstr "Izvēlaties, šo opciju, ja vēlaties, lai komanda tiek izpildīta termināla logā"
+msgstr ""
+"Izvēlaties, šo opciju, ja vēlaties, lai komanda tiek izpildīta termināla logā"
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:591
@@ -733,10 +728,8 @@ msgstr "Noklusētais URL, kad veido saiti"
 msgid "Preset icon when creating a desktop file"
 msgstr "Noklusētā ikona, kad veido darbavirsmas failu"
 
-#: ../exo-desktop-item-edit/main.c:79
-#: ../exo-helper/main.c:67
-#: ../exo-mount/main.c:74
-#: ../exo-mount-notify/main.c:77
+#: ../exo-desktop-item-edit/main.c:79 ../exo-helper/main.c:67
+#: ../exo-mount/main.c:77 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Izdrukāt versijas informāciju un iziet"
 
@@ -745,8 +738,7 @@ msgstr "Izdrukāt versijas informāciju un iziet"
 msgid "[FILE|FOLDER]"
 msgstr "[FAILS|MAPE]"
 
-#: ../exo-desktop-item-edit/main.c:138
-#: ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:138 ../exo-mount/main.c:114
 #: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "Neizdevās atvērt displeju"
@@ -1050,7 +1042,8 @@ msgstr "Neizdevās atvērt helpers.rc rakstīšanai"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Vēlamās lietotnes (tīmekļa pārlūks, pasta lasītājs un termināla emulators)"
+msgstr ""
+"Vēlamās lietotnes (tīmekļa pārlūks, pasta lasītājs un termināla emulators)"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
@@ -1081,8 +1074,12 @@ msgid "SOCKET ID"
 msgstr "SOKETA ID"
 
 #: ../exo-helper/main.c:70
-msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
-msgstr "Palaist noklusēto palīdzības TIPU ar neobligātajiem PARAMETRIEM, kur TIPS ir viena no sekojošām vērtībām."
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
+"one of the following values."
+msgstr ""
+"Palaist noklusēto palīdzības TIPU ar neobligātajiem PARAMETRIEM, kur TIPS ir "
+"viena no sekojošām vērtībām."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
@@ -1262,143 +1259,149 @@ msgstr "W3M teksta pārlūks"
 msgid "X Terminal"
 msgstr "X terminālis"
 
-#: ../exo-mount/exo-mount-fstab.c:92
+#: ../exo-mount/exo-mount-fstab.c:85
 #, c-format
 msgid "Unknown error"
 msgstr "Nezināma kļūda"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:132
-#: ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:420
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Ierīce \"%s\" netika atrasta failu sistēmas ierīču tabulā"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224
-#: ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Norādīta ierīce \"%s\" nav sējums vai datu ierīce"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:605
+#: ../exo-mount/exo-mount-hal.c:652
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Jums, nav tiesību veikt sējuma \"%s\" izgrūšanu"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:610
+#: ../exo-mount/exo-mount-hal.c:657
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Lietotne neļauj izgrūst sējumu \"%s\" "
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:841
+#: ../exo-mount/exo-mount-hal.c:919
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Jums nav tiesību veikt sējuma \"%s\" montēšanu"
 
-#: ../exo-mount/exo-mount-hal.c:856
+#: ../exo-mount/exo-mount-hal.c:934
 #, c-format
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
-msgstr "Tukšu disku nevar montēt, izmantojiet CD rakstīšanas lietotni, piemēram, Xfburn, lai ierakstītu audio vai datus uz diska"
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
+msgstr ""
+"Tukšu disku nevar montēt, izmantojiet CD rakstīšanas lietotni, piemēram, "
+"Xfburn, lai ierakstītu audio vai datus uz diska"
 
-#: ../exo-mount/exo-mount-hal.c:867
+#: ../exo-mount/exo-mount-hal.c:945
 #, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "Audio CD nevar montēt, izmantojiet Xfmedia, lai atskaņotu audio celiņus"
+msgstr ""
+"Audio CD nevar montēt, izmantojiet Xfmedia, lai atskaņotu audio celiņus"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:932
+#: ../exo-mount/exo-mount-hal.c:1010
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "Jums nav tiesību veikt crypto slāņa iznīcināšanu"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:937
+#: ../exo-mount/exo-mount-hal.c:1015
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "Lietotne liedz crypto slānim iznīcināties"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1021
+#: ../exo-mount/exo-mount-hal.c:1099
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Jums nav tiesības veikt sējuma \"%s\" nomontēšanu"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1026
+#: ../exo-mount/exo-mount-hal.c:1104
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Lietotne \"%s\" neļauj veikt sējuma nomontēšanu"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1031
+#: ../exo-mount/exo-mount-hal.c:1109
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Sējums \"%s\" iespējams tika montēts manuāli no komandlīnijas"
 
-#: ../exo-mount/main.c:65
+#: ../exo-mount/main.c:68
 msgid "Eject rather than mount"
 msgstr "Izgrūst, nevis montēt"
 
-#: ../exo-mount/main.c:66
+#: ../exo-mount/main.c:69
 msgid "Unmount rather than mount"
 msgstr "Nomontēt, nevis montēt"
 
-#: ../exo-mount/main.c:68
+#: ../exo-mount/main.c:71
 msgid "Mount by HAL device UDI"
 msgstr "Montēt pēc HAL ierīces UDI"
 
-#: ../exo-mount/main.c:70
+#: ../exo-mount/main.c:73
 msgid "Mount by HAL device UDI (not supported)"
 msgstr "Montēt pēc HAL ierīces UDI (netiek atbalstīts)"
 
-#: ../exo-mount/main.c:72
+#: ../exo-mount/main.c:75
 msgid "Mount by device file"
 msgstr "Montēt pēc ierīces faila"
 
-#: ../exo-mount/main.c:73
+#: ../exo-mount/main.c:76
 msgid "Don't show any dialogs"
 msgstr "Nerādīt nekādus dialogus"
 
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:138
+#: ../exo-mount/main.c:144
 msgid "Must specify HAL device UDI or device file"
 msgstr "Jānorāda HAL iekārtas UDI vai ierīces fails"
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:146
+#: ../exo-mount/main.c:152
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "Nenorādiet vienlaicīgi HAL iekārtas UDI un ierīces failu"
 
-#: ../exo-mount/main.c:154
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
-msgstr "Nevar montēt pēc HAL iekārtas UDI, jo HAL atbalsts ir atspējots šai būvējumā"
+#: ../exo-mount/main.c:160
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+"Nevar montēt pēc HAL iekārtas UDI, jo HAL atbalsts ir atspējots šai būvējumā"
 
-#: ../exo-mount/main.c:161
+#: ../exo-mount/main.c:167
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 msgstr "Norādītais UDI \"%s\" nav derīgs HAL ierīču UDI"
 
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:178
+#: ../exo-mount/main.c:184
 msgid "Cannot eject and unmount simultaneously"
 msgstr "Nevar vienlaicīgi izgrūst un nomontēt"
 
-#: ../exo-mount/main.c:330
+#: ../exo-mount/main.c:336
 #, c-format
 msgid "Failed to eject \"%s\""
 msgstr "Neizdevās izgrūst \"%s\""
 
-#: ../exo-mount/main.c:332
+#: ../exo-mount/main.c:338
 #, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "Neizdevās nomontēt \"%s\""
 
-#: ../exo-mount/main.c:334
+#: ../exo-mount/main.c:340
 #, c-format
 msgid "Failed to mount \"%s\""
 msgstr "Neizdevās \"%s\" montāža"
@@ -1430,8 +1433,12 @@ msgstr "Nomontēju ierīci"
 
 #: ../exo-mount-notify/main.c:233
 #, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
-msgstr "Sistēma veic nomontēšanu ierīcei \"%s\". Lūdzu, nenoņemiet datu nesēju vai neatvienojiet dzini."
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+"Sistēma veic nomontēšanu ierīcei \"%s\". Lūdzu, nenoņemiet datu nesēju vai "
+"neatvienojiet dzini."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:240
@@ -1440,51 +1447,61 @@ msgstr "Dati tiek rakstīti ierīcē"
 
 #: ../exo-mount-notify/main.c:241
 #, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
-msgstr "Ir dati, kuri jāieraksta iekārtā \"%s\" pirms noņemšanas. Lūdzu, nenoņemiet datu nesēju vai neatvienojiet dzini."
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
+"Ir dati, kuri jāieraksta iekārtā \"%s\" pirms noņemšanas. Lūdzu, nenoņemiet "
+"datu nesēju vai neatvienojiet dzini."
 
-#: ../exo-open/main.c:59
+#: ../exo-open/main.c:73
 msgid "Usage: exo-open [URLs...]"
 msgstr "Lietošana: exo-open [URLi...]"
 
-#: ../exo-open/main.c:60
+#: ../exo-open/main.c:74
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TIPS [PARAMETRI...]"
 
-#: ../exo-open/main.c:62
+#: ../exo-open/main.c:76
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          Izdrukā šo palīdzības ziņu un iziet"
+msgstr ""
+"  -?, --help                          Izdrukā šo palīdzības ziņu un iziet"
 
-#: ../exo-open/main.c:63
-msgid "  -V, --version                       Print version information and exit"
-msgstr "  -V, --version                       Izdrukā versijas informāciju un iziet"
+#: ../exo-open/main.c:77
+msgid ""
+"  -V, --version                       Print version information and exit"
+msgstr ""
+"  -V, --version                       Izdrukā versijas informāciju un iziet"
 
-#: ../exo-open/main.c:65
+#: ../exo-open/main.c:79
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TIPS [PARAMETRI...]       Palaist vēlamo TIPA lietotni\n"
 "                                      ar neobligātiem PARAMETRIEM, kur TIPS\n"
 "                                      ir kāda no sekojošām vērtibām."
 
-#: ../exo-open/main.c:69
+#: ../exo-open/main.c:83
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DIREKTORIJA       Noklusētā darba direktorija priekš lietotnes,\n"
+"  --working-directory DIREKTORIJA       Noklusētā darba direktorija priekš "
+"lietotnes,\n"
 "                                      kad izmanto --lunch opciju."
 
-#: ../exo-open/main.c:72
+#: ../exo-open/main.c:86
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "--lunch komandas atbalstītie TIPI:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:78
+#: ../exo-open/main.c:92
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1494,7 +1511,7 @@ msgstr ""
 "  MailReader       - Vēlamais pasta lasītājs.\n"
 "  TerminalEmulator - Vēlamais termināla emulators."
 
-#: ../exo-open/main.c:82
+#: ../exo-open/main.c:96
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1508,20 +1525,21 @@ msgstr ""
 "parametrus lietotnei (piemēram, TerminalEmulator, jūs varat\n"
 "padot komandlīniju, kuru izpildīt terminālī)."
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:200
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Neizdevās palaist vēlamo aplikāciju no kategorijas \"%s\"."
 
-#: ../exo-open/main.c:191
+#: ../exo-open/main.c:221
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Nevar atvērt URL \"%s\"."
 
 #~ msgid "Xfce 4 Preferred Applications"
 #~ msgstr "Xfce 4 vēlamās lietotnes"
+
 #~ msgid "Failed to launch exo-preferred-applications"
 #~ msgstr "Neizdevās palaist exo-preferred-applications"
+
 #~ msgid "Button Label|Preferred Applications"
 #~ msgstr "Vēlamās lietotnes"
-
