@@ -942,8 +942,8 @@ oom:      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_NOMEM, "%s", g_strerror
             {
               /* TRANSLATORS: User tried to mount an Audio CD that doesn't contain a data track. */
               g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED,
-                           _("Audio CDs cannot be mounted, use "
-                             "Xfmedia to play the audio tracks"));
+                           _("Audio CDs cannot be mounted, use your favorite audio "
+                             "player to play the audio tracks"));
             }
           else
             {

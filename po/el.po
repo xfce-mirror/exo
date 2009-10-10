@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo git\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-30 17:50+0200\n"
+"POT-Creation-Date: 2009-10-10 20:18+0200\n"
 "PO-Revision-Date: 2009-09-01 20:20-0800\n"
 "Last-Translator: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -20,355 +20,348 @@ msgstr ""
 "X-Poedit-Country: GREECE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:114
-#: ../exo/exo-cell-renderer-icon.c:126
+#: ../exo/exo-cell-renderer-ellipsized-text.c:132
+#: ../exo/exo-cell-renderer-icon.c:145
 msgid "Follow state"
 msgstr "Παρακολούθηση κατάστασης"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:115
-#: ../exo/exo-cell-renderer-icon.c:127
+#: ../exo/exo-cell-renderer-ellipsized-text.c:133
+#: ../exo/exo-cell-renderer-icon.c:146
 msgid "Render differently based on the selection state."
 msgstr "Διαφορετική απεικόνιση ανάλογα με την κατάσταση επιλογής."
 
-#: ../exo/exo-cell-renderer-icon.c:148
+#: ../exo/exo-cell-renderer-icon.c:167
 msgid "Icon"
 msgstr "Εικονίδιο"
 
-#: ../exo/exo-cell-renderer-icon.c:149
+#: ../exo/exo-cell-renderer-icon.c:168
 msgid "The icon to render."
 msgstr "Το εικονίδιο που θα προβληθεί."
 
-#: ../exo/exo-cell-renderer-icon.c:167
+#: ../exo/exo-cell-renderer-icon.c:186
 msgid "GIcon"
 msgstr "Εικονίδιο (GIcon)"
 
-#: ../exo/exo-cell-renderer-icon.c:168
+#: ../exo/exo-cell-renderer-icon.c:187
 msgid "The GIcon to render."
 msgstr "Το εικονίδιο (GIcon) που θα προβληθεί."
 
-#: ../exo/exo-cell-renderer-icon.c:189
+#: ../exo/exo-cell-renderer-icon.c:208
 msgid "size"
 msgstr "μέγεθος"
 
-#: ../exo/exo-cell-renderer-icon.c:190
+#: ../exo/exo-cell-renderer-icon.c:209
 msgid "The size of the icon to render in pixels."
 msgstr "Το μέγεθος του εικονιδίου σε pixel."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:770
-#: ../exo/exo-mount-point.c:208
-#: ../exo/exo-mount-point.c:237
-#: ../exo/exo-mount-point.c:425
+#: ../exo/exo-gdk-pixbuf-extensions.c:788 ../exo/exo-mount-point.c:221
+#: ../exo/exo-mount-point.c:250 ../exo/exo-mount-point.c:438
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Απέτυχε το άνοιγμα του αρχείου \"%s\": %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:832
+#: ../exo/exo-gdk-pixbuf-extensions.c:850
 #, c-format
 msgid "Failed to read file \"%s\": %s"
 msgstr "Απέτυχε η ανάγνωση του αρχείου \"%s\": %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:873
+#: ../exo/exo-gdk-pixbuf-extensions.c:891
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Απέτυχε η φόρτωση της εικόνας \"%s\": Άγνωστος λόγος, πιθανά να είναι κατεστραμμένο το αρχείο εικόνας"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Απέτυχε η φόρτωση της εικόνας \"%s\": Άγνωστος λόγος, πιθανά να είναι "
+"κατεστραμμένο το αρχείο εικόνας"
 
-#: ../exo/exo-gtk-extensions.c:210
+#: ../exo/exo-gtk-extensions.c:228
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Απέτυχε το άνοιγμα του \"%s\"."
 
-#: ../exo/exo-icon-bar.c:228
-#: ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-bar.c:278 ../exo/exo-icon-view.c:777
 msgid "Orientation"
 msgstr "Προσανατολισμός"
 
-#: ../exo/exo-icon-bar.c:229
+#: ../exo/exo-icon-bar.c:279
 msgid "The orientation of the iconbar"
 msgstr "Ο προσανατολισμός του Iconbar"
 
-#: ../exo/exo-icon-bar.c:245
-#: ../exo/exo-icon-view.c:780
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
 msgid "Pixbuf column"
 msgstr "Στήλη Pixbuf"
 
-#: ../exo/exo-icon-bar.c:246
-#: ../exo/exo-icon-view.c:781
+#: ../exo/exo-icon-bar.c:296 ../exo/exo-icon-view.c:795
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Το μοντέλο στήλης για τη λήψη του pixbuf εικονιδίου"
 
-#: ../exo/exo-icon-bar.c:261
-#: ../exo/exo-icon-view.c:907
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
 msgid "Text column"
 msgstr "Στήλη κειμένου"
 
-#: ../exo/exo-icon-bar.c:262
-#: ../exo/exo-icon-view.c:908
+#: ../exo/exo-icon-bar.c:312 ../exo/exo-icon-view.c:922
 msgid "Model column used to retrieve the text from"
 msgstr "Το μοντέλο στήλης για τη λήψη του κειμένου"
 
-#: ../exo/exo-icon-bar.c:274
+#: ../exo/exo-icon-bar.c:324
 msgid "Icon Bar Model"
 msgstr "Μοντέλο Iconbar"
 
-#: ../exo/exo-icon-bar.c:275
+#: ../exo/exo-icon-bar.c:325
 msgid "Model for the icon bar"
 msgstr "Το μοντέλο για τη μπάρα εικονιδίων"
 
-#: ../exo/exo-icon-bar.c:291
+#: ../exo/exo-icon-bar.c:341
 msgid "Active"
 msgstr "Ενεργό"
 
-#: ../exo/exo-icon-bar.c:292
+#: ../exo/exo-icon-bar.c:342
 msgid "Active item index"
 msgstr "Το αντικείμενο που είναι αυτή τη στιγμή ενεργό"
 
-#: ../exo/exo-icon-bar.c:298
-#: ../exo/exo-icon-bar.c:299
+#: ../exo/exo-icon-bar.c:348 ../exo/exo-icon-bar.c:349
 msgid "Active item fill color"
 msgstr "Χρώμα γεμίσματος ενεργού αντικειμένου"
 
-#: ../exo/exo-icon-bar.c:305
-#: ../exo/exo-icon-bar.c:306
+#: ../exo/exo-icon-bar.c:355 ../exo/exo-icon-bar.c:356
 msgid "Active item border color"
 msgstr "Χρώμα περιγράμματος ενεργού αντικειμένου"
 
-#: ../exo/exo-icon-bar.c:312
-#: ../exo/exo-icon-bar.c:313
+#: ../exo/exo-icon-bar.c:362 ../exo/exo-icon-bar.c:363
 msgid "Active item text color"
 msgstr "Χρώμα κειμένου ενεργού αντικειμένου"
 
-#: ../exo/exo-icon-bar.c:319
-#: ../exo/exo-icon-bar.c:320
+#: ../exo/exo-icon-bar.c:369 ../exo/exo-icon-bar.c:370
 msgid "Cursor item fill color"
 msgstr "Χρώμα γεμίσματος κέρσορα"
 
-#: ../exo/exo-icon-bar.c:326
-#: ../exo/exo-icon-bar.c:327
+#: ../exo/exo-icon-bar.c:376 ../exo/exo-icon-bar.c:377
 msgid "Cursor item border color"
 msgstr "Χρώμα περιγράμματος κέρσορα"
 
-#: ../exo/exo-icon-bar.c:333
-#: ../exo/exo-icon-bar.c:334
+#: ../exo/exo-icon-bar.c:383 ../exo/exo-icon-bar.c:384
 msgid "Cursor item text color"
 msgstr "Χρώμα κειμένου κέρσορα"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:83
+#: ../exo/exo-icon-chooser-dialog.c:97
 msgid "Action Icons"
 msgstr "Εικονίδια δράσεων"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:85
+#: ../exo/exo-icon-chooser-dialog.c:99
 msgid "Animations"
 msgstr "Κινούμενες εικόνες"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:87
+#: ../exo/exo-icon-chooser-dialog.c:101
 msgid "Application Icons"
 msgstr "Εικονίδια εφαρμογών"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:89
+#: ../exo/exo-icon-chooser-dialog.c:103
 msgid "Menu Icons"
 msgstr "Εικονίδια μενού"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:91
+#: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Device Icons"
 msgstr "Εικονίδια συσκευών"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:93
+#: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Emblems"
 msgstr "Εμβλήματα"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:95
+#: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Emoticons"
 msgstr "Φατσούλες"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:97
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "International Denominations"
 msgstr "Διεθνείς ονομασίες"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:99
+#: ../exo/exo-icon-chooser-dialog.c:113
 msgid "File Type Icons"
 msgstr "Εικονίδια τύπων αρχείων"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:101
+#: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Location Icons"
 msgstr "Εικονίδια τοποθεσιών"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:103
+#: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Status Icons"
 msgstr "Εικονίδια κατάστασης"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:105
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "Uncategorized Icons"
 msgstr "Εικονίδια χωρίς κατηγορία"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:109
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "All Icons"
 msgstr "Όλα τα εικονίδια"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:113
-#: ../exo/exo-icon-chooser-dialog.c:237
+#: ../exo/exo-icon-chooser-dialog.c:127 ../exo/exo-icon-chooser-dialog.c:251
 msgid "Image Files"
 msgstr "Εικόνες"
 
 #. setup the header label
-#: ../exo/exo-icon-chooser-dialog.c:180
+#: ../exo/exo-icon-chooser-dialog.c:194
 msgid "Select _icon from:"
 msgstr "Επιλογή ε_ικονιδίου από:"
 
-#: ../exo/exo-icon-view.c:631
+#: ../exo/exo-icon-view.c:645
 msgid "Column Spacing"
 msgstr "Διάστημα στηλών"
 
-#: ../exo/exo-icon-view.c:632
+#: ../exo/exo-icon-view.c:646
 msgid "Space which is inserted between grid column"
 msgstr "Το διάστημα που εισάγεται ανάμεσα στα κελιά στηλών πλέγματος"
 
-#: ../exo/exo-icon-view.c:648
+#: ../exo/exo-icon-view.c:662
 msgid "Number of columns"
 msgstr "Αριθμός στηλών"
 
-#: ../exo/exo-icon-view.c:649
+#: ../exo/exo-icon-view.c:663
 msgid "Number of columns to display"
 msgstr "Ο αριθμός των στηλών  που προβάλλεται"
 
-#: ../exo/exo-icon-view.c:663
+#: ../exo/exo-icon-view.c:677
 msgid "Enable Search"
 msgstr "Ενεργοποίηση αναζήτησης"
 
-#: ../exo/exo-icon-view.c:664
+#: ../exo/exo-icon-view.c:678
 msgid "View allows user to search through columns interactively"
 msgstr "Η Προβολή επιτρέπει το χρήστη να ερευνήσει στις στήλες διαδραστικά"
 
-#: ../exo/exo-icon-view.c:681
+#: ../exo/exo-icon-view.c:695
 msgid "Width for each item"
 msgstr "Πλάτος για κάθε αντικείμενο"
 
-#: ../exo/exo-icon-view.c:682
+#: ../exo/exo-icon-view.c:696
 msgid "The width used for each item"
 msgstr "Το πλάτος που χρησιμοποιείται για κάθε στοιχείο"
 
-#: ../exo/exo-icon-view.c:700
+#: ../exo/exo-icon-view.c:714
 msgid "Layout mode"
 msgstr "Διάταξη"
 
-#: ../exo/exo-icon-view.c:701
+#: ../exo/exo-icon-view.c:715
 msgid "The layout mode"
 msgstr "Η διάταξη της προβολής"
 
-#: ../exo/exo-icon-view.c:717
+#: ../exo/exo-icon-view.c:731
 msgid "Margin"
 msgstr "Περιθώριο"
 
-#: ../exo/exo-icon-view.c:718
+#: ../exo/exo-icon-view.c:732
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Το διάστημα που εισάγεται στα όρια της προβολής εικονιδίου"
 
-#: ../exo/exo-icon-view.c:734
+#: ../exo/exo-icon-view.c:748
 msgid "Markup column"
 msgstr "Στήλη επισήμανσης"
 
-#: ../exo/exo-icon-view.c:735
-msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Το μοντέλο στήλης για τη λήψη του κειμένου, στην περίπτωση χρήσης σήμανσης Pango"
-
 #: ../exo/exo-icon-view.c:749
+msgid "Model column used to retrieve the text if using Pango markup"
+msgstr ""
+"Το μοντέλο στήλης για τη λήψη του κειμένου, στην περίπτωση χρήσης σήμανσης "
+"Pango"
+
+#: ../exo/exo-icon-view.c:763
 msgid "Icon View Model"
 msgstr "Μοντέλο προβολής εικονιδίου"
 
-#: ../exo/exo-icon-view.c:750
+#: ../exo/exo-icon-view.c:764
 msgid "The model for the icon view"
 msgstr "Το μοντέλο για την προβολή εικονιδίου"
 
-#: ../exo/exo-icon-view.c:764
-msgid "How the text and icon of each item are positioned relative to each other"
-msgstr "Πως το κείμενο και κάθε στοιχείο τοποθετούνται το ένα σε σχέση με το άλλο"
+#: ../exo/exo-icon-view.c:778
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"Πως το κείμενο και κάθε στοιχείο τοποθετούνται το ένα σε σχέση με το άλλο"
 
-#: ../exo/exo-icon-view.c:796
+#: ../exo/exo-icon-view.c:810
 msgid "Reorderable"
 msgstr "Δυνατότητα αναταξινόμησης"
 
-#: ../exo/exo-icon-view.c:797
+#: ../exo/exo-icon-view.c:811
 msgid "View is reorderable"
 msgstr "Η προβολή έχει δυνατότητα αναταξινόμησης"
 
-#: ../exo/exo-icon-view.c:812
+#: ../exo/exo-icon-view.c:826
 msgid "Row Spacing"
 msgstr "Διάστημα γραμμών"
 
-#: ../exo/exo-icon-view.c:813
+#: ../exo/exo-icon-view.c:827
 msgid "Space which is inserted between grid rows"
 msgstr "Το διάστημα που εισάγεται ανάμεσα στα κελιά γραμμών πλέγματος"
 
-#: ../exo/exo-icon-view.c:827
+#: ../exo/exo-icon-view.c:841
 msgid "Search Column"
 msgstr "Αναζήτηση στήλης"
 
-#: ../exo/exo-icon-view.c:828
+#: ../exo/exo-icon-view.c:842
 msgid "Model column to search through when searching through item"
 msgstr "Μοντέλο στήλης για αναζήτηση όταν γίνεται αναζήτηση μέσω αντικειμένου"
 
-#: ../exo/exo-icon-view.c:842
+#: ../exo/exo-icon-view.c:856
 msgid "Selection mode"
 msgstr "Λειτουργία επιλογής"
 
-#: ../exo/exo-icon-view.c:843
+#: ../exo/exo-icon-view.c:857
 msgid "The selection mode"
 msgstr "Η λειτουργία επιλογής"
 
-#: ../exo/exo-icon-view.c:858
-#: ../exo/exo-tree-view.c:141
+#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
 msgid "Single Click"
 msgstr "Μονό κλικ"
 
-#: ../exo/exo-icon-view.c:859
-#: ../exo/exo-tree-view.c:142
+#: ../exo/exo-icon-view.c:873 ../exo/exo-tree-view.c:156
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Εάν θα ενεργοποιούνται τα αντικείμενα στην προβολή με μονά κλικ"
 
-#: ../exo/exo-icon-view.c:875
-#: ../exo/exo-tree-view.c:158
+#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
 msgid "Single Click Timeout"
 msgstr "Λήξη χρονικού ορίου για μονό κλικ"
 
-#: ../exo/exo-icon-view.c:876
-#: ../exo/exo-tree-view.c:159
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "Ο χρόνος μετά τον οποίο το αντικείμενο κάτω από τον κέρσορα του ποντικιού θα επιλεγεί αυτόματα στη λειτουργία μονού κλικ"
+#: ../exo/exo-icon-view.c:890 ../exo/exo-tree-view.c:173
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Ο χρόνος μετά τον οποίο το αντικείμενο κάτω από τον κέρσορα του ποντικιού θα "
+"επιλεγεί αυτόματα στη λειτουργία μονού κλικ"
 
-#: ../exo/exo-icon-view.c:891
+#: ../exo/exo-icon-view.c:905
 msgid "Spacing"
 msgstr "Διάστιχο"
 
-#: ../exo/exo-icon-view.c:892
+#: ../exo/exo-icon-view.c:906
 msgid "Space which is inserted between cells of an item"
 msgstr "Το διάστημα που εισάγεται ανάμεσα στα κελιά ενός στοιχείου"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:929
 msgid "Selection Box Color"
 msgstr "Χρώμα κουτιού επιλογής"
 
-#: ../exo/exo-icon-view.c:916
+#: ../exo/exo-icon-view.c:930
 msgid "Color of the selection box"
 msgstr "Χρώμα του κουτιού επιλογής"
 
-#: ../exo/exo-icon-view.c:922
+#: ../exo/exo-icon-view.c:936
 msgid "Selection Box Alpha"
 msgstr "Τιμή διαφάνειας κουτιού επιλογής"
 
-#: ../exo/exo-icon-view.c:923
+#: ../exo/exo-icon-view.c:937
 msgid "Opacity of the selection box"
 msgstr "Αδιαφάνεια κουτιού επιλογής"
 
@@ -376,8 +369,7 @@ msgstr "Αδιαφάνεια κουτιού επιλογής"
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
-#: ../exo/exo-thumbnail-preview.c:130
-#: ../exo/exo-thumbnail-preview.c:272
+#: ../exo/exo-thumbnail-preview.c:130 ../exo/exo-thumbnail-preview.c:272
 msgid "No file selected"
 msgstr "Δεν επιλέχθηκε αρχείο"
 
@@ -401,87 +393,91 @@ msgstr "FIFO"
 msgid "Socket"
 msgstr "Υποδοχή"
 
-#: ../exo/exo-toolbars-editor-dialog.c:108
+#: ../exo/exo-toolbars-editor-dialog.c:119
 msgid "_Add a new toolbar"
 msgstr "_Προσθήκη μιας νέας εργαλειοθήκης"
 
-#: ../exo/exo-toolbars-editor.c:206
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "Σύρετε ένα αντικείμενο στις εργαλειοθήκες παραπάνω για να το προσθέσετε, και από τις εργαλειοθήκες στον πίνακα αντικειμένων για να το αφαιρέσετε."
+#: ../exo/exo-toolbars-editor.c:222
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Σύρετε ένα αντικείμενο στις εργαλειοθήκες παραπάνω για να το προσθέσετε, και "
+"από τις εργαλειοθήκες στον πίνακα αντικειμένων για να το αφαιρέσετε."
 
-#: ../exo/exo-toolbars-editor.c:523
+#: ../exo/exo-toolbars-editor.c:539
 msgid "Separator"
 msgstr "Διαχωριστικό"
 
-#: ../exo/exo-toolbars-view.c:744
+#: ../exo/exo-toolbars-view.c:753
 msgid "Toolbar _Style"
 msgstr "_Στυλ εργαλειοθήκης"
 
-#: ../exo/exo-toolbars-view.c:751
+#: ../exo/exo-toolbars-view.c:760
 msgid "_Desktop Default"
 msgstr "_Προεπιλογή επιφάνειας εργασίας"
 
-#: ../exo/exo-toolbars-view.c:760
+#: ../exo/exo-toolbars-view.c:769
 msgid "_Icons only"
 msgstr "_Εικονίδια μόνο"
 
-#: ../exo/exo-toolbars-view.c:769
+#: ../exo/exo-toolbars-view.c:778
 msgid "_Text only"
 msgstr "_Κείμενο μόνο"
 
-#: ../exo/exo-toolbars-view.c:778
+#: ../exo/exo-toolbars-view.c:787
 msgid "Text for _All Icons"
 msgstr "Κείμενο για Όλ_α τα εικονίδια"
 
-#: ../exo/exo-toolbars-view.c:787
+#: ../exo/exo-toolbars-view.c:796
 msgid "Text for I_mportant Icons"
 msgstr "Κεί_μενο για τα Σημαντικά εικονίδια"
 
-#: ../exo/exo-toolbars-view.c:795
+#: ../exo/exo-toolbars-view.c:804
 msgid "_Remove Toolbar"
 msgstr "_Απομάκρυνση εργαλειοθήκης"
 
-#: ../exo/exo-toolbars-view.c:810
+#: ../exo/exo-toolbars-view.c:819
 msgid "Customize Toolbar..."
 msgstr "Προσαρμογή Εργαλειοθήκης..."
 
-#: ../exo/exo-wrap-table.c:135
+#: ../exo/exo-wrap-table.c:149
 msgid "Column spacing"
 msgstr "Διάστιχο στηλών"
 
-#: ../exo/exo-wrap-table.c:136
+#: ../exo/exo-wrap-table.c:150
 msgid "The amount of space between two consecutive columns"
 msgstr "Το διάστημα μεταξύ δυο συνεχόμενων στηλών"
 
-#: ../exo/exo-wrap-table.c:150
+#: ../exo/exo-wrap-table.c:164
 msgid "Row spacing"
 msgstr "Διάστιχο γραμμών"
 
-#: ../exo/exo-wrap-table.c:151
+#: ../exo/exo-wrap-table.c:165
 msgid "The amount of space between two consecutive rows"
 msgstr "Το διάστημα μεταξύ δυο συνεχόμενων γραμμών"
 
-#: ../exo/exo-wrap-table.c:165
+#: ../exo/exo-wrap-table.c:179
 msgid "Homogeneous"
 msgstr "Ομογενές"
 
-#: ../exo/exo-wrap-table.c:166
+#: ../exo/exo-wrap-table.c:180
 msgid "Whether the children should be all the same size"
 msgstr "Εάν όλα τα θυγατρικά αντικείμενα πρέπει να έχουν το ίδιο μέγεθος"
 
-#: ../exo/exo-xsession-client.c:122
+#: ../exo/exo-xsession-client.c:211
 msgid "Window group"
 msgstr "Ομάδα παραθύρων"
 
-#: ../exo/exo-xsession-client.c:123
+#: ../exo/exo-xsession-client.c:212
 msgid "Window group leader"
 msgstr "Αρχηγός ομάδας παραθύρων"
 
-#: ../exo/exo-xsession-client.c:133
+#: ../exo/exo-xsession-client.c:222
 msgid "Restart command"
 msgstr "Εντολή επανεκκίνησης"
 
-#: ../exo/exo-xsession-client.c:134
+#: ../exo/exo-xsession-client.c:223
 msgid "Session restart command"
 msgstr "Εντολή επανεκκίνησης συνεδρίας"
 
@@ -535,10 +531,8 @@ msgstr "  --strip-comments  Αφαίρεση σχολίων από αρχεία 
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Αφαίρεση δεδομένων από αρχεία XML\n"
 
-#: ../exo-csource/main.c:305
-#: ../exo-desktop-item-edit/main.c:156
-#: ../exo-mount/main.c:122
-#: ../exo-mount-notify/main.c:170
+#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:156
+#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:170
 #: ../exo-open/main.c:270
 #, c-format
 msgid ""
@@ -554,10 +548,8 @@ msgstr ""
 "Γραμμένο από τον Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:309
-#: ../exo-desktop-item-edit/main.c:160
-#: ../exo-mount/main.c:126
-#: ../exo-mount-notify/main.c:174
+#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:160
+#: ../exo-mount/main.c:132 ../exo-mount-notify/main.c:174
 #: ../exo-open/main.c:274
 #, c-format
 msgid ""
@@ -573,10 +565,8 @@ msgstr ""
 "να βρεθεί μέσα στο πακέτο με τον πηγαίο κώδικα του %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:313
-#: ../exo-desktop-item-edit/main.c:164
-#: ../exo-mount/main.c:130
-#: ../exo-mount-notify/main.c:178
+#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:164
+#: ../exo-mount/main.c:136 ../exo-mount-notify/main.c:178
 #: ../exo-open/main.c:278
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -666,8 +656,14 @@ msgid "Use _startup notification"
 msgstr "Χρήση γνω_στοποίηση εκκίνησης"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:374
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "Επιλέξτε αυτό για να ενεργοποιήσετε την ειδοποίηση εκκίνησης όταν η εντολή εκτελείται από τον διαχειριστή αρχείων ή το μενού. Δεν υποστηρίζεται από όλες τις εφαρμογές."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Επιλέξτε αυτό για να ενεργοποιήσετε την ειδοποίηση εκκίνησης όταν η εντολή "
+"εκτελείται από τον διαχειριστή αρχείων ή το μενού. Δεν υποστηρίζεται από "
+"όλες τις εφαρμογές."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -678,12 +674,18 @@ msgstr "Εκτέλεση σε τερματι_κό"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:387
 msgid "Select this option to run the command in a terminal window."
-msgstr "Επιλογή αυτού του κουτιού για εκτέλεση της εντολής σε ένα παράθυρο τερματικού."
+msgstr ""
+"Επιλογή αυτού του κουτιού για εκτέλεση της εντολής σε ένα παράθυρο "
+"τερματικού."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:533
 msgid "Select an icon"
 msgstr "Επιλογή εικονιδίου"
+
+#: ../exo-desktop-item-edit/exo-die-utils.c:150
+msgid "File location is not a regular file or directory"
+msgstr ""
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:54
@@ -730,10 +732,8 @@ msgstr "Εξορισμού URL κατά τη δημιουργία ενός αρ�
 msgid "Preset icon when creating a desktop file"
 msgstr "Εξορισμού εικονίδιο κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:83
-#: ../exo-helper/main.c:68
-#: ../exo-mount/main.c:74
-#: ../exo-mount-notify/main.c:77
+#: ../exo-desktop-item-edit/main.c:83 ../exo-helper/main.c:68
+#: ../exo-mount/main.c:77 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Αναφέρει τις πληροφορίες έκδοσης"
 
@@ -743,8 +743,7 @@ msgid "[FILE|FOLDER]"
 msgstr "[ΑΡΧΕΙΟ|ΦΑΚΕΛΟΣ]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:144
-#: ../exo-mount/main.c:108
+#: ../exo-desktop-item-edit/main.c:144 ../exo-mount/main.c:114
 #: ../exo-mount-notify/main.c:156
 msgid "Failed to open display"
 msgstr "Απέτυχε το άνοιγμα της οθόνης"
@@ -801,90 +800,90 @@ msgstr "Απέτυχε η δημιουργία του \"%s\"."
 msgid "Failed to save \"%s\"."
 msgstr "Απέτυχε η αποθήκευση του \"%s\"."
 
-#: ../exo-hal/exo-hal.c:444
+#: ../exo-hal/exo-hal.c:478
 #, c-format
 msgid "External %s Drive"
 msgstr "Εξωτερικός οδηγός %s"
 
-#: ../exo-hal/exo-hal.c:446
+#: ../exo-hal/exo-hal.c:480
 #, c-format
 msgid "%s Drive"
 msgstr "Οδηγός %s"
 
-#: ../exo-hal/exo-hal.c:455
+#: ../exo-hal/exo-hal.c:489
 msgid "External Floppy Drive"
 msgstr "Εξωτερικός οδηγός δισκέτας"
 
-#: ../exo-hal/exo-hal.c:457
+#: ../exo-hal/exo-hal.c:491
 msgid "Floppy Drive"
 msgstr "Οδηγός δισκέτας"
 
-#: ../exo-hal/exo-hal.c:461
+#: ../exo-hal/exo-hal.c:495
 msgid "Compact Flash Drive"
 msgstr "Οδηγός Compact Flash"
 
-#: ../exo-hal/exo-hal.c:465
+#: ../exo-hal/exo-hal.c:499
 msgid "Memory Stick Drive"
 msgstr "Οδηγός Memory Stick"
 
-#: ../exo-hal/exo-hal.c:469
+#: ../exo-hal/exo-hal.c:503
 msgid "Smart Media Drive"
 msgstr "Οδηγός Smart Media"
 
-#: ../exo-hal/exo-hal.c:473
+#: ../exo-hal/exo-hal.c:507
 msgid "SD/MMC Drive"
 msgstr "Οδηγός SD/MMC"
 
-#: ../exo-hal/exo-hal.c:477
+#: ../exo-hal/exo-hal.c:511
 msgid "Zip Drive"
 msgstr "Οδηγός Zip"
 
-#: ../exo-hal/exo-hal.c:481
+#: ../exo-hal/exo-hal.c:515
 msgid "Jaz Drive"
 msgstr "Οδηγός Jaz"
 
-#: ../exo-hal/exo-hal.c:485
+#: ../exo-hal/exo-hal.c:519
 msgid "Pen Drive"
 msgstr "Μνήμη USB"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:494
+#: ../exo-hal/exo-hal.c:528
 #, c-format
 msgid "%s Music Player"
 msgstr "Αναπαραγωγέας μουσικής %s"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:509
+#: ../exo-hal/exo-hal.c:543
 #, c-format
 msgid "%s Digital Camera"
 msgstr "Ψηφιακή φωτ.μηχανή %s"
 
 #. last fallback to "Drive"
-#: ../exo-hal/exo-hal.c:532
+#: ../exo-hal/exo-hal.c:566
 msgid "Drive"
 msgstr "Οδηγός"
 
-#: ../exo-hal/exo-hal.c:759
+#: ../exo-hal/exo-hal.c:793
 #, c-format
 msgid "Blank %s Disc"
 msgstr "Κενός δίσκος %s"
 
-#: ../exo-hal/exo-hal.c:761
+#: ../exo-hal/exo-hal.c:795
 #, c-format
 msgid "%s Disc"
 msgstr "Δίσκος %s"
 
 #. special case for pure audio disc
-#: ../exo-hal/exo-hal.c:766
+#: ../exo-hal/exo-hal.c:800
 msgid "Audio CD"
 msgstr "CD Ήχου"
 
-#: ../exo-hal/exo-hal.c:802
+#: ../exo-hal/exo-hal.c:836
 #, c-format
 msgid "%s Removable Volume"
 msgstr "Αφαιρούμενος τόμος %s"
 
-#: ../exo-hal/exo-hal.c:804
+#: ../exo-hal/exo-hal.c:838
 #, c-format
 msgid "%s Volume"
 msgstr "Τόμος %s"
@@ -969,7 +968,9 @@ msgstr "Απέτυχε το άνοιγμα του περιηγητή της τε
 #: ../exo-helper/exo-helper-chooser.c:150
 #: ../exo-helper/exo-helper-chooser.c:157
 msgid "Press left mouse button to change the selected application."
-msgstr "Πιέστε το αριστερό πλήκτρο του ποντικιού για να αλλάξετε την επιλεγμένη εφαρμογή."
+msgstr ""
+"Πιέστε το αριστερό πλήκτρο του ποντικιού για να αλλάξετε την επιλεγμένη "
+"εφαρμογή."
 
 #: ../exo-helper/exo-helper-chooser.c:156
 msgid "Application Chooser Button"
@@ -1050,7 +1051,8 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
-msgstr "Περιήγηση του συστήματος αρχείων για την επιλογή της προσαρμοσμένης εντολής."
+msgstr ""
+"Περιήγηση του συστήματος αρχείων για την επιλογή της προσαρμοσμένης εντολής."
 
 #: ../exo-helper/exo-helper-chooser.c:763
 msgid "_Other..."
@@ -1058,7 +1060,8 @@ msgstr "Άλ_λες..."
 
 #: ../exo-helper/exo-helper-chooser.c:764
 msgid "Use a custom application which is not included in the above list."
-msgstr "Χρήση προσαρμοσμένης εφαρμογής που δεν περιλαμβάνεται στην παραπάνω λίστα."
+msgstr ""
+"Χρήση προσαρμοσμένης εφαρμογής που δεν περιλαμβάνεται στην παραπάνω λίστα."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:114
 msgid "Choose Preferred Application"
@@ -1108,7 +1111,9 @@ msgstr "Απέτυχε το άνοιγμα του helpers.rc για εγγραφ
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Προτιμώμενες εφαρμογές (περιηγητής διαδικτύου, αναγνώστης αλληλογραφίας και εξομοιωτής τερματικό)"
+msgstr ""
+"Προτιμώμενες εφαρμογές (περιηγητής διαδικτύου, αναγνώστης αλληλογραφίας και "
+"εξομοιωτής τερματικό)"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
@@ -1143,8 +1148,12 @@ msgid "SOCKET ID"
 msgstr "ΑΝΑΓΝΩΡΙΣΤΙΚΟ ΥΠΟΔΟΧΗΣ"
 
 #: ../exo-helper/main.c:71
-msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
-msgstr "Εκκίνηση του προεπιλεγμένου βοηθού του ΤΥΠΟΥ με την προαιρετική ΠΑΡΑΜΕΤΡΟ, όπου ΤΥΠΟΣ είναι μια από τις ακόλουθες τιμές."
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
+"one of the following values."
+msgstr ""
+"Εκκίνηση του προεπιλεγμένου βοηθού του ΤΥΠΟΥ με την προαιρετική ΠΑΡΑΜΕΤΡΟ, "
+"όπου ΤΥΠΟΣ είναι μια από τις ακόλουθες τιμές."
 
 #: ../exo-helper/main.c:71
 msgid "TYPE [PARAMETER]"
@@ -1340,136 +1349,152 @@ msgstr "Άγνωστο σφάλμα"
 
 #. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:125
-#: ../exo-mount/exo-mount-hal.c:374
+#: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:420
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Η συσκευή \"%s\" δε βρέθηκε στον πίνακα συσκευών του συστήματος"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:224
-#: ../exo-mount/exo-mount-hal.c:280
+#: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Η συσκευή \"%s\" δεν είναι τόμος ή οδηγός"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:605
+#: ../exo-mount/exo-mount-hal.c:652
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Δεν έχετε τα κατάλληλα δικαιώματα για την αποβολή του τόμου \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:610
+#: ../exo-mount/exo-mount-hal.c:657
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Μια εφαρμογή αποτρέπει την εξαγωγή του τόμου \"%s\""
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:841
+#: ../exo-mount/exo-mount-hal.c:919
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Δεν έχετε τα κατάλληλα δικαιώματα για να προσαρτήσετε τον τόμο \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:856
+#: ../exo-mount/exo-mount-hal.c:934
 #, c-format
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
-msgstr "Οι κενοί δίσκοι δεν είναι δυνατό να προσαρτηθούν. Χρησιμοποιήστε μια εφαρμογή εγγραφής CD όπως το Xfburn για να γράψετε δεδομένα στο δίσκο"
+msgid ""
+"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
+"record audio or data on the disc"
+msgstr ""
+"Οι κενοί δίσκοι δεν είναι δυνατό να προσαρτηθούν. Χρησιμοποιήστε μια "
+"εφαρμογή εγγραφής CD όπως το Xfburn για να γράψετε δεδομένα στο δίσκο"
 
-#: ../exo-mount/exo-mount-hal.c:867
-#, c-format
-msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "Τα CD ήχου δεν είναι δυνατό να προσαρτηθούν. Χρησιμοποιήστε το Xfmedia για την αναπαραγωγή του"
+#: ../exo-mount/exo-mount-hal.c:945
+#, fuzzy, c-format
+msgid ""
+"Audio CDs cannot be mounted, use your favorite audio player to play the "
+"audio tracks"
+msgstr ""
+"Τα CD ήχου δεν είναι δυνατό να προσαρτηθούν. Χρησιμοποιήστε το Xfmedia για "
+"την αναπαραγωγή του"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:932
+#: ../exo-mount/exo-mount-hal.c:1010
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
-msgstr "Δεν έχετε τα κατάλληλα δικαιώματα για να απασφαλήσετε το στρώμα κρυπτογράφησης"
+msgstr ""
+"Δεν έχετε τα κατάλληλα δικαιώματα για να απασφαλήσετε το στρώμα "
+"κρυπτογράφησης"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:937
+#: ../exo-mount/exo-mount-hal.c:1015
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "Μια εφαρμογή αποτρέπει την απασφάλιση του στρώματος κρυπτογράφησης"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1021
+#: ../exo-mount/exo-mount-hal.c:1099
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "Δεν έχετε τα κατάλληλα δικαιώματα για να αποπροσαρτήσετε τον τόμο \"%s\""
+msgstr ""
+"Δεν έχετε τα κατάλληλα δικαιώματα για να αποπροσαρτήσετε τον τόμο \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1026
+#: ../exo-mount/exo-mount-hal.c:1104
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Μια εφαρμογή αποτρέπει την αποπροσάρτηση του τόμου \"%s\""
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1031
+#: ../exo-mount/exo-mount-hal.c:1109
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Ο τόμος  \"%s\" έχει πιθανόν προσαρτηθεί από τη γραμμή εντολών"
 
-#: ../exo-mount/main.c:65
+#: ../exo-mount/main.c:68
 msgid "Eject rather than mount"
 msgstr "Αποβολή αντί για αποπροσάρτηση"
 
-#: ../exo-mount/main.c:66
+#: ../exo-mount/main.c:69
 msgid "Unmount rather than mount"
 msgstr "Αποπροσάρτηση παρά προσάρτηση"
 
-#: ../exo-mount/main.c:68
+#: ../exo-mount/main.c:71
 msgid "Mount by HAL device UDI"
 msgstr "Προσάρτηση βάση του αναγνωριστικού συσκευής HAL"
 
-#: ../exo-mount/main.c:70
+#: ../exo-mount/main.c:73
 msgid "Mount by HAL device UDI (not supported)"
 msgstr "Προσάρτηση βάση του αναγνωριστικού συσκευής HAL (δεν υποστηρίζεται)"
 
-#: ../exo-mount/main.c:72
+#: ../exo-mount/main.c:75
 msgid "Mount by device file"
 msgstr "Προσάρτηση βάση του αρχείου συσκευής"
 
-#: ../exo-mount/main.c:73
+#: ../exo-mount/main.c:76
 msgid "Don't show any dialogs"
 msgstr "Να μην εμφανίζονται διάλογοι"
 
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:138
+#: ../exo-mount/main.c:144
 msgid "Must specify HAL device UDI or device file"
-msgstr "Πρέπει να προσδιορίσετε ένα αναγνωριστικό συσκευής HAL ή ένα αρχείο συσκευής"
+msgstr ""
+"Πρέπει να προσδιορίσετε ένα αναγνωριστικό συσκευής HAL ή ένα αρχείο συσκευής"
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:146
+#: ../exo-mount/main.c:152
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "Δε μπορείτε να προσδιορίσετε ένα αναγνωριστικό συσκευής HAL και ένα αρχείο συσκευής ταυτόχρονα"
+msgstr ""
+"Δε μπορείτε να προσδιορίσετε ένα αναγνωριστικό συσκευής HAL και ένα αρχείο "
+"συσκευής ταυτόχρονα"
 
-#: ../exo-mount/main.c:154
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
-msgstr "Δεν είναι δυνατή η προσάρτηση με χρήση του αναγνωριστικού συσκευής HAL διότι η υποστήριξη HAL είναι απενεργοποιημένη"
+#: ../exo-mount/main.c:160
+msgid ""
+"Cannot mount by HAL device UDI, because HAL support was disabled for this "
+"build"
+msgstr ""
+"Δεν είναι δυνατή η προσάρτηση με χρήση του αναγνωριστικού συσκευής HAL διότι "
+"η υποστήριξη HAL είναι απενεργοποιημένη"
 
-#: ../exo-mount/main.c:161
+#: ../exo-mount/main.c:167
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 msgstr "Το αναγνωριστικό \"%s\" δεν είναι έγκυρο αναγνωριστικό συσκευής HAL."
 
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:178
+#: ../exo-mount/main.c:184
 msgid "Cannot eject and unmount simultaneously"
 msgstr "Δεν είναι δυνατή η ταυτόχρονη αποβολή και αποπροσάρτηση"
 
-#: ../exo-mount/main.c:330
+#: ../exo-mount/main.c:336
 #, c-format
 msgid "Failed to eject \"%s\""
 msgstr "Απέτυχε η εξαγωγή του \"%s\""
 
-#: ../exo-mount/main.c:332
+#: ../exo-mount/main.c:338
 #, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "Απέτυχε η αποπροσάρτηση του \"%s\""
 
-#: ../exo-mount/main.c:334
+#: ../exo-mount/main.c:340
 #, c-format
 msgid "Failed to mount \"%s\""
 msgstr "Απέτυχε η προσάρτηση του \"%s\""
@@ -1501,8 +1526,12 @@ msgstr "Αποπροσάρτηση συσκευής"
 
 #: ../exo-mount-notify/main.c:234
 #, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
-msgstr "Γίνεται αποπροσάρτηση της συσκευής \"%s\" από το σύστημα. Παρακαλώ μην αφαιρέσετε το μέσο ή αποσυνδέσετε τον οδηγό."
+msgid ""
+"The device \"%s\" is being unmounted by the system. Please do not remove the "
+"media or disconnect the drive."
+msgstr ""
+"Γίνεται αποπροσάρτηση της συσκευής \"%s\" από το σύστημα. Παρακαλώ μην "
+"αφαιρέσετε το μέσο ή αποσυνδέσετε τον οδηγό."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:241
@@ -1511,8 +1540,13 @@ msgstr "Εγγραφή δεδομένων στη συσκευή"
 
 #: ../exo-mount-notify/main.c:242
 #, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
-msgstr "Υπάρχουν δεδομένα που πρέπει να εγγραφούν στη συσκευή \"%s\" πριν γίνει δυνατή η αφαίρεσή της. Παρακαλώ μην αφαιρέσετε το μέσο ή αποσυνδέσετε τον οδηγό."
+msgid ""
+"There is data that needs to be written to the device \"%s\" before it can be "
+"removed. Please do not remove the media or disconnect the drive."
+msgstr ""
+"Υπάρχουν δεδομένα που πρέπει να εγγραφούν στη συσκευή \"%s\" πριν γίνει "
+"δυνατή η αφαίρεσή της. Παρακαλώ μην αφαιρέσετε το μέσο ή αποσυνδέσετε τον "
+"οδηγό."
 
 #: ../exo-open/main.c:83
 msgid "Usage: exo-open [URLs...]"
@@ -1524,29 +1558,36 @@ msgstr "       exo-open --launch ΤΥΠΟΣ [ΠΑΡΑΜΕΤΡΟΙ...]"
 
 #: ../exo-open/main.c:86
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          Εμφανίζει αυτό το κείμενο βοήθειας"
+msgstr ""
+"  -?, --help                          Εμφανίζει αυτό το κείμενο βοήθειας"
 
 #: ../exo-open/main.c:87
-msgid "  -V, --version                       Print version information and exit"
-msgstr "  -V, --version                       Εμφανίζει τις πληροφορίες έκδοσης"
+msgid ""
+"  -V, --version                       Print version information and exit"
+msgstr ""
+"  -V, --version                       Εμφανίζει τις πληροφορίες έκδοσης"
 
 #: ../exo-open/main.c:89
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch TYPE [ΠΑΡΑΜΕΤΡΟι...]       Εκτέλεση της προτιμώμενης εφαρμογής του\n"
+"  --launch TYPE [ΠΑΡΑΜΕΤΡΟι...]       Εκτέλεση της προτιμώμενης εφαρμογής "
+"του\n"
 "                                      TYPE με τις προαιρετικές ΠΑΡΑΜΕΤΡΟΥς,\n"
 "                                      όπου TYPE είναι ένα από τα παρακάτω."
 
 #: ../exo-open/main.c:93
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
 "  --working-directory ΚΑΤΑΛΟΓΟΣ       Προεπιλεγμένος κατάλογος λειτουργίας\n"
-"                                      εφαρμογής όταν χρησιμοποιείται η επιλογή --launch."
+"                                      εφαρμογής όταν χρησιμοποιείται η "
+"επιλογή --launch."
 
 #: ../exo-open/main.c:96
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1584,7 +1625,8 @@ msgstr ""
 #: ../exo-open/main.c:324
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Απέτυχε η εκτέλεση της προτιμώμενης εφαρμογής για την κατηγορία \"%s\"."
+msgstr ""
+"Απέτυχε η εκτέλεση της προτιμώμενης εφαρμογής για την κατηγορία \"%s\"."
 
 #: ../exo-open/main.c:366
 #, c-format
@@ -1595,4 +1637,3 @@ msgstr "Αδυναμία εύρεσης του σχήματος URI του \"%s\
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Απέτυχε το άνοιγμα του URI \"%s\"."
-
