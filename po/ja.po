@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-10 20:18+0200\n"
-"PO-Revision-Date: 2009-07-04 13:45+0900\n"
+"POT-Creation-Date: 2009-10-11 17:00+0900\n"
+"PO-Revision-Date: 2009-10-11 16:59+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -743,7 +743,7 @@ msgstr "アイコンを選択してください"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:150
 msgid "File location is not a regular file or directory"
-msgstr ""
+msgstr "ファイルの場所は正規のファイルまたはディレクトリではありません"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:54
@@ -811,26 +811,26 @@ msgid "No file/folder specified"
 msgstr "ファイル/フォルダが指定されていません"
 
 #: ../exo-desktop-item-edit/main.c:217
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "ファイル \"%s\" を開けませんでした: %s"
+msgstr "\"%s\" から内容を読み込むことに失敗しました: %s"
 
 #: ../exo-desktop-item-edit/main.c:222
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr ""
+msgstr "ファイル \"%s\" にはデータがありません"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "ファイル \"%s\" を開けませんでした: %s"
+msgstr "\"%s\" の内容の解析に失敗しました: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:247
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "ファイル \"%s\" には type キーがありません"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:257
@@ -997,17 +997,15 @@ msgstr "ユーティリティ"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "File Manager"
-msgstr ""
+msgstr "ファイルマネージャ"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:227
-#, fuzzy
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
-"ここで指定したお気に入りのウェブブラウザは、\n"
-"リンクを開いたりヘルプの内容を表示する際に\n"
-"使用されます。"
+"ここで指定したお気に入りのファイルマネージャは、\n"
+"フォルダの内容を表示する際に使用されます。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:251
 msgid "Terminal Emulator"
@@ -1018,7 +1016,7 @@ msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
-"ここで指定した、お気に入りのターミナルエミュレータは、\n"
+"ここで指定したお気に入りのターミナルエミュレータは、\n"
 "コマンドラインインターフェイスが必要なコマンドを\n"
 "実行する際に使用されます。"
 
@@ -1050,9 +1048,8 @@ msgid "Failed to set default Mail Reader"
 msgstr "デフォルトのメーラーの設定に失敗しました"
 
 #: ../exo-helper/exo-helper-chooser.c:318
-#, fuzzy
 msgid "Failed to set default File Manager"
-msgstr "デフォルトのメーラーの設定に失敗しました"
+msgstr "デフォルトのファイルマネージャの設定に失敗しました"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Terminal Emulator"
@@ -1072,9 +1069,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "メーラーを選択してください"
 
 #: ../exo-helper/exo-helper-chooser.c:504
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "メーラーを選択してください"
+msgstr "ファイルマネージャを選択してください"
 
 #: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Terminal Emulator"
@@ -1097,13 +1093,12 @@ msgstr ""
 "アプリケーションを指定してください:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
-#, fuzzy
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
-"デフォルトのメーラーとして使用したい\n"
-"アプリケーションを指定してください:"
+"Xfce のデフォルトのファイルマネージャとして使用\n"
+"したいアプリケーションを指定してください:"
 
 #: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
@@ -1149,12 +1144,11 @@ msgstr ""
 
 # In ja translation: Put the names of menu/control in 「」.
 #: ../exo-helper/exo-helper-launcher-dialog.c:261
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
-"お気に入りのメーラーを選択して\n"
+"お気に入りのファイルマネージャを選択して\n"
 "「OK」をクリックしてください。"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:263
@@ -1189,9 +1183,8 @@ msgid "Failed to execute default Mail Reader"
 msgstr "デフォルトのメーラーの実行に失敗しました"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "デフォルトのメーラーの実行に失敗しました"
+msgstr "デフォルトのファイルマネージャの実行に失敗しました"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
@@ -1226,7 +1219,6 @@ msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
 #: ../exo-helper/main.c:95
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1239,6 +1231,7 @@ msgstr ""
 "\n"
 "  WebBrowser       - お気に入りのウェブブラウザ。\n"
 "  MailReader       - お気に入りのメーラー。\n"
+"  FileManager      - お気に入りのファイルマネージャ。\n"
 "  TerminalEmulator - お気に入りのターミナルエミュレータ。"
 
 #: ../exo-helper/main.c:105
@@ -1282,7 +1275,7 @@ msgstr "Xfce ターミナル"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
-msgstr ""
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1364,7 +1357,7 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
 msgid "Nautilus"
-msgstr ""
+msgstr "Nautilus"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
@@ -1384,7 +1377,7 @@ msgstr "Opera メール"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr ""
+msgstr "PCMan File Manager"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1456,12 +1449,13 @@ msgstr ""
 "Xfburn のような CD レコーディングアプリケーションを使用してください。"
 
 #: ../exo-mount/exo-mount-hal.c:945
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
 "audio tracks"
 msgstr ""
-"音楽 CD はマウントできません。音楽を再生するには Xfmedia を使用してください。"
+"音楽 CD はマウントできません。音楽を再生するにはオーディオプレーヤーを使用し"
+"てください。"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1010
@@ -1656,7 +1650,6 @@ msgstr "次の TYPE が --launch コマンドでサポートされます:"
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
 #: ../exo-open/main.c:102
-#, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1665,6 +1658,7 @@ msgid ""
 msgstr ""
 "  WebBrowser       - お気に入りのウェブブラウザ。\n"
 "  MailReader       - お気に入りのメーラー。\n"
+"  FileManager      - お気に入りのファイルマネージャ。\n"
 "  TerminalEmulator - お気に入りのターミナルエミュレータ。"
 
 #: ../exo-open/main.c:107
@@ -1689,12 +1683,12 @@ msgstr "タイプが \"%s\" のファイルを開くアプリケーションの�
 #: ../exo-open/main.c:366
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "\"%s\" のURIスキーマを検出できません。"
 
 #: ../exo-open/main.c:376
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "URL \"%s\" を開けませんでした。"
+msgstr "URI \"%s\" を開けませんでした。"
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "\"%s\" を開けません"
