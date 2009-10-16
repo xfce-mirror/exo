@@ -46,6 +46,9 @@ gchar                *exo_strdup_strftime        (const gchar     *format,
 gchar               **exo_strndupv               (gchar          **strv,
                                                   guint            num) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
+gboolean              exo_str_looks_like_an_uri  (const gchar     *str);
+
+
 
 /**
  * exo_str_is_empty:

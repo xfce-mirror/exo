@@ -403,5 +403,34 @@ exo_strndupv (gchar **strv,
 
 
 
+/**
+ * exo_str_looks_like_an_uri:
+ * @str : an input string.
+ *
+ * Returns %TRUE if the @string looks like an URI
+ * according to RFC 2396, %FALSE otherwise.
+ *
+ * Since: 0.5.0
+ **/
+gboolean
+exo_str_looks_like_an_uri (const gchar *str)
+{
+  const gchar *s = str;
+
+  /* <scheme> starts with an alpha character */
+  if (g_ascii_isalpha (*s))
+    {
+      /* <scheme> continues with (alpha | digit | "+" | "-" | ".")* */
+      for (++s; g_ascii_isalnum (*s) || *s == '+' || *s == '-' || *s == '.'; ++s);
+
+      /* <scheme> must be followed by ":" */
+      return (*s == ':');
+    }
+
+  return FALSE;
+}
+
+
+
 #define __EXO_STRING_C__
 #include <exo/exo-aliasdef.c>
