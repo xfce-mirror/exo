@@ -134,12 +134,12 @@ exo_job_class_init (ExoJobClass *klass)
    * Emitted whenever an error occurs while executing the @job. This signal
    * may not be emitted from within #ExoJob subclasses. If a subclass wants
    * to emit an "error" signal (and thereby terminate the operation), it has
-   * to fill the #GError structure and abort from its execute() method. 
-   * #ExoJob will automatically emit the "error" signal when the #GError is 
+   * to fill the #GError structure and abort from its execute() method.
+   * #ExoJob will automatically emit the "error" signal when the #GError is
    * filled after the execute() method has finished.
    *
    * Callers interested in whether the @job was cancelled can connect to
-   * the "cancelled" signal of the #GCancellable returned from 
+   * the "cancelled" signal of the #GCancellable returned from
    * exo_job_get_cancellable().
    **/
   job_signals[ERROR] =
@@ -175,7 +175,7 @@ exo_job_class_init (ExoJobClass *klass)
    * @job     : an #ExoJob.
    * @message : information to be displayed about @job.
    *
-   * This signal is emitted to display information about the status of 
+   * This signal is emitted to display information about the status of
    * the @job. Examples of messages are "Preparing..." or "Cleaning up...".
    *
    * The @message is garanteed to contain valid UTF-8, so it can be
@@ -195,8 +195,8 @@ exo_job_class_init (ExoJobClass *klass)
    * @job     : an #ExoJob.
    * @percent : the percentage of completeness.
    *
-   * This signal is emitted to present the overall progress of the 
-   * operation. The @percent value is garantied to be a value between 
+   * This signal is emitted to present the overall progress of the
+   * operation. The @percent value is garantied to be a value between
    * 0.0 and 100.0.
    **/
   job_signals[PERCENT] =
@@ -558,7 +558,7 @@ exo_job_get_cancellable (const ExoJob *job)
  * g_cancellable_set_error_if_cancelled (cancellable, error);
  * </programlisting></informalexample>
  *
- * Returns: %TRUE if the job was cancelled and @error is now set, 
+ * Returns: %TRUE if the job was cancelled and @error is now set,
  *          %FALSE otherwise.
  **/
 gboolean

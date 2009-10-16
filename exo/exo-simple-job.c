@@ -171,7 +171,7 @@ exo_simple_job_execute (ExoJob  *job,
  * An example could be:
  *
  * <informalexample><programlisting>
- * static gboolean 
+ * static gboolean
  * list_directory (ExoJob      *job,
  *                 GValueArray *param_values,
  *                 GError     **error)
@@ -186,13 +186,13 @@ exo_simple_job_execute (ExoJob  *job,
  *
  *   directory = g_value_get_object (g_value_array_get_nth (param_values, 0));
  *
- *   enumerator = g_file_enumerate_children (directory, 
+ *   enumerator = g_file_enumerate_children (directory,
  *                                           "standard::display-name",
  *                                           G_FILE_QUERY_INFO_NONE,
  *                                           exo_job_get_cancellable (job),
  *                                           &err);
  *
- *   if (err != NULL) 
+ *   if (err != NULL)
  *     {
  *       g_propagate_error (error, err);
  *       return FALSE;
@@ -200,14 +200,14 @@ exo_simple_job_execute (ExoJob  *job,
  *
  *   while (TRUE)
  *     {
- *       info = g_file_enumerator_next_file (enumerator, 
+ *       info = g_file_enumerator_next_file (enumerator,
  *                                           exo_job_get_cancellable (job),
  *                                           &err);
  *
  *       if (info == NULL)
  *         break;
  *
- *       exo_job_info_message (job, _("Child: %s"), 
+ *       exo_job_info_message (job, _("Child: %s"),
  *                             g_file_info_get_display_name (info));
  *
  *       g_object_unref (info);
@@ -234,7 +234,7 @@ exo_simple_job_execute (ExoJob  *job,
  * g_signal_connect (job, "finished", G_CALLBACK (unref_the_job_object), NULL);
  * </programlisting></informalexample>
  *
- * The caller is responsible to release the returned #ExoJob object 
+ * The caller is responsible to release the returned #ExoJob object
  * using g_object_unref() when no longer needed.
  *
  * Returns: the launched #ExoJob.
