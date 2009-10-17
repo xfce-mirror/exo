@@ -10,6 +10,9 @@ INCLUDES = 								\
 	-DPATH_MOUNT=\"$(PATH_MOUNT)\"					\
 	-DPATH_UMOUNT=\"$(PATH_UMOUNT)\"
 
+defaultsdir = $(sysconfdir)/xdg/xfce4
+defaults_DATA = mount.rc
+
 bin_PROGRAMS =								\
 	exo-mount
 
@@ -52,6 +55,7 @@ install-data-local:
 	-( cd $(DESTDIR)$(bindir) ; ln -sf exo-mount exo-unmount )
 
 EXTRA_DIST =								\
+	$(defaults_DATA)					\
 	README
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
