@@ -5,6 +5,9 @@ AUTOMAKE_OPTIONS = 1.6
 # The name of the module.
 DOC_MODULE=exo
 
+# Uncomment for versioned docs and specify the version of the module, e.g. '2'.
+DOC_MODULE_VERSION=$(LIBEXO_VERSION_API)
+
 # The top-level SGML file.
 DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.sgml
 
