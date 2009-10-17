@@ -322,6 +322,9 @@ exo_job_scheduler_job_func (GIOSchedulerJob *scheduler_job,
   GError             *error = NULL;
   gboolean            success;
 
+  _exo_return_val_if_fail (G_IS_SIMPLE_ASYNC_RESULT (result), FALSE);
+  _exo_return_val_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable), FALSE);
+
   job = g_simple_async_result_get_op_res_gpointer (result);
   job->priv->scheduler_job = scheduler_job;
 
