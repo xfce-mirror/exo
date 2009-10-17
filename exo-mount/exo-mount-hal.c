@@ -694,8 +694,14 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
   gchar       *fstype;
   const gchar *fs;
   gchar       *s;
-  gint         m, n = 0;
+  guint        m, n;
   const gchar *charset;
+  XfceRc      *rc;
+  gchar       *key;
+  gchar       *option;
+  GSList      *lp, *fsoptions = NULL;
+  gsize        len;
+  const gchar *value;
 
   g_return_val_if_fail (device != NULL, FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
@@ -710,59 +716,97 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
   else
     fs = device->fstype;
 
+  /* open the config file and look for the filesystem group */
+  rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "xfce4" G_DIR_SEPARATOR_S "mount.rc", FALSE);
+  if (G_LIKELY (rc != NULL))
+    {
+      if (xfce_rc_has_group (rc, fs))
+        {
+          /* set the filesystem group */
+          xfce_rc_set_group (rc, fs);
+        }
+      else
+        {
+          /* config is not usable */
+          xfce_rc_close (rc);
+          rc = NULL;
+        }
+    }
+
   /* check if we know any valid mount options */
   if (G_LIKELY (device->fsoptions != NULL))
     {
       /* process all valid mount options */
       for (m = 0; device->fsoptions[m] != NULL; ++m)
         {
-          /* this is currently mostly Linux specific noise */
-          if (strcmp (device->fsoptions[m], "uid=") == 0
-              && (strcmp (fs, "vfat") == 0
-               || strcmp (fs, "iso9660") == 0
-               || strcmp (fs, "udf") == 0
-               || strcmp (fs, "ntfs") == 0
-               || strcmp (fs, "ntfs-3g") == 0
-               || device->volume == NULL))
-            {
-              options[n++] = g_strdup_printf ("uid=%u", (guint) getuid ());
-            }
-          else if (strcmp (device->fsoptions[m], "shortname=") == 0
-                && strcmp (fs, "vfat") == 0)
-            {
-              options[n++] = g_strdup_printf ("shortname=winnt");
-            }
-          else if (strcmp (device->fsoptions[m], "sync") == 0
-                && device->volume == NULL)
+          option = NULL;
+
+          if (strcmp (device->fsoptions[m], "sync") == 0)
             {
               /* non-pollable drive... */
-              options[n++] = g_strdup ("sync");
+              option = g_strdup ("sync");
             }
-          else if (strcmp (device->fsoptions[m], "longnames") == 0
-                && strcmp (fs, "vfat") == 0)
+          else if (rc != NULL)
             {
-              /* however this one is FreeBSD specific */
-              options[n++] = g_strdup ("longnames");
-            }
-          else if (strcmp (device->fsoptions[m], "umask=") == 0
-                   && strcmp (fs, "ntfs-3g") == 0)
-            {
-              /* we need to pass umask=0077 to ntfs-g3 or else it gets 0777 perms */
-              options[n++] = g_strdup ("umask=0077");
-            }
-          else if (strcmp (device->fsoptions[m], "iocharset=") == 0)
-            {
-              /* get the charset from a variable set by the user or glib */
-              charset = g_getenv ("EXO_MOUNT_IOCHARSET");
-              if (G_LIKELY (charset == NULL))
-                if (g_get_charset (&charset))
-                  charset = "utf8";
+              /* option with value or enabled/disabled */
+              if (g_str_has_suffix (device->fsoptions[m], "="))
+                {
+                  len = strlen (device->fsoptions[m]) - 1;
+                  key = g_strndup (device->fsoptions[m], len);
+                  value = xfce_rc_read_entry_untranslated (rc, key, NULL);
 
-              if (G_LIKELY (charset != NULL && *charset != '\0'))
-                options[n++] = g_strdup_printf ("iocharset=%s", charset);
+                  if (value != NULL)
+                    {
+                      /* substitute the <auto> options */
+                      if (strcmp (value, "<auto>") == 0)
+                        {
+                          if (strcmp (key, "uid") == 0)
+                            {
+                              option = g_strdup_printf ("uid=%u", (guint) getuid ());
+                            }
+                          else if (strcmp (key, "gid") == 0)
+                            {
+                              option = g_strdup_printf ("gid=%u", (guint) getgid ());
+                            }
+                          else if (strcmp (key, "iocharset") == 0)
+                            {
+                              charset = g_getenv ("EXO_MOUNT_IOCHARSET");
+                              if (charset == NULL
+                                  && g_get_charset (&charset))
+                                charset = "utf8";
+                              option = g_strdup_printf ("iocharset=%s", charset);
+                            }
+                        }
+                      else
+                        {
+                          /* use the value from the rc file */
+                          option = g_strdup_printf ("%s=%s", key, value);
+                        }
+                    }
+
+                  g_free (key);
+                }
+              else if (xfce_rc_has_entry (rc, device->fsoptions[m]))
+                {
+                  if (xfce_rc_read_bool_entry (rc, device->fsoptions[m], FALSE))
+                    option = g_strdup (device->fsoptions[m]);
+                }
             }
+
+          /* add the option */
+          if (option != NULL)
+            fsoptions = g_slist_prepend (fsoptions, option);
         }
     }
+
+  if (rc != NULL)
+    xfce_rc_close (rc);
+
+  /* create the filesystem options (+2 for possible "ro" and null terminate) */
+  options = g_new0 (gchar *, g_slist_length (fsoptions) + 2);
+  for (n = 0, lp = fsoptions; lp != NULL; lp = lp->next, ++n)
+    options[n] = lp->data;
+  g_slist_free (fsoptions);
 
   /* try to determine a usable mount point */
   if (G_LIKELY (device->volume != NULL))
@@ -777,9 +821,10 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
     }
 
   /* make sure that the mount point is usable (i.e. does not contain G_DIR_SEPARATOR's) */
-  mount_point = !exo_str_is_empty (mount_point)
-              ? exo_str_replace (mount_point, G_DIR_SEPARATOR_S, "_")
-              : g_strdup ("");
+  if (!exo_str_is_empty (mount_point))
+    mount_point = exo_str_replace (mount_point, G_DIR_SEPARATOR_S, "_");
+  else
+    mount_point = g_strdup ("");
 
   /* let HAL guess the fstype, unless we have an alternative preferred fstype */
   if (G_UNLIKELY (device->altfstype != NULL))

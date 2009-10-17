@@ -1,0 +1,54 @@
+#
+# ABOUT
+# =====
+# This file contains the mount option configuration when exo-mount is used with the HAL
+# back end (which is highly recommended). If mounting using exo is somehow not working
+# for you, you can copy this file to your $XDG_CONFIG_HOME/xfce4 directory and modify it.
+#
+# The options for each filesystem are not used when they are not in the list of
+# valid mount options provided by HAL. You can find those values using lshal and
+# search for the volume.mount.valid_options property.
+#
+#
+# EXAMPLE
+# =======
+# For example your usb device contains the vfat file system and lshal shows the
+# following valid mount options for the device:
+#
+#   volume.mount.valid_options = {'ro', 'sync', 'dirsync', 'noatime', 'nodiratime',
+#                                 'noexec', 'quiet', 'remount', 'exec', 'uid=',
+#                                 'gid=', 'umask=', 'utf8'} (string list)
+#
+# All the values that end with a = character are options that contain a value,
+# the other options are booleans that can be enabled by for example putting
+# utf8=true in the group.
+#
+#
+# SUBSTITUTIONS
+# =============
+# Some options can be substituted by exo-mount when you set the value to <auto>:
+#   uid      : The real user ID
+#   gid      : The real group ID
+#   iocharset: To the EXO_MOUNT_IOCHARSET or LC_CTYPE environment variable.
+#
+
+[vfat]
+uid=<auto>
+shortname=winnt
+# FreeBSD specific option
+longnames=true
+
+[iso9660]
+uid=<auto>
+
+[udf]
+uid=<auto>
+iocharset=<auto>
+
+[ntfs]
+uid=<auto>
+
+[ntfs-3g]
+uid=<auto>
+# Make sure the device does not get 0777 permissions
+umask=0077
