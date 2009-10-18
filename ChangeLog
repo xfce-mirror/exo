@@ -1,2193 +1,1284 @@
-2009-05-12	Jannis Pohlmann <jannis@xfce.org>
+commit c2ce554b39f682c05bb8ffeeb45fb5251e629d45
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Oct 18 18:44:17 2009 +0200
 
-	* docs/reference/exo-sections.txt, docs/reference/tmpl/exo-job.sgml: 
-	  Update sections.
-	* docs/reference/exo-open.xml: Fix typo spotted by Yves-Alexis.
-	* exo/exo-job.{c,h}: Add new function exo_job_send_to_mainloop() which
-	  is a simple wrapper around g_io_scheduler_job_send_to_mainloop(). I
-	  don't want to expose any the GIO scheduling internals.
+    Sync NEWS file with releases from stable branch.
 
-2009-05-11	Nick Schermer <nick@xfce.org>
+commit 3ca94be42015e0405a543b901e80faf393a39356
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Oct 18 15:23:09 2009 +0200
 
-	* exo/exo-job.c, exo/exo-cell-renderer-icon.c: Fix compiler warnings.
-	* exo-open/main.c: Ignore unknown options so the user can send
-	  arguments to the exo-open terminal parameters.
+    Use new pygobject-codegen-2.0.
 
-2009-05-05	Jannis Pohlmann <jannis@xfce.org>
+commit c28b992db6f2f033cfc0ccb1dbd6e1849f18c7d2
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Oct 18 15:21:47 2009 +0200
 
-	* configure.in.in: Add hint that we'll need to update library version 
-	  information before the next release, due to the added APIs.
-	* docs/reference/exo-docs.sgml, 
-	  docs/reference/tmpl/exo-simple-job.sgml, 
-	  docs/reference/tmpl/exo-job.sgml, docs/reference/exo-sections.txt: 
-	  Add new section for ExoJob and ExoSimpleJob.
-	* exo/exo-job.c, exo/exo-simple-job.c: Improve the API documentation 
-	  and associate class methods with the signals of ExoJob.
+    Use new pygobject-codegen-2.0.
 
-2009-05-05	Jannis Pohlmann <jannis@xfce.org>
+commit ddfdc62e750286f6c3c4c1827a7f42fc16cf1cda
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Oct 18 15:21:23 2009 +0200
 
-	* docs/reference/exo.types, exo/Makefile.am, exo/exo-job.{c,h}, 
-	  exo/exo-simple-job.{c,h}, exo/exo.h: Add ExoJob and ExoSimpleJob. 
-	  They come from Thunar and can be used to wrap threaded/asynchronous
-	  operations with objects that support signals and subclassing.
+    Silent the build.
 
-2009-04-13	Jannis Pohlmann <jannis@xfce.org>
+commit 1f0444e4ac6775af225575575d18ca9e2a056d63
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sat Oct 17 20:55:47 2009 +0200
 
-	* configure.in.in, docs/reference/tmpl/exo-cell-renderer-icon.sgml,
-	  exo/Makefile.am, exo/exo-cell-renderer-icon.c: Add GIO to the 
-	  dependencies and bump GLib to 2.16, GTK+ to 2.14. Add "gicon" 
-	  property to ExoCellRendererIcon. It benefits from the same SVG 
-	  speedup as the icon property.
+    Fix notes when generating the man pages.
 
-2009-04-12  Stephan Arts <stephan@xfce.org>
+commit 3854a91602fb9f3349c6c8583d412b40c6b3d8a6
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sat Oct 17 18:53:37 2009 +0200
 
-	* == Released 0.3.101 ==
-	* NEWS: Update news for the release.
-	* configure.in.in: Update version number.
+    Version to API docs.
+    
+    This will make parallel installation of exo-1 and exo-0.3
+    easier.
 
-2009-04-08	Jannis Pohlmann <jannis@xfce.org>
+commit 94acf3844546d235dc310ab9303917fe96efeec3
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sat Oct 17 13:02:33 2009 +0200
 
-	* configure.in.in, docs/manual/da/images/, docs/manual/gl/images/: Fix
-	  broken build due to incomplete integration of the Danish and Galician
-	  manual translations.
-	* exo-helper/exo-helper-launcher-dialog.c: Add gettext() call around
-	  two strings which are already as translatable with N_() (bug #5203).
+    Read mount options from a rc file (bug #2891).
+    
+    All the hardcoded mount options are now read from a rc file so
+    they can be easily changed by the distro or user.
 
-2009-02-24  Stephan Arts <stephan@xfce.org>
+commit b9217ffd03affdd7dac64ec601f3c401d192f0c6
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Sat Oct 17 12:33:21 2009 +0200
 
-	* == Released 0.3.100 ==
-	* NEWS: Update news for the release.
-	* configure.in.in: Update version number.
+    Add assertions to exo_job_scheduler_job_func().
 
-2009-01-25	Jannis Pohlmann <jannis@xfce.org>
+commit d0f1eb81f83a6b2678dbe7e1e2bd72ba414923a9
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 16 21:36:55 2009 +0200
 
-	* == Released 0.3.99.1 == 
-	* NEWS: Update news for the release.
-	* configure.in.in: Update version number.
+    Strip some trailing spaces.
 
-2009-01-18	Jannis Pohlmann <jannis@xfce.org> 
+commit 839e9d1420dc8c916e1a375920853331fb022d83
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 16 21:35:51 2009 +0200
 
-	* configure.in.in: Add Makefiles for Spanish docs.
+    Add function exo_str_looks_like_an_uri (bug #5710).
 
-2009-01-14	Jannis Pohlmann <jannis@xfce.org>
+commit f07a9c00c7167e66935ec7b58a41b20cae1ca9e7
+Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
+Date:   Sun Oct 11 07:59:40 2009 +0000
 
-	* configure.in.in: Post-release version bump.
+    l10n: Updates to Japanese (ja) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
 
-2009-01-12	Stephan Arts <stephan@xfce.org>
+commit f9dea32a4606b6b7c0c77e399fd6bc9c25126a56
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sat Oct 10 20:18:02 2009 +0200
 
-	* === Released 0.3.93 ===
-	* configure.in.in: Update version number
+    String change, don't mention xfmedia explicitly (bug #3067).
 
-2009-01-11	Jannis Pohlmann <jannis@xfce.org>
+commit 42d4c9befb7e32d4675976093c435fc198977d95
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 9 20:55:10 2009 +0200
 
-	* configure.in.in: Add missing docs subdirectories.
+    Make unmount work for devices that have a parent that is a volume (bug #2968).
+    
+    When a device had interfaces, but none of them was a volume, we
+    simply failed with an error without checking if the device
+    has parents that had his capability.
+    
+    Put the looping code in functions instead of a bunch gotos,
+    to make the whole thing easier to understand.
 
-2009-01-10	Jannis Pohlmann <jannis@xfce.org>
+commit 4026b70b84a6f739fd2c8b980ccfe51396631e0a
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 9 19:08:16 2009 +0200
 
-	* NEWS: Update NEWS for the upcoming 0.3.93 release.
+    Improve comment a bit.
 
-2008-12-08	Nick Schermer <nick@xfce.org>
+commit 8f4ea78de67433e60b88c7748fc4b3f534754fe5
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 9 14:53:47 2009 +0200
 
-	* exo/exo-icon-view.c: Don't setup bindings for shift+n and shift+p
-	  so type-ahead search works as expected. Bug #4633.
+    Use the update-preview signal for updating the preview (bug #5133).
 
-2008-12-08	Nick Schermer <nick@xfce.org>
+commit 8bf62890d12cfeb895014c0aa442db9a4c8856f4
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 9 14:35:37 2009 +0200
 
-	* Fix all compiler warnings and fix some possibly uninitialized variables.
+    Add support for iocharset in exo-mount (bug #4294).
+    
+    When the wrong charset if detected you can override it
+    with the environment variable EXO_MOUNT_IOCHARSET.
 
-2008-11-23	Jannis Pohlmann <jannis@xfce.org>
+commit 886816e1de4bb1dd9bc58858aa75a285b8353914
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 9 13:59:58 2009 +0200
 
-	* exo-helper/main.c: Oops, I actually broke the --launch parameter. Fixed.
+    Use same trick as in Thunar to make the Debian buildbot work.
 
-2008-11-23	Jannis Pohlmann <jannis@xfce.org>
+commit a3544823b2f88ee1af86d673da4f3d0c3ce91c11
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 9 13:25:25 2009 +0200
 
-	* exo-helper/exo-preferred-applications.desktop.in: Remove GenericName and
-	  the "Xfce 4" prefix from the Name field.
-	* exo-helper/main.c: Change order of the command line parameters so 
-	  that --launch is at the very bottom of the list (directly above the
-	  launch type explanations.
+    Make mounting NTFS drives work in exo-mount (bug #4532).
 
-2008-11-23	Jannis Pohlmann <jannis@xfce.org>
+commit 7ea79df52fa90caf34c596e551229c048a07564b
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 9 12:00:51 2009 +0200
 
-	* exo-helper/main.c (main): Stop startup notification once the plug is
-	  created and the dialog content has been moved into the plug.
+    Fix some compiler warnings.
 
-2008-11-22	Nick Schermer <nick@xfce.org>
+commit f81a571cefe8c9aa9bb43880544deab292402e1e
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 9 11:28:56 2009 +0200
+
+    Use new xdt  macros.
+    
+    Also drop the INSTALL file since it is generated at compile time.
+
+commit 1f6917f78eaba44aa779d6875b8b2dfccfe74817
+Author: Leandro Regueiro <leandro.regueiro@gmail.com>
+Date:   Sun Oct 4 12:37:38 2009 +0000
+
+    l10n: Updates to Galician (gl) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 773eb56aa60547fffa9f882275568196f28ca7a8
+Author: Leandro Regueiro <leandro.regueiro@gmail.com>
+Date:   Sun Oct 4 12:37:10 2009 +0000
+
+    l10n: Updates to Galician (gl) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 9a43e56e99308390be5e26d8b0c1cd9f9c5627eb
+Author: Nick Schermer <nick@xfce.org>
+Date:   Tue Sep 29 14:57:29 2009 +0200
+
+    Allow ssh as known filemanager uri too.
+
+commit a27374fec0c3347c64fdc8ede93185bd45d2f34f
+Author: Piarres Beobide <pi@beobide.net>
+Date:   Mon Sep 21 20:48:04 2009 +0000
+
+    l10n: Updates to Basque (eu) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 3e1011b47d3dae18ae062339b120dbf57b0a99f1
+Author: Rihards Prieditis <rprieditis@gmail.com>
+Date:   Fri Sep 18 16:04:15 2009 +0000
+
+    l10n: Updates to Latvian (lv) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 899c58c1bead581df0f5d612e1e8caaaddf84614
+Author: Rihards Prieditis <rprieditis@gmail.com>
+Date:   Fri Sep 18 16:02:50 2009 +0000
+
+    l10n: Updates to Latvian (lv) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 93b16ad4580afbcba2467290457383ca55a89f9c
+Author: Robert Hartl <hartl.robert@gmail.com>
+Date:   Thu Sep 17 17:30:52 2009 +0000
+
+    l10n: Updates to Slovak (sk) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 5e5d41f658e74e9e0b90bbb30665361f64168ef9
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Tue Sep 15 17:42:15 2009 +0200
+
+    Revert "Use an idle function for delayed scrolling."
+    
+    This reverts commit 0a7be769f07828953d62e86fbc9da755f9aa8ad6. The
+    related GDK bug was fixed upstream by Alexander Larsson (more
+    information on https://bugzilla.gnome.org/show_bug.cgi?id=594880).
+
+commit 8637a16a521a190c63cea91f007637841d396f8b
+Author: Ignacio Velasco <elega@elega.com.ar>
+Date:   Tue Sep 15 03:17:08 2009 +0000
 
-	* exo-desktop-item-edit/main.c, exo-open/main.c, exo-mount/main.c
-	  exo-csource/main.c, exo-mount-notify/main.c: Use -V for --version.
-	* Manually update po files and regenerate them. 
+    l10n: Updates to Spanish (Castilian) (es) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
 
-2008-11-20	Jannis Pohlmann <jannis@xfce.org>
+commit 28bce8c986692b65f52816863b1cd56d30410976
+Author: Robert Hartl <hartl.robert@gmail.com>
+Date:   Sun Sep 13 14:56:23 2009 +0000
 
-	* exo/exo-url.c (_exo_url_to_local_path, exo_url_show_on_screen): 
-	  Modify _exo_url_to_local_path() so that it converts file:// URIs to
-	  paths, does not touch absolute paths and converts relative paths to
-	  absolute paths only if they exist in the local filesystem. Set 
-	  relative paths to NULL otherwise. 
-	  Replace the two regular expression for browser URIs by a more 
-	  generic one and try to open URIs in the following order: file 
-	  manager, email client and web browser as a last option.
-	  Alltogether this should fix bug #4627.
+    l10n: Updates to Slovak (sk) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
 
-2008-11-11	Jannis Pohlmann <jannis@xfce.org>
+commit 0a7be769f07828953d62e86fbc9da755f9aa8ad6
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Fri Sep 11 20:10:04 2009 +0200
 
-	* NEWS: Update NEWS file for the upcoming beta2 release.
+    Use an idle function for delayed scrolling.
+    
+    It looks like modifying the bin_window GdkWindow inside the expose
+    event handler of ExoIconView does no longer work with client-side
+    windows. This was done for delaying the scrolling to a certain path
+    until the widget is realized and layouting is completed.
+    
+    As a result of using gdk_window_move() inside of the expose event
+    handler, the painted icon view was not up to date or mixed up after the
+    event handler had finished. Icons moved up a few pixels when hovering
+    them and with scroll positions further down the view, the contents were
+    painted twice (in the old and new state), resulting in overlapping
+    items.
+    
+    This commit implements delayed scrolling via an idle function, which is
+    the only way I see right now to work around this. It may cause the
+    automatic scrolling to the previous file to be delayed for a very short
+    time, but this shouldn't be critical.
+    
+    A bug was filed against GDK on
+    
+      http://bugzilla.gnome.org/show_bug.cgi?id=594880
 
-2008-11-11	Jannis Pohlmann <jannis@xfce.org>
+commit 790a952f24b6d9ceb5cebec0a97fb11274d905f7
+Author: Carles Muñoz Gorriz <carlesmu@internautas.org>
+Date:   Sat Sep 5 11:23:05 2009 +0000
 
-	* exo/exo-icon-view.c: Add hack for drawing the background of text 
-	  renderers inside the icon view. GtkIconView uses a similar hack, but
-	  this should really be fixed in GtkCellRendererText.
+    l10n: Updates to Catalan (Valencian) (ca) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
 
-2008-11-10	Jannis Pohlmann <jannis@xfce.org>
+commit 5000268e78776d9566cbc1b966b8e179403f117c
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Wed Sep 2 16:22:22 2009 +0200
 
-	* exo/exo-icon-view.c: Revert accidently committed painting code.
+    Another ExoSimpleJob doc update.
 
-2008-11-10	Jannis Pohlmann <jannis@xfce.org>
+commit 710bbb267cd5554c7d3848b3bbea6c1edc438b39
+Author: Nick Schermer <nick@xfce.org>
+Date:   Wed Sep 2 16:21:41 2009 +0200
 
-	* configure.in.in, exo/exo-md5.c: Get rid of external MD5 functions.
+    Add missing file in POTFILES.in.
 
-2008-11-06	Brian Tarricone <bjt23@cornell.edu>
+commit f3ea0ce56d15769de9184fb2c04e338a3ad83a0e
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Wed Sep 2 16:18:55 2009 +0200
 
-	* exo-helper/main.c: Fix compile against glib < 2.14.
+    Update job docs. Only cancel the cancellable if the job is running.
 
-2008-11-03	Jannis Pohlmann <jannis@xfce.org>
+commit d89f1faae0e279264f5fc79537dda9b81f922b34
+Author: Iñigo Varela <malditoastur@gmail.com>
+Date:   Wed Sep 2 10:31:12 2009 +0000
 
-	* exo/exo-url.c: Split up assignment and conditional into separate 
-	  lines to make the code more readable.
+    l10n: Updates to Asturian (ast) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
 
-2008-11-03	Jannis Pohlmann <jannis@xfce.org>
+commit a1230904c18da053a70bc1666e6b4f7ea4e81399
+Author: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>
+Date:   Tue Sep 1 17:22:10 2009 +0000
 
-	* exo/exo-url.c: Check whether the given URL can be transformed into
-	  a local filename before going through the regular expressions for
-	  email addresses and browser URLs. Also don't allow additional
-	  characters before and after email addresses and browser URLs. This
-	  handles filenames with @ properly and should fix bug #4330.
-
-2008-10-22	Brian Tarricone <bjt23@cornell.edu>
-
-	* configure.in.in: Add 'svn' version tag.
-	* exo-helper/exo-helper-chooser-dialog.[ch]: Add function to
-	  retrieve the toplevel container beneath the GtkDialog's
-	  GtkVBox.
-	* exo-helper/exo-preferred-applications.desktop.in: Add
-	  X-XfcePluggable and X-XfceHelpFile keys.
-	* exo-helper/exo-preferred-applications.in: Pass any extra
-	  command-line arguments on to exo-helper-0.3.
-	* exo-helper/main.c: Use GOption framework for parsing the
-	  command line.  Add --socket-id parameter so the dialog can
-	  be embedded in the settings manager.
-
-2008-10-10	Jannis Pohlmann <jannis@xfce.org>
-
-	* exo-helper/helpers/Makefile.am, 
-	  exo-helper/helpers/midori.desktop.in.in: Add Midori helper. Patch 
-	  provided by Christian Dywan. This closes bug #4446.
-
-2008-08-05	Brian Tarricone <bjt23@cornell.edu>
-
-	* exo/exo-utils.h: Move the exo_atomic_inc()/exo_atomic_dec() inline
-	  function decls into the #ifdef to fix compilation on non-x86
-	  platforms (bug 4387).
-
-2008-08-30	Jannis Pohlmann <jannis@xfce.org>
-
-	* autogen.sh: Do not print errors when trying to detect the 
-	  revision of a git svn repository.
-
-2008-08-25	Brian Tarricone <kelnos@xfce.org>
-
-	* exo-helper/exo-preferred-applications.desktop.in: Include
-	  preferred apps dialog in new settings manager.
-
-2008-08-12  Brian Tarricone <bjt23@cornell.edu>
-
-	* exo-mount/exo-mount-hal.c: Add support for mounting and
-	  unmounting encrypted volumes.  Patch from Colin Leroy.
-	  Bug #3349.
-
-200-07-26	Jannis Pohlmann <jannis@xfce.org>
-
-	* autogen.sh: Add @REVISION@ substitution support for git svn 
-	  repositories.
-
-2008-07-17	Nick Schermer <nick@xfce.org>
-
-	* exo-csource/main.c: Don't strip text between nodes 
-	  with --strip-content. This will make stripping work
-	  on glade files.
-	* configure.in.in: Version bump from 0.3.7 to 0.3.7.1.
-
-2007-12-02	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Post-release version bump.
-
-2007-12-02	Benedikt Meurer <benny@xfce.org>
-
-	* === Released 0.3.4 ===
-	* NEWS, configure.in.in: Bump version.
-	* THANKS: Update translator credits.
-	* po/*.po: Update Project-Id-Version.
-	* docs/reference/Makefile.am: Fix dist building.
-
-2007-07-20	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mount-point.c: Fix build on Solaris.
-
-2007-05-22	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, exo/exo-string.{c,h}, exo/exo.symbols: Add new
-	  function exo_strdup_strftime(), which is an UTF-8 aware wrapper
-	  for strftime().
-	* docs/reference/: Update reference manual.
-
-2007-05-22	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Prefer -lmd over -lmd5.
-	* docs/reference/: Update reference manual.
-
-2007-05-20	Benedikt Meurer <benny@xfce.org>
-
-	* exo-csource/main.c: Add support to strip comments and node contents
-	  from XML files. Based on patch from Nick Schermer <nick@xfce.org>.
-	  Bug #3094.
-	* po/*.po, po/*.pot: Merge new strings.
-	* po/de.po: Update german translations.
-
-2007-05-09	Benedikt Meurer <benny@xfce.org>
-
-	* INSTALL, configure.in.in: Update for latest autoconf.
-
-2007-05-09	Benedikt Meurer <benny@xfce.org>
-
-	* COPYING.LIB, COPYING, Makefile.am: Ship LGPL and GPL license
-	  files. Bug #2895.
-
-2007-02-17	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-config.h.in: Make sure EXO_PARAM_READABLE,
-	  EXO_PARAM_WRITABLE and EXO_PARAM_READWRITE are properly set.
-
-2007-02-12	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mount-point.c: Fix compilation on Solaris 2.8. Bug #2798.
-
-2007-02-12	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, exo/exo-mount-point.c: Fix compilation on newer
-	  NetBSD versions. Bug #2808.
-
-2007-02-12	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/helpers/sylpheed-claws.desktop.in.in: Apply patch from
-	  Colin Leroy <colin@colino.net> to replace Sylpheed-Claws with Claws
-	  Mail. Bug #2851.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-
-2007-01-28	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-url.c(exo_url_show_on_screen): Apply patch from Peter de
-	  Ridder <pc.ridder@zonnet.nl> to quote URLs properly prior to
-	  passing them to external programs. Bug #2791.
-
-2007-01-28	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Bump required HAL version to 0.5.7. Bug #2828.
-
-2007-01-20	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Post-release version bump.
-
-2007-01-20	Benedikt Meurer <benny@xfce.org>
-
-	* === Released 0.3.2 ===
-	* NEWS, configure.in.in: Bump version.
-	* THANKS: Update translator credits.
-	* po/*.po: Update Project-Id-Version.
-	* README, docs/reference/Makefile.am, exo-desktop-item-edit/Makefile.am,
-	  exo-hal/Makefile.am, exo-helper/Makefile.am, exo-mount/Makefile.am,
-	  exo-open/Makefile.am, exo/Makefile.am, exo/exo.h, python/Makefile.am,
-	  tests/Makefile.am: Drop EXO_API_SUBJECT_TO_CHANGE, as the 0.3 API
-	  is the stable API for the Xfce 4.4 branch now.
-
-2007-01-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo-mount/exo-mount-hal.c(exo_mount_hal_device_from_udi): Release
-	  string array properly.
-
-2007-01-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo-mount/exo-mount-hal.c(exo_mount_hal_device_from_udi): Allow
-	  to use the drive UDIs for CD-ROMs, which don't implement the
-	  Volume interface, but have atleast one associated, that
-	  implements the Volume interface.
-
-2007-01-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo-hal/exo-hal.c(exo_hal_volume_compute_display_name): Fix
-	  compilation on amd64, using G_GUINT64_FORMAT instead of assuming
-	  it's llu. Bug #2758.
-
-2007-01-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo-mount/main.c(main): Fix unused label if HAL is not available.
-
-2007-01-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mount-point.c(exo_mount_point_list_match_configured): Fix
-	  Linux build error.
-
-2007-01-10	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-md5.c(exo_md5_digest_dup): Fix invalid usage of g_memdup().
-	* exo/exo-mount-point.{c,h}, exo/Makefile.am, exo/exo.symbols,
-	  exo/exo.h: Import new module ExoMountPoint, which handles the
-	  retrieval of active or configured mount points. This was merged
-	  here to avoid duplicating the code in several other applications.
-	  For example, Thunar, exo-mount and thunar-volman included similar
-	  code somehow. The code itself is highly platform-depend and so its
-	  easier to manage it in a central place.
-	* docs/reference/: Update reference manual.
-	* exo-mount/: Use the functions from the ExoMountPoint module.
-	* tests/: Add a test case for the ExoMountPoint module.
-	* po/POTFILES.in: Add new files here.
-
-2007-01-09	Benedikt Meurer <benny@xfce.org>
-
-	* exo-hal/exo-hal.{c,h}: Add utility function exo_hal_udi_validate()
-	  to validate HAL device UDIs (actually D-Bus object paths).
-	* docs/reference/: Update reference manual.
-	* exo-mount/main.c(main): Use exo_hal_udi_validate() to verify HAL
-	  device UDIs passed on the command line.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Update german translations.
-
-2007-01-08	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, exo-hal/exo-hal.c: Fix build with older HAL
-	  versions. Fix build on amd64. Bug #2725.
-
-2007-01-07	Benedikt Meurer <benny@xfce.org>
-
-	* exo-mount/exo-mount-hal.c: Handle blank discs properly. Try to come
-	  up with a usable error message if the user tries to mount a blank
-	  disc or a pure audio disc.
-	* exo-mount/exo-mount-hal.c: Fix crash with certain types of discs.
-	  Bug #2723.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Update german translations.
-
-2007-01-07	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, Makefile.am, exo-hal/: Add utility library exo-hal,
-	  which provides functions to lookup display names and icons for HAL
-	  devices. These functions are used by both exo-mount and Thunar, and
-	  probably additional software in the future. The library is there to
-	  avoid having to duplicate these rather messy functions all over the
-	  place, and to make translators life easier, having to translate them
-	  only in a single place.
-	* docs/reference/: Update the reference manual.
-	* exo-mount/: Use exo-hal to determine the display names and icons for
-	  the HAL devices.
-	* po/POTFILES.in: Add new files here.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Update german translations.
-
-2007-01-06	Benedikt Meurer <benny@xfce.org>
-
-	* exo-mount-notify/main.c(signal_io_func): Do not block Thunar's
-	  unmount operation waiting for the last notification to go
-	  away.
-	* configure.in.in, exo-mount/: Be smarter when checking device files
-	  for equality, comparing them by their major/minor device ids instead
-	  of their paths.
-
-2007-01-06	Benedikt Meurer <benny@xfce.org>
-
-	* exo-mount/exo-mount-fstab.c: Add missing <errno.h> include.
-
-2007-01-06	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, Makefile.am, exo-mount/: Add mount utility, that
-	  uses HAL if available, but can also operate without HAL. This is
-	  necessary because other mount utilities like gnome-mount or pmount
-	  do not always work properly, esp. with devices such as floppy
-	  drives. Even worse those utilities behave differently depending on
-	  the underlying system, and thunar-vfs already contains too many
-	  work arounds for such messy stuff.
-	* configure.in.in, Makefile.am, exo-mount-notify/: Add an optional
-	  internal mount notify, which notifies the user that a device is
-	  being released by the system, and gives him a hint when the device
-	  can be removed physically. This requires a running notification
-	  daemon.
-	* exo-desktop-item-edit/main.c(main): Update string to avoid
-	  duplicated strings in the translations.
-	* po/POTFILES.in: Add new files here.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Update german translations.
-
-2007-01-03	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, exo-csource/main.c, exo-open/main.c,
-	  exo-desktop-item-edit/main.c: Update copyright dates.
-	* po/libexo-0.3.pot, po/*.po: Merge changed strings.
-	* po/de.po: Update german translations.
-
-2006-12-28	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Several code cleanups.
-
-2006-11-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-url.c: Detect complex mailto:-URLs properly. Bug #2530.
-
-2006-11-04	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Post-release version bump.
-
-2006-11-04	Benedikt Meurer <benny@xfce.org>
-
-	* === Released 0.3.1.12rc2 ===
-	* NEWS, configure.in.in: Bump version.
-	* THANKS: Update translator credits.
-	* po/*.po: Update Project-Id-Version.
-
-2006-11-04	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-url.c(exo_url_show_on_screen): Need to escape commata in
-	  URLs passed to web browsers and mail readers, because some of them,
-	  i.e. Firefox and Thunderbird, will otherwise strip offs the part
-	  after the last comma. Bug #2454.
-
-2006-11-03	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-url.c: Underscore is a valid character for usernames.
-	  Bug #2453.
-
-2006-11-03	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-cell-renderer-icon.c(exo_cell_renderer_icon_render): Handle
-	  internal icons properly. Bug #2488.
-
-2006-10-30	Jean-François <pollux@xfce.org>
-
-	* configure.in.in, docs/manual/fr,
-	  docs/manual/fr/exo-preferred-applications.xml.in,
-	  docs/manual/fr/images/, docs/manual/fr/Makefile.am,
-	  docs/manual/Makefile.am, po-doc/LINGUAS, po-doc/fr.po,
-	  po-doc/ChangeLog: Add French translations of the manual by Maximilian
-	  Schleiss. Bug #2478.
-
-2006-09-28	Benedikt Meurer <benny@xfce.org>
-
-	* icons/24x24/, configure.in.in, icons/Makefile.am: Install the
-	  preferences-desktop-default-applications.png in 24x24 as well.
-
-2006-09-28	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, exo-helper/Makefile.am: Fix installation on Win32
-	  variants. Bug #2463.
-
-2006-09-14	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_button_press_event): Fix double
-	  click sometimes requiring a third click. Bug #2259.
-
-2006-09-13	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_item_hit_test): Revert previous
-	  change as it makes it too easy to accidently select files that you
-	  do not wanted to selected, when in compact list mode.
-
-2006-09-13	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_item_hit_test): Apply patch from
-	  Matt McClinch <mattmcclinch@gmail.com> to improve rubberband
-	  selection in compact list mode.
-
-2006-09-10	Benedikt Meurer <benny@xfce.org>
-
-	* docs/reference/exo-open.xml: Add the --working-directory parameter
-	  to the exo-open manpage.
-
-2006-09-10	Benedikt Meurer <benny@xfce.org>
-
-	* exo-open/main.c: Use GOption to parse the command line parameters
-	  and add a --working-directory parameter, which is used when launching
-	  applications via --launch.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Update german translations.
-
-2006-09-05	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Post-release version bump.
-
-2006-09-02	Benedikt Meurer <benny@xfce.org>
-
-	* === Released 0.3.1.10rc1 ===
-	* NEWS, configure.in.in: Bump version.
-	* THANKS: Update translator credits.
-	* po/*.po: Update Project-Id-Version.
-	* exo.spec.in: Add missing files.
-
-2006-09-02	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-tree-view.c(exo_tree_view_drag_begin): Fix build with
-	  compilers other than gcc. Bug #2252.
-	* po/cs.po: Updated czech translations by Michal Várady 
-	  <miko.vaji@gmail.com>.
-
-2006-08-27	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-chooser-model.h: Need to include <exo/exo-config.h> to
-	  make sure G_GNUC_WARN_UNUSED_RESULT is defined. Thanks to Enrico
-	  Troeger <enrico.troeger@uvena.de> for the hint.
-
-2006-08-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-chooser-dialog.c(CONTEXT_TITLES): Apply patch from
-	  Matt McClinch <mattmcclinch@gmail.com> to fix a warning with older
-	  compilers. Bug #2223.
-
-2006-08-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Finally fix the layout problem where the
-	  appearance of a scrollbar causes the icons to be laid out again and
-	  again. Thanks to Matt McClinch <mattmcclinch@gmail.com> for the
-	  patch. Bug #2219.
-	* exo/exo-icon-view.c: Several small cleanups.
-
-2006-08-26	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Fix typo, where -NDEBUG was used instead of
-	  -DNDEBUG as preprocessor flag. Bug #2221.
-
-2006-08-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-config.h.in: Verify that G_GNUC_NULL_TERMINATED is defined.
-	* exo/exo-private.{c,h}: Add _exo_g_type_add_interface_simple() to
-	  further reduce the number of relocations.
-	* exo/exo-icon-view.c(exo_icon_view_get_type): Use the newly added
-	  _exo_g_type_add_interface_simple() function here.
-	* exo/exo-gdk-pixbuf-extensions.{c,h}, exo/exo.symbols: Import the
-	  exo_gdk_pixbuf_frame() function from Thunar, which will be used
-	  in the thumbnail preview widget to properly frame certain thumbnails,
-	  just like Thunar does.
-	* configure.in.in, exo/exo-gdk-pixbuf-extensions.{c,h}, exo/exo.symbols:
-	  Add new method exo_gdk_pixbuf_new_from_file_at_max_size(), which loads
-	  an image from a file, scaling down the image as necessary, but never
-	  scaling up. It uses mmap() if possible to speed up loading images.
-	* exo/exo-cell-renderer-ellipsized-text.{c,h}: Recycle the previously
-	  deprecated ExoCellRendererEllipsizedText class to be used as text
-	  renderers in ExoIconViews, utilizing the new follow-state property.
-	* exo/exo-thumbnail.{c,h}, exo/Makefile.am: Add an internal frontend
-	  to the thumbnail database, which is used for the thumbnail preview
-	  widget and to load SVG icons in the icon cell renderer.
-	* Makefile.am, configure.in.in, pixmaps/, exo/Makefile.am,
-	  exo/exo-thumbnail-preview.{c,h}: Import the ExoThumbnailPreview
-	  class as an internal widget class to display a thumbnail preview
-	  to be used in GtkFileChooser's. The preview widget was designed to
-	  look similar to the preview widget in The Gimp.
-	* exo/exo-gtk-extensions.{c,h}, exo/exo.symbols: Add the convenience
-	  helper function exo_gtk_file_chooser_add_thumbnail_preview(), which
-	  adds an ExoThumbnailsPreview to a given GtkFileChooser and connects
-	  it appropriately to display a thumbnail for the currently selected
-	  file (if possible).
-	* exo/Makefile.am, exo/exo-cell-renderer-icon.{c,h}, exo/exo.symbols,
-	  exo/exo.h: Import the ExoCellRendererIcon class, which should be used
-	  as icon cell renderer in ExoIconViews, and supports rendering named
-	  icons as well as image files, utilizing the thumbnail database
-	  whenever possible.
-	* exo/Makefile.am, exo/exo-icon-chooser-dialog.{c,h}, exo/exo.symbols,
-	  exo/exo-icon-chooser-model.{c,h}, exo/exo.h: Finally import the
-	  initial components of the icon chooser framework, namely the
-	  ExoIconChooserModel and ExoIconChooserDialog classes.
-	* exo-desktop-item-edit/exo-die-editor.c: Use the ExoIconChooserDialog
-	  here to select icons for .desktop files.
-	* tests/Makefile.am, tests/test-exo-icon-chooser-dialog.c: Add a simple
-	  test case for the ExoIconChooserDialog.
-	* configure.in.in, exo/exo-private.h: Use -DNDEBUG in release builds
-	  and -DG_ENABLE_DEBUG in full debug builds.
-	* exo/exo-wrap-table.c, exo/exo-xsession-client.c: Documentation fixes.
-	* docs/reference/: Update the API documentation.
-	* python/: Update the python bindings.
-	* po/POTFILES.in: Add new files here.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Update german translations.
-	* HACKING: A few updates.
-
-2006-08-16	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/exo-helper-chooser-dialog.c
-	  (exo_helper_chooser_dialog_init): Use "Web Browser" instead of
-	  "Default Web Browser" (same for terminal and mailer) for the section
-	  titles, as the term "Default" is somewhat redundant to the rest of
-	  the dialog and makes the whole UI looks busy.
-	* exo-helper/exo-helper-chooser.c: Display fallback icon if no
-	  specific icon for the helper was found.
-	* exo-helper/helpers/: Add several new helpers.
-	* po/POTFILES.in: Add new files here.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Update german translations.
-
-2006-08-14	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/helpers/urxvt.desktop.in.in,
-	  exo-helper/helpers/Makefile.am: Add support for rxvt-unicode.
-	  Bug #2158.
-	* po/POTFILES.in: Add new files here.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Update german translations.
-
-2006-08-09	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-tree-view.c: Add support for rubberband selection in the
-	  ExoTreeView class. Bug #1996.
-
-2006-08-07	Benedikt Meurer <benny@xfce.org>
-
-	* exo-desktop-item-edit/exo-die-desktop-model.c
-	  (exo_die_desktop_item_new_from_file): Load only .desktop files of
-	  type Application.
-
-2006-08-06	Benedikt Meurer <benny@xfce.org>
-
-	* exo-desktop-item-edit/exo-die-command-entry.c,
-	  exo-desktop-item-edit/exo-die-command-model.c: Set the completion
-	  model only after the command model is loaded, as GtkEntryCompletion
-	  in GTK+ 2.10 is way to slow when adding rows to a model, which makes
-	  the dialog hang for several seconds on startup.
-	* exo-desktop-item-edit/exo-die-desktop-model.{c,h},
-	  exo-desktop-item-edit/Makefile.am, exo-desktop-item-edit/main.c,
-	  exo-desktop-item-edit/exo-die-editor.c: Add a convenient way to
-	  create launchers for applications installed on the system and
-	  available via the desktop database, by typing the name of the
-	  application in the "Name" field and using the available completion.
-	* po/POTFILES.in: Add new files here.
-	* po/libexo-0.3.pot, po/*.po: Updated.
-	* po/de.po: Update german translations.
-
-2006-07-28	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(ExoIconViewItem): Apply patch from Matt McClinch 
-	  <mattmcclinch@gmail.com> to fix invalid size for row and col.
-
-2006-07-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-xsession-client.c(exo_xsession_client_set_group): Use the
-	  stack to allocate the temporary custom protocols.
-	* exo/exo-private.h: Add support macros for the slice allocator.
-	* exo/exo-binding.c, exo/exo-icon-bar.c, exo/exo-icon-view.c,
-	  exo/exo-md5.c, exo/exo-toolbars-model.c: Use the slice allocator
-	  to reduce memory overhead where possible.
-
-2006-07-09	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Post-release version bump.
-
-2006-07-09	Benedikt Meurer <benny@xfce.org>
-
-	* === Released 0.3.1.8beta2 ===
-	* NEWS, configure.in.in: Bump version.
-	* THANKS: Add missing translator credits.
-	* po/*.po: Update Project-Id-Version.
-	* exo.spec.in: Add missing files.
-
-2006-06-19	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/helpers/exo-compose-mail-0.3: For some reasons, not all
-	  env implementations can handle additional parameters properly.
-	  Bug #1923.
-
-2006-06-13	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-cell-renderer-ellipsized-text.{c,h}, exo/exo.symbols,
-	  exo/exo-ellipsized-label.{c,h}, exo/exo-pango-extensions.{c,h},
-	  docs/reference/: ExoCellRendererEllipsizedText, ExoEllipsizedLabel
-	  and the exo-pango-extensions are deprecated now.
-	* exo/exo-config.h.in: Verify that G_GNUC_WARN_UNUSED_RESULT is
-	  defined.
-	* exo/exo-md5.c(exo_md5_digest_get_type): Mark type name static.
-	* exo/exo-md5.c(exo_md5_digest_to_str): Move hex digits to rodata.
-	* exo/exo-md5.h, exo/exo.symbols: Warn if the result of an MD5
-	  function that returns data allocated on the heap is not used in
-	  the program.
-	* exo/exo-string.h: Warn if the result of a string function that
-	  returns data allocated on the heap is not used in the program.
-	* exo/exo-private.{c,h}, exo/exo-*.c: Reduce the number of relocations
-	  using a simple wrapper for g_type_register_static().
-	* configure.in.in: Use --as-needed if supported by the linker.
-
-2006-06-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/helpers/balsa.desktop.in.in: Use the correct icon.
-	* exo-helper/helpers/exo-compose-mail-0.3: Various fixes.
-
-2006-06-08	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/helpers/exo-compose-mail-0.3: Add simple Perl script to
-	  support extended mailto:-URIs for all included MailReaders. For
-	  example, it is now possible to specify a subject or attach files
-	  when composing mails using exo-open.
-	* exo-helper/helpers/: Use exo-compose-mail-0.3 for all included
-	  MailReaders, and add Mutt and Sylpheed to the list.
-	* acinclude.m4, configure.in.in: Check for required Perl modules,
-	  otherwise exo-compose-mail-0.3 will fail "silently".
-	* docs/reference/exo-open.xml: Update the exo-open manual page with
-	  a short description of the extended mailto:-syntax.
-	* po/POTFILES.in: Add new files here.
-	* po/libexo-0.3.pot, po/*.po: Updated.
-
-2006-05-25	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/helpers/firefox.desktop.in: Don't forcibly open a new
-	  window for Firefox, but do whatever the user configured in Firefox.
-	  Bug #1850.
-
-2006-05-16	Benedikt Meurer <benny@xfce.org>
-
-	* python/: Update python bindings to support compilation with PyGTK
-	  2.9.0 and newer. Bug #1815.
-
-2006-05-14	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/exo-helper-chooser.c(browse_clicked): Make this consistent
-	  with the command chooser dialog in Thunar and exo-desktop-item-edit.
-	* exo-helper/exo-helper-chooser.c(menu_activate_other): Make spacing
-	  consistent with the message dialogs.
-
-2006-05-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo-desktop-item-edit/main.c(main): Handle broken Icon values with
-	  file extensions properly. Bug #1795.
-
-2006-05-08	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-wrap-table.c(exo_wrap_table_layout): Fix typo.
-
-2006-05-07	Benedikt Meurer <benny@xfce.org>
-
-	* exo-desktop-item-edit/main.c: Add hidden command line switch --xid
-	  to allow applications to pass a parent window id, so the window
-	  manager can properly place the "Create Launcher/Link" window above
-	  the parent window.
-
-2006-05-07	Benedikt Meurer <benny@xfce.org>
-
-	* exo-desktop-item-edit/exo-die-icon-button.{c,h}: This wasn't meant
-	  to be imported.
-
-2006-05-07	Benedikt Meurer <benny@xfce.org>
-
-	* exo-desktop-item-edit/exo-die-editor.c(exo_die_editor_icon_clicked):
-	  Use gtk_file_filter_add_pixbuf_formats().
-
-2006-05-06	Benedikt Meurer <benny@xfce.org>
-
-	* exo-desktop-item-edit/, configure.in.in, Makefile.am: Import the
-	  exo-desktop-item-edit utility, used to create/edit .desktop links
-	  and launchers. Bug #1724.
-	* icons/48x48/: Import fallback icons for the exo-desktop-item-edit
-	  utility, required for older icon themes that weren't updated to
-	  the icon naming spec yet.
-	* po/POTFILES.in: Add new files here.
-	* po/libexo-0.3.pot, po/*.po: Updated.
-	* po/de.po: Update german translations.
-	* NEWS, THANKS: Update NEWS and THANKS.
-
-2006-05-06	Benedikt Meurer <benny@xfce.org>
-
-	* Makefile.am: Add --enable-xml2po to DISTCHECK_CONFIGURE_FLAGS.
-	* exo-helper/exo-helper-launcher-dialog.c: Drop the "Help" button from
-	  the launcher dialog.
-	* Makefile.am, configure.in.in, exo-support/: Import XfceHeading and
-	  XfceTitledDialog from libxfcegui4 to use by the tools in this package
-	  without readding the dependency on libxfcegui4.
-	* exo-helper/Makefile.am, exo-helper/exo-helper-chooser-dialog.c,
-	  exo-helper/exo-helper-utils.{c,h}: Use XfceTitledDialog as superclass
-	  for ExoHelperChooserDialog.
-	* po/libexo-0.3.pot, po/*.po: Updated.
-	* po/de.po: Update the german translations.
-
-2006-05-05	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Update PACKAGE_BUGREPORT.
-	* exo-source/main.c(print_version): Update copyright.
-	* exo-source/main.c: Print version and usage in local encoding.
-	* exo-helper/exo-preferred-applications-settings.c: Use absolute path
-	  to spawn exo-preferred-applications to make sure we always launch
-	  the script installed with this version of the package. Add icon name
-	  to the plugin icon object to support the new mcs manager.
-
-2006-05-04	Daichi Kawahata <daichi@xfce.org>
-
-	* Makefile.am, configure.in.in, docs/manual/Makefile.am,
-	  docs/manual/ja/Makefile.am,
-	  docs/manual/ja/exo-preferred-applications.xml.in,
-	  docs/manual/ja/images/Makefile.am,
-	  docs/manual/ja/images/exo-preferred-applications-internet.png,
-	  docs/manual/ja/images/exo-preferred-applications-utilities.png,
-	  docs/manual/ja/images/exo-preferred-applications-webbrowser-custom.png,
-	  docs/manual/ja/images/exo-preferred-applications-webbrowser-menu.png,
-	  po-doc/ChangeLog, po-doc/LINGUAS, po-doc/Makefile.am,
-	  po-doc/exo-preferred-applications.pot, po-doc/ja.po: Import
-	  initial Japanese translations and related files.
-
-2006-05-02	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c, exo/exo-url.c: Apply patches from Oliver
-	  Lehmann <oliver@freebsd.org> to fix the compilation on older
-	  FreeBSD systems.
-
-2006-05-01	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, exo/exo-md5.c: RedHat/Fedora requires md5global.h
-	  before md5.h can be used. Bug #1732.
-
-2006-04-19	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_scroll_to_item): Avoid scrolling
-	  horizontally (to the right) if the item width is larger than the
-	  available allocation width, which fixes a weird scrolling bug with
-	  the compact view. Bug #1683.
-
-2006-04-19	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/exo-preferred-applications-settings.c(mcs_plugin_init):
-	  Mark button label translation. Bug #1669.
-	* po/libexo-0.3.pot, po/*.po: Update translations.
-
-2006-04-17	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/exo-helper.c(exo_helper_execute): Finally fix the helper
-	  command execution.
-
-2006-04-16	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Post-release version bump.
-
-2006-04-16	Benedikt Meurer <benny@xfce.org>
-
-	* === Released 0.3.1.6beta1 ===
-	* NEWS, configure.in.in: Bump version.
-	* configure.in.in: Depend on Xfce 4.2.2 or above.
-	* Makefile.am, exo.spec.in, configure.in.in: Readd fixed exo.spec.in
-	  file for RPM building.
-
-2006-04-16	Benedikt Meurer <benny@xfce.org>
-
-	* po/libexo-0.3.pot, po/*.po: Updated.
-
-2006-04-16	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Check for sys/wait.h.
-	* exo-helper/exo-helper.c: Properly retry with the remaining commands
-	  if a command returns with an error within 5 seconds. This finally
-	  fixes the issues with Firefox.
-
-2006-04-16	Benedikt Meurer <benny@xfce.org>
-
-	* docs/manual/C/exo-preferred-applications.xml.in: Update the
-	  documentation date.
-
-2006-04-16	Benedikt Meurer <benny@xfce.org>
-
-	* NEWS: Update NEWS file for BETA1.
-	* HACKING: Fix repository URL.
-	* exo.spec.in, Makefile.am, configure.in.in: Drop spec file, as it is
-	  totally outdated and unmaintained.
-
-2006-04-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_layout_single_col): Apply patch
-	  from Matt McClinch <mattmcclinch@gmail.com> to properly use the
-	  calculated rowspan.
-	* THANKS: Fix "Other contributors" section title.
-
-2006-04-14	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Allow horizontal scrolling using the regular
-	  mouse wheel when in EXO_ICON_VIEW_LAYOUT_COLS mode. Bug #1665.
-
-2006-04-14	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Avoid calling size_allocate() again and again,
-	  because of GtkScrolledWindow interaction (actually because GTK+ is
-	  totally broken here).
-
-2006-04-14	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add support for an
-	  additional layout mode, which is similar to the list view in Windows
-	  Explorer and lays out items in columns instead of rows, based on a
-	  patch from Matt McClinch <mattmcclinch@gmail.com>.
-	* docs/reference/: Update API docs.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-
-2006-04-11	Benedikt Meurer <benny@xfce.org>
-
-	* python/pyexo.h: Work-around compile problem when glibc headers are
-	  included before Pythons config file.
-
-2006-04-11	Benedikt Meurer <benny@xfce.org>
-
-	* python/: Update the Python bindings, including exo-url, exo-execute
-	  and exo-binding. Update the Python examples.
-
-2006-04-10	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_button_press_event),
-	  exo/exo-icon-view.c(exo_icon_view_single_click_timeout): Apply patch
-	  from Matt McClinch <mattmcclinch@gmail.com> to further improve
-	  Shift-selection handling.
-
-2006-04-09	Benedikt Meurer <benny@xfce.org>
-
-	* icons/Makefile.am: Be sure to run gtk-update-icon-cache after
-	  installing new icons into the hicolor icon theme (skipped if $DESTDIR
-	  is set).
-
-2006-04-09	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.{c,h}, exo/exo-tree-view.{c,h}, exo/exo.symbols:
-	  Add "single-click-timeout" properties to ExoIconView and ExoTreeView,
-	  which control the delay after which the item under the mouse pointer
-	  is automatically selected. Bug #1509.
-	* docs/reference/: Update API documentation.
-
-2006-04-09	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_select_all_between), THANKS:
-	  Apply patch to improve shift-selection in the icon view, from
-	  Matt McClinch <mattmcclinch@gmail.com>.
-
-2006-04-05	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Do not depend on Xfce 4.2.2, as 4.2.1 will also do.
-	* configure.in.in: Solaris has MD5 functions in libmd5.
-	* exo/exo-toolbars-editor-dialog.c
-	  (exo_toolbars_editor_dialog_add_toolbar): Fix format warning.
-	* exo/exo-xsession-client.c(exo_xsession_client_set_group): Use
-	  memcpy() instead of bcopy().
-	* docs/reference/exo-open.xml: Fix typo.
-
-2006-03-31	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_row_inserted): No need to invali-
-	  date the prelit_item here.
-
-2006-03-31	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-tree-view.c(exo_tree_view_button_release_event): Use button
-	  release to easily alter the selection even if all visible rows are
-	  selected in possible preparation for a drag operation.
-
-2006-03-30	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Implement "Right Arrow Keyboard Navigation" for
-	  ExoIconView, as requested by Jannis. Bug #1623.
-
-2006-03-21	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-tree-view.c(exo_tree_view_button_press_event): Do not
-	  mess up with double click events.
-
-2006-03-18	Benedikt Meurer <benny@xfce.org>
-
-	* THANKS: Add translator credits for Andrey Fedoseev
-	  <andrey.fedoseev@gmail.com>.
-
-2006-03-16	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-tree-view.c(exo_tree_view_button_press_event): Allow to
-	  alter selection using Ctrl+button/Shift+button.
-
-2006-03-16	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-tree-view.c(exo_tree_view_button_press_event): Use a simple 
-	  optimization here.
-
-2006-03-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/helpers/sylpheed-claws.desktop.in,
-	  exo-helper/helpers/Makefile.am: Add Sylpheed Claws as MailReader to
-	  the helper list. Thanks to Bernhard Walle <bernhard.walle@gmx.de>.
-
-2006-03-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_row_deleted): Use next/prev item (if
-	  any) as cursor/anchor when a row is deleted from the model. Else if
-	  the deleted item was the last item, reset anchor/cursor.
-
-2006-03-08	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_set_model): Always schedule a
-	  relayout here.
-	* exo/exo-icon-view.c: Apply the scroll_to_path in the expose event
-	  handler rather than the size_allocate.
-
-2006-03-06	Benedikt Meurer <benny@xfce.org>
-
-	* autogen.sh, configure.in.in, po/LINGUAS: Read the set of available
-	  languages from po/LINGUAS and substitute them when autogen.sh is
-	  run. This way we can continue to use glib-gettext.
-
-2006-03-05	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Bump version to 0.3.1.5svn.
-
-2006-03-05	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Bump version to 0.3.1.4alpha2.
-	* configure.in.in: Bump soname.
-	* NEWS: Add news items.
-
-2006-03-04	Benedikt Meurer <benny@xfce.org>
-
-	* po/de.po: Fix error.
-
-2006-03-02	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, exo/exo-gdk-pixbuf-extensions.{c,h},
-	  exo/exo.symbols: Import exo_gdk_pixbuf_colorize, exo_gdk_pixbuf_lucent
-	  and exo_gdk_pixbuf_spotlight into libexo, so they can also be used by
-	  xfdesktop.
-	* docs/reference/: Update the API documentation.
-
-2006-03-01	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_get_selected_items): Return the
-	  selected items in the correct order.
-
-2006-02-27	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-tree-view.c(exo_tree_view_button_press_event): In single-click
-	  mode, do not emit "row-activated" if the button-press event was for
-	  one of the associated windows (i.e. the columns header window).
-
-2006-02-27	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Handle scrolling to a path before the view
-	  is realized/layouted.
-
-2006-02-27	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c, exo/exo-tree-view.c: Also drop the prelit
-	  timeout defines.
-	* exo/exo-icon-view.c(exo_icon_view_button_press_event): Do not alter
-	  selection while shift is pressed when clicking on an already selected
-	  file. Bug #1501.
-
-2006-02-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c, exo/exo-tree-view.c: Revert the hover-autoselect
-	  stuff for now, as the current implementation can cause trouble. Maybe
-	  re-add it later, once a good implementation is available.
-
-2006-02-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Reset the cursor in single-click mode when the
-	  pointer leaves the icon view window.
-
-2006-02-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-tree-view.{c,h}, exo/Makefile.am, exo/exo.h, exo/exo.symbols:
-	  Add ExoTreeView which derives from GtkTreeView and extends it with
-	  single-click support and also works around the GtkTreeView limitation
-	  of dragging multiple files.
-	* docs/references/: Update the API documentation.
-	* po/POTFILES.in: Add exo-tree-view.c here.
-	* po/libexo-0.3.pot, po/*.po: Update translations.
-
-2006-02-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Automatically select prelited items after a
-	  certain amount of time in single-click mode.
-
-2006-02-25	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_button_release_event): Allow multi
-	  selection using Shift/Control in single click mode. Bug #1500.
-
-2006-02-24	Benedikt Meurer <benny@xfce.org>
-
-	* docs/manual/, Makefile.am, configure.in.in, docs/Makefile.am,
-	  exo-helper/exo-helper-chooser-dialog.c,
-	  exo-helper/exo-helper-launcher-dialog.c: Add initial user manual for
-	  the preferred applications framework, and connect the "Help" buttons
-	  to display the manual. Bug #1403.
-	* docs/reference/exo-open.xml, docs/reference/Makefile.am: Add initial
-	  manpage for exo-open.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-
-2006-02-24	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-private.{c,h}: Add helper function required for the
-	  interactive search, _exo_gtk_widget_send_focus_change().
-	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add interactive search
-	  capabilities to ExoIconView. Bug #1358.
-	* docs/reference/: Update the API documentation.
-	* exo-helper/exo-helper-chooser-dialog.c
-	  (exo_helper_chooser_dialog_key_press_event): Close the chooser dialog
-	  on <control>W, so we are consistent with other applications.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Further updates on the german translations.
-
-2006-02-24	Benedikt Meurer <benny@xfce.org>
-
-	* autogen.sh: Be sure to run svn info with LC_ALL=C.
-
-2006-02-23	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.{c,h}: Mark the "text-column", "markup-column" and
-	  "pixbuf-column" properties - their accessor methods - as deprecated,
-	  noting that developers should use the more powerful GtkCellRenderer's
-	  instead.
-	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add "single-click" property
-	  to ExoIconView. Bug #1411.
-	* docs/reference/: Update the API documentation.
-	* exo/exo-url.c: Spawn Thunar asynchronously, as it will not exit if
-	  no running instance is found. We can be sure that Thunar will handle
-	  the file if found.
-	* exo/exo-url.c, exo-open/main.c, exo-helper/main.c: Cleanup several
-	  error strings.
-	* po/libexo-0.3.pot, po/*.po: Merge changed/new strings.
-	* po/de.po: Update the german translations.
-
-2006-02-13	Benedikt Meurer <benny@xfce.org>
-
-	* exo-helper/helpers/Terminal.desktop.in: Add "xfce4-terminal" here to
-	  be compatible with Debian/Ubuntu, where no "Terminal" binary is avail-
-	  able, instead the binary (and the package) is named "xfce4-terminal".
-
-2006-02-10	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: We do not need to keep around the index for every
-	  icon view item, as the index is simply the position in the list. In
-	  addition, we can speed up the reordering of items by reordering the
-	  list items of the existing list, rather than creating a new list.
-
-2006-02-09	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-utils.h: Do not use the exo_atomic_* functions, unless the
-	  compiler will really inline the functions. Else, we can just call
-	  the g_atomic_int_* counterparts here.
-
-2006-02-08	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-url.c(exo_url_show_on_screen): Add better support to open
-	  local paths using various fallbacks. Also add gnome-open as fallback
-	  for URLs not support by the helpers.
-
-2006-02-03	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-url.c: Define FNM_CASEFOLD for systems that don't support it.
-	  Bug #1423.
-
-2006-01-31	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_button_press_event): Reset
-	  pressed_button to -1 after handling a double blick, so that
-	  motion events occuring between here and the release event don't
-	  trigger a DnD operation.
-
-2006-01-31	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Drop accessibility support from the ExoIconView
-	  widget class for now, as it's totally broken right now. This should
-	  be rewritten from scratch at some time, using only the public
-	  interface of the class, once Atk/Gtk+ offers better support for
-	  accessibility on GtkCellRenderers.
-
-2006-01-31	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Fix two potential bugs, where the return value
-	  of g_list_remove() was ignored.
-
-2006-01-31	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Check for fnmatch.h.
-	* exo/exo-url.c: Make exo_url_show_on_screen() smarter in guessing the
-	  correct application, it is now able to open local HTML files as well
-	  if the url refers to a local file.
-	* exo-open/main.c(main): Popup an error dialog if an error occurs while
-	  trying to execute the preferred application or trying to open one of
-	  the specified URLs. This way we can just use it right away from
-	  applications/scripts without having to worry about user interaction.
-
-2006-01-31	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Depend on GLib >= 2.6.4 and Gtk+ >= 2.6.0.
-	* configure.in.in, Makefile.am, icons/: Add preferred applications icon.
-	* configure.in.in, Makefile.am, exo-helper/, NEWS: Import exo-helper
-	  framework based on the helper framework found in Terminal. Bug #1368.
-	* exo/exo-execute.{c,h}, exo/exo-url.{c,h}, exo/Makefile.am, exo/exo.h,
-	  exo/exo.symbols: Add exo-url and exo-execute modules, which provide
-	  a consistent frontend to the helper framework.
-	* configure.in.in, Makefile.am, exo-open/: Add exo-open utility
-	  program, which simply calls appropriate functions in libexo.
-	* docs/reference/: Update the API documentation.
-	* po/POTFILES.in: Add new files.
-	* po/libexo-0.3.pot, po/*.po: Merge new strings.
-	* po/de.po: Update german translations.
-
-2006-01-25	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Drop G_DISABLE_DEPRECATED completely. This fixes
-	  bug #1379.
-	* exo/exo.h: Make sure i18n stuff is setup properly, so people with
-	  older Xfce versions can still build and run Thunar. This fixes
-	  bug #1341.
-
-2006-01-23	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-gtk-extensions.c(exo_gtk_radio_action_set_current_value):
-	  If no action matches the new value, the radio group will have no
-	  active action afterwards.
-
-2006-01-23	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Bump version to 0.3.1.3svn.
-
-2006-01-22	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Bump version to 0.3.1.2alpha.
-	* configure.in.in: Bump current library interface version to 1, to make
-	  sure certain Linux distributions don't run into trouble when including
-	  exo pre-releases.
-	* NEWS: Update some news items for the alpha release.
-	* THANKS: Update translator credits.
-	* po/*.po, po/libexo-0.3.pot: Update translations.
-
-2006-01-14	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Draw keyfocus using the same semantics as
-	  GtkTreeView. This finally fixes bug #1321.
-
-2006-01-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_paint_item): Let the cell renderer
-	  know whether the current item has the keyboard focus. Part one of fix
-	  for bug #1321.
-
-2005-12-30	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_start_rubberbanding): Be sure to
-	  disable a previous rubberband selection when starting a new rubberband
-	  selection.
-
-2005-12-17	Benedikt Meurer <benny@xfce.org>
-
-	* NEWS, README, configure.in.in: Add support for three different levels
-	  of debugging support.
-
-2005-12-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_expose_event): Don't handle expose
-	  events until the layout has been calculated.
-	* exo/exo-icon-view.c(exo_icon_view_expose_event): Simplify the rubber-
-	  band painting by taking advantage of double-buffering.
-
-2005-12-13	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-gdk-pixbuf-extensions.{c,h}, exo/exo.symbols: Add new function
-	  exo_gdk_pixbuf_scale_down(), which scales down an icon to fit into
-	  given dest_width/dest_height, optionally preserving the aspect ratio
-	  of the source icon.
-	* docs/reference/tmpl/exo-gdk-pixbuf-extensions.sgml,
-	  docs/reference/exo-sections.txt: Add new function to the reference
-	  manual.
-	* docs/reference/tmpl/exo-ellipsized-label.sgml,
-	  exo/exo-ellipsized-label.h: Small documentation fix.
-	* HACKING, README: Update URLs and descriptions.
-
-2005-12-05	Benedikt Meurer <benny@xfce.org>
-
-	* tests/test-exo-string.c, docs/reference/, exo/exo.symbols,
-	  exo/exo-string.{c,h}, tests/Makefile.am: Add new utility function
-	  exo_str_replace().
-
-2005-12-04	Benedikt Meurer <benny@xfce.org>
-
-	* HACKING: Add reminder to increment library major version whenever
-	  new functions got added.
-
-2005-12-03	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Build the gnuc visibility test program with -Wall
-	  -Werror, as gcc reports warnings instead of errors if ELF visibility
-	  is not supported for the target platform, see bug #1253.
-
-2005-11-30	Benedikt Meurer <benny@xfce.org>
-
-	* docs/reference/, exo/exo-gtk-extensions.{c,h}, exo/exo.symbols: Add
-	  exo_gtk_object_ref_sink(), which takes a reference on the object and
-	  drops the floating reference to the object (if any).
-
-2005-11-29	Benedikt Meurer <benny@xfce.org>
-
-	* docs/reference/, exo/exo-binding.h: Update reference documentation.
-
-2005-11-22	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-string.{c,h}, exo/exo.symbols: Add exo_intern_string() and
-	  exo_intern_static_string(), which transform a string to it's GQuark
-	  representation and thereby can be used to reduce the memory overhead
-	  for static strings that will be handed to g_signal_new(),
-	  g_type_register_*(), etc.
-	* exo/exo-cell-renderer-ellipsized-text.c: We don't need to provide an
-	  implementation here if build with Gtk+ 2.6 or above, as starting with
-	  Gtk+ 2.6, GtkCellRendererText already provides the required
-	  functionality.
-	* exo/exo-cell-renderer-ellipsized-text.c, exo/exo-icon-bar.c,
-	  exo/exo-icon-view.c, exo/exo-toolbars-editor-dialog.c,
-	  exo/exo-toolbars-editor.c, exo/exo-toolbars-model.c,
-	  exo/exo-toolbars-view.c, exo/exo-wrap-table.c,
-	  exo/exo-xsession-client.c: Use exo_intern_static_string() aka I_() to
-	  avoid g_strdup()'ing static strings which are used for GQuarks in
-	  various places.
-	* po/: Update translations.
-
-2005-11-16	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-gdk-pixbuf-extensions.c(exo_gdk_pixbuf_scale_ratio): Be sure
-	  to always pass width/height values greater than 0 to
-	  gdk_pixbuf_scale_simple().
-
-2005-11-15	Benedikt Meurer <benny@xfce.org>
-
-	* NEWS: Add note about new ca translations. Remove note about ExoObject.
-
-2005-11-14	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Bump version to 0.3.1.1svn.
-	* po/*.po, po/libexo-0.3.pot: Update translations.
-
-2005-11-13	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_expose_event): Return FALSE from
-	  the expose_event() method, so signal handlers can run after the
-	  default handler ran.
-
-2005-11-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_row_changed): Emit the
-	  "selection-changed" signal whenever a currently selected row
-	  changes.
-
-2005-11-07	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Use an alloc-only memory chunk and reset it
-	  whenever the item count drops to zero. This saves some overhead
-	  required for managing the allocated chunks.
-	* exo/exo-icon-view.c: Update the bin_window background whenever a
-	  new style is set.
-
-2005-11-04	Benedikt Meurer <benny@xfce.org>
-
-	* exo/Makefile.am, exo/exo.h, exo/exo.symbols, exo/exo-wrap-table.{c,h}:
-	  Add new class ExoWrapTable, which provides a container widget with
-	  automatic child layouting according to the width allocated to the
-	  container.
-	* docs/reference/exo-docs.sgml, docs/reference/exo-sections.txt,
-	  docs/reference/exo.types, docs/reference/tmpl/exo-wrap-table.sgml:
-	  Add API documentation for ExoWrapTable.
-	* tests/test-exo-wrap-table.c, tests/Makefile.am: Add a simple test
-	  case for ExoWrapTable.
-	* po/*.po: Merge new strings.
-
-2005-10-29	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_set_cursor): Use g_list_nth_data()
-	  instead of g_list_nth()->data.
-	* exo/exo-icon-view.c(exo_icon_view_layout_single_row): Drop unused
-	  variable spacing.
-	* exo/exo-icon-view.c(exo_icon_view_drag_motion): Drop unused variable
-	  model.
-	* exo/exo-icon-view.c(exo_icon_view_item_accessible_action_do_action):
-	  Drop unused variable icon_view.
-	* exo/exo-icon-view.c(exo_icon_view_create_drag_icon): Verify that
-	  the icon view is realized.
-
-2005-10-27	Benedikt Meurer <benny@xfce.org>
-
-	* exo/abicheck.sh, exo/exo-utils.{c,h}, exo/exo.symbols: Include
-	  implementations for the exo_atomic_* functions and add them to the
-	  exported interface of the library.
-	* configure.in.in: Don't use -fvisibility=hidden, as it causes trouble
-	  with the extern inline functions.
-	* exo/exo-private.h, exo/exo-toolbars-private.h, python/exo.override,
-	  python/exomodule.c: Mark internal symbols with G_GNUC_INTERNAL.
-	* docs/reference/exo-docs.sgml, docs/reference/exo-sections.txt,
-	  docs/reference/tmpl/exo-utils.sgml: Add the exo-utils to the reference
-	  documentation.
-	* docs/reference/tmpl/exo-config.sgml: Mark the config interface as
-	  Stable.
-	* exo/exo-config.{c,h.in}, exo/exo.symbols,
-	  docs/reference/exo-sections.txt: Add exo_check_version() to support
-	  runtime version checks.
-	* exo/exo.symbols, exo/abicheck.sh: Use special handling for exported
-	  variables.
-
-2005-10-17	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-noop.{c,h}, exo/exo-utils.{c,h}, exo/Makefile.am, exo/exo.h,
-	  exo/exo.symbols: Move the exo_noop_* functions to exo-utils.
-	* exo/exo-utils.h: Add exo_atomic_* inline functions.
-
-2005-09-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-object.{c,h}, tests/test-exo-object.c, exo/Makefile.am,
-	  exo/exo.h, exo/exo.symbols, tests/Makefile.am: Remove the ExoObject
-	  class as it causes to much trouble, unfortunately. Maybe one day the
-	  GType System and the various language bindings will be ready for this,
-	  then we can re-add it.
-
-2005-09-06	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_set_model): Reset the item memory
-	  chunk as a whole instead of freeing each item when the model is
-	  reset.
-	* exo/exo-icon-view.c(exo_icon_view_set_model): Don't schedule the
-	  layouting if we're going to resize the view anyways.
-
-2005-09-04	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(find_item_page_up_down): Fix Page_Up handling.
-
-2005-09-03	Benedikt Meurer <benny@xfce.org>
-
-	* exo-csource/main.c(print_csource): Fix a small bug for platforms,
-	  where size_t is different from unsigned int.
-
-2005-09-02	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_allocate_children): Increase the
-	  area allocated to child widgets by focus-line-width and focus-padding.
-
-2005-09-02	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_get_path_at_pos): Actually accept
-	  widget coordinates here, to be compatible with GtkTreeView.
-
-2005-09-01	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_dispose): Reset the drag destination
-	  item as we use a tree row reference here, which can cause a memory
-	  leak with custom DnD implementations.
-
-2005-08-31	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.{c,h}, exo/exo.symbols: Add two new methods
-	  exo_icon_view_widget_to_icon_coords() and
-	  exo_icon_view_icon_to_widget_coords(), which are used to translate
-	  between widget coordinates and icon window coordinates.
-	* exo/exo-icon-view.c(exo_icon_view_get_dest_item_at_pos): Be consistent
-	  with the other methods that accept (x,y) coordinates and use icon
-	  window coordinates instead of widget coordinates.
-
-2005-08-31	Benedikt Meurer <benny@xfce.org>
-
-	* po/es.po: Update spanish translations, thanks to Patricio Carr
-	  <pato@patocarr.com>.
-
-2005-08-27	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-bar.c, exo/exo-icon-view.c: Use alloca wrappers
-	  provided by GLib.
-
-2005-08-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c(exo_icon_view_expose_event): No need to setup
-	  the clipping for the fill GC, as we'll only draw within the clip
-	  region anyways.
-
-2005-08-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Allocate the GCs required for drawing the
-	  rubberband selection when the rubberbanding starts and deallocate
-	  them when rubberbanding is done, instead of allocating them for
-	  every expose_event handler invokation.
-
-2005-08-25	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-private.{c,h}: Drop the MIME info parser.
-	* docs/reference/tmpl/*.sgml: Regenerate the API documentation
-	  templates.
-	* docs/reference/exo-docs.sgml: Don't list libxfcegui4 as dependency
-	  any longer.
-
-2005-08-22	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Disable Gtk+ DnD callbacks when starting a
-	  rubberband selection and re-enable them afterwards.
-	* exo/exo-icon-view.c(exo_icon_view_button_press_event): Cancel cell
-	  editing when clicking on an empty area.
-
-2005-08-19	Benedikt Meurer <benny@xfce.org>
-
-	* python/Makefile.am: Fix indentation.
-	* configure.in.in: Enable debugging by default when building from a
-	  SVN sandbox. Disable debugging by default when building a release.
-	* TODO: Remove obsolete items.
-	* HACKING: Fix repository URLs and file names.
-	* NEWS: Collect atleast the most important changes.
-	* po/: Run 'gmake update-po'.
-
-2005-08-19	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Bump the libtool revision number.
-
-2005-08-19	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, exo/exo-xsession-client.c: Drop dependency on X11.
-	  Acts as a dummy on other GDK targets.
-	* configure.in.in, docs/reference/Makefile.am, exo/Makefile.am,
-	  exo/exo-0.3.pc.in, exo/exo.h, python/Makefile.am, tests/Makefile.am:
-	  Drop unnecessary dependency on libxfcegui4.
-
-2005-08-18	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.{c,h}, docs/reference/tmpl/exo-icon-view.sgml:
-	  Import the new ExoIconView class, which provides a compatible
-	  interface to the GtkIconView class in Gtk+ 2.8 (using cell
-	  renderers instead of hardcoding the renderering in the icon
-	  view). The icon view should be faster now, especially the
-	  rubberband painting should be atleast twice as fast (given that
-	  you don't use Gtk+ 2.8 with Cairo).
-	* exo/exo-mime-database.{c,h}, exo/exo-mime-info.{c,h},
-	  exo/xdgmime/, exo/Makefile.am, configure.in.in, exo/exo.h,
-	  po/POTFILES.in: Remove the MIME database implementation, as
-	  ThunarVFS contains a thread-safe replacement now.
-	* configure.in.in, exo/, python/: Use ELF visibility if supported
-	  by the compiler and the linker.
-	* exo/: Fix several signedness warnings produced by gcc41.
-	* python/: Remove the MIME implementation from the Python bindings
-	  and add the new icon view methods.
-	* po/libexo-0.3.pot: Ditch autogenerated file.
-	* exo-csource/Makefile.am: Build the exo-csource tool on 'gmake
-	  distcheck', as it's required to successfully 'gmake distcheck'
-	  in tests/.
-
-2005-08-14	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Add fi translations to XDT_I18N().
-	* po/POTFILES.in: Add missing source files.
-
-2005-08-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-object-generic.c, exo/exo-object-i386.S, exo/exo-object.c:
-	  Better let the compiler handle the exo_object_new() and
-	  exo_object_unref() methods, so we don't need to care about
-	  text relocations.
-
-2005-08-05	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-object.h: Reserve two pointers for ExoObject.
-
-2005-08-04	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in: Merge debug support from Thunar. Add check for
-	  target platform, supports only i386 currently.
-	* exo/exo-noop-generic.c, exo/exo-noop-i386.S, exo/exo-noop.h: Add
-	  commonly used noops.
-	* exo/exo.h: Include exo-object.h and exo-noop.h.
-	* exo/exo-config.h.in: Add EXO_GNUC_MALLOC macro.
-	* exo/exo-object.{c,h}, exo/exo-object-generic.c, exo/exo-object-i386.S:
-	  Add lightweight object class which features thread-safe type
-	  registration and atomic refcouting, but provides none of the more
-	  advanced features of GObject. This can be used for lightweight, fast
-	  objects, that don't require any of GObject's features other than
-	  refcounting.
-	* exo/Makefile.am: Add the new files.
-	* tests/test-exo-noop.c, tests/test-exo-noop.c, tests/Makefile.am: Add
-	  new tests for exo-noop and exo-object.
-
-2005-07-19	Benedikt Meurer <benny@xfce.org>
-
-	* po/ja.po: Update japanese translations, thanks to Daichi Kawahata
-	  <daichik@users.sourceforge.net>.
-
-2005-07-02	Benedikt Meurer <benny@xfce.org>
-
-	* tests/Makefile.am: Don't assume that srcdir = builddir.
-
-2005-07-02	Benedikt Meurer <benny@xfce.org>
-
-	* exo-csource/Makefile.am, exo-csource/main.c: Import the exo-csource
-	  utility, which can generate C code for arbitrary data, much like
-	  gdk-pixbuf-csource, but not limited to images.
-	* docs/reference/exo-csource.xml, docs/reference/Makefile.am,
-	  docs/reference/exo-docs.sgml: Add documentation for the exo-csource
-	  utility.
-	* tests/: Add a simple test case for the exo-csource utility.
-	* po/: Hook the new strings from exo-csource into the translation
-	  database.
-	* Makefile.am, configure.in.in: Link new stuff into the build framework.
-
-2005-06-28	Benedikt Meurer <benny@xfce.org>
-
-	* configure.in.in, autogen.sh, Makefile.am: Merge build framework
-	  changes from Thunar.
-	* po/libexo-0.3.pot, po/*.po: Run `gmake update-po'.
-
-2005-06-27	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-bar.c: G_DEFINE_TYPE already defines a parent class
-	  pointer, no need to do that manually.
-	* exo/exo-icon-bar.c: Show the bin_window directly in the realize
-	  method instead of overriding the map method.
-	* exo/exo-icon-bar.c: Fix a few rendering bugs. Still not perfect.
-
-2005-06-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/xdgmime/xdgmime.c, exo/exo-mime-database.c: The MIME detector
-	  doesn't perform any stat() calls anymore. The application is
-	  responsible to check that only regular files will be tested.
-	* TODO: Add items that must be done for the MIME detector.
-
-2005-06-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/xdgmime/ChangeLog: Import the xdgmime ChangeLog to ease syncing.
-	* exo/xdgmime/xdgmime.c(xdg_mime_init_from_directory): Import patch
-	  from federico to realloc the right size.
-	* exo/xdgmime/xdgmime.c(xdg_check_time_and_dirs): Increase re-check
-	  time to 60 seconds.
-	* exo/xdgmime/xdgmime.c(xdg_mime_get_mime_type_for_file): Don't use
-	  stdio streams to grab the data from the file for the magic check,
-	  because the additional overhead is unnecessary. Prefer fstat() over
-	  stat() to avoid having to resolve the inode for the given path twice.
-
-2005-06-24	Benedikt Meurer <benny@xfce.org>
-
-	* exo/xdgmime/xdgmime.c(xdg_mime_remove_callback): Allow to specify
-	  NULL for the destroy function.
-
-2005-06-16	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-config.h.in: Add defines for EXO_PARAM_READABLE,
-	  EXO_PARAM_WRITABLE and EXO_PARAM_READWRITE, which enables us to take
-	  advantage of the new G_PARAM_STATIC_* defines in GObject 2.7.x/2.8.x,
-	  that are used to tell GParamSpec, that it doesn't need to take a
-	  copy of the name, nick and blurb settings if they are static strings.
-	* exo/exo-cell-renderer-ellipsized-text.c, exo/exo-toolbars-view.c,
-	  exo/exo-mime-info.c, exo/exo-toolbars-editor.c, exo/exo-icon-bar.c,
-	  exo/exo-xsession-client.c: Make use of the new EXO_PARAM_* defines
-	  that were added to exo/exo-config.h.in.
-
-2005-06-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mime-database.c(exo_mime_database_init): Be sure to call
-	  xdg_mime_init() before setting up the reload callback function,
-	  because else the first call to a public xdg_mime_* function will
-	  lead to an invokation of xdg_mime_init(), which in turn will fire
-	  all reload callbacks, which in turn will make the ExoMimeDatabase
-	  drop it's internal state, which means that in the worst case, all
-	  the MIME information would be loaded twice on program startup.
-	* exo/xdgmime/xdgmime.{c,h}: The xdg_mime_init() function must be
-	  public.
-	* python/exo.defs: Add the exo_mime_info_lookup_icon_name() method to
-	  the Python bindings.
-
-2005-06-14	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mime-info.{c,h}: Add a method exo_mime_info_lookup_icon_name()
-	  which determines the name of a suitable icon in a given icon theme.
-	  The result of the lookup is cached internally. The purpose of this
-	  change is to allow for better caching of mime icons in the application
-	  using this interface. The implementation tries to reduce memory
-	  usage as much as possible.
-
-2005-06-13	Benedikt Meurer <benny@xfce.org>
-
-	* po/ja.po: Update japanese translations, thanks to Daichi Kawahata
-	  <daichik@users.sourceforge.net>.
-	* configure.ac, THANKS, po/fr.po: Add french translations, thanks to
-	  Stephane Roy <sroy@j2n.net>.
-
-2005-06-11	Benedikt Meurer <benny@xfce.org>
-
-	* po/ja.po: Update japanese translations, thanks to Daichi Kawahata
-	  <daichik@users.sourceforge.net>.
-
-2005-06-11	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac, po/es.po, THANKS: Add spanish translations from
-	  Patricio Carr <pato@patocarr.com>.
-
-2005-06-08	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac: Check for libintl.h as well.
-	* exo/exo-private.c: Need to include locale.h here to get LC_MESSAGES
-	  on all systems.
-
-2005-06-05	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mime-info.c: Use the MIME-Type's name as fallback if the
-	  Shared MIME Database contains no comment for a given type.
-
-2005-06-04	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mime-database.c: Run the reload signal at the highest
-	  priority.
-
-2005-06-04	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mime-database.h: Fix indentation.
-	* exo/exo-mime-database.c (exo_mime_database_get_info): The
-	  ExoMimeDatabase instance takes a reference on every returned
-	  ExoMimeInfo object.
-
-2005-05-30	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mime-database.{c,h}: Don't use separate private data
-	  structure.
-	* exo/exo-mime-info.{c,h}: Add exo_mime_info_get_media(),
-	  exo_mime_info_get_subtype() and exo_mime_info_lookup_icon() methods.
-	* python/exo.defs, python/exo.override: Add new methods to the Python
-	  bindings.
-
-2005-05-30	Benedikt Meurer <benny@xfce.org>
-
-	* exo/Makefile.am: We don't use D-Bus any longer, so no need to keep
-	  that define around.
-
-2005-05-29	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-mime-database.h: Fix missing function declaration.
-
-2005-05-29	Benedikt Meurer <benny@xfce.org>
-
-	* exo/xdgmime/: Import the xdgmime module from freedesktop.org.
-	* exo/exo-mime-info.{c,h}, exo/exo-mime-database.{c,h}: Add two new
-	  classes ExoMimeDatabase and ExoMimeInfo to provide a high-level
-	  interface to the Shared MIME Database. We currently use xdgmime as
-	  backend, but that may change over time.
-	* configure.ac, exo/Makefile.am, exo/exo.h: Add the new classes to the
-	  build framework.
-	* python/examples/toolbars.py: Fix typo.
-	* exo/exo-private.{c,h}: Import the MIME parser from the filer
-	  repository, which is used to query the comment for a given MIME
-	  type.
-	* python/exo.defs: Add the ExoMimeDatabase and ExoMimeInfo classes to
-	  the Python bindings.
-	* python/examples/mime.py: Add a short example of how to use the MIME
-	  module from a Python script.
-
-2005-03-17	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac, po/ja.po, THANKS, NEWS: Add ja translations, thanks to
-	  Daichi Kawahata <daichik@users.sourceforge.net>.
-	* docs/reference/tmpl/*.sgml: Regenerate with updated gtk-doc.
-
-2005-03-13	Benedikt Meurer <benny@xfce.org>
-
-	* HACKING: Add several missing points to the Release process.
-	* configure.ac: Bump version to 0.3.1svn.
-
-2005-03-13	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac, NEWS: Version 0.3.0.
-	* docs/reference/exo-docs.sgml: Update date.
-	* po/: Run "make update-po".
-	* po/de.po: Update the header.
-
-2005-03-09	Benedikt Meurer <benny@xfce.org>
-
-	* exo.spec.in: Update the spec file.
-
-2005-03-02	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-0.3.pc.in: Fix API version.
-	* exo/Makefile.am: Fix exo-enum-types.h handling.
-	* po/: Update translations.
-
-2005-03-02	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac, NEWS: Version 0.3.0pre1.
-	* HACKING: Fix a typo in the 'Release process' section. Remove the
-	  obsolete step 'make regenerate' from the release process.
-	* po/de.po, po/libexo-0.3.pot, po/en_GB.po: Run 'make update-po'.
-	* Makefile.am: Add the "dist-bz2" and "distcheck-bz2" targets.
-	* exo/exo-md5.c(MD5Final): Remove unused variables i and bytes.
-
-2005-02-25	Benedikt Meurer <benny@xfce.org>
-
-	* docs/reference/tmpl/exo-toolbars-editor-dialog.sgml,
-	  docs/reference/tmpl/exo-toolbars-editor.sgml, exo/exo-icon-view.c,
-	  exo/exo-toolbars-editor-dialog.c, exo/exo-toolbars-editor.c,
-	  exo/exo-toolbars-model.c, NEWS: Update the API reference manual.
-
-2005-02-24	Benedikt Meurer <benny@xfce.org>
-
-	* python/exo.override, python/exo.defs: Add Python bindings for
-	  the editable toolbars framework.
-	* python/examples/Makefile.am, python/examples/toolbars.ui,
-	  python/examples/toolbars.py: Add example how to use the editable
-	  toolbars framework.
-
-2005-02-21	Benedikt Meurer <benny@xfce.org>
-
-	* python/exomodule.c: Add pygtk_tree_path_to_pyobject() and
-	  pygtk_tree_path_from_pyobject() from the pygtk distribution, as
-	  the pygtk module unfortunately doesn't export them.
-	* python/exo.override, python/exo.defs: Add the ExoIconView class
-	  to the Python bindings.
-
-2005-02-19	Benedikt Meurer <benny@xfce.org>
-
-	* acinclude.m4, configure.ac: Remove custom Python headers check
-	  and use the new check from xfce4-dev-tools instead.
-
-2005-02-18	Benedikt Meurer <benny@xfce.org>
-
-	* po/libexo-0.3.pot, po/de.po, po/en_GB.po: Update the translation
-	  files with the recent changes to the source files.
-	* po/ChangeLog: Add an empty file here, as its required by the
-	  po/Makefile.in.in file generated by gettextize.
-	* configure.ac: Add the Makefile for the Python examples. Add
-	  a Makefile variable LIBEXO_VERSION_API, that contains the
-	  API version of libexo.
-	* python/examples/Makefile.am, python/examples/ellipsizing.py,
-	  python/examples/README: Ship simple python examples, currently
-	  only one sample program to demonstrate the use of the ellipsizing
-	  objects in libexo.
-	* python/__init__.py, python/pyexo.py, python/Makefile.am: Use a
-	  similar technique like pygtk to support installing multiple
-	  versions of the pyexo bindings in parallel.
-	* python/exomodule.c, python/exo.override, python/exo.defs,
-	  python/Makefile.am: Include the ExoEllipsizedLabel and
-	  ExoCellRendererEllipsizedText classes with the Python bindings.
-	* NEWS: Add note about the new Python bindings.
-
-2005-02-17	Benedikt Meurer <benny@xfce.org>
-
-	* python/exomodule.c, python/Makefile.am, python/exo.override, TODO,
-	  python/exo.defs, configure.ac, acinclude.m4, Makefile.am: Initial
-	  work on the Python bindings, currently includes ExoIconBar and
-	  ExoXsessionClient.
-
-2005-02-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo.spec.in: Do not include the API docs with the exo-devel package,
-	  but instead, use a exo-docs package.
-	* exo.spec.in: Do not depend on D-BUS any longer.
-	* exo.spec.in: Add --enable-final as configure parameter.
-
-2005-02-15	Benedikt Meurer <benny@xfce.org>
-
-	* docs: Restructured.
-
-2005-02-15	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac, po/libexo.pot, po/libexo-0.3.pot: Include the major
-	  and minor version in the translation domain name to allow parallel
-	  installations of libexo-0.2 and libexo-0.3.
-	* configure.ac, exo/exo-dbus.c, exo/exo-dbus.h, exo/exo.h,
-	  exo/Makefile.am, po/POTFILES.in: Remove dependency on D-BUS.
-	* configure.ac, exo/exo-ice.h, exo/exo-ice.c, exo/Makefile.am,
-	  po/POTFILES.in: Remove ICE module, which can be readded later
-	  on, but for now, we'll stick to the lightweight session
-	  management provided by ExoXSessionClient.
-	* configure.ac, NEWS, exo/exo-0.2.pc.in, exo/exo-0.3.pc.in,
-	  exo/Makefile.am: Bump version to 0.3.0svn.
-	* Makefile.am: Remove stale reference to the m4 directory.
-	* exo/exo.h, exo/exo-property-proxy.h, exo/exo-property-proxy.c,
-	  exo/Makefile.am, po/POTFILES.in: Remove obsolete class
-	  ExoPropertyProxy, which was replaced with ExoBinding already.
-	* exo/exo-file-watch.h, exo/exo-file-watch.c, exo/exo.h,
-	  exo/Makefile.am, po/POTFILES.in: Remove obsolete class ExoFileWatch.
-	  Thunar will include a better implementation.
-	* exo/exo-uri.c, exo/exo-uri.h, exo/exo.h, exo/Makefile.am,
-	  po/POTFILES.in: Remove unused class ExoUri.
-	* exo/Makefile.am: Added rules to properly auto-generate the built
-	  files. These autogeneration rules are only available if
-	  --enable-maintainer-mode is specified for configure (which is
-	  usually the case for autogen runs, but not for enduser configure
-	  runs).
-
-2005-02-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-cell-render-ellipsized-text.c
-	  (exo_cell_renderer_ellipsized_text_render): Make sure that the
-	  cell actually contains text (text string != NULL), because else
-	  the Pango extension code will dump core if libexo is built with
-	  --enable-final.
-
-2005-01-29	Benedikt Meurer <benny@xfce.org>
-
-	* po/de.po: Improved translations for the toolbar style menu.
-
-2005-01-29	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-toolbars-view.c(exo_toolbars_view_context_menu), po/de.po,
-	  po/libexo.pot: Better texts for the toolbar style chooser menu.
-
-2005-01-27	Benedikt Meurer <benny@xfce.org>
-
-	* m4/, configure, Makefile.in, debian/, depcomp, docs/Makefile.in,
-	  config.guess, exo/Makefile.in, config.sub, ltmain.sh, gtk-doc.make,
-	  po/Makefile.in.in, po/*.gmo, mkinstalldirs, config.h.in, missing,
-	  aclocal.m4, install-sh: Removed all auto-generated files from the
-	  repository.
-	* autogen.sh, configure.ac: Use xfce4-dev-tools.
-	* exo.spec.in: Use @PACKAGE_TARNAME@ and @PACKAGE_VERSION@ instead
-	  of hardcoding values.
-
-2004-12-23	Benedikt Meurer <benny@xfce.org>
-
-	* gtk-doc.make, exo/Makefile.am: Get 'make dist' to work from a
-	  clean checkout.
-
-2004-12-13	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac, Makefile.am, THANKS, po/en_GB.po, po/en_GB.gmo: Added
-	  en_GB translations from Dwayne Bailey <dwayne@translate.org.za>.
-
-2004-12-12	Benedikt Meurer <benny@xfce.org>
-
-	* po/libexo.pot, po/de.po, po/de.gmo: Ran make update-po.
-
-2004-12-09	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac, exo.spec.in, Makefile.am: Added .spec file and
-	  "rpm" target.
-
-2004-12-06	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c: Sync with latest changes to GtkIconView, esp.
-	  the accessibility support.
-	* exo/exo-icon-bar.c: Icon bar rendering and sizing fixes.
-
-2004-12-03	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac: Bump version to 0.2.1svn.
-
-2004-12-02	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-xsession-client.c: Added "restart-command" property.
-	* exo/exo-pango-extensions.c: Updated gtk-doc.
-	* docs/: Updated API documentation.
-	* po/libexo.pot, po/de.po, po/de.gmo: Updated translations.
-	* configure.ac, NEWS: Version 0.2.0.
-
-2004-12-01	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.c, exo/exo-icon-view.h, docs/: Added documentation
-	  for the ExoIconView class.
-
-2004-11-30	Benedikt Meurer <benny@xfce.org>
-
-	* exo/: Copyright corrections.
-
-2004-11-28	Benedikt Meurer <benny@xfce.org>
-
-	* NEWS, po/de.po, po/de.gmo: Fix version number.
-
-2004-11-28	Benedikt Meurer <benny@xfce.org>
-
-	* po/libexo.pot: Updated.
-	* po/de.po, po/de.gmo: Completed the german translations.
-	* exo/exo-binding.c, exo/exo-binding.h: Avoid recursing in notify
-	  handlers for mutual bindings by blocking the destination handler.
-	* configure.ac, NEWS: Version 0.2.0pre2.
-
-2004-11-28	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-view.h: Added 4 padding fields to ExoIconViewClass
-	  for future expansion.
-	* exo/exo-md5.h, exo/exo-md5.c: Changed the API to be compatible
-	  with libgnome/libegg.
-	* docs/: Updated API documentation.
-
-2004-11-27	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-ellipsized-label.c(exo_ellipsized_label_new): Fix typo, the
-	  property is named "label", not "text".
-	* exo/exo-icon-bar.c(exo_icon_bar_style_set): Reset background color
-	  only if the widget is realized.
-
-2004-11-27	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-bar.c: Update background of the bin_window as well
-	  when style changes. This fixes bug #23.
-
-2004-11-26	Benedikt Meurer <benny@xfce.org>
-
-	* NEWS: Updated for 0.2.0pre1.
-
-2004-11-26	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-string.h, exo/exo-string.c: Added exo_strndupv() utility
-	  function to duplicate string arrays.
-	* exo/exo-enum-types.h, exo/exo-pango-extensions.c,
-	  exo/exo-enum-types.c, exo/exo-pango-extensions.h: Added 
-	  EXO_PANGO_ELLIPSIZE_NONE to be compatible with Pango. Use
-	  ellipsizing functions provided by Pango 1.6 if build against
-	  Pango 1.6 or above.
-	* exo/exo-xsession-client.h, exo/exo-xsession-client.c: Added
-	  exo_xsession_client_get_restart_command() as per Brians request.
-	* exo/exo-ellipsized-label.c, exo/exo-ellipsized-label.h: Made this
-	  widget compatible with GtkLabel from Gtk+ 2.6.
-	* exo/exo-cell-renderer-ellipsized-text.c,
-	  exo/exo-cell-renderer-ellipsized-text.h: Added a CellRenderer widget
-	  that enhances GtkCellRendererText with the ability to automatically
-	  ellipsize text. This is compatible with GtkCellRendererText from
-	  Gtk+ 2.6.
-	* exo/Makefile.am, HACKING: Added "regenerate" targets to regenerate
-	  the marshallers and enum types files.
-	* exo/exo.h: Include new header files.
-	* docs/: Updated API documentation.
-	* configure.ac: Updated version to 0.2.0pre1.
-
-2004-11-25	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-toolbars-view.c, exo/exo-toolbars-view.h: Changed the
-	  semantics of the ExoToolbarsView class. The integrated right-click
-	  menu now contains an item "Customize Toolbars...", when the user
-	  has connected a handler to the "customize" signal. The icons
-	  where removed from the right-click menu until better icons are
-	  available.
-	* po/libexo.pot, po/de.po, po/de.gmo: Updated the german translations.
-	* docs/: Updated online documentation.
-	* exo/exo-icon-bar.c, exo/exo-icon-bar.h: Added an "orientation"
-	  property. Iconbar now supports horizontal and vertical mode.
-	* docs/Makefile.am, gtk-doc.make: Imported the gtk-doc make rules
-	  from Gtk+ 2.5.
-
-2004-11-23	Benedikt Meurer <benny@xfce.org>
-
-	* README, HACKING: Improved these documents.
-
-2004-11-23	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac, exo/exo.h, exo/exo-xsession-client.c,
-	  exo/exo-xsession-client.h, docs/: Added ExoXsessionClient class,
-	  which provides a lightweight X11R5 session management client.
-
-2004-11-23	Benedikt Meurer <benny@xfce.org>
-
-	* HACKING: Additional notes for releases.
-
-2004-11-22	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-bar.c, exo/exo-icon-bar.h, docs/tmpl/exo-icon-bar.sgml:
-	  ExoIconBar can no longer receive focus. Renamed "changed" signal to
-	  "selection-changed". Several code cleanups and gtk-doc completed.
-	* exo/exo-binding.c, exo/exo-gobject-extensions.c,
-	  exo/exo-binding.h, exo/exo-gobject-extensions.h,
-	  docs/tmpl/exo-binding.sgml, docs/tmpl/exo-gobject-extensions.sgml:
-	  Replacement for ExoPropertyProxy. Based on the GObject Binding
-	  Properties code from http://ex-code.com/glib-bind/. This
-	  implementation is easier, faster and requires less memory.
-	* exo/exo.h: Deprecated ExoPropertyProxy in favour of ExoBinding.
-	* configure.ac: Added some M4 magic to allow version tags. Updated
-	  version to 0.2.0svn.
-	* po/: Updated translations.
-	* exo/exo-private.c, exo/exo-private.h, exo/exo-toolbars-view.c: Get
-	  i18n support working.
-
-2004-11-16	Benedikt Meurer <benny@xfce.org>
-
-	* po/, configure.ac: Made libexo translatable.
-
-2004-11-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-ellipsized-label.c: Remove the tooltips from the label
-	  object.
-
-2004-11-15	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-toolbars-view.c: Emit "popup-menu" if the user clicks the
-	  toolbars while not in Editing mode.
-
-2004-11-12	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac, NEWS: Version 0.1.3.
-	* exo/exo-config.h.in, exo/exo-config.c, exo/exo.h, docs/exo-docs.sgml,
-	  docs/tmpl/exo-config.sgml, docs/exo-sections.txt: Added
-	  `Version Information' variables and macros similar to what
-	  we use in Xfce and Gtk+.
-	* m4/debug.m4: --enable-final is now on by default for plattforms
-	  that support it.
-	* exo/exo-toolbars-model.c(exo_toolbars_model_real_add_item): Always
-	  check if the action is valid.
-
-2004-11-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-string.c(exo_str_is_equal): Avoid call to strcmp here.
-	* configure.ac, exo/exo-toolbars-model.c: Elide the dependency on
-	  libxml-2.0. Replaced with a GLib based XML parser.
-	* configure.ac, m4/gtk-doc.m4, docs/: Added initial API reference
-	  documentation for libexo.
-
-2004-11-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-toolbars-private.c: Fix a crash on X setups where Gtk+
-	  doesn't use the best visual by default.
-
-2004-11-10	Benedikt Meurer <benny@xfce.org>
-
-	* AUTHORS: Added note about libegg.
-
-2004-11-09	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac: Depend on libxml-2.0. Set libtool verinfo properly.
-	* exo/exo-string.h, exo/exo-string.c: Added a function
-	  exo_str_elide_underscores that is used to remove underscores
-	  from label texts.
-	* exo/exo-marshal.list, exo/exo-marshal.c, exo/exo-marshal.h: Added
-	  additional marshallers required for the toolbars stuff.
-	* exo/exo-toolbars-private.h, exo/exo-toolbars-private.c,
-	  exo/exo-toolbars-model.h, exo/exo-toolbars-model.c,
-	  exo/exo-toolbars-view.h, exo/exo-toolbars-view.c,
-	  exo/exo-toolbars-editor-dialog.h, exo/exo-toolbars-editor-dialog.c,
-	  exo/exo-toolbars-editor.h, exo/exo-toolbars-editor.c: Added a
-	  customizable toolbar with backend and editing frontend. This is
-	  partly based on the editable toolbar found in libegg, but not
-	  compatible in any way.
-	* exo/exo.h: Include new headers.
-
-2004-10-12	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac: Version 0.1.2.
-	* m4/debug.m4: Added linker optimizations if --enable-final is
-	  given (recent GNU binutils required).
-
-2004-10-11	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-md5.c: Don't include <md5.h> if MD5Init wasn't found
-	  on the system.
-
-2004-09-30	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-icon-bar.c: Fixed the text color problem by introducing
-	  two new style properties active_item_text_color and
-	  cursor_item_text_color, which defaults to black.
-	* exo/exo-icon-bar.c(exo_icon_bar_paint_item): Always draw the text
-	  with ACTIVE or SELECTED state to work-around issues with gtk
-	  themes that do not yet know about ExoIconBar. We need a real
-	  solution here.
-	* TODO: Added note about the ExoIconBar theme problem.
-
-2004-09-25	Benedikt Meurer <benny@xfce.org>
-
-	* configure.ac: Version 0.1.1.
-
-2004-09-24	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-ice.c, exo/exo-ice.h: Add ICE module based upon the
-	  ice-layer from xfce4-session and the gnome-ice module of
-	  libgnomeui.
-	* configure.ac: Add check for ICE/XSM libraries.
-
-2004-09-23	Benedikt Meurer <benny@xfce.org>
-
-	* exo/exo-md5.c: Add a fallback implementation for the MD5 algorithm,
-	  taken from ROX-Filer. Only used if MD5Init isn't found on the
-	  system.
-
-2004-09-14	Benedikt Meurer <benny@xfce.org>
-
-	* Initial import.
+    l10n: Updates to Greek (el) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit d029c07d3c50e018da6d8ec8e11c90e0da75a4b0
+Author: Nick Schermer <nick@xfce.org>
+Date:   Tue Sep 1 12:28:28 2009 +0200
+
+    Some other fixes in the documentation.
+
+commit 5d2fe2a44ff0233643c8a712905123ea4b959bd3
+Author: Nick Schermer <nick@xfce.org>
+Date:   Tue Sep 1 12:27:52 2009 +0200
+
+    Remove the old tmpl files.
+
+commit f4b112e3cde701624944f90a430404cf20a0999c
+Author: Nick Schermer <nick@xfce.org>
+Date:   Tue Sep 1 12:25:44 2009 +0200
+
+    Move all the documentation in the code.
+
+commit 5f5e8f266f8dabef305a2a30c52534ed77fdbeda
+Author: Robert Hartl <hartl.robert@gmail.com>
+Date:   Mon Aug 31 17:21:17 2009 +0000
+
+    l10n: Slovak translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 7c8b6d56486c3900188d8ba1d1cdcf329777ad5a
+Author: Per Kongstad <p_kongstad@op.pl>
+Date:   Sun Aug 30 19:22:27 2009 +0000
+
+    l10n: Updates to Danish (da) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 95b8b3db51f1bbb02ef1fd136baabdd00a8845f5
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Aug 30 17:51:16 2009 +0200
+
+    Regenerate po files.
+
+commit 6c9441c2f056b22b4ec0b7fc797db16be012c1b8
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Aug 30 17:44:34 2009 +0200
+
+    Drop the 0.3 pot file.
+
+commit 3c9cee30fb1e6e018b379b37c9d3e774d3630a2e
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Aug 30 17:44:11 2009 +0200
+
+    Use the version api number in to pot file.
+
+commit 19375842e7f4a1bc8a54bd24af1afab0bf5f92f4
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Aug 30 17:35:14 2009 +0200
+
+    Launch desktop files using GIO (bug #5712).
+    
+    We cannot trust the file manager to handle this properly.
+    Also fix a bug with relive files.
+
+commit e812468ea05ba805a82b61a6922f3c50a24e43be
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Aug 30 13:58:11 2009 +0200
+
+    Use GIO for file loading/saving in the item editor.
+    
+    This makes the editor work with URIs and basically all
+    file locations GIO supports.
+    Also improved the error reporting a bit.
+
+commit 34e749f93ffac275444fe0d1a284bf85ea3314fa
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Aug 30 12:26:06 2009 +0200
+
+    Use the key file macros for the key and group names.
+
+commit b896ca3c980a087aea4931ed16c59c4f444e0dac
+Author: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>
+Date:   Sun Aug 30 13:55:59 2009 +0000
+
+    l10n: Updates to Greek (el) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit ce3c2d6606f856b4f0bebad286e0825d1622fc7f
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sat Aug 29 21:46:34 2009 +0200
+
+    Squashed commit of the following:
+    
+    commit c89f6932db63a37827ef5c05e06002d2eeb151ad
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Thu Aug 27 20:17:00 2009 +0200
+    
+        Strip the mailto: part from an uri since we work with mailto:%s in the desktop files.
+    
+    commit 8d82d52e199b8dfc8ef99763d203daaa6c4ed688
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 22:46:47 2009 +0200
+    
+        Fix distcheck with external gio module.
+    
+    commit a8c711840c69e434ea7b436cc9c84444328faadd
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 22:34:04 2009 +0200
+    
+        Update POTFILES.in.
+    
+    commit 3167524eae1b5dfacb3c4c6dc7adfe53f5f0b2e4
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 19:11:31 2009 +0200
+    
+        Use -compose for thunderbird (bug #4496).
+    
+    commit d72abb5d58b217a60fde7755f1102f1658747d39
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 18:44:35 2009 +0200
+    
+        Add gopher to the known browser URI schemes (bug #4497).
+    
+    commit 41b0c2a5d33f51195f0a01d9154b099f0a9cdc61
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 18:42:01 2009 +0200
+    
+        Update docs.
+    
+    commit d28a218994ae1b7ca3553a864a1ab28312141ab2
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 18:38:26 2009 +0200
+    
+        Update python bindings.
+    
+    commit e09d4bcc06dcd32a135b98b2ddca98e5d2e4e079
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 18:37:03 2009 +0200
+    
+        Remove exo-url functions and move dialog hook to gtk extensions.
+    
+    commit c07a72487229b8ab3b75326dd1a29211b9455914
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 18:09:09 2009 +0200
+    
+        Add FileManager support to exo-open and known URI completion.
+    
+        Move some code from exo-url to exo-open to complete non-uris
+        when passing for example some filenames to exo-open.
+    
+    commit a16361e2f7684ac84d9e80008969e3a7db5a5838
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 18:08:10 2009 +0200
+    
+        Iterate the mainloop so the dialog is fully destroyed before executing.
+    
+    commit 4a3b8878bde0e18faae459e1a530bbd0f6c24aee
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 18:05:16 2009 +0200
+    
+        Add FileManager support to exo-helper (bug #4445).
+    
+        Slightly modified patch provided by Christian Dywan.
+    
+    commit 48e3c3f52d41cc4da1b5d85d93990e205f5b13a1
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Wed Aug 26 18:02:02 2009 +0200
+    
+        Add a GIO module to handle known exo helper URIs.
+
+commit 6764461a5357e2901430ebe4e01c2f43acb3fe16
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 27 19:59:54 2009 +0200
+
+    Fix some lines in the spec files.
+
+commit 4211025e87e19c673c89a74c54291407ef00d261
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 27 19:52:11 2009 +0200
+
+    Drop the Encoding and Categories from the item editor (bug #4423).
+
+commit 59594bc3b42d4ba7acb675db54819707fa7c1bcb
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 27 18:09:54 2009 +0200
+
+    Protect strstr against null values, probably the crash in bug #3847.
+
+commit 54edd5fd5a501db44084a29eccde2851a82302b9
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Tue Aug 25 03:03:26 2009 +0200
+
+    Fix a typo related to the previous commit.
+
+commit 052fcaa595d2792dfd20232aefd442e80f2d179e
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Tue Aug 25 02:48:47 2009 +0200
+
+    Use on exo-helper-$(LIBEXO_VERSION_API) for exo-preferred-applications.
+
+commit db6628fe1cc9728bca23295ee896bcd9692c140f
+Author: Bauzhan Muftakhidinov <baurthefirst@gmail.com>
+Date:   Mon Aug 24 11:27:09 2009 +0000
+
+    l10n: New translation to Kazakh
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 68243933d72353c8c598eca73a6176bd1447fd5c
+Author: Carles Muñoz Gorriz <carlesmu@internautas.org>
+Date:   Sun Aug 23 08:38:34 2009 +0000
+
+    l10n: Initial Catalan po-doc translation.
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 60ca64ef596b9e05da4687c00d9b33b8b39bdb7a
+Author: Carles Muñoz Gorriz <carlesmu@internautas.org>
+Date:   Sun Aug 23 08:37:42 2009 +0000
+
+    l10n: Updates to Catalan translation.
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 8ae5449767707f42d24297e53ace52d75fe93797
+Author: Nuno Miguel <nunis@netcabo.pt>
+Date:   Sat Aug 22 21:29:39 2009 +0000
+
+    l10n: Updates to Portuguese (pt) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit db00686d3ff93104fd9ed7dcfee53728b28a10f2
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 20 21:40:33 2009 +0200
+
+    Update version to 0.5.0 and use new git build stuff.
+
+commit 583ec9b731b98451b3b6ffe5b385b313b005ef0a
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 20 21:21:06 2009 +0200
+
+    Fix some distcheck problems.
+
+commit f9abffbc1e8259c9e18f5aecfa51726b277a191b
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 20 19:51:22 2009 +0200
+
+    Don't abort if python is not found (bug #3751).
+
+commit 228e8f70760538235172d576ed17140c453c2983
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 20 19:39:02 2009 +0200
+
+    Prefer getvfsstat over getfsstat (bug #3718).
+
+commit d1aa907c12c4f3878cbefa1609a5a27cee41d5ff
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 20 19:35:58 2009 +0200
+
+    Fix missing include (bug #3751).
+
+commit 98d5545b871b591ac93e780c2b1b135e1af9c694
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 20 19:32:01 2009 +0200
+
+    Fix abicheck and visibility of exo-(simple)-job.
+
+commit 05627cdb04d5d49d947f6acb7e3bbea26cfe5ec9
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Aug 20 19:23:51 2009 +0200
+
+    Lookup the hardcoded paths for (u)mount during configure (bug #3717).
+
+commit c98c4d368f6a091d995c1d916b091f76ae4a5614
+Author: Nick Schermer <nick@xfce.org>
+Date:   Wed Aug 19 22:22:41 2009 +0200
+
+    Fix module.xml, still had multiple maintainers.
+
+commit 7eb4fcda3ba1502e849408cb4fa8f4a21a868df6
+Author: Nick Schermer <nick@xfce.org>
+Date:   Wed Aug 19 18:43:20 2009 +0200
+
+    Add some tests for the noop and string functions.
+
+commit ffe5750f096bfcfa2d88da01b341a631f712cea9
+Author: Nick Schermer <nick@xfce.org>
+Date:   Wed Aug 19 18:13:14 2009 +0200
+
+    Improve exo_str_replace() a bit and make it handle NULL strings better.
+
+commit c8acc832c7635fd1bd29a5eb42f0d6f498d9d65d
+Author: Nick Schermer <nick@xfce.org>
+Date:   Wed Aug 19 17:28:41 2009 +0200
+
+    Add Since 0.3.101 in the docs for exo_str_is_empty().
+
+commit 547d3ea84d9502eeb1e1c8102bdb9812f5cf6ec2
+Author: Nick Schermer <nick@xfce.org>
+Date:   Wed Aug 19 17:27:22 2009 +0200
+
+    Use exo_str_is_empty() in the library.
+
+commit ed360b61b22334a58e3d9e8acfd0ace2b2001dcf
+Author: Nick Schermer <nick@xfce.org>
+Date:   Wed Aug 19 16:55:11 2009 +0200
+
+    Add exo_str_is_empty() macro.
+    
+    Add a helper macro check check if a string is NULL
+    or starts with a nul-terminated character.
+
+commit 10d04c4d5bbd1a6a62a5aea2745e3f13dab00400
+Author: Nick Schermer <nick@xfce.org>
+Date:   Tue Aug 18 22:33:45 2009 +0200
+
+    Fix exo_strndupv.
+    
+    Previous implemenation segfaulted and could overflow if
+    @num was larger then the number of items in @strv.
+    
+    Also did a slight API break, making @num an unsigned int.
+
+commit 49d214266478cdec15761d7fcb18e3e48138c907
+Merge: 46ee5ce 58ebfe8
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Sat Aug 15 23:56:52 2009 +0200
+
+    Merge branch 'master' of ssh://git.xfce.org/git/xfce/exo
+
+commit 46ee5ce1284231ce6437e4465b54337dad0393e7
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Sat Aug 15 23:50:09 2009 +0200
+
+    Rename exo-0.3 to exo-1. Merge versioning-from-0.3-to-1 branch.
+    
+    commit c9b8d885c034022ae7cbaba91f17ffc15b5608ea
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Fri Aug 14 22:59:00 2009 +0200
+    
+        Cleanup some unneeded Gtk or Glib version checks.
+    
+    commit 6a9b850134897ea57830de53dce38d6abb510193
+    Author: Nick Schermer <nick@xfce.org>
+    Date:   Fri Aug 14 22:52:34 2009 +0200
+    
+        Move some private binding struts out of the header.
+    
+    commit 5ba0cb5e14b1e89f94c9e1a3fa9763dc57220249
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 17:16:47 2009 +0200
+    
+        Remove exo_icon_view_{set,get}_{text,markup,pixbuf}_column() functions.
+    
+    commit 28e7f49b8864163aacf764b21d07592a14072a45
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 16:54:36 2009 +0200
+    
+        Drop ExoPangoEllipsizeMode and related functions.
+    
+    commit 7ba2f84774dbf69f669cc6677cae10d382c6b66d
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 16:49:00 2009 +0200
+    
+        Remove exo_md5_*() functions and ExoMd5Digest. There's GChecksum now.
+    
+    commit 0d7c388f8875a32d902cd94ca492787c812121d4
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 16:40:57 2009 +0200
+    
+        Remove exo_intern_string() and exo_intern_static_string().
+    
+    commit 796215a00b477d8ad10fd5a3d1c6b575739ef2ba
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 16:31:55 2009 +0200
+    
+        Remove ExoEllipsizedLabel from exo.symbols.
+    
+    commit ec8c2ced12d05a0e54ade145527e0d2fb752c36c
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 16:26:10 2009 +0200
+    
+        Drop ExoEllipsizedLabel entirely.
+    
+    commit 9bb4e592eb7c04d7227292ab3eb59f47a5cb634c
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 15:39:50 2009 +0200
+    
+        Drop exo_gtk_object_ref_sink and exo_gtk_radio_action_set_current_value.
+    
+        This is part of bug #5671, which is about dropping deprecated/obsolete
+        bits from exo before we switch from exo-0.3 to exo-1.
+    
+    commit 79ce003347ba5e4bb32a9f3c2cd93739fc07a0f3
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 02:10:39 2009 +0200
+    
+        Make Python bindings work again. pyexo.require('0.3') works with exo-1.
+    
+    commit 1793ad0e2fc2a2407f5babfc3c6464bd4cf4c250
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 01:26:33 2009 +0200
+    
+        Rename 0.3 to 1 in even more places. Python module might not work.
+    
+    commit 2de4f022e76541549f2c7a1e1e41116b8da98e2c
+    Author: Jannis Pohlmann <jannis@xfce.org>
+    Date:   Thu Aug 13 00:09:35 2009 +0200
+    
+        Switch from exo-0.3 to exo-1 (library and command names).
+    
+        I might have missed a few spots. This is not tested yet.
+
+commit 58ebfe836c180faac9b2675576f20a1c5fc71e06
+Author: jannis <jannis@xfce.org>
+Date:   Sat Aug 15 00:13:12 2009 +0000
+
+    l10n: Updates to German (de) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 158bc6c41fdd3b7a376b91dbd50140f3ee553b00
+Author: jannis <jannis@xfce.org>
+Date:   Sat Aug 15 00:03:06 2009 +0000
+
+    l10n: Updates to German (de) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 4c725114b766723232351bfb39f453d94cf8d631
+Author: Nick Schermer <nick@xfce.org>
+Date:   Wed Aug 12 21:17:30 2009 +0200
+
+    Make some changes to exo-desktop-item-edit.
+    
+    - Remove bold labels
+    - Use new tooltip api
+
+commit f4b5526ca19811a601da06326bae5a0038025f28
+Author: Nick Schermer <nick@xfce.org>
+Date:   Tue Aug 11 17:08:55 2009 +0200
+
+    Add Jannis too.
+
+commit 4f8a83c2121fa3fb8a7ece2b260a447d735d1eed
+Author: Nick Schermer <nick@xfce.org>
+Date:   Tue Aug 11 17:06:32 2009 +0200
+
+    Add module description file.
+
+commit ecb1c9ad33f659f2d9c39430df103160dcddbcdd
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Sat Aug 8 13:26:34 2009 +0000
+
+    update xfce translation
+    
+    (Old svn revision: 30448)
+
+commit 7aa7d3b94bccc34bb8014a3aa3246084ea64ad99
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Aug 7 14:37:14 2009 +0000
+
+    Do not escape commas in url's (bug #5654).
+    
+    
+    (Old svn revision: 30446)
+
+commit 868cbbb0112834ecfc1071799d5f12c61bc88aa7
+Author: Nick Schermer <nick@xfce.org>
+Date:   Tue Aug 4 22:06:52 2009 +0000
+
+    Fix possible segfault in exo, bug #5633.
+    
+    
+    (Old svn revision: 30428)
+
+commit 3728134024d8b40422c14b745f5dc6adb1ede04f
+Author: Nick Schermer <nick@xfce.org>
+Date:   Mon Jul 20 17:29:14 2009 +0000
+
+    Fix crash in exo code if the ui-manager is not up2date.
+    
+    
+    (Old svn revision: 30359)
+
+commit 3298dfb12b3eac0f8ab6f285fc3afeb71385eeca
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Jul 19 15:58:43 2009 +0000
+
+    Fix critical warnings if pixbuf is not found, ellipsize labels.
+    
+    
+    (Old svn revision: 30352)
+
+commit 106cacf9742aabb3d3f6c557387cc37d9d06f6a6
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Jul 17 21:37:29 2009 +0000
+
+    Cleanup a bunch of code.
+    
+    Use Glib macros for defining a type, saves a bunch
+    of code and is thread-safe.
+    
+    Drop ; after G_{BEGIN,END}_DECLS macros.
+    
+    Move G_GNUC_INTERNAL macros in front of the function
+    to avoid problems with Solaris. Remove them from the
+    code that is compiled as an executable.
+    
+    Tabs and spaces cleanups.
+    
+    
+    (Old svn revision: 30340)
+
+commit 35e8346a9e3b699c52f092fdb5cc145eb87e683b
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Jul 16 21:30:25 2009 +0000
+
+    Small optimization in exo_str_is_equal.
+    
+    
+    (Old svn revision: 30332)
+
+commit d04a8abc1c655d765ed3b6d9b58b7de84788b5cf
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Jul 16 20:22:46 2009 +0000
+
+    Drop the slice allocator macros and use it directly.
+    
+    
+    (Old svn revision: 30331)
+
+commit 388ba9cec1c6a8626a115d3f0b83438cefdc16c7
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sat Jul 11 20:42:55 2009 +0000
+
+    Revert some unneeded (gchar *) casts when -Wwrite-strings is not used.
+    
+    
+    (Old svn revision: 30287)
+
+commit 62d16b4af41f2880455115854a8a571c94e81871
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Jul 10 18:48:14 2009 +0000
+
+    Add another case in exo-open that should work.
+    
+    
+    (Old svn revision: 30254)
+
+commit 6af5a64f0a5b35551ad819e68cc9e3b91d44c7cd
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Jul 10 18:38:05 2009 +0000
+
+    Make run in terminal in xfrun4 work again.
+    
+    
+    (Old svn revision: 30252)
+
+commit f578ac2d91d63241af2db9987e6b94514f5d183e
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Jul 10 18:24:36 2009 +0000
+
+    Fix quotes in urls, only quote when the arg contains spaces (bug #5461).
+    
+    
+    (Old svn revision: 30251)
+
+commit ce99ab4f0dbe661236c8a2fe3eca4620f41d8ac1
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Jul 10 16:56:33 2009 +0000
+
+    Fix a bunch of compiler warnings.
+    
+    
+    (Old svn revision: 30250)
+
+commit 227832b4dd9238f30060233471f579c415a0d8b1
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Thu Jul 9 12:42:21 2009 +0000
+
+    Add Asturian translations
+    
+    (Old svn revision: 30229)
+
+commit 82e0ba18bc761d0f13d0c29089b6adb227327285
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Thu Jul 9 10:03:02 2009 +0000
+
+    update xfce translation
+    
+    (Old svn revision: 30227)
+
+commit 93b3e6487ebbf8f20623796d431b6d0eb732d12c
+Author: Gabor Kelemen <kelemeng@gnome.hu>
+Date:   Tue Jul 7 17:10:19 2009 +0000
+
+    2009-07-07  Gabor Kelemen  <kelemeng@gnome.hu>
+    
+    	* hu.po: Translation updated.
+    
+    
+    (Old svn revision: 30215)
+
+commit 63b245c3d6ac4f14a7f5ec71f86d5bbe2b459091
+Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
+Date:   Sat Jul 4 12:01:05 2009 +0000
+
+    ja translation update
+    
+    
+    
+    (Old svn revision: 30194)
+
+commit 7df7697cced88a5e00ece318c5279baa4435c1e3
+Author: Per Kongstad <p_kongstad@op.pl>
+Date:   Thu Jul 2 18:43:34 2009 +0000
+
+    	* da.po: Danish translation update (Per Kongstad)
+    
+    (Old svn revision: 30139)
+
+commit 8f5640632017f8d5a9c1d1982c597e76b636278b
+Author: Piarres Beobide <pi@beobide.net>
+Date:   Mon Jun 22 22:14:44 2009 +0000
+
+    libexo Basque translation update
+    
+    
+    (Old svn revision: 30070)
+
+commit 1fd149a0509cf05913af622c2c15f5d7bcc8d138
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Mon Jun 15 12:47:08 2009 +0000
+
+    update translation
+    
+    (Old svn revision: 30019)
+
+commit 9fa7aa8e890922d16cdda8fe5568ca5b6a3c3f6e
+Author: Gabor Kelemen <kelemeng@gnome.hu>
+Date:   Sat Jun 13 09:50:22 2009 +0000
+
+    2009-06-09  Gabor Kelemen  <kelemeng@gnome.hu>
+    
+    	* hu.po: Translation reworked
+    
+    
+    (Old svn revision: 30003)
+
+commit 3378626df227b89cf65203ad3ce5c11c93f37967
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Tue Jun 9 20:33:53 2009 +0000
+
+    Drop svn:executable bit from po files
+    
+    (Old svn revision: 29999)
+
+commit 982542dbc1d17e45ff05ca5c6c986e91cabacecb
+Author: Dumitru Moldovan <niznaiul@gmail.com>
+Date:   Sat May 30 12:58:12 2009 +0000
+
+    Added initial xfce4-settings Romanian translation
+    Changed mail addresses for myself and Romanian language team
+    Other minor improvements and updates for libexo, thunar, terminal and xfcalendar
+    
+    
+    
+    (Old svn revision: 29989)
+
+commit 1e30c60b86190da8c21db601223e9c83abd8016f
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Fri May 29 10:43:27 2009 +0000
+
+    update xfce translations
+    
+    (Old svn revision: 29988)
+
+commit 50f97784c1b4a5f4ae75fad1e5da5648d43fff5a
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Thu May 14 14:59:24 2009 +0000
+
+    Remove the branch code from trunk again.
+    
+    
+    (Old svn revision: 29958)
+
+commit 8750a6cf158a549c2ea95dd0f97327ef789dd7dd
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Thu May 14 14:42:26 2009 +0000
+
+    	* configure.in.in, Makefile.am, exo-thumbnailers/Makefile.am,
+    	  exo-thumbnailers/exo-generic-thumbnailer.{c,h},
+    	  exo-thumbnailers/exo-thumbnailer-service-dbus.xml,
+    	  exo-thumbnailers/exu-thumbnailer-service-main.c,
+    	  exo-thumbnailers/exo-thumbnailer-service.{c,h}: Initial import of a
+    	  raw skeleton for the implementation of the Thumbnailer Specification.
+    	  ExoGenericThumbnailer implements org.freedesktop.thumbnailer.Generic and
+    	  ExoThumbnailerService is the D-Bus service that establishes the D-Bus
+    	  connection and makes sure the thumbnailer service always runs only once.
+    	  There seems to be something wrong right now, though. I can't get the
+    	  service to be recognized by D-Bus properly at all ...
+    
+    (Old svn revision: 29956)
+
+commit e4bb22e08116ef7be8c9d6b7f335f1b1d0ff7043
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Mon May 11 22:48:08 2009 +0000
+
+    	* docs/reference/exo-sections.txt, docs/reference/tmpl/exo-job.sgml:
+    	  Update sections.
+    	* docs/reference/exo-open.xml: Fix typo spotted by Yves-Alexis.
+    	* exo/exo-job.{c,h}: Add new function exo_job_send_to_mainloop() which
+    	  is a simple wrapper around g_io_scheduler_job_send_to_mainloop(). I
+    	  don't want to expose any the GIO scheduling internals.
+    
+    (Old svn revision: 29948)
+
+commit 9d4de3c1d518aaa6787f71461183377e516892d9
+Author: Nick Schermer <nick@xfce.org>
+Date:   Mon May 11 19:42:21 2009 +0000
+
+    	* exo/exo-job.c, exo/exo-cell-renderer-icon.c: Fix compiler warnings.
+    	* exo-open/main.c: Ignore unknown options so the user can send
+    	  arguments to the exo-open terminal parameters.
+    
+    (Old svn revision: 29942)
+
+commit d4dead05937d2dc797c3cedbc64ccf8342128ada
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Mon May 11 19:16:17 2009 +0000
+
+    update latvian translation
+    
+    (Old svn revision: 29940)
+
+commit 81f770fcac434930f6ee84aac7cabd45a2431601
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Mon May 11 17:14:48 2009 +0000
+
+    Update xml documentation
+    
+    (Old svn revision: 29937)
+
+commit b11b52ef8a005c9f99e7b8dd8615a43f40525023
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Mon May 11 16:27:50 2009 +0000
+
+    update translations
+    
+    (Old svn revision: 29936)
+
+commit aa9f64adbdc0095cf9d059693eed5272b4e65235
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Tue May 5 21:39:22 2009 +0000
+
+    	* configure.in.in: Add hint that we'll need to update library version
+    	  information before the next release, due to the added APIs.
+    	* docs/reference/exo-docs.sgml,
+    	  docs/reference/tmpl/exo-simple-job.sgml,
+    	  docs/reference/tmpl/exo-job.sgml, docs/reference/exo-sections.txt:
+    	  Add new section for ExoJob and ExoSimpleJob.
+    	* exo/exo-job.c, exo/exo-simple-job.c: Improve the API documentation
+    	  and associate class methods with the signals of ExoJob.
+    	  They come from Thunar and can be used to wrap threaded/asynchronous
+    	  operations with objects that support signals and subclassing.
+    
+    (Old svn revision: 29927)
+
+commit 9f5de6f174bba7f48a44650fe202265f16088031
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Tue May 5 20:07:22 2009 +0000
+
+    	* docs/reference/exo.types, exo/Makefile.am, exo/exo-job.{c,h},
+    	  exo/exo-simple-job.{c,h}, exo/exo.h: Add ExoJob and ExoSimpleJob.
+    		They come from Thunar and can be used to wrap threaded/asynchronous
+    		operations with objects that support signals and subclassing.
+    	* libexo-0.3.pot, *.po: Merge new strings.
+    
+    (Old svn revision: 29926)
+
+commit e1c575f6322bfbc7f3208eee83c47aa5967d165b
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Mon Apr 20 13:39:50 2009 +0000
+
+    forgot libexo in this job that is getting me very tired
+    
+    (Old svn revision: 29863)
+
+commit a25fc8925da8a4131858d348b1a5a3dc346dd398
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Mon Apr 20 12:10:17 2009 +0000
+
+    xfce translation update
+    
+    (Old svn revision: 29856)
+
+commit c8461ecbf94571728a03d72fd285d18b7950b169
+Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
+Date:   Thu Apr 16 14:54:01 2009 +0000
+
+    Japanese translation update
+    
+    
+    
+    (Old svn revision: 29823)
+
+commit 660eb8e2102a9afe5f1ac97647be0d3fe7a4c1d2
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Thu Apr 16 08:45:36 2009 +0000
+
+    galician translation update
+    
+    (Old svn revision: 29822)
+
+commit c921c13fb3b39593b4f86887be2847cd2d0daf1e
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Mon Apr 13 02:22:25 2009 +0000
+
+    	* configure.in.in, docs/reference/tmpl/exo-cell-renderer-icon.sgml,
+    	  exo/Makefile.am, exo/exo-cell-renderer-icon.c: Add GIO to the
+    	  dependencies and bump GLib to 2.16, GTK+ to 2.14. Add "gicon"
+    	  property to ExoCellRendererIcon. It benefits from the same SVG
+    	  speedup as the icon property.
+    
+    (Old svn revision: 29789)
+
+commit 785a7b0402070fd6b3315c9c6daa1c59f2e0689b
+Author: Stephan Arts <stephan@xfce.org>
+Date:   Sun Apr 12 21:33:01 2009 +0000
+
+    Update NEWS, ChangeLog and version info
+    
+    
+    
+    (Old svn revision: 29784)
+
+commit 4ce7ecf5783b6822451b72da01558d53606d99ac
+Author: Jannis Pohlmann <jannis@xfce.org>
+Date:   Wed Apr 8 12:01:08 2009 +0000
+
+    	* configure.in.in, docs/manual/da/images/, docs/manual/gl/images/: Fix
+    	  broken build due to incomplete integration of the Danish and Galician
+    	  manual translations.
+    	* exo-helper/exo-helper-launcher-dialog.c: Add gettext() call around
+    	  two strings which are already as translatable with N_() (bug #5203).
+    	* libexo-0.3.pot, *.po: Update translation files (no real changes
+    	  though).
+    
+    (Old svn revision: 29730)
+
+commit 26e6da211f0f2b1a356790040d94c3ab2d3e17a4
+Author: Piotr Sokól <piotr.sokol@10g.pl>
+Date:   Wed Apr 8 11:49:55 2009 +0000
+
+    Updated Polish translations
+    
+    (Old svn revision: 29729)
+
+commit 110dc36ee11bc6a843d8af224cd053c869020609
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Tue Apr 7 22:41:49 2009 +0000
+
+    Doc maintainance (make update-xml)
+    
+    (Old svn revision: 29723)
+
+commit 30540aeb200caa307faaea3268b97c73b1df010a
+Author: Piotr Sokól <piotr.sokol@10g.pl>
+Date:   Mon Mar 30 15:14:15 2009 +0000
+
+    Updated Polish translations
+    
+    (Old svn revision: 29690)
+
+commit a57a8ad0b917fd16e328359fd193494150d2a467
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sun Mar 29 22:03:06 2009 +0000
+
+    Translations updates - es it ku
+    
+    (Old svn revision: 29689)
+
+commit bd759ad703cd7112de9fe12e6efadf2260a29b51
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Fri Mar 27 22:27:47 2009 +0000
+
+    Translations updates - gl pt ru
+    
+    (Old svn revision: 29686)
+
+commit 7130dba459f80fd36b11535caabc98230de3ed77
+Author: Piotr Sokól <piotr.sokol@10g.pl>
+Date:   Mon Mar 23 10:13:59 2009 +0000
+
+    Updated Polish translations
+    
+    (Old svn revision: 29682)
+
+commit 8bb87fb690fa593add1446296a01356dd8d3247c
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Mar 22 09:09:16 2009 +0000
+
+    Quote arguments passed to exo-open (bug #5132).
+    
+    
+    (Old svn revision: 29679)
+
+commit c402c4888683b442eb9a3094fede16e41173d737
+Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
+Date:   Thu Mar 19 15:02:17 2009 +0000
+
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    	* ja.po: Japanese translation update (Masato Hashimoto)
+    
+    (Old svn revision: 29675)
+
+commit 1a1cd089b121b979b1be9c2827e7dc458bf73c9a
+Author: Piotr Sokól <piotr.sokol@10g.pl>
+Date:   Mon Mar 16 11:17:09 2009 +0000
+
+    Updated Polish translations
+    
+    (Old svn revision: 29669)
+
+commit 8c9120f3ddf68cac29360d8b51fdf65df82c45a5
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Mar 15 11:24:01 2009 +0000
+
+    Add it docs to configure. Patch by Maximilian.
+    
+    
+    (Old svn revision: 29664)
+
+commit fa8af013e2256c1a30f2b48da09ef03e60e05a88
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sat Mar 14 14:55:12 2009 +0000
+
+    Translations updates - da es fr gl it nn
+    
+    (Old svn revision: 29660)
+
+commit 36c15602ea0c88cc338306b40ca03b8b14951e51
+Author: Piotr Sokól <piotr.sokol@10g.pl>
+Date:   Sun Mar 8 16:05:36 2009 +0000
+
+    Updated Polish translations
+    
+    
+    (Old svn revision: 29647)
+
+commit 01513a91241018ef07029781febd00613b3a6374
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Thu Mar 5 14:52:02 2009 +0000
+
+    Renamed pt_PT to pt and nb_NO to nb (bug #4574)
+    
+    (Old svn revision: 29645)
+
+commit 5c65e204abef8d64036c871becd1f665d512b78f
+Author: Jean-François Wauthy <pollux@xfce.org>
+Date:   Thu Mar 5 10:57:38 2009 +0000
+
+    Rename nb_NO.po into nb.po
+    
+    (Old svn revision: 29644)
+
+commit 2372f27b553e921034ee647623717588a01e8657
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Mon Mar 2 23:18:41 2009 +0000
+
+    Translations updates - pt_PT
+    
+    (Old svn revision: 29641)
+
+commit 30cfbeca1037b8c05867a055b777770f51fed487
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sun Mar 1 22:47:35 2009 +0000
+
+    Translations updates - es pl uk
+    
+    (Old svn revision: 29639)
