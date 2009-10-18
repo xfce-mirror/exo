@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-10 20:18+0200\n"
+"POT-Creation-Date: 2009-10-18 20:05+0200\n"
 "PO-Revision-Date: 2009-07-07 15:05+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
@@ -1365,12 +1365,12 @@ msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Egy alkalmazás megakadályozza a kötet („%s”) kiadását"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:919
+#: ../exo-mount/exo-mount-hal.c:964
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Nincs jogosultsága a kötet („%s”) csatolására"
 
-#: ../exo-mount/exo-mount-hal.c:934
+#: ../exo-mount/exo-mount-hal.c:979
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1379,7 +1379,7 @@ msgstr ""
 "Az üres lemezek nem csatolhatók, ehelyett egy CD-író alkalmazás (például az "
 "Xfburn) használatával adatokat vagy hangot rögzíthet rá"
 
-#: ../exo-mount/exo-mount-hal.c:945
+#: ../exo-mount/exo-mount-hal.c:990
 #, fuzzy, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
@@ -1389,31 +1389,31 @@ msgstr ""
 "hangsávokat"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1010
+#: ../exo-mount/exo-mount-hal.c:1055
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "Nincs jogosultsága leválasztani a titkosítási réteget"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1015
+#: ../exo-mount/exo-mount-hal.c:1060
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "Egy alkalmazás megakadályozza a titkosítási réteg leválasztását"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1099
+#: ../exo-mount/exo-mount-hal.c:1144
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Nincs jogosultsága a kötet („%s”) leválasztására"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1104
+#: ../exo-mount/exo-mount-hal.c:1149
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Egy alkalmazás megakadályozza a kötet („%s”) leválasztását"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1109
+#: ../exo-mount/exo-mount-hal.c:1154
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "A kötetet („%s”) valószínűleg parancssorból csatolták"

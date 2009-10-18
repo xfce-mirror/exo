@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-10 20:18+0200\n"
+"POT-Creation-Date: 2009-10-18 20:05+0200\n"
 "PO-Revision-Date: 2007-02-23 21:39+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi <punjabi-l10n@lists.sf.net>\n"
@@ -1337,12 +1337,12 @@ msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "ਇੱਕ ਐਪਲੀਕੇਸ਼ਨ \"%s\" ਵਾਲੀਅਮ ਨੂੰ ਬਾਹਰ ਕੱਢਣ ਤੋਂ ਰੋਕ ਰਿਹਾ ਹੈ"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:919
+#: ../exo-mount/exo-mount-hal.c:964
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "ਤੁਹਾਨੂੰ \"%s\" ਮਾਊਟ ਕਰਨ ਦਾ ਅਧਿਕਾਰ ਨਹੀਂ ਹੈ"
 
-#: ../exo-mount/exo-mount-hal.c:934
+#: ../exo-mount/exo-mount-hal.c:979
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1351,7 +1351,7 @@ msgstr ""
 "ਖਾਲੀ ਡਿਸਕਾਂ ਨੂੰ ਮਾਊਂਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ, CD ਰਿਕਾਰਡ ਕਰਨ ਵਾਲੇ ਐਪਲੀਕੇਸ਼ਨ, ਜਿਵੇਂ ਕਿ "
 "Xfburn  ਆਦਿ ਨੂੰ ਆਡੀਓ ਜਾਂ ਡਾਟਾ ਡਿਸਕ ਲਿਖਣ ਲਈ ਵਰਤੋਂ"
 
-#: ../exo-mount/exo-mount-hal.c:945
+#: ../exo-mount/exo-mount-hal.c:990
 #, fuzzy, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
@@ -1359,31 +1359,31 @@ msgid ""
 msgstr "ਆਡੀਓ CD ਮਾਊਟ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ, ਆਡੀਓ ਟਰੈਕ ਚਲਾਉਣ ਲਈ Xfmedia ਵਰਤੋਂ"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1010
+#: ../exo-mount/exo-mount-hal.c:1055
 #, fuzzy, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "ਤੁਹਾਨੂੰ \"%s\" ਮਾਊਟ ਕਰਨ ਦਾ ਅਧਿਕਾਰ ਨਹੀਂ ਹੈ"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1015
+#: ../exo-mount/exo-mount-hal.c:1060
 #, fuzzy, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "ਇੱਕ ਐਪਲੀਕੇਸ਼ਨ ਵਾਲੀਅਮ \"%s\" ਨੂੰ ਅਣ-ਮਾਊਂਟ ਕਰਨ ਤੋਂ ਰੋਕ ਰਹੀ ਹੈ"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1099
+#: ../exo-mount/exo-mount-hal.c:1144
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "ਵਾਲੀਅਮ \"%s\" ਨੂੰ ਅਣ-ਮਾਊਂਟ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਅਧਿਕਾਰ ਨਹੀਂ ਹੈ"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1104
+#: ../exo-mount/exo-mount-hal.c:1149
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "ਇੱਕ ਐਪਲੀਕੇਸ਼ਨ ਵਾਲੀਅਮ \"%s\" ਨੂੰ ਅਣ-ਮਾਊਂਟ ਕਰਨ ਤੋਂ ਰੋਕ ਰਹੀ ਹੈ"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1109
+#: ../exo-mount/exo-mount-hal.c:1154
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr ""

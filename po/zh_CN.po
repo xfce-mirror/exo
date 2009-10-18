@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-10 20:18+0200\n"
+"POT-Creation-Date: 2009-10-18 20:05+0200\n"
 "PO-Revision-Date: 2009-06-14 03:12+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Simplified Chinese <xfce-i18n@xfce.org>\n"
@@ -1328,12 +1328,12 @@ msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "某个程序正在访问“%s”,暂时无法弹出"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:919
+#: ../exo-mount/exo-mount-hal.c:964
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "您没有权限挂载“%s”"
 
-#: ../exo-mount/exo-mount-hal.c:934
+#: ../exo-mount/exo-mount-hal.c:979
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1342,7 +1342,7 @@ msgstr ""
 "空白盘片不能被挂载，但您可以用 CD 刻录程序，比如 Xfburn，来在该盘上\n"
 "记录音乐或数据。"
 
-#: ../exo-mount/exo-mount-hal.c:945
+#: ../exo-mount/exo-mount-hal.c:990
 #, fuzzy, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
@@ -1350,31 +1350,31 @@ msgid ""
 msgstr "音乐 CD 不能被挂载，但您可以用 Xfmedia 来播放其中的音轨。"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1010
+#: ../exo-mount/exo-mount-hal.c:1055
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "您没有权限取消加密"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1015
+#: ../exo-mount/exo-mount-hal.c:1060
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "有一个程序阻止您取消加密"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1099
+#: ../exo-mount/exo-mount-hal.c:1144
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "您没有权限卸载“%s”"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1104
+#: ../exo-mount/exo-mount-hal.c:1149
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "某个程序正在访问“%s”，暂时无法卸载"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1109
+#: ../exo-mount/exo-mount-hal.c:1154
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "“%s”可能是在命令行手动挂载的"

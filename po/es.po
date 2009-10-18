@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-10 20:18+0200\n"
+"POT-Creation-Date: 2009-10-18 20:05+0200\n"
 "PO-Revision-Date: 2009-09-15 00:25-0300\n"
 "Last-Translator: elega <elega@elega.com.ar>\n"
 "Language-Team: Spanish/ES <xfce-i18n@xfce.org>\n"
@@ -1370,12 +1370,12 @@ msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Una aplicación está impidiendo que el volumen \"%s\" sea expulsado"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:919
+#: ../exo-mount/exo-mount-hal.c:964
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "No tiene privilegios para montar el volumen \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:934
+#: ../exo-mount/exo-mount-hal.c:979
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1384,7 +1384,7 @@ msgstr ""
 "Los discos vírgenes no pueden ser montados. Use una aplicación de grabación "
 "de CD como Xfburn para grabar audio o datos en el disco"
 
-#: ../exo-mount/exo-mount-hal.c:945
+#: ../exo-mount/exo-mount-hal.c:990
 #, fuzzy, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
@@ -1394,31 +1394,31 @@ msgstr ""
 "pistas de audio"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1010
+#: ../exo-mount/exo-mount-hal.c:1055
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "No tiene privilegios para desactivar la capa de cifrado"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1015
+#: ../exo-mount/exo-mount-hal.c:1060
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "Una aplicación está impidiendo que se desactive la capa de cifrado"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1099
+#: ../exo-mount/exo-mount-hal.c:1144
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "No tiene privilegios para desmontar el volumen \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1104
+#: ../exo-mount/exo-mount-hal.c:1149
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Una aplicación está impidiendo que el volumen \"%s\" sea desmontado"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1109
+#: ../exo-mount/exo-mount-hal.c:1154
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr ""

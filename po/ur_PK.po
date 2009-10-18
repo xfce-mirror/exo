@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libexo-0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-10 20:18+0200\n"
+"POT-Creation-Date: 2009-10-18 20:05+0200\n"
 "PO-Revision-Date: 2009-04-27 22:55+0500\n"
 "Last-Translator: Muhammad Ali Makki <makki.ma@gmail.com>\n"
 "Language-Team: Urdu <makki.ma@gmail.com>\n"
@@ -1364,12 +1364,12 @@ msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "کسی اطلاقیے نے حجم \"%s\" کو نکلنے سے روکا ہوا ہے"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:919
+#: ../exo-mount/exo-mount-hal.c:964
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "آپ کے پاس حجم \"%s\" کو ماؤنٹ کرنے کے اختیارات نہیں ہیں"
 
-#: ../exo-mount/exo-mount-hal.c:934
+#: ../exo-mount/exo-mount-hal.c:979
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1378,7 +1378,7 @@ msgstr ""
 "خالی سی ڈی ماؤنٹ نہیں کی جاسکتی، سی ڈی پر صوتی یا مواد ریکارڈنگ کے لیے کوئی "
 "سی ڈی ریکارڈنگ اطلاقیہ استعمال کریں جیسے ایک ایف برن"
 
-#: ../exo-mount/exo-mount-hal.c:945
+#: ../exo-mount/exo-mount-hal.c:990
 #, fuzzy, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
@@ -1388,31 +1388,31 @@ msgstr ""
 "استعمال کریں"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1010
+#: ../exo-mount/exo-mount-hal.c:1055
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "آپ کے پاس ڈیوائس کو نکالنے کے اختیارات نہیں ہیں"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1015
+#: ../exo-mount/exo-mount-hal.c:1060
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "ایک پروگرام حجم کو ان ماؤنٹ کرنے سے روک رہا ہے"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1099
+#: ../exo-mount/exo-mount-hal.c:1144
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "آپ کے پاس حجم \"%s\" کو ان ماؤنٹ کرنے کے اختیارات نہیں ہیں"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1104
+#: ../exo-mount/exo-mount-hal.c:1149
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "کوئی اطلاقیہ حجم \"%s\" کو ان ماؤنٹ ہونے سے روک رہا ہے"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1109
+#: ../exo-mount/exo-mount-hal.c:1154
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "ممکن ہے کہ حجم \"%s\" کو کمانڈ لائن سے ماؤنٹ کیا گیا ہو"
