@@ -144,15 +144,15 @@ TESTS =									\
 endif
 
 exo-alias.h: make-exo-alias.pl exo.symbols
-	$(PERL) $(srcdir)/make-exo-alias.pl < $(srcdir)/exo.symbols > exo-alias.h
+	$(AM_V_GEN) $(PERL) $(srcdir)/make-exo-alias.pl < $(srcdir)/exo.symbols > exo-alias.h
 
 exo-aliasdef.c: make-exo-alias.pl exo.symbols
-	$(PERL) $(srcdir)/make-exo-alias.pl -def < $(srcdir)/exo.symbols > exo-aliasdef.c
+	$(AM_V_GEN) $(PERL) $(srcdir)/make-exo-alias.pl -def < $(srcdir)/exo.symbols > exo-aliasdef.c
 
 exo-enum-types.h: stamp-exo-enum-types.h
 	@true
 stamp-exo-enum-types.h: $(libexo_headers) Makefile
-	( cd $(srcdir) && glib-mkenums \
+	$(AM_V_GEN) ( cd $(srcdir) && glib-mkenums \
 		--fhead "#ifndef __EXO_ENUM_TYPES_H__\n#define __EXO_ENUM_TYPES_H__\n#include <libxfce4util/libxfce4util.h>\nG_BEGIN_DECLS\n" \
 		--fprod "/* enumerations from \"@filename@\" */\n" \
 		--vhead "GType @enum_name@_get_type (void) G_GNUC_CONST;\n#define EXO_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
@@ -163,7 +163,7 @@ stamp-exo-enum-types.h: $(libexo_headers) Makefile
 	&& echo timestamp > $(@F)
 
 exo-enum-types.c: $(libexo_headers) Makefile
-	( cd $(srcdir) && glib-mkenums \
+	$(AM_V_GEN) ( cd $(srcdir) && glib-mkenums \
 		--fhead "#undef GTK_DISABLE_DEPRECATED\n#define GTK_ENABLE_BROKEN\n#include <exo/exo.h>\n#include <exo/exo-alias.h>\n" \
 		--fprod "\n/* enumerations from \"@filename@\" */" \
 		--vhead "GType\n@enum_name@_get_type (void)\n{\n\tstatic GType type = 0;\n\tif (type == 0) {\n\tstatic const G@Type@Value values[] = {"\
@@ -177,7 +177,7 @@ exo-enum-types.c: $(libexo_headers) Makefile
 exo-marshal.h: stamp-exo-marshal.h
 	@true
 stamp-exo-marshal.h: exo-marshal.list Makefile
-	( cd $(srcdir) && glib-genmarshal \
+	$(AM_V_GEN) ( cd $(srcdir) && glib-genmarshal \
 		--prefix=_exo_marshal \
 		--header exo-marshal.list ) >> xgen-emh \
 	&& ( cmp -s xgen-emh exo-marshal.h || cp xgen-emh exo-marshal.h ) \
@@ -185,7 +185,7 @@ stamp-exo-marshal.h: exo-marshal.list Makefile
 	&& echo timestamp > $(@F)
 
 exo-marshal.c: exo-marshal.list Makefile
-	echo "#include <exo/exo-marshal.h>" > xgen-emc \
+	$(AM_V_GEN) echo "#include <exo/exo-marshal.h>" > xgen-emc \
 	&& ( cd $(srcdir) && glib-genmarshal \
 		--prefix=_exo_marshal \
 		--body exo-marshal.list ) >> xgen-emc \

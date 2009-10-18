@@ -85,7 +85,7 @@ BUILT_SOURCES =								\
 exo-helper-enum-types.h: stamp-exo-helper-enum-types.h
 	@true
 stamp-exo-helper-enum-types.h: $(exo_helper_headers) Makefile
-	( cd $(srcdir) && glib-mkenums \
+	$(AM_V_GEN) ( cd $(srcdir) && glib-mkenums \
 		--fhead "#ifndef __EXO_HELPER_ENUM_TYPES_H__\n#define __EXO_HELPER_ENUM_TYPES_H__\n#include <exo/exo.h>\nG_BEGIN_DECLS\n" \
 		--fprod "/* enumerations from \"@filename@\" */\n" \
 		--vhead "GType @enum_name@_get_type (void) G_GNUC_CONST;\n#define EXO_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
@@ -96,7 +96,7 @@ stamp-exo-helper-enum-types.h: $(exo_helper_headers) Makefile
 	&& echo timestamp > $(@F)
 
 exo-helper-enum-types.c: $(exo_helper_headers) Makefile
-	( cd $(srcdir) && glib-mkenums \
+	$(AM_V_GEN) ( cd $(srcdir) && glib-mkenums \
 		--fhead "#undef GTK_DISABLE_DEPRECATED\n#define GTK_ENABLE_BROKEN\n#include <exo-helper/exo-helper.h>\n\n#include \"exo-helper-enum-types.h\"" \
 		--fprod "\n/* enumerations from \"@filename@\" */" \
 		--vhead "GType\n@enum_name@_get_type (void)\n{\n\tstatic GType type = 0;\n\tif (type == 0) {\n\tstatic const G@Type@Value values[] = {"\

@@ -46,7 +46,7 @@ BUILT_SOURCES =								\
 
 exo.c: $(defs_DATA) $(srcdir)/exo.override Makefile
 .defs.c:
-	(cd $(srcdir)							\
+	$(AM_V_GEN) (cd $(srcdir)							\
 	 && $(PYGTK_CODEGEN)						\
 	    --register $(PYGTK_DEFSDIR)/pango-types.defs		\
 	    --register $(PYGTK_DEFSDIR)/atk-types.defs			\
