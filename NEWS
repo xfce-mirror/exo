@@ -1,3 +1,34 @@
+0.5.0
+=====
+The API version of exo has been changed from 0.3 to 1, to make it easier
+to bump minor and major version numbers in future releases. To compile
+against this version of exo, you have to change exo-0.3 to exo-1 in your
+configure file. This backwards-incompatible change has also been used to
+remove deprecated APIs or APIs that are now provided by Gtk 2.14 or Glib
+2.18.
+
+Removed or incompatibly changed classes/enums/functions:
+  - Renamed exo_url_about_dialog_hook() to exo_gtk_url_about_dialog_hook().
+  - Exo(Mutual)Binding structures are now private.
+  - Removed exo_icon_view_{set,get}_{text,markup,pixbuf}_column().
+  - Removed ExoPangoEllipsizeMode and related functions.
+  - Removed exo_md5_*() functions and ExoMd5Digest.
+  - Removed exo_intern_string() and exo_intern_static_string().
+  - Removed ExoEllipsizedLabel has been entirely removed.
+  - Removed exo_gtk_object_ref_sink() and
+    exo_gtk_radio_action_set_current_value().
+  - Removed exo_url_show() and exo_url_show_on_screen().
+
+New classes/functions:
+  - ExoJob and ExoSimpleJob for handling threaded/asynchronous jobs.
+  - exo_str_is_empty(), exo_str_looks_like_an_uri().
+
+Other changes:
+- GIO module for handling URIs that are known by the preferred
+  applications framework.
+- API documentation has been inlined in the code.
+- Various other fixes, cleanups and translation updates.
+
 0.3.105
 =======
 - Read mount options from a rc file (bug #2891).
