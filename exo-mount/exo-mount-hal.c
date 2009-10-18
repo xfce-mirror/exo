@@ -741,7 +741,8 @@ exo_mount_hal_device_mount (ExoMountHalDevice *device,
         {
           option = NULL;
 
-          if (strcmp (device->fsoptions[m], "sync") == 0)
+          if (strcmp (device->fsoptions[m], "sync") == 0
+              && device->volume == NULL)
             {
               /* non-pollable drive... */
               option = g_strdup ("sync");
