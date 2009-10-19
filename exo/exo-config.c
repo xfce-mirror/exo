@@ -25,7 +25,6 @@
 #endif
 
 #include <exo/exo-config.h>
-#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-config
@@ -117,8 +116,3 @@ exo_check_version (guint required_major,
 {
   return NULL;
 }
-
-
-
-#define __EXO_CONFIG_C__
-#include <exo/exo-aliasdef.c>

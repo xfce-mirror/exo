@@ -18,24 +18,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
-/* This file lists all exported symbols. It is used to generate
- * the gobject.def file used to control exports on Windows and the
- * exo-alias.h/exo-aliasdef.c files used to avoid PLT entries for 
- * internal uses of exported functions (see make-exo-alias.pl).
- * 
- * Every symbol must be included in the right
- * #ifdef IN_HEADER(sym) #endif and
- * #ifdef IN_SOURCE(sym) #endif sections. 
- */
-
-#ifdef ALL_FILES
-#define IN_HEADER(x) 1
-#define IN_SOURCE(x) 1
-#endif
-
-/* exo-binding functions */
-#if IN_HEADER(__EXO_BINDING_H__)
-#if IN_SOURCE(__EXO_BINDING_C__)
+/* exo-binding */
 exo_binding_new
 exo_binding_new_full
 exo_binding_new_with_negation
@@ -44,90 +27,52 @@ exo_mutual_binding_new
 exo_mutual_binding_new_full
 exo_mutual_binding_new_with_negation
 exo_mutual_binding_unbind
-#endif
-#endif
 
-/* ExoCellRendererEllipsizedText methods */
-#if IN_HEADER(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__)
-#if IN_SOURCE(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_C__)
-exo_cell_renderer_ellipsized_text_get_type G_GNUC_CONST
-exo_cell_renderer_ellipsized_text_new G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-#endif
-#endif
+/* exo-cell-renderer-ellipsized-text */
+exo_cell_renderer_ellipsized_text_get_type
+exo_cell_renderer_ellipsized_text_new
 
-/* ExoCellRendererIcon methods */
-#if IN_HEADER(__EXO_CELL_RENDERER_ICON_H__)
-#if IN_SOURCE(__EXO_CELL_RENDERER_ICON_C__)
-exo_cell_renderer_icon_get_type G_GNUC_CONST
-exo_cell_renderer_icon_new G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-#endif
-#endif
+/* exo-cell-renderer-icon */
+exo_cell_renderer_icon_get_type
+exo_cell_renderer_icon_new
 
-/* exo-config variables */
-#if IN_HEADER(__EXO_CONFIG_H__)
-#if IN_SOURCE(__EXO_CONFIG_C__)
-#ifdef INCLUDE_VARIABLES
+/* exo-config */
 exo_major_version
 exo_minor_version
 exo_micro_version
-#endif
 exo_check_version
-#endif
-#endif
 
-/* exo-enum-types functions */
-#if IN_HEADER(__EXO_ENUM_TYPES_H__)
-#if IN_SOURCE(__EXO_ENUM_TYPES_C__)
-exo_icon_view_drop_position_get_type G_GNUC_CONST
-exo_icon_view_layout_mode_get_type G_GNUC_CONST
-exo_mount_point_flags_get_type G_GNUC_CONST
-exo_toolbars_model_flags_get_type G_GNUC_CONST
-#endif
-#endif
+/* exo-enum-types */
+exo_icon_view_drop_position_get_type
+exo_icon_view_layout_mode_get_type
+exo_mount_point_flags_get_type
+exo_toolbars_model_flags_get_type
 
-/* exo-execute functions */
-#if IN_HEADER(__EXO_EXECUTE_H__)
-#if IN_SOURCE(__EXO_EXECUTE_C__)
+/* exo-execute */
 exo_execute_preferred_application
 exo_execute_preferred_application_on_screen
 exo_execute_terminal_shell
 exo_execute_terminal_shell_on_screen
-#endif
-#endif
 
-/* exo-gdk-pixbuf-extensions functions */
-#if IN_HEADER(__EXO_GDK_PIXBUF_EXTENSIONS_H__)
-#if IN_SOURCE(__EXO_GDK_PIXBUF_EXTENSIONS_C__)
-exo_gdk_pixbuf_colorize G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_gdk_pixbuf_frame G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_gdk_pixbuf_lucent G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_gdk_pixbuf_spotlight G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_gdk_pixbuf_scale_down G_GNUC_WARN_UNUSED_RESULT
-exo_gdk_pixbuf_scale_ratio G_GNUC_WARN_UNUSED_RESULT
-exo_gdk_pixbuf_new_from_file_at_max_size G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-#endif
-#endif
+/* exo-gdk-pixbuf-extensions */
+exo_gdk_pixbuf_colorize
+exo_gdk_pixbuf_frame
+exo_gdk_pixbuf_lucent
+exo_gdk_pixbuf_spotlight
+exo_gdk_pixbuf_scale_down
+exo_gdk_pixbuf_scale_ratio
+exo_gdk_pixbuf_new_from_file_at_max_size
 
-/* exo-gobject-extensions functions */
-#if IN_HEADER(__EXO_GOBJECT_EXTENSIONS_H__)
-#if IN_SOURCE(__EXO_GOBJECT_EXTENSIONS_C__)
+/* exo-gobject-extensions */
 exo_g_value_transform_negate
-#endif
-#endif
 
-/* exo-gtk-extensions functions */
-#if IN_HEADER(__EXO_GTK_EXTENSIONS_H__)
-#if IN_SOURCE(__EXO_GTK_EXTENSIONS_C__)
+/* exo-gtk-extensions */
 exo_gtk_object_destroy_later
 exo_gtk_file_chooser_add_thumbnail_preview
 exo_gtk_url_about_dialog_hook
-#endif
-#endif
 
-/* ExoIconBar methods */
-#if IN_HEADER(__EXO_ICON_BAR_H__)
-#if IN_SOURCE(__EXO_ICON_BAR_C__)
-exo_icon_bar_get_type G_GNUC_CONST
+/* exo-icon-bar */
+exo_icon_bar_get_type
 exo_icon_bar_new
 exo_icon_bar_new_with_model
 exo_icon_bar_get_model
@@ -142,23 +87,15 @@ exo_icon_bar_get_active
 exo_icon_bar_set_active
 exo_icon_bar_get_active_iter
 exo_icon_bar_set_active_iter
-#endif
-#endif
 
-/* ExoIconChooserDialog methods */
-#if IN_HEADER(__EXO_ICON_CHOOSER_DIALOG_H__)
-#if IN_SOURCE(__EXO_ICON_CHOOSER_DIALOG_C__)
-exo_icon_chooser_dialog_get_type G_GNUC_CONST
-exo_icon_chooser_dialog_new G_GNUC_MALLOC G_GNUC_NULL_TERMINATED G_GNUC_WARN_UNUSED_RESULT
-exo_icon_chooser_dialog_get_icon G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+/* exo-icon-chooser */
+exo_icon_chooser_dialog_get_type
+exo_icon_chooser_dialog_new
+exo_icon_chooser_dialog_get_icon
 exo_icon_chooser_dialog_set_icon
-#endif
-#endif
 
-/* ExoIconView methods */
-#if IN_HEADER(__EXO_ICON_VIEW_H__)
-#if IN_SOURCE(__EXO_ICON_VIEW_C__)
-exo_icon_view_get_type G_GNUC_CONST
+/* exo-icon-view */
+exo_icon_view_get_type
 exo_icon_view_new
 exo_icon_view_new_with_model
 exo_icon_view_get_model
@@ -219,95 +156,62 @@ exo_icon_view_get_search_equal_func
 exo_icon_view_set_search_equal_func
 exo_icon_view_get_search_position_func
 exo_icon_view_set_search_position_func
-#endif
-#endif
 
-/* exo-job functions */
-#if IN_HEADER(__EXO_JOB_H__)
-#if IN_SOURCE(__EXO_JOB_C__)
+/* exo-job */
 exo_job_cancel
 exo_job_emit
 exo_job_get_cancellable
-exo_job_get_type G_GNUC_CONST
+exo_job_get_type
 exo_job_info_message
 exo_job_is_cancelled
 exo_job_launch
 exo_job_percent
 exo_job_send_to_mainloop
 exo_job_set_error_if_cancelled
-#endif
-#endif
 
-/* exo-mount-point functions */
-#if IN_HEADER(__EXO_MOUNT_POINT_H__)
-#if IN_SOURCE(__EXO_MOUNT_POINT_C__)
-exo_mount_point_get_type G_GNUC_CONST
-exo_mount_point_dup G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+/* exo-mount-point */
+exo_mount_point_get_type
+exo_mount_point_dup
 exo_mount_point_free
-exo_mount_point_list_matched G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-#endif
-#endif
+exo_mount_point_list_matched
 
-/* exo-utils functions */
-#if IN_HEADER(__EXO_UTILS_H__)
-#if IN_SOURCE(__EXO_UTILS_C__)
-exo_noop G_GNUC_PURE
-exo_noop_one G_GNUC_PURE
-exo_noop_zero G_GNUC_PURE
-exo_noop_null G_GNUC_PURE
-exo_noop_true G_GNUC_PURE
-exo_noop_false G_GNUC_PURE
-#ifdef INCLUDE_INTERNAL_SYMBOLS
+/* exo-utils */
+exo_noop
+exo_noop_one
+exo_noop_zero
+exo_noop_null
+exo_noop_true
+exo_noop_false
 exo_atomic_inc
 exo_atomic_dec
-#endif
-#endif
-#endif
 
-/* exo-simple-job functions */
-#if IN_HEADER(__EXO_SIMPLE_JOB_H__)
-#if IN_SOURCE(__EXO_SIMPLE_JOB_C__)
-exo_simple_job_get_type G_GNUC_CONST
-exo_simple_job_launch G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-#endif
-#endif
+/* exo-simple-job */
+exo_simple_job_get_type
+exo_simple_job_launch
 
-/* exo-string functions */
-#if IN_HEADER(__EXO_STRING_H__)
-#if IN_SOURCE(__EXO_STRING_C__)
-exo_str_elide_underscores G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
+/* exo-string */
+exo_str_elide_underscores
 exo_str_is_equal
-exo_str_replace G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_strdup_strftime G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_strndupv G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-#endif
-#endif
+exo_str_replace
+exo_str_looks_like_an_uri
+exo_strdup_strftime
+exo_strndupv
 
-/* ExoToolbarsEditorDialog methods */
-#if IN_HEADER(__EXO_TOOLBARS_EDITOR_DIALOG_H__)
-#if IN_SOURCE(__EXO_TOOLBARS_EDITOR_DIALOG_C__)
-exo_toolbars_editor_dialog_get_type G_GNUC_CONST
+/* exo-toolbars-editor-dialog */
+exo_toolbars_editor_dialog_get_type
 exo_toolbars_editor_dialog_new_with_model
-#endif
-#endif
 
-/* ExoToolbarsEditor methods */
-#if IN_HEADER(__EXO_TOOLBARS_EDITOR_H__)
-#if IN_SOURCE(__EXO_TOOLBARS_EDITOR_C__)
-exo_toolbars_editor_get_type G_GNUC_CONST
+/* exo-toolbars-editor */
+exo_toolbars_editor_get_type
 exo_toolbars_editor_new
 exo_toolbars_editor_new_with_model
 exo_toolbars_editor_get_model
 exo_toolbars_editor_set_model
 exo_toolbars_editor_get_ui_manager
 exo_toolbars_editor_set_ui_manager
-#endif
-#endif
 
-/* ExoToolbarsModel methods */
-#if IN_HEADER(__EXO_TOOLBARS_MODEL_H__)
-#if IN_SOURCE(__EXO_TOOLBARS_MODEL_C__)
-exo_toolbars_model_get_type G_GNUC_CONST
+/* exo-toolbars-model */
+exo_toolbars_model_get_type
 exo_toolbars_model_new
 exo_toolbars_model_set_actions
 exo_toolbars_model_get_actions
@@ -331,13 +235,9 @@ exo_toolbars_model_n_items
 exo_toolbars_model_item_nth
 exo_toolbars_model_n_toolbars
 exo_toolbars_model_toolbar_nth
-#endif
-#endif
 
-/* ExoToolbarsView methods */
-#if IN_HEADER(__EXO_TOOLBARS_VIEW_H__)
-#if IN_SOURCE(__EXO_TOOLBARS_VIEW_C__)
-exo_toolbars_view_get_type G_GNUC_CONST
+/* exo-toolbars-view */
+exo_toolbars_view_get_type
 exo_toolbars_view_new
 exo_toolbars_view_new_with_model
 exo_toolbars_view_get_editing
@@ -346,42 +246,29 @@ exo_toolbars_view_get_model
 exo_toolbars_view_set_model
 exo_toolbars_view_get_ui_manager
 exo_toolbars_view_set_ui_manager
-#endif
-#endif
 
-#if IN_HEADER(__EXO_TREE_VIEW_H__)
-#if IN_SOURCE(__EXO_TREE_VIEW_C__)
-exo_tree_view_get_type G_GNUC_CONST
-exo_tree_view_new G_GNUC_MALLOC
+/* exo-tree-view */
+exo_tree_view_get_type
+exo_tree_view_new
 exo_tree_view_get_single_click
 exo_tree_view_set_single_click
 exo_tree_view_get_single_click_timeout
 exo_tree_view_set_single_click_timeout
-#endif
-#endif
 
-#if IN_HEADER(__EXO_WRAP_TABLE_H__)
-#if IN_SOURCE(__EXO_WRAP_TABLE_C__)
-exo_wrap_table_get_type G_GNUC_CONST
-exo_wrap_table_new G_GNUC_MALLOC
+/* exo-wrap-table */
+exo_wrap_table_get_type
+exo_wrap_table_new
 exo_wrap_table_get_col_spacing
 exo_wrap_table_set_col_spacing
 exo_wrap_table_get_row_spacing
 exo_wrap_table_set_row_spacing
 exo_wrap_table_get_homogeneous
 exo_wrap_table_set_homogeneous
-#endif
-#endif
 
-/* ExoXsessionClient methods */
-#if IN_HEADER(__EXO_XSESSION_CLIENT_H__)
-#if IN_SOURCE(__EXO_XSESSION_CLIENT_C__)
-exo_xsession_client_get_type G_GNUC_CONST
+/* exo-xsession-client */
+exo_xsession_client_get_type
 exo_xsession_client_new_with_group
 exo_xsession_client_get_group
 exo_xsession_client_set_group
 exo_xsession_client_get_restart_command
 exo_xsession_client_set_restart_command
-#endif
-#endif
-

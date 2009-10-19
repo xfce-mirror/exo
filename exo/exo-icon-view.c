@@ -47,7 +47,6 @@
 #include <exo/exo-marshal.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
-#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-icon-view
@@ -8432,8 +8431,3 @@ exo_icon_view_search_timeout_destroy (gpointer user_data)
 {
   EXO_ICON_VIEW (user_data)->priv->search_timeout_id = 0;
 }
-
-
-
-#define __EXO_ICON_VIEW_C__
-#include <exo/exo-aliasdef.c>

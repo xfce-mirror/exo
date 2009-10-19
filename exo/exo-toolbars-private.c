@@ -26,7 +26,6 @@
 #endif
 
 #include <exo/exo-toolbars-private.h>
-#include <exo/exo-alias.h>
 
 
 
@@ -365,7 +364,3 @@ _exo_toolbars_unset_drag_cursor (GtkWidget *widget)
   if (G_LIKELY (widget->window != NULL))
     gdk_window_set_cursor (widget->window, NULL);
 }
-
-
-
-

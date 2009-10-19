@@ -27,7 +27,6 @@
 #include <exo/exo-string.h>
 #include <exo/exo-tree-view.h>
 #include <exo/exo-utils.h>
-#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-tree-view
@@ -867,8 +866,3 @@ exo_tree_view_set_single_click_timeout (ExoTreeView *tree_view,
       g_object_notify (G_OBJECT (tree_view), "single-click-timeout");
     }
 }
-
-
-
-#define __EXO_TREE_VIEW_C__
-#include <exo/exo-aliasdef.c>

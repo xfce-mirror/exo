@@ -44,12 +44,13 @@ typedef enum /*< skip >*/
   EXO_THUMBNAIL_SIZE_LARGE  = 256,
 } ExoThumbnailSize;
 
-G_GNUC_INTERNAL GdkPixbuf *_exo_thumbnail_get_for_file (const gchar     *filename,
-                                                        ExoThumbnailSize size,
-                                                        GError         **error) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
-G_GNUC_INTERNAL GdkPixbuf *_exo_thumbnail_get_for_uri  (const gchar     *uri,
-                                                        ExoThumbnailSize size,
-                                                        GError         **error) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+GdkPixbuf *_exo_thumbnail_get_for_file (const gchar     *filename,
+                                        ExoThumbnailSize size,
+                                        GError         **error) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+
+GdkPixbuf *_exo_thumbnail_get_for_uri  (const gchar     *uri,
+                                        ExoThumbnailSize size,
+                                        GError         **error) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 G_END_DECLS
 

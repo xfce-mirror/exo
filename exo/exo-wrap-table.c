@@ -27,7 +27,6 @@
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-wrap-table.h>
-#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-wrap-table
@@ -716,8 +715,3 @@ exo_wrap_table_set_homogeneous (ExoWrapTable *table,
       g_object_notify (G_OBJECT (table), "homogeneous");
     }
 }
-
-
-
-#define __EXO_WRAP_TABLE_C__
-#include <exo/exo-aliasdef.c>

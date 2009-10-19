@@ -37,7 +37,6 @@
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-model.h>
 #include <exo/exo-toolbars-private.h>
-#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-toolbars-model
@@ -1421,8 +1420,3 @@ exo_toolbars_model_toolbar_nth (ExoToolbarsModel *model,
 
   return toolbar->name;
 }
-
-
-
-#define __EXO_TOOLBARS_MODEL_C__
-#include <exo/exo-aliasdef.c>

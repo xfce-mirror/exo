@@ -35,7 +35,6 @@
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-xsession-client.h>
-#include <exo/exo-alias.h>
 
 #ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
@@ -579,8 +578,3 @@ exo_xsession_client_set_restart_command (ExoXsessionClient *client,
                argv, argc);
 #endif
 }
-
-
-
-#define __EXO_XSESSION_CLIENT_C__
-#include <exo/exo-aliasdef.c>

@@ -70,7 +70,6 @@
 #include <exo/exo-mount-point.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
-#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-mount-point
@@ -590,8 +589,3 @@ exo_mount_point_list_matched (ExoMountPointMatchMask mask,
 
   return mount_points;
 }
-
-
-
-#define __EXO_MOUNT_POINT_C__
-#include <exo/exo-aliasdef.c>

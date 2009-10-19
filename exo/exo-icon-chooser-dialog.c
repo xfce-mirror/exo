@@ -42,7 +42,6 @@
 #include <exo/exo-icon-chooser-model.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-private.h>
-#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-icon-chooser-dialog
@@ -660,8 +659,3 @@ exo_icon_chooser_dialog_set_icon (ExoIconChooserDialog *icon_chooser_dialog,
 
   return FALSE;
 }
-
-
-
-#define __EXO_ICON_CHOOSER_DIALOG_C__
-#include <exo/exo-aliasdef.c>

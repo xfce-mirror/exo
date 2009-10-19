@@ -68,10 +68,10 @@ G_BEGIN_DECLS
 #define g_value_get_object(v)   (((const GValue *) (v))->data[0].v_pointer)
 #endif
 
-G_GNUC_INTERNAL void  _exo_i18n_init                    (void);
+void  _exo_i18n_init                    (void);
 
-G_GNUC_INTERNAL void  _exo_gtk_widget_send_focus_change (GtkWidget         *widget,
-                                                         gboolean           in);
+void  _exo_gtk_widget_send_focus_change (GtkWidget         *widget,
+                                         gboolean           in);
 
 G_END_DECLS
 

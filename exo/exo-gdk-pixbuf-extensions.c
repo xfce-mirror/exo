@@ -60,7 +60,6 @@
 
 #include <exo/exo-gdk-pixbuf-extensions.h>
 #include <exo/exo-private.h>
-#include <exo/exo-alias.h>
 
 /* use g_open() on win32 */
 #if defined(G_OS_WIN32)
@@ -903,8 +902,3 @@ err3: /* we failed for some reason */
 
   return pixbuf;
 }
-
-
-
-#define __EXO_GDK_PIXBUF_EXTENSIONS_C__
-#include <exo/exo-aliasdef.c>
