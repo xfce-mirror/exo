@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-18 20:05+0200\n"
-"PO-Revision-Date: 2009-06-14 03:12+0800\n"
+"PO-Revision-Date: 2009-10-20 23:43+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Simplified Chinese <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -56,23 +56,23 @@ msgstr "所显示图标的大小（像素）。"
 #: ../exo/exo-mount-point.c:250 ../exo/exo-mount-point.c:438
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "无法打开文件“%s”：%s"
+msgstr "无法打开文件 \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:850
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "无法读取文件“%s”：%s"
+msgstr "无法读取文件 \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:891
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "无法载入图片“%s”：未知原因，可能图片已损坏。"
+msgstr "无法载入图片 \"%s\": 未知原因，可能图片已损坏。"
 
 #: ../exo/exo-gtk-extensions.c:228
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "无法打开“%s”。"
+msgstr "无法打开 \"%s\"。"
 
 #: ../exo/exo-icon-bar.c:278 ../exo/exo-icon-view.c:777
 msgid "Orientation"
@@ -670,7 +670,7 @@ msgstr "选择图标"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:150
 msgid "File location is not a regular file or directory"
-msgstr ""
+msgstr "文件位置不是一个有效的文件或目录"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:54
@@ -738,37 +738,37 @@ msgid "No file/folder specified"
 msgstr "未指定文件或目录"
 
 #: ../exo-desktop-item-edit/main.c:217
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "无法打开文件“%s”：%s"
+msgstr "无法从 \"%2$s\" 中读取内容: %1$s"
 
 #: ../exo-desktop-item-edit/main.c:222
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr ""
+msgstr "文件 \"%s\" 不包含任何数据"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "无法打开文件“%s”：%s"
+msgstr "无法解析 \"%s\" 的内容: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:247
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "文件 \"%s\" 没有类型字段"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:257
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "不支持的桌面文件类型“%s”"
+msgstr "不支持的桌面文件类型 \"%s\""
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:273
 msgid "C_reate"
-msgstr "创建(_C)"
+msgstr "创建(_R)"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:413
@@ -778,12 +778,12 @@ msgstr "选择文件名"
 #: ../exo-desktop-item-edit/main.c:471
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "无法创建“%s”。"
+msgstr "无法创建 \"%s\"。"
 
 #: ../exo-desktop-item-edit/main.c:471
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "无法保存“%s”。"
+msgstr "无法保存 \"%s\"。"
 
 #: ../exo-hal/exo-hal.c:478
 #, c-format
@@ -918,14 +918,14 @@ msgstr "工具"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "File Manager"
-msgstr ""
+msgstr "文件管理器"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:227
-#, fuzzy
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr "首选网络浏览器将被用于打开网页链接和显示帮助内容"
+msgstr ""
+"首选的文件管理器将被用于浏览文件夹。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:251
 msgid "Terminal Emulator"
@@ -963,9 +963,8 @@ msgid "Failed to set default Mail Reader"
 msgstr "默认邮件阅读器设置失败"
 
 #: ../exo-helper/exo-helper-chooser.c:318
-#, fuzzy
 msgid "Failed to set default File Manager"
-msgstr "默认邮件阅读器设置失败"
+msgstr "默认文件管理器设置失败"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Terminal Emulator"
@@ -985,9 +984,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "请选择邮件阅读器"
 
 #: ../exo-helper/exo-helper-chooser.c:504
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "请选择邮件阅读器"
+msgstr "请选择您首选的文件管理器"
 
 #: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Terminal Emulator"
@@ -1006,11 +1004,11 @@ msgid ""
 msgstr "指定您想用作 Xfce 缺省邮件阅读器的应用程序:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
-#, fuzzy
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr "指定您想用作 Xfce 缺省邮件阅读器的应用程序:"
+msgstr ""
+"指定您想用作 Xfce 默认文件管理器的应用程序:"
 
 #: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
@@ -1047,11 +1045,11 @@ msgid ""
 msgstr "请选择您的首选邮件阅读器，点确定执行。"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:261
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr "请选择您的首选邮件阅读器，点确定执行。"
+msgstr ""
+"请选择您的首选文件管理器并点击确认按钮。"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:263
 msgid ""
@@ -1082,9 +1080,8 @@ msgid "Failed to execute default Mail Reader"
 msgstr "无法运行缺省邮件阅读器"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "无法运行缺省邮件阅读器"
+msgstr "无法运行默认文件管理器"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
@@ -1108,14 +1105,14 @@ msgstr "接口 ID"
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
-msgstr "用可选项“参数”来启动特定“类型”的外围程序，“类型”可以是以下值。"
+msgstr ""
+"用可选项 “参数” 来启动特定 “类型” 的外围程序，“类型” 可以是以下值之一。"
 
 #: ../exo-helper/main.c:71
 msgid "TYPE [PARAMETER]"
 msgstr "类型 [参数]"
 
 #: ../exo-helper/main.c:95
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1124,21 +1121,22 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"--launch 命令支持以下“类型”：\n"
+"--launch 命令支持以下类型:\n"
 "\n"
-"  网络浏览器            - 首选网络浏览器\n"
-"  邮件阅读器            - 首选邮件阅读器\n"
-"  终端模拟器            - 首选终端模拟器"
+"  WebBrowser       - 首选网络浏览器。\n"
+"  MailReader       - 首选邮件阅读器。\n"
+"  FileManager      - 首选文件管理器。\n"
+"  TerminalEmulator - 首选终端模拟器。"
 
 #: ../exo-helper/main.c:105
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr "“%s --help” 会给出使用说明。"
+msgstr "输入 '%s --help' 查看使用说明。"
 
 #: ../exo-helper/main.c:155
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "无效的外围程序类型“%s”"
+msgstr "无效的外围程序类型 \"%s\""
 
 #: ../exo-helper/main.c:199
 #, c-format
@@ -1171,7 +1169,7 @@ msgstr "Xfce 终端模拟器"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
-msgstr ""
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1251,7 +1249,7 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
 msgid "Nautilus"
-msgstr ""
+msgstr "Nautilus"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
@@ -1271,7 +1269,7 @@ msgstr "Opera 邮件"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr ""
+msgstr "PCMan 文件管理器"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1307,31 +1305,31 @@ msgstr "未知错误"
 #: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:420
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr "在文件系统设备列表中找不到设备“%s”"
+msgstr "在文件系统设备列表中找不到设备 \"%s\""
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
-msgstr "所给设备“%s”不是卷或者驱动器"
+msgstr "所给设备 \"%s\" 不是卷或者驱动器"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:652
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
-msgstr "您没有权限弹出“%s”"
+msgstr "您没有权限弹出 \"%s\""
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:657
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr "某个程序正在访问“%s”,暂时无法弹出"
+msgstr "某个程序正在访问 \"%s\"，暂时无法弹出"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:964
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr "您没有权限挂载“%s”"
+msgstr "您没有权限挂载 \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:979
 #, c-format
@@ -1343,11 +1341,12 @@ msgstr ""
 "记录音乐或数据。"
 
 #: ../exo-mount/exo-mount-hal.c:990
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
 "audio tracks"
-msgstr "音乐 CD 不能被挂载，但您可以用 Xfmedia 来播放其中的音轨。"
+msgstr ""
+"音乐 CD 不能被挂载，但您可以使用您喜欢的音乐播放器来播放其中的音轨"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1055
@@ -1365,19 +1364,19 @@ msgstr "有一个程序阻止您取消加密"
 #: ../exo-mount/exo-mount-hal.c:1144
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "您没有权限卸载“%s”"
+msgstr "您没有权限卸载 \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:1149
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr "某个程序正在访问“%s”，暂时无法卸载"
+msgstr "某个程序正在访问 \"%s\"，暂时无法卸载"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:1154
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr "“%s”可能是在命令行手动挂载的"
+msgstr "卷 \"%s\" 可能是在命令行手动挂载的"
 
 #: ../exo-mount/main.c:68
 msgid "Eject rather than mount"
@@ -1422,7 +1421,7 @@ msgstr "无法从 HAL 设备 UDI 挂载，本发行版本不支持 HAL。"
 #: ../exo-mount/main.c:167
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr "指定的 UDI “%s”无效"
+msgstr "指定的 UDI \"%s\" 无效"
 
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:184
@@ -1432,23 +1431,23 @@ msgstr "无法同时弹出和卸载设备"
 #: ../exo-mount/main.c:336
 #, c-format
 msgid "Failed to eject \"%s\""
-msgstr "弹出“%s”失败"
+msgstr "弹出 \"%s\" 失败"
 
 #: ../exo-mount/main.c:338
 #, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "卸载“%s”失败"
+msgstr "卸载 \"%s\"失败"
 
 #: ../exo-mount/main.c:340
 #, c-format
 msgid "Failed to mount \"%s\""
-msgstr "挂载“%s”失败"
+msgstr "挂载 \"%s\" 失败"
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:113
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
-msgstr "现在可以安全地移除“%s”。"
+msgstr "现在可以安全地移除 \"%s\"。"
 
 #: ../exo-mount-notify/main.c:114
 msgid "Device is now safe to remove"
@@ -1462,7 +1461,7 @@ msgstr "正在弹出设备"
 #: ../exo-mount-notify/main.c:228
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr "正在弹出“%s”，请稍候。"
+msgstr "正在弹出 \"%s\"，请稍候。"
 
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:233
@@ -1474,7 +1473,7 @@ msgstr "正在卸载设备"
 msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
-msgstr "系统正在卸载设备“%s”，请不要从电脑上取出或拔下该设备。"
+msgstr "系统正在卸载设备 \"%s\"，请不要从电脑上取出或拔下该设备。"
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:241
@@ -1486,7 +1485,7 @@ msgstr "正在向设备写入数据"
 msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
-msgstr "移除设备“%s”前还有数据要写入，请不要取出或拔下该设备。"
+msgstr "移除设备 \"%s\" 前还有数据要写入，请不要取出或拔下该设备。"
 
 #: ../exo-open/main.c:83
 msgid "Usage: exo-open [URLs...]"
@@ -1512,8 +1511,8 @@ msgid ""
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch 类型 [参数...]       用可选“参数”运行所给“类型”的首选程序，\n"
-"                                “类型”可以是下列值。"
+"  --launch 类型 [参数...]       用可选 “参数” 运行所给 “类型” 的首选程序，\n"
+"                                “类型” 可以是下列值之一。"
 
 #: ../exo-open/main.c:93
 msgid ""
@@ -1526,22 +1525,22 @@ msgstr ""
 
 #: ../exo-open/main.c:96
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr "--launch 命令支持 以下“类型”："
+msgstr "--launch 命令支持 以下 “类型”:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
 #: ../exo-open/main.c:102
-#, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  网络浏览器            - 首选网络浏览器\n"
-"  邮件阅读器            - 首选邮件阅读器\n"
-"  终端模拟器            - 首选终端模拟器"
+"  WebBrowser       - 首选网络浏览器。\n"
+"  MailReader       - 首选邮件阅读器。\n"
+"  FileManager      - 首选文件管理器。\n"
+"  TerminalEmulator - 首选终端模拟器。"
 
 #: ../exo-open/main.c:107
 msgid ""
@@ -1558,32 +1557,15 @@ msgstr ""
 #: ../exo-open/main.c:324
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "无法启动类别“%s”的首选程序。"
+msgstr "无法启动类别 \"%s\" 的首选程序。"
 
 #: ../exo-open/main.c:366
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "无法检测 \"%s\" 的 URI 主题。"
 
 #: ../exo-open/main.c:376
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "无法打开 URL \"%s\"。"
+msgstr "无法打开 URI \"%s\"。"
 
-#~ msgid "Unable to open \"%s\""
-#~ msgstr "无法打开“%s”"
-
-#~ msgid "The URL \"%s\" is not supported"
-#~ msgstr "不支持 URL “%s”"
-
-#~ msgid "Unknown helper arguments.\n"
-#~ msgstr "未知外部程序参数。\n"
-
-#~ msgid "Xfce 4 Preferred Applications"
-#~ msgstr "Xfce4 偏好应用程序"
-
-#~ msgid "Failed to launch exo-preferred-applications"
-#~ msgstr "无法执行 exo-preferred-applications"
-
-#~ msgid "Button Label|Preferred Applications"
-#~ msgstr "偏好应用程序"
