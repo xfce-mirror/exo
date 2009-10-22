@@ -26,6 +26,7 @@
 #define G_IMPLEMENT_INLINES 1
 #define __EXO_UTILS_C__
 #include <exo/exo-utils.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-utils
@@ -162,3 +163,9 @@ exo_noop_false (void)
 {
   return FALSE;
 }
+
+
+
+#define __EXO_UTILS_C__
+#include <exo/exo-aliasdef.c>
+

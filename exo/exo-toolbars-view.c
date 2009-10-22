@@ -38,6 +38,7 @@
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-private.h>
 #include <exo/exo-toolbars-view.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-toolbars-view
@@ -1426,3 +1427,8 @@ exo_toolbars_view_set_ui_manager (ExoToolbarsView *view,
       exo_toolbars_view_construct (view);
     }
 }
+
+
+
+#define __EXO_TOOLBARS_VIEW_C__
+#include <exo/exo-aliasdef.c>

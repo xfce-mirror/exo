@@ -34,19 +34,19 @@ G_BEGIN_DECLS
 typedef struct _ExoThumbnailPreviewClass ExoThumbnailPreviewClass;
 typedef struct _ExoThumbnailPreview      ExoThumbnailPreview;
 
-#define EXO_TYPE_THUMBNAIL_PREVIEW            (_exo_thumbnail_preview_get_type ())
+#define EXO_TYPE_THUMBNAIL_PREVIEW            (exo_thumbnail_preview_get_type ())
 #define EXO_THUMBNAIL_PREVIEW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), EXO_TYPE_THUMBNAIL_PREVIEW, ExoThumbnailPreview))
 #define EXO_THUMBNAIL_PREVIEW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), EXO_TYPE_THUMBNAIL_PREVIEW, ExoThumbnailPreviewClass))
 #define EXO_IS_THUMBNAIL_PREVIEW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), EXO_TYPE_THUMBNAIL_PREVIEW))
 #define EXO_IS_THUMBNAIL_PREVIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EXO_TYPE_THUMBNAIL_PREVIEW))
 #define EXO_THUMBNAIL_PREVIEW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EXO_TYPE_THUMBNAIL_PREVIEW, ExoThumbnailPreviewClass))
 
-GType      _exo_thumbnail_preview_get_type (void) G_GNUC_CONST;
+G_GNUC_INTERNAL GType      exo_thumbnail_preview_get_type  (void) G_GNUC_CONST;
 
-GtkWidget *_exo_thumbnail_preview_new      (void) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+G_GNUC_INTERNAL GtkWidget *_exo_thumbnail_preview_new      (void) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
-void       _exo_thumbnail_preview_set_uri  (ExoThumbnailPreview *thumbnail_preview,
-                                            const gchar         *uri);
+G_GNUC_INTERNAL void       _exo_thumbnail_preview_set_uri  (ExoThumbnailPreview *thumbnail_preview,
+                                                            const gchar         *uri);
 
 G_END_DECLS
 

@@ -35,6 +35,7 @@
 #endif
 
 #include <exo/exo-string.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-string
@@ -428,3 +429,8 @@ exo_str_looks_like_an_uri (const gchar *str)
 
   return FALSE;
 }
+
+
+
+#define __EXO_STRING_C__
+#include <exo/exo-aliasdef.c>

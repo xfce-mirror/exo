@@ -25,6 +25,7 @@
 #endif
 
 #include <exo/exo-gobject-extensions.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-gobject-extensions
@@ -65,3 +66,8 @@ exo_g_value_transform_negate (const GValue  *src_value,
 
   return FALSE;
 }
+
+
+
+#define __EXO_GOBJECT_EXTENSIONS_C__
+#include <exo/exo-aliasdef.c>

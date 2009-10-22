@@ -26,6 +26,7 @@
 
 #include <exo/exo-cell-renderer-ellipsized-text.h>
 #include <exo/exo-private.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-cell-renderer-ellipsized-text
@@ -368,3 +369,8 @@ exo_cell_renderer_ellipsized_text_new (void)
 {
   return g_object_new (EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT, NULL);
 }
+
+
+
+#define __EXO_CELL_RENDERER_ELLIPSIZED_TEXT_C__
+#include <exo/exo-aliasdef.c>

@@ -31,6 +31,7 @@
 #include <exo/exo-gtk-extensions.h>
 #include <exo/exo-private.h>
 #include <exo/exo-thumbnail-preview.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-gtk-extensions
@@ -234,3 +235,8 @@ exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
   /* cleanup */
   g_free (uri);
 }
+
+
+
+#define __EXO_GTK_EXTENSIONS_C__
+#include <exo/exo-aliasdef.c>

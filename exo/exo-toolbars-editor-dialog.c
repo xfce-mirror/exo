@@ -38,6 +38,7 @@
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-editor-dialog.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-toolbars-editor-dialog
@@ -172,3 +173,8 @@ exo_toolbars_editor_dialog_new_with_model (GtkUIManager     *ui_manager,
 
   return GTK_WIDGET (dialog);
 }
+
+
+
+#define __EXO_TOOLBARS_EDITOR_DIALOG_C__
+#include <exo/exo-aliasdef.c>

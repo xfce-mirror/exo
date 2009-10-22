@@ -32,6 +32,7 @@
 #include <exo/exo-icon-chooser-model.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
+#include <exo/exo-alias.h>
 
 
 
@@ -39,7 +40,7 @@ typedef struct _ExoIconChooserModelItem ExoIconChooserModelItem;
 
 
 
-static void               exo_icon_chooser_model_tree_model_init   (GtkTreeModelIface         *iface);
+static void               exo_icon_chooser_model_tree_model_init    (GtkTreeModelIface         *iface);
 static void               exo_icon_chooser_model_finalize           (GObject                   *object);
 static GtkTreeModelFlags  exo_icon_chooser_model_get_flags          (GtkTreeModel              *tree_model);
 static gint               exo_icon_chooser_model_get_n_columns      (GtkTreeModel              *tree_model);
@@ -117,26 +118,18 @@ static const gchar CONTEXT_NAMES[][14] =
 
 
 
-G_DEFINE_TYPE_WITH_CODE (ExoIconChooserModel, _exo_icon_chooser_model, G_TYPE_OBJECT,
+G_DEFINE_TYPE_WITH_CODE (ExoIconChooserModel, exo_icon_chooser_model, G_TYPE_OBJECT,
   G_IMPLEMENT_INTERFACE (GTK_TYPE_TREE_MODEL, exo_icon_chooser_model_tree_model_init))
 
 
 
 static void
-_exo_icon_chooser_model_class_init (ExoIconChooserModelClass *klass)
+exo_icon_chooser_model_class_init (ExoIconChooserModelClass *klass)
 {
   GObjectClass *gobject_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_icon_chooser_model_finalize;
-}
-
-
-
-static void
-_exo_icon_chooser_model_init (ExoIconChooserModel *model)
-{
-  model->stamp = g_random_int ();
 }
 
 
@@ -161,6 +154,14 @@ exo_icon_chooser_model_tree_model_init (GtkTreeModelIface *iface)
 
 
 static void
+exo_icon_chooser_model_init (ExoIconChooserModel *model)
+{
+  model->stamp = g_random_int ();
+}
+
+
+
+static void
 exo_icon_chooser_model_finalize (GObject *object)
 {
   ExoIconChooserModel *model = EXO_ICON_CHOOSER_MODEL (object);
@@ -178,7 +179,7 @@ exo_icon_chooser_model_finalize (GObject *object)
   g_list_foreach (model->items, (GFunc) exo_icon_chooser_model_item_free, NULL);
   g_list_free (model->items);
 
-  (*G_OBJECT_CLASS (_exo_icon_chooser_model_parent_class)->finalize) (object);
+  (*G_OBJECT_CLASS (exo_icon_chooser_model_parent_class)->finalize) (object);
 }
 
 
@@ -638,3 +639,8 @@ _exo_icon_chooser_model_get_iter_for_icon_name (ExoIconChooserModel *model,
 
   return FALSE;
 }
+
+
+
+#define __EXO_ICON_CHOOSER_MODEL_C__
+#include <exo/exo-aliasdef.c>

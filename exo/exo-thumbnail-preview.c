@@ -41,6 +41,7 @@
 #include <exo/exo-thumbnail-preview.h>
 #include <exo/exo-thumbnail.h>
 #include <exo/exo-utils.h>
+#include <exo/exo-alias.h>
 #include <exo/exo-string.h>
 
 
@@ -66,19 +67,19 @@ struct _ExoThumbnailPreview
 
 
 
-G_DEFINE_TYPE (ExoThumbnailPreview, _exo_thumbnail_preview, GTK_TYPE_FRAME)
+G_DEFINE_TYPE (ExoThumbnailPreview, exo_thumbnail_preview, GTK_TYPE_FRAME)
 
 
 
 static void
-_exo_thumbnail_preview_class_init (ExoThumbnailPreviewClass *klass)
+exo_thumbnail_preview_class_init (ExoThumbnailPreviewClass *klass)
 {
 }
 
 
 
 static void
-_exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
+exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
 {
   GtkWidget *button;
   GtkWidget *label;
@@ -379,3 +380,8 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
   gtk_label_set_text (GTK_LABEL (thumbnail_preview->size_label), (size_name != NULL) ? size_name : "");
   g_free (size_name);
 }
+
+
+
+#define __EXO_THUMBNAIL_PREVIEW_C__
+#include <exo/exo-aliasdef.c>

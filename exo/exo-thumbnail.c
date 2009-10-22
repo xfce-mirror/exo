@@ -54,6 +54,7 @@
 #include <exo/exo-gdk-pixbuf-extensions.h>
 #include <exo/exo-private.h>
 #include <exo/exo-thumbnail.h>
+#include <exo/exo-alias.h>
 
 /* use g_rename() and g_unlink() on win32 */
 #if defined(G_OS_WIN32)
@@ -292,3 +293,8 @@ _exo_thumbnail_get_for_uri (const gchar     *uri,
 
   return thumbnail;
 }
+
+
+
+#define __EXO_THUMBNAIL_C__
+#include <exo/exo-aliasdef.c>

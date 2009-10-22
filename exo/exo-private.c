@@ -33,6 +33,7 @@
 
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
+#include <exo/exo-alias.h>
 
 
 

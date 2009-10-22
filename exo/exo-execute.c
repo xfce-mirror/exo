@@ -23,6 +23,7 @@
 #endif
 
 #include <exo/exo-execute.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-execute
@@ -224,3 +225,8 @@ exo_execute_terminal_shell_on_screen (const gchar *command_line,
 
   return exo_execute_preferred_application_on_screen ("TerminalEmulator", command_line, working_directory, envp, screen, error);
 }
+
+
+
+#define __EXO_EXECUTE_C__
+#include <exo/exo-aliasdef.c>

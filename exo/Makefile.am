@@ -40,6 +40,8 @@ libexo_built_public_sources =						\
 
 libexo_built_sources =							\
 	$(libexo_built_public_sources)					\
+	exo-alias.h							\
+	exo-aliasdef.c							\
 	exo-enum-types.c						\
 	exo-marshal.c							\
 	exo-marshal.h
@@ -136,8 +138,16 @@ DISTCLEANFILES =							\
 BUILT_SOURCES =								\
 	$(libexo_built_sources)
 
+if HAVE_GNUC_VISIBILITY
 TESTS =									\
 	abicheck.sh
+endif
+
+exo-alias.h: make-exo-alias.pl exo.symbols
+	$(AM_V_GEN) $(PERL) $(srcdir)/make-exo-alias.pl < $(srcdir)/exo.symbols > exo-alias.h
+
+exo-aliasdef.c: make-exo-alias.pl exo.symbols
+	$(AM_V_GEN) $(PERL) $(srcdir)/make-exo-alias.pl -def < $(srcdir)/exo.symbols > exo-aliasdef.c
 
 exo-enum-types.h: stamp-exo-enum-types.h
 	@true
@@ -154,12 +164,12 @@ stamp-exo-enum-types.h: $(libexo_headers) Makefile
 
 exo-enum-types.c: $(libexo_headers) Makefile
 	$(AM_V_GEN) ( cd $(srcdir) && glib-mkenums \
-		--fhead "#undef GTK_DISABLE_DEPRECATED\n#define GTK_ENABLE_BROKEN\n#include <exo/exo.h>\n" \
+		--fhead "#undef GTK_DISABLE_DEPRECATED\n#define GTK_ENABLE_BROKEN\n#include <exo/exo.h>\n#include <exo/exo-alias.h>\n" \
 		--fprod "\n/* enumerations from \"@filename@\" */" \
 		--vhead "GType\n@enum_name@_get_type (void)\n{\n\tstatic GType type = 0;\n\tif (type == 0) {\n\tstatic const G@Type@Value values[] = {"\
 		--vprod "\t{ @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
 		--vtail "\t{ 0, NULL, NULL }\n\t};\n\ttype = g_@type@_register_static (\"@EnumName@\", values);\n  }\n\treturn type;\n}\n" \
-		--ftail "\n#define __EXO_ENUM_TYPES_C__\n" \
+		--ftail "\n#define __EXO_ENUM_TYPES_C__\n#include <exo/exo-aliasdef.c>\n" \
 		$(libexo_headers) ) >> xgen-eetc \
 	&& cp xgen-eetc exo-enum-types.c \
 	&& rm -f xgen-eetc
@@ -190,6 +200,9 @@ dist-hook: all
 EXTRA_DIST = 								\
 	abicheck.sh							\
 	exo.symbols							\
-	exo-marshal.list
+	exo-alias.h							\
+	exo-aliasdef.c							\
+	exo-marshal.list						\
+	make-exo-alias.pl
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

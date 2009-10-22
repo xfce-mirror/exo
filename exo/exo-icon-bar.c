@@ -29,6 +29,7 @@
 #include <exo/exo-marshal.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-icon-bar
@@ -1882,3 +1883,8 @@ exo_icon_bar_set_active_iter (ExoIconBar  *icon_bar,
       gtk_tree_path_free (path);
     }
 }
+
+
+
+#define __EXO_ICON_BAR_C__
+#include <exo/exo-aliasdef.c>

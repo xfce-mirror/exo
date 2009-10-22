@@ -39,6 +39,7 @@
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-private.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-toolbars-editor
@@ -724,3 +725,8 @@ exo_toolbars_editor_set_ui_manager (ExoToolbarsEditor *editor,
 
   exo_toolbars_editor_update (editor);
 }
+
+
+
+#define __EXO_TOOLBARS_EDITOR_C__
+#include <exo/exo-aliasdef.c>

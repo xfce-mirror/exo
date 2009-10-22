@@ -29,6 +29,7 @@
 #include <exo/exo-gdk-pixbuf-extensions.h>
 #include <exo/exo-private.h>
 #include <exo/exo-thumbnail.h>
+#include <exo/exo-alias.h>
 
 /**
  * SECTION: exo-cell-renderer-icon
@@ -566,3 +567,8 @@ exo_cell_renderer_icon_new (void)
 {
   return g_object_new (EXO_TYPE_CELL_RENDERER_ICON, NULL);
 }
+
+
+
+#define __EXO_CELL_RENDERER_ICON_C__
+#include <exo/exo-aliasdef.c>

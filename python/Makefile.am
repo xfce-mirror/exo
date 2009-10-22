@@ -69,7 +69,9 @@ CLEANFILES =								\
 	exo.c								\
 	expected-abi
 
+if HAVE_GNUC_VISIBILITY
 TESTS =									\
 	abicheck.sh
+endif
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
