@@ -48,7 +48,6 @@
 #include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-job.h>
-#include <exo/exo-mount-point.h>
 #include <exo/exo-simple-job.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>

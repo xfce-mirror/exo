@@ -8,7 +8,8 @@ INCLUDES = 								\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"			\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	-DPATH_MOUNT=\"$(PATH_MOUNT)\"					\
-	-DPATH_UMOUNT=\"$(PATH_UMOUNT)\"
+	-DPATH_UMOUNT=\"$(PATH_UMOUNT)\"				\
+	-DPATH_EJECT=\"$(PATH_EJECT)\"
 
 defaultsdir = $(sysconfdir)/xdg/xfce4
 defaults_DATA = mount.rc
@@ -17,10 +18,6 @@ bin_PROGRAMS =								\
 	exo-mount
 
 exo_mount_SOURCES =							\
-	exo-mount-fstab.c						\
-	exo-mount-fstab.h						\
-	exo-mount-utils.c						\
-	exo-mount-utils.h						\
 	main.c
 
 if HAVE_HAL
@@ -32,7 +29,9 @@ endif
 exo_mount_CFLAGS =							\
 	$(GTK_CFLAGS)							\
 	$(HAL_CFLAGS)							\
-	$(LIBXFCE4UTIL_CFLAGS)
+	$(LIBXFCE4UTIL_CFLAGS)						\
+	$(GIO_CFLAGS)							\
+	$(GIO_UNIX_CFLAGS)
 
 exo_mount_LDFLAGS =							\
 	-no-undefined
@@ -45,7 +44,9 @@ exo_mount_LDADD =							\
 	$(GTK_LIBS)							\
 	$(HAL_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la \
+	$(GIO_LIBS)							\
+	$(GIO_UNIX_LIBS)						\
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la		\
 	$(top_builddir)/exo-hal/libexo-hal-$(LIBEXO_VERSION_API).la
 
 # install apppropriate symlinks

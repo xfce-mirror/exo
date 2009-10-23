@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-18 20:05+0200\n"
+"POT-Creation-Date: 2009-10-23 14:20+0200\n"
 "PO-Revision-Date: 2008-12-13 16:27+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: os-cillation <info@os-cillation.com>\n"
@@ -51,8 +51,7 @@ msgstr "koko"
 msgid "The size of the icon to render in pixels."
 msgstr "Piirrettävän kuvakkeen koko kuvapisteinä."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:788 ../exo/exo-mount-point.c:221
-#: ../exo/exo-mount-point.c:250 ../exo/exo-mount-point.c:438
+#: ../exo/exo-gdk-pixbuf-extensions.c:788
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Tiedoston \"%s\" avaaminen epäonnistui: %s"
@@ -525,8 +524,8 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Poista noodien sisältö XML-tiedostoista\n"
 
 #: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:156
-#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:170
-#: ../exo-open/main.c:270
+#: ../exo-mount/main.c:264 ../exo-mount-notify/main.c:170
+#: ../exo-open/main.c:259
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -542,8 +541,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:160
-#: ../exo-mount/main.c:132 ../exo-mount-notify/main.c:174
-#: ../exo-open/main.c:274
+#: ../exo-mount/main.c:268 ../exo-mount-notify/main.c:174
+#: ../exo-open/main.c:263
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -559,8 +558,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:164
-#: ../exo-mount/main.c:136 ../exo-mount-notify/main.c:178
-#: ../exo-open/main.c:278
+#: ../exo-mount/main.c:272 ../exo-mount-notify/main.c:178
+#: ../exo-open/main.c:267
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Ilmoitathan ohjelmistovirheet osoitteeseen <%s>.\n"
@@ -724,7 +723,7 @@ msgid "Preset icon when creating a desktop file"
 msgstr "Esiasetettu kuvake luotaessa desktop-tiedostoa"
 
 #: ../exo-desktop-item-edit/main.c:83 ../exo-helper/main.c:68
-#: ../exo-mount/main.c:77 ../exo-mount-notify/main.c:77
+#: ../exo-mount/main.c:81 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Näytä versiotiedot ja poistu"
 
@@ -734,7 +733,7 @@ msgid "[FILE|FOLDER]"
 msgstr "[TIEDOSTO|KANSIO]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:144 ../exo-mount/main.c:114
+#: ../exo-desktop-item-edit/main.c:144 ../exo-mount/main.c:250
 #: ../exo-mount-notify/main.c:156
 msgid "Failed to open display"
 msgstr "Näytön avaaminen epäonnistui"
@@ -1329,23 +1328,17 @@ msgstr "W3M -tekstiselain"
 msgid "X Terminal"
 msgstr "X-pääte"
 
-#: ../exo-mount/exo-mount-fstab.c:85
-#, c-format
-msgid "Unknown error"
-msgstr "Tuntematon virhe"
-
-#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
-#. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:420
-#, c-format
-msgid "Device \"%s\" not found in file system device table"
-msgstr "Laitetta \"%s\" ei löydy tiedostojärjestelmätaulukosta"
-
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Määritetty laite \"%s\" ei ole taltio tai asema"
+
+#. tell the caller that no matching device was found
+#: ../exo-mount/exo-mount-hal.c:420 ../exo-mount/main.c:142
+#, c-format
+msgid "Device \"%s\" not found in file system device table"
+msgstr "Laitetta \"%s\" ei löydy tiedostojärjestelmätaulukosta"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:652
@@ -1360,12 +1353,12 @@ msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Sovellus estää taltion \"%s\" poistamisen"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:964
+#: ../exo-mount/exo-mount-hal.c:965
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Sinulla ei ole oikeuksia taltion \"%s\" liittämiseen"
 
-#: ../exo-mount/exo-mount-hal.c:979
+#: ../exo-mount/exo-mount-hal.c:980
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1374,7 +1367,7 @@ msgstr ""
 "Tyhjiä levyjä ei voi liittää. Tallenna levylle ääntä tai tiedostoja CD:n\n"
 "kirjoitussovelluksen (esim. Xfburn) avulla."
 
-#: ../exo-mount/exo-mount-hal.c:990
+#: ../exo-mount/exo-mount-hal.c:991
 #, fuzzy, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
@@ -1382,70 +1375,82 @@ msgid ""
 msgstr "Audio-CD:tä ei voi liittää. Kuuntele ääniraitoja Xfmedialla."
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1055
+#: ../exo-mount/exo-mount-hal.c:1056
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "Oikeutesi eivät riitä salauskerroksen purkamiseen"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1060
+#: ../exo-mount/exo-mount-hal.c:1061
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "Sovellus estää taltion salauskerroksen purkamisen"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1144
+#: ../exo-mount/exo-mount-hal.c:1145
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Sinulla ei ole oikeuksia taltion \"%s\" irrottamiseen"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1149
+#: ../exo-mount/exo-mount-hal.c:1150
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Sovellus estää taltion \"%s\" irrottamisen"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1154
+#: ../exo-mount/exo-mount-hal.c:1155
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "Taltio \"%s\" on varmaankin liitetty manuaalisesti komentoriviltä"
 
-#: ../exo-mount/main.c:68
+#: ../exo-mount/main.c:72
 msgid "Eject rather than mount"
 msgstr "Poista, älä liitä"
 
-#: ../exo-mount/main.c:69
+#: ../exo-mount/main.c:73
 msgid "Unmount rather than mount"
 msgstr "Irrota, älä liitä"
 
-#: ../exo-mount/main.c:71
+#: ../exo-mount/main.c:75
 msgid "Mount by HAL device UDI"
 msgstr "Liitä HAL:in laite-UDI:n perusteella"
 
-#: ../exo-mount/main.c:73
+#: ../exo-mount/main.c:77
 msgid "Mount by HAL device UDI (not supported)"
 msgstr "Liitä HAL:in laite-UDI:n perusteella (ei tuettu)"
 
-#: ../exo-mount/main.c:75
+#: ../exo-mount/main.c:79
 msgid "Mount by device file"
 msgstr "Liitä laitetiedoston perusteella"
 
-#: ../exo-mount/main.c:76
+#: ../exo-mount/main.c:80
 msgid "Don't show any dialogs"
 msgstr "Älä näytä dialogeja"
 
+#: ../exo-mount/main.c:206
+#, c-format
+msgid "Unknown error"
+msgstr "Tuntematon virhe"
+
+#: ../exo-mount/main.c:277
+#, c-format
+msgid ""
+"%s is compiled without GIO-Unix features. Therefore it will probably not "
+"work on this system."
+msgstr ""
+
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:144
+#: ../exo-mount/main.c:285
 msgid "Must specify HAL device UDI or device file"
 msgstr "Määritettävä HAL:in laite-UDI tai laitetiedosto"
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:152
+#: ../exo-mount/main.c:293
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "Määritettävä joko HAL:in laite-UDI tai laitetiedosto, ei molempia"
 
-#: ../exo-mount/main.c:160
+#: ../exo-mount/main.c:301
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
@@ -1453,27 +1458,27 @@ msgstr ""
 "Ei voi liittää HAL:in laite-UDI:n perusteella, koska sovellusta ei käännetty "
 "HAL-tuella"
 
-#: ../exo-mount/main.c:167
+#: ../exo-mount/main.c:308
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 msgstr "Määritetty UDI \"%s\" ei ole kelvollinen HAL:in laite-UDI"
 
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:184
+#: ../exo-mount/main.c:325
 msgid "Cannot eject and unmount simultaneously"
 msgstr "Ei voi poistaa ja irrottaa samanaikaisesti"
 
-#: ../exo-mount/main.c:336
+#: ../exo-mount/main.c:477
 #, c-format
 msgid "Failed to eject \"%s\""
 msgstr "Kohteen \"%s\" poistaminen epäonnistui."
 
-#: ../exo-mount/main.c:338
+#: ../exo-mount/main.c:479
 #, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "Kohteen \"%s\" irrottaminen epäonnistui."
 
-#: ../exo-mount/main.c:340
+#: ../exo-mount/main.c:481
 #, c-format
 msgid "Failed to mount \"%s\""
 msgstr "Kohteen \"%s\" liittäminen epäonnistui."
@@ -1526,24 +1531,24 @@ msgstr ""
 "Laitteelle \"%s\" täytyy kirjoittaa tietoa ennen sen poistamista. Älä poista "
 "taltiota asemasta tai laitetta järjestelmästä."
 
-#: ../exo-open/main.c:83
+#: ../exo-open/main.c:85
 msgid "Usage: exo-open [URLs...]"
 msgstr "Käyttö: exo-open [URL:t...]"
 
-#: ../exo-open/main.c:84
+#: ../exo-open/main.c:86
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "        exo-open --launch TYYPPI [PARAMETRIT...]"
 
-#: ../exo-open/main.c:86
+#: ../exo-open/main.c:88
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Näytä tämä ohjeteksti ja poistu"
 
-#: ../exo-open/main.c:87
+#: ../exo-open/main.c:89
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Näytä versiotiedot ja poistu"
 
-#: ../exo-open/main.c:89
+#: ../exo-open/main.c:91
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1554,7 +1559,7 @@ msgstr ""
 "                                      käyttäen valinnaisia PARAMETREJA,\n"
 "                                      kun TYYPPI on joku alla luetelluista."
 
-#: ../exo-open/main.c:93
+#: ../exo-open/main.c:95
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1563,14 +1568,14 @@ msgstr ""
 "  --working-directory KANSIO          Sovellusten oletusarvoinen työkansio\n"
 "                                      käytettäessä --launch -valitsinta."
 
-#: ../exo-open/main.c:96
+#: ../exo-open/main.c:98
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Komento --launch tukee seuraavia TYYPPEJÄ:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:102
+#: ../exo-open/main.c:104
 #, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1582,7 +1587,7 @@ msgstr ""
 "  MailReader       - Oletusarvoinen sähköpostiohjelma.\n"
 "  TerminalEmulator - Oletusarvoinen pääteohjelma."
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1595,17 +1600,24 @@ msgstr ""
 "sovelluksen ja antaa sille lisäparametreja (voit esimerkiksi määrittää\n"
 "päätteessä suoritettavan komentorivin)."
 
-#: ../exo-open/main.c:324
+#: ../exo-open/main.c:171
+#, c-format
+msgid ""
+"Launching desktop files is not supported when %s is compiled without GIO-"
+"Unix features."
+msgstr ""
+
+#: ../exo-open/main.c:313
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Oletussovelluksen suorittaminen kategorialle \"%s\" epäonnistui."
 
-#: ../exo-open/main.c:366
+#: ../exo-open/main.c:355
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr ""
 
-#: ../exo-open/main.c:376
+#: ../exo-open/main.c:365
 #, fuzzy, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "URL:n \"%s\" avaaminen epäonnistui."

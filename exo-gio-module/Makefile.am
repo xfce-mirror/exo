@@ -7,6 +7,8 @@ INCLUDES = 								\
 	-DLIBEXECDIR=\"$(libexecdir)\"					\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"
 
+if HAVE_GIO_UNIX
+
 if HAVE_GIO_MODULEDIR
 exomoduledir =								\
 	$(GIOMODULEDIR)
@@ -43,5 +45,7 @@ libexo_module_1_la_LIBADD =						\
 	$(GTK_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
+
+endif
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:

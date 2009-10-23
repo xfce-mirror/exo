@@ -24,7 +24,6 @@ libexo_headers =							\
 	exo-icon-view.h							\
 	exo-job.h							\
 	exo-simple-job.h						\
-	exo-mount-point.h						\
 	exo-string.h							\
 	exo-toolbars-editor-dialog.h					\
 	exo-toolbars-editor.h						\
@@ -73,7 +72,6 @@ libexo_1_la_SOURCES =							\
 	exo-job.c							\
 	exo-job.h							\
 	exo-simple-job.c						\
-	exo-mount-point.c						\
 	exo-private.c							\
 	exo-private.h							\
 	exo-string.c							\

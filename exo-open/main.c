@@ -33,7 +33,9 @@
 
 #include <glib/gstdio.h>
 #include <gio/gio.h>
+#ifdef HAVE_GIO_UNIX
 #include <gio/gdesktopappinfo.h>
+#endif
 #include <exo/exo.h>
 
 
@@ -117,6 +119,7 @@ usage (void)
 static gboolean
 exo_open_launch_desktop_file (const gchar *arg)
 {
+#ifdef HAVE_GIO_UNIX
   GFile           *gfile;
   gchar           *contents;
   gsize            length;
@@ -157,33 +160,19 @@ exo_open_launch_desktop_file (const gchar *arg)
   else
     result = FALSE;
 
+  g_object_unref (G_OBJECT (appinfo));
+
 #ifndef NDEBUG
   g_debug ("launching desktop file %s", result ? "succeeded" : "failed");
 #endif
 
-  g_object_unref (G_OBJECT (appinfo));
-
   return result;
-}
-
-
-
-static gboolean
-exo_open_looks_like_an_uri (const gchar *string)
-{
-  const gchar *s = string;
-
-  /* <scheme> starts with an alpha character */
-  if (g_ascii_isalpha (*s))
-    {
-      /* <scheme> continues with (alpha | digit | "+" | "-" | ".")* */
-      for (++s; g_ascii_isalnum (*s) || *s == '+' || *s == '-' || *s == '.'; ++s);
-
-      /* <scheme> must be followed by ":" */
-      return (*s == ':');
-    }
+#else /* !HAVE_GIO_UNIX */
+  g_critical (_("Launching desktop files is not supported when %s is compiled "
+                "without GIO-Unix features."), g_get_prgname ());
 
   return FALSE;
+#endif
 }
 
 
@@ -344,7 +333,7 @@ main (int argc, char **argv)
               /* successfully launched a desktop file */
               continue;
             }
-          else if (exo_open_looks_like_an_uri (*argv))
+          else if (exo_str_looks_like_an_uri (*argv))
             {
               /* use the argument directly */
               uri = g_strdup (*argv);
