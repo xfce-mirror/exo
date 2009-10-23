@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-18 20:05+0200\n"
+"POT-Creation-Date: 2009-10-23 14:20+0200\n"
 "PO-Revision-Date: 2008-11-12 11:50-0400\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -56,8 +56,7 @@ msgstr "tamanho"
 msgid "The size of the icon to render in pixels."
 msgstr "O tamanho do ícone a renderizar em pixels."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:788 ../exo/exo-mount-point.c:221
-#: ../exo/exo-mount-point.c:250 ../exo/exo-mount-point.c:438
+#: ../exo/exo-gdk-pixbuf-extensions.c:788
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Falhou ao abrir o arquivo \"%s\": %s"
@@ -534,8 +533,8 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Remove conteúdo de nós de arquivos XML\n"
 
 #: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:156
-#: ../exo-mount/main.c:128 ../exo-mount-notify/main.c:170
-#: ../exo-open/main.c:270
+#: ../exo-mount/main.c:264 ../exo-mount-notify/main.c:170
+#: ../exo-open/main.c:259
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -551,8 +550,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:160
-#: ../exo-mount/main.c:132 ../exo-mount-notify/main.c:174
-#: ../exo-open/main.c:274
+#: ../exo-mount/main.c:268 ../exo-mount-notify/main.c:174
+#: ../exo-open/main.c:263
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -568,8 +567,8 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:164
-#: ../exo-mount/main.c:136 ../exo-mount-notify/main.c:178
-#: ../exo-open/main.c:278
+#: ../exo-mount/main.c:272 ../exo-mount-notify/main.c:178
+#: ../exo-open/main.c:267
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Por favor, relate problemas para <%s>.\n"
@@ -734,7 +733,7 @@ msgid "Preset icon when creating a desktop file"
 msgstr "Ícone pré-definidodo ao criar um arquivo de área de trabalho"
 
 #: ../exo-desktop-item-edit/main.c:83 ../exo-helper/main.c:68
-#: ../exo-mount/main.c:77 ../exo-mount-notify/main.c:77
+#: ../exo-mount/main.c:81 ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Mostra informação de versão e sai"
 
@@ -744,7 +743,7 @@ msgid "[FILE|FOLDER]"
 msgstr "[ARQUIVO|PASTA]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:144 ../exo-mount/main.c:114
+#: ../exo-desktop-item-edit/main.c:144 ../exo-mount/main.c:250
 #: ../exo-mount-notify/main.c:156
 msgid "Failed to open display"
 msgstr "Falhou ao abrir exibição"
@@ -1344,25 +1343,19 @@ msgstr "Navegador de texto W3M"
 msgid "X Terminal"
 msgstr "Terminal X"
 
-#: ../exo-mount/exo-mount-fstab.c:85
-#, c-format
-msgid "Unknown error"
-msgstr "Erro desconhecido"
-
-#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
-#. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-fstab.c:125 ../exo-mount/exo-mount-hal.c:420
-#, c-format
-msgid "Device \"%s\" not found in file system device table"
-msgstr ""
-"Dispositivo \"%s\" não encontrado na tabela de dispositivos do sistema de "
-"arquivos"
-
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "O dispositivo \"%s\" não é um volume ou disco"
+
+#. tell the caller that no matching device was found
+#: ../exo-mount/exo-mount-hal.c:420 ../exo-mount/main.c:142
+#, c-format
+msgid "Device \"%s\" not found in file system device table"
+msgstr ""
+"Dispositivo \"%s\" não encontrado na tabela de dispositivos do sistema de "
+"arquivos"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:652
@@ -1377,12 +1370,12 @@ msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Algum aplicativo esta impedindo o volume \"%s\" de ser ejetado"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:964
+#: ../exo-mount/exo-mount-hal.c:965
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Você não possui privilégios para montar o volume \"%s\""
 
-#: ../exo-mount/exo-mount-hal.c:979
+#: ../exo-mount/exo-mount-hal.c:980
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1391,7 +1384,7 @@ msgstr ""
 "Discos em branco não podem ser montados. Para gravar áudio ou dados, use um "
 "programa como o Xfburn"
 
-#: ../exo-mount/exo-mount-hal.c:990
+#: ../exo-mount/exo-mount-hal.c:991
 #, fuzzy, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
@@ -1401,74 +1394,86 @@ msgstr ""
 "áudio."
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1055
+#: ../exo-mount/exo-mount-hal.c:1056
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "Você não possui privilégios para desmontar a camada criptografada"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1060
+#: ../exo-mount/exo-mount-hal.c:1061
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr ""
 "Um aplicativo esta impedindo que a camada criptografada seja desmontada"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1144
+#: ../exo-mount/exo-mount-hal.c:1145
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "Você não possui privilégios para desmontar o volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1149
+#: ../exo-mount/exo-mount-hal.c:1150
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Algum aplicativo esta impedindo que o volume \"%s\" seja desmontado"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1154
+#: ../exo-mount/exo-mount-hal.c:1155
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr ""
 "O volume \"%s\" foi provavelmente montado manualmente pela linha de comando"
 
-#: ../exo-mount/main.c:68
+#: ../exo-mount/main.c:72
 msgid "Eject rather than mount"
 msgstr "Ejetar invés de montar"
 
-#: ../exo-mount/main.c:69
+#: ../exo-mount/main.c:73
 msgid "Unmount rather than mount"
 msgstr "Desmontar invés de montar"
 
-#: ../exo-mount/main.c:71
+#: ../exo-mount/main.c:75
 msgid "Mount by HAL device UDI"
 msgstr "Montar por UDI de dispositivo HAL"
 
-#: ../exo-mount/main.c:73
+#: ../exo-mount/main.c:77
 msgid "Mount by HAL device UDI (not supported)"
 msgstr "Montar por UDI de dispositivo HAL (não suportado)"
 
-#: ../exo-mount/main.c:75
+#: ../exo-mount/main.c:79
 msgid "Mount by device file"
 msgstr "Montar por arquivo de dispositivo"
 
-#: ../exo-mount/main.c:76
+#: ../exo-mount/main.c:80
 msgid "Don't show any dialogs"
 msgstr "Não mostrar nenhum diálogo"
 
+#: ../exo-mount/main.c:206
+#, c-format
+msgid "Unknown error"
+msgstr "Erro desconhecido"
+
+#: ../exo-mount/main.c:277
+#, c-format
+msgid ""
+"%s is compiled without GIO-Unix features. Therefore it will probably not "
+"work on this system."
+msgstr ""
+
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:144
+#: ../exo-mount/main.c:285
 msgid "Must specify HAL device UDI or device file"
 msgstr "Deve especificar um UDI de dispositivo HAL ou arquivo de dispositivo"
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:152
+#: ../exo-mount/main.c:293
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr ""
 "Não especificar um UDI de dispositivo HAL e um arquivo de dispositivo "
 "simultaneamente"
 
-#: ../exo-mount/main.c:160
+#: ../exo-mount/main.c:301
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
@@ -1476,27 +1481,27 @@ msgstr ""
 "Não é possível montar por este UDI de dispositivo HAL porque o suporte ao "
 "HAL foi desabilitado nesta instalação"
 
-#: ../exo-mount/main.c:167
+#: ../exo-mount/main.c:308
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 msgstr "O UDI \"%s\" não é um UDI válido de dispositivo HAL"
 
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:184
+#: ../exo-mount/main.c:325
 msgid "Cannot eject and unmount simultaneously"
 msgstr "Não é possível ejetar e desmontar simultaneamente"
 
-#: ../exo-mount/main.c:336
+#: ../exo-mount/main.c:477
 #, c-format
 msgid "Failed to eject \"%s\""
 msgstr "Falhou ao ejetar \"%s\""
 
-#: ../exo-mount/main.c:338
+#: ../exo-mount/main.c:479
 #, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "Falhou ao desmontar \"%s\""
 
-#: ../exo-mount/main.c:340
+#: ../exo-mount/main.c:481
 #, c-format
 msgid "Failed to mount \"%s\""
 msgstr "Falhou ao montar \"%s\""
@@ -1549,26 +1554,26 @@ msgstr ""
 "Existem dados que precisam ser gravados no dispositivo \"%s\" antes que ele "
 "possa ser removido. Por favor não remova a mídia ou desconecte o disco."
 
-#: ../exo-open/main.c:83
+#: ../exo-open/main.c:85
 msgid "Usage: exo-open [URLs...]"
 msgstr "Uso: exo-open [URLs...]"
 
-#: ../exo-open/main.c:84
+#: ../exo-open/main.c:86
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TIPO [PARÂMETROs...]"
 
-#: ../exo-open/main.c:86
+#: ../exo-open/main.c:88
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          Mostra esta mensagem de ajuda e sai"
 
-#: ../exo-open/main.c:87
+#: ../exo-open/main.c:89
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Mostra informação de versão e sai"
 
-#: ../exo-open/main.c:89
+#: ../exo-open/main.c:91
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1579,7 +1584,7 @@ msgstr ""
 "                                      TIPO com PARÂMETROs opcionais, onde\n"
 "                                      TIPO é um dos seguintes valores."
 
-#: ../exo-open/main.c:93
+#: ../exo-open/main.c:95
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1589,14 +1594,14 @@ msgstr ""
 "aplicativos\n"
 "                                      ao usar a opção --launch."
 
-#: ../exo-open/main.c:96
+#: ../exo-open/main.c:98
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Os seguintes TIPOs são suportados para o comando --launch:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:102
+#: ../exo-open/main.c:104
 #, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1608,7 +1613,7 @@ msgstr ""
 "  MailReader       - O leitor de e-mail preferido.\n"
 "  TerminalEmulator - O emulador de terminal preferido."
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1626,17 +1631,24 @@ msgstr ""
 "para TerminalEmulator você pode passar a linha de comando que deve ser\n"
 "executada dentro do terminal)."
 
-#: ../exo-open/main.c:324
+#: ../exo-open/main.c:171
+#, c-format
+msgid ""
+"Launching desktop files is not supported when %s is compiled without GIO-"
+"Unix features."
+msgstr ""
+
+#: ../exo-open/main.c:313
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Falhou ao executar o aplicativo preferido para a categoria \"%s\"."
 
-#: ../exo-open/main.c:366
+#: ../exo-open/main.c:355
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr ""
 
-#: ../exo-open/main.c:376
+#: ../exo-open/main.c:365
 #, fuzzy, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Falhou ao abrir a URL \"%s\"."
