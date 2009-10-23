@@ -3,7 +3,6 @@
 # toolbars.py - Simple example to demonstrate the usage of the editable
 #               toolbars framework in libexo.
 #
-# $Id$
 # vim:set ts=4 sw=4 et ai syntax=python:
 #
 # Copyright (c) 2005 os-cillation

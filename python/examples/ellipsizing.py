@@ -6,7 +6,6 @@
 #                  which also works with Gtk 2.5 and above without the
 #                  need to change your code.
 #
-# $Id$
 # vim:set ts=4 sw=4 et ai syntax=python:
 #
 # Copyright (c) 2005 os-cillation

@@ -4,7 +4,6 @@
 #              exo.MutualBinding to automatically synchronize GObject
 #              properties.
 #
-# $Id$
 #
 # Copyright (c) 2005-2006 os-cillation
 #

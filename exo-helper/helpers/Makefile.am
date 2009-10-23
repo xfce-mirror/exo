@@ -1,4 +1,3 @@
-# $Id$
 
 defaultsdir = $(sysconfdir)/xdg/xfce4
 defaults_DATA = helpers.rc

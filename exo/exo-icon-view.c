@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2008       Jannis Pohlmann <jannis@xfce.org>
  * Copyright (c) 2004-2006  os-cillation e.K.

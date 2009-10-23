@@ -4,7 +4,6 @@
 #               exo.IconView, exo.CellRendererEllipsizedText
 #               and exo.CellRendererIcon classes.
 #
-# $Id$
 # vim:set ts=4 sw=4 et ai syntax=python:
 #
 # Copyright (c) 2006 Written by Benedikt Meurer <benny@xfce.org>.

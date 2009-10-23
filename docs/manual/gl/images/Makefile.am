@@ -1,4 +1,3 @@
-# $Id$
 
 imagesdir = $(datadir)/xfce4/doc/gl/images
 images_DATA =								\

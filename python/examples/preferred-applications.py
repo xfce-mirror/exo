@@ -3,7 +3,6 @@
 # preferred-applications.py - Example demonstrating the usage of the preferred
 #                             applications and the URL modules in libexo.
 #
-# $Id$
 #
 # Copyright (c) 2005-2006 os-cillation
 #

@@ -1,4 +1,3 @@
-# $Id$
 # vim:set ts=4 sw=4 et ai syntax=python:
 #
 # Copyright (c) 2005 os-cillation

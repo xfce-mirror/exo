@@ -1,4 +1,3 @@
-# $Id$
 
 pixmapsdir = $(datadir)/pixmaps/exo-$(LIBEXO_VERSION_API)
 pixmaps_DATA =								\

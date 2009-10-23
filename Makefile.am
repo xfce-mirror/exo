@@ -1,4 +1,3 @@
-# $Id$
 
 if HAVE_LIBNOTIFY
 EXO_MOUNT_NOTIFY_SUBDIR=exo-mount-notify

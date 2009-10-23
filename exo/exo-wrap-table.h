@@ -1,4 +1,3 @@
-/* $Id$ */
 /*-
  * Copyright (c) 2000 Ramiro Estrugo <ramiro@eazel.com>
  * Copyright (c) 2005 Benedikt Meurer <benny@xfce.org>

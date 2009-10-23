@@ -1,4 +1,3 @@
-dnl $Id$
 dnl
 dnl Copyright (c) 2002 Dean Povey <povey@wedgetail.com>
 dnl Copyright (c) 2006 Benedikt Meurer <benny@xfce.org>.
