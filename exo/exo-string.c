@@ -407,8 +407,11 @@ exo_strndupv (gchar **strv,
  * exo_str_looks_like_an_uri:
  * @str : an input string.
  *
- * Returns %TRUE if the @string looks like an URI
- * according to RFC 2396, %FALSE otherwise.
+ * Check if @str looks like an uri. This function is no guarantee that
+ * the uri exists, or is supported by the system.
+ *
+ * Returns: %TRUE if the @str looks like an URI
+ *          according to RFC 2396, %FALSE otherwise.
  *
  * Since: 0.5.0
  **/
