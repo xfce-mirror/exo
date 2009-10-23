@@ -95,6 +95,7 @@ exo_die_g_key_file_save (GKeyFile    *key_file,
   gsize      length;
   gboolean   result;
   guint      n;
+  gboolean   desktop_suffix;
 
   g_return_val_if_fail (G_IS_FILE (base), FALSE);
   g_return_val_if_fail (key_file != NULL, FALSE);
@@ -103,51 +104,63 @@ exo_die_g_key_file_save (GKeyFile    *key_file,
   /* check if we should create a new file */
   if (G_LIKELY (create))
     {
-      file_type = g_file_query_file_type (base, G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL);
-      if (file_type == G_FILE_TYPE_REGULAR)
+
+      /* if the filename end with .desktop, then use the base as file */
+      name = g_file_get_basename (base);
+      desktop_suffix = g_str_has_suffix (name, ".desktop");
+      g_free (name);
+      if (desktop_suffix)
         {
           file = g_object_ref (G_OBJECT (base));
         }
-      else if (file_type == G_FILE_TYPE_DIRECTORY)
-        {
-          /* determine the desktop entry name */
-          name = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
-                                               G_KEY_FILE_DESKTOP_KEY_NAME, NULL, NULL);
-          if (G_UNLIKELY (name == NULL))
-            name = g_strdup ("launcher");
-
-          /* replace invalid file system characters */
-          for (s = name; *s != '\0'; ++s)
-            if (G_IS_DIR_SEPARATOR (*s) || *s == '.')
-              *s = '_';
-
-          /* create a unique filename */
-          filename = g_strconcat (name, ".desktop", NULL);
-          file = g_file_get_child_for_display_name (base, filename, error);
-          for (n = 0; file != NULL && g_file_query_exists (file, NULL); n++)
-            {
-              /* release the previous name */
-              g_free (filename);
-              g_object_unref (G_OBJECT (file));
-
-              /* generate a new file name */
-              filename = g_strdup_printf ("%s%d.desktop", name, n);
-              file = g_file_get_child_for_display_name (base, filename, error);
-            }
-
-          /* cleanup */
-          g_free (filename);
-          g_free (name);
-
-          if (G_UNLIKELY (file == NULL))
-            return FALSE;
-        }
       else
         {
-          /* base is not a directory, cannot save */
-          g_set_error_literal (error, G_FILE_ERROR, g_file_error_from_errno (ENOTDIR),
-                               _("File location is not a regular file or directory"));
-          return FALSE;
+          file_type = g_file_query_file_type (base, G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL);
+          if (file_type == G_FILE_TYPE_REGULAR)
+            {
+              file = g_object_ref (G_OBJECT (base));
+            }
+          else if (file_type == G_FILE_TYPE_DIRECTORY)
+            {
+              /* determine the desktop entry name */
+              name = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                                   G_KEY_FILE_DESKTOP_KEY_NAME, NULL, NULL);
+              if (G_UNLIKELY (name == NULL))
+                name = g_strdup ("launcher");
+
+              /* replace invalid file system characters */
+              for (s = name; *s != '\0'; ++s)
+                if (G_IS_DIR_SEPARATOR (*s) || *s == '.')
+                  *s = '_';
+
+              /* create a unique filename */
+              filename = g_strconcat (name, ".desktop", NULL);
+              file = g_file_get_child_for_display_name (base, filename, error);
+              for (n = 0; file != NULL && g_file_query_exists (file, NULL); n++)
+                {
+                  /* release the previous name */
+                  g_free (filename);
+                  g_object_unref (G_OBJECT (file));
+
+                  /* generate a new file name */
+                  filename = g_strdup_printf ("%s%d.desktop", name, n);
+                  file = g_file_get_child_for_display_name (base, filename, error);
+                }
+
+              /* cleanup */
+              g_free (filename);
+              g_free (name);
+
+              if (G_UNLIKELY (file == NULL))
+                return FALSE;
+            }
+          else
+            {
+              /* base is not a directory, cannot save */
+              g_set_error_literal (error, G_FILE_ERROR, g_file_error_from_errno (ENOTDIR),
+                                   _("File location is not a regular file or directory"));
+              return FALSE;
+            }
         }
     }
   else
