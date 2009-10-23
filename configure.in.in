@@ -160,24 +160,26 @@ dnl *** Check for required packages ***
 dnl ***********************************
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.18.0])
 XDT_CHECK_PACKAGE([GIO], [gio-2.0], [2.18.0])
-XDT_CHECK_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.18.0])
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.14.0])
 XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.16.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.2])
 
-dnl ****************************
-dnl *** GIO modules location ***
-dnl ****************************
-AC_ARG_WITH([gio-module-dir],
-            [AC_HELP_STRING([--with-gio-module-dir=PATH],
-                            [Specify where to install the exo gio module (default=autodetect)])],
-            [gio_module_dir="$withval"])
-if test x"$gio_module_dir" = x""; then
-  GIOMODULEDIR="`$PKG_CONFIG gio-2.0 --variable giomoduledir`"
-elif test x"$gio_module_dir" = x"distcheck"; then
-  GIOMODULEDIR=""
-else
-  GIOMODULEDIR="$gio_module_dir"
+dnl *************************************
+dnl *** Check for GIO-Unix (optional) ***
+dnl *************************************
+XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.18.0], [gio-unix], [GIO-Unix features], [yes])
+GIOMODULEDIR=""
+if test x"$GIO_UNIX_FOUND" = x"yes"; then
+  dnl GIO directory for extensions
+  AC_ARG_WITH([gio-module-dir],
+              [AC_HELP_STRING([--with-gio-module-dir=PATH],
+                              [Specify where to install the exo gio module (default=autodetect)])],
+              [gio_module_dir="$withval"])
+  if test x"$gio_module_dir" = x""; then
+    GIOMODULEDIR="`$PKG_CONFIG gio-2.0 --variable giomoduledir`"
+  elif test x"$gio_module_dir" != x"distcheck"; then
+    GIOMODULEDIR="$gio_module_dir"
+  fi
 fi
 AC_SUBST([GIOMODULEDIR])
 AM_CONDITIONAL([HAVE_GIO_MODULEDIR], [test x"$GIOMODULEDIR" != x""])
@@ -414,11 +416,21 @@ echo
 echo "Build Configuration:"
 echo
 if test x"$HAL_FOUND" = x"yes"; then
-echo "* HAL support:    yes"
+echo "* HAL support:          yes"
 else
-echo "* HAL support:    no"
+echo "* HAL support:          no"
 fi
-echo "* GIO Module Dir: $GIOMODULEDIR"
-echo "* Debug Support:  $enable_debug"
-echo "* Python Support: $have_python"
+if test x"$LIBNOTIFY_FOUND" = x"yes"; then
+echo "* Notification support: yes"
+else
+echo "* Notification support: no"
+fi
+if test x"$GIO_UNIX_FOUND" = x"yes"; then
+echo "* GIO-Unix features:    yes"
+echo "  - GIO Module Dir:     $GIOMODULEDIR"
+else
+echo "* GIO-Unix features:    no"
+fi
+echo "* Debug Support:        $enable_debug"
+echo "* Python Support:       $have_python"
 echo

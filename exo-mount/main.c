@@ -45,7 +45,6 @@
 #include <glib/gstdio.h>
 
 #include <gio/gio.h>
-#define HAVE_GIO_UNIX
 #ifdef HAVE_GIO_UNIX
 #include <gio/gunixmounts.h>
 #endif
@@ -275,7 +274,7 @@ main (gint argc, gchar **argv)
     }
 
 #ifndef HAVE_GIO_UNIX
-  g_warning (_("%s is not compiled with GIO-Unix support. Therefore it will "
+  g_warning (_("%s is compiled without GIO-Unix features. Therefore it will "
                "probably not work on this system."), g_get_prgname ());
 #endif
 

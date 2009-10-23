@@ -33,7 +33,9 @@
 
 #include <glib/gstdio.h>
 #include <gio/gio.h>
+#ifdef HAVE_GIO_UNIX
 #include <gio/gdesktopappinfo.h>
+#endif
 #include <exo/exo.h>
 
 
@@ -117,6 +119,7 @@ usage (void)
 static gboolean
 exo_open_launch_desktop_file (const gchar *arg)
 {
+#ifdef HAVE_GIO_UNIX
   GFile           *gfile;
   gchar           *contents;
   gsize            length;
@@ -157,13 +160,19 @@ exo_open_launch_desktop_file (const gchar *arg)
   else
     result = FALSE;
 
+  g_object_unref (G_OBJECT (appinfo));
+
 #ifndef NDEBUG
   g_debug ("launching desktop file %s", result ? "succeeded" : "failed");
 #endif
 
-  g_object_unref (G_OBJECT (appinfo));
-
   return result;
+#else /* !HAVE_GIO_UNIX */
+  g_critical (_("Launching desktop files is not supported when %s is compiled "
+                "without GIO-Unix features."), g_get_prgname ());
+
+  return FALSE;
+#endif
 }
 
 
