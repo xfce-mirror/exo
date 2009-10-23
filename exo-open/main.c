@@ -177,26 +177,6 @@ exo_open_launch_desktop_file (const gchar *arg)
 
 
 
-static gboolean
-exo_open_looks_like_an_uri (const gchar *string)
-{
-  const gchar *s = string;
-
-  /* <scheme> starts with an alpha character */
-  if (g_ascii_isalpha (*s))
-    {
-      /* <scheme> continues with (alpha | digit | "+" | "-" | ".")* */
-      for (++s; g_ascii_isalnum (*s) || *s == '+' || *s == '-' || *s == '.'; ++s);
-
-      /* <scheme> must be followed by ":" */
-      return (*s == ':');
-    }
-
-  return FALSE;
-}
-
-
-
 static gchar *
 exo_open_find_scheme (const gchar *string)
 {
@@ -353,7 +333,7 @@ main (int argc, char **argv)
               /* successfully launched a desktop file */
               continue;
             }
-          else if (exo_open_looks_like_an_uri (*argv))
+          else if (exo_str_looks_like_an_uri (*argv))
             {
               /* use the argument directly */
               uri = g_strdup (*argv);
