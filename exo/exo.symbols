@@ -238,16 +238,6 @@ exo_job_set_error_if_cancelled
 #endif
 #endif
 
-/* exo-mount-point functions */
-#if IN_HEADER(__EXO_MOUNT_POINT_H__)
-#if IN_SOURCE(__EXO_MOUNT_POINT_C__)
-exo_mount_point_get_type G_GNUC_CONST
-exo_mount_point_dup G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-exo_mount_point_free
-exo_mount_point_list_matched G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-#endif
-#endif
-
 /* exo-utils functions */
 #if IN_HEADER(__EXO_UTILS_H__)
 #if IN_SOURCE(__EXO_UTILS_C__)
