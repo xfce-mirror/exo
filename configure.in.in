@@ -322,8 +322,12 @@ if test x"$enable_visibility" != x"no"; then
   AC_MSG_CHECKING([whether $CC supports the GNUC visibility attribute])
   AC_COMPILE_IFELSE(AC_LANG_SOURCE(
   [
+    void test_default (void);
+    void test_hidden (void);
+
     void __attribute__ ((visibility("default"))) test_default (void) {}
     void __attribute__ ((visibility("hidden"))) test_hidden (void) {}
+
     int main (int argc, char **argv) { test_default (); test_hidden (); return 0; }
   ]),
   [
@@ -432,5 +436,6 @@ else
 echo "* GIO-Unix features:    no"
 fi
 echo "* Debug Support:        $enable_debug"
+echo "* GNU Visibility:       $have_gnuc_visibility"
 echo "* Python Support:       $have_python"
 echo
