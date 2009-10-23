@@ -44,12 +44,17 @@
 
 #include <glib/gstdio.h>
 
+#include <gio/gio.h>
+#define HAVE_GIO_UNIX
+#ifdef HAVE_GIO_UNIX
+#include <gio/gunixmounts.h>
+#endif
+
 #include <exo-hal/exo-hal.h>
 #include <exo/exo.h>
-#include <exo-mount/exo-mount-fstab.h>
+#ifdef HAVE_HAL
 #include <exo-mount/exo-mount-hal.h>
-#include <exo-mount/exo-mount-utils.h>
-
+#endif
 
 
 /* --- globals --- */
@@ -80,8 +85,140 @@ static GOptionEntry entries[] =
 
 
 
-int
-main (int argc, char **argv)
+static gboolean
+exo_mount_device_is_mounted (const gchar *device_file,
+                             gboolean    *readonly_return)
+{
+#ifdef HAVE_GIO_UNIX
+  GList           *lp;
+  GUnixMountEntry *mount_entry;
+  const gchar     *device_path;
+
+  /* get the mounted devices (from mtab) */
+  for (lp = g_unix_mounts_get (NULL); lp != NULL; lp = lp->next)
+    {
+      mount_entry = lp->data;
+
+      device_path = g_unix_mount_get_device_path (mount_entry);
+      if (exo_str_is_equal (device_path, device_file))
+        {
+          if (G_LIKELY (readonly_return != NULL))
+            *readonly_return = g_unix_mount_is_readonly (mount_entry);
+          return TRUE;
+        }
+    }
+#endif
+
+  return FALSE;
+}
+
+
+
+#ifdef HAVE_GIO_UNIX
+static gboolean
+exo_mount_device_lookup (const gchar      *device_file,
+                         GUnixMountPoint **mount_point_return,
+                         GError          **error)
+{
+  GList           *lp;
+  GUnixMountPoint *mount_point;
+  const gchar     *device_path;
+
+  /* get the known devices (from fstab) */
+  for (lp = g_unix_mount_points_get (NULL); lp != NULL; lp = lp->next)
+    {
+      mount_point = lp->data;
+
+      device_path = g_unix_mount_point_get_device_path (mount_point);
+      if (exo_str_is_equal (device_path, device_file))
+        {
+          if (G_LIKELY (mount_point_return != NULL))
+            *mount_point_return = mount_point;
+          return TRUE;
+        }
+    }
+
+  /* TRANSLATORS: a device is missing from the file system table (usually /etc/fstab) */
+  if (G_LIKELY (error != NULL))
+    g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_INVAL, _("Device \"%s\" not found in file system device table"), device_file);
+
+  return FALSE;
+}
+#endif
+
+
+
+static gboolean
+exo_mount_device_is_mount_point (const gchar *device_file)
+{
+#ifdef HAVE_GIO_UNIX
+  return exo_mount_device_lookup (device_file, NULL, NULL);
+#else
+  return FALSE;
+#endif
+}
+
+
+
+static void
+exo_mount_device_execute (const gchar  *device_file,
+                          const gchar  *command,
+                          GError      **error)
+{
+  gboolean         result;
+  gchar           *standard_error;
+  gchar           *command_line;
+  gchar           *quoted;
+  gint             status;
+  const gchar     *argument;
+#ifdef HAVE_GIO_UNIX
+  GUnixMountPoint *mount_point;
+
+  if (!exo_mount_device_lookup (device_file, &mount_point, error))
+    return;
+  argument = g_unix_mount_point_get_device_path (mount_point);
+#else
+  argument = device_file;
+#endif
+
+  /* generate the command line */
+  quoted = g_shell_quote (argument);
+  command_line = g_strconcat (command, " ", quoted, NULL);
+  g_free (quoted);
+
+  /* try to execute the command line */
+  result = g_spawn_command_line_sync (command_line, NULL, &standard_error, &status, error);
+  if (G_LIKELY (result))
+    {
+      /* check if the command failed */
+      if (G_UNLIKELY (status != 0))
+        {
+          /* drop additional whitespace from the stderr output */
+          g_strstrip (standard_error);
+
+          /* strip all trailing dots from the stderr output */
+          while (*standard_error != '\0' && standard_error[strlen (standard_error) - 1] == '.')
+            standard_error[strlen (standard_error) - 1] = '\0';
+
+          /* generate an error from the stderr output */
+          if (G_LIKELY (*standard_error != '\0'))
+            g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, "%s", standard_error);
+          else
+            g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED, _("Unknown error"));
+        }
+
+      /* release the stderr output */
+      g_free (standard_error);
+    }
+
+  /* cleanup */
+  g_free (command_line);
+}
+
+
+
+gint
+main (gint argc, gchar **argv)
 {
 #ifdef HAVE_HAL
   ExoMountHalDevice *device;
@@ -136,6 +273,11 @@ main (int argc, char **argv)
       g_print (_("Please report bugs to <%s>.\n"), PACKAGE_BUGREPORT);
       return EXIT_SUCCESS;
     }
+
+#ifndef HAVE_GIO_UNIX
+  g_warning (_("%s is not compiled with GIO-Unix support. Therefore it will "
+               "probably not work on this system."), g_get_prgname ());
+#endif
 
   /* make sure that either a device UDI or file was specified... */
   if (G_UNLIKELY (opt_hal_udi == NULL && opt_device == NULL))
@@ -212,7 +354,7 @@ main (int argc, char **argv)
 #endif
 
   /* check if the device is currently mounted */
-  mounted = exo_mount_utils_is_mounted (opt_device, &mounted_readonly);
+  mounted = exo_mount_device_is_mounted (opt_device, &mounted_readonly);
   if ((!opt_eject && !opt_unmount && mounted)
       || (opt_unmount && !mounted))
     {
@@ -270,7 +412,7 @@ main (int argc, char **argv)
    * if so, we cannot use HAL to mount it.
    */
 #ifdef HAVE_HAL
-  if (!exo_mount_fstab_contains (opt_device))
+  if (!exo_mount_device_is_mount_point (opt_device))
     {
       /* perform the requested operation */
       if (G_LIKELY (opt_unmount))
@@ -285,11 +427,11 @@ main (int argc, char **argv)
     {
       /* perform the requested operation */
       if (G_LIKELY (opt_unmount))
-        exo_mount_fstab_unmount (opt_device, &err);
+        exo_mount_device_execute (opt_device, PATH_UMOUNT, &err);
       else if (G_LIKELY (opt_eject))
-        exo_mount_fstab_eject (opt_device, &err);
+        exo_mount_device_execute (opt_device, PATH_EJECT, &err);
       else
-        exo_mount_fstab_mount (opt_device, &err);
+        exo_mount_device_execute (opt_device, PATH_MOUNT, &err);
     }
 
   /* check if we have a notification process to kill */
@@ -304,7 +446,7 @@ main (int argc, char **argv)
 
   /* if we tried to mount, make sure it's really mounted now */
   if (err == NULL && (!opt_eject && !opt_unmount)
-      && !exo_mount_utils_is_mounted (opt_device, NULL))
+      && !exo_mount_device_is_mounted (opt_device, NULL))
     {
       /* although somebody claims that we were successfully, that's not the case */
       g_set_error (&err, G_FILE_ERROR, G_FILE_ERROR_FAILED,
