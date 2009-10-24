@@ -1,3 +1,184 @@
+commit b82102baa26a53bde6d60fc0648918ef5e48703d
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sat Oct 24 11:50:28 2009 +0200
+
+    Updates for 0.5.1 release.
+
+commit 35422d8faa1473ca77e1c16d66ad3971228fde35
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sat Oct 24 11:47:00 2009 +0200
+
+    Move the abicheck.sh test to the end of Makefile.am.
+
+    This way the test is executed when running distcheck.
+
+commit 4ccfa786759f3f7d76bac330b837271b0f7e63d1
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 22:38:27 2009 +0200
+
+    Use .desktop filename when creating a new desktop item.
+
+    If the user supplies a filename or uri that has a .desktop
+    suffix, use that file to create the new desktop file instead
+    of opening the file chooser.
+
+commit ae85ea32a8bacad10bcaa2e835958ef078bcd86d
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 19:22:44 2009 +0200
+
+    Remove all the old svn $Id$ substitutions.
+
+commit 6109be2d2662aab1d2c87f10650d17c433707495
+Merge: 1d35fd6 29cce3a
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 17:43:56 2009 +0200
+
+    Merge branch 'nick/remove-exo-mount-point'
+
+commit 29cce3af887093ff06e2ee515238143f6c4cdf42
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 17:11:46 2009 +0200
+
+    Fix visibility code.
+
+    Missed a generated enum type and make sure visiblity works
+    when debugging is enabled.
+
+commit 1d35fd61bf677a3916764ac117bb515f4ef4c0cc
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 14:36:26 2009 +0200
+
+    Fix documentation of exo_str_looks_like_an_uri().
+
+commit e15d28dade90b674697fe63120a51db2e3b87498
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 14:24:49 2009 +0200
+
+    Remove the exo-mount-point test.
+
+commit 05c67cf3895662f74570b25ac020880133f4bace
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 14:21:06 2009 +0200
+
+    Remove exo-mount-point from the reference docs.
+
+commit cb9216baf0ecc54c826c4bfd71e654b3a296a501
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 14:20:43 2009 +0200
+
+    Rebuild the translations.
+
+commit d360e538a0be2c658a761b8fee868dbfa2d9e219
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 14:18:08 2009 +0200
+
+    Use the new exo_str_looks_like_an_uri() function.
+
+commit afc76d7cbf690024d4cfd819c4a2900b274290b7
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 14:17:23 2009 +0200
+
+    Make GIO-Unix an optional package.
+
+commit 7963243f4f83a78b927dd93237a0c68fdd45a028
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 13:57:11 2009 +0200
+
+    Remove exo-mount-point.
+
+    This is implemented in the GIO-Unix backend and works
+    on more platforms then the exo code.
+
+commit 9e9a788ed6f54a9cc9a5b06c7fc646597ea99a2c
+Author: Nick Schermer <nick@xfce.org>
+Date:   Fri Oct 23 13:56:20 2009 +0200
+
+    Use the GIO code for reading mount points in exo-mount.
+
+commit e30594c963df9e87bb8ce5c4675c4037da81fbe2
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Oct 22 11:14:51 2009 +0200
+
+    Add missing function in the symbols file.
+
+commit 79244fdc4a95cfc222f9bd4bcead92ba23e741a4
+Author: Nick Schermer <nick@xfce.org>
+Date:   Thu Oct 22 11:13:50 2009 +0200
+
+    Revert "Remove visibility and use the linker for this."
+
+    This reverts commit ed7589d185b6c9d305a87039422b08c02df5251f.
+
+commit 553391277c847b5e0ba24b5112e377327c4212ae
+Author: Rihards Prieditis <rprieditis@gmail.com>
+Date:   Wed Oct 21 12:15:30 2009 +0000
+
+    l10n: Updates to Latvian (lv) translation
+
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit bc2952307e9a1feaf6fda0d84af2c1426ca2160a
+Author: Xu Meihong <mhuntxu@gmail.com>
+Date:   Tue Oct 20 15:39:20 2009 +0000
+
+    l10n: Updates to Chinese (China) (zh_CN) translation
+
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 06295dc6b5a588783a0c3f9174e00c1fda16fa5c
+Author: Per Kongstad <p_kongstad@op.pl>
+Date:   Mon Oct 19 13:41:04 2009 +0000
+
+    l10n: Updates to Danish (da) translation
+
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit ed7589d185b6c9d305a87039422b08c02df5251f
+Author: Nick Schermer <nick@xfce.org>
+Date:   Mon Oct 19 13:25:51 2009 +0200
+
+    Remove visibility and use the linker for this.
+
+commit ac57b8a8e7011bab0919fb7717188bdbf3be1c27
+Author: Nick Schermer <nick@xfce.org>
+Date:   Mon Oct 19 00:47:32 2009 +0200
+
+    Only sync devices with no volume.
+
+    If the devices is pollable and we set the sync option, this
+    will slowdown the transfer. I missed that when changing the
+    code.
+
+commit 67ea5cb9179074747533e6055b4b8195efa0db39
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Oct 18 20:27:28 2009 +0200
+
+    Post-release tag bump.
+
+commit 5ef20525582a8afba3c970f333d7c6b07c7a7c1c
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Oct 18 20:14:37 2009 +0200
+
+    Remove git tag for release.
+
+commit e0f35aa1036e96e29b3d441e3c02f2b69c200008
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Oct 18 20:13:44 2009 +0200
+
+    Update NEWS for 0.5.0 release.
+
+commit b55038f5cbdcc066a279b75f6420adf3490380d2
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Oct 18 20:13:24 2009 +0200
+
+    Rebuild translations.
+
+commit 05f8343c4dcf3aec91a84653ad81a7fb89f88ba3
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Oct 18 18:47:45 2009 +0200
+
+    Backup old ChangeLog and add new log from GIT.
+
 commit c2ce554b39f682c05bb8ffeeb45fb5251e629d45
 Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Oct 18 18:44:17 2009 +0200
@@ -33,7 +214,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Sat Oct 17 18:53:37 2009 +0200
 
     Version to API docs.
-    
+
     This will make parallel installation of exo-1 and exo-0.3
     easier.
 
@@ -42,7 +223,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Sat Oct 17 13:02:33 2009 +0200
 
     Read mount options from a rc file (bug #2891).
-    
+
     All the hardcoded mount options are now read from a rc file so
     they can be easily changed by the distro or user.
 
@@ -69,7 +250,7 @@ Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
 Date:   Sun Oct 11 07:59:40 2009 +0000
 
     l10n: Updates to Japanese (ja) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit f9dea32a4606b6b7c0c77e399fd6bc9c25126a56
@@ -83,11 +264,11 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Oct 9 20:55:10 2009 +0200
 
     Make unmount work for devices that have a parent that is a volume (bug #2968).
-    
+
     When a device had interfaces, but none of them was a volume, we
     simply failed with an error without checking if the device
     has parents that had his capability.
-    
+
     Put the looping code in functions instead of a bunch gotos,
     to make the whole thing easier to understand.
 
@@ -108,7 +289,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Oct 9 14:35:37 2009 +0200
 
     Add support for iocharset in exo-mount (bug #4294).
-    
+
     When the wrong charset if detected you can override it
     with the environment variable EXO_MOUNT_IOCHARSET.
 
@@ -135,7 +316,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Oct 9 11:28:56 2009 +0200
 
     Use new xdt  macros.
-    
+
     Also drop the INSTALL file since it is generated at compile time.
 
 commit 1f6917f78eaba44aa779d6875b8b2dfccfe74817
@@ -143,7 +324,7 @@ Author: Leandro Regueiro <leandro.regueiro@gmail.com>
 Date:   Sun Oct 4 12:37:38 2009 +0000
 
     l10n: Updates to Galician (gl) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 773eb56aa60547fffa9f882275568196f28ca7a8
@@ -151,7 +332,7 @@ Author: Leandro Regueiro <leandro.regueiro@gmail.com>
 Date:   Sun Oct 4 12:37:10 2009 +0000
 
     l10n: Updates to Galician (gl) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 9a43e56e99308390be5e26d8b0c1cd9f9c5627eb
@@ -165,7 +346,7 @@ Author: Piarres Beobide <pi@beobide.net>
 Date:   Mon Sep 21 20:48:04 2009 +0000
 
     l10n: Updates to Basque (eu) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 3e1011b47d3dae18ae062339b120dbf57b0a99f1
@@ -173,7 +354,7 @@ Author: Rihards Prieditis <rprieditis@gmail.com>
 Date:   Fri Sep 18 16:04:15 2009 +0000
 
     l10n: Updates to Latvian (lv) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 899c58c1bead581df0f5d612e1e8caaaddf84614
@@ -181,7 +362,7 @@ Author: Rihards Prieditis <rprieditis@gmail.com>
 Date:   Fri Sep 18 16:02:50 2009 +0000
 
     l10n: Updates to Latvian (lv) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 93b16ad4580afbcba2467290457383ca55a89f9c
@@ -189,7 +370,7 @@ Author: Robert Hartl <hartl.robert@gmail.com>
 Date:   Thu Sep 17 17:30:52 2009 +0000
 
     l10n: Updates to Slovak (sk) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 5e5d41f658e74e9e0b90bbb30665361f64168ef9
@@ -197,7 +378,7 @@ Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Tue Sep 15 17:42:15 2009 +0200
 
     Revert "Use an idle function for delayed scrolling."
-    
+
     This reverts commit 0a7be769f07828953d62e86fbc9da755f9aa8ad6. The
     related GDK bug was fixed upstream by Alexander Larsson (more
     information on https://bugzilla.gnome.org/show_bug.cgi?id=594880).
@@ -207,7 +388,7 @@ Author: Ignacio Velasco <elega@elega.com.ar>
 Date:   Tue Sep 15 03:17:08 2009 +0000
 
     l10n: Updates to Spanish (Castilian) (es) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 28bce8c986692b65f52816863b1cd56d30410976
@@ -215,7 +396,7 @@ Author: Robert Hartl <hartl.robert@gmail.com>
 Date:   Sun Sep 13 14:56:23 2009 +0000
 
     l10n: Updates to Slovak (sk) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 0a7be769f07828953d62e86fbc9da755f9aa8ad6
@@ -223,26 +404,26 @@ Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Fri Sep 11 20:10:04 2009 +0200
 
     Use an idle function for delayed scrolling.
-    
+
     It looks like modifying the bin_window GdkWindow inside the expose
     event handler of ExoIconView does no longer work with client-side
     windows. This was done for delaying the scrolling to a certain path
     until the widget is realized and layouting is completed.
-    
+
     As a result of using gdk_window_move() inside of the expose event
     handler, the painted icon view was not up to date or mixed up after the
     event handler had finished. Icons moved up a few pixels when hovering
     them and with scroll positions further down the view, the contents were
     painted twice (in the old and new state), resulting in overlapping
     items.
-    
+
     This commit implements delayed scrolling via an idle function, which is
     the only way I see right now to work around this. It may cause the
     automatic scrolling to the previous file to be delayed for a very short
     time, but this shouldn't be critical.
-    
+
     A bug was filed against GDK on
-    
+
       http://bugzilla.gnome.org/show_bug.cgi?id=594880
 
 commit 790a952f24b6d9ceb5cebec0a97fb11274d905f7
@@ -250,7 +431,7 @@ Author: Carles Muñoz Gorriz <carlesmu@internautas.org>
 Date:   Sat Sep 5 11:23:05 2009 +0000
 
     l10n: Updates to Catalan (Valencian) (ca) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 5000268e78776d9566cbc1b966b8e179403f117c
@@ -276,7 +457,7 @@ Author: Iñigo Varela <malditoastur@gmail.com>
 Date:   Wed Sep 2 10:31:12 2009 +0000
 
     l10n: Updates to Asturian (ast) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit a1230904c18da053a70bc1666e6b4f7ea4e81399
@@ -284,7 +465,7 @@ Author: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>
 Date:   Tue Sep 1 17:22:10 2009 +0000
 
     l10n: Updates to Greek (el) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit d029c07d3c50e018da6d8ec8e11c90e0da75a4b0
@@ -310,7 +491,7 @@ Author: Robert Hartl <hartl.robert@gmail.com>
 Date:   Mon Aug 31 17:21:17 2009 +0000
 
     l10n: Slovak translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 7c8b6d56486c3900188d8ba1d1cdcf329777ad5a
@@ -318,7 +499,7 @@ Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Sun Aug 30 19:22:27 2009 +0000
 
     l10n: Updates to Danish (da) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 95b8b3db51f1bbb02ef1fd136baabdd00a8845f5
@@ -344,7 +525,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Aug 30 17:35:14 2009 +0200
 
     Launch desktop files using GIO (bug #5712).
-    
+
     We cannot trust the file manager to handle this properly.
     Also fix a bug with relive files.
 
@@ -353,7 +534,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Aug 30 13:58:11 2009 +0200
 
     Use GIO for file loading/saving in the item editor.
-    
+
     This makes the editor work with URIs and basically all
     file locations GIO supports.
     Also improved the error reporting a bit.
@@ -369,7 +550,7 @@ Author: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>
 Date:   Sun Aug 30 13:55:59 2009 +0000
 
     l10n: Updates to Greek (el) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit ce3c2d6606f856b4f0bebad286e0825d1622fc7f
@@ -377,82 +558,82 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Sat Aug 29 21:46:34 2009 +0200
 
     Squashed commit of the following:
-    
+
     commit c89f6932db63a37827ef5c05e06002d2eeb151ad
     Author: Nick Schermer <nick@xfce.org>
     Date:   Thu Aug 27 20:17:00 2009 +0200
-    
+
         Strip the mailto: part from an uri since we work with mailto:%s in the desktop files.
-    
+
     commit 8d82d52e199b8dfc8ef99763d203daaa6c4ed688
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 22:46:47 2009 +0200
-    
+
         Fix distcheck with external gio module.
-    
+
     commit a8c711840c69e434ea7b436cc9c84444328faadd
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 22:34:04 2009 +0200
-    
+
         Update POTFILES.in.
-    
+
     commit 3167524eae1b5dfacb3c4c6dc7adfe53f5f0b2e4
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 19:11:31 2009 +0200
-    
+
         Use -compose for thunderbird (bug #4496).
-    
+
     commit d72abb5d58b217a60fde7755f1102f1658747d39
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 18:44:35 2009 +0200
-    
+
         Add gopher to the known browser URI schemes (bug #4497).
-    
+
     commit 41b0c2a5d33f51195f0a01d9154b099f0a9cdc61
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 18:42:01 2009 +0200
-    
+
         Update docs.
-    
+
     commit d28a218994ae1b7ca3553a864a1ab28312141ab2
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 18:38:26 2009 +0200
-    
+
         Update python bindings.
-    
+
     commit e09d4bcc06dcd32a135b98b2ddca98e5d2e4e079
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 18:37:03 2009 +0200
-    
+
         Remove exo-url functions and move dialog hook to gtk extensions.
-    
+
     commit c07a72487229b8ab3b75326dd1a29211b9455914
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 18:09:09 2009 +0200
-    
+
         Add FileManager support to exo-open and known URI completion.
-    
+
         Move some code from exo-url to exo-open to complete non-uris
         when passing for example some filenames to exo-open.
-    
+
     commit a16361e2f7684ac84d9e80008969e3a7db5a5838
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 18:08:10 2009 +0200
-    
+
         Iterate the mainloop so the dialog is fully destroyed before executing.
-    
+
     commit 4a3b8878bde0e18faae459e1a530bbd0f6c24aee
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 18:05:16 2009 +0200
-    
+
         Add FileManager support to exo-helper (bug #4445).
-    
+
         Slightly modified patch provided by Christian Dywan.
-    
+
     commit 48e3c3f52d41cc4da1b5d85d93990e205f5b13a1
     Author: Nick Schermer <nick@xfce.org>
     Date:   Wed Aug 26 18:02:02 2009 +0200
-    
+
         Add a GIO module to handle known exo helper URIs.
 
 commit 6764461a5357e2901430ebe4e01c2f43acb3fe16
@@ -490,7 +671,7 @@ Author: Bauzhan Muftakhidinov <baurthefirst@gmail.com>
 Date:   Mon Aug 24 11:27:09 2009 +0000
 
     l10n: New translation to Kazakh
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 68243933d72353c8c598eca73a6176bd1447fd5c
@@ -498,7 +679,7 @@ Author: Carles Muñoz Gorriz <carlesmu@internautas.org>
 Date:   Sun Aug 23 08:38:34 2009 +0000
 
     l10n: Initial Catalan po-doc translation.
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 60ca64ef596b9e05da4687c00d9b33b8b39bdb7a
@@ -506,7 +687,7 @@ Author: Carles Muñoz Gorriz <carlesmu@internautas.org>
 Date:   Sun Aug 23 08:37:42 2009 +0000
 
     l10n: Updates to Catalan translation.
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 8ae5449767707f42d24297e53ace52d75fe93797
@@ -514,7 +695,7 @@ Author: Nuno Miguel <nunis@netcabo.pt>
 Date:   Sat Aug 22 21:29:39 2009 +0000
 
     l10n: Updates to Portuguese (pt) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit db00686d3ff93104fd9ed7dcfee53728b28a10f2
@@ -594,7 +775,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Wed Aug 19 16:55:11 2009 +0200
 
     Add exo_str_is_empty() macro.
-    
+
     Add a helper macro check check if a string is NULL
     or starts with a nul-terminated character.
 
@@ -603,10 +784,10 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Tue Aug 18 22:33:45 2009 +0200
 
     Fix exo_strndupv.
-    
+
     Previous implemenation segfaulted and could overflow if
     @num was larger then the number of items in @strv.
-    
+
     Also did a slight API break, making @num an unsigned int.
 
 commit 49d214266478cdec15761d7fcb18e3e48138c907
@@ -621,82 +802,82 @@ Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Sat Aug 15 23:50:09 2009 +0200
 
     Rename exo-0.3 to exo-1. Merge versioning-from-0.3-to-1 branch.
-    
+
     commit c9b8d885c034022ae7cbaba91f17ffc15b5608ea
     Author: Nick Schermer <nick@xfce.org>
     Date:   Fri Aug 14 22:59:00 2009 +0200
-    
+
         Cleanup some unneeded Gtk or Glib version checks.
-    
+
     commit 6a9b850134897ea57830de53dce38d6abb510193
     Author: Nick Schermer <nick@xfce.org>
     Date:   Fri Aug 14 22:52:34 2009 +0200
-    
+
         Move some private binding struts out of the header.
-    
+
     commit 5ba0cb5e14b1e89f94c9e1a3fa9763dc57220249
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 17:16:47 2009 +0200
-    
+
         Remove exo_icon_view_{set,get}_{text,markup,pixbuf}_column() functions.
-    
+
     commit 28e7f49b8864163aacf764b21d07592a14072a45
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 16:54:36 2009 +0200
-    
+
         Drop ExoPangoEllipsizeMode and related functions.
-    
+
     commit 7ba2f84774dbf69f669cc6677cae10d382c6b66d
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 16:49:00 2009 +0200
-    
+
         Remove exo_md5_*() functions and ExoMd5Digest. There's GChecksum now.
-    
+
     commit 0d7c388f8875a32d902cd94ca492787c812121d4
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 16:40:57 2009 +0200
-    
+
         Remove exo_intern_string() and exo_intern_static_string().
-    
+
     commit 796215a00b477d8ad10fd5a3d1c6b575739ef2ba
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 16:31:55 2009 +0200
-    
+
         Remove ExoEllipsizedLabel from exo.symbols.
-    
+
     commit ec8c2ced12d05a0e54ade145527e0d2fb752c36c
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 16:26:10 2009 +0200
-    
+
         Drop ExoEllipsizedLabel entirely.
-    
+
     commit 9bb4e592eb7c04d7227292ab3eb59f47a5cb634c
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 15:39:50 2009 +0200
-    
+
         Drop exo_gtk_object_ref_sink and exo_gtk_radio_action_set_current_value.
-    
+
         This is part of bug #5671, which is about dropping deprecated/obsolete
         bits from exo before we switch from exo-0.3 to exo-1.
-    
+
     commit 79ce003347ba5e4bb32a9f3c2cd93739fc07a0f3
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 02:10:39 2009 +0200
-    
+
         Make Python bindings work again. pyexo.require('0.3') works with exo-1.
-    
+
     commit 1793ad0e2fc2a2407f5babfc3c6464bd4cf4c250
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 01:26:33 2009 +0200
-    
+
         Rename 0.3 to 1 in even more places. Python module might not work.
-    
+
     commit 2de4f022e76541549f2c7a1e1e41116b8da98e2c
     Author: Jannis Pohlmann <jannis@xfce.org>
     Date:   Thu Aug 13 00:09:35 2009 +0200
-    
+
         Switch from exo-0.3 to exo-1 (library and command names).
-    
+
         I might have missed a few spots. This is not tested yet.
 
 commit 58ebfe836c180faac9b2675576f20a1c5fc71e06
@@ -704,7 +885,7 @@ Author: jannis <jannis@xfce.org>
 Date:   Sat Aug 15 00:13:12 2009 +0000
 
     l10n: Updates to German (de) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 158bc6c41fdd3b7a376b91dbd50140f3ee553b00
@@ -712,7 +893,7 @@ Author: jannis <jannis@xfce.org>
 Date:   Sat Aug 15 00:03:06 2009 +0000
 
     l10n: Updates to German (de) translation
-    
+
     Transmitted-via: Transifex (translations.xfce.org)
 
 commit 4c725114b766723232351bfb39f453d94cf8d631
@@ -720,7 +901,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Wed Aug 12 21:17:30 2009 +0200
 
     Make some changes to exo-desktop-item-edit.
-    
+
     - Remove bold labels
     - Use new tooltip api
 
@@ -741,7 +922,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Sat Aug 8 13:26:34 2009 +0000
 
     update xfce translation
-    
+
     (Old svn revision: 30448)
 
 commit 7aa7d3b94bccc34bb8014a3aa3246084ea64ad99
@@ -749,8 +930,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Aug 7 14:37:14 2009 +0000
 
     Do not escape commas in url's (bug #5654).
-    
-    
+
     (Old svn revision: 30446)
 
 commit 868cbbb0112834ecfc1071799d5f12c61bc88aa7
@@ -758,8 +938,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Tue Aug 4 22:06:52 2009 +0000
 
     Fix possible segfault in exo, bug #5633.
-    
-    
+
     (Old svn revision: 30428)
 
 commit 3728134024d8b40422c14b745f5dc6adb1ede04f
@@ -767,8 +946,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Mon Jul 20 17:29:14 2009 +0000
 
     Fix crash in exo code if the ui-manager is not up2date.
-    
-    
+
     (Old svn revision: 30359)
 
 commit 3298dfb12b3eac0f8ab6f285fc3afeb71385eeca
@@ -776,8 +954,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Jul 19 15:58:43 2009 +0000
 
     Fix critical warnings if pixbuf is not found, ellipsize labels.
-    
-    
+
     (Old svn revision: 30352)
 
 commit 106cacf9742aabb3d3f6c557387cc37d9d06f6a6
@@ -785,19 +962,18 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 17 21:37:29 2009 +0000
 
     Cleanup a bunch of code.
-    
+
     Use Glib macros for defining a type, saves a bunch
     of code and is thread-safe.
-    
+
     Drop ; after G_{BEGIN,END}_DECLS macros.
-    
+
     Move G_GNUC_INTERNAL macros in front of the function
     to avoid problems with Solaris. Remove them from the
     code that is compiled as an executable.
-    
+
     Tabs and spaces cleanups.
-    
-    
+
     (Old svn revision: 30340)
 
 commit 35e8346a9e3b699c52f092fdb5cc145eb87e683b
@@ -805,8 +981,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Thu Jul 16 21:30:25 2009 +0000
 
     Small optimization in exo_str_is_equal.
-    
-    
+
     (Old svn revision: 30332)
 
 commit d04a8abc1c655d765ed3b6d9b58b7de84788b5cf
@@ -814,8 +989,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Thu Jul 16 20:22:46 2009 +0000
 
     Drop the slice allocator macros and use it directly.
-    
-    
+
     (Old svn revision: 30331)
 
 commit 388ba9cec1c6a8626a115d3f0b83438cefdc16c7
@@ -823,8 +997,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Sat Jul 11 20:42:55 2009 +0000
 
     Revert some unneeded (gchar *) casts when -Wwrite-strings is not used.
-    
-    
+
     (Old svn revision: 30287)
 
 commit 62d16b4af41f2880455115854a8a571c94e81871
@@ -832,8 +1005,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 10 18:48:14 2009 +0000
 
     Add another case in exo-open that should work.
-    
-    
+
     (Old svn revision: 30254)
 
 commit 6af5a64f0a5b35551ad819e68cc9e3b91d44c7cd
@@ -841,8 +1013,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 10 18:38:05 2009 +0000
 
     Make run in terminal in xfrun4 work again.
-    
-    
+
     (Old svn revision: 30252)
 
 commit f578ac2d91d63241af2db9987e6b94514f5d183e
@@ -850,8 +1021,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 10 18:24:36 2009 +0000
 
     Fix quotes in urls, only quote when the arg contains spaces (bug #5461).
-    
-    
+
     (Old svn revision: 30251)
 
 commit ce99ab4f0dbe661236c8a2fe3eca4620f41d8ac1
@@ -859,8 +1029,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Fri Jul 10 16:56:33 2009 +0000
 
     Fix a bunch of compiler warnings.
-    
-    
+
     (Old svn revision: 30250)
 
 commit 227832b4dd9238f30060233471f579c415a0d8b1
@@ -868,7 +1037,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Thu Jul 9 12:42:21 2009 +0000
 
     Add Asturian translations
-    
+
     (Old svn revision: 30229)
 
 commit 82e0ba18bc761d0f13d0c29089b6adb227327285
@@ -876,7 +1045,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Thu Jul 9 10:03:02 2009 +0000
 
     update xfce translation
-    
+
     (Old svn revision: 30227)
 
 commit 93b3e6487ebbf8f20623796d431b6d0eb732d12c
@@ -884,10 +1053,9 @@ Author: Gabor Kelemen <kelemeng@gnome.hu>
 Date:   Tue Jul 7 17:10:19 2009 +0000
 
     2009-07-07  Gabor Kelemen  <kelemeng@gnome.hu>
-    
+
     	* hu.po: Translation updated.
-    
-    
+
     (Old svn revision: 30215)
 
 commit 63b245c3d6ac4f14a7f5ec71f86d5bbe2b459091
@@ -895,9 +1063,7 @@ Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
 Date:   Sat Jul 4 12:01:05 2009 +0000
 
     ja translation update
-    
-    
-    
+
     (Old svn revision: 30194)
 
 commit 7df7697cced88a5e00ece318c5279baa4435c1e3
@@ -905,7 +1071,7 @@ Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Thu Jul 2 18:43:34 2009 +0000
 
     	* da.po: Danish translation update (Per Kongstad)
-    
+
     (Old svn revision: 30139)
 
 commit 8f5640632017f8d5a9c1d1982c597e76b636278b
@@ -913,8 +1079,7 @@ Author: Piarres Beobide <pi@beobide.net>
 Date:   Mon Jun 22 22:14:44 2009 +0000
 
     libexo Basque translation update
-    
-    
+
     (Old svn revision: 30070)
 
 commit 1fd149a0509cf05913af622c2c15f5d7bcc8d138
@@ -922,7 +1087,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Mon Jun 15 12:47:08 2009 +0000
 
     update translation
-    
+
     (Old svn revision: 30019)
 
 commit 9fa7aa8e890922d16cdda8fe5568ca5b6a3c3f6e
@@ -930,10 +1095,9 @@ Author: Gabor Kelemen <kelemeng@gnome.hu>
 Date:   Sat Jun 13 09:50:22 2009 +0000
 
     2009-06-09  Gabor Kelemen  <kelemeng@gnome.hu>
-    
+
     	* hu.po: Translation reworked
-    
-    
+
     (Old svn revision: 30003)
 
 commit 3378626df227b89cf65203ad3ce5c11c93f37967
@@ -941,7 +1105,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Tue Jun 9 20:33:53 2009 +0000
 
     Drop svn:executable bit from po files
-    
+
     (Old svn revision: 29999)
 
 commit 982542dbc1d17e45ff05ca5c6c986e91cabacecb
@@ -951,9 +1115,7 @@ Date:   Sat May 30 12:58:12 2009 +0000
     Added initial xfce4-settings Romanian translation
     Changed mail addresses for myself and Romanian language team
     Other minor improvements and updates for libexo, thunar, terminal and xfcalendar
-    
-    
-    
+
     (Old svn revision: 29989)
 
 commit 1e30c60b86190da8c21db601223e9c83abd8016f
@@ -961,7 +1123,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Fri May 29 10:43:27 2009 +0000
 
     update xfce translations
-    
+
     (Old svn revision: 29988)
 
 commit 50f97784c1b4a5f4ae75fad1e5da5648d43fff5a
@@ -969,8 +1131,7 @@ Author: Jannis Pohlmann <jannis@xfce.org>
 Date:   Thu May 14 14:59:24 2009 +0000
 
     Remove the branch code from trunk again.
-    
-    
+
     (Old svn revision: 29958)
 
 commit 8750a6cf158a549c2ea95dd0f97327ef789dd7dd
@@ -988,7 +1149,7 @@ Date:   Thu May 14 14:42:26 2009 +0000
     	  connection and makes sure the thumbnailer service always runs only once.
     	  There seems to be something wrong right now, though. I can't get the
     	  service to be recognized by D-Bus properly at all ...
-    
+
     (Old svn revision: 29956)
 
 commit e4bb22e08116ef7be8c9d6b7f335f1b1d0ff7043
@@ -1001,7 +1162,7 @@ Date:   Mon May 11 22:48:08 2009 +0000
     	* exo/exo-job.{c,h}: Add new function exo_job_send_to_mainloop() which
     	  is a simple wrapper around g_io_scheduler_job_send_to_mainloop(). I
     	  don't want to expose any the GIO scheduling internals.
-    
+
     (Old svn revision: 29948)
 
 commit 9d4de3c1d518aaa6787f71461183377e516892d9
@@ -1011,7 +1172,7 @@ Date:   Mon May 11 19:42:21 2009 +0000
     	* exo/exo-job.c, exo/exo-cell-renderer-icon.c: Fix compiler warnings.
     	* exo-open/main.c: Ignore unknown options so the user can send
     	  arguments to the exo-open terminal parameters.
-    
+
     (Old svn revision: 29942)
 
 commit d4dead05937d2dc797c3cedbc64ccf8342128ada
@@ -1019,7 +1180,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Mon May 11 19:16:17 2009 +0000
 
     update latvian translation
-    
+
     (Old svn revision: 29940)
 
 commit 81f770fcac434930f6ee84aac7cabd45a2431601
@@ -1027,7 +1188,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Mon May 11 17:14:48 2009 +0000
 
     Update xml documentation
-    
+
     (Old svn revision: 29937)
 
 commit b11b52ef8a005c9f99e7b8dd8615a43f40525023
@@ -1035,7 +1196,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Mon May 11 16:27:50 2009 +0000
 
     update translations
-    
+
     (Old svn revision: 29936)
 
 commit aa9f64adbdc0095cf9d059693eed5272b4e65235
@@ -1052,7 +1213,7 @@ Date:   Tue May 5 21:39:22 2009 +0000
     	  and associate class methods with the signals of ExoJob.
     	  They come from Thunar and can be used to wrap threaded/asynchronous
     	  operations with objects that support signals and subclassing.
-    
+
     (Old svn revision: 29927)
 
 commit 9f5de6f174bba7f48a44650fe202265f16088031
@@ -1064,7 +1225,7 @@ Date:   Tue May 5 20:07:22 2009 +0000
     		They come from Thunar and can be used to wrap threaded/asynchronous
     		operations with objects that support signals and subclassing.
     	* libexo-0.3.pot, *.po: Merge new strings.
-    
+
     (Old svn revision: 29926)
 
 commit e1c575f6322bfbc7f3208eee83c47aa5967d165b
@@ -1072,7 +1233,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Mon Apr 20 13:39:50 2009 +0000
 
     forgot libexo in this job that is getting me very tired
-    
+
     (Old svn revision: 29863)
 
 commit a25fc8925da8a4131858d348b1a5a3dc346dd398
@@ -1080,7 +1241,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Mon Apr 20 12:10:17 2009 +0000
 
     xfce translation update
-    
+
     (Old svn revision: 29856)
 
 commit c8461ecbf94571728a03d72fd285d18b7950b169
@@ -1088,9 +1249,7 @@ Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
 Date:   Thu Apr 16 14:54:01 2009 +0000
 
     Japanese translation update
-    
-    
-    
+
     (Old svn revision: 29823)
 
 commit 660eb8e2102a9afe5f1ac97647be0d3fe7a4c1d2
@@ -1098,7 +1257,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Thu Apr 16 08:45:36 2009 +0000
 
     galician translation update
-    
+
     (Old svn revision: 29822)
 
 commit c921c13fb3b39593b4f86887be2847cd2d0daf1e
@@ -1110,7 +1269,7 @@ Date:   Mon Apr 13 02:22:25 2009 +0000
     	  dependencies and bump GLib to 2.16, GTK+ to 2.14. Add "gicon"
     	  property to ExoCellRendererIcon. It benefits from the same SVG
     	  speedup as the icon property.
-    
+
     (Old svn revision: 29789)
 
 commit 785a7b0402070fd6b3315c9c6daa1c59f2e0689b
@@ -1118,9 +1277,7 @@ Author: Stephan Arts <stephan@xfce.org>
 Date:   Sun Apr 12 21:33:01 2009 +0000
 
     Update NEWS, ChangeLog and version info
-    
-    
-    
+
     (Old svn revision: 29784)
 
 commit 4ce7ecf5783b6822451b72da01558d53606d99ac
@@ -1134,7 +1291,7 @@ Date:   Wed Apr 8 12:01:08 2009 +0000
     	  two strings which are already as translatable with N_() (bug #5203).
     	* libexo-0.3.pot, *.po: Update translation files (no real changes
     	  though).
-    
+
     (Old svn revision: 29730)
 
 commit 26e6da211f0f2b1a356790040d94c3ab2d3e17a4
@@ -1142,7 +1299,7 @@ Author: Piotr Sokól <piotr.sokol@10g.pl>
 Date:   Wed Apr 8 11:49:55 2009 +0000
 
     Updated Polish translations
-    
+
     (Old svn revision: 29729)
 
 commit 110dc36ee11bc6a843d8af224cd053c869020609
@@ -1150,7 +1307,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Tue Apr 7 22:41:49 2009 +0000
 
     Doc maintainance (make update-xml)
-    
+
     (Old svn revision: 29723)
 
 commit 30540aeb200caa307faaea3268b97c73b1df010a
@@ -1158,7 +1315,7 @@ Author: Piotr Sokól <piotr.sokol@10g.pl>
 Date:   Mon Mar 30 15:14:15 2009 +0000
 
     Updated Polish translations
-    
+
     (Old svn revision: 29690)
 
 commit a57a8ad0b917fd16e328359fd193494150d2a467
@@ -1166,7 +1323,7 @@ Author: Maximilian Schleiss <maxschleiss@solnet.ch>
 Date:   Sun Mar 29 22:03:06 2009 +0000
 
     Translations updates - es it ku
-    
+
     (Old svn revision: 29689)
 
 commit bd759ad703cd7112de9fe12e6efadf2260a29b51
@@ -1174,7 +1331,7 @@ Author: Maximilian Schleiss <maxschleiss@solnet.ch>
 Date:   Fri Mar 27 22:27:47 2009 +0000
 
     Translations updates - gl pt ru
-    
+
     (Old svn revision: 29686)
 
 commit 7130dba459f80fd36b11535caabc98230de3ed77
@@ -1182,7 +1339,7 @@ Author: Piotr Sokól <piotr.sokol@10g.pl>
 Date:   Mon Mar 23 10:13:59 2009 +0000
 
     Updated Polish translations
-    
+
     (Old svn revision: 29682)
 
 commit 8bb87fb690fa593add1446296a01356dd8d3247c
@@ -1190,8 +1347,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Mar 22 09:09:16 2009 +0000
 
     Quote arguments passed to exo-open (bug #5132).
-    
-    
+
     (Old svn revision: 29679)
 
 commit c402c4888683b442eb9a3094fede16e41173d737
@@ -1214,7 +1370,7 @@ Date:   Thu Mar 19 15:02:17 2009 +0000
     	* ja.po: Japanese translation update (Masato Hashimoto)
     	* ja.po: Japanese translation update (Masato Hashimoto)
     	* ja.po: Japanese translation update (Masato Hashimoto)
-    
+
     (Old svn revision: 29675)
 
 commit 1a1cd089b121b979b1be9c2827e7dc458bf73c9a
@@ -1222,7 +1378,7 @@ Author: Piotr Sokól <piotr.sokol@10g.pl>
 Date:   Mon Mar 16 11:17:09 2009 +0000
 
     Updated Polish translations
-    
+
     (Old svn revision: 29669)
 
 commit 8c9120f3ddf68cac29360d8b51fdf65df82c45a5
@@ -1230,8 +1386,7 @@ Author: Nick Schermer <nick@xfce.org>
 Date:   Sun Mar 15 11:24:01 2009 +0000
 
     Add it docs to configure. Patch by Maximilian.
-    
-    
+
     (Old svn revision: 29664)
 
 commit fa8af013e2256c1a30f2b48da09ef03e60e05a88
@@ -1239,7 +1394,7 @@ Author: Maximilian Schleiss <maxschleiss@solnet.ch>
 Date:   Sat Mar 14 14:55:12 2009 +0000
 
     Translations updates - da es fr gl it nn
-    
+
     (Old svn revision: 29660)
 
 commit 36c15602ea0c88cc338306b40ca03b8b14951e51
@@ -1247,8 +1402,7 @@ Author: Piotr Sokól <piotr.sokol@10g.pl>
 Date:   Sun Mar 8 16:05:36 2009 +0000
 
     Updated Polish translations
-    
-    
+
     (Old svn revision: 29647)
 
 commit 01513a91241018ef07029781febd00613b3a6374
@@ -1256,7 +1410,7 @@ Author: Mike Massonnet <mmassonnet@xfce.org>
 Date:   Thu Mar 5 14:52:02 2009 +0000
 
     Renamed pt_PT to pt and nb_NO to nb (bug #4574)
-    
+
     (Old svn revision: 29645)
 
 commit 5c65e204abef8d64036c871becd1f665d512b78f
@@ -1264,7 +1418,7 @@ Author: Jean-François Wauthy <pollux@xfce.org>
 Date:   Thu Mar 5 10:57:38 2009 +0000
 
     Rename nb_NO.po into nb.po
-    
+
     (Old svn revision: 29644)
 
 commit 2372f27b553e921034ee647623717588a01e8657
@@ -1272,7 +1426,7 @@ Author: Maximilian Schleiss <maxschleiss@solnet.ch>
 Date:   Mon Mar 2 23:18:41 2009 +0000
 
     Translations updates - pt_PT
-    
+
     (Old svn revision: 29641)
 
 commit 30cfbeca1037b8c05867a055b777770f51fed487
@@ -1280,5 +1434,5 @@ Author: Maximilian Schleiss <maxschleiss@solnet.ch>
 Date:   Sun Mar 1 22:47:35 2009 +0000
 
     Translations updates - es pl uk
-    
+
     (Old svn revision: 29639)
