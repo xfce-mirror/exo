@@ -135,11 +135,6 @@ DISTCLEANFILES =							\
 BUILT_SOURCES =								\
 	$(libexo_built_sources)
 
-if HAVE_GNUC_VISIBILITY
-TESTS =									\
-	abicheck.sh
-endif
-
 exo-alias.h: make-exo-alias.pl exo.symbols
 	$(AM_V_GEN) $(PERL) $(srcdir)/make-exo-alias.pl < $(srcdir)/exo.symbols > exo-alias.h
 
@@ -201,5 +196,10 @@ EXTRA_DIST = 								\
 	exo-aliasdef.c							\
 	exo-marshal.list						\
 	make-exo-alias.pl
+
+if HAVE_GNUC_VISIBILITY
+TESTS =									\
+	abicheck.sh
+endif
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
