@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: xfce-i18n@xfce.org\n"
 "POT-Creation-Date: 2009-04-20 15:37+0200\n"
-"PO-Revision-Date: 2009-09-19 12:51+0100\n"
+"PO-Revision-Date: 2009-11-13 13:29+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -133,7 +133,7 @@ msgstr "Especifique un navegador web personalizado"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in:149(para)
 msgid "The special marker <literal>%s</literal> in the command will be substituted with the URL when you click on a hyperlink. When running just the preferred Web Browser without any URL, i.e. using <command>exo-open --launch WebBrowser</command>, only the binary of the specified command will be used and the parameters will be stripped off. In the example above, with <command>mywebbrowser \"%s\"</command> as custom Web Browser, the command <command>mywebbrowser</command> will be used to open the Web Browser without an URL."
-msgstr ""
+msgstr "O marcador especial <literal>%s</literal> que vai no comando substituirase co URL cando prema nunha hiperligazón. Ao executar o Navegador web preferido sen ningún URL, p.ex. usando <command>exo-open --launch WebBrowser</command>, só se usará o binario do comando especificado e descartaranse os parámetros. No exemplo de enriba, con <command>omeunavegador \"%s\"</command> como Navegador web predeterminado, usarase o comando <command>omeunavegador</command> para abrir o Navegador web sen ningún URL."
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in:163(title)
 #: ../docs/manual/C/exo-preferred-applications.xml.in:174(title)
@@ -150,7 +150,7 @@ msgstr "Seleccionar outras aplicacións"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in:187(para)
 msgid "For custom terminal commands, the special marker <literal>%s</literal> will be substituted with the application to run in the terminal. Otherwise the same rules apply as described in <xref linkend=\"configuration-internet\"/>."
-msgstr ""
+msgstr "Nos comandos de terminal personalizados, substituirase o marcador especial <literal>%s</literal> polo aplicativo que se vai executar na terminal. En outro caso aplicaranse as mesmas regras tal como se describe en <xref linkend=\"configuration-internet\"/>."
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in:198(title)
 msgid "exo-open"
@@ -162,7 +162,7 @@ msgstr "Inclúese unha simple interface de liña de comandos para a infraestrutu
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in:208(para)
 msgid "<application>exo-open</application> supports two operation modes. The first will simply launch the preferred application for a certain category, optionally passing a parameter (the exact meaning of the term <emphasis>parameter</emphasis> depends on the category). For example, to launch the command <command>mutt</command> in the preferred Terminal Emulator, you would use"
-msgstr ""
+msgstr "<application>exo-open</application> soporta dous modos de operación. O primeiro simplemente iniciará o aplicativo preferido dunha certa categoría, podéndolle pasar de xeito opcional algún parámetro (e significado exacto do termo <emphasis>parámetro</emphasis> depende da categoría). Por exemplo, para iniciar o comando <command>mutt</command> no Emulador de terminal preferido tería que usar"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in:217(screen)
 #, no-wrap
@@ -180,7 +180,7 @@ msgstr "exo-open --launch WebBrowser"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in:226(para)
 msgid "The second mode supported by <application>exo-open</application> opens all parameters passed to it with the default URL handlers. Here URLs mean either fully qualified URLs (i.e. <literal>http://www.xfce.org/</literal> or <literal>mailto:xfce4-dev@xfce.org</literal>) or local paths (i.e. <literal>/home/dude/myfile.txt</literal>). For example to open <literal>/home/dude/file1.mp3</literal> and <literal>/home/dude/file2.txt</literal> in the default applications, you would use the following command:"
-msgstr ""
+msgstr "O segundo modo soportado por <application>exo-open</application> abre tódolos parámetros que se lle pasan cos manexadores predeterminados de URL. Aquí URL significa tanto URL totalmente cualificada (p.ex. <literal>http://www.xfce.org/</literal> ou <literal>mailto:xfce4-dev@xfce.org</literal>) como rutas locais (p.ex. <literal>/home/usuario/algunficheiro.txt</literal>). Por exemplo para abrir <literal>/home/usuario/ficheiro1.mp3</literal> e <literal>/home/usuario/ficheiro2.txt</literal> cos aplicativos predeterminados tería que usar o seguinte comando:"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in:238(screen)
 #, no-wrap
