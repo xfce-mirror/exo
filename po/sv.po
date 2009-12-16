@@ -1,15 +1,15 @@
 # Swedish translations for libexo
 # Copyright (C) 2004-2008 os-cillation e.K.
 # This file is distributed under the same license as exo.
-# Daniel Nylander <po@danielnylander.se>, 2007, 2008.
 # Alexander Toresson <alexander.toresson@gmail.com>, 2005.
+# Daniel Nylander <po@danielnylander.se>, 2007, 2008, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libexo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-23 14:20+0200\n"
-"PO-Revision-Date: 2008-12-09 01:13+0100\n"
+"PO-Revision-Date: 2009-12-16 14:12+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -36,14 +36,12 @@ msgid "The icon to render."
 msgstr "Ikonen att rita ut."
 
 #: ../exo/exo-cell-renderer-icon.c:186
-#, fuzzy
 msgid "GIcon"
-msgstr "Ikon"
+msgstr "GIcon"
 
 #: ../exo/exo-cell-renderer-icon.c:187
-#, fuzzy
 msgid "The GIcon to render."
-msgstr "Ikonen att rita ut."
+msgstr "GIcon att rita ut."
 
 #: ../exo/exo-cell-renderer-icon.c:208
 msgid "size"
@@ -65,18 +63,16 @@ msgstr "Misslyckades med att läsa filen \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:891
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Misslyckades med att läsa in bilden \"%s\": Okänd anledning, antagligen en "
-"skadad bildfil"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Misslyckades med att läsa in bilden \"%s\": Okänd anledning, antagligen en skadad bildfil"
 
 #: ../exo/exo-gtk-extensions.c:228
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Misslyckades med att öppna \"%s\"."
 
-#: ../exo/exo-icon-bar.c:278 ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-bar.c:278
+#: ../exo/exo-icon-view.c:777
 msgid "Orientation"
 msgstr "Orientering"
 
@@ -84,19 +80,23 @@ msgstr "Orientering"
 msgid "The orientation of the iconbar"
 msgstr "Orienteringen för ikonraden"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:295
+#: ../exo/exo-icon-view.c:794
 msgid "Pixbuf column"
 msgstr "Pixbuf-kolumn"
 
-#: ../exo/exo-icon-bar.c:296 ../exo/exo-icon-view.c:795
+#: ../exo/exo-icon-bar.c:296
+#: ../exo/exo-icon-view.c:795
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Modellkolumn som används för att hämta ikonens pixbuf från"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:311
+#: ../exo/exo-icon-view.c:921
 msgid "Text column"
 msgstr "Textkolumn"
 
-#: ../exo/exo-icon-bar.c:312 ../exo/exo-icon-view.c:922
+#: ../exo/exo-icon-bar.c:312
+#: ../exo/exo-icon-view.c:922
 msgid "Model column used to retrieve the text from"
 msgstr "Modellkolumn som används för att hämta texten från"
 
@@ -116,27 +116,33 @@ msgstr "Aktiv"
 msgid "Active item index"
 msgstr "Index för aktiva objekt"
 
-#: ../exo/exo-icon-bar.c:348 ../exo/exo-icon-bar.c:349
+#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:349
 msgid "Active item fill color"
 msgstr "Fyllnadsfärg för aktivt objekt"
 
-#: ../exo/exo-icon-bar.c:355 ../exo/exo-icon-bar.c:356
+#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:356
 msgid "Active item border color"
 msgstr "Kantfärg för aktivt objekt"
 
-#: ../exo/exo-icon-bar.c:362 ../exo/exo-icon-bar.c:363
+#: ../exo/exo-icon-bar.c:362
+#: ../exo/exo-icon-bar.c:363
 msgid "Active item text color"
 msgstr "Textfärg för aktivt objekt"
 
-#: ../exo/exo-icon-bar.c:369 ../exo/exo-icon-bar.c:370
+#: ../exo/exo-icon-bar.c:369
+#: ../exo/exo-icon-bar.c:370
 msgid "Cursor item fill color"
 msgstr "Fyllnadsfärg för markörobjekt"
 
-#: ../exo/exo-icon-bar.c:376 ../exo/exo-icon-bar.c:377
+#: ../exo/exo-icon-bar.c:376
+#: ../exo/exo-icon-bar.c:377
 msgid "Cursor item border color"
 msgstr "Kantfärg för markörobjekt"
 
-#: ../exo/exo-icon-bar.c:383 ../exo/exo-icon-bar.c:384
+#: ../exo/exo-icon-bar.c:383
+#: ../exo/exo-icon-bar.c:384
 msgid "Cursor item text color"
 msgstr "Textfärg för markörobjekt"
 
@@ -206,7 +212,8 @@ msgid "All Icons"
 msgstr "Alla ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:127 ../exo/exo-icon-chooser-dialog.c:251
+#: ../exo/exo-icon-chooser-dialog.c:127
+#: ../exo/exo-icon-chooser-dialog.c:251
 msgid "Image Files"
 msgstr "Bildfiler"
 
@@ -280,8 +287,7 @@ msgid "The model for the icon view"
 msgstr "Modellen för ikonvyn"
 
 #: ../exo/exo-icon-view.c:778
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr "Hur texten och ikonen i varje objekt placeras relativt till varandra"
 
 #: ../exo/exo-icon-view.c:810
@@ -316,25 +322,25 @@ msgstr "Markeringsläge"
 msgid "The selection mode"
 msgstr "Markeringsläget"
 
-#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:872
+#: ../exo/exo-tree-view.c:155
 msgid "Single Click"
 msgstr "Enkelklick"
 
-#: ../exo/exo-icon-view.c:873 ../exo/exo-tree-view.c:156
+#: ../exo/exo-icon-view.c:873
+#: ../exo/exo-tree-view.c:156
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Huruvida objekten i vyn kan aktiveras med enkelklick"
 
-#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:889
+#: ../exo/exo-tree-view.c:172
 msgid "Single Click Timeout"
 msgstr "Tidsgräns för enkelklick"
 
-#: ../exo/exo-icon-view.c:890 ../exo/exo-tree-view.c:173
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"Tiden det tar innan objektet som är under muspekaren automatiskt kommer att "
-"väljas i enkelklicksläge"
+#: ../exo/exo-icon-view.c:890
+#: ../exo/exo-tree-view.c:173
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "Tiden det tar innan objektet som är under muspekaren automatiskt kommer att väljas i enkelklicksläge"
 
 #: ../exo/exo-icon-view.c:905
 msgid "Spacing"
@@ -364,7 +370,8 @@ msgstr "Opakhet för markeringsrutan"
 msgid "Preview"
 msgstr "Förhandsvisning"
 
-#: ../exo/exo-thumbnail-preview.c:130 ../exo/exo-thumbnail-preview.c:272
+#: ../exo/exo-thumbnail-preview.c:130
+#: ../exo/exo-thumbnail-preview.c:272
 msgid "No file selected"
 msgstr "Ingen fil vald"
 
@@ -393,12 +400,8 @@ msgid "_Add a new toolbar"
 msgstr "_Lägg till en ny verktygsrad"
 
 #: ../exo/exo-toolbars-editor.c:222
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Dra ett objekt till verktygsraderna ovan för att lägga till det, från "
-"verktygsraderna till objekttabellen för att ta bort det."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Dra ett objekt till verktygsraderna ovan för att lägga till det, från verktygsraderna till objekttabellen för att ta bort det."
 
 #: ../exo/exo-toolbars-editor.c:539
 msgid "Separator"
@@ -526,8 +529,10 @@ msgstr "  --strip-comments Ta bort kommentarer från XML-filer\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content Ta bort nodinnehåll från XML-filer\n"
 
-#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:156
-#: ../exo-mount/main.c:264 ../exo-mount-notify/main.c:170
+#: ../exo-csource/main.c:305
+#: ../exo-desktop-item-edit/main.c:156
+#: ../exo-mount/main.c:264
+#: ../exo-mount-notify/main.c:170
 #: ../exo-open/main.c:259
 #, c-format
 msgid ""
@@ -543,8 +548,10 @@ msgstr ""
 "Skrivet av Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:160
-#: ../exo-mount/main.c:268 ../exo-mount-notify/main.c:174
+#: ../exo-csource/main.c:309
+#: ../exo-desktop-item-edit/main.c:160
+#: ../exo-mount/main.c:268
+#: ../exo-mount-notify/main.c:174
 #: ../exo-open/main.c:263
 #, c-format
 msgid ""
@@ -560,8 +567,10 @@ msgstr ""
 "källkodspaketet för %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:164
-#: ../exo-mount/main.c:272 ../exo-mount-notify/main.c:178
+#: ../exo-csource/main.c:313
+#: ../exo-desktop-item-edit/main.c:164
+#: ../exo-mount/main.c:272
+#: ../exo-mount-notify/main.c:178
 #: ../exo-open/main.c:267
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -651,14 +660,8 @@ msgid "Use _startup notification"
 msgstr "Använd upp_startsnotifiering"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:374
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"Välj det här alternativet för att aktivera uppstartsnotifiering när "
-"kommandot körs från filhanteraren eller menyn. Inte alla program har stöd "
-"för uppstartsnotifiering."
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Välj det här alternativet för att aktivera uppstartsnotifiering när kommandot körs från filhanteraren eller menyn. Inte alla program har stöd för uppstartsnotifiering."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -669,8 +672,7 @@ msgstr "Kör i _terminal"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:387
 msgid "Select this option to run the command in a terminal window."
-msgstr ""
-"Välj det här alternativet för att köra kommandot i ett terminalfönster."
+msgstr "Välj det här alternativet för att köra kommandot i ett terminalfönster."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:533
@@ -679,7 +681,7 @@ msgstr "Välj en ikon"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:150
 msgid "File location is not a regular file or directory"
-msgstr ""
+msgstr "Filens plats är inte en vanlig fil eller katalog"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:54
@@ -726,8 +728,10 @@ msgstr "Standard-URL för nya länkar"
 msgid "Preset icon when creating a desktop file"
 msgstr "Standardikon för ny skrivbordsfil"
 
-#: ../exo-desktop-item-edit/main.c:83 ../exo-helper/main.c:68
-#: ../exo-mount/main.c:81 ../exo-mount-notify/main.c:77
+#: ../exo-desktop-item-edit/main.c:83
+#: ../exo-helper/main.c:68
+#: ../exo-mount/main.c:81
+#: ../exo-mount-notify/main.c:77
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
@@ -737,7 +741,8 @@ msgid "[FILE|FOLDER]"
 msgstr "[FIL|MAPP]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:144 ../exo-mount/main.c:250
+#: ../exo-desktop-item-edit/main.c:144
+#: ../exo-mount/main.c:250
 #: ../exo-mount-notify/main.c:156
 msgid "Failed to open display"
 msgstr "Misslyckades med att öppna display"
@@ -747,26 +752,26 @@ msgid "No file/folder specified"
 msgstr "Ingen fil/katalog angavs"
 
 #: ../exo-desktop-item-edit/main.c:217
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Misslyckades med att öppna filen \"%s\": %s"
+msgstr "Misslyckades med att läsa innehållet i \"%s\": %s"
 
 #: ../exo-desktop-item-edit/main.c:222
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr ""
+msgstr "Filen \"%s\" innehåller inget data"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Misslyckades med att öppna filen \"%s\": %s"
+msgstr "Misslyckades med att tolka innehållet i \"%s\": %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:247
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "Filen \"%s\" saknar en type-nyckel"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:257
@@ -908,7 +913,7 @@ msgid ""
 "hyperlinks and display help contents."
 msgstr ""
 "Den föredragna webbläsaren kommer att användas\n"
-" till att öppna hyperlänkar och för att visa\n"
+"till att öppna hyperlänkar och för att visa\n"
 "hjälpinnehåll."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:178
@@ -933,17 +938,15 @@ msgstr "Verktyg"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "File Manager"
-msgstr ""
+msgstr "Filhanterare"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:227
-#, fuzzy
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
-"Den föredragna webbläsaren kommer att användas\n"
-" till att öppna hyperlänkar och för att visa\n"
-"hjälpinnehåll."
+"Den föredragna filhanteraren kommer att\n"
+"användas för att bläddra bland mappar."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:251
 msgid "Terminal Emulator"
@@ -983,9 +986,8 @@ msgid "Failed to set default Mail Reader"
 msgstr "Misslyckades med att ställa in den föredragna e-postklienten"
 
 #: ../exo-helper/exo-helper-chooser.c:318
-#, fuzzy
 msgid "Failed to set default File Manager"
-msgstr "Misslyckades med att ställa in den föredragna e-postklienten"
+msgstr "Misslyckades med att ställa in den föredragna filhanteraren"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Terminal Emulator"
@@ -1005,9 +1007,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "Välj en anpassad e-postklient"
 
 #: ../exo-helper/exo-helper-chooser.c:504
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "Välj en anpassad e-postklient"
+msgstr "Välj en anpassad filhanterare"
 
 #: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Terminal Emulator"
@@ -1019,7 +1020,7 @@ msgid ""
 "as default Web Browser for Xfce:"
 msgstr ""
 "Välj det program som du vill använda\n"
-"som standardwebbläsare för Xfce:"
+"som föredragen webbläsare för Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
@@ -1027,16 +1028,15 @@ msgid ""
 "as default Mail Reader for Xfce:"
 msgstr ""
 "Välj det program som du vill använda\n"
-"som standard-e-postklient för Xfce:"
+"som föredragen e-postklient för Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
-#, fuzzy
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
 "Välj det program som du vill använda\n"
-"som standard-e-postklient för Xfce:"
+"som föredragen filhanterare för Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
@@ -1044,7 +1044,7 @@ msgid ""
 "as default Terminal Emulator for Xfce:"
 msgstr ""
 "Välj det program som du vill använda\n"
-"som standardterminalemulator för Xfce:"
+"som föredragen terminalemulator för Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
@@ -1079,12 +1079,11 @@ msgstr ""
 "och tryck på OK för att fortsätta."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:261
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
-"Välj den e-postklient som du föredrar\n"
+"Välj den filhanterare som du föredrar\n"
 "och tryck på OK för att fortsätta."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:263
@@ -1118,9 +1117,8 @@ msgid "Failed to execute default Mail Reader"
 msgstr "Misslyckades med att köra den föredragna e-postklienten"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "Misslyckades med att köra den föredragna e-postklienten"
+msgstr "Misslyckades med att köra den föredragna filhanteraren"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
@@ -1143,19 +1141,14 @@ msgid "SOCKET ID"
 msgstr "UTTAGS-ID"
 
 #: ../exo-helper/main.c:71
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
-msgstr ""
-"Kör standardhjälparen för TYP med frivilliga PARAMETRAR, där TYP är ett av "
-"följande värden."
+msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgstr "Kör standardhjälparen för TYP med frivilliga PARAMETRAR, där TYP är ett av följande värden."
 
 #: ../exo-helper/main.c:71
 msgid "TYPE [PARAMETER]"
 msgstr "TYP [PARAMETER]"
 
 #: ../exo-helper/main.c:95
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1168,6 +1161,7 @@ msgstr ""
 "\n"
 "  WebBrowser       - Den föredragna webbläsaren.\n"
 "  MailReader       - Den föredragna e-postklienten.\n"
+"  FileManager      - Den föredragna filhanteraren.\n"
 "  TerminalEmulator - Den föredragna terminalemulatorn."
 
 #: ../exo-helper/main.c:105
@@ -1212,7 +1206,7 @@ msgstr "Xfce-terminalen"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
-msgstr ""
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1292,7 +1286,7 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
 msgid "Nautilus"
-msgstr ""
+msgstr "Nautilus"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
@@ -1312,7 +1306,7 @@ msgstr "Opera e-post"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr ""
+msgstr "Filhanteraren PCMan"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1339,13 +1333,15 @@ msgid "X Terminal"
 msgstr "X-terminal"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
+#: ../exo-mount/exo-mount-hal.c:263
+#: ../exo-mount/exo-mount-hal.c:331
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Enheten \"%s\" är inte en volym eller enhet"
 
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-hal.c:420 ../exo-mount/main.c:142
+#: ../exo-mount/exo-mount-hal.c:420
+#: ../exo-mount/main.c:142
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr "Enheten \"%s\" hittades inte i filsystemets enhetstabell"
@@ -1370,20 +1366,13 @@ msgstr "Du har inte behörighet att montera volymen \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:980
 #, c-format
-msgid ""
-"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
-"record audio or data on the disc"
-msgstr ""
-"Tomma skivor kan inte monteras, använd ett cd-bränningsprogram som Xfburn "
-"för att skriva ljud eller data på skivan"
+msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+msgstr "Tomma skivor kan inte monteras, använd ett cd-bränningsprogram som Xfburn för att skriva ljud eller data på skivan"
 
 #: ../exo-mount/exo-mount-hal.c:991
-#, fuzzy, c-format
-msgid ""
-"Audio CDs cannot be mounted, use your favorite audio player to play the "
-"audio tracks"
-msgstr ""
-"Ljud-cd-skivor kan inte monteras, använd Xfmedia för att spela ljudspåren"
+#, c-format
+msgid "Audio CDs cannot be mounted, use your favorite audio player to play the audio tracks"
+msgstr "Ljud-cd-skivor kan inte monteras, använd din favoritljudspelare för att spela ljudspåren"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1056
@@ -1446,10 +1435,8 @@ msgstr "Okänt fel"
 
 #: ../exo-mount/main.c:277
 #, c-format
-msgid ""
-"%s is compiled without GIO-Unix features. Therefore it will probably not "
-"work on this system."
-msgstr ""
+msgid "%s is compiled without GIO-Unix features. Therefore it will probably not work on this system."
+msgstr "%s är kompilerad utan GIO-Unix-funktioner. Därför kommer det antagligen inte att fungera på detta system."
 
 #. the caller must specify either a HAL UDI or a device file
 #: ../exo-mount/main.c:285
@@ -1462,12 +1449,8 @@ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr "Får inte ange både en HAL enhets-UDI och en enhetsfil på samma gång"
 
 #: ../exo-mount/main.c:301
-msgid ""
-"Cannot mount by HAL device UDI, because HAL support was disabled for this "
-"build"
-msgstr ""
-"Kan inte montera efter HAL enhets-UDI, eftersom stöd för HAL blev "
-"inaktiverad för detta bygge"
+msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+msgstr "Kan inte montera efter HAL enhets-UDI, eftersom stöd för HAL blev inaktiverad för detta bygge"
 
 #: ../exo-mount/main.c:308
 #, c-format
@@ -1521,12 +1504,8 @@ msgstr "Avmonterar enhet"
 
 #: ../exo-mount-notify/main.c:234
 #, c-format
-msgid ""
-"The device \"%s\" is being unmounted by the system. Please do not remove the "
-"media or disconnect the drive."
-msgstr ""
-"Enheten \"%s\" håller på att avmonteras av systemet. Koppla inte från "
-"enheten eller ta ur lagringsmediet."
+msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+msgstr "Enheten \"%s\" håller på att avmonteras av systemet. Koppla inte från enheten eller ta ur lagringsmediet."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:241
@@ -1535,12 +1514,8 @@ msgstr "Skriver data till enhet"
 
 #: ../exo-mount-notify/main.c:242
 #, c-format
-msgid ""
-"There is data that needs to be written to the device \"%s\" before it can be "
-"removed. Please do not remove the media or disconnect the drive."
-msgstr ""
-"Det finns data som behöver skrivas till enheten \"%s\" innan den kan kopplas "
-"från. Koppla inte från enheten eller ta ur lagringsmediet."
+msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+msgstr "Det finns data som behöver skrivas till enheten \"%s\" innan den kan kopplas från. Koppla inte från enheten eller ta ur lagringsmediet."
 
 #: ../exo-open/main.c:85
 msgid "Usage: exo-open [URLs...]"
@@ -1552,22 +1527,16 @@ msgstr "       exo-open --launch TYP [PARAMETRAR...]"
 
 #: ../exo-open/main.c:88
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
-"  -?, --help                          Skriv ut det här hjälpmeddelandet och "
-"avsluta"
+msgstr "  -?, --help                          Skriv ut det här hjälpmeddelandet och avsluta"
 
 #: ../exo-open/main.c:89
-msgid ""
-"  -V, --version                       Print version information and exit"
-msgstr ""
-"  -V, --version                       Skriv ut versionsinformation och "
-"avsluta"
+msgid "  -V, --version                       Print version information and exit"
+msgstr "  -V, --version                       Skriv ut versionsinformation och avsluta"
 
 #: ../exo-open/main.c:91
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TYP [PARAMETRAR...]        Kör det föredragna programmet för TYP\n"
@@ -1576,8 +1545,7 @@ msgstr ""
 
 #: ../exo-open/main.c:95
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
 "  --working-directory KATALOG         Standardarbetskatalog för program\n"
@@ -1591,7 +1559,6 @@ msgstr "De följande TYPerna stöds för kommandot --launch:"
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
 #: ../exo-open/main.c:104
-#, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1600,6 +1567,7 @@ msgid ""
 msgstr ""
 "  WebBrowser       - Den föredragna webbläsaren.\n"
 "  MailReader       - Den föredragna e-postklienten.\n"
+"  FileManager      - Den föredragna filhanteraren.\n"
 "  TerminalEmulator - Den föredragna terminalemulatorn."
 
 #: ../exo-open/main.c:109
@@ -1612,59 +1580,49 @@ msgid ""
 msgstr ""
 "Om du inte anger --launch kommer exo-open öppna alla angivna URL:er med\n"
 "deras föredragna URL-hanterare. Annars, om du anger --launch, kan du välja\n"
-"vilken av de föredragna programmen du vill köra, och de kan ge extra "
-"parametrar\n"
+"vilken av de föredragna programmen du vill köra, och de kan ge extra parametrar\n"
 "till program (t.ex. kan du ange kommandot som ska köras i terminalen\n"
 "med TerminalEmulator)."
 
 #: ../exo-open/main.c:171
 #, c-format
-msgid ""
-"Launching desktop files is not supported when %s is compiled without GIO-"
-"Unix features."
-msgstr ""
+msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
+msgstr "Körning av skrivbordsfiler stöds inte när %s är kompilerad utan GIO-Unix-funktioner."
 
 #: ../exo-open/main.c:313
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr ""
-"Misslyckades med att starta det föredragna programmet för kategorin \"%s\"."
+msgstr "Misslyckades med att starta det föredragna programmet för kategorin \"%s\"."
 
 #: ../exo-open/main.c:355
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "Kunde inte identifiera URI-schemat för \"%s\"."
 
 #: ../exo-open/main.c:365
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Misslyckades med att öppna URL:en \"%s\"."
+msgstr "Misslyckades med att öppna URI:en \"%s\"."
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "Kunde inte öppna \"%s\""
-
 #~ msgid "The URL \"%s\" is not supported"
 #~ msgstr "URL:en \"%s\" stöds inte"
-
 #~ msgid "Unknown helper arguments.\n"
 #~ msgstr "Okända hjälparargument.\n"
-
 #~ msgid "Failed to launch exo-preferred-applications"
 #~ msgstr "Misslyckades med att starta exo-preferred-applications"
-
 #~ msgid "Button Label|Preferred Applications"
 #~ msgstr "Föredragna program"
-
 #~ msgid "Usage: exo-helper [OPTION...]"
 #~ msgstr "Användning: exo-helper [FLAGGA...]"
-
 #~ msgid ""
 #~ "  -h, --help                          Print this help message and exit"
 #~ msgstr "  -h, --help Skriv ut det här hjälpmeddelandet och avsluta"
-
 #~ msgid ""
 #~ "  --configure                         Open the Preferred Applications\n"
 #~ "                                      configuration dialog"
 #~ msgstr ""
 #~ "  --configure Öppna konfigurationsdialogrutan\n"
 #~ "                                      för föredragna program"
+
