@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libexo 0.3.101\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-20 13:45+0200\n"
-"PO-Revision-Date: 2009-08-19 21:57+0100\n"
+"POT-Creation-Date: 2009-12-18 14:58+0000\n"
+"PO-Revision-Date: 2009-12-18 19:21+0100\n"
 "Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -1036,7 +1036,7 @@ msgstr "Kunne ikke åbne helpers.rc i skrivetilstand"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:40
 msgid "Failed to launch exo-preferred-applications"
-msgstr "Kunne ikke ikke starte exo-fortrukne-programmer"
+msgstr "Kunne ikke starte exo-fortrukne-programmer"
 
 #: ../exo-helper/exo-preferred-applications-settings.c:60
 msgid "Button Label|Preferred Applications"
@@ -1049,6 +1049,98 @@ msgstr "Foretrukne programmer (Webbrowser, postprogram og terminal-emulering)"
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
 msgstr "Foretrukne programmer til Xfce 4"
+
+#: ../exo-helper/main.c:42
+msgid "Failed to execute default Web Browser"
+msgstr "Kunne ikke køre foretrukne webbrowser"
+
+#: ../exo-helper/main.c:43
+msgid "Failed to execute default Mail Reader"
+msgstr "Kunne ikke køre foretrukne postprogram"
+
+#: ../exo-helper/main.c:44
+msgid "Failed to execute default Terminal Emulator"
+msgstr "Kunne ikke køre foretrukne terminal-emulering"
+
+#: ../exo-helper/main.c:52
+msgid "Usage: exo-helper [OPTION...]"
+msgstr "Brug: exo-helper [TILVALG...]"
+
+#: ../exo-helper/main.c:54
+msgid "  -h, --help                          Print this help message and exit"
+msgstr "  -h, --help                          Udskriv denne hjælpbesked og afslut"
+
+#: ../exo-helper/main.c:55
+#: ../exo-open/main.c:63
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Udskriv versionsinformation og afslut"
+
+#: ../exo-helper/main.c:57
+msgid ""
+"  --configure                         Open the Preferred Applications\n"
+"                                      configuration dialog"
+msgstr ""
+"  --configure                         Åbn indstillingsdialogen\n"
+"                                      til de foretrukne programmer"
+
+#: ../exo-helper/main.c:60
+msgid ""
+"  --launch TYPE [PARAMETER]           Launch the default helper of TYPE\n"
+"                                      with the optional PARAMETER, where\n"
+"                                      TYPE is one of the following values."
+msgstr ""
+"  --launch TYPE [PARAMETRE...]        Start standardhjælp af TYPE\n"
+"                                      med mulige PARAMETRE, hvor\n"
+"                                      TYPE er en af følgende værdier."
+
+#: ../exo-helper/main.c:64
+#: ../exo-open/main.c:72
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr "Følgende TYPEr understøttes af kommandoen --launch:"
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. * since the exo-helper utility will not accept localized TYPEs.
+#.
+#: ../exo-helper/main.c:70
+#: ../exo-open/main.c:78
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+"  WebBrowser       - Den foretrukne webbrowser.\n"
+"  MailReader       - Det foretrukne postprogram.\n"
+"  TerminalEmulator - Den foretrukne terminal-emulering."
+
+#: ../exo-helper/main.c:114
+#, c-format
+msgid "Invalid helper type \"%s\""
+msgstr "Ugyldig hjælpertype \"%s\""
+
+#: ../exo-helper/main.c:158
+#, c-format
+msgid ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
+"\n"
+"Please report bugs to <%s>.\n"
+msgstr ""
+"%s (Xfce %s)\n"
+"\n"
+"Ophavsret (c) 2003-2006\n"
+"        os-cillation e.K. Alle rettigheder forbeholdes.\n"
+"\n"
+"Skrevet af Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Kompileret med  Gtk+-%d.%d.%d, kørende Gtk+-%d.%d.%d.\n"
+"\n"
+"Rapportér venligst fejl til <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1344,10 +1436,6 @@ msgstr "       exo-open --launch TYPE [PARAMETRE...]"
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Udskriv denne hjælpbesked og afslut"
 
-#: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Udskriv versionsinformation og afslut"
-
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
@@ -1365,23 +1453,6 @@ msgid ""
 msgstr ""
 "  --working-directory DIRECTORY       Standardarbejdsmappe for programmer\n"
 "                                      når tilvalget --launch bruges."
-
-#: ../exo-open/main.c:72
-msgid "The following TYPEs are supported for the --launch command:"
-msgstr "Følgende TYPEr understøttes af kommandoen --launch:"
-
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
-#. * since the exo-helper utility will not accept localized TYPEs.
-#.
-#: ../exo-open/main.c:78
-msgid ""
-"  WebBrowser       - The preferred Web Browser.\n"
-"  MailReader       - The preferred Mail Reader.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"  WebBrowser       - Den foretrukne webbrowser.\n"
-"  MailReader       - Det foretrukne postprogram.\n"
-"  TerminalEmulator - Den foretrukne terminal-emulering."
 
 #: ../exo-open/main.c:82
 msgid ""
@@ -1411,12 +1482,6 @@ msgstr "Kunne ikke åbne URL'en \"%s\"."
 #~ msgstr "G-ikon"
 #~ msgid "The GIcon to render."
 #~ msgstr "G-ikonet der skal renderes."
-#~ msgid "Failed to execute default Web Browser"
-#~ msgstr "Kunne ikke køre foretrukne webbrowser"
-#~ msgid "Failed to execute default Mail Reader"
-#~ msgstr "Kunne ikke køre foretrukne postprogram"
-#~ msgid "Failed to execute default Terminal Emulator"
-#~ msgstr "Kunne ikke køre foretrukne terminal-emulering"
 #~ msgid ""
 #~ "Open the Preferred Applications\n"
 #~ "configuration dialog"
@@ -1449,30 +1514,6 @@ msgstr "Kunne ikke åbne URL'en \"%s\"."
 #~ "  TerminalEmulator - Den foretrukne terminal-emulering."
 #~ msgid "Type '%s --help' for usage."
 #~ msgstr "Tast '%s --help' for brug."
-#~ msgid "Invalid helper type \"%s\""
-#~ msgstr "Ugyldig hjælpertype \"%s\""
-#~ msgid ""
-#~ "%s (Xfce %s)\n"
-#~ "\n"
-#~ "Copyright (c) 2003-2006\n"
-#~ "        os-cillation e.K. All rights reserved.\n"
-#~ "\n"
-#~ "Written by Benedikt Meurer <benny@xfce.org>.\n"
-#~ "\n"
-#~ "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
-#~ "\n"
-#~ "Please report bugs to <%s>.\n"
-#~ msgstr ""
-#~ "%s (Xfce %s)\n"
-#~ "\n"
-#~ "Ophavsret (c) 2003-2006\n"
-#~ "        os-cillation e.K. Alle rettigheder forbeholdes.\n"
-#~ "\n"
-#~ "Skrevet af Benedikt Meurer <benny@xfce.org>.\n"
-#~ "\n"
-#~ "Kompileret med  Gtk+-%d.%d.%d, kørende Gtk+-%d.%d.%d.\n"
-#~ "\n"
-#~ "Rapportér venligst fejl til <%s>.\n"
 #~ msgid "Unknown helper arguments.\n"
 #~ msgstr "Ukendt programargumenter.\n"
 #~ msgid "Midori"
