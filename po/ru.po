@@ -12,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugzilla.xfce.org\n"
-"POT-Creation-Date: 2010-01-05 10:33-0100\n"
-"PO-Revision-Date: 2010-01-05 18:27+0300\n"
+"POT-Creation-Date: 2010-01-05 17:02+0000\n"
+"PO-Revision-Date: 2010-01-05 20:28+0300\n"
 "Last-Translator: dima <info@cnc-parts.info>\n"
-"Language-Team: Russian\n"
+"Language-Team: Russian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,12 +41,10 @@ msgid "The icon to render."
 msgstr "Отображаемый значок"
 
 #: ../exo/exo-cell-renderer-icon.c:185
-#, fuzzy
 msgid "GIcon"
 msgstr "Значок"
 
 #: ../exo/exo-cell-renderer-icon.c:186
-#, fuzzy
 msgid "The GIcon to render."
 msgstr "Отображаемый значок"
 
@@ -759,9 +757,9 @@ msgid "No file/folder specified"
 msgstr "Не указан файл/папка"
 
 #: ../exo-desktop-item-edit/main.c:216
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Не удалось открыть файл \"%s\": %s"
+msgstr "Не удалось открыть содержимое \"%s\": %s"
 
 #: ../exo-desktop-item-edit/main.c:221
 #, c-format
@@ -770,9 +768,9 @@ msgstr "Файл \"%s\" не содержит данных"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:234
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Не удалось открыть файл \"%s\": %s"
+msgstr "Не удалось открыть содержимое \"%s\": %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:246
@@ -947,13 +945,12 @@ msgid "File Manager"
 msgstr "Файловый менеджер"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:226
-#, fuzzy
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
-"Выбранный веб-браузер будет использоваться для\n"
-"открытия гиперссылок и просмотра справки."
+"Выбранный файловый менеджер будет использоваться для\n"
+"просмотра папок."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 msgid "Terminal Emulator"
@@ -994,9 +991,8 @@ msgid "Failed to set default Mail Reader"
 msgstr "Невозможно открыть приложение для чтения электронной почты"
 
 #: ../exo-helper/exo-helper-chooser.c:317
-#, fuzzy
 msgid "Failed to set default File Manager"
-msgstr "Невозможно открыть приложение для чтения электронной почты"
+msgstr "Невозможно устаноовить файловый менеджер по умолчанию"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
@@ -1016,9 +1012,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "Выберите приложение для чтения электронной почты"
 
 #: ../exo-helper/exo-helper-chooser.c:503
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "Выберите приложение для чтения электронной почты"
+msgstr "Выберите файловый менеджер"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
@@ -1042,14 +1037,12 @@ msgstr ""
 "программы для Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
-#, fuzzy
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
 "Укажите приложение, которые вы хотите\n"
-"использовать в качестве почтовой\n"
-"программы для Xfce:"
+"использовать в качестве файлового менеджера для Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
@@ -1093,13 +1086,10 @@ msgstr ""
 "программу и нажмите OK, чтобы продолжить."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr ""
-"Пожалуйста, выберите предпочитаемую почтовую\n"
-"программу и нажмите OK, чтобы продолжить."
+msgstr "Пожалуйста, выберите предпочитаемый файловый менеджер и нажмите OK, чтобы продолжить."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
@@ -1124,31 +1114,26 @@ msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Предпочтительные приложения (Веб-браузер, почтовая программа, эмулятор терминала)"
 
 #: ../exo-helper/main.c:41
-#, fuzzy
 msgid "Failed to execute default Web Browser"
 msgstr "Невозможно открыть web-браузер"
 
 #: ../exo-helper/main.c:42
-#, fuzzy
 msgid "Failed to execute default Mail Reader"
 msgstr "Невозможно открыть приложение для чтения электронной почты"
 
 #: ../exo-helper/main.c:43
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "Невозможно открыть приложение для чтения электронной почты"
+msgstr "Невозможно открыть файловый менеджер"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
 msgid "Failed to execute default Terminal Emulator"
-msgstr "Невозможно открыть эмулятор терминала"
+msgstr "Невозможно открыть терминал"
 
 #: ../exo-helper/main.c:68
-#, fuzzy
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr "Предпочтительные приложения Xfce 4"
+msgstr "Открыть диалог Предпочитаемые приложения Xfce 4"
 
 #: ../exo-helper/main.c:69
 msgid "Settings manager socket"
@@ -1160,14 +1145,13 @@ msgstr "ID сокета"
 
 #: ../exo-helper/main.c:70
 msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
-msgstr ""
+msgstr "Запустите программу помощи с TYPE, где TYPE один из следуующих параметров"
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
 msgstr "Тип [ПАРАМЕТР]"
 
 #: ../exo-helper/main.c:94
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1176,6 +1160,8 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"Следуующие типы поддерживаются --launch-command:\n"
+"\n"
 "  WebBrowser       - Предпочитаемый веб браузер.\n"
 "  MailReader       - Предпочитаемая почтовая программа.\n"
 "  TerminalEmulator - Предпочитаемый эмулятор терминала."
@@ -1186,12 +1172,12 @@ msgid "Type '%s --help' for usage."
 msgstr "Напишите '%s --help'  для большей информации"
 
 #: ../exo-helper/main.c:154
-#, fuzzy, c-format
+#, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Невозможно открыть  \"%s\""
+msgstr "Неверный тип помощи  \"%s\""
 
 #: ../exo-helper/main.c:198
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s (Xfce %s)\n"
 "\n"
@@ -1204,11 +1190,16 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr ""
-"Copyright (c) %s\n"
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2010\n"
 "        os-cillation e.K. Все права сохранены.\n"
 "\n"
 "Автор: Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
+"Собранно для Gtk+-%d.%d.%d, запущен Gtk+-%d.%d.%d.\n"
+"\n"
+"Об ошибках сообщайте <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1380,21 +1371,21 @@ msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn
 msgstr "Пустые диски не могут быть смонтированы. Используется программу для записи CD, такую как Xfburn, для записи аудио-дисков или дисков с данными"
 
 #: ../exo-mount/exo-mount-hal.c:990
-#, fuzzy, c-format
+#, c-format
 msgid "Audio CDs cannot be mounted, use your favorite audio player to play the audio tracks"
-msgstr "Аудио-диски не могут быть смонтированы. Используйте Xfmedia, чтобы проигрывать их"
+msgstr "Аудио-диск не может быть подключен. Используйте ваш аудио плеер, чтобы проиграть их"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1055
-#, fuzzy, c-format
+#, c-format
 msgid "You are not privileged to teardown the crypto layer"
-msgstr "У вас нет прав на монтирование тома \"%s\""
+msgstr "У вас нет прав на отключение защиты"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:1060
-#, fuzzy, c-format
+#, c-format
 msgid "An application is preventing the crypto layer from being torn down"
-msgstr "Есть приложение, которое препятствует размонтированию тома \"%s\""
+msgstr "Приложениее не допускает использования уровня защиты"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1144
@@ -1570,7 +1561,6 @@ msgstr "Для команды --launch поддерживаются следую
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
 #: ../exo-open/main.c:103
-#, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1579,6 +1569,7 @@ msgid ""
 msgstr ""
 "  WebBrowser       - Предпочитаемый веб браузер.\n"
 "  MailReader       - Предпочитаемая почтовая программа.\n"
+"  FileManager      - Предпочитаемыей файловый менеджер.\n"
 "  TerminalEmulator - Предпочитаемый эмулятор терминала."
 
 #: ../exo-open/main.c:108
@@ -1612,7 +1603,7 @@ msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Невозможно найти URI-схему устройства \"%s\"."
 
 #: ../exo-open/main.c:364
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Не удалось открыть URL \"%s\"."
 
