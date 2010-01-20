@@ -67,9 +67,9 @@ struct _KnownSchemes
 
 static KnownSchemes known_schemes[] =
 {
-  { "^(https?|ftps|gopher)$", "WebBrowser" },
-  { "^mailto$",               "MailReader" },
-  { "^(file|trash|ssh)$",     "FileManager" }
+  { "^(https?|ftps?|gopher)$", "WebBrowser" },
+  { "^mailto$",                "MailReader" },
+  { "^(file|trash|ssh)$",      "FileManager" }
 };
 
 
@@ -170,7 +170,7 @@ g_io_module_load (GIOModule *module)
 {
   exo_gio_module_register_type (G_TYPE_MODULE (module));
   g_io_extension_point_implement (G_DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME,
-                                  EXO_TYPE_GIO_MODULE, "ExoGioModule", 10);
+                                  EXO_TYPE_GIO_MODULE, "ExoGioModule", 15);
 }
 
 
