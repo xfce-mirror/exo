@@ -156,9 +156,11 @@ exo_gio_module_get_default_for_uri_scheme (GDesktopAppInfoLookup *lookup,
         }
     }
 
+#ifndef NDEBUG
   /* print debug message if scheme is not recognized by exo */
   if (!found)
     g_debug ("Unknown URI-scheme \"%s\".", uri_scheme);
+#endif
 
   return info;
 }
