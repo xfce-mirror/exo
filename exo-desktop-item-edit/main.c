@@ -134,13 +134,13 @@ main (int argc, char **argv)
       if (G_UNLIKELY (error != NULL))
         {
           /* use the supplied error message */
-          g_critical ("%s", error->message);
+          g_printerr ("%s\n", error->message);
           g_error_free (error);
         }
       else
         {
           /* no error message, the GUI initialization failed */
-          g_critical ("%s %s", _("Failed to open display"),
+          g_printerr ("%s %s\n", _("Failed to open display"),
                       STR_FB (gdk_get_display_arg_name (), ""));
         }
 
@@ -167,7 +167,7 @@ main (int argc, char **argv)
   /* verify that a file/folder is specified */
   if (G_UNLIKELY (argc != 2))
     {
-      g_critical (_("No file/folder specified"));
+      g_printerr ("%s\n", _("No file/folder specified"));
       return EXIT_FAILURE;
     }
 
@@ -213,14 +213,14 @@ main (int argc, char **argv)
           /* we cannot open the file */
           if (G_LIKELY (error != NULL))
             {
-              g_critical (_("Failed to load contents from \"%s\": %s"), argv[1], error->message);
+              g_printerr (_("Failed to load contents from \"%s\": %s"), argv[1], error->message);
               g_error_free (error);
             }
           else
             {
-              g_critical (_("The file \"%s\" contains no data"), argv[1]);
+              g_printerr (_("The file \"%s\" contains no data"), argv[1]);
             }
-
+          g_printerr ("\n");
           return EXIT_FAILURE;
         }
 
@@ -231,7 +231,8 @@ main (int argc, char **argv)
       if (G_UNLIKELY (!res))
         {
           /* failed to parse the file */
-          g_critical (_("Failed to parse contents of \"%s\": %s"), argv[1], error->message);
+          g_printerr (_("Failed to parse contents of \"%s\": %s"), argv[1], error->message);
+          g_printerr ("\n");
           g_error_free (error);
           return EXIT_FAILURE;
         }
@@ -243,7 +244,8 @@ main (int argc, char **argv)
   if (G_UNLIKELY (value == NULL))
     {
       /* we cannot continue without a type */
-      g_critical (_("File \"%s\" has no type key"), argv[1]);
+      g_printerr (_("File \"%s\" has no type key"), argv[1]);
+      g_printerr ("\n");
       return EXIT_FAILURE;
     }
 
@@ -253,7 +255,8 @@ main (int argc, char **argv)
   if (G_UNLIKELY (enum_value == NULL))
     {
       /* tell the user that we don't support the type */
-      g_critical (_("Unsupported desktop file type \"%s\""), value);
+      g_printerr (_("Unsupported desktop file type \"%s\""), value);
+      g_printerr ("\n");
       return EXIT_FAILURE;
     }
   g_free (value);
