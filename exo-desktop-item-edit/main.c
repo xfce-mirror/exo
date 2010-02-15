@@ -69,6 +69,10 @@ static gint     opt_xid = 0;
 
 
 
+static void exo_die_error (const gchar *format, ...) G_GNUC_PRINTF (1, 2);
+
+
+
 /* --- command line options --- */
 static GOptionEntry option_entries[] =
 {
@@ -83,6 +87,24 @@ static GOptionEntry option_entries[] =
   { "xid", 0, G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_INT, &opt_xid, NULL, NULL, },
   { NULL, },
 };
+
+
+
+static void
+exo_die_error (const gchar *format,
+               ...)
+{
+  gchar   *buffer;
+  va_list  args;
+
+  va_start (args, format);
+  buffer = g_strdup_vprintf (format, args);
+  va_end (args);
+
+  g_printerr ("%s: %s\n", G_LOG_DOMAIN, buffer);
+
+  g_free (buffer);
+}
 
 
 
@@ -134,13 +156,13 @@ main (int argc, char **argv)
       if (G_UNLIKELY (error != NULL))
         {
           /* use the supplied error message */
-          g_printerr ("%s\n", error->message);
+          exo_die_error ("%s", error->message);
           g_error_free (error);
         }
       else
         {
           /* no error message, the GUI initialization failed */
-          g_printerr ("%s %s\n", _("Failed to open display"),
+          exo_die_error ("%s %s", _("Failed to open display"),
                       STR_FB (gdk_get_display_arg_name (), ""));
         }
 
@@ -167,7 +189,7 @@ main (int argc, char **argv)
   /* verify that a file/folder is specified */
   if (G_UNLIKELY (argc != 2))
     {
-      g_printerr ("%s\n", _("No file/folder specified"));
+      exo_die_error (_("No file/folder specified"));
       return EXIT_FAILURE;
     }
 
@@ -219,14 +241,14 @@ main (int argc, char **argv)
           /* we cannot open the file */
           if (G_LIKELY (error != NULL))
             {
-              g_printerr (_("Failed to load contents from \"%s\": %s"), argv[1], error->message);
+              exo_die_error (_("Failed to load contents from \"%s\": %s"), argv[1], error->message);
               g_error_free (error);
             }
           else
             {
-              g_printerr (_("The file \"%s\" contains no data"), argv[1]);
+              exo_die_error (_("The file \"%s\" contains no data"), argv[1]);
             }
-          g_printerr ("\n");
+
           return EXIT_FAILURE;
         }
 
@@ -237,8 +259,7 @@ main (int argc, char **argv)
       if (G_UNLIKELY (!res))
         {
           /* failed to parse the file */
-          g_printerr (_("Failed to parse contents of \"%s\": %s"), argv[1], error->message);
-          g_printerr ("\n");
+          exo_die_error (_("Failed to parse contents of \"%s\": %s"), argv[1], error->message);
           g_error_free (error);
           return EXIT_FAILURE;
         }
@@ -250,8 +271,7 @@ main (int argc, char **argv)
   if (G_UNLIKELY (value == NULL))
     {
       /* we cannot continue without a type */
-      g_printerr (_("File \"%s\" has no type key"), argv[1]);
-      g_printerr ("\n");
+      exo_die_error (_("File \"%s\" has no type key"), argv[1]);
       return EXIT_FAILURE;
     }
 
@@ -261,8 +281,7 @@ main (int argc, char **argv)
   if (G_UNLIKELY (enum_value == NULL))
     {
       /* tell the user that we don't support the type */
-      g_printerr (_("Unsupported desktop file type \"%s\""), value);
-      g_printerr ("\n");
+      exo_die_error (_("Unsupported desktop file type \"%s\""), value);
       return EXIT_FAILURE;
     }
   g_free (value);
