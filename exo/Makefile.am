@@ -92,6 +92,7 @@ libexo_1_la_SOURCES =							\
 libexo_1_la_CFLAGS =							\
 	$(GIO_CFLAGS)							\
 	$(GTK_CFLAGS)							\
+	$(LIBX11_CFLAGS)						\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 libexo_1_la_LDFLAGS =							\
@@ -103,6 +104,7 @@ libexo_1_la_LDFLAGS =							\
 libexo_1_la_LIBADD =							\
 	$(GIO_LIBS)							\
 	$(GTK_LIBS)							\
+	$(LIBX11_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)
 
 pkgconfigdir = $(libdir)/pkgconfig

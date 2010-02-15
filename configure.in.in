@@ -183,6 +183,11 @@ fi
 AC_SUBST([GIOMODULEDIR])
 AM_CONDITIONAL([HAVE_GIO_MODULEDIR], [test x"$GIOMODULEDIR" != x""])
 
+dnl *********************
+dnl *** Check for X11 ***
+dnl *********************
+XDT_CHECK_LIBX11_REQUIRE()
+
 dnl **************************************
 dnl *** Check for libnotify (optional) ***
 dnl **************************************

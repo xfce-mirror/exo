@@ -67,6 +67,7 @@ test_exo_icon_chooser_dialog_DEPENDENCIES =				\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_icon_chooser_dialog_LDADD =					\
+	$(GTK_LIBS)							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_wrap_table_SOURCES =						\
@@ -80,6 +81,7 @@ test_exo_wrap_table_DEPENDENCIES =					\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_wrap_table_LDADD =						\
+	$(GTK_LIBS)							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 DISTCLEANFILES = test-exo-csource-data.c
