@@ -193,9 +193,23 @@ main (int argc, char **argv)
       return EXIT_FAILURE;
     }
 
+  /* create a file from the arguments */
+  gfile = g_file_new_for_commandline_arg (argv[1]);
+  if (!opt_create_new && opt_type == NULL
+      && !g_file_query_exists (gfile, NULL))
+    {
+      /* to help alacarte and some users a bit, we try to be smart here */
+      if (g_str_has_suffix (argv[1], ".desktop"))
+        opt_type = "Application";
+      else if (g_str_has_suffix (argv[1], ".directory"))
+        opt_type = "Directory";
+
+      /* go to create mode if we found a valid suffix */
+      opt_create_new = (opt_type != NULL);
+    }
+
   /* allocate a key file */
   key_file = g_key_file_new ();
-  gfile = g_file_new_for_commandline_arg (argv[1]);
 
   /* create new key file if --create-new was specified */
   if (opt_create_new)
