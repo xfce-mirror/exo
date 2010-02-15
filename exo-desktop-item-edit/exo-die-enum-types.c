@@ -36,6 +36,7 @@ exo_die_editor_mode_get_type (void)
       {
         { EXO_DIE_EDITOR_MODE_APPLICATION, "EXO_DIE_EDITOR_MODE_APPLICATION", "Application", },
         { EXO_DIE_EDITOR_MODE_LINK,        "EXO_DIE_EDITOR_MODE_LINK",        "Link",        },
+        { EXO_DIE_EDITOR_MODE_DIRECTORY,   "EXO_DIE_EDITOR_MODE_DIRECTORY",   "Directory",   },
         { 0,                               NULL,                              NULL,          },
       };
 

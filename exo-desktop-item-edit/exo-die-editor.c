@@ -705,6 +705,9 @@ exo_die_editor_get_complete (ExoDieEditor *editor)
       return (!exo_str_is_empty (editor->name)
               && !exo_str_is_empty (editor->url));
 
+    case EXO_DIE_EDITOR_MODE_DIRECTORY:
+      return !exo_str_is_empty (editor->name);
+
     default:
       g_assert_not_reached ();
       return FALSE;

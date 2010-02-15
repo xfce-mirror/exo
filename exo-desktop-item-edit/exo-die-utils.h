@@ -22,18 +22,20 @@
 
 #include <exo/exo.h>
 #include <gio/gio.h>
+#include <exo-desktop-item-edit/exo-die-enum-types.h>
 
 G_BEGIN_DECLS
 
-void      exo_die_g_key_file_set_locale_value (GKeyFile    *key_file,
-                                               const gchar *group,
-                                               const gchar *key,
-                                               const gchar *value);
+void      exo_die_g_key_file_set_locale_value (GKeyFile          *key_file,
+                                               const gchar       *group,
+                                               const gchar       *key,
+                                               const gchar       *value);
 
-gboolean  exo_die_g_key_file_save             (GKeyFile    *key_file,
-                                               gboolean     create,
-                                               GFile       *base,
-                                               GError     **error);
+gboolean  exo_die_g_key_file_save             (GKeyFile          *key_file,
+                                               gboolean           create,
+                                               GFile             *base,
+                                               ExoDieEditorMode   mode,
+                                               GError           **error);
 
 G_END_DECLS
 

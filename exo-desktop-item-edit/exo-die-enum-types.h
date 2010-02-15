@@ -30,11 +30,13 @@ G_BEGIN_DECLS
  * ExoDieEditorMode:
  * @EXO_DIE_EDITOR_MODE_APPLICATION : application launcher editing.
  * @EXO_DIE_EDITOR_MODE_LINK        : link editing.
+ * @EXO_DIE_EDITOR_MODE_DIRECTORY   : menu directory editing.
  **/
 typedef enum
 {
   EXO_DIE_EDITOR_MODE_APPLICATION,
   EXO_DIE_EDITOR_MODE_LINK,
+  EXO_DIE_EDITOR_MODE_DIRECTORY
 } ExoDieEditorMode;
 
 GType exo_die_editor_mode_get_type (void) G_GNUC_CONST;

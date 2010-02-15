@@ -78,24 +78,27 @@ exo_die_g_key_file_set_locale_value (GKeyFile    *key_file,
  * @key_file : the #GKeyFile.
  * @create   : whether to create.
  * @base     : file or folder (if @create).
+ * @mode     : file mode for .directory or .desktop suffix.
  * @error    : return location for errors or %NULL.
  *
  * Return value: %TRUE if successfull, %FALSE otherwise.
  **/
 gboolean
-exo_die_g_key_file_save (GKeyFile    *key_file,
-                         gboolean     create,
-                         GFile       *base,
-                         GError     **error)
+exo_die_g_key_file_save (GKeyFile          *key_file,
+                         gboolean           create,
+                         GFile             *base,
+                         ExoDieEditorMode   mode,
+                         GError           **error)
 {
-  GFileType  file_type;
-  GFile     *file;
-  gchar     *name, *s;
-  gchar     *filename, *data;
-  gsize      length;
-  gboolean   result;
-  guint      n;
-  gboolean   desktop_suffix;
+  GFileType    file_type;
+  GFile       *file;
+  gchar       *name, *s;
+  gchar       *filename, *data;
+  gsize        length;
+  gboolean     result;
+  guint        n;
+  gboolean     desktop_suffix;
+  const gchar *suffix;
 
   g_return_val_if_fail (G_IS_FILE (base), FALSE);
   g_return_val_if_fail (key_file != NULL, FALSE);
@@ -104,10 +107,14 @@ exo_die_g_key_file_save (GKeyFile    *key_file,
   /* check if we should create a new file */
   if (G_LIKELY (create))
     {
+      if (mode == EXO_DIE_EDITOR_MODE_DIRECTORY)
+        suffix = ".directory";
+      else
+        suffix = ".desktop";
 
       /* if the filename end with .desktop, then use the base as file */
       name = g_file_get_basename (base);
-      desktop_suffix = g_str_has_suffix (name, ".desktop");
+      desktop_suffix = g_str_has_suffix (name, suffix);
       g_free (name);
       if (desktop_suffix)
         {
@@ -134,7 +141,7 @@ exo_die_g_key_file_save (GKeyFile    *key_file,
                   *s = '_';
 
               /* create a unique filename */
-              filename = g_strconcat (name, ".desktop", NULL);
+              filename = g_strconcat (name, suffix, NULL);
               file = g_file_get_child_for_display_name (base, filename, error);
               for (n = 0; file != NULL && g_file_query_exists (file, NULL); n++)
                 {
@@ -143,7 +150,7 @@ exo_die_g_key_file_save (GKeyFile    *key_file,
                   g_object_unref (G_OBJECT (file));
 
                   /* generate a new file name */
-                  filename = g_strdup_printf ("%s%d.desktop", name, n);
+                  filename = g_strdup_printf ("%s%d%s", name, n, suffix);
                   file = g_file_get_child_for_display_name (base, filename, error);
                 }
 

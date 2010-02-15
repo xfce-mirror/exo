@@ -50,9 +50,9 @@
 
 
 /* --- constants --- */
-static const gchar *CREATE_TITLES[] = { N_ ("Create Launcher"), N_ ("Create Link") };
-static const gchar *EDIT_TITLES[] = { N_ ("Edit Launcher"), N_ ("Edit Link") };
-static const gchar *ICON_NAMES[] = { "applications-other", "applications-internet" };
+static const gchar *CREATE_TITLES[] = { N_ ("Create Launcher"), N_ ("Create Link"), N_("Create Directory") };
+static const gchar *EDIT_TITLES[] = { N_ ("Edit Launcher"), N_ ("Edit Link"), N_("Edit Directory") };
+static const gchar *ICON_NAMES[] = { "applications-other", "applications-internet", "folder" };
 
 
 
@@ -176,7 +176,7 @@ main (int argc, char **argv)
   gfile = g_file_new_for_commandline_arg (argv[1]);
 
   /* create new key file if --create-new was specified */
-  if (G_LIKELY (opt_create_new))
+  if (opt_create_new)
     {
       /* generic stuff */
       g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
@@ -195,8 +195,14 @@ main (int argc, char **argv)
                                 G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, "gnome-fs-bookmark"));
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_URL, STR_FB (opt_url, ""));
+
         }
-      else
+      else if (exo_str_is_equal (opt_type, G_KEY_FILE_DESKTOP_TYPE_DIRECTORY))
+        {
+          g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, ""));
+        }
+      else if (exo_str_is_equal (opt_type, G_KEY_FILE_DESKTOP_TYPE_APPLICATION))
         {
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_EXEC, STR_FB (opt_command, ""));
@@ -338,6 +344,10 @@ main (int argc, char **argv)
       g_free (value);
       break;
 
+    case EXO_DIE_EDITOR_MODE_DIRECTORY:
+      /* nothing special */
+      break;
+
     default:
       g_assert_not_reached ();
       break;
@@ -400,13 +410,18 @@ main (int argc, char **argv)
                                  exo_die_editor_get_url (EXO_DIE_EDITOR (editor)));
           break;
 
+        case EXO_DIE_EDITOR_MODE_DIRECTORY:
+          /* nothing special */
+          break;
+
         default:
           g_assert_not_reached ();
           break;
         }
 
       /* try to save the file */
-      if (!exo_die_g_key_file_save (key_file, opt_create_new, gfile, &error) && opt_create_new)
+      if (!exo_die_g_key_file_save (key_file, opt_create_new, gfile, mode, &error)
+          && opt_create_new)
         {
           /* reset the error */
           g_clear_error (&error);
@@ -453,7 +468,7 @@ main (int argc, char **argv)
 
               /* try again to save to the new file */
               gfile = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (chooser));
-              exo_die_g_key_file_save (key_file, FALSE, gfile, &error);
+              exo_die_g_key_file_save (key_file, FALSE, gfile, mode, &error);
             }
 
           /* destroy the chooser */
