@@ -33,7 +33,7 @@ import gobject
 import gtk
 
 import pyexo
-pyexo.require('0.3')
+pyexo.require('0.5')
 import exo
 
 
@@ -58,7 +58,7 @@ class EllipsizingTree(gtk.TreeView):
 
         column = gtk.TreeViewColumn('Description')
         renderer = exo.CellRendererEllipsizedText()
-        renderer.set_property('ellipsize', exo.PANGO_ELLIPSIZE_END)
+        renderer.set_property('ellipsize', "end")
         renderer.set_property('ellipsize-set', True)
         column.pack_start(renderer, True)
         column.add_attribute(renderer, 'text', 1)
@@ -78,9 +78,8 @@ class EllipsizingWindow(gtk.Window):
         self.add(vbox)
         vbox.show()
 
-        label = exo.EllipsizedLabel('Resize this window to see ' \
+        label = gtk.Label('Resize this window to see ' \
                                     'the ellipsizing effects')
-        label.set_ellipsize(exo.PANGO_ELLIPSIZE_MIDDLE)
         vbox.pack_start(label, False, True, 0)
         label.show()
 
