@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo 0.5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-14 18:00+0100\n"
-"PO-Revision-Date: 2010-02-14 19:49+0100\n"
+"POT-Creation-Date: 2010-02-15 12:00+0100\n"
+"PO-Revision-Date: 2010-02-15 12:36+0100\n"
 "Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -536,7 +536,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Fjern knudeindhold fra XML-filer (node)\n"
 
 #: ../exo-csource/main.c:304
-#: ../exo-desktop-item-edit/main.c:155
+#: ../exo-desktop-item-edit/main.c:177
 #: ../exo-mount/main.c:263
 #: ../exo-mount-notify/main.c:169
 #: ../exo-open/main.c:258
@@ -555,7 +555,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308
-#: ../exo-desktop-item-edit/main.c:159
+#: ../exo-desktop-item-edit/main.c:181
 #: ../exo-mount/main.c:267
 #: ../exo-mount-notify/main.c:173
 #: ../exo-open/main.c:262
@@ -574,7 +574,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312
-#: ../exo-desktop-item-edit/main.c:163
+#: ../exo-desktop-item-edit/main.c:185
 #: ../exo-mount/main.c:271
 #: ../exo-mount-notify/main.c:177
 #: ../exo-open/main.c:266
@@ -650,7 +650,7 @@ msgstr "_Ikon:"
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:357
-#: ../exo-desktop-item-edit/exo-die-editor.c:1077
+#: ../exo-desktop-item-edit/exo-die-editor.c:1080
 msgid "No icon"
 msgstr "Intet ikon"
 
@@ -685,7 +685,7 @@ msgstr "Vælg denne indstilling for at køre kommandoen i et terminalvindue."
 msgid "Select an icon"
 msgstr "Vælg et ikon"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:161
+#: ../exo-desktop-item-edit/exo-die-utils.c:168
 msgid "File location is not a regular file or directory"
 msgstr "Filplaceringen er ikke en regulær fil eller mappe"
 
@@ -698,6 +698,10 @@ msgstr "Opret programstarter"
 msgid "Create Link"
 msgstr "Opret henvisning"
 
+#: ../exo-desktop-item-edit/main.c:53
+msgid "Create Directory"
+msgstr "Opret mappe"
+
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Launcher"
 msgstr "Redigér programstarter"
@@ -706,35 +710,39 @@ msgstr "Redigér programstarter"
 msgid "Edit Link"
 msgstr "Redigér henvisning"
 
-#: ../exo-desktop-item-edit/main.c:75
+#: ../exo-desktop-item-edit/main.c:54
+msgid "Edit Directory"
+msgstr "Redigér mappe"
+
+#: ../exo-desktop-item-edit/main.c:79
 msgid "Create a new desktop file in the given directory"
 msgstr "Opret en ny skrivebordsfil i den valgte mappe"
 
-#: ../exo-desktop-item-edit/main.c:76
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Skal skrivebordsfilen være af typen program eller henvisning?"
 
-#: ../exo-desktop-item-edit/main.c:77
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Preset name when creating a desktop file"
 msgstr "Foruddefineret navn når man opretter en skrivebordsfil"
 
-#: ../exo-desktop-item-edit/main.c:78
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset comment when creating a desktop file"
 msgstr "Foruddefineret kommentar når man opretter en skrivebordsfil"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset command when creating a launcher"
 msgstr "Foruddefineret kommando når man opretter en programstarter"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset URL when creating a link"
 msgstr "Foruddefineret URL når man opretter en henvisning"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:85
 msgid "Preset icon when creating a desktop file"
 msgstr "Foruddefineret ikon når man opretter en skrivebordsfil"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:86
 #: ../exo-helper/main.c:67
 #: ../exo-mount/main.c:80
 #: ../exo-mount-notify/main.c:76
@@ -742,65 +750,65 @@ msgid "Print version information and exit"
 msgstr "Udskriv versionsinformation og afslut"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:131
+#: ../exo-desktop-item-edit/main.c:153
 msgid "[FILE|FOLDER]"
 msgstr "[FIL|MAPPE]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:143
+#: ../exo-desktop-item-edit/main.c:165
 #: ../exo-mount/main.c:249
 #: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "Kunne ikke åbne skærm"
 
-#: ../exo-desktop-item-edit/main.c:170
+#: ../exo-desktop-item-edit/main.c:192
 msgid "No file/folder specified"
 msgstr "Ingen fil/mappe angivet"
 
-#: ../exo-desktop-item-edit/main.c:216
+#: ../exo-desktop-item-edit/main.c:258
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Kunne ikke indlæse indhold fra \"%s\": %s"
 
-#: ../exo-desktop-item-edit/main.c:221
+#: ../exo-desktop-item-edit/main.c:263
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Filen \"%s\" indeholder ingen data"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:234
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Kunne ikke fortolke indholdet af \"%s\": %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:246
+#: ../exo-desktop-item-edit/main.c:288
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Filen \"%s\" har ikke nogen typenøgle"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:256
+#: ../exo-desktop-item-edit/main.c:298
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Ikke understøttet type af skrivebordsfil \"%s\""
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:272
+#: ../exo-desktop-item-edit/main.c:314
 msgid "C_reate"
 msgstr "Op_ret"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:412
+#: ../exo-desktop-item-edit/main.c:463
 msgid "Choose filename"
 msgstr "Vælg filnavn"
 
-#: ../exo-desktop-item-edit/main.c:470
+#: ../exo-desktop-item-edit/main.c:521
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Kunne ikke oprette \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:470
+#: ../exo-desktop-item-edit/main.c:521
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Kunne ikke gemme \"%s\"."
