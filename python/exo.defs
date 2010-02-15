@@ -1175,17 +1175,9 @@
   (return-type "GType")
 )
 
-(define-function exo_toolbars_view_new
-  (c-name "exo_toolbars_view_new")
-  (is-constructor-of "ExoToolbarsView")
-  (return-type "GtkWidget*")
-  (parameters
-    '("GtkUIManager*" "ui_manager")
-  )
-)
-
 (define-function exo_toolbars_view_new_with_model
   (c-name "exo_toolbars_view_new_with_model")
+  (is-constructor-of "ExoToolbarsView")
   (return-type "GtkWidget*")
   (parameters
     '("GtkUIManager*" "ui_manager")
