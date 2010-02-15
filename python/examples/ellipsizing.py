@@ -33,7 +33,7 @@ import gobject
 import gtk
 
 import pyexo
-pyexo.require('0.5')
+pyexo.require('0.3')
 import exo
 
 
