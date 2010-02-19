@@ -89,7 +89,7 @@ static void     exo_icon_chooser_dialog_selection_changed        (ExoIconChooser
 struct _ExoIconChooserDialogPrivate
 {
   GtkWidget *combo;
-  GtkWidget *entry;
+  GtkWidget *filter_entry;
   GtkWidget *icon_chooser;
   GtkWidget *file_chooser;
   GtkWidget *file_preview;
@@ -220,13 +220,12 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   label = gtk_label_new_with_mnemonic (_("_Search icon:"));
   gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.5f);
   gtk_table_attach (GTK_TABLE (table), label, 0, 1, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
-  gtk_widget_show (label);
 
-  priv->entry = gtk_entry_new ();
-  gtk_table_attach (GTK_TABLE (table), priv->entry, 1, 2, 1, 2, GTK_FILL | GTK_EXPAND, GTK_FILL, 0, 0);
-  gtk_label_set_mnemonic_widget (GTK_LABEL (label), priv->entry);
-  g_signal_connect (G_OBJECT (priv->entry), "changed", G_CALLBACK (exo_icon_chooser_dialog_entry_changed), icon_chooser_dialog);
-  gtk_widget_show (priv->entry);
+  priv->filter_entry = gtk_entry_new ();
+  exo_binding_new (G_OBJECT (priv->filter_entry), "visible", G_OBJECT (label), "visible");
+  gtk_table_attach (GTK_TABLE (table), priv->filter_entry, 1, 2, 1, 2, GTK_FILL | GTK_EXPAND, GTK_FILL, 0, 0);
+  gtk_label_set_mnemonic_widget (GTK_LABEL (label), priv->filter_entry);
+  g_signal_connect (G_OBJECT (priv->filter_entry), "changed", G_CALLBACK (exo_icon_chooser_dialog_entry_changed), icon_chooser_dialog);
 
   /* setup the scrolled window for the icon chooser */
   scrolled_window = gtk_scrolled_window_new (NULL, NULL);
@@ -448,7 +447,7 @@ exo_icon_chooser_dialog_start_interactive_search (ExoIconChooserDialog *icon_cho
 {
   ExoIconChooserDialogPrivate *priv = EXO_ICON_CHOOSER_DIALOG_GET_PRIVATE (icon_chooser_dialog);
 
-  gtk_window_set_focus (GTK_WINDOW (icon_chooser_dialog), priv->entry);
+  gtk_window_set_focus (GTK_WINDOW (icon_chooser_dialog), priv->filter_entry);
 
   return TRUE;
 }
@@ -471,6 +470,7 @@ exo_icon_chooser_dialog_combo_changed (GtkWidget            *combo,
       /* hide the file chooser/show the icon chooser */
       gtk_widget_hide (priv->file_chooser);
       gtk_widget_show (priv->icon_chooser);
+      gtk_widget_show (priv->filter_entry);
 
       /* need to re-filter with the new context */
       model = exo_icon_view_get_model (EXO_ICON_VIEW (priv->icon_chooser));
@@ -492,6 +492,7 @@ exo_icon_chooser_dialog_combo_changed (GtkWidget            *combo,
       /* show the file chooser/hide the icon chooser */
       gtk_widget_show (priv->file_chooser);
       gtk_widget_hide (priv->icon_chooser);
+      gtk_widget_hide (priv->filter_entry);
     }
 
   /* we certainly changed the selection this way */
@@ -512,7 +513,7 @@ exo_icon_chooser_dialog_entry_changed (GtkWidget            *combo,
   g_free (priv->casefolded_text);
   priv->casefolded_text = NULL;
 
-  text = gtk_entry_get_text (GTK_ENTRY (priv->entry));
+  text = gtk_entry_get_text (GTK_ENTRY (priv->filter_entry));
   if (!exo_str_is_empty (text))
     {
       /* case fold the search string */
