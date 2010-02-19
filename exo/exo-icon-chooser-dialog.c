@@ -82,6 +82,11 @@ static void     exo_icon_chooser_dialog_combo_changed            (GtkWidget     
                                                                   ExoIconChooserDialog       *icon_chooser_dialog);
 static void     exo_icon_chooser_dialog_entry_changed            (GtkWidget                  *entry,
                                                                   ExoIconChooserDialog       *icon_chooser_dialog);
+#if GTK_CHECK_VERSION (2, 16, 0)
+static void     exo_icon_chooser_dialog_entry_clear              (GtkEntry                   *entry,
+                                                                  GtkEntryIconPosition        icon_pos,
+                                                                  GdkEvent                   *event);
+#endif
 static void     exo_icon_chooser_dialog_selection_changed        (ExoIconChooserDialog       *icon_chooser_dialog);
 
 
@@ -226,6 +231,12 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   gtk_table_attach (GTK_TABLE (table), priv->filter_entry, 1, 2, 1, 2, GTK_FILL | GTK_EXPAND, GTK_FILL, 0, 0);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), priv->filter_entry);
   g_signal_connect (G_OBJECT (priv->filter_entry), "changed", G_CALLBACK (exo_icon_chooser_dialog_entry_changed), icon_chooser_dialog);
+#if GTK_CHECK_VERSION (2, 16, 0)
+  gtk_entry_set_icon_from_stock (GTK_ENTRY (priv->filter_entry), GTK_ENTRY_ICON_SECONDARY, GTK_STOCK_CLEAR);
+  gtk_entry_set_icon_tooltip_text (GTK_ENTRY (priv->filter_entry), GTK_ENTRY_ICON_SECONDARY, _("Clear search field"));
+  gtk_entry_set_icon_sensitive (GTK_ENTRY (priv->filter_entry), GTK_ENTRY_ICON_SECONDARY, FALSE);
+  g_signal_connect (G_OBJECT (priv->filter_entry), "icon-release", G_CALLBACK (exo_icon_chooser_dialog_entry_clear), NULL);
+#endif
 
   /* setup the scrolled window for the icon chooser */
   scrolled_window = gtk_scrolled_window_new (NULL, NULL);
@@ -522,10 +533,29 @@ exo_icon_chooser_dialog_entry_changed (GtkWidget            *combo,
       g_free (normalized);
     }
 
+#if GTK_CHECK_VERSION (2, 16, 0)
+  gtk_entry_set_icon_sensitive (GTK_ENTRY (priv->filter_entry),
+                                GTK_ENTRY_ICON_SECONDARY,
+                                !exo_str_is_empty (text));
+#endif
+
   model = exo_icon_view_get_model (EXO_ICON_VIEW (priv->icon_chooser));
   if (G_LIKELY (model != NULL))
     gtk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (model));
 }
+
+
+
+#if GTK_CHECK_VERSION (2, 16, 0)
+static void
+exo_icon_chooser_dialog_entry_clear (GtkEntry             *entry,
+                                     GtkEntryIconPosition  icon_pos,
+                                     GdkEvent             *event)
+{
+  if (icon_pos == GTK_ENTRY_ICON_SECONDARY)
+    gtk_entry_set_text (entry, "");
+}
+#endif
 
 
 
