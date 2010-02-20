@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-20 13:45+0200\n"
-"PO-Revision-Date: 2008-04-06 17:24+0300\n"
-"Last-Translator: Rihards Prieditis <RPrieditis@gmail.com>\n"
+"POT-Creation-Date: 2010-02-20 12:07+0100\n"
+"PO-Revision-Date: 2010-02-20 12:36+0100\n"
+"Last-Translator: Rihards Priedītis <rprieditis@gmail.com>\n"
 "Language-Team: Latvian <RPrieditis@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
@@ -497,34 +497,42 @@ msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [opcijas] --build-list [[faila nosaukums]...]\n"
 
 #: ../exo-csource/main.c:286
+#, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help         Izdrukā šo ziņu un iziet\n"
 
 #: ../exo-csource/main.c:287
+#, c-format
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --version     Izdrukā versijas informāciju un iziet\n"
 
 #: ../exo-csource/main.c:288
+#, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Veidot ārējos simbolus\n"
 
 #: ../exo-csource/main.c:289
+#, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static           Veidot statiskos simbolus\n"
 
 #: ../exo-csource/main.c:290
+#, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifikātors, C makro/mainīgā vārds\n"
 
 #: ../exo-csource/main.c:291
+#, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Parsē (nosaukums, fails) pārus\n"
 
 #: ../exo-csource/main.c:292
+#, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Dzēš komentārus no XML failiem\n"
 
 #: ../exo-csource/main.c:293
+#, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Dzēš mezglu saturu XML failos\n"
 
@@ -1028,10 +1036,12 @@ msgstr ""
 "emulatoru un apstipriniet, lai turpinātu."
 
 #: ../exo-helper/exo-helper.c:404
+#, c-format
 msgid "No command specified"
 msgstr "Nav norādīta komanda"
 
 #: ../exo-helper/exo-helper.c:740
+#, c-format
 msgid "Failed to open helpers.rc for writing"
 msgstr "Neizdevās atvērt helpers.rc rakstīšanai"
 
@@ -1050,6 +1060,98 @@ msgstr "Vēlamās lietotnes (tīmekļa pārlūks, pasta lasītājs un termināla
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
 msgstr "Xfce 4 vēlamās lietotnes"
+
+#: ../exo-helper/main.c:42
+msgid "Failed to execute default Web Browser"
+msgstr "Neizdevās izpildīt noklusēto tīmekļa pārlūku"
+
+#: ../exo-helper/main.c:43
+msgid "Failed to execute default Mail Reader"
+msgstr "Neizdevās izpildīt noklusēto pasta lasītāju"
+
+#: ../exo-helper/main.c:44
+msgid "Failed to execute default Terminal Emulator"
+msgstr "Neizdevās izpildīt noklusēto termināla emulatoru"
+
+#: ../exo-helper/main.c:52
+msgid "Usage: exo-helper [OPTION...]"
+msgstr "Lietošana: exo-helper [IESPĒJAS...]"
+
+#: ../exo-helper/main.c:54
+msgid "  -h, --help                          Print this help message and exit"
+msgstr "  -h, --help                          Izdrukā šo palīdzības ziņu un iziet"
+
+#: ../exo-helper/main.c:55
+#: ../exo-open/main.c:63
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Izdrukā versijas informāciju un iziet"
+
+#: ../exo-helper/main.c:57
+msgid ""
+"  --configure                         Open the Preferred Applications\n"
+"                                      configuration dialog"
+msgstr ""
+"  --configure                         Atvērt Vēlamo lietotņu\n"
+"                                      konfigurācijas logu"
+
+#: ../exo-helper/main.c:60
+msgid ""
+"  --launch TYPE [PARAMETER]           Launch the default helper of TYPE\n"
+"                                      with the optional PARAMETER, where\n"
+"                                      TYPE is one of the following values."
+msgstr ""
+"  --launch TIPS [PARAMETRI...]       Palaist vēlamo TIPA palīgu ar\n"
+"                                       neobligātiem PARAMETRIEM, kur TIPS\n"
+"                                       ir kāda no sekojošām vērtibām."
+
+#: ../exo-helper/main.c:64
+#: ../exo-open/main.c:72
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr "--lunch komandas atbalstītie TIPI:"
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. * since the exo-helper utility will not accept localized TYPEs.
+#.
+#: ../exo-helper/main.c:70
+#: ../exo-open/main.c:78
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+"  WebBrowser       - Vēlamais tīmekļa pārlūks.\n"
+"  MailReader       - Vēlamais pasta lasītājs.\n"
+"  TerminalEmulator - Vēlamais termināla emulators."
+
+#: ../exo-helper/main.c:114
+#, c-format
+msgid "Invalid helper type \"%s\""
+msgstr "Nederīgs palīga tips \"%s\""
+
+#: ../exo-helper/main.c:158
+#, c-format
+msgid ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
+"\n"
+"Please report bugs to <%s>.\n"
+msgstr ""
+"%s (Xfce %s)\n"
+"\n"
+"Autortiesības (c) 2003-2006\n"
+"        os-cillation e.K. Visas tiesības paturētas.\n"
+"\n"
+"Autors Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Celts ar Gtk+-%d.%d.%d, skrejošais Gtk+-%d.%d.%d.\n"
+"\n"
+"Lūdzu ziņojiet par kļūdām uz <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1168,6 +1270,7 @@ msgid "X Terminal"
 msgstr "X terminālis"
 
 #: ../exo-mount/exo-mount-fstab.c:92
+#, c-format
 msgid "Unknown error"
 msgstr "Nezināma kļūda"
 
@@ -1205,10 +1308,12 @@ msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Jums nav tiesību veikt sējuma \"%s\" montēšanu"
 
 #: ../exo-mount/exo-mount-hal.c:846
+#, c-format
 msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
 msgstr "Tukšu disku nevar montēt, izmantojiet CD rakstīšanas lietotni, piemēram, Xfburn, lai ierakstītu audio vai datus uz diska"
 
 #: ../exo-mount/exo-mount-hal.c:857
+#, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 msgstr "Audio CD nevar montēt, izmantojiet Xfmedia, lai atskaņotu audio celiņus"
 
@@ -1345,10 +1450,6 @@ msgstr "       exo-open --launch TIPS [PARAMETRI...]"
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Izdrukā šo palīdzības ziņu un iziet"
 
-#: ../exo-open/main.c:63
-msgid "  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Izdrukā versijas informāciju un iziet"
-
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
@@ -1366,23 +1467,6 @@ msgid ""
 msgstr ""
 "  --working-directory DIREKTORIJA       Noklusētā darba direktorija priekš lietotnes,\n"
 "                                      kad izmanto --lunch opciju."
-
-#: ../exo-open/main.c:72
-msgid "The following TYPEs are supported for the --launch command:"
-msgstr "--lunch komandas atbalstītie TIPI:"
-
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
-#. * since the exo-helper utility will not accept localized TYPEs.
-#.
-#: ../exo-open/main.c:78
-msgid ""
-"  WebBrowser       - The preferred Web Browser.\n"
-"  MailReader       - The preferred Mail Reader.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"  WebBrowser       - Vēlamais tīmekļa pārlūks.\n"
-"  MailReader       - Vēlamais pasta lasītājs.\n"
-"  TerminalEmulator - Vēlamais termināla emulators."
 
 #: ../exo-open/main.c:82
 msgid ""
