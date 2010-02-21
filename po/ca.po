@@ -2,15 +2,15 @@
 # Catalan translations for exo package.
 # Copyright (C) 2004-2006 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
-# Pau Ruŀlan Ferragut <paurullan@bulma.net> 2005, 2006, 2007
-# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006, 2008-2009.
+# Pau Ruŀlan Ferragut <paurullan@bulma.net> 2005, 2006, 2007.
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006, 2008-2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-23 14:20+0200\n"
-"PO-Revision-Date: 2009-11-26 18:24+0100\n"
+"POT-Creation-Date: 2010-02-21 12:06+0100\n"
+"PO-Revision-Date: 2010-02-21 13:07+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,51 +21,51 @@ msgstr ""
 "X-Poedit-Country: ANDORRA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:132
-#: ../exo/exo-cell-renderer-icon.c:145
+#: ../exo/exo-cell-renderer-ellipsized-text.c:131
+#: ../exo/exo-cell-renderer-icon.c:144
 msgid "Follow state"
 msgstr "Manté l'estat"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:133
-#: ../exo/exo-cell-renderer-icon.c:146
+#: ../exo/exo-cell-renderer-ellipsized-text.c:132
+#: ../exo/exo-cell-renderer-icon.c:145
 msgid "Render differently based on the selection state."
 msgstr "Representa segons l'estat de selecció."
 
-#: ../exo/exo-cell-renderer-icon.c:167
+#: ../exo/exo-cell-renderer-icon.c:166
 msgid "Icon"
 msgstr "Icona"
 
-#: ../exo/exo-cell-renderer-icon.c:168
+#: ../exo/exo-cell-renderer-icon.c:167
 msgid "The icon to render."
 msgstr "La icona a representar."
 
-#: ../exo/exo-cell-renderer-icon.c:186
+#: ../exo/exo-cell-renderer-icon.c:185
 msgid "GIcon"
 msgstr "GIcon"
 
-#: ../exo/exo-cell-renderer-icon.c:187
+#: ../exo/exo-cell-renderer-icon.c:186
 msgid "The GIcon to render."
 msgstr "El GIcon a dibuixar."
 
-#: ../exo/exo-cell-renderer-icon.c:208
+#: ../exo/exo-cell-renderer-icon.c:207
 msgid "size"
 msgstr "mida"
 
-#: ../exo/exo-cell-renderer-icon.c:209
+#: ../exo/exo-cell-renderer-icon.c:208
 msgid "The size of the icon to render in pixels."
 msgstr "La mida en píxels de la icona a representar."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:788
+#: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "No s'ha pogut obrir «%s»: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:850
+#: ../exo/exo-gdk-pixbuf-extensions.c:849
 #, c-format
 msgid "Failed to read file \"%s\": %s"
 msgstr "No s'ha pogut crear «%s»: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:891
+#: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
@@ -73,266 +73,275 @@ msgstr ""
 "No s'ha pogut carregar la imatge «%s»: raó desconeguda; probablement el "
 "fitxer està corromput."
 
-#: ../exo/exo-gtk-extensions.c:228
+#: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "No s'ha pogut obrir «%s»."
 
-#: ../exo/exo-icon-bar.c:278 ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
 msgid "Orientation"
 msgstr "Orientació"
 
-#: ../exo/exo-icon-bar.c:279
+#: ../exo/exo-icon-bar.c:278
 msgid "The orientation of the iconbar"
 msgstr "Orientació de la barra d'icones"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:793
 msgid "Pixbuf column"
 msgstr "Columna de memòria de píxel"
 
-#: ../exo/exo-icon-bar.c:296 ../exo/exo-icon-view.c:795
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Columna del model d'on obtenir la icona de la memòria de píxel"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
 msgid "Text column"
 msgstr "Columna de text"
 
-#: ../exo/exo-icon-bar.c:312 ../exo/exo-icon-view.c:922
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
 msgid "Model column used to retrieve the text from"
 msgstr "Columna del model d'on obtenir el text"
 
-#: ../exo/exo-icon-bar.c:324
+#: ../exo/exo-icon-bar.c:323
 msgid "Icon Bar Model"
 msgstr "Model de barra d'icones"
 
-#: ../exo/exo-icon-bar.c:325
+#: ../exo/exo-icon-bar.c:324
 msgid "Model for the icon bar"
 msgstr "Model per la barra d'icones"
 
-#: ../exo/exo-icon-bar.c:341
+#: ../exo/exo-icon-bar.c:340
 msgid "Active"
 msgstr "Actiu"
 
-#: ../exo/exo-icon-bar.c:342
+#: ../exo/exo-icon-bar.c:341
 msgid "Active item index"
 msgstr "Activa element d'índex"
 
-#: ../exo/exo-icon-bar.c:348 ../exo/exo-icon-bar.c:349
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Active item fill color"
 msgstr "Activa element emplenat de color"
 
-#: ../exo/exo-icon-bar.c:355 ../exo/exo-icon-bar.c:356
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Active item border color"
 msgstr "Activa element amb vora de color"
 
-#: ../exo/exo-icon-bar.c:362 ../exo/exo-icon-bar.c:363
+#: ../exo/exo-icon-bar.c:361 ../exo/exo-icon-bar.c:362
 msgid "Active item text color"
-msgstr "Activa element amd text de color"
+msgstr "Activa element amb text de color"
 
-#: ../exo/exo-icon-bar.c:369 ../exo/exo-icon-bar.c:370
+#: ../exo/exo-icon-bar.c:368 ../exo/exo-icon-bar.c:369
 msgid "Cursor item fill color"
 msgstr "Cursor emplenat de color"
 
-#: ../exo/exo-icon-bar.c:376 ../exo/exo-icon-bar.c:377
+#: ../exo/exo-icon-bar.c:375 ../exo/exo-icon-bar.c:376
 msgid "Cursor item border color"
 msgstr "Cursor amb vora de color"
 
-#: ../exo/exo-icon-bar.c:383 ../exo/exo-icon-bar.c:384
+#: ../exo/exo-icon-bar.c:382 ../exo/exo-icon-bar.c:383
 msgid "Cursor item text color"
 msgstr "Cursor amb text de color"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:97
+#: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Action Icons"
 msgstr "Icones d'accions"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:99
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Animations"
 msgstr "Animacions"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:101
+#: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Application Icons"
 msgstr "Icones d'aplicacions"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:103
+#: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Menu Icons"
 msgstr "Icones de menú"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:105
+#: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Device Icons"
 msgstr "Icones de dispositiu"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:107
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "Emblems"
 msgstr "Distintius"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:109
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Emoticons"
 msgstr "Emoticones"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:111
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "International Denominations"
 msgstr "Denominacions internacionals"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:113
+#: ../exo/exo-icon-chooser-dialog.c:125
 msgid "File Type Icons"
 msgstr "Icones de tipus de fitxer"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Location Icons"
 msgstr "Icones de llocs"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:117
+#: ../exo/exo-icon-chooser-dialog.c:129
 msgid "Status Icons"
 msgstr "Icones d'estat"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:119
+#: ../exo/exo-icon-chooser-dialog.c:131
 msgid "Uncategorized Icons"
 msgstr "Icones sense categoria"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:135
 msgid "All Icons"
 msgstr "Totes les icones"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:127 ../exo/exo-icon-chooser-dialog.c:251
+#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
 msgid "Image Files"
 msgstr "Fitxers d'imatge"
 
-#. setup the header label
-#: ../exo/exo-icon-chooser-dialog.c:194
+#. setup the context combo box
+#: ../exo/exo-icon-chooser-dialog.c:210
 msgid "Select _icon from:"
 msgstr "Tria l'_icona de:"
 
-#: ../exo/exo-icon-view.c:645
+#. search filter
+#: ../exo/exo-icon-chooser-dialog.c:225
+msgid "_Search icon:"
+msgstr "_Cerca una icona:"
+
+#: ../exo/exo-icon-chooser-dialog.c:236
+msgid "Clear search field"
+msgstr "Neteja el camp de cerca"
+
+#: ../exo/exo-icon-view.c:644
 msgid "Column Spacing"
 msgstr "Espaiat entre columnes"
 
-#: ../exo/exo-icon-view.c:646
+#: ../exo/exo-icon-view.c:645
 msgid "Space which is inserted between grid column"
 msgstr "L'espai inserit entre les columnes d'una graella"
 
-#: ../exo/exo-icon-view.c:662
+#: ../exo/exo-icon-view.c:661
 msgid "Number of columns"
 msgstr "Número de columnes"
 
-#: ../exo/exo-icon-view.c:663
+#: ../exo/exo-icon-view.c:662
 msgid "Number of columns to display"
 msgstr "El nombre de columnes a mostrar"
 
-#: ../exo/exo-icon-view.c:677
+#: ../exo/exo-icon-view.c:676
 msgid "Enable Search"
 msgstr "Habilita la cerca"
 
-#: ../exo/exo-icon-view.c:678
+#: ../exo/exo-icon-view.c:677
 msgid "View allows user to search through columns interactively"
 msgstr ""
 "Vista que permet a l'usuari buscar de manera interactiva mitjançant columnes"
 
-#: ../exo/exo-icon-view.c:695
+#: ../exo/exo-icon-view.c:694
 msgid "Width for each item"
 msgstr "Amplada de cada element"
 
-#: ../exo/exo-icon-view.c:696
+#: ../exo/exo-icon-view.c:695
 msgid "The width used for each item"
 msgstr "L'amplada utilitzada per cada element"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:713
 msgid "Layout mode"
 msgstr "Mode del format"
 
-#: ../exo/exo-icon-view.c:715
+#: ../exo/exo-icon-view.c:714
 msgid "The layout mode"
 msgstr "El mode del format"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:730
 msgid "Margin"
 msgstr "Marge"
 
-#: ../exo/exo-icon-view.c:732
+#: ../exo/exo-icon-view.c:731
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Espai inserit a les vores de la vista d'icones"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:747
 msgid "Markup column"
 msgstr "Columna d'etiquetatge"
 
-#: ../exo/exo-icon-view.c:749
+#: ../exo/exo-icon-view.c:748
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Columna del model d'on obtenir el text si es fa servir el marcatge Pango"
 
-#: ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-view.c:762
 msgid "Icon View Model"
 msgstr "Model de vista d'icones"
 
-#: ../exo/exo-icon-view.c:764
+#: ../exo/exo-icon-view.c:763
 msgid "The model for the icon view"
 msgstr "El model per la vista d'icones"
 
-#: ../exo/exo-icon-view.c:778
+#: ../exo/exo-icon-view.c:777
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Posicionament relatiu entre el text i la icona de cada element"
 
-#: ../exo/exo-icon-view.c:810
+#: ../exo/exo-icon-view.c:809
 msgid "Reorderable"
 msgstr "Reordenable"
 
-#: ../exo/exo-icon-view.c:811
+#: ../exo/exo-icon-view.c:810
 msgid "View is reorderable"
 msgstr "Vista és reordenable"
 
-#: ../exo/exo-icon-view.c:826
+#: ../exo/exo-icon-view.c:825
 msgid "Row Spacing"
 msgstr "Espaiat de files"
 
-#: ../exo/exo-icon-view.c:827
+#: ../exo/exo-icon-view.c:826
 msgid "Space which is inserted between grid rows"
 msgstr "L'espai inserit entre les files d'una graella"
 
-#: ../exo/exo-icon-view.c:841
+#: ../exo/exo-icon-view.c:840
 msgid "Search Column"
 msgstr "Cerca columna"
 
-#: ../exo/exo-icon-view.c:842
+#: ../exo/exo-icon-view.c:841
 msgid "Model column to search through when searching through item"
 msgstr "Model de columnes per buscar quan es busqui mitjançant elements"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:855
 msgid "Selection mode"
 msgstr "Mode de selecció"
 
-#: ../exo/exo-icon-view.c:857
+#: ../exo/exo-icon-view.c:856
 msgid "The selection mode"
 msgstr "El mode de selecció"
 
-#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Clic senzill"
 
-#: ../exo/exo-icon-view.c:873 ../exo/exo-tree-view.c:156
+#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Si els elements de la vista poden ser activats amb un sol clic"
 
-#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:888 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Temps d'espera pel clic senzill"
 
-#: ../exo/exo-icon-view.c:890 ../exo/exo-tree-view.c:173
+#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -340,63 +349,63 @@ msgstr ""
 "El temps que transcorrerà quan el cursor estigui sobre un element que s'hagi "
 "seleccionat automàticament al mode de clic senzill."
 
-#: ../exo/exo-icon-view.c:905
+#: ../exo/exo-icon-view.c:904
 msgid "Spacing"
 msgstr "Espaiat"
 
-#: ../exo/exo-icon-view.c:906
+#: ../exo/exo-icon-view.c:905
 msgid "Space which is inserted between cells of an item"
 msgstr "Espai inserit entre les ceŀles de cada element"
 
-#: ../exo/exo-icon-view.c:929
+#: ../exo/exo-icon-view.c:928
 msgid "Selection Box Color"
 msgstr "Color de caixa de selecció"
 
-#: ../exo/exo-icon-view.c:930
+#: ../exo/exo-icon-view.c:929
 msgid "Color of the selection box"
 msgstr "El color de la caixa de selecció"
 
-#: ../exo/exo-icon-view.c:936
+#: ../exo/exo-icon-view.c:935
 msgid "Selection Box Alpha"
 msgstr "Alfa de la caixa de selecció"
 
-#: ../exo/exo-icon-view.c:937
+#: ../exo/exo-icon-view.c:936
 msgid "Opacity of the selection box"
 msgstr "Opacitat de la caixa de selecció"
 
-#: ../exo/exo-thumbnail-preview.c:114
+#: ../exo/exo-thumbnail-preview.c:113
 msgid "Preview"
 msgstr "Vista prèvia"
 
-#: ../exo/exo-thumbnail-preview.c:130 ../exo/exo-thumbnail-preview.c:272
+#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
 msgid "No file selected"
 msgstr "No s'ha seleccionat cap fitxer"
 
-#: ../exo/exo-thumbnail-preview.c:290
+#: ../exo/exo-thumbnail-preview.c:289
 msgid "Block Device"
 msgstr "Dispositiu de blocs"
 
-#: ../exo/exo-thumbnail-preview.c:295
+#: ../exo/exo-thumbnail-preview.c:294
 msgid "Character Device"
 msgstr "Dispositiu de caràcters"
 
-#: ../exo/exo-thumbnail-preview.c:300
+#: ../exo/exo-thumbnail-preview.c:299
 msgid "Folder"
 msgstr "Directori"
 
-#: ../exo/exo-thumbnail-preview.c:305
+#: ../exo/exo-thumbnail-preview.c:304
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../exo/exo-thumbnail-preview.c:310
+#: ../exo/exo-thumbnail-preview.c:309
 msgid "Socket"
 msgstr "Sòcol"
 
-#: ../exo/exo-toolbars-editor-dialog.c:119
+#: ../exo/exo-toolbars-editor-dialog.c:118
 msgid "_Add a new toolbar"
 msgstr "_Afegeix una barra d'eines nova"
 
-#: ../exo/exo-toolbars-editor.c:222
+#: ../exo/exo-toolbars-editor.c:221
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
@@ -405,135 +414,135 @@ msgstr ""
 "Arrossegueu-lo des de les barres d'eines a la taula d'elements per a "
 "suprimir-lo."
 
-#: ../exo/exo-toolbars-editor.c:539
+#: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
 msgstr "Separador"
 
-#: ../exo/exo-toolbars-view.c:753
+#: ../exo/exo-toolbars-view.c:752
 msgid "Toolbar _Style"
 msgstr "E_stil de la barra d'eines"
 
-#: ../exo/exo-toolbars-view.c:760
+#: ../exo/exo-toolbars-view.c:759
 msgid "_Desktop Default"
 msgstr "_Escriptori predeterminat"
 
-#: ../exo/exo-toolbars-view.c:769
+#: ../exo/exo-toolbars-view.c:768
 msgid "_Icons only"
 msgstr "Només _icones"
 
-#: ../exo/exo-toolbars-view.c:778
+#: ../exo/exo-toolbars-view.c:777
 msgid "_Text only"
 msgstr "Només _text"
 
-#: ../exo/exo-toolbars-view.c:787
+#: ../exo/exo-toolbars-view.c:786
 msgid "Text for _All Icons"
 msgstr "Text per t_otes les icones"
 
-#: ../exo/exo-toolbars-view.c:796
+#: ../exo/exo-toolbars-view.c:795
 msgid "Text for I_mportant Icons"
 msgstr "Text per les icones i_mportants"
 
-#: ../exo/exo-toolbars-view.c:804
+#: ../exo/exo-toolbars-view.c:803
 msgid "_Remove Toolbar"
 msgstr "_Suprimir barra d'eines"
 
-#: ../exo/exo-toolbars-view.c:819
+#: ../exo/exo-toolbars-view.c:818
 msgid "Customize Toolbar..."
 msgstr "Personalitza barra d'eines…"
 
-#: ../exo/exo-wrap-table.c:149
+#: ../exo/exo-wrap-table.c:148
 msgid "Column spacing"
 msgstr "Espaiat entre columnes"
 
-#: ../exo/exo-wrap-table.c:150
+#: ../exo/exo-wrap-table.c:149
 msgid "The amount of space between two consecutive columns"
 msgstr "L'espai deixat entre dues columnes consecutives"
 
-#: ../exo/exo-wrap-table.c:164
+#: ../exo/exo-wrap-table.c:163
 msgid "Row spacing"
 msgstr "Espaiat entre files"
 
-#: ../exo/exo-wrap-table.c:165
+#: ../exo/exo-wrap-table.c:164
 msgid "The amount of space between two consecutive rows"
 msgstr "L'espai deixat entre dues files consecutives"
 
-#: ../exo/exo-wrap-table.c:179
+#: ../exo/exo-wrap-table.c:178
 msgid "Homogeneous"
 msgstr "Homogeni"
 
-#: ../exo/exo-wrap-table.c:180
+#: ../exo/exo-wrap-table.c:179
 msgid "Whether the children should be all the same size"
 msgstr "Si tots els fills han de tenir la mateixa mida"
 
-#: ../exo/exo-xsession-client.c:211
+#: ../exo/exo-xsession-client.c:210
 msgid "Window group"
 msgstr "Grup de finestres"
 
-#: ../exo/exo-xsession-client.c:212
+#: ../exo/exo-xsession-client.c:211
 msgid "Window group leader"
 msgstr "Finestra principal del grup"
 
-#: ../exo/exo-xsession-client.c:222
+#: ../exo/exo-xsession-client.c:221
 msgid "Restart command"
 msgstr "Reinicia ordre"
 
-#: ../exo/exo-xsession-client.c:223
+#: ../exo/exo-xsession-client.c:222
 msgid "Session restart command"
 msgstr "Ordre per reiniciar la sessió"
 
-#: ../exo-csource/main.c:285
+#: ../exo-csource/main.c:284
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Ús: %s [opcions] [fitxer]\n"
 
-#: ../exo-csource/main.c:286
+#: ../exo-csource/main.c:285
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [opcions] --build-list [nom del fitxer]\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:287
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Mostra aquest missatge i surt\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:288
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
 msgstr "  -V, --version     Mostra la versió i surt\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:289
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Genera símbols externs\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:290
 #, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr " --static           Genera símbols estàtics\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:291
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier nom de la macro de C\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:292
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Analitza parelles (nom, fitxer)\n"
 
-#: ../exo-csource/main.c:294
+#: ../exo-csource/main.c:293
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Treu els comentaris del fitxers XML\n"
 
-#: ../exo-csource/main.c:295
+#: ../exo-csource/main.c:294
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content  Treu els continguts del nodes dels fitxers XML\n"
 
-#: ../exo-csource/main.c:305 ../exo-desktop-item-edit/main.c:156
-#: ../exo-mount/main.c:264 ../exo-mount-notify/main.c:170
-#: ../exo-open/main.c:259
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
+#: ../exo-mount/main.c:263 ../exo-mount-notify/main.c:169
+#: ../exo-open/main.c:258
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -548,9 +557,9 @@ msgstr ""
 "Escrit per Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:309 ../exo-desktop-item-edit/main.c:160
-#: ../exo-mount/main.c:268 ../exo-mount-notify/main.c:174
-#: ../exo-open/main.c:263
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
+#: ../exo-mount/main.c:267 ../exo-mount-notify/main.c:173
+#: ../exo-open/main.c:262
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -565,97 +574,97 @@ msgstr ""
 "paquet de codi font de %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:313 ../exo-desktop-item-edit/main.c:164
-#: ../exo-mount/main.c:272 ../exo-mount-notify/main.c:178
-#: ../exo-open/main.c:267
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
+#: ../exo-mount/main.c:271 ../exo-mount-notify/main.c:177
+#: ../exo-open/main.c:266
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Envieu els errors a <%s>.\n"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:256
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:255
 msgid "Select an Application"
 msgstr "Seleccioneu una aplicació"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:265
-#: ../exo-helper/exo-helper-chooser.c:399
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:264
+#: ../exo-helper/exo-helper-chooser.c:398
 msgid "All Files"
 msgstr "Tots els fitxers"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:270
-#: ../exo-helper/exo-helper-chooser.c:404
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:269
+#: ../exo-helper/exo-helper-chooser.c:403
 msgid "Executable Files"
 msgstr "Fitxer executables"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:285
-#: ../exo-helper/exo-helper-chooser.c:419
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:284
+#: ../exo-helper/exo-helper-chooser.c:418
 msgid "Perl Scripts"
 msgstr "Seqüències en Perl"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:291
-#: ../exo-helper/exo-helper-chooser.c:425
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:290
+#: ../exo-helper/exo-helper-chooser.c:424
 msgid "Python Scripts"
 msgstr "Seqüències en Python"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:297
-#: ../exo-helper/exo-helper-chooser.c:431
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:296
+#: ../exo-helper/exo-helper-chooser.c:430
 msgid "Ruby Scripts"
 msgstr "Seqüències en Ruby"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:303
-#: ../exo-helper/exo-helper-chooser.c:437
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:302
+#: ../exo-helper/exo-helper-chooser.c:436
 msgid "Shell Scripts"
 msgstr "Seqüències de shell"
 
-#: ../exo-desktop-item-edit/exo-die-desktop-model.c:285
+#: ../exo-desktop-item-edit/exo-die-desktop-model.c:284
 #, c-format
 msgid "Create Launcher <b>%s</b>"
 msgstr "Crea un llançador <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:278
+#: ../exo-desktop-item-edit/exo-die-editor.c:277
 msgid "_Name:"
 msgstr "_Nom:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:294
+#: ../exo-desktop-item-edit/exo-die-editor.c:293
 msgid "C_omment:"
 msgstr "Co_mentari:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:310
+#: ../exo-desktop-item-edit/exo-die-editor.c:309
 msgid "Comm_and:"
 msgstr "_Ordre:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:325
+#: ../exo-desktop-item-edit/exo-die-editor.c:324
 msgid "_URL:"
 msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:341
+#: ../exo-desktop-item-edit/exo-die-editor.c:340
 msgid "_Icon:"
 msgstr "_Icona:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: ../exo-desktop-item-edit/exo-die-editor.c:358
-#: ../exo-desktop-item-edit/exo-die-editor.c:1078
+#: ../exo-desktop-item-edit/exo-die-editor.c:357
+#: ../exo-desktop-item-edit/exo-die-editor.c:1080
 msgid "No icon"
 msgstr "Sense icona"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:364
+#: ../exo-desktop-item-edit/exo-die-editor.c:363
 msgid "Options:"
 msgstr "Opcions:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
-#: ../exo-desktop-item-edit/exo-die-editor.c:373
+#: ../exo-desktop-item-edit/exo-die-editor.c:372
 msgid "Use _startup notification"
 msgstr "Empra noti_ficació d'inicialització"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:374
+#: ../exo-desktop-item-edit/exo-die-editor.c:373
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
@@ -668,246 +677,254 @@ msgstr ""
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
-#: ../exo-desktop-item-edit/exo-die-editor.c:386
+#: ../exo-desktop-item-edit/exo-die-editor.c:385
 msgid "Run in _terminal"
 msgstr "Executa en un _terminal"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:387
+#: ../exo-desktop-item-edit/exo-die-editor.c:386
 msgid "Select this option to run the command in a terminal window."
 msgstr ""
 "Seleccioneu aquesta opció per executar una ordre en una finestra de terminal."
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:533
+#: ../exo-desktop-item-edit/exo-die-editor.c:532
 msgid "Select an icon"
 msgstr "Seleccioneu una icona"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:150
+#: ../exo-desktop-item-edit/exo-die-utils.c:168
 msgid "File location is not a regular file or directory"
 msgstr "La ubicació del fitxer no està en un fitxer o directori regular"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Launcher"
 msgstr "Crea un llançador"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Link"
 msgstr "Crea un enllaç"
 
-#: ../exo-desktop-item-edit/main.c:55
+#: ../exo-desktop-item-edit/main.c:53
+msgid "Create Directory"
+msgstr "Crea un directori"
+
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Launcher"
 msgstr "Edita el llançador"
 
-#: ../exo-desktop-item-edit/main.c:55
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Link"
 msgstr "Edita l'enllaç"
 
-#: ../exo-desktop-item-edit/main.c:76
+#: ../exo-desktop-item-edit/main.c:54
+msgid "Edit Directory"
+msgstr "Edita un directori"
+
+#: ../exo-desktop-item-edit/main.c:79
 msgid "Create a new desktop file in the given directory"
 msgstr "Crea un nou fitxer d'escriptori en el directori especificat"
 
-#: ../exo-desktop-item-edit/main.c:77
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Tipus de fitxer d'escriptori a crear (aplicació o enllaç)"
 
-#: ../exo-desktop-item-edit/main.c:78
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Preset name when creating a desktop file"
 msgstr "Preselecciona el nom de creació de fitxers d'escriptori"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset comment when creating a desktop file"
 msgstr "Preselecciona el comentari de creació de fitxers d'escriptori"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset command when creating a launcher"
 msgstr "Preselecciona l'ordre de creació de llançadors"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset URL when creating a link"
 msgstr "Preselecciona la URL de creació d'enllaços"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:85
 msgid "Preset icon when creating a desktop file"
 msgstr "Preselecciona la icona de creació de fitxers d'escriptori"
 
-#: ../exo-desktop-item-edit/main.c:83 ../exo-helper/main.c:68
-#: ../exo-mount/main.c:81 ../exo-mount-notify/main.c:77
+#: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
+#: ../exo-mount/main.c:80 ../exo-mount-notify/main.c:76
 msgid "Print version information and exit"
 msgstr "Imprimeix informació sobre la versió i surt"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:132
+#: ../exo-desktop-item-edit/main.c:153
 msgid "[FILE|FOLDER]"
 msgstr "[FITXER|CARPETA]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:144 ../exo-mount/main.c:250
-#: ../exo-mount-notify/main.c:156
+#: ../exo-desktop-item-edit/main.c:165 ../exo-mount/main.c:249
+#: ../exo-mount-notify/main.c:155
 msgid "Failed to open display"
 msgstr "No s'ha pogut obrir la pantalla"
 
-#: ../exo-desktop-item-edit/main.c:171
+#: ../exo-desktop-item-edit/main.c:192
 msgid "No file/folder specified"
 msgstr "No heu especificat cap fitxer o carpeta"
 
-#: ../exo-desktop-item-edit/main.c:217
+#: ../exo-desktop-item-edit/main.c:258
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "No s'ha pogut carregar el contingutde  «%s»: %s"
 
-#: ../exo-desktop-item-edit/main.c:222
+#: ../exo-desktop-item-edit/main.c:263
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "El fitxer «%s» no conté dades"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:235
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "No s'ha pogut analitzar el contingut de «%s»: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:247
+#: ../exo-desktop-item-edit/main.c:288
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "El fitxer «%s» no te clau de tipus"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:257
+#: ../exo-desktop-item-edit/main.c:298
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "No es reconeix el tipus de fitxer d'escriptori «%s»"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:273
+#: ../exo-desktop-item-edit/main.c:314
 msgid "C_reate"
 msgstr "C_rea"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:413
+#: ../exo-desktop-item-edit/main.c:463
 msgid "Choose filename"
 msgstr "Trieu un nom de fitxer"
 
-#: ../exo-desktop-item-edit/main.c:471
+#: ../exo-desktop-item-edit/main.c:521
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "No s'ha pogut crear «%s»."
 
-#: ../exo-desktop-item-edit/main.c:471
+#: ../exo-desktop-item-edit/main.c:521
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "No s'ha pogut desar «%s»."
 
-#: ../exo-hal/exo-hal.c:478
+#: ../exo-hal/exo-hal.c:477
 #, c-format
 msgid "External %s Drive"
 msgstr "Unitat externa %s"
 
-#: ../exo-hal/exo-hal.c:480
+#: ../exo-hal/exo-hal.c:479
 #, c-format
 msgid "%s Drive"
 msgstr "Unitat %s"
 
-#: ../exo-hal/exo-hal.c:489
+#: ../exo-hal/exo-hal.c:488
 msgid "External Floppy Drive"
 msgstr "Unitat externa de disquet"
 
-#: ../exo-hal/exo-hal.c:491
+#: ../exo-hal/exo-hal.c:490
 msgid "Floppy Drive"
 msgstr "Disquet"
 
-#: ../exo-hal/exo-hal.c:495
+#: ../exo-hal/exo-hal.c:494
 msgid "Compact Flash Drive"
 msgstr "Medi Compact Flash"
 
-#: ../exo-hal/exo-hal.c:499
+#: ../exo-hal/exo-hal.c:498
 msgid "Memory Stick Drive"
 msgstr "Memòria portàtil"
 
-#: ../exo-hal/exo-hal.c:503
+#: ../exo-hal/exo-hal.c:502
 msgid "Smart Media Drive"
 msgstr "Smart Media"
 
-#: ../exo-hal/exo-hal.c:507
+#: ../exo-hal/exo-hal.c:506
 msgid "SD/MMC Drive"
 msgstr "Medi SD/MMC"
 
-#: ../exo-hal/exo-hal.c:511
+#: ../exo-hal/exo-hal.c:510
 msgid "Zip Drive"
 msgstr "Unitat Zip"
 
-#: ../exo-hal/exo-hal.c:515
+#: ../exo-hal/exo-hal.c:514
 msgid "Jaz Drive"
 msgstr "Unitat Jaz"
 
-#: ../exo-hal/exo-hal.c:519
+#: ../exo-hal/exo-hal.c:518
 msgid "Pen Drive"
 msgstr "Unitat de clauer"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:528
+#: ../exo-hal/exo-hal.c:527
 #, c-format
 msgid "%s Music Player"
 msgstr "Reproductor de música %s"
 
 #. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:543
+#: ../exo-hal/exo-hal.c:542
 #, c-format
 msgid "%s Digital Camera"
 msgstr "Càmera digital %s"
 
 #. last fallback to "Drive"
-#: ../exo-hal/exo-hal.c:566
+#: ../exo-hal/exo-hal.c:565
 msgid "Drive"
 msgstr "Unitat"
 
-#: ../exo-hal/exo-hal.c:793
+#: ../exo-hal/exo-hal.c:792
 #, c-format
 msgid "Blank %s Disc"
 msgstr "Disc en blanc %s"
 
-#: ../exo-hal/exo-hal.c:795
+#: ../exo-hal/exo-hal.c:794
 #, c-format
 msgid "%s Disc"
 msgstr "Disc %s"
 
 #. special case for pure audio disc
-#: ../exo-hal/exo-hal.c:800
+#: ../exo-hal/exo-hal.c:799
 msgid "Audio CD"
 msgstr "CD d'àudio"
 
-#: ../exo-hal/exo-hal.c:836
+#: ../exo-hal/exo-hal.c:835
 #, c-format
 msgid "%s Removable Volume"
 msgstr "Volum extraïble %s"
 
-#: ../exo-hal/exo-hal.c:838
+#: ../exo-hal/exo-hal.c:837
 #, c-format
 msgid "%s Volume"
 msgstr "Volum %s"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:103
+#: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Aplicacions preferides"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:104
+#: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
 msgstr "Seleccioneu les aplicacions per defecte de diversos serveis"
 
 #.
 #. Internet
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:133
+#: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:146
+#: ../exo-helper/exo-helper-chooser-dialog.c:145
 msgid "Web Browser"
 msgstr "Navegador web"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:154
+#: ../exo-helper/exo-helper-chooser-dialog.c:153
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
@@ -915,11 +932,11 @@ msgstr ""
 "El navegador web preferit s'usarà per obrir els\n"
 "hiperenllaços i mostrar l'ajuda."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:178
+#: ../exo-helper/exo-helper-chooser-dialog.c:177
 msgid "Mail Reader"
 msgstr "Client de correu"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:186
+#: ../exo-helper/exo-helper-chooser-dialog.c:185
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
@@ -930,15 +947,15 @@ msgstr ""
 #.
 #. Utilities
 #.
-#: ../exo-helper/exo-helper-chooser-dialog.c:206
+#: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Utilitats"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:219
+#: ../exo-helper/exo-helper-chooser-dialog.c:218
 msgid "File Manager"
 msgstr "Gestor de fitxers"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:227
+#: ../exo-helper/exo-helper-chooser-dialog.c:226
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
@@ -946,11 +963,11 @@ msgstr ""
 "El gestor de fitxers preferit s'usarà per\n"
 "veure el contingut de les carpetes."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:251
+#: ../exo-helper/exo-helper-chooser-dialog.c:250
 msgid "Terminal Emulator"
 msgstr "Emulador de terminal"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:259
+#: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
@@ -958,62 +975,62 @@ msgstr ""
 "L'emulador de terminal preferit s'usarà per executar\n"
 "ordres dins un entorn de línia d'ordres."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:298
+#: ../exo-helper/exo-helper-chooser-dialog.c:297
 msgid "Failed to open the documentation browser."
 msgstr "No s'ha pogut obrir el navegador per la documentació."
 
-#: ../exo-helper/exo-helper-chooser.c:150
-#: ../exo-helper/exo-helper-chooser.c:157
+#: ../exo-helper/exo-helper-chooser.c:149
+#: ../exo-helper/exo-helper-chooser.c:156
 msgid "Press left mouse button to change the selected application."
 msgstr ""
 "Premeu el botó esquerra del ratolí per canviar l'aplicació seleccionada."
 
-#: ../exo-helper/exo-helper-chooser.c:156
+#: ../exo-helper/exo-helper-chooser.c:155
 msgid "Application Chooser Button"
 msgstr "Botó d'elecció d'aplicació"
 
-#: ../exo-helper/exo-helper-chooser.c:300
+#: ../exo-helper/exo-helper-chooser.c:299
 msgid "No application selected"
 msgstr "No s'ha seleccionat cap aplicació"
 
-#: ../exo-helper/exo-helper-chooser.c:316
+#: ../exo-helper/exo-helper-chooser.c:315
 msgid "Failed to set default Web Browser"
 msgstr "No s'ha pogut definir el navegador web predeterminat"
 
-#: ../exo-helper/exo-helper-chooser.c:317
+#: ../exo-helper/exo-helper-chooser.c:316
 msgid "Failed to set default Mail Reader"
 msgstr "No s'ha pogut definir el client de correu predeterminat"
 
-#: ../exo-helper/exo-helper-chooser.c:318
+#: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
 msgstr "No s'ha pogut definir el gestor de fitxers predeterminat"
 
-#: ../exo-helper/exo-helper-chooser.c:319
+#: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
 msgstr "No s'ha pogut definir l'emulador de terminal predeterminat"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:388
 msgid "Select application"
 msgstr "Seleccioni l'aplicació"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:501
 msgid "Choose a custom Web Browser"
 msgstr "Escolliu un navegador web"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:502
 msgid "Choose a custom Mail Reader"
 msgstr "Escolliu un client de correu"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:503
 msgid "Choose a custom File Manager"
 msgstr "Escolliu un gestor de fitxers"
 
-#: ../exo-helper/exo-helper-chooser.c:505
+#: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
 msgstr "Escolliu un emulador de terminal"
 
-#: ../exo-helper/exo-helper-chooser.c:510
+#: ../exo-helper/exo-helper-chooser.c:509
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
@@ -1021,7 +1038,7 @@ msgstr ""
 "Especifiqueu l'aplicació que voleu emprar\n"
 "com a navegador web de Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:511
+#: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
@@ -1029,7 +1046,7 @@ msgstr ""
 "Especifiqueu l'aplicació que voleu emprar\n"
 "com a client de correu de Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:512
+#: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
@@ -1037,7 +1054,7 @@ msgstr ""
 "Especifiqueu l'aplicació que voleu emprar\n"
 "com a gestor de fitxers de Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:513
+#: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
@@ -1045,23 +1062,23 @@ msgstr ""
 "Especifiqueu l'aplicació que voleu emprar\n"
 "com a emulador de terminal de Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:580
+#: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
 msgstr "Navega pel sistema de fitxer per escollir una ordre."
 
-#: ../exo-helper/exo-helper-chooser.c:763
+#: ../exo-helper/exo-helper-chooser.c:762
 msgid "_Other..."
 msgstr "_Altres…"
 
-#: ../exo-helper/exo-helper-chooser.c:764
+#: ../exo-helper/exo-helper-chooser.c:763
 msgid "Use a custom application which is not included in the above list."
 msgstr "Usa una aplicació que no està inclosa a la llista anterior."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:114
+#: ../exo-helper/exo-helper-launcher-dialog.c:113
 msgid "Choose Preferred Application"
 msgstr "Tria l'aplicació preferida"
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:257
+#: ../exo-helper/exo-helper-launcher-dialog.c:256
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
@@ -1069,7 +1086,7 @@ msgstr ""
 "Trieu el navegador web preferit \n"
 "i premeu «D'acord» per seguir."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:259
+#: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
@@ -1077,7 +1094,7 @@ msgstr ""
 "Per favor trieu el client de correu\n"
 "preferit i premeu «D'acord» per seguir"
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:261
+#: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
@@ -1085,7 +1102,7 @@ msgstr ""
 "Per favor trieu el gestor de fitxers\n"
 "preferit i premeu «D'acord» per seguir."
 
-#: ../exo-helper/exo-helper-launcher-dialog.c:263
+#: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
@@ -1093,12 +1110,12 @@ msgstr ""
 "Per favor trieu l'emulador de terminal\n"
 "preferit i premeu «D'acord» per seguir"
 
-#: ../exo-helper/exo-helper.c:383
+#: ../exo-helper/exo-helper.c:382
 #, c-format
 msgid "No command specified"
 msgstr "No heu especificat cap ordre"
 
-#: ../exo-helper/exo-helper.c:685
+#: ../exo-helper/exo-helper.c:684
 #, c-format
 msgid "Failed to open helpers.rc for writing"
 msgstr "No s'ha pogut obrir helpers.rc per escriptura"
@@ -1109,23 +1126,23 @@ msgstr ""
 "Aplicacions preferides (navegador web, lector de correu i emulador de "
 "terminal)"
 
-#: ../exo-helper/main.c:42
+#: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
 msgstr "No s'ha pogut executar el navegador web per defecte"
 
-#: ../exo-helper/main.c:43
+#: ../exo-helper/main.c:42
 msgid "Failed to execute default Mail Reader"
 msgstr "No s'ha pogut executar el lector de correus per defecte"
 
-#: ../exo-helper/main.c:44
+#: ../exo-helper/main.c:43
 msgid "Failed to execute default File Manager"
 msgstr "No s'ha pogut executar el gestor de fitxers per defecte"
 
-#: ../exo-helper/main.c:45
+#: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
 msgstr "No s'ha pogut executar l'emulador de terminal per defecte"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:68
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1133,15 +1150,15 @@ msgstr ""
 "Obre les aplicacions preferides\n"
 "diàleg de configuració"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:69
 msgid "Settings manager socket"
 msgstr "Sòcol del gestor d'ajustaments"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:69
 msgid "SOCKET ID"
 msgstr "SÒCOL ID"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:70
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1149,11 +1166,11 @@ msgstr ""
 "Llança l'aplicació per defecte del TIPUS amb els PARÀMETREs opcionals, on "
 "TIPUS és un dels següents valors."
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
 msgstr "TIPUS [PARÀMETRE]"
 
-#: ../exo-helper/main.c:95
+#: ../exo-helper/main.c:94
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1169,17 +1186,17 @@ msgstr ""
 "  FileManager      - El gestor de fitxers preferit.\n"
 "  TerminalEmulator - L'emulador de terminal preferit."
 
-#: ../exo-helper/main.c:105
+#: ../exo-helper/main.c:104
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Feu «%s --help» per veure l'ús."
 
-#: ../exo-helper/main.c:155
+#: ../exo-helper/main.c:154
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "El tipus d'aplicació no és vàlida «%s»"
 
-#: ../exo-helper/main.c:199
+#: ../exo-helper/main.c:198
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1337,37 +1354,37 @@ msgid "X Terminal"
 msgstr "Terminal X"
 
 #. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:263 ../exo-mount/exo-mount-hal.c:331
+#: ../exo-mount/exo-mount-hal.c:262 ../exo-mount/exo-mount-hal.c:330
 #, c-format
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "El dispositiu «%s» no és un volum o unitat"
 
 #. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-hal.c:420 ../exo-mount/main.c:142
+#: ../exo-mount/exo-mount-hal.c:419 ../exo-mount/main.c:141
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
 msgstr ""
 "No s'ha pogut trobar dispositiu «%s» a la taula de dispositius del sistema"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:652
+#: ../exo-mount/exo-mount-hal.c:651
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "No teniu suficients permisos per expulsar el volum «%s»"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:657
+#: ../exo-mount/exo-mount-hal.c:656
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
 msgstr "Alguna aplicació està impedint que el volum «%s» pugui ser expulsat"
 
 #. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:965
+#: ../exo-mount/exo-mount-hal.c:964
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
 msgstr "No teniu permisos suficients per muntar el volum «%s»"
 
-#: ../exo-mount/exo-mount-hal.c:980
+#: ../exo-mount/exo-mount-hal.c:979
 #, c-format
 msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
@@ -1376,7 +1393,7 @@ msgstr ""
 "Els discs en blanc no es poden montar. Useu alguna aplicació com Xfburn per "
 "gravar so o dades al disc"
 
-#: ../exo-mount/exo-mount-hal.c:991
+#: ../exo-mount/exo-mount-hal.c:990
 #, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
@@ -1386,65 +1403,65 @@ msgstr ""
 "preferit per reproduir les pistes d'àudio"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1056
+#: ../exo-mount/exo-mount-hal.c:1055
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
 msgstr "No teniu permisos suficients per apagar la capa criptogràfica"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1061
+#: ../exo-mount/exo-mount-hal.c:1060
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
 msgstr "Alguna aplicació impedeix que la capa criptogràfica s'apagui"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1145
+#: ../exo-mount/exo-mount-hal.c:1144
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
 msgstr "No teniu permisos per desmountar el volum «%s»"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1150
+#: ../exo-mount/exo-mount-hal.c:1149
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
 msgstr "Alguna aplicació està impedint que el volum «%s» pugui ser desmuntat"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1155
+#: ../exo-mount/exo-mount-hal.c:1154
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
 msgstr "El volum «%s» probablement fou muntat des de la línia d'ordres"
 
-#: ../exo-mount/main.c:72
+#: ../exo-mount/main.c:71
 msgid "Eject rather than mount"
 msgstr "Expulsa enlloc de muntar"
 
-#: ../exo-mount/main.c:73
+#: ../exo-mount/main.c:72
 msgid "Unmount rather than mount"
 msgstr "Desmunta enlloc de muntar"
 
-#: ../exo-mount/main.c:75
+#: ../exo-mount/main.c:74
 msgid "Mount by HAL device UDI"
 msgstr "Munta amb el HAL"
 
-#: ../exo-mount/main.c:77
+#: ../exo-mount/main.c:76
 msgid "Mount by HAL device UDI (not supported)"
 msgstr "Munta amb el HAL (no suportat)"
 
-#: ../exo-mount/main.c:79
+#: ../exo-mount/main.c:78
 msgid "Mount by device file"
 msgstr "Munta amb el fitxer de dispositus"
 
-#: ../exo-mount/main.c:80
+#: ../exo-mount/main.c:79
 msgid "Don't show any dialogs"
 msgstr "No mostris cap diàleg"
 
-#: ../exo-mount/main.c:206
+#: ../exo-mount/main.c:205
 #, c-format
 msgid "Unknown error"
 msgstr "Error desconegut"
 
-#: ../exo-mount/main.c:277
+#: ../exo-mount/main.c:276
 #, c-format
 msgid ""
 "%s is compiled without GIO-Unix features. Therefore it will probably not "
@@ -1454,17 +1471,17 @@ msgstr ""
 "funcioni en aquest sistema."
 
 #. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:285
+#: ../exo-mount/main.c:284
 msgid "Must specify HAL device UDI or device file"
 msgstr "Heu d'especificar una configuració HAL o un fitxer de dispositiu"
 
 #. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:293
+#: ../exo-mount/main.c:292
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 msgstr ""
 "No heu d'especificar una configuració HAL o un fitxer de dispositiu alhora"
 
-#: ../exo-mount/main.c:301
+#: ../exo-mount/main.c:300
 msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
@@ -1472,57 +1489,57 @@ msgstr ""
 "No s'ha pogut muntar mitjançant HAL perquè fou deshabilitat per aquesta "
 "compilació"
 
-#: ../exo-mount/main.c:308
+#: ../exo-mount/main.c:307
 #, c-format
 msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 msgstr "L'adreça UDI «%s» no és un dispositiu HAL vàlid"
 
 #. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:325
+#: ../exo-mount/main.c:324
 msgid "Cannot eject and unmount simultaneously"
 msgstr "No es pot expulsar i desmuntar alhora"
 
-#: ../exo-mount/main.c:477
+#: ../exo-mount/main.c:476
 #, c-format
 msgid "Failed to eject \"%s\""
 msgstr "No s'ha pogut expulsar «%s»"
 
-#: ../exo-mount/main.c:479
+#: ../exo-mount/main.c:478
 #, c-format
 msgid "Failed to unmount \"%s\""
 msgstr "No s'ha pogut desmuntar «%s»"
 
-#: ../exo-mount/main.c:481
+#: ../exo-mount/main.c:480
 #, c-format
 msgid "Failed to mount \"%s\""
 msgstr "No s'ha pogut muntar «%s»"
 
 #. tell the user that the device can be removed now
-#: ../exo-mount-notify/main.c:113
+#: ../exo-mount-notify/main.c:112
 #, c-format
 msgid "The device \"%s\" is now safe to remove."
 msgstr "El dispositiu «%s» ja es pot extreure."
 
-#: ../exo-mount-notify/main.c:114
+#: ../exo-mount-notify/main.c:113
 msgid "Device is now safe to remove"
 msgstr "El dispositiu ja es pot extreure"
 
 #. read-only, just ejecting
-#: ../exo-mount-notify/main.c:227
+#: ../exo-mount-notify/main.c:226
 msgid "Ejecting device"
 msgstr "Expulsant dispositiu"
 
-#: ../exo-mount-notify/main.c:228
+#: ../exo-mount-notify/main.c:227
 #, c-format
 msgid "The device \"%s\" is being ejected. This may take some time."
 msgstr "S'està expulsant el dispositiu «%s». Això pot tardar una mica."
 
 #. read-only, just unmounting
-#: ../exo-mount-notify/main.c:233
+#: ../exo-mount-notify/main.c:232
 msgid "Unmounting device"
 msgstr "S'està desmuntant el dispositiu"
 
-#: ../exo-mount-notify/main.c:234
+#: ../exo-mount-notify/main.c:233
 #, c-format
 msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
@@ -1532,11 +1549,11 @@ msgstr ""
 "el dispositiu."
 
 #. not read-only, writing back data
-#: ../exo-mount-notify/main.c:241
+#: ../exo-mount-notify/main.c:240
 msgid "Writing data to device"
 msgstr "S'està escrivint al dispositiu"
 
-#: ../exo-mount-notify/main.c:242
+#: ../exo-mount-notify/main.c:241
 #, c-format
 msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
@@ -1545,24 +1562,24 @@ msgstr ""
 "Hi ha dades pendents per escriure al dispositiu «%s» abans que es pugui "
 "extreure. No extragueu el mitjà o desconnecteu el dispositiu."
 
-#: ../exo-open/main.c:85
+#: ../exo-open/main.c:84
 msgid "Usage: exo-open [URLs...]"
 msgstr "Ús: exo-open [URLs…]"
 
-#: ../exo-open/main.c:86
+#: ../exo-open/main.c:85
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "    exo-open --launch TIPUS [PARÀMETREs…]"
 
-#: ../exo-open/main.c:88
+#: ../exo-open/main.c:87
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Mostra aquest missatge i surt"
 
-#: ../exo-open/main.c:89
+#: ../exo-open/main.c:88
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Mostra la versió i surt"
 
-#: ../exo-open/main.c:91
+#: ../exo-open/main.c:90
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1575,7 +1592,7 @@ msgstr ""
 "TIPUS\n"
 "                                      és un dels valors següents."
 
-#: ../exo-open/main.c:95
+#: ../exo-open/main.c:94
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1585,14 +1602,14 @@ msgstr ""
 "aplicacions\n"
 "                                      quan s'empra l'opció --launch."
 
-#: ../exo-open/main.c:98
+#: ../exo-open/main.c:97
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Els següents TIPUS són els suportats per l'ordre --launch:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:104
+#: ../exo-open/main.c:103
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1604,7 +1621,7 @@ msgstr ""
 "  FileManager      - El gestir de fitxers preferit.\n"
 "  TerminalEmulator - L'emulador de terminal preferit."
 
-#: ../exo-open/main.c:109
+#: ../exo-open/main.c:108
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1619,7 +1636,7 @@ msgstr ""
 "exemple, a TerminalEmulator podeu decidir que l'ordre sigui executada\n"
 "sobre una terminal)."
 
-#: ../exo-open/main.c:171
+#: ../exo-open/main.c:170
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1628,17 +1645,17 @@ msgstr ""
 "No es poden llançar els fitxers d'escriptori si %s no s'ha compilat amb "
 "compatibilitat GIO-Unix."
 
-#: ../exo-open/main.c:313
+#: ../exo-open/main.c:312
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "No s'ha pogut llançar l'aplicació preferida de la categoria «%s»."
 
-#: ../exo-open/main.c:355
+#: ../exo-open/main.c:354
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "No s'ha pogut detectar l'esquema URI de «%s»."
 
-#: ../exo-open/main.c:365
+#: ../exo-open/main.c:364
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "No s'ha pogut obrir la URL «%s»."
