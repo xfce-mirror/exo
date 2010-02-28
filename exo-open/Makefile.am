@@ -26,4 +26,19 @@ exo_open_LDADD =							\
 	$(GIO_UNIX_LIBS)						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
+desktopdir = $(datadir)/applications
+desktop_in_files =							\
+	exo-file-manager.desktop.in					\
+	exo-mail-reader.desktop.in					\
+	exo-terminal-emulator.desktop.in				\
+	exo-web-browser.desktop.in
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
+
+EXTRA_DIST =								\
+	$(desktop_in_files)
+
+DISTCLEANFILES =							\
+	$(desktop_DATA)
+
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
