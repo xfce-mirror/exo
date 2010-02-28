@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-19 19:18+0900\n"
-"PO-Revision-Date: 2010-02-19 19:18+0900\n"
+"POT-Creation-Date: 2010-03-01 00:22+0900\n"
+"PO-Revision-Date: 2010-03-01 00:22+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -155,84 +155,88 @@ msgid "Cursor item text color"
 msgstr "カーソルアイテムの文字色"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:104
+#: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Action Icons"
 msgstr "アクションアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:106
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Animations"
 msgstr "アニメーション"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:108
+#: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Application Icons"
 msgstr "アプリケーション・アイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:110
+#: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Menu Icons"
 msgstr "メニューアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:112
+#: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Device Icons"
 msgstr "デバイスアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:114
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "Emblems"
 msgstr "シンボル"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:116
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Emoticons"
 msgstr "エモティコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:118
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "International Denominations"
 msgstr "国際単位"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:120
+#: ../exo/exo-icon-chooser-dialog.c:125
 msgid "File Type Icons"
 msgstr "ファイルタイプアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:122
+#: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Location Icons"
 msgstr "場所アイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:124
+#: ../exo/exo-icon-chooser-dialog.c:129
 msgid "Status Icons"
 msgstr "ステータスアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:126
+#: ../exo/exo-icon-chooser-dialog.c:131
 msgid "Uncategorized Icons"
 msgstr "未分類のアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:130
+#: ../exo/exo-icon-chooser-dialog.c:135
 msgid "All Icons"
 msgstr "全てのアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:134 ../exo/exo-icon-chooser-dialog.c:275
+#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
 msgid "Image Files"
 msgstr "画像ファイル"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:205
+#: ../exo/exo-icon-chooser-dialog.c:210
 msgid "Select _icon from:"
 msgstr "アイコンを選択(_I):"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:220
+#: ../exo/exo-icon-chooser-dialog.c:225
 msgid "_Search icon:"
 msgstr "アイコンの検索(_S):"
+
+#: ../exo/exo-icon-chooser-dialog.c:236
+msgid "Clear search field"
+msgstr "検索フィールドのクリア"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:644
@@ -974,6 +978,7 @@ msgid "Internet"
 msgstr "インターネット"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Web Browser"
 msgstr "ウェブブラウザ"
 
@@ -987,6 +992,7 @@ msgstr ""
 "使用されます。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
+#: ../exo-open/exo-mail-reader.desktop.in.h:1
 msgid "Mail Reader"
 msgstr "メーラー"
 
@@ -1007,6 +1013,7 @@ msgid "Utilities"
 msgstr "ユーティリティ"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "File Manager"
 msgstr "ファイルマネージャ"
 
@@ -1019,6 +1026,7 @@ msgstr ""
 "フォルダの内容を表示する際に使用されます。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
+#: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
 msgstr "ターミナルエミュレータ"
 
@@ -1717,6 +1725,22 @@ msgstr "\"%s\" のURIスキーマを検出できません。"
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "URI \"%s\" を開けませんでした。"
+
+#: ../exo-open/exo-file-manager.desktop.in.h:1
+msgid "Browse the file system"
+msgstr "ファイルシステムを参照します。"
+
+#: ../exo-open/exo-mail-reader.desktop.in.h:2
+msgid "Read your email"
+msgstr "電子メールを読みます。"
+
+#: ../exo-open/exo-terminal-emulator.desktop.in.h:2
+msgid "Use the command line"
+msgstr "コマンドラインを使用します。"
+
+#: ../exo-open/exo-web-browser.desktop.in.h:1
+msgid "Browse the web"
+msgstr "ウェブを参照します。"
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "\"%s\" を開けません"
