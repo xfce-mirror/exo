@@ -33,7 +33,7 @@ libexo_module_1_la_LDFLAGS =						\
 	-avoid-version							\
 	-module								\
 	-no-undefined							\
-	-export-symbols-regex '^g_io_module_(load|unload)'
+	-export-symbols-regex '^g_io_module_(load|unload|query)'
 
 libexo_module_1_la_DEPENDENCIES =					\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la

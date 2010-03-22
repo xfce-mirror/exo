@@ -181,3 +181,13 @@ G_MODULE_EXPORT void
 g_io_module_unload (GIOModule   *module)
 {
 }
+
+G_MODULE_EXPORT gchar **
+g_io_module_query (void)
+{
+  gchar *eps[] = {
+    G_DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME,
+    NULL
+  };
+  return g_strdupv (eps);
+}
