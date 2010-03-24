@@ -44,7 +44,6 @@ static GAppInfo *exo_gio_module_get_default_for_uri_scheme (GDesktopAppInfoLooku
 
 
 
-
 typedef struct _ExoGioModuleClass ExoGioModuleClass;
 typedef struct _ExoGioModule      ExoGioModule;
 typedef struct _KnownSchemes      KnownSchemes;
@@ -178,9 +177,11 @@ g_io_module_load (GIOModule *module)
 
 
 G_MODULE_EXPORT void
-g_io_module_unload (GIOModule   *module)
+g_io_module_unload (GIOModule *module)
 {
 }
+
+
 
 G_MODULE_EXPORT gchar **
 g_io_module_query (void)
