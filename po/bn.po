@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-28 18:00+0100\n"
-"PO-Revision-Date: 2010-02-01 17:20+0600\n"
+"POT-Creation-Date: 2010-03-30 16:00+0000\n"
+"PO-Revision-Date: 2010-04-01 17:20+0600\n"
 "Last-Translator: Israt Jahan <israt@ankur.org.bd>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -272,8 +272,7 @@ msgstr "মার্কআপ কলাম"
 
 #: ../exo/exo-icon-view.c:748
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"যদি প্যানগো মার্কআপ ব্যবহার করে পাঠ্য উদ্ধার করতে মডেল কলাম ব্যবহার করা হয়"
+msgstr "যদি প্যানগো মার্কআপ ব্যবহার করে পাঠ্য উদ্ধার করতে মডেল কলাম ব্যবহার করা হয়"
 
 #: ../exo/exo-icon-view.c:762
 msgid "Icon View Model"
@@ -336,7 +335,7 @@ msgstr "একক ক্লিক টাইম আউট"
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr ""
+msgstr "একক ক্লিক মোডে যে সময়ের ব্যবধানে নির্বাচিত আইটেমটি স্বয়ংক্রিয়ভাবে খুলবে"
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -344,7 +343,7 @@ msgstr "মধ্যবর্তী ফাঁকা স্থান"
 
 #: ../exo/exo-icon-view.c:905
 msgid "Space which is inserted between cells of an item"
-msgstr ""
+msgstr "একটি আইটেমের দুটি ঘরের মাঝে যে পরিমাণ ফাঁকা জায়গা আছে"
 
 #: ../exo/exo-icon-view.c:928
 msgid "Selection Box Color"
@@ -399,6 +398,8 @@ msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
 msgstr ""
+"একটি আইটেম যোগ করার জন্য একে টুলবার থেকে টেনে আনুন, এবং আইটেম টেবিল থেকে "
+"মুছে ফেলতেও টেনে আনুন।"
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -554,6 +555,9 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
+"%s ABSOLUTELY NO WARRANTY সহ আসে,\nআপনি %s এর কপিগুলো\nGNU Lesser General "
+"Public License এর অধীণে পুনরায় বিলি করতে পারেন যা\n%s সোর্স প্যাকেজ হিসেবে "
+"পাওয়া যাবে।\n\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
 #: ../exo-mount/main.c:271 ../exo-mount-notify/main.c:177
@@ -651,6 +655,9 @@ msgid ""
 "from the file manager or the menu. Not every application supports startup "
 "notification."
 msgstr ""
+"ফাইল ম্যানেজার না মেনু থেকে কমান্ড চালানোর সময় স্টার্টআপ বিজ্ঞপ্তি সক্রিয় "
+"করতে এই অপশনটি নির্বাচন করুন। প্রতিটি অ্যাপ্লিকেশন স্টার্টআপ বিজ্ঞপ্তি "
+"সমর্থন করবে না।"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -907,6 +914,8 @@ msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr ""
+"সহায়তা বিষয়বস্তু প্রদর্শন করতে‌ এবং হাইপারলিংক খুলতে\nপছন্দসই ওয়েব ব্রাউজার "
+"ব্যবহার করা হবে।"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -918,6 +927,8 @@ msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
+"আপনি যখন ইমেইল ঠিকানায় ক্লিক করবেন\nতখন মেইল কম্পোজ করতে পছন্দসই মেইল রিডার "
+"ব্যবহার করা হবে।"
 
 #.
 #. Utilities
@@ -936,6 +947,7 @@ msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
+"ফোল্ডারের বিষয়বস্তু ব্রাউজ করতে\nপছন্দসই ফাইল ম্যানেজার ব্যবহার করা হবে।"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -947,6 +959,8 @@ msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
+"যেসব কমান্ডে CLI এনভায়রনমেন্ট প্রয়োজন হয় সেসব কমান্ড চালাতে\nপছন্দসই "
+"টার্মিনাল ইমুলেটর ব্যবহার করা হয়।"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:297
 msgid "Failed to open the documentation browser."
@@ -1007,28 +1021,36 @@ msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
+"Xfce এর জন্য ডিফল্ট ওয়েব ব্রাউজার হিসেবে ব্যবহার করতে চান\nসে অ্যাপ্লিকেশন "
+"উল্লেখ করুন:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
+"Xfce এর জন্য ডিফল্ট মেইল রিডার হিসেবে ব্যবহার করতে চান\nসে অ্যাপ্লিকেশন "
+"উল্লেখ করুন:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
+"Xfce এর জন্য ডিফল্ট ফাইল ম্যানেজার হিসেবে ব্যবহার করতে চান\nসে অ্যাপ্লিকেশন "
+"উল্লেখ করুন:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
+"Xfce এর জন্য ডিফল্ট টার্মিনাল ইমুলেটর হিসেবে ব্যবহার করতে চান\nসে "
+"অ্যাপ্লিকেশন উল্লেখ করুন:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "পছন্দসই কমান্ড বেছে নিতে ফাইল সিস্টেম ব্রাউজ করুন।"
 
 #: ../exo-helper/exo-helper-chooser.c:762
 msgid "_Other..."
@@ -1036,7 +1058,7 @@ msgstr "অন্যান্য... (_O)"
 
 #: ../exo-helper/exo-helper-chooser.c:763
 msgid "Use a custom application which is not included in the above list."
-msgstr ""
+msgstr "উপরের তালিকায় নেই এমন একটি পছন্দসই অ্যাপ্লিকেশন ব্যবহার করুন।"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:113
 msgid "Choose Preferred Application"
@@ -1047,24 +1069,32 @@ msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
 msgstr ""
+"অনুগ্রহ করে আপনার পছন্দসই ওয়েব ব্রাউজার বেছে নিন\nকাজ এগিয়ে নিয়ে যেতে \"ঠিক "
+"আছে\" ক্লিক করুন।"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
+"অনুগ্রহ করে আপনার পছন্দসই মেইল রিডার বেছে নিন\nকাজ এগিয়ে নিয়ে যেতে \"ঠিক আছে\" "
+"ক্লিক করুন।"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
+"অনুগ্রহ করে আপনার পছন্দসই ফাইল ম্যানেজার বেছে নিন\nকাজ এগিয়ে নিয়ে যেতে \"ঠিক "
+"আছে\" ক্লিক করুন।"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
+"অনুগ্রহ করে আপনার পছন্দসই টার্মিনাল ইমুলেটর বেছে নিন\nকাজ এগিয়ে নিয়ে যেতে "
+"\"ঠিক আছে\" ক্লিক করুন।"
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -1100,7 +1130,7 @@ msgstr "ডিফল্ট টার্মিনাল ইম্যুলেট�
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr ""
+msgstr "পছন্দসই অ্যাপ্লিকেশন\nকনফিগারেশন ডায়ালগ খুলুন"
 
 #: ../exo-helper/main.c:69
 msgid "Settings manager socket"
@@ -1115,6 +1145,8 @@ msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
 msgstr ""
+"ঐচ্ছিক PARAMETER সহ ডিফল্ট সাহায্যকারী TYPE চালু করা হয়, যেখানে TYPE এর "
+"নিম্নোক্ত মান আছে:"
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
@@ -1129,6 +1161,10 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"নিম্নোক্ত TYPE গুলো এদের জন্য সমর্থিত --চালুকরণ কমান্ড:\n\n  WebBrowser "
+"      - পছন্দসই ওয়েব ব্রাউজার।\n  MailReader       - পছন্দসই মেইল রিডার।\n "
+" FileManager      - পছন্দসই  ফাইল ম্যানেজার।\n  TerminalEmulator - পছন্দসই "
+"টার্মিনাল ইমুলেটর।"
 
 #: ../exo-helper/main.c:104
 #, c-format
@@ -1154,9 +1190,16 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr ""
-"%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. All "
-"rights reserved.\n\nWritten by Benedikt Meurer <benny@xfce.org>.\n\nBuilt "
-"with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n\nPlease report bugs to <%s>.\n"
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
+"\n"
+"Please report bugs to <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1326,6 +1369,8 @@ msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
+"খালি ডিস্ক মাউন্ট করা যায় না, ডিস্কে অডিও বা ডাটা রেকর্ড করতে Xfburn এর মত "
+"সিডি রেকর্ডিং অ্যাপ্লিকেশন ব্যবহার করুন"
 
 #: ../exo-mount/exo-mount-hal.c:990
 #, c-format
@@ -1333,36 +1378,38 @@ msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
 "audio tracks"
 msgstr ""
+"অডিও সিডি মাউন্র করা যায়নি, অডিও ট্র্যাকটি আপনার পছন্দের অডিও প্লেয়ার দিয়ে "
+"বাজান"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1055
 #, c-format
 msgid "You are not privileged to teardown the crypto layer"
-msgstr ""
+msgstr "ক্রিপ্টো লেয়ার টিয়ারডাউন করার অনুমোদন আপনার নেই"
 
 #. TRANSLATORS: An application is blocking a mounted volume from being ejected.
 #: ../exo-mount/exo-mount-hal.c:1060
 #, c-format
 msgid "An application is preventing the crypto layer from being torn down"
-msgstr ""
+msgstr "ক্রিপ্টো লেয়ারটি টর্ন ডাউন হতে একটি অ্যাপ্লিকেশন বাধা দিচ্ছে"
 
 #. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1144
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr ""
+msgstr "\"%s\" এই ভলিউমটি আনমাউন্ট করার অনুমোদন আপনার নেই"
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:1149
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr ""
+msgstr "ভলিউম \"%s\" কে আনমাউন্ট হতে একটি অ্যাপ্লিকেশন বাধা দিচ্ছে"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:1154
 #, c-format
 msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr ""
+msgstr "ভলিউমটি \"%s\" সম্ভবত ম্যানুয়ালী কমান্ড লাইনে আনমাউন্ট করা হয়েছিল"
 
 #: ../exo-mount/main.c:71
 msgid "Eject rather than mount"
@@ -1399,6 +1446,8 @@ msgid ""
 "%s is compiled without GIO-Unix features. Therefore it will probably not "
 "work on this system."
 msgstr ""
+"%s কে GIO-Unix বৈশিষ্ট্য ছাড়াই কম্পাইল করা হয়েছে। এটি এই সিস্টেমে কাজ নাও "
+"করতে পারে।"
 
 #. the caller must specify either a HAL UDI or a device file
 #: ../exo-mount/main.c:284
@@ -1408,7 +1457,8 @@ msgstr "অবশ্যই HAL ডিভাইস UDI অথবা ডিভা�
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:292
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "Must not specify both a HAL device UDI and a device file simultaneously"
+msgstr ""
+"Must not specify both a HAL device UDI and a device file simultaneously"
 
 #: ../exo-mount/main.c:300
 msgid ""
@@ -1474,6 +1524,8 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
+"\"%s\" ডিভাইসটি সিস্টেমে আনমাউন্ট করা হয়েছে। অনুগ্রহ করে মিডিয়াটি সরিয়ে ফেলবেন "
+"না বা ড্রাইভটি বিচ্ছিন্ন করবেন না।"
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:240
@@ -1486,6 +1538,8 @@ msgid ""
 "There is data that needs to be written to the device \"%s\" before it can be "
 "removed. Please do not remove the media or disconnect the drive."
 msgstr ""
+"সরিয়ে নেয়ার আগেই ডাটা \"%s\" ডিভাইসে লিখে ফেলতে হবে। অনুগ্রহ করে মিডিয়ে সরিয়ে "
+"ফেলবেন না বা ড্রাইভ বিচ্ছিন্ন করবেন না।"
 
 #: ../exo-open/main.c:84
 msgid "Usage: exo-open [URLs...]"
@@ -1554,6 +1608,11 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
+"যদি আপনি --চালুকরণ অপশন উল্লেখ না করেন, তবে exo-open সব উল্লেখিত\nURL তাদের "
+"পছন্দসই URL হ্যান্ডলার সহ খুলবে। এছাড়া, যদি আপনি --চালুকরণ\nঅপশন উল্লেখ "
+"করেন, আপনি এটি চালানোর জন্য পছন্দসই অ্যাপ্লিকেশন নির্বাচন করতে পারেন, "
+"এবং\nঅতিরিক্ত প্যারামিটার পাস করতে পারেন।(যেমন, TerminalEmulator\nএর জন্য "
+"আপনি কমান্ড লাইনে চালানোর জন্য টার্মিনালে কমান্ড পাস করতে পারেন)।"
 
 #: ../exo-open/main.c:170
 #, c-format
@@ -1561,6 +1620,8 @@ msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
 msgstr ""
+"ডেস্কটপ ফাইল চালুকরণ সমর্থিত হয় না যখন %s GIO-Unix বৈশিষ্ট্য দিয়ে কম্পাইল "
+"করা হয়।"
 
 #: ../exo-open/main.c:312
 #, c-format
