@@ -182,7 +182,7 @@ g_io_module_unload (GIOModule *module)
 }
 
 
-
+#if GLIB_CHECK_VERSION (2, 24, 0)
 G_MODULE_EXPORT gchar **
 g_io_module_query (void)
 {
@@ -192,3 +192,4 @@ g_io_module_query (void)
   };
   return g_strdupv (eps);
 }
+#endif
