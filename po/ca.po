@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 12:06+0100\n"
-"PO-Revision-Date: 2010-02-21 13:07+0100\n"
+"POT-Creation-Date: 2010-04-11 10:00+0000\n"
+"PO-Revision-Date: 2010-04-11 15:32+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -444,11 +444,11 @@ msgstr "Text per les icones i_mportants"
 
 #: ../exo/exo-toolbars-view.c:803
 msgid "_Remove Toolbar"
-msgstr "_Suprimir barra d'eines"
+msgstr "_Suprimir la barra d'eines"
 
 #: ../exo/exo-toolbars-view.c:818
 msgid "Customize Toolbar..."
-msgstr "Personalitza barra d'eines…"
+msgstr "Personalitza la barra d'eines…"
 
 #: ../exo/exo-wrap-table.c:148
 msgid "Column spacing"
@@ -498,7 +498,7 @@ msgstr "Ús: %s [opcions] [fitxer]\n"
 #: ../exo-csource/main.c:285
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [opcions] --build-list [nom del fitxer]\n"
+msgstr "    %s [opcions] --build-list [nom del fitxer]\n"
 
 #: ../exo-csource/main.c:287
 #, c-format
@@ -921,6 +921,7 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Web Browser"
 msgstr "Navegador web"
 
@@ -933,6 +934,7 @@ msgstr ""
 "hiperenllaços i mostrar l'ajuda."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
+#: ../exo-open/exo-mail-reader.desktop.in.h:1
 msgid "Mail Reader"
 msgstr "Client de correu"
 
@@ -952,6 +954,7 @@ msgid "Utilities"
 msgstr "Utilitats"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "File Manager"
 msgstr "Gestor de fitxers"
 
@@ -964,6 +967,7 @@ msgstr ""
 "veure el contingut de les carpetes."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
+#: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
 msgstr "Emulador de terminal"
 
@@ -1659,6 +1663,22 @@ msgstr "No s'ha pogut detectar l'esquema URI de «%s»."
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "No s'ha pogut obrir la URL «%s»."
+
+#: ../exo-open/exo-file-manager.desktop.in.h:1
+msgid "Browse the file system"
+msgstr "Navega el sistema de fitxers"
+
+#: ../exo-open/exo-mail-reader.desktop.in.h:2
+msgid "Read your email"
+msgstr "Llegiu el vostre correu electrònic"
+
+#: ../exo-open/exo-terminal-emulator.desktop.in.h:2
+msgid "Use the command line"
+msgstr "Empra la línia d'ordres"
+
+#: ../exo-open/exo-web-browser.desktop.in.h:1
+msgid "Browse the web"
+msgstr "Navega la web"
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "No s'ha pogut obrir «%s»"
