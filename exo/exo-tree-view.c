@@ -278,6 +278,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   gboolean          result;
   GList            *selected_paths = NULL;
   GList            *lp;
+  gpointer          drag_data;
 
   /* by default we won't emit "row-activated" on button-release-events */
   tree_view->priv->button_release_activates = FALSE;
@@ -347,7 +348,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
       if (G_LIKELY (path == NULL || !gtk_tree_selection_path_is_selected (selection, path)))
         {
           /* need to disable drag and drop because we're rubberbanding now */
-          gpointer drag_data = g_object_get_data (G_OBJECT (tree_view), I_("gtk-site-data"));
+          drag_data = g_object_get_data (G_OBJECT (tree_view), I_("gtk-site-data"));
           if (G_LIKELY (drag_data != NULL))
             {
               g_signal_handlers_block_matched (G_OBJECT (tree_view),
@@ -416,6 +417,7 @@ exo_tree_view_button_release_event (GtkWidget      *widget,
   GtkTreeSelection  *selection;
   GtkTreePath       *path;
   ExoTreeView       *tree_view = EXO_TREE_VIEW (widget);
+  gpointer           drag_data;
 
   /* verify that the release event is for the internal tree view window */
   if (G_LIKELY (event->window == gtk_tree_view_get_bin_window (GTK_TREE_VIEW (tree_view))))
@@ -464,7 +466,7 @@ exo_tree_view_button_release_event (GtkWidget      *widget,
   /* check if we need to re-enable drag and drop */
   if (G_LIKELY (tree_view->priv->button_release_unblocks_dnd))
     {
-      gpointer drag_data = g_object_get_data (G_OBJECT (tree_view), I_("gtk-site-data"));
+      drag_data = g_object_get_data (G_OBJECT (tree_view), I_("gtk-site-data"));
       if (G_LIKELY (drag_data != NULL))
         {
           g_signal_handlers_unblock_matched (G_OBJECT (tree_view),
