@@ -1,4 +1,5 @@
-SUBDIRS =				\
+SUBDIRS =					\
+	am					\
 	C					\
 	da					\
 	es					\
@@ -7,8 +8,10 @@ SUBDIRS =				\
 	id					\
 	it					\
 	ja					\
-	pt_BR				\
-	tr
+	pt					\
+	pt_BR					\
+	tr					\
+	ug
 
-EXTRA_DIST =				\
+EXTRA_DIST =					\
 	xfce-nochunk.xsl

@@ -3,12 +3,12 @@
 <!ENTITY date "April 2006">
 <!ENTITY version "@PACKAGE_VERSION@">
 ]>
-<article id="exo-preferred-applications" lang="ja">
+<article id="exo-preferred-applications" lang="ug">
 
 
   <!-- Header -->
   <articleinfo>
-    <title>Xfce 4 お気に入りのアプリケーション</title>
+    <title>Xfce 4 دىكى ئامراق پروگراممىلار</title>
 
     <pubdate>&date;</pubdate>
 
@@ -17,10 +17,10 @@
       <year>2005</year>
       <year>2006</year>
       <holder>Benedikt Meurer</holder>
-    </copyright><copyright><year>2006.</year><holder>Daichi Kawahata (daichi@xfce.org)</holder></copyright><copyright><year>2009, 2010.</year><holder>Masato Hashimoto (hashimo@xfce.org)</holder></copyright>
+    </copyright>
 
     <legalnotice id="legalnotice">
-      <para>フリーソフトウェア財団が公表する GNU フリー文書利用許諾契約書の第1.1版、あるいはそれ以降のいずれかの版の条件下において、この文書の複製、配布および/または変更が許可されます。変更出来ない箇所、表紙文および裏表紙文があってはいけません。この利用許諾契約書の全文は<ulink type="http" url="http://www.gnu.org/">フリーソフトウェア財団</ulink>から取得する事ができます。</para>
+      <para>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The complete license text is available from the <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.</para>
     </legalnotice>
 
     <authorgroup>
@@ -33,69 +33,69 @@
       </author>
     </authorgroup>
 
-    <releaseinfo>この説明書は <emphasis>Xfceお気に入りのアプリケーション</emphasis> フレームワークおよびそのコンポーネントのバージョン @PACKAGE_VERSION@ について書かれています。</releaseinfo>
+    <releaseinfo>بۇ <emphasis>Xfce دىكى ئامراق پروگرامما </emphasis> framework ۋە ئۇنىڭ component لىرىنىڭ  @PACKAGE_VERSION@ ھەققىدىكى قوللانمىدۇر. </releaseinfo>
   </articleinfo>
 
 
   <!-- Content -->
   <sect1 id="intro">
-    <title>初めに</title>
+    <title>كىرىش سوز</title>
 
     <para>Xfce デスクトップ環境の 4.x シリーズには当初、例えばハイパーリンクを開くときに使用されるウェブブラウザのような、ユーザが簡単にお気に入りのアプリケーションを設定する方法はありませんでした。<emphasis>Xfceお気に入りのアプリケーション</emphasis> フレームワークはこの制約を取り除いて利用者が好きなウェブブラウザ、メールリーダ、ターミナルエミュレータを選べるように Xfce 4.3 で新たに追加されました。</para>
   </sect1>
 
 
   <sect1 id="configuration">
-    <title>設定</title>
+    <title>تەڭشەك</title>
 
     <para><ulink type="http" url="xfce-mcs-manager.html#manager-dialog">Xfce 設定マネージャ</ulink><guibutton>「お気に入りのアプリケーション」</guibutton> をクリックすると設定ダイアログが表示されます。設定ダイアログは以下に説明する 2 つのページからなっています。</para>
 
     <sect2 id="configuration-internet">
-      <title>インターネットアプリケーション</title>
+      <title>ئىنتېرنېت پروگراممىلىرى</title>
 
       <para>最初のページではウェブブラウザとメールリーダを設定できます。ハイパーリンクをクリックしたときにここで選択したウェブブラウザを使用してドキュメントが表示され、メールを作成するときにここで選択したメールリーダが使用されます。</para>
 
       <figure id="configuration-internet-figure">
-        <title>インターネットアプリケーション</title>
+        <title>ئىنتېرنېت پروگراممىلىرى</title>
         <screenshot>
           <mediaobject>
             <imageobject>
               <imagedata fileref="images/exo-preferred-applications-internet.png" format="PNG"/>
             </imageobject>
             <textobject>
-              <phrase>インターネットアプリケーションの選択</phrase>
+              <phrase>ئىنتېرنېت پروگراممىلىرىنى تاللاش</phrase>
             </textobject>
           </mediaobject>
         </screenshot>
       </figure>
 
-      <para>現在のデフォルトウェブブラウザを別のものへ変更する場合は、<guilabel>ウェブブラウザ</guilabel> セクションのボタンをクリックしてください。システム内から検出されたウェブブラウザのリストが <xref linkend="configuration-webbrowser-menu"/> のように表示されます。</para>
+      <para>كۆڭۈلدىكى توركۆرگۈدىن باشقا توركۆرگۈنى تاللاش ئۈچۈن <guilabel>كۆڭۈلدىكى توركۆرگۈ</guilabel> دىكى توپچىنى چېكىڭ. سىستېمىدىن تېپىلغان توركۆرگۈنىڭ تىزىملىكى <xref linkend="configuration-webbrowser-menu"/> دا كۆرسىتىلگەندەك كۆرسىتىلىدۇ.</para>
 
       <figure id="configuration-webbrowser-menu">
-        <title>ウェブブラウザの選択</title>
+        <title>تور كۆرگۈنى تاللاش</title>
         <screenshot>
           <mediaobject>
             <imageobject>
               <imagedata fileref="images/exo-preferred-applications-webbrowser-menu.png" format="PNG"/>
             </imageobject>
             <textobject>
-              <phrase>ウェブブラウザの選択</phrase>
+              <phrase>تور كۆرگۈنى تاللاش</phrase>
             </textobject>
           </mediaobject>
         </screenshot>
       </figure>
 
-      <para>お探しのウェブブラウザが自動検出されなかった場合、ドロップダウンメニューから <guimenu><guimenuitem>「その他...」</guimenuitem></guimenu> を選択してください。<xref linkend="configuration-webbrowser-custom"/> のようにウェブブラウザのコマンドを入力するダイアログが表示されます。</para>
+      <para>سىز ئارزۇ قىلغان توركۆرگۈ تېپىلمىغان بولسا، drop down menu دىن  <guimenu><guimenuitem>‹باشقىلار...›</guimenuitem></guimenu> نى تاللاڭ. شۇ چاغدا <xref linkend="configuration-webbrowser-custom"/> دا كۆرسىتىلگەندەك توركۆرگۈنىڭ نامىنى كىرگۈزگىلى بولىدىغان دىئالوگ كۆزنىكى كۆرۈنىدۇ.</para>
 
       <figure id="configuration-webbrowser-custom">
-        <title>カスタムウェブブラウザの設定</title>
+        <title>custom توركۆرگۈنى بېكىتىش</title>
         <screenshot>
           <mediaobject>
             <imageobject>
               <imagedata fileref="images/exo-preferred-applications-webbrowser-custom.png" format="PNG"/>
             </imageobject>
             <textobject>
-              <phrase>カスタムウェブブラウザの設定</phrase>
+              <phrase>custom توركۆرگۈنى بېكىتىش</phrase>
             </textobject>
           </mediaobject>
         </screenshot>
@@ -105,19 +105,19 @@
     </sect2>
 
     <sect2 id="configuration-utilities">
-      <title>その他のアプリケーション</title>
+      <title>باشقا پروگراممىلار</title>
 
       <para>設定ダイアログの次のページでは、お気に入りのターミナルエミュレータを選択できます。お気に入りのターミナルエミュレータは Xfce デスクトップ環境全体を通して CLI (コマンドラインインターフェイス) 上での動作が必要なアプリケーションが起動されるとき使用されます。</para>
 
       <figure id="configuration-utilities-figure">
-        <title>その他のアプリケーション</title>
+        <title>باشقا پروگراممىلار</title>
         <screenshot>
           <mediaobject>
             <imageobject>
               <imagedata fileref="images/exo-preferred-applications-utilities.png" format="PNG"/>
             </imageobject>
             <textobject>
-              <phrase>その他のアプリケーションの選択</phrase>
+              <phrase>باشقا پروگراممىلارنى تاللاش</phrase>
             </textobject>
           </mediaobject>
         </screenshot>
@@ -137,7 +137,7 @@
 
 <screen>exo-open --launch TerminalEmulator mutt</screen>
 
-    <para>お気に入りのウェブブラウザを単に起動だけ行いたい場合は以下のコマンドを使用します:</para>
+    <para>ئامراق توركۆرگۈنىلا قوزغاتماقچى بولسا، تۆۋەندىكى بۇيرۇق ئىشلىتىلىدۇ:</para>
 
 <screen>exo-open --launch WebBrowser</screen>
 
@@ -145,20 +145,20 @@
 
 <screen>exo-open /home/dude/file1.mp3 /home/dude/file2.txt</screen>
 
-    <para>電子メールを <ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce4-dev">xfce4-dev</ulink> メーリングリストへ送る場合は、以下のようにします:</para>
+    <para>ئېلخەتنى  <ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce4-dev">xfce4-dev</ulink> ئېلخەت گۇرۇپپىسىغا ئەۋەتمەكچى بولسا، تۆۋەندىكىدەك قىلسا بولىدۇ:</para>
 
 <screen>exo-open mailto:xfce4-dev@xfce.org</screen>
   </sect1>
 
 
   <sect1 id="copyright">
-    <title>このプログラムについて</title>
+    <title>بۇ پروگرامما ھەققىدە</title>
 
-    <para>Xfce デスクトップ環境向けの <emphasis>Xfce お気に入りのアプリケーション</emphasis> フレームワークおよびそのコンポーネントは Benedikt Meurer (<email>benny@xfce.org</email>) が製作しました。より詳しい情報は <ulink url="http://www.xfce.org" type="http">Xfce ウェブサイト</ulink> を参照してください。</para>
+    <para>Xfce デスクトップ環境向けの <emphasis>Xfce お気に入りのアプリケーション</emphasis> フレームワークおよびそのコンポーネントは Benedikt Meurer (<email>benny@xfce.org</email>) が製作しました。より詳しい情報は <ulink url="http://www.xfce.org" type="http">Xfce website</ulink> を参照してください。</para>
 
-    <para>このソフトウェアまたは説明書に関するバグの報告やご意見は <ulink type="http" url="http://bugzilla.xfce.org/">Xfce バグ追跡システム</ulink> をご利用ください (Product: <literal>Exo</literal>、Component: <literal>helpers</literal>)。</para>
+    <para>このソフトウェアまたは説明書に関するバグの報告やご提案は <ulink type="http" url="http://bugzilla.xfce.org/">Xfce バグ追跡システム</ulink> をご利用ください (Product: <literal>libexo</literal>、Component: <literal>helpers</literal>)。</para>
 
-    <para>このパッケージの使用方法やインストールに関する質問は、<ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce">xfce</ulink> メーリングリストで尋ねてみてください。開発に関する議論は <ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce4-dev">xfce4-dev</ulink> メーリングリストで行われています。</para>
+    <para>بۇ بولاق ياكى ئورنىتىش ئۇسۇلىغا مۇناسىۋەتلىك سوئاللارنى <ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce">xfce</ulink> ئېلخەت گۇرۇپپىسىدىن سوراڭ. ئىجادىيەت ھەققىدىكى پىكىرلەرنى <ulink type="http" url="http://foo-projects.org/mailman/listinfo/xfce4-dev">xfce4-dev</ulink> ئېلخەت گۇرۇپپىسىغا يوللاڭ.</para>
 
      <para>このソフトウェアはフリーソフトウェア財団が公表する GNU 一般公衆利用許諾契約書の条件下に配布されています。第2版あるいは、あなたが選ぶそれ以降の版のいずれかが適用されます。</para>
 
