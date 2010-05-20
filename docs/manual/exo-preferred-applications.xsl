@@ -14,7 +14,7 @@ file"
 <xsl:param name="suppress.navigation">1</xsl:param>
 
 <!-- Use stylesheet -->
-<xsl:param name="html.stylesheet" select="'../xfce.css'"/>
+<xsl:param name="html.stylesheet" select="'../exo-preferred-applications.css'"/>
 
 <!-- labels and numbering -->
 <xsl:param name="autotoc.label.separator" select="'. '"/>
@@ -47,12 +47,6 @@ file"
 
 <xsl:param name="graphic.default.extension" select="png"/>
 
-<xsl:attribute-set name="shade.verbatim.style">
-	<xsl:attribute name="border">0</xsl:attribute>
-	<xsl:attribute name="bgcolor">#F3F4F8</xsl:attribute>
-	<xsl:attribute name="width">100%</xsl:attribute>
-</xsl:attribute-set>
-
 <!-- Addition by Jasper Huijsmans to be able to set background color -->
 <!-- and cell attributes. -->
 <!-- This requires an adapted template for tgroup (see end of stylesheet) -->
@@ -64,8 +58,6 @@ file"
 
 
 <xsl:param name="generate.legalnotice.link" select="0"/>
-
-<xsl:param name="shade.verbatim" select="1"/>
 
 <!-- set font styles for various tags   -->
 <xsl:template match="guibutton">

@@ -1,5 +1,4 @@
-
-imagesdir = $(datadir)/xfce4/doc/C/images
+imagesdir = $(docdir)/html/ja/images
 images_DATA =								\
 	exo-preferred-applications-internet.png				\
 	exo-preferred-applications-utilities.png			\

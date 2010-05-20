@@ -1,4 +1,4 @@
-imagesdir = $(datadir)/xfce4/doc/pt_BR/images
+imagesdir = $(docdir)/html/es/images
 images_DATA =								\
 	exo-preferred-applications-internet.png				\
 	exo-preferred-applications-utilities.png			\
@@ -7,3 +7,5 @@ images_DATA =								\
 
 EXTRA_DIST =								\
 	$(images_DATA)
+
+# vi:set ts=8 sw=8 noet ai nocindent:

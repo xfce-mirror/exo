@@ -70,8 +70,7 @@ DISTCLEANFILES =							\
 
 DISTCHECK_CONFIGURE_FLAGS =						\
 	--enable-gtk-doc						\
-	--enable-xml2po							\
-	--enable-xsltproc						\
+	--enable-gen-doc						\
 	--with-gio-module-dir=distcheck
 
 # vi:set ts=8 sw=8 noet ai nocindent:
