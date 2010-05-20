@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-07 16:10+0000\n"
+"POT-Creation-Date: 2010-05-20 10:14+0000\n"
 "PO-Revision-Date: 2008-09-23 22:19+0400\n"
 "Last-Translator: NIkitaBelobrov <qvzqvz@gmail.com>\n"
 "Language-Team: Russian\n"
@@ -1059,22 +1059,21 @@ msgstr "Открыть диалог настройки предпочтител�
 
 #: ../exo-helper/main.c:69
 msgid "Settings manager socket"
-msgstr ""
+msgstr "Сокет менеджера настроек"
 
 #: ../exo-helper/main.c:69
 msgid "SOCKET ID"
-msgstr ""
+msgstr "ИДЕНТИФИКАТОР СОКЕТА"
 
 #: ../exo-helper/main.c:70
 msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
-msgstr ""
+msgstr "Запускает умалчиваемый тип приложения с необязательным параметром, где тип является одним из следующих значений."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
-msgstr ""
+msgstr "ТИП [ПАРАМЕТР]"
 
 #: ../exo-helper/main.c:93
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1082,7 +1081,10 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"WebBrowser       - Предпочитаемый веб браузер.\n"
+"Следующие типы поддерживаются командой --launch:\n"
+"\n"
+"\r\n"
+"WebBrowser - Предпочитаемый интернет-проводник.\n"
 "  MailReader       - Предпочитаемая почтовая программа.\n"
 "  TerminalEmulator - Предпочитаемый эмулятор терминала."
 
@@ -1092,9 +1094,9 @@ msgid "Type '%s --help' for usage."
 msgstr "Наберите '%s --help' для просмотра вариантов использования."
 
 #: ../exo-helper/main.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Невозможно открыть  \"%s\""
+msgstr "Неверный тип приложения  \"%s\""
 
 #: ../exo-helper/main.c:192
 #, c-format
@@ -1124,7 +1126,7 @@ msgstr ""
 #: ../exo-helper/main.c:209
 #, c-format
 msgid "Unknown helper arguments.\n"
-msgstr ""
+msgstr "Неизвестный тип приложения.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
