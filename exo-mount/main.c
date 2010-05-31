@@ -146,6 +146,7 @@ exo_mount_device_lookup (const gchar      *device_file,
 
 
 
+#ifdef HAVE_HAL
 static gboolean
 exo_mount_device_is_mount_point (const gchar *device_file)
 {
@@ -155,6 +156,7 @@ exo_mount_device_is_mount_point (const gchar *device_file)
   return FALSE;
 #endif
 }
+#endif
 
 
 
