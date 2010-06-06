@@ -22,7 +22,6 @@ SUBDIRS =								\
 	icons								\
 	pixmaps								\
 	po								\
-	po-doc								\
 	$(PYTHON_SUBDIR)						\
 	tests
 
