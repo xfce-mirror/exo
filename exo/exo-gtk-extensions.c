@@ -152,7 +152,7 @@ exo_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
 /**
  * exo_gtk_url_about_dialog_hook:
  * @about_dialog : the #GtkAboutDialog in which the user activated a link.
- * @link         : the link, mail or web address, to open.
+ * @address      : the link, mail or web address, to open.
  * @user_data    : user data that was passed when the function was
  *                 registered with gtk_about_dialog_set_email_hook()
  *                 or gtk_about_dialog_set_url_hook(). This is currently
@@ -186,7 +186,7 @@ exo_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
  **/
 void
 exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
-                               const gchar    *link,
+                               const gchar    *address,
                                gpointer        user_data)
 {
   GtkWidget *message;
@@ -198,15 +198,15 @@ exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
   g_return_if_fail (link != NULL);
 
   /* simple check if this is an email address */
-  if (!g_str_has_prefix (link, "mailto:") && strchr (link, '@') != NULL)
+  if (!g_str_has_prefix (address, "mailto:") && strchr (address, '@') != NULL)
     {
-      escaped = g_uri_escape_string (link, NULL, FALSE);
+      escaped = g_uri_escape_string (address, NULL, FALSE);
       uri = g_strdup_printf ("mailto:%s", escaped);
       g_free (escaped);
     }
   else
     {
-      uri = g_strdup (link);
+      uri = g_strdup (address);
     }
 
   /* determine the screen from the about dialog */
