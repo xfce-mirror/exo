@@ -195,7 +195,7 @@ exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
   gchar     *uri, *escaped;
 
   g_return_if_fail (GTK_IS_ABOUT_DIALOG (about_dialog));
-  g_return_if_fail (link != NULL);
+  g_return_if_fail (address != NULL);
 
   /* simple check if this is an email address */
   if (!g_str_has_prefix (address, "mailto:") && strchr (address, '@') != NULL)
