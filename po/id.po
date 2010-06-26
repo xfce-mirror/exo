@@ -1,14 +1,14 @@
 # Indonesian translation of the libexo package.
 # Copyright (C) 2004-2007 os-cillation e.K.
 # This file is distributed under the same license as the libexo package.
-# Andhika Padmawan <andhika.padmawan@gmail.com>, 2009.
+# Andhika Padmawan <andhika.padmawan@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-23 14:20+0200\n"
-"PO-Revision-Date: 2009-06-02 21:49+0700\n"
+"PO-Revision-Date: 2010-06-26 09:22-0400\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -678,7 +678,7 @@ msgstr "Pilih ikon"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:150
 msgid "File location is not a regular file or directory"
-msgstr ""
+msgstr "Lokasi berkas bukan berkas reguler atau direktori"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:54
@@ -746,26 +746,26 @@ msgid "No file/folder specified"
 msgstr "Tak ada berkas/folder ditentukan"
 
 #: ../exo-desktop-item-edit/main.c:217
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Gagal membuka berkas \"%s\": %s"
+msgstr "Gagal memuat isi dari \"%s\": %s"
 
 #: ../exo-desktop-item-edit/main.c:222
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr ""
+msgstr "Berkas \"%s\" tidak berisi data"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:235
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Gagal membuka berkas \"%s\": %s"
+msgstr "Gagal mengurai isi dari \"%s\": %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:247
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "Berkas \"%s\" tidak mempunyai kunci tipe"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:257
@@ -930,16 +930,15 @@ msgstr "Utilitas"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid "File Manager"
-msgstr ""
+msgstr "Manajer Berkas"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:227
-#, fuzzy
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
-"Peramban Web terpilih akan digunakan untuk membuka\n"
-"hipertaut dan menayangkan isi bantuan."
+"Manajer Berkas kesukaan akan digunakan untuk\n"
+"meramban isi folder."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:251
 msgid "Terminal Emulator"
@@ -980,9 +979,8 @@ msgid "Failed to set default Mail Reader"
 msgstr "Gagal mengatur Pembaca Surat standar"
 
 #: ../exo-helper/exo-helper-chooser.c:318
-#, fuzzy
 msgid "Failed to set default File Manager"
-msgstr "Gagal mengatur Pembaca Surat standar"
+msgstr "Gagal mengatur Manajer Berkas standar"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Terminal Emulator"
@@ -1002,9 +1000,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "Pilih Pembaca Surat suai"
 
 #: ../exo-helper/exo-helper-chooser.c:504
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "Pilih Pembaca Surat suai"
+msgstr "Pilih Manajer Berkas suai"
 
 #: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Terminal Emulator"
@@ -1027,13 +1024,12 @@ msgstr ""
 "sebagai Pembaca Surat standar untuk Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
-#, fuzzy
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
 "Tentukan aplikasi yang ingin anda gunakan\n"
-"sebagai Pembaca Surat standar untuk Xfce:"
+"sebagai Manajer Berkas standar untuk Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
@@ -1076,12 +1072,11 @@ msgstr ""
 "sekarang dan klik OK untuk melanjutkan."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:261
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
-"Silakan pilih Pembaca Surat kesukaan anda\n"
+"Silakan pilih Manajer Berkas kesukaan anda\n"
 "sekarang dan klik OK untuk melanjutkan."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:263
@@ -1115,9 +1110,8 @@ msgid "Failed to execute default Mail Reader"
 msgstr "Gagal mengeksekusi Pembaca Surat standar"
 
 #: ../exo-helper/main.c:44
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "Gagal mengeksekusi Pembaca Surat standar"
+msgstr "Gagal mengeksekusi Manajer Berkas standar"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
@@ -1152,7 +1146,6 @@ msgid "TYPE [PARAMETER]"
 msgstr "TIPE [PARAMETER]"
 
 #: ../exo-helper/main.c:95
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1165,6 +1158,7 @@ msgstr ""
 "\n"
 "  WebBrowser       - Peramban Web kesukaan.\n"
 "  MailReader       - Pembaca Surat kesukaan.\n"
+"  FileManager      - Manajer Berkas kesukaan.\n"
 "  TerminalEmulator - Emulator Terminal kesukaan."
 
 #: ../exo-helper/main.c:105
@@ -1208,7 +1202,7 @@ msgstr "Terminal Xfce"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
-msgstr ""
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1288,7 +1282,7 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
 msgid "Nautilus"
-msgstr ""
+msgstr "Nautilus"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
@@ -1308,7 +1302,7 @@ msgstr "Surat Opera"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr ""
+msgstr "Manajer Berkas PCMan"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1362,7 +1356,7 @@ msgstr "Sebuah aplikasi mencegah volume \"%s\" untuk dikeluarkan"
 #: ../exo-mount/exo-mount-hal.c:965
 #, c-format
 msgid "You are not privileged to mount the volume \"%s\""
-msgstr "Anda tidak diizinkan untuk mount volume \"%s\""
+msgstr "Anda tidak diizinkan untuk mengaitkan volume \"%s\""
 
 #: ../exo-mount/exo-mount-hal.c:980
 #, c-format
@@ -1370,15 +1364,16 @@ msgid ""
 "Blank discs cannot be mounted, use a CD recording application like Xfburn to "
 "record audio or data on the disc"
 msgstr ""
-"Cakram kosong tak dapat dimount, gunakan aplikasi perekam CD seperti Xfburn "
-"untuk merekam audio atau data di cakram"
+"Cakram kosong tak dapat dikaitkan, gunakan aplikasi perekam CD seperti "
+"Xfburn untuk merekam audio atau data di cakram"
 
 #: ../exo-mount/exo-mount-hal.c:991
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Audio CDs cannot be mounted, use your favorite audio player to play the "
 "audio tracks"
-msgstr "CD Audio tak dapat dimount, gunakan Xfmedia untuk memutar jalur audio"
+msgstr "CD Audio tak dapat dikaitkan, gunakan pemutar audio favorit anda "
+"untuk memutar jalur audio"
 
 #. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
 #: ../exo-mount/exo-mount-hal.c:1056
@@ -1396,13 +1391,13 @@ msgstr "Sebuah aplikasi mencegah lapisan kripto dari peruntuhan"
 #: ../exo-mount/exo-mount-hal.c:1145
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "Anda tidak diizinkan untuk melepas mount volume \"%s\""
+msgstr "Anda tidak diizinkan untuk melepas kaitan volume \"%s\""
 
 #. TRANSLATORS: An application is blocking a volume from being unmounted.
 #: ../exo-mount/exo-mount-hal.c:1150
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr "Sebuah aplikasi mencegah volume \"%s\" untuk dilepas mount"
+msgstr "Sebuah aplikasi mencegah volume \"%s\" untuk dilepas kaitkan"
 
 #. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
 #: ../exo-mount/exo-mount-hal.c:1155
@@ -1412,23 +1407,23 @@ msgstr "Volume \"%s\" mungkin dimount secara manual pada baris perintah"
 
 #: ../exo-mount/main.c:72
 msgid "Eject rather than mount"
-msgstr "Keluarkan daripada mount"
+msgstr "Keluarkan daripada kaitkan"
 
 #: ../exo-mount/main.c:73
 msgid "Unmount rather than mount"
-msgstr "Lepas mount daripada mount"
+msgstr "Lepas kaitan daripada kaitkan"
 
 #: ../exo-mount/main.c:75
 msgid "Mount by HAL device UDI"
-msgstr "Mount dengan UDI divais HAL"
+msgstr "Kaitkan dengan UDI divais HAL"
 
 #: ../exo-mount/main.c:77
 msgid "Mount by HAL device UDI (not supported)"
-msgstr "Mount UDI divais HAL (tidak didukung)"
+msgstr "Kaitkan UDI divais HAL (tidak didukung)"
 
 #: ../exo-mount/main.c:79
 msgid "Mount by device file"
-msgstr "Mount dengan berkas divais"
+msgstr "Kaitkan dengan berkas divais"
 
 #: ../exo-mount/main.c:80
 msgid "Don't show any dialogs"
@@ -1445,6 +1440,8 @@ msgid ""
 "%s is compiled without GIO-Unix features. Therefore it will probably not "
 "work on this system."
 msgstr ""
+"%s dikompilasi tanpa fitur GIO-Unix. Maka kelihatannya tidak akan "
+"bekerja di sistem ini."
 
 #. the caller must specify either a HAL UDI or a device file
 #: ../exo-mount/main.c:285
@@ -1461,8 +1458,8 @@ msgid ""
 "Cannot mount by HAL device UDI, because HAL support was disabled for this "
 "build"
 msgstr ""
-"Tak dapat mount dengan UDI divais HAL, karena dukungan HAL dinonaktifkan "
-"untuk bangunan ini"
+"Tak dapat mengaitkan dengan UDI divais HAL, karena dukungan HAL "
+"dinonaktifkan untuk pembangunan ini"
 
 #: ../exo-mount/main.c:308
 #, c-format
@@ -1472,7 +1469,7 @@ msgstr "UDI \"%s\" yang ditentukan bukan UDI divais HAL yang benar"
 #. the caller must not specify both eject and unmount
 #: ../exo-mount/main.c:325
 msgid "Cannot eject and unmount simultaneously"
-msgstr "Tak dapat keluarkan dan lepas mount secara bersamaan"
+msgstr "Tak dapat keluarkan dan lepas kaitkan secara bersamaan"
 
 #: ../exo-mount/main.c:477
 #, c-format
@@ -1482,12 +1479,12 @@ msgstr "Gagal mengeluarkan \"%s\""
 #: ../exo-mount/main.c:479
 #, c-format
 msgid "Failed to unmount \"%s\""
-msgstr "Gagal melepas mount \"%s\""
+msgstr "Gagal melepas kaitan \"%s\""
 
 #: ../exo-mount/main.c:481
 #, c-format
 msgid "Failed to mount \"%s\""
-msgstr "Gagal mount \"%s\""
+msgstr "Gagal mengaitkan \"%s\""
 
 #. tell the user that the device can be removed now
 #: ../exo-mount-notify/main.c:113
@@ -1513,7 +1510,7 @@ msgstr ""
 #. read-only, just unmounting
 #: ../exo-mount-notify/main.c:233
 msgid "Unmounting device"
-msgstr "Melepas mount divais"
+msgstr "Melepas kaitan divais"
 
 #: ../exo-mount-notify/main.c:234
 #, c-format
@@ -1521,7 +1518,7 @@ msgid ""
 "The device \"%s\" is being unmounted by the system. Please do not remove the "
 "media or disconnect the drive."
 msgstr ""
-"Divais \"%s\" sedang dilepas mount oleh sistem. Tolong jangan mengeluarkan "
+"Divais \"%s\" sedang dilepas kaitkan oleh sistem. Tolong jangan mengeluarkan "
 "media atau mencabut penggerak."
 
 #. not read-only, writing back data
@@ -1587,7 +1584,6 @@ msgstr "TIPE berikut didukung untuk perintah --launch:"
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
 #: ../exo-open/main.c:104
-#, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1596,6 +1592,7 @@ msgid ""
 msgstr ""
 "  WebBrowser       - Peramban Web kesukaan.\n"
 "  MailReader       - Pembaca Surat kesukaan.\n"
+"  FileManager      - Manajer Berkas kesukaan.\n"
 "  TerminalEmulator - Emulator Terminal kesukaan."
 
 #: ../exo-open/main.c:109
@@ -1620,6 +1617,8 @@ msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
 msgstr ""
+"Menjalankan berkas desktop tidak didukung jika %s dikompilasi tanpa fitur "
+"GIO-Unix."
 
 #: ../exo-open/main.c:313
 #, c-format
@@ -1629,12 +1628,12 @@ msgstr "Gagal menjalankan aplikasi kesukaan untuk kategori \"%s\"."
 #: ../exo-open/main.c:355
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "Tak dapat mendeteksi skema URI dari \"%s\"."
 
 #: ../exo-open/main.c:365
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Gagal membuka URL \"%s\"."
+msgstr "Gagal membuka URI \"%s\"."
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "Tak dapat membuka \"%s\""
