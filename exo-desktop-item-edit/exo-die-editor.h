@@ -60,6 +60,10 @@ const gchar      *exo_die_editor_get_url      (ExoDieEditor     *editor);
 void              exo_die_editor_set_url      (ExoDieEditor     *editor,
                                                const gchar      *url);
 
+const gchar      *exo_die_editor_get_path     (ExoDieEditor     *editor);
+void              exo_die_editor_set_path     (ExoDieEditor     *editor,
+                                               const gchar      *path);
+
 const gchar      *exo_die_editor_get_icon     (ExoDieEditor     *editor);
 void              exo_die_editor_set_icon     (ExoDieEditor     *editor,
                                                const gchar      *icon);

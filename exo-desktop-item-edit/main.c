@@ -360,6 +360,13 @@ main (int argc, char **argv)
       exo_die_editor_set_command (EXO_DIE_EDITOR (editor), (value != NULL) ? value : "");
       g_free (value);
 
+      /* setup the working directory */
+      value = g_key_file_get_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                     G_KEY_FILE_DESKTOP_KEY_PATH, NULL);
+      exo_die_editor_set_path (EXO_DIE_EDITOR (editor), (value != NULL) ? value : "");
+      g_free (value);
+
+
       /* setup launcher options */
       exo_die_editor_set_snotify (EXO_DIE_EDITOR (editor),
           g_key_file_get_boolean (key_file, G_KEY_FILE_DESKTOP_GROUP,
@@ -426,6 +433,11 @@ main (int argc, char **argv)
           g_key_file_set_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                  G_KEY_FILE_DESKTOP_KEY_EXEC,
                                  exo_die_editor_get_command (EXO_DIE_EDITOR (editor)));
+
+          /* save the new command */
+          g_key_file_set_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
+                                 G_KEY_FILE_DESKTOP_KEY_PATH,
+                                 exo_die_editor_get_path (EXO_DIE_EDITOR (editor)));
 
           /* save the new launcher options */
           g_key_file_set_boolean (key_file, G_KEY_FILE_DESKTOP_GROUP,

@@ -38,6 +38,7 @@ enum
   PROP_COMMAND,
   PROP_URL,
   PROP_ICON,
+  PROP_PATH,
   PROP_SNOTIFY,
   PROP_TERMINAL,
 };
@@ -54,6 +55,8 @@ static void     exo_die_editor_set_property   (GObject            *object,
                                                const GValue       *value,
                                                GParamSpec         *pspec);
 static void     exo_die_editor_icon_clicked   (GtkWidget          *button,
+                                               ExoDieEditor       *editor);
+static void     exo_die_editor_path_clicked   (GtkWidget          *button,
                                                ExoDieEditor       *editor);
 static gboolean exo_die_editor_match_selected (GtkEntryCompletion *completion,
                                                GtkTreeModel       *model,
@@ -83,6 +86,7 @@ struct _ExoDieEditor
   gchar           *command;
   gchar           *url;
   gchar           *icon;
+  gchar           *path;
   guint            snotify : 1;
   guint            terminal : 1;
 };
@@ -197,6 +201,19 @@ exo_die_editor_class_init (ExoDieEditorClass *klass)
                                                         EXO_PARAM_READWRITE));
 
   /**
+   * ExoDieEditor:path:
+   *
+   * The path of the desktop item edited by this editor.
+   **/
+  g_object_class_install_property (gobject_class,
+                                   PROP_PATH,
+                                   g_param_spec_string ("path",
+                                                        "path",
+                                                        "path",
+                                                        NULL,
+                                                        EXO_PARAM_READWRITE));
+
+  /**
    * ExoDieEditor:snotify:
    *
    * Whether the desktop item edited by this editor should use startup
@@ -256,6 +273,8 @@ exo_die_editor_init (ExoDieEditor *editor)
   GtkWidget *align;
   GtkWidget *entry;
   GtkWidget *label;
+  GtkWidget *image;
+  GtkWidget *box;
   gint       row;
 
   /* start with sane defaults */
@@ -265,6 +284,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   editor->icon = g_strdup ("");
   editor->name = g_strdup ("");
   editor->url = g_strdup ("");
+  editor->path = g_strdup ("");
 
   /* configure the table */
   gtk_table_resize (GTK_TABLE (editor), 8, 2);
@@ -336,6 +356,35 @@ exo_die_editor_init (ExoDieEditor *editor)
 
   row += 1;
 
+  /* TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts */
+  label = gtk_label_new_with_mnemonic (_("Working _Directory:"));
+  gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
+  gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
+  exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (label), "visible", exo_die_true_if_application, NULL, NULL);
+  gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
+
+  box = gtk_hbox_new (FALSE, 6);
+  gtk_table_attach (GTK_TABLE (editor), box, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
+  exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (box), "visible", exo_die_true_if_application, NULL, NULL);
+
+  entry = gtk_entry_new ();
+  gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
+  exo_mutual_binding_new (G_OBJECT (editor), "path", G_OBJECT (entry), "text");
+  gtk_box_pack_start (GTK_BOX (box), entry, TRUE, TRUE, 0);
+  gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
+  gtk_widget_show (entry);
+
+  button = gtk_button_new ();
+  g_signal_connect (G_OBJECT (button), "clicked", G_CALLBACK (exo_die_editor_path_clicked), editor);
+  gtk_box_pack_start (GTK_BOX (box), button, FALSE, FALSE, 0);
+  gtk_widget_show (button);
+
+  image = gtk_image_new_from_stock (GTK_STOCK_DIRECTORY, GTK_ICON_SIZE_MENU);
+  gtk_container_add (GTK_CONTAINER (button), image);
+  gtk_widget_show (image);
+
+  row += 1;
+
   /* TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts */
   label = gtk_label_new_with_mnemonic (_("_Icon:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
@@ -402,6 +451,7 @@ exo_die_editor_finalize (GObject *object)
   g_free (editor->icon);
   g_free (editor->name);
   g_free (editor->url);
+  g_free (editor->path);
 
   (*G_OBJECT_CLASS (exo_die_editor_parent_class)->finalize) (object);
 }
@@ -440,6 +490,10 @@ exo_die_editor_get_property (GObject    *object,
 
     case PROP_URL:
       g_value_set_string (value, exo_die_editor_get_url (editor));
+      break;
+
+    case PROP_PATH:
+      g_value_set_string (value, exo_die_editor_get_path (editor));
       break;
 
     case PROP_ICON:
@@ -490,6 +544,10 @@ exo_die_editor_set_property (GObject      *object,
 
     case PROP_URL:
       exo_die_editor_set_url (editor, g_value_get_string (value));
+      break;
+
+    case PROP_PATH:
+      exo_die_editor_set_path (editor, g_value_get_string (value));
       break;
 
     case PROP_ICON:
@@ -559,6 +617,54 @@ exo_die_editor_icon_clicked (GtkWidget    *button,
 
 
 
+static void
+exo_die_editor_path_clicked (GtkWidget    *button,
+                             ExoDieEditor *editor)
+{
+  GtkWidget *toplevel;
+  GtkWidget *chooser;
+  gchar     *path;
+
+  g_return_if_fail (GTK_IS_BUTTON (button));
+  g_return_if_fail (EXO_DIE_IS_EDITOR (editor));
+
+  /* determine the toplevel widget */
+  toplevel = gtk_widget_get_toplevel (button);
+  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+    return;
+
+  /* allocate the file chooser dialog */
+  chooser = gtk_file_chooser_dialog_new (_("Select a working directory"),
+                                         GTK_WINDOW (toplevel),
+                                         GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+                                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                         GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+                                         NULL);
+  gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
+  gtk_dialog_set_alternative_button_order (GTK_DIALOG (chooser),
+                                           GTK_RESPONSE_ACCEPT,
+                                           GTK_RESPONSE_CANCEL,
+                                           -1);
+
+  /* check if we have a path to set for the chooser */
+  if (G_LIKELY (!exo_str_is_empty (editor->path)))
+    gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), editor->path);
+
+  /* run the chooser dialog */
+  if (gtk_dialog_run (GTK_DIALOG (chooser)) == GTK_RESPONSE_ACCEPT)
+    {
+      /* remember the selected path from the chooser */
+      path = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
+      exo_die_editor_set_path (editor, path);
+      g_free (path);
+    }
+
+  /* destroy the chooser */
+  gtk_widget_destroy (chooser);
+}
+
+
+
 static gboolean
 exo_die_editor_match_selected (GtkEntryCompletion *completion,
                                GtkTreeModel       *model,
@@ -594,6 +700,7 @@ exo_die_editor_match_selected (GtkEntryCompletion *completion,
   exo_die_editor_set_icon (editor, (icon != NULL) ? icon : "");
   exo_die_editor_set_snotify (editor, snotify);
   exo_die_editor_set_terminal (editor, terminal);
+  exo_die_editor_set_path (editor, "");
 
   /* cleanup */
   g_free (comment);
@@ -980,6 +1087,52 @@ exo_die_editor_set_url (ExoDieEditor *editor,
       /* notify listeners */
       g_object_notify (G_OBJECT (editor), "complete");
       g_object_notify (G_OBJECT (editor), "url");
+    }
+}
+
+
+
+/**
+ * exo_die_editor_get_path:
+ * @editor : an #ExoDieEditor.
+ *
+ * Returns the path for @editor, which is only valid
+ * if the mode is %EXO_DIE_EDITOR_MODE_APPLICATION.
+ *
+ * Return value: the working directory for @editor.
+ **/
+const gchar*
+exo_die_editor_get_path (ExoDieEditor *editor)
+{
+  g_return_val_if_fail (EXO_DIE_IS_EDITOR (editor), NULL);
+  return editor->path;
+}
+
+
+
+/**
+ * exo_die_editor_set_path:
+ * @editor : an #ExoDieEditor.
+ * @path   : the new working directory for @editor.
+ *
+ * Sets the working directory for @editor to @url.
+ **/
+void
+exo_die_editor_set_path (ExoDieEditor *editor,
+                         const gchar  *path)
+{
+  g_return_if_fail (EXO_DIE_IS_EDITOR (editor));
+  g_return_if_fail (g_utf8_validate (path, -1, NULL));
+
+  /* check if we have a new URL here */
+  if (!exo_str_is_equal (editor->path, path))
+    {
+      /* apply the new URL */
+      g_free (editor->path);
+      editor->path = g_strdup (path);
+
+      /* notify listeners */
+      g_object_notify (G_OBJECT (editor), "path");
     }
 }
 
