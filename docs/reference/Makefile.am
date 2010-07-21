@@ -22,8 +22,8 @@ MKDB_OPTIONS=--output-format=xml --sgml-mode --name-space=exo
 FIXXREF_OPTIONS=
 
 # Used for dependencies
-HFILE_GLOB=$(top_srcdir)/exo/*.h $(top_srcdir)/exo-hal/*.h
-CFILE_GLOB=$(top_srcdir)/exo/*.c $(top_srcdir)/exo-hal/*.c
+HFILE_GLOB=$(top_srcdir)/exo/*.h
+CFILE_GLOB=$(top_srcdir)/exo/*.c
 
 # Header files to ignore when scanning
 IGNORE_HFILES=
