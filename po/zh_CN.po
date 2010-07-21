@@ -10,10 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-18 06:00+0100\n"
+"POT-Creation-Date: 2010-07-21 18:14+0200\n"
 "PO-Revision-Date: 2010-03-18 15:42+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Simplified Chinese <xfce-i18n@xfce.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -529,7 +530,6 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content       移除 XML 文件中的节点内容\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-mount/main.c:263 ../exo-mount-notify/main.c:169
 #: ../exo-open/main.c:258
 #, c-format
 msgid ""
@@ -546,7 +546,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-mount/main.c:267 ../exo-mount-notify/main.c:173
 #: ../exo-open/main.c:262
 #, c-format
 msgid ""
@@ -562,7 +561,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-mount/main.c:271 ../exo-mount-notify/main.c:177
 #: ../exo-open/main.c:266
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -609,49 +607,55 @@ msgid "Create Launcher <b>%s</b>"
 msgstr "创建启动器 <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:277
+#: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "名称(_N):"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:293
+#: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "描述(_C):"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:309
+#: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "命令(_A):"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:324
+#: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:360
+#, fuzzy
+msgid "Working _Directory:"
+msgstr "编辑目录"
+
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:340
+#: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "图标(_I):"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: ../exo-desktop-item-edit/exo-die-editor.c:357
-#: ../exo-desktop-item-edit/exo-die-editor.c:1080
+#: ../exo-desktop-item-edit/exo-die-editor.c:406
+#: ../exo-desktop-item-edit/exo-die-editor.c:1233
 msgid "No icon"
 msgstr "无图标"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:363
+#: ../exo-desktop-item-edit/exo-die-editor.c:412
 msgid "Options:"
 msgstr "选项:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
-#: ../exo-desktop-item-edit/exo-die-editor.c:372
+#: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "使用启动提示(_S)"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:373
+#: ../exo-desktop-item-edit/exo-die-editor.c:422
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
@@ -663,17 +667,23 @@ msgstr ""
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
-#: ../exo-desktop-item-edit/exo-die-editor.c:385
+#: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "在终端窗口中运行(_T)"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:386
+#: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
 msgstr "选择此选项后，该命令会在终端窗口中运行。"
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:532
+#: ../exo-desktop-item-edit/exo-die-editor.c:590
 msgid "Select an icon"
+msgstr "选择图标"
+
+#. allocate the file chooser dialog
+#: ../exo-desktop-item-edit/exo-die-editor.c:637
+#, fuzzy
+msgid "Select a working directory"
 msgstr "选择图标"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:168
@@ -734,7 +744,6 @@ msgid "Preset icon when creating a desktop file"
 msgstr "创建桌面文件时的预设图标"
 
 #: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:80 ../exo-mount-notify/main.c:76
 msgid "Print version information and exit"
 msgstr "显示版本信息后退出"
 
@@ -744,8 +753,7 @@ msgid "[FILE|FOLDER]"
 msgstr "[文件|文件夹]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:165 ../exo-mount/main.c:249
-#: ../exo-mount-notify/main.c:155
+#: ../exo-desktop-item-edit/main.c:165
 msgid "Failed to open display"
 msgstr "打开显示失败"
 
@@ -787,107 +795,19 @@ msgid "C_reate"
 msgstr "创建(_R)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:463
+#: ../exo-desktop-item-edit/main.c:475
 msgid "Choose filename"
 msgstr "选择文件名"
 
-#: ../exo-desktop-item-edit/main.c:521
+#: ../exo-desktop-item-edit/main.c:533
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "无法创建 \"%s\"。"
 
-#: ../exo-desktop-item-edit/main.c:521
+#: ../exo-desktop-item-edit/main.c:533
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "无法保存 \"%s\"。"
-
-#: ../exo-hal/exo-hal.c:477
-#, c-format
-msgid "External %s Drive"
-msgstr "外部 %s 驱动器"
-
-#: ../exo-hal/exo-hal.c:479
-#, c-format
-msgid "%s Drive"
-msgstr "%s 驱动器"
-
-#: ../exo-hal/exo-hal.c:488
-msgid "External Floppy Drive"
-msgstr "外部软盘驱动器"
-
-#: ../exo-hal/exo-hal.c:490
-msgid "Floppy Drive"
-msgstr "软盘驱动器"
-
-#: ../exo-hal/exo-hal.c:494
-msgid "Compact Flash Drive"
-msgstr "Compact Flash 驱动器"
-
-#: ../exo-hal/exo-hal.c:498
-msgid "Memory Stick Drive"
-msgstr "Memory Stick 驱动器"
-
-#: ../exo-hal/exo-hal.c:502
-msgid "Smart Media Drive"
-msgstr "Smart Media 驱动器"
-
-#: ../exo-hal/exo-hal.c:506
-msgid "SD/MMC Drive"
-msgstr "SD/MMC 驱动器"
-
-#: ../exo-hal/exo-hal.c:510
-msgid "Zip Drive"
-msgstr "Zip 驱动器"
-
-#: ../exo-hal/exo-hal.c:514
-msgid "Jaz Drive"
-msgstr "Jaz 驱动器"
-
-#: ../exo-hal/exo-hal.c:518
-msgid "Pen Drive"
-msgstr "闪存驱动器"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:527
-#, c-format
-msgid "%s Music Player"
-msgstr "%s 音乐播放器"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:542
-#, c-format
-msgid "%s Digital Camera"
-msgstr "%s 数码相机"
-
-#. last fallback to "Drive"
-#: ../exo-hal/exo-hal.c:565
-msgid "Drive"
-msgstr "驱动器"
-
-#: ../exo-hal/exo-hal.c:792
-#, c-format
-msgid "Blank %s Disc"
-msgstr "空白 %s 盘"
-
-#: ../exo-hal/exo-hal.c:794
-#, c-format
-msgid "%s Disc"
-msgstr "%s 盘"
-
-#. special case for pure audio disc
-#: ../exo-hal/exo-hal.c:799
-msgid "Audio CD"
-msgstr "音乐 CD"
-
-#: ../exo-hal/exo-hal.c:835
-#, c-format
-msgid "%s Removable Volume"
-msgstr "%s 可移动卷"
-
-#: ../exo-hal/exo-hal.c:837
-#, c-format
-msgid "%s Volume"
-msgstr "%s 卷"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -1312,203 +1232,6 @@ msgstr "W3M 文本网络浏览器"
 msgid "X Terminal"
 msgstr "X 终端模拟器"
 
-#. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:262 ../exo-mount/exo-mount-hal.c:330
-#, c-format
-msgid "Given device \"%s\" is not a volume or drive"
-msgstr "所给设备 \"%s\" 不是卷或者驱动器"
-
-#. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-hal.c:419 ../exo-mount/main.c:141
-#, c-format
-msgid "Device \"%s\" not found in file system device table"
-msgstr "在文件系统设备列表中找不到设备 \"%s\""
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:651
-#, c-format
-msgid "You are not privileged to eject the volume \"%s\""
-msgstr "您没有权限弹出 \"%s\""
-
-#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:656
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr "某个程序正在访问 \"%s\"，暂时无法弹出"
-
-#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:964
-#, c-format
-msgid "You are not privileged to mount the volume \"%s\""
-msgstr "您没有权限挂载 \"%s\""
-
-#: ../exo-mount/exo-mount-hal.c:979
-#, c-format
-msgid ""
-"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
-"record audio or data on the disc"
-msgstr ""
-"空白盘片不能被挂载，但您可以用 CD 刻录程序，比如 Xfburn，来在该盘上\n"
-"记录音乐或数据。"
-
-#: ../exo-mount/exo-mount-hal.c:990
-#, c-format
-msgid ""
-"Audio CDs cannot be mounted, use your favorite audio player to play the "
-"audio tracks"
-msgstr "音乐 CD 不能被挂载，但您可以使用您喜欢的音乐播放器来播放其中的音轨"
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1055
-#, c-format
-msgid "You are not privileged to teardown the crypto layer"
-msgstr "您没有权限取消加密"
-
-#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1060
-#, c-format
-msgid "An application is preventing the crypto layer from being torn down"
-msgstr "有一个程序阻止您取消加密"
-
-#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1144
-#, c-format
-msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "您没有权限卸载 \"%s\""
-
-#. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1149
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr "某个程序正在访问 \"%s\"，暂时无法卸载"
-
-#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1154
-#, c-format
-msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr "卷 \"%s\" 可能是在命令行手动挂载的"
-
-#: ../exo-mount/main.c:71
-msgid "Eject rather than mount"
-msgstr "弹出而不是挂载"
-
-#: ../exo-mount/main.c:72
-msgid "Unmount rather than mount"
-msgstr "卸载而不是挂载"
-
-#: ../exo-mount/main.c:74
-msgid "Mount by HAL device UDI"
-msgstr "从 HAL 设备 UDI 挂载"
-
-#: ../exo-mount/main.c:76
-msgid "Mount by HAL device UDI (not supported)"
-msgstr "从 HAL 设备 UDI 挂载（不支持）"
-
-#: ../exo-mount/main.c:78
-msgid "Mount by device file"
-msgstr "从设备文件挂载"
-
-#: ../exo-mount/main.c:79
-msgid "Don't show any dialogs"
-msgstr "不显示任何对话"
-
-#: ../exo-mount/main.c:205
-#, c-format
-msgid "Unknown error"
-msgstr "未知错误"
-
-#: ../exo-mount/main.c:276
-#, c-format
-msgid ""
-"%s is compiled without GIO-Unix features. Therefore it will probably not "
-"work on this system."
-msgstr "%s 未编译入 GIO-Unix 特性支持。于是它在此系统上可能无法正常工作。"
-
-#. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:284
-msgid "Must specify HAL device UDI or device file"
-msgstr "必须指定 HAL 设备 UDI 或者设备文件"
-
-#. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:292
-msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "不能同时指定 HAL 设备 UDI 和设备文件"
-
-#: ../exo-mount/main.c:300
-msgid ""
-"Cannot mount by HAL device UDI, because HAL support was disabled for this "
-"build"
-msgstr "无法从 HAL 设备 UDI 挂载，本发行版本不支持 HAL。"
-
-#: ../exo-mount/main.c:307
-#, c-format
-msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr "指定的 UDI \"%s\" 无效"
-
-#. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:324
-msgid "Cannot eject and unmount simultaneously"
-msgstr "无法同时弹出和卸载设备"
-
-#: ../exo-mount/main.c:476
-#, c-format
-msgid "Failed to eject \"%s\""
-msgstr "弹出 \"%s\" 失败"
-
-#: ../exo-mount/main.c:478
-#, c-format
-msgid "Failed to unmount \"%s\""
-msgstr "卸载 \"%s\"失败"
-
-#: ../exo-mount/main.c:480
-#, c-format
-msgid "Failed to mount \"%s\""
-msgstr "挂载 \"%s\" 失败"
-
-#. tell the user that the device can be removed now
-#: ../exo-mount-notify/main.c:112
-#, c-format
-msgid "The device \"%s\" is now safe to remove."
-msgstr "现在可以安全地移除 \"%s\"。"
-
-#: ../exo-mount-notify/main.c:113
-msgid "Device is now safe to remove"
-msgstr "现在可以安全地移除设备"
-
-#. read-only, just ejecting
-#: ../exo-mount-notify/main.c:226
-msgid "Ejecting device"
-msgstr "正在弹出设备"
-
-#: ../exo-mount-notify/main.c:227
-#, c-format
-msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr "正在弹出 \"%s\"，请稍候。"
-
-#. read-only, just unmounting
-#: ../exo-mount-notify/main.c:232
-msgid "Unmounting device"
-msgstr "正在卸载设备"
-
-#: ../exo-mount-notify/main.c:233
-#, c-format
-msgid ""
-"The device \"%s\" is being unmounted by the system. Please do not remove the "
-"media or disconnect the drive."
-msgstr "系统正在卸载设备 \"%s\"，请不要从电脑上取出或拔下该设备。"
-
-#. not read-only, writing back data
-#: ../exo-mount-notify/main.c:240
-msgid "Writing data to device"
-msgstr "正在向设备写入数据"
-
-#: ../exo-mount-notify/main.c:241
-#, c-format
-msgid ""
-"There is data that needs to be written to the device \"%s\" before it can be "
-"removed. Please do not remove the media or disconnect the drive."
-msgstr "移除设备 \"%s\" 前还有数据要写入，请不要取出或拔下该设备。"
-
 #: ../exo-open/main.c:84
 msgid "Usage: exo-open [URLs...]"
 msgstr "用法： exo-open [URL...]"
@@ -1613,3 +1336,183 @@ msgstr "使用命令行"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "浏览网页"
+
+#~ msgid "External %s Drive"
+#~ msgstr "外部 %s 驱动器"
+
+#~ msgid "%s Drive"
+#~ msgstr "%s 驱动器"
+
+#~ msgid "External Floppy Drive"
+#~ msgstr "外部软盘驱动器"
+
+#~ msgid "Floppy Drive"
+#~ msgstr "软盘驱动器"
+
+#~ msgid "Compact Flash Drive"
+#~ msgstr "Compact Flash 驱动器"
+
+#~ msgid "Memory Stick Drive"
+#~ msgstr "Memory Stick 驱动器"
+
+#~ msgid "Smart Media Drive"
+#~ msgstr "Smart Media 驱动器"
+
+#~ msgid "SD/MMC Drive"
+#~ msgstr "SD/MMC 驱动器"
+
+#~ msgid "Zip Drive"
+#~ msgstr "Zip 驱动器"
+
+#~ msgid "Jaz Drive"
+#~ msgstr "Jaz 驱动器"
+
+#~ msgid "Pen Drive"
+#~ msgstr "闪存驱动器"
+
+#~ msgid "%s Music Player"
+#~ msgstr "%s 音乐播放器"
+
+#~ msgid "%s Digital Camera"
+#~ msgstr "%s 数码相机"
+
+#~ msgid "Drive"
+#~ msgstr "驱动器"
+
+#~ msgid "Blank %s Disc"
+#~ msgstr "空白 %s 盘"
+
+#~ msgid "%s Disc"
+#~ msgstr "%s 盘"
+
+#~ msgid "Audio CD"
+#~ msgstr "音乐 CD"
+
+#~ msgid "%s Removable Volume"
+#~ msgstr "%s 可移动卷"
+
+#~ msgid "%s Volume"
+#~ msgstr "%s 卷"
+
+#~ msgid "Given device \"%s\" is not a volume or drive"
+#~ msgstr "所给设备 \"%s\" 不是卷或者驱动器"
+
+#~ msgid "Device \"%s\" not found in file system device table"
+#~ msgstr "在文件系统设备列表中找不到设备 \"%s\""
+
+#~ msgid "You are not privileged to eject the volume \"%s\""
+#~ msgstr "您没有权限弹出 \"%s\""
+
+#~ msgid "An application is preventing the volume \"%s\" from being ejected"
+#~ msgstr "某个程序正在访问 \"%s\"，暂时无法弹出"
+
+#~ msgid "You are not privileged to mount the volume \"%s\""
+#~ msgstr "您没有权限挂载 \"%s\""
+
+#~ msgid ""
+#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
+#~ "to record audio or data on the disc"
+#~ msgstr ""
+#~ "空白盘片不能被挂载，但您可以用 CD 刻录程序，比如 Xfburn，来在该盘上\n"
+#~ "记录音乐或数据。"
+
+#~ msgid ""
+#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
+#~ "audio tracks"
+#~ msgstr "音乐 CD 不能被挂载，但您可以使用您喜欢的音乐播放器来播放其中的音轨"
+
+#~ msgid "You are not privileged to teardown the crypto layer"
+#~ msgstr "您没有权限取消加密"
+
+#~ msgid "An application is preventing the crypto layer from being torn down"
+#~ msgstr "有一个程序阻止您取消加密"
+
+#~ msgid "You are not privileged to unmount the volume \"%s\""
+#~ msgstr "您没有权限卸载 \"%s\""
+
+#~ msgid "An application is preventing the volume \"%s\" from being unmounted"
+#~ msgstr "某个程序正在访问 \"%s\"，暂时无法卸载"
+
+#~ msgid "The volume \"%s\" was probably mounted manually on the command line"
+#~ msgstr "卷 \"%s\" 可能是在命令行手动挂载的"
+
+#~ msgid "Eject rather than mount"
+#~ msgstr "弹出而不是挂载"
+
+#~ msgid "Unmount rather than mount"
+#~ msgstr "卸载而不是挂载"
+
+#~ msgid "Mount by HAL device UDI"
+#~ msgstr "从 HAL 设备 UDI 挂载"
+
+#~ msgid "Mount by HAL device UDI (not supported)"
+#~ msgstr "从 HAL 设备 UDI 挂载（不支持）"
+
+#~ msgid "Mount by device file"
+#~ msgstr "从设备文件挂载"
+
+#~ msgid "Don't show any dialogs"
+#~ msgstr "不显示任何对话"
+
+#~ msgid "Unknown error"
+#~ msgstr "未知错误"
+
+#~ msgid ""
+#~ "%s is compiled without GIO-Unix features. Therefore it will probably not "
+#~ "work on this system."
+#~ msgstr "%s 未编译入 GIO-Unix 特性支持。于是它在此系统上可能无法正常工作。"
+
+#~ msgid "Must specify HAL device UDI or device file"
+#~ msgstr "必须指定 HAL 设备 UDI 或者设备文件"
+
+#~ msgid ""
+#~ "Must not specify both a HAL device UDI and a device file simultaneously"
+#~ msgstr "不能同时指定 HAL 设备 UDI 和设备文件"
+
+#~ msgid ""
+#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
+#~ "build"
+#~ msgstr "无法从 HAL 设备 UDI 挂载，本发行版本不支持 HAL。"
+
+#~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
+#~ msgstr "指定的 UDI \"%s\" 无效"
+
+#~ msgid "Cannot eject and unmount simultaneously"
+#~ msgstr "无法同时弹出和卸载设备"
+
+#~ msgid "Failed to eject \"%s\""
+#~ msgstr "弹出 \"%s\" 失败"
+
+#~ msgid "Failed to unmount \"%s\""
+#~ msgstr "卸载 \"%s\"失败"
+
+#~ msgid "Failed to mount \"%s\""
+#~ msgstr "挂载 \"%s\" 失败"
+
+#~ msgid "The device \"%s\" is now safe to remove."
+#~ msgstr "现在可以安全地移除 \"%s\"。"
+
+#~ msgid "Device is now safe to remove"
+#~ msgstr "现在可以安全地移除设备"
+
+#~ msgid "Ejecting device"
+#~ msgstr "正在弹出设备"
+
+#~ msgid "The device \"%s\" is being ejected. This may take some time."
+#~ msgstr "正在弹出 \"%s\"，请稍候。"
+
+#~ msgid "Unmounting device"
+#~ msgstr "正在卸载设备"
+
+#~ msgid ""
+#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
+#~ "the media or disconnect the drive."
+#~ msgstr "系统正在卸载设备 \"%s\"，请不要从电脑上取出或拔下该设备。"
+
+#~ msgid "Writing data to device"
+#~ msgstr "正在向设备写入数据"
+
+#~ msgid ""
+#~ "There is data that needs to be written to the device \"%s\" before it can "
+#~ "be removed. Please do not remove the media or disconnect the drive."
+#~ msgstr "移除设备 \"%s\" 前还有数据要写入，请不要取出或拔下该设备。"

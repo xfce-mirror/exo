@@ -6,15 +6,16 @@
 # Pablo Lerina <pabloalr@gmail.com>, 2007.
 # Og Maciel <ogmaciel@gnome.org>, 2007-2008.
 # Vladimir Melo <vladimirmelo.psi@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-17 22:00+0000\n"
+"POT-Creation-Date: 2010-07-21 18:14+0200\n"
 "PO-Revision-Date: 2010-02-02 21:49-0300\n"
 "Last-Translator: Vladimir Melo <vladimirmelo.psi@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,8 +68,11 @@ msgstr "Falha ao ler o arquivo \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Falha ao carregar a imagem \"%s\": Razão desconhecida, provavelmente um arquivo de imagem corrompido"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Falha ao carregar a imagem \"%s\": Razão desconhecida, provavelmente um "
+"arquivo de imagem corrompido"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -245,7 +249,8 @@ msgstr "Habilitar pesquisa"
 
 #: ../exo/exo-icon-view.c:677
 msgid "View allows user to search through columns interactively"
-msgstr "Visualização permite ao usuário pesquisar pelas colunas interativamente"
+msgstr ""
+"Visualização permite ao usuário pesquisar pelas colunas interativamente"
 
 #: ../exo/exo-icon-view.c:694
 msgid "Width for each item"
@@ -277,7 +282,8 @@ msgstr "Coluna de marcação"
 
 #: ../exo/exo-icon-view.c:748
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Coluna do modelo usada para obter o texto se estiver usando marcação Pango"
+msgstr ""
+"Coluna do modelo usada para obter o texto se estiver usando marcação Pango"
 
 #: ../exo/exo-icon-view.c:762
 msgid "Icon View Model"
@@ -288,8 +294,10 @@ msgid "The model for the icon view"
 msgstr "O modelo para a visualização de ícones"
 
 #: ../exo/exo-icon-view.c:777
-msgid "How the text and icon of each item are positioned relative to each other"
-msgstr "Como o texto e o ícone de cada item são posicionados com relação um ao outro"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"Como o texto e o ícone de cada item são posicionados com relação um ao outro"
 
 #: ../exo/exo-icon-view.c:809
 msgid "Reorderable"
@@ -336,8 +344,12 @@ msgid "Single Click Timeout"
 msgstr "Tempo de clique único"
 
 #: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "A quantidade de tempo após a qual o item sob o cursor do mouse será selecionado automaticamente no modo de clique único"
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"A quantidade de tempo após a qual o item sob o cursor do mouse será "
+"selecionado automaticamente no modo de clique único"
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -396,8 +408,12 @@ msgid "_Add a new toolbar"
 msgstr "_Adicionar uma nova barra de ferramentas"
 
 #: ../exo/exo-toolbars-editor.c:221
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "Arraste um item sobre a barras de ferramentas para adicioná-lo, das barras de ferramentas na tabela de itens para removê-lo."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Arraste um item sobre a barras de ferramentas para adicioná-lo, das barras "
+"de ferramentas na tabela de itens para removê-lo."
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -526,7 +542,6 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Remove conteúdo de nós de arquivos XML\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-mount/main.c:265 ../exo-mount-notify/main.c:169
 #: ../exo-open/main.c:258
 #, c-format
 msgid ""
@@ -543,7 +558,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-mount/main.c:269 ../exo-mount-notify/main.c:173
 #: ../exo-open/main.c:262
 #, c-format
 msgid ""
@@ -560,7 +574,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-mount/main.c:273 ../exo-mount-notify/main.c:177
 #: ../exo-open/main.c:266
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -606,44 +619,37 @@ msgstr "Scripts em Shell"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Criar lançador <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Nome:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "C_omentário:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Com_ando:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "_Diretório de trabalho:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "Í_cone:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -654,31 +660,34 @@ msgstr "Nenhum ícone"
 msgid "Options:"
 msgstr "Opções:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Usar _notificação de iniciação"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "Selecione esta opção para habilitar a notificação de iniciação quando o comando é executado a partir do gerenciador de arquivos ou do menu. Nem todos aplicativos tem suporte a notificação de iniciação."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Selecione esta opção para habilitar a notificação de iniciação quando o "
+"comando é executado a partir do gerenciador de arquivos ou do menu. Nem "
+"todos aplicativos tem suporte a notificação de iniciação."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Executar no _terminal"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
-msgstr "Selecione esta opção para executar o comando em uma janela de terminal."
+msgstr ""
+"Selecione esta opção para executar o comando em uma janela de terminal."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:590
@@ -748,7 +757,6 @@ msgid "Preset icon when creating a desktop file"
 msgstr "Ícone predefinido ao criar um arquivo de área de trabalho"
 
 #: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:80 ../exo-mount-notify/main.c:76
 msgid "Print version information and exit"
 msgstr "Mostra informação de versão e sai"
 
@@ -758,8 +766,7 @@ msgid "[FILE|FOLDER]"
 msgstr "[ARQUIVO|PASTA]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:165 ../exo-mount/main.c:251
-#: ../exo-mount-notify/main.c:155
+#: ../exo-desktop-item-edit/main.c:165
 msgid "Failed to open display"
 msgstr "Falha ao abrir exibição"
 
@@ -815,96 +822,6 @@ msgstr "Falha ao criar \"%s\"."
 msgid "Failed to save \"%s\"."
 msgstr "Falha ao salvar \"%s\"."
 
-#: ../exo-hal/exo-hal.c:477
-#, c-format
-msgid "External %s Drive"
-msgstr "Disco %s externo"
-
-#: ../exo-hal/exo-hal.c:479
-#, c-format
-msgid "%s Drive"
-msgstr "Disco %s"
-
-#: ../exo-hal/exo-hal.c:488
-msgid "External Floppy Drive"
-msgstr "Disquete externo"
-
-#: ../exo-hal/exo-hal.c:490
-msgid "Floppy Drive"
-msgstr "Disquete"
-
-#: ../exo-hal/exo-hal.c:494
-msgid "Compact Flash Drive"
-msgstr "Disco flash compacto"
-
-#: ../exo-hal/exo-hal.c:498
-msgid "Memory Stick Drive"
-msgstr "Disco memory stick"
-
-#: ../exo-hal/exo-hal.c:502
-msgid "Smart Media Drive"
-msgstr "Disco smart mídia"
-
-#: ../exo-hal/exo-hal.c:506
-msgid "SD/MMC Drive"
-msgstr "Disco SD/MMC"
-
-#: ../exo-hal/exo-hal.c:510
-msgid "Zip Drive"
-msgstr "Disco Zip"
-
-#: ../exo-hal/exo-hal.c:514
-msgid "Jaz Drive"
-msgstr "Disco Jaz"
-
-#: ../exo-hal/exo-hal.c:518
-msgid "Pen Drive"
-msgstr "Pen Drive"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty
-#. string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:527
-#, c-format
-msgid "%s Music Player"
-msgstr "Reprodutor de música %s"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty
-#. string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:542
-#, c-format
-msgid "%s Digital Camera"
-msgstr "Câmera digital %s"
-
-#. last fallback to "Drive"
-#: ../exo-hal/exo-hal.c:565
-msgid "Drive"
-msgstr "Disco"
-
-#: ../exo-hal/exo-hal.c:792
-#, c-format
-msgid "Blank %s Disc"
-msgstr "Disco em Branco %s"
-
-#: ../exo-hal/exo-hal.c:794
-#, c-format
-msgid "%s Disc"
-msgstr "Disco %s"
-
-#. special case for pure audio disc
-#: ../exo-hal/exo-hal.c:799
-msgid "Audio CD"
-msgstr "CD de áudio"
-
-#: ../exo-hal/exo-hal.c:835
-#, c-format
-msgid "%s Removable Volume"
-msgstr "Volume removível %s"
-
-#: ../exo-hal/exo-hal.c:837
-#, c-format
-msgid "%s Volume"
-msgstr "Volume %s"
-
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
@@ -914,8 +831,9 @@ msgstr "Aplicativos preferidos"
 msgid "Select default applications for various services"
 msgstr "Selecione aplicativos padrão para vários serviços"
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
@@ -946,8 +864,9 @@ msgstr ""
 "O cliente de e-mail preferido será usado para compor\n"
 "e-mails quando você clicar em um endereço de e-mail."
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Utilitários"
@@ -985,7 +904,8 @@ msgstr "Falha ao abrir o navegador de documentação."
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
 msgid "Press left mouse button to change the selected application."
-msgstr "Pressione o botão esquerdo do mouse para mudar o aplicativo selecionado."
+msgstr ""
+"Pressione o botão esquerdo do mouse para mudar o aplicativo selecionado."
 
 #: ../exo-helper/exo-helper-chooser.c:155
 msgid "Application Chooser Button"
@@ -1124,7 +1044,9 @@ msgstr "Falha ao abrir helpers.rc para escrita"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Aplicativos preferidos (navegador web, cliente de e-mail, e emulador de terminal)"
+msgstr ""
+"Aplicativos preferidos (navegador web, cliente de e-mail, e emulador de "
+"terminal)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
@@ -1159,8 +1081,12 @@ msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
 #: ../exo-helper/main.c:70
-msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
-msgstr "Iniciar o assistente padrão de TIPO com o PARÂMETRO opcional, onde TIPO é um dos seguintes valores."
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
+"one of the following values."
+msgstr ""
+"Iniciar o assistente padrão de TIPO com o PARÂMETRO opcional, onde TIPO é um "
+"dos seguintes valores."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
@@ -1348,194 +1274,6 @@ msgstr "Navegador de texto W3M"
 msgid "X Terminal"
 msgstr "Terminal X"
 
-#. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:262 ../exo-mount/exo-mount-hal.c:330
-#, c-format
-msgid "Given device \"%s\" is not a volume or drive"
-msgstr "O dispositivo \"%s\" não é um volume ou disco"
-
-#. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-hal.c:419 ../exo-mount/main.c:141
-#, c-format
-msgid "Device \"%s\" not found in file system device table"
-msgstr "Dispositivo \"%s\" não localizado na tabela de dispositivos do sistema de arquivos"
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged
-#. to do so.
-#: ../exo-mount/exo-mount-hal.c:651
-#, c-format
-msgid "You are not privileged to eject the volume \"%s\""
-msgstr "Você não possui privilégios para ejetar o volume \"%s\""
-
-#. TRANSLATORS: An application is blocking a mounted volume from being
-#. ejected.
-#: ../exo-mount/exo-mount-hal.c:656
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr "Algum aplicativo esta impedindo o volume \"%s\" de ser ejetado"
-
-#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:964
-#, c-format
-msgid "You are not privileged to mount the volume \"%s\""
-msgstr "Você não possui privilégios para montar o volume \"%s\""
-
-#: ../exo-mount/exo-mount-hal.c:979
-#, c-format
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
-msgstr "Discos em branco não podem ser montados. Para gravar áudio ou dados, use um programa como o Xfburn"
-
-#: ../exo-mount/exo-mount-hal.c:990
-#, c-format
-msgid "Audio CDs cannot be mounted, use your favorite audio player to play the audio tracks"
-msgstr "Os CDs de áudio não podem ser montados, use o seu reprodutor de áudio favorito para reproduzir faixas de áudio"
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged
-#. to do so.
-#: ../exo-mount/exo-mount-hal.c:1055
-#, c-format
-msgid "You are not privileged to teardown the crypto layer"
-msgstr "Você não possui privilégios para desmontar a camada criptografada"
-
-#. TRANSLATORS: An application is blocking a mounted volume from being
-#. ejected.
-#: ../exo-mount/exo-mount-hal.c:1060
-#, c-format
-msgid "An application is preventing the crypto layer from being torn down"
-msgstr "Um aplicativo esta impedindo que a camada criptografada seja desmontada"
-
-#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do
-#. so.
-#: ../exo-mount/exo-mount-hal.c:1144
-#, c-format
-msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "Você não possui privilégios para desmontar o volume \"%s\""
-
-#. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1149
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr "Algum aplicativo esta impedindo que o volume \"%s\" seja desmontado"
-
-#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1154
-#, c-format
-msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr "O volume \"%s\" foi provavelmente montado manualmente pela linha de comando"
-
-#: ../exo-mount/main.c:71
-msgid "Eject rather than mount"
-msgstr "Ejetar em vez de montar"
-
-#: ../exo-mount/main.c:72
-msgid "Unmount rather than mount"
-msgstr "Desmontar em vez de montar"
-
-#: ../exo-mount/main.c:74
-msgid "Mount by HAL device UDI"
-msgstr "Montar por UDI de dispositivo HAL"
-
-#: ../exo-mount/main.c:76
-msgid "Mount by HAL device UDI (not supported)"
-msgstr "Montar por UDI de dispositivo HAL (não suportado)"
-
-#: ../exo-mount/main.c:78
-msgid "Mount by device file"
-msgstr "Montar por arquivo de dispositivo"
-
-#: ../exo-mount/main.c:79
-msgid "Don't show any dialogs"
-msgstr "Não mostrar nenhum diálogo"
-
-#: ../exo-mount/main.c:207
-#, c-format
-msgid "Unknown error"
-msgstr "Erro desconhecido"
-
-#: ../exo-mount/main.c:278
-#, c-format
-msgid "%s is compiled without GIO-Unix features. Therefore it will probably not work on this system."
-msgstr "%s é compilado sem os recursos GIO-Unix. Então provavelmente não funcionará neste sistema."
-
-#. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:286
-msgid "Must specify HAL device UDI or device file"
-msgstr "Deve especificar um UDI de dispositivo HAL ou arquivo de dispositivo"
-
-#. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:294
-msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "Não especificar um UDI de dispositivo HAL e um arquivo de dispositivo simultaneamente"
-
-#: ../exo-mount/main.c:302
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
-msgstr "Não é possível montar por este UDI de dispositivo HAL porque o suporte ao HAL foi desabilitado nesta instalação"
-
-#: ../exo-mount/main.c:309
-#, c-format
-msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr "O UDI \"%s\" não é um UDI válido de dispositivo HAL"
-
-#. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:326
-msgid "Cannot eject and unmount simultaneously"
-msgstr "Não é possível ejetar e desmontar simultaneamente"
-
-#: ../exo-mount/main.c:478
-#, c-format
-msgid "Failed to eject \"%s\""
-msgstr "Falha ao ejetar \"%s\""
-
-#: ../exo-mount/main.c:480
-#, c-format
-msgid "Failed to unmount \"%s\""
-msgstr "Falha ao desmontar \"%s\""
-
-#: ../exo-mount/main.c:482
-#, c-format
-msgid "Failed to mount \"%s\""
-msgstr "Falha ao montar \"%s\""
-
-#. tell the user that the device can be removed now
-#: ../exo-mount-notify/main.c:112
-#, c-format
-msgid "The device \"%s\" is now safe to remove."
-msgstr "O dispositivo \"%s\" pode ser removido com segurança."
-
-#: ../exo-mount-notify/main.c:113
-msgid "Device is now safe to remove"
-msgstr "Dispositivo pode ser removido com segurança"
-
-#. read-only, just ejecting
-#: ../exo-mount-notify/main.c:226
-msgid "Ejecting device"
-msgstr "Ejetando dispositivo"
-
-#: ../exo-mount-notify/main.c:227
-#, c-format
-msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr "O dispositivo \"%s\" esta sendo ejetado. Isto pode levar um tempo."
-
-#. read-only, just unmounting
-#: ../exo-mount-notify/main.c:232
-msgid "Unmounting device"
-msgstr "Desmontando dispositivo"
-
-#: ../exo-mount-notify/main.c:233
-#, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
-msgstr "O dispositivo \"%s\" esta sendo desmontado pelo sistema. Por favor não remova a mídia ou desconecte o disco."
-
-#. not read-only, writing back data
-#: ../exo-mount-notify/main.c:240
-msgid "Writing data to device"
-msgstr "Gravando no dispositivo"
-
-#: ../exo-mount-notify/main.c:241
-#, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
-msgstr "Existem dados que precisam ser gravados no dispositivo \"%s\" antes que ele possa ser removido. Por favor não remova a mídia ou desconecte o disco."
-
 #: ../exo-open/main.c:84
 msgid "Usage: exo-open [URLs...]"
 msgstr "Uso: exo-open [URLs...]"
@@ -1546,16 +1284,20 @@ msgstr "       exo-open --launch TIPO [PARÂMETROs...]"
 
 #: ../exo-open/main.c:87
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          Mostra esta mensagem de ajuda e sai"
+msgstr ""
+"  -?, --help                          Mostra esta mensagem de ajuda e sai"
 
 #: ../exo-open/main.c:88
-msgid "  -V, --version                       Print version information and exit"
-msgstr "  -V, --version                       Mostra informação de versão e sai"
+msgid ""
+"  -V, --version                       Print version information and exit"
+msgstr ""
+"  -V, --version                       Mostra informação de versão e sai"
 
 #: ../exo-open/main.c:90
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TIPO [PARÂMETROs...]       Executar o aplicativo preferido do\n"
@@ -1564,20 +1306,21 @@ msgstr ""
 
 #: ../exo-open/main.c:94
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DIRETÓRIO       Diretório de trabalho padrão para aplicativos\n"
+"  --working-directory DIRETÓRIO       Diretório de trabalho padrão para "
+"aplicativos\n"
 "                                      ao usar a opção --launch."
 
 #: ../exo-open/main.c:97
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Os seguintes TIPOs são suportados para o comando --launch:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
+#.
 #: ../exo-open/main.c:103
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1598,16 +1341,23 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
 "Se você não especificar a opção --launch, exo-open irá abrir todas os URLs\n"
-"especificados com seus tratadores de URL preferidos. Caso contrário, se você\n"
-"especificar a opção --launch, você pode selecionar qual aplicativo preferido\n"
-"você deseja executar e passar parâmetros adicionais para o aplicativo (isto é,\n"
+"especificados com seus tratadores de URL preferidos. Caso contrário, se "
+"você\n"
+"especificar a opção --launch, você pode selecionar qual aplicativo "
+"preferido\n"
+"você deseja executar e passar parâmetros adicionais para o aplicativo (isto "
+"é,\n"
 "para TerminalEmulator você pode passar a linha de comando que deve ser\n"
 "executada dentro do terminal)."
 
 #: ../exo-open/main.c:170
 #, c-format
-msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
-msgstr "Não há suporte para lançamento de arquivos da área de trabalho quando %s é compilado sem os recursos GIO-Unix."
+msgid ""
+"Launching desktop files is not supported when %s is compiled without GIO-"
+"Unix features."
+msgstr ""
+"Não há suporte para lançamento de arquivos da área de trabalho quando %s é "
+"compilado sem os recursos GIO-Unix."
 
 #: ../exo-open/main.c:312
 #, c-format
@@ -1639,6 +1389,205 @@ msgstr "Usar a linha de comando"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "Navegar pela web"
+
+#~ msgid "External %s Drive"
+#~ msgstr "Disco %s externo"
+
+#~ msgid "%s Drive"
+#~ msgstr "Disco %s"
+
+#~ msgid "External Floppy Drive"
+#~ msgstr "Disquete externo"
+
+#~ msgid "Floppy Drive"
+#~ msgstr "Disquete"
+
+#~ msgid "Compact Flash Drive"
+#~ msgstr "Disco flash compacto"
+
+#~ msgid "Memory Stick Drive"
+#~ msgstr "Disco memory stick"
+
+#~ msgid "Smart Media Drive"
+#~ msgstr "Disco smart mídia"
+
+#~ msgid "SD/MMC Drive"
+#~ msgstr "Disco SD/MMC"
+
+#~ msgid "Zip Drive"
+#~ msgstr "Disco Zip"
+
+#~ msgid "Jaz Drive"
+#~ msgstr "Disco Jaz"
+
+#~ msgid "Pen Drive"
+#~ msgstr "Pen Drive"
+
+#~ msgid "%s Music Player"
+#~ msgstr "Reprodutor de música %s"
+
+#~ msgid "%s Digital Camera"
+#~ msgstr "Câmera digital %s"
+
+#~ msgid "Drive"
+#~ msgstr "Disco"
+
+#~ msgid "Blank %s Disc"
+#~ msgstr "Disco em Branco %s"
+
+#~ msgid "%s Disc"
+#~ msgstr "Disco %s"
+
+#~ msgid "Audio CD"
+#~ msgstr "CD de áudio"
+
+#~ msgid "%s Removable Volume"
+#~ msgstr "Volume removível %s"
+
+#~ msgid "%s Volume"
+#~ msgstr "Volume %s"
+
+#~ msgid "Given device \"%s\" is not a volume or drive"
+#~ msgstr "O dispositivo \"%s\" não é um volume ou disco"
+
+#~ msgid "Device \"%s\" not found in file system device table"
+#~ msgstr ""
+#~ "Dispositivo \"%s\" não localizado na tabela de dispositivos do sistema de "
+#~ "arquivos"
+
+#~ msgid "You are not privileged to eject the volume \"%s\""
+#~ msgstr "Você não possui privilégios para ejetar o volume \"%s\""
+
+#~ msgid "An application is preventing the volume \"%s\" from being ejected"
+#~ msgstr "Algum aplicativo esta impedindo o volume \"%s\" de ser ejetado"
+
+#~ msgid "You are not privileged to mount the volume \"%s\""
+#~ msgstr "Você não possui privilégios para montar o volume \"%s\""
+
+#~ msgid ""
+#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
+#~ "to record audio or data on the disc"
+#~ msgstr ""
+#~ "Discos em branco não podem ser montados. Para gravar áudio ou dados, use "
+#~ "um programa como o Xfburn"
+
+#~ msgid ""
+#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
+#~ "audio tracks"
+#~ msgstr ""
+#~ "Os CDs de áudio não podem ser montados, use o seu reprodutor de áudio "
+#~ "favorito para reproduzir faixas de áudio"
+
+#~ msgid "You are not privileged to teardown the crypto layer"
+#~ msgstr "Você não possui privilégios para desmontar a camada criptografada"
+
+#~ msgid "An application is preventing the crypto layer from being torn down"
+#~ msgstr ""
+#~ "Um aplicativo esta impedindo que a camada criptografada seja desmontada"
+
+#~ msgid "You are not privileged to unmount the volume \"%s\""
+#~ msgstr "Você não possui privilégios para desmontar o volume \"%s\""
+
+#~ msgid "An application is preventing the volume \"%s\" from being unmounted"
+#~ msgstr "Algum aplicativo esta impedindo que o volume \"%s\" seja desmontado"
+
+#~ msgid "The volume \"%s\" was probably mounted manually on the command line"
+#~ msgstr ""
+#~ "O volume \"%s\" foi provavelmente montado manualmente pela linha de "
+#~ "comando"
+
+#~ msgid "Eject rather than mount"
+#~ msgstr "Ejetar em vez de montar"
+
+#~ msgid "Unmount rather than mount"
+#~ msgstr "Desmontar em vez de montar"
+
+#~ msgid "Mount by HAL device UDI"
+#~ msgstr "Montar por UDI de dispositivo HAL"
+
+#~ msgid "Mount by HAL device UDI (not supported)"
+#~ msgstr "Montar por UDI de dispositivo HAL (não suportado)"
+
+#~ msgid "Mount by device file"
+#~ msgstr "Montar por arquivo de dispositivo"
+
+#~ msgid "Don't show any dialogs"
+#~ msgstr "Não mostrar nenhum diálogo"
+
+#~ msgid "Unknown error"
+#~ msgstr "Erro desconhecido"
+
+#~ msgid ""
+#~ "%s is compiled without GIO-Unix features. Therefore it will probably not "
+#~ "work on this system."
+#~ msgstr ""
+#~ "%s é compilado sem os recursos GIO-Unix. Então provavelmente não "
+#~ "funcionará neste sistema."
+
+#~ msgid "Must specify HAL device UDI or device file"
+#~ msgstr ""
+#~ "Deve especificar um UDI de dispositivo HAL ou arquivo de dispositivo"
+
+#~ msgid ""
+#~ "Must not specify both a HAL device UDI and a device file simultaneously"
+#~ msgstr ""
+#~ "Não especificar um UDI de dispositivo HAL e um arquivo de dispositivo "
+#~ "simultaneamente"
+
+#~ msgid ""
+#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
+#~ "build"
+#~ msgstr ""
+#~ "Não é possível montar por este UDI de dispositivo HAL porque o suporte ao "
+#~ "HAL foi desabilitado nesta instalação"
+
+#~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
+#~ msgstr "O UDI \"%s\" não é um UDI válido de dispositivo HAL"
+
+#~ msgid "Cannot eject and unmount simultaneously"
+#~ msgstr "Não é possível ejetar e desmontar simultaneamente"
+
+#~ msgid "Failed to eject \"%s\""
+#~ msgstr "Falha ao ejetar \"%s\""
+
+#~ msgid "Failed to unmount \"%s\""
+#~ msgstr "Falha ao desmontar \"%s\""
+
+#~ msgid "Failed to mount \"%s\""
+#~ msgstr "Falha ao montar \"%s\""
+
+#~ msgid "The device \"%s\" is now safe to remove."
+#~ msgstr "O dispositivo \"%s\" pode ser removido com segurança."
+
+#~ msgid "Device is now safe to remove"
+#~ msgstr "Dispositivo pode ser removido com segurança"
+
+#~ msgid "Ejecting device"
+#~ msgstr "Ejetando dispositivo"
+
+#~ msgid "The device \"%s\" is being ejected. This may take some time."
+#~ msgstr "O dispositivo \"%s\" esta sendo ejetado. Isto pode levar um tempo."
+
+#~ msgid "Unmounting device"
+#~ msgstr "Desmontando dispositivo"
+
+#~ msgid ""
+#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
+#~ "the media or disconnect the drive."
+#~ msgstr ""
+#~ "O dispositivo \"%s\" esta sendo desmontado pelo sistema. Por favor não "
+#~ "remova a mídia ou desconecte o disco."
+
+#~ msgid "Writing data to device"
+#~ msgstr "Gravando no dispositivo"
+
+#~ msgid ""
+#~ "There is data that needs to be written to the device \"%s\" before it can "
+#~ "be removed. Please do not remove the media or disconnect the drive."
+#~ msgstr ""
+#~ "Existem dados que precisam ser gravados no dispositivo \"%s\" antes que "
+#~ "ele possa ser removido. Por favor não remova a mídia ou desconecte o "
+#~ "disco."
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "Não foi possível abrir \"%s\""

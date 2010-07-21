@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-01 00:22+0900\n"
+"POT-Creation-Date: 2010-07-21 18:14+0200\n"
 "PO-Revision-Date: 2010-03-01 00:22+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -598,7 +599,6 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   XML ファイルからノード情報を削除します\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-mount/main.c:263 ../exo-mount-notify/main.c:169
 #: ../exo-open/main.c:258
 #, c-format
 msgid ""
@@ -615,7 +615,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-mount/main.c:267 ../exo-mount-notify/main.c:173
 #: ../exo-open/main.c:262
 #, c-format
 msgid ""
@@ -632,7 +631,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-mount/main.c:271 ../exo-mount-notify/main.c:177
 #: ../exo-open/main.c:266
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -679,49 +677,55 @@ msgid "Create Launcher <b>%s</b>"
 msgstr "ランチャ <b>%s</b> を作成"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:277
+#: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "名前(_N):"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:293
+#: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "コメント(_O):"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:309
+#: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "コマンド(_A):"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:324
+#: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "URL(_U):"
 
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:360
+#, fuzzy
+msgid "Working _Directory:"
+msgstr "ディレクトリの編集"
+
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:340
+#: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "アイコン(_I):"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: ../exo-desktop-item-edit/exo-die-editor.c:357
-#: ../exo-desktop-item-edit/exo-die-editor.c:1080
+#: ../exo-desktop-item-edit/exo-die-editor.c:406
+#: ../exo-desktop-item-edit/exo-die-editor.c:1233
 msgid "No icon"
 msgstr "アイコンはありません"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:363
+#: ../exo-desktop-item-edit/exo-die-editor.c:412
 msgid "Options:"
 msgstr "オプション:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
-#: ../exo-desktop-item-edit/exo-die-editor.c:372
+#: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "起動通知を行う(_S)"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:373
+#: ../exo-desktop-item-edit/exo-die-editor.c:422
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
@@ -734,18 +738,24 @@ msgstr ""
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
-#: ../exo-desktop-item-edit/exo-die-editor.c:385
+#: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "ターミナルで実行する(_T)"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:386
+#: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
 msgstr ""
 "このオプションを有効にすると、コマンドはターミナルウィンドウで実行されます。"
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:532
+#: ../exo-desktop-item-edit/exo-die-editor.c:590
 msgid "Select an icon"
+msgstr "アイコンを選択してください"
+
+#. allocate the file chooser dialog
+#: ../exo-desktop-item-edit/exo-die-editor.c:637
+#, fuzzy
+msgid "Select a working directory"
 msgstr "アイコンを選択してください"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:168
@@ -806,7 +816,6 @@ msgid "Preset icon when creating a desktop file"
 msgstr "デスクトップファイルを作成する場合のプリセットアイコン"
 
 #: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:80 ../exo-mount-notify/main.c:76
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
 
@@ -816,8 +825,7 @@ msgid "[FILE|FOLDER]"
 msgstr "[ファイル|フォルダ]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:165 ../exo-mount/main.c:249
-#: ../exo-mount-notify/main.c:155
+#: ../exo-desktop-item-edit/main.c:165
 msgid "Failed to open display"
 msgstr "ディスプレイを開けませんでした"
 
@@ -859,107 +867,19 @@ msgid "C_reate"
 msgstr "作成(_R)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:463
+#: ../exo-desktop-item-edit/main.c:475
 msgid "Choose filename"
 msgstr "ファイル名を選択してください"
 
-#: ../exo-desktop-item-edit/main.c:521
+#: ../exo-desktop-item-edit/main.c:533
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\" を作成できませんでした。"
 
-#: ../exo-desktop-item-edit/main.c:521
+#: ../exo-desktop-item-edit/main.c:533
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" を保存できませんでした。"
-
-#: ../exo-hal/exo-hal.c:477
-#, c-format
-msgid "External %s Drive"
-msgstr "外付け %s ドライブ"
-
-#: ../exo-hal/exo-hal.c:479
-#, c-format
-msgid "%s Drive"
-msgstr "%s ドライブ"
-
-#: ../exo-hal/exo-hal.c:488
-msgid "External Floppy Drive"
-msgstr "外付けフロッピードライブ"
-
-#: ../exo-hal/exo-hal.c:490
-msgid "Floppy Drive"
-msgstr "フロッピードライブ"
-
-#: ../exo-hal/exo-hal.c:494
-msgid "Compact Flash Drive"
-msgstr "コンパクトフラッシュドライブ"
-
-#: ../exo-hal/exo-hal.c:498
-msgid "Memory Stick Drive"
-msgstr "メモリースティックドライブ"
-
-#: ../exo-hal/exo-hal.c:502
-msgid "Smart Media Drive"
-msgstr "スマートメディアドライブ"
-
-#: ../exo-hal/exo-hal.c:506
-msgid "SD/MMC Drive"
-msgstr "SD/MMC ドライブ"
-
-#: ../exo-hal/exo-hal.c:510
-msgid "Zip Drive"
-msgstr "Zip ドライブ"
-
-#: ../exo-hal/exo-hal.c:514
-msgid "Jaz Drive"
-msgstr "Jaz ドライブ"
-
-#: ../exo-hal/exo-hal.c:518
-msgid "Pen Drive"
-msgstr "ペンドライブ"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:527
-#, c-format
-msgid "%s Music Player"
-msgstr "%s 音楽プレイヤ"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:542
-#, c-format
-msgid "%s Digital Camera"
-msgstr "%s デジタルカメラ"
-
-#. last fallback to "Drive"
-#: ../exo-hal/exo-hal.c:565
-msgid "Drive"
-msgstr "ドライブ"
-
-#: ../exo-hal/exo-hal.c:792
-#, c-format
-msgid "Blank %s Disc"
-msgstr "空の %s ディスク"
-
-#: ../exo-hal/exo-hal.c:794
-#, c-format
-msgid "%s Disc"
-msgstr "%s ディスク"
-
-#. special case for pure audio disc
-#: ../exo-hal/exo-hal.c:799
-msgid "Audio CD"
-msgstr "オーディオ CD"
-
-#: ../exo-hal/exo-hal.c:835
-#, c-format
-msgid "%s Removable Volume"
-msgstr "%s リムーバブルボリューム"
-
-#: ../exo-hal/exo-hal.c:837
-#, c-format
-msgid "%s Volume"
-msgstr "%s ボリューム"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -1422,214 +1342,6 @@ msgstr "W3M テキストブラウザ"
 msgid "X Terminal"
 msgstr "X ターミナル"
 
-#. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:262 ../exo-mount/exo-mount-hal.c:330
-#, c-format
-msgid "Given device \"%s\" is not a volume or drive"
-msgstr "指定されたデバイス \"%s\" はボリュームでもドライブでもありません"
-
-#. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-hal.c:419 ../exo-mount/main.c:141
-#, c-format
-msgid "Device \"%s\" not found in file system device table"
-msgstr "ファイルシステムのデバイステーブルに \"%s\" がありません"
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:651
-#, c-format
-msgid "You are not privileged to eject the volume \"%s\""
-msgstr "ボリューム \"%s\" を取り出す権限がありません"
-
-#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:656
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr "アプリケーションが使用中のため \"%s\" を取り出せません"
-
-#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:964
-#, c-format
-msgid "You are not privileged to mount the volume \"%s\""
-msgstr "ボリューム \"%s\" をマウントする権限がありません"
-
-#: ../exo-mount/exo-mount-hal.c:979
-#, c-format
-msgid ""
-"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
-"record audio or data on the disc"
-msgstr ""
-"空のディスクはマウントできません。このディスクに音楽やデータを記録するには "
-"Xfburn のような CD レコーディングアプリケーションを使用してください。"
-
-#: ../exo-mount/exo-mount-hal.c:990
-#, c-format
-msgid ""
-"Audio CDs cannot be mounted, use your favorite audio player to play the "
-"audio tracks"
-msgstr ""
-"音楽 CD はマウントできません。音楽を再生するにはオーディオプレーヤーを使用し"
-"てください。"
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1055
-#, c-format
-msgid "You are not privileged to teardown the crypto layer"
-msgstr "暗号化レイヤの解析を行う権限がありません"
-
-#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
-#: ../exo-mount/exo-mount-hal.c:1060
-#, c-format
-msgid "An application is preventing the crypto layer from being torn down"
-msgstr "アプリケーションが使用中のため暗号化レイヤの解析ができません"
-
-#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:1144
-#, c-format
-msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "ボリューム \"%s\" のマウントを解除する権限がありません"
-
-#. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1149
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr "アプリケーションが使用中のため \"%s\" のマウントを解除できません"
-
-#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1154
-#, c-format
-msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr "ボリューム \"%s\" は恐らくコマンドラインから手動でマウントされています"
-
-#: ../exo-mount/main.c:71
-msgid "Eject rather than mount"
-msgstr "マウントせずにイジェクトする"
-
-#: ../exo-mount/main.c:72
-msgid "Unmount rather than mount"
-msgstr "マウントせずにマウント解除する"
-
-#: ../exo-mount/main.c:74
-msgid "Mount by HAL device UDI"
-msgstr "HAL デバイス UDI でマウントする"
-
-#: ../exo-mount/main.c:76
-msgid "Mount by HAL device UDI (not supported)"
-msgstr "HAL デバイス UDI でマウントする (未対応)"
-
-#: ../exo-mount/main.c:78
-msgid "Mount by device file"
-msgstr "デバイスファイルでマウントする"
-
-#: ../exo-mount/main.c:79
-msgid "Don't show any dialogs"
-msgstr "ダイアログを表示しない"
-
-#: ../exo-mount/main.c:205
-#, c-format
-msgid "Unknown error"
-msgstr "不明なエラー"
-
-#: ../exo-mount/main.c:276
-#, c-format
-msgid ""
-"%s is compiled without GIO-Unix features. Therefore it will probably not "
-"work on this system."
-msgstr ""
-"%s は GIO-Unix 機能なしでコンパイルされています。従ってこれはおそらく動作しま"
-"せん。"
-
-#. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:284
-msgid "Must specify HAL device UDI or device file"
-msgstr "HAL デバイス UDI かデバイスファイルを指定する必要があります"
-
-#. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:292
-msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "HAL デバイス UDI とデバイスファイルを同時に指定することはできません"
-
-#: ../exo-mount/main.c:300
-msgid ""
-"Cannot mount by HAL device UDI, because HAL support was disabled for this "
-"build"
-msgstr ""
-"このビルドでは HAL サポートが無効になっているため、HAL デバイス UDI でマウン"
-"トできません。"
-
-#: ../exo-mount/main.c:307
-#, c-format
-msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr "指定された UDI \"%s\" は適切な HAL デバイス UDI ではありません"
-
-#. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:324
-msgid "Cannot eject and unmount simultaneously"
-msgstr "取り出しとマウント解除を同時に行うことはできません"
-
-#: ../exo-mount/main.c:476
-#, c-format
-msgid "Failed to eject \"%s\""
-msgstr "\"%s\" を取り出しに失敗しました。"
-
-#: ../exo-mount/main.c:478
-#, c-format
-msgid "Failed to unmount \"%s\""
-msgstr "\"%s\" のマウント解除に失敗しました。"
-
-#: ../exo-mount/main.c:480
-#, c-format
-msgid "Failed to mount \"%s\""
-msgstr "\"%s\" のマウントに失敗しました。"
-
-#. tell the user that the device can be removed now
-#: ../exo-mount-notify/main.c:112
-#, c-format
-msgid "The device \"%s\" is now safe to remove."
-msgstr "デバイス \"%s\" を安全に取り外す準備ができました。"
-
-#: ../exo-mount-notify/main.c:113
-msgid "Device is now safe to remove"
-msgstr "デバイスは安全に取り外せます。"
-
-#. read-only, just ejecting
-#: ../exo-mount-notify/main.c:226
-msgid "Ejecting device"
-msgstr "デバイスを取り出しています"
-
-#: ../exo-mount-notify/main.c:227
-#, c-format
-msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr ""
-"デバイス \"%s\" を取り出しています。しばらく時間がかかるかもしれません。"
-
-#. read-only, just unmounting
-#: ../exo-mount-notify/main.c:232
-msgid "Unmounting device"
-msgstr "デバイスのマウントを解除しています"
-
-#: ../exo-mount-notify/main.c:233
-#, c-format
-msgid ""
-"The device \"%s\" is being unmounted by the system. Please do not remove the "
-"media or disconnect the drive."
-msgstr ""
-"デバイス \"%s\" はシステムによってマウントを解除されています。メディアを取り"
-"出したりドライブを外したりしないでください。"
-
-#. not read-only, writing back data
-#: ../exo-mount-notify/main.c:240
-msgid "Writing data to device"
-msgstr "デバイスにデータを書き込んでいます"
-
-#: ../exo-mount-notify/main.c:241
-#, c-format
-msgid ""
-"There is data that needs to be written to the device \"%s\" before it can be "
-"removed. Please do not remove the media or disconnect the drive."
-msgstr ""
-"デバイス \"%s\" が取り出される前に書き込む必要のあるデータがあります。メディ"
-"アを取り出したりドライブを外したりしないでください。"
-
 #: ../exo-open/main.c:84
 msgid "Usage: exo-open [URLs...]"
 msgstr "使用法: exo-open [URL...]"
@@ -1741,6 +1453,198 @@ msgstr "コマンドラインを使用します。"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "ウェブを参照します。"
+
+#~ msgid "External %s Drive"
+#~ msgstr "外付け %s ドライブ"
+
+#~ msgid "%s Drive"
+#~ msgstr "%s ドライブ"
+
+#~ msgid "External Floppy Drive"
+#~ msgstr "外付けフロッピードライブ"
+
+#~ msgid "Floppy Drive"
+#~ msgstr "フロッピードライブ"
+
+#~ msgid "Compact Flash Drive"
+#~ msgstr "コンパクトフラッシュドライブ"
+
+#~ msgid "Memory Stick Drive"
+#~ msgstr "メモリースティックドライブ"
+
+#~ msgid "Smart Media Drive"
+#~ msgstr "スマートメディアドライブ"
+
+#~ msgid "SD/MMC Drive"
+#~ msgstr "SD/MMC ドライブ"
+
+#~ msgid "Zip Drive"
+#~ msgstr "Zip ドライブ"
+
+#~ msgid "Jaz Drive"
+#~ msgstr "Jaz ドライブ"
+
+#~ msgid "Pen Drive"
+#~ msgstr "ペンドライブ"
+
+#~ msgid "%s Music Player"
+#~ msgstr "%s 音楽プレイヤ"
+
+#~ msgid "%s Digital Camera"
+#~ msgstr "%s デジタルカメラ"
+
+#~ msgid "Drive"
+#~ msgstr "ドライブ"
+
+#~ msgid "Blank %s Disc"
+#~ msgstr "空の %s ディスク"
+
+#~ msgid "%s Disc"
+#~ msgstr "%s ディスク"
+
+#~ msgid "Audio CD"
+#~ msgstr "オーディオ CD"
+
+#~ msgid "%s Removable Volume"
+#~ msgstr "%s リムーバブルボリューム"
+
+#~ msgid "%s Volume"
+#~ msgstr "%s ボリューム"
+
+#~ msgid "Given device \"%s\" is not a volume or drive"
+#~ msgstr "指定されたデバイス \"%s\" はボリュームでもドライブでもありません"
+
+#~ msgid "Device \"%s\" not found in file system device table"
+#~ msgstr "ファイルシステムのデバイステーブルに \"%s\" がありません"
+
+#~ msgid "You are not privileged to eject the volume \"%s\""
+#~ msgstr "ボリューム \"%s\" を取り出す権限がありません"
+
+#~ msgid "An application is preventing the volume \"%s\" from being ejected"
+#~ msgstr "アプリケーションが使用中のため \"%s\" を取り出せません"
+
+#~ msgid "You are not privileged to mount the volume \"%s\""
+#~ msgstr "ボリューム \"%s\" をマウントする権限がありません"
+
+#~ msgid ""
+#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
+#~ "to record audio or data on the disc"
+#~ msgstr ""
+#~ "空のディスクはマウントできません。このディスクに音楽やデータを記録するに"
+#~ "は Xfburn のような CD レコーディングアプリケーションを使用してください。"
+
+#~ msgid ""
+#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
+#~ "audio tracks"
+#~ msgstr ""
+#~ "音楽 CD はマウントできません。音楽を再生するにはオーディオプレーヤーを使用"
+#~ "してください。"
+
+#~ msgid "You are not privileged to teardown the crypto layer"
+#~ msgstr "暗号化レイヤの解析を行う権限がありません"
+
+#~ msgid "An application is preventing the crypto layer from being torn down"
+#~ msgstr "アプリケーションが使用中のため暗号化レイヤの解析ができません"
+
+#~ msgid "You are not privileged to unmount the volume \"%s\""
+#~ msgstr "ボリューム \"%s\" のマウントを解除する権限がありません"
+
+#~ msgid "An application is preventing the volume \"%s\" from being unmounted"
+#~ msgstr "アプリケーションが使用中のため \"%s\" のマウントを解除できません"
+
+#~ msgid "The volume \"%s\" was probably mounted manually on the command line"
+#~ msgstr ""
+#~ "ボリューム \"%s\" は恐らくコマンドラインから手動でマウントされています"
+
+#~ msgid "Eject rather than mount"
+#~ msgstr "マウントせずにイジェクトする"
+
+#~ msgid "Unmount rather than mount"
+#~ msgstr "マウントせずにマウント解除する"
+
+#~ msgid "Mount by HAL device UDI"
+#~ msgstr "HAL デバイス UDI でマウントする"
+
+#~ msgid "Mount by HAL device UDI (not supported)"
+#~ msgstr "HAL デバイス UDI でマウントする (未対応)"
+
+#~ msgid "Mount by device file"
+#~ msgstr "デバイスファイルでマウントする"
+
+#~ msgid "Don't show any dialogs"
+#~ msgstr "ダイアログを表示しない"
+
+#~ msgid "Unknown error"
+#~ msgstr "不明なエラー"
+
+#~ msgid ""
+#~ "%s is compiled without GIO-Unix features. Therefore it will probably not "
+#~ "work on this system."
+#~ msgstr ""
+#~ "%s は GIO-Unix 機能なしでコンパイルされています。従ってこれはおそらく動作"
+#~ "しません。"
+
+#~ msgid "Must specify HAL device UDI or device file"
+#~ msgstr "HAL デバイス UDI かデバイスファイルを指定する必要があります"
+
+#~ msgid ""
+#~ "Must not specify both a HAL device UDI and a device file simultaneously"
+#~ msgstr "HAL デバイス UDI とデバイスファイルを同時に指定することはできません"
+
+#~ msgid ""
+#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
+#~ "build"
+#~ msgstr ""
+#~ "このビルドでは HAL サポートが無効になっているため、HAL デバイス UDI でマウ"
+#~ "ントできません。"
+
+#~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
+#~ msgstr "指定された UDI \"%s\" は適切な HAL デバイス UDI ではありません"
+
+#~ msgid "Cannot eject and unmount simultaneously"
+#~ msgstr "取り出しとマウント解除を同時に行うことはできません"
+
+#~ msgid "Failed to eject \"%s\""
+#~ msgstr "\"%s\" を取り出しに失敗しました。"
+
+#~ msgid "Failed to unmount \"%s\""
+#~ msgstr "\"%s\" のマウント解除に失敗しました。"
+
+#~ msgid "Failed to mount \"%s\""
+#~ msgstr "\"%s\" のマウントに失敗しました。"
+
+#~ msgid "The device \"%s\" is now safe to remove."
+#~ msgstr "デバイス \"%s\" を安全に取り外す準備ができました。"
+
+#~ msgid "Device is now safe to remove"
+#~ msgstr "デバイスは安全に取り外せます。"
+
+#~ msgid "Ejecting device"
+#~ msgstr "デバイスを取り出しています"
+
+#~ msgid "The device \"%s\" is being ejected. This may take some time."
+#~ msgstr ""
+#~ "デバイス \"%s\" を取り出しています。しばらく時間がかかるかもしれません。"
+
+#~ msgid "Unmounting device"
+#~ msgstr "デバイスのマウントを解除しています"
+
+#~ msgid ""
+#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
+#~ "the media or disconnect the drive."
+#~ msgstr ""
+#~ "デバイス \"%s\" はシステムによってマウントを解除されています。メディアを取"
+#~ "り出したりドライブを外したりしないでください。"
+
+#~ msgid "Writing data to device"
+#~ msgstr "デバイスにデータを書き込んでいます"
+
+#~ msgid ""
+#~ "There is data that needs to be written to the device \"%s\" before it can "
+#~ "be removed. Please do not remove the media or disconnect the drive."
+#~ msgstr ""
+#~ "デバイス \"%s\" が取り出される前に書き込む必要のあるデータがあります。メ"
+#~ "ディアを取り出したりドライブを外したりしないでください。"
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "\"%s\" を開けません"

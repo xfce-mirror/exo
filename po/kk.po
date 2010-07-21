@@ -2,15 +2,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-12 22:00+0000\n"
+"POT-Creation-Date: 2010-07-21 18:14+0200\n"
 "PO-Revision-Date: 2010-03-13 18:36+0600\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -62,8 +63,11 @@ msgstr "\"%s\" файлын оқу мүмкін емес: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "\"%s\" суретін жүктеу мүмкін емес: Себебі белгісіз, мүмкін, ол файл зақымдалған"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"\"%s\" суретін жүктеу мүмкін емес: Себебі белгісіз, мүмкін, ол файл "
+"зақымдалған"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -240,7 +244,8 @@ msgstr "Іздеуді іске қосу"
 
 #: ../exo/exo-icon-view.c:677
 msgid "View allows user to search through columns interactively"
-msgstr "Көрініс пайдаланушыға бағандардан интерактивті іздеуге мүмкіндік береді"
+msgstr ""
+"Көрініс пайдаланушыға бағандардан интерактивті іздеуге мүмкіндік береді"
 
 #: ../exo/exo-icon-view.c:694
 msgid "Width for each item"
@@ -283,7 +288,8 @@ msgid "The model for the icon view"
 msgstr "Таңбашалар көрініс түрі"
 
 #: ../exo/exo-icon-view.c:777
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr "Мәтін мен таңбаша өзара орналасуын көрсетеді"
 
 #: ../exo/exo-icon-view.c:809
@@ -331,8 +337,12 @@ msgid "Single Click Timeout"
 msgstr "Бірлік шерту уақыты"
 
 #: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "Бірлік шерту кезіндегі тышқан курсорының астындағы элементтің автобелсендірілу уақыты"
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Бірлік шерту кезіндегі тышқан курсорының астындағы элементтің "
+"автобелсендірілу уақыты"
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -391,8 +401,12 @@ msgid "_Add a new toolbar"
 msgstr "Ж_аңа саймандар панелін қосу"
 
 #: ../exo/exo-toolbars-editor.c:221
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "Элементті қосу үшін оны жоғарыдағы панельге тартып апарыңыз, өшіру үшін кері тартыңыз."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Элементті қосу үшін оны жоғарыдағы панельге тартып апарыңыз, өшіру үшін кері "
+"тартыңыз."
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -521,7 +535,6 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   XML файлдарынан node құрамасын өшіру\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-mount/main.c:265 ../exo-mount-notify/main.c:169
 #: ../exo-open/main.c:258
 #, c-format
 msgid ""
@@ -538,7 +551,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-mount/main.c:269 ../exo-mount-notify/main.c:173
 #: ../exo-open/main.c:262
 #, c-format
 msgid ""
@@ -554,7 +566,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-mount/main.c:273 ../exo-mount-notify/main.c:177
 #: ../exo-open/main.c:266
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -600,44 +611,37 @@ msgstr "Shell скриптері"
 msgid "Create Launcher <b>%s</b>"
 msgstr "<b>%s</b> жөнелткішін жасау"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Аты:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "А_нықтамасы:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Ко_манда:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "Жұмыс _бумасы"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "Таңба_ша:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -648,24 +652,26 @@ msgstr "таңбашасы жоқ"
 msgid "Options:"
 msgstr "Опциялар:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Қос_ылу хабарламасын қолдану"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "Бұл опцияны тандасаңыз, команда файлдар басқарушы не мәзірден орындалған кезде хабарлама көрсетіледі. Қосылу хабарламасын әрбір қолданба қолдай бермейді."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Бұл опцияны тандасаңыз, команда файлдар басқарушы не мәзірден орындалған "
+"кезде хабарлама көрсетіледі. Қосылу хабарламасын әрбір қолданба қолдай "
+"бермейді."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Т_ерминалда орындау"
@@ -742,7 +748,6 @@ msgid "Preset icon when creating a desktop file"
 msgstr "Desktop файлын жасауда алдын-ала орнатылған таңбаша"
 
 #: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:80 ../exo-mount-notify/main.c:76
 msgid "Print version information and exit"
 msgstr "Нұсқа ақпаратын шығару мен шығу"
 
@@ -752,8 +757,7 @@ msgid "[FILE|FOLDER]"
 msgstr "[ФАЙЛ|БУМА]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:165 ../exo-mount/main.c:251
-#: ../exo-mount-notify/main.c:155
+#: ../exo-desktop-item-edit/main.c:165
 msgid "Failed to open display"
 msgstr "Дисплейді ашу сәтсіз аяқталды"
 
@@ -809,96 +813,6 @@ msgstr "\"%s\" жасау сәтсіз аяқталды."
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" сақтау сәтсіз аяқталды."
 
-#: ../exo-hal/exo-hal.c:477
-#, c-format
-msgid "External %s Drive"
-msgstr "Сыртқы %s дискі"
-
-#: ../exo-hal/exo-hal.c:479
-#, c-format
-msgid "%s Drive"
-msgstr "%s дискі"
-
-#: ../exo-hal/exo-hal.c:488
-msgid "External Floppy Drive"
-msgstr "Сыртқы Floppy дискі"
-
-#: ../exo-hal/exo-hal.c:490
-msgid "Floppy Drive"
-msgstr "Floppy дискі"
-
-#: ../exo-hal/exo-hal.c:494
-msgid "Compact Flash Drive"
-msgstr "Compact Flash дискі"
-
-#: ../exo-hal/exo-hal.c:498
-msgid "Memory Stick Drive"
-msgstr "Memory Stick дискі"
-
-#: ../exo-hal/exo-hal.c:502
-msgid "Smart Media Drive"
-msgstr "Smart Media дискі"
-
-#: ../exo-hal/exo-hal.c:506
-msgid "SD/MMC Drive"
-msgstr "SD/MMC дискі"
-
-#: ../exo-hal/exo-hal.c:510
-msgid "Zip Drive"
-msgstr "Zip дискі"
-
-#: ../exo-hal/exo-hal.c:514
-msgid "Jaz Drive"
-msgstr "Jaz дискі"
-
-#: ../exo-hal/exo-hal.c:518
-msgid "Pen Drive"
-msgstr "Pen дискі"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty
-#. string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:527
-#, c-format
-msgid "%s Music Player"
-msgstr "%s музыка плеері"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty
-#. string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:542
-#, c-format
-msgid "%s Digital Camera"
-msgstr "%s цифрлық камера"
-
-#. last fallback to "Drive"
-#: ../exo-hal/exo-hal.c:565
-msgid "Drive"
-msgstr "Құрылғы"
-
-#: ../exo-hal/exo-hal.c:792
-#, c-format
-msgid "Blank %s Disc"
-msgstr "Таза %s дискі"
-
-#: ../exo-hal/exo-hal.c:794
-#, c-format
-msgid "%s Disc"
-msgstr "%s дискі"
-
-#. special case for pure audio disc
-#: ../exo-hal/exo-hal.c:799
-msgid "Audio CD"
-msgstr "Аудио CD"
-
-#: ../exo-hal/exo-hal.c:835
-#, c-format
-msgid "%s Removable Volume"
-msgstr "%s ауыстырмалы бөлімі"
-
-#: ../exo-hal/exo-hal.c:837
-#, c-format
-msgid "%s Volume"
-msgstr "%s бөлімі"
-
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
@@ -908,8 +822,9 @@ msgstr "Таңдамалы қолданбалар"
 msgid "Select default applications for various services"
 msgstr "Кейбір қызметтер үшін негізгі қолданбаларды таңдаңыз"
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Интернет"
@@ -940,8 +855,9 @@ msgstr ""
 "Эл. пошта адреске шерткен кезде поштаны жазуға арналған\n"
 "таңдамалы пошта қолданбасы."
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Утилиталар"
@@ -1118,7 +1034,8 @@ msgstr "Жазу үшін helpers.rc ашу сәтсіз аяқталды"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Таңдамалы қолданбалар (Веб браузер, пошта қолданбасы мен терминал эмуляторы)"
+msgstr ""
+"Таңдамалы қолданбалар (Веб браузер, пошта қолданбасы мен терминал эмуляторы)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
@@ -1153,8 +1070,12 @@ msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
 #: ../exo-helper/main.c:70
-msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
-msgstr "ТҮР үшін негізгі көмекшіні жөнелту, міндетті емес ПАРАМЕТРмен, бұл жердегі ТҮР төмендегі мәндердің біреуі."
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
+"one of the following values."
+msgstr ""
+"ТҮР үшін негізгі көмекшіні жөнелту, міндетті емес ПАРАМЕТРмен, бұл жердегі "
+"ТҮР төмендегі мәндердің біреуі."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
@@ -1343,194 +1264,6 @@ msgstr "W3M мәтіндік браузері"
 msgid "X Terminal"
 msgstr "X терминалы"
 
-#. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:262 ../exo-mount/exo-mount-hal.c:330
-#, c-format
-msgid "Given device \"%s\" is not a volume or drive"
-msgstr "Көрсетілген \"%s\" құрылғысы диск не бөлім емес"
-
-#. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-hal.c:419 ../exo-mount/main.c:141
-#, c-format
-msgid "Device \"%s\" not found in file system device table"
-msgstr "\"%s\" құрылғысы жүйелік құрылғылар кестесінен табылмады"
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged
-#. to do so.
-#: ../exo-mount/exo-mount-hal.c:651
-#, c-format
-msgid "You are not privileged to eject the volume \"%s\""
-msgstr "\"%s\" бөлімін шығаруға құқығыңыз жоқ"
-
-#. TRANSLATORS: An application is blocking a mounted volume from being
-#. ejected.
-#: ../exo-mount/exo-mount-hal.c:656
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr "\"%s\" бөлімнің шығарылуына қолданба кедергі болып отыр"
-
-#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:964
-#, c-format
-msgid "You are not privileged to mount the volume \"%s\""
-msgstr "\"%s\" бөлімін тіркеу үшін құқығыңыз жеткіліксіз"
-
-#: ../exo-mount/exo-mount-hal.c:979
-#, c-format
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
-msgstr "Бос дисктерді тіркеуге болмайды, оларға ақпаратты жазу үшін Xfburn сияқты диск қолданбаларын қолданыңыз"
-
-#: ../exo-mount/exo-mount-hal.c:990
-#, c-format
-msgid "Audio CDs cannot be mounted, use your favorite audio player to play the audio tracks"
-msgstr "Аудио CD тіркеуге болмайды, аудионы ойнату үшін аудио плеерді қолданыңыз"
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged
-#. to do so.
-#: ../exo-mount/exo-mount-hal.c:1055
-#, c-format
-msgid "You are not privileged to teardown the crypto layer"
-msgstr "Шифрленген бөлімді оқу үшін құқығыңыз жеткіліксіз"
-
-#. TRANSLATORS: An application is blocking a mounted volume from being
-#. ejected.
-#: ../exo-mount/exo-mount-hal.c:1060
-#, c-format
-msgid "An application is preventing the crypto layer from being torn down"
-msgstr "Шифрленген бөлімді оқуға қандай да бір қолданба кедергі болып отыр"
-
-#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do
-#. so.
-#: ../exo-mount/exo-mount-hal.c:1144
-#, c-format
-msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "\"%s\" бөлімін тіркеуден босату үшін құқығыңыз жеткіліксіз"
-
-#. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1149
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr "\"%s\" бөлімін тіркеуден босатуға қандай да бір қолданба кедергі болып отыр"
-
-#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1154
-#, c-format
-msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr "\"%s\" бөлімі командалық жолда қолмен тіркелген сияқты"
-
-#: ../exo-mount/main.c:71
-msgid "Eject rather than mount"
-msgstr "Тіркемей шығару"
-
-#: ../exo-mount/main.c:72
-msgid "Unmount rather than mount"
-msgstr "Тіркемей босату"
-
-#: ../exo-mount/main.c:74
-msgid "Mount by HAL device UDI"
-msgstr "HAL құрылғы UDI бойынша тіркеу"
-
-#: ../exo-mount/main.c:76
-msgid "Mount by HAL device UDI (not supported)"
-msgstr "HAL құрылғы UDI бойынша тіркеу (қолдау жоқ)"
-
-#: ../exo-mount/main.c:78
-msgid "Mount by device file"
-msgstr "Құрылғы файлы бойынша тіркеу"
-
-#: ../exo-mount/main.c:79
-msgid "Don't show any dialogs"
-msgstr "Сұхбат терезелерін көрсетпеу"
-
-#: ../exo-mount/main.c:207
-#, c-format
-msgid "Unknown error"
-msgstr "Белгісіз қате"
-
-#: ../exo-mount/main.c:278
-#, c-format
-msgid "%s is compiled without GIO-Unix features. Therefore it will probably not work on this system."
-msgstr "%s нұсқасы GIO-Unix мүмкіндіктерінсіз жиналған. Сол үшін осы жүйеде жұмыс істемеуі мүмкін."
-
-#. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:286
-msgid "Must specify HAL device UDI or device file"
-msgstr "HAL құрылғы UDI не құрылғы файлын көрсету керек"
-
-#. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:294
-msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "HAL құрылғы UDI мен құрылғы файлын бір уақытта көрсетуге болмайды"
-
-#: ../exo-mount/main.c:302
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
-msgstr "HAL құрылғы UDI бойынша тіркеу мүмкін емес, өйткені HAL қолдауы жинау кезінде сөндірілген"
-
-#: ../exo-mount/main.c:309
-#, c-format
-msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr "Көрсетілген \"%s\" UDI дұрыс HAL құрылғы UDI-і емес"
-
-#. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:326
-msgid "Cannot eject and unmount simultaneously"
-msgstr "Бір уақытта тіркеуден босату мен шығаруға мүмкіндік жоқ"
-
-#: ../exo-mount/main.c:478
-#, c-format
-msgid "Failed to eject \"%s\""
-msgstr "\"%s\" шығару сәтсіз аяқталды"
-
-#: ../exo-mount/main.c:480
-#, c-format
-msgid "Failed to unmount \"%s\""
-msgstr "\"%s\" тіркеуден босату сәтсіз аяқталды"
-
-#: ../exo-mount/main.c:482
-#, c-format
-msgid "Failed to mount \"%s\""
-msgstr "\"%s\" тіркеу сәтсіз аяқталды"
-
-#. tell the user that the device can be removed now
-#: ../exo-mount-notify/main.c:112
-#, c-format
-msgid "The device \"%s\" is now safe to remove."
-msgstr "\"%s\" құрылғысын енді қауіпсіз шығаруға болады."
-
-#: ../exo-mount-notify/main.c:113
-msgid "Device is now safe to remove"
-msgstr "Құрылғыны енді қауіпсіз шығаруға болады"
-
-#. read-only, just ejecting
-#: ../exo-mount-notify/main.c:226
-msgid "Ejecting device"
-msgstr "Құрылғыны шығару"
-
-#: ../exo-mount-notify/main.c:227
-#, c-format
-msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr "\"%s\" құрылғысы шығарылуда. Бұл біраз уақытты алуы мүмкін."
-
-#. read-only, just unmounting
-#: ../exo-mount-notify/main.c:232
-msgid "Unmounting device"
-msgstr "Құрылғыны тіркеуден босату"
-
-#: ../exo-mount-notify/main.c:233
-#, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
-msgstr "\"%s\" құрылғысы жүйемен тіркеуден босатылуда. Тасымалдағышты суырмаңыз не дискті алып тастамаңыз."
-
-#. not read-only, writing back data
-#: ../exo-mount-notify/main.c:240
-msgid "Writing data to device"
-msgstr "Құрылғыға ақпаратты жазу"
-
-#: ../exo-mount-notify/main.c:241
-#, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
-msgstr "\"%s\" құрылғысын тіркеуден босатуға дейін оған жазу керек боп тұрған ақпарат бар. Дискті не тасымалдағышты алып тастамаңыз."
-
 #: ../exo-open/main.c:84
 msgid "Usage: exo-open [URLs...]"
 msgstr "Қолданылуы: exo-open [URL-дар...]"
@@ -1541,38 +1274,43 @@ msgstr "       exo-open --launch ТҮРІ [ПАРАМЕТРЛЕР...]"
 
 #: ../exo-open/main.c:87
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          Осы көмек ақпаратын шығару мен шығу"
+msgstr ""
+"  -?, --help                          Осы көмек ақпаратын шығару мен шығу"
 
 #: ../exo-open/main.c:88
-msgid "  -V, --version                       Print version information and exit"
+msgid ""
+"  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Нұсқа ақпаратын шығару мен шығу"
 
 #: ../exo-open/main.c:90
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch ТҮР [ПАРАМЕТРлер...]    ТҮРдің таңдамалы қолданбасын\n"
-"                                      міндетті емес ПАРАМЕТРмен жөнелту, бұл жердегі\n"
+"                                      міндетті емес ПАРАМЕТРмен жөнелту, бұл "
+"жердегі\n"
 "                                      ТҮР төмендегі мәндердің біреуі."
 
 #: ../exo-open/main.c:94
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory БУМА         --launch опциясымен қолданылатын қолданбалар\n"
+"  --working-directory БУМА         --launch опциясымен қолданылатын "
+"қолданбалар\n"
 "                                      үшін негізгі жұмыс бумасы."
 
 #: ../exo-open/main.c:97
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Келесі ТҮРлерге ғана --launch командасында қолдау бар:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
+#.
 #: ../exo-open/main.c:103
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1601,8 +1339,12 @@ msgstr ""
 
 #: ../exo-open/main.c:170
 #, c-format
-msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
-msgstr "%s нұсқасы GIO-Unix мүмкіндіктерінсіз жиналған кезде desktop файлдарын жөнелтуге болмайды."
+msgid ""
+"Launching desktop files is not supported when %s is compiled without GIO-"
+"Unix features."
+msgstr ""
+"%s нұсқасы GIO-Unix мүмкіндіктерінсіз жиналған кезде desktop файлдарын "
+"жөнелтуге болмайды."
 
 #: ../exo-open/main.c:312
 #, c-format
@@ -1634,3 +1376,194 @@ msgstr "Командалық жолды қолдану"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "Интернетті шолу"
+
+#~ msgid "External %s Drive"
+#~ msgstr "Сыртқы %s дискі"
+
+#~ msgid "%s Drive"
+#~ msgstr "%s дискі"
+
+#~ msgid "External Floppy Drive"
+#~ msgstr "Сыртқы Floppy дискі"
+
+#~ msgid "Floppy Drive"
+#~ msgstr "Floppy дискі"
+
+#~ msgid "Compact Flash Drive"
+#~ msgstr "Compact Flash дискі"
+
+#~ msgid "Memory Stick Drive"
+#~ msgstr "Memory Stick дискі"
+
+#~ msgid "Smart Media Drive"
+#~ msgstr "Smart Media дискі"
+
+#~ msgid "SD/MMC Drive"
+#~ msgstr "SD/MMC дискі"
+
+#~ msgid "Zip Drive"
+#~ msgstr "Zip дискі"
+
+#~ msgid "Jaz Drive"
+#~ msgstr "Jaz дискі"
+
+#~ msgid "Pen Drive"
+#~ msgstr "Pen дискі"
+
+#~ msgid "%s Music Player"
+#~ msgstr "%s музыка плеері"
+
+#~ msgid "%s Digital Camera"
+#~ msgstr "%s цифрлық камера"
+
+#~ msgid "Drive"
+#~ msgstr "Құрылғы"
+
+#~ msgid "Blank %s Disc"
+#~ msgstr "Таза %s дискі"
+
+#~ msgid "%s Disc"
+#~ msgstr "%s дискі"
+
+#~ msgid "Audio CD"
+#~ msgstr "Аудио CD"
+
+#~ msgid "%s Removable Volume"
+#~ msgstr "%s ауыстырмалы бөлімі"
+
+#~ msgid "%s Volume"
+#~ msgstr "%s бөлімі"
+
+#~ msgid "Given device \"%s\" is not a volume or drive"
+#~ msgstr "Көрсетілген \"%s\" құрылғысы диск не бөлім емес"
+
+#~ msgid "Device \"%s\" not found in file system device table"
+#~ msgstr "\"%s\" құрылғысы жүйелік құрылғылар кестесінен табылмады"
+
+#~ msgid "You are not privileged to eject the volume \"%s\""
+#~ msgstr "\"%s\" бөлімін шығаруға құқығыңыз жоқ"
+
+#~ msgid "An application is preventing the volume \"%s\" from being ejected"
+#~ msgstr "\"%s\" бөлімнің шығарылуына қолданба кедергі болып отыр"
+
+#~ msgid "You are not privileged to mount the volume \"%s\""
+#~ msgstr "\"%s\" бөлімін тіркеу үшін құқығыңыз жеткіліксіз"
+
+#~ msgid ""
+#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
+#~ "to record audio or data on the disc"
+#~ msgstr ""
+#~ "Бос дисктерді тіркеуге болмайды, оларға ақпаратты жазу үшін Xfburn сияқты "
+#~ "диск қолданбаларын қолданыңыз"
+
+#~ msgid ""
+#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
+#~ "audio tracks"
+#~ msgstr ""
+#~ "Аудио CD тіркеуге болмайды, аудионы ойнату үшін аудио плеерді қолданыңыз"
+
+#~ msgid "You are not privileged to teardown the crypto layer"
+#~ msgstr "Шифрленген бөлімді оқу үшін құқығыңыз жеткіліксіз"
+
+#~ msgid "An application is preventing the crypto layer from being torn down"
+#~ msgstr "Шифрленген бөлімді оқуға қандай да бір қолданба кедергі болып отыр"
+
+#~ msgid "You are not privileged to unmount the volume \"%s\""
+#~ msgstr "\"%s\" бөлімін тіркеуден босату үшін құқығыңыз жеткіліксіз"
+
+#~ msgid "An application is preventing the volume \"%s\" from being unmounted"
+#~ msgstr ""
+#~ "\"%s\" бөлімін тіркеуден босатуға қандай да бір қолданба кедергі болып "
+#~ "отыр"
+
+#~ msgid "The volume \"%s\" was probably mounted manually on the command line"
+#~ msgstr "\"%s\" бөлімі командалық жолда қолмен тіркелген сияқты"
+
+#~ msgid "Eject rather than mount"
+#~ msgstr "Тіркемей шығару"
+
+#~ msgid "Unmount rather than mount"
+#~ msgstr "Тіркемей босату"
+
+#~ msgid "Mount by HAL device UDI"
+#~ msgstr "HAL құрылғы UDI бойынша тіркеу"
+
+#~ msgid "Mount by HAL device UDI (not supported)"
+#~ msgstr "HAL құрылғы UDI бойынша тіркеу (қолдау жоқ)"
+
+#~ msgid "Mount by device file"
+#~ msgstr "Құрылғы файлы бойынша тіркеу"
+
+#~ msgid "Don't show any dialogs"
+#~ msgstr "Сұхбат терезелерін көрсетпеу"
+
+#~ msgid "Unknown error"
+#~ msgstr "Белгісіз қате"
+
+#~ msgid ""
+#~ "%s is compiled without GIO-Unix features. Therefore it will probably not "
+#~ "work on this system."
+#~ msgstr ""
+#~ "%s нұсқасы GIO-Unix мүмкіндіктерінсіз жиналған. Сол үшін осы жүйеде жұмыс "
+#~ "істемеуі мүмкін."
+
+#~ msgid "Must specify HAL device UDI or device file"
+#~ msgstr "HAL құрылғы UDI не құрылғы файлын көрсету керек"
+
+#~ msgid ""
+#~ "Must not specify both a HAL device UDI and a device file simultaneously"
+#~ msgstr "HAL құрылғы UDI мен құрылғы файлын бір уақытта көрсетуге болмайды"
+
+#~ msgid ""
+#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
+#~ "build"
+#~ msgstr ""
+#~ "HAL құрылғы UDI бойынша тіркеу мүмкін емес, өйткені HAL қолдауы жинау "
+#~ "кезінде сөндірілген"
+
+#~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
+#~ msgstr "Көрсетілген \"%s\" UDI дұрыс HAL құрылғы UDI-і емес"
+
+#~ msgid "Cannot eject and unmount simultaneously"
+#~ msgstr "Бір уақытта тіркеуден босату мен шығаруға мүмкіндік жоқ"
+
+#~ msgid "Failed to eject \"%s\""
+#~ msgstr "\"%s\" шығару сәтсіз аяқталды"
+
+#~ msgid "Failed to unmount \"%s\""
+#~ msgstr "\"%s\" тіркеуден босату сәтсіз аяқталды"
+
+#~ msgid "Failed to mount \"%s\""
+#~ msgstr "\"%s\" тіркеу сәтсіз аяқталды"
+
+#~ msgid "The device \"%s\" is now safe to remove."
+#~ msgstr "\"%s\" құрылғысын енді қауіпсіз шығаруға болады."
+
+#~ msgid "Device is now safe to remove"
+#~ msgstr "Құрылғыны енді қауіпсіз шығаруға болады"
+
+#~ msgid "Ejecting device"
+#~ msgstr "Құрылғыны шығару"
+
+#~ msgid "The device \"%s\" is being ejected. This may take some time."
+#~ msgstr "\"%s\" құрылғысы шығарылуда. Бұл біраз уақытты алуы мүмкін."
+
+#~ msgid "Unmounting device"
+#~ msgstr "Құрылғыны тіркеуден босату"
+
+#~ msgid ""
+#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
+#~ "the media or disconnect the drive."
+#~ msgstr ""
+#~ "\"%s\" құрылғысы жүйемен тіркеуден босатылуда. Тасымалдағышты суырмаңыз "
+#~ "не дискті алып тастамаңыз."
+
+#~ msgid "Writing data to device"
+#~ msgstr "Құрылғыға ақпаратты жазу"
+
+#~ msgid ""
+#~ "There is data that needs to be written to the device \"%s\" before it can "
+#~ "be removed. Please do not remove the media or disconnect the drive."
+#~ msgstr ""
+#~ "\"%s\" құрылғысын тіркеуден босатуға дейін оған жазу керек боп тұрған "
+#~ "ақпарат бар. Дискті не тасымалдағышты алып тастамаңыз."

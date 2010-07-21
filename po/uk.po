@@ -1,16 +1,17 @@
 # Ukrainian translation of  libexo.
 # Copyright (C) 2008 Dmitry Nikitin
 # This file is distributed under the same license as the libexo package.
-# 
+#
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: libexo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-05 06:00+0100\n"
+"POT-Creation-Date: 2010-07-21 18:14+0200\n"
 "PO-Revision-Date: 2008-11-24 12:00+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -62,8 +63,11 @@ msgstr "Помилка читання з файлу \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Неможливо завантажити малюнок \"%s\": Невідома причина, можливо пошкоджений файл малюнку"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Неможливо завантажити малюнок \"%s\": Невідома причина, можливо пошкоджений "
+"файл малюнку"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -272,7 +276,9 @@ msgstr "Стовпчик відміток"
 
 #: ../exo/exo-icon-view.c:748
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Модель стовпчиків, що використовується для отримання тексту якщо застосовується маркування Pango"
+msgstr ""
+"Модель стовпчиків, що використовується для отримання тексту якщо "
+"застосовується маркування Pango"
 
 #: ../exo/exo-icon-view.c:762
 msgid "Icon View Model"
@@ -283,7 +289,8 @@ msgid "The model for the icon view"
 msgstr "Режим перегляду у вигляді значків"
 
 #: ../exo/exo-icon-view.c:777
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr "Як текст і значок кожного елемента розташовується відповідно до іншого"
 
 #: ../exo/exo-icon-view.c:809
@@ -331,8 +338,12 @@ msgid "Single Click Timeout"
 msgstr "Затримка разового клацання"
 
 #: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "Інтервал часу після якого елемент під курсором мишки буде вибрано автоматично в режимі одинарного клацання"
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"Інтервал часу після якого елемент під курсором мишки буде вибрано "
+"автоматично в режимі одинарного клацання"
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -391,8 +402,12 @@ msgid "_Add a new toolbar"
 msgstr "_Додати нову панель"
 
 #: ../exo/exo-toolbars-editor.c:221
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "Перетягніть елемент на панелі вище щоб додати його, або з панелей в таблицю елементів щоб його видалити."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"Перетягніть елемент на панелі вище щоб додати його, або з панелей в таблицю "
+"елементів щоб його видалити."
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -521,7 +536,6 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Видалити вузлів змісту з XML файлів\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-mount/main.c:263 ../exo-mount-notify/main.c:169
 #: ../exo-open/main.c:258
 #, c-format
 msgid ""
@@ -538,7 +552,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-mount/main.c:267 ../exo-mount-notify/main.c:173
 #: ../exo-open/main.c:262
 #, c-format
 msgid ""
@@ -555,7 +568,6 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-mount/main.c:271 ../exo-mount-notify/main.c:177
 #: ../exo-open/main.c:266
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -601,77 +613,85 @@ msgstr "Сценарії Shell"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Створити ярлик запуску <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:277
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Назва:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:293
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "К_оментар:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:309
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Ком_анда:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:324
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_Посилання URL:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:340
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:360
+#, fuzzy
+msgid "Working _Directory:"
+msgstr "Редагувати теку"
+
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Значок:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: ../exo-desktop-item-edit/exo-die-editor.c:357
-#: ../exo-desktop-item-edit/exo-die-editor.c:1080
+#: ../exo-desktop-item-edit/exo-die-editor.c:406
+#: ../exo-desktop-item-edit/exo-die-editor.c:1233
 msgid "No icon"
 msgstr "Без значка"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:363
+#: ../exo-desktop-item-edit/exo-die-editor.c:412
 msgid "Options:"
 msgstr "Параметри:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
-#: ../exo-desktop-item-edit/exo-die-editor.c:372
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
+#: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Використовувати пов_ідомлення про запуск"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:373
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "Виберіть цей параметр для повідомлення про запуск коли команду запущено   з менеджеру файлів або з меню. Не кожна програма підтримує повідомлення   про запуск  ."
+#: ../exo-desktop-item-edit/exo-die-editor.c:422
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"Виберіть цей параметр для повідомлення про запуск коли команду запущено   з "
+"менеджеру файлів або з меню. Не кожна програма підтримує повідомлення   про "
+"запуск  ."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
-#: ../exo-desktop-item-edit/exo-die-editor.c:385
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
+#: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Запустити в _терміналі"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:386
+#: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
 msgstr "Виберіть цей параметр для запуску команди у вікні терміналу."
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:532
+#: ../exo-desktop-item-edit/exo-die-editor.c:590
 msgid "Select an icon"
+msgstr "Виберіть значок"
+
+#. allocate the file chooser dialog
+#: ../exo-desktop-item-edit/exo-die-editor.c:637
+#, fuzzy
+msgid "Select a working directory"
 msgstr "Виберіть значок"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:168
@@ -732,7 +752,6 @@ msgid "Preset icon when creating a desktop file"
 msgstr "Виберіть значок для створюваного файлу desktop"
 
 #: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
-#: ../exo-mount/main.c:80 ../exo-mount-notify/main.c:76
 msgid "Print version information and exit"
 msgstr "Надрукувати інформацію про версію і вийти"
 
@@ -742,8 +761,7 @@ msgid "[FILE|FOLDER]"
 msgstr "[FILE|FOLDER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:165 ../exo-mount/main.c:249
-#: ../exo-mount-notify/main.c:155
+#: ../exo-desktop-item-edit/main.c:165
 msgid "Failed to open display"
 msgstr "Помилка відкриття дисплею"
 
@@ -785,109 +803,19 @@ msgid "C_reate"
 msgstr "С_творити"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:463
+#: ../exo-desktop-item-edit/main.c:475
 msgid "Choose filename"
 msgstr "Вибрати назву файлу"
 
-#: ../exo-desktop-item-edit/main.c:521
+#: ../exo-desktop-item-edit/main.c:533
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Помилка при створені \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:521
+#: ../exo-desktop-item-edit/main.c:533
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Помилка при збережені \"%s\"."
-
-#: ../exo-hal/exo-hal.c:477
-#, c-format
-msgid "External %s Drive"
-msgstr "Зовнішній %s носій"
-
-#: ../exo-hal/exo-hal.c:479
-#, c-format
-msgid "%s Drive"
-msgstr "%s носій"
-
-#: ../exo-hal/exo-hal.c:488
-msgid "External Floppy Drive"
-msgstr "Зовнішній дисковод"
-
-#: ../exo-hal/exo-hal.c:490
-msgid "Floppy Drive"
-msgstr "Дисковод"
-
-#: ../exo-hal/exo-hal.c:494
-msgid "Compact Flash Drive"
-msgstr "Носій Compact Flash"
-
-#: ../exo-hal/exo-hal.c:498
-msgid "Memory Stick Drive"
-msgstr "Носій Memory Stick"
-
-#: ../exo-hal/exo-hal.c:502
-msgid "Smart Media Drive"
-msgstr "Носій Smart Media"
-
-#: ../exo-hal/exo-hal.c:506
-msgid "SD/MMC Drive"
-msgstr "Носій SD/MMC"
-
-#: ../exo-hal/exo-hal.c:510
-msgid "Zip Drive"
-msgstr "Носій Zip"
-
-#: ../exo-hal/exo-hal.c:514
-msgid "Jaz Drive"
-msgstr "Носій Jaz"
-
-#: ../exo-hal/exo-hal.c:518
-msgid "Pen Drive"
-msgstr "Носій Pen"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty
-#. string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:527
-#, c-format
-msgid "%s Music Player"
-msgstr "%s Музичний програвач"
-
-#. TRANSLATORS: This string requires special care as %s may be the empty
-#. string. Trailing/leading whitespace will be removed.
-#: ../exo-hal/exo-hal.c:542
-#, c-format
-msgid "%s Digital Camera"
-msgstr "%s Цифрова камера"
-
-#. last fallback to "Drive"
-#: ../exo-hal/exo-hal.c:565
-msgid "Drive"
-msgstr "Носій"
-
-#: ../exo-hal/exo-hal.c:792
-#, c-format
-msgid "Blank %s Disc"
-msgstr "Чистий %s диск"
-
-#: ../exo-hal/exo-hal.c:794
-#, c-format
-msgid "%s Disc"
-msgstr "Диск %s"
-
-#. special case for pure audio disc
-#: ../exo-hal/exo-hal.c:799
-msgid "Audio CD"
-msgstr "Аудіо диск"
-
-#: ../exo-hal/exo-hal.c:835
-#, c-format
-msgid "%s Removable Volume"
-msgstr "З'ємний том %s"
-
-#: ../exo-hal/exo-hal.c:837
-#, c-format
-msgid "%s Volume"
-msgstr "%s розділ"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -898,8 +826,9 @@ msgstr "Типові програми"
 msgid "Select default applications for various services"
 msgstr "Виберіть типову програму для відповідного сервісу"
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Інтернет"
@@ -930,8 +859,9 @@ msgstr ""
 "Типовий Поштовий клієнт використовується для   \n"
 "створення повідомлень при виборі email адрес."
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Утиліти"
@@ -1108,7 +1038,8 @@ msgstr "Помилка відкриття helpers.rc для запису"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Улюблені програми (переглядач Web, переглядач пошти та емулятор терміналу)"
+msgstr ""
+"Улюблені програми (переглядач Web, переглядач пошти та емулятор терміналу)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
@@ -1143,8 +1074,12 @@ msgid "SOCKET ID"
 msgstr "ID сокета"
 
 #: ../exo-helper/main.c:70
-msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
-msgstr "Запустити типовий конфігуратор ТИПу з опціями ПАРАМЕТРИ, де ТИП це є одне із наступних значень."
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
+"one of the following values."
+msgstr ""
+"Запустити типовий конфігуратор ТИПу з опціями ПАРАМЕТРИ, де ТИП це є одне із "
+"наступних значень."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
@@ -1333,194 +1268,6 @@ msgstr "Переглядач W3M текстовий"
 msgid "X Terminal"
 msgstr "Термінал X"
 
-#. definitely not a device that we're able to mount, eject or unmount
-#: ../exo-mount/exo-mount-hal.c:262 ../exo-mount/exo-mount-hal.c:330
-#, c-format
-msgid "Given device \"%s\" is not a volume or drive"
-msgstr "Отриманий пристрій \"%s\" не є розділом або диском"
-
-#. tell the caller that no matching device was found
-#: ../exo-mount/exo-mount-hal.c:419 ../exo-mount/main.c:141
-#, c-format
-msgid "Device \"%s\" not found in file system device table"
-msgstr "Пристрій \"%s\" не знайдено в таблиці пристроїв файлової системи"
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged
-#. to do so.
-#: ../exo-mount/exo-mount-hal.c:651
-#, c-format
-msgid "You are not privileged to eject the volume \"%s\""
-msgstr "Ви не маєте прав на здійснення витягування тому \"%s\""
-
-#. TRANSLATORS: An application is blocking a mounted volume from being
-#. ejected.
-#: ../exo-mount/exo-mount-hal.c:656
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being ejected"
-msgstr "Якась із програм забороняє викидання розділу \"%s\""
-
-#. TRANSLATORS: User tried to mount a volume, but is not privileged to do so.
-#: ../exo-mount/exo-mount-hal.c:964
-#, c-format
-msgid "You are not privileged to mount the volume \"%s\""
-msgstr "Ви не маєте прав на монтування розділу \"%s\""
-
-#: ../exo-mount/exo-mount-hal.c:979
-#, c-format
-msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
-msgstr "Чисті диски не можуть бути змонтовані, використовуйте програму запису дисків таку як Xfburn для запису аудіо чи дисків з даними"
-
-#: ../exo-mount/exo-mount-hal.c:990
-#, c-format
-msgid "Audio CDs cannot be mounted, use your favorite audio player to play the audio tracks"
-msgstr "Аудіо диски не можуть бути змонтовані, використовуйте Ваш улюблений аудіо програвач для програвання аудіо треків"
-
-#. TRANSLATORS: The user tried to eject a device although he's not privileged
-#. to do so.
-#: ../exo-mount/exo-mount-hal.c:1055
-#, c-format
-msgid "You are not privileged to teardown the crypto layer"
-msgstr "Ви не маєте прав для відміни шару криптографії"
-
-#. TRANSLATORS: An application is blocking a mounted volume from being
-#. ejected.
-#: ../exo-mount/exo-mount-hal.c:1060
-#, c-format
-msgid "An application is preventing the crypto layer from being torn down"
-msgstr "Якась програма запобігає руйнуванню шару криптографії"
-
-#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do
-#. so.
-#: ../exo-mount/exo-mount-hal.c:1144
-#, c-format
-msgid "You are not privileged to unmount the volume \"%s\""
-msgstr "Ви не маєте прав на демонтування розділу \"%s\""
-
-#. TRANSLATORS: An application is blocking a volume from being unmounted.
-#: ../exo-mount/exo-mount-hal.c:1149
-#, c-format
-msgid "An application is preventing the volume \"%s\" from being unmounted"
-msgstr "Якась із програм забороняє демонтування розділу \"%s\""
-
-#. TRANSLATORS: HAL can only unmount volumes that were mounted via HAL.
-#: ../exo-mount/exo-mount-hal.c:1154
-#, c-format
-msgid "The volume \"%s\" was probably mounted manually on the command line"
-msgstr "Розділ \"%s\" можна спробувати змонтувати вручну через командний рядок"
-
-#: ../exo-mount/main.c:71
-msgid "Eject rather than mount"
-msgstr "Висування важливіше монтування"
-
-#: ../exo-mount/main.c:72
-msgid "Unmount rather than mount"
-msgstr "Демонтування важливіше монтування"
-
-#: ../exo-mount/main.c:74
-msgid "Mount by HAL device UDI"
-msgstr "Монтувати за допомогою ідентифікатора HAL UDI пристрою"
-
-#: ../exo-mount/main.c:76
-msgid "Mount by HAL device UDI (not supported)"
-msgstr "Монтування за допомогою HAL UDI пристрою (не підтримується)"
-
-#: ../exo-mount/main.c:78
-msgid "Mount by device file"
-msgstr "Монтування за допомогою файла пристрою"
-
-#: ../exo-mount/main.c:79
-msgid "Don't show any dialogs"
-msgstr "Не показувати ніяких діалогів"
-
-#: ../exo-mount/main.c:205
-#, c-format
-msgid "Unknown error"
-msgstr "Невідома помилка"
-
-#: ../exo-mount/main.c:276
-#, c-format
-msgid "%s is compiled without GIO-Unix features. Therefore it will probably not work on this system."
-msgstr "%s скомпільовано без можливостей GIO-Unix. Тому, ймовірно, не працює в цій системі."
-
-#. the caller must specify either a HAL UDI or a device file
-#: ../exo-mount/main.c:284
-msgid "Must specify HAL device UDI or device file"
-msgstr "Повинні призначити пристрій HAL UDI або файл пристрою"
-
-#. the caller must specify EITHER a HAL UDI or a device file
-#: ../exo-mount/main.c:292
-msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "Не треба призначати HAL пристрій UDI і файл пристрою одночасно"
-
-#: ../exo-mount/main.c:300
-msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
-msgstr "Неможливо змонтувати через HAL пристрій UDI, оскільки відсутня підтримка HAL у цьому випуску"
-
-#: ../exo-mount/main.c:307
-#, c-format
-msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-msgstr "Призначений UDI \"%s\" не є правильним пристроєм HAL UDI"
-
-#. the caller must not specify both eject and unmount
-#: ../exo-mount/main.c:324
-msgid "Cannot eject and unmount simultaneously"
-msgstr "Неможливо одночасно витягнути і демонтувати"
-
-#: ../exo-mount/main.c:476
-#, c-format
-msgid "Failed to eject \"%s\""
-msgstr "Неможливо витягнути \"%s\""
-
-#: ../exo-mount/main.c:478
-#, c-format
-msgid "Failed to unmount \"%s\""
-msgstr "Неможливо демонтувати \"%s\""
-
-#: ../exo-mount/main.c:480
-#, c-format
-msgid "Failed to mount \"%s\""
-msgstr "Неможливо монтувати \"%s\""
-
-#. tell the user that the device can be removed now
-#: ../exo-mount-notify/main.c:112
-#, c-format
-msgid "The device \"%s\" is now safe to remove."
-msgstr "Пристрій \"%s\" заборонено до видалення."
-
-#: ../exo-mount-notify/main.c:113
-msgid "Device is now safe to remove"
-msgstr "Пристрій зараз заборонено до видалення"
-
-#. read-only, just ejecting
-#: ../exo-mount-notify/main.c:226
-msgid "Ejecting device"
-msgstr "Висування пристрою"
-
-#: ../exo-mount-notify/main.c:227
-#, c-format
-msgid "The device \"%s\" is being ejected. This may take some time."
-msgstr "Пристрій \"%s\" буде витягнуто. Це може зайняти деякий час."
-
-#. read-only, just unmounting
-#: ../exo-mount-notify/main.c:232
-msgid "Unmounting device"
-msgstr "Демонтування пристрою"
-
-#: ../exo-mount-notify/main.c:233
-#, c-format
-msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
-msgstr "Пристрій \"%s\" буде демонтований системою. Будь-ласка видаліть медіа-диск або відключіть диск."
-
-#. not read-only, writing back data
-#: ../exo-mount-notify/main.c:240
-msgid "Writing data to device"
-msgstr "Запис даних на пристрій"
-
-#: ../exo-mount-notify/main.c:241
-#, c-format
-msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
-msgstr "Ще є дані для запису на пристрій \"%s\" перед тим як його буде видалено.Будь-ласка не видаляйте медіа-диск та не відключайте диск."
-
 #: ../exo-open/main.c:84
 msgid "Usage: exo-open [URLs...]"
 msgstr "Використання: exo-open [посилання URLs...]"
@@ -1534,35 +1281,39 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Надрукувати цей текст і вийти   "
 
 #: ../exo-open/main.c:88
-msgid "  -V, --version                       Print version information and exit"
+msgid ""
+"  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Вивести інформацію про версію "
 
 #: ../exo-open/main.c:90
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch ТИП [ПАРАМЕТРИ  ...]       Запустити улюблену програму        \n"
-"                                      ТИП з необов'язковими ПАРАМЕТРАМИ, де   \n"
+"                                      ТИП з необов'язковими ПАРАМЕТРАМИ, "
+"де   \n"
 "                                      ТИП це одне з наступних значень.    "
 
 #: ../exo-open/main.c:94
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory ТЕКА            Типова робоча тека для програм             \n"
+"  --working-directory ТЕКА            Типова робоча тека для "
+"програм             \n"
 "                                      коли викор.    --launch опція. "
 
 #: ../exo-open/main.c:97
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Наступні ТИПИ підтримуються для --launch команди:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
+#.
 #: ../exo-open/main.c:103
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1591,8 +1342,12 @@ msgstr ""
 
 #: ../exo-open/main.c:170
 #, c-format
-msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
-msgstr "Запущені файли desktop не підтримуються коли %s скомпільовано без можливостей GIO-Unix."
+msgid ""
+"Launching desktop files is not supported when %s is compiled without GIO-"
+"Unix features."
+msgstr ""
+"Запущені файли desktop не підтримуються коли %s скомпільовано без "
+"можливостей GIO-Unix."
 
 #: ../exo-open/main.c:312
 #, c-format
@@ -1624,6 +1379,197 @@ msgstr "Використовуєте командну стрічку"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "Мандруйте Інтернетом"
+
+#~ msgid "External %s Drive"
+#~ msgstr "Зовнішній %s носій"
+
+#~ msgid "%s Drive"
+#~ msgstr "%s носій"
+
+#~ msgid "External Floppy Drive"
+#~ msgstr "Зовнішній дисковод"
+
+#~ msgid "Floppy Drive"
+#~ msgstr "Дисковод"
+
+#~ msgid "Compact Flash Drive"
+#~ msgstr "Носій Compact Flash"
+
+#~ msgid "Memory Stick Drive"
+#~ msgstr "Носій Memory Stick"
+
+#~ msgid "Smart Media Drive"
+#~ msgstr "Носій Smart Media"
+
+#~ msgid "SD/MMC Drive"
+#~ msgstr "Носій SD/MMC"
+
+#~ msgid "Zip Drive"
+#~ msgstr "Носій Zip"
+
+#~ msgid "Jaz Drive"
+#~ msgstr "Носій Jaz"
+
+#~ msgid "Pen Drive"
+#~ msgstr "Носій Pen"
+
+#~ msgid "%s Music Player"
+#~ msgstr "%s Музичний програвач"
+
+#~ msgid "%s Digital Camera"
+#~ msgstr "%s Цифрова камера"
+
+#~ msgid "Drive"
+#~ msgstr "Носій"
+
+#~ msgid "Blank %s Disc"
+#~ msgstr "Чистий %s диск"
+
+#~ msgid "%s Disc"
+#~ msgstr "Диск %s"
+
+#~ msgid "Audio CD"
+#~ msgstr "Аудіо диск"
+
+#~ msgid "%s Removable Volume"
+#~ msgstr "З'ємний том %s"
+
+#~ msgid "%s Volume"
+#~ msgstr "%s розділ"
+
+#~ msgid "Given device \"%s\" is not a volume or drive"
+#~ msgstr "Отриманий пристрій \"%s\" не є розділом або диском"
+
+#~ msgid "Device \"%s\" not found in file system device table"
+#~ msgstr "Пристрій \"%s\" не знайдено в таблиці пристроїв файлової системи"
+
+#~ msgid "You are not privileged to eject the volume \"%s\""
+#~ msgstr "Ви не маєте прав на здійснення витягування тому \"%s\""
+
+#~ msgid "An application is preventing the volume \"%s\" from being ejected"
+#~ msgstr "Якась із програм забороняє викидання розділу \"%s\""
+
+#~ msgid "You are not privileged to mount the volume \"%s\""
+#~ msgstr "Ви не маєте прав на монтування розділу \"%s\""
+
+#~ msgid ""
+#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
+#~ "to record audio or data on the disc"
+#~ msgstr ""
+#~ "Чисті диски не можуть бути змонтовані, використовуйте програму запису "
+#~ "дисків таку як Xfburn для запису аудіо чи дисків з даними"
+
+#~ msgid ""
+#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
+#~ "audio tracks"
+#~ msgstr ""
+#~ "Аудіо диски не можуть бути змонтовані, використовуйте Ваш улюблений аудіо "
+#~ "програвач для програвання аудіо треків"
+
+#~ msgid "You are not privileged to teardown the crypto layer"
+#~ msgstr "Ви не маєте прав для відміни шару криптографії"
+
+#~ msgid "An application is preventing the crypto layer from being torn down"
+#~ msgstr "Якась програма запобігає руйнуванню шару криптографії"
+
+#~ msgid "You are not privileged to unmount the volume \"%s\""
+#~ msgstr "Ви не маєте прав на демонтування розділу \"%s\""
+
+#~ msgid "An application is preventing the volume \"%s\" from being unmounted"
+#~ msgstr "Якась із програм забороняє демонтування розділу \"%s\""
+
+#~ msgid "The volume \"%s\" was probably mounted manually on the command line"
+#~ msgstr ""
+#~ "Розділ \"%s\" можна спробувати змонтувати вручну через командний рядок"
+
+#~ msgid "Eject rather than mount"
+#~ msgstr "Висування важливіше монтування"
+
+#~ msgid "Unmount rather than mount"
+#~ msgstr "Демонтування важливіше монтування"
+
+#~ msgid "Mount by HAL device UDI"
+#~ msgstr "Монтувати за допомогою ідентифікатора HAL UDI пристрою"
+
+#~ msgid "Mount by HAL device UDI (not supported)"
+#~ msgstr "Монтування за допомогою HAL UDI пристрою (не підтримується)"
+
+#~ msgid "Mount by device file"
+#~ msgstr "Монтування за допомогою файла пристрою"
+
+#~ msgid "Don't show any dialogs"
+#~ msgstr "Не показувати ніяких діалогів"
+
+#~ msgid "Unknown error"
+#~ msgstr "Невідома помилка"
+
+#~ msgid ""
+#~ "%s is compiled without GIO-Unix features. Therefore it will probably not "
+#~ "work on this system."
+#~ msgstr ""
+#~ "%s скомпільовано без можливостей GIO-Unix. Тому, ймовірно, не працює в "
+#~ "цій системі."
+
+#~ msgid "Must specify HAL device UDI or device file"
+#~ msgstr "Повинні призначити пристрій HAL UDI або файл пристрою"
+
+#~ msgid ""
+#~ "Must not specify both a HAL device UDI and a device file simultaneously"
+#~ msgstr "Не треба призначати HAL пристрій UDI і файл пристрою одночасно"
+
+#~ msgid ""
+#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
+#~ "build"
+#~ msgstr ""
+#~ "Неможливо змонтувати через HAL пристрій UDI, оскільки відсутня підтримка "
+#~ "HAL у цьому випуску"
+
+#~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
+#~ msgstr "Призначений UDI \"%s\" не є правильним пристроєм HAL UDI"
+
+#~ msgid "Cannot eject and unmount simultaneously"
+#~ msgstr "Неможливо одночасно витягнути і демонтувати"
+
+#~ msgid "Failed to eject \"%s\""
+#~ msgstr "Неможливо витягнути \"%s\""
+
+#~ msgid "Failed to unmount \"%s\""
+#~ msgstr "Неможливо демонтувати \"%s\""
+
+#~ msgid "Failed to mount \"%s\""
+#~ msgstr "Неможливо монтувати \"%s\""
+
+#~ msgid "The device \"%s\" is now safe to remove."
+#~ msgstr "Пристрій \"%s\" заборонено до видалення."
+
+#~ msgid "Device is now safe to remove"
+#~ msgstr "Пристрій зараз заборонено до видалення"
+
+#~ msgid "Ejecting device"
+#~ msgstr "Висування пристрою"
+
+#~ msgid "The device \"%s\" is being ejected. This may take some time."
+#~ msgstr "Пристрій \"%s\" буде витягнуто. Це може зайняти деякий час."
+
+#~ msgid "Unmounting device"
+#~ msgstr "Демонтування пристрою"
+
+#~ msgid ""
+#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
+#~ "the media or disconnect the drive."
+#~ msgstr ""
+#~ "Пристрій \"%s\" буде демонтований системою. Будь-ласка видаліть медіа-"
+#~ "диск або відключіть диск."
+
+#~ msgid "Writing data to device"
+#~ msgstr "Запис даних на пристрій"
+
+#~ msgid ""
+#~ "There is data that needs to be written to the device \"%s\" before it can "
+#~ "be removed. Please do not remove the media or disconnect the drive."
+#~ msgstr ""
+#~ "Ще є дані для запису на пристрій \"%s\" перед тим як його буде видалено."
+#~ "Будь-ласка не видаляйте медіа-диск та не відключайте диск."
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "Неможливо відкрити \"%s\""
