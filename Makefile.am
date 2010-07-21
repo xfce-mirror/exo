@@ -1,8 +1,4 @@
 
-if HAVE_LIBNOTIFY
-EXO_MOUNT_NOTIFY_SUBDIR=exo-mount-notify
-endif
-
 if HAVE_PYTHON
 PYTHON_SUBDIR=python
 endif
@@ -13,10 +9,7 @@ SUBDIRS =								\
 	exo-support							\
 	exo-desktop-item-edit						\
 	exo-gio-module							\
-	exo-hal								\
 	exo-helper							\
-	exo-mount							\
-	$(EXO_MOUNT_NOTIFY_SUBDIR)					\
 	exo-open							\
 	docs								\
 	icons								\
