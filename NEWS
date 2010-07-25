@@ -1,3 +1,16 @@
+0.5.3
+=====
+- Drop all HAL related code. Exo-hal is not used by thunar-volman
+  anymore now it is ported to udev, udisks is a non-hal replacement
+  for exo-mount.
+- Add working directory support to exo-desktop-item-edit (bug #5692).
+- Generate documentation with --enable-gen-doc.
+- Make the treeview work again with gtk 2.20 (bug #6230).
+- Fix compilation error (bug #6421).
+- Some compiler warnings and identation fixes.
+- Translation updates (de, ru, kk, si, zh_CN, es, hr, eu, bn, pa,
+  is, gl, el, tr, ug, fr, id, it, pt, pr_BR, da).
+
 0.5.2
 =====
 - Some fixes in the python bindings (bug #6186, #6187 and #6188).
