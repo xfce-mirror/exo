@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-20 04:00+0000\n"
+"POT-Creation-Date: 2010-08-22 16:00+0000\n"
 "PO-Revision-Date: 2008-11-23 16:07+0100\n"
 "Last-Translator: Jannis Pohlmann <jannis@xfce.org>\n"
 "Language-Team: German <xfce-i18n-de@xfce.org>\n"
@@ -215,9 +215,8 @@ msgstr "_Symbol wählen aus:"
 
 #. search filter
 #: ../exo/exo-icon-chooser-dialog.c:225
-#, fuzzy
 msgid "_Search icon:"
-msgstr "Suchspalte"
+msgstr "_Suchspalte"
 
 #: ../exo/exo-icon-chooser-dialog.c:236
 msgid "Clear search field"
@@ -628,9 +627,8 @@ msgstr "A_dresse:"
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
-#, fuzzy
 msgid "Working _Directory:"
-msgstr "Neuen Ordner anlegen"
+msgstr "_Arbeitsverzeichnis"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -683,13 +681,12 @@ msgstr "Ein Symbol auswählen"
 
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:637
-#, fuzzy
 msgid "Select a working directory"
-msgstr "Ein Symbol auswählen"
+msgstr "Wählen Sie ein Arbeitsverzeichnis aus"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:168
 msgid "File location is not a regular file or directory"
-msgstr ""
+msgstr "Diese Angabe ist keine gültige Datei oder Ordner"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:53
@@ -713,7 +710,6 @@ msgid "Edit Link"
 msgstr "Verknüpfung bearbeiten"
 
 #: ../exo-desktop-item-edit/main.c:54
-#, fuzzy
 msgid "Edit Directory"
 msgstr "Verzeichnis bearbeiten"
 
@@ -764,26 +760,26 @@ msgid "No file/folder specified"
 msgstr "Keine Datei bzw. kein Ordner angegeben"
 
 #: ../exo-desktop-item-edit/main.c:258
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Konnte die Datei »%s« nicht öffnen: %s"
+msgstr "Konnte den Inhalt aus »%s« nicht laden: %s"
 
 #: ../exo-desktop-item-edit/main.c:263
-#, c-format, fuzzy
+#, c-format
 msgid "The file \"%s\" contains no data"
-msgstr "Die Datei \"%s\" enthält keine Daten"
+msgstr "Die Datei »%s« enthält keine Daten"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:276
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Konnte die Datei »%s« nicht öffnen: %s"
+msgstr "Konnte die Datei »%s« nicht parsen: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:288
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "Die Datei »%s« hat keinen Schlüssel für den Typ"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:298
@@ -927,9 +923,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "Eigenes E-Mail-Programm angeben"
 
 #: ../exo-helper/exo-helper-chooser.c:503
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "Bitte wählen Sie ihren Dateimanager"
+msgstr "Bitte wählen Sie Ihren Dateimanager"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
@@ -1001,12 +996,11 @@ msgstr ""
 "aus und klicken Sie auf OK um fortzufahren."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
-"Bitte wählen Sie Ihr bevorzugtes E-Mail-Programm\n"
+"Bitte wählen Sie jetzt Ihren bevorzugten Dateimanager\n"
 "aus und klicken Sie auf OK um fortzufahren."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
@@ -1040,9 +1034,8 @@ msgid "Failed to execute default Mail Reader"
 msgstr "Konnte das bevorzugte E-Mail-Programm nicht ausführen"
 
 #: ../exo-helper/main.c:43
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "Konnte das bevorzugte E-Mail-Programm nicht ausführen"
+msgstr "Konnte den bevorzugten Dateimanager nicht ausführen"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
@@ -1071,7 +1064,6 @@ msgid "TYPE [PARAMETER]"
 msgstr "TYP [PARAMETER]"
 
 #: ../exo-helper/main.c:94
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1081,8 +1073,9 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
 "Die folgenden TYPen werden für den Befehl »--launch« unterstützt:\n"
-"  WebBrowser       - Der bevorzugte Webbrowser.\n"
-"  MailReader       - Das bevorzugte E-Mail-Programm.\n"
+"  WebBrowser - Der bevorzugte Webbrowser.\n"
+"  MailReader - Das bevorzugte E-Mail-Programm.\n"
+" Dateimanager - Der bevorzugte Dateimanager.\n"
 "  TerminalEmulator - Das bevorzugte Terminal."
 
 #: ../exo-helper/main.c:104
@@ -1225,9 +1218,8 @@ msgid "Opera Mail"
 msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
-#, fuzzy
 msgid "PCMan File Manager"
-msgstr "PCMan Dateimanager"
+msgstr "Dateimanager PCMan"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1297,16 +1289,16 @@ msgstr "Die folgenden TYPen für --launch werden derzeit unterstützt:"
 #. * since the exo-helper utility will not accept localized TYPEs.
 #. 
 #: ../exo-open/main.c:103
-#, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  WebBrowser       - Der bevorzugte Webbrowser.\n"
-"  MailReader       - Das bevorzugte E-Mail-Programm.\n"
-"  TerminalEmulator - Das bevorzugte Terminal."
+"  WebBrowser - Der bevorzugte Webbrowser.\n"
+"  MailReader - Das bevorzugte E-Mail-Programm.\n"
+" Dateimanager - Der bevorzugte Dateimanager.\n"
+" TerminalEmulator - Das bevorzugte Terminal."
 
 #: ../exo-open/main.c:108
 msgid ""
@@ -1323,7 +1315,7 @@ msgstr ""
 "Befehl angeben, der im Terminal ausgeführt werden soll)."
 
 #: ../exo-open/main.c:170
-#, c-format, fuzzy
+#, fuzzy, c-format
 msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
 msgstr "Das Ausführen von Desktopdateien wird nicht unterstützt, wenn %s ohne GIO-Unix Funktionen kompiliert wurde."
 
@@ -1333,24 +1325,22 @@ msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Konnte die bevorzugte Anwendung für den Typ »%s« nicht starten."
 
 #: ../exo-open/main.c:354
-#, c-format, fuzzy
+#, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "Konnte das URI Schema von \"%s\"\\ nicht erkennen"
+msgstr "Konnte das URI-Schema von »%s« nicht erkennen."
 
 #: ../exo-open/main.c:364
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Konnte die URI »%s« nicht öffnen."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:1
-#, fuzzy
 msgid "Browse the file system"
 msgstr "Das Dateisystem durchsuchen, um einen eigenen Befehl zu wählen"
 
 #: ../exo-open/exo-mail-reader.desktop.in.h:2
-#, fuzzy
 msgid "Read your email"
-msgstr "Emails lesen"
+msgstr "E-Mails lesen"
 
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:2
 msgid "Use the command line"
