@@ -154,8 +154,9 @@ msgid "For custom terminal commands, the special marker <literal>%s</literal> wi
 msgstr "Für einen benutzerdefinierten Konsolenbefehl wird der spezielle Marker <literal>%s</literal> durch die Anwendung ersetzt, die im Terminal ausgeführt werden soll. Ansonsten gelten die gleichen Regeln wie in <xref linkend=\"configuration-internet\"/> beschrieben."
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in198(title)
+#, fuzzy
 msgid "exo-open"
-msgstr ""
+msgstr "exo-open"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in200(para)
 msgid "A simple command line frontend to the <emphasis>Xfce Preferred Applications</emphasis> framework is included, named <application>exo-open</application>. Users and developers can use this utility to launch the preferred application for a certain category or open URLs with the default URL handler."
@@ -166,36 +167,36 @@ msgid "<application>exo-open</application> supports two operation modes. The fir
 msgstr "<application>exo-open</application> unterstützt zwei Operationsmodi. Der erste wird einfach die bevorzugte Anwendung für eine bestimmte Kategorie starten, wobei optional Parameter angegeben werden (die exakte Bedeutung des Ausdrucks <emphasis>Parameter</emphasis> hängt von der Kategorie ab). Um zum Beispiel den Befehl <command>mutt</command> in der bevorzugten Terminalemulation auszuführen, würde man folgendes verwenden:"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in217(screen)
-#, no-wrap
+#, no-wrap, fuzzy
 msgid "exo-open --launch TerminalEmulator mutt"
-msgstr ""
+msgstr "exo-open --launch TerminalEmulator mutt"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in219(para)
 msgid "while to just open the preferred Web Browser, the following command would be used:"
 msgstr "Um den bevorzugten Webbrowser zu öffnen wird der folgende Befehl verwendet:"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in224(screen)
-#, no-wrap
+#, no-wrap, fuzzy
 msgid "exo-open --launch WebBrowser"
-msgstr ""
+msgstr "exo-open --launch WebBrowser"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in226(para)
 msgid "The second mode supported by <application>exo-open</application> opens all parameters passed to it with the default URL handlers. Here URLs mean either fully qualified URLs (i.e. <literal>http://www.xfce.org/</literal> or <literal>mailto:xfce4-dev@xfce.org</literal>) or local paths (i.e. <literal>/home/dude/myfile.txt</literal>). For example to open <literal>/home/dude/file1.mp3</literal> and <literal>/home/dude/file2.txt</literal> in the default applications, you would use the following command:"
 msgstr "Der zweite Modus, der von <application>exo-open</application> unterstützt wird, öffnet alle Parameter, die an ihn übergeben werden mit den vorgebenen URL-Behandlern. URLs bezeichnet hier entweder qualifizierte URLs (z.B. <literal>http://www.xfce.org/</literal> oder <literal>mailto:xfce4-dev@xfce.org</literal>) oder lokale Pfade (z.B. <literal>/home/user/myfile.txt</literal>). Um zum Beispiel <literal>/home/dude/file1.mp3</literal> zu öffnen und <literal>/home/dude/file2.txt</literal> in der Standardapplikation auszuführen, wird folgender Befehl verwendet:"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in238(screen)
-#, no-wrap
+#, no-wrap, fuzzy
 msgid "exo-open /home/dude/file1.mp3 /home/dude/file2.txt"
-msgstr ""
+msgstr "exo-open /home/dude/file1.mp3 /home/dude/file2.txt"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in240(para)
 msgid "To start composing a mail to the <ulink type=\"http\" url=\"http://foo-projects.org/mailman/listinfo/xfce4-dev\">xfce4-dev</ulink> mailing list, you can do:"
 msgstr "Um eine eMail für die <ulink type=\"http\" url=\"http://foo-projects.org/mailman/listinfo/xfce4-dev\">xfce4-dev</ulink> Mailing-Liste zu verfassen, kann man folgendes tun:"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in246(screen)
-#, no-wrap
+#, no-wrap, fuzzy
 msgid "exo-open mailto:xfce4-dev@xfce.org"
-msgstr ""
+msgstr "exo-open mailto:xfce4-dev@xfce.org"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in251(title)
 msgid "About"
