@@ -17,7 +17,6 @@ msgstr ""
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/exo-preferred-applications.xml.in95(None)
-#, fuzzy
 msgid "@@image: 'images/exo-preferred-applications-internet.png'; md5=aad820986d24a1cc052e491cf22100a2"
 msgstr "@@image: 'images/exo-preferred-applications-internet.png'; md5=aad820986d24a1cc052e491cf22100a2"
 
@@ -25,7 +24,6 @@ msgstr "@@image: 'images/exo-preferred-applications-internet.png'; md5=aad820986
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/exo-preferred-applications.xml.in117(None)
-#, fuzzy
 msgid "@@image: 'images/exo-preferred-applications-webbrowser-menu.png'; md5=5aebcc859c5b3bffbb6141fb7e51cd7d"
 msgstr "@@image: 'images/exo-preferred-applications-webbrowser-menu.png'; md5=5aebcc859c5b3bffbb6141fb7e51cd7d"
 
@@ -33,7 +31,6 @@ msgstr "@@image: 'images/exo-preferred-applications-webbrowser-menu.png'; md5=5a
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/exo-preferred-applications.xml.in140(None)
-#, fuzzy
 msgid "@@image: 'images/exo-preferred-applications-webbrowser-custom.png'; md5=8029c8ff46e17b868286f47bb3598d8d"
 msgstr "@@image: 'images/exo-preferred-applications-webbrowser-custom.png'; md5=8029c8ff46e17b868286f47bb3598d8d"
 
@@ -41,7 +38,6 @@ msgstr "@@image: 'images/exo-preferred-applications-webbrowser-custom.png'; md5=
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/exo-preferred-applications.xml.in178(None)
-#, fuzzy
 msgid "@@image: 'images/exo-preferred-applications-utilities.png'; md5=5f789aa388d6fc1ea613a3d26c4fb0d7"
 msgstr "@@image: 'images/exo-preferred-applications-utilities.png'; md5=5f789aa388d6fc1ea613a3d26c4fb0d7"
 
@@ -154,7 +150,6 @@ msgid "For custom terminal commands, the special marker <literal>%s</literal> wi
 msgstr "Für einen benutzerdefinierten Konsolenbefehl wird der spezielle Marker <literal>%s</literal> durch die Anwendung ersetzt, die im Terminal ausgeführt werden soll. Ansonsten gelten die gleichen Regeln wie in <xref linkend=\"configuration-internet\"/> beschrieben."
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in198(title)
-#, fuzzy
 msgid "exo-open"
 msgstr "exo-open"
 
@@ -167,7 +162,7 @@ msgid "<application>exo-open</application> supports two operation modes. The fir
 msgstr "<application>exo-open</application> unterstützt zwei Operationsmodi. Der erste wird einfach die bevorzugte Anwendung für eine bestimmte Kategorie starten, wobei optional Parameter angegeben werden (die exakte Bedeutung des Ausdrucks <emphasis>Parameter</emphasis> hängt von der Kategorie ab). Um zum Beispiel den Befehl <command>mutt</command> in der bevorzugten Terminalemulation auszuführen, würde man folgendes verwenden:"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in217(screen)
-#, no-wrap, fuzzy
+#, no-wrap
 msgid "exo-open --launch TerminalEmulator mutt"
 msgstr "exo-open --launch TerminalEmulator mutt"
 
@@ -176,7 +171,7 @@ msgid "while to just open the preferred Web Browser, the following command would
 msgstr "Um den bevorzugten Webbrowser zu öffnen wird der folgende Befehl verwendet:"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in224(screen)
-#, no-wrap, fuzzy
+#, no-wrap
 msgid "exo-open --launch WebBrowser"
 msgstr "exo-open --launch WebBrowser"
 
@@ -185,7 +180,7 @@ msgid "The second mode supported by <application>exo-open</application> opens al
 msgstr "Der zweite Modus, der von <application>exo-open</application> unterstützt wird, öffnet alle Parameter, die an ihn übergeben werden mit den vorgebenen URL-Behandlern. URLs bezeichnet hier entweder qualifizierte URLs (z.B. <literal>http://www.xfce.org/</literal> oder <literal>mailto:xfce4-dev@xfce.org</literal>) oder lokale Pfade (z.B. <literal>/home/user/myfile.txt</literal>). Um zum Beispiel <literal>/home/dude/file1.mp3</literal> zu öffnen und <literal>/home/dude/file2.txt</literal> in der Standardapplikation auszuführen, wird folgender Befehl verwendet:"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in238(screen)
-#, no-wrap, fuzzy
+#, no-wrap
 msgid "exo-open /home/dude/file1.mp3 /home/dude/file2.txt"
 msgstr "exo-open /home/dude/file1.mp3 /home/dude/file2.txt"
 
@@ -194,7 +189,7 @@ msgid "To start composing a mail to the <ulink type=\"http\" url=\"http://foo-pr
 msgstr "Um eine eMail für die <ulink type=\"http\" url=\"http://foo-projects.org/mailman/listinfo/xfce4-dev\">xfce4-dev</ulink> Mailing-Liste zu verfassen, kann man folgendes tun:"
 
 #: ../docs/manual/C/exo-preferred-applications.xml.in246(screen)
-#, no-wrap, fuzzy
+#, no-wrap
 msgid "exo-open mailto:xfce4-dev@xfce.org"
 msgstr "exo-open mailto:xfce4-dev@xfce.org"
 
