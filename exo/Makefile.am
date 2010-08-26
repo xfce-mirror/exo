@@ -4,7 +4,7 @@ INCLUDES = 								\
 	-DDATADIR=\"$(datadir)\"					\
 	-DEXO_COMPILATION						\
 	-DG_LOG_DOMAIN=\"exo\"						\
-	-DLIBEXECDIR=\"$(libexecdir)\"					\
+	-DLIBDIR=\"$(libdir)/xfce4/exo-$(LIBEXO_VERSION_API)\"		\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"			\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 

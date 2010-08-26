@@ -2,8 +2,8 @@
 INCLUDES = 								\
 	-I$(top_srcdir)							\
 	-DG_LOG_DOMAIN=\"exo-gio-module\"				\
+	-DLIBDIR=\"$(libdir)/xfce4/exo-$(LIBEXO_VERSION_API)\"		\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
-	-DLIBEXECDIR=\"$(libexecdir)\"					\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"
 
 if HAVE_GIO_UNIX

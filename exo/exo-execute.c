@@ -131,7 +131,7 @@ exo_execute_preferred_application_on_screen (const gchar *category,
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   /* generate the argument vector */
-  argv[argc++] = LIBEXECDIR "/exo-helper-" LIBEXO_VERSION_API;
+  argv[argc++] = LIBDIR G_DIR_SEPARATOR_S "exo-helper-" LIBEXO_VERSION_API;
   argv[argc++] = "--launch";
   argv[argc++] = (gchar *) category;
 

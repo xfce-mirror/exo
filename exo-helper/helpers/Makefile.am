@@ -40,10 +40,11 @@ desktop_in_in_files =							\
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 %.desktop.in: %.desktop.in.in
-	sed -e "s,\@libexecdir\@,$(libexecdir),g" < $< > $@
+	sed -e 's,\@HELPERDIR\@,$(libdir)/xfce4/exo-$(LIBEXO_VERSION_API),g' < $< > $@
 @INTLTOOL_DESKTOP_RULE@
 
-libexec_SCRIPTS =							\
+exo_composedir = $(libdir)/xfce4/exo-$(LIBEXO_VERSION_API)
+exo_compose_SCRIPTS =							\
 	exo-compose-mail-$(LIBEXO_VERSION_API)
 
 DISTCLEANFILES =							\
