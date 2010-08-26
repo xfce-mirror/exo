@@ -54,7 +54,9 @@ bin_SCRIPTS =								\
 
 exo-preferred-applications: Makefile $(srcdir)/exo-preferred-applications.in
 	sed -e 's,@libdir\@,$(libdir),g' 				\
-	    -e 's,@LIBEXO_VERSION_API\@,$(LIBEXO_VERSION_API),g' < $< > $@
+	    -e 's,@LIBEXO_VERSION_API\@,$(LIBEXO_VERSION_API),g' 	\
+	    < $(srcdir)/exo-preferred-applications.in			\
+	    > exo-preferred-applications
 
 desktopdir = $(datadir)/applications
 desktop_in_files =							\
