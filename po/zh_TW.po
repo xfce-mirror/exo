@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-07-21 18:14+0200\n"
-"PO-Revision-Date: 2010-08-27 00:47+0800\n"
+"PO-Revision-Date: 2010-08-27 09:50+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
@@ -500,42 +500,42 @@ msgstr "       %s [選項] --build-list [[name file]...]\n"
 #: ../exo-csource/main.c:287
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr ""
+msgstr "  -h, --help        印出此幫助訊息並離開\n"
 
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr ""
+msgstr "  -V, --version     印出版本資訊並離開\n"
 
 #: ../exo-csource/main.c:289
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
-msgstr ""
+msgstr "  --extern          產生外部符號\n"
 
 #: ../exo-csource/main.c:290
 #, c-format
 msgid "  --static          Generate static symbols\n"
-msgstr ""
+msgstr "  --static          產生靜態符號\n"
 
 #: ../exo-csource/main.c:291
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr ""
+msgstr "  --name=identifier C macro/variable name\n"
 
 #: ../exo-csource/main.c:292
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr ""
+msgstr "  --build-list      Parse (name, file) pairs\n"
 
 #: ../exo-csource/main.c:293
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr ""
+msgstr "  --strip-comments  從 XML 檔案移除註解\n"
 
 #: ../exo-csource/main.c:294
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr ""
+msgstr "  --strip-content   從 XML 檔案移除 node 內容\n"
 
 #: ../exo-csource/main.c:304
 #: ../exo-desktop-item-edit/main.c:177
@@ -565,6 +565,11 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
+"%s 不提供任何擔保，\n"
+"您可以依照 GNU Lesser General Public License 授權\n"
+"的條款重新散布 %s 的副本；授權可以在 %s 源碼套件內\n"
+"找到。\n"
+"\n"
 
 #: ../exo-csource/main.c:312
 #: ../exo-desktop-item-edit/main.c:185
@@ -1266,11 +1271,11 @@ msgstr "       exo-open --launch 類型 [參數...]"
 
 #: ../exo-open/main.c:87
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
+msgstr "  -?, --help                          印出此幫助訊息並離開"
 
 #: ../exo-open/main.c:88
 msgid "  -V, --version                       Print version information and exit"
-msgstr ""
+msgstr "  -V, --version                       印出版本訊息並離開"
 
 #: ../exo-open/main.c:90
 msgid ""
@@ -1278,12 +1283,17 @@ msgid ""
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
+"  --launch 類型 [參數...]       啟動「類型」的預設輔助程式，並加\n"
+"                                      上選用的「參數」；「類型」是下方的\n"
+"                                      值之一。"
 
 #: ../exo-open/main.c:94
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
+"  --working-directory 目錄       使用 --launch 選項時應用程式的\n"
+"                                      預設工作目錄。"
 
 #: ../exo-open/main.c:97
 msgid "The following TYPEs are supported for the --launch command:"
