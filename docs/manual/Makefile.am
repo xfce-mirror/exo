@@ -20,7 +20,7 @@ install-data-local:
 			done; \
 			if test x"$$lang" != x"C" -a ! -d $(srcdir)/images/$$lang; then \
 				echo "--- Creating symlink to C images for $$lang"; \
-				ln -sf $(docdir)/html/C/images $(DESTDIR)$(docdir)/html/$$lang/images; \
+				ln -sf $(docdir)/html/C/images $$dest/images; \
 			fi \
 		fi \
 	done;
@@ -72,7 +72,7 @@ doc-build.stamp: $(srcdir)/$(DOCUMENT) $(srcdir)/$(STYLESHEET)
 			-e "s,\@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g" \
 			-i xgen-doc; \
 		echo "Validating DocBook XML file"; \
-		$(XMLLINT) --noout --valid xgen-doc; \
+		$(XMLLINT) --noout --valid xgen-doc || exit 1; \
 		echo "Creating the HTML pages"; \
 		$(XSLTPROC) --nonet -o $(srcdir)/html/$$lang/ $(srcdir)/$(STYLESHEET) xgen-doc; \
 		chmod -R u+w $(srcdir)/html/$$lang; \
