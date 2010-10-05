@@ -43,6 +43,7 @@
 #include <exo/exo-config.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-icon-view.h>
+#include <exo/exo-lazy-cell-renderer.h>
 #include <exo/exo-marshal.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
@@ -400,9 +401,10 @@ static void     exo_icon_view_search_timeout_destroy    (gpointer        user_da
 struct _ExoIconViewCellInfo
 {
   GtkCellRenderer      *cell;
-  guint                 expand : 1;
-  guint                 pack : 1;
   guint                 editing : 1;
+  guint                 expand : 1;
+  guint                 lazy : 1;
+  guint                 pack : 1;
   gint                  position;
   GSList               *attributes;
   GtkCellLayoutDataFunc func;
@@ -3547,6 +3549,10 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
   gint                 y_0;
   gint                 x_1;
   gint                 y_1;
+  gint                 x_offset;
+  gint                 y_offset;
+  gint                 width;
+  gint                 height;
 
   if (G_UNLIKELY (icon_view->priv->model == NULL))
     return;
@@ -3650,11 +3656,33 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
       cell_area.x = x - item->area.x + cell_area.x;
       cell_area.y = y - item->area.y + cell_area.y;
 
-      gtk_cell_renderer_render (info->cell,
-                                drawable,
-                                GTK_WIDGET (icon_view),
-                                &cell_area, &cell_area, area, flags);
+      if (!info->lazy)
+        {
+          gtk_cell_renderer_render (info->cell,
+                                    drawable,
+                                    GTK_WIDGET (icon_view),
+                                    &cell_area, &cell_area, area, flags);
+        }
+      else if (exo_lazy_cell_renderer_render_and_resize (EXO_LAZY_CELL_RENDERER (info->cell), drawable,
+                                                         GTK_WIDGET (icon_view), &cell_area, &cell_area,
+                                                         area, flags, &x_offset, &y_offset, &width, &height))
+        {
+          item->box[info->position].x = x_offset + cell_area.x;
+          item->box[info->position].y = y_offset + cell_area.y;
+          item->box[info->position].width = width;
+          item->box[info->position].height = height;
 
+          if (icon_view->priv->orientation == GTK_ORIENTATION_HORIZONTAL)
+            {
+              item->before[info->position] = x_offset;
+              item->after[info->position] = cell_area.width - width - x_offset;
+            }
+          else
+            {
+              item->before[info->position] = y_offset;
+              item->after[info->position] = cell_area.height - height - y_offset;
+            }
+        }
     }
 }
 
@@ -4680,6 +4708,7 @@ exo_icon_view_cell_layout_pack_start (GtkCellLayout   *layout,
   info = g_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
   info->expand = expand ? TRUE : FALSE;
+  info->lazy = EXO_IS_LAZY_CELL_RENDERER (renderer);
   info->pack = GTK_PACK_START;
   info->position = icon_view->priv->n_cells;
   info->is_text = GTK_IS_CELL_RENDERER_TEXT (renderer);
@@ -4709,6 +4738,7 @@ exo_icon_view_cell_layout_pack_end (GtkCellLayout   *layout,
   info = g_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
   info->expand = expand ? TRUE : FALSE;
+  info->lazy = EXO_IS_LAZY_CELL_RENDERER (renderer);
   info->pack = GTK_PACK_END;
   info->position = icon_view->priv->n_cells;
   info->is_text = GTK_IS_CELL_RENDERER_TEXT (renderer);

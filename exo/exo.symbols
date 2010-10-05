@@ -220,6 +220,15 @@ exo_icon_view_set_search_position_func
 #endif
 #endif
 
+/* ExoLazyCellRenderer methods */
+#if IN_HEADER(__EXO_LAZY_CELL_RENDERER_H__)
+#if IN_SOURCE(__EXO_LAZY_CELL_RENDERER_C__)
+exo_lazy_cell_renderer_get_type G_GNUC_CONST
+exo_lazy_cell_renderer_render_and_resize
+#endif
+#endif
+
+ /* exo-md5 functions */
 /* exo-job functions */
 #if IN_HEADER(__EXO_JOB_H__)
 #if IN_SOURCE(__EXO_JOB_C__)

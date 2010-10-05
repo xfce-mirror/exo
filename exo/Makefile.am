@@ -21,6 +21,7 @@ libexo_headers =							\
 	exo-icon-bar.h							\
 	exo-icon-chooser-dialog.h					\
 	exo-icon-view.h							\
+	exo-lazy-cell-renderer.h					\
 	exo-job.h							\
 	exo-simple-job.h						\
 	exo-string.h							\
@@ -68,6 +69,7 @@ libexo_1_la_SOURCES =							\
 	exo-icon-chooser-model.c					\
 	exo-icon-chooser-model.h					\
 	exo-icon-view.c							\
+	exo-lazy-cell-renderer.c					\
 	exo-job.c							\
 	exo-job.h							\
 	exo-simple-job.c						\
