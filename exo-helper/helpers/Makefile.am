@@ -19,6 +19,7 @@ desktop_in_in_files =							\
 	gnome-terminal.desktop.in.in					\
 	kmail.desktop.in.in						\
 	konqueror.desktop.in.in						\
+	icedove.desktop.in.in                                           \
 	links.desktop.in.in						\
 	lynx.desktop.in.in						\
 	midori.desktop.in.in						\
