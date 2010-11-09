@@ -152,7 +152,13 @@ elsif ($style eq 'sylpheed') {
 	if (@attachments > 0) {
 		push (@argv, '--attach');
 		for my $uri (@attachments) {
-			push (@argv, $uri->path ());
+			# claws-mail supports URIs, sylpheed and older claws need 
+			# unescaped local paths
+			if ($binary eq 'claws-mail') {
+				push (@argv, $uri);
+			} else {
+				push (@argv, uri_unescape ($uri->path ()));
+			}
 		}
 	}
 }
