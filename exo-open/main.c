@@ -87,8 +87,6 @@ static KnownSchemes known_schemes[] =
 {
   { "^(https?|ftps?|gopher)$", "WebBrowser" },
   { "^mailto$",                "MailReader" },
-  /* no file here, because we handle directories and files differently */
-  { "^(trash)$",               "FileManager" }
 };
 
 
@@ -325,6 +323,9 @@ exo_open_uri (const gchar  *uri,
       file_type = g_file_info_get_file_type (file_info);
       if (file_type == G_FILE_TYPE_DIRECTORY)
         {
+#ifndef NDEBUG
+          g_debug ("file is directory, use filemanager");
+#endif
           /* directories should go fine with a file manager */
           retval = exo_open_launch_category ("FileManager", uri);
           succeed = TRUE;
