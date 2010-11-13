@@ -8,7 +8,7 @@ INCLUDES = 								\
 
 if HAVE_GIO_UNIX
 
-if HAVE_GIO_MODULEDIR
+if BUILD_GIO_MODULE
 exomoduledir =								\
 	$(GIOMODULEDIR)
 else
