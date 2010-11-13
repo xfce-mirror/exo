@@ -85,8 +85,8 @@ struct _KnownSchemes
 
 static KnownSchemes known_schemes[] =
 {
-  { "^(https?|ftps?|gopher)$", "WebBrowser" },
-  { "^mailto$",                "MailReader" },
+  { "^(https?|gopher)$", "WebBrowser" },
+  { "^mailto$",          "MailReader" },
 };
 
 
@@ -369,16 +369,23 @@ exo_open_uri (const gchar  *uri,
     }
 
   g_object_unref (G_OBJECT (file));
-  g_free (scheme);
 
   /* our last try... */
   if (!succeed)
     {
 #ifndef NDEBUG
-      g_debug ("use gtk_show_uri()");
+          g_debug ("nothing worked, try ftp(s) or gtk_show_uri()");
 #endif
-      retval = gtk_show_uri (NULL, uri, 0, error);
+
+      /* try ftp uris if the file manager/gio failed to recognize it */
+      if (g_strcmp0 (scheme, "ftp") == 0
+          || g_strcmp0 (scheme, "ftps") == 0)
+        retval = exo_open_launch_category ("WebBrowser", uri);
+      else
+        retval = gtk_show_uri (NULL, uri, 0, error);
     }
+
+  g_free (scheme);
 
   return retval;
 }
