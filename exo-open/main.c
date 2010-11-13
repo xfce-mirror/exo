@@ -76,6 +76,21 @@ static GOptionEntry entries[] =
   { NULL, },
 };
 
+typedef struct _KnownSchemes KnownSchemes;
+struct _KnownSchemes
+{
+  const gchar *pattern;
+  const gchar *category;
+};
+
+static KnownSchemes known_schemes[] =
+{
+  { "^(https?|ftps?|gopher)$", "WebBrowser" },
+  { "^mailto$",                "MailReader" },
+  /* no file here, because we handle directories and files differently */
+  { "^(trash)$",               "FileManager" }
+};
+
 
 
 static void
@@ -214,8 +229,163 @@ exo_open_find_scheme (const gchar *string)
 
 
 
-int
-main (int argc, char **argv)
+static gboolean
+exo_open_launch_category (const gchar *category,
+                          const gchar *parameters)
+{
+  GtkWidget *dialog;
+  GError    *error = NULL;
+
+#ifndef NDEBUG
+  g_debug ("category='%s', wd='%s', parameters='%s'", category, opt_working_directory, parameters);
+#endif
+
+  /* run the preferred application */
+  if (!exo_execute_preferred_application (category, parameters, opt_working_directory, NULL, &error))
+    {
+      /* display an error dialog */
+      dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
+                                       _("Failed to launch preferred application for category \"%s\"."), category);
+      gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
+      gtk_dialog_run (GTK_DIALOG (dialog));
+      gtk_widget_destroy (dialog);
+      g_error_free (error);
+
+      return FALSE;
+    }
+
+  return TRUE;
+}
+
+
+static gboolean
+exo_open_uri_known_category (const gchar  *uri,
+                             const gchar  *scheme,
+                             gboolean     *succeed)
+{
+  guint        i;
+  const gchar *category = NULL;
+
+  g_return_val_if_fail (uri != NULL, FALSE);
+  g_return_val_if_fail (scheme != NULL, FALSE);
+
+  /* check if the scheme matches a known preferred application type */
+  for (i = 0; category == NULL && i < G_N_ELEMENTS (known_schemes); i++)
+    {
+      if (g_regex_match_simple (known_schemes[i].pattern, scheme, G_REGEX_CASELESS, 0))
+        {
+          /* launch the preferred application */
+          *succeed = exo_open_launch_category (known_schemes[i].category, uri);
+
+          /* we always return, because we found a matching scheme */
+          return TRUE;
+        }
+    }
+
+  return FALSE;
+}
+
+
+
+static gboolean
+exo_open_uri (const gchar  *uri,
+              GError      **error)
+{
+  GFile       *file;
+  gchar       *scheme;
+  GFileInfo   *file_info;
+  gboolean     succeed = FALSE;
+  gboolean     retval = FALSE;
+  GFileType    file_type;
+  const gchar *content_type;
+  GAppInfo    *app_info;
+  gchar       *path;
+  const gchar *executable;
+  GList        fake_list;
+
+  g_return_val_if_fail (uri != NULL, FALSE);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  file = g_file_new_for_uri (uri);
+  scheme = g_file_get_uri_scheme (file);
+
+  /* try to launch common schemes for know preferred applications */
+  if (scheme != NULL && exo_open_uri_known_category (uri, scheme, &retval))
+    {
+      g_free (scheme);
+      return retval;
+    }
+
+  /* handle the uri as a file, maybe we succeed... */
+  file_info = g_file_query_info (file, G_FILE_ATTRIBUTE_STANDARD_TYPE ","
+                                 G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE,
+                                 G_FILE_QUERY_INFO_NONE, NULL, error);
+  if (file_info != NULL)
+    {
+      file_type = g_file_info_get_file_type (file_info);
+      if (file_type == G_FILE_TYPE_DIRECTORY)
+        {
+          /* directories should go fine with a file manager */
+          retval = exo_open_launch_category ("FileManager", uri);
+          succeed = TRUE;
+        }
+      else
+        {
+          content_type = g_file_info_get_content_type (file_info);
+#ifndef NDEBUG
+          g_debug ("content type=%s", content_type);
+#endif
+          if (G_LIKELY (content_type))
+            {
+              /* try to find a suitable application for this content type */
+              path = g_file_get_path (file);
+              app_info = g_app_info_get_default_for_type (content_type, path == NULL);
+              g_free (path);
+
+              if (app_info != NULL)
+                {
+                  /* make sure we don't loop somehow */
+                  executable = g_app_info_get_executable (app_info);
+#ifndef NDEBUG
+                  g_debug ("default executable=%s", executable);
+#endif
+                  if (g_strcmp0 (executable, "exo-open") != 0)
+                    {
+                      fake_list.data = (gpointer) uri;
+                      fake_list.prev = fake_list.next = NULL;
+
+                      /* launch it */
+                      retval = g_app_info_launch_uris (app_info, &fake_list, NULL, error);
+                      succeed = TRUE;
+                    }
+
+                  g_object_unref (G_OBJECT (app_info));
+                }
+            }
+        }
+
+      g_object_unref (G_OBJECT (file_info));
+    }
+
+  g_object_unref (G_OBJECT (file));
+  g_free (scheme);
+
+  /* our last try... */
+  if (!succeed)
+    {
+#ifndef NDEBUG
+      g_debug ("use gtk_show_uri()");
+#endif
+      retval = gtk_show_uri (NULL, uri, 0, error);
+    }
+
+  return retval;
+}
+
+
+
+gint
+main (gint argc, gchar **argv)
 {
   GOptionContext  *context;
   GtkWidget       *dialog;
@@ -300,25 +470,10 @@ main (int argc, char **argv)
           parameter = NULL;
         }
 
-#ifndef NDEBUG
-      g_debug ("launch=%s, wd=%s, parameters (%d)=%s", opt_launch, opt_working_directory, argc, parameter);
-#endif
-
       /* run the preferred application */
-      if (!exo_execute_preferred_application (opt_launch, parameter, opt_working_directory, NULL, &err))
-        {
-          /* display an error dialog */
-          dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
-                                           _("Failed to launch preferred application for category \"%s\"."),
-                                           opt_launch);
-          gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", err->message);
-          gtk_dialog_run (GTK_DIALOG (dialog));
-          gtk_widget_destroy (dialog);
-          result = EXIT_FAILURE;
-          g_error_free (err);
-        }
+      if (!exo_open_launch_category (opt_launch, parameter))
+        result = EXIT_FAILURE;
 
-      /* cleanup */
       g_free (parameter);
     }
   else if (argc > 1)
@@ -357,20 +512,22 @@ main (int argc, char **argv)
 
               result = EXIT_FAILURE;
             }
-          else if (!gtk_show_uri (NULL, uri, 0, &err))
+          else if (!exo_open_uri (uri, &err))
             {
-              /* display an error dialog */
-              dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
-                                               _("Failed to open URI \"%s\"."), uri);
-              gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", err->message);
-              g_error_free (err);
-              gtk_dialog_run (GTK_DIALOG (dialog));
-              gtk_widget_destroy (dialog);
+              if (err != NULL)
+                {
+                  /* display an error dialog */
+                  dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
+                                                   _("Failed to open URI \"%s\"."), uri);
+                  gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", err->message);
+                  g_error_free (err);
+                  gtk_dialog_run (GTK_DIALOG (dialog));
+                  gtk_widget_destroy (dialog);
+                }
 
               result = EXIT_FAILURE;
             }
 
-          /* cleanup */
           g_free (uri);
         }
     }
