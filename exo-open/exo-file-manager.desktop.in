@@ -1,11 +1,12 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Exec=exo-open --launch FileManager
+Exec=exo-open --launch FileManager %u
 Icon=system-file-manager
 StartupNotify=true
 Terminal=false
 Categories=X-XFCE;X-Xfce-Toplevel;
 OnlyShowIn=XFCE;
+MimeType=x-scheme-handler/file;x-scheme-handler/trash;
 _Name=File Manager
 _Comment=Browse the file system
