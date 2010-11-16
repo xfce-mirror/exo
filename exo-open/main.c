@@ -289,20 +289,30 @@ static gboolean
 exo_open_uri (const gchar  *uri,
               GError      **error)
 {
-  GFile       *file;
-  gchar       *scheme;
-  GFileInfo   *file_info;
-  gboolean     succeed = FALSE;
-  gboolean     retval = FALSE;
-  GFileType    file_type;
-  const gchar *content_type;
-  GAppInfo    *app_info;
-  gchar       *path;
-  const gchar *executable;
-  GList        fake_list;
+  GFile               *file;
+  gchar               *scheme;
+  GFileInfo           *file_info;
+  gboolean             succeed = FALSE;
+  gboolean             retval = FALSE;
+  GFileType            file_type;
+  const gchar         *content_type;
+  GAppInfo            *app_info;
+  gchar               *path;
+  const gchar         *executable;
+  GList                fake_list;
+  const gchar * const *schemes;
+  GError              *err = NULL;
+  guint                i;
 
   g_return_val_if_fail (uri != NULL, FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+#ifndef NDEBUG
+  schemes = g_vfs_get_supported_uri_schemes (g_vfs_get_default ());
+  scheme = g_strjoinv (", ", (gchar **) schemes);
+  g_debug ("vfs supported schemes: %s", scheme);
+  g_free (scheme);
+#endif
 
   file = g_file_new_for_uri (uri);
   scheme = g_file_get_uri_scheme (file);
@@ -317,7 +327,7 @@ exo_open_uri (const gchar  *uri,
   /* handle the uri as a file, maybe we succeed... */
   file_info = g_file_query_info (file, G_FILE_ATTRIBUTE_STANDARD_TYPE ","
                                  G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE,
-                                 G_FILE_QUERY_INFO_NONE, NULL, error);
+                                 G_FILE_QUERY_INFO_NONE, NULL, &err);
   if (file_info != NULL)
     {
       file_type = g_file_info_get_file_type (file_info);
@@ -350,13 +360,14 @@ exo_open_uri (const gchar  *uri,
 #ifndef NDEBUG
                   g_debug ("default executable=%s", executable);
 #endif
-                  if (g_strcmp0 (executable, "exo-open") != 0)
+                  if (executable == NULL
+                      || strcmp (executable, "exo-open") != 0)
                     {
                       fake_list.data = (gpointer) uri;
                       fake_list.prev = fake_list.next = NULL;
 
                       /* launch it */
-                      retval = g_app_info_launch_uris (app_info, &fake_list, NULL, error);
+                      retval = g_app_info_launch_uris (app_info, &fake_list, NULL, &err);
                       succeed = TRUE;
                     }
 
@@ -366,6 +377,25 @@ exo_open_uri (const gchar  *uri,
         }
 
       g_object_unref (G_OBJECT (file_info));
+    }
+  else if (err != NULL
+           && scheme != NULL
+           && err->code == G_IO_ERROR_NOT_MOUNTED)
+    {
+      /* check if the scheme is supported by gio */
+      schemes = g_vfs_get_supported_uri_schemes (g_vfs_get_default ());
+      if (G_LIKELY (schemes != NULL))
+        {
+          for (i = 0; schemes[i] != NULL; i++)
+            {
+              /* found scheme, open in file manager */
+              if (strcmp (scheme, schemes[i]) == 0)
+                {
+                  retval = succeed = exo_open_launch_category ("FileManager", uri);
+                  break;
+                }
+            }
+        }
     }
 
   g_object_unref (G_OBJECT (file));
@@ -378,14 +408,19 @@ exo_open_uri (const gchar  *uri,
 #endif
 
       /* try ftp uris if the file manager/gio failed to recognize it */
-      if (g_strcmp0 (scheme, "ftp") == 0
-          || g_strcmp0 (scheme, "ftps") == 0)
+      if (scheme != NULL
+          && (strcmp (scheme, "ftp") == 0 || strcmp (scheme, "ftps") == 0))
         retval = exo_open_launch_category ("WebBrowser", uri);
       else
         retval = gtk_show_uri (NULL, uri, 0, error);
     }
 
   g_free (scheme);
+
+  if (!retval && error != NULL)
+    *error = err;
+  else if (err != NULL)
+    g_error_free (err);
 
   return retval;
 }
