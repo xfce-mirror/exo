@@ -1,6 +1,15 @@
-0.5.x
+0.5.5
 =====
 - Fix opening of URIs with spaces in claws-mail and sylpheed.
+- Fix two @libexecdir@ -> @HELPERDIR@ replacements.
+- Add Icedove helper.
+- Fix Opera helper with Opera >= 10.60.
+- Add mime types to the exo-open desktop files (bug #6800).
+- Store preferred application in mimeapps.list (bug #6800).
+- Don't build the GIO module after glib 2.27 (bug #6800).
+- Make exo-open more standalone (bug #6573).
+- Translation updates (ug, gl, zh_TW, ru, sk, ja, el, sv, es, eu,
+  hu, pt, kk, it, ja, he, uk, ca, da, id).
 
 0.5.4
 =====
