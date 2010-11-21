@@ -155,11 +155,15 @@ dnl *** Check if we need to build the GIO module (optional) ***
 dnl ***********************************************************
 XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.18.0], [gio-unix], [GIO-Unix features], [yes])
 GIOMODULEDIR=""
+BUILD_GIOMODULE=""
 if test x"$GIO_UNIX_FOUND" = x"yes"; then
   dnl Do not build the module after GIO 2.27
   XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX_227], [gio-unix-2.0], [2.27.0], [gio-unix], [GIO-Unix too new], [yes])
 
   if test x"$GIO_UNIX_227_FOUND" != x"yes"; then
+    dnl A GIO version >= 2.18 and < 2.27 was found
+    BUILD_GIOMODULE="yes"
+
     dnl GIO directory for extensions
     AC_ARG_WITH([gio-module-dir],
                 [AC_HELP_STRING([--with-gio-module-dir=PATH],
@@ -173,7 +177,8 @@ if test x"$GIO_UNIX_FOUND" = x"yes"; then
   fi
 fi
 AC_SUBST([GIOMODULEDIR])
-AM_CONDITIONAL([BUILD_GIO_MODULE], [test x"$GIOMODULEDIR" != x""])
+AM_CONDITIONAL([HAVE_GIOMODULEDIR], [test x"$GIOMODULEDIR" != x""])
+AM_CONDITIONAL([BUILD_GIOMODULE], [test x"$BUILD_GIOMODULE" != x""])
 
 dnl *********************
 dnl *** Check for X11 ***

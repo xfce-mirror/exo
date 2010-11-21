@@ -6,9 +6,9 @@ INCLUDES = 								\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"
 
-if BUILD_GIO_MODULE
+if BUILD_GIOMODULE
 
-if GIOMODULEDIR
+if HAVE_GIOMODULEDIR
 exomoduledir =								\
 	$(GIOMODULEDIR)
 else
