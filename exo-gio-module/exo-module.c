@@ -62,13 +62,14 @@ struct _KnownSchemes
 {
   const gchar *pattern;
   const gchar *category;
+  const gchar *app_name; /* name of the desktop files we use after gio 2.27 for thunar */
 };
 
 static KnownSchemes known_schemes[] =
 {
-  { "^(https?|ftps?|gopher)$", "WebBrowser" },
-  { "^mailto$",                "MailReader" },
-  { "^(file|trash|ssh)$",      "FileManager" }
+  { "^(https?|ftps?|gopher)$", "WebBrowser",  "exo-web-browser" },
+  { "^mailto$",                "MailReader",  "exo-mail-reader" },
+  { "^(file|trash|ssh)$",      "FileManager", "exo-file-manager" }
 };
 
 
@@ -141,7 +142,8 @@ exo_gio_module_get_default_for_uri_scheme (GDesktopAppInfoLookup *lookup,
         {
           /* use the exo-helper directly here to avoid possible roundtrips with exo-open */
           command = g_strconcat (EXO_HELPER_LAUNCH, known_schemes[i].category, NULL);
-          info = g_app_info_create_from_commandline (command, NULL, G_APP_INFO_CREATE_SUPPORTS_URIS, &error);
+          info = g_app_info_create_from_commandline (command, known_schemes[i].app_name, 
+                                                     G_APP_INFO_CREATE_SUPPORTS_URIS, &error);
           if (G_UNLIKELY (info == NULL))
             {
               /* show error */
