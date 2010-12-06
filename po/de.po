@@ -6,12 +6,12 @@
 # Nico Schümann <nico@prog.nico22.de>, 2007.
 # Jannis Pohlmann <jannis@xfce.org>, 2008.
 # Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-23 23:00+0000\n"
+"POT-Creation-Date: 2010-12-06 11:00+0000\n"
 "PO-Revision-Date: 2010-11-24 00:14+0100\n"
 "Last-Translator: Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
 "Language-Team: German <xfce-i18n-de@xfce.org>\n"
@@ -58,12 +58,12 @@ msgstr "Die Größe in Pixeln, in der das Symbol dargestellt werden soll."
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Konnte die Datei »%s« nicht öffnen: %s"
+msgstr "Datei »%s« konnte nicht geöffnet werden: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:849
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Konnte die Datei »%s« nicht lesen: %s"
+msgstr "Datei »%s« konnte nicht gelesen werden: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
@@ -73,10 +73,9 @@ msgstr "Das Bild »%s« konnte aus unbekanntem Grund nicht geladen werden. Vermu
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Konnte »%s« nicht öffnen."
+msgstr "»%s« konnte nicht geöffnet werden."
 
-#: ../exo/exo-icon-bar.c:277
-#: ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
 msgid "Orientation"
 msgstr "Ausrichtung"
 
@@ -84,23 +83,19 @@ msgstr "Ausrichtung"
 msgid "The orientation of the iconbar"
 msgstr "Die Ausrichtung der Symbolleiste"
 
-#: ../exo/exo-icon-bar.c:294
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:793
 msgid "Pixbuf column"
 msgstr "Pixbuf-Spalte"
 
-#: ../exo/exo-icon-bar.c:295
-#: ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Spalte, aus welcher die Pixbuf-Symbole entnommen werden"
 
-#: ../exo/exo-icon-bar.c:310
-#: ../exo/exo-icon-view.c:920
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
 msgid "Text column"
 msgstr "Textspalte"
 
-#: ../exo/exo-icon-bar.c:311
-#: ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
 msgid "Model column used to retrieve the text from"
 msgstr "Spalte, aus welcher der Text entnommen wird"
 
@@ -120,33 +115,27 @@ msgstr "Aktiv"
 msgid "Active item index"
 msgstr "Index des aktiven Elements"
 
-#: ../exo/exo-icon-bar.c:347
-#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Active item fill color"
 msgstr "Füllfarbe des aktiven Elements"
 
-#: ../exo/exo-icon-bar.c:354
-#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Active item border color"
 msgstr "Randfarbe des aktiven Elements"
 
-#: ../exo/exo-icon-bar.c:361
-#: ../exo/exo-icon-bar.c:362
+#: ../exo/exo-icon-bar.c:361 ../exo/exo-icon-bar.c:362
 msgid "Active item text color"
 msgstr "Textfarbe des aktiven Elements"
 
-#: ../exo/exo-icon-bar.c:368
-#: ../exo/exo-icon-bar.c:369
+#: ../exo/exo-icon-bar.c:368 ../exo/exo-icon-bar.c:369
 msgid "Cursor item fill color"
 msgstr "Füllfarbe des Elements unter dem Zeiger"
 
-#: ../exo/exo-icon-bar.c:375
-#: ../exo/exo-icon-bar.c:376
+#: ../exo/exo-icon-bar.c:375 ../exo/exo-icon-bar.c:376
 msgid "Cursor item border color"
 msgstr "Randfarbe des Elements unter dem Zeiger"
 
-#: ../exo/exo-icon-bar.c:382
-#: ../exo/exo-icon-bar.c:383
+#: ../exo/exo-icon-bar.c:382 ../exo/exo-icon-bar.c:383
 msgid "Cursor item text color"
 msgstr "Textfarbe des Elements unter dem Zeiger"
 
@@ -216,8 +205,7 @@ msgid "All Icons"
 msgstr "Alle Symbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:139
-#: ../exo/exo-icon-chooser-dialog.c:285
+#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
 msgid "Image Files"
 msgstr "Bilddateien"
 
@@ -335,23 +323,19 @@ msgstr "Auswahlmodus"
 msgid "The selection mode"
 msgstr "Der Auswahlmodus"
 
-#: ../exo/exo-icon-view.c:871
-#: ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Einfacher Klick"
 
-#: ../exo/exo-icon-view.c:872
-#: ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Legt fest, ob Elemente bereits mit einem einfachen Klick aktiviert werden sollen"
 
-#: ../exo/exo-icon-view.c:888
-#: ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:888 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Auswahlverzögerung bei einfachem Klick"
 
-#: ../exo/exo-icon-view.c:889
-#: ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
 msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
 msgstr "Die Zeitspanne, nach der das Element unter dem Mauszeiger automatisch ausgewählt wird, wenn Aktivierung durch einfachen Klick aktiviert ist"
 
@@ -383,8 +367,7 @@ msgstr "Die Deckkraft der Auswahlbox"
 msgid "Preview"
 msgstr "Vorschau"
 
-#: ../exo/exo-thumbnail-preview.c:129
-#: ../exo/exo-thumbnail-preview.c:271
+#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
 msgid "No file selected"
 msgstr "Keine Datei ausgewählt"
 
@@ -542,8 +525,7 @@ msgstr "  --strip-comments  Kommentare aus XML-Dateien entfernen\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Knoteninhalte aus XML-Dateien entfernen\n"
 
-#: ../exo-csource/main.c:304
-#: ../exo-desktop-item-edit/main.c:177
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
 #: ../exo-open/main.c:471
 #, c-format
 msgid ""
@@ -559,8 +541,7 @@ msgstr ""
 "Entwickelt von Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
 #: ../exo-open/main.c:475
 #, c-format
 msgid ""
@@ -574,8 +555,7 @@ msgstr ""
 "Sie können im Rahmen der GNU Lesser General Public License, die im Quellpaket von %s enthalten ist, Kopien von %s verbreiten.\n"
 "\n"
 
-#: ../exo-csource/main.c:312
-#: ../exo-desktop-item-edit/main.c:185
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
 #: ../exo-open/main.c:479
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -621,37 +601,44 @@ msgstr "Shell-Skripte"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Starter für <b>%s</b> erstellen"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Name:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "_Kommentar:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "_Befehl:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "A_dresse:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "_Arbeitsverzeichnis"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "S_ymbol:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -662,9 +649,11 @@ msgstr "Kein Symbol"
 msgid "Options:"
 msgstr "Optionen:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "_Visuelle Rückmeldung über den Programmstart"
@@ -673,9 +662,11 @@ msgstr "_Visuelle Rückmeldung über den Programmstart"
 msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
 msgstr "Wählen Sie diese Option, um eine Rückmeldung zu erhalten, wenn die Anwendung aus dem Dateimanager oder dem Menü heraus gestartet wird. Nicht jede Anwendung unterstützt dies."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Im _Terminal ausführen"
@@ -751,8 +742,7 @@ msgstr "Voreingestellte URL (nur für Verknüpfungen)"
 msgid "Preset icon when creating a desktop file"
 msgstr "Voreingestelltes Symbol"
 
-#: ../exo-desktop-item-edit/main.c:86
-#: ../exo-helper/main.c:67
+#: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
 msgid "Print version information and exit"
 msgstr "Programmversion anzeigen und beenden"
 
@@ -827,9 +817,8 @@ msgstr "Bevorzugte Anwendungen"
 msgid "Select default applications for various services"
 msgstr "Definieren Sie Standardanwendungen für bestimmte Zwecke"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
@@ -858,9 +847,8 @@ msgstr ""
 "Das E-Mail-Programm wird verwendet, um E-Mails zu verfassen, wenn\n"
 "Sie zum Beispiel auf eine E-Mail-Adresse klicken."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Werkzeuge"
@@ -908,11 +896,11 @@ msgstr "Keine Anwendung ausgewählt"
 
 #: ../exo-helper/exo-helper-chooser.c:315
 msgid "Failed to set default Web Browser"
-msgstr "Konnte den bevorzugten Webbrowser nicht speichern"
+msgstr "Konnte den bevorzugten Webbrowser nicht festlegen"
 
 #: ../exo-helper/exo-helper-chooser.c:316
 msgid "Failed to set default Mail Reader"
-msgstr "Konnte das bevorzugte E-Mail-Programm nicht speichern"
+msgstr "Konnte das bevorzugte E-Mail-Programm nicht festlegen"
 
 #: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
@@ -920,7 +908,7 @@ msgstr "Konnte den bevorzugten Dateimanager nicht festlegen"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
-msgstr "Konnte das bevorzugte Terminal nicht speichern"
+msgstr "Konnte das bevorzugte Terminal nicht festlegen"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:388
@@ -937,7 +925,7 @@ msgstr "Eigenes E-Mail-Programm angeben"
 
 #: ../exo-helper/exo-helper-chooser.c:503
 msgid "Choose a custom File Manager"
-msgstr "Bitte wählen Sie Ihren Dateimanager"
+msgstr "Eigenen Dateimanager angeben"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
@@ -1029,8 +1017,7 @@ msgstr ""
 msgid "No command specified"
 msgstr "Kein Befehl angegeben"
 
-#: ../exo-helper/exo-helper.c:688
-#: ../exo-helper/exo-helper.c:722
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Konnte »%s« nicht zum Schreiben öffnen"
@@ -1302,9 +1289,10 @@ msgstr ""
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Die folgenden TYPen für --launch werden derzeit unterstützt:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
+#. 
 #: ../exo-open/main.c:116
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1369,176 +1357,196 @@ msgstr "Im Internet surfen"
 
 #~ msgid "External %s Drive"
 #~ msgstr "Externes %s-Laufwerk"
+
 #~ msgid "%s Drive"
 #~ msgstr "%s-Laufwerk"
+
 #~ msgid "External Floppy Drive"
 #~ msgstr "Externes Diskettenlaufwerk"
+
 #~ msgid "Floppy Drive"
 #~ msgstr "Diskettenlaufwerk"
+
 #~ msgid "Compact Flash Drive"
 #~ msgstr "Compact-Flash-Laufwerk"
+
 #~ msgid "Memory Stick Drive"
 #~ msgstr "Memory-Stick-Laufwerk"
+
 #~ msgid "Smart Media Drive"
 #~ msgstr "Smart-Media-Laufwerk"
+
 #~ msgid "SD/MMC Drive"
 #~ msgstr "SD/MMC-Laufwerk"
+
 #~ msgid "Zip Drive"
 #~ msgstr "ZIP-Laufwerk"
+
 #~ msgid "Jaz Drive"
 #~ msgstr "Jaz-Laufwerk"
+
 #~ msgid "Pen Drive"
 #~ msgstr "USB-Stick-Laufwerk"
+
 #~ msgid "%s Music Player"
 #~ msgstr "%s Musik-Player"
+
 #~ msgid "%s Digital Camera"
 #~ msgstr "%s Digitalkamera"
+
 #~ msgid "Drive"
 #~ msgstr "Laufwerk"
+
 #~ msgid "Blank %s Disc"
 #~ msgstr "%s-Rohling"
+
 #~ msgid "%s Disc"
 #~ msgstr "%s-Medium"
+
 #~ msgid "Audio CD"
 #~ msgstr "Audio-CD"
+
 #~ msgid "%s Removable Volume"
 #~ msgstr "Wechseldatenträger »%s«"
+
 #~ msgid "%s Volume"
 #~ msgstr "Datenträger »%s«"
+
 #~ msgid "Given device \"%s\" is not a volume or drive"
 #~ msgstr "Das Gerät »%s« ist kein gültiger Datenträger"
+
 #~ msgid "Device \"%s\" not found in file system device table"
 #~ msgstr "Das Gerät »%s« ist nicht in der Datenträgertabelle enthalten"
+
 #~ msgid "You are not privileged to eject the volume \"%s\""
 #~ msgstr "Sie sind nicht dazu berechtigt, den Datenträger »%s« auszuwerfen"
+
 #~ msgid "An application is preventing the volume \"%s\" from being ejected"
-#~ msgstr ""
-#~ "Eine Anwendung verhindert, dass der Datenträger »%s« ausgeworfen werden "
-#~ "kann"
+#~ msgstr "Eine Anwendung verhindert, dass der Datenträger »%s« ausgeworfen werden kann"
+
 #~ msgid "You are not privileged to mount the volume \"%s\""
 #~ msgstr "Sie sind nicht dazu berechtigt, den Datenträger »%s« einzubinden"
-#~ msgid ""
-#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
-#~ "to record audio or data on the disc"
-#~ msgstr ""
-#~ "CD-Rohlinge können nicht eingebunden werden. Benutzen Sie stattdessen ein "
-#~ "Brennprogramm wie zum Beispiel Xfburn, um Daten oder Musik auf den "
-#~ "Rohling zu brennen"
-#~ msgid ""
-#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
-#~ "audio tracks"
-#~ msgstr ""
-#~ "Audio-CDs können nicht eingebunden werden. Benutzen Sie stattdessen ein "
-#~ "Musikprogramm, um die CD abzuspielen"
+
+#~ msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+#~ msgstr "CD-Rohlinge können nicht eingebunden werden. Benutzen Sie stattdessen ein Brennprogramm wie zum Beispiel Xfburn, um Daten oder Musik auf den Rohling zu brennen"
+
+#~ msgid "Audio CDs cannot be mounted, use your favorite audio player to play the audio tracks"
+#~ msgstr "Audio-CDs können nicht eingebunden werden. Benutzen Sie stattdessen ein Musikprogramm, um die CD abzuspielen"
+
 #~ msgid "You are not privileged to teardown the crypto layer"
-#~ msgstr ""
-#~ "Sie sind nicht dazu berechtigt, die Verschlüsselungsschicht "
-#~ "herunterzunehmen"
+#~ msgstr "Sie sind nicht dazu berechtigt, die Verschlüsselungsschicht herunterzunehmen"
+
 #~ msgid "An application is preventing the crypto layer from being torn down"
-#~ msgstr ""
-#~ "Eine Anwendung verhindert, dass die Verschlüsselungsschicht "
-#~ "heruntergenommen werden kann"
+#~ msgstr "Eine Anwendung verhindert, dass die Verschlüsselungsschicht heruntergenommen werden kann"
+
 #~ msgid "You are not privileged to unmount the volume \"%s\""
 #~ msgstr "Sie sind nicht dazu brechtigt, den Datenträger »%s« auszuhängen"
+
 #~ msgid "An application is preventing the volume \"%s\" from being unmounted"
-#~ msgstr ""
-#~ "Eine Anwendung verhindert, dass der Datenträger »%s« ausgeworfen werden "
-#~ "kann"
+#~ msgstr "Eine Anwendung verhindert, dass der Datenträger »%s« ausgeworfen werden kann"
+
 #~ msgid "The volume \"%s\" was probably mounted manually on the command line"
-#~ msgstr ""
-#~ "Der Datenträger »%s« wurde möglicherweise von der Befehlszeile aus "
-#~ "eingebunden"
+#~ msgstr "Der Datenträger »%s« wurde möglicherweise von der Befehlszeile aus eingebunden"
+
 #~ msgid "Eject rather than mount"
 #~ msgstr "Auswerfen statt einbinden"
+
 #~ msgid "Unmount rather than mount"
 #~ msgstr "Aushängen statt einbinden"
+
 #~ msgid "Mount by HAL device UDI"
 #~ msgstr "Einbinden mittels einer HAL-Geräte-UDI"
+
 #~ msgid "Mount by HAL device UDI (not supported)"
 #~ msgstr "Einbinden mittels einer HAL-Geräte-UDI (nicht unterstützt)"
+
 #~ msgid "Mount by device file"
 #~ msgstr "Einbinden mittels einer Gerätedatei"
+
 #~ msgid "Don't show any dialogs"
 #~ msgstr "Keine Dialoge anzeigen"
+
 #~ msgid "Unknown error"
 #~ msgstr "Unbekannter Fehler"
+
 #~ msgid "Must specify HAL device UDI or device file"
 #~ msgstr "Entweder muss eine HAL-Geräte-UDI oder Gerätedatei angegeben werden"
-#~ msgid ""
-#~ "Must not specify both a HAL device UDI and a device file simultaneously"
-#~ msgstr ""
-#~ "Es dürfen nicht gleichzeitig eine HAL-Geräte-UDI und eine Gerätedatei "
-#~ "angegeben werden"
-#~ msgid ""
-#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
-#~ "build"
-#~ msgstr ""
-#~ "Datenträger können nicht mittels einer HAL-Geräte-UDI eingebunden werden, "
-#~ "da HAL von dieser Version nicht unterstützt wird"
+
+#~ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
+#~ msgstr "Es dürfen nicht gleichzeitig eine HAL-Geräte-UDI und eine Gerätedatei angegeben werden"
+
+#~ msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+#~ msgstr "Datenträger können nicht mittels einer HAL-Geräte-UDI eingebunden werden, da HAL von dieser Version nicht unterstützt wird"
+
 #~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-#~ msgstr ""
-#~ "Bei der angegebenen UDI »%s« handelt es sich nicht um eine gültige HAL-"
-#~ "Geräte-UDI"
+#~ msgstr "Bei der angegebenen UDI »%s« handelt es sich nicht um eine gültige HAL-Geräte-UDI"
+
 #~ msgid "Cannot eject and unmount simultaneously"
 #~ msgstr "Kann nicht gleichzeitig aushängen und auswerfen"
+
 #~ msgid "Failed to eject \"%s\""
 #~ msgstr "Der Datenträger »%s« konnte nicht ausgeworfen werden"
+
 #~ msgid "Failed to unmount \"%s\""
 #~ msgstr "Der Datenträger »%s« konnte nicht ausgehängt werden"
+
 #~ msgid "Failed to mount \"%s\""
 #~ msgstr "Der Datenträger »%s« konnte nicht eingebunden werden"
+
 #~ msgid "The device \"%s\" is now safe to remove."
 #~ msgstr "Der Datenträger »%s« kann nun sicher entfernt werden."
+
 #~ msgid "Device is now safe to remove"
 #~ msgstr "Der Datenträger kann nun sicher entfernt werden"
+
 #~ msgid "Ejecting device"
 #~ msgstr "Werfe Datenträger aus"
+
 #~ msgid "The device \"%s\" is being ejected. This may take some time."
-#~ msgstr ""
-#~ "Der Datenträger »%s« wird ausgeworfen. Dies kann einen Moment dauern."
+#~ msgstr "Der Datenträger »%s« wird ausgeworfen. Dies kann einen Moment dauern."
+
 #~ msgid "Unmounting device"
 #~ msgstr "Hänge Datenträger aus"
-#~ msgid ""
-#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
-#~ "the media or disconnect the drive."
-#~ msgstr ""
-#~ "Der Datenträger »%s« wird durch das System ausgehängt. Belassen Sie in "
-#~ "dieser Zeit das Medium im Computer bzw. trennen Sie das Gerät nicht noch "
-#~ "vom Computer."
+
+#~ msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+#~ msgstr "Der Datenträger »%s« wird durch das System ausgehängt. Belassen Sie in dieser Zeit das Medium im Computer bzw. trennen Sie das Gerät nicht noch vom Computer."
+
 #~ msgid "Writing data to device"
 #~ msgstr "Daten werden auf den Datenträger geschrieben"
-#~ msgid ""
-#~ "There is data that needs to be written to the device \"%s\" before it can "
-#~ "be removed. Please do not remove the media or disconnect the drive."
-#~ msgstr ""
-#~ "Einige Daten müssen noch auf den Datenträger »%s« geschrieben werden, "
-#~ "bevor dieser entfernt werden kann. Belassen Sie in dieser Zeit das Medium "
-#~ "im Computer bzw. trennen Sie das Gerät noch nicht vom Computer."
+
+#~ msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+#~ msgstr "Einige Daten müssen noch auf den Datenträger »%s« geschrieben werden, bevor dieser entfernt werden kann. Belassen Sie in dieser Zeit das Medium im Computer bzw. trennen Sie das Gerät noch nicht vom Computer."
+
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "Konnte »%s« nicht öffnen"
+
 #~ msgid "The URL \"%s\" is not supported"
 #~ msgstr "Die URL »%s« wird nicht unterstützt"
+
 #~ msgid "Unknown helper arguments.\n"
 #~ msgstr "Unbekannte Argumente für das Programm.\n"
+
 #~ msgid "Xfce 4 Preferred Applications"
 #~ msgstr "Xfce 4 Bevorzugte Anwendungen"
+
 #~ msgid "Failed to launch exo-preferred-applications"
 #~ msgstr "Konnte exo-preferred-applications nicht ausführen"
+
 #~ msgid "Button Label|Preferred Applications"
 #~ msgstr "Bevorzugte Anwendungen"
+
 #~ msgid "Usage: exo-helper [OPTION...]"
 #~ msgstr "Aufruf: exo-helper [OPTION...]"
-#~ msgid ""
-#~ "  -h, --help                          Print this help message and exit"
-#~ msgstr ""
-#~ "  -h, --help                          Diesen Hilfetext anzeigen und "
-#~ "beenden"
+
+#~ msgid "  -h, --help                          Print this help message and exit"
+#~ msgstr "  -h, --help                          Diesen Hilfetext anzeigen und beenden"
+
 #~ msgid ""
 #~ "  --configure                         Open the Preferred Applications\n"
 #~ "                                      configuration dialog"
 #~ msgstr ""
 #~ "  --configure                         Den Dialoog für die bevorzugten\n"
 #~ "                                      Anwendungen öffnen"
+
 #~ msgid "Sylpheed Claws"
 #~ msgstr "Sylpheed Claws"
-
