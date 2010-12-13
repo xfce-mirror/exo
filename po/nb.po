@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Terje Uriansrud <ter@operamail.com>, 2007.
 # Terje Uriansrud <terje@uriansrud.net>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-21 18:14+0200\n"
+"POT-Creation-Date: 2010-12-13 17:00+0000\n"
 "PO-Revision-Date: 2007-05-12 17:42+0200\n"
 "Last-Translator: Terje Uriansrud <terje@uriansrud.net>\n"
 "Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
-"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
@@ -37,14 +37,12 @@ msgid "The icon to render."
 msgstr "Ikonet som skal tegnes"
 
 #: ../exo/exo-cell-renderer-icon.c:185
-#, fuzzy
 msgid "GIcon"
-msgstr "Ikon"
+msgstr "GIkon"
 
 #: ../exo/exo-cell-renderer-icon.c:186
-#, fuzzy
 msgid "The GIcon to render."
-msgstr "Ikonet som skal tegnes"
+msgstr "GIkonet som skal tegnes."
 
 #: ../exo/exo-cell-renderer-icon.c:207
 msgid "size"
@@ -66,10 +64,8 @@ msgstr "Klarte ikke lese fra file \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Klarte ikke laste bilde \"%s\": Ukjent årsak, antakeligvis er filen korrupt."
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Klarte ikke laste bilde \"%s\": Ukjent årsak, antakeligvis er filen korrupt."
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -217,13 +213,12 @@ msgstr "Velg _ikon fra:"
 
 #. search filter
 #: ../exo/exo-icon-chooser-dialog.c:225
-#, fuzzy
 msgid "_Search icon:"
-msgstr "Søkekolonne"
+msgstr "_Søkeikon:"
 
 #: ../exo/exo-icon-chooser-dialog.c:236
 msgid "Clear search field"
-msgstr ""
+msgstr "Tøm søkefelt"
 
 #: ../exo/exo-icon-view.c:644
 msgid "Column Spacing"
@@ -290,11 +285,8 @@ msgid "The model for the icon view"
 msgstr "Modellen for ikonvisning"
 
 #: ../exo/exo-icon-view.c:777
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"Hvordan tekst og ikoner for hvert element er posisjonert i forhold til "
-"hverandre"
+msgid "How the text and icon of each item are positioned relative to each other"
+msgstr "Hvordan tekst og ikoner for hvert element er posisjonert i forhold til hverandre"
 
 #: ../exo/exo-icon-view.c:809
 msgid "Reorderable"
@@ -341,12 +333,8 @@ msgid "Single Click Timeout"
 msgstr "Enkeltklikk tidsgrense"
 
 #: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"Tiden det tar før et element under musepekeren blir valgt automatisk i "
-"enkeltklikkmodus."
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "Tiden det tar før et element under musepekeren blir valgt automatisk i enkeltklikkmodus."
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -405,12 +393,8 @@ msgid "_Add a new toolbar"
 msgstr "_Legg til ny verktøylinje"
 
 #: ../exo/exo-toolbars-editor.c:221
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Dra et element til verktøylinjen for å legge til, eller fra verktøylinjen "
-"til elementlisten for å fjerne det"
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Dra et element til verktøylinjen for å legge til, eller fra verktøylinjen til elementlisten for å fjerne det"
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -539,7 +523,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Fjern nodeinnhold fra XML filer\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:471
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -555,7 +539,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-open/main.c:262
+#: ../exo-open/main.c:475
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -570,7 +554,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-open/main.c:266
+#: ../exo-open/main.c:479
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Rapporter programfeil til <%s>.\n"
@@ -615,37 +599,44 @@ msgstr "Skallskript"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Lag ny snarvei <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Navn:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "K_ommentar:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Komm_ando."
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_Url:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
-msgstr ""
+msgstr "Arbei_dsmappe:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Ikon:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -656,26 +647,24 @@ msgstr "Uten ikon"
 msgid "Options:"
 msgstr "Valg:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Bruk _oppstartsvarsel"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"Velg dette valget for å aktivere oppstartsvarsel når kommandoen kjøres fra "
-"filbehandleren eller fra menyen. Ikke alle programmer støtter "
-"oppstartsvarsel."
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Velg dette valget for å aktivere oppstartsvarsel når kommandoen kjøres fra filbehandleren eller fra menyen. Ikke alle programmer støtter oppstartsvarsel."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Kjør i _terminal"
@@ -691,13 +680,12 @@ msgstr "Velg et ikon"
 
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:637
-#, fuzzy
 msgid "Select a working directory"
-msgstr "Velg et ikon"
+msgstr "Velg arbeidsmappe"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:168
 msgid "File location is not a regular file or directory"
-msgstr ""
+msgstr "Filplassering er ikke en fil eller en mappe"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:53
@@ -710,7 +698,7 @@ msgstr "Lag ny lenke"
 
 #: ../exo-desktop-item-edit/main.c:53
 msgid "Create Directory"
-msgstr ""
+msgstr "Lag mappe"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Launcher"
@@ -722,7 +710,7 @@ msgstr "Rediger lenke"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Directory"
-msgstr ""
+msgstr "Rediger mappe"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Create a new desktop file in the given directory"
@@ -771,26 +759,26 @@ msgid "No file/folder specified"
 msgstr "Ingen fil/mappe er angitt"
 
 #: ../exo-desktop-item-edit/main.c:258
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Klarte ikke åpne filen \"%s\": %s"
+msgstr "Klarte ikke laste innholdet fra \"%s\": %s"
 
 #: ../exo-desktop-item-edit/main.c:263
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr ""
+msgstr "Filen \"%s\" inneholder ingen data"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:276
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Klarte ikke åpne filen \"%s\": %s"
+msgstr "Klarte ikke tolke innholdet i \"%s\": %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:288
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "Filen \"%s\" har ingen typenøkkel"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:298
@@ -827,9 +815,8 @@ msgstr "Prefererte programmer"
 msgid "Select default applications for various services"
 msgstr "Velg standardprogram for forskjellige oppgaver"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internett"
@@ -860,9 +847,8 @@ msgstr ""
 "Den prefererte epostleseren brukes for å skrive\n"
 "epost når du klikker på epostadresser."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Verktøy"
@@ -870,16 +856,15 @@ msgstr "Verktøy"
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "File Manager"
-msgstr ""
+msgstr "Filbehandler"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:226
-#, fuzzy
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
-"Den prefererte nettleseren brukes for å åpne\n"
-"lenker og vise hjelpeinnhold."
+"Den prefererte filbehandleren vil brukes til å\n"
+"navigere i mapper og filer "
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -920,9 +905,8 @@ msgid "Failed to set default Mail Reader"
 msgstr "Klarte ikke sette standard epostleser"
 
 #: ../exo-helper/exo-helper-chooser.c:317
-#, fuzzy
 msgid "Failed to set default File Manager"
-msgstr "Klarte ikke sette standard epostleser"
+msgstr "Klarte ikke sette preferert filbehandler"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
@@ -942,9 +926,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "Velg din egen epostleser"
 
 #: ../exo-helper/exo-helper-chooser.c:503
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "Velg din egen epostleser"
+msgstr "Sett en selvvalgt filbehandler"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
@@ -967,13 +950,12 @@ msgstr ""
 "standard epostleser i Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
-#, fuzzy
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
 "Velg programmet du ønsker å bruke som\n"
-"standard epostleser i Xfce:"
+"standard filbehandler i Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
@@ -1016,12 +998,11 @@ msgstr ""
 "og klikk OK for å fortsette."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
-"Velg din prefererte epostleser nå\n"
+"Velg din prefererte filbehandler\n"
 "og klikk OK for å fortsette."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
@@ -1037,7 +1018,7 @@ msgstr ""
 msgid "No command specified"
 msgstr "Ingen kommando er angitt"
 
-#: ../exo-helper/exo-helper.c:684
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Klarte ikke åpne %s for skriving"
@@ -1055,9 +1036,8 @@ msgid "Failed to execute default Mail Reader"
 msgstr "Klarte ikke starte standard epostleser"
 
 #: ../exo-helper/main.c:43
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "Klarte ikke starte standard epostleser"
+msgstr "Klarte ikke starte standard filbehandler"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
@@ -1078,19 +1058,14 @@ msgid "SOCKET ID"
 msgstr "SOKKEL-ID"
 
 #: ../exo-helper/main.c:70
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
-msgstr ""
-"Start standard hjelper av TYPE med valgfritt PARAMETER, hvor TYPE er en av "
-"følgende verdier."
+msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgstr "Start standard hjelper av TYPE med valgfritt PARAMETER, hvor TYPE er en av følgende verdier."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
 #: ../exo-helper/main.c:94
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1099,11 +1074,12 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"Følgende typer er støttet for --launch kommandoen:\n"
+"Følgende TYPE er støttet for --launch kommandoen:\n"
 "\n"
 "  WebBrowser       - Preferert nettleser.\n"
 "  MailReader       - Preferert epostleser.\n"
-"  TerminalEmulator - Preferert teminalemulator."
+" FileManager - Preferert Filbehandler.\n"
+" TerminalEmulator - Preferert teminalemulator."
 
 #: ../exo-helper/main.c:104
 #, c-format
@@ -1146,7 +1122,7 @@ msgstr "Xfce Terminal"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
-msgstr ""
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1192,6 +1168,10 @@ msgstr "Galeon nettleser"
 msgid "GNOME Terminal"
 msgstr "GNOME terminal"
 
+#: ../exo-helper/helpers/icedove.desktop.in.in.h:1
+msgid "Icedove"
+msgstr "Icedove"
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1226,7 +1206,7 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
 msgid "Nautilus"
-msgstr ""
+msgstr "Nautilus"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
@@ -1246,7 +1226,7 @@ msgstr "Opera Epost"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr ""
+msgstr "PCMan Filbehandler"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1272,54 +1252,49 @@ msgstr "W3M tekstnettleser"
 msgid "X Terminal"
 msgstr "X Terminal"
 
-#: ../exo-open/main.c:84
+#: ../exo-open/main.c:97
 msgid "Usage: exo-open [URLs...]"
 msgstr "Bruk: exo-open [url'er...]"
 
-#: ../exo-open/main.c:85
+#: ../exo-open/main.c:98
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
-#: ../exo-open/main.c:87
+#: ../exo-open/main.c:100
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
-"  -?, --help                          Skriv ut denne meldingen og avslutt"
+msgstr "  -?, --help                          Skriv ut denne meldingen og avslutt"
 
-#: ../exo-open/main.c:88
-msgid ""
-"  -V, --version                       Print version information and exit"
-msgstr ""
-"  -V, --version                       Skriv ut versjonsinformasjon og avslutt"
+#: ../exo-open/main.c:101
+msgid "  -V, --version                       Print version information and exit"
+msgstr "  -V, --version                       Skriv ut versjonsinformasjon og avslutt"
 
-#: ../exo-open/main.c:90
+#: ../exo-open/main.c:103
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TYPE [PARAMETRE...]        Start det prefererte programmet av\n"
 "                                      TYPE med valgfrie PARAMETRE, hvor\n"
 "                                      TYPE er en av følgende typer."
 
-#: ../exo-open/main.c:94
+#: ../exo-open/main.c:107
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
 "  --working-directory MAPPE           Standard arbeidsmappe for programmer\n"
 "                                      ved bruk av --launch opsjonen."
 
-#: ../exo-open/main.c:97
+#: ../exo-open/main.c:110
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Følgende typer er støttet for --launch kommandoen:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
-#: ../exo-open/main.c:103
-#, fuzzy
+#. 
+#: ../exo-open/main.c:116
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1328,9 +1303,10 @@ msgid ""
 msgstr ""
 "  WebBrowser       - Preferert nettleser.\n"
 "  MailReader       - Preferert epostleser.\n"
-"  TerminalEmulator - Preferert teminalemulator."
+" FileManager - Preferert Filbehandler\n"
+" TerminalEmulator - Preferert teminalemulator."
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:121
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1344,44 +1320,41 @@ msgstr ""
 "sende parametre til programmet (feks for terminalemulatoren kan du sende\n"
 "kommandoene som skal kjøres i terminalvinduet)."
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:183
 #, c-format
-msgid ""
-"Launching desktop files is not supported when %s is compiled without GIO-"
-"Unix features."
-msgstr ""
+msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
+msgstr "Oppstart av desktop filer er ikke støttet når %s er kompilert uten GIO-Unix funksjoner."
 
-#: ../exo-open/main.c:312
+#: ../exo-open/main.c:246
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Klarte ikke å starte preferert program for kategorien \"%s\"."
 
-#: ../exo-open/main.c:354
+#: ../exo-open/main.c:552
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "Klarte ikke detektere URI-schema for \"%s\"."
 
-#: ../exo-open/main.c:364
-#, fuzzy, c-format
+#: ../exo-open/main.c:564
+#, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Klarte ikke åone Url \"%s\"."
+msgstr "Klarte ikke åpne URI \"%s\"."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:1
-#, fuzzy
 msgid "Browse the file system"
-msgstr "Bla gjennom filsystemet for å velge kommando."
+msgstr "Bla gjennom filsystemet"
 
 #: ../exo-open/exo-mail-reader.desktop.in.h:2
 msgid "Read your email"
-msgstr ""
+msgstr "Les epost"
 
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:2
 msgid "Use the command line"
-msgstr ""
+msgstr "Bruk kommandlinjen"
 
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
-msgstr ""
+msgstr "Surfe på nettet"
 
 #~ msgid "External %s Drive"
 #~ msgstr "Eksternt %s drev"
@@ -1455,17 +1428,10 @@ msgstr ""
 #~ msgid "You are not privileged to mount the volume \"%s\""
 #~ msgstr "Du har ikke rettigheter til å montere enheten \"%s\""
 
-#~ msgid ""
-#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
-#~ "to record audio or data on the disc"
-#~ msgstr ""
-#~ "Tomt media kan ikke monteres, bruk et CD-brenne program som Xfburn til å "
-#~ "lagre musikk eller data på disken"
+#~ msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+#~ msgstr "Tomt media kan ikke monteres, bruk et CD-brenne program som Xfburn til å lagre musikk eller data på disken"
 
-#, fuzzy
-#~ msgid ""
-#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
-#~ "audio tracks"
+#~ msgid "Audio CDs cannot be mounted, use your favorite audio player to play the audio tracks"
 #~ msgstr "Lydcd kan ikke monteres, bruk Xfmedia for å spille lydsporene"
 
 #~ msgid "You are not privileged to teardown the crypto layer"
@@ -1507,16 +1473,11 @@ msgstr ""
 #~ msgid "Must specify HAL device UDI or device file"
 #~ msgstr "Må spesifisere HAL enhets UDI eller enhetsfil"
 
-#~ msgid ""
-#~ "Must not specify both a HAL device UDI and a device file simultaneously"
+#~ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
 #~ msgstr "Kan ikke angi både HAL enhets UDI og en enhetsfil samtidig"
 
-#~ msgid ""
-#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
-#~ "build"
-#~ msgstr ""
-#~ "Kan ikke montere med HAL enhets UDI fordi HAL støtte var deaktivert for "
-#~ "dette bygget"
+#~ msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+#~ msgstr "Kan ikke montere med HAL enhets UDI fordi HAL støtte var deaktivert for dette bygget"
 
 #~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 #~ msgstr "Den angitte UDI \"%s\" er ikke en gyldig HAL enhets UDI"
@@ -1548,22 +1509,14 @@ msgstr ""
 #~ msgid "Unmounting device"
 #~ msgstr "Demonterer enhet"
 
-#~ msgid ""
-#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
-#~ "the media or disconnect the drive."
-#~ msgstr ""
-#~ "Enheten \"%s\" demonteres nå av systemet. Ikke fjerne eller koble fra "
-#~ "enheten."
+#~ msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+#~ msgstr "Enheten \"%s\" demonteres nå av systemet. Ikke fjerne eller koble fra enheten."
 
 #~ msgid "Writing data to device"
 #~ msgstr "Skriver data til enheten"
 
-#~ msgid ""
-#~ "There is data that needs to be written to the device \"%s\" before it can "
-#~ "be removed. Please do not remove the media or disconnect the drive."
-#~ msgstr ""
-#~ "Data må skrives til enheten \"%s\" før den kan frakobles. Ikke frakoble "
-#~ "mediet eller fjern enheten"
+#~ msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+#~ msgstr "Data må skrives til enheten \"%s\" før den kan frakobles. Ikke frakoble mediet eller fjern enheten"
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "Klarte ikke åpne \"%s\""
