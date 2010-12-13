@@ -3,20 +3,20 @@
 # This file is distributed under the same license as the exo package.
 # Dwayne Bailey <dwayne@translate.org.za>, 2005.
 # Dwayne Bailey <dwayne@translate.org.za>, 2007.
-#
-#
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-21 18:14+0200\n"
+"POT-Creation-Date: 2010-12-13 05:00+0000\n"
 "PO-Revision-Date: 2009-01-27 12:37+1100\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -37,14 +37,12 @@ msgid "The icon to render."
 msgstr "The icon to render."
 
 #: ../exo/exo-cell-renderer-icon.c:185
-#, fuzzy
 msgid "GIcon"
-msgstr "Icon"
+msgstr "GIcon"
 
 #: ../exo/exo-cell-renderer-icon.c:186
-#, fuzzy
 msgid "The GIcon to render."
-msgstr "The icon to render."
+msgstr "The GIcon to render."
 
 #: ../exo/exo-cell-renderer-icon.c:207
 msgid "size"
@@ -66,10 +64,8 @@ msgstr "Failed to read file \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -217,13 +213,12 @@ msgstr "Select _icon from:"
 
 #. search filter
 #: ../exo/exo-icon-chooser-dialog.c:225
-#, fuzzy
 msgid "_Search icon:"
-msgstr "Search Column"
+msgstr "_Search icon:"
 
 #: ../exo/exo-icon-chooser-dialog.c:236
 msgid "Clear search field"
-msgstr ""
+msgstr "Clear search field"
 
 #: ../exo/exo-icon-view.c:644
 msgid "Column Spacing"
@@ -290,10 +285,8 @@ msgid "The model for the icon view"
 msgstr "The model for the icon view"
 
 #: ../exo/exo-icon-view.c:777
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
-msgstr ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
+msgstr "How the text and icon of each item are positioned relative to each other"
 
 #: ../exo/exo-icon-view.c:809
 msgid "Reorderable"
@@ -340,12 +333,8 @@ msgid "Single Click Timeout"
 msgstr "Single Click Timeout"
 
 #: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -404,12 +393,8 @@ msgid "_Add a new toolbar"
 msgstr "_Add a new toolbar"
 
 #: ../exo/exo-toolbars-editor.c:221
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -538,7 +523,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Remove node contents from XML files\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:471
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -554,7 +539,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-open/main.c:262
+#: ../exo-open/main.c:475
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -570,7 +555,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-open/main.c:266
+#: ../exo-open/main.c:479
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Please report bugs to <%s>.\n"
@@ -615,37 +600,44 @@ msgstr "Shell Scripts"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Create Launcher <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Name:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "C_omment:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Comm_and:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
-msgstr ""
+msgstr "Working _Directory:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Icon:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -656,26 +648,24 @@ msgstr "No icon"
 msgid "Options:"
 msgstr "Options:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Use _startup notification"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Run in _terminal"
@@ -691,13 +681,12 @@ msgstr "Select an icon"
 
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:637
-#, fuzzy
 msgid "Select a working directory"
-msgstr "Select an icon"
+msgstr "Select a working directory"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:168
 msgid "File location is not a regular file or directory"
-msgstr ""
+msgstr "File location is not a regular file or directory"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:53
@@ -710,7 +699,7 @@ msgstr "Create Link"
 
 #: ../exo-desktop-item-edit/main.c:53
 msgid "Create Directory"
-msgstr ""
+msgstr "Create Directory"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Launcher"
@@ -722,7 +711,7 @@ msgstr "Edit Link"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Directory"
-msgstr ""
+msgstr "Edit Directory"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Create a new desktop file in the given directory"
@@ -771,26 +760,26 @@ msgid "No file/folder specified"
 msgstr "No file/folder specified"
 
 #: ../exo-desktop-item-edit/main.c:258
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Failed to open file \"%s\": %s"
+msgstr "Failed to load contents from \"%s\": %s"
 
 #: ../exo-desktop-item-edit/main.c:263
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr ""
+msgstr "The file \"%s\" contains no data"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:276
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Failed to open file \"%s\": %s"
+msgstr "Failed to parse contents of \"%s\": %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:288
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "File \"%s\" has no type key"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:298
@@ -827,9 +816,8 @@ msgstr "Preferred Applications"
 msgid "Select default applications for various services"
 msgstr "Select default applications for various services"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
@@ -860,9 +848,8 @@ msgstr ""
 "The preferred Mail Reader will be used to compose\n"
 "e-mails when you click on e-mail addresses."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Utilities"
@@ -870,16 +857,15 @@ msgstr "Utilities"
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "File Manager"
-msgstr ""
+msgstr "File Manager"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:226
-#, fuzzy
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
-"The preferred Web Browser will be used to open\n"
-"hyperlinks and display help contents."
+"The preferred File Manager will be used to\n"
+"browse the contents of folders."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -920,9 +906,8 @@ msgid "Failed to set default Mail Reader"
 msgstr "Failed to set default Mail Reader"
 
 #: ../exo-helper/exo-helper-chooser.c:317
-#, fuzzy
 msgid "Failed to set default File Manager"
-msgstr "Failed to set default Mail Reader"
+msgstr "Failed to set default File Manager"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
@@ -942,9 +927,8 @@ msgid "Choose a custom Mail Reader"
 msgstr "Choose a custom Mail Reader"
 
 #: ../exo-helper/exo-helper-chooser.c:503
-#, fuzzy
 msgid "Choose a custom File Manager"
-msgstr "Choose a custom Mail Reader"
+msgstr "Choose a custom File Manager"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
@@ -967,13 +951,12 @@ msgstr ""
 "as default Mail Reader for Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
-#, fuzzy
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
 "Specify the application you want to use\n"
-"as default Mail Reader for Xfce:"
+"as default File Manager for Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
@@ -1016,12 +999,11 @@ msgstr ""
 "now and click OK to proceed."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
-#, fuzzy
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
-"Please choose your preferred Mail Reader\n"
+"Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
@@ -1037,15 +1019,14 @@ msgstr ""
 msgid "No command specified"
 msgstr "No command specified"
 
-#: ../exo-helper/exo-helper.c:684
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Failed to open %s for writing"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr ""
-"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
+msgstr "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
@@ -1056,9 +1037,8 @@ msgid "Failed to execute default Mail Reader"
 msgstr "Failed to execute default Mail Reader"
 
 #: ../exo-helper/main.c:43
-#, fuzzy
 msgid "Failed to execute default File Manager"
-msgstr "Failed to execute default Mail Reader"
+msgstr "Failed to execute default File Manager"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
@@ -1081,19 +1061,14 @@ msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
 #: ../exo-helper/main.c:70
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
-msgstr ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
+msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgstr "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
 #: ../exo-helper/main.c:94
-#, fuzzy
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1106,6 +1081,7 @@ msgstr ""
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
+"  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 
 #: ../exo-helper/main.c:104
@@ -1149,7 +1125,7 @@ msgstr "Xfce Terminal"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
-msgstr ""
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1195,6 +1171,10 @@ msgstr "Galeon Web Browser"
 msgid "GNOME Terminal"
 msgstr "GNOME Terminal"
 
+#: ../exo-helper/helpers/icedove.desktop.in.in.h:1
+msgid "Icedove"
+msgstr "Icedove"
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1229,7 +1209,7 @@ msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
 msgid "Nautilus"
-msgstr ""
+msgstr "Nautilus"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
 msgid "Netscape Navigator"
@@ -1249,7 +1229,7 @@ msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr ""
+msgstr "PCMan File Manager"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1275,55 +1255,49 @@ msgstr "W3M Text Browser"
 msgid "X Terminal"
 msgstr "X Terminal"
 
-#: ../exo-open/main.c:84
+#: ../exo-open/main.c:97
 msgid "Usage: exo-open [URLs...]"
 msgstr "Usage: exo-open [URLs...]"
 
-#: ../exo-open/main.c:85
+#: ../exo-open/main.c:98
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
-#: ../exo-open/main.c:87
+#: ../exo-open/main.c:100
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Print this help message and exit"
 
-#: ../exo-open/main.c:88
-msgid ""
-"  -V, --version                       Print version information and exit"
-msgstr ""
-"  -V, --version                       Print version information and exit"
+#: ../exo-open/main.c:101
+msgid "  -V, --version                       Print version information and exit"
+msgstr "  -V, --version                       Print version information and exit"
 
-#: ../exo-open/main.c:90
+#: ../exo-open/main.c:103
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 
-#: ../exo-open/main.c:94
+#: ../exo-open/main.c:107
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 
-#: ../exo-open/main.c:97
+#: ../exo-open/main.c:110
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "The following TYPEs are supported for the --launch command:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
-#: ../exo-open/main.c:103
-#, fuzzy
+#. 
+#: ../exo-open/main.c:116
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1332,9 +1306,10 @@ msgid ""
 msgstr ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
+"  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:121
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1348,44 +1323,41 @@ msgstr ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:183
 #, c-format
-msgid ""
-"Launching desktop files is not supported when %s is compiled without GIO-"
-"Unix features."
-msgstr ""
+msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
+msgstr "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
 
-#: ../exo-open/main.c:312
+#: ../exo-open/main.c:246
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Failed to launch preferred application for category \"%s\"."
 
-#: ../exo-open/main.c:354
+#: ../exo-open/main.c:552
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "Unable to detect the URI-scheme of \"%s\"."
 
-#: ../exo-open/main.c:364
-#, fuzzy, c-format
+#: ../exo-open/main.c:564
+#, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Failed to open URL \"%s\"."
+msgstr "Failed to open URI \"%s\"."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:1
-#, fuzzy
 msgid "Browse the file system"
-msgstr "Browse the file system to choose a custom command."
+msgstr "Browse the file system"
 
 #: ../exo-open/exo-mail-reader.desktop.in.h:2
 msgid "Read your email"
-msgstr ""
+msgstr "Read your email"
 
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:2
 msgid "Use the command line"
-msgstr ""
+msgstr "Use the command line"
 
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
-msgstr ""
+msgstr "Browse the web"
 
 #~ msgid "External %s Drive"
 #~ msgstr "External %s Drive"
@@ -1459,17 +1431,10 @@ msgstr ""
 #~ msgid "You are not privileged to mount the volume \"%s\""
 #~ msgstr "You are not privileged to mount the volume \"%s\""
 
-#~ msgid ""
-#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
-#~ "to record audio or data on the disc"
-#~ msgstr ""
-#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
-#~ "to record audio or data on the disc"
+#~ msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+#~ msgstr "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
 
-#, fuzzy
-#~ msgid ""
-#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
-#~ "audio tracks"
+#~ msgid "Audio CDs cannot be mounted, use your favorite audio player to play the audio tracks"
 #~ msgstr "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
 
 #~ msgid "You are not privileged to teardown the crypto layer"
@@ -1511,17 +1476,11 @@ msgstr ""
 #~ msgid "Must specify HAL device UDI or device file"
 #~ msgstr "Must specify HAL device UDI or device file"
 
-#~ msgid ""
-#~ "Must not specify both a HAL device UDI and a device file simultaneously"
-#~ msgstr ""
-#~ "Must not specify both a HAL device UDI and a device file simultaneously"
+#~ msgid "Must not specify both a HAL device UDI and a device file simultaneously"
+#~ msgstr "Must not specify both a HAL device UDI and a device file simultaneously"
 
-#~ msgid ""
-#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
-#~ "build"
-#~ msgstr ""
-#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
-#~ "build"
+#~ msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+#~ msgstr "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
 
 #~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
 #~ msgstr "The specified UDI \"%s\" is not a valid HAL device UDI"
@@ -1553,22 +1512,14 @@ msgstr ""
 #~ msgid "Unmounting device"
 #~ msgstr "Unmounting device"
 
-#~ msgid ""
-#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
-#~ "the media or disconnect the drive."
-#~ msgstr ""
-#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
-#~ "the media or disconnect the drive."
+#~ msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+#~ msgstr "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
 
 #~ msgid "Writing data to device"
 #~ msgstr "Writing data to device"
 
-#~ msgid ""
-#~ "There is data that needs to be written to the device \"%s\" before it can "
-#~ "be removed. Please do not remove the media or disconnect the drive."
-#~ msgstr ""
-#~ "There is data that needs to be written to the device \"%s\" before it can "
-#~ "be removed. Please do not remove the media or disconnect the drive."
+#~ msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+#~ msgstr "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
 
 #~ msgid "Unable to open \"%s\""
 #~ msgstr "Unable to open \"%s\""
@@ -1588,6 +1539,5 @@ msgstr ""
 #~ msgid "Button Label|Preferred Applications"
 #~ msgstr "Preferred Applications"
 
-#, fuzzy
 #~ msgid "Select an Icon"
 #~ msgstr "Selection mode"
