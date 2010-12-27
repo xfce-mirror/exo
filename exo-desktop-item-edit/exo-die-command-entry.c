@@ -357,6 +357,15 @@ exo_die_command_entry_button_clicked (GtkWidget          *button,
           filename = s;
         }
 
+      /* quote the filename if it contains a space */
+      if (filename != NULL
+          && strchr (filename, ' ') != NULL)
+        {
+          s = g_shell_quote (filename);
+          g_free (filename);
+          filename = s;
+        }
+
       /* apply the new command */
       exo_die_command_entry_set_text (command_entry, filename);
       g_free (filename);
