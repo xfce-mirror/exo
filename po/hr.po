@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+# Petar <petar.koretic@gmail.com>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-08 17:00+0000\n"
-"PO-Revision-Date: 2010-05-19 16:42+0100\n"
+"PO-Revision-Date: 2011-01-09 00:29+0100\n"
 "Last-Translator: Petar <petar.koretic@gmail.com>\n"
 "Language-Team: Croatian <petar.koretic@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -64,8 +65,11 @@ msgstr "Neuspješno čitanje datoteke \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Neuspješno učitavanje slike  \"%s\": Nepoznati razlog, vjerojatno oštećena slika"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"Neuspješno učitavanje slike  \"%s\": Nepoznati razlog, vjerojatno oštećena "
+"slika"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -285,7 +289,8 @@ msgid "The model for the icon view"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:777
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr "Pozicija teksta i ikona svake stavke u odnosu jedne na drugu"
 
 #: ../exo/exo-icon-view.c:809
@@ -333,7 +338,9 @@ msgid "Single Click Timeout"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:904
@@ -393,7 +400,9 @@ msgid "_Add a new toolbar"
 msgstr "_Dodaj novu alatnu traku"
 
 #: ../exo/exo-toolbars-editor.c:221
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
 msgstr ""
 
 #: ../exo/exo-toolbars-editor.c:538
@@ -490,7 +499,7 @@ msgstr "  -h, --help        Ispiši ovu poruku i izađi\n"
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr ""
+msgstr "  -V, --version    Ispiši informacije o verziji i izađi\n"
 
 #: ../exo-csource/main.c:289
 #, c-format
@@ -647,20 +656,23 @@ msgstr "Opcije:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
 msgstr ""
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Pokreni u _terminalu"
@@ -812,7 +824,7 @@ msgid "Select default applications for various services"
 msgstr "Odaberite zadane aplikacije za razne usluge"
 
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
@@ -844,7 +856,7 @@ msgstr ""
 " email poruka kada se klikne na email adresu."
 
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Uslužni programi"
@@ -1056,7 +1068,9 @@ msgid "SOCKET ID"
 msgstr ""
 
 #: ../exo-helper/main.c:70
-msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
+"one of the following values."
 msgstr ""
 
 #: ../exo-helper/main.c:70
@@ -1072,6 +1086,11 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"Slijedeći TIPovi su podržani za --launch command:\n"
+"  Webpreglednik       - Zadanii Web preglednik.\n"
+"  Čitačpošte       - Zadani čitač pošte.\n"
+"  Upraviteljdatotekama      - Zadani upravitelj datotekama.\n"
+"  Emulatortermiala - Zadani emulator terminala."
 
 #: ../exo-helper/main.c:104
 #, c-format
@@ -1136,7 +1155,7 @@ msgstr "a"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Novell Evolution"
-msgstr ""
+msgstr "Novell Evolution"
 
 #: ../exo-helper/helpers/firefox.desktop.in.in.h:1
 msgid "Mozilla Firefox"
@@ -1184,7 +1203,7 @@ msgstr "Mozilla pošta"
 
 #: ../exo-helper/helpers/mutt.desktop.in.in.h:1
 msgid "Mutt"
-msgstr ""
+msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
 msgid "Nautilus"
@@ -1196,7 +1215,7 @@ msgstr "Netscape Navigator"
 
 #: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
 msgid "NXterm"
-msgstr ""
+msgstr "NXterm"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
@@ -1236,7 +1255,7 @@ msgstr "X Terminal"
 
 #: ../exo-open/main.c:97
 msgid "Usage: exo-open [URLs...]"
-msgstr ""
+msgstr "Uporaba:  exo-open [URLs...]"
 
 #: ../exo-open/main.c:98
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
@@ -1247,30 +1266,33 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "-?, --help Ispiši ovu poruku pomoći i izađi"
 
 #: ../exo-open/main.c:101
-msgid "  -V, --version                       Print version information and exit"
+msgid ""
+"  -V, --version                       Print version information and exit"
 msgstr "-V, --version Ispiši informacije o verziji i izađi"
 
 #: ../exo-open/main.c:103
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 
 #: ../exo-open/main.c:107
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
 
 #: ../exo-open/main.c:110
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr ""
+msgstr "Slijedeći TIPovi su podržani za --launch command:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
+#.
 #: ../exo-open/main.c:116
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1278,10 +1300,10 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"Webpreglednik - Željeni Web preglednik.\n"
-" Čitačpošte - Željeni čitač pošte.\n"
-" Upravitelj datotekama - Željeni upravitelj datotekama.\n"
-" Emulatorterminala - Željeni emulator terminala"
+"Webpreglednik - Zadani Web preglednik.\n"
+" Čitačpošte - Zadani čitač pošte.\n"
+" Upravitelj datotekama - Zadani upravitelj datotekama.\n"
+" Emulatorterminala - Zadani emulator terminala"
 
 #: ../exo-open/main.c:121
 msgid ""
@@ -1294,13 +1316,15 @@ msgstr ""
 
 #: ../exo-open/main.c:183
 #, c-format
-msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
+msgid ""
+"Launching desktop files is not supported when %s is compiled without GIO-"
+"Unix features."
 msgstr ""
 
 #: ../exo-open/main.c:246
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Neuspjelo pokretanje željenog programa ta kategoriju \"%s\"."
+msgstr "Neuspjelo pokretanje zadanog programa za kategoriju \"%s\"."
 
 #: ../exo-open/main.c:552
 #, c-format
@@ -1322,7 +1346,7 @@ msgstr "Čitaj svoju poštu"
 
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:2
 msgid "Use the command line"
-msgstr "KOristi naredbeni redak"
+msgstr "Koristi naredbeni redak"
 
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
