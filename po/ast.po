@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-21 18:14+0200\n"
+"POT-Creation-Date: 2011-01-16 16:35+0100\n"
 "PO-Revision-Date: 2009-08-31 15:43+0100\n"
 "Last-Translator: astur <malditoastur@gmail.com>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -531,7 +531,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Desaniciar conteníos de nodos de ficheros XML\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:471
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -547,7 +547,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-open/main.c:262
+#: ../exo-open/main.c:475
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -563,7 +563,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-open/main.c:266
+#: ../exo-open/main.c:479
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Por favor, informe de fallos a <%s>.\n"
@@ -1029,7 +1029,7 @@ msgstr ""
 msgid "No command specified"
 msgstr "Nun s'especificó dengún comandu"
 
-#: ../exo-helper/exo-helper.c:684
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Fallu al abrir %s pa escritura"
@@ -1187,6 +1187,10 @@ msgstr "Restolador web Galeon"
 msgid "GNOME Terminal"
 msgstr "Terminal de GNOME"
 
+#: ../exo-helper/helpers/icedove.desktop.in.in.h:1
+msgid "Icedove"
+msgstr ""
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1267,24 +1271,24 @@ msgstr "Restolador web en mou testu W3M"
 msgid "X Terminal"
 msgstr "X Terminal"
 
-#: ../exo-open/main.c:84
+#: ../exo-open/main.c:97
 msgid "Usage: exo-open [URLs...]"
 msgstr "Usu: exo-open [URLs...]"
 
-#: ../exo-open/main.c:85
+#: ../exo-open/main.c:98
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TIPU [PARÁMETROs...]"
 
-#: ../exo-open/main.c:87
+#: ../exo-open/main.c:100
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -h, --help        Amosar esti mensaxe d'aida y colar"
 
-#: ../exo-open/main.c:88
+#: ../exo-open/main.c:101
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version     Amosar informacion sobro la version y colar"
 
-#: ../exo-open/main.c:90
+#: ../exo-open/main.c:103
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1295,7 +1299,7 @@ msgstr ""
 "                                      TIPU colos PARÁMETROs opcionales, au\n"
 "                                      TIPU ye ún de los siguientes valores."
 
-#: ../exo-open/main.c:94
+#: ../exo-open/main.c:107
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1305,14 +1309,14 @@ msgstr ""
 "p'aplicaciones\n"
 "                                      cuando s'usa la opción --launch."
 
-#: ../exo-open/main.c:97
+#: ../exo-open/main.c:110
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Los siguientes TIPOs tán soportaos pola opción --launch:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:103
+#: ../exo-open/main.c:116
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1324,7 +1328,7 @@ msgstr ""
 "  FileManager      - El xestor de Ficheros preferíu.\n"
 "  TerminalEmulator - L'emulador de terminal preferíu."
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:121
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1340,24 +1344,24 @@ msgstr ""
 "Emulador de Terminal, puede pasar la llinia de comandu que se tendría\n"
 "executar dientro del terminal)."
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:183
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
 msgstr ""
 
-#: ../exo-open/main.c:312
+#: ../exo-open/main.c:246
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Fallu al executar l'aplicación prefería pa la categoría \"%s\"."
 
-#: ../exo-open/main.c:354
+#: ../exo-open/main.c:552
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Nun pudo deteutase el URI-scheme de \"%s\"."
 
-#: ../exo-open/main.c:364
+#: ../exo-open/main.c:564
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Fallu al abrir la URI \"%s\"."

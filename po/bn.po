@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-21 18:14+0200\n"
+"POT-Creation-Date: 2011-01-16 16:35+0100\n"
 "PO-Revision-Date: 2010-04-01 17:20+0600\n"
 "Last-Translator: Israt Jahan <israt@ankur.org.bd>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
@@ -529,7 +529,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   XML ফাইল থেকে নোড বিষয়বস্তু অপসারণ করা হয়\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:471
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -545,7 +545,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-open/main.c:262
+#: ../exo-open/main.c:475
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -561,7 +561,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-open/main.c:266
+#: ../exo-open/main.c:479
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "অনুগ্রহ করে <%s> তে বাগ রিপোর্ট পাঠান।\n"
@@ -1023,7 +1023,7 @@ msgstr ""
 msgid "No command specified"
 msgstr "কোন কমান্ড উল্লেখ করা হয়নি"
 
-#: ../exo-helper/exo-helper.c:684
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "লেখার জন্য %s খুলতে ব্যর্থ"
@@ -1179,6 +1179,10 @@ msgstr "গ্যালিওন ওয়েব ব্রাউজার"
 msgid "GNOME Terminal"
 msgstr "GNOME টার্মিনাল"
 
+#: ../exo-helper/helpers/icedove.desktop.in.in.h:1
+msgid "Icedove"
+msgstr ""
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1259,26 +1263,26 @@ msgstr "W3M পাঠ্য ব্রাউজার"
 msgid "X Terminal"
 msgstr "X টার্মিনাল"
 
-#: ../exo-open/main.c:84
+#: ../exo-open/main.c:97
 msgid "Usage: exo-open [URLs...]"
 msgstr "ব্যবহার: exo-open [URLs...]"
 
-#: ../exo-open/main.c:85
+#: ../exo-open/main.c:98
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
-#: ../exo-open/main.c:87
+#: ../exo-open/main.c:100
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          সহায়তা বার্তা মুদ্রণ করে প্রস্থান করা হবে"
 
-#: ../exo-open/main.c:88
+#: ../exo-open/main.c:101
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       সলস্করণের তথ্য মুদ্রণ করে প্রস্থান করা হবে"
 
-#: ../exo-open/main.c:90
+#: ../exo-open/main.c:103
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1290,7 +1294,7 @@ msgstr ""
 "যেখানে\n"
 "                                      TYPE এর মান নিম্নের যেকোন একটি।"
 
-#: ../exo-open/main.c:94
+#: ../exo-open/main.c:107
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1299,14 +1303,14 @@ msgstr ""
 "  --working-directory DIRECTORY       অ্যাপ্লিকেশনের কার্যকর ডিফল্ট ডিরেক্টরি\n"
 "                                      যখন --launch অপশন ব্যবহার করা হয়।"
 
-#: ../exo-open/main.c:97
+#: ../exo-open/main.c:110
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "নিম্নের TYPE --launch command সমর্থিত:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:103
+#: ../exo-open/main.c:116
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1318,7 +1322,7 @@ msgstr ""
 "  FileManager      - পছন্দসই ফাইল ম্যানেজার।\n"
 "  TerminalEmulator - পছন্দসই টার্মিনাল ইম্যুলেটর।"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:121
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1333,7 +1337,7 @@ msgstr ""
 "অতিরিক্ত প্যারামিটার পাস করতে পারেন।(যেমন, TerminalEmulator\n"
 "এর জন্য আপনি কমান্ড লাইনে চালানোর জন্য টার্মিনালে কমান্ড পাস করতে পারেন)।"
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:183
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1341,17 +1345,17 @@ msgid ""
 msgstr ""
 "ডেস্কটপ ফাইল চালুকরণ সমর্থিত হয় না যখন %s GIO-Unix বৈশিষ্ট্য দিয়ে কম্পাইল করা হয়।"
 
-#: ../exo-open/main.c:312
+#: ../exo-open/main.c:246
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "\"%s\" শ্রেনীবিভাগের জন্য পছন্দসই অ্য়াপ্লিকেশন চালু করতে ব্যর্থ।"
 
-#: ../exo-open/main.c:354
+#: ../exo-open/main.c:552
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" এর URI-স্কিম সনাক্ত করতে ব্যর্থ।"
 
-#: ../exo-open/main.c:364
+#: ../exo-open/main.c:564
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "URI \"%s\" খুলতে ব্যর্থ।"

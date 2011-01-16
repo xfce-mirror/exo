@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-21 18:14+0200\n"
+"POT-Creation-Date: 2011-01-16 16:35+0100\n"
 "PO-Revision-Date: 2009-10-25 12:47+0100\n"
 "Last-Translator: Rihards Priedītis <rprieditis@gmail.com>\n"
 "Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
@@ -542,7 +542,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Dzēš mezglu saturu XML failos\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:471
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -558,7 +558,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-open/main.c:262
+#: ../exo-open/main.c:475
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -574,7 +574,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-open/main.c:266
+#: ../exo-open/main.c:479
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Lūdzu ziņojiet par kļūdām uz <%s>.\n"
@@ -1037,7 +1037,7 @@ msgstr ""
 msgid "No command specified"
 msgstr "Nav norādīta komanda"
 
-#: ../exo-helper/exo-helper.c:684
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Neizdevās atvērt %s rakstīšanai"
@@ -1194,6 +1194,10 @@ msgstr "Galeon tīmekļa pārlūks"
 msgid "GNOME Terminal"
 msgstr "GNOME termināls"
 
+#: ../exo-helper/helpers/icedove.desktop.in.in.h:1
+msgid "Icedove"
+msgstr ""
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1274,26 +1278,26 @@ msgstr "W3M teksta pārlūks"
 msgid "X Terminal"
 msgstr "X terminālis"
 
-#: ../exo-open/main.c:84
+#: ../exo-open/main.c:97
 msgid "Usage: exo-open [URLs...]"
 msgstr "Lietošana: exo-open [URLi...]"
 
-#: ../exo-open/main.c:85
+#: ../exo-open/main.c:98
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TIPS [PARAMETRI...]"
 
-#: ../exo-open/main.c:87
+#: ../exo-open/main.c:100
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          Izdrukā šo palīdzības ziņu un iziet"
 
-#: ../exo-open/main.c:88
+#: ../exo-open/main.c:101
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Izdrukā versijas informāciju un iziet"
 
-#: ../exo-open/main.c:90
+#: ../exo-open/main.c:103
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1304,7 +1308,7 @@ msgstr ""
 "                                      ar neobligātiem PARAMETRIEM, kur TIPS\n"
 "                                      ir kāda no sekojošām vērtībām."
 
-#: ../exo-open/main.c:94
+#: ../exo-open/main.c:107
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1314,14 +1318,14 @@ msgstr ""
 "lietotnes,\n"
 "                                      kad izmanto --lunch opciju."
 
-#: ../exo-open/main.c:97
+#: ../exo-open/main.c:110
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "--lunch komandas atbalstītie TIPI:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:103
+#: ../exo-open/main.c:116
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1333,7 +1337,7 @@ msgstr ""
 "  FileManager       - Vēlamais failu pārvaldnieks.\n"
 "  TerminalEmulator - Vēlamais termināla emulators."
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:121
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1347,7 +1351,7 @@ msgstr ""
 "parametrus lietotnei (piemēram, TerminalEmulator, jūs varat\n"
 "padot komandlīniju, kuru izpildīt terminālī)."
 
-#: ../exo-open/main.c:170
+#: ../exo-open/main.c:183
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1356,17 +1360,17 @@ msgstr ""
 "Darbavirsmas faila palaišana netiek atbalstīta, kad %s ir kompilēts bez GIO-"
 "Unix iespējām."
 
-#: ../exo-open/main.c:312
+#: ../exo-open/main.c:246
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Neizdevās palaist vēlamo aplikāciju no kategorijas \"%s\"."
 
-#: ../exo-open/main.c:354
+#: ../exo-open/main.c:552
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Nevar noteikt URI-shēmu priekš \"%s\"."
 
-#: ../exo-open/main.c:364
+#: ../exo-open/main.c:564
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Neizdevās atvērt URI \"%s\"."

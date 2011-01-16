@@ -11,11 +11,11 @@ dnl ***************************
 m4_define([libexo_verinfo], [0:0:0])
 m4_define([libexo_version_api], [1])
 m4_define([libexo_version_major], [0])
-m4_define([libexo_version_minor], [5])
-m4_define([libexo_version_micro], [6])
+m4_define([libexo_version_minor], [6])
+m4_define([libexo_version_micro], [0])
 m4_define([libexo_version_nano], [])
 m4_define([libexo_version_build], [@REVISION@])
-m4_define([libexo_version_tag], [git])
+m4_define([libexo_version_tag], [])
 m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()ifelse(libexo_version_nano(), [], [], [.libexo_version_nano()])ifelse(libexo_version_tag(), [git], [libexo_version_tag()-libexo_version_build()], [libexo_version_tag()])])
 
 dnl ********************************************
@@ -26,10 +26,8 @@ m4_define([libexo_debug_default], [ifelse(libexo_version_tag(), [git], [full], [
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
-AC_COPYRIGHT([Copyright (c) 2004-2009 os-cillation.
-All rights reserved.
-        
-Written by Benedikt Meurer <benny@xfce.org>.])
+AC_COPYRIGHT([Copyright (c) 2004-2010 os-cillation.
+Copyright (c) 2004-2011 Xfce Development Team])
 AC_INIT([exo], [libexo_version], [http://bugzilla.xfce.org/])
 AC_PREREQ([2.50])
 AC_REVISION([@REVISION@])
@@ -148,7 +146,7 @@ XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.18.0])
 XDT_CHECK_PACKAGE([GIO], [gio-2.0], [2.18.0])
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.14.0])
 XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.16.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.2.2])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.8.0])
 
 dnl ***********************************************************
 dnl *** Check if we need to build the GIO module (optional) ***
