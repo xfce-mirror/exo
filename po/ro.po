@@ -2,20 +2,19 @@
 # Copyright (C) 2006-2007 Free Software Foundation
 # This file is distributed under the same license as the exo package.
 # Mişu Moldovan <dumol@gnome.ro>, 2006-2007.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-20 13:45+0200\n"
+"POT-Creation-Date: 2011-01-16 05:19+0000\n"
 "PO-Revision-Date: 2007-11-16 23:23+0200\n"
 "Last-Translator: Mişu Moldovan <dumol@gnome.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3;plural=(n==1?0:(n==0||((n%100)>0&&(n%100)<20))?"
-"1:2)\n"
+"Plural-Forms: nplurals=3;plural=(n==1?0:(n==0||((n%100)>0&&(n%100)<20))?1:2)\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:138
 #: ../exo/exo-cell-renderer-icon.c:145
@@ -56,11 +55,8 @@ msgstr "Nu s-a putut citi fişierul „%s”: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:873
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Nu s-a putut încărca imaginea „%s”: motiv necunoscut, probabil un fişier "
-"imagine corupt"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Nu s-a putut încărca imaginea „%s”: motiv necunoscut, probabil un fişier imagine corupt"
 
 #: ../exo/exo-icon-bar.c:249 ../exo/exo-icon-view.c:783
 msgid "Orientation"
@@ -223,8 +219,7 @@ msgstr "Activare căutare"
 
 #: ../exo/exo-icon-view.c:684
 msgid "View allows user to search through columns interactively"
-msgstr ""
-"Mod de vizualizare ce permite utilizatorului să caute interactiv în coloane"
+msgstr "Mod de vizualizare ce permite utilizatorului să caute interactiv în coloane"
 
 #: ../exo/exo-icon-view.c:701
 msgid "Width for each item"
@@ -256,9 +251,7 @@ msgstr "Coloană markup"
 
 #: ../exo/exo-icon-view.c:755
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Model de coloană utilizat pentru extragerea textului când se utilizează "
-"markup Pango"
+msgstr "Model de coloană utilizat pentru extragerea textului când se utilizează markup Pango"
 
 #: ../exo/exo-icon-view.c:769
 msgid "Icon View Model"
@@ -269,8 +262,7 @@ msgid "The model for the icon view"
 msgstr "Model pentru vizualizarea de iconiţe"
 
 #: ../exo/exo-icon-view.c:784
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr "Modul de poziţionare relativă a textului şi iconiţei fiecărui item"
 
 # Ai altă idee mai bună? Nici „reorderable” nu există în engleză...
@@ -319,12 +311,8 @@ msgid "Single Click Timeout"
 msgstr "Limită de timp pentru clic simplu"
 
 #: ../exo/exo-icon-view.c:896 ../exo/exo-tree-view.c:184
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"Durata minimă pentru selectarea automată a itemului aflat sub cursor când se "
-"utilizează clic simplu"
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "Durata minimă pentru selectarea automată a itemului aflat sub cursor când se utilizează clic simplu"
 
 #: ../exo/exo-icon-view.c:911
 msgid "Spacing"
@@ -383,12 +371,8 @@ msgid "_Add a new toolbar"
 msgstr "_Adăugare bară cu unelte"
 
 #: ../exo/exo-toolbars-editor.c:230
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Trageţi un item deasupra unei bare cu unelte pentru a-l adăuga, ori din bara "
-"cu unelte între ceilalţi itemi pentru a-l scoate."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Trageţi un item deasupra unei bare cu unelte pentru a-l adăuga, ori din bara cu unelte între ceilalţi itemi pentru a-l scoate."
 
 #: ../exo/exo-toolbars-editor.c:543
 msgid "Separator"
@@ -492,34 +476,42 @@ msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [opţiuni] --build-list [[nume fişier]...]\n"
 
 #: ../exo-csource/main.c:286
+#, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Arată acest mesaj de ajutor şi ieşi\n"
 
 #: ../exo-csource/main.c:287
+#, c-format
 msgid "  -v, --version     Print version information and exit\n"
 msgstr "  -v, --version     Arată versiunea curentă şi ieşi\n"
 
 #: ../exo-csource/main.c:288
+#, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Generează simboluri externe\n"
 
 #: ../exo-csource/main.c:289
+#, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Generează simboluri statice\n"
 
 #: ../exo-csource/main.c:290
+#, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier Nume macro/variabilă C\n"
 
 #: ../exo-csource/main.c:291
+#, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Prelucrează perechile de nume/fişiere\n"
 
 #: ../exo-csource/main.c:292
+#, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Şterge comentariile din fişierele XML\n"
 
 #: ../exo-csource/main.c:293
+#, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Şterge conţinutul nodurilor din fişierele XML\n"
 
@@ -604,32 +596,38 @@ msgstr "Scripturi shell"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Creare lansator <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:318
 msgid "_Name:"
 msgstr "_Nume:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:336
 msgid "C_omment:"
 msgstr "C_omentariu:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:354
 msgid "Comm_and:"
 msgstr "Com_andă:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:371
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Iconiţă"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:408
 #: ../exo-desktop-item-edit/exo-die-editor.c:1134
@@ -640,26 +638,24 @@ msgstr "Fără iconiţă"
 msgid "Options:"
 msgstr "Opţiuni:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:430
 msgid "Use _startup notification"
 msgstr "Utilizează _notificare la pornire"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:431
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"Selectaţi această opţiune pentru a activa notificarea la pornire atunci când "
-"comanda este executată din administratorul de fişiere sau din meniu. Nu "
-"toate aplicaţiile suportă notificarea la pornire."
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Selectaţi această opţiune pentru a activa notificarea la pornire atunci când comanda este executată din administratorul de fişiere sau din meniu. Nu toate aplicaţiile suportă notificarea la pornire."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:443
 msgid "Run in _terminal"
 msgstr "Porneşte în _terminal"
@@ -809,13 +805,15 @@ msgstr "Unitate Jaz"
 msgid "Pen Drive"
 msgstr "Unitate Stick"
 
-#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
+#. TRANSLATORS: This string requires special care as %s may be the empty
+#. string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:494
 #, c-format
 msgid "%s Music Player"
 msgstr "Redare audio %s"
 
-#. TRANSLATORS: This string requires special care as %s may be the empty string. Trailing/leading whitespace will be removed.
+#. TRANSLATORS: This string requires special care as %s may be the empty
+#. string. Trailing/leading whitespace will be removed.
 #: ../exo-hal/exo-hal.c:509
 #, c-format
 msgid "%s Digital Camera"
@@ -860,9 +858,8 @@ msgstr "Aplicaţii preferate"
 msgid "Select default applications for various services"
 msgstr "Selectaţi aplicaţiile implicite pentru anumite servicii"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:125
 msgid "Internet"
 msgstr "Internet"
@@ -891,9 +888,8 @@ msgstr ""
 "Clientul de mail implicit va fi utilizat pentru\n"
 "compunerea mailurilor la un clic pe o adresă de mail."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:198
 msgid "Utilities"
 msgstr "Utilitare"
@@ -1021,10 +1017,12 @@ msgstr ""
 "şi alegeţi OK pentru a continua."
 
 #: ../exo-helper/exo-helper.c:404
+#, c-format
 msgid "No command specified"
 msgstr "Nu s-a specificat o comandă"
 
 #: ../exo-helper/exo-helper.c:740
+#, c-format
 msgid "Failed to open helpers.rc for writing"
 msgstr "Nu s-a putut deschide „helpers.rc” pentru scriere"
 
@@ -1038,12 +1036,101 @@ msgstr "Aplicaţii preferate"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr ""
-"Aplicaţii preferate (Navigator web, client de mail, emulator de terminal)"
+msgstr "Aplicaţii preferate (Navigator web, client de mail, emulator de terminal)"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:3
 msgid "Xfce 4 Preferred Applications"
 msgstr "Aplicaţii preferate în Xfce 4"
+
+#: ../exo-helper/main.c:42
+msgid "Failed to execute default Web Browser"
+msgstr "Nu s-a putut lansa navigatorul web implicit"
+
+#: ../exo-helper/main.c:43
+msgid "Failed to execute default Mail Reader"
+msgstr "Nu s-a putut lansa clientul de mail implicit"
+
+#: ../exo-helper/main.c:44
+msgid "Failed to execute default Terminal Emulator"
+msgstr "Nu s-a putut lansa emulatorul de terminal implicit"
+
+#: ../exo-helper/main.c:52
+msgid "Usage: exo-helper [OPTION...]"
+msgstr "Utilizare: exo-open [OPȚIUNI...]"
+
+#: ../exo-helper/main.c:54
+msgid "  -h, --help                          Print this help message and exit"
+msgstr "  -?, --help                          Arată acest mesaj de ajutor și ieși"
+
+#: ../exo-helper/main.c:55 ../exo-open/main.c:63
+msgid "  -v, --version                       Print version information and exit"
+msgstr "  -v, --version                       Arată versiunea curentă"
+
+#: ../exo-helper/main.c:57
+msgid ""
+"  --configure                         Open the Preferred Applications\n"
+"                                      configuration dialog"
+msgstr ""
+"  --configure                         Deschide fereastra de configurare\n"
+"                                      a aplicațiilor preferate"
+
+#: ../exo-helper/main.c:60
+msgid ""
+"  --launch TYPE [PARAMETER]           Launch the default helper of TYPE\n"
+"                                      with the optional PARAMETER, where\n"
+"                                      TYPE is one of the following values."
+msgstr ""
+"  --launch TIP  [PARAMETRU]           Lansează asocierea implicită \n"
+"                                      pentru TIP cu opțiunea PARAMETRU,\n"
+"                                      unde TIP are una dintre următoarele valori."
+
+#: ../exo-helper/main.c:64 ../exo-open/main.c:72
+msgid "The following TYPEs are supported for the --launch command:"
+msgstr "Următoarele valori TIP nu sunt suportate de comanda „--launch”:"
+
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
+#. * since the exo-helper utility will not accept localized TYPEs.
+#. 
+#: ../exo-helper/main.c:70 ../exo-open/main.c:78
+msgid ""
+"  WebBrowser       - The preferred Web Browser.\n"
+"  MailReader       - The preferred Mail Reader.\n"
+"  TerminalEmulator - The preferred Terminal Emulator."
+msgstr ""
+"  WebBrowser       - Navigatorul web preferat.\n"
+"  MailReader       - Clientul de mail preferat.\n"
+"  TerminalEmulator - Emulatorul de terminal preferat."
+
+#: ../exo-helper/main.c:114
+#, c-format
+msgid "Invalid helper type \"%s\""
+msgstr "Tip invalid de asociere „%s”"
+
+#: ../exo-helper/main.c:158
+#, c-format
+msgid ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
+"\n"
+"Please report bugs to <%s>.\n"
+msgstr ""
+"%s (Xfce %s)\n"
+"\n"
+"Drepturi de autor (c) 2003-2006\n"
+"        os-cillation e.K. Toate drepturile rezervate.\n"
+"\n"
+"Scris de Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Compilat cu Gtk+-%d.%d.%d, pornit cu Gtk+-%d.%d.%d.\n"
+"\n"
+"Raportați problemele la <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1162,16 +1249,17 @@ msgid "X Terminal"
 msgstr "Terminalul Xterm"
 
 #: ../exo-mount/exo-mount-fstab.c:92
+#, c-format
 msgid "Unknown error"
 msgstr "Eroare necunoscută"
 
-#. TRANSLATORS: a device is missing from the file system table (usually /etc/fstab)
+#. TRANSLATORS: a device is missing from the file system table (usually
+#. /etc/fstab)
 #. tell the caller that no matching device was found
 #: ../exo-mount/exo-mount-fstab.c:132 ../exo-mount/exo-mount-hal.c:374
 #, c-format
 msgid "Device \"%s\" not found in file system device table"
-msgstr "Dispozitivul „%s” nu a fost găsit în tabela de dispozitive a "
-"sistemului de fişiere"
+msgstr "Dispozitivul „%s” nu a fost găsit în tabela de dispozitive a sistemului de fişiere"
 
 #. definitely not a device that we're able to mount, eject or unmount
 #: ../exo-mount/exo-mount-hal.c:224 ../exo-mount/exo-mount-hal.c:280
@@ -1179,13 +1267,15 @@ msgstr "Dispozitivul „%s” nu a fost găsit în tabela de dispozitive a "
 msgid "Given device \"%s\" is not a volume or drive"
 msgstr "Dispozitivul dat „%s” nu este un volum sau o unitate"
 
-#. TRANSLATORS: The user tried to eject a device although he's not privileged to do so.
+#. TRANSLATORS: The user tried to eject a device although he's not privileged
+#. to do so.
 #: ../exo-mount/exo-mount-hal.c:595
 #, c-format
 msgid "You are not privileged to eject the volume \"%s\""
 msgstr "Nu aveţi drepturile necesare pentru a ejecta volumul „%s”"
 
-#. TRANSLATORS: An application is blocking a mounted volume from being ejected.
+#. TRANSLATORS: An application is blocking a mounted volume from being
+#. ejected.
 #: ../exo-mount/exo-mount-hal.c:600
 #, c-format
 msgid "An application is preventing the volume \"%s\" from being ejected"
@@ -1198,19 +1288,17 @@ msgid "You are not privileged to mount the volume \"%s\""
 msgstr "Nu aveţi drepturile necesare pentru a monta volumul „%s”"
 
 #: ../exo-mount/exo-mount-hal.c:846
-msgid ""
-"Blank discs cannot be mounted, use a CD recording application like Xfburn to "
-"record audio or data on the disc"
-msgstr ""
-"Discurile goale nu pot fi montate. Utilizaţi o aplicaţie de scris CD-uri "
-"precum Xfburn pentru a înregistra piste audio sau date pe disc"
+#, c-format
+msgid "Blank discs cannot be mounted, use a CD recording application like Xfburn to record audio or data on the disc"
+msgstr "Discurile goale nu pot fi montate. Utilizaţi o aplicaţie de scris CD-uri precum Xfburn pentru a înregistra piste audio sau date pe disc"
 
 #: ../exo-mount/exo-mount-hal.c:857
+#, c-format
 msgid "Audio CDs cannot be mounted, use Xfmedia to play the audio tracks"
-msgstr "CD-urile audio nu pot fi montate, utilizaţi Xfmedia pentru a reda "
-"pistele audio"
+msgstr "CD-urile audio nu pot fi montate, utilizaţi Xfmedia pentru a reda pistele audio"
 
-#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do so.
+#. TRANSLATORS: User tried to unmount a volume, but is not privileged to do
+#. so.
 #: ../exo-mount/exo-mount-hal.c:942
 #, c-format
 msgid "You are not privileged to unmount the volume \"%s\""
@@ -1260,16 +1348,11 @@ msgstr "Trebuie specificat UDI-ul dispozitivului HAL sau fişierul dispozitiv"
 #. the caller must specify EITHER a HAL UDI or a device file
 #: ../exo-mount/main.c:146
 msgid "Must not specify both a HAL device UDI and a device file simultaneously"
-msgstr "Nu trebuie specificat simultan UDI-ul dispozitivului HAL şi un fişier "
-"dispozitiv"
+msgstr "Nu trebuie specificat simultan UDI-ul dispozitivului HAL şi un fişier dispozitiv"
 
 #: ../exo-mount/main.c:154
-msgid ""
-"Cannot mount by HAL device UDI, because HAL support was disabled for this "
-"build"
-msgstr ""
-"Nu s-a putut monta după UDI-ul dispozitivului HAL pentru că suportul HAL nu "
-"a fost inclus la compilare"
+msgid "Cannot mount by HAL device UDI, because HAL support was disabled for this build"
+msgstr "Nu s-a putut monta după UDI-ul dispozitivului HAL pentru că suportul HAL nu a fost inclus la compilare"
 
 #: ../exo-mount/main.c:161
 #, c-format
@@ -1323,12 +1406,8 @@ msgstr "Se demontează dispozitivul"
 
 #: ../exo-mount-notify/main.c:231
 #, c-format
-msgid ""
-"The device \"%s\" is being unmounted by the system. Please do not remove the "
-"media or disconnect the drive."
-msgstr ""
-"Dispozitivul „%s” este în curs de demontare din sistem. Nu scoateţi mediul "
-"de stocare şi nu deconectaţi unitatea."
+msgid "The device \"%s\" is being unmounted by the system. Please do not remove the media or disconnect the drive."
+msgstr "Dispozitivul „%s” este în curs de demontare din sistem. Nu scoateţi mediul de stocare şi nu deconectaţi unitatea."
 
 #. not read-only, writing back data
 #: ../exo-mount-notify/main.c:238
@@ -1337,12 +1416,8 @@ msgstr "Se scriu datele pe dispozitiv"
 
 #: ../exo-mount-notify/main.c:239
 #, c-format
-msgid ""
-"There is data that needs to be written to the device \"%s\" before it can be "
-"removed. Please do not remove the media or disconnect the drive."
-msgstr ""
-"Există date ce trebuie scrise pe dispozitivul „%s” înainte ca acesta să "
-"poată fi scos. Nu scoateţi mediul de stocare şi nu deconectaţi unitatea."
+msgid "There is data that needs to be written to the device \"%s\" before it can be removed. Please do not remove the media or disconnect the drive."
+msgstr "Există date ce trebuie scrise pe dispozitivul „%s” înainte ca acesta să poată fi scos. Nu scoateţi mediul de stocare şi nu deconectaţi unitatea."
 
 #: ../exo-open/main.c:59
 msgid "Usage: exo-open [URLs...]"
@@ -1354,52 +1429,25 @@ msgstr "       exo-open --launch TIP [PARAMETRI...]"
 
 #: ../exo-open/main.c:62
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
-"  -?, --help                          Arată acest mesaj de ajutor"
-
-#: ../exo-open/main.c:63
-msgid ""
-"  -v, --version                       Print version information and exit"
-msgstr "  -v, --version                       Arată versiunea curentă"
+msgstr "  -?, --help                          Arată acest mesaj de ajutor"
 
 #: ../exo-open/main.c:65
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TIP [PARAMETRI...]         Porneşte aplicaţiile preferate de\n"
-"                                      tipul TIP cu parametri PARAMETRI, "
-"unde\n"
+"                                      tipul TIP cu parametri PARAMETRI, unde\n"
 "                                      TIP are una din valorile următoare."
 
 #: ../exo-open/main.c:69
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DIRECTORY       Director de lucru implicit pentru "
-"aplicaţii\n"
+"  --working-directory DIRECTORY       Director de lucru implicit pentru aplicaţii\n"
 "                                      când se utilizează opţiunea „--launch”."
-
-#: ../exo-open/main.c:72
-msgid "The following TYPEs are supported for the --launch command:"
-msgstr "Următoarele valori TIP nu sunt suportate de comanda „--launch”:"
-
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
-#. * since the exo-helper utility will not accept localized TYPEs.
-#.
-#: ../exo-open/main.c:78
-msgid ""
-"  WebBrowser       - The preferred Web Browser.\n"
-"  MailReader       - The preferred Mail Reader.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"  WebBrowser       - Navigatorul web preferat.\n"
-"  MailReader       - Clientul de mail preferat.\n"
-"  TerminalEmulator - Emulatorul de terminal preferat."
 
 #: ../exo-open/main.c:82
 msgid ""
@@ -1424,4 +1472,3 @@ msgstr "Nu s-a putut lansa aplicaţia preferată pentru categoria „%s”."
 #, c-format
 msgid "Failed to open URL \"%s\"."
 msgstr "Nu s-a putut deschide URL-ul „%s”."
-
