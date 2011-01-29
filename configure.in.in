@@ -155,10 +155,9 @@ XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.18.0], [gio-unix], [GI
 GIOMODULEDIR=""
 BUILD_GIOMODULE=""
 if test x"$GIO_UNIX_FOUND" = x"yes"; then
-  dnl Do not build the module after GIO 2.27
-  XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX_227], [gio-unix-2.0], [2.27.0], [gio-unix], [GIO-Unix too new], [yes])
-
-  if test x"$GIO_UNIX_227_FOUND" != x"yes"; then
+  if $PKG_CONFIG "--atleast-version=2.27.0" "gio-unix-2.0" >/dev/null 2>&1; then
+    BUILD_GIOMODULE="no"
+  else
     dnl A GIO version >= 2.18 and < 2.27 was found
     BUILD_GIOMODULE="yes"
 
@@ -176,7 +175,7 @@ if test x"$GIO_UNIX_FOUND" = x"yes"; then
 fi
 AC_SUBST([GIOMODULEDIR])
 AM_CONDITIONAL([HAVE_GIOMODULEDIR], [test x"$GIOMODULEDIR" != x""])
-AM_CONDITIONAL([BUILD_GIOMODULE], [test x"$BUILD_GIOMODULE" != x""])
+AM_CONDITIONAL([BUILD_GIOMODULE], [test x"$BUILD_GIOMODULE" = x"yes"])
 
 dnl *********************
 dnl *** Check for X11 ***
@@ -358,7 +357,7 @@ dnl ***************************
 echo
 echo "Build Configuration:"
 echo
-if test x"$GIO_UNIX_227_FOUND" = x"yes"; then
+if test x"$BUILD_GIOMODULE" = x"no"; then
 echo "* Build GIO module:     no (not needed after glib 2.27)"
 elif test x"$GIO_UNIX_FOUND" = x"yes"; then
 echo "* Build GIO module:     yes"
