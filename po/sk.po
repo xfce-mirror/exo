@@ -1,19 +1,20 @@
 # Slovak translations for exo.
 # Copyright (C) 2009 Benedikt Meurer, Jannis Pohlmann, Nick Schermer.
 # This file is distributed under the same license as the exo package.
-# Robert Hartl <hartl.robert@gmail.com>, 2009.
+# Robert Hartl <hartl.robert@gmail.com>, 2009, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 16:35+0100\n"
-"PO-Revision-Date: 2009-12-06 14:03+0100\n"
+"POT-Creation-Date: 2011-01-31 11:31+0000\n"
+"PO-Revision-Date: 2011-01-31 14:29+0100\n"
 "Last-Translator: Robert Hartl <hartl.robert@gmail.com>\n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
-"Language: sk\n"
+"Language-Team: Slovak <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8-bit\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
@@ -214,13 +215,12 @@ msgstr "Vybrať _ikonu z:"
 
 #. search filter
 #: ../exo/exo-icon-chooser-dialog.c:225
-#, fuzzy
 msgid "_Search icon:"
-msgstr "Stĺpec hľadania"
+msgstr "_Nájsť ikonu:"
 
 #: ../exo/exo-icon-chooser-dialog.c:236
 msgid "Clear search field"
-msgstr ""
+msgstr "Vyčistiť vyhľadávacie pole"
 
 #: ../exo/exo-icon-view.c:644
 msgid "Column Spacing"
@@ -635,7 +635,7 @@ msgstr "_Adresa URL:"
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
-msgstr ""
+msgstr "Pracovný _adresár:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
@@ -688,9 +688,8 @@ msgstr "Vyberte ikonu"
 
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:637
-#, fuzzy
 msgid "Select a working directory"
-msgstr "Vyberte ikonu"
+msgstr "Vyberte pracovný adresár"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:168
 msgid "File location is not a regular file or directory"
@@ -707,7 +706,7 @@ msgstr "Vytvoriť odkaz"
 
 #: ../exo-desktop-item-edit/main.c:53
 msgid "Create Directory"
-msgstr ""
+msgstr "Vytvoriť adresár"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Launcher"
@@ -719,7 +718,7 @@ msgstr "Upraviť odkaz"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Directory"
-msgstr ""
+msgstr "Upraviť adresár"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Create a new desktop file in the given directory"
@@ -731,23 +730,23 @@ msgstr "Typ vytváraného súboru pracovnej plochy (aplikácia alebo odkaz)"
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Preset name when creating a desktop file"
-msgstr ""
+msgstr "Predvolený názov pri vytváraní súboru na ploche"
 
 #: ../exo-desktop-item-edit/main.c:82
 msgid "Preset comment when creating a desktop file"
-msgstr ""
+msgstr "Predvolený komentár pri vytváraní súboru na ploche"
 
 #: ../exo-desktop-item-edit/main.c:83
 msgid "Preset command when creating a launcher"
-msgstr ""
+msgstr "Predvolená príkaz pri vytváraní spušťača"
 
 #: ../exo-desktop-item-edit/main.c:84
 msgid "Preset URL when creating a link"
-msgstr ""
+msgstr "Predvolená adresa URL pri vytváraní odkazu"
 
 #: ../exo-desktop-item-edit/main.c:85
 msgid "Preset icon when creating a desktop file"
-msgstr ""
+msgstr "Predvolená ikona pri vytváraní súboru na ploche"
 
 #: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
 msgid "Print version information and exit"
@@ -1035,7 +1034,7 @@ msgstr "Nebol zadaný žiadny príkaz"
 #: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
-msgstr "Nepodarilo sa otvoriť súbor helpers rc pre zápis"
+msgstr "Nepodarilo sa otvoriť %s pre zápis"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
@@ -1069,7 +1068,7 @@ msgstr ""
 
 #: ../exo-helper/main.c:69
 msgid "Settings manager socket"
-msgstr ""
+msgstr "Soket správcu nastavenia"
 
 #: ../exo-helper/main.c:69
 msgid "SOCKET ID"
@@ -1192,7 +1191,7 @@ msgstr "GNOME Terminál"
 
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
-msgstr ""
+msgstr "Icedove"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1310,6 +1309,9 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
+"  --working-directory ADRESÁR       Predvolený pracovný adresár pre "
+"aplikácie\n"
+"                                      pri použití prepínača --launch."
 
 #: ../exo-open/main.c:110
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1338,6 +1340,11 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
+"Ak nezadáte voľbu --launch, exo-open otvorí všetky špecifikované\n"
+"adresy URL aplikáciou zvolenou podľa tvaru adresy URL. Ak však \n"
+"zadáte voľbu --launch budete si môcť vybrať, ktorú aplikáciu chcete\n"
+"spustiť a zadať dodatočné parametre aplikáciu (napr. pre TerminalEmulator\n"
+"môžete zadať príkaz, ktorý sa vykoná v novom okne terminálu)."
 
 #: ../exo-open/main.c:183
 #, c-format
@@ -1369,15 +1376,15 @@ msgstr "Prehliadať systém súborov"
 
 #: ../exo-open/exo-mail-reader.desktop.in.h:2
 msgid "Read your email"
-msgstr ""
+msgstr "Čítať poštu"
 
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:2
 msgid "Use the command line"
-msgstr ""
+msgstr "Použiť príkazový riadok"
 
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
-msgstr ""
+msgstr "Prehliadať web"
 
 #~ msgid "External %s Drive"
 #~ msgstr "Externá jednotka %s"
