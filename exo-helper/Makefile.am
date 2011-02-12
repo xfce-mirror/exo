@@ -9,7 +9,7 @@ INCLUDES = 								\
 	-DG_LOG_DOMAIN=\"exo-helper\"					\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
-exo_helperdir = $(libdir)/xfce4/exo-$(LIBEXO_VERSION_API)
+exo_helperdir = $(HELPER_PATH_PREFIX)/xfce4/exo-$(LIBEXO_VERSION_API)
 
 exo_helper_PROGRAMS = \
 	exo-helper-1
@@ -53,7 +53,7 @@ bin_SCRIPTS =								\
 	exo-preferred-applications
 
 exo-preferred-applications: Makefile $(srcdir)/exo-preferred-applications.in
-	sed -e 's,@libdir\@,$(libdir),g' 				\
+	sed -e 's,@HELPERDIR\@,$(HELPER_PATH_PREFIX)/xfce4/exo-$(LIBEXO_VERSION_API),g' \
 	    -e 's,@LIBEXO_VERSION_API\@,$(LIBEXO_VERSION_API),g' 	\
 	    < $(srcdir)/exo-preferred-applications.in			\
 	    > exo-preferred-applications
