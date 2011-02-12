@@ -14,7 +14,9 @@ TESTS =									\
 check_PROGRAMS =							\
 	test-exo-csource						\
 	test-exo-noop							\
-	test-exo-string
+	test-exo-string							\
+	test-exo-icon-chooser-dialog					\
+	test-exo-wrap-table
 
 test_exo_csource_SOURCES =						\
 	test-exo-csource.c						\
@@ -51,10 +53,6 @@ test_exo_string_DEPENDENCIES =						\
 
 test_exo_string_LDADD =							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
-
-noinst_PROGRAMS =							\
-	test-exo-icon-chooser-dialog					\
-	test-exo-wrap-table
 
 test_exo_icon_chooser_dialog_SOURCES =					\
 	test-exo-icon-chooser-dialog.c
