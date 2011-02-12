@@ -2,7 +2,7 @@
 INCLUDES = 								\
 	-I$(top_srcdir)							\
 	-DG_LOG_DOMAIN=\"exo-gio-module\"				\
-	-DLIBDIR=\"$(libdir)/xfce4/exo-$(LIBEXO_VERSION_API)\"		\
+	-DHELPERDIR=\"$(HELPER_PATH_PREFIX)/xfce4/exo-$(LIBEXO_VERSION_API)\"	\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"
 

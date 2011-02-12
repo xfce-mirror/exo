@@ -24,7 +24,7 @@
 #include <gio/gio.h>
 #include <gio/gdesktopappinfo.h>
 
-#define EXO_HELPER_LAUNCH LIBDIR G_DIR_SEPARATOR_S "exo-helper-" LIBEXO_VERSION_API " --launch "
+#define EXO_HELPER_LAUNCH HELPERDIR G_DIR_SEPARATOR_S "exo-helper-" LIBEXO_VERSION_API " --launch "
 
 
 
