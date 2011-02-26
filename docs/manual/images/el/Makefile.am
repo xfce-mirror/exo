@@ -1,10 +1,4 @@
-SUBDIRS =								\
-	el								\
-	es								\
-	ja								\
-	sv
-
-imagesdir = $(docdir)/html/C/images
+imagesdir = $(docdir)/html/el/images
 images_DATA =								\
 	exo-preferred-applications-internet.png				\
 	exo-preferred-applications-utilities.png			\
