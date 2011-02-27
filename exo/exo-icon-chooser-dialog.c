@@ -269,7 +269,7 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
                            "yalign", 0.0f,
                            NULL);
   gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, FALSE);
-  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, "text", EXO_ICON_CHOOSER_MODEL_COLUMN_DISPLAY_NAME, NULL);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, "text", EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME, NULL);
 
   /* setup the file chooser (hidden by default) */
   priv->file_chooser = gtk_file_chooser_widget_new (GTK_FILE_CHOOSER_ACTION_OPEN);
@@ -379,7 +379,7 @@ exo_icon_chooser_dialog_set_model (ExoIconChooserDialog *dialog)
       g_object_unref (G_OBJECT (filter));
 
       /* enable search on the display name */
-      exo_icon_view_set_search_column (EXO_ICON_VIEW (priv->icon_chooser), EXO_ICON_CHOOSER_MODEL_COLUMN_DISPLAY_NAME);
+      exo_icon_view_set_search_column (EXO_ICON_VIEW (priv->icon_chooser), EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME);
     }
   g_object_unref (G_OBJECT (model));
 }
@@ -432,7 +432,7 @@ exo_icon_chooser_dialog_visible_func (GtkTreeModel *model,
   /* filter by string */
   if (priv->casefolded_text != NULL)
     {
-      gtk_tree_model_get (model, iter, EXO_ICON_CHOOSER_MODEL_COLUMN_DISPLAY_NAME, &name, -1);
+      gtk_tree_model_get (model, iter, EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME, &name, -1);
 
       /* casefold the name */
       normalized = g_utf8_normalize (name, -1, G_NORMALIZE_ALL);

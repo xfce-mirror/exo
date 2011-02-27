@@ -72,7 +72,6 @@ typedef enum
  * ExoIconChooserModelColumns:
  * @EXO_ICON_CHOOSER_MODEL_COLUMN_CONTEXT      : the context of the icon.
  * @EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME    : the name of the icon.
- * @EXO_ICON_CHOOSER_MODEL_COLUMN_DISPLAY_NAME : the display name of the icon.
  * @EXO_ICON_CHOOSER_MODEL_N_COLUMNS           : the number of columns.
  *
  * The columns provided by the #ExoIconChooserModel.
@@ -81,7 +80,6 @@ typedef enum
 {
   EXO_ICON_CHOOSER_MODEL_COLUMN_CONTEXT,
   EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME,
-  EXO_ICON_CHOOSER_MODEL_COLUMN_DISPLAY_NAME,
   EXO_ICON_CHOOSER_MODEL_N_COLUMNS,
 } ExoIconChooserModelColumn;
 
