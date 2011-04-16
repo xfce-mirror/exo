@@ -47,19 +47,19 @@ my @attachments = ();
 # parse the mailto:-address
 my @headers = $mailtoUrl->headers();
 for (my $n = 0; $n < $#headers; $n += 2) {
-	if ($headers[$n] eq 'to') {
+	if ($headers[$n] =~ /^to$/i) {
 		push (@to, $headers[$n + 1]);
 	}
-	elsif ($headers[$n] eq 'cc') {
+	elsif ($headers[$n] =~ /^cc$/i ) {
 		push (@cc, $headers[$n + 1]);
 	}
-	elsif ($headers[$n] eq 'subject') {
+	elsif ($headers[$n] =~ /^subject$/i ) {
 		$subject = $headers[$n + 1];
 	}
-	elsif ($headers[$n] eq 'body') {
+	elsif ($headers[$n] =~ /^body$/i ) {
 		$body = $headers[$n + 1];
 	}
-	elsif ($headers[$n] eq 'attach') {
+	elsif ($headers[$n] =~ /^attach$/i ) {
 		# be sure to add as file:-URI
 		my $f = $headers[$n + 1];
 		push(@attachments, ($f =~ m/^file:\//) ? URI->new($f) : URI::file->new_abs($f));
