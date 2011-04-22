@@ -3540,7 +3540,6 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
   ExoIconViewCellInfo *info;
   GtkStateType         state;
   GdkRectangle         cell_area;
-  gboolean             rtl;
   cairo_t             *cr;
   GList               *lp;
   gint                 x_0;
@@ -3552,8 +3551,6 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
     return;
 
   exo_icon_view_set_cell_data (icon_view, item);
-
-  rtl = gtk_widget_get_direction (GTK_WIDGET (icon_view)) == GTK_TEXT_DIR_RTL;
 
   if (item->selected)
     {
