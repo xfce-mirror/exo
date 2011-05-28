@@ -1,4 +1,4 @@
-# Dutch translations for exo package.
+# Dutch translations for the exo package.
 # Copyright (C) The Xfce development team.
 # This file is distributed under the same license as the exo package.
 # Stephan Arts <psyBSD@gmail.com>, 2006.
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-27 10:00+0000\n"
+"POT-Creation-Date: 2011-05-28 16:00+0000\n"
 "PO-Revision-Date: 2006-11-03 15:05+0100\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -73,7 +73,7 @@ msgstr ""
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Kon \"%s\" niet openen"
+msgstr "Kon \"%s\" niet openen."
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
 msgid "Orientation"
@@ -133,7 +133,7 @@ msgstr "Aanwijzer-element vulkleur"
 
 #: ../exo/exo-icon-bar.c:375 ../exo/exo-icon-bar.c:376
 msgid "Cursor item border color"
-msgstr "aanwijzer-element randkleur"
+msgstr "Aanwijzer-element randkleur"
 
 #: ../exo/exo-icon-bar.c:382 ../exo/exo-icon-bar.c:383
 msgid "Cursor item text color"
@@ -177,7 +177,7 @@ msgstr "Emoticons"
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:123
 msgid "International Denominations"
-msgstr "Internationale aanduidingen"
+msgstr "Internationale Aanduidingen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:125
@@ -345,8 +345,8 @@ msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr ""
-"De tijd waarna een item onder de muiscursor automatisch wordt geselecteerd "
-"in enkele-klik-modus"
+"De hoeveelheid tijd waarna een element onder de muispijl automatisch "
+"wordt geselecteerd in enkele-klik-modus"
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -454,7 +454,7 @@ msgstr "Kolom-spatiëring"
 
 #: ../exo/exo-wrap-table.c:149
 msgid "The amount of space between two consecutive columns"
-msgstr "De ruimte tussen twee opeenvolgende kolommen"
+msgstr "De hoeveelheid ruimte tussen twee opeenvolgende kolommen"
 
 #: ../exo/exo-wrap-table.c:163
 msgid "Row spacing"
@@ -462,7 +462,7 @@ msgstr "Rij-spatiëring"
 
 #: ../exo/exo-wrap-table.c:164
 msgid "The amount of space between two consecutive rows"
-msgstr "De ruimte tussen twee opeenvolgende rijen"
+msgstr "De hoeveelheid ruimte tussen twee opeenvolgende rijen"
 
 #: ../exo/exo-wrap-table.c:178
 msgid "Homogeneous"
@@ -566,7 +566,7 @@ msgid ""
 msgstr ""
 "%s komt ZONDER ENIGE GARANTIE,\n"
 "U mag %s herdistribueren onder de voorwaarden van\n"
-"de GNU Lesser General Public License welke gevonden kan worden\n"
+"de GNU Lesser General Public License, welke gevonden kan worden\n"
 "in het %s bronpakket.\n"
 "\n"
 
@@ -614,7 +614,7 @@ msgstr "Shell scripts"
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:284
 #, c-format
 msgid "Create Launcher <b>%s</b>"
-msgstr "Maak Snelstarter <b>%s</b>"
+msgstr "Maak Starter <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
@@ -671,7 +671,7 @@ msgid ""
 "notification."
 msgstr ""
 "Selecteer deze optie om opstartmelding in te schakelen wanneer deze opdracht "
-"wordt uitgevoerd vanuit de bestandsbeheerder of het menu. Niet elk programma "
+"wordt uitgevoerd vanuit de bestandsbeheerder of het menu. Niet elke toepassing "
 "ondersteunt opstartmelding."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
@@ -731,7 +731,7 @@ msgstr "Maak een nieuw bureaubladbestand in de opgegeven map"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Het te maken bureaubladbestandstype (Toepassing of Koppeling)"
+msgstr "Het te maken bureaublad-bestandstype (Toepassing of Koppeling)"
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Preset name when creating a desktop file"
@@ -785,7 +785,7 @@ msgstr "Het bestand \"%s\" bevat geen gegevens"
 #: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Kon de inhoud van bestand \"%s\" niet openen: %s"
+msgstr "Kon de inhoud van bestand \"%s\" niet lezen: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:288
@@ -807,7 +807,7 @@ msgstr "M_aken"
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:475
 msgid "Choose filename"
-msgstr "Kies bestandsnaam"
+msgstr "Kies bestandnaam"
 
 #: ../exo-desktop-item-edit/main.c:533
 #, c-format
@@ -884,14 +884,14 @@ msgstr ""
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
-msgstr "Terminalnabootser"
+msgstr "Terminalvenster"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
-"De voorkeur-terminalnabootser zal worden gebruikt\n"
+"Het voorkeurs-terminalvenster zal worden gebruikt\n"
 "om opdrachten uit te voeren die een terminalomgeving vereisen"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:297
@@ -925,7 +925,7 @@ msgstr "Kon de standaard-bestandbeheerder niet instellen"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
-msgstr "Kon de standaard-terminalnabootser niet instellen"
+msgstr "Kon het standaard-terminalvenster niet instellen"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:388
@@ -946,7 +946,7 @@ msgstr "Kies een aangepaste bestandbeheerder"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
-msgstr "Kies een aangepaste terminalnabootser"
+msgstr "Kies een aangepast terminalvenster"
 
 #: ../exo-helper/exo-helper-chooser.c:509
 msgid ""
@@ -978,7 +978,7 @@ msgid ""
 "as default Terminal Emulator for Xfce:"
 msgstr ""
 "Kies de toepassing die u als standaard-\n"
-"terminalnabootser voor Xfce wilt gebruiken:"
+"terminalvenster voor Xfce wilt gebruiken:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -990,7 +990,7 @@ msgstr "_Overige..."
 
 #: ../exo-helper/exo-helper-chooser.c:763
 msgid "Use a custom application which is not included in the above list."
-msgstr "Gebruik een aangepaste toepassing die niet in bovenstaande lijst staat"
+msgstr "Gebruik een aangepaste toepassing die niet in bovenstaande lijst staat."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:113
 msgid "Choose Preferred Application"
@@ -1025,7 +1025,7 @@ msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
-"Kies nu uw voorkeurs-terminalnabootser\n"
+"Kies nu uw voorkeurs-terminalvenster\n"
 "en klik op OK om door te gaan."
 
 #: ../exo-helper/exo-helper.c:382
@@ -1041,7 +1041,7 @@ msgstr "Kon %s niet openen om naar te schrijven"
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr ""
-"Voorkeurstoepassingen (webbrowser, e-mailprogramma en terminal-emulator)"
+"Voorkeurstoepassingen (webbrowser, e-mailprogramma en terminalvenster)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
@@ -1053,11 +1053,11 @@ msgstr "Kon het standaard-emailprogramma niet uitvoeren"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default File Manager"
-msgstr "Kon de standaard-bestandsbeheerder niet uitvoeren"
+msgstr "Kon de standaard-bestandbeheerder niet uitvoeren"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
-msgstr "Kon de standaard-terminalnabootser niet uitvoeren"
+msgstr "Kon het standaard-terminalvenster niet uitvoeren"
 
 #: ../exo-helper/main.c:68
 msgid ""
@@ -1101,7 +1101,7 @@ msgstr ""
 " WebBrowser - De voorkeurs-webbladeraar.\n"
 " MailReader - De voorkeurs-emaillezer.\n"
 " FileManager - De voorkeurs-bestandbeheerder.\n"
-" TerminalEmulator - De voorkeurs-terminalnabootser."
+" TerminalEmulator - Het voorkeurs-terminalvenster."
 
 #: ../exo-helper/main.c:104
 #, c-format
@@ -1160,7 +1160,7 @@ msgstr "Debian Sensible Browser"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr "Debian X terminal-emulator"
+msgstr "Debian X Terminalvenster"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -1168,11 +1168,11 @@ msgstr "Encompass"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
-msgstr "Epiphany webbrowser"
+msgstr "Epiphany Webbrowser"
 
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr "Enlightened terminal-emulator"
+msgstr "Enlightened Terminalvenster"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Novell Evolution"
@@ -1184,11 +1184,11 @@ msgstr "Mozilla Firefox"
 
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
-msgstr "Galeon webbrowser"
+msgstr "Galeon Webbrowser"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
-msgstr "GNOME terminal"
+msgstr "GNOME Terminal"
 
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
@@ -1200,15 +1200,15 @@ msgstr "KMail"
 
 #: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
 msgid "Konqueror Web Browser"
-msgstr "Konqueror webbrowser"
+msgstr "Konqueror Webbrowser"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
 msgid "Links Text Browser"
-msgstr "Links tekstbrowser"
+msgstr "Links Tekstbrowser"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
 msgid "Lynx Text Browser"
-msgstr "Lynx tekstbrowser"
+msgstr "Lynx Tekstbrowser"
 
 #: ../exo-helper/helpers/midori.desktop.in.in.h:1
 msgid "Midori"
@@ -1332,7 +1332,7 @@ msgstr ""
 "WebBrowser - De voorkeurs-webbladeraar.\n"
 " MailReader - De voorkeurs-emaillezer.\n"
 " FileManager - De voorkeurs-bestandbeheerder.\n"
-" TerminalEmulator - De voorkeurs-terminalnabootser."
+" TerminalEmulator - Het voorkeurs-terminalvenster."
 
 #: ../exo-open/main.c:131
 msgid ""
@@ -1440,7 +1440,7 @@ msgstr "Blader door het web"
 #~ msgstr "Geluids-CD"
 
 #~ msgid "%s Removable Volume"
-#~ msgstr "%s Verwisselbaar Medium"
+#~ msgstr "%s Verwijderbaar Medium"
 
 #~ msgid "%s Volume"
 #~ msgstr "%s Medium"
@@ -1457,7 +1457,7 @@ msgstr "Blader door het web"
 #~ msgstr "U heeft geen rechten voor het uitwerpen van het medium \"%s\""
 
 #~ msgid "An application is preventing the volume \"%s\" from being ejected"
-#~ msgstr "Een programma belemmert het uitwerpen van het medium \"%s\""
+#~ msgstr "Een toepassing belemmert het uitwerpen van het medium \"%s\""
 
 #~ msgid "You are not privileged to mount the volume \"%s\""
 #~ msgstr "U heeft geen rechten voor het aankoppelen van het medium \"%s\""
@@ -1474,7 +1474,7 @@ msgstr "Blader door het web"
 #~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
 #~ "audio tracks"
 #~ msgstr ""
-#~ "Audio-CD's kunnen niet worden aangekoppeld, gebruik uw favoriete "
+#~ "Geluids-CD's kunnen niet worden aangekoppeld, gebruik uw favoriete "
 #~ "muziekspeler om de geluidbestanden af te spelen"
 
 #~ msgid "You are not privileged to teardown the crypto layer"
