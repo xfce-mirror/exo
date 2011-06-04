@@ -731,7 +731,7 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
   if (G_UNLIKELY (desktop_file != NULL))
     {
       xfce_rc_set_group (desktop_file, "Desktop Entry");
-      mimetypes = xfce_rc_read_list_entry (desktop_file, "MimeType", ";");
+      mimetypes = xfce_rc_read_list_entry (desktop_file, "X-XFCE-MimeType", ";");
       if (mimetypes != NULL)
         {
           xfce_rc_set_group (rc, "Added Associations");
