@@ -35,10 +35,9 @@
 #endif
 
 #include <gio/gio.h>
+#include <libxfce4ui/libxfce4ui.h>
 #include <exo-desktop-item-edit/exo-die-editor.h>
 #include <exo-desktop-item-edit/exo-die-utils.h>
-
-#include <exo-support/exo-support.h>
 
 #if defined(GDK_WINDOWING_X11)
 #include <gdk/gdkx.h>

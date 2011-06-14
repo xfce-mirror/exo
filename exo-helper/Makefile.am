@@ -37,16 +37,16 @@ exo_helper_1_SOURCES =						\
 
 exo_helper_1_CFLAGS =							\
 	$(GTK_CFLAGS)							\
-	$(LIBXFCE4UTIL_CFLAGS)
+	$(LIBXFCE4UTIL_CFLAGS)						\
+	$(LIBXFCE4UI_CFLAGS)
 
 exo_helper_1_DEPENDENCIES =						\
-	$(top_builddir)/exo-support/libexo-support.la			\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 exo_helper_1_LDADD =							\
 	$(GTK_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
-	$(top_builddir)/exo-support/libexo-support.la			\
+	$(LIBXFCE4UI_LIBS)						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 bin_SCRIPTS =								\

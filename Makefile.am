@@ -6,7 +6,6 @@ endif
 SUBDIRS =								\
 	exo								\
 	exo-csource							\
-	exo-support							\
 	exo-desktop-item-edit						\
 	exo-gio-module							\
 	exo-helper							\

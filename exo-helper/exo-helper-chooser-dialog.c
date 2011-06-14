@@ -21,10 +21,10 @@
 #endif
 
 #include <gdk/gdkkeysyms.h>
+#include <libxfce4ui/libxfce4ui.h>
 
 #include <exo-helper/exo-helper-chooser-dialog.h>
 
-#include <exo-support/exo-support.h>
 
 
 
