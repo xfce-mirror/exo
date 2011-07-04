@@ -1,8 +1,3 @@
-
-if HAVE_PYTHON
-PYTHON_SUBDIR=python
-endif
-
 SUBDIRS =								\
 	exo								\
 	exo-csource							\
@@ -14,7 +9,6 @@ SUBDIRS =								\
 	icons								\
 	pixmaps								\
 	po								\
-	$(PYTHON_SUBDIR)						\
 	tests
 
 AUTOMAKE_OPTIONS =							\

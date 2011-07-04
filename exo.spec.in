@@ -28,7 +28,7 @@ Static libraries and header files for the exo library.
 %setup -q
 
 %build
-%configure --enable-final --enable-gtk-doc --disable-python --enable-xsltproc
+%configure --enable-final --enable-gtk-doc --enable-xsltproc
 make
 
 %install
