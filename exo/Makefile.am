@@ -105,7 +105,8 @@ libexo_1_la_LIBADD =							\
 	$(GIO_LIBS)							\
 	$(GTK_LIBS)							\
 	$(LIBX11_LIBS)							\
-	$(LIBXFCE4UTIL_LIBS)
+	$(LIBXFCE4UTIL_LIBS)						\
+	-lm
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = exo-$(LIBEXO_VERSION_API).pc
