@@ -39,6 +39,7 @@ test_exo_noop_DEPENDENCIES =						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_noop_LDADD =							\
+	$(GLIB_LIBS)							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_string_SOURCES =						\
@@ -52,6 +53,7 @@ test_exo_string_DEPENDENCIES =						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_string_LDADD =							\
+	$(GLIB_LIBS)							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_icon_chooser_dialog_SOURCES =					\
