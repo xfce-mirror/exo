@@ -2,21 +2,23 @@
 # Copyright (C) 2004-2006 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
 # Peeter Vois <peeter.vois@proekspert.ee>, 2006.
-# 
+# Allar Kiristaja <aquastus@gmail.com>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-26 10:00+0000\n"
-"PO-Revision-Date: 2008-09-08 12:12-0800\n"
-"Last-Translator: Kristjan Siimson <epost@ksiimson.se>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2011-10-26 16:00+0000\n"
+"PO-Revision-Date: 2011-10-26 23:17+0300\n"
+"Last-Translator: Allar Kiristaja <aquastus@gmail.com>\n"
+"Language-Team: Eesti <>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"Content-Transfer-Encoding: 8bits\n"
 "X-Poedit-Language: Estonian\n"
 "X-Poedit-Country: ESTONIA\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -217,7 +219,7 @@ msgstr "Vali _ikoon asukohast:"
 #. search filter
 #: ../exo/exo-icon-chooser-dialog.c:225
 msgid "_Search icon:"
-msgstr "_Otsimise ikoon"
+msgstr "_Otsimise ikoon:"
 
 #: ../exo/exo-icon-chooser-dialog.c:236
 msgid "Clear search field"
@@ -502,12 +504,12 @@ msgstr "  -h, --help        Trüki see abiteade ja välju\n"
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version    Trüki versioon ja välju\n"
+msgstr "  -V, --version     Trüki versioon ja välju\n"
 
 #: ../exo-csource/main.c:289
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
-msgstr "  -extern          Tekita välised märgid\n"
+msgstr "  --extern          Tekita välised märgid\n"
 
 #: ../exo-csource/main.c:290
 #, c-format
@@ -517,12 +519,12 @@ msgstr "  --static          Tekita staatilised märgid\n"
 #: ../exo-csource/main.c:291
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=väärtus C makro/muutuja nimi\n"
+msgstr "  --name=väärtus    C makro/muutuja nimi\n"
 
 #: ../exo-csource/main.c:292
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list       otsi (nimi, fail) paare\n"
+msgstr "  --build-list      Otsi (nimi, fail) paare\n"
 
 #: ../exo-csource/main.c:293
 #, c-format
@@ -612,44 +614,37 @@ msgstr "Shelli skriptid"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Loo käivitaja <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Nimi:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "_Märkus:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "K_äsk:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "Tegev kataloog:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Ikoon:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -660,11 +655,9 @@ msgstr "Ikoon puudub"
 msgid "Options:"
 msgstr "Valikud:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Ka_suta töölemineku märguannet:"
@@ -679,11 +672,9 @@ msgstr ""
 "failihaldurist või menüüst käivitatakse. Mitte kõik rakendused ei oma "
 "töölemineku märguande toetust."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Käivita _terminalis"
@@ -797,7 +788,7 @@ msgstr "Faili \"%s\" sisu sõelumine ebaõnnestus: %s"
 #: ../exo-desktop-item-edit/main.c:287
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "Failil „%s” ei ole võtme liiki"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:297
@@ -834,8 +825,9 @@ msgstr "Eelistatud rakendused"
 msgid "Select default applications for various services"
 msgstr "Vali vaikimisi rakendused erinevatele teenustele"
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
@@ -866,8 +858,9 @@ msgstr ""
 "Eelistatavat e-posti lugejat kasutatakse e-kirjade\n"
 "koostamiseks, kui sa klõpsad e-posti aadressile."
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Abivahendid"
@@ -1077,13 +1070,15 @@ msgstr "Sätete halduri sokkel"
 
 #: ../exo-helper/main.c:69
 msgid "SOCKET ID"
-msgstr "Sokkeli ID"
+msgstr "SOKKELI ID"
 
 #: ../exo-helper/main.c:70
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
-msgstr "Käivita vaikimisi liiki(TYPE) aitaja valikulise parameetriga(PARAMETER), kus liik(TYPE) on üks järgnevatest väärtustest."
+msgstr ""
+"Käivita vaikimisi liiki(TYPE) aitaja valikulise parameetriga(PARAMETER), kus "
+"liik(TYPE) on üks järgnevatest väärtustest."
 
 #: ../exo-helper/main.c:70
 #, fuzzy
@@ -1099,22 +1094,25 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  WebBrowser       - Eelistatav veebibrauser.\n"
-"  MailReader       - Eelistatav e-posti lugeja.\n"
+"--launch käsk toetab järgnevaid liike(TYPE):\n"
+"\n"
+"  WebBrowser       - Eelistatud veebisirvija.\n"
+"  MailReader       - Eelistatud e-posti lugeja.\n"
+"  FileManager      - Eelistatud failihaldur.\n"
 "  TerminalEmulator - Eelistatud terminaliemulaator."
 
 #: ../exo-helper/main.c:104
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr ""
+msgstr "Trüki „%s --help” kasutusjuhisteks"
 
 #: ../exo-helper/main.c:154
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Vigane aitaja tüüp\"%s\""
+msgstr "Vigane aitaja tüüp „%s”"
 
 #: ../exo-helper/main.c:198
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s (Xfce %s)\n"
 "\n"
@@ -1127,11 +1125,16 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr ""
-"Autoriõigus (c) %s\n"
+"%s (Xfce %s)\n"
+"\n"
+"Autoriõigus (c) 2003-2006\n"
 "       os-cillation·e.K.·Kõik õigused kaitstud.\n"
 "\n"
 "Kirjutanud·Benedikt·Meurer·<benny@xfce.org>.\n"
 "\n"
+"Ehitatud kasutades Gtk+-%d.%d.%d, jooksmas Gtk+-%d.%d.%d.\n"
+"\n"
+"Vigadest andke teada aadressil <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1285,7 +1288,7 @@ msgstr "  -?, --help                          Trüki see abiteade ja välju"
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
-"  -V, --version                      Trüki versiooni informatsioon ja välju"
+"  -V, --version                       Trüki versiooni informatsioon ja välju"
 
 #: ../exo-open/main.c:113
 msgid ""
@@ -1305,27 +1308,26 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory KATALOOG       Vaikimisi töökataloog rakendustele\n"
+"  --working-directory KATALOOG        Vaikimisi töökataloog rakendustele\n"
 "                                      kui kasutatakse --launch valikut."
 
 #: ../exo-open/main.c:120
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr "Järgnevad LIIGID on toetatud --launch käsu jaoks:"
+msgstr "--launch käsk toetab järgnevaid liike (TYPE):"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
+#.
 #: ../exo-open/main.c:126
-#, fuzzy
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  WebBrowser       - Eelistatav veebibrauser.\n"
-"  MailReader       - Eelistatav e-posti lugeja.\n"
+"  WebBrowser       - Eelistatud veebisirvija.\n"
+"  MailReader       - Eelistatud e-posti lugeja.\n"
+"  FileManager      - Eelistatud failihaldur.\n"
 "  TerminalEmulator - Eelistatud terminaliemulaator."
 
 #: ../exo-open/main.c:131
@@ -1336,21 +1338,23 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
-"Kui te ei täpsusta --launch seadistust, siis exo-open avab kõik määratud\n"
-"URL-id nende eelistatavate URL-i käsitlejatega. Kui aga te määratlete --"
+"Kui te ei täpsusta --launch seadistust, siis avab exo-open kõik määratud\n"
+"URL-id nende eelistatavate URL-i käsitlejatega. Kui te aga määratlete --"
 "launch\n"
-"seadistuse, siis te saate valida millist eelistatud rakendust te soovite "
+"seadistuse, siis te saate valida, millist eelistatud rakendust te soovite "
 "käivitada\n"
 "ja te saate ka määrata täiendavaid parameetreid (näiteks: "
 "terminaliemulaatori\n"
-"jaoks te saate määrata käsurea, mida tuleb käivitada terminali käivitamisel)."
+"jaoks saate te määrata käsurea, mida tuleb käivitada terminali käivitamisel)."
 
 #: ../exo-open/main.c:193
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr "Töölaua failide käivitamist ei toetata kui %s on kompileeritud GIO-Unix omadusteta."
+msgstr ""
+"Töölaua failide käivitamist ei toetata kui %s on kompileeritud GIO-Unix "
+"omadusteta."
 
 #: ../exo-open/main.c:258
 #, c-format
