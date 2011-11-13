@@ -17,11 +17,7 @@ AUTOMAKE_OPTIONS =							\
 	no-dist-gzip
 
 distclean-local:
-	rm -rf *.spec *.cache *~
-
-rpm: dist
-	rpmbuild -ta $(PACKAGE)-$(VERSION).tar.gz
-	@rm -f $(PACKAGE)-$(VERSION).tar.gz
+	rm -rf *.cache *~
 
 .PHONY: ChangeLog
 
@@ -43,13 +39,11 @@ EXTRA_DIST =								\
 	README								\
 	THANKS								\
 	TODO								\
-	exo.spec.in							\
 	intltool-extract.in						\
 	intltool-merge.in						\
 	intltool-update.in
 
 DISTCLEANFILES =							\
-	exo.spec							\
 	intltool-extract						\
 	intltool-merge							\
 	intltool-update
