@@ -1,6 +1,5 @@
-# Simplified Chinese translations for libexo package.
-# Copyright (C) 2008, 2009 THE libexo'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the libexo package.
+# Simplified Chinese translations for exo package.
+# This file is distributed under the same license as the exo package.
 # Chao Sye <chao-7410@163.com>, 2008.
 # Chris K. Zhang <plutino@gmail.com>, 2009
 # Hunt Xu <huntxu@live.cn>, 2009, 2010.
@@ -13,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2011-07-23 04:32+0000\n"
 "PO-Revision-Date: 2010-11-23 22:56+0800\n"
 "Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
-"Language-Team: Simplified Chinese <xfce-i18n@xfce.org>\n"
+"Language-Team: Chinese (simplified) <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -116,7 +115,7 @@ msgstr "活动项目索引"
 
 #: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Active item fill color"
-msgstr "活动项目填充色"
+msgstr "活动项目的填充色"
 
 #: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Active item border color"
@@ -146,7 +145,7 @@ msgstr "动作图标"
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Animations"
-msgstr "动画图标"
+msgstr "动画"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:113
@@ -206,7 +205,7 @@ msgstr "所有图标"
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
 #: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
 msgid "Image Files"
-msgstr "图像文件"
+msgstr "图片文件"
 
 #. setup the context combo box
 #: ../exo/exo-icon-chooser-dialog.c:210
@@ -220,7 +219,7 @@ msgstr "搜索图标(_S)："
 
 #: ../exo/exo-icon-chooser-dialog.c:236
 msgid "Clear search field"
-msgstr "清除搜索域"
+msgstr "清除搜索框"
 
 #: ../exo/exo-icon-view.c:644
 msgid "Column Spacing"
@@ -297,7 +296,7 @@ msgstr "可重排序"
 
 #: ../exo/exo-icon-view.c:810
 msgid "View is reorderable"
-msgstr "可重排序视图"
+msgstr "视图可重排序"
 
 #: ../exo/exo-icon-view.c:825
 msgid "Row Spacing"
@@ -457,7 +456,7 @@ msgstr "相邻两行之间的间距"
 
 #: ../exo/exo-wrap-table.c:178
 msgid "Homogeneous"
-msgstr "统一大小"
+msgstr "相似的"
 
 #: ../exo/exo-wrap-table.c:179
 msgid "Whether the children should be all the same size"
@@ -469,7 +468,7 @@ msgstr "窗口组"
 
 #: ../exo/exo-xsession-client.c:211
 msgid "Window group leader"
-msgstr "窗口组中的首窗口"
+msgstr "窗口组之首"
 
 #: ../exo/exo-xsession-client.c:221
 msgid "Restart command"
@@ -492,12 +491,12 @@ msgstr "        %s [选项] --build-list [[名称文件]...]\n"
 #: ../exo-csource/main.c:287
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help            显示帮助信息后退出\n"
+msgstr "  -h, --help            列印帮助信息后退出\n"
 
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version         显示版本信息后退出\n"
+msgstr "  -V, --version         列印版本信息后退出\n"
 
 #: ../exo-csource/main.c:289
 #, c-format
@@ -512,7 +511,7 @@ msgstr "  --static              生成静态符号\n"
 #: ../exo-csource/main.c:291
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=标识符          C 语言宏/变量名\n"
+msgstr "  --name 为标识符          C 语言宏/变量名\n"
 
 #: ../exo-csource/main.c:292
 #, c-format
@@ -522,7 +521,7 @@ msgstr "  --build-list          解析(名称，文件)对\n"
 #: ../exo-csource/main.c:293
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "  --strip-comments      移除 XML 文件中的备注\n"
+msgstr "  --strip-comments      移除 XML 文件中的注释\n"
 
 #: ../exo-csource/main.c:294
 #, c-format
@@ -539,10 +538,10 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) %s\n"
+"版权 (c) %s\n"
 "          os-cillation e.K. 版权所有。\n"
 "\n"
-"作者：Benedikt Meurer <benny@xfce.org> 。\n"
+"由 Benedikt Meurer <benny@xfce.org> 撰写。\n"
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
@@ -555,9 +554,9 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
-"作者不对 %s 提供任何形式的使用担保，\n"
-"在 GNU LGPL 授权许可下，您可以重新发布 %s，\n"
-"%s 的源码包中有 GNU LGPL 授权的全文。\n"
+"%s 绝对没有任何担保，\n"
+"您可以在源码软件包中找到 GNU 宽通用公共许可协议\n"
+"并以此方式重新发布 %s 的副本。\n"
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
@@ -614,7 +613,7 @@ msgstr "名称(_N)："
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
-msgstr "描述(_O)："
+msgstr "备注(_O)："
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
@@ -743,7 +742,7 @@ msgstr "创建桌面文件时的预设图标"
 
 #: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
 msgid "Print version information and exit"
-msgstr "显示版本信息后退出"
+msgstr "列印版本信息后退出"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:153
@@ -762,12 +761,12 @@ msgstr "未指定文件/目录"
 #: ../exo-desktop-item-edit/main.c:258
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "无法从 “%s” 中载人内容：%s"
+msgstr "无法从 “%s” 中载入内容：%s"
 
 #: ../exo-desktop-item-edit/main.c:263
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr "文件 “%s” 不包含任何数据"
+msgstr "文件 “%s” 不包含数据"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:276
@@ -832,7 +831,7 @@ msgstr "网络浏览器"
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr "首选网络浏览器将用于打开网页链接和显示帮助内容"
+msgstr "首选网络浏览器将用于打开超链接和显示帮助内容。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -843,14 +842,14 @@ msgstr "邮件阅读器"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr "首选邮件阅读器将用于打开您点击的邮件地址"
+msgstr "首选邮件阅读器将用于打开您点击的邮件地址。"
 
 #.
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
-msgstr "工具"
+msgstr "实用程序"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:2
@@ -872,7 +871,7 @@ msgstr "终端模拟器"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr "首选终端模拟器将用于运行要用到 CLI 环境的命令"
+msgstr "首选终端模拟器将用于运行要用到 CLI 环境的命令。"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:297
 msgid "Failed to open the documentation browser."
@@ -1012,23 +1011,23 @@ msgstr "无法打开 %s 来写入"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "首选应用程序(网络浏览器、邮件阅读器及终端模拟器)"
+msgstr "首选应用程序(网络浏览器、邮件阅读器和终端模拟器)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
-msgstr "无法运行默认网络浏览器"
+msgstr "无法运行默认的网络浏览器"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Mail Reader"
-msgstr "无法运行默认邮件阅读器"
+msgstr "无法运行默认的邮件阅读器"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default File Manager"
-msgstr "无法运行默认文件管理器"
+msgstr "无法运行默认的文件管理器"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
-msgstr "无法运行默认终端模拟器"
+msgstr "无法运行默认的终端模拟器"
 
 #: ../exo-helper/main.c:68
 msgid ""
@@ -1038,18 +1037,19 @@ msgstr "打开首选应用程序配置对话框"
 
 #: ../exo-helper/main.c:69
 msgid "Settings manager socket"
-msgstr "设置管理器接口"
+msgstr "设置管理器套接字"
 
 #: ../exo-helper/main.c:69
 msgid "SOCKET ID"
-msgstr "接口 ID"
+msgstr "套接字 ID"
 
 #: ../exo-helper/main.c:70
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
 msgstr ""
-"用可选项 “参数” 来启动特定 “类型” 的外围程序，“类型” 可以是以下值之一。"
+"用可选项 “参数” 来启动特定 “类型” 的外围程序，“类型” "
+"可以是以下值之一。"
 
 #: ../exo-helper/main.c:70
 msgid "TYPE [PARAMETER]"
@@ -1074,7 +1074,7 @@ msgstr ""
 #: ../exo-helper/main.c:104
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr "输入 '%s --help' 查看使用说明。"
+msgstr "输入 ‘%s --help’ 获取使用说明。"
 
 #: ../exo-helper/main.c:154
 #, c-format
@@ -1097,10 +1097,10 @@ msgid ""
 msgstr ""
 "%s (Xfce %s)\n"
 "\n"
-"Copyright (c) 2003-2006\n"
+"版权 (c) 2003-2006\n"
 "          os-cillation e.K. 版权所有。\n"
 "\n"
-"作者：Benedikt Meurer <benny@xfce.org> 。\n"
+"由 Benedikt Meurer <benny@xfce.org> 撰写。\n"
 "\n"
 "用 Gtk+-%d.%d.%d 编译，在 Gtk+-%d.%d.%d 下运行。\n"
 "\n"
@@ -1248,18 +1248,19 @@ msgstr "用法： exo-open [URL...]"
 
 #: ../exo-open/main.c:108
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr "        exo-open --launch 类型 [参数...]"
+msgstr ""
+"        exo-open --launch 类型 [参数...]"
 
 #: ../exo-open/main.c:110
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
-"  -?, --help                   显示帮助信息后退出"
+"  -?, --help				列印帮助信息后退出"
 
 #: ../exo-open/main.c:111
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
-"  -V, --version                显示版本信息后退出"
+"  -V, --version			列印版本信息后退出"
 
 #: ../exo-open/main.c:113
 msgid ""
@@ -1268,8 +1269,9 @@ msgid ""
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch 类型 [参数...]       用可选 “参数” 运行所给 “类型” 的首选应用程序，\n"
-"                               “类型” 可以是下列值之一。"
+"  --launch 类型 [参数...]	用可选 “参数” 运行所给\n"
+"							 “类型” 的首选应用程序，\n"
+"							“类型” 可以是下列值之一。"
 
 #: ../exo-open/main.c:117
 msgid ""
@@ -1277,8 +1279,8 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory 目录      使用 --launch 选项时的默认工作目录\n"
-"  应用程序                       "
+"  --working-directory 目录	使用 --launch 选项时应用\n"
+"							程序的默认工作目录"
 
 #: ../exo-open/main.c:120
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1307,17 +1309,19 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
-"如果您没有指定 --launch 选项，exo-open 会用首选 URL 处理器打开所有\n"
-"指定的 URL。否则，如果您指定 --launch 选项，您可以选择您要运行的首选\n"
-"应用程序，还可以把额外参数传给应用程序(比如对于 TerminalEmulator ，\n"
-"您可以传递一个应该在终端中运行的命令行。)"
+"如果您没有指定 --launch 选项，exo-open 会用首选 URL \n"
+"处理器打开所有指定的 URL。否则，如果您指定 --launch \n"
+"选项，您可以选择您要运行的首选应用程序，还可以把额外参数\n"
+"传给应用程序(比如对于 TerminalEmulator，您可以传递一个"
+"应该在终端中运行的命令行。)"
 
 #: ../exo-open/main.c:193
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr "当 %s 未编译支持 GIO-Unix 功能时，不支持启动桌面文件。"
+msgstr ""
+"当 %s 未编译支持 GIO-Unix 功能时，不支持启动桌面文件。"
 
 #: ../exo-open/main.c:258
 #, c-format
