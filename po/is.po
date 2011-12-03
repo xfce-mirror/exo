@@ -1,21 +1,22 @@
-# translation of exo.master.is.po to Icelandic
+# translation of is.po to Icelandic
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
-# Sveinn í Felli <sveinki@nett.is>, 2010.
+#
+# Sveinn í Felli <sveinki@nett.is>, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: exo.master.is\n"
+"Project-Id-Version: is\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-01 06:00+0000\n"
-"PO-Revision-Date: 2010-05-03 09:46+0000\n"
+"POT-Creation-Date: 2011-01-16 16:35+0100\n"
+"PO-Revision-Date: 2011-12-03 13:47+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
-"Language-Team: Icelandic <rglug@rglug.org>\n"
+"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: is\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -28,7 +29,6 @@ msgid "Render differently based on the selection state."
 msgstr ""
 
 #: ../exo/exo-cell-renderer-icon.c:166
-#, fuzzy
 msgid "Icon"
 msgstr "Táknmynd"
 
@@ -38,14 +38,13 @@ msgstr ""
 
 #: ../exo/exo-cell-renderer-icon.c:185
 msgid "GIcon"
-msgstr ""
+msgstr "GIcon"
 
 #: ../exo/exo-cell-renderer-icon.c:186
 msgid "The GIcon to render."
 msgstr ""
 
 #: ../exo/exo-cell-renderer-icon.c:207
-#, fuzzy
 msgid "size"
 msgstr "stærð"
 
@@ -56,26 +55,24 @@ msgstr ""
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Mistókst að opna skrá \"%s\": %s"
+msgstr "Gat ekki opnað skrá \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:849
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Mistókst að lesa skrá \"%s\": %s"
+msgstr ""
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Mistókst að hlaða mynd \"%s\": Ekki er vitað ástæðuna, líklega ónýt skrá"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Mistókst að opna \"%s\"."
+msgstr ""
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
-#, fuzzy
 msgid "Orientation"
 msgstr "Stefna"
 
@@ -93,7 +90,7 @@ msgstr ""
 
 #: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
 msgid "Text column"
-msgstr "Texta dálki"
+msgstr ""
 
 #: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
 msgid "Model column used to retrieve the text from"
@@ -108,7 +105,6 @@ msgid "Model for the icon bar"
 msgstr ""
 
 #: ../exo/exo-icon-bar.c:340
-#, fuzzy
 msgid "Active"
 msgstr "Virkt"
 
@@ -143,91 +139,86 @@ msgstr ""
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Action Icons"
-msgstr ""
+msgstr "Táknmyndiraðgerða"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:111
-#, fuzzy
 msgid "Animations"
 msgstr "Hreyfimyndir"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Application Icons"
-msgstr "Táknmyndir Forrita"
+msgstr "Táknmyndir forrita"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Menu Icons"
-msgstr "Táknmyndir Valmynda"
+msgstr "Táknmyndir valmynda"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
 #: ../exo/exo-icon-chooser-dialog.c:117
-#, fuzzy
 msgid "Device Icons"
 msgstr "Tækjatáknmyndir"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:119
 msgid "Emblems"
-msgstr "Merkimiðar"
+msgstr "Tákn"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:121
-#, fuzzy
 msgid "Emoticons"
 msgstr "Tjáningartákn"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:123
 msgid "International Denominations"
-msgstr ""
+msgstr "Alþjóðleg tákn"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:125
 msgid "File Type Icons"
-msgstr ""
+msgstr "Táknmyndir fyrir skráategundir"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
 #: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Location Icons"
-msgstr ""
+msgstr "Táknmyndir fyrir staðsetningu"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:129
 msgid "Status Icons"
-msgstr ""
+msgstr "Táknmyndir fyrir stöðu"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:131
 msgid "Uncategorized Icons"
-msgstr ""
+msgstr "Óflokkaðar táknmyndir"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:135
-#, fuzzy
 msgid "All Icons"
 msgstr "Allar táknmyndir"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
 #: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
-#, fuzzy
 msgid "Image Files"
 msgstr "Myndskrár"
 
 #. setup the context combo box
 #: ../exo/exo-icon-chooser-dialog.c:210
 msgid "Select _icon from:"
-msgstr "Velja _tákn frá:"
+msgstr ""
 
 #. search filter
 #: ../exo/exo-icon-chooser-dialog.c:225
 msgid "_Search icon:"
-msgstr "_Leita að tákni:"
+msgstr ""
 
 #: ../exo/exo-icon-chooser-dialog.c:236
 msgid "Clear search field"
-msgstr "Hreinsa leitar dálk"
+msgstr "Hreinsa leitarsvæði"
 
 #: ../exo/exo-icon-view.c:644
 msgid "Column Spacing"
@@ -238,7 +229,6 @@ msgid "Space which is inserted between grid column"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:661
-#, fuzzy
 msgid "Number of columns"
 msgstr "Fjöldi dálka"
 
@@ -248,16 +238,15 @@ msgstr ""
 
 #: ../exo/exo-icon-view.c:676
 msgid "Enable Search"
-msgstr "Virkja Leit"
+msgstr ""
 
 #: ../exo/exo-icon-view.c:677
 msgid "View allows user to search through columns interactively"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:694
-#, fuzzy
 msgid "Width for each item"
-msgstr "Breidd fyrir hvert atriði"
+msgstr ""
 
 #: ../exo/exo-icon-view.c:695
 msgid "The width used for each item"
@@ -272,7 +261,6 @@ msgid "The layout mode"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:730
-#, fuzzy
 msgid "Margin"
 msgstr "Spássía"
 
@@ -297,14 +285,12 @@ msgid "The model for the icon view"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:777
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr ""
 
 #: ../exo/exo-icon-view.c:809
-#, fuzzy
 msgid "Reorderable"
-msgstr "Upptakanlegt"
+msgstr ""
 
 #: ../exo/exo-icon-view.c:810
 msgid "View is reorderable"
@@ -320,7 +306,7 @@ msgstr ""
 
 #: ../exo/exo-icon-view.c:840
 msgid "Search Column"
-msgstr "Leitar Dálkur"
+msgstr ""
 
 #: ../exo/exo-icon-view.c:841
 msgid "Model column to search through when searching through item"
@@ -328,16 +314,15 @@ msgstr ""
 
 #: ../exo/exo-icon-view.c:855
 msgid "Selection mode"
-msgstr ""
+msgstr "Valhamur"
 
 #: ../exo/exo-icon-view.c:856
 msgid "The selection mode"
-msgstr ""
+msgstr "Valhamur"
 
 #: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
-#, fuzzy
 msgid "Single Click"
-msgstr "Einfalt músarklikk"
+msgstr "Einn músarsmellur"
 
 #: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
@@ -354,7 +339,6 @@ msgid ""
 msgstr ""
 
 #: ../exo/exo-icon-view.c:904
-#, fuzzy
 msgid "Spacing"
 msgstr "Millibil"
 
@@ -379,14 +363,12 @@ msgid "Opacity of the selection box"
 msgstr ""
 
 #: ../exo/exo-thumbnail-preview.c:113
-#, fuzzy
 msgid "Preview"
-msgstr "Forsýn"
+msgstr "Forskoðun"
 
 #: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
-#, fuzzy
 msgid "No file selected"
-msgstr "Engar skrár valdar"
+msgstr "Engin skrá valin"
 
 #: ../exo/exo-thumbnail-preview.c:289
 msgid "Block Device"
@@ -397,92 +379,82 @@ msgid "Character Device"
 msgstr ""
 
 #: ../exo/exo-thumbnail-preview.c:299
-#, fuzzy
 msgid "Folder"
 msgstr "Mappa"
 
 #: ../exo/exo-thumbnail-preview.c:304
-#, fuzzy
 msgid "FIFO"
 msgstr "FIFO"
 
 #: ../exo/exo-thumbnail-preview.c:309
-#, fuzzy
 msgid "Socket"
 msgstr "Sökkull"
 
 #: ../exo/exo-toolbars-editor-dialog.c:118
 msgid "_Add a new toolbar"
-msgstr "Bæta við nýrri tækjastiku"
+msgstr "Bæt_a við nýrri áhaldastiku"
 
 #: ../exo/exo-toolbars-editor.c:221
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
 msgstr ""
-"Dragðu hluti inná tækjastikunna til að bæta við hana,\r\n"
-"dragðu af tækjastikunni til að fjarlægja af henni."
 
 #: ../exo/exo-toolbars-editor.c:538
-#, fuzzy
 msgid "Separator"
-msgstr "Aðskiljari"
+msgstr "Aðgreinir"
 
 #: ../exo/exo-toolbars-view.c:752
 msgid "Toolbar _Style"
-msgstr "_Stíll Tækjastiku"
+msgstr "S_tíll áhaldastiku"
 
 #: ../exo/exo-toolbars-view.c:759
 msgid "_Desktop Default"
-msgstr "Venjulega Skjáborðið"
+msgstr ""
 
 #: ../exo/exo-toolbars-view.c:768
 msgid "_Icons only"
-msgstr "Aðeins _Tákn"
+msgstr "E_inungis táknmyndir"
 
 #: ../exo/exo-toolbars-view.c:777
 msgid "_Text only"
-msgstr "Aðeins _Texti"
+msgstr "Einungis _texti"
 
 #: ../exo/exo-toolbars-view.c:786
 msgid "Text for _All Icons"
-msgstr "Texti fyrir _öll Táknin"
+msgstr ""
 
 #: ../exo/exo-toolbars-view.c:795
 msgid "Text for I_mportant Icons"
-msgstr "Texti fyrir _mikilvæg Tákn"
+msgstr ""
 
 #: ../exo/exo-toolbars-view.c:803
 msgid "_Remove Toolbar"
-msgstr "Fjarlægja Tækjastiku"
+msgstr ""
 
 #: ../exo/exo-toolbars-view.c:818
 msgid "Customize Toolbar..."
-msgstr "Sérsníða Tækjastiku..."
+msgstr ""
 
 #: ../exo/exo-wrap-table.c:148
-#, fuzzy
 msgid "Column spacing"
 msgstr "Bil milli dálka"
 
 #: ../exo/exo-wrap-table.c:149
-#, fuzzy
 msgid "The amount of space between two consecutive columns"
 msgstr "Stærð bils milli tveggja dálka"
 
 #: ../exo/exo-wrap-table.c:163
-#, fuzzy
 msgid "Row spacing"
 msgstr "Bil milli raða"
 
 #: ../exo/exo-wrap-table.c:164
-#, fuzzy
 msgid "The amount of space between two consecutive rows"
 msgstr "Stærð bils milli tveggja raða"
 
 #: ../exo/exo-wrap-table.c:178
 msgid "Homogeneous"
-msgstr "Einsleitt"
+msgstr "Öll eins"
 
 #: ../exo/exo-wrap-table.c:179
 msgid "Whether the children should be all the same size"
@@ -490,24 +462,24 @@ msgstr ""
 
 #: ../exo/exo-xsession-client.c:210
 msgid "Window group"
-msgstr "Glugga hópur"
+msgstr ""
 
 #: ../exo/exo-xsession-client.c:211
 msgid "Window group leader"
-msgstr "Stjóri glugga hóps"
+msgstr ""
 
 #: ../exo/exo-xsession-client.c:221
 msgid "Restart command"
-msgstr "Enduræsa skipun"
+msgstr ""
 
 #: ../exo/exo-xsession-client.c:222
 msgid "Session restart command"
 msgstr ""
 
 #: ../exo-csource/main.c:284
-#, c-format, fuzzy
+#, c-format
 msgid "Usage: %s [options] [file]\n"
-msgstr "Usage: %s [valkostir] [skrá]\n"
+msgstr ""
 
 #: ../exo-csource/main.c:285
 #, c-format
@@ -555,7 +527,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr ""
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-open/main.c:483
+#: ../exo-open/main.c:471
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -566,7 +538,7 @@ msgid ""
 msgstr ""
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-open/main.c:487
+#: ../exo-open/main.c:475
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -577,109 +549,95 @@ msgid ""
 msgstr ""
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-open/main.c:491
+#: ../exo-open/main.c:479
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr ""
+msgstr "Tilkynntu villur til <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:255
-#, fuzzy
 msgid "Select an Application"
 msgstr "Veldu forrit"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:264
 #: ../exo-helper/exo-helper-chooser.c:398
-#, fuzzy
 msgid "All Files"
 msgstr "Allar skrár"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:269
 #: ../exo-helper/exo-helper-chooser.c:403
-#, fuzzy
 msgid "Executable Files"
 msgstr "Keyrsluskrár"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:284
 #: ../exo-helper/exo-helper-chooser.c:418
 msgid "Perl Scripts"
-msgstr "Perl Skrifta"
+msgstr "Perl skriftur"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:290
 #: ../exo-helper/exo-helper-chooser.c:424
 msgid "Python Scripts"
-msgstr "Python Skrifta"
+msgstr "Python skriftur"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:296
 #: ../exo-helper/exo-helper-chooser.c:430
 msgid "Ruby Scripts"
-msgstr "Ruby Skrifta"
+msgstr "Ruby skriftur"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:302
 #: ../exo-helper/exo-helper-chooser.c:436
 msgid "Shell Scripts"
-msgstr "Shell Skrifta"
+msgstr "Skeljarskriftur"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:284
 #, c-format
 msgid "Create Launcher <b>%s</b>"
 msgstr ""
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
-#, fuzzy
 msgid "_Name:"
-msgstr "_Nafn:"
+msgstr "_Heiti:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
-msgstr "A_thugasemd:"
+msgstr "At_hugasemd:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "_Skipun:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
-msgstr "_Veffang:"
+msgstr "_Veffang (URL):"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
-#, fuzzy
 msgid "Working _Directory:"
-msgstr "Búa til möppu:"
+msgstr "_Vinnumappa:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "Táknm_ynd:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
 msgid "No icon"
-msgstr "Ekkert tákn"
+msgstr "Engin táknmynd"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:412
 msgid "Options:"
 msgstr "Valkostir:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr ""
@@ -691,15 +649,12 @@ msgid ""
 "notification."
 msgstr ""
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
-#, fuzzy
 msgid "Run in _terminal"
-msgstr "Keyra á _skjáhermi"
+msgstr "Keyra í skjá_hermi"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
@@ -708,12 +663,12 @@ msgstr ""
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:590
 msgid "Select an icon"
-msgstr "Velja tákn"
+msgstr ""
 
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:637
 msgid "Select a working directory"
-msgstr "Velja möppu"
+msgstr ""
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:168
 msgid "File location is not a regular file or directory"
@@ -721,26 +676,22 @@ msgstr ""
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:53
-#, fuzzy
 msgid "Create Launcher"
 msgstr "Búa til ræsi"
 
 #: ../exo-desktop-item-edit/main.c:53
-#, fuzzy
 msgid "Create Link"
 msgstr "Búa til tengil"
 
 #: ../exo-desktop-item-edit/main.c:53
-#, fuzzy
 msgid "Create Directory"
 msgstr "Búa til möppu"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Launcher"
-msgstr "Breyta ræsi"
+msgstr ""
 
 #: ../exo-desktop-item-edit/main.c:54
-#, fuzzy
 msgid "Edit Link"
 msgstr "Breyta tengli"
 
@@ -754,7 +705,7 @@ msgstr ""
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Tegund skrifborð skrá til að stofna (Forrit eða Tengil)"
+msgstr ""
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Preset name when creating a desktop file"
@@ -777,14 +728,13 @@ msgid "Preset icon when creating a desktop file"
 msgstr ""
 
 #: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
-#, fuzzy
 msgid "Print version information and exit"
 msgstr "Prenta upplýsingar um útgáfu og hætta"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:153
 msgid "[FILE|FOLDER]"
-msgstr "[SKRÁ| MAPPA]"
+msgstr ""
 
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:165
@@ -793,17 +743,17 @@ msgstr ""
 
 #: ../exo-desktop-item-edit/main.c:192
 msgid "No file/folder specified"
-msgstr "Enginn skrá/mappa valin"
+msgstr ""
 
 #: ../exo-desktop-item-edit/main.c:258
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Mistókst að hlaða efni frá \"%s\": %s"
+msgstr ""
 
 #: ../exo-desktop-item-edit/main.c:263
-#, c-format, fuzzy
+#, c-format
 msgid "The file \"%s\" contains no data"
-msgstr "Skráin \"%s\" er innihaldslaus"
+msgstr ""
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:276
@@ -825,44 +775,42 @@ msgstr ""
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:314
-#, fuzzy
 msgid "C_reate"
 msgstr "_Búa til"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:475
 msgid "Choose filename"
-msgstr "Veldu skráarnafn"
+msgstr "Veldu skráarheiti"
 
 #: ../exo-desktop-item-edit/main.c:533
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Mistókst að búa til \"%s\"."
+msgstr ""
 
 #: ../exo-desktop-item-edit/main.c:533
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Mistókst að vista \"%s\"."
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
-#, fuzzy
 msgid "Preferred Applications"
-msgstr "Valin forrit"
+msgstr "Sérvalin forrit"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
 msgstr ""
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internetið"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:2
-#, fuzzy
 msgid "Web Browser"
 msgstr "Vafri"
 
@@ -874,7 +822,6 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
-#, fuzzy
 msgid "Mail Reader"
 msgstr "Póstforrit"
 
@@ -884,18 +831,17 @@ msgid ""
 "emails when you click on email addresses."
 msgstr ""
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-#, fuzzy
 msgid "Utilities"
-msgstr "Tól"
+msgstr "Nytjatól"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Skráarstjóri"
+msgstr "Skráastjóri"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:226
 msgid ""
@@ -906,7 +852,7 @@ msgstr ""
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
-msgstr ""
+msgstr "Skjáhermir"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid ""
@@ -921,7 +867,7 @@ msgstr ""
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
 msgid "Press left mouse button to change the selected application."
-msgstr "Ýttu á vinstri músar hnappinn til að breyta völdu forriti."
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:155
 msgid "Application Chooser Button"
@@ -929,19 +875,19 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:299
 msgid "No application selected"
-msgstr "Ekkert forrit valið"
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:315
 msgid "Failed to set default Web Browser"
-msgstr "Mistókst að velja sjálfgefin vafra"
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:316
 msgid "Failed to set default Mail Reader"
-msgstr "Mistókst að velja sjálfgefið póstforrit"
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
-msgstr "Mistókst að velja sjálfgefin skráarstjóra"
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
@@ -950,7 +896,7 @@ msgstr ""
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:388
 msgid "Select application"
-msgstr "Velja forrit"
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:501
 msgid "Choose a custom Web Browser"
@@ -1033,7 +979,7 @@ msgid ""
 msgstr ""
 
 #: ../exo-helper/exo-helper.c:382
-#, fuzzy, c-format
+#, c-format
 msgid "No command specified"
 msgstr "Engin skipun gefin"
 
@@ -1099,7 +1045,7 @@ msgstr ""
 #: ../exo-helper/main.c:104
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr ""
+msgstr "Skrifaðu '%s --help' til að sjá hvernig á að nota þetta."
 
 #: ../exo-helper/main.c:154
 #, c-format
@@ -1123,186 +1069,157 @@ msgstr ""
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
-msgstr "Xfce Terminal"
+msgstr "Xfce skjáhermir"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
 msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
-#, fuzzy
 msgid "aterm"
 msgstr "aterm"
 
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
-#, fuzzy
 msgid "Balsa"
 msgstr "Balsa"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
-#, fuzzy
 msgid "Debian Sensible Browser"
-msgstr "Debian Sensible Browser"
+msgstr "Debian Sensible vafri"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
-#, fuzzy
 msgid "Debian X Terminal Emulator"
-msgstr "Debian X Terminal Emulator"
+msgstr "Debian X skjáhermir"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
-#, fuzzy
 msgid "Encompass"
 msgstr "Encompass"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
-#, fuzzy
 msgid "Epiphany Web Browser"
 msgstr "Epiphany netvafri"
 
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
-#, fuzzy
 msgid "Enlightened Terminal Emulator"
-msgstr "Enlightened Skjáhermir"
+msgstr "Enlightened skjáhermir"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
-#, fuzzy
 msgid "Novell Evolution"
 msgstr "Novell Evolution"
 
 #: ../exo-helper/helpers/firefox.desktop.in.in.h:1
-#, fuzzy
 msgid "Mozilla Firefox"
-msgstr "Mozilla Firefox"
+msgstr "Mozilla Firefox netvafri"
 
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
-#, fuzzy
 msgid "Galeon Web Browser"
 msgstr "Galeon vafri"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
-#, fuzzy
 msgid "GNOME Terminal"
-msgstr "GNOME útstöð"
+msgstr "GNOME skjáhermir"
 
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
-#, fuzzy
 msgid "Icedove"
 msgstr "Icedove"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
-#, fuzzy
 msgid "KMail"
 msgstr "KMail"
 
 #: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
-#, fuzzy
 msgid "Konqueror Web Browser"
-msgstr "Konqueror Web Browser"
+msgstr "Konqueror netvafri"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
-#, fuzzy
 msgid "Links Text Browser"
-msgstr "Links Text Browser"
+msgstr "Links textavafri"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-#, fuzzy
 msgid "Lynx Text Browser"
-msgstr "Lynx Text Browser"
+msgstr "Lynx textavafri"
 
 #: ../exo-helper/helpers/midori.desktop.in.in.h:1
-#, fuzzy
 msgid "Midori"
 msgstr "Midori"
 
 #: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
 msgid "Mozilla Browser"
-msgstr "Mozilla Vafri"
+msgstr "Mozilla netvafri"
 
 #: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
-#, fuzzy
 msgid "Mozilla Mail"
-msgstr "Mozilla Mail"
+msgstr "Mozilla Mail póstforrit"
 
 #: ../exo-helper/helpers/mutt.desktop.in.in.h:1
-#, fuzzy
 msgid "Mutt"
 msgstr "Mutt"
 
 #: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
-#, fuzzy
 msgid "Nautilus"
 msgstr "Nautilus"
 
 #: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
-#, fuzzy
 msgid "Netscape Navigator"
 msgstr "Netscape Navigator"
 
 #: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
-#, fuzzy
 msgid "NXterm"
 msgstr "NXterm"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
-msgstr "Opera Vafri"
+msgstr "Opera netvafri"
 
 #: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
-#, fuzzy
 msgid "Opera Mail"
 msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
-#, fuzzy
 msgid "PCMan File Manager"
-msgstr "PCMan Skráastjóri"
+msgstr "PCMan skráastjóri"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-#, fuzzy
 msgid "Claws Mail"
-msgstr "Claws Póstur"
+msgstr "Claws Mail póstur"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-#, fuzzy
 msgid "Sylpheed"
 msgstr "Sylpheed"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
-#, fuzzy
 msgid "Mozilla Thunderbird"
-msgstr "Mozilla Thunderbird"
+msgstr "Mozilla Thunderbird póstforrit"
 
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
-msgstr ""
+msgstr "RXVT Unicode"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
-msgstr ""
+msgstr "W3M textavafri"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
-#, fuzzy
 msgid "X Terminal"
-msgstr "X skjáhermir"
+msgstr "X Terminal"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:97
 msgid "Usage: exo-open [URLs...]"
-msgstr ""
+msgstr "Notkun: exo-open [URLs...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:98
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr ""
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:100
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 
-#: ../exo-open/main.c:111
-msgid ""
-"  -V, --version                       Print version information and exit"
+#: ../exo-open/main.c:101
+msgid "  -V, --version                       Print version information and exit"
 msgstr ""
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:103
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1310,22 +1227,21 @@ msgid ""
 "                                      TYPE is one of the following values."
 msgstr ""
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:107
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:110
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr ""
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
-#: ../exo-open/main.c:126
+#.
+#: ../exo-open/main.c:116
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1333,7 +1249,7 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:121
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1342,24 +1258,24 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:183
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
 msgstr ""
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:246
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr ""
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:552
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr ""
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:564
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr ""
@@ -1370,7 +1286,7 @@ msgstr "Flakka í skráakerfinu"
 
 #: ../exo-open/exo-mail-reader.desktop.in.h:2
 msgid "Read your email"
-msgstr "Lesa tölvupóstinn"
+msgstr "Lesa tölvupóstinn þinn"
 
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:2
 msgid "Use the command line"
@@ -1380,50 +1296,3 @@ msgstr "Nota skipanalínuna"
 msgid "Browse the web"
 msgstr "Flakka á vefnum"
 
-#~ msgid "%s Drive"
-#~ msgstr "%s drif"
-
-#~ msgid "External Floppy Drive"
-#~ msgstr "Utanáliggjandi disklingadrif"
-
-#~ msgid "Floppy Drive"
-#~ msgstr "Disklingadrif"
-
-#~ msgid "Compact Flash Drive"
-#~ msgstr "Compact Flash drif"
-
-#~ msgid "Memory Stick Drive"
-#~ msgstr "Memory Stick drif"
-
-#~ msgid "Smart Media Drive"
-#~ msgstr "Smart Media drif"
-
-#~ msgid "SD/MMC Drive"
-#~ msgstr "SD/MMC drif"
-
-#~ msgid "Zip Drive"
-#~ msgstr "Zipdrif"
-
-#~ msgid "Jaz Drive"
-#~ msgstr "Jazdrif"
-
-#~ msgid "Pen Drive"
-#~ msgstr "Pennadrif"
-
-#~ msgid "Drive"
-#~ msgstr "Drif"
-
-#~ msgid "Audio CD"
-#~ msgstr "Hljóðdiskur CD"
-
-#~ msgid "%s Removable Volume"
-#~ msgstr "%s fjarlægjanleg geymslueining"
-
-#~ msgid "%s Volume"
-#~ msgstr "%s geymslueining"
-
-#~ msgid "Unknown error"
-#~ msgstr "Óþekkt villa"
-
-#~ msgid "Writing data to device"
-#~ msgstr "Skrifa upplýsingar"
