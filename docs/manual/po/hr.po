@@ -1,18 +1,20 @@
-## Croatian translation for exo.docs package. package.
+# Croatian translation for exo.docs package. package.
 # Copyright (C) 2004-2006 os-cillation e.K.
 # This file is distributed under the same license as the  exo.docs package
 # Ivica Kolić <ikoli@yahoo.com>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: exo\n"
+"Project-Id-Version:  exo.docs \n"
 "POT-Creation-Date: 2010-05-20 20:24+0200\n"
-"PO-Revision-Date: 2011-12-03 18:01+0100\n"
+"PO-Revision-Date: 2011-12-03 18:15+0100\n"
 "Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Hrvatski <>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: \n"
 "X-Poedit-Language: Croatian\n"
 "X-Poedit-Country: CROATIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -61,7 +63,7 @@ msgstr ""
 
 #: exo-preferred-applications.xml:13(title)
 msgid "Xfce 4 Preferred Applications"
-msgstr ""
+msgstr "Xfce 4 Poželjni programi"
 
 #: exo-preferred-applications.xml:18(year)
 msgid "2004"
@@ -91,25 +93,27 @@ msgstr ""
 
 #: exo-preferred-applications.xml:37(firstname)
 msgid "Benedikt"
-msgstr ""
+msgstr "Benedikt"
 
 #: exo-preferred-applications.xml:38(surname)
 msgid "Meurer"
-msgstr ""
+msgstr "Meurer"
 
 #: exo-preferred-applications.xml:40(email)
 msgid "benny@xfce.org"
-msgstr ""
+msgstr "benny@xfce.org"
 
 #: exo-preferred-applications.xml:45(releaseinfo)
 msgid ""
 "This manual describes version @PACKAGE_VERSION@ of the <emphasis>Xfce "
 "Preferred Applications</emphasis> framework and its components."
 msgstr ""
+"Onaj priručnik opisuje verziju @PACKAGE_VERSION@ <emphasis>Xfce Poželjni "
+"programi</emphasis> okvira i njenih dijelova."
 
 #: exo-preferred-applications.xml:54(title)
 msgid "Introduction"
-msgstr ""
+msgstr "Uvod"
 
 #: exo-preferred-applications.xml:56(para)
 msgid ""
@@ -120,10 +124,15 @@ msgid ""
 "limitation and provide users with an easy way to select their preferred web "
 "browser, mail reader and terminal emulator."
 msgstr ""
+"Kroz 4.x serije Xfce radnog okruženja nije bilo lakog načina za korisnike da "
+"postave svoje poželjne programe, npr.Web preglednik koji bi trebao otvarati "
+"poveznice.<emphasis>Xfce Poželjni programi</emphasis> okvir je dodan u Xfce "
+"4.3 da prevlada ta ograničenja i omogući korisnicima laki način odabira "
+"poželjnog web preglednika,čitača pošte i emulatora terminala."
 
 #: exo-preferred-applications.xml:69(title)
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguracija"
 
 #: exo-preferred-applications.xml:71(para)
 msgid ""
@@ -133,11 +142,16 @@ msgid ""
 "ulink>. The configuration dialog is split into two pages, which are "
 "described in the following sections."
 msgstr ""
+"Možete pristupiti konfiguracijskom dijalogu klikom na <guibutton>Poželjni "
+"programi</guibutton> tipku u <ulink type=\"http\" url=\"xfce-mcs-manager."
+"html#manager-dialog\">Xfce Upravitelj postavkama</ulink>.Konfiguracijski "
+"dijalog je podjeljen na dvije stranice,koje su opisane u slijedećim "
+"odjeljcima."
 
 #: exo-preferred-applications.xml:80(title)
 #: exo-preferred-applications.xml:91(title)
 msgid "Internet applications"
-msgstr ""
+msgstr "Internet programi"
 
 #: exo-preferred-applications.xml:82(para)
 msgid ""
@@ -146,10 +160,14 @@ msgid ""
 "to open hyperlinks that you click on and to display the documentation, "
 "whereas the Mail Reader will be used to compose mails."
 msgstr ""
+"Prva stranica konfiguracijskog dijaloga dopušta vam da odaberete poželjni "
+"Web preglednik i Čitač pošte.Odabrani web preglednik će biti korišten za "
+"otvaranje poveznica na koje ste kliknuli i za prikaz dokumentacije,dok će "
+"Čitač pošte biti korišten za pisanje pošte."
 
 #: exo-preferred-applications.xml:98(phrase)
 msgid "Select internet applications"
-msgstr ""
+msgstr "Odaberite internet programe"
 
 #: exo-preferred-applications.xml:104(para)
 msgid ""
@@ -158,11 +176,15 @@ msgid ""
 "web browsers that were detected on your system will appear, as shown in "
 "<xref linkend=\"configuration-webbrowser-menu\"/>."
 msgstr ""
+"Za odabir drugog web preglednika od trenutno zadanog,kliknite na dugme u "
+"<guilabel>Zadani web preglednik</guilabel> sekciji i pojaviti će se lista "
+"web preglednika pronađenih u vašem sustavu,kao što je prikazano u <xref "
+"linkend=\"configuration-webbrowser-menu\"/>."
 
 #: exo-preferred-applications.xml:113(title)
 #: exo-preferred-applications.xml:120(phrase)
 msgid "Select Web Browser"
-msgstr ""
+msgstr "Odaberite Web preglednk"
 
 #: exo-preferred-applications.xml:126(para)
 msgid ""
@@ -172,11 +194,16 @@ msgid ""
 "custom Web Browser, as shown in <xref linkend=\"configuration-webbrowser-"
 "custom\"/>."
 msgstr ""
+"Ako Web preglednik koji tražite nije automatski pronađen u sustavu,možete "
+"odabrati <guimenuitem>Ostalo...</guimenuitem> iz padajućeg izbornika i "
+"pojaviti će se dijalog pitajući vas da unesete naredbu za prilagođeni Web "
+"preglednik,kako je prikazano u <xref linkend=\"configuration-webbrowser-"
+"custom\"/>."
 
 #: exo-preferred-applications.xml:136(title)
 #: exo-preferred-applications.xml:143(phrase)
 msgid "Specify a custom Web Browser"
-msgstr ""
+msgstr "Odredite Prilagođeni web preglednik"
 
 #: exo-preferred-applications.xml:149(para)
 msgid ""
@@ -193,7 +220,7 @@ msgstr ""
 #: exo-preferred-applications.xml:163(title)
 #: exo-preferred-applications.xml:174(title)
 msgid "Other applications"
-msgstr ""
+msgstr "Ostali programi"
 
 #: exo-preferred-applications.xml:165(para)
 msgid ""
@@ -202,10 +229,14 @@ msgid ""
 "throughout the Xfce Desktop Environment to launch applications that need to "
 "be run in a CLI (command line interface) environment."
 msgstr ""
+"Prva stranica konfiguracijskog dijaloga omogućava vam odabir vašeg poželjnog "
+"emulatora terminala.Poželjni emulator terminala biti će korišten u Xfce "
+"radnom okruženju za pokretanje programa kojise moraju pokrenuti iz "
+"naredbenog retka."
 
 #: exo-preferred-applications.xml:181(phrase)
 msgid "Select other applications"
-msgstr ""
+msgstr "Odaberite ostale programe"
 
 #: exo-preferred-applications.xml:187(para)
 msgid ""
@@ -216,7 +247,7 @@ msgstr ""
 
 #: exo-preferred-applications.xml:198(title)
 msgid "exo-open"
-msgstr ""
+msgstr "exo-open"
 
 #: exo-preferred-applications.xml:200(para)
 msgid ""
@@ -245,12 +276,12 @@ msgstr ""
 msgid ""
 "while to just open the preferred Web Browser, the following command would be "
 "used:"
-msgstr ""
+msgstr "dok će za otvaranje poželjnog Web preglednika biti korištena naredba:"
 
 #: exo-preferred-applications.xml:224(screen)
 #, no-wrap
 msgid "exo-open --launch WebBrowser"
-msgstr ""
+msgstr "exo-open --launch WebBrowser"
 
 #: exo-preferred-applications.xml:226(para)
 msgid ""
@@ -278,11 +309,11 @@ msgstr ""
 #: exo-preferred-applications.xml:246(screen)
 #, no-wrap
 msgid "exo-open mailto:xfce4-dev@xfce.org"
-msgstr ""
+msgstr "exo-open mailto:xfce4-dev@xfce.org"
 
 #: exo-preferred-applications.xml:251(title)
 msgid "About"
-msgstr ""
+msgstr "O programu"
 
 #: exo-preferred-applications.xml:253(para)
 msgid ""
@@ -291,6 +322,10 @@ msgid ""
 "for the Xfce Desktop Environment. For more information, please visit the "
 "<ulink url=\"http://www.xfce.org\" type=\"http\">Xfce website</ulink>."
 msgstr ""
+"Okvir za <emphasis>Xfce Poželjni programi</emphasis> i njegove komponente "
+"napisao je Benedikt Meurer (<email>benny@xfce.org</email>) za xfce radno "
+"okruženje.Za više informacija,molimo posjetite <ulink url=\"http://www.xfce."
+"org\" type=\"http\">Xfce website</ulink>."
 
 #: exo-preferred-applications.xml:260(para)
 msgid ""
@@ -299,6 +334,10 @@ msgid ""
 "Tracking System</ulink> (Product: <literal>libexo</literal>, Component: "
 "<literal>helpers</literal>)."
 msgstr ""
+"Za prijavu problema ili davanje sugestija o ovom software-u il ovom "
+"priručniku,koristite <ulink type=\"http\" url=\"http://bugzilla.xfce.org/"
+"\">Xfce Bug Tracking System</ulink> (Product: <literal>libexo</literal>, "
+"Component: <literal>helpers</literal>)."
 
 #: exo-preferred-applications.xml:267(para)
 msgid ""
@@ -308,6 +347,11 @@ msgid ""
 "place on the <ulink type=\"http\" url=\"http://foo-projects.org/mailman/"
 "listinfo/xfce4-dev\">xfce4-dev</ulink> mailing list."
 msgstr ""
+"Ako imate pitanja o korištenju ili instalaciji ovoga paketa,molim pitajte na "
+"<ulink type=\"http\" url=\"http://foo-projects.org/mailman/listinfo/xfce"
+"\">xfce</ulink>mailing list. Diskusije o razvoju nalaze se na <ulink type="
+"\"http\" url=\"http://foo-projects.org/mailman/listinfo/xfce4-dev\">xfce4-"
+"dev</ulink> mailing list."
 
 #: exo-preferred-applications.xml:276(para)
 msgid ""
@@ -322,8 +366,11 @@ msgid ""
 "this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
 "Place - Suite 330, Boston, MA 02111-1307, USA."
 msgstr ""
+"Sa ovim programom trebali ste dobiti kopiju GNU General Public License;ako "
+"niste pišite na Free Software Foundation, Inc., 59 Temple Place - Suite 330, "
+"Boston, MA 02111-1307, USA."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: exo-preferred-applications.xml:0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "Ivica Kolić <ikoli@yahoo.com>"
