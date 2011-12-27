@@ -133,9 +133,12 @@ main (int argc, char **argv)
   gsize            length = 0;
   gboolean         res;
   GFileType        file_type;
-  GFile           *gfile_localapps;
-  GFile           *gfile_new;
-  gchar           *localapps;
+  GFile           *gfile_local;
+  gchar           *relpath;
+  gchar           *path;
+  gchar          **dirs;
+  guint            i;
+  const gchar     *mode_dir;
 
   /* setup translation domain */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
@@ -524,32 +527,50 @@ main (int argc, char **argv)
             }
           else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED))
             {
-              localapps = xfce_resource_save_location (XFCE_RESOURCE_DATA, "applications/", TRUE);
-              gfile_localapps = g_file_new_for_path (localapps);
+              if (mode == EXO_DIE_EDITOR_MODE_DIRECTORY)
+                mode_dir = "desktop-directories/";
+              else
+                mode_dir = "applications/";
 
-              /* check if the file is not already saved in ~/.local/share/applications */
-              if (!g_file_has_parent (gfile, gfile_localapps))
+              /* check if the file is in one of the applications directories
+               * and get the relative path */
+              dirs = xfce_resource_lookup_all (XFCE_RESOURCE_DATA, mode_dir);
+              base_name = NULL;
+              for (base_name = NULL, i = 0; !base_name && dirs[i] != NULL; i++)
                 {
-                  /* create local file with the same name */
-                  base_name = g_file_get_basename (gfile);
-                  gfile_new = g_file_get_child (gfile_localapps, base_name);
+                  gfile_parent = g_file_new_for_path (dirs[i]);
+                  base_name = g_file_get_relative_path (gfile_parent, gfile);
+                  g_object_unref (G_OBJECT (gfile_parent));
+                }
+              g_strfreev (dirs);
 
-                  /* silently notify the user we're going to write to a new location */
-                  exo_die_error ("\"%s\" is not writeable, saving to \"%s%s\" instead.",
-                                 argv[1], localapps, base_name);
+              /* file was found in an applications directory, write a new file in
+               * the users' local applications directory */
+              if (base_name != NULL)
+                {
+                  /* get the new file location */
+                  relpath = g_build_filename (mode_dir, base_name, NULL);
+                  path = xfce_resource_save_location (XFCE_RESOURCE_DATA, relpath, TRUE);
+                  g_free (relpath);
 
-                  /* reset the error */
-                  g_clear_error (&error);
+                  if (G_LIKELY (path != NULL))
+                    {
+                      /* silently notify the user we're going to write to a new location */
+                      exo_die_error ("\"%s\" is not writeable, saving to \"%s\" instead.",
+                                     argv[1], path);
 
-                  /* try another save */
-                  exo_die_g_key_file_save (key_file, FALSE, gfile_new, mode, &error);
+                      /* reset the error */
+                      g_clear_error (&error);
 
-                  g_object_unref (G_OBJECT (gfile_new));
+                      /* try another save */
+                      gfile_local = g_file_new_for_path (path);
+                      exo_die_g_key_file_save (key_file, FALSE, gfile_local, mode, &error);
+                      g_object_unref (G_OBJECT (gfile_local));
+                    }
+
+                  g_free (path);
                   g_free (base_name);
                 }
-
-              g_free (localapps);
-              g_object_unref (G_OBJECT (gfile_localapps));
             }
         }
 
