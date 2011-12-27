@@ -133,6 +133,9 @@ main (int argc, char **argv)
   gsize            length = 0;
   gboolean         res;
   GFileType        file_type;
+  GFile           *gfile_localapps;
+  GFile           *gfile_new;
+  gchar           *localapps;
 
   /* setup translation domain */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
@@ -464,59 +467,90 @@ main (int argc, char **argv)
         }
 
       /* try to save the file */
-      if (!exo_die_g_key_file_save (key_file, opt_create_new, gfile, mode, &error)
-          && opt_create_new)
+      if (!exo_die_g_key_file_save (key_file, opt_create_new, gfile, mode, &error))
         {
-          /* reset the error */
-          g_clear_error (&error);
-
-          /* create failed, ask the user to specify a file name */
-          chooser = gtk_file_chooser_dialog_new (_("Choose filename"),
-                                                 GTK_WINDOW (dialog),
-                                                 GTK_FILE_CHOOSER_ACTION_SAVE,
-                                                 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                                 GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
-                                                 NULL);
-          gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), TRUE);
-          gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
-
-          file_type = g_file_query_file_type (gfile, G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL);
-
-          /* if base is a folder, enter the folder */
-          if (file_type == G_FILE_TYPE_DIRECTORY)
+          if (opt_create_new)
             {
-              gtk_file_chooser_set_current_folder_file (GTK_FILE_CHOOSER (chooser), gfile, NULL);
-              gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), "new-file.desktop");
-            }
-          else if (file_type == G_FILE_TYPE_REGULAR)
-            {
-              gfile_parent = g_file_get_parent (gfile);
-              if (G_LIKELY (gfile_parent != NULL))
+              /* reset the error */
+              g_clear_error (&error);
+
+              /* create failed, ask the user to specify a file name */
+              chooser = gtk_file_chooser_dialog_new (_("Choose filename"),
+                                                     GTK_WINDOW (dialog),
+                                                     GTK_FILE_CHOOSER_ACTION_SAVE,
+                                                     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                                     GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+                                                     NULL);
+              gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), TRUE);
+              gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
+
+              file_type = g_file_query_file_type (gfile, G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL);
+
+              /* if base is a folder, enter the folder */
+              if (file_type == G_FILE_TYPE_DIRECTORY)
                 {
-                  gtk_file_chooser_set_current_folder_file (GTK_FILE_CHOOSER (chooser), gfile_parent, NULL);
-                  g_object_unref (G_OBJECT (gfile_parent));
+                  gtk_file_chooser_set_current_folder_file (GTK_FILE_CHOOSER (chooser), gfile, NULL);
+                  gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), "new-file.desktop");
+                }
+              else if (file_type == G_FILE_TYPE_REGULAR)
+                {
+                  gfile_parent = g_file_get_parent (gfile);
+                  if (G_LIKELY (gfile_parent != NULL))
+                    {
+                      gtk_file_chooser_set_current_folder_file (GTK_FILE_CHOOSER (chooser), gfile_parent, NULL);
+                      g_object_unref (G_OBJECT (gfile_parent));
+                    }
+
+                  base_name = g_file_get_basename (gfile);
+                  gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), base_name);
+                  g_free (base_name);
                 }
 
-              base_name = g_file_get_basename (gfile);
-              gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), base_name);
-              g_free (base_name);
-            }
+              /* run the chooser */
+              response = gtk_dialog_run (GTK_DIALOG (chooser));
+              if (G_LIKELY (response == GTK_RESPONSE_ACCEPT))
+                {
+                  /* release the previous file name */
+                  if (G_LIKELY (gfile != NULL))
+                    g_object_unref (G_OBJECT (gfile));
 
-          /* run the chooser */
-          response = gtk_dialog_run (GTK_DIALOG (chooser));
-          if (G_LIKELY (response == GTK_RESPONSE_ACCEPT))
+                  /* try again to save to the new file */
+                  gfile = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (chooser));
+                  exo_die_g_key_file_save (key_file, FALSE, gfile, mode, &error);
+                }
+
+              /* destroy the chooser */
+              gtk_widget_destroy (chooser);
+            }
+          else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED))
             {
-              /* release the previous file name */
-              if (G_LIKELY (gfile != NULL))
-                g_object_unref (G_OBJECT (gfile));
+              localapps = xfce_resource_save_location (XFCE_RESOURCE_DATA, "applications/", TRUE);
+              gfile_localapps = g_file_new_for_path (localapps);
 
-              /* try again to save to the new file */
-              gfile = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (chooser));
-              exo_die_g_key_file_save (key_file, FALSE, gfile, mode, &error);
+              /* check if the file is not already saved in ~/.local/share/applications */
+              if (!g_file_has_parent (gfile, gfile_localapps))
+                {
+                  /* create local file with the same name */
+                  base_name = g_file_get_basename (gfile);
+                  gfile_new = g_file_get_child (gfile_localapps, base_name);
+
+                  /* silently notify the user we're going to write to a new location */
+                  exo_die_error ("\"%s\" is not writeable, saving to \"%s%s\" instead.",
+                                 argv[1], localapps, base_name);
+
+                  /* reset the error */
+                  g_clear_error (&error);
+
+                  /* try another save */
+                  exo_die_g_key_file_save (key_file, FALSE, gfile_new, mode, &error);
+
+                  g_object_unref (G_OBJECT (gfile_new));
+                  g_free (base_name);
+                }
+
+              g_free (localapps);
+              g_object_unref (G_OBJECT (gfile_localapps));
             }
-
-          /* destroy the chooser */
-          gtk_widget_destroy (chooser);
         }
 
       /* check if we failed to save/create */
