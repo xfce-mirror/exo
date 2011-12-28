@@ -64,7 +64,7 @@ static gchar   *opt_comment = NULL;
 static gchar   *opt_command = NULL;
 static gchar   *opt_url = NULL;
 static gchar   *opt_icon = NULL;
-static gint     opt_xid = 0;
+static gint64   opt_xid = 0;
 
 
 
@@ -83,7 +83,7 @@ static GOptionEntry option_entries[] =
   { "url", 0, 0, G_OPTION_ARG_STRING, &opt_url, N_ ("Preset URL when creating a link"), NULL, },
   { "icon", 0, 0, G_OPTION_ARG_STRING, &opt_icon, N_ ("Preset icon when creating a desktop file"), NULL, },
   { "version", 'V', 0, G_OPTION_ARG_NONE, &opt_version, N_ ("Print version information and exit"), NULL, },
-  { "xid", 0, G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_INT, &opt_xid, NULL, NULL, },
+  { "xid", 0, G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_INT64, &opt_xid, NULL, NULL, },
   { NULL, },
 };
 
@@ -139,6 +139,7 @@ main (int argc, char **argv)
   gchar          **dirs;
   guint            i;
   const gchar     *mode_dir;
+  gint             ox, oy, ow, oh;
 
   /* setup translation domain */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
@@ -403,7 +404,7 @@ main (int argc, char **argv)
   if (G_UNLIKELY (opt_xid != 0))
     {
       /* try to determine the window for the id */
-      xwindow = gdk_window_foreign_new (opt_xid);
+      xwindow = gdk_window_foreign_new ((GdkNativeWindow) opt_xid);
       if (G_LIKELY (xwindow != NULL))
         {
           /* realize the dialog first... */
@@ -411,6 +412,16 @@ main (int argc, char **argv)
 
           /* ...and set the "transient for" relation */
           gdk_window_set_transient_for (dialog->window, xwindow);
+          gtk_window_set_screen (GTK_WINDOW (dialog), gdk_window_get_screen (xwindow));
+
+          /* center on parent */
+          gdk_window_get_root_origin (xwindow, &ox, &oy);
+          gdk_window_get_geometry (xwindow, NULL, NULL, &ow, &oh, NULL);
+
+          ox += (ow - dialog->allocation.width) / 2;
+          oy += (oh - dialog->allocation.height) / 2;
+
+          gtk_window_move (GTK_WINDOW (dialog), MAX (ox, 0), MAX (oy, 0));
         }
     }
 #endif
