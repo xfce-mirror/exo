@@ -19,6 +19,9 @@ AUTOMAKE_OPTIONS =							\
 distclean-local:
 	rm -rf *.cache *~
 
+distuninstallcheck_listfiles = 						\ 
+	find . -type f -print | grep -v ./share/icons/hicolor/icon-theme.cache
+
 .PHONY: ChangeLog
 
 ChangeLog: Makefile

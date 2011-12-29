@@ -1,3 +1,34 @@
+0.7.0
+=====
+- Do not insert symlink icons in the icon chooser.
+- Use libxfce4ui instead of support library.
+- Drop the python bindings.
+- Use new libtool macros and versions (bug #6920).
+- Remove spec file and rpm build.
+- Silenty save to local application is permission denied to origional
+  file in exo-desktop-item-edit.
+- Support hexadecimal xid and center exo-desktop-item-edit on parent.
+
+0.6.2
+=====
+- Fix preferred applications handling (bug #7140).
+- Translation updates: Dutch.
+
+0.6.1
+=====
+- Improve exo-open url and email match regexes (bug #7281).
+- Create relative symlinks to doc images (bug #7379).
+- Remove mime-types from the exo helper desktop files (bug #7257).
+- Drop unused variable.
+- Make exo-compose-mail-1 case-insensitive (bug #7472).
+- Use portable abicheck.sh from xfconf.
+- Add missing linker flag.
+- Add Greek manual screenshots.
+- Only compile demo application in make check (bug #7267).
+- Allow installation of the helpers in a custom location.
+- Fix gio-unix 2.27 detection (bug #7124).
+- Translation updates: nl, pt_BR, ru, sk, sv.
+
 0.6.0
 =====
 - Add main category to exo-open desktop files.
