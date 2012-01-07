@@ -107,6 +107,15 @@ exo_die_error (const gchar *format,
 
 
 
+static void
+exo_die_help (GtkWidget *button,
+              GtkWidget *dialog)
+{
+  xfce_dialog_show_help (GTK_WINDOW (dialog), "exo", "desktop-item-edit", NULL);
+}
+
+
+
 int
 main (int argc, char **argv)
 {
@@ -119,6 +128,7 @@ main (int argc, char **argv)
   GtkWidget       *chooser;
   GtkWidget       *message;
   GtkWidget       *button;
+  GtkWidget       *bbox;
   GtkWidget       *dialog;
   GtkWidget       *editor;
   GKeyFile        *key_file;
@@ -315,6 +325,14 @@ main (int argc, char **argv)
                                                 NULL);
   gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 375);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), ICON_NAMES[mode]);
+
+  button = gtk_button_new_from_stock (GTK_STOCK_HELP);
+  bbox = gtk_dialog_get_action_area (GTK_DIALOG (dialog));
+  gtk_box_pack_start (GTK_BOX (bbox), button, FALSE, FALSE, 0);
+  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (bbox), button, TRUE);
+  g_signal_connect (G_OBJECT (button), "clicked",
+      G_CALLBACK (exo_die_help), dialog);
+  gtk_widget_show (button);
 
   /* add the "Create"/"Save" button (as default) */
   button = gtk_button_new_from_stock (opt_create_new ? _("C_reate") : GTK_STOCK_SAVE);

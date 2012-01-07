@@ -281,25 +281,9 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
 static void
 exo_helper_chooser_dialog_show_help (ExoHelperChooserDialog *chooser_dialog)
 {
-  GtkWidget *message;
-  GError    *error = NULL;
-
   g_return_if_fail (EXO_IS_HELPER_CHOOSER_DIALOG (chooser_dialog));
-
-  /* try to open the documentation using xfhelp4 */
-  if (!gdk_spawn_command_line_on_screen (gtk_widget_get_screen (GTK_WIDGET (chooser_dialog)), "xfhelp4 exo-preferred-applications.html", &error))
-    {
-      message = gtk_message_dialog_new (GTK_WINDOW (chooser_dialog),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT
-                                        | GTK_DIALOG_MODAL,
-                                        GTK_MESSAGE_ERROR,
-                                        GTK_BUTTONS_CLOSE,
-                                        _("Failed to open the documentation browser."));
-      gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (message), "%s.", error->message);
-      gtk_dialog_run (GTK_DIALOG (message));
-      gtk_widget_destroy (message);
-      g_error_free (error);
-    }
+  xfce_dialog_show_help (GTK_WINDOW (chooser_dialog), "exo",
+                         "preferred-applications", NULL);
 }
 
 
