@@ -233,7 +233,7 @@ void                  exo_icon_view_icon_to_widget_coords     (const ExoIconView
                                                                gint                      ix,
                                                                gint                      iy,
                                                                gint                     *wx,
-                                                             gint                     *wy);
+                                                               gint                     *wy);
 
 GtkTreePath          *exo_icon_view_get_path_at_pos           (const ExoIconView        *icon_view,
                                                                gint                      x,
@@ -261,6 +261,11 @@ GList                *exo_icon_view_get_selected_items        (const ExoIconView
 void                  exo_icon_view_select_all                (ExoIconView              *icon_view);
 void                  exo_icon_view_unselect_all              (ExoIconView              *icon_view);
 void                  exo_icon_view_item_activated            (ExoIconView              *icon_view,
+                                                               GtkTreePath              *path);
+
+gint                  exo_icon_view_get_item_column           (ExoIconView              *icon_view,
+                                                               GtkTreePath              *path);
+gint                  exo_icon_view_get_item_row              (ExoIconView              *icon_view,
                                                                GtkTreePath              *path);
 
 gboolean              exo_icon_view_get_cursor                (const ExoIconView        *icon_view,

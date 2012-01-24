@@ -5693,6 +5693,68 @@ exo_icon_view_item_activated (ExoIconView *icon_view,
 
 
 /**
+ * exo_icon_view_get_item_column:
+ * @icon_view : A #ExoIconView.
+ * @path      : The #GtkTreePath of the item.
+ *
+ * Gets the column in which the item @path is currently
+ * displayed. Column numbers start at 0.
+ *
+ * Returns: The column in which the item is displayed
+ *
+ * Since: 0.7.1
+ **/
+gint
+exo_icon_view_get_item_column (ExoIconView *icon_view,
+                               GtkTreePath *path)
+{
+  ExoIconViewItem *item;
+
+  g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), -1);
+  g_return_val_if_fail (icon_view->priv->model != NULL, -1);
+  g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, -1);
+
+  item = g_list_nth_data (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
+  if (G_LIKELY (item != NULL))
+    return item->col;
+
+  return -1;
+}
+
+
+
+/**
+ * exo_icon_view_get_item_row:
+ * @icon_view : A #ExoIconView.
+ * @path      : The #GtkTreePath of the item.
+ *
+ * Gets the row in which the item @path is currently
+ * displayed. Row numbers start at 0.
+ *
+ * Returns: The row in which the item is displayed
+ *
+ * Since: 0.7.1
+ */
+gint
+exo_icon_view_get_item_row (ExoIconView *icon_view,
+                            GtkTreePath *path)
+{
+  ExoIconViewItem *item;
+
+  g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), -1);
+  g_return_val_if_fail (icon_view->priv->model != NULL, -1);
+  g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, -1);
+
+  item = g_list_nth_data (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
+  if (G_LIKELY (item != NULL))
+    return item->row;
+
+  return -1;
+}
+
+
+
+/**
  * exo_icon_view_get_cursor:
  * @icon_view : A #ExoIconView
  * @path      : Return location for the current cursor path, or %NULL
