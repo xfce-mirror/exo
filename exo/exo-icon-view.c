@@ -4249,14 +4249,18 @@ static void
 exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
                                    gint         count)
 {
-  ExoIconViewItem *item;
-  gboolean         dirty = FALSE;
-  GList           *list;
-  gint             cell = -1;
-  gint             step;
+  ExoIconViewItem  *item;
+  gboolean          dirty = FALSE;
+  GList            *list;
+  gint              cell = -1;
+  gint              step;
+  GtkDirectionType  direction;
+  GtkWidget        *toplevel;
 
   if (!GTK_WIDGET_HAS_FOCUS (icon_view))
     return;
+
+  direction = count < 0 ? GTK_DIR_UP : GTK_DIR_DOWN;
 
   if (!icon_view->priv->cursor_item)
     {
@@ -4314,7 +4318,21 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
     }
 
   if (!item)
-    return;
+    {
+      if (!gtk_widget_keynav_failed (GTK_WIDGET (icon_view), direction))
+        {
+          toplevel = gtk_widget_get_toplevel (GTK_WIDGET (icon_view));
+          if (toplevel != NULL)
+            {
+              gtk_widget_child_focus (toplevel,
+                                      direction == GTK_DIR_UP ?
+                                          GTK_DIR_TAB_BACKWARD :
+                                          GTK_DIR_TAB_FORWARD);
+            }
+        }
+
+      return;
+    }
 
   if (icon_view->priv->ctrl_pressed ||
       !icon_view->priv->shift_pressed ||
@@ -4399,14 +4417,18 @@ static void
 exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
                                       gint         count)
 {
-  ExoIconViewItem *item;
-  gboolean         dirty = FALSE;
-  GList           *list;
-  gint             cell = -1;
-  gint             step;
+  ExoIconViewItem  *item;
+  gboolean          dirty = FALSE;
+  GList            *list;
+  gint              cell = -1;
+  gint              step;
+  GtkDirectionType  direction;
+  GtkWidget        *toplevel;
 
   if (!GTK_WIDGET_HAS_FOCUS (icon_view))
     return;
+
+  direction = count < 0 ? GTK_DIR_LEFT : GTK_DIR_RIGHT;
 
   if (!icon_view->priv->cursor_item)
     {
@@ -4468,7 +4490,21 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
     }
 
   if (!item)
-    return;
+    {
+      if (!gtk_widget_keynav_failed (GTK_WIDGET (icon_view), direction))
+        {
+          toplevel = gtk_widget_get_toplevel (GTK_WIDGET (icon_view));
+          if (toplevel != NULL)
+            {
+              gtk_widget_child_focus (toplevel,
+                                      direction == GTK_DIR_LEFT ?
+                                          GTK_DIR_TAB_BACKWARD :
+                                          GTK_DIR_TAB_FORWARD);
+            }
+        }
+
+      return;
+    }
 
   if (icon_view->priv->ctrl_pressed ||
       !icon_view->priv->shift_pressed ||
