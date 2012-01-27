@@ -55,6 +55,8 @@ main (int argc, char **argv)
   GtkWidget         *dialog;
   GError            *error = NULL;
   gint               result = EXIT_SUCCESS;
+  GtkWidget         *plug;
+  GtkWidget         *plug_child;
 
   gboolean           opt_version = FALSE;
   gboolean           opt_configure = FALSE;
@@ -123,8 +125,6 @@ main (int argc, char **argv)
 
       if (opt_socket_id != 0)
         {
-          GtkWidget *plug, *plug_child;
-
           plug = gtk_plug_new (opt_socket_id);
           gtk_widget_show (plug);
           g_signal_connect (plug, "delete-event", G_CALLBACK (gtk_main_quit), NULL);
@@ -137,7 +137,6 @@ main (int argc, char **argv)
           gdk_notify_startup_complete ();
 
           gtk_main ();
-          gtk_widget_destroy (plug);
         }
       else
         {
