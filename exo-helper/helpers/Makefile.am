@@ -8,6 +8,7 @@ desktop_in_in_files =							\
 	Thunar.desktop.in.in						\
 	aterm.desktop.in.in						\
 	balsa.desktop.in.in						\
+	chromium.desktop.in.in						\
 	debian-sensible-browser.desktop.in.in				\
 	debian-x-terminal-emulator.desktop.in.in			\
 	encompass.desktop.in.in						\
