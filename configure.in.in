@@ -15,7 +15,7 @@ m4_define([libexo_version_minor], [7])
 m4_define([libexo_version_micro], [1])
 m4_define([libexo_version_nano], [])
 m4_define([libexo_version_build], [@REVISION@])
-m4_define([libexo_version_tag], [])
+m4_define([libexo_version_tag], [git])
 m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()ifelse(libexo_version_nano(), [], [], [.libexo_version_nano()])ifelse(libexo_version_tag(), [git], [libexo_version_tag()-libexo_version_build()], [libexo_version_tag()])])
 
 dnl ********************************************
