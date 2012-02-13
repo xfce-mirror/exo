@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the exo package.
 # Stephan Arts <psyBSD@gmail.com>, 2006.
 # Pjotr, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-08 16:00+0000\n"
+"POT-Creation-Date: 2012-02-13 05:03+0000\n"
 "PO-Revision-Date: 2011-09-08 15:05+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
@@ -538,7 +538,7 @@ msgstr "  --strip-comments  Verwijder commentaren uit XML-bestanden\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Verwijder node-informatie uit XML-bestanden\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:176
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
 #: ../exo-open/main.c:483
 #, c-format
 msgid ""
@@ -554,7 +554,7 @@ msgstr ""
 "Geschreven door Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:180
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
 #: ../exo-open/main.c:487
 #, c-format
 msgid ""
@@ -570,7 +570,7 @@ msgstr ""
 "in het %s bronpakket.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:184
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
 #: ../exo-open/main.c:491
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -616,37 +616,44 @@ msgstr "Shell scripts"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Maak starter <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Naam:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "_Opmerking:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Opdr_acht:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "_Werkmap:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Pictogram:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -657,9 +664,11 @@ msgstr "Geen pictogram"
 msgid "Options:"
 msgstr "Opties:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Gebruik op_startnotificatie"
@@ -674,9 +683,11 @@ msgstr ""
 "wordt uitgevoerd vanuit de bestandbeheerder of het menu. Niet elke "
 "toepassing ondersteunt opstartmelding."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "In _terminal uitvoeren"
@@ -753,68 +764,68 @@ msgstr "Vooringestelde URL bij het maken van een nieuwe koppeling"
 msgid "Preset icon when creating a desktop file"
 msgstr "Vooringesteld pictogram bij het maken van een nieuw bureaubladbestand"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:67
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
 msgid "Print version information and exit"
 msgstr "Versie-informatie afdrukken en afsluiten"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:152
+#: ../exo-desktop-item-edit/main.c:169
 msgid "[FILE|FOLDER]"
 msgstr "[BESTAND|MAP]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:164
+#: ../exo-desktop-item-edit/main.c:181
 msgid "Failed to open display"
 msgstr "Kon scherm niet openen"
 
-#: ../exo-desktop-item-edit/main.c:191
+#: ../exo-desktop-item-edit/main.c:208
 msgid "No file/folder specified"
 msgstr "Geen bestand/map opgegeven"
 
-#: ../exo-desktop-item-edit/main.c:257
+#: ../exo-desktop-item-edit/main.c:274
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Kon de inhoud van \"%s\" niet laden: %s"
 
-#: ../exo-desktop-item-edit/main.c:262
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Het bestand \"%s\" bevat geen gegevens"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:275
+#: ../exo-desktop-item-edit/main.c:292
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Kon de inhoud van bestand \"%s\" niet lezen: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:287
+#: ../exo-desktop-item-edit/main.c:304
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Bestand \"%s\" heeft geen typetoets"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:297
+#: ../exo-desktop-item-edit/main.c:314
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Niet-ondersteund type bureaubladbestand \"%s\""
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:313
+#: ../exo-desktop-item-edit/main.c:338
 msgid "C_reate"
 msgstr "M_aken"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:474
+#: ../exo-desktop-item-edit/main.c:510
 msgid "Choose filename"
 msgstr "Kies bestandnaam"
 
-#: ../exo-desktop-item-edit/main.c:532
+#: ../exo-desktop-item-edit/main.c:616
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Kon \"%s\" niet maken."
 
-#: ../exo-desktop-item-edit/main.c:532
+#: ../exo-desktop-item-edit/main.c:616
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Kon \"%s\" niet opslaan."
@@ -828,9 +839,8 @@ msgstr "Voorkeurtoepassingen"
 msgid "Select default applications for various services"
 msgstr "Selecteer standaardtoepassingen voor diverse diensten"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
@@ -861,9 +871,8 @@ msgstr ""
 "Het voorkeurs-emailprogramma zal worden gebruikt\n"
 "om e-mails te schrijven als u op e-mail-adressen klikt."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Hulpprogramma's"
@@ -893,10 +902,6 @@ msgid ""
 msgstr ""
 "Het voorkeurs-terminalvenster zal worden gebruikt\n"
 "om opdrachten uit te voeren die een terminalomgeving vereisen"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:297
-msgid "Failed to open the documentation browser."
-msgstr "Kon de documentatieverkenner niet openen"
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -1059,7 +1064,7 @@ msgstr "Kon de standaard-bestandbeheerder niet uitvoeren"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Kon het standaard-terminalvenster niet uitvoeren"
 
-#: ../exo-helper/main.c:68
+#: ../exo-helper/main.c:70
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1067,15 +1072,15 @@ msgstr ""
 "Open het dialoogscherm voor configuratie\n"
 "van voorkeurtoepassingen"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "Settings manager socket"
 msgstr "Contactpunt voor instellingenbeheerder"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:72
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1083,11 +1088,11 @@ msgstr ""
 "Start de standaardhulp van TYPE met de optionele PARAMETER, waar TYPE één "
 "van de volgende waarden is."
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:72
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
-#: ../exo-helper/main.c:94
+#: ../exo-helper/main.c:96
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1103,17 +1108,17 @@ msgstr ""
 " FileManager - De voorkeurs-bestandbeheerder.\n"
 " TerminalEmulator - Het voorkeurs-terminalvenster."
 
-#: ../exo-helper/main.c:104
+#: ../exo-helper/main.c:106
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Tik '%s --help' voor gebruik"
 
-#: ../exo-helper/main.c:154
+#: ../exo-helper/main.c:153
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Ongeldig hulptype \"%s\""
 
-#: ../exo-helper/main.c:198
+#: ../exo-helper/main.c:197
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1153,6 +1158,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
+msgid "Chromium"
+msgstr "Chromium"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
@@ -1319,9 +1328,10 @@ msgstr ""
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "De volgende TYPEs worden ondersteund voor de --launch opdracht:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
+#. 
 #: ../exo-open/main.c:126
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1387,6 +1397,9 @@ msgstr "Gebruik de opdrachtregel"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "Blader door het web"
+
+#~ msgid "Failed to open the documentation browser."
+#~ msgstr "Kon de documentatieverkenner niet openen"
 
 #~ msgid "External %s Drive"
 #~ msgstr "Extern %s Station"
