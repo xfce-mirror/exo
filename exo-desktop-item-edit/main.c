@@ -430,7 +430,8 @@ main (int argc, char **argv)
 
           /* ...and set the "transient for" relation */
           gdk_window_set_transient_for (dialog->window, xwindow);
-          gtk_window_set_screen (GTK_WINDOW (dialog), gdk_window_get_screen (xwindow));
+          gtk_window_set_screen (GTK_WINDOW (dialog),
+              gdk_drawable_get_screen (GDK_DRAWABLE (xwindow)));
 
           /* center on parent */
           gdk_window_get_root_origin (xwindow, &ox, &oy);
