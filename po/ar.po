@@ -7,16 +7,15 @@ msgstr ""
 "PO-Revision-Date: 2012-02-20 21:17+0000\n"
 "Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic Xfce Translation Team\n"
-"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Virtaal 0.7.0\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Language: Arabic\n"
 "X-Poedit-Country: MOROCCO\n"
+"Language: ar\n"
+"X-Generator: Virtaal 0.7.0\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Poedit-Language: Arabic\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -606,37 +605,44 @@ msgstr "شيل سكريبت"
 msgid "Create Launcher <b>%s</b>"
 msgstr "انشئ مطلق <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "إ_سم:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "تعلي_ق:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "أ_مر:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "الع_نوان:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "م_سار العمل:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "أي_قونة:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -647,9 +653,11 @@ msgstr "بدون أيقونة"
 msgid "Options:"
 msgstr "خيارات:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "أستخدم _تنبية بدأ التشغيل"
@@ -661,9 +669,11 @@ msgid ""
 "notification."
 msgstr ""
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "تنفيذ في ال_طرفية"
@@ -777,7 +787,7 @@ msgstr "فشل تحليل محتويات \"%s\": %s"
 #: ../exo-desktop-item-edit/main.c:288
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "ملف \"%s\" بدون مفتاح الصنف"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:298
@@ -814,9 +824,8 @@ msgstr "تطبيقات المفضلة"
 msgid "Select default applications for various services"
 msgstr "إختر التطبيقات المفضلة لخدمات المتنوعة"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "إنترنت"
@@ -831,6 +840,8 @@ msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr ""
+"متصفح الوب المفضل سيستعمل لفتح\n"
+"الوصلات وعرض محتويات المساعدة."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -842,10 +853,11 @@ msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
+"قارء البريد المفضل سيستعمل لإنشاء\n"
+"رسائل عتد الضغط على عنوان بريد إلكتروني."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "وسائل"
@@ -860,6 +872,8 @@ msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr ""
+"مدير الملفات المفضل سيستعمل لتصفح\n"
+"محتويات المجلدات."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -871,6 +885,8 @@ msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
+"محاكي الطرفية المفضل سيستعمل لتشغيل\n"
+"الأوامر التي تعمل في بيئة سطر الأوامر."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:297
 msgid "Failed to open the documentation browser."
@@ -879,7 +895,7 @@ msgstr "فشل فتح متصفح التوثيق."
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
 msgid "Press left mouse button to change the selected application."
-msgstr ""
+msgstr "إضغط بالزر أيمر للفأرة لتغيير التطبيق المحدد."
 
 #: ../exo-helper/exo-helper-chooser.c:155
 msgid "Application Chooser Button"
@@ -931,18 +947,24 @@ msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
+"حدد التطبيق الذي تريد إستعماله كـ\n"
+"متصفح وب إفتراضي لـإكسفس:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
+"حدد التطبيق الذي تريد إستعماله كـ\n"
+"قارء البريد إفتراضي لـإكسفس:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
+"حدد التطبيق الذي تريد إستعماله كـ\n"
+"مدير ملفات إفتراضي لـإكسفس:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
@@ -962,7 +984,7 @@ msgstr "أ_خرى..."
 
 #: ../exo-helper/exo-helper-chooser.c:763
 msgid "Use a custom application which is not included in the above list."
-msgstr ""
+msgstr "إستعمل تطبيق مخصص عند عدم وجوده في لائحة أعلاه."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:113
 msgid "Choose Preferred Application"
@@ -973,24 +995,32 @@ msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
 msgstr ""
+"المرجوا تحديد متصفح\n"
+"وب المفضل الأن و الضغط على نعم للمضي قدما."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
+"المرجوا تحديد قارء\n"
+"بريدك المفضل الأن و الضغط على نعم للمضي قدما."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
+"المرجوا تحديد مدير\n"
+"ملفاتك المفضل الأن و الضغط على نعم للمضي قدما."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
 msgstr ""
+"المرجوا تحديد محاكي\n"
+"طرفيتك المفضل الأن و الضغط على نعم للمضي قدما."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -1133,11 +1163,11 @@ msgstr "متصفّح الوِب إبِفَني"
 
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr ""
+msgstr "محاكي ترفية Enlightened"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Novell Evolution"
-msgstr ""
+msgstr "نوفيل إفولوشين"
 
 #: ../exo-helper/helpers/firefox.desktop.in.in.h:1
 msgid "Mozilla Firefox"
@@ -1270,14 +1300,17 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
+"  --working-directory DIRECTORY       دليل العمل الإفتراضي\n"
+"                                      عند إستعمال خيار --launch option."
 
 #: ../exo-open/main.c:110
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr ""
+msgstr "الانواع التالية مدعومة لأمر --launch command:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
+#. 
 #: ../exo-open/main.c:116
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
