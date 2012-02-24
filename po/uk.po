@@ -1,20 +1,20 @@
 # Ukrainian translation of  libexo.
 # Copyright (C) 2008 Dmitry Nikitin
 # This file is distributed under the same license as the libexo package.
-#
+# 
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: libexo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 16:35+0100\n"
+"POT-Creation-Date: 2012-02-24 21:18+0000\n"
 "PO-Revision-Date: 2008-11-24 12:00+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
-"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
@@ -535,8 +535,8 @@ msgstr "  --strip-comments  Видалення коментарів XML файл
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Видалити вузлів змісту з XML файлів\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-open/main.c:471
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
+#: ../exo-open/main.c:483
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -551,8 +551,8 @@ msgstr ""
 "Написано   Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-open/main.c:475
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
+#: ../exo-open/main.c:487
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -567,8 +567,8 @@ msgstr ""
 "у пакеті текстів програми %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-open/main.c:479
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
+#: ../exo-open/main.c:491
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Повідомлення про помилки для <%s>.\n"
@@ -613,37 +613,44 @@ msgstr "Сценарії Shell"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Створити ярлик запуску <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Назва:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "К_оментар:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Ком_анда:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_Посилання URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "Робоча _тека"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Значок:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -654,9 +661,11 @@ msgstr "Без значка"
 msgid "Options:"
 msgstr "Параметри:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Використовувати пов_ідомлення про запуск"
@@ -671,9 +680,11 @@ msgstr ""
 "менеджеру файлів або з меню. Не кожна програма підтримує повідомлення   про "
 "запуск  ."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Запустити в _терміналі"
@@ -697,120 +708,120 @@ msgid "File location is not a regular file or directory"
 msgstr "Місцезнаходження файлу не є регулярним файлом чи текою"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:52
 msgid "Create Launcher"
 msgstr "Створити ярлик запуску"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:52
 msgid "Create Link"
 msgstr "Створити посилання"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:52
 msgid "Create Directory"
 msgstr "Створити теку"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Edit Launcher"
 msgstr "Редагувати ярлик запуску"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Edit Link"
 msgstr "Редагувати посилання"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Edit Directory"
 msgstr "Редагувати теку"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:78
 msgid "Create a new desktop file in the given directory"
 msgstr "Створити новий файл desktop в поточній теці"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:79
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Тип файлу desktop для створення (Програма чи посилання)"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Preset name when creating a desktop file"
 msgstr "Введіть назву створюваного файлу desktop"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Preset comment when creating a desktop file"
 msgstr "Введіть коментар для створюваного файлу desktop"
 
-#: ../exo-desktop-item-edit/main.c:83
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset command when creating a launcher"
 msgstr "Введіть команду для створюваного ярлика запуску"
 
-#: ../exo-desktop-item-edit/main.c:84
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset URL when creating a link"
 msgstr "Введіть адресу URL для створюваного посилання"
 
-#: ../exo-desktop-item-edit/main.c:85
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset icon when creating a desktop file"
 msgstr "Виберіть значок для створюваного файлу desktop"
 
-#: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
 msgid "Print version information and exit"
 msgstr "Надрукувати інформацію про версію і вийти"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:153
+#: ../exo-desktop-item-edit/main.c:169
 msgid "[FILE|FOLDER]"
 msgstr "[FILE|FOLDER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:165
+#: ../exo-desktop-item-edit/main.c:181
 msgid "Failed to open display"
 msgstr "Помилка відкриття дисплею"
 
-#: ../exo-desktop-item-edit/main.c:192
+#: ../exo-desktop-item-edit/main.c:208
 msgid "No file/folder specified"
 msgstr "Не визначено файлу/теки"
 
-#: ../exo-desktop-item-edit/main.c:258
+#: ../exo-desktop-item-edit/main.c:274
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Помилка завантаження вмісту \"%s\": %s"
 
-#: ../exo-desktop-item-edit/main.c:263
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Файл \"%s\" не містить данних"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:276
+#: ../exo-desktop-item-edit/main.c:292
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Не вдалось розібрати вміст \"%s\": %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:288
+#: ../exo-desktop-item-edit/main.c:304
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Файл \"%s\" немає ключа типу"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:298
+#: ../exo-desktop-item-edit/main.c:314
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Неправильний тип файлу desktop \"%s\""
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:338
 msgid "C_reate"
 msgstr "С_творити"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:475
+#: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
 msgstr "Вибрати назву файлу"
 
-#: ../exo-desktop-item-edit/main.c:533
+#: ../exo-desktop-item-edit/main.c:617
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Помилка при створені \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:533
+#: ../exo-desktop-item-edit/main.c:617
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Помилка при збережені \"%s\"."
@@ -824,9 +835,8 @@ msgstr "Типові програми"
 msgid "Select default applications for various services"
 msgstr "Виберіть типову програму для відповідного сервісу"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Інтернет"
@@ -857,9 +867,8 @@ msgstr ""
 "Типовий Поштовий клієнт використовується для   \n"
 "створення повідомлень при виборі email адрес."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Утиліти"
@@ -889,10 +898,6 @@ msgid ""
 msgstr ""
 "Типовий Емулятор терміналу буде використаний \n"
 "для команд, що потребують CLI середовища."
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:297
-msgid "Failed to open the documentation browser."
-msgstr "Помилка відкриття документації переглядача."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -1055,7 +1060,7 @@ msgstr "Не вдалось запустити типовий Файловий �
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Помилка під час запуску типового емулятора терміналу"
 
-#: ../exo-helper/main.c:68
+#: ../exo-helper/main.c:70
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1063,15 +1068,15 @@ msgstr ""
 "Відкрити діалог налаштування\n"
 "улюблених програм"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "Settings manager socket"
 msgstr "Сокет Менеджера властивостей"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "SOCKET ID"
 msgstr "ID сокета"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:72
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1079,11 +1084,11 @@ msgstr ""
 "Запустити типовий конфігуратор ТИПу з опціями ПАРАМЕТРИ, де ТИП це є одне із "
 "наступних значень."
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:72
 msgid "TYPE [PARAMETER]"
 msgstr "ТИП [ПАРАМЕТР]"
 
-#: ../exo-helper/main.c:94
+#: ../exo-helper/main.c:96
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1099,17 +1104,17 @@ msgstr ""
 "  FileManager      - типовий Файловий менеджер.\n"
 "  TerminalEmulator - типовий Емулятор Терміналу."
 
-#: ../exo-helper/main.c:104
+#: ../exo-helper/main.c:106
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Наберіть '%s --help' для використання."
 
-#: ../exo-helper/main.c:154
+#: ../exo-helper/main.c:153
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Неправильний тип улюбленої програми \"%s\""
 
-#: ../exo-helper/main.c:198
+#: ../exo-helper/main.c:197
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1149,6 +1154,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
+msgid "Chromium"
+msgstr "Хроміум"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
@@ -1270,24 +1279,24 @@ msgstr "Переглядач W3M текстовий"
 msgid "X Terminal"
 msgstr "Термінал X"
 
-#: ../exo-open/main.c:97
+#: ../exo-open/main.c:107
 msgid "Usage: exo-open [URLs...]"
 msgstr "Використання: exo-open [посилання URLs...]"
 
-#: ../exo-open/main.c:98
+#: ../exo-open/main.c:108
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch ТИП [ПАРАМЕТРИ  ...]"
 
-#: ../exo-open/main.c:100
+#: ../exo-open/main.c:110
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Надрукувати цей текст і вийти   "
 
-#: ../exo-open/main.c:101
+#: ../exo-open/main.c:111
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Вивести інформацію про версію "
 
-#: ../exo-open/main.c:103
+#: ../exo-open/main.c:113
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1299,7 +1308,7 @@ msgstr ""
 "де   \n"
 "                                      ТИП це одне з наступних значень.    "
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:117
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1309,14 +1318,15 @@ msgstr ""
 "програм             \n"
 "                                      коли викор.    --launch опція. "
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:120
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Наступні ТИПИ підтримуються для --launch команди:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
-#: ../exo-open/main.c:116
+#. 
+#: ../exo-open/main.c:126
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1328,7 +1338,7 @@ msgstr ""
 "  FileManager      - типовий Файловий менеджер.\n"
 "  TerminalEmulator - типовий Емулятор Терміналу."
 
-#: ../exo-open/main.c:121
+#: ../exo-open/main.c:131
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1342,7 +1352,7 @@ msgstr ""
 "передати додаткові параметри для програми (таких як для Емулятора       \n"
 "терміналу передати стрічку команд які варто запустити в терміналі)"
 
-#: ../exo-open/main.c:183
+#: ../exo-open/main.c:193
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1351,17 +1361,17 @@ msgstr ""
 "Запущені файли desktop не підтримуються коли %s скомпільовано без "
 "можливостей GIO-Unix."
 
-#: ../exo-open/main.c:246
+#: ../exo-open/main.c:258
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Неможливо запустити улюблену програму для категорії \"%s\"."
 
-#: ../exo-open/main.c:552
+#: ../exo-open/main.c:564
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Неможливо визначити схему URI \"%s\"."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:576
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Неможливо відкрити URI \"%s\"."
@@ -1381,6 +1391,9 @@ msgstr "Використовуєте командну стрічку"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "Мандруйте Інтернетом"
+
+#~ msgid "Failed to open the documentation browser."
+#~ msgstr "Помилка відкриття документації переглядача."
 
 #~ msgid "External %s Drive"
 #~ msgstr "Зовнішній %s носій"
