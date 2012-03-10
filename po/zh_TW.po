@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-14 11:00+0000\n"
-"PO-Revision-Date: 2011-11-14 23:22+0800\n"
+"POT-Creation-Date: 2012-03-10 05:18+0000\n"
+"PO-Revision-Date: 2012-03-10 17:50+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
@@ -539,7 +539,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   從 XML 檔案移除 node 內容\n"
 
 #: ../exo-csource/main.c:304
-#: ../exo-desktop-item-edit/main.c:176
+#: ../exo-desktop-item-edit/main.c:193
 #: ../exo-open/main.c:483
 #, c-format
 msgid ""
@@ -556,7 +556,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308
-#: ../exo-desktop-item-edit/main.c:180
+#: ../exo-desktop-item-edit/main.c:197
 #: ../exo-open/main.c:487
 #, c-format
 msgid ""
@@ -573,7 +573,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312
-#: ../exo-desktop-item-edit/main.c:184
+#: ../exo-desktop-item-edit/main.c:201
 #: ../exo-open/main.c:491
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -750,68 +750,68 @@ msgid "Preset icon when creating a desktop file"
 msgstr "預先設定建立桌面檔時的圖示"
 
 #: ../exo-desktop-item-edit/main.c:85
-#: ../exo-helper/main.c:67
+#: ../exo-helper/main.c:69
 msgid "Print version information and exit"
 msgstr "顯示版本資訊並離開"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:152
+#: ../exo-desktop-item-edit/main.c:169
 msgid "[FILE|FOLDER]"
 msgstr "[檔案|資料夾]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:164
+#: ../exo-desktop-item-edit/main.c:181
 msgid "Failed to open display"
 msgstr "開啟顯示失敗"
 
-#: ../exo-desktop-item-edit/main.c:191
+#: ../exo-desktop-item-edit/main.c:208
 msgid "No file/folder specified"
 msgstr "沒有指定的檔案/資料夾"
 
-#: ../exo-desktop-item-edit/main.c:257
+#: ../exo-desktop-item-edit/main.c:274
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "無法從「%s」載入內容：%s"
 
-#: ../exo-desktop-item-edit/main.c:262
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "檔案「%s」不包含資料"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:275
+#: ../exo-desktop-item-edit/main.c:292
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "無法解析「%s」的內容：%s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:287
+#: ../exo-desktop-item-edit/main.c:304
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "檔案「%s」沒有類型的鍵"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:297
+#: ../exo-desktop-item-edit/main.c:314
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "未支援的桌面檔類型「%s」"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:313
+#: ../exo-desktop-item-edit/main.c:338
 msgid "C_reate"
 msgstr "建立(_R)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:474
+#: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
 msgstr "選擇檔案名稱"
 
-#: ../exo-desktop-item-edit/main.c:532
+#: ../exo-desktop-item-edit/main.c:617
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "建立「%s」失敗。"
 
-#: ../exo-desktop-item-edit/main.c:532
+#: ../exo-desktop-item-edit/main.c:617
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "儲存「%s」失敗。"
@@ -890,10 +890,6 @@ msgid ""
 msgstr ""
 "偏好的終端機模擬器將用來\n"
 "執行需要 CLI 環境的指令。"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:297
-msgid "Failed to open the documentation browser."
-msgstr "開啟文件瀏覽器失敗。"
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -1056,7 +1052,7 @@ msgstr "執行預設檔案管理員失敗"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "執行預設終端機模擬器失敗"
 
-#: ../exo-helper/main.c:68
+#: ../exo-helper/main.c:70
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1064,23 +1060,23 @@ msgstr ""
 "開啟偏好應用程式\n"
 "設置對話窗"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "Settings manager socket"
 msgstr "設定值管理員 socket"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:71
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:72
 msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
 msgstr "啟動「類型」的預設輔助程式，並加上選用的「參數」；「類型」是下方的值之一。"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:72
 msgid "TYPE [PARAMETER]"
 msgstr "類型 [參數]"
 
-#: ../exo-helper/main.c:94
+#: ../exo-helper/main.c:96
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1096,17 +1092,17 @@ msgstr ""
 "  FileManager      - 偏好的檔案管理員。\n"
 "  TerminalEmulator - 偏好的終端機模擬器。"
 
-#: ../exo-helper/main.c:104
+#: ../exo-helper/main.c:106
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "輸入 '%s --help' 以瞭解用法。"
 
-#: ../exo-helper/main.c:154
+#: ../exo-helper/main.c:153
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "無效的輔助程式類型「%s」"
 
-#: ../exo-helper/main.c:198
+#: ../exo-helper/main.c:197
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1146,6 +1142,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
+msgid "Chromium"
+msgstr "Chromium"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
@@ -1368,6 +1368,9 @@ msgstr "使用指令列"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "瀏覽網路"
+
+#~ msgid "Failed to open the documentation browser."
+#~ msgstr "開啟文件瀏覽器失敗。"
 
 #~ msgid "%s Digital Camera"
 #~ msgstr "%s 數位相機"
