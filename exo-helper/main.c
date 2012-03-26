@@ -57,6 +57,7 @@ main (int argc, char **argv)
   gint               result = EXIT_SUCCESS;
   GtkWidget         *plug;
   GtkWidget         *plug_child;
+  gchar             *startup_id;
 
   gboolean           opt_version = FALSE;
   gboolean           opt_configure = FALSE;
@@ -80,6 +81,11 @@ main (int argc, char **argv)
   /* setup i18n support */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 #endif
+
+  /* steal the startup id, before gtk tries to grab it */
+  startup_id = g_strdup (g_getenv ("DESKTOP_STARTUP_ID"));
+  if (startup_id != NULL)
+    g_unsetenv ("DESKTOP_STARTUP_ID");
 
   /* set up options */
   opt_ctx = g_option_context_new (NULL);
@@ -115,6 +121,10 @@ main (int argc, char **argv)
   /* initialize Gtk+ */
   gtk_init (&argc, &argv);
 
+  /* restore the startup-id for the child environment */
+  if (startup_id)
+    g_setenv ("DESKTOP_STARTUP_ID", startup_id, TRUE);
+
   /* setup default window icon */
   gtk_window_set_default_icon_name ("preferences-desktop-default-applications");
 
@@ -134,12 +144,14 @@ main (int argc, char **argv)
           gtk_widget_show (plug_child);
 
           /* End startup notification */
-          gdk_notify_startup_complete ();
+          gdk_notify_startup_complete_with_id (startup_id);
 
           gtk_main ();
         }
       else
         {
+          if (startup_id != NULL)
+            gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
           gtk_dialog_run (GTK_DIALOG (dialog));
         }
 
@@ -163,6 +175,8 @@ main (int argc, char **argv)
         {
           /* ask the user to choose a default helper for category */
           dialog = exo_helper_launcher_dialog_new (category);
+          if (startup_id != NULL)
+            gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
           if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_OK)
             helper = exo_helper_database_get_default (database, category);
           gtk_widget_destroy (dialog);
@@ -184,6 +198,8 @@ main (int argc, char **argv)
               dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
                                                "%s.", _(CATEGORY_EXEC_ERRORS[category]));
               gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
+              if (startup_id != NULL)
+                gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
               gtk_dialog_run (GTK_DIALOG (dialog));
               gtk_widget_destroy (dialog);
               g_error_free (error);

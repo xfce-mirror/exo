@@ -77,6 +77,8 @@ static gboolean  opt_version = FALSE;
 static gchar    *opt_launch = NULL;
 static gchar    *opt_working_directory = NULL;
 
+static gchar    *startup_id = NULL;
+
 static GOptionEntry entries[] =
 {
   { "help", '?', 0, G_OPTION_ARG_NONE, &opt_help, NULL, NULL, },
@@ -256,6 +258,8 @@ exo_open_launch_category (const gchar *category,
       /* display an error dialog */
       dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
                                        _("Failed to launch preferred application for category \"%s\"."), category);
+      if (startup_id != NULL)
+        gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
       gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
       gtk_dialog_run (GTK_DIALOG (dialog));
       gtk_widget_destroy (dialog);
@@ -437,7 +441,7 @@ exo_open_uri (const gchar  *uri,
   return retval;
 }
 
-
+#include <gdk/gdkx.h>
 
 gint
 main (gint argc, gchar **argv)
@@ -456,6 +460,11 @@ main (gint argc, gchar **argv)
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 #endif
 
+  /* steal the startup id, before gtk tries to grab it */
+  startup_id = g_strdup (g_getenv ("DESKTOP_STARTUP_ID"));
+  if (startup_id != NULL)
+    g_unsetenv ("DESKTOP_STARTUP_ID");
+
   /* try to parse the command line parameters */
   context = g_option_context_new (NULL);
   g_option_context_set_help_enabled (context, FALSE);
@@ -468,6 +477,10 @@ main (gint argc, gchar **argv)
       g_error_free (err);
       return EXIT_FAILURE;
     }
+
+  /* restore the startup-id for the child environment */
+  if (startup_id != NULL)
+    g_setenv ("DESKTOP_STARTUP_ID", startup_id, TRUE);
 
   /* setup default icon for windows */
   gtk_window_set_default_icon_name ("preferences-desktop-default-applications");
@@ -562,6 +575,8 @@ main (gint argc, gchar **argv)
               /* display an error dialog */
               dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
                                                _("Unable to detect the URI-scheme of \"%s\"."), *argv);
+              if (startup_id != NULL)
+                gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
               gtk_dialog_run (GTK_DIALOG (dialog));
               gtk_widget_destroy (dialog);
 
@@ -574,6 +589,8 @@ main (gint argc, gchar **argv)
                   /* display an error dialog */
                   dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
                                                    _("Failed to open URI \"%s\"."), uri);
+                  if (startup_id != NULL)
+                    gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
                   gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", err->message);
                   g_error_free (err);
                   gtk_dialog_run (GTK_DIALOG (dialog));
