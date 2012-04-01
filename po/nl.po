@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-13 05:03+0000\n"
+"POT-Creation-Date: 2012-04-01 16:42+0000\n"
 "PO-Revision-Date: 2011-09-08 15:05+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
@@ -55,12 +55,12 @@ msgstr "De grootte van het weer te geven pictogram in pixels."
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Kon bestand \"%s\" niet openen: %s"
+msgstr "Kon bestand '%s' niet openen: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:849
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Kon bestand \"%s\" niet lezen: %s"
+msgstr "Kon bestand '%s' niet lezen: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
@@ -73,7 +73,7 @@ msgstr ""
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Kon \"%s\" niet openen."
+msgstr "Kon '%s' niet openen."
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
 msgid "Orientation"
@@ -539,7 +539,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Verwijder node-informatie uit XML-bestanden\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
-#: ../exo-open/main.c:483
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -555,7 +555,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
-#: ../exo-open/main.c:487
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -571,7 +571,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
-#: ../exo-open/main.c:491
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Meld a.u.b. fouten aan <%s>.\n"
@@ -764,7 +764,7 @@ msgstr "Vooringestelde URL bij het maken van een nieuwe koppeling"
 msgid "Preset icon when creating a desktop file"
 msgstr "Vooringesteld pictogram bij het maken van een nieuw bureaubladbestand"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Versie-informatie afdrukken en afsluiten"
 
@@ -816,16 +816,16 @@ msgid "C_reate"
 msgstr "M_aken"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:510
+#: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
 msgstr "Kies bestandnaam"
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:617
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Kon \"%s\" niet maken."
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:617
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Kon \"%s\" niet opslaan."
@@ -1064,7 +1064,7 @@ msgstr "Kon de standaard-bestandbeheerder niet uitvoeren"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Kon het standaard-terminalvenster niet uitvoeren"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1072,15 +1072,15 @@ msgstr ""
 "Open het dialoogscherm voor configuratie\n"
 "van voorkeurtoepassingen"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Contactpunt voor instellingenbeheerder"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1088,11 +1088,11 @@ msgstr ""
 "Start de standaardhulp van TYPE met de optionele PARAMETER, waar TYPE één "
 "van de volgende waarden is."
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
-#: ../exo-helper/main.c:96
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1108,17 +1108,17 @@ msgstr ""
 " FileManager - De voorkeurs-bestandbeheerder.\n"
 " TerminalEmulator - Het voorkeurs-terminalvenster."
 
-#: ../exo-helper/main.c:106
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Tik '%s --help' voor gebruik"
 
-#: ../exo-helper/main.c:153
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Ongeldig hulptype \"%s\""
 
-#: ../exo-helper/main.c:197
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1283,27 +1283,27 @@ msgstr "W3M tekstbrowser"
 msgid "X Terminal"
 msgstr "X Terminal"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Gebruik: exo-open [URL's...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                         Deze hulptekst afdrukken en afsluiten"
 
-#: ../exo-open/main.c:111
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Versie-informatie afdrukken en "
 "afsluiten"
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1314,7 +1314,7 @@ msgstr ""
 "                                      TYPE met extra opties, waarbij TYPE \n"
 "                                      een van de volgende waarden is."
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1324,7 +1324,7 @@ msgstr ""
 "                                      indien de --launch optie wordt "
 "gebruikt."
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "De volgende TYPEs worden ondersteund voor de --launch opdracht:"
 
@@ -1332,7 +1332,7 @@ msgstr "De volgende TYPEs worden ondersteund voor de --launch opdracht:"
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #. 
-#: ../exo-open/main.c:126
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1344,7 +1344,7 @@ msgstr ""
 " FileManager - De voorkeurs-bestandbeheerder.\n"
 " TerminalEmulator - Het voorkeurs-terminalvenster."
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1358,7 +1358,7 @@ msgstr ""
 "kunt u extra parameters aan de toepassing doorgeven (bijvoorbeeld: voor\n"
 "TerminalEmulator kunt u de in de terminal uit te voeren opdracht opgeven)"
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1367,17 +1367,17 @@ msgstr ""
 "Het starten van bureaubladbestanden wordt niet ondersteund wanneer %s wordt "
 "gecompileerd zonder GIO-Unix-eigenschappen."
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Kon voorkeurstoepassing voor categorie \"%s\" niet starten."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Kon het URI-schema van \"%s\" niet vaststellen."
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Kon URL \"%s\" niet openen."
