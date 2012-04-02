@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the exo package.
 # Stavros Giannouris <stavrosg@hellug.gr>, 2005, 2006, 2007, 2008, 2009.
 # Stathis Kamperis <ekamperi@auth.gr>, 2006.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: exo git\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 16:35+0100\n"
+"POT-Creation-Date: 2012-04-02 04:18+0000\n"
 "PO-Revision-Date: 2011-01-07 17:44+0200\n"
 "Last-Translator: Spiros Georgaras <sng@hellug.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Greek\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -540,8 +540,8 @@ msgstr "  --strip-comments  Αφαίρεση σχολίων από αρχεία 
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Αφαίρεση δεδομένων από αρχεία XML\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:177
-#: ../exo-open/main.c:471
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -556,8 +556,8 @@ msgstr ""
 "Γραμμένο από τον Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:181
-#: ../exo-open/main.c:475
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -572,8 +572,8 @@ msgstr ""
 "να βρεθεί μέσα στο πακέτο με τον πηγαίο κώδικα του %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:185
-#: ../exo-open/main.c:479
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Παρακαλούμε αναφέρατε σφάλματα στον <%s>/\n"
@@ -618,37 +618,44 @@ msgstr "Δέσμες ενεργειών κέλυφους"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Δημιουργία εκκινητή <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "Ό_νομα:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "Σχόλι_ο:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Εντο_λή:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_Διεύθυνση:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "Κατάλο_γος εργασίας:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "Ε_ικονίδιο:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -659,9 +666,11 @@ msgstr "Χωρίς εικονίδιο"
 msgid "Options:"
 msgstr "Επιλογές:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Χρήση γνω_στοποίηση εκκίνησης"
@@ -676,9 +685,11 @@ msgstr ""
 "εκτελείται από τον διαχειριστή αρχείων ή το μενού. Δεν υποστηρίζεται από "
 "όλες τις εφαρμογές."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Εκτέλεση σε τερματι_κό"
@@ -704,120 +715,120 @@ msgid "File location is not a regular file or directory"
 msgstr "Η τοποθεσία του αρχείου δεν είναι ένα κανονικό αρχείο ή κατάλογος"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:52
 msgid "Create Launcher"
 msgstr "Δημιουργία εκκινητή"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:52
 msgid "Create Link"
 msgstr "Δημιουργία δεσμού"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:52
 msgid "Create Directory"
 msgstr "Δημιουργία καταλόγου"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Edit Launcher"
 msgstr "Επεξεργασία εκκινητή"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Edit Link"
 msgstr "Επεξεργασία δεσμού"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Edit Directory"
 msgstr "Επεξεργασία καταλόγου"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:78
 msgid "Create a new desktop file in the given directory"
 msgstr "Δημιουργία νέου αρχείου desktop στον επιλεγμένο κατάλογο"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:79
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Τύπος αρχείου desktop (εφαρμογή ή δεσμός)"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Preset name when creating a desktop file"
 msgstr "Εξορισμού όνομα κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Preset comment when creating a desktop file"
 msgstr "Εξορισμού σχόλιο κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:83
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset command when creating a launcher"
 msgstr "Εξορισμού εντολή κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:84
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset URL when creating a link"
 msgstr "Εξορισμού URL κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:85
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset icon when creating a desktop file"
 msgstr "Εξορισμού εικονίδιο κατά τη δημιουργία ενός αρχείου desktop"
 
-#: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:67
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Αναφέρει τις πληροφορίες έκδοσης"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:153
+#: ../exo-desktop-item-edit/main.c:169
 msgid "[FILE|FOLDER]"
 msgstr "[ΑΡΧΕΙΟ|ΦΑΚΕΛΟΣ]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:165
+#: ../exo-desktop-item-edit/main.c:181
 msgid "Failed to open display"
 msgstr "Απέτυχε το άνοιγμα της οθόνης"
 
-#: ../exo-desktop-item-edit/main.c:192
+#: ../exo-desktop-item-edit/main.c:208
 msgid "No file/folder specified"
 msgstr "Δεν έχει οριστεί όνομα αρχείου ή φακέλου."
 
-#: ../exo-desktop-item-edit/main.c:258
+#: ../exo-desktop-item-edit/main.c:274
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Απέτυχε η φόρτωση των περιεχομένων από το \"%s\": %s"
 
-#: ../exo-desktop-item-edit/main.c:263
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Το αρχείο \"%s\" δεν περιέχει δεδομένα"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:276
+#: ../exo-desktop-item-edit/main.c:292
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Απέτυχε η ανάλυση των περιεχομένων του \"%s\": %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:288
+#: ../exo-desktop-item-edit/main.c:304
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Το αρχείο  \"%s\" δεν έχει κλειδί τύπο"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:298
+#: ../exo-desktop-item-edit/main.c:314
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Μη υποστηριζόμενος τύπος αρχείου \"%s\""
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:338
 msgid "C_reate"
 msgstr "_Δημιουργία"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:475
+#: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
 msgstr "Επιλέξετε όνομα αρχείου"
 
-#: ../exo-desktop-item-edit/main.c:533
+#: ../exo-desktop-item-edit/main.c:617
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Απέτυχε η δημιουργία του \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:533
+#: ../exo-desktop-item-edit/main.c:617
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Απέτυχε η αποθήκευση του \"%s\"."
@@ -831,9 +842,8 @@ msgstr "Προτιμώμενες εφαρμογές"
 msgid "Select default applications for various services"
 msgstr "Επιλέξτε τις εξ ορισμού εφαρμογές για τις διάφορες υπηρεσίες"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Διαδίκτυο"
@@ -865,9 +875,8 @@ msgstr ""
 "που θα χρησιμοποιηθεί για τη σύνθεση αλληλογραφίας\n"
 "όταν επιλέγετε διευθύνσεις αλληλογραφίας."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Εργαλεία"
@@ -898,10 +907,6 @@ msgstr ""
 "Ο προτιμώμενος εξομοιωτής τερματικού θα\n"
 "χρησιμοποιηθεί για να εκτελεστούν εντολές που\n"
 "απαιτούν περιβάλλον γραμμής εντολών."
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:297
-msgid "Failed to open the documentation browser."
-msgstr "Απέτυχε το άνοιγμα του περιηγητή της τεκμηρίωσης."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -1069,7 +1074,7 @@ msgstr "Απέτυχε η εκτέλεση του προεπιλεγμένου �
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Απέτυχε η εκτέλεση του προεπιλεγμένου εξομοιωτή τερματικού"
 
-#: ../exo-helper/main.c:68
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1077,15 +1082,15 @@ msgstr ""
 "Άνοιγμα του διαλόγου ρυθμίσεων\n"
 "προτιμώμενων εφαρμογών"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Υποδοχή διαχειριστή ρυθμίσεων"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "ΑΝΑΓΝΩΡΙΣΤΙΚΟ ΥΠΟΔΟΧΗΣ"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1093,11 +1098,11 @@ msgstr ""
 "Εκκίνηση του προεπιλεγμένου βοηθού του ΤΥΠΟΥ με την προαιρετική ΠΑΡΑΜΕΤΡΟ, "
 "όπου ΤΥΠΟΣ είναι μια από τις ακόλουθες τιμές."
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "ΤΥΠΟΣ [ΠΑΡΑΜΕΤΡΟΣ]"
 
-#: ../exo-helper/main.c:94
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1113,17 +1118,17 @@ msgstr ""
 "  FileManager      - Ο προτιμώμενος διαχειριστής αρχείων.\n"
 "  TerminalEmulator - Ο προτιμώμενος εξομοιωτής τερματικού."
 
-#: ../exo-helper/main.c:104
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Πληκτρολογήστε '%s --help' για βοήθεια στη χρήση."
 
-#: ../exo-helper/main.c:154
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Μη έγκυρος τύπος βοηθού \"%s\""
 
-#: ../exo-helper/main.c:198
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1163,6 +1168,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
+msgid "Chromium"
+msgstr "Chromium"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
@@ -1284,26 +1293,26 @@ msgstr "Περιηγητής διαδικτύου W3M"
 msgid "X Terminal"
 msgstr "Τερματικό X"
 
-#: ../exo-open/main.c:97
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Χρήση: exo-open [URLs...]"
 
-#: ../exo-open/main.c:98
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch ΤΥΠΟΣ [ΠΑΡΑΜΕΤΡΟΙ...]"
 
-#: ../exo-open/main.c:100
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          Εμφανίζει αυτό το κείμενο βοήθειας"
 
-#: ../exo-open/main.c:101
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Εμφανίζει τις πληροφορίες έκδοσης"
 
-#: ../exo-open/main.c:103
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1315,7 +1324,7 @@ msgstr ""
 "                                      TYPE με τις προαιρετικές ΠΑΡΑΜΕΤΡΟΥς,\n"
 "                                      όπου TYPE είναι ένα από τα παρακάτω."
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1325,14 +1334,15 @@ msgstr ""
 "                                      εφαρμογής όταν χρησιμοποιείται η "
 "επιλογή --launch."
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Οι παρακάτω TYPEοι υποστηρίζονται για την εντολή --launch:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
-#: ../exo-open/main.c:116
+#. 
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1344,7 +1354,7 @@ msgstr ""
 "  FileManager      - O προτιμώμενος διαχειριστής αρχείων.\n"
 "  TerminalEmulator - Ο προτιμώμενος εξομοιωτής τερματικού."
 
-#: ../exo-open/main.c:121
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1358,7 +1368,7 @@ msgstr ""
 "περάσετε επί πλέον παραμέτρους στην εφαρμογή (π.χ. για το TerminalEmulator\n"
 "μπορείτε να δώσετε την εντολή που θα τρέξει στο τερματικό)."
 
-#: ../exo-open/main.c:183
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1367,18 +1377,18 @@ msgstr ""
 "Η εκκίνηση των αρχείων της επιφάνειας εργασίας δεν υποστηρίζονται όταν το %s "
 "έχει μεταγλωττιστεί χωρίς τα χαρακτηρικά GIO-UNIX."
 
-#: ../exo-open/main.c:246
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr ""
 "Απέτυχε η εκτέλεση της προτιμώμενης εφαρμογής για την κατηγορία \"%s\"."
 
-#: ../exo-open/main.c:552
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Αδυναμία εύρεσης του σχήματος URI του \"%s\"."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Απέτυχε το άνοιγμα του URI \"%s\"."
@@ -1398,3 +1408,6 @@ msgstr "Χρησιμοποιείστε την γραμμή εντολών"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "Περιηγηθείτε στον ιστό"
+
+#~ msgid "Failed to open the documentation browser."
+#~ msgstr "Απέτυχε το άνοιγμα του περιηγητή της τεκμηρίωσης."
