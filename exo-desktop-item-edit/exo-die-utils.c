@@ -99,6 +99,7 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
   guint        n;
   gboolean     desktop_suffix;
   const gchar *suffix;
+  gchar       *path;
 
   g_return_val_if_fail (G_IS_FILE (base), FALSE);
   g_return_val_if_fail (key_file != NULL, FALSE);
@@ -185,13 +186,21 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
     }
 
   /* write the contents to the file */
-  result = g_file_replace_contents (file, data, length, NULL, FALSE,
-#if GLIB_CHECK_VERSION (2, 20, 0)
-                                    G_FILE_CREATE_REPLACE_DESTINATION,
-#else
-                                    G_FILE_CREATE_NONE,
-#endif
-                                    NULL, NULL, error);
+  if (g_file_is_native (file))
+    {
+      /* for local writes, to make sure the file is written to a tmp
+       * file before the origional desktop file is replaced */
+      path = g_file_get_path (file);
+      result = g_file_set_contents (path, data, length, error);
+      g_free (path);
+    }
+  else
+    {
+      /* for remote writes */
+      result = g_file_replace_contents (file, data, length, NULL, FALSE,
+                                        G_FILE_CREATE_REPLACE_DESTINATION,
+                                        NULL, NULL, error);
+    }
 
   /* cleanup */
   g_free (data);
