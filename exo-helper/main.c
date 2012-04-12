@@ -144,7 +144,7 @@ main (int argc, char **argv)
           gtk_widget_show (plug_child);
 
           /* End startup notification */
-          gdk_notify_startup_complete_with_id (startup_id);
+          gdk_notify_startup_complete ();
 
           gtk_main ();
         }
