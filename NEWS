@@ -1,3 +1,17 @@
+0.7.3
+=====
+- Enable startup-notify in the exo-open desktop files.
+- Use g_file_set_contents on local files.
+- Bump gtk to 2.20 and glib to 2.24.
+- Don't set invalid startup id.
+- Replace deprecated function g_strcasecmp (bug #8647).
+- Fix possible segfault in exo_str_looks_like_an_uri.
+- Updates licenses.
+- Fix saving of desktop files in local dir.
+- Translation updates: Arabic, Greek, French, Galician, Japanese,
+  Korean, Dutch (Flemish), Norwegian Nynorsk, Portuguese, Portuguese
+  (Brazilian).
+
 0.7.2
 =====
 - Drop gtk 2.24 api (bug #8461).
