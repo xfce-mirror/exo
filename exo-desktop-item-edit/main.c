@@ -555,7 +555,8 @@ main (int argc, char **argv)
               /* destroy the chooser */
               gtk_widget_destroy (chooser);
             }
-          else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED))
+          else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED)
+                   || g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_ACCES))
             {
               if (mode == EXO_DIE_EDITOR_MODE_DIRECTORY)
                 mode_dir = "desktop-directories/";
