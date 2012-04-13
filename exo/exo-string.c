@@ -419,6 +419,9 @@ exo_str_looks_like_an_uri (const gchar *str)
 {
   const gchar *s = str;
 
+  if (G_UNLIKELY (str == NULL))
+    return FALSE;
+
   /* <scheme> starts with an alpha character */
   if (g_ascii_isalpha (*s))
     {
