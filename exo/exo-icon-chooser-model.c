@@ -572,11 +572,15 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
 
 
 static gint
-exo_icon_chooser_model_item_compare (gconstpointer item_a,
-                                     gconstpointer item_b)
+exo_icon_chooser_model_item_compare (gconstpointer data_a,
+                                     gconstpointer data_b)
 {
-  return g_strcasecmp (((const ExoIconChooserModelItem *) item_a)->icon_name,
-                       ((const ExoIconChooserModelItem *) item_b)->icon_name);
+  const ExoIconChooserModelItem *item_a = data_a;
+  const ExoIconChooserModelItem *item_b = data_b;
+
+  /* the case is not much of a problem in icon themes, so
+   * therefore we only use good utf-8 sorting */
+  return g_utf8_collate (item_a->icon_name, item_b->icon_name);
 }
 
 
