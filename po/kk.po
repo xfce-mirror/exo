@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-15 09:15+0000\n"
+"POT-Creation-Date: 2012-04-16 02:30+0000\n"
 "PO-Revision-Date: 2010-08-03 09:54+0600\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -535,7 +535,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   XML файлдарынан node құрамасын өшіру\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
-#: ../exo-open/main.c:483
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -551,7 +551,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
-#: ../exo-open/main.c:487
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -566,7 +566,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
-#: ../exo-open/main.c:491
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Ақаулықтар жөнінде хабарлаңыз: <%s>.\n"
@@ -701,7 +701,7 @@ msgstr "Таңбашаны тандаңыз"
 msgid "Select a working directory"
 msgstr "Жұмыс бумасын таңдаңыз"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:168
+#: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
 msgstr "Файл орналасуы кәдімгі файл не бума емес"
 
@@ -758,7 +758,7 @@ msgstr "Сілтемені жасауда алдын-ала орнатылған
 msgid "Preset icon when creating a desktop file"
 msgstr "Desktop файлын жасауда алдын-ала орнатылған таңбаша"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Нұсқа ақпаратын шығару мен шығу"
 
@@ -810,16 +810,16 @@ msgid "C_reate"
 msgstr "Ж_асау"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:510
+#: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
 msgstr "Файл атын таңдаңыз"
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\" жасау сәтсіз."
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" сақтау сәтсіз."
@@ -1058,7 +1058,7 @@ msgstr "Негізгі файлдар басқарушысын жөнелту с
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Негізгі терминал эмуляторын жөнелту сәтсіз аяқталды"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1066,15 +1066,15 @@ msgstr ""
 "Таңдамалы қолданбалар сұхбат\n"
 "терезесін ашу"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Баптаулар басқарушы сокеті"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1082,11 +1082,11 @@ msgstr ""
 "ТҮР үшін негізгі көмекшіні жөнелту, міндетті емес ПАРАМЕТРмен, бұл жердегі "
 "ТҮР - төмендегі мәндердің біреуі."
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "ТҮРІ [ПАРАМЕТР]"
 
-#: ../exo-helper/main.c:96
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1102,17 +1102,17 @@ msgstr ""
 "  FileManager      - Таңдамалы файлдар басқарушысы.\n"
 "  TerminalEmulator - Таңдамалы терминал эмуляторы."
 
-#: ../exo-helper/main.c:106
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Көмек алу үшін '%s --help' енгізіңіз."
 
-#: ../exo-helper/main.c:153
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Қате көмекші түрі \"%s\""
 
-#: ../exo-helper/main.c:197
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1197,6 +1197,10 @@ msgstr "GNOME терминалы"
 msgid "Icedove"
 msgstr "Icedove"
 
+#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
+msgid "Iceweasel"
+msgstr "Iceweasel"
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1277,25 +1281,25 @@ msgstr "W3M мәтіндік браузері"
 msgid "X Terminal"
 msgstr "X терминалы"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Қолданылуы: exo-open [URL-дер...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch ТҮРІ [ПАРАМЕТРЛЕР...]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          Осы көмек ақпаратын шығару мен шығу"
 
-#: ../exo-open/main.c:111
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Нұсқа ақпаратын шығару мен шығу"
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1307,7 +1311,7 @@ msgstr ""
 "жердегі\n"
 "                                      ТҮР - төмендегі мәндердің біреуі."
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1317,7 +1321,7 @@ msgstr ""
 "қолданбалар\n"
 "                                      үшін негізгі жұмыс бумасы."
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Келесі ТҮРлерге ғана --launch командасында қолдау бар:"
 
@@ -1325,7 +1329,7 @@ msgstr "Келесі ТҮРлерге ғана --launch командасында
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #. 
-#: ../exo-open/main.c:126
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1337,7 +1341,7 @@ msgstr ""
 "  FileManager      - Таңдамалы файлдар басқарушысы.\n"
 "  TerminalEmulator - Таңдамалы терминал эмуляторы."
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1351,7 +1355,7 @@ msgstr ""
 "параметрлерді көрсете аласыз (мыс. терминал эмуляторы үшін терминалда\n"
 "орындалатын командалық жол болуы мүмкін)."
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1360,17 +1364,17 @@ msgstr ""
 "%s нұсқасы GIO-Unix мүмкіндіктерінсіз жиналған кезде desktop файлдарын "
 "жөнелтуге болмайды."
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "\"%s\" санаты үшін таңдамалы қолданбаны жөнелту сәтсіз аяқталды."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" үшін URI-схемасын анықтау мүмкін емес."
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "\"%s\" URI-ын ашу сәтсіз аяқталды."
