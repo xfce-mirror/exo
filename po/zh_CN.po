@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-10 22:42+0000\n"
+"POT-Creation-Date: 2012-04-15 20:45+0000\n"
 "PO-Revision-Date: 2010-11-23 22:56+0800\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
@@ -533,7 +533,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content       移除 XML 文件中的节点内容\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
-#: ../exo-open/main.c:483
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -549,7 +549,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
-#: ../exo-open/main.c:487
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -564,7 +564,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
-#: ../exo-open/main.c:491
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "请向 <%s> 报告缺陷。\n"
@@ -687,7 +687,7 @@ msgstr "选择图标"
 msgid "Select a working directory"
 msgstr "选择工作目录"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:168
+#: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
 msgstr "文件位置不是正规的文件或目录"
 
@@ -744,7 +744,7 @@ msgstr "创建链接时的预设 URL"
 msgid "Preset icon when creating a desktop file"
 msgstr "创建桌面文件时的预设图标"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "列印版本信息后退出"
 
@@ -800,12 +800,12 @@ msgstr "创建(_R)"
 msgid "Choose filename"
 msgstr "选择文件名"
 
-#: ../exo-desktop-item-edit/main.c:617
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "无法创建 “%s”。"
 
-#: ../exo-desktop-item-edit/main.c:617
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "无法保存 “%s”。"
@@ -1029,31 +1029,31 @@ msgstr "无法执行默认的文件管理器"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "无法执行默认的终端模拟器"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "打开首选应用程序配置对话框"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "设置管理器套接字"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "套接字 ID"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
 msgstr "用可选 ‘参数’ 来启动 ‘类型’ 的默认辅助程序，‘类型’ 可以是以下值之一。"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "类型 [参数]"
 
-#: ../exo-helper/main.c:96
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1069,17 +1069,17 @@ msgstr ""
 "  FileManager      - 首选文件管理器。\n"
 "  TerminalEmulator - 首选终端模拟器。"
 
-#: ../exo-helper/main.c:106
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "输入 ‘%s --help’ 获取用法。"
 
-#: ../exo-helper/main.c:153
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "无效的外围程序类型 “%s”"
 
-#: ../exo-helper/main.c:197
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1164,6 +1164,10 @@ msgstr "GNOME 终端"
 msgid "Icedove"
 msgstr "Icedove"
 
+#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
+msgid "Iceweasel"
+msgstr "Iceweasel"
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1244,24 +1248,24 @@ msgstr "W3M 文本浏览器"
 msgid "X Terminal"
 msgstr "X 终端"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "用法： exo-open [URL...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "        exo-open --launch 类型 [参数...]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help\t\t\t列印帮助信息后退出"
 
-#: ../exo-open/main.c:111
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version\t\t列印版本信息后退出"
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1272,7 +1276,7 @@ msgstr ""
 "\t\t\t\t“类型” 的首选应用程序，\n"
 "\t\t\t\t“类型” 可以是下列值之一。"
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1281,14 +1285,14 @@ msgstr ""
 "  --working-directory 目录\t使用 --launch 选项时应用\n"
 "\t\t\t\t程序的默认工作目录。"
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "--launch 命令支持以下 “类型”："
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:126
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1300,7 +1304,7 @@ msgstr ""
 "  FileManager      - 首选文件管理器。\n"
 "  TerminalEmulator - 首选终端模拟器。"
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1316,24 +1320,24 @@ msgstr ""
 "TerminalEmulator，您可以传递一个应该\n"
 "在终端中运行的命令行)。"
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
 msgstr " %s 未编译支持 GIO-Unix 功能时，不支持当启动桌面文件。"
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "无法启动类别 “%s” 的首选应用程序。"
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "无法检测 “%s” 的 URI-scheme 。"
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "无法打开 URI “%s”。"
