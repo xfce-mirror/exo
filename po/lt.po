@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-13 05:03+0000\n"
+"POT-Creation-Date: 2012-04-16 02:30+0000\n"
 "PO-Revision-Date: 2012-01-27 09:04+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
@@ -536,7 +536,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Pašalinti mazgo turinį iš XML failų\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
-#: ../exo-open/main.c:483
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -552,7 +552,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
-#: ../exo-open/main.c:487
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -568,7 +568,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
-#: ../exo-open/main.c:491
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Apie klaidas praneškite <%s>.\n"
@@ -705,7 +705,7 @@ msgstr "Pasirinkite piktogramą"
 msgid "Select a working directory"
 msgstr "Pasirinkite darbinį aplanką"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:168
+#: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
 msgstr "Failo vieta nėra paprastas failas ar aplankas"
 
@@ -762,7 +762,7 @@ msgstr "Išankstinių nustatymų rinkinio URL kuriant nuorodą"
 msgid "Preset icon when creating a desktop file"
 msgstr "Išankstinių nustatymų rinkinio piktograma darbastalio failo kūrimui"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Parodyti versijos informaciją ir išeiti"
 
@@ -814,16 +814,16 @@ msgid "C_reate"
 msgstr "Suku_rti"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:510
+#: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
 msgstr "Pasirinkite failo pavadinimą"
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Nepavyko sukurti „%s“."
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Nepavyko išsaugoti „%s“."
@@ -1063,7 +1063,7 @@ msgstr "Nepavyko paleisti numatytosios failų tvarkyklės"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Nepavyko paleisti numatytojo terminalo emuliatoriaus"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1071,15 +1071,15 @@ msgstr ""
 "Atverti pageidaujamų programų\n"
 "konfigūracijos dialogą"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Nustatymų tvarkyklės lizdas"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "LIZDO ID"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1087,11 +1087,11 @@ msgstr ""
 "Paleisti numatytąjį TIPO padėjėją su nebūtinu PARAMETRU, TIPAS gali būti "
 "viena iš šių reikšmių."
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "TIPAS [PARAMETRAS]"
 
-#: ../exo-helper/main.c:96
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1107,17 +1107,17 @@ msgstr ""
 "  FileManager      - Pageidaujama failų tvarkyklė.\n"
 "  TerminalEmulator - Pageidaujamas terminalo emuliatorius."
 
-#: ../exo-helper/main.c:106
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Bandykite „%s --help“ dėl naudojimo."
 
-#: ../exo-helper/main.c:153
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Netinkamas padėjėjo tipas „%s“"
 
-#: ../exo-helper/main.c:197
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1202,6 +1202,10 @@ msgstr "GNOME terminalas"
 msgid "Icedove"
 msgstr "Icedove"
 
+#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
+msgid "Iceweasel"
+msgstr "Iceweasel"
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1282,24 +1286,24 @@ msgstr "W3M Text Browser"
 msgid "X Terminal"
 msgstr "X Terminalas"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Naudojimas: exo-open [URL...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TIPAS [PARAMETRAI...]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                Parodyti šį pagalbos pranešimą ir išeiti"
 
-#: ../exo-open/main.c:111
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Parodyti versiją ir išeiti"
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1310,7 +1314,7 @@ msgstr ""
 "                                      su nebūtinais PARAMETRAIS, kur\n"
 "                                      TIPAS yra viena iš šių reikšmių."
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1320,7 +1324,7 @@ msgstr ""
 "programoms\n"
 "                                      naudojant --launch parinkty."
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Šie tipai yra palaikomi --launch parinkties:"
 
@@ -1328,7 +1332,7 @@ msgstr "Šie tipai yra palaikomi --launch parinkties:"
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #. 
-#: ../exo-open/main.c:126
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1340,7 +1344,7 @@ msgstr ""
 "  FileManager      - Pageidaujama failų tvarkyklė.\n"
 "  TerminalEmulator - Pageidaujamas terminalo emuliatorius."
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1355,7 +1359,7 @@ msgstr ""
 "parametrus (t.y. terminalo emuliatoriuj galėsite perduoti komandą kurią "
 "vykdyti)."
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1364,17 +1368,17 @@ msgstr ""
 "Darbastalio failų paleidimas nepalaikomas, kai %s yra sukompiliuota be GIO-"
 "Unix galimybės."
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Nepavyko paleisti pageidaujamos programos kategorijai „%s“."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Nepavyko nustatyti URI schemos „%s“."
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Nepavyko atverti URI „%s“."
