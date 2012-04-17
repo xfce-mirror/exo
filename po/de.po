@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-17 07:57+0000\n"
+"POT-Creation-Date: 2012-04-17 18:45+0000\n"
 "PO-Revision-Date: 2010-11-24 00:14+0100\n"
 "Last-Translator: Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
 "Language-Team: German <xfce-i18n-de@xfce.org>\n"
@@ -543,7 +543,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Knoteninhalte aus XML-Dateien entfernen\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
-#: ../exo-open/main.c:483
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -559,7 +559,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
-#: ../exo-open/main.c:487
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -574,7 +574,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
-#: ../exo-open/main.c:491
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Bitte melden Sie Fehler an <%s>.\n"
@@ -711,7 +711,7 @@ msgstr "Ein Symbol auswählen"
 msgid "Select a working directory"
 msgstr "Wählen Sie ein Arbeitsverzeichnis aus"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:168
+#: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
 msgstr "Diese Angabe ist keine gültige Datei oder Ordner"
 
@@ -768,7 +768,7 @@ msgstr "Voreingestellte URL (nur für Verknüpfungen)"
 msgid "Preset icon when creating a desktop file"
 msgstr "Voreingestelltes Symbol"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Programmversion anzeigen und beenden"
 
@@ -820,16 +820,16 @@ msgid "C_reate"
 msgstr "_Erstellen"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:510
+#: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
 msgstr "Dateinamen eingeben"
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Konnte »%s« nicht erstellen."
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Konnte »%s« nicht speichern."
@@ -1067,21 +1067,21 @@ msgstr "Konnte den bevorzugten Dateimanager nicht ausführen"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Konnte das bevorzugte Terminal nicht ausführen"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Die bevorzugten Anwendungen über einen Dialog einstellen"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Socket zum Einbinden des Dialogs in ein anderes Programm"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "SOCKET-NUMMER"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1089,11 +1089,11 @@ msgstr ""
 "Das bevorzugte Programm für TYP mit dem optionalen PARAMETER starten, wobei "
 "TYP einer der folgenden Werte ist."
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "TYP [PARAMETER]"
 
-#: ../exo-helper/main.c:96
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1108,18 +1108,18 @@ msgstr ""
 " FileManager - Der bevorzugte Dateimanager.\n"
 "  TerminalEmulator - Das bevorzugte Terminal."
 
-#: ../exo-helper/main.c:106
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr ""
 "Geben Sie »%s --help« ein, um Hilfe zum Aufruf des Programms zu erhalten."
 
-#: ../exo-helper/main.c:153
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Ungültiger Programmtyp »%s«"
 
-#: ../exo-helper/main.c:197
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1204,6 +1204,10 @@ msgstr "GNOME-Terminal"
 msgid "Icedove"
 msgstr "Icedove"
 
+#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
+msgid "Iceweasel"
+msgstr "Iceweasel"
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1284,26 +1288,26 @@ msgstr "W3M (textbasiert)"
 msgid "X Terminal"
 msgstr "X-Terminal"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Aufruf: exo-open [URLs...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "        exo-open --launch TYP [PARAMETER...]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          Diesen Hilfetext anzeigen und beenden"
 
-#: ../exo-open/main.c:111
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Programmversion anzeigen und beenden"
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1316,7 +1320,7 @@ msgstr ""
 "                                      wobei TYP einen der folgenden Werte\n"
 "                                      annehmen kann."
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1326,7 +1330,7 @@ msgstr ""
 "die\n"
 "                                      mit --launch gestartet werden."
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Die folgenden TYPen für --launch werden derzeit unterstützt:"
 
@@ -1334,7 +1338,7 @@ msgstr "Die folgenden TYPen für --launch werden derzeit unterstützt:"
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #. 
-#: ../exo-open/main.c:126
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1346,7 +1350,7 @@ msgstr ""
 " Dateimanager - Der bevorzugte Dateimanager.\n"
 " TerminalEmulator - Das bevorzugte Terminal."
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1360,7 +1364,7 @@ msgstr ""
 "zusätzliche Parameter übergeben (z.B. kann man bei TerminalEmulator den\n"
 "Befehl angeben, der im Terminal ausgeführt werden soll)."
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1369,17 +1373,17 @@ msgstr ""
 "Das Ausführen von Desktopdateien wird nicht unterstützt, wenn %s ohne GIO-"
 "Unix Funktionen kompiliert wurde."
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Konnte die bevorzugte Anwendung für den Typ »%s« nicht starten."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Konnte das URI-Schema von »%s« nicht erkennen."
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Konnte die URI »%s« nicht öffnen."
