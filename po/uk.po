@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libexo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-24 21:18+0000\n"
+"POT-Creation-Date: 2012-04-18 17:45+0000\n"
 "PO-Revision-Date: 2008-11-24 12:00+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -536,7 +536,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Видалити вузлів змісту з XML файлів\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
-#: ../exo-open/main.c:483
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -552,7 +552,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
-#: ../exo-open/main.c:487
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -568,7 +568,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
-#: ../exo-open/main.c:491
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Повідомлення про помилки для <%s>.\n"
@@ -703,7 +703,7 @@ msgstr "Виберіть значок"
 msgid "Select a working directory"
 msgstr "Виберіть робочу теку"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:168
+#: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
 msgstr "Місцезнаходження файлу не є регулярним файлом чи текою"
 
@@ -760,7 +760,7 @@ msgstr "Введіть адресу URL для створюваного поси
 msgid "Preset icon when creating a desktop file"
 msgstr "Виберіть значок для створюваного файлу desktop"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Надрукувати інформацію про версію і вийти"
 
@@ -816,12 +816,12 @@ msgstr "С_творити"
 msgid "Choose filename"
 msgstr "Вибрати назву файлу"
 
-#: ../exo-desktop-item-edit/main.c:617
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Помилка при створені \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:617
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Помилка при збережені \"%s\"."
@@ -1060,7 +1060,7 @@ msgstr "Не вдалось запустити типовий Файловий �
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Помилка під час запуску типового емулятора терміналу"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1068,15 +1068,15 @@ msgstr ""
 "Відкрити діалог налаштування\n"
 "улюблених програм"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Сокет Менеджера властивостей"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "ID сокета"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1084,11 +1084,11 @@ msgstr ""
 "Запустити типовий конфігуратор ТИПу з опціями ПАРАМЕТРИ, де ТИП це є одне із "
 "наступних значень."
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "ТИП [ПАРАМЕТР]"
 
-#: ../exo-helper/main.c:96
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1104,17 +1104,17 @@ msgstr ""
 "  FileManager      - типовий Файловий менеджер.\n"
 "  TerminalEmulator - типовий Емулятор Терміналу."
 
-#: ../exo-helper/main.c:106
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Наберіть '%s --help' для використання."
 
-#: ../exo-helper/main.c:153
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Неправильний тип улюбленої програми \"%s\""
 
-#: ../exo-helper/main.c:197
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1199,6 +1199,10 @@ msgstr "Термінал GNOME"
 msgid "Icedove"
 msgstr "Icedove"
 
+#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
+msgid "Iceweasel"
+msgstr "Iceweasel"
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "Переглядач пошти KMail"
@@ -1279,24 +1283,24 @@ msgstr "Переглядач W3M текстовий"
 msgid "X Terminal"
 msgstr "Термінал X"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Використання: exo-open [посилання URLs...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch ТИП [ПАРАМЕТРИ  ...]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Надрукувати цей текст і вийти   "
 
-#: ../exo-open/main.c:111
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Вивести інформацію про версію "
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1308,7 +1312,7 @@ msgstr ""
 "де   \n"
 "                                      ТИП це одне з наступних значень.    "
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1318,7 +1322,7 @@ msgstr ""
 "програм             \n"
 "                                      коли викор.    --launch опція. "
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Наступні ТИПИ підтримуються для --launch команди:"
 
@@ -1326,7 +1330,7 @@ msgstr "Наступні ТИПИ підтримуються для --launch к�
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #. 
-#: ../exo-open/main.c:126
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1338,7 +1342,7 @@ msgstr ""
 "  FileManager      - типовий Файловий менеджер.\n"
 "  TerminalEmulator - типовий Емулятор Терміналу."
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1352,7 +1356,7 @@ msgstr ""
 "передати додаткові параметри для програми (таких як для Емулятора       \n"
 "терміналу передати стрічку команд які варто запустити в терміналі)"
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1361,17 +1365,17 @@ msgstr ""
 "Запущені файли desktop не підтримуються коли %s скомпільовано без "
 "можливостей GIO-Unix."
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Неможливо запустити улюблену програму для категорії \"%s\"."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Неможливо визначити схему URI \"%s\"."
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Неможливо відкрити URI \"%s\"."
