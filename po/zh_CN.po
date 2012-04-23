@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: exo\n"
-"Report-Msgid-Bugs-To: <xfce-i18n@xfce.org>\n"
-"POT-Creation-Date: 2012-04-20 10:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-23 01:15+0000\n"
 "PO-Revision-Date: 2010-11-23 22:56+0800\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
@@ -111,23 +111,23 @@ msgstr "图标栏所使用的模板"
 
 #: ../exo/exo-icon-bar.c:340
 msgid "Active"
-msgstr "活动"
+msgstr "当前的"
 
 #: ../exo/exo-icon-bar.c:341
 msgid "Active item index"
-msgstr "活动项目索引"
+msgstr "当前项目索引"
 
 #: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Active item fill color"
-msgstr "活动项目的填充色"
+msgstr "当前项目的填充色"
 
 #: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Active item border color"
-msgstr "活动项目的边框色"
+msgstr "当前项目的边框色"
 
 #: ../exo/exo-icon-bar.c:361 ../exo/exo-icon-bar.c:362
 msgid "Active item text color"
-msgstr "活动项目的文字颜色"
+msgstr "当前项目的文字颜色"
 
 #: ../exo/exo-icon-bar.c:368 ../exo/exo-icon-bar.c:369
 msgid "Cursor item fill color"
@@ -663,8 +663,8 @@ msgid ""
 "from the file manager or the menu. Not every application supports startup "
 "notification."
 msgstr ""
-"选中此项后从文件管理器或菜单中运行此命令时\n"
-"会启用启动通知。不是所有应用程序都支持启动通知。"
+"选中此项后从文件管理器或菜单中运行此命令时会启用启动通知。"
+"不是所有应用程序都支持启动通知。"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -689,7 +689,7 @@ msgstr "选择工作目录"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
-msgstr "文件位置不是正规的文件或目录"
+msgstr "文件位置不是常规的文件或目录"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:52
@@ -846,7 +846,7 @@ msgstr "邮件阅读器"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr "首选邮件阅读器将用于打开您点击的邮件地址。"
+msgstr "首选邮件阅读器将用于您点击电子邮件地址时撰写邮件。"
 
 #.
 #. Utilities
@@ -1258,12 +1258,14 @@ msgstr "        exo-open --launch 类型 [参数...]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help\t\t\t列印帮助信息后退出"
+msgstr ""
+"  -?, --help                          列印帮助信息后退出"
 
 #: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr "  -V, --version\t\t列印版本信息后退出"
+msgstr ""
+"  -V, --version                       列印版本信息后退出"
 
 #: ../exo-open/main.c:115
 msgid ""
@@ -1272,9 +1274,9 @@ msgid ""
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch 类型 [参数...]       用可选 “参数” 运行所给\n"
-"\t\t\t\t“类型” 的首选应用程序，\n"
-"\t\t\t\t“类型” 可以是下列值之一。"
+"  --launch TYPE [PARAMETERs...]       用可选 ‘参数’ 启动 ‘类型’ \n"
+"                                      的首选应用程序，\n"
+"                                      ‘类型’ 可以是下列值之一。"
 
 #: ../exo-open/main.c:119
 msgid ""
@@ -1282,8 +1284,8 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory 目录\t使用 --launch 选项时应用\n"
-"\t\t\t\t程序的默认工作目录。"
+"  --working-directory 目录             使用 --launch 选项时应用\n"
+"                                      程序的默认工作目录。"
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1325,7 +1327,7 @@ msgstr ""
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr " %s 未编译支持 GIO-Unix 功能时，不支持当启动桌面文件。"
+msgstr "%s 未编译支持 GIO-Unix 功能时，不支持启动桌面文件。"
 
 #: ../exo-open/main.c:260
 #, c-format
@@ -1335,7 +1337,7 @@ msgstr "无法启动类别 “%s” 的首选应用程序。"
 #: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "无法检测 “%s” 的 URI-scheme 。"
+msgstr "未能检测 “%s” 的 URI-scheme 。"
 
 #: ../exo-open/main.c:591
 #, c-format
