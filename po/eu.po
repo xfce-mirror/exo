@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-17 07:57+0000\n"
+"POT-Creation-Date: 2012-04-23 01:15+0000\n"
 "PO-Revision-Date: 2011-11-06 00:16+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: debian-l10n-eu@lists.debian.org\n"
@@ -540,7 +540,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Ezabatu nodo edukiak XML fitxategietatik\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
-#: ../exo-open/main.c:483
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -556,7 +556,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
-#: ../exo-open/main.c:487
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -571,7 +571,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
-#: ../exo-open/main.c:491
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Erroreen berri eman <%s>-ra.\n"
@@ -706,7 +706,7 @@ msgstr "Hautatu ikono bat"
 msgid "Select a working directory"
 msgstr "Hautatu lan direktorioa"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:168
+#: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
 msgstr "Fitxategi kokapena ez da ez fitxategi erregular bat ez direktorio bat"
 
@@ -763,7 +763,7 @@ msgstr "Idazmahai fitxategi bat sortzean URL-a aurrez ezarri"
 msgid "Preset icon when creating a desktop file"
 msgstr "Idazmahai fitxategi bat sortzean ikonoa aurrez ezarri"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Bertsio argibideak bistarazi eta irten"
 
@@ -815,16 +815,16 @@ msgid "C_reate"
 msgstr "So_rtu"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:510
+#: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
 msgstr "Fitxategi izena hautatu"
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Huts \"%s\" sortzerakoan."
 
-#: ../exo-desktop-item-edit/main.c:616
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Huts \"%s\" gordetzerakoan."
@@ -1064,7 +1064,7 @@ msgstr "Huts lehenetsiriko fitxategi kudeatzailea exekutatzean"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Huts lehenetsiriko terminal emuladorea exekutatzean"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1072,15 +1072,15 @@ msgstr ""
 "Ireki Xfce 4 hobetsiriko aplikazio\n"
 "konfigurazio leihoa"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Ezarpen kudeatzaile socket-a"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "SOCKET IDa"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1088,11 +1088,11 @@ msgstr ""
 "Abiarazi MOTA laguntzailea aukerako PARAMETRO honez, non MOTA hauetako balio "
 "bat izan daitekeen."
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "MOTA [PARAMETROA]"
 
-#: ../exo-helper/main.c:96
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1108,17 +1108,17 @@ msgstr ""
 "  FileManager      - Hobetsiriko fitxategi kudeatzailea.\n"
 "  TerminalEmulator - Hobetsiriko terminal emuladorea."
 
-#: ../exo-helper/main.c:106
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Idatzi '%s --help' erabilerarako."
 
-#: ../exo-helper/main.c:153
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "\"%s\" laguntzaile mota baliogabea"
 
-#: ../exo-helper/main.c:197
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1203,6 +1203,10 @@ msgstr "GNOME terminala"
 msgid "Icedove"
 msgstr "Icedove"
 
+#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
+msgid "Iceweasel"
+msgstr "Iceweasel"
+
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
 msgstr "KMail"
@@ -1283,26 +1287,26 @@ msgstr "W3M testu nabigatzailea"
 msgid "X Terminal"
 msgstr "X terminala"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Erabilera: exo-open [URLs...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch MOTA [PARAMETROAK...]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          Laguntza testua hau bistarazi eta irten"
 
-#: ../exo-open/main.c:111
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Bertsio xehetasunak bistarazi eta irten"
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1314,7 +1318,7 @@ msgstr ""
 "non\n"
 "                                      MOTA hauetako balio bat izan behar da."
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1324,7 +1328,7 @@ msgstr ""
 "aplikazioentzat\n"
 "                                      --launch aukera erabiltzean."
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Hurrengo MOTA hauek onartzen dira --launch komandoarentzat:"
 
@@ -1332,7 +1336,7 @@ msgstr "Hurrengo MOTA hauek onartzen dira --launch komandoarentzat:"
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #. 
-#: ../exo-open/main.c:126
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1344,7 +1348,7 @@ msgstr ""
 "  FileManager      - Hobetsiriko fitxategi kudeatzailea.\n"
 "  TerminalEmulator - Hobetsiriko Terminal Emuladorea."
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1360,7 +1364,7 @@ msgstr ""
 "bidali diezazkiokezu (adib. terminal emuladoreari\n"
 "terminal batean ireki beharrezko egiten duen parametroa ipini diezaiokezu)."
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1369,17 +1373,17 @@ msgstr ""
 "Idazmahai fitxategi abiarazleak ez dira onartzen %s ez dagoenean GIO_Unix "
 "ezaugarriekin konpilaturik."
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Huts \"%s\" ataleko hobetsiriko aplikazioa irekitzerakoan."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Ezin da \"%s\"ren URI-eskema antzeman."
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Huts \"%s\" URIa irekitzerakoan."
