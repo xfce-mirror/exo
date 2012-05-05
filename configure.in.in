@@ -234,7 +234,6 @@ exo/exo-1.pc
 exo/exo-config.h
 exo-csource/Makefile
 exo-desktop-item-edit/Makefile
-exo-gio-module/Makefile
 exo-helper/Makefile
 exo-helper/helpers/Makefile
 exo-open/Makefile
@@ -253,14 +252,6 @@ dnl ***************************
 echo
 echo "Build Configuration:"
 echo
-if test x"$BUILD_GIOMODULE" = x"no"; then
-echo "* Build GIO module:     no (not needed after glib 2.27)"
-elif test x"$GIO_UNIX_FOUND" = x"yes"; then
-echo "* Build GIO module:     yes"
-echo "  - GIO Module Dir:     $GIOMODULEDIR"
-else
-echo "* Build GIO module:     no"
-fi
 echo "* Debug Support:        $enable_debug"
 echo "* GNU Visibility:       $have_gnuc_visibility"
 echo
