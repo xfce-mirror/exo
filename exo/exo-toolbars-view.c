@@ -663,7 +663,7 @@ exo_toolbars_view_drag_data_received (GtkWidget         *toolbar,
                                                                             data_is_separator (id),
                                                                             NULL);
       g_object_ref (G_OBJECT (view->priv->dragged_item));
-      gtk_object_sink (GTK_OBJECT (view->priv->dragged_item));
+      gtk_widget_sink (GTK_OBJECT (view->priv->dragged_item));
     }
   else
     {

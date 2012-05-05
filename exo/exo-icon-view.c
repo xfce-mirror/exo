@@ -2786,7 +2786,7 @@ exo_icon_view_set_adjustments (ExoIconView   *icon_view,
     {
       icon_view->priv->hadjustment = hadj;
       g_object_ref (icon_view->priv->hadjustment);
-      gtk_object_sink (GTK_OBJECT (icon_view->priv->hadjustment));
+      gtk_widget_sink (GTK_OBJECT (icon_view->priv->hadjustment));
 
       g_signal_connect (icon_view->priv->hadjustment, "value-changed",
                         G_CALLBACK (exo_icon_view_adjustment_changed),
@@ -2798,7 +2798,7 @@ exo_icon_view_set_adjustments (ExoIconView   *icon_view,
     {
       icon_view->priv->vadjustment = vadj;
       g_object_ref (icon_view->priv->vadjustment);
-      gtk_object_sink (GTK_OBJECT (icon_view->priv->vadjustment));
+      gtk_widget_sink (GTK_OBJECT (icon_view->priv->vadjustment));
 
       g_signal_connect (icon_view->priv->vadjustment, "value-changed",
                         G_CALLBACK (exo_icon_view_adjustment_changed),
@@ -4712,7 +4712,7 @@ exo_icon_view_cell_layout_pack_start (GtkCellLayout   *layout,
   _exo_return_if_fail (exo_icon_view_get_cell_info (icon_view, renderer) == NULL);
 
   g_object_ref (renderer);
-  gtk_object_sink (GTK_OBJECT (renderer));
+  gtk_widget_sink (GTK_OBJECT (renderer));
 
   info = g_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
@@ -4741,7 +4741,7 @@ exo_icon_view_cell_layout_pack_end (GtkCellLayout   *layout,
   _exo_return_if_fail (exo_icon_view_get_cell_info (icon_view, renderer) == NULL);
 
   g_object_ref (renderer);
-  gtk_object_sink (GTK_OBJECT (renderer));
+  gtk_widget_sink (GTK_OBJECT (renderer));
 
   info = g_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
@@ -6765,7 +6765,7 @@ exo_icon_view_drag_begin (GtkWidget      *widget,
 {
   ExoIconView *icon_view;
   ExoIconViewItem *item;
-  GdkPixmap *icon;
+  cairo_surface_t *icon;
   gint x, y;
   GtkTreePath *path;
 
@@ -7388,23 +7388,23 @@ exo_icon_view_get_dest_item_at_pos (ExoIconView              *icon_view,
  * @icon_view : a #ExoIconView
  * @path      : a #GtkTreePath in @icon_view
  *
- * Creates a #GdkPixmap representation of the item at @path.
+ * Creates a #cairo_surface_t representation of the item at @path.
  * This image is used for a drag icon.
  *
  * Returns: a newly-allocated pixmap of the drag icon.
  *
  * Since: 0.3.1
  **/
-GdkPixmap*
+cairo_surface_t *
 exo_icon_view_create_drag_icon (ExoIconView *icon_view,
                                 GtkTreePath *path)
 {
-  GdkRectangle area;
-  GtkWidget   *widget = GTK_WIDGET (icon_view);
-  GdkPixmap   *drawable;
-  GdkGC       *gc;
-  GList       *lp;
-  gint         idx;
+  GdkRectangle     area;
+  GtkWidget       *widget = GTK_WIDGET (icon_view);
+  cairo_surface_t *drawable;
+  GdkGC           *gc;
+  GList           *lp;
+  gint             idx;
 
   g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), NULL);
   g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, NULL);

@@ -113,7 +113,7 @@ enum
 
 
 
-static void            exo_icon_bar_destroy               (GtkObject        *object);
+static void            exo_icon_bar_destroy               (GtkWidget        *object);
 static void            exo_icon_bar_finalize              (GObject          *object);
 static void            exo_icon_bar_get_property          (GObject          *object,
                                                            guint             prop_id,
@@ -237,7 +237,7 @@ G_DEFINE_TYPE (ExoIconBar, exo_icon_bar, GTK_TYPE_CONTAINER)
 static void
 exo_icon_bar_class_init (ExoIconBarClass *klass)
 {
-  GtkObjectClass *gtkobject_class;
+  GtkWidgetClass *gtkobject_class;
   GtkWidgetClass *gtkwidget_class;
   GObjectClass   *gobject_class;
 
@@ -442,7 +442,7 @@ exo_icon_bar_init (ExoIconBar *icon_bar)
 
 
 static void
-exo_icon_bar_destroy (GtkObject *object)
+exo_icon_bar_destroy (GtkWidget *object)
 {
   ExoIconBar *icon_bar = EXO_ICON_BAR (object);
 
@@ -860,7 +860,7 @@ exo_icon_bar_set_adjustments (ExoIconBar    *icon_bar,
     {
       icon_bar->priv->hadjustment = hadj;
       g_object_ref (icon_bar->priv->hadjustment);
-      gtk_object_sink (GTK_OBJECT (icon_bar->priv->hadjustment));
+      gtk_widget_sink (GTK_OBJECT (icon_bar->priv->hadjustment));
 
       g_signal_connect (icon_bar->priv->hadjustment, "value_changed",
                         G_CALLBACK (exo_icon_bar_adjustment_changed), icon_bar);
@@ -871,7 +871,7 @@ exo_icon_bar_set_adjustments (ExoIconBar    *icon_bar,
     {
       icon_bar->priv->vadjustment = vadj;
       g_object_ref (icon_bar->priv->vadjustment);
-      gtk_object_sink (GTK_OBJECT (icon_bar->priv->vadjustment));
+      gtk_widget_sink (GTK_OBJECT (icon_bar->priv->vadjustment));
 
       g_signal_connect (icon_bar->priv->vadjustment, "value_changed",
                         G_CALLBACK (exo_icon_bar_adjustment_changed), icon_bar);

@@ -30,7 +30,7 @@
 
 G_BEGIN_DECLS
 
-void      exo_gtk_object_destroy_later                (GtkObject      *object);
+void      exo_gtk_widget_destroy_later                (GtkWidget      *object);
 
 void      exo_gtk_file_chooser_add_thumbnail_preview  (GtkFileChooser *chooser);
 

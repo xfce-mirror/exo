@@ -52,7 +52,7 @@
 static gboolean
 later_destroy (gpointer object)
 {
-  gtk_object_destroy (GTK_OBJECT (object));
+  gtk_widget_destroy (GTK_OBJECT (object));
   g_object_unref (G_OBJECT (object));
   return FALSE;
 }
@@ -60,14 +60,14 @@ later_destroy (gpointer object)
 
 
 /**
- * exo_gtk_object_destroy_later:
- * @object : a #GtkObject.
+ * exo_gtk_widget_destroy_later:
+ * @object : a #GtkWidget.
  *
  * Schedules an idle function to destroy the specified @object
  * when the application enters the main loop the next time.
  **/
 void
-exo_gtk_object_destroy_later (GtkObject *object)
+exo_gtk_widget_destroy_later (GtkWidget *object)
 {
   g_return_if_fail (GTK_IS_OBJECT (object));
 

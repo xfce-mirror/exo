@@ -311,7 +311,7 @@ gboolean              exo_icon_view_get_dest_item_at_pos      (ExoIconView      
                                                                gint                      drag_y,
                                                                GtkTreePath             **path,
                                                                ExoIconViewDropPosition  *pos);
-GdkPixmap            *exo_icon_view_create_drag_icon          (ExoIconView              *icon_view,
+cairo_surface_t      *exo_icon_view_create_drag_icon          (ExoIconView              *icon_view,
                                                                GtkTreePath              *path);
 
 
