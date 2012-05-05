@@ -143,7 +143,7 @@ exo_execute_preferred_application_on_screen (const gchar *category,
   argv[argc] = NULL;
 
   /* launch the command */
-  return gdk_spawn_on_screen (screen, working_directory, argv, envp, 0, NULL, NULL, NULL, error);
+  return g_spawn_async (working_directory, argv, envp, 0, NULL, NULL, NULL, error);
 }
 
 

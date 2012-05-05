@@ -108,13 +108,12 @@ exo_helper_launcher_dialog_init (ExoHelperLauncherDialog *launcher_dialog)
   gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
   gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), GTK_STOCK_OK, GTK_RESPONSE_OK);
   gtk_dialog_set_default_response (GTK_DIALOG (launcher_dialog), GTK_RESPONSE_OK);
-  gtk_dialog_set_has_separator (GTK_DIALOG (launcher_dialog), FALSE);
   gtk_window_set_resizable (GTK_WINDOW (launcher_dialog), FALSE);
   gtk_window_set_title (GTK_WINDOW (launcher_dialog), _("Choose Preferred Application"));
 
-  hbox = gtk_hbox_new (FALSE, 12);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_container_set_border_width (GTK_CONTAINER (hbox), 12);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (launcher_dialog)->vbox), hbox, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (launcher_dialog))), hbox, TRUE, TRUE, 0);
   gtk_widget_show (hbox);
 
   image = gtk_image_new_from_icon_name ("preferences-desktop-default-applications", GTK_ICON_SIZE_DIALOG);
@@ -122,7 +121,7 @@ exo_helper_launcher_dialog_init (ExoHelperLauncherDialog *launcher_dialog)
   gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
   gtk_widget_show (image);
 
-  vbox = gtk_vbox_new (FALSE, 12);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
   gtk_box_pack_start (GTK_BOX (hbox), vbox, FALSE, FALSE, 0);
   gtk_widget_show (vbox);
 

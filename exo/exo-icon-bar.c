@@ -237,7 +237,6 @@ G_DEFINE_TYPE (ExoIconBar, exo_icon_bar, GTK_TYPE_CONTAINER)
 static void
 exo_icon_bar_class_init (ExoIconBarClass *klass)
 {
-  GtkWidgetClass *gtkobject_class;
   GtkWidgetClass *gtkwidget_class;
   GObjectClass   *gobject_class;
 
@@ -247,11 +246,10 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
   gobject_class->finalize = exo_icon_bar_finalize;
   gobject_class->get_property = exo_icon_bar_get_property;
   gobject_class->set_property = exo_icon_bar_set_property;
-
-  gtkobject_class = GTK_OBJECT_CLASS (klass);
-  gtkobject_class->destroy = exo_icon_bar_destroy;
+  
 
   gtkwidget_class = GTK_WIDGET_CLASS (klass);
+  gtkwidget_class->destroy = exo_icon_bar_destroy;
   gtkwidget_class->style_set = exo_icon_bar_style_set;
   gtkwidget_class->realize = exo_icon_bar_realize;
   gtkwidget_class->unrealize = exo_icon_bar_unrealize;
@@ -448,7 +446,7 @@ exo_icon_bar_destroy (GtkWidget *object)
 
   exo_icon_bar_set_model (icon_bar, NULL);
 
-  (*GTK_OBJECT_CLASS (exo_icon_bar_parent_class)->destroy) (object);
+  (*GTK_WIDGET_CLASS (exo_icon_bar_parent_class)->destroy) (object);
 }
 
 
@@ -549,7 +547,7 @@ exo_icon_bar_style_set (GtkWidget *widget,
 
   (*GTK_WIDGET_CLASS (exo_icon_bar_parent_class)->style_set) (widget, previous_style);
 
-  if (GTK_WIDGET_REALIZED (widget))
+  if (gtk_widget_get_realized (widget))
     {
       gdk_window_set_background (icon_bar->priv->bin_window,
                                  &widget->style->base[widget->state]);
@@ -680,7 +678,7 @@ exo_icon_bar_size_allocate (GtkWidget     *widget,
 
   widget->allocation = *allocation;
 
-  if (GTK_WIDGET_REALIZED (widget))
+  if (gtk_widget_get_realized (widget))
     {
       gdk_window_move_resize (widget->window,
                               allocation->x,
@@ -860,7 +858,6 @@ exo_icon_bar_set_adjustments (ExoIconBar    *icon_bar,
     {
       icon_bar->priv->hadjustment = hadj;
       g_object_ref (icon_bar->priv->hadjustment);
-      gtk_widget_sink (GTK_OBJECT (icon_bar->priv->hadjustment));
 
       g_signal_connect (icon_bar->priv->hadjustment, "value_changed",
                         G_CALLBACK (exo_icon_bar_adjustment_changed), icon_bar);
@@ -871,7 +868,6 @@ exo_icon_bar_set_adjustments (ExoIconBar    *icon_bar,
     {
       icon_bar->priv->vadjustment = vadj;
       g_object_ref (icon_bar->priv->vadjustment);
-      gtk_widget_sink (GTK_OBJECT (icon_bar->priv->vadjustment));
 
       g_signal_connect (icon_bar->priv->vadjustment, "value_changed",
                         G_CALLBACK (exo_icon_bar_adjustment_changed), icon_bar);
@@ -888,7 +884,7 @@ static void
 exo_icon_bar_adjustment_changed (GtkAdjustment *adjustment,
                                  ExoIconBar    *icon_bar)
 {
-  if (GTK_WIDGET_REALIZED (icon_bar))
+  if (gtk_widget_get_realized (GTK_WIDGET (icon_bar)))
     {
       gdk_window_move (icon_bar->priv->bin_window,
                        - icon_bar->priv->hadjustment->value,
@@ -935,7 +931,7 @@ exo_icon_bar_queue_draw_item (ExoIconBar     *icon_bar,
 {
   GdkRectangle area;
 
-  if (GTK_WIDGET_REALIZED (icon_bar))
+  if (gtk_widget_get_realized (GTK_WIDGET (icon_bar)))
     {
       if (icon_bar->priv->orientation == GTK_ORIENTATION_VERTICAL)
         {

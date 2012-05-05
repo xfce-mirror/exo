@@ -97,7 +97,6 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   g_assert (EXO_HELPER_N_CATEGORIES == 4);
 
   gtk_dialog_add_button (GTK_DIALOG (chooser_dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
-  gtk_dialog_set_has_separator (GTK_DIALOG (chooser_dialog), FALSE);
   gtk_window_set_icon_name (GTK_WINDOW (chooser_dialog), "preferences-desktop-default-applications");
   gtk_window_set_title (GTK_WINDOW (chooser_dialog), _("Preferred Applications"));
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (chooser_dialog), _("Select default applications for various services"));
@@ -105,12 +104,12 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   /* add the "Help" button */
   button = gtk_button_new_from_stock (GTK_STOCK_HELP);
   g_signal_connect_swapped (G_OBJECT (button), "clicked", G_CALLBACK (exo_helper_chooser_dialog_show_help), chooser_dialog);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->action_area), button, FALSE, TRUE, 0);
-  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (GTK_DIALOG (chooser_dialog)->action_area), button, TRUE);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (chooser_dialog))), button, FALSE, TRUE, 0);
+  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (gtk_dialog_get_action_area (GTK_DIALOG (chooser_dialog))), button, TRUE);
   gtk_widget_show (button);
 
   topcontainer = gtk_alignment_new (0.0, 0.0, 1.0, 1.0);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->vbox), topcontainer, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (chooser_dialog))), topcontainer, TRUE, TRUE, 0);
   gtk_widget_show (topcontainer);
   chooser_dialog->plug_child = topcontainer;
 

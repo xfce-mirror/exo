@@ -323,11 +323,12 @@ exo_wrap_table_add (GtkContainer *container,
   table->priv->children = g_list_append (table->priv->children, widget);
 
   /* realize the widget if required */
-  if (GTK_WIDGET_REALIZED (container))
+  if (gtk_widget_get_realized (GTK_WIDGET (container)))
     gtk_widget_realize (widget);
 
   /* map the widget if required */
-  if (GTK_WIDGET_VISIBLE (container) && GTK_WIDGET_VISIBLE (widget))
+  if (gtk_widget_get_visible (GTK_WIDGET (container))
+      && gtk_widget_get_visible (GTK_WIDGET (widget)))
     {
       if (GTK_WIDGET_MAPPED (container))
         gtk_widget_map (widget);

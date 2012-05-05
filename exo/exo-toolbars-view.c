@@ -663,7 +663,7 @@ exo_toolbars_view_drag_data_received (GtkWidget         *toolbar,
                                                                             data_is_separator (id),
                                                                             NULL);
       g_object_ref (G_OBJECT (view->priv->dragged_item));
-      gtk_widget_sink (GTK_OBJECT (view->priv->dragged_item));
+      gtk_widget_sink (GTK_WIDGET (view->priv->dragged_item));
     }
   else
     {
@@ -962,7 +962,7 @@ exo_toolbars_view_create_dock (ExoToolbarsView *view)
   GtkWidget *toolbar;
   GtkWidget *hbox;
 
-  hbox = gtk_hbox_new (0, FALSE);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
   gtk_widget_show (hbox);
 
   toolbar = g_object_new (GTK_TYPE_TOOLBAR,

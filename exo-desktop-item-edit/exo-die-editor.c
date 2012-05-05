@@ -363,7 +363,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (label), "visible", exo_die_true_if_application, NULL, NULL);
   gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
 
-  box = gtk_hbox_new (FALSE, 6);
+  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
   gtk_table_attach (GTK_TABLE (editor), box, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (box), "visible", exo_die_true_if_application, NULL, NULL);
 
@@ -583,7 +583,7 @@ exo_die_editor_icon_clicked (GtkWidget    *button,
 
   /* determine the toplevel widget */
   toplevel = gtk_widget_get_toplevel (button);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the icon chooser dialog */
@@ -630,7 +630,7 @@ exo_die_editor_path_clicked (GtkWidget    *button,
 
   /* determine the toplevel widget */
   toplevel = gtk_widget_get_toplevel (button);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the file chooser dialog */
@@ -1173,6 +1173,7 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
   GtkWidget    *label;
   gint          pixbuf_width;
   gint          pixbuf_height;
+  GtkWidget    *child;
 
   g_return_if_fail (EXO_DIE_IS_EDITOR (editor));
   g_return_if_fail (g_utf8_validate (icon, -1, NULL));
@@ -1188,8 +1189,9 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
       g_object_notify (G_OBJECT (editor), "icon");
 
       /* drop the previous icon button child */
-      if (GTK_BIN (editor->icon_button)->child != NULL)
-        gtk_widget_destroy (GTK_BIN (editor->icon_button)->child);
+      child = gtk_bin_get_child (GTK_BIN (editor->icon_button));
+      if (child != NULL)
+        gtk_widget_destroy (child);
 
       /* check the icon depending on the type */
       if (icon != NULL && g_path_is_absolute (icon))

@@ -248,7 +248,7 @@ exo_die_command_entry_button_clicked (GtkWidget          *button,
 
   /* determine the toplevel window */
   toplevel = gtk_widget_get_toplevel (button);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the file chooser */

@@ -8,30 +8,22 @@ INCLUDES = 								\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"			\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
-lib_LTLIBRARIES = libexo-1.la
+lib_LTLIBRARIES = libexo-2.la
 
 libexo_headers =							\
 	exo-binding.h							\
 	exo-cell-renderer-ellipsized-text.h				\
-	exo-cell-renderer-icon.h					\
 	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
 	exo-gtk-extensions.h						\
 	exo-gobject-extensions.h					\
-	exo-icon-bar.h							\
-	exo-icon-chooser-dialog.h					\
 	exo-icon-view.h							\
+	exo-icon-chooser-dialog.h					\
 	exo-job.h							\
 	exo-simple-job.h						\
 	exo-string.h							\
-	exo-toolbars-editor-dialog.h					\
-	exo-toolbars-editor.h						\
-	exo-toolbars-model.h						\
-	exo-toolbars-view.h						\
 	exo-tree-view.h							\
-	exo-utils.h							\
-	exo-wrap-table.h						\
-	exo-xsession-client.h
+	exo-utils.h
 
 libexo_built_public_sources =						\
 	exo-enum-types.h
@@ -44,7 +36,7 @@ libexo_built_sources =							\
 	exo-marshal.c							\
 	exo-marshal.h
 
-libexoincludedir = $(includedir)/exo-1/exo
+libexoincludedir = $(includedir)/exo-2/exo
 
 libexoinclude_HEADERS =							\
 	$(libexo_built_public_sources)					\
@@ -52,22 +44,20 @@ libexoinclude_HEADERS =							\
 	exo.h								\
 	exo-config.h
 
-libexo_1_la_SOURCES =							\
+libexo_2_la_SOURCES =							\
 	$(libexoinclude_HEADERS)					\
 	$(libexo_built_sources)						\
 	exo-binding.c							\
 	exo-cell-renderer-ellipsized-text.c				\
-	exo-cell-renderer-icon.c					\
 	exo-config.c							\
 	exo-execute.c							\
 	exo-gdk-pixbuf-extensions.c					\
 	exo-gtk-extensions.c						\
 	exo-gobject-extensions.c					\
-	exo-icon-bar.c							\
+	exo-icon-view.c							\
 	exo-icon-chooser-dialog.c					\
 	exo-icon-chooser-model.c					\
 	exo-icon-chooser-model.h					\
-	exo-icon-view.c							\
 	exo-job.c							\
 	exo-job.h							\
 	exo-simple-job.c						\
@@ -78,18 +68,10 @@ libexo_1_la_SOURCES =							\
 	exo-thumbnail-preview.h						\
 	exo-thumbnail.c							\
 	exo-thumbnail.h							\
-	exo-toolbars-editor-dialog.c					\
-	exo-toolbars-editor.c						\
-	exo-toolbars-model.c						\
-	exo-toolbars-private.c						\
-	exo-toolbars-private.h						\
-	exo-toolbars-view.c						\
 	exo-tree-view.c							\
-	exo-utils.c							\
-	exo-wrap-table.c						\
-	exo-xsession-client.c
+	exo-utils.c
 
-libexo_1_la_CFLAGS =							\
+libexo_2_la_CFLAGS =							\
 	$(GIO_CFLAGS)							\
 	$(GTK_CFLAGS)							\
 	$(LIBX11_CFLAGS)						\
@@ -101,7 +83,7 @@ libexo_1_la_LDFLAGS =							\
 	-export-symbols-regex "^[^_].*"					\
 	-no-undefined
 
-libexo_1_la_LIBADD =							\
+libexo_2_la_LIBADD =							\
 	$(GIO_LIBS)							\
 	$(GTK_LIBS)							\
 	$(LIBX11_LIBS)							\

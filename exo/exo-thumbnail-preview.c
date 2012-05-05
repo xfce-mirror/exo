@@ -45,9 +45,8 @@
 
 
 
-static void exo_thumbnail_preview_style_set (GtkWidget           *ebox,
-                                             GtkStyle            *previous_style,
-                                             ExoThumbnailPreview *thumbnail_preview);
+static void exo_thumbnail_preview_style_updated (GtkWidget           *ebox,
+                                                 ExoThumbnailPreview *thumbnail_preview);
 
 
 
@@ -94,11 +93,11 @@ exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
 
   ebox = gtk_event_box_new ();
   gtk_widget_modify_bg (ebox, GTK_STATE_NORMAL, &gtk_widget_get_style (ebox)->base[GTK_STATE_NORMAL]);
-  g_signal_connect (G_OBJECT (ebox), "style-set", G_CALLBACK (exo_thumbnail_preview_style_set), thumbnail_preview);
+  g_signal_connect (G_OBJECT (ebox), "style-updated", G_CALLBACK (exo_thumbnail_preview_style_updated), thumbnail_preview);
   gtk_container_add (GTK_CONTAINER (thumbnail_preview), ebox);
   gtk_widget_show (ebox);
 
-  vbox = gtk_vbox_new (FALSE, 0);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_container_add (GTK_CONTAINER (ebox), vbox);
   gtk_widget_show (vbox);
 
@@ -115,7 +114,7 @@ exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
   gtk_container_add (GTK_CONTAINER (button), label);
   gtk_widget_show (label);
 
-  box = gtk_vbox_new (FALSE, 2);
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
   gtk_container_set_border_width (GTK_CONTAINER (box), 2);
   gtk_box_pack_start (GTK_BOX (vbox), box, FALSE, FALSE, 0);
   gtk_widget_show (box);
@@ -140,20 +139,19 @@ exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
 
 
 static void
-exo_thumbnail_preview_style_set (GtkWidget           *ebox,
-                                 GtkStyle            *previous_style,
-                                 ExoThumbnailPreview *thumbnail_preview)
+exo_thumbnail_preview_style_updated (GtkWidget           *ebox,
+                                     ExoThumbnailPreview *thumbnail_preview)
 {
   _exo_return_if_fail (EXO_IS_THUMBNAIL_PREVIEW (thumbnail_preview));
   _exo_return_if_fail (GTK_IS_EVENT_BOX (ebox));
 
   /* check if the ebox is already realized */
-  if (GTK_WIDGET_REALIZED (ebox))
+  if (gtk_widget_get_realized (ebox))
     {
       /* set background color (using the base color) */
-      g_signal_handlers_block_by_func (G_OBJECT (ebox), exo_thumbnail_preview_style_set, thumbnail_preview);
-      gtk_widget_modify_bg (ebox, GTK_STATE_NORMAL, &ebox->style->base[GTK_STATE_NORMAL]);
-      g_signal_handlers_unblock_by_func (G_OBJECT (ebox), exo_thumbnail_preview_style_set, thumbnail_preview);
+      g_signal_handlers_block_by_func (G_OBJECT (ebox), exo_thumbnail_preview_style_updated, thumbnail_preview);
+      /*TODO gtk_widget_modify_bg (ebox, GTK_STATE_NORMAL, &ebox->style->base[GTK_STATE_NORMAL]); */
+      g_signal_handlers_unblock_by_func (G_OBJECT (ebox), exo_thumbnail_preview_style_updated, thumbnail_preview);
     }
 }
 

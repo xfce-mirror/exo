@@ -52,7 +52,7 @@
 static gboolean
 later_destroy (gpointer object)
 {
-  gtk_widget_destroy (GTK_OBJECT (object));
+  gtk_widget_destroy (GTK_WIDGET (object));
   g_object_unref (G_OBJECT (object));
   return FALSE;
 }
@@ -69,7 +69,7 @@ later_destroy (gpointer object)
 void
 exo_gtk_widget_destroy_later (GtkWidget *object)
 {
-  g_return_if_fail (GTK_IS_OBJECT (object));
+  g_return_if_fail (GTK_IS_WIDGET (object));
 
   g_idle_add_full (G_PRIORITY_HIGH, later_destroy, object, NULL);
   g_object_ref_sink (object);

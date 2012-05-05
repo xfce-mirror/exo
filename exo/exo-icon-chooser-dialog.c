@@ -35,11 +35,10 @@
 
 #include <exo/exo-binding.h>
 #include <exo/exo-cell-renderer-ellipsized-text.h>
-#include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-gtk-extensions.h>
+#include <exo/exo-icon-view.h>
 #include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-icon-chooser-model.h>
-#include <exo/exo-icon-view.h>
 #include <exo/exo-string.h>
 #include <exo/exo-private.h>
 #include <exo/exo-alias.h>
@@ -168,8 +167,8 @@ exo_icon_chooser_dialog_class_init (ExoIconChooserDialogClass *klass)
 
   /* connect additional key bindings to the GtkDialog::close action signal */
   binding_set = gtk_binding_set_by_class (klass);
-  gtk_binding_entry_add_signal (binding_set, GDK_w, GDK_CONTROL_MASK, "close", 0);
-  gtk_binding_entry_add_signal (binding_set, GDK_W, GDK_CONTROL_MASK, "close", 0);
+  gtk_binding_entry_add_signal (binding_set, GDK_KEY_w, GDK_CONTROL_MASK, "close", 0);
+  gtk_binding_entry_add_signal (binding_set, GDK_KEY_W, GDK_CONTROL_MASK, "close", 0);
 }
 
 
@@ -194,9 +193,9 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   gtk_widget_push_composite_child ();
 
   /* add the main box */
-  vbox = gtk_vbox_new (FALSE, 6);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (icon_chooser_dialog)->vbox), vbox, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (icon_chooser_dialog))), vbox, TRUE, TRUE, 0);
   gtk_widget_show (vbox);
 
   /* add the header table */
@@ -212,9 +211,9 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   gtk_table_attach (GTK_TABLE (table), label, 0, 1, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
   gtk_widget_show (label);
 
-  priv->combo = gtk_combo_box_new_text ();
+  priv->combo = gtk_combo_box_text_new ();
   for (context = 0; context < G_N_ELEMENTS (CONTEXT_TITLES); ++context)
-    gtk_combo_box_append_text (GTK_COMBO_BOX (priv->combo), _(CONTEXT_TITLES[context]));
+    gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (priv->combo), "", _(CONTEXT_TITLES[context]));
   gtk_combo_box_set_row_separator_func (GTK_COMBO_BOX (priv->combo), exo_icon_chooser_dialog_separator_func, icon_chooser_dialog, NULL);
   g_signal_connect (G_OBJECT (priv->combo), "changed", G_CALLBACK (exo_icon_chooser_dialog_combo_changed), icon_chooser_dialog);
   gtk_table_attach (GTK_TABLE (table), priv->combo, 1, 2, 0, 1, GTK_FILL | GTK_EXPAND, GTK_FILL, 0, 0);
@@ -256,9 +255,9 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   gtk_widget_show (priv->icon_chooser);
 
   /* setup the icon renderer */
-  renderer = exo_cell_renderer_icon_new ();
+  renderer = gtk_cell_renderer_pixbuf_new ();
   gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, TRUE);
-  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, "icon", EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME, NULL);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, "icon-name", EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME, NULL);
 
   /* setup the text renderer */
   renderer = g_object_new (EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT,
@@ -344,11 +343,12 @@ exo_icon_chooser_dialog_close (GtkDialog *dialog)
   GdkEvent *event;
 
   /* verify that the dialog is realized */
-  if (G_LIKELY (GTK_WIDGET_REALIZED (dialog)))
+  if (G_LIKELY (gtk_widget_get_realized (GTK_WIDGET (dialog))))
     {
       /* send a delete event to the dialog */
       event = gdk_event_new (GDK_DELETE);
-      event->any.window = g_object_ref (GTK_WIDGET (dialog)->window);
+      event->any.window = gtk_widget_get_window (GTK_WIDGET (dialog));
+      g_object_ref (G_OBJECT (event->any.window));
       event->any.send_event = TRUE;
       gtk_main_do_event (event);
       gdk_event_free (event);

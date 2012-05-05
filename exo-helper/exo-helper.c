@@ -399,7 +399,7 @@ exo_helper_execute (ExoHelper   *helper,
         continue;
 
       /* try to run the command */
-      succeed = gdk_spawn_on_screen (screen, NULL, argv, NULL, G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH, NULL, NULL, &pid, &err);
+      succeed = g_spawn_async (NULL, argv, NULL, G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH, NULL, NULL, &pid, &err);
 
       /* cleanup */
       g_strfreev (argv);

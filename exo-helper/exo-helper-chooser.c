@@ -69,7 +69,6 @@ struct _ExoHelperChooser
 
   GtkWidget         *image;
   GtkWidget         *label;
-  GtkTooltips       *tooltips;
 
   ExoHelperDatabase *database;
   ExoHelperCategory  category;
@@ -139,14 +138,11 @@ exo_helper_chooser_init (ExoHelperChooser *chooser)
 
   chooser->database = exo_helper_database_get ();
 
-  chooser->tooltips = gtk_tooltips_new ();
-  g_object_ref_sink (G_OBJECT (chooser->tooltips));
-
   gtk_widget_push_composite_child ();
 
   button = gtk_button_new ();
   g_signal_connect_swapped (G_OBJECT (button), "pressed", G_CALLBACK (exo_helper_chooser_pressed), chooser);
-  gtk_tooltips_set_tip (chooser->tooltips, button, _("Press left mouse button to change the selected application."), NULL);
+  gtk_widget_set_tooltip_text (button, _("Press left mouse button to change the selected application."));
   gtk_container_add (GTK_CONTAINER (chooser), button);
   gtk_widget_show (button);
 
@@ -155,7 +151,7 @@ exo_helper_chooser_init (ExoHelperChooser *chooser)
   atk_object_set_name (object, _("Application Chooser Button"));
   atk_object_set_description (object, _("Press left mouse button to change the selected application."));
 
-  hbox = gtk_hbox_new (FALSE, 4);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
   gtk_container_add (GTK_CONTAINER (button), hbox);
   gtk_widget_show (hbox);
 
@@ -193,7 +189,6 @@ exo_helper_chooser_finalize (GObject *object)
   ExoHelperChooser *chooser = EXO_HELPER_CHOOSER (object);
 
   g_object_unref (G_OBJECT (chooser->database));
-  g_object_unref (G_OBJECT (chooser->tooltips));
 
   (*G_OBJECT_CLASS (exo_helper_chooser_parent_class)->finalize) (object);
 }
@@ -381,7 +376,7 @@ browse_clicked (GtkWidget *button,
 
   /* determine the toplevel window */
   toplevel = gtk_widget_get_toplevel (entry);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the chooser */
@@ -532,7 +527,6 @@ menu_activate_other (GtkWidget        *item,
   dialog = gtk_dialog_new_with_buttons (dgettext (GETTEXT_PACKAGE, BROWSE_TITLES[chooser->category]),
                                         GTK_WINDOW (toplevel),
                                         GTK_DIALOG_DESTROY_WITH_PARENT
-                                        | GTK_DIALOG_NO_SEPARATOR
                                         | GTK_DIALOG_MODAL,
                                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
                                         GTK_STOCK_OK, GTK_RESPONSE_OK,
@@ -540,13 +534,13 @@ menu_activate_other (GtkWidget        *item,
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
   gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), GTK_RESPONSE_OK, FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 6);
-  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog)->action_area), 5);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->action_area), 6);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 6);
+  gtk_container_set_border_width (GTK_CONTAINER (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), 5);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), 6);
   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 
   hbox = g_object_new (GTK_TYPE_HBOX, "border-width", 5, "spacing", 12, NULL);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), hbox, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), hbox, TRUE, TRUE, 0);
   gtk_widget_show (hbox);
 
   image = gtk_image_new_from_icon_name ("preferences-desktop-default-applications", GTK_ICON_SIZE_DIALOG);
@@ -554,7 +548,7 @@ menu_activate_other (GtkWidget        *item,
   gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
   gtk_widget_show (image);
 
-  vbox = gtk_vbox_new (FALSE, 6);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
   gtk_widget_show (vbox);
 
@@ -566,7 +560,7 @@ menu_activate_other (GtkWidget        *item,
   gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, TRUE, 0);
   gtk_widget_show (label);
 
-  hbox = gtk_hbox_new (FALSE, 3);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 3);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, TRUE, 0);
   gtk_widget_show (hbox);
 
@@ -576,7 +570,7 @@ menu_activate_other (GtkWidget        *item,
   gtk_widget_show (entry);
 
   button = gtk_button_new ();
-  gtk_tooltips_set_tip (chooser->tooltips, button, _("Browse the file system to choose a custom command."), NULL);
+  gtk_widget_set_tooltip_text (button, _("Browse the file system to choose a custom command."));
   g_signal_connect (G_OBJECT (button), "clicked", G_CALLBACK (browse_clicked), entry);
   gtk_box_pack_start (GTK_BOX (hbox), button, FALSE, FALSE, 0);
   gtk_widget_show (button);
@@ -625,8 +619,8 @@ menu_position (GtkMenu  *menu,
                gboolean *push_in,
                gpointer  chooser)
 {
-  GtkRequisition chooser_request;
-  GtkRequisition menu_request;
+  GtkAllocation  chooser_request;
+  GtkAllocation  menu_request;
   GdkRectangle   geometry;
   GdkScreen     *screen;
   GtkWidget     *toplevel = gtk_widget_get_toplevel (chooser);
@@ -636,10 +630,10 @@ menu_position (GtkMenu  *menu,
 
   gtk_widget_translate_coordinates (GTK_WIDGET (chooser), toplevel, 0, 0, &x0, &y0);
 
-  gtk_widget_size_request (GTK_WIDGET (chooser), &chooser_request);
-  gtk_widget_size_request (GTK_WIDGET (menu), &menu_request);
+  gtk_widget_get_allocation (GTK_WIDGET (chooser), &chooser_request);
+  gtk_widget_get_allocation (GTK_WIDGET (menu), &menu_request);
 
-  gdk_window_get_position (GTK_WIDGET (chooser)->window, x, y);
+  gtk_window_get_position (GTK_WINDOW (chooser), x, y);
 
   *y += y0;
   *x += x0;
@@ -678,16 +672,20 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   GList          *helpers;
   GList          *lp;
   gint            icon_size;
+  GtkAllocation   menu_alloc;
+  GtkAllocation   chooser_alloc;
+  GdkWindow      *gdkwindow;
 
   g_return_if_fail (EXO_IS_HELPER_CHOOSER (chooser));
   g_return_if_fail (GTK_IS_BUTTON (button));
 
   /* set a watch cursor while loading the menu */
-  if (G_LIKELY (button->window != NULL))
+  gdkwindow = gtk_widget_get_window (button);
+  if (G_LIKELY (gdkwindow != NULL))
     {
       cursor = gdk_cursor_new (GDK_WATCH);
-      gdk_window_set_cursor (button->window, cursor);
-      gdk_cursor_unref (cursor);
+      gdk_window_set_cursor (gdkwindow, cursor);
+      g_object_unref (G_OBJECT (cursor));
       gdk_flush ();
     }
 
@@ -760,18 +758,20 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
     }
 
   item = gtk_menu_item_new_with_mnemonic (_("_Other..."));
-  gtk_tooltips_set_tip (chooser->tooltips, item, _("Use a custom application which is not included in the above list."), NULL);
+  gtk_widget_set_tooltip_text (item, _("Use a custom application which is not included in the above list."));
   g_signal_connect (G_OBJECT (item), "activate", G_CALLBACK (menu_activate_other), chooser);
   gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
   gtk_widget_show (item);
 
   /* make sure the menu has atleast the same width as the chooser */
-  if (menu->allocation.width < GTK_WIDGET (chooser)->allocation.width)
-    gtk_widget_set_size_request (menu, GTK_WIDGET (chooser)->allocation.width, -1);
+  gtk_widget_get_allocation (menu, &menu_alloc);
+  gtk_widget_get_allocation (GTK_WIDGET (chooser), &chooser_alloc);
+  if (menu_alloc.width < chooser_alloc.width)
+    gtk_widget_set_size_request (menu, chooser_alloc.width, -1);
 
   /* reset the watch cursor on the chooser */
-  if (G_LIKELY (button->window != NULL))
-    gdk_window_set_cursor (button->window, NULL);
+  if (G_LIKELY (gdkwindow != NULL))
+    gdk_window_set_cursor (gdkwindow, NULL);
 
   /* allocate a new main loop */
   loop = g_main_loop_new (NULL, FALSE);
@@ -784,7 +784,6 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   gtk_grab_remove (menu);
   g_main_loop_unref (loop);
 
-  gtk_button_released (GTK_BUTTON (button));
   g_object_unref (G_OBJECT (menu));
 }
 

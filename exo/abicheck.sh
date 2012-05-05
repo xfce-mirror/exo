@@ -21,5 +21,5 @@
 
 trap 'rm expected-abi actual-abi' EXIT
 ${CPP:-cpp} -DINCLUDE_INTERNAL_SYMBOLS -DINCLUDE_VARIABLES -DALL_FILES ${srcdir:-.}/exo.symbols | sed 's/ G_GNUC.*$//;s/ PRIVATE//;/^ *$/d;/^#/d' | sort >expected-abi
-${NM:-nm} -D -g -P .libs/libexo-1.so | awk '$2~/^[DRTG]$/&&$1~/^[^_]/{print $1}' | sort >actual-abi
+${NM:-nm} -D -g -P .libs/libexo-2.so | awk '$2~/^[DRTG]$/&&$1~/^[^_]/{print $1}' | sort >actual-abi
 diff -u expected-abi actual-abi

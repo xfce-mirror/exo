@@ -62,14 +62,12 @@ _exo_gtk_widget_send_focus_change (GtkWidget *widget,
 
   g_object_ref (G_OBJECT (widget));
 
- if (in)
-    GTK_WIDGET_SET_FLAGS (widget, GTK_HAS_FOCUS);
-  else
-    GTK_WIDGET_UNSET_FLAGS (widget, GTK_HAS_FOCUS);
+  gtk_widget_set_can_focus (widget, in);
 
   fevent = gdk_event_new (GDK_FOCUS_CHANGE);
   fevent->focus_change.type = GDK_FOCUS_CHANGE;
-  fevent->focus_change.window = g_object_ref (widget->window);
+  fevent->focus_change.window = gtk_widget_get_window (widget);
+  g_object_ref (G_OBJECT (fevent->focus_change.window));
   fevent->focus_change.in = in;
 
   gtk_widget_event (widget, fevent);

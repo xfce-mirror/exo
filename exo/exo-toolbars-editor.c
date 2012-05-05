@@ -209,7 +209,7 @@ exo_toolbars_editor_init (ExoToolbarsEditor *editor)
                                          editor->priv->table);
   gtk_widget_show (editor->priv->table);
 
-  hbox = gtk_hbox_new (FALSE, 6);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
   gtk_box_pack_start (GTK_BOX (editor), hbox, FALSE, FALSE, 0);
   gtk_widget_show (hbox);
 
@@ -310,7 +310,7 @@ exo_toolbars_editor_drag_data_get (GtkWidget          *item,
 
   action = g_object_get_data (G_OBJECT (item), I_("gtk-action"));
   target = (action != NULL) ? gtk_action_get_name (action) : "separator";
-  gtk_selection_data_set (selection_data, selection_data->target,
+  gtk_selection_data_set (selection_data, gtk_selection_data_get_target (selection_data),
                           8, (const guchar *) target, strlen (target));
 }
 
@@ -375,7 +375,7 @@ exo_toolbars_editor_create_item (ExoToolbarsEditor  *editor,
                         G_CALLBACK (gtk_widget_show), NULL);
     }
 
-  vbox = gtk_vbox_new (0, FALSE);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_container_add (GTK_CONTAINER (ebox), vbox);
   gtk_widget_show (vbox);
 

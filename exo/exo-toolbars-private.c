@@ -153,7 +153,7 @@ _exo_toolbars_new_separator_pixbuf (void)
   GtkWidget *separator;
   GdkPixbuf *pixbuf;
 
-  separator = gtk_vseparator_new ();
+  separator = gtk_separator_new (GTK_ORIENTATION_VERTICAL);
   pixbuf = new_pixbuf_from_widget (separator);
   gtk_widget_destroy (separator);
 
@@ -348,7 +348,7 @@ _exo_toolbars_set_drag_cursor (GtkWidget *widget)
                                            pixbuf, 12, 12);
       gdk_window_set_cursor (widget->window, cursor);
       g_object_unref (G_OBJECT (pixbuf));
-      gdk_cursor_unref (cursor);
+      g_object_unref (G_OBJECT (cursor));
     }
 }
 

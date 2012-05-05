@@ -34,6 +34,7 @@
 #include <exo-helper/exo-helper-launcher-dialog.h>
 #include <exo-helper/exo-helper-utils.h>
 
+#include <gtk/gtkx.h>
 
 
 static const gchar *CATEGORY_EXEC_ERRORS[] =
@@ -62,14 +63,14 @@ main (int argc, char **argv)
   gboolean           opt_version = FALSE;
   gboolean           opt_configure = FALSE;
   gchar             *opt_launch_type = NULL;
-  GdkNativeWindow    opt_socket_id = 0;
+  gint64             opt_socket_id = 0;
 
   GOptionContext    *opt_ctx;
   GOptionGroup      *gtk_option_group;
   GOptionEntry       option_entries[] = {
     { "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &opt_version, N_("Print version information and exit"), NULL, },
     { "configure", 'c', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &opt_configure, N_("Open the Preferred Applications\nconfiguration dialog"), NULL, },
-    { "socket-id", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &opt_socket_id, N_("Settings manager socket"), N_("SOCKET ID"), },
+    { "socket-id", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT64, &opt_socket_id, N_("Settings manager socket"), N_("SOCKET ID"), },
     { "launch", 'l', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &opt_launch_type, N_("Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."), N_("TYPE [PARAMETER]"), },
     { NULL, },
   };
