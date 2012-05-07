@@ -12,7 +12,7 @@ INCLUDES = 								\
 exo_helperdir = $(HELPER_PATH_PREFIX)/xfce4/exo-$(LIBEXO_VERSION_API)
 
 exo_helper_PROGRAMS = \
-	exo-helper-1
+	exo-helper-2
 
 exo_helper_built_sources =						\
 	exo-helper-enum-types.c						\
@@ -21,7 +21,7 @@ exo_helper_built_sources =						\
 exo_helper_headers =							\
 	exo-helper.h
 
-exo_helper_1_SOURCES =						\
+exo_helper_2_SOURCES =						\
 	$(exo_helper_built_sources)					\
 	$(exo_helper_headers)						\
 	exo-helper-chooser-dialog.c					\
@@ -35,15 +35,15 @@ exo_helper_1_SOURCES =						\
 	exo-helper.c							\
 	main.c
 
-exo_helper_1_CFLAGS =							\
+exo_helper_2_CFLAGS =							\
 	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(LIBXFCE4UI_CFLAGS)
 
-exo_helper_1_DEPENDENCIES =						\
+exo_helper_2_DEPENDENCIES =						\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
-exo_helper_1_LDADD =							\
+exo_helper_2_LDADD =							\
 	$(GTK_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(LIBXFCE4UI_LIBS)						\
