@@ -93,6 +93,12 @@ enum
   PROP_SINGLE_CLICK_TIMEOUT,
   PROP_ENABLE_SEARCH,
   PROP_SEARCH_COLUMN,
+
+  /* For scrollable interface */
+  PROP_HADJUSTMENT,
+  PROP_VADJUSTMENT,
+  PROP_HSCROLL_POLICY,
+  PROP_VSCROLL_POLICY
 };
 
 /* Signal identifiers */
@@ -567,6 +573,11 @@ struct _ExoIconViewPrivate
 
   /* ExoIconViewFlags */
   guint flags;
+
+  /* GtkScrollablePolicy needs to be checked when
+   * driving the scrollable adjustment values */
+  GtkScrollablePolicy hscroll_policy;
+  GtkScrollablePolicy vscroll_policy;
 };
 
 
@@ -1072,6 +1083,12 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                   GTK_TYPE_MOVEMENT_STEP,
                   G_TYPE_INT);
 
+  /* Scrollable interface properties */
+  g_object_class_override_property (gobject_class, PROP_HADJUSTMENT,    "hadjustment");
+  g_object_class_override_property (gobject_class, PROP_VADJUSTMENT,    "vadjustment");
+  g_object_class_override_property (gobject_class, PROP_HSCROLL_POLICY, "hscroll-policy");
+  g_object_class_override_property (gobject_class, PROP_VSCROLL_POLICY, "vscroll-policy");
+
   /* Key bindings */
   gtkbinding_set = gtk_binding_set_by_class (klass);
   gtk_binding_entry_add_signal (gtkbinding_set, GDK_KEY_a, GDK_CONTROL_MASK, "select-all", 0);
@@ -1307,6 +1324,22 @@ exo_icon_view_get_property (GObject      *object,
       g_value_set_enum (value, priv->layout_mode);
       break;
 
+    case PROP_HADJUSTMENT:
+      g_value_set_object (value, priv->hadjustment);
+      break;
+
+    case PROP_VADJUSTMENT:
+      g_value_set_object (value, priv->vadjustment);
+      break;
+
+    case PROP_HSCROLL_POLICY:
+      g_value_set_enum (value, priv->hscroll_policy);
+      break;
+
+    case PROP_VSCROLL_POLICY:
+      g_value_set_enum (value, priv->vscroll_policy);
+      break;
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1383,6 +1416,24 @@ exo_icon_view_set_property (GObject      *object,
 
     case PROP_LAYOUT_MODE:
       exo_icon_view_set_layout_mode (icon_view, g_value_get_enum (value));
+      break;
+
+    case PROP_HADJUSTMENT:
+      exo_icon_view_set_adjustments (icon_view, g_value_get_object (value), NULL);
+      break;
+      
+    case PROP_VADJUSTMENT:
+      exo_icon_view_set_adjustments (icon_view, NULL, g_value_get_object (value));
+      break;
+      
+    case PROP_HSCROLL_POLICY:
+      icon_view->priv->hscroll_policy = g_value_get_enum (value);
+      gtk_widget_queue_resize (GTK_WIDGET (icon_view));
+      break;
+      
+    case PROP_VSCROLL_POLICY:
+      icon_view->priv->vscroll_policy = g_value_get_enum (value);
+      gtk_widget_queue_resize (GTK_WIDGET (icon_view));
       break;
 
     default:
@@ -2709,7 +2760,7 @@ exo_icon_view_update_rubberband_selection (ExoIconView *icon_view)
 
   if (G_LIKELY (changed))
     g_signal_emit (G_OBJECT (icon_view), icon_view_signals[SELECTION_CHANGED], 0);
-#endif 
+#endif
 }
 
 
@@ -6845,9 +6896,9 @@ exo_icon_view_drag_begin (GtkWidget      *widget,
   path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
   icon = exo_icon_view_create_drag_icon (icon_view, path);
   gtk_tree_path_free (path);
-  
+
   cairo_surface_set_device_offset (icon, -x, -y);
-  
+
   gtk_drag_set_icon_surface (context, icon);
 
   cairo_surface_destroy (icon);
@@ -7476,7 +7527,7 @@ exo_icon_view_create_drag_icon (ExoIconView *icon_view,
       if (G_UNLIKELY (idx == item_idx))
         {
           item = lp->data;
-          
+
           rect.x = item->area.x;
           rect.y = item->area.y;
           rect.width = item->area.width;
