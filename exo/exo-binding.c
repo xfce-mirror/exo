@@ -354,7 +354,20 @@ exo_binding_new_full (GObject            *src_object,
   g_return_val_if_fail (G_IS_OBJECT (dst_object), NULL);
 
   src_pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (src_object), src_property);
+  if (G_UNLIKELY (src_pspec == NULL))
+    {
+      g_critical ("Object of type '%s' has no property named '%s'",
+                  G_OBJECT_TYPE_NAME (src_object), src_property);
+      return NULL;
+    }
+
   dst_pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (dst_object), dst_property);
+  if (G_UNLIKELY (dst_pspec == NULL))
+    {
+      g_critical ("Object of type '%s' has no property named '%s'",
+                  G_OBJECT_TYPE_NAME (dst_object), dst_property);
+      return NULL;
+    }
 
   if (transform == NULL)
     transform = (ExoBindingTransform) g_value_transform;
