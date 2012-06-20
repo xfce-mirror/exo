@@ -1,15 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
+# Serbian translation of exo.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the exo package.
 # salepetronije <salepetronije@gmail.com>, 2012.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-05 19:24+0000\n"
-"PO-Revision-Date: 2012-06-11 22:47+0200\n"
-"Last-Translator: salepetronije <salepetronije@gmail.com>\n"
-"Language-Team: српски <xfce-i18n@xfce.org>\n"
+"POT-Creation-Date: 2012-06-20 07:12+0000\n"
+"PO-Revision-Date: 2012-06-20 10:58+0200\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <gnu@prevod.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -534,8 +535,8 @@ msgstr "  --strip-comments  Уклања напомене из ИксМЛ дат
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Уклања сдржаје чворова из ИксМЛ датотека\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:176
-#: ../exo-open/main.c:483
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -550,8 +551,8 @@ msgstr ""
 "Написао Бенедикт Мејер <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:180
-#: ../exo-open/main.c:487
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -566,8 +567,8 @@ msgstr ""
 "у %s изворном пакету.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:184
-#: ../exo-open/main.c:491
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Грешке пријавите на <%s>.\n"
@@ -612,44 +613,37 @@ msgstr "Скрипте шкољке"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Направи покретач <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "На_зив:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "На_помена:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "На_редба:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_Адреса:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "Радни _директоријум:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Иконица:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -660,10 +654,8 @@ msgstr "Нема иконице"
 msgid "Options:"
 msgstr "Могућности:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
@@ -679,10 +671,8 @@ msgstr ""
 "покрене из управника датотека или из изборника. Не подржавају сви програми "
 "обавештења о покретању."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
@@ -702,7 +692,7 @@ msgstr "Изаберите иконицу"
 msgid "Select a working directory"
 msgstr "Изаберите радни директоријум"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:168
+#: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
 msgstr "Место датотеке није редовна датотека или директоријум"
 
@@ -759,68 +749,68 @@ msgstr "Адреса претподешавања приликом ствара�
 msgid "Preset icon when creating a desktop file"
 msgstr "Иконица претподешавања приликом стварања датотеке радне површи"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:67
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Исписује податке о издању и излази"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:152
+#: ../exo-desktop-item-edit/main.c:169
 msgid "[FILE|FOLDER]"
 msgstr "[ДАТОТЕКА|ФАСЦИКЛА]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:164
+#: ../exo-desktop-item-edit/main.c:181
 msgid "Failed to open display"
 msgstr "Нисам успео да отворим приказ"
 
-#: ../exo-desktop-item-edit/main.c:191
+#: ../exo-desktop-item-edit/main.c:208
 msgid "No file/folder specified"
 msgstr "Није наведена датотека/фасцикла"
 
-#: ../exo-desktop-item-edit/main.c:257
+#: ../exo-desktop-item-edit/main.c:274
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Нисам успео да учитам садржаје са „%s“: %s"
 
-#: ../exo-desktop-item-edit/main.c:262
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Датотека „%s“ не садржи податке"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:275
+#: ../exo-desktop-item-edit/main.c:292
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Нисам успео да обрадим садржаје „%s“: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:287
+#: ../exo-desktop-item-edit/main.c:304
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Датотека „%s“ нема кључ врсте"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:297
+#: ../exo-desktop-item-edit/main.c:314
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Неподржана врста датотеке радне површи „%s“"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:313
+#: ../exo-desktop-item-edit/main.c:338
 msgid "C_reate"
 msgstr "_Направи"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:474
+#: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
 msgstr "Изаберите назив датотеке"
 
-#: ../exo-desktop-item-edit/main.c:532
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Нисам успео да направим „%s“."
 
-#: ../exo-desktop-item-edit/main.c:532
+#: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Нисам успео да сачувам „%s“."
@@ -834,6 +824,7 @@ msgstr "Омиљени програми"
 msgid "Select default applications for various services"
 msgstr "Изаберите основне програме за разне услуге"
 
+#.
 #. Internet
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
@@ -866,6 +857,7 @@ msgstr ""
 "Омиљени читач поште ће бити коришћен за састављање\n"
 "ел. порука када кликнете на адресе ел. поште."
 
+#.
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
@@ -1058,7 +1050,7 @@ msgstr "Нисам успео да извршим основног управн�
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Нисам успео да извршим основног емулатора терминала"
 
-#: ../exo-helper/main.c:68
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1066,15 +1058,15 @@ msgstr ""
 "Отворите прозорче за подешавање\n"
 "омиљених програма"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Подешава управника прикључнице"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "ИБ ПРИКЉУЧНИЦЕ"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1082,11 +1074,11 @@ msgstr ""
 "Покреће основног помоћника ВРСТЕ са опционалним ПАРАМЕТРОМ, где је ВРСТА "
 "једна од следећих вредности."
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "ВРСТА [ПАРАМЕТАР]"
 
-#: ../exo-helper/main.c:94
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1102,17 +1094,17 @@ msgstr ""
 "  FileManager      — Омиљени управник датотека.\n"
 "  TerminalEmulator — Омиљени емулатор терминала."
 
-#: ../exo-helper/main.c:104
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Упишите „%s --help“ за коришћење."
 
-#: ../exo-helper/main.c:154
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Неисправна врста помоћника „%s“"
 
-#: ../exo-helper/main.c:198
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1153,6 +1145,10 @@ msgstr "атерм"
 msgid "Balsa"
 msgstr "Балса"
 
+#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
+msgid "Chromium"
+msgstr "Кромијум"
+
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
 msgstr "Разумни читач Дебијана"
@@ -1192,6 +1188,10 @@ msgstr "Гномов терминал"
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
 msgstr "Ледени голуб"
+
+#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
+msgid "Iceweasel"
+msgstr "Ледена ласица"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1273,26 +1273,26 @@ msgstr "В3М прегледач текста"
 msgid "X Terminal"
 msgstr "Икс терминал"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Употреба: exo-open [адресе...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch ВРСТА [ПАРАМЕТРИ...]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
 "  -?, --help                          Исписује ову поруку помоћи и излази"
 
-#: ../exo-open/main.c:111
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "-V, --version                         Исписује податке о издању и излази"
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1304,24 +1304,24 @@ msgstr ""
 "је\n"
 "                                      ВРСТА једна од следећих вредности."
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory ДИРЕКТОРИЈУМ    Основни радни директоријум за програме\n"
+"  --working-directory ДИРЕКТОРИЈУМ    Основни радни директоријум за "
+"програме\n"
 "                                      приликом коришћења опције „--launch“."
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Следеће ВРСТЕ су подржане за наредбу „--launch“:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
-#: ../exo-open/main.c:126
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1333,7 +1333,7 @@ msgstr ""
 "  FileManager      — Омиљени управник датотека.\n"
 "  TerminalEmulator — Омиљени емулатор терминала."
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1348,7 +1348,7 @@ msgstr ""
 "„TerminalEmulator“\n"
 "можете да проследите наредбу која би требала да буде покренута у терминалу)."
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1357,17 +1357,17 @@ msgstr ""
 "Покретање датотека радне површи није подржано када је „%s“ преведен без ГИО-"
 "Јуникс функција."
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Нисам успео да покренем омиљрни програм за категорију „%s“."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Не могу да откријем шему адресе за „%s“."
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Нисам успео да отворим адресу „%s“."
