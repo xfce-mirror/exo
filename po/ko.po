@@ -849,14 +849,14 @@ msgstr ""
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
 msgid "Mail Reader"
-msgstr "메일 리더"
+msgstr "메일 보기"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:185
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr ""
-"기본 메일 리더는 이메일 주소를 눌렀을 때\n"
+"기본 메일 보기 프로그램은 이메일 주소를 눌렀을 때\n"
 "이메일을 작성하는데 사용할 것입니다."
 
 #.
@@ -911,7 +911,7 @@ msgstr "기본 웹 브라우저를 설정하는데 실패했습니다"
 
 #: ../exo-helper/exo-helper-chooser.c:316
 msgid "Failed to set default Mail Reader"
-msgstr "기본 메일 리더를 설정하는데 실패했습니다"
+msgstr "기본 메일 보기 프로그램을 설정하는데 실패했습니다"
 
 #: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
@@ -932,7 +932,7 @@ msgstr "사용자 정의 웹 브라우저 선택"
 
 #: ../exo-helper/exo-helper-chooser.c:502
 msgid "Choose a custom Mail Reader"
-msgstr "사용자 정의 메일 리더 선택"
+msgstr "사용자 정의 메일 보기 프로그램 선택"
 
 #: ../exo-helper/exo-helper-chooser.c:503
 msgid "Choose a custom File Manager"
@@ -947,7 +947,7 @@ msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
-"Xfce 기본 웹 브라우저로 사용할 프로그램을\n"
+"Xfce에서 기본으로 사용할 웹 브라우저를\n"
 "지정합니다:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
@@ -955,7 +955,7 @@ msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
-"Xfce 기본 메일 리더로 사용할 프로그램을\n"
+"Xfce에서 기본으로 사용할 메일 보기 프로그램을\n"
 "지정합니다:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
@@ -963,7 +963,7 @@ msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
-"Xfce 기본 파일 관리자로 사용할 프로그램을\n"
+"Xfce에서 기본으로 사용할 파일 관리자 프로그램을\n"
 "지정합니다:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
@@ -971,8 +971,8 @@ msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
-"Xfce 기본 터미널 에뮬레이터로 사용할\n"
-"프로그램을 지정합니다:"
+"Xfce에서 기본으로 사용할 터미널 에뮬레이터를\n"
+"지정합니다:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -1003,7 +1003,7 @@ msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
 msgstr ""
-"기본 메일 리더를 선택하여 주시고\n"
+"기본 메일 보기 프로그램을 선택하여 주시고\n"
 "실행을 위해 OK를 눌러주시기 바랍니다."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
@@ -1011,7 +1011,7 @@ msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
 msgstr ""
-"기본 파일 매니저를 선택하여 주시고\n"
+"기본 파일 관리자를 선택하여 주시고\n"
 "실행을 위해 OK를 눌러주시기 바랍니다."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
@@ -1035,7 +1035,7 @@ msgstr "기록을 위한 %s을(를) 여는데 실패했습니다"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "기본 프로그램 (웹 브라우저, 메일 리더 그리고 터미널 에뮬레이터)"
+msgstr "기본 프로그램 (웹 브라우저, 메일 보기 그리고 터미널 에뮬레이터)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
@@ -1043,7 +1043,7 @@ msgstr "기본 웹 브라우저를 실행하는데 실패했습니다"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Mail Reader"
-msgstr "기본 메일 리더를 실행하는데 실패했습니다"
+msgstr "기본 메일 보기 프로그램을 실행하는데 실패했습니다"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default File Manager"
@@ -1088,10 +1088,10 @@ msgid ""
 msgstr ""
 "다음 유형이 --launch 명령을 위해 지원합니다:\n"
 "\n"
-"  WebBrowser       - 기본 웹 브라우저.\n"
-"  MailReader       - 기본 메일 리더.\n"
-"  FileManager      - 기본 파일 매니저.\n"
-"  TerminalEmulator - 기본 터미널 에뮬레이터."
+"  WebBrowser       - 기본 웹 브라우저입니다.\n"
+"  MailReader       - 기본 메일 보기입니다.\n"
+"  FileManager      - 기본 파일 관리자입니다.\n"
+"  TerminalEmulator - 기본 터미널 에뮬레이터입니다."
 
 #: ../exo-helper/main.c:112
 #, c-format
@@ -1320,10 +1320,10 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
-"  WebBrowser       - 기본 웹 브라우저.\n"
-"  MailReader       - 기본 메일 리더.\n"
-"  FileManager      - 기본 파일 매니저.\n"
-"  TerminalEmulator - 기본 터미널 에뮬레이터."
+"  WebBrowser       - 기본 웹 브라우저입니다.\n"
+"  MailReader       - 기본 메일 보기입니다.\n"
+"  FileManager      - 기본 파일 관리자입니다.\n"
+"  TerminalEmulator - 기본 터미널 에뮬레이터입니다."
 
 #: ../exo-open/main.c:133
 msgid ""
