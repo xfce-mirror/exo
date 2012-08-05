@@ -129,7 +129,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   /*
      Internet
    */
-  label = gtk_label_new (_("Internet"));
+  label = gtk_label_new_with_mnemonic (_("_Internet"));
   vbox = g_object_new (GTK_TYPE_VBOX, "border-width", 12, "spacing", 24, NULL);
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox, label);
   gtk_widget_show (label);
@@ -202,7 +202,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   /*
      Utilities
    */
-  label = gtk_label_new (_("Utilities"));
+  label = gtk_label_new_with_mnemonic (_("_Utilities"));
   vbox = g_object_new (GTK_TYPE_VBOX, "border-width", 12, "spacing", 24, NULL);
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox, label);
   gtk_widget_show (label);
