@@ -161,9 +161,11 @@ main (int argc, char **argv)
   g_log_set_always_fatal (G_LOG_LEVEL_CRITICAL | G_LOG_LEVEL_WARNING);
 #endif
 
+#if !GLIB_CHECK_VERSION(2,32,0)
   /* initialize the GThread system */
   if (!g_thread_supported ())
     g_thread_init (NULL);
+#endif
 
   /* initialize Gtk+ */
   if (!gtk_init_with_args (&argc, &argv, _("[FILE|FOLDER]"), option_entries, GETTEXT_PACKAGE, &error))
