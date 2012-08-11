@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the exo package.
 # Stephan Arts <psyBSD@gmail.com>, 2006.
 # Pjotr, 2011.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-17 07:15+0000\n"
+"POT-Creation-Date: 2012-08-11 16:24+0000\n"
 "PO-Revision-Date: 2011-09-08 15:05+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
+"Language: nl (Dutch)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl (Dutch)\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
@@ -67,7 +67,7 @@ msgstr "Kon bestand '%s' niet lezen: %s"
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
-"Kon afbeelding \"%s\" niet laden: onbekende reden, waarschijnlijk een "
+"Kon afbeelding '%s' niet laden: onbekende reden, waarschijnlijk een "
 "beschadigd afbeeldingbestand"
 
 #: ../exo/exo-gtk-extensions.c:227
@@ -538,7 +538,7 @@ msgstr "  --strip-comments  Verwijder commentaren uit XML-bestanden\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Verwijder node-informatie uit XML-bestanden\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -554,7 +554,7 @@ msgstr ""
 "Geschreven door Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -570,7 +570,7 @@ msgstr ""
 "in het %s bronpakket.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -616,44 +616,37 @@ msgstr "Shell scripts"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Maak starter <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Naam:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "_Opmerking:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Opdr_acht:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "_Werkmap:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Pictogram:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -664,11 +657,9 @@ msgstr "Geen pictogram"
 msgid "Options:"
 msgstr "Opties:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Gebruik op_startmelding"
@@ -683,11 +674,9 @@ msgstr ""
 "wordt uitgevoerd vanuit de bestandbeheerder of het menu. Niet elke "
 "toepassing ondersteunt opstartmelding."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "In _terminal uitvoeren"
@@ -769,63 +758,63 @@ msgid "Print version information and exit"
 msgstr "Versie-informatie afdrukken en afsluiten"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:169
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[BESTAND|MAP]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "Kon scherm niet openen"
 
-#: ../exo-desktop-item-edit/main.c:208
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "Geen bestand/map opgegeven"
 
-#: ../exo-desktop-item-edit/main.c:274
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Kon de inhoud van '%s' niet laden: %s"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Het bestand '%s' bevat geen gegevens"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:292
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Kon de inhoud van bestand '%s' niet lezen: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:304
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Bestand '%s' heeft geen typetoets"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Niet-ondersteund type bureaubladbestand '%s'"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "M_aken"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:511
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "Kies bestandnaam"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Kon '%s' niet maken."
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Kon '%s' niet opslaan."
@@ -839,10 +828,11 @@ msgstr "Voorkeurtoepassingen"
 msgid "Select default applications for various services"
 msgstr "Selecteer standaardtoepassingen voor diverse diensten"
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
+msgid "_Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
@@ -871,10 +861,11 @@ msgstr ""
 "Het voorkeurs-emailprogramma zal worden gebruikt\n"
 "om e-mails te schrijven als u op e-mail-adressen klikt."
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
+msgid "_Utilities"
 msgstr "Hulpprogramma's"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
@@ -959,7 +950,7 @@ msgid ""
 "as default Web Browser for Xfce:"
 msgstr ""
 "Kies de toepassing die u als standaard-\n"
-"webbrowser voor Xfce wilt gebruiken:"
+"webbrowser wil gebruiken voor Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
@@ -967,7 +958,7 @@ msgid ""
 "as default Mail Reader for Xfce:"
 msgstr ""
 "Kies de toepassing die u als standaard-\n"
-"e-mailprogramma voor Xfce wilt gebruiken:"
+"e-mailprogramma wil gebruiken voor Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
@@ -983,7 +974,7 @@ msgid ""
 "as default Terminal Emulator for Xfce:"
 msgstr ""
 "Kies de toepassing die u als standaard-\n"
-"terminalvenster voor Xfce wilt gebruiken:"
+"terminalvenster wil gebruiken voor Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -1116,7 +1107,7 @@ msgstr "Tik '%s --help' voor gebruik"
 #: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Ongeldig hulptype \"%s\""
+msgstr "Ongeldig hulptype '%s'"
 
 #: ../exo-helper/main.c:213
 #, c-format
@@ -1332,10 +1323,9 @@ msgstr ""
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "De volgende TYPEs worden ondersteund voor de --launch opdracht:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
+#.
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1463,21 +1453,21 @@ msgstr "Verken het web"
 #~ msgstr "%s Medium"
 
 #~ msgid "Given device \"%s\" is not a volume or drive"
-#~ msgstr "Opgegeven apparaat \"%s\" is geen medium of station"
+#~ msgstr "Opgegeven apparaat '%s' is geen medium of station"
 
 #~ msgid "Device \"%s\" not found in file system device table"
 #~ msgstr ""
-#~ "Apparaat \"%s\" is niet gevonden in de apparatentabel van het "
+#~ "Apparaat '%s' is niet gevonden in de apparatentabel van het "
 #~ "bestandssysteem"
 
 #~ msgid "You are not privileged to eject the volume \"%s\""
-#~ msgstr "U heeft geen rechten voor het uitwerpen van het medium \"%s\""
+#~ msgstr "U heeft geen rechten voor het uitwerpen van het medium '%s'"
 
 #~ msgid "An application is preventing the volume \"%s\" from being ejected"
-#~ msgstr "Een toepassing belemmert het uitwerpen van het medium \"%s\""
+#~ msgstr "Een toepassing belemmert het uitwerpen van het medium '%s'"
 
 #~ msgid "You are not privileged to mount the volume \"%s\""
-#~ msgstr "U heeft geen rechten voor het aankoppelen van het medium \"%s\""
+#~ msgstr "U heeft geen rechten voor het aankoppelen van het medium '%s'"
 
 #~ msgid ""
 #~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
@@ -1501,14 +1491,14 @@ msgstr "Verken het web"
 #~ msgstr "Een toepassing belemmert het verwijderen van de versleutelingslaag"
 
 #~ msgid "You are not privileged to unmount the volume \"%s\""
-#~ msgstr "U heeft geen rechten voor het ontkoppelen van het medium \"%s\""
+#~ msgstr "U heeft geen rechten voor het ontkoppelen van het medium '%s'"
 
 #~ msgid "An application is preventing the volume \"%s\" from being unmounted"
-#~ msgstr "Een toepassing voorkomt dat het medium \"%s\" wordt ontkoppeld"
+#~ msgstr "Een toepassing voorkomt dat het medium '%s' wordt ontkoppeld"
 
 #~ msgid "The volume \"%s\" was probably mounted manually on the command line"
 #~ msgstr ""
-#~ "Het medium \"%s\" werd waarschijnlijk handmatig via een opdrachtregel "
+#~ "Het medium '%s' werd waarschijnlijk handmatig via een opdrachtregel "
 #~ "aangekoppeld"
 
 #~ msgid "Eject rather than mount"
@@ -1549,22 +1539,22 @@ msgstr "Verken het web"
 #~ "deze versie is uitgeschakeld"
 
 #~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-#~ msgstr "De opgegeven UDI \"%s\" is geen geldig HAL-apparaat UDI"
+#~ msgstr "De opgegeven UDI '%s' is geen geldig HAL-apparaat UDI"
 
 #~ msgid "Cannot eject and unmount simultaneously"
 #~ msgstr "Kan niet gelijktijdig uitwerpen en ontkoppelen"
 
 #~ msgid "Failed to eject \"%s\""
-#~ msgstr "Kon \"%s\" niet uitwerpen"
+#~ msgstr "Kon '%s' niet uitwerpen"
 
 #~ msgid "Failed to unmount \"%s\""
-#~ msgstr "Kon \"%s\" niet ontkoppelen"
+#~ msgstr "Kon '%s' niet ontkoppelen"
 
 #~ msgid "Failed to mount \"%s\""
-#~ msgstr "Kon \"%s\" niet aankoppelen"
+#~ msgstr "Kon '%s' niet aankoppelen"
 
 #~ msgid "The device \"%s\" is now safe to remove."
-#~ msgstr "Het apparaat \"%s\" kan nu veilig worden verwijderd."
+#~ msgstr "Het apparaat '%s' kan nu veilig worden verwijderd."
 
 #~ msgid "Device is now safe to remove"
 #~ msgstr "Apparaat kan nu veilig worden verwijderd"
@@ -1573,7 +1563,7 @@ msgstr "Verken het web"
 #~ msgstr "Apparaat aan het uitwerpen"
 
 #~ msgid "The device \"%s\" is being ejected. This may take some time."
-#~ msgstr "Apparaat \"%s\" wordt uitgeworpen. Dit kan even duren."
+#~ msgstr "Apparaat '%s' wordt uitgeworpen. Dit kan even duren."
 
 #~ msgid "Unmounting device"
 #~ msgstr "Bezig met ontkoppelen van apparaat"
@@ -1582,7 +1572,7 @@ msgstr "Verken het web"
 #~ "The device \"%s\" is being unmounted by the system. Please do not remove "
 #~ "the media or disconnect the drive."
 #~ msgstr ""
-#~ "Het apparaat \"%s\" wordt door het systeem ontkoppeld. Graag de media "
+#~ "Het apparaat '%s' wordt door het systeem ontkoppeld. Graag de media "
 #~ "niet verwijderen noch het apparaat loskoppelen."
 
 #~ msgid "Writing data to device"
@@ -1592,18 +1582,18 @@ msgstr "Verken het web"
 #~ "There is data that needs to be written to the device \"%s\" before it can "
 #~ "be removed. Please do not remove the media or disconnect the drive."
 #~ msgstr ""
-#~ "Er zijn gegevens die naar het apparaat \"%s\" moeten worden weggeschreven "
+#~ "Er zijn gegevens die naar het apparaat '%s' moeten worden weggeschreven "
 #~ "voordat het verwijderd kan worden. Graag de media niet verwijderen noch "
 #~ "het station loskoppelen."
 
 #~ msgid "Unable to open \"%s\""
-#~ msgstr "Kan \"%s\" niet openen"
+#~ msgstr "Kan '%s' niet openen"
 
 #~ msgid "The URL \"%s\" is not supported"
-#~ msgstr "De URL \"%s\" wordt niet ondersteund"
+#~ msgstr "De URL '%s' wordt niet ondersteund"
 
 #~ msgid "Xfce 4 Preferred Applications"
-#~ msgstr "Xfce 4-Voorkeurstoepassingen"
+#~ msgstr "Xfce 4-voorkeurstoepassingen"
 
 #~ msgid "Failed to launch exo-preferred-applications"
 #~ msgstr "Kon exo-preferred-applications niet starten"
