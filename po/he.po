@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-14 07:54+0000\n"
+"POT-Creation-Date: 2012-08-18 19:36+0000\n"
 "PO-Revision-Date: 2007-01-19 14:50+0200\n"
 "Last-Translator: Yuval Tanny <tanai@int.gov.il>\n"
 "Language-Team: Hebrew\n"
@@ -530,8 +530,8 @@ msgstr "  --strip-comments  Remove comments from XML files\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Remove node contents from XML files\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
-#: ../exo-open/main.c:483
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -546,8 +546,8 @@ msgstr ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
-#: ../exo-open/main.c:487
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -562,8 +562,8 @@ msgstr ""
 "בחבילת קוד המקור של %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
-#: ../exo-open/main.c:491
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "נא לדווח על באגים ל- <%s>.\n"
@@ -697,7 +697,7 @@ msgstr "בחר סמל"
 msgid "Select a working directory"
 msgstr "בחירת תיקיית הפעילות"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:168
+#: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
 msgstr "מיקום הקובץ אינו קובץ רגיל או תיקייה"
 
@@ -754,68 +754,68 @@ msgstr "קבע מראש כתובת כאשר יוצרים קישור"
 msgid "Preset icon when creating a desktop file"
 msgstr "קבע מראש סמל כאשר יוצרים קובץ שולחן עבודה"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:69
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Print version information and exit"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:169
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[FILE|FOLDER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "Failed to open display"
 
-#: ../exo-desktop-item-edit/main.c:208
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "No file/folder specified"
 
-#: ../exo-desktop-item-edit/main.c:274
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "ארע כשל בטעינת תכנים מ־\"%s\":‏ %s"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "הקובץ \"%s\" אינו מכיל נתונים"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:292
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Failed to parse contents of \"%s\": %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:304
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "File \"%s\" has no type key"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "סוג קובץ שולחן עבודה לא נתמך \"%s\""
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "_צור"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:511
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "בחר שם קובץ"
 
-#: ../exo-desktop-item-edit/main.c:617
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Failed to create \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:617
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Failed to save \"%s\"."
@@ -832,8 +832,8 @@ msgstr "בחר יישום ברירת מחדל לשירותים"
 #. Internet
 #. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
-msgstr "אינטרנט"
+msgid "_Internet"
+msgstr "_אינטרנט"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:2
@@ -864,8 +864,8 @@ msgstr ""
 #. Utilities
 #. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
-msgstr "כלים"
+msgid "_Utilities"
+msgstr "_עזרים"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:2
@@ -1053,7 +1053,7 @@ msgstr "Failed to execute default File Manager"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Failed to execute default Terminal Emulator"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1061,15 +1061,15 @@ msgstr ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Settings manager socket"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1077,11 +1077,11 @@ msgstr ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
-#: ../exo-helper/main.c:96
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1097,17 +1097,17 @@ msgstr ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 
-#: ../exo-helper/main.c:106
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Type '%s --help' for usage."
 
-#: ../exo-helper/main.c:153
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Invalid helper type \"%s\""
 
-#: ../exo-helper/main.c:197
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1149,7 +1149,6 @@ msgid "Balsa"
 msgstr "Balsa"
 
 #: ../exo-helper/helpers/chromium.desktop.in.in.h:1
-#, fuzzy
 msgid "Chromium"
 msgstr "Chromium"
 
@@ -1192,6 +1191,10 @@ msgstr "GNOME Terminal"
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
 msgstr "Icedove"
+
+#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
+msgid "Iceweasel"
+msgstr "Iceweasel"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1273,26 +1276,26 @@ msgstr "הדפדפן הטקסטואלי W2M"
 msgid "X Terminal"
 msgstr "X Terminal"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Usage: exo-open [URLs...]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Print this help message and exit"
 
-#: ../exo-open/main.c:111
-msgid ""
-"  -V, --version                       Print version information and exit"
-msgstr ""
-"  -V, --version                       Print version information and exit"
-
 #: ../exo-open/main.c:113
 msgid ""
+"  -V, --version                       Print version information and exit"
+msgstr ""
+"  -V, --version                       Print version information and exit"
+
+#: ../exo-open/main.c:115
+msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
 "where\n"
@@ -1303,7 +1306,7 @@ msgstr ""
 "where\n"
 "                                      TYPE is one of the following values."
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1313,7 +1316,7 @@ msgstr ""
 "applications\n"
 "                                      when using the --launch option."
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "The following TYPEs are supported for the --launch command:"
 
@@ -1321,7 +1324,7 @@ msgstr "The following TYPEs are supported for the --launch command:"
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #. 
-#: ../exo-open/main.c:126
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1333,7 +1336,7 @@ msgstr ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1347,7 +1350,7 @@ msgstr ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1356,17 +1359,17 @@ msgstr ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "כשל בשיגור היישום המועדף לקבוצה \"%s\"."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Unable to detect the URI-scheme of \"%s\"."
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Failed to open URI \"%s\"."
