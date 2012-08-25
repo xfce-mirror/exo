@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-16 02:30+0000\n"
-"PO-Revision-Date: 2012-04-16 16:37+0900\n"
+"POT-Creation-Date: 2012-08-25 12:06+0000\n"
+"PO-Revision-Date: 2012-08-26 01:50+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: xfce-i18n <xfce-i18n@xfce.org>\n"
 "Language: ko\n"
@@ -541,7 +541,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   XML 파일에서 노드 내용을 제거합니다\n"
 
 #: ../exo-csource/main.c:304
-#: ../exo-desktop-item-edit/main.c:193
+#: ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -558,7 +558,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:308
-#: ../exo-desktop-item-edit/main.c:197
+#: ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -574,7 +574,7 @@ msgstr ""
 "\n"
 
 #: ../exo-csource/main.c:312
-#: ../exo-desktop-item-edit/main.c:201
+#: ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -756,63 +756,63 @@ msgid "Print version information and exit"
 msgstr "버전 정보를 출력하고 끝냅니다"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:169
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[FILE|FOLDER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "화면을 여는데 실패했습니다"
 
-#: ../exo-desktop-item-edit/main.c:208
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "지정된 파일이나 폴더가 없습니다"
 
-#: ../exo-desktop-item-edit/main.c:274
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "\"%s\"에서 내용을 불러오는데 실패했습니다: %s"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "파일 \"%s\"에 데이터가 없습니다"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:292
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "\"%s\"의 내용을 해석하는데 실패했습니다: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:304
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "파일 \"%s\"에 키의 유형이 없습니다"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "지원하지 않는 데스크톱 파일 유형 \"%s\" 입니다"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "만들기(_R)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:511
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "파일 이름 선택"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\"을(를) 만드는데 실패했습니다."
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\"을(를) 저장하는데 실패했습니다."
@@ -830,8 +830,8 @@ msgstr "다양한 서비스에 대한 기본 프로그램을 선택합니다"
 #. Internet
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
-msgstr "인터넷"
+msgid "_Internet"
+msgstr "인터넷(_I)"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:2
@@ -863,8 +863,8 @@ msgstr ""
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
-msgstr "유틸리티"
+msgid "_Utilities"
+msgstr "유틸리티(_U)"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:2
