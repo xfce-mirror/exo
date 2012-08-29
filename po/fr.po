@@ -5,19 +5,21 @@
 # Maximilian Schleiss <maximilian@xfce.org>, 2006-2008.
 # Jérôme Guelfucci <jeromeg@xfce.org>, 2009.
 # Douart Patrick <patrick.2@laposte.net>, 2009.
-# 
+# jc1 <jc1>, 2012.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: libexo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-16 02:30+0000\n"
-"PO-Revision-Date: 2010-07-28 19:09+0100\n"
-"Last-Translator: Durand-Favreau Arnaud <biginoz@free.fr>\n"
-"Language-Team: French <xfce-i18n@xfce.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2012-08-29 12:24+0000\n"
+"PO-Revision-Date: 2012-08-29 16:32+0200\n"
+"Last-Translator: jc1 <jc1>\n"
+"Language-Team: français <>\n"
 "Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -56,25 +58,25 @@ msgstr "La taille de l'icône dont il faut faire le rendu, en pixels."
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Impossible d'ouvrir le fichier \"%s\" : %s"
+msgstr "Impossible d'ouvrir le fichier « %s » : %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:849
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Impossible de lire le fichier \"%s\" : %s"
+msgstr "Impossible de lire le fichier « %s » : %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr ""
-"Impossible de charger l'image \"%s\" : la raison est inconnue, l'image est "
+"Impossible de charger l'image « %s » : la raison est inconnue, l'image est "
 "probablement corrompue"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Impossible d'ouvrir \"%s\"."
+msgstr "Impossible d'ouvrir « %s »."
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
 msgid "Orientation"
@@ -542,7 +544,7 @@ msgstr "  --strip-comments  Supprimer les commentaires des fichiers XML\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Supprimer le contenu des nœuds XML\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -558,7 +560,7 @@ msgstr ""
 "Écrit par Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -574,7 +576,7 @@ msgstr ""
 "trouve dans l'archive de sources %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -620,44 +622,37 @@ msgstr "Scripts Shell"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Créer le lanceur <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Nom :"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "C_ommentaire :"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Comm_ande :"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL :"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "_Répertoire de travail :"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Icône :"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -668,11 +663,9 @@ msgstr "Pas d'icône"
 msgid "Options:"
 msgstr "Options :"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Utili_ser la notification de démarrage"
@@ -687,11 +680,9 @@ msgstr ""
 "la commande est exécutée depuis le gestionnaire de fichiers ou le menu. La "
 "notification au démarrage n'est pas utilisable avec toutes les applications."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Exécuter dans _terminal"
@@ -774,66 +765,66 @@ msgid "Print version information and exit"
 msgstr "Afficher les informations sur la version et quitter"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:169
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[FICHIER|DOSSIER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "Impossible d'ouvrir l'affichage"
 
-#: ../exo-desktop-item-edit/main.c:208
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "Aucun fichier/dossier n'a été précisé"
 
-#: ../exo-desktop-item-edit/main.c:274
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Impossible d'ouvrir le fichier \"%s\" : %s"
+msgstr "Impossible d'ouvrir le fichier « %s » : %s"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr "Le fichier \"%s\" ne contient aucune données"
+msgstr "Le fichier « %s » ne contient aucune données"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:292
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Impossible d'analyser le contenu de \"%s\" : %s"
+msgstr "Impossible d'analyser le contenu de « %s » : %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:304
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr "Le fichier \"%s\"  n'a pas de clé type"
+msgstr "Le fichier « %s »  n'a pas de clé type"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Type de fichier Desktop non pris en charge : \"%s\""
+msgstr "Type de fichier Desktop non pris en charge : « %s »"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "C_réer"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:511
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "Choisir un nom de fichier"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Impossible de créer \"%s\"."
+msgstr "Impossible de créer « %s »."
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Impossible d'enregistrer \"%s\"."
+msgstr "Impossible d'enregistrer « %s »."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -844,11 +835,12 @@ msgstr "Applications favorites"
 msgid "Select default applications for various services"
 msgstr "Sélectionner les applications par défaut pour différents services"
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
-msgstr "Internet"
+msgid "_Internet"
+msgstr "_Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:2
@@ -876,11 +868,12 @@ msgstr ""
 "Le client de messagerie favori sera utilisé pour composer des courriels\n"
 "quand vous cliquez sur une adresse électronique."
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
-msgstr "Utilitaires"
+msgid "_Utilities"
+msgstr "_Utilitaires"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:2
@@ -1125,7 +1118,7 @@ msgstr "Saisissez '%s --help' pour afficher l'aide."
 #: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Type d'application incorrect \"%s\""
+msgstr "Type d'application incorrect « %s »"
 
 #: ../exo-helper/main.c:213
 #, c-format
@@ -1343,10 +1336,9 @@ msgstr ""
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Les TYPEs suivants sont pris en charge par la commande --launch :"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
+#.
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1388,17 +1380,17 @@ msgstr ""
 #: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Impossible de lancer l'application favorite pour la catégorie \"%s\"."
+msgstr "Impossible de lancer l'application favorite pour la catégorie « %s »."
 
 #: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "Impossible de détecter le schéma URL de \"%s\"."
+msgstr "Impossible de détecter le schéma URL de « %s »."
 
 #: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Impossible d'ouvrir l'URL \"%s\"."
+msgstr "Impossible d'ouvrir l'URL « %s »."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "Browse the file system"
