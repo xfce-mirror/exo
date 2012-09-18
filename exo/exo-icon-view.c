@@ -5627,6 +5627,41 @@ exo_icon_view_select_all (ExoIconView *icon_view)
 
 
 /**
+ * exo_icon_view_selection_invert:
+ * @icon_view : A #ExoIconView.
+ *
+ * Selects all the icons that are currently not selected. @icon_view must
+ * has its selection mode set to #GTK_SELECTION_MULTIPLE.
+ **/
+void
+exo_icon_view_selection_invert (ExoIconView *icon_view)
+{
+  GList           *items;
+  gboolean         dirty = FALSE;
+  ExoIconViewItem *item;
+
+  g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));
+
+  if (icon_view->priv->selection_mode != GTK_SELECTION_MULTIPLE)
+    return;
+
+  for (items = icon_view->priv->items; items; items = items->next)
+    {
+      item = items->data;
+
+      item->selected = !item->selected;
+      exo_icon_view_queue_draw_item (icon_view, item);
+
+      dirty = TRUE;
+    }
+
+  if (dirty)
+    g_signal_emit (icon_view, icon_view_signals[SELECTION_CHANGED], 0);
+}
+
+
+
+/**
  * exo_icon_view_unselect_all:
  * @icon_view : A #ExoIconView.
  *

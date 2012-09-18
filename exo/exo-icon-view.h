@@ -260,6 +260,7 @@ gboolean              exo_icon_view_path_is_selected          (const ExoIconView
 GList                *exo_icon_view_get_selected_items        (const ExoIconView        *icon_view);
 void                  exo_icon_view_select_all                (ExoIconView              *icon_view);
 void                  exo_icon_view_unselect_all              (ExoIconView              *icon_view);
+void                  exo_icon_view_selection_invert          (ExoIconView              *icon_view);
 void                  exo_icon_view_item_activated            (ExoIconView              *icon_view,
                                                                GtkTreePath              *path);
 
