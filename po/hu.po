@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-20 12:51+0000\n"
+"POT-Creation-Date: 2012-09-27 11:54+0000\n"
 "PO-Revision-Date: 2010-02-05 22:43+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at fsf dot hu>\n"
@@ -536,7 +536,7 @@ msgstr "  --strip-comments  Megjegyzések eltávolítása XML fájlokból\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Csomópont tartalmának eltávolítása XML fájlokból\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -552,7 +552,7 @@ msgstr ""
 "Írta: Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -567,7 +567,7 @@ msgstr ""
 " feltételei szerint, amely megtalálható a(z) %s forráscsomagban.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -766,63 +766,63 @@ msgid "Print version information and exit"
 msgstr "Verzióinformációk kiírása és kilépés"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:169
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[FÁJL|MAPPA]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "A képernyő megnyitása meghiúsult"
 
-#: ../exo-desktop-item-edit/main.c:208
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "Nincs megadva fájl/mappa"
 
-#: ../exo-desktop-item-edit/main.c:274
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "A tartalom („%s”) betöltése meghiúsult: %s"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "A fájl („%s”) nem tartalmaz adatokat"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:292
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "A(z( „%s” tartalmának feldolgozása meghiúsult: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:304
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "A fájl („%s”) nem tartalmaz típus kulcsot"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Nem támogatott asztalifájl-típus: „%s”"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "_Létrehozás"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:511
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "Válasszon fájlnevet"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "„%s” létrehozása meghiúsult."
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "„%s” mentése meghiúsult."
@@ -839,8 +839,8 @@ msgstr "Alapértelmezett alkalmazások kiválasztása számos szolgáltatáshoz"
 #. Internet
 #. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
-msgstr "Internet"
+msgid "_Internet"
+msgstr "_Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:2
@@ -871,7 +871,8 @@ msgstr ""
 #. Utilities
 #. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
+#, fuzzy
+msgid "_Utilities"
 msgstr "Segédprogramok"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
