@@ -429,7 +429,7 @@ exo_str_looks_like_an_uri (const gchar *str)
       for (++s; g_ascii_isalnum (*s) || *s == '+' || *s == '-' || *s == '.'; ++s);
 
       /* <scheme> must be followed by ":" */
-      return (*s == ':');
+      return (*s == ':' && *(s+1) == '/');
     }
 
   return FALSE;
