@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-18 17:58+0900\n"
-"PO-Revision-Date: 2012-04-25 20:34+0900\n"
+"POT-Creation-Date: 2012-10-15 20:02+0900\n"
+"PO-Revision-Date: 2012-10-15 21:14+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "Language: ja\n"
@@ -64,8 +64,11 @@ msgstr "ファイル \"%s\" を読み込めませんでした: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "画像 \"%s\" の読み込みに失敗しました: 理由は不明ですが、恐らく画像ファイルが破損しています"
+msgid ""
+"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr ""
+"画像 \"%s\" の読み込みに失敗しました: 理由は不明ですが、恐らく画像ファイルが"
+"破損しています"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -73,8 +76,7 @@ msgid "Failed to open \"%s\"."
 msgstr "\"%s\" を開けませんでした。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:277
-#: ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
 msgid "Orientation"
 msgstr "方向"
 
@@ -84,26 +86,22 @@ msgid "The orientation of the iconbar"
 msgstr "アイコンバーが延びる方向です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:294
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:793
 msgid "Pixbuf column"
 msgstr "ピクセルバッファー欄"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:295
-#: ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "アイコンのピクセルバッファーを取得するために使用されるモデル欄です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:310
-#: ../exo/exo-icon-view.c:920
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
 msgid "Text column"
 msgstr "文字欄"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:311
-#: ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
 msgid "Model column used to retrieve the text from"
 msgstr "文字を取得するために使用されるモデル欄です。"
 
@@ -128,38 +126,32 @@ msgid "Active item index"
 msgstr "有効アイテムのインデックス"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:347
-#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Active item fill color"
 msgstr "有効アイテムの塗りつぶし色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:354
-#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Active item border color"
 msgstr "有効アイテムの枠の色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:361
-#: ../exo/exo-icon-bar.c:362
+#: ../exo/exo-icon-bar.c:361 ../exo/exo-icon-bar.c:362
 msgid "Active item text color"
 msgstr "有効アイテムの文字色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:368
-#: ../exo/exo-icon-bar.c:369
+#: ../exo/exo-icon-bar.c:368 ../exo/exo-icon-bar.c:369
 msgid "Cursor item fill color"
 msgstr "カーソルアイテムの塗りつぶし色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:375
-#: ../exo/exo-icon-bar.c:376
+#: ../exo/exo-icon-bar.c:375 ../exo/exo-icon-bar.c:376
 msgid "Cursor item border color"
 msgstr "カーソルアイテムの枠の色"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:382
-#: ../exo/exo-icon-bar.c:383
+#: ../exo/exo-icon-bar.c:382 ../exo/exo-icon-bar.c:383
 msgid "Cursor item text color"
 msgstr "カーソルアイテムの文字色"
 
@@ -229,8 +221,7 @@ msgid "All Icons"
 msgstr "すべてのアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:139
-#: ../exo/exo-icon-chooser-dialog.c:285
+#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
 msgid "Image Files"
 msgstr "画像ファイル"
 
@@ -316,7 +307,8 @@ msgstr "マークアップ欄"
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:748
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Pango のマークアップが使用されている場合に文字を取得するためのモデル欄です。"
+msgstr ""
+"Pango のマークアップが使用されている場合に文字を取得するためのモデル欄です。"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:762
@@ -330,8 +322,11 @@ msgstr "アイコン表示のためのモデルです。"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:777
-msgid "How the text and icon of each item are positioned relative to each other"
-msgstr "それぞれのアイテムの文字とアイコンがお互いにどの位置に置かれるかを選択します。"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
+msgstr ""
+"それぞれのアイテムの文字とアイコンがお互いにどの位置に置かれるかを選択しま"
+"す。"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:809
@@ -374,28 +369,28 @@ msgid "The selection mode"
 msgstr "選択モードです。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:871
-#: ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "シングルクリック"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:872
-#: ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "表示されているアイテムを一回のクリックで有効にするかどうか指定します。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:888
-#: ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:888 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "シングルクリックのタイムアウト"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:889
-#: ../exo/exo-tree-view.c:172
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-msgstr "シングルクリックモードの時にマウスカーソルの下にあるアイテムが自動的に選択状態になるまでの時間です。"
+#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
+msgstr ""
+"シングルクリックモードの時にマウスカーソルの下にあるアイテムが自動的に選択状"
+"態になるまでの時間です。"
 
 # NOTE: GObject property
 #: ../exo/exo-icon-view.c:904
@@ -431,8 +426,7 @@ msgstr "選択ボックスの透明度です。"
 msgid "Preview"
 msgstr "プレビュー"
 
-#: ../exo/exo-thumbnail-preview.c:129
-#: ../exo/exo-thumbnail-preview.c:271
+#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
 msgid "No file selected"
 msgstr "ファイルは選択されていません"
 
@@ -461,8 +455,12 @@ msgid "_Add a new toolbar"
 msgstr "新しいツールバーを追加(_A)"
 
 #: ../exo/exo-toolbars-editor.c:221
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
-msgstr "追加するにはアイテムをツールバーの上にドラッグしてください。ツールバーからドラッグすると削除されます。"
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
+msgstr ""
+"追加するにはアイテムをツールバーの上にドラッグしてください。ツールバーからド"
+"ラッグすると削除されます。"
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -600,8 +598,7 @@ msgstr "  --strip-comments  XML ファイルからコメントを削除します
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   XML ファイルからノード情報を削除します\n"
 
-#: ../exo-csource/main.c:304
-#: ../exo-desktop-item-edit/main.c:193
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -617,8 +614,7 @@ msgstr ""
 "Benedikt Meurer <benny@xfce.org> が製作しました。\n"
 "\n"
 
-#: ../exo-csource/main.c:308
-#: ../exo-desktop-item-edit/main.c:197
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -634,8 +630,7 @@ msgstr ""
 "%s source package.\n"
 "\n"
 
-#: ../exo-csource/main.c:312
-#: ../exo-desktop-item-edit/main.c:201
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -730,8 +725,14 @@ msgid "Use _startup notification"
 msgstr "起動通知を行う(_S)"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
-msgstr "このオプションを選択すると、ファイルマネージャーやメニューからコマンドが実行される時に起動通知を行います。すべてのアプリケーションが起動通知に対応しているわけではありません。"
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
+msgstr ""
+"このオプションを選択すると、ファイルマネージャーやメニューからコマンドが実行"
+"される時に起動通知を行います。すべてのアプリケーションが起動通知に対応してい"
+"るわけではありません。"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -742,7 +743,8 @@ msgstr "ターミナルで実行する(_T)"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
-msgstr "このオプションを有効にすると、コマンドはターミナルウィンドウで実行されます。"
+msgstr ""
+"このオプションを有効にすると、コマンドはターミナルウィンドウで実行されます。"
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:590
@@ -811,69 +813,68 @@ msgstr "リンクを作成する場合のプリセット URL"
 msgid "Preset icon when creating a desktop file"
 msgstr "デスクトップファイルを作成する場合のプリセットアイコン"
 
-#: ../exo-desktop-item-edit/main.c:85
-#: ../exo-helper/main.c:70
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:169
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[ファイル|フォルダー]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "ディスプレイを開けませんでした"
 
-#: ../exo-desktop-item-edit/main.c:208
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "ファイル/フォルダーが指定されていません"
 
-#: ../exo-desktop-item-edit/main.c:274
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "\"%s\" から内容を読み込むことに失敗しました: %s"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "ファイル \"%s\" にはデータがありません"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:292
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "\"%s\" の内容の解析に失敗しました: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:304
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "ファイル \"%s\" には type キーがありません"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "タイプ \"%s\" はデスクトップファイルとしてサポートされません"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "作成(_R)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:511
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "ファイル名を選択してください"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\" を作成できませんでした。"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" を保存できませんでした。"
@@ -891,8 +892,8 @@ msgstr "各種サービスのためのデフォルトアプリケーションを
 #. Internet
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
-msgstr "インターネット"
+msgid "_Internet"
+msgstr "インターネット(_I)"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:1
@@ -926,8 +927,8 @@ msgstr ""
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
-msgstr "ユーティリティ"
+msgid "_Utilities"
+msgstr "ユーティリティ(_U)"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:1
@@ -959,7 +960,9 @@ msgstr ""
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
 msgid "Press left mouse button to change the selected application."
-msgstr "選択されているアプリケーションを変更するにはマウスの左ボタンをクリックしてください。"
+msgstr ""
+"選択されているアプリケーションを変更するにはマウスの左ボタンをクリックしてく"
+"ださい。"
 
 #: ../exo-helper/exo-helper-chooser.c:155
 msgid "Application Chooser Button"
@@ -1094,15 +1097,15 @@ msgstr ""
 msgid "No command specified"
 msgstr "コマンドが指定されていません"
 
-#: ../exo-helper/exo-helper.c:688
-#: ../exo-helper/exo-helper.c:722
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "書き込むために %s を開くことに失敗しました"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "お気に入りのアプリケーション (ブラウザー、メーラーやターミナルエミュレーター)"
+msgstr ""
+"お気に入りのアプリケーション (ブラウザー、メーラーやターミナルエミュレーター)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
@@ -1137,8 +1140,12 @@ msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
 #: ../exo-helper/main.c:73
-msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
-msgstr "TYPE のデフォルトヘルパーを PARAMETER オプションを付けて起動する。TYPE は以下を参照。"
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
+"one of the following values."
+msgstr ""
+"TYPE のデフォルトヘルパーを PARAMETER オプションを付けて起動する。TYPE は以下"
+"を参照。"
 
 #: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
@@ -1354,22 +1361,26 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          このメッセージを表示して終了する"
 
 #: ../exo-open/main.c:113
-msgid "  -V, --version                       Print version information and exit"
+msgid ""
+"  -V, --version                       Print version information and exit"
 msgstr "  -v, --version                       バージョン情報を表示して終了する"
 
 #: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, where\n"
+"                                      TYPE with the optional PARAMETERs, "
+"where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 "  --launch TYPE [PARAMETERs...]       TYPE のアプリケーションを PARAMETER \n"
-"                                      オプションを付けて実行する。TYPE の値は\n"
+"                                      オプションを付けて実行する。TYPE の値"
+"は\n"
 "                                      以下を参照。"
 
 #: ../exo-open/main.c:119
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for applications\n"
+"  --working-directory DIRECTORY       Default working directory for "
+"applications\n"
 "                                      when using the --launch option."
 msgstr ""
 "  --working-directory DIRECTORY      --launch オプションを使用した時の\n"
@@ -1411,8 +1422,12 @@ msgstr ""
 
 #: ../exo-open/main.c:195
 #, c-format
-msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
-msgstr "%s が GIO-Unix 機能なしでコンパイルされている時、デスクトップファイルの起動はサポートされません。"
+msgid ""
+"Launching desktop files is not supported when %s is compiled without GIO-"
+"Unix features."
+msgstr ""
+"%s が GIO-Unix 機能なしでコンパイルされている時、デスクトップファイルの起動は"
+"サポートされません。"
 
 #: ../exo-open/main.c:260
 #, c-format
@@ -1444,4 +1459,3 @@ msgstr "コマンドラインを使用します"
 #: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "ウェブを閲覧します"
-
