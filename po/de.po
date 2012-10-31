@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-17 18:45+0000\n"
+"POT-Creation-Date: 2012-10-31 09:06+0000\n"
 "PO-Revision-Date: 2010-11-24 00:14+0100\n"
 "Last-Translator: Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
 "Language-Team: German <xfce-i18n-de@xfce.org>\n"
@@ -542,7 +542,7 @@ msgstr "  --strip-comments  Kommentare aus XML-Dateien entfernen\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Knoteninhalte aus XML-Dateien entfernen\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -558,7 +558,7 @@ msgstr ""
 "Entwickelt von Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -573,7 +573,7 @@ msgstr ""
 "Quellpaket von %s enthalten ist, Kopien von %s verbreiten.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -773,63 +773,63 @@ msgid "Print version information and exit"
 msgstr "Programmversion anzeigen und beenden"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:169
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[DATEI|ORDNER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "Konnte Anzeige nicht öffnen"
 
-#: ../exo-desktop-item-edit/main.c:208
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "Keine Datei bzw. kein Ordner angegeben"
 
-#: ../exo-desktop-item-edit/main.c:274
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Konnte den Inhalt aus »%s« nicht laden: %s"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Die Datei »%s« enthält keine Daten"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:292
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Konnte die Datei »%s« nicht parsen: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:304
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Die Datei »%s« hat keinen Schlüssel für den Typ"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Nicht unterstützter Dateityp »%s«"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "_Erstellen"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:511
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "Dateinamen eingeben"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Konnte »%s« nicht erstellen."
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Konnte »%s« nicht speichern."
@@ -846,8 +846,8 @@ msgstr "Definieren Sie Standardanwendungen für bestimmte Zwecke"
 #. Internet
 #. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
-msgstr "Internet"
+msgid "_Internet"
+msgstr "_Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:2
@@ -876,8 +876,8 @@ msgstr ""
 #. Utilities
 #. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
-msgstr "Werkzeuge"
+msgid "_Utilities"
+msgstr "Werkze_uge"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:2
