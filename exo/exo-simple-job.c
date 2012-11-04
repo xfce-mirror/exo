@@ -32,6 +32,9 @@
 #include <string.h>
 #endif
 
+/* avoid waring in the gvalue collector, since it will break the api */
+#define GLIB_VERSION_MIN_REQUIRED GLIB_VERSION_2_30
+
 #include <gobject/gvaluecollector.h>
 
 #include <exo/exo-job.h>
