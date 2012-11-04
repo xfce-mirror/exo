@@ -197,6 +197,7 @@ EXTRA_DIST = 								\
 	exo.symbols							\
 	exo-alias.h							\
 	exo-aliasdef.c							\
+	exo-icon-view-accessible.c					\
 	exo-marshal.list						\
 	make-exo-alias.pl
 

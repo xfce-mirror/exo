@@ -427,6 +427,9 @@ struct _ExoIconViewItem
    */
   GdkRectangle area;
 
+  /* position of the item in the list */
+  gint index;
+
   /* Individual cells.
    * box[i] is the actual area occupied by cell i,
    * before, after are used to calculate the cell
@@ -568,6 +571,10 @@ struct _ExoIconViewPrivate
 
 
 
+#include <exo/exo-icon-view-accessible.c>
+
+
+
 static guint icon_view_signals[LAST_SIGNAL];
 
 
@@ -575,7 +582,34 @@ static guint icon_view_signals[LAST_SIGNAL];
 G_DEFINE_TYPE_WITH_CODE (ExoIconView, exo_icon_view, GTK_TYPE_CONTAINER,
     G_IMPLEMENT_INTERFACE (GTK_TYPE_CELL_LAYOUT, exo_icon_view_cell_layout_init))
 
+static AtkObject *
+exo_icon_view_get_accessible (GtkWidget *widget)
+{
+  static gboolean initited = FALSE;
+  GType derived_type; 
+  AtkObjectFactory *factory;
+  AtkRegistry *registry;
+  GType derived_atk_type;
+  
+  if (!initited)
+    {
+      derived_type = g_type_parent (EXO_TYPE_ICON_VIEW);
 
+      registry = atk_get_default_registry ();
+      factory = atk_registry_get_factory (registry, derived_type);
+      derived_atk_type = atk_object_factory_get_accessible_type (factory);
+
+      if (g_type_is_a (derived_atk_type, GTK_TYPE_ACCESSIBLE))
+        {
+          atk_registry_set_factory_type (registry, EXO_TYPE_ICON_VIEW,
+                                         exo_icon_view_accessible_factory_get_type ());
+        }
+
+      initited = TRUE;
+    }
+
+  return GTK_WIDGET_CLASS (exo_icon_view_parent_class)->get_accessible (widget);
+}
 
 static void
 exo_icon_view_class_init (ExoIconViewClass *klass)
@@ -600,6 +634,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   gtkwidget_class->size_request = exo_icon_view_size_request;
   gtkwidget_class->size_allocate = exo_icon_view_size_allocate;
   gtkwidget_class->style_set = exo_icon_view_style_set;
+  gtkwidget_class->get_accessible = exo_icon_view_get_accessible;
   gtkwidget_class->expose_event = exo_icon_view_expose_event;
   gtkwidget_class->motion_notify_event = exo_icon_view_motion_notify_event;
   gtkwidget_class->button_press_event = exo_icon_view_button_press_event;
@@ -1696,8 +1731,10 @@ exo_icon_view_expose_event (GtkWidget      *widget,
       if (G_LIKELY (gdk_region_rect_in (event->region, &item->area) != GDK_OVERLAP_RECTANGLE_OUT))
         {
           exo_icon_view_paint_item (icon_view, item, &event_area, event->window, item->area.x, item->area.y, TRUE);
-          if (G_UNLIKELY (dest_index >= 0 && dest_item == NULL && dest_index == g_list_index (priv->items, item)))
-            dest_item = item;
+          if (G_UNLIKELY (dest_index >= 0 && dest_item == NULL)) {
+                  
+           if (dest_index == g_list_index (priv->items, item))
+            dest_item = item;}
         }
     }
 
@@ -3871,6 +3908,7 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
 {
   ExoIconViewItem *item;
   gint             idx;
+  GList           *list;
 
   idx = gtk_tree_path_get_indices (path)[0];
 
@@ -3878,7 +3916,16 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
   item = g_slice_new0 (ExoIconViewItem);
   item->iter = *iter;
   item->area.width = -1;
+  item->index = idx;
   icon_view->priv->items = g_list_insert (icon_view->priv->items, item, idx);
+
+  /* update index of items in tail */
+  list = g_list_nth (icon_view->priv->items, idx + 1);
+  for (; list != NULL; list = list->next)
+    {
+      item = list->data;
+      item->index++;
+    }
 
   /* recalculate the layout */
   exo_icon_view_queue_layout (icon_view);
@@ -3956,11 +4003,12 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
                               gint         *new_order,
                               ExoIconView  *icon_view)
 {
-  GList **list_array;
-  GList  *list;
-  gint   *order;
-  gint     length;
-  gint     i;
+  GList          **list_array;
+  GList           *list;
+  gint            *order;
+  gint              length;
+  gint              i;
+  ExoIconViewItem  *item;
 
   /* cancel any editing attempt */
   exo_icon_view_stop_editing (icon_view, TRUE);
@@ -3983,11 +4031,17 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
   icon_view->priv->items = list_array[0];
   list_array[0]->prev = NULL;
 
+  item = list_array[0]->data;
+  item->index = 0;
+
   /* hook up the remaining items */
   for (i = 1; i < length; ++i)
     {
       list_array[i - 1]->next = list_array[i];
       list_array[i]->prev = list_array[i - 1];
+
+      item = list_array[i]->data;
+      item->index = i;
     }
 
   /* hook up the last item */
@@ -5374,11 +5428,13 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       /* build up the initial items list */
       if (gtk_tree_model_get_iter_first (model, &iter))
         {
+          n = 0;
           do
             {
               item = g_slice_new0 (ExoIconViewItem);
               item->iter = iter;
               item->area.width = -1;
+              item->index = n++;
               items = g_list_prepend (items, item);
             }
           while (gtk_tree_model_iter_next (model, &iter));
@@ -7440,12 +7496,13 @@ GdkPixmap*
 exo_icon_view_create_drag_icon (ExoIconView *icon_view,
                                 GtkTreePath *path)
 {
-  GdkRectangle area;
-  GtkWidget   *widget = GTK_WIDGET (icon_view);
-  GdkPixmap   *drawable;
-  GdkGC       *gc;
-  GList       *lp;
-  gint         idx;
+  GdkRectangle     area;
+  GtkWidget       *widget = GTK_WIDGET (icon_view);
+  GdkPixmap       *drawable;
+  GdkGC           *gc;
+  GList           *lp;
+  gint             idx;
+  ExoIconViewItem *item;
 
   g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), NULL);
   g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, NULL);
@@ -7458,7 +7515,7 @@ exo_icon_view_create_drag_icon (ExoIconView *icon_view,
 
   for (lp = icon_view->priv->items; lp != NULL; lp = lp->next)
     {
-      ExoIconViewItem *item = lp->data;
+      item = lp->data;
       if (G_UNLIKELY (idx == g_list_index (icon_view->priv->items, item)))
         {
           drawable = gdk_pixmap_new (icon_view->priv->bin_window,
