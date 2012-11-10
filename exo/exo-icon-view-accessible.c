@@ -52,6 +52,8 @@ typedef struct
   guint action_idle_handler;
 } ExoIconViewItemAccessible;
 
+#define accessible_item_index(item) (g_list_index (EXO_ICON_VIEW (item->widget)->priv->items, item->item))
+
 static const gchar *const exo_icon_view_item_accessible_action_names[] = 
 {
   "activate",
@@ -84,7 +86,7 @@ exo_icon_view_item_accessible_idle_do_action (gpointer data)
   if (item->widget != NULL)
     {
       icon_view = EXO_ICON_VIEW (item->widget);
-      path = gtk_tree_path_new_from_indices (item->item->index, -1);
+      path = gtk_tree_path_new_from_indices (accessible_item_index (item), -1);
       exo_icon_view_item_activated (icon_view, path);
       gtk_tree_path_free (path);
     }
@@ -973,7 +975,7 @@ exo_icon_view_item_accessible_get_index_in_parent (AtkObject *obj)
   g_return_val_if_fail (EXO_IS_ICON_VIEW_ITEM_ACCESSIBLE (obj), 0);
   item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (obj);
 
-  return item->item->index; 
+  return accessible_item_index (item); 
 }
 
 static AtkStateSet *
@@ -1197,8 +1199,9 @@ exo_icon_view_accessible_ref_child (AtkObject *accessible,
   if (icons)
     {
       ExoIconViewItem *item = icons->data;
+      gint item_index = g_list_index (icon_view->priv->items, item);
    
-      g_return_val_if_fail (item->index == index, NULL);
+      g_return_val_if_fail (item_index == index, NULL);
       obj = exo_icon_view_accessible_find_child (accessible, index);
       if (!obj)
         {
@@ -1414,7 +1417,7 @@ exo_icon_view_accessible_model_row_inserted (GtkTreeModel *tree_model,
     {
       info = items->data;
       item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (info->item);
-      if (info->index != item->item->index)
+      if (info->index != accessible_item_index (item))
         {
           if (info->index < index)
             g_warning ("Unexpected index value on insertion %d %d", index, info->index);
@@ -1422,7 +1425,7 @@ exo_icon_view_accessible_model_row_inserted (GtkTreeModel *tree_model,
           if (tmp_list == NULL)
             tmp_list = items;
    
-          info->index = item->item->index;
+          info->index = accessible_item_index (item);
         }
 
       items = items->next;
@@ -1465,12 +1468,12 @@ exo_icon_view_accessible_model_row_deleted (GtkTreeModel *tree_model,
         {
           deleted_item = items;
         }
-      if (info->index != item->item->index)
+      if (info->index != accessible_item_index (item))
         {
           if (tmp_list == NULL)
             tmp_list = items;
             
-          info->index = item->item->index;
+          info->index = accessible_item_index (item);
         }
 
       items = items->next;
@@ -1766,6 +1769,7 @@ exo_icon_view_accessible_ref_accessible_at_point (AtkComponent *component,
   ExoIconView *icon_view;
   ExoIconViewItem *item;
   gint x_pos, y_pos;
+  gint index;
 
   widget = GTK_ACCESSIBLE (component)->widget;
   if (widget == NULL)
@@ -1775,8 +1779,9 @@ exo_icon_view_accessible_ref_accessible_at_point (AtkComponent *component,
   icon_view = EXO_ICON_VIEW (widget);
   atk_component_get_extents (component, &x_pos, &y_pos, NULL, NULL, coord_type);
   item = exo_icon_view_get_item_at_coords (icon_view, x - x_pos, y - y_pos, TRUE, NULL);
+  index = g_list_index (icon_view->priv->items, item);
   if (item)
-    return exo_icon_view_accessible_ref_child (ATK_OBJECT (component), item->index);
+    return exo_icon_view_accessible_ref_child (ATK_OBJECT (component), index);
 
   return NULL;
 }
@@ -1835,6 +1840,7 @@ exo_icon_view_accessible_ref_selection (AtkSelection *selection,
   GtkWidget *widget;
   ExoIconView *icon_view;
   ExoIconViewItem *item;
+  gint index;
 
   widget = GTK_ACCESSIBLE (selection)->widget;
   if (widget == NULL)
@@ -1843,17 +1849,19 @@ exo_icon_view_accessible_ref_selection (AtkSelection *selection,
   icon_view = EXO_ICON_VIEW (widget);
 
   l = icon_view->priv->items;
+  index = 0;
   while (l)
     {
       item = l->data;
       if (item->selected)
         {
           if (i == 0)
-            return atk_object_ref_accessible_child (gtk_widget_get_accessible (widget), item->index);
+            return atk_object_ref_accessible_child (gtk_widget_get_accessible (widget), index);
           else
             i--;
         }
       l = l->next;
+      index++;
     }
 
   return NULL;

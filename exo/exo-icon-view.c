@@ -427,9 +427,6 @@ struct _ExoIconViewItem
    */
   GdkRectangle area;
 
-  /* position of the item in the list */
-  gint index;
-
   /* Individual cells.
    * box[i] is the actual area occupied by cell i,
    * before, after are used to calculate the cell
@@ -3908,7 +3905,6 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
 {
   ExoIconViewItem *item;
   gint             idx;
-  GList           *list;
 
   idx = gtk_tree_path_get_indices (path)[0];
 
@@ -3916,16 +3912,7 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
   item = g_slice_new0 (ExoIconViewItem);
   item->iter = *iter;
   item->area.width = -1;
-  item->index = idx;
   icon_view->priv->items = g_list_insert (icon_view->priv->items, item, idx);
-
-  /* update index of items in tail */
-  list = g_list_nth (icon_view->priv->items, idx + 1);
-  for (; list != NULL; list = list->next)
-    {
-      item = list->data;
-      item->index++;
-    }
 
   /* recalculate the layout */
   exo_icon_view_queue_layout (icon_view);
@@ -4008,7 +3995,6 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
   gint            *order;
   gint              length;
   gint              i;
-  ExoIconViewItem  *item;
 
   /* cancel any editing attempt */
   exo_icon_view_stop_editing (icon_view, TRUE);
@@ -4031,17 +4017,11 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
   icon_view->priv->items = list_array[0];
   list_array[0]->prev = NULL;
 
-  item = list_array[0]->data;
-  item->index = 0;
-
   /* hook up the remaining items */
   for (i = 1; i < length; ++i)
     {
       list_array[i - 1]->next = list_array[i];
       list_array[i]->prev = list_array[i - 1];
-
-      item = list_array[i]->data;
-      item->index = i;
     }
 
   /* hook up the last item */
@@ -5434,7 +5414,6 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
               item = g_slice_new0 (ExoIconViewItem);
               item->iter = iter;
               item->area.width = -1;
-              item->index = n++;
               items = g_list_prepend (items, item);
             }
           while (gtk_tree_model_iter_next (model, &iter));
