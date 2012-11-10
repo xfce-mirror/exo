@@ -467,7 +467,7 @@ struct _ExoIconViewPrivate
   GtkAdjustment *hadjustment;
   GtkAdjustment *vadjustment;
 
-  gint layout_idle_id;
+  guint layout_idle_id;
 
   gboolean doing_rubberband;
   gint rubberband_x_1, rubberband_y_1;
@@ -475,7 +475,7 @@ struct _ExoIconViewPrivate
   GdkGC *rubberband_border_gc;
   GdkGC *rubberband_fill_gc;
 
-  gint scroll_timeout_id;
+  guint scroll_timeout_id;
   gint scroll_value_diff;
   gint event_last_x, event_last_y;
 
@@ -553,7 +553,7 @@ struct _ExoIconViewPrivate
   guint                         search_imcontext_changed : 1;
   gint                          search_column;
   gint                          search_selected_iter;
-  gint                          search_timeout_id;
+  guint                         search_timeout_id;
   gboolean                      search_disable_popdown;
   ExoIconViewSearchEqualFunc    search_equal_func;
   gpointer                      search_equal_data;
