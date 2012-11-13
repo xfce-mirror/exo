@@ -1118,7 +1118,7 @@ exo_icon_view_accessible_get_priv (AtkObject *accessible)
 static void
 exo_icon_view_item_accessible_info_new (AtkObject *accessible,
                                         AtkObject *item,
-                                        gint       index)
+                                        gint       idx)
 {
   ExoIconViewItemAccessibleInfo *info;
   ExoIconViewItemAccessibleInfo *tmp_info;
@@ -1127,14 +1127,14 @@ exo_icon_view_item_accessible_info_new (AtkObject *accessible,
 
   info = g_new (ExoIconViewItemAccessibleInfo, 1);
   info->item = item;
-  info->index = index;
+  info->index = idx;
 
   priv = exo_icon_view_accessible_get_priv (accessible);
   items = priv->items;
   while (items)
     {
       tmp_info = items->data;
-      if (tmp_info->index > index)
+      if (tmp_info->index > idx)
         break;
       items = items->next;
     }
@@ -1160,7 +1160,7 @@ exo_icon_view_accessible_get_n_children (AtkObject *accessible)
 
 static AtkObject *
 exo_icon_view_accessible_find_child (AtkObject *accessible,
-                                     gint       index)
+                                     gint       idx)
 {
   ExoIconViewAccessiblePrivate *priv;
   ExoIconViewItemAccessibleInfo *info;
@@ -1172,7 +1172,7 @@ exo_icon_view_accessible_find_child (AtkObject *accessible,
   while (items)
     {
       info = items->data;
-      if (info->index == index)
+      if (info->index == idx)
         return info->item;
       items = items->next; 
     }
@@ -1181,7 +1181,7 @@ exo_icon_view_accessible_find_child (AtkObject *accessible,
 
 static AtkObject *
 exo_icon_view_accessible_ref_child (AtkObject *accessible,
-                                    gint       index)
+                                    gint       idx)
 {
   ExoIconView *icon_view;
   GtkWidget *widget;
@@ -1194,15 +1194,15 @@ exo_icon_view_accessible_ref_child (AtkObject *accessible,
     return NULL;
 
   icon_view = EXO_ICON_VIEW (widget);
-  icons = g_list_nth (icon_view->priv->items, index);
+  icons = g_list_nth (icon_view->priv->items, idx);
   obj = NULL;
   if (icons)
     {
       ExoIconViewItem *item = icons->data;
       gint item_index = g_list_index (icon_view->priv->items, item);
    
-      g_return_val_if_fail (item_index == index, NULL);
-      obj = exo_icon_view_accessible_find_child (accessible, index);
+      g_return_val_if_fail (item_index == idx, NULL);
+      obj = exo_icon_view_accessible_find_child (accessible, idx);
       if (!obj)
         {
           gchar *text;
@@ -1210,7 +1210,7 @@ exo_icon_view_accessible_ref_child (AtkObject *accessible,
           obj = g_object_new (exo_icon_view_item_accessible_get_type (), NULL);
           exo_icon_view_item_accessible_info_new (accessible,
                                                   obj,
-                                                  index);
+                                                  idx);
           obj->role = ATK_ROLE_ICON;
           a11y_item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (obj);
           a11y_item->item = item;
@@ -1353,7 +1353,7 @@ exo_icon_view_accessible_model_row_changed (GtkTreeModel *tree_model,
                                             gpointer      user_data)
 {
   AtkObject *atk_obj;
-  gint index;
+  gint idx;
   GtkWidget *widget;
   ExoIconView *icon_view;
   ExoIconViewItem *item;
@@ -1362,9 +1362,9 @@ exo_icon_view_accessible_model_row_changed (GtkTreeModel *tree_model,
   gchar *text;
 
   atk_obj = gtk_widget_get_accessible (GTK_WIDGET (user_data));
-  index = gtk_tree_path_get_indices(path)[0];
+  idx = gtk_tree_path_get_indices(path)[0];
   a11y_item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (
-      exo_icon_view_accessible_find_child (atk_obj, index));
+      exo_icon_view_accessible_find_child (atk_obj, idx));
 
   if (a11y_item)
     {
@@ -1404,9 +1404,9 @@ exo_icon_view_accessible_model_row_inserted (GtkTreeModel *tree_model,
   GList *items;
   GList *tmp_list;
   AtkObject *atk_obj;
-  gint index;
+  gint idx;
 
-  index = gtk_tree_path_get_indices(path)[0];
+  idx = gtk_tree_path_get_indices(path)[0];
   atk_obj = gtk_widget_get_accessible (GTK_WIDGET (user_data));
   view = EXO_ICON_VIEW_ACCESSIBLE (atk_obj);
   priv = exo_icon_view_accessible_get_priv (atk_obj);
@@ -1419,8 +1419,8 @@ exo_icon_view_accessible_model_row_inserted (GtkTreeModel *tree_model,
       item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (info->item);
       if (info->index != accessible_item_index (item))
         {
-          if (info->index < index)
-            g_warning ("Unexpected index value on insertion %d %d", index, info->index);
+          if (info->index < idx)
+            g_warning ("Unexpected index value on insertion %d %d", idx, info->index);
  
           if (tmp_list == NULL)
             tmp_list = items;
@@ -1432,7 +1432,7 @@ exo_icon_view_accessible_model_row_inserted (GtkTreeModel *tree_model,
     }
   exo_icon_view_accessible_traverse_items (view, tmp_list);
   g_signal_emit_by_name (atk_obj, "children-changed::add",
-                         index, NULL, NULL);
+                         idx, NULL, NULL);
   return;
 }
 
@@ -1449,9 +1449,9 @@ exo_icon_view_accessible_model_row_deleted (GtkTreeModel *tree_model,
   GList *tmp_list;
   GList *deleted_item;
   AtkObject *atk_obj;
-  gint index;
+  gint idx;
 
-  index = gtk_tree_path_get_indices(path)[0];
+  idx = gtk_tree_path_get_indices(path)[0];
   atk_obj = gtk_widget_get_accessible (GTK_WIDGET (user_data));
   view = EXO_ICON_VIEW_ACCESSIBLE (atk_obj);
   priv = exo_icon_view_accessible_get_priv (atk_obj);
@@ -1464,7 +1464,7 @@ exo_icon_view_accessible_model_row_deleted (GtkTreeModel *tree_model,
     {
       info = items->data;
       item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (info->item);
-      if (info->index == index)
+      if (info->index == idx)
         {
           deleted_item = items;
         }
@@ -1484,7 +1484,7 @@ exo_icon_view_accessible_model_row_deleted (GtkTreeModel *tree_model,
       info = deleted_item->data;
       exo_icon_view_item_accessible_add_state (EXO_ICON_VIEW_ITEM_ACCESSIBLE (info->item), ATK_STATE_DEFUNCT, TRUE);
       g_signal_emit_by_name (atk_obj, "children-changed::remove",
-                             index, NULL, NULL);
+                             idx, NULL, NULL);
       priv->items = g_list_remove_link (priv->items, deleted_item);
       g_free (info);
     }
@@ -1769,7 +1769,7 @@ exo_icon_view_accessible_ref_accessible_at_point (AtkComponent *component,
   ExoIconView *icon_view;
   ExoIconViewItem *item;
   gint x_pos, y_pos;
-  gint index;
+  gint idx;
 
   widget = GTK_ACCESSIBLE (component)->widget;
   if (widget == NULL)
@@ -1779,9 +1779,9 @@ exo_icon_view_accessible_ref_accessible_at_point (AtkComponent *component,
   icon_view = EXO_ICON_VIEW (widget);
   atk_component_get_extents (component, &x_pos, &y_pos, NULL, NULL, coord_type);
   item = exo_icon_view_get_item_at_coords (icon_view, x - x_pos, y - y_pos, TRUE, NULL);
-  index = g_list_index (icon_view->priv->items, item);
+  idx = g_list_index (icon_view->priv->items, item);
   if (item)
-    return exo_icon_view_accessible_ref_child (ATK_OBJECT (component), index);
+    return exo_icon_view_accessible_ref_child (ATK_OBJECT (component), idx);
 
   return NULL;
 }
@@ -1840,7 +1840,7 @@ exo_icon_view_accessible_ref_selection (AtkSelection *selection,
   GtkWidget *widget;
   ExoIconView *icon_view;
   ExoIconViewItem *item;
-  gint index;
+  gint idx;
 
   widget = GTK_ACCESSIBLE (selection)->widget;
   if (widget == NULL)
@@ -1849,19 +1849,19 @@ exo_icon_view_accessible_ref_selection (AtkSelection *selection,
   icon_view = EXO_ICON_VIEW (widget);
 
   l = icon_view->priv->items;
-  index = 0;
+  idx = 0;
   while (l)
     {
       item = l->data;
       if (item->selected)
         {
           if (i == 0)
-            return atk_object_ref_accessible_child (gtk_widget_get_accessible (widget), index);
+            return atk_object_ref_accessible_child (gtk_widget_get_accessible (widget), idx);
           else
             i--;
         }
       l = l->next;
-      index++;
+      idx++;
     }
 
   return NULL;
