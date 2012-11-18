@@ -1,12 +1,12 @@
 # Korean translations for exo package.
 # Copyright (C) 2003-2011 The Xfce development team.
 # This file is distributed under the same license as the exo package.
-# Seong-ho, Cho <darkcircle.0426@gmail.com>, 2011, 2012.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: exo.master\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: https://bugzilla.xfce.org/enter_bug.cgi?product=Exo\n"
 "POT-Creation-Date: 2012-08-25 12:06+0000\n"
 "PO-Revision-Date: 2012-08-26 01:50+0900\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
@@ -578,7 +578,7 @@ msgstr ""
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "<%s>로 버그를 알려주시기 바랍니다.\n"
+msgstr "<%s>로 버그를 알려주십시오.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:255
@@ -728,7 +728,7 @@ msgstr "주어진 디렉터리에 새로운 데스크톱 파일을 만듭니다"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "만들 데스크팁 파일의 형식 (프로그램 또는 링크)"
+msgstr "만들 데스크톱 파일의 형식(프로그램 또는 링크)"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Preset name when creating a desktop file"
@@ -844,7 +844,7 @@ msgid ""
 "hyperlinks and display help contents."
 msgstr ""
 "기본 웹 브라우저는 하이퍼링크를 열거나\n"
-"도움말 내용을 보여줄 때 사용할 것입니다."
+"도움말 내용을 보여줄 때 사용합니다."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -857,7 +857,7 @@ msgid ""
 "emails when you click on email addresses."
 msgstr ""
 "기본 메일 보기 프로그램은 이메일 주소를 눌렀을 때\n"
-"이메일을 작성하는데 사용할 것입니다."
+"이메일을 작성하는데 사용합니다."
 
 #.
 #. Utilities
@@ -877,7 +877,7 @@ msgid ""
 "browse the contents of folders."
 msgstr ""
 "기본 파일 관리자는 폴더의 내용을 탐색하는데\n"
-"사용할 것입니다."
+"사용합니다."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -889,8 +889,8 @@ msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr ""
-"기본 터미널 에뮬레이터는 CLI 환경을 필요로 하는\n"
-"명령을 실행하는데 사용할 것입니다."
+"기본 터미널 에뮬레이터는 CLI 환경이 필요한 명령을\n"
+"실행하는데 사용합니다."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -976,7 +976,7 @@ msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
-msgstr "사용자 정의 명령을 선택하기 위해 파일 시스템을 탐색합니다."
+msgstr "사용자 정의 명령을 선택하려면 파일 시스템을 탐색합니다."
 
 #: ../exo-helper/exo-helper-chooser.c:762
 msgid "_Other..."
@@ -996,7 +996,7 @@ msgid ""
 "Browser now and click OK to proceed."
 msgstr ""
 "기본 웹 브라우저를 선택하여 주시고\n"
-"실행을 위해 OK를 눌러주시기 바랍니다."
+"실행을 위해 OK를 눌러주십시오."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
@@ -1004,7 +1004,7 @@ msgid ""
 "now and click OK to proceed."
 msgstr ""
 "기본 메일 보기 프로그램을 선택하여 주시고\n"
-"실행을 위해 OK를 눌러주시기 바랍니다."
+"실행을 위해 OK를 눌러주십시오."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
@@ -1012,7 +1012,7 @@ msgid ""
 "now and click OK to proceed."
 msgstr ""
 "기본 파일 관리자를 선택하여 주시고\n"
-"실행을 위해 OK를 눌러주시기 바랍니다."
+"실행을 위해 OK를 눌러주십시오."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
@@ -1020,7 +1020,7 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr ""
 "기본 터미널 에뮬레이터를 선택하여 주시고\n"
-"실행을 위해 OK를 눌러주시기 바랍니다."
+"실행을 위해 OK를 눌러주십시오."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -1035,7 +1035,7 @@ msgstr "기록을 위한 %s을(를) 여는데 실패했습니다"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "기본 프로그램 (웹 브라우저, 메일 보기 그리고 터미널 에뮬레이터)"
+msgstr "기본 프로그램(웹 브라우저, 메일 보기 그리고 터미널 에뮬레이터)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
@@ -1126,7 +1126,7 @@ msgstr ""
 "\n"
 "Gtk+-%d.%d.%d(으)로 빌드하였고, Gtk+-%d.%d.%d에서 실행중입니다.\n"
 "\n"
-"<%s>(으)로 버그를 알려주시기 바랍니다.\n"
+"<%s>(으)로 버그를 알려주십시오.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
