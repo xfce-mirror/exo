@@ -80,7 +80,7 @@ typedef struct _ExoJobSignalData ExoJobSignalData;
 
 static void exo_job_finalize   (GObject      *object);
 static void exo_job_error      (ExoJob       *job,
-                                GError       *error);
+                                const GError *error);
 static void exo_job_finished   (ExoJob       *job);
 
 
@@ -90,6 +90,9 @@ struct _ExoJobPrivate
   GIOSchedulerJob *scheduler_job;
   GCancellable    *cancellable;
   guint            running : 1;
+  GError          *error;
+  gboolean         failed;
+  GMainContext    *context;
 };
 
 struct _ExoJobSignalData
@@ -218,6 +221,9 @@ exo_job_init (ExoJob *job)
   job->priv->cancellable = g_cancellable_new ();
   job->priv->running = FALSE;
   job->priv->scheduler_job = NULL;
+  job->priv->error = NULL;
+  job->priv->failed = FALSE;
+  job->priv->context = NULL;
 }
 
 
@@ -230,7 +236,13 @@ exo_job_finalize (GObject *object)
   if (job->priv->running)
     exo_job_cancel (job);
 
+  if (job->priv->error != NULL)
+    g_error_free (job->priv->error);
+
   g_object_unref (job->priv->cancellable);
+
+  if (job->priv->context != NULL)
+    g_main_context_unref (job->priv->context);
 
   (*G_OBJECT_CLASS (exo_job_parent_class)->finalize) (object);
 }
@@ -240,7 +252,6 @@ exo_job_finalize (GObject *object)
 /**
  * exo_job_finish:
  * @job    : an #ExoJob.
- * @result : the #GSimpleAsyncResult of the job.
  * @error  : return location for errors.
  *
  * Finishes the execution of an operation by propagating errors
@@ -250,15 +261,19 @@ exo_job_finalize (GObject *object)
  *          %FALSE otherwise.
  **/
 static gboolean
-exo_job_finish (ExoJob             *job,
-                GSimpleAsyncResult *result,
-                GError            **error)
+exo_job_finish (ExoJob  *job,
+                GError **error)
 {
   _exo_return_val_if_fail (EXO_IS_JOB (job), FALSE);
-  _exo_return_val_if_fail (G_IS_SIMPLE_ASYNC_RESULT (result), FALSE);
   _exo_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
-  return !g_simple_async_result_propagate_error (result, error);
+  if (G_UNLIKELY (job->priv->failed))
+    {
+      g_propagate_error (error, job->priv->error);
+      return FALSE;
+    }
+
+  return TRUE;
 }
 
 
@@ -272,17 +287,15 @@ exo_job_finish (ExoJob             *job,
  * operation. It checks if there were errors during the operation
  * and emits "error" and "finished" signals.
  **/
-static void
-exo_job_async_ready (GObject      *object,
-                     GAsyncResult *result)
+static gboolean
+exo_job_async_ready (gpointer user_data)
 {
-  ExoJob *job = EXO_JOB (object);
+  ExoJob *job = EXO_JOB (user_data);
   GError *error = NULL;
 
-  _exo_return_if_fail (EXO_IS_JOB (job));
-  _exo_return_if_fail (G_IS_SIMPLE_ASYNC_RESULT (result));
+  _exo_return_val_if_fail (EXO_IS_JOB (job), FALSE);
 
-  if (!exo_job_finish (job, G_SIMPLE_ASYNC_RESULT (result), &error))
+  if (!exo_job_finish (job, &error))
     {
       g_assert (error != NULL);
 
@@ -296,6 +309,8 @@ exo_job_async_ready (GObject      *object,
   exo_job_finished (job);
 
   job->priv->running = FALSE;
+
+  return FALSE;
 }
 
 
@@ -304,7 +319,7 @@ exo_job_async_ready (GObject      *object,
  * exo_job_scheduler_job_func:
  * @scheduler_job : the #GIOSchedulerJob running the operation.
  * @cancellable   : the #GCancellable associated with the job.
- * @user_data     : a #GSimpleAsyncResult.
+ * @user_data     : an #ExoJob.
  *
  * This function is called by the #GIOScheduler to execute the
  * operation associated with the job. It basically calls the
@@ -317,30 +332,37 @@ exo_job_scheduler_job_func (GIOSchedulerJob *scheduler_job,
                             GCancellable    *cancellable,
                             gpointer         user_data)
 {
-  GSimpleAsyncResult *result = user_data;
-  ExoJob             *job;
-  GError             *error = NULL;
-  gboolean            success;
+  ExoJob   *job = EXO_JOB (user_data);
+  GError   *error = NULL;
+  gboolean  success;
+  GSource  *source;
 
-  _exo_return_val_if_fail (G_IS_SIMPLE_ASYNC_RESULT (result), FALSE);
+  _exo_return_val_if_fail (EXO_IS_JOB (job), FALSE);
   _exo_return_val_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable), FALSE);
 
-  job = g_simple_async_result_get_op_res_gpointer (result);
   job->priv->scheduler_job = scheduler_job;
 
   success = (*EXO_JOB_GET_CLASS (job)->execute) (job, &error);
 
-  /* TODO why was this necessary again? GIO uses this too, for some reason. */
-  g_io_scheduler_job_send_to_mainloop (scheduler_job, (GSourceFunc) gtk_false,
-                                       NULL, NULL);
-
   if (!success)
     {
-      g_simple_async_result_set_from_error (result, error);
-      g_error_free (error);
+      /* clear existing error */
+      if (G_UNLIKELY (job->priv->error != NULL))
+        g_error_free (job->priv->error);
+
+      /* take the error */
+      job->priv->error = error;
     }
 
-  g_simple_async_result_complete_in_idle (result);
+  job->priv->failed = !success;
+
+  /* idle completion in the thread exo job was started from */
+  source = g_idle_source_new ();
+  g_source_set_priority (source, G_PRIORITY_DEFAULT);
+  g_source_set_callback (source, exo_job_async_ready, g_object_ref (job),
+                         g_object_unref);
+  g_source_attach (source, job->priv->context);
+  g_source_unref (source);
 
   return FALSE;
 }
@@ -420,8 +442,8 @@ exo_job_emit_valist (ExoJob *job,
  * main loop.
  **/
 static void
-exo_job_error (ExoJob *job,
-               GError *error)
+exo_job_error (ExoJob       *job,
+               const GError *error)
 {
   _exo_return_if_fail (EXO_IS_JOB (job));
   _exo_return_if_fail (error != NULL);
@@ -464,8 +486,6 @@ exo_job_finished (ExoJob *job)
 ExoJob *
 exo_job_launch (ExoJob *job)
 {
-  GSimpleAsyncResult *result;
-
   _exo_return_val_if_fail (EXO_IS_JOB (job), NULL);
   _exo_return_val_if_fail (!job->priv->running, NULL);
   _exo_return_val_if_fail (EXO_JOB_GET_CLASS (job)->execute != NULL, NULL);
@@ -473,14 +493,9 @@ exo_job_launch (ExoJob *job)
   /* mark the job as running */
   job->priv->running = TRUE;
 
-  result = g_simple_async_result_new (G_OBJECT (job),
-                                      (GAsyncReadyCallback) exo_job_async_ready,
-                                      NULL, exo_job_launch);
+  job->priv->context = g_main_context_ref_thread_default ();
 
-  g_simple_async_result_set_op_res_gpointer (result, g_object_ref (job),
-                                             (GDestroyNotify) g_object_unref);
-
-  g_io_scheduler_push_job (exo_job_scheduler_job_func, result,
+  g_io_scheduler_push_job (exo_job_scheduler_job_func, g_object_ref (job),
                            (GDestroyNotify) g_object_unref,
                            G_PRIORITY_HIGH, job->priv->cancellable);
 
@@ -674,6 +689,7 @@ exo_job_send_to_mainloop (ExoJob        *job,
                           GDestroyNotify destroy_notify)
 {
   _exo_return_val_if_fail (EXO_IS_JOB (job), FALSE);
+  _exo_return_val_if_fail (job->priv->scheduler_job != NULL, FALSE);
 
   return g_io_scheduler_job_send_to_mainloop (job->priv->scheduler_job, func, user_data,
                                               destroy_notify);
