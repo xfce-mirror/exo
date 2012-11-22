@@ -250,35 +250,6 @@ exo_job_finalize (GObject *object)
 
 
 /**
- * exo_job_finish:
- * @job    : an #ExoJob.
- * @error  : return location for errors.
- *
- * Finishes the execution of an operation by propagating errors
- * from the @result into @error.
- *
- * Returns: %TRUE if there was no error during the operation,
- *          %FALSE otherwise.
- **/
-static gboolean
-exo_job_finish (ExoJob  *job,
-                GError **error)
-{
-  _exo_return_val_if_fail (EXO_IS_JOB (job), FALSE);
-  _exo_return_val_if_fail (error == NULL || *error == NULL, FALSE);
-
-  if (G_UNLIKELY (job->priv->failed))
-    {
-      g_propagate_error (error, job->priv->error);
-      return FALSE;
-    }
-
-  return TRUE;
-}
-
-
-
-/**
  * exo_job_async_ready:
  * @object : an #ExoJob.
  * @result : the #GAsyncResult of the job.
@@ -291,19 +262,20 @@ static gboolean
 exo_job_async_ready (gpointer user_data)
 {
   ExoJob *job = EXO_JOB (user_data);
-  GError *error = NULL;
 
   _exo_return_val_if_fail (EXO_IS_JOB (job), FALSE);
 
-  if (!exo_job_finish (job, &error))
+  if (job->priv->failed)
     {
-      g_assert (error != NULL);
+      g_assert (job->priv->error != NULL);
 
       /* don't treat cancellation as an error */
-      if (error->code != G_IO_ERROR_CANCELLED)
-        exo_job_error (job, error);
+      if (!g_error_matches (job->priv->error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+        exo_job_error (job, job->priv->error);
 
-      g_error_free (error);
+      /* cleanup */
+      g_error_free (job->priv->error);
+      job->priv->error = NULL;
     }
 
   exo_job_finished (job);
