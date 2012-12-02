@@ -2,7 +2,6 @@ SUBDIRS =								\
 	exo								\
 	exo-csource							\
 	exo-desktop-item-edit						\
-	exo-gio-module							\
 	exo-helper							\
 	exo-open							\
 	docs								\
