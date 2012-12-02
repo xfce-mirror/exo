@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-20 10:00+0000\n"
+"POT-Creation-Date: 2012-12-02 22:12+0000\n"
 "PO-Revision-Date: 2012-04-27 15:23+0300\n"
 "Last-Translator: Mișu Moldovan <dumol@xfce.org>\n"
 "Language-Team: Romanian <diacritice@googlegroups.com>\n"
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Failed to open \"%s\"."
 msgstr "Nu s-a putut deschide „%s”."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
 msgid "Orientation"
 msgstr "Orientare"
 
@@ -83,19 +83,19 @@ msgstr "Orientare"
 msgid "The orientation of the iconbar"
 msgstr "Orientarea barei cu iconițe"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
 msgid "Pixbuf column"
 msgstr "Coloană pixbuf"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Coloană model utilizată pentru extragerea iconiței pixbuf"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
 msgid "Text column"
 msgstr "Coloană de text"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
 msgid "Model column used to retrieve the text from"
 msgstr "Coloană model utilizată pentru extragerea textului"
 
@@ -223,124 +223,124 @@ msgstr "_Căutare în iconițe:"
 msgid "Clear search field"
 msgstr "Curăță câmpul de căutare"
 
-#: ../exo/exo-icon-view.c:644
+#: ../exo/exo-icon-view.c:674
 msgid "Column Spacing"
 msgstr "Spațiere între coloane"
 
-#: ../exo/exo-icon-view.c:645
+#: ../exo/exo-icon-view.c:675
 msgid "Space which is inserted between grid column"
 msgstr "Spațiu inserat între coloanele grilei"
 
-#: ../exo/exo-icon-view.c:661
+#: ../exo/exo-icon-view.c:691
 msgid "Number of columns"
 msgstr "Număr de coloane"
 
-#: ../exo/exo-icon-view.c:662
+#: ../exo/exo-icon-view.c:692
 msgid "Number of columns to display"
 msgstr "Număr de coloane de afișat"
 
-#: ../exo/exo-icon-view.c:676
+#: ../exo/exo-icon-view.c:706
 msgid "Enable Search"
 msgstr "Activează căutarea"
 
-#: ../exo/exo-icon-view.c:677
+#: ../exo/exo-icon-view.c:707
 msgid "View allows user to search through columns interactively"
 msgstr ""
 "Mod de vizualizare ce permite utilizatorului să caute interactiv în coloane"
 
-#: ../exo/exo-icon-view.c:694
+#: ../exo/exo-icon-view.c:724
 msgid "Width for each item"
 msgstr "Lățime pentru fiecare element"
 
-#: ../exo/exo-icon-view.c:695
+#: ../exo/exo-icon-view.c:725
 msgid "The width used for each item"
 msgstr "Lățime utilizată pentru fiecare element"
 
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:743
 msgid "Layout mode"
 msgstr "Mod de afișare"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:744
 msgid "The layout mode"
 msgstr "Modul de afișare"
 
-#: ../exo/exo-icon-view.c:730
+#: ../exo/exo-icon-view.c:760
 msgid "Margin"
 msgstr "Margine"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:761
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Spațiu adăugat la marginile vizualizării de iconițe"
 
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:777
 msgid "Markup column"
 msgstr "Coloană de tip markup"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:778
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Model de coloană utilizat pentru extragerea textului când se utilizează "
 "markup Pango"
 
-#: ../exo/exo-icon-view.c:762
+#: ../exo/exo-icon-view.c:792
 msgid "Icon View Model"
 msgstr "Model de vizualizare cu iconițe"
 
-#: ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-view.c:793
 msgid "The model for the icon view"
 msgstr "Model pentru vizualizarea cu iconițe"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:807
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Modul de poziționare relativă a textului și iconiței fiecărui element"
 
 # Ai altă idee mai bună? Nici „reorderable” nu există în engleză...
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:839
 msgid "Reorderable"
 msgstr "Reordonabil"
 
-#: ../exo/exo-icon-view.c:810
+#: ../exo/exo-icon-view.c:840
 msgid "View is reorderable"
 msgstr "Vizualizarea este reordonabilă"
 
-#: ../exo/exo-icon-view.c:825
+#: ../exo/exo-icon-view.c:855
 msgid "Row Spacing"
 msgstr "Spațiere între rânduri"
 
-#: ../exo/exo-icon-view.c:826
+#: ../exo/exo-icon-view.c:856
 msgid "Space which is inserted between grid rows"
 msgstr "Spațiu inserat între rândurile grilei"
 
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:870
 msgid "Search Column"
 msgstr "Coloană de căutare"
 
-#: ../exo/exo-icon-view.c:841
+#: ../exo/exo-icon-view.c:871
 msgid "Model column to search through when searching through item"
 msgstr "Model de coloană pentru căutare când se face căutarea într-un element"
 
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:885
 msgid "Selection mode"
 msgstr "Mod de selectare"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:886
 msgid "The selection mode"
 msgstr "Modul de selectare"
 
-#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Clic simplu"
 
-#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Specifică dacă elementele vizualizării pot fi activate cu un clic unic"
 
-#: ../exo/exo-icon-view.c:888 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Limită de timp pentru clic simplu"
 
-#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -348,29 +348,13 @@ msgstr ""
 "Durata minimă pentru selectarea automată a elementului aflat sub cursor când "
 "se utilizează clic simplu"
 
-#: ../exo/exo-icon-view.c:904
+#: ../exo/exo-icon-view.c:934
 msgid "Spacing"
 msgstr "Spațiere"
 
-#: ../exo/exo-icon-view.c:905
+#: ../exo/exo-icon-view.c:935
 msgid "Space which is inserted between cells of an item"
 msgstr "Spațiu inserat între celulele unui element"
-
-#: ../exo/exo-icon-view.c:928
-msgid "Selection Box Color"
-msgstr "Culoare a cutiei de selectare"
-
-#: ../exo/exo-icon-view.c:929
-msgid "Color of the selection box"
-msgstr "Culoare a cutiei de selectare"
-
-#: ../exo/exo-icon-view.c:935
-msgid "Selection Box Alpha"
-msgstr "Valoare alfa pentru cutia de selectare"
-
-#: ../exo/exo-icon-view.c:936
-msgid "Opacity of the selection box"
-msgstr "Opacitate a cutiei de selectare"
 
 #: ../exo/exo-thumbnail-preview.c:113
 msgid "Preview"
@@ -538,7 +522,7 @@ msgstr "  --strip-comments  Șterge comentariile din fișierele XML\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Șterge conținutul nodurilor din fișierele XML\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -554,7 +538,7 @@ msgstr ""
 "Scris de Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -569,7 +553,7 @@ msgstr ""
 "licenței GNU LGPL, disponibilă în pachetul cu sursele %s.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -610,7 +594,7 @@ msgstr "Scripturile Ruby"
 msgid "Shell Scripts"
 msgstr "Scripturile shell"
 
-#: ../exo-desktop-item-edit/exo-die-desktop-model.c:284
+#: ../exo-desktop-item-edit/exo-die-desktop-model.c:288
 #, c-format
 msgid "Create Launcher <b>%s</b>"
 msgstr "Creați un lansator <b>%s</b>"
@@ -767,63 +751,63 @@ msgid "Print version information and exit"
 msgstr "Arată detaliile de versiune și ieși"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:169
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[FIȘIER|DIRECTOR]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "Nu s-a putut deschide displayul"
 
-#: ../exo-desktop-item-edit/main.c:208
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "Nu s-a specificat un fișier ori dosar"
 
-#: ../exo-desktop-item-edit/main.c:274
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Nu s-a putut încărca conținutul fișierului „%s”: %s"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Fișierul „%s” nu conține niciun fel date"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:292
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Nu s-a putut prelucra conținutul fișierului „%s”: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:304
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Fișierul „%s” nu are o cheie „type”"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Nu există suport pentru acest tip de fișier desktop: „%s”"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "_Creează"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:511
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "Alegeți un nume de fișier"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Nu s-a putut crea „%s”"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Nu s-a putut salva „%s”"
@@ -840,8 +824,8 @@ msgstr "Selectați programele implicite pentru anumite servicii"
 #. Internet
 #. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
-msgstr "Internet"
+msgid "_Internet"
+msgstr "_Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:2
@@ -872,8 +856,8 @@ msgstr ""
 #. Utilities
 #. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
-msgstr "Utilitare"
+msgid "_Utilities"
+msgstr "_Utilitare"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:2
@@ -1397,6 +1381,18 @@ msgstr "Utilizați linia de comandă"
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "Navigați pe net"
+
+#~ msgid "Selection Box Color"
+#~ msgstr "Culoare a cutiei de selectare"
+
+#~ msgid "Color of the selection box"
+#~ msgstr "Culoare a cutiei de selectare"
+
+#~ msgid "Selection Box Alpha"
+#~ msgstr "Valoare alfa pentru cutia de selectare"
+
+#~ msgid "Opacity of the selection box"
+#~ msgstr "Opacitate a cutiei de selectare"
 
 #~ msgid "Failed to open the documentation browser."
 #~ msgstr "Nu s-a putut deschide navigatorul documentației."
