@@ -469,8 +469,6 @@ struct _ExoIconViewPrivate
   gboolean doing_rubberband;
   gint rubberband_x_1, rubberband_y_1;
   gint rubberband_x2, rubberband_y2;
-  GdkGC *rubberband_border_gc;
-  GdkGC *rubberband_fill_gc;
 
   guint scroll_timeout_id;
   gint scroll_value_diff;
@@ -953,22 +951,6 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      _("Model column used to retrieve the text from"),
                                                      -1, G_MAXINT, -1,
                                                      EXO_PARAM_READWRITE));
-
-
-  gtk_widget_class_install_style_property (gtkwidget_class,
-                                           g_param_spec_boxed ("selection-box-color",
-                                                               _("Selection Box Color"),
-                                                               _("Color of the selection box"),
-                                                               GDK_TYPE_COLOR,
-                                                               EXO_PARAM_READABLE));
-
-  gtk_widget_class_install_style_property (gtkwidget_class,
-                                           g_param_spec_uchar ("selection-box-alpha",
-                                                               _("Selection Box Alpha"),
-                                                               _("Opacity of the selection box"),
-                                                               0, 0xff,
-                                                               0x40,
-                                                               EXO_PARAM_READABLE));
 
   /**
    * ExoIconView::item-activated:
@@ -1638,10 +1620,13 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   GdkRectangle            event_area = event->area;
   ExoIconView            *icon_view = EXO_ICON_VIEW (widget);
   GtkTreePath            *path;
-  GdkRectangle            rubber_rect = { 0, };
+  GdkRectangle            rubber_rect;
+  GdkRectangle            rect;
   const GList            *lp;
   gint                    event_area_last;
   gint                    dest_index = -1;
+  cairo_t                *cr;
+  GtkStyle               *style;
 
   /* verify that the expose happened on the icon window */
   if (G_UNLIKELY (event->window != priv->bin_window))
@@ -1681,22 +1666,6 @@ exo_icon_view_expose_event (GtkWidget      *widget,
     {
       dest_index = gtk_tree_path_get_indices (path)[0];
       gtk_tree_path_free (path);
-    }
-
-  /* paint the rubberband background */
-  if (G_UNLIKELY (priv->doing_rubberband))
-    {
-      /* calculate the rubberband area */
-      rubber_rect.x = MIN (priv->rubberband_x_1, priv->rubberband_x2);
-      rubber_rect.y = MIN (priv->rubberband_y_1, priv->rubberband_y2);
-      rubber_rect.width = ABS (priv->rubberband_x_1 - priv->rubberband_x2) + 1;
-      rubber_rect.height = ABS (priv->rubberband_y_1 - priv->rubberband_y2) + 1;
-
-      /* we take advantage of double-buffering here and use only a single
-       * draw_rectangle() operation w/o having to take care of clipping.
-       */
-      gdk_draw_rectangle (event->window, priv->rubberband_fill_gc, TRUE,
-                          rubber_rect.x, rubber_rect.y, rubber_rect.width, rubber_rect.height);
     }
 
   /* determine the last interesting coordinate (depending on the layout mode) */
@@ -1790,9 +1759,39 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   /* draw the rubberband border */
   if (G_UNLIKELY (priv->doing_rubberband))
     {
-      /* draw the border */
-      gdk_draw_rectangle (event->window, priv->rubberband_border_gc, FALSE,
-                          rubber_rect.x, rubber_rect.y, rubber_rect.width - 1, rubber_rect.height - 1);
+      /* calculate the rubberband area */
+      rubber_rect.x = MIN (priv->rubberband_x_1, priv->rubberband_x2);
+      rubber_rect.y = MIN (priv->rubberband_y_1, priv->rubberband_y2);
+      rubber_rect.width = ABS (priv->rubberband_x_1 - priv->rubberband_x2) + 1;
+      rubber_rect.height = ABS (priv->rubberband_y_1 - priv->rubberband_y2) + 1;
+
+      if (gdk_rectangle_intersect (&rubber_rect, &event_area, &rect))
+        {
+          cr = gdk_cairo_create (GDK_DRAWABLE (event->window));
+          cairo_set_line_width (cr, 1.0);
+          style = gtk_widget_get_style (widget);
+
+          /* draw the area */
+          cairo_set_source_rgba (cr,
+                                 style->fg[GTK_STATE_NORMAL].red / 65535.0,
+                                 style->fg[GTK_STATE_NORMAL].green / 65535.0,
+                                 style->fg[GTK_STATE_NORMAL].blue / 65535.0,
+                                 0.25);
+          gdk_cairo_rectangle (cr, &rect);
+          cairo_clip (cr);
+          cairo_paint (cr);
+
+          /* draw the border */
+          cairo_set_source_rgb (cr,
+                                style->fg[GTK_STATE_NORMAL].red / 65535.0,
+                                style->fg[GTK_STATE_NORMAL].green / 65535.0,
+                                style->fg[GTK_STATE_NORMAL].blue / 65535.0);
+          cairo_rectangle (cr,
+                          rubber_rect.x + 0.5, rubber_rect.y + 0.5,
+                          rubber_rect.width - 1, rubber_rect.height - 1);
+          cairo_stroke (cr);
+          cairo_destroy (cr);
+        }
     }
 
   /* let the GtkContainer forward the expose event to all children */
@@ -2595,11 +2594,8 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
                                    gint          x,
                                    gint          y)
 {
-  const GdkColor *background_color;
-  GdkColor       *color;
-  guchar          alpha;
-  gpointer        drag_data;
-  GList          *items;
+  gpointer  drag_data;
+  GList    *items;
 
   /* be sure to disable any previously active rubberband */
   exo_icon_view_stop_rubberbanding (icon_view);
@@ -2616,32 +2612,6 @@ exo_icon_view_start_rubberbanding (ExoIconView  *icon_view,
   icon_view->priv->rubberband_y2 = y;
 
   icon_view->priv->doing_rubberband = TRUE;
-
-  /* determine the border color */
-  gtk_widget_style_get (GTK_WIDGET (icon_view), "selection-box-color", &color, NULL);
-  if (G_LIKELY (color == NULL))
-    color = gdk_color_copy (&GTK_WIDGET (icon_view)->style->base[GTK_STATE_SELECTED]);
-
-  /* allocate the border GC */
-  icon_view->priv->rubberband_border_gc = gdk_gc_new (icon_view->priv->bin_window);
-  gdk_gc_set_rgb_fg_color (icon_view->priv->rubberband_border_gc, color);
-  gdk_color_free (color);
-
-  /* determine the fill color and alpha setting */
-  gtk_widget_style_get (GTK_WIDGET (icon_view), "selection-box-color", &color, "selection-box-alpha", &alpha, NULL);
-  if (G_LIKELY (color == NULL))
-    color = gdk_color_copy (&GTK_WIDGET (icon_view)->style->base[GTK_STATE_SELECTED]);
-
-  /* calculate the fill color (based on the fill color, the alpha setting and the background color) */
-  background_color = &GTK_WIDGET (icon_view)->style->base[GTK_STATE_NORMAL];
-  color->red = ((color->red * (alpha / 255.0)) + (background_color->red * (255.0 - alpha / 255.0)));
-  color->green = ((color->green * (alpha / 255.0)) + (background_color->green * (255.0 - alpha / 255.0)));
-  color->blue = ((color->blue * (alpha / 255.0)) + (background_color->blue * (255.0 - alpha / 255.0)));
-
-  /* allocate the GC to draw the rubberband background */
-  icon_view->priv->rubberband_fill_gc = gdk_gc_new (icon_view->priv->bin_window);
-  gdk_gc_set_rgb_fg_color (icon_view->priv->rubberband_fill_gc, color);
-  gdk_color_free (color);
 
   gtk_grab_add (GTK_WIDGET (icon_view));
 
@@ -2668,12 +2638,6 @@ exo_icon_view_stop_rubberbanding (ExoIconView *icon_view)
       icon_view->priv->doing_rubberband = FALSE;
       gtk_grab_remove (GTK_WIDGET (icon_view));
       gtk_widget_queue_draw (GTK_WIDGET (icon_view));
-
-      /* drop the GCs for drawing the rubberband */
-      g_object_unref (G_OBJECT (icon_view->priv->rubberband_border_gc));
-      g_object_unref (G_OBJECT (icon_view->priv->rubberband_fill_gc));
-      icon_view->priv->rubberband_border_gc = NULL;
-      icon_view->priv->rubberband_fill_gc = NULL;
 
       /* re-enable Gtk+ DnD callbacks again */
       drag_data = g_object_get_data (G_OBJECT (icon_view), I_("gtk-site-data"));
