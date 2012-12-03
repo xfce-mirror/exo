@@ -465,7 +465,14 @@ exo_job_launch (ExoJob *job)
   /* mark the job as running */
   job->priv->running = TRUE;
 
+#if GLIB_CHECK_VERSION (2, 32, 0)
   job->priv->context = g_main_context_ref_thread_default ();
+#else
+  job->priv->context = g_main_context_get_thread_default ();
+  if (job->priv->context == NULL)
+    job->priv->context = g_main_context_default ();
+  g_main_context_ref (job->priv->context);
+#endif
 
   g_io_scheduler_push_job (exo_job_scheduler_job_func, g_object_ref (job),
                            (GDestroyNotify) g_object_unref,
