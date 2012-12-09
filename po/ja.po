@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-15 20:02+0900\n"
+"POT-Creation-Date: 2012-12-09 18:45+0100\n"
 "PO-Revision-Date: 2012-10-15 21:14+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -76,7 +76,7 @@ msgid "Failed to open \"%s\"."
 msgstr "\"%s\" を開けませんでした。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
 msgid "Orientation"
 msgstr "方向"
 
@@ -86,22 +86,22 @@ msgid "The orientation of the iconbar"
 msgstr "アイコンバーが延びる方向です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
 msgid "Pixbuf column"
 msgstr "ピクセルバッファー欄"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "アイコンのピクセルバッファーを取得するために使用されるモデル欄です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
 msgid "Text column"
 msgstr "文字欄"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
 msgid "Model column used to retrieve the text from"
 msgstr "文字を取得するために使用されるモデル欄です。"
 
@@ -240,88 +240,88 @@ msgid "Clear search field"
 msgstr "検索フィールドのクリア"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:644
+#: ../exo/exo-icon-view.c:674
 msgid "Column Spacing"
 msgstr "表示欄スペース"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:645
+#: ../exo/exo-icon-view.c:675
 msgid "Space which is inserted between grid column"
 msgstr "グリッド欄の間に挿入されるスペースです。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:661
+#: ../exo/exo-icon-view.c:691
 msgid "Number of columns"
 msgstr "表示欄の数"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:662
+#: ../exo/exo-icon-view.c:692
 msgid "Number of columns to display"
 msgstr "表示する表示欄の数です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:676
+#: ../exo/exo-icon-view.c:706
 msgid "Enable Search"
 msgstr "検索を有効にする"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:677
+#: ../exo/exo-icon-view.c:707
 msgid "View allows user to search through columns interactively"
 msgstr "表示欄をインタラクティブに検索できるようにします。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:694
+#: ../exo/exo-icon-view.c:724
 msgid "Width for each item"
 msgstr "アイテムの幅"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:695
+#: ../exo/exo-icon-view.c:725
 msgid "The width used for each item"
 msgstr "それぞれのアイテムに使用する幅です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:743
 msgid "Layout mode"
 msgstr "レイアウトモード"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:744
 msgid "The layout mode"
 msgstr "レイアウトモードです。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:730
+#: ../exo/exo-icon-view.c:760
 msgid "Margin"
 msgstr "余白"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:761
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "アイテム表示の端に挿入されるスペースです。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:777
 msgid "Markup column"
 msgstr "マークアップ欄"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:778
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Pango のマークアップが使用されている場合に文字を取得するためのモデル欄です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:762
+#: ../exo/exo-icon-view.c:792
 msgid "Icon View Model"
 msgstr "アイコン表示モデル"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-view.c:793
 msgid "The model for the icon view"
 msgstr "アイコン表示のためのモデルです。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:807
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr ""
@@ -329,62 +329,62 @@ msgstr ""
 "す。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:839
 msgid "Reorderable"
 msgstr "並べ替え可能"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:810
+#: ../exo/exo-icon-view.c:840
 msgid "View is reorderable"
 msgstr "表示は並べ替え可能です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:825
+#: ../exo/exo-icon-view.c:855
 msgid "Row Spacing"
 msgstr "行スペース"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:826
+#: ../exo/exo-icon-view.c:856
 msgid "Space which is inserted between grid rows"
 msgstr "グリッド行の間に挿入されるスペースです。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:870
 msgid "Search Column"
 msgstr "検索欄"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:841
+#: ../exo/exo-icon-view.c:871
 msgid "Model column to search through when searching through item"
 msgstr "アイテムを検索する時に検索するモデル欄です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:885
 msgid "Selection mode"
 msgstr "選択モード"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:886
 msgid "The selection mode"
 msgstr "選択モードです。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "シングルクリック"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "表示されているアイテムを一回のクリックで有効にするかどうか指定します。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:888 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "シングルクリックのタイムアウト"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -393,34 +393,14 @@ msgstr ""
 "態になるまでの時間です。"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:904
+#: ../exo/exo-icon-view.c:934
 msgid "Spacing"
 msgstr "スペース"
 
 # NOTE: GObject property
-#: ../exo/exo-icon-view.c:905
+#: ../exo/exo-icon-view.c:935
 msgid "Space which is inserted between cells of an item"
 msgstr "アイテムのセルの間に挿入されるスペースです。"
-
-# NOTE: GObject property
-#: ../exo/exo-icon-view.c:928
-msgid "Selection Box Color"
-msgstr "選択ボックスの色"
-
-# NOTE: GObject property
-#: ../exo/exo-icon-view.c:929
-msgid "Color of the selection box"
-msgstr "選択ボックスの色です。"
-
-# NOTE: GObject property
-#: ../exo/exo-icon-view.c:935
-msgid "Selection Box Alpha"
-msgstr "選択ボックスのα値"
-
-# NOTE: GObject property
-#: ../exo/exo-icon-view.c:936
-msgid "Opacity of the selection box"
-msgstr "選択ボックスの透明度です。"
 
 #: ../exo/exo-thumbnail-preview.c:113
 msgid "Preview"
@@ -671,7 +651,7 @@ msgstr "Ruby スクリプト"
 msgid "Shell Scripts"
 msgstr "シェルスクリプト"
 
-#: ../exo-desktop-item-edit/exo-die-desktop-model.c:284
+#: ../exo-desktop-item-edit/exo-die-desktop-model.c:288
 #, c-format
 msgid "Create Launcher <b>%s</b>"
 msgstr "ランチャー <b>%s</b> を作成"
@@ -1459,3 +1439,19 @@ msgstr "コマンドラインを使用します"
 #: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "ウェブを閲覧します"
+
+# NOTE: GObject property
+#~ msgid "Selection Box Color"
+#~ msgstr "選択ボックスの色"
+
+# NOTE: GObject property
+#~ msgid "Color of the selection box"
+#~ msgstr "選択ボックスの色です。"
+
+# NOTE: GObject property
+#~ msgid "Selection Box Alpha"
+#~ msgstr "選択ボックスのα値"
+
+# NOTE: GObject property
+#~ msgid "Opacity of the selection box"
+#~ msgstr "選択ボックスの透明度です。"

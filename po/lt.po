@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the exo package.
 # mantas <mantaz@users.sourceforge.net>, 2006.
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-16 02:30+0000\n"
+"POT-Creation-Date: 2012-12-09 18:45+0100\n"
 "PO-Revision-Date: 2012-01-27 09:04+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lt\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -75,7 +76,7 @@ msgstr ""
 msgid "Failed to open \"%s\"."
 msgstr "Nepavyko atverti „%s“."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
 msgid "Orientation"
 msgstr "Orientacija"
 
@@ -83,19 +84,19 @@ msgstr "Orientacija"
 msgid "The orientation of the iconbar"
 msgstr "Piktogramų juostos orientacija"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
 msgid "Pixbuf column"
 msgstr "Pixbuf stulpelis"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Modelio stulpelis iš kurio gaunamas piktogramos pixbuf"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
 msgid "Text column"
 msgstr "Teksto stulpelis"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
 msgid "Model column used to retrieve the text from"
 msgstr "Modelio stulpelis iš kurio gaunamas tekstas"
 
@@ -223,121 +224,121 @@ msgstr "_Ieškoti piktogramos:"
 msgid "Clear search field"
 msgstr "Išvalyti paieškos eilutę"
 
-#: ../exo/exo-icon-view.c:644
+#: ../exo/exo-icon-view.c:674
 msgid "Column Spacing"
 msgstr "Tarpai tarp stulpelių"
 
-#: ../exo/exo-icon-view.c:645
+#: ../exo/exo-icon-view.c:675
 msgid "Space which is inserted between grid column"
 msgstr "Tarpas įterpiamas tarp grotelių stulpelių"
 
-#: ../exo/exo-icon-view.c:661
+#: ../exo/exo-icon-view.c:691
 msgid "Number of columns"
 msgstr "Stulpelių skaičius"
 
-#: ../exo/exo-icon-view.c:662
+#: ../exo/exo-icon-view.c:692
 msgid "Number of columns to display"
 msgstr "Rodomų stulpelių skaičius"
 
-#: ../exo/exo-icon-view.c:676
+#: ../exo/exo-icon-view.c:706
 msgid "Enable Search"
 msgstr "Įjungti paiešką"
 
-#: ../exo/exo-icon-view.c:677
+#: ../exo/exo-icon-view.c:707
 msgid "View allows user to search through columns interactively"
 msgstr "Vartotojai gali vykdyti interaktyvią paiešką tarp stulpelių"
 
-#: ../exo/exo-icon-view.c:694
+#: ../exo/exo-icon-view.c:724
 msgid "Width for each item"
 msgstr "Kiekvieno elemento plotis"
 
-#: ../exo/exo-icon-view.c:695
+#: ../exo/exo-icon-view.c:725
 msgid "The width used for each item"
 msgstr "Kiekvieno elemento plotis"
 
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:743
 msgid "Layout mode"
 msgstr "Išdėstymo būdas"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:744
 msgid "The layout mode"
 msgstr "Išdėstymo būdas"
 
-#: ../exo/exo-icon-view.c:730
+#: ../exo/exo-icon-view.c:760
 msgid "Margin"
 msgstr "Paraštė"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:761
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Tarpas, įterpiamas piktogramos vaizdo kraštuose"
 
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:777
 msgid "Markup column"
 msgstr "Žymėjimo stulpelis"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:778
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr ""
 "Modelio stulpelis naudojamas gauti tekstui, kai naudojamas Pango žymėjimas"
 
-#: ../exo/exo-icon-view.c:762
+#: ../exo/exo-icon-view.c:792
 msgid "Icon View Model"
 msgstr "Piktogramų vaizdo modelis"
 
-#: ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-view.c:793
 msgid "The model for the icon view"
 msgstr "Piktogramų vaizdo modelis"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:807
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Kaip tekstas ir piktogramos išsidėstę vienas kito atžvilgiu"
 
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:839
 msgid "Reorderable"
 msgstr "Perrūšiuojamas"
 
-#: ../exo/exo-icon-view.c:810
+#: ../exo/exo-icon-view.c:840
 msgid "View is reorderable"
 msgstr "Vaizdas yra rūšiuojamas"
 
-#: ../exo/exo-icon-view.c:825
+#: ../exo/exo-icon-view.c:855
 msgid "Row Spacing"
 msgstr "Tarpai tarp eilučių"
 
-#: ../exo/exo-icon-view.c:826
+#: ../exo/exo-icon-view.c:856
 msgid "Space which is inserted between grid rows"
 msgstr "Tarpas, įterpiamas tarp grotelių eilučių"
 
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:870
 msgid "Search Column"
 msgstr "Paieškos stulpelis"
 
-#: ../exo/exo-icon-view.c:841
+#: ../exo/exo-icon-view.c:871
 msgid "Model column to search through when searching through item"
 msgstr "Stulpelio modelis pagal kurį ieškoti"
 
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:885
 msgid "Selection mode"
 msgstr "Pasirinkimo veiksena"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:886
 msgid "The selection mode"
 msgstr "Parinkimo veiksena"
 
-#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Viengubas spragtelėjimas"
 
-#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Ar elementas peržiūroje gali būti aktyvuotas vienu paspaudimu"
 
-#: ../exo/exo-icon-view.c:888 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Vieno spustelėjimo trukmė"
 
-#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -345,29 +346,13 @@ msgstr ""
 "Laiko tarpas po kurio elementas po pelės žymekliu bus automatiškai "
 "pasirinktas vieno paspaudimo režimu"
 
-#: ../exo/exo-icon-view.c:904
+#: ../exo/exo-icon-view.c:934
 msgid "Spacing"
 msgstr "Išretinimas"
 
-#: ../exo/exo-icon-view.c:905
+#: ../exo/exo-icon-view.c:935
 msgid "Space which is inserted between cells of an item"
 msgstr "Tarpas, įterpiamas tarp elemento langelių"
-
-#: ../exo/exo-icon-view.c:928
-msgid "Selection Box Color"
-msgstr "Pažymėjimo dėžutės spalva"
-
-#: ../exo/exo-icon-view.c:929
-msgid "Color of the selection box"
-msgstr "Pažymėjimo dėžutės spalva"
-
-#: ../exo/exo-icon-view.c:935
-msgid "Selection Box Alpha"
-msgstr "Pažymėjimo dėžutės permatomumas"
-
-#: ../exo/exo-icon-view.c:936
-msgid "Opacity of the selection box"
-msgstr "Pažymėjimo dėžutės permatomumas"
 
 #: ../exo/exo-thumbnail-preview.c:113
 msgid "Preview"
@@ -535,7 +520,7 @@ msgstr "  --strip-comments  Pašalinti komentarus iš XML failų\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Pašalinti mazgo turinį iš XML failų\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -551,7 +536,7 @@ msgstr ""
 "Sukūrė Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -567,7 +552,7 @@ msgstr ""
 "%s pradinio kodo pakete.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -608,49 +593,42 @@ msgstr "Ruby scenarijai"
 msgid "Shell Scripts"
 msgstr "Shell scenarijai"
 
-#: ../exo-desktop-item-edit/exo-die-desktop-model.c:284
+#: ../exo-desktop-item-edit/exo-die-desktop-model.c:288
 #, c-format
 msgid "Create Launcher <b>%s</b>"
 msgstr "Sukurti leistuką <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "Pa_vadinimas:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "K_omentaras:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Kom_anda:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "Darbinis a_plankas:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "P_iktograma:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -661,11 +639,9 @@ msgstr "Nėra piktogramos"
 msgid "Options:"
 msgstr "Parinktys:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Naudoti pa_leidimo pranešimą"
@@ -680,11 +656,9 @@ msgstr ""
 "paleidžiama iš failų tvarkyklės ar meniu. Nevisos programos palaiko "
 "paleidimo pranešimą."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Paleisti _terminale"
@@ -767,63 +741,63 @@ msgid "Print version information and exit"
 msgstr "Parodyti versijos informaciją ir išeiti"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:169
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[FAILAS|APLANKAS]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:181
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "Nepavyko atverti ekrano"
 
-#: ../exo-desktop-item-edit/main.c:208
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "Nenurodytas failas/aplankas"
 
-#: ../exo-desktop-item-edit/main.c:274
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Nepavyko įkelti turinio iš „%s“: %s"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Faile „%s“ nėra duomenų"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:292
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Nepavyko apdoroti „%s“ turinio: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:304
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Failas „%s“ neturi tipo įrašo"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:314
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Nepalaikomas darbastalio failo tipas „%s“"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "Suku_rti"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:511
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "Pasirinkite failo pavadinimą"
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Nepavyko sukurti „%s“."
 
-#: ../exo-desktop-item-edit/main.c:618
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Nepavyko išsaugoti „%s“."
@@ -837,14 +811,16 @@ msgstr "Pageidaujamos programos"
 msgid "Select default applications for various services"
 msgstr "Pasirinkite numatytas programas įvairioms tarnyboms"
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
+#, fuzzy
+msgid "_Internet"
 msgstr "Internetas"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Interneto naršyklė"
 
@@ -869,14 +845,16 @@ msgstr ""
 "Pageidaujama pašto programa bus naudojama kurti\n"
 "el. laiškus, paspaudus ant el. pašto adreso."
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
+#, fuzzy
+msgid "_Utilities"
 msgstr "Reikmenys"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Failų tvarkyklė"
 
@@ -1328,10 +1306,9 @@ msgstr ""
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Šie tipai yra palaikomi --launch parinkties:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
+#.
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1383,7 +1360,7 @@ msgstr "Nepavyko nustatyti URI schemos „%s“."
 msgid "Failed to open URI \"%s\"."
 msgstr "Nepavyko atverti URI „%s“."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "Naršyti failų sistemą"
 
@@ -1395,6 +1372,18 @@ msgstr "Skaityti paštą"
 msgid "Use the command line"
 msgstr "Naudoti komandų eilutę"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "Naršyti internete"
+
+#~ msgid "Selection Box Color"
+#~ msgstr "Pažymėjimo dėžutės spalva"
+
+#~ msgid "Color of the selection box"
+#~ msgstr "Pažymėjimo dėžutės spalva"
+
+#~ msgid "Selection Box Alpha"
+#~ msgstr "Pažymėjimo dėžutės permatomumas"
+
+#~ msgid "Opacity of the selection box"
+#~ msgstr "Pažymėjimo dėžutės permatomumas"

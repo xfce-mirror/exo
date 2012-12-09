@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo-1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-06 02:39+0000\n"
+"POT-Creation-Date: 2012-12-09 18:45+0100\n"
 "PO-Revision-Date: 2011-11-09 16:10+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -64,14 +64,16 @@ msgstr "ھۆججەت «%s» نى ئوقۇيالمىدى: %s"
 #, c-format
 msgid ""
 "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "رەسىم «%s» نى ئوقۇش مەغلۇپ بولدى،: نامەلۇم سەۋەب،  رەسىم ھۆججىتى بۇزۇلغان بولۇشى مۇمكىن"
+msgstr ""
+"رەسىم «%s» نى ئوقۇش مەغلۇپ بولدى،: نامەلۇم سەۋەب،  رەسىم ھۆججىتى بۇزۇلغان "
+"بولۇشى مۇمكىن"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "«%s» نى ئېچىشتا خاتالىق كۆرۈلدى."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
 msgid "Orientation"
 msgstr "يۆنىلىشى"
 
@@ -79,19 +81,19 @@ msgstr "يۆنىلىشى"
 msgid "The orientation of the iconbar"
 msgstr "سىنبەلگە بالدىقىنىڭ يۆنىلىشى"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
 msgid "Pixbuf column"
 msgstr "Pixbuf ئىستونى"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "سىنبەلگە pixbuf  دىن ئىزدەشتە ئىشلىتىدىغان مودېل ئىستونى"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
 msgid "Text column"
 msgstr "تېكىست ئىستونى"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
 msgid "Model column used to retrieve the text from"
 msgstr "تېكىستتىن ئىزدەشتە ئىشلىتىلىدىغان مودېل ئىستونى"
 
@@ -219,148 +221,136 @@ msgstr "سىنبەلگە ئىزدە:(_S)"
 msgid "Clear search field"
 msgstr "ئىزدەش كۆزنەكچىسىنى تازىلا"
 
-#: ../exo/exo-icon-view.c:644
+#: ../exo/exo-icon-view.c:674
 msgid "Column Spacing"
 msgstr "ئىستوننىڭ بوشلۇقى"
 
-#: ../exo/exo-icon-view.c:645
+#: ../exo/exo-icon-view.c:675
 msgid "Space which is inserted between grid column"
 msgstr "كاتەكچە ئارىسىدىكى بوشلۇق"
 
-#: ../exo/exo-icon-view.c:661
+#: ../exo/exo-icon-view.c:691
 msgid "Number of columns"
 msgstr "ئىستون سانى"
 
-#: ../exo/exo-icon-view.c:662
+#: ../exo/exo-icon-view.c:692
 msgid "Number of columns to display"
 msgstr "كۆرسىتىدىغان ئىستون سانى"
 
-#: ../exo/exo-icon-view.c:676
+#: ../exo/exo-icon-view.c:706
 msgid "Enable Search"
 msgstr "ئىزدەشكە بولىدۇ"
 
-#: ../exo/exo-icon-view.c:677
+#: ../exo/exo-icon-view.c:707
 msgid "View allows user to search through columns interactively"
 msgstr "كۆرسىتىش ئىستونىنى ئۆز-ئارا ماسلاشتۇرۇپ ئىزدىيەلەيدىغان قىلىش"
 
-#: ../exo/exo-icon-view.c:694
+#: ../exo/exo-icon-view.c:724
 msgid "Width for each item"
 msgstr "ھەر بىر تۈرنىڭ كەڭلىكى"
 
-#: ../exo/exo-icon-view.c:695
+#: ../exo/exo-icon-view.c:725
 msgid "The width used for each item"
 msgstr "ھەر بىر تۈردە ئىشلىتىلىدىغان كەڭلىك"
 
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:743
 msgid "Layout mode"
 msgstr "Layout ھالىتى"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:744
 msgid "The layout mode"
 msgstr "Layout ھالىتى"
 
-#: ../exo/exo-icon-view.c:730
+#: ../exo/exo-icon-view.c:760
 msgid "Margin"
 msgstr "گىرۋەكتىكى بوشلۇق"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:761
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "سىنبەلگىنىڭ گىرۋىكىگە قىستۇرۇلغان بوشلۇق"
 
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:777
 msgid "Markup column"
 msgstr "Markup ئىستونى"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:778
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Pango markup ئىشلىتىلگەن ۋاقىتتا تېكىستتىن ئىزدەشتە ئىشلىتىلىدىغان مودېل ئىستونى"
+msgstr ""
+"Pango markup ئىشلىتىلگەن ۋاقىتتا تېكىستتىن ئىزدەشتە ئىشلىتىلىدىغان مودېل "
+"ئىستونى"
 
-#: ../exo/exo-icon-view.c:762
+#: ../exo/exo-icon-view.c:792
 msgid "Icon View Model"
 msgstr "سىنبەلگىنىڭ view مودېلى"
 
-#: ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-view.c:793
 msgid "The model for the icon view"
 msgstr "سىنبەلگە كۆرسىتىش ئۈچۈن ئىشلىتىدىغان مودېل"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:807
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "ھەربىر تېكىست ۋە سىنبەلگىنىڭ قايسى ئورۇندا ئىكەنلىكىنى بەلگىلەش"
 
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:839
 msgid "Reorderable"
 msgstr "تەرتىپىنى ئۆزگەرتكىلى بولىدۇ"
 
-#: ../exo/exo-icon-view.c:810
+#: ../exo/exo-icon-view.c:840
 msgid "View is reorderable"
 msgstr "view تەرتىپىنى ئۆزگەرتكىلى بولىدۇ"
 
-#: ../exo/exo-icon-view.c:825
+#: ../exo/exo-icon-view.c:855
 msgid "Row Spacing"
 msgstr "قۇر ئارىلىقى"
 
-#: ../exo/exo-icon-view.c:826
+#: ../exo/exo-icon-view.c:856
 msgid "Space which is inserted between grid rows"
 msgstr "قۇرلار ئارىسىدىكى بوشلۇق"
 
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:870
 msgid "Search Column"
 msgstr "ئىزدەش ئىستونى"
 
-#: ../exo/exo-icon-view.c:841
+#: ../exo/exo-icon-view.c:871
 msgid "Model column to search through when searching through item"
 msgstr "item لارنى ئىزدەشتە ئىشلىتىلىدىغان مودېل ئىستونى"
 
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:885
 msgid "Selection mode"
 msgstr "تاللاش ھالىتى"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:886
 msgid "The selection mode"
 msgstr "تاللاش ھالىتى"
 
-#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "بىرلا چېكىش"
 
-#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "View دىكى تۈرلەرنى بىرلا چېكىپ ئاكتىپلاش"
 
-#: ../exo/exo-icon-view.c:888 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "بىرلا چېكىش ۋاقىت چېكى"
 
-#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr "بىرلا چېكىپ تاللاش ھالىتىدە،  چاشقىنەك بار يەردىكى تۈرنى ئاپتوماتىك تاللاش ئۈچۈن چاشقىنەكنىڭ جىم تۇرۇش ۋاقتى"
+msgstr ""
+"بىرلا چېكىپ تاللاش ھالىتىدە،  چاشقىنەك بار يەردىكى تۈرنى ئاپتوماتىك تاللاش "
+"ئۈچۈن چاشقىنەكنىڭ جىم تۇرۇش ۋاقتى"
 
-#: ../exo/exo-icon-view.c:904
+#: ../exo/exo-icon-view.c:934
 msgid "Spacing"
 msgstr "بوشلۇق"
 
-#: ../exo/exo-icon-view.c:905
+#: ../exo/exo-icon-view.c:935
 msgid "Space which is inserted between cells of an item"
 msgstr "تۈر كاتەكچىسى ئارىسىدىكى بوشلۇق"
-
-#: ../exo/exo-icon-view.c:928
-msgid "Selection Box Color"
-msgstr "تاللانغان كۆزنەكچىنىڭ رەڭگى"
-
-#: ../exo/exo-icon-view.c:929
-msgid "Color of the selection box"
-msgstr "تاللانغان كۆزنەكچىنىڭ رەڭگى"
-
-#: ../exo/exo-icon-view.c:935
-msgid "Selection Box Alpha"
-msgstr "تاللانغان كۆزنەكچىنىڭ α قىممىتى"
-
-#: ../exo/exo-icon-view.c:936
-msgid "Opacity of the selection box"
-msgstr "تاللانغان كۆزنەكچىنىڭ سۈزۈكلۈكى"
 
 #: ../exo/exo-thumbnail-preview.c:113
 msgid "Preview"
@@ -398,7 +388,9 @@ msgstr "يېڭىدىن قورال بالدىقى قوشۇش(_A)"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr "قوشماقچى بولغان تۈرنى قورال بالدىقىغا تۇتۇپ تاشلاڭ، قورال بالدىقى تۇتۇپ ئالسىڭىز تۈر ئۆچۈرۈلىدۇ."
+msgstr ""
+"قوشماقچى بولغان تۈرنى قورال بالدىقىغا تۇتۇپ تاشلاڭ، قورال بالدىقى تۇتۇپ "
+"ئالسىڭىز تۈر ئۆچۈرۈلىدۇ."
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -524,7 +516,8 @@ msgstr "  --strip-comments  XML ھۆججەتنىڭ تەركىبىدىكى ئىز
 #: ../exo-csource/main.c:294
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   XML ھۆججەتنىڭ تەركىبىدىكى تۈگۈن ئۇچۇرلىرىنى ئۆچۈرىدۇ\n"
+msgstr ""
+"  --strip-content   XML ھۆججەتنىڭ تەركىبىدىكى تۈگۈن ئۇچۇرلىرىنى ئۆچۈرىدۇ\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
@@ -535,7 +528,8 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr "Copyright (c) %s\n"
+msgstr ""
+"Copyright (c) %s\n"
 "        os-cillation e.K. All rights reserved.\n"
 "\n"
 "Benedikt Meurer <benny@xfce.org> ئىشلىگەن.\n"
@@ -550,7 +544,8 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr "%s ھېچقانداق كاپالەتكە ئىگە ئەمەس,\n"
+msgstr ""
+"%s ھېچقانداق كاپالەتكە ئىگە ئەمەس,\n"
 "You may redistribute copies of %s under the terms of\n"
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
@@ -597,49 +592,42 @@ msgstr "Ruby پروگراممىسى"
 msgid "Shell Scripts"
 msgstr "Shell پروگراممىسى"
 
-#: ../exo-desktop-item-edit/exo-die-desktop-model.c:284
+#: ../exo-desktop-item-edit/exo-die-desktop-model.c:288
 #, c-format
 msgid "Create Launcher <b>%s</b>"
 msgstr "ئىجراچى <b>%s</b> قۇرۇش"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "ئاتى(_N):"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "ئىزاھات(_O):"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "بۇيرۇق(_A):"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "URL(_U):"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "خىزمەت مۇندەرىجىسى(_D):"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "سىنبەلگە(_I):"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -650,10 +638,8 @@ msgstr "سىنبەلگە يوق"
 msgid "Options:"
 msgstr "تاللانمىلار:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
@@ -664,12 +650,12 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "بۇ تاللانما تاللانسا، ھۆججەت باشقۇرغۇ قوزغالغاندا قوزغىلىش ئۇقتۇرۇشى تارقىتىدۇ. ھەممە پروگراممىنىڭ قوزغىلىش ئۇقتۇرۇشىنى قوللىشى ناتايىن"
+msgstr ""
+"بۇ تاللانما تاللانسا، ھۆججەت باشقۇرغۇ قوزغالغاندا قوزغىلىش ئۇقتۇرۇشى "
+"تارقىتىدۇ. ھەممە پروگراممىنىڭ قوزغىلىش ئۇقتۇرۇشىنى قوللىشى ناتايىن"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
 #.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
@@ -821,6 +807,7 @@ msgstr "ئامراق پروگراممىلار"
 msgid "Select default applications for various services"
 msgstr "ھەر خىل مۇلازىمەتلەر ئۈچۈن كۆڭۈلدىكى پروگراممىلارنى تاللاش"
 
+#.
 #. Internet
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
@@ -828,7 +815,7 @@ msgid "_Internet"
 msgstr "ئىنتېرنېت(_I)"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "توركۆرگۈ"
 
@@ -836,7 +823,9 @@ msgstr "توركۆرگۈ"
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr "بېكىتىلگەن ئامراق توركۆرگۈ، ئۇلانمىلارنى ئېچىش، ياردەملەرنى كۆرسىتىشتە ئىشلىتىلىدۇ."
+msgstr ""
+"بېكىتىلگەن ئامراق توركۆرگۈ، ئۇلانمىلارنى ئېچىش، ياردەملەرنى كۆرسىتىشتە "
+"ئىشلىتىلىدۇ."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -847,8 +836,11 @@ msgstr "ئېلخەت ئوقۇغۇ"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr "بېكىتىلگەن ئامراق خەت ئوقۇغۇ، ئېلخەت ئادرېسىنى چەككەندە ئېلخەت يېزىشقا ئىشلىتىلىدۇ."
+msgstr ""
+"بېكىتىلگەن ئامراق خەت ئوقۇغۇ، ئېلخەت ئادرېسىنى چەككەندە ئېلخەت يېزىشقا "
+"ئىشلىتىلىدۇ."
 
+#.
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
@@ -856,7 +848,7 @@ msgid "_Utilities"
 msgstr "قوراللار(_I)"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "ھۆججەت باشقۇرغۇ"
 
@@ -864,7 +856,9 @@ msgstr "ھۆججەت باشقۇرغۇ"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr "بېكىتىلگەن ئامراق ھۆججەت باشقۇرغۇ، مۇندەرىجىلەرنىڭ مەزمۇنىنى كۆرۈشكە ئىشلىتىلىدۇ."
+msgstr ""
+"بېكىتىلگەن ئامراق ھۆججەت باشقۇرغۇ، مۇندەرىجىلەرنىڭ مەزمۇنىنى كۆرۈشكە "
+"ئىشلىتىلىدۇ."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -875,7 +869,9 @@ msgstr "تېرمىنال Emulator"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr "بېكىتىلگەن ئامراق تېرمىنال تەقلىدلىگۈ CLI مۇھىتىدا بۇيرۇقلارنى ئىجرا قىلىشقا ئىشلىتىلىدۇ."
+msgstr ""
+"بېكىتىلگەن ئامراق تېرمىنال تەقلىدلىگۈ CLI مۇھىتىدا بۇيرۇقلارنى ئىجرا قىلىشقا "
+"ئىشلىتىلىدۇ."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -1039,7 +1035,9 @@ msgstr "SOCKET ID"
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
-msgstr "TYPE نىڭ كۆڭۈلدىكى helper نى  PARAMETER تاللانمىسىنى قوشۇپ ئىجرا قىل. TYPE تۆۋەندىكىلەرنىڭ بىرى."
+msgstr ""
+"TYPE نىڭ كۆڭۈلدىكى helper نى  PARAMETER تاللانمىسىنى قوشۇپ ئىجرا قىل. TYPE "
+"تۆۋەندىكىلەرنىڭ بىرى."
 
 #: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
@@ -1053,7 +1051,8 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "--launch command دا تۆۋەندىكى تىپلارنى ئىشلەتكىلى بولىدۇ:\n"
+msgstr ""
+"--launch command دا تۆۋەندىكى تىپلارنى ئىشلەتكىلى بولىدۇ:\n"
 "\n"
 "  WebBrowser       - ئامراق توركۆرگۈ.\n"
 "  MailReader       - ئامراق ئېلخەت ئوقۇغۇ.\n"
@@ -1083,7 +1082,8 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n"
+msgstr ""
+"%s (Xfce %s)\n"
 "\n"
 "Copyright (c) 2003-2006\n"
 "        os-cillation e.K. All rights reserved.\n"
@@ -1248,12 +1248,14 @@ msgstr "       ياكى: exo-open --launch TYPE [PARAMETERs...]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          ياردەم ئۇچۇرىنى چىقىرىپ ئاخىرلىشىدۇ"
+msgstr ""
+"  -?, --help                          ياردەم ئۇچۇرىنى چىقىرىپ ئاخىرلىشىدۇ"
 
 #: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr "  -v, --version                       نەشر ئۇچۇرىنى چىقىرىپ ئاخىرلىشىدۇ"
+msgstr ""
+"  -v, --version                       نەشر ئۇچۇرىنى چىقىرىپ ئاخىرلىشىدۇ"
 
 #: ../exo-open/main.c:115
 msgid ""
@@ -1261,24 +1263,27 @@ msgid ""
 "                                      TYPE with the optional PARAMETERs, "
 "where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch TYPE [PARAMETERs...]       TYPE دېگەن پروگراممىنى PARAMETER \n"
+msgstr ""
+"  --launch TYPE [PARAMETERs...]       TYPE دېگەن پروگراممىنى PARAMETER \n"
 "                                      تاللانمىسى قوشۇپ ئىجرا قىلىدۇ.\n"
-"                                      TYPE نىڭ قىممىتىنى تۆۋەندىكىلەردىن كۆرۈڭ."
+"                                      TYPE نىڭ قىممىتىنى تۆۋەندىكىلەردىن "
+"كۆرۈڭ."
 
 #: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory DIRECTORY      --launch ئىشلىتىلگەن چاغدىكى پروگراممىنىڭ كۆڭۈلدىكى \n"
+msgstr ""
+"  --working-directory DIRECTORY      --launch ئىشلىتىلگەن چاغدىكى "
+"پروگراممىنىڭ كۆڭۈلدىكى \n"
 "                                     خىزمەت مۇندەرىجىسى"
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "تۆۋەندىكى TYPE لارنى --launch بۇيرۇقىدا ئىشلەتكىلى بولىدۇ:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
 #.
 #: ../exo-open/main.c:128
@@ -1287,7 +1292,8 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - ئامراق توركۆرگۈ.\n"
+msgstr ""
+"  WebBrowser       - ئامراق توركۆرگۈ.\n"
 "  MailReader       - ئامراق ئېلخەت ئوقۇغۇ.\n"
 "  FileManager      - ئامراق ھۆججەت باشقۇرغۇ.\n"
 "  TerminalEmulator - ئامراق تېرمىنال تەقلىدلىگۈ."
@@ -1299,21 +1305,27 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr "تاللانما --launch يېزىلمىسا، exo-open يېزىلغان بارلىق URL نى\n"
-"ئالدىن بەلگىلەن ئۇسۇل بويىچە ئاچىدۇ. ئەگەر تاللانما --launch يېزىلسا ئامراق پروگرامما تاللىنىپ، شۇ پروگراممىغا باشقا پارامېتىرلار يەتكۈزۈلۈپ \n"
-"ئىجرا قىلىنىدۇ. (TerminalEmulator غا چوقۇم بۇيرۇق قۇرىدا ئىجرا قىلغىلى بولىدىغان پارامېتىرلارنى يېزىش كېرەك.)。"
+msgstr ""
+"تاللانما --launch يېزىلمىسا، exo-open يېزىلغان بارلىق URL نى\n"
+"ئالدىن بەلگىلەن ئۇسۇل بويىچە ئاچىدۇ. ئەگەر تاللانما --launch يېزىلسا ئامراق "
+"پروگرامما تاللىنىپ، شۇ پروگراممىغا باشقا پارامېتىرلار يەتكۈزۈلۈپ \n"
+"ئىجرا قىلىنىدۇ. (TerminalEmulator غا چوقۇم بۇيرۇق قۇرىدا ئىجرا قىلغىلى "
+"بولىدىغان پارامېتىرلارنى يېزىش كېرەك.)。"
 
 #: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr "%s GIO-Unix ئالاھىدىلىكىنى ئىشلىتىپ يۇغۇرۇلمىغان بولسا ئۈستەلئۈستى ھۆججىتىنى ئىجرا قىلغىلى بولمايدۇ."
+msgstr ""
+"%s GIO-Unix ئالاھىدىلىكىنى ئىشلىتىپ يۇغۇرۇلمىغان بولسا ئۈستەلئۈستى ھۆججىتىنى "
+"ئىجرا قىلغىلى بولمايدۇ."
 
 #: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "كاتېگورىيە «%s» غا تەۋە ھۆججەتنى ئىجرا قىلىدىغان پروگرامما مەغلۇپ بولدى."
+msgstr ""
+"كاتېگورىيە «%s» غا تەۋە ھۆججەتنى ئىجرا قىلىدىغان پروگرامما مەغلۇپ بولدى."
 
 #: ../exo-open/main.c:577
 #, c-format
@@ -1325,7 +1337,7 @@ msgstr "«%s» نىڭ URI-scheme نى بىلگىلى بولمىدى."
 msgid "Failed to open URI \"%s\"."
 msgstr "URI «%s» نى ئېچىش مەغلۇپ بولدى."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "ھۆججەت سىستېمىسىنى كۆرىدۇ"
 
@@ -1337,6 +1349,18 @@ msgstr "ئېلخەت ئوقۇيدۇ"
 msgid "Use the command line"
 msgstr "بۇيرۇق قۇرىنى ئىشلىتىدۇ"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "تور كۆرىدۇ"
+
+#~ msgid "Selection Box Color"
+#~ msgstr "تاللانغان كۆزنەكچىنىڭ رەڭگى"
+
+#~ msgid "Color of the selection box"
+#~ msgstr "تاللانغان كۆزنەكچىنىڭ رەڭگى"
+
+#~ msgid "Selection Box Alpha"
+#~ msgstr "تاللانغان كۆزنەكچىنىڭ α قىممىتى"
+
+#~ msgid "Opacity of the selection box"
+#~ msgstr "تاللانغان كۆزنەكچىنىڭ سۈزۈكلۈكى"

@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the exo package.
 # Peeter Vois <peeter.vois@proekspert.ee>, 2006.
 # Allar Kiristaja <aquastus@gmail.com>, 2011.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-26 16:00+0000\n"
+"POT-Creation-Date: 2012-12-09 18:45+0100\n"
 "PO-Revision-Date: 2011-10-26 23:17+0300\n"
 "Last-Translator: Allar Kiristaja <aquastus@gmail.com>\n"
 "Language-Team: Eesti <>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bits\n"
-"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Poedit-Language: Estonian\n"
 "X-Poedit-Country: ESTONIA\n"
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Failed to open \"%s\"."
 msgstr "\"%s\" avamine ebaõnnestus."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
 msgid "Orientation"
 msgstr "Suund"
 
@@ -85,19 +85,19 @@ msgstr "Suund"
 msgid "The orientation of the iconbar"
 msgstr "Ikooniriba suund"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
 msgid "Pixbuf column"
 msgstr "Pixbuf-tulp"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Mudeli tulp, kust ikooni pixbuf saadakse"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
 msgid "Text column"
 msgstr "Teksti tulp"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
 msgid "Model column used to retrieve the text from"
 msgstr "Mudeli tulp, kust tekst saadakse"
 
@@ -225,120 +225,120 @@ msgstr "_Otsimise ikoon:"
 msgid "Clear search field"
 msgstr "Tühjenda otsimise ala"
 
-#: ../exo/exo-icon-view.c:644
+#: ../exo/exo-icon-view.c:674
 msgid "Column Spacing"
 msgstr "Tulpade vahe"
 
-#: ../exo/exo-icon-view.c:645
+#: ../exo/exo-icon-view.c:675
 msgid "Space which is inserted between grid column"
 msgstr "Ruudustiku tulpade vahele jäetav ruum"
 
-#: ../exo/exo-icon-view.c:661
+#: ../exo/exo-icon-view.c:691
 msgid "Number of columns"
 msgstr "Tulpade arv"
 
-#: ../exo/exo-icon-view.c:662
+#: ../exo/exo-icon-view.c:692
 msgid "Number of columns to display"
 msgstr "Näidatavate tulpade arv"
 
-#: ../exo/exo-icon-view.c:676
+#: ../exo/exo-icon-view.c:706
 msgid "Enable Search"
 msgstr "Luba otsimine"
 
-#: ../exo/exo-icon-view.c:677
+#: ../exo/exo-icon-view.c:707
 msgid "View allows user to search through columns interactively"
 msgstr "Vaade võimaldab kasutajal otsida läbi tulpade interaktiivselt"
 
-#: ../exo/exo-icon-view.c:694
+#: ../exo/exo-icon-view.c:724
 msgid "Width for each item"
 msgstr "Laius igale esemele"
 
-#: ../exo/exo-icon-view.c:695
+#: ../exo/exo-icon-view.c:725
 msgid "The width used for each item"
 msgstr "Iga eseme jaoks kasutatav laius"
 
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:743
 msgid "Layout mode"
 msgstr "Paigutusviis"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:744
 msgid "The layout mode"
 msgstr "Paigutusviis"
 
-#: ../exo/exo-icon-view.c:730
+#: ../exo/exo-icon-view.c:760
 msgid "Margin"
 msgstr "Piir"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:761
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Ikoonivaate äärtesse jäetav ruum"
 
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:777
 msgid "Markup column"
 msgstr "Märgistuse tulp"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:778
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Mudeli tulp, kust tekst saadakse, kui kasutatakse Pango märgistuskeelt"
 
-#: ../exo/exo-icon-view.c:762
+#: ../exo/exo-icon-view.c:792
 msgid "Icon View Model"
 msgstr "Ikoonivaate mudel"
 
-#: ../exo/exo-icon-view.c:763
+#: ../exo/exo-icon-view.c:793
 msgid "The model for the icon view"
 msgstr "Mudel ikoonivaatele"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:807
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Kuidas iga elemendi tekst ja ikoon paigutatakse üksteise suhtes"
 
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:839
 msgid "Reorderable"
 msgstr "Ümberjärjestatav"
 
-#: ../exo/exo-icon-view.c:810
+#: ../exo/exo-icon-view.c:840
 msgid "View is reorderable"
 msgstr "Vaade on ümberjärjestatav"
 
-#: ../exo/exo-icon-view.c:825
+#: ../exo/exo-icon-view.c:855
 msgid "Row Spacing"
 msgstr "Ridade vahe"
 
-#: ../exo/exo-icon-view.c:826
+#: ../exo/exo-icon-view.c:856
 msgid "Space which is inserted between grid rows"
 msgstr "Ruudustiku ridade vahele jäetav ruum"
 
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:870
 msgid "Search Column"
 msgstr "Otsimise tulp"
 
-#: ../exo/exo-icon-view.c:841
+#: ../exo/exo-icon-view.c:871
 msgid "Model column to search through when searching through item"
 msgstr "Mudeli tulp, mis otsitakse läbi, kui esemest midagi otsitakse"
 
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:885
 msgid "Selection mode"
 msgstr "Valikuviis"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:886
 msgid "The selection mode"
 msgstr "Valikuviis"
 
-#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Üks klõps"
 
-#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Kas vaates olevaid asju saab ühe klõpsuga aktiveerida"
 
-#: ../exo/exo-icon-view.c:888 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Ühe klõpsu ajakatkestus"
 
-#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -346,29 +346,13 @@ msgstr ""
 "Aeg, pärast mida hiirekursori all paiknev element valitakse ühe klõpsu "
 "režiimis automaatselt"
 
-#: ../exo/exo-icon-view.c:904
+#: ../exo/exo-icon-view.c:934
 msgid "Spacing"
 msgstr "Vahe"
 
-#: ../exo/exo-icon-view.c:905
+#: ../exo/exo-icon-view.c:935
 msgid "Space which is inserted between cells of an item"
 msgstr "Eseme lahtrite vahele jäetav ruum"
-
-#: ../exo/exo-icon-view.c:928
-msgid "Selection Box Color"
-msgstr "Valikukasti värv"
-
-#: ../exo/exo-icon-view.c:929
-msgid "Color of the selection box"
-msgstr "Valikukasti värv"
-
-#: ../exo/exo-icon-view.c:935
-msgid "Selection Box Alpha"
-msgstr "Valikukasti alfa"
-
-#: ../exo/exo-icon-view.c:936
-msgid "Opacity of the selection box"
-msgstr "Valikukasti läbipaistmatus"
 
 #: ../exo/exo-thumbnail-preview.c:113
 msgid "Preview"
@@ -536,8 +520,8 @@ msgstr "  --strip-comments  Eemalda kommentaarid XML failidest\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Eemalda sõlmede sisu XML failidest\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:176
-#: ../exo-open/main.c:483
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
+#: ../exo-open/main.c:496
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -552,8 +536,8 @@ msgstr ""
 "Kirjutanud·Benedikt·Meurer·<benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:180
-#: ../exo-open/main.c:487
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
+#: ../exo-open/main.c:500
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -568,8 +552,8 @@ msgstr ""
 "%s lähtekoodi pakist.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:184
-#: ../exo-open/main.c:491
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
+#: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Palun teata vigadest aadressil <%s>.\n"
@@ -609,49 +593,42 @@ msgstr "Ruby skriptid"
 msgid "Shell Scripts"
 msgstr "Shelli skriptid"
 
-#: ../exo-desktop-item-edit/exo-die-desktop-model.c:284
+#: ../exo-desktop-item-edit/exo-die-desktop-model.c:288
 #, c-format
 msgid "Create Launcher <b>%s</b>"
 msgstr "Loo käivitaja <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Nimi:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "_Märkus:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "K_äsk:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "Tegev kataloog:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Ikoon:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -662,11 +639,9 @@ msgstr "Ikoon puudub"
 msgid "Options:"
 msgstr "Valikud:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Ka_suta töölemineku märguannet:"
@@ -681,11 +656,9 @@ msgstr ""
 "failihaldurist või menüüst käivitatakse. Mitte kõik rakendused ei oma "
 "töölemineku märguande toetust."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Käivita _terminalis"
@@ -704,7 +677,7 @@ msgstr "Vali ikoon"
 msgid "Select a working directory"
 msgstr "Vali tegev kataloog"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:168
+#: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
 msgstr "Faili asukoht ei ole tavaline fail või kataloog"
 
@@ -761,68 +734,68 @@ msgstr "Ettemääratud URL viite loomisel"
 msgid "Preset icon when creating a desktop file"
 msgstr "Ettemääratud ikoon töölaua faili loomisel"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:67
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Trüki versioon ja välju"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:152
+#: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
 msgstr "[FAIL|KAUST]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:164
+#: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
 msgstr "Kuva avamine ebaõnnestus"
 
-#: ../exo-desktop-item-edit/main.c:191
+#: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
 msgstr "Ühtegi faili ega kausta pole määratud"
 
-#: ../exo-desktop-item-edit/main.c:257
+#: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "\"%s\" sisu avamine ebaõnnestus: %s"
 
-#: ../exo-desktop-item-edit/main.c:262
+#: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Fail  \"%s\" ei sisalda andmeid"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:275
+#: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Faili \"%s\" sisu sõelumine ebaõnnestus: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:287
+#: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Failil „%s” ei ole võtme liiki"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:297
+#: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Toetamata töölaua faili liik \"%s\""
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:313
+#: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "_Loo"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:474
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "Vali failinimi"
 
-#: ../exo-desktop-item-edit/main.c:532
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\" loomine ebaõnnestus."
 
-#: ../exo-desktop-item-edit/main.c:532
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" salvestamine ebaõnnestus."
@@ -836,14 +809,16 @@ msgstr "Eelistatud rakendused"
 msgid "Select default applications for various services"
 msgstr "Vali vaikimisi rakendused erinevatele teenustele"
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-msgid "Internet"
+#, fuzzy
+msgid "_Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Veebisirvija"
 
@@ -868,14 +843,16 @@ msgstr ""
 "Eelistatavat e-posti lugejat kasutatakse e-kirjade\n"
 "koostamiseks, kui sa klõpsad e-posti aadressile."
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-msgid "Utilities"
+#, fuzzy
+msgid "_Utilities"
 msgstr "Abivahendid"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Failihaldur"
 
@@ -899,10 +876,6 @@ msgid ""
 msgstr ""
 "Eelistatavat terminaliemulaatorit kasutatakse\n"
 "käsurea keskkonda nõudvate käskluste korral."
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:297
-msgid "Failed to open the documentation browser."
-msgstr "Dokumentatsioonisirvija avamine ebaõnnestus."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -1065,7 +1038,7 @@ msgstr "Vaikimisi failihalduri käivitamine ebaõnnestus"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Vaikimisi terminaliemulaatori käivitamine ebaõnnestus"
 
-#: ../exo-helper/main.c:68
+#: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
@@ -1073,15 +1046,15 @@ msgstr ""
 "Ava eelistatud rakenduste \n"
 "sätete dialoog"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:72
 msgid "Settings manager socket"
 msgstr "Sätete halduri sokkel"
 
-#: ../exo-helper/main.c:69
+#: ../exo-helper/main.c:72
 msgid "SOCKET ID"
 msgstr "SOKKELI ID"
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
@@ -1089,11 +1062,11 @@ msgstr ""
 "Käivita vaikimisi liiki(TYPE) aitaja valikulise parameetriga(PARAMETER), kus "
 "liik(TYPE) on üks järgnevatest väärtustest."
 
-#: ../exo-helper/main.c:70
+#: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
-#: ../exo-helper/main.c:94
+#: ../exo-helper/main.c:102
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1109,17 +1082,17 @@ msgstr ""
 "  FileManager      - Eelistatud failihaldur.\n"
 "  TerminalEmulator - Eelistatud terminaliemulaator."
 
-#: ../exo-helper/main.c:104
+#: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Trüki „%s --help” kasutusjuhisteks"
 
-#: ../exo-helper/main.c:154
+#: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Vigane aitaja tüüp „%s”"
 
-#: ../exo-helper/main.c:198
+#: ../exo-helper/main.c:213
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1160,6 +1133,10 @@ msgstr "aterm"
 msgid "Balsa"
 msgstr "Balsa"
 
+#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
+msgid "Chromium"
+msgstr ""
+
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
 msgstr "Debian Sensible sirvija"
@@ -1199,6 +1176,10 @@ msgstr "GNOME Terminal"
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
 msgstr "Icedove"
+
+#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
+msgid "Iceweasel"
+msgstr ""
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1280,25 +1261,25 @@ msgstr "W3M tekstisirvija"
 msgid "X Terminal"
 msgstr "X Terminal"
 
-#: ../exo-open/main.c:107
+#: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
 msgstr "Kasutamine: exo-open [URL-id..]"
 
-#: ../exo-open/main.c:108
+#: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "exo-open --launch TYPE [PARAMETERs..]"
 
-#: ../exo-open/main.c:110
+#: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Trüki see abiteade ja välju"
 
-#: ../exo-open/main.c:111
+#: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr ""
 "  -V, --version                       Trüki versiooni informatsioon ja välju"
 
-#: ../exo-open/main.c:113
+#: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, "
@@ -1310,7 +1291,7 @@ msgstr ""
 "parameetritega (PARAMETER), kus\n"
 "                                      TYPE on üks järgnevatest väärtustest."
 
-#: ../exo-open/main.c:117
+#: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for "
 "applications\n"
@@ -1319,15 +1300,14 @@ msgstr ""
 "  --working-directory KATALOOG        Vaikimisi töökataloog rakendustele\n"
 "                                      kui kasutatakse --launch valikut."
 
-#: ../exo-open/main.c:120
+#: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "--launch käsk toetab järgnevaid liike (TYPE):"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
-#: ../exo-open/main.c:126
+#.
+#: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -1339,7 +1319,7 @@ msgstr ""
 "  FileManager      - Eelistatud failihaldur.\n"
 "  TerminalEmulator - Eelistatud terminaliemulaator."
 
-#: ../exo-open/main.c:131
+#: ../exo-open/main.c:133
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -1356,7 +1336,7 @@ msgstr ""
 "terminaliemulaatori\n"
 "jaoks saate te määrata käsurea, mida tuleb käivitada terminali käivitamisel)."
 
-#: ../exo-open/main.c:193
+#: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
@@ -1365,22 +1345,22 @@ msgstr ""
 "Töölaua failide käivitamist ei toetata kui %s on kompileeritud GIO-Unix "
 "omadusteta."
 
-#: ../exo-open/main.c:258
+#: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Jaotise \"%s\" eelistatud rakenduse käivitamine ebaõnnestus."
 
-#: ../exo-open/main.c:564
+#: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Ei saa tuvastada \"%s\" URI-skeemi"
 
-#: ../exo-open/main.c:576
+#: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "URI \"%s\" avamine ebaõnnestus."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "Sirvi failisüsteemi"
 
@@ -1392,9 +1372,24 @@ msgstr "Loe e-posti"
 msgid "Use the command line"
 msgstr "Kasuta käsurida"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "Sirvi veebi"
+
+#~ msgid "Selection Box Color"
+#~ msgstr "Valikukasti värv"
+
+#~ msgid "Color of the selection box"
+#~ msgstr "Valikukasti värv"
+
+#~ msgid "Selection Box Alpha"
+#~ msgstr "Valikukasti alfa"
+
+#~ msgid "Opacity of the selection box"
+#~ msgstr "Valikukasti läbipaistmatus"
+
+#~ msgid "Failed to open the documentation browser."
+#~ msgstr "Dokumentatsioonisirvija avamine ebaõnnestus."
 
 #~ msgid "External %s Drive"
 #~ msgstr "Väline %s ketas"
