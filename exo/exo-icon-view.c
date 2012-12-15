@@ -5586,10 +5586,10 @@ exo_icon_view_get_selected_items (const ExoIconView *icon_view)
   for (i = 0, lp = icon_view->priv->items; lp != NULL; ++i, lp = lp->next)
     {
       if (EXO_ICON_VIEW_ITEM (lp->data)->selected)
-        selected = g_list_append (selected, gtk_tree_path_new_from_indices (i, -1));
+        selected = g_list_prepend (selected, gtk_tree_path_new_from_indices (i, -1));
     }
 
-  return selected;
+  return g_list_reverse (selected);
 }
 
 
