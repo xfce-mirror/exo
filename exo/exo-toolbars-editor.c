@@ -322,17 +322,16 @@ event_box_realize (GtkWidget *widget,
 {
   GtkImageType type;
   GdkPixbuf   *pixbuf;
-  gchar       *stock_id;
+  const gchar *icon_name;
 
   _exo_toolbars_set_drag_cursor (widget);
 
   type = gtk_image_get_storage_type (image);
-  if (type == GTK_IMAGE_STOCK)
+  if (type == GTK_IMAGE_ICON_NAME)
     {
-      gtk_image_get_stock (image, &stock_id, NULL);
-      pixbuf = gtk_widget_render_icon (widget, stock_id, GTK_ICON_SIZE_LARGE_TOOLBAR, NULL);
-      if (G_LIKELY (pixbuf != NULL))
-        gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
+      gtk_image_get_icon_name (image, &icon_name, NULL);
+      if (icon_name != NULL)
+        gtk_drag_source_set_icon_name (widget, icon_name);
     }
   else if (type == GTK_IMAGE_PIXBUF)
     {
@@ -516,7 +515,7 @@ exo_toolbars_editor_update (ExoToolbarsEditor *editor)
       if (G_UNLIKELY (stock == NULL))
         stock = g_strdup (GTK_STOCK_DND);
 
-      image = gtk_image_new_from_stock (stock, GTK_ICON_SIZE_LARGE_TOOLBAR);
+      image = gtk_image_new_from_icon_name (stock, GTK_ICON_SIZE_LARGE_TOOLBAR);
       item = exo_toolbars_editor_create_item (editor, image, text,
                                               GDK_ACTION_MOVE);
       g_object_set_data (G_OBJECT (item), I_("gtk-action"), action);
