@@ -226,7 +226,7 @@ thumbnail_add_frame (GdkPixbuf *thumbnail)
   if (G_LIKELY (frame != NULL))
     {
       /* add a frame to the thumbnail */
-      thumbnail = exo_gdk_pixbuf_frame (thumbnail, frame, 3, 3, 6, 6);
+      thumbnail = exo_gdk_pixbuf_frame (thumbnail, frame, 4, 3, 5, 6);
       g_object_unref (G_OBJECT (frame));
     }
   else
