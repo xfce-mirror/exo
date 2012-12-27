@@ -4,7 +4,6 @@ defaults_DATA = helpers.rc
 
 desktopdir = $(datadir)/xfce4/helpers
 desktop_in_in_files =							\
-	Terminal.desktop.in.in						\
 	Thunar.desktop.in.in						\
 	aterm.desktop.in.in						\
 	balsa.desktop.in.in						\
@@ -39,7 +38,9 @@ desktop_in_in_files =							\
 	thunderbird.desktop.in.in					\
 	urxvt.desktop.in.in						\
 	w3m.desktop.in.in						\
+	xfce4-terminal.desktop.in.in					\
 	xterm.desktop.in.in
+
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 %.desktop.in: %.desktop.in.in
