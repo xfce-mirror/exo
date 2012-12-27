@@ -4,12 +4,13 @@ defaults_DATA = helpers.rc
 
 desktopdir = $(datadir)/xfce4/helpers
 desktop_in_in_files =							\
-	Thunar.desktop.in.in						\
 	aterm.desktop.in.in						\
 	balsa.desktop.in.in						\
+	caja.desktop.in.in						\
 	chromium.desktop.in.in						\
 	debian-sensible-browser.desktop.in.in				\
 	debian-x-terminal-emulator.desktop.in.in			\
+	dillo.desktop.in.in						\
 	encompass.desktop.in.in						\
 	epiphany.desktop.in.in						\
 	eterm.desktop.in.in						\
@@ -17,10 +18,12 @@ desktop_in_in_files =							\
 	firefox.desktop.in.in						\
 	galeon.desktop.in.in						\
 	gnome-terminal.desktop.in.in					\
-	kmail.desktop.in.in						\
-	konqueror.desktop.in.in						\
+	icecat.desktop.in.in						\
 	icedove.desktop.in.in						\
 	iceweasel.desktop.in.in						\
+	jumanji.desktop.in.in						\
+	kmail.desktop.in.in						\
+	konqueror.desktop.in.in						\
 	links.desktop.in.in						\
 	lynx.desktop.in.in						\
 	midori.desktop.in.in						\
@@ -33,13 +36,19 @@ desktop_in_in_files =							\
 	opera-browser.desktop.in.in					\
 	opera-mailer.desktop.in.in					\
 	pcmanfm.desktop.in.in						\
+	rodent.desktop.in.in						\
+	rox-filer.desktop.in.in						\
+	sakura.desktop.in.in						\
 	sylpheed.desktop.in.in						\
 	sylpheed-claws.desktop.in.in					\
+	Thunar.desktop.in.in						\
 	thunderbird.desktop.in.in					\
 	urxvt.desktop.in.in						\
 	w3m.desktop.in.in						\
 	xfce4-terminal.desktop.in.in					\
+	xfe.desktop.in.in						\
 	xterm.desktop.in.in
+
 
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
