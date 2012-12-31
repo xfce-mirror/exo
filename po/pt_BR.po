@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-09 18:45+0100\n"
-"PO-Revision-Date: 2012-06-17 03:07-0300\n"
+"POT-Creation-Date: 2012-12-31 00:18+0000\n"
+"PO-Revision-Date: 2012-12-30 23:34-0300\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <xfce-i18n-br@xfce.org>\n"
 "Language: pt_BR\n"
@@ -20,8 +20,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: BRAZIL\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -400,7 +398,7 @@ msgstr ""
 "Arraste um item sobre as barras de ferramentas para adicioná-lo e das barras "
 "de ferramentas para a tabela de itens para removê-lo."
 
-#: ../exo/exo-toolbars-editor.c:538
+#: ../exo/exo-toolbars-editor.c:537
 msgid "Separator"
 msgstr "Separador"
 
@@ -834,7 +832,7 @@ msgid "_Internet"
 msgstr "_Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Web Browser"
 msgstr "Navegador web"
 
@@ -867,7 +865,7 @@ msgid "_Utilities"
 msgstr "_Utilitários"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "File Manager"
 msgstr "Gerenciador de arquivos"
 
@@ -1137,14 +1135,6 @@ msgstr ""
 "\n"
 "Por favor relatar erros para <%s>.\n"
 
-#: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
-msgid "Xfce Terminal"
-msgstr "Terminal do Xfce"
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr "Thunar"
-
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
 msgstr "aterm"
@@ -1152,6 +1142,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/caja.desktop.in.in.h:1
+msgid "Caja File Manager"
+msgstr "Gerenciador de arquivos Caja"
 
 #: ../exo-helper/helpers/chromium.desktop.in.in.h:1
 msgid "Chromium"
@@ -1163,7 +1157,11 @@ msgstr "Navegador do Debian"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr "Emulador de terminal do Debian"
+msgstr "Emulador de terminal X do Debian"
+
+#: ../exo-helper/helpers/dillo.desktop.in.in.h:1
+msgid "Dillo"
+msgstr "Dillo"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -1193,6 +1191,10 @@ msgstr "Navegador web Galeon"
 msgid "GNOME Terminal"
 msgstr "Terminal do GNOME"
 
+#: ../exo-helper/helpers/icecat.desktop.in.in.h:1
+msgid "Icecat"
+msgstr "Icecat"
+
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
 msgstr "Icedove"
@@ -1200,6 +1202,10 @@ msgstr "Icedove"
 #: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
 msgid "Iceweasel"
 msgstr "Iceweasel"
+
+#: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
+msgid "Jumanji"
+msgstr "Jumanji"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1257,13 +1263,29 @@ msgstr "Cliente de e-mail Opera"
 msgid "PCMan File Manager"
 msgstr "Gerenciador de arquivos PCManFM"
 
-#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Claws Mail"
-msgstr "Cliente de e-mail Claws"
+#: ../exo-helper/helpers/rodent.desktop.in.in.h:1
+msgid "Rodent File Manager"
+msgstr "Gerenciador de arquivos Rodent"
+
+#: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
+msgid "ROX-Filer"
+msgstr "ROX-Filer"
+
+#: ../exo-helper/helpers/sakura.desktop.in.in.h:1
+msgid "Sakura"
+msgstr "Sakura"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
 msgstr "Sylpheed"
+
+#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
+msgid "Claws Mail"
+msgstr "Cliente de e-mail Claws"
+
+#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
+msgid "Thunar"
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
@@ -1276,6 +1298,14 @@ msgstr "RXVT Unicode"
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
 msgstr "Navegador de texto W3M"
+
+#: ../exo-helper/helpers/xfce4-terminal.desktop.in.in.h:1
+msgid "Xfce Terminal"
+msgstr "Terminal do Xfce"
+
+#: ../exo-helper/helpers/xfe.desktop.in.in.h:1
+msgid "Xfe File Manager"
+msgstr "Gerenciador de arquivos do Xfce"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -1381,7 +1411,7 @@ msgstr "Não foi possível detectar o esquema URI de \"%s\"."
 msgid "Failed to open URI \"%s\"."
 msgstr "Falha ao abrir o URI \"%s\"."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "Browse the file system"
 msgstr "Navegar pelo sistema de arquivos"
 
@@ -1393,7 +1423,7 @@ msgstr "Ler seu e-mail"
 msgid "Use the command line"
 msgstr "Usar a linha de comando"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "Navegar pela web"
 
