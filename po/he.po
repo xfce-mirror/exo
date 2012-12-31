@@ -1,21 +1,21 @@
 # translation of he.po to Hebrew
 # Copyright (C) 2006 os-cillation e.K.
 # This file is distributed under the same license as the exo package.
-#
+# 
 # Dotan Kamber <kamberd@yahoo.com>, 2006.
 # Yuval Tanny <tanai@int.gov.il>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: exo 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-09 18:45+0100\n"
+"POT-Creation-Date: 2012-12-31 11:00+0000\n"
 "PO-Revision-Date: 2007-01-19 14:50+0200\n"
 "Last-Translator: Yuval Tanny <tanai@int.gov.il>\n"
 "Language-Team: Hebrew\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
@@ -388,7 +388,7 @@ msgstr ""
 "גרירת פריט אל סרגלי הכלים מעלה תוסיף אותו וגרירת פריט מסרגלי הכלים בטבלת "
 "הפריטים תסיר אותו"
 
-#: ../exo/exo-toolbars-editor.c:538
+#: ../exo/exo-toolbars-editor.c:537
 msgid "Separator"
 msgstr "קו מפריד"
 
@@ -592,37 +592,44 @@ msgstr "תסריטי Shell"
 msgid "Create Launcher <b>%s</b>"
 msgstr "צור משגר <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_שם:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "_הערה:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "_פקודה:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_כתובת:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "תיקיית ה_פעילות:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_סמל:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -633,9 +640,11 @@ msgstr "אין סמל"
 msgid "Options:"
 msgstr "אפשרויות:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "השתמש _בהתראת הפעלה"
@@ -649,9 +658,11 @@ msgstr ""
 "בחר באפשרות זו כדי לאפשר התראה בהפעלה כאשר הפקודה רצה מסייר הקבצים או "
 "התפריט. לא כל יישמום תומך בהתראת הפעלה."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "הרץ בתוך _מסוף"
@@ -802,15 +813,14 @@ msgstr "יישומים מועדפים"
 msgid "Select default applications for various services"
 msgstr "בחר יישום ברירת מחדל לשירותים"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "_Internet"
 msgstr "_אינטרנט"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Web Browser"
 msgstr "דפדפן אינטרנט"
 
@@ -835,15 +845,14 @@ msgstr ""
 "קורא הדוא\"ל המועדף ישמש לחיבור\n"
 "הודעות דוא\"ל כשאר תלחץ כתובת דוא\"ל."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "_Utilities"
 msgstr "_עזרים"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "File Manager"
 msgstr "מנהל קבצים"
 
@@ -1004,9 +1013,9 @@ msgid "No command specified"
 msgstr "לא נבחרה פקודה."
 
 #: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to open %s for writing"
-msgstr "אירע כשל בפתיחת \"%s\"."
+msgstr "פתיחת %s לכתיבה נכשלה"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
@@ -1107,14 +1116,6 @@ msgstr ""
 "\n"
 "Please report bugs to <%s>.\n"
 
-#: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
-msgid "Xfce Terminal"
-msgstr "Xfce Terminal"
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr "Thunar"
-
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
 msgstr "aterm"
@@ -1122,6 +1123,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/caja.desktop.in.in.h:1
+msgid "Caja File Manager"
+msgstr "מנהל הקבצים Caja"
 
 #: ../exo-helper/helpers/chromium.desktop.in.in.h:1
 msgid "Chromium"
@@ -1134,6 +1139,10 @@ msgstr "Debian Sensible Browser"
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Debian X Terminal Emulator"
+
+#: ../exo-helper/helpers/dillo.desktop.in.in.h:1
+msgid "Dillo"
+msgstr "Dillo"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -1163,6 +1172,10 @@ msgstr "דפדפן האינטרנט Galeon"
 msgid "GNOME Terminal"
 msgstr "GNOME Terminal"
 
+#: ../exo-helper/helpers/icecat.desktop.in.in.h:1
+msgid "Icecat"
+msgstr "Icecat"
+
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
 msgstr "Icedove"
@@ -1170,6 +1183,10 @@ msgstr "Icedove"
 #: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
 msgid "Iceweasel"
 msgstr "Iceweasel"
+
+#: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
+msgid "Jumanji"
+msgstr "Jumanji"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1227,13 +1244,29 @@ msgstr "Opera Mail"
 msgid "PCMan File Manager"
 msgstr "מנהל הקבצים של PCMan"
 
-#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Claws Mail"
-msgstr "Claws Mail"
+#: ../exo-helper/helpers/rodent.desktop.in.in.h:1
+msgid "Rodent File Manager"
+msgstr "מנהל קבצים"
+
+#: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
+msgid "ROX-Filer"
+msgstr "ROX-Filer"
+
+#: ../exo-helper/helpers/sakura.desktop.in.in.h:1
+msgid "Sakura"
+msgstr "Sakura"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
 msgstr "Sylpheed"
+
+#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
+msgid "Claws Mail"
+msgstr "Claws Mail"
+
+#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
+msgid "Thunar"
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
@@ -1246,6 +1279,14 @@ msgstr "RXVT Unicode"
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
 msgstr "הדפדפן הטקסטואלי W2M"
+
+#: ../exo-helper/helpers/xfce4-terminal.desktop.in.in.h:1
+msgid "Xfce Terminal"
+msgstr "Xfce Terminal"
+
+#: ../exo-helper/helpers/xfe.desktop.in.in.h:1
+msgid "Xfe File Manager"
+msgstr "מנהל קבצים של Xfe"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -1295,9 +1336,10 @@ msgstr ""
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "The following TYPEs are supported for the --launch command:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
+#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1348,7 +1390,7 @@ msgstr "Unable to detect the URI-scheme of \"%s\"."
 msgid "Failed to open URI \"%s\"."
 msgstr "Failed to open URI \"%s\"."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "Browse the file system"
 msgstr "עיון במערכת הקבצים"
 
@@ -1360,7 +1402,7 @@ msgstr "קריאת הדוא״ל שלך"
 msgid "Use the command line"
 msgstr "שימוש בשורת הפקודה"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "גלישה באינטרנט"
 
