@@ -4,7 +4,7 @@
 # the exo package.
 # Chao Sye <chao-7410@163.com>, 2008.
 # Chris K. Zhang <plutino@gmail.com>, 2009
-# Hunt Xu <huntxu@live.cn>, 2009, 2010.
+# Hunt Xu <huntxu@live.cn>, 2009, 2010, 2012.
 # Aron Xu <aronmalache@163.com>, 2009.
 # Chipong Luo <chipong.luo@yahoo.com>, 2011, 2012.
 #
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-09 18:45+0100\n"
-"PO-Revision-Date: 2010-11-23 22:56+0800\n"
+"POT-Creation-Date: 2012-12-31 00:18+0000\n"
+"PO-Revision-Date: 2012-12-31 11:57+0800\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n-cn@xfce.org>\n"
 "Language: zh_CN\n"
@@ -390,7 +390,7 @@ msgid ""
 "items table to remove it."
 msgstr "把一个项目拖到工具栏中来添加，从工具栏拖走来移除。"
 
-#: ../exo/exo-toolbars-editor.c:538
+#: ../exo/exo-toolbars-editor.c:537
 msgid "Separator"
 msgstr "分隔符"
 
@@ -542,9 +542,9 @@ msgid ""
 "%s source package.\n"
 "\n"
 msgstr ""
-"%s 绝对没有任何担保，\n"
-"您可以在源码软件包中找到 GNU 宽通用公共\n"
-"许可协议并以此方式重新发布 %s 的副本。\n"
+"%1$s 绝对没有任何担保，\n"
+"您可以在 %3$s 的源码包中找到 GNU 宽通用公共\n"
+"许可协议并在此协议的约束下重新发布 %2$s 的副本。\n"
 "\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
@@ -811,7 +811,7 @@ msgid "_Internet"
 msgstr "互联网(_I)"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Web Browser"
 msgstr "网络浏览器"
 
@@ -840,7 +840,7 @@ msgid "_Utilities"
 msgstr "实用程序(_U)"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "File Manager"
 msgstr "文件管理器"
 
@@ -1088,14 +1088,6 @@ msgstr ""
 "\n"
 "请向 <%s> 报告缺陷。\n"
 
-#: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
-msgid "Xfce Terminal"
-msgstr "Xfce 终端"
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr "Thunar 文件管理器"
-
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
 msgstr "Aterm"
@@ -1103,6 +1095,10 @@ msgstr "Aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/caja.desktop.in.in.h:1
+msgid "Caja File Manager"
+msgstr "Caja 文件管理器"
 
 #: ../exo-helper/helpers/chromium.desktop.in.in.h:1
 msgid "Chromium"
@@ -1115,6 +1111,10 @@ msgstr "Debian 实用浏览器"
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Debian X 终端模拟器"
+
+#: ../exo-helper/helpers/dillo.desktop.in.in.h:1
+msgid "Dillo"
+msgstr "Dillo"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -1144,6 +1144,10 @@ msgstr "Galeon 网络浏览器"
 msgid "GNOME Terminal"
 msgstr "GNOME 终端"
 
+#: ../exo-helper/helpers/icecat.desktop.in.in.h:1
+msgid "Icecat"
+msgstr "Icecat"
+
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
 msgstr "Icedove"
@@ -1151,6 +1155,10 @@ msgstr "Icedove"
 #: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
 msgid "Iceweasel"
 msgstr "Iceweasel"
+
+#: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
+msgid "Jumanji"
+msgstr "Jumanji"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1208,13 +1216,29 @@ msgstr "Opera 邮件"
 msgid "PCMan File Manager"
 msgstr "PCMan 文件管理器"
 
-#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Claws Mail"
-msgstr "Claws 邮件"
+#: ../exo-helper/helpers/rodent.desktop.in.in.h:1
+msgid "Rodent File Manager"
+msgstr "Rodent 文件管理器"
+
+#: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
+msgid "ROX-Filer"
+msgstr "ROX-Filer"
+
+#: ../exo-helper/helpers/sakura.desktop.in.in.h:1
+msgid "Sakura"
+msgstr "Sakura"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
 msgstr "Sylpheed"
+
+#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
+msgid "Claws Mail"
+msgstr "Claws 邮件"
+
+#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
+msgid "Thunar"
+msgstr "Thunar 文件管理器"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
@@ -1228,13 +1252,21 @@ msgstr "RXVT Unicode"
 msgid "W3M Text Browser"
 msgstr "W3M 文本浏览器"
 
+#: ../exo-helper/helpers/xfce4-terminal.desktop.in.in.h:1
+msgid "Xfce Terminal"
+msgstr "Xfce 终端"
+
+#: ../exo-helper/helpers/xfe.desktop.in.in.h:1
+msgid "Xfe File Manager"
+msgstr "Xfe 文件管理器"
+
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
 msgstr "X 终端"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
-msgstr "用法： exo-open [URL...]"
+msgstr "用法: exo-open [URL...]"
 
 #: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
@@ -1326,7 +1358,7 @@ msgstr "未能检测 “%s” 的 URI-scheme。"
 msgid "Failed to open URI \"%s\"."
 msgstr "无法打开 URI “%s”。"
 
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "Browse the file system"
 msgstr "浏览文件系统"
 
@@ -1338,7 +1370,7 @@ msgstr "阅读您的邮件"
 msgid "Use the command line"
 msgstr "使用命令行"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "浏览网络"
 
