@@ -43,6 +43,7 @@
 #include <exo/exo-config.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-icon-view.h>
+#include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-marshal.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
@@ -76,6 +77,7 @@ enum
 {
   PROP_0,
   PROP_PIXBUF_COLUMN,
+  PROP_ICON_COLUMN,
   PROP_TEXT_COLUMN,
   PROP_MARKUP_COLUMN,
   PROP_SELECTION_MODE,
@@ -307,6 +309,10 @@ static void                 exo_icon_view_start_editing                  (ExoIco
                                                                           GdkEvent               *event);
 static void                 exo_icon_view_stop_editing                   (ExoIconView            *icon_view,
                                                                           gboolean                cancel_editing);
+static void                 exo_icon_view_set_pixbuf_column              (ExoIconView              *icon_view,
+                                                                          gint                      column);
+static void                 exo_icon_view_set_icon_column                (ExoIconView              *icon_view,
+                                                                          gint                      column);
 
 /* Source side drag signals */
 static void exo_icon_view_drag_begin       (GtkWidget        *widget,
@@ -499,6 +505,7 @@ struct _ExoIconViewPrivate
   gint text_column;
   gint markup_column;
   gint pixbuf_column;
+  gint icon_column;
 
   gint pixbuf_cell;
   gint text_cell;
@@ -822,6 +829,24 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                    g_param_spec_int ("pixbuf-column",
                                                      _("Pixbuf column"),
                                                      _("Model column used to retrieve the icon pixbuf from"),
+                                                     -1, G_MAXINT, -1,
+                                                     EXO_PARAM_READWRITE));
+
+  /**
+   * ExoIconView:icon-column:
+   *
+   * The ::icon-column property contains the number of the model column
+   * containing an absolute path to an image file to render. The icon column
+   * must be of type #G_TYPE_STRING. Setting this property to -1 turns off
+   * the display of icons.
+   *
+   * Since: 0.10.2
+   **/
+  g_object_class_install_property (gobject_class,
+                                   PROP_ICON_COLUMN,
+                                   g_param_spec_int ("icon-column",
+                                                     _("Icon column"),
+                                                     _("Model column used to retrieve the absolute path of an image file to render"),
                                                      -1, G_MAXINT, -1,
                                                      EXO_PARAM_READWRITE));
 
@@ -1157,6 +1182,7 @@ exo_icon_view_init (ExoIconView *icon_view)
   icon_view->priv->text_column = -1;
   icon_view->priv->markup_column = -1;
   icon_view->priv->pixbuf_column = -1;
+  icon_view->priv->icon_column = -1;
   icon_view->priv->text_cell = -1;
   icon_view->priv->pixbuf_cell = -1;
 
@@ -1296,6 +1322,10 @@ exo_icon_view_get_property (GObject      *object,
       g_value_set_int (value, priv->pixbuf_column);
       break;
 
+    case PROP_ICON_COLUMN:
+      g_value_set_int (value, priv->icon_column);
+      break;
+
     case PROP_REORDERABLE:
       g_value_set_boolean (value, priv->reorderable);
       break;
@@ -1376,6 +1406,14 @@ exo_icon_view_set_property (GObject      *object,
 
     case PROP_ORIENTATION:
       exo_icon_view_set_orientation (icon_view, g_value_get_enum (value));
+      break;
+
+    case PROP_PIXBUF_COLUMN:
+      exo_icon_view_set_pixbuf_column (icon_view, g_value_get_int (value));
+      break;
+
+    case PROP_ICON_COLUMN:
+      exo_icon_view_set_icon_column (icon_view, g_value_get_int (value));
       break;
 
     case PROP_REORDERABLE:
@@ -5278,6 +5316,9 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       if (G_UNLIKELY (icon_view->priv->pixbuf_column != -1))
         g_return_if_fail (gtk_tree_model_get_column_type (model, icon_view->priv->pixbuf_column) == GDK_TYPE_PIXBUF);
 
+      if (G_UNLIKELY (icon_view->priv->icon_column != -1))
+        g_return_if_fail (gtk_tree_model_get_column_type (model, icon_view->priv->icon_column) == G_TYPE_STRING);
+
       if (G_UNLIKELY (icon_view->priv->text_column != -1))
         g_return_if_fail (gtk_tree_model_get_column_type (model, icon_view->priv->text_column) == G_TYPE_STRING);
 
@@ -5464,7 +5505,8 @@ update_pixbuf_cell (ExoIconView *icon_view)
   GList *l;
   gint i;
 
-  if (icon_view->priv->pixbuf_column == -1)
+  if (icon_view->priv->pixbuf_column == -1 &&
+      icon_view->priv->icon_column == -1)
     {
       if (icon_view->priv->pixbuf_cell != -1)
         {
@@ -5483,7 +5525,16 @@ update_pixbuf_cell (ExoIconView *icon_view)
     {
       if (icon_view->priv->pixbuf_cell == -1)
         {
-          GtkCellRenderer *cell = gtk_cell_renderer_pixbuf_new ();
+          GtkCellRenderer *cell;
+
+          if (icon_view->priv->pixbuf_column != -1)
+            {
+              cell = gtk_cell_renderer_pixbuf_new ();
+            }
+          else
+            {
+              cell = exo_cell_renderer_icon_new ();
+            }
 
           gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (icon_view), cell, FALSE);
           for (l = icon_view->priv->cell_list, i = 0; l; l = l->next, i++)
@@ -5497,13 +5548,23 @@ update_pixbuf_cell (ExoIconView *icon_view)
             }
         }
 
-        info = g_list_nth_data (icon_view->priv->cell_list,
-                                icon_view->priv->pixbuf_cell);
+      info = g_list_nth_data (icon_view->priv->cell_list,
+                              icon_view->priv->pixbuf_cell);
 
-        gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (icon_view),
-                                        info->cell,
-                                        "pixbuf", icon_view->priv->pixbuf_column,
-                                        NULL);
+      if (icon_view->priv->pixbuf_column != -1)
+        {
+          gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (icon_view),
+                                          info->cell,
+                                          "pixbuf", icon_view->priv->pixbuf_column,
+                                          NULL);
+        }
+      else
+        {
+          gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (icon_view),
+                                          info->cell,
+                                          "icon", icon_view->priv->icon_column,
+                                          NULL);
+        }
     }
 }
 
@@ -7487,6 +7548,48 @@ exo_icon_view_create_drag_icon (ExoIconView *icon_view,
     }
 
   return NULL;
+}
+
+
+
+/**
+ * exo_icon_view_set_pixbuf_column:
+ * @icon_view : a #ExoIconView
+ * @column    : The column that contains the pixbuf to render.
+ *
+ * Sets the column that contains the pixbuf to render.
+ *
+ * Since: 0.10.2
+ **/
+void
+exo_icon_view_set_pixbuf_column (ExoIconView *icon_view, gint column)
+{
+  g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));
+
+  icon_view->priv->pixbuf_column = column;
+
+  update_pixbuf_cell(icon_view);
+}
+
+
+
+/**
+ * exo_icon_view_set_icon_column:
+ * @icon_view : a #ExoIconView
+ * @column    : The column that contains file to render.
+ *
+ * Sets the column that contains the file to render.
+ *
+ * Since: 0.10.2
+ **/
+void
+exo_icon_view_set_icon_column (ExoIconView *icon_view, gint column)
+{
+  g_return_if_fail (EXO_IS_ICON_VIEW (icon_view));
+
+  icon_view->priv->icon_column = column;
+
+  update_pixbuf_cell(icon_view);
 }
 
 
