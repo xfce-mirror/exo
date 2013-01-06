@@ -2,7 +2,7 @@
 SUBDIRS =								\
 	helpers
 
-INCLUDES = 								\
+AM_CPPFLAGS = 								\
 	-I$(top_srcdir)							\
 	-DBINDIR=\"$(bindir)\"						\
 	-DDATADIR=\"$(datadir)\"					\

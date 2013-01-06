@@ -2,7 +2,7 @@
 SUBDIRS =								\
 	data
 
-INCLUDES =								\
+AM_CPPFLAGS =								\
 	-I$(top_srcdir)							\
 	-DG_LOG_DOMAIN=\"exo-tests\"
 

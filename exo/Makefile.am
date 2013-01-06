@@ -1,5 +1,5 @@
 
-INCLUDES = 								\
+AM_CPPFLAGS = 								\
 	-I$(top_srcdir)							\
 	-DDATADIR=\"$(datadir)\"					\
 	-DEXO_COMPILATION						\
