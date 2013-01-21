@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-09 18:45+0100\n"
+"POT-Creation-Date: 2013-01-21 15:15+0000\n"
 "PO-Revision-Date: 2011-11-06 00:16+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: debian-l10n-eu@lists.debian.org\n"
-"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.7.0\n"
 
@@ -397,7 +397,7 @@ msgstr ""
 "Elementu bat tresna barra mugitu eta bertan gehitu, tresna-barratik kanpora "
 "mugitu berau ezabatzeko."
 
-#: ../exo/exo-toolbars-editor.c:538
+#: ../exo/exo-toolbars-editor.c:537
 msgid "Separator"
 msgstr "Bereizlea"
 
@@ -600,37 +600,44 @@ msgstr "Shell Script-ak"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Sortu <b>%s</b> abiarazlea"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Izena:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "Iru_zkina:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "Kom_andoa:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL-a:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "Lan _direktorioa:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Ikonoa:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -641,9 +648,11 @@ msgstr "Ikonorik ez"
 msgid "Options:"
 msgstr "Aukerak:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "A_biarazte berri emateak erabili"
@@ -658,9 +667,11 @@ msgstr ""
 "abiarazte berri ematea gaitu. Abiarazte berri ematea ez dute aplikazio "
 "guztiek onartzen."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Abiarazi _terminalean"
@@ -811,15 +822,14 @@ msgstr "Hobetsiriko aplikazioak"
 msgid "Select default applications for various services"
 msgstr "Zenbait erabilpenerako lehenetsiriko aplikazioak ezarri"
 
-#.
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "_Internet"
 msgstr "_Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Web Browser"
 msgstr "Web nabigatzailea"
 
@@ -844,15 +854,14 @@ msgstr ""
 "Lehenetsiriko posta bezeroa eposta helbide batean\n"
 "klikatzerakoan mezu bat sortzeko erabiliko da."
 
-#.
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "_Utilities"
 msgstr "_Lanabesak"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "File Manager"
 msgstr "Fitxategi kudeatzailea"
 
@@ -1118,14 +1127,6 @@ msgstr ""
 "\n"
 "Programa erroreen berri hemen eman: <%s>.\n"
 
-#: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
-msgid "Xfce Terminal"
-msgstr "Xfce Terminala"
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr "Thunar"
-
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
 msgstr "aterm"
@@ -1133,6 +1134,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/caja.desktop.in.in.h:1
+msgid "Caja File Manager"
+msgstr "CAja fitxategi kudeatzailea"
 
 #: ../exo-helper/helpers/chromium.desktop.in.in.h:1
 msgid "Chromium"
@@ -1145,6 +1150,10 @@ msgstr "Debian lehenetsiriko nabigatzailea"
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Debian X terminal emuladorea"
+
+#: ../exo-helper/helpers/dillo.desktop.in.in.h:1
+msgid "Dillo"
+msgstr "Dillo"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -1174,6 +1183,10 @@ msgstr "Galeon web nabigatzailea"
 msgid "GNOME Terminal"
 msgstr "GNOME terminala"
 
+#: ../exo-helper/helpers/icecat.desktop.in.in.h:1
+msgid "Icecat"
+msgstr "Icecat"
+
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
 msgstr "Icedove"
@@ -1181,6 +1194,10 @@ msgstr "Icedove"
 #: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
 msgid "Iceweasel"
 msgstr "Iceweasel"
+
+#: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
+msgid "Jumanji"
+msgstr "Jumanji"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1238,13 +1255,29 @@ msgstr "Opera posta"
 msgid "PCMan File Manager"
 msgstr "PCM fitxategi kudeatzailea"
 
-#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Claws Mail"
-msgstr "Claws posta"
+#: ../exo-helper/helpers/rodent.desktop.in.in.h:1
+msgid "Rodent File Manager"
+msgstr "Rodent fitxategi kudeatzailea"
+
+#: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
+msgid "ROX-Filer"
+msgstr "ROX-Filer"
+
+#: ../exo-helper/helpers/sakura.desktop.in.in.h:1
+msgid "Sakura"
+msgstr "Sakura"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
 msgstr "Sylpheed"
+
+#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
+msgid "Claws Mail"
+msgstr "Claws posta"
+
+#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
+msgid "Thunar"
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
@@ -1257,6 +1290,14 @@ msgstr "RXVT Unicode"
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
 msgstr "W3M testu nabigatzailea"
+
+#: ../exo-helper/helpers/xfce4-terminal.desktop.in.in.h:1
+msgid "Xfce Terminal"
+msgstr "Xfce Terminala"
+
+#: ../exo-helper/helpers/xfe.desktop.in.in.h:1
+msgid "Xfe File Manager"
+msgstr "Xfce Fitxategi kudeatzailea"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -1307,9 +1348,10 @@ msgstr ""
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Hurrengo MOTA hauek onartzen dira --launch komandoarentzat:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
+#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1362,7 +1404,7 @@ msgstr "Ezin da \"%s\"ren URI-eskema antzeman."
 msgid "Failed to open URI \"%s\"."
 msgstr "Huts \"%s\" URIa irekitzerakoan."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "Browse the file system"
 msgstr "Arakatu fitxategi sistema"
 
@@ -1374,7 +1416,7 @@ msgstr "Irakurri zure posta"
 msgid "Use the command line"
 msgstr "Erabili komando lerroa"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
 msgstr "Nabigatu web-a"
 
