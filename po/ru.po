@@ -8,20 +8,21 @@
 # Dmitrij Smirnov <other@igus.lv>, 2010.
 # Denis Koryavov <dkoryavov@yandex.ru>, 2010.
 # Artem Zolochevskiy <artem.zolochevskiy@gmail.com>, 2011.
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: exo\n"
+"Project-Id-Version: exo_ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-10 11:45+0000\n"
-"PO-Revision-Date: 2011-08-01 17:48+0300\n"
+"POT-Creation-Date: 2013-01-27 20:39+0400\n"
+"PO-Revision-Date: 2013-01-27 20:39+0400\n"
 "Last-Translator: Artem Zolochevskiy <artem.zolochevskiy@gmail.com>\n"
-"Language-Team: Russian\n"
+"Language-Team: xfce-i18n@xfce.org\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -379,7 +380,7 @@ msgstr "Символьное устройство"
 
 #: ../exo/exo-thumbnail-preview.c:299
 msgid "Folder"
-msgstr "Папка"
+msgstr "Каталог"
 
 #: ../exo/exo-thumbnail-preview.c:304
 msgid "FIFO"
@@ -605,44 +606,37 @@ msgstr "Скрипты Shell"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Создать значок запуска <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Имя:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "_Комментарий:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "К_оманда:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "URL-_адрес:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
-#. conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "Рабочий _каталог:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
-#. avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "_Значок:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
-#. dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -653,11 +647,9 @@ msgstr "Без значка"
 msgid "Options:"
 msgstr "Параметры:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Использовать _уведомление о запуске"
@@ -672,11 +664,9 @@ msgstr ""
 "команды из файлового менеджера или меню. Учтите, что не все приложения "
 "поддерживают уведомление о запуске."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
-#. avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar
-#. and xfce4-panel.
-#. 
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar and xfce4-panel.
+#.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Запускать в _терминале"
@@ -697,7 +687,7 @@ msgstr "Выбор рабочего каталога"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
-msgstr "Путь не указывает на файл или папку"
+msgstr "Путь не указывает на файл или каталог"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:52
@@ -726,7 +716,7 @@ msgstr "Изменить каталог"
 
 #: ../exo-desktop-item-edit/main.c:78
 msgid "Create a new desktop file in the given directory"
-msgstr "Создать новый desktop-файл в указанной папке"
+msgstr "Создать новый desktop-файл в указанном каталоге"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Type of desktop file to create (Application or Link)"
@@ -759,7 +749,7 @@ msgstr "Показать информацию о версии и выйти"
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
-msgstr "[ФАЙЛ|ПАПКА]"
+msgstr "[ФАЙЛ|КАТАЛОГ]"
 
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:183
@@ -768,7 +758,7 @@ msgstr "Не удалось открыть дисплей"
 
 #: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
-msgstr "Не указан файл/папка"
+msgstr "Не указан файл/каталог"
 
 #: ../exo-desktop-item-edit/main.c:276
 #, c-format
@@ -827,14 +817,15 @@ msgstr "Предпочитаемые приложения"
 msgid "Select default applications for various services"
 msgstr "Выберите приложения по умолчанию для различных задач"
 
+#.
 #. Internet
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "_Internet"
 msgstr "_Интернет"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Веб-браузер"
 
@@ -859,14 +850,15 @@ msgstr ""
 "Выбранная почтовая программа будет использоваться для\n"
 "составления писем при щелчке по адресу электронной почты."
 
+#.
 #. Utilities
-#. 
+#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "_Utilities"
 msgstr "_Утилиты"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Файловый менеджер"
 
@@ -876,7 +868,7 @@ msgid ""
 "browse the contents of folders."
 msgstr ""
 "Выбранный файловый менеджер будет использоваться для\n"
-"просмотра содержимого папок."
+"просмотра содержимого каталогов."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -1269,7 +1261,7 @@ msgstr "Файловый менеджер Rodent"
 
 #: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
 msgid "ROX-Filer"
-msgstr ""
+msgstr "ROX-Filer"
 
 #: ../exo-helper/helpers/sakura.desktop.in.in.h:1
 msgid "Sakura"
@@ -1357,10 +1349,9 @@ msgstr ""
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Для команды --launch поддерживаются следующие ТИПы:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
-#. TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
+#.
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1412,7 +1403,7 @@ msgstr "Не удалось распознать схему URI в «%s»."
 msgid "Failed to open URI \"%s\"."
 msgstr "Не удалось открыть URI «%s»."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "Просмотреть файловую систему"
 
@@ -1424,21 +1415,6 @@ msgstr "Читать электронную почту"
 msgid "Use the command line"
 msgstr "Использовать командную строку"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "Смотреть в Интернете"
-
-#~ msgid "Selection Box Color"
-#~ msgstr "Цвет окна выбора"
-
-#~ msgid "Color of the selection box"
-#~ msgstr "Цвет окна выбора"
-
-#~ msgid "Selection Box Alpha"
-#~ msgstr "Прозрачность окна выбора"
-
-#~ msgid "Opacity of the selection box"
-#~ msgstr "Прозрачность окна выбора"
-
-#~ msgid "Failed to open the documentation browser."
-#~ msgstr "Не удалось открыть приложение просмотра документации."
