@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: exo 4.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-09 18:45+0100\n"
-"PO-Revision-Date: 2011-12-30 04:57+0200\n"
-"Last-Translator: Milen Milev <fanfolet@gmail.com>\n"
+"POT-Creation-Date: 2013-02-02 10:48+0000\n"
+"PO-Revision-Date: 2013-02-02 15:42+0200\n"
+"Last-Translator: Cybercop <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
 msgid "Follow state"
-msgstr "Следвай състояние"
+msgstr "Следвай състоянието"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:132
 #: ../exo/exo-cell-renderer-icon.c:145
@@ -65,18 +65,16 @@ msgstr "Не може да се прочете файл \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Не може да се зареди изображението \"%s\": неясна причина, може би повреден "
-"файл"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Не може да се зареди изображението \"%s\": неясна причина, може би повреден файл"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Не може да се отвори \"%s\"."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
+#: ../exo/exo-icon-bar.c:277
+#: ../exo/exo-icon-view.c:806
 msgid "Orientation"
 msgstr "Ориентация"
 
@@ -84,21 +82,25 @@ msgstr "Ориентация"
 msgid "The orientation of the iconbar"
 msgstr "Ориентация на лентата с иконите"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
+#: ../exo/exo-icon-bar.c:294
+#: ../exo/exo-icon-view.c:823
 msgid "Pixbuf column"
 msgstr "Pixbuf колона"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-bar.c:295
+#: ../exo/exo-icon-view.c:824
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr ""
+msgstr "Модел колона, използвана за извличане на pixbuf икона от"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-bar.c:310
+#: ../exo/exo-icon-view.c:950
 msgid "Text column"
 msgstr "Текст колона "
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
+#: ../exo/exo-icon-bar.c:311
+#: ../exo/exo-icon-view.c:951
 msgid "Model column used to retrieve the text from"
-msgstr ""
+msgstr "Модел колона, използвана за извличане на текст от"
 
 #: ../exo/exo-icon-bar.c:323
 msgid "Icon Bar Model"
@@ -116,27 +118,33 @@ msgstr "Активен"
 msgid "Active item index"
 msgstr "Индекс на активните обекти"
 
-#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347
+#: ../exo/exo-icon-bar.c:348
 msgid "Active item fill color"
 msgstr "Цвят за запълване на активния обект"
 
-#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354
+#: ../exo/exo-icon-bar.c:355
 msgid "Active item border color"
 msgstr "Цвят на рамката на активния обект"
 
-#: ../exo/exo-icon-bar.c:361 ../exo/exo-icon-bar.c:362
+#: ../exo/exo-icon-bar.c:361
+#: ../exo/exo-icon-bar.c:362
 msgid "Active item text color"
 msgstr "Цвят на текста за активен обект"
 
-#: ../exo/exo-icon-bar.c:368 ../exo/exo-icon-bar.c:369
+#: ../exo/exo-icon-bar.c:368
+#: ../exo/exo-icon-bar.c:369
 msgid "Cursor item fill color"
 msgstr "Цвят за запълване на курсора"
 
-#: ../exo/exo-icon-bar.c:375 ../exo/exo-icon-bar.c:376
+#: ../exo/exo-icon-bar.c:375
+#: ../exo/exo-icon-bar.c:376
 msgid "Cursor item border color"
 msgstr "Цвят за рамката на курсора"
 
-#: ../exo/exo-icon-bar.c:382 ../exo/exo-icon-bar.c:383
+#: ../exo/exo-icon-bar.c:382
+#: ../exo/exo-icon-bar.c:383
 msgid "Cursor item text color"
 msgstr "Цвят за текста на курсора"
 
@@ -206,7 +214,8 @@ msgid "All Icons"
 msgstr "Всички икони"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
+#: ../exo/exo-icon-chooser-dialog.c:139
+#: ../exo/exo-icon-chooser-dialog.c:285
 msgid "Image Files"
 msgstr "Картинки"
 
@@ -278,7 +287,7 @@ msgstr "Markup колона"
 
 #: ../exo/exo-icon-view.c:778
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
+msgstr "Модел колона, използвана за извличане на текст, ако използвате Pango маркиране"
 
 #: ../exo/exo-icon-view.c:792
 msgid "Icon View Model"
@@ -289,8 +298,7 @@ msgid "The model for the icon view"
 msgstr "Моделът на изгледа на иконите"
 
 #: ../exo/exo-icon-view.c:807
-msgid ""
-"How the text and icon of each item are positioned relative to each other"
+msgid "How the text and icon of each item are positioned relative to each other"
 msgstr "Как текстът и иконата на всеки обект се разполагат един спрямо друг"
 
 #: ../exo/exo-icon-view.c:839
@@ -315,7 +323,7 @@ msgstr "Търсене колона"
 
 #: ../exo/exo-icon-view.c:871
 msgid "Model column to search through when searching through item"
-msgstr ""
+msgstr "Модел колона, използвана за търсене, когато търсите чрез елемент"
 
 #: ../exo/exo-icon-view.c:885
 msgid "Selection mode"
@@ -325,25 +333,25 @@ msgstr "Режим на избиране"
 msgid "The selection mode"
 msgstr "Режимът на избиране"
 
-#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:901
+#: ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Единичен клик "
 
-#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:902
+#: ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Дали обектите могат да се активират с еднократен клик"
 
-#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:918
+#: ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Време за единичен клик "
 
-#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
-msgid ""
-"The amount of time after which the item under the mouse cursor will be "
-"selected automatically in single click mode"
-msgstr ""
-"Времето, след което, обектът под показалеца на мишката ще бъде избран "
-"автоматично, в режим еднократен клик. "
+#: ../exo/exo-icon-view.c:919
+#: ../exo/exo-tree-view.c:172
+msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+msgstr "Времето, след което, обектът под показалеца на мишката ще бъде избран автоматично, в режим еднократен клик. "
 
 #: ../exo/exo-icon-view.c:934
 msgid "Spacing"
@@ -357,7 +365,8 @@ msgstr "Разстояние за вмъкване между клетките �
 msgid "Preview"
 msgstr "Преглед"
 
-#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
+#: ../exo/exo-thumbnail-preview.c:129
+#: ../exo/exo-thumbnail-preview.c:271
 msgid "No file selected"
 msgstr "Не е избран файл"
 
@@ -386,14 +395,10 @@ msgid "_Add a new toolbar"
 msgstr "Добави нова лента"
 
 #: ../exo/exo-toolbars-editor.c:221
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr ""
-"Влачи обекта до лентите за да го добавиш, и от лентите към таблицата с "
-"обекти, за да го премахнеш."
+msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgstr "Влачи обекта до лентите за да го добавиш, и от лентите към таблицата с обекти, за да го премахнеш."
 
-#: ../exo/exo-toolbars-editor.c:538
+#: ../exo/exo-toolbars-editor.c:537
 msgid "Separator"
 msgstr "Разделител"
 
@@ -482,12 +487,12 @@ msgstr "       %s [options] --build-list [[name file]...]\n"
 #: ../exo-csource/main.c:287
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help        Изпиши това помощно съобшение и излез\n"
+msgstr "  -h, --help        Изпиши това помощно съобщение и излез\n"
 
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version     Изпиши инфо за версията и излез\n"
+msgstr "  -V, --version     Изпиши информация за версията и излез\n"
 
 #: ../exo-csource/main.c:289
 #, c-format
@@ -519,7 +524,8 @@ msgstr "  --strip-comments  Премахни коментарите от XML ф�
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Remove node contents from XML files\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
+#: ../exo-csource/main.c:304
+#: ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -529,13 +535,14 @@ msgid ""
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 msgstr ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. All rights reserved.\n"
+"Авторски права (c) %s\n"
+"        os-cillation e.K. Всички права са запазени.\n"
 "\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"Написано от Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
+#: ../exo-csource/main.c:308
+#: ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -551,11 +558,12 @@ msgstr ""
 "%s source package.\n"
 "\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
+#: ../exo-csource/main.c:312
+#: ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
-#, fuzzy, c-format
+#, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "Докладвайте за грешки на <%s>."
+msgstr "Моля, докладвайте за грешки на <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:255
@@ -646,14 +654,8 @@ msgid "Use _startup notification"
 msgstr "Известяване при стартиране"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
-msgid ""
-"Select this option to enable startup notification when the command is run "
-"from the file manager or the menu. Not every application supports startup "
-"notification."
-msgstr ""
-"Избери тази опция за известяване при стартиране, когато командата е "
-"изпълнена от файловият мениджър или от менюто. Не всяка програма поддържа "
-"тази функция."
+msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgstr "Избери тази опция за известяване при стартиране, когато командата е изпълнена от файловият мениджър или от менюто. Не всяка програма поддържа тази функция."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -733,14 +735,15 @@ msgstr "Шаблон за URL, когато се създава линк"
 msgid "Preset icon when creating a desktop file"
 msgstr "Шаблон за икона, когато се създава десктоп файл"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
+#: ../exo-desktop-item-edit/main.c:85
+#: ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Изписва инфо за версията и излиза"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:171
 msgid "[FILE|FOLDER]"
-msgstr "[FILE|FOLDER]"
+msgstr "[ФАЙЛ|ПАПКА]"
 
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:183
@@ -812,12 +815,11 @@ msgstr "Избери програма по подразбиране за раз�
 #. Internet
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
-#, fuzzy
 msgid "_Internet"
 msgstr "Интернет"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Web Browser"
 msgstr "Интернет браузър"
 
@@ -846,12 +848,11 @@ msgstr ""
 #. Utilities
 #.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
-#, fuzzy
 msgid "_Utilities"
 msgstr "Инструменти"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "File Manager"
 msgstr "Файлов мениджър"
 
@@ -1011,7 +1012,8 @@ msgstr ""
 msgid "No command specified"
 msgstr "Не е определена команда"
 
-#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
+#: ../exo-helper/exo-helper.c:688
+#: ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Не може да се отвари %s за запис"
@@ -1053,14 +1055,12 @@ msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
 #: ../exo-helper/main.c:73
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
-msgstr ""
+msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgstr "Стартиране помощник по подразбиране на ТИП с незадължителен ПАРАМЕТЪР, когато ТИП е една от следните стойности."
 
 #: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
-msgstr "TYPE [PARAMETER]"
+msgstr "ТИП [ПАРАМЕТЪР]"
 
 #: ../exo-helper/main.c:102
 msgid ""
@@ -1071,6 +1071,12 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"Следните типове се поддържат за --launch command (стартиране на команда):\n"
+"\n"
+"  WebBrowser       - Предпочитаният уеб браузър.\n"
+"  MailReader       - Предпочитаният четец на поща.\n"
+"  FileManager      - Предпочитаният файлов мениджър.\n"
+"  TerminalEmulator - Предпочитаният Терминал Емулатор."
 
 #: ../exo-helper/main.c:112
 #, c-format
@@ -1098,22 +1104,14 @@ msgid ""
 msgstr ""
 "%s (Xfce %s)\n"
 "\n"
-"Copyright (c) 2003-2006\n"
-"        os-cillation e.K. All rights reserved.\n"
+"Авторски права (c) 2003-2006\n"
+"        os-cillation e.K. Всички права са запазени.\n"
 "\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"Написано от Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
+"Изградено с Gtk+-%d.%d.%d, стартиране с Gtk+-%d.%d.%d.\n"
 "\n"
 "Докладвай грешки на <%s>.\n"
-
-#: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
-msgid "Xfce Terminal"
-msgstr "Xfce Терминал"
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr "Thunar"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1123,9 +1121,13 @@ msgstr "aterm Терминал"
 msgid "Balsa"
 msgstr "Balsa"
 
+#: ../exo-helper/helpers/caja.desktop.in.in.h:1
+msgid "Caja File Manager"
+msgstr "Caja файлов мениджър"
+
 #: ../exo-helper/helpers/chromium.desktop.in.in.h:1
 msgid "Chromium"
-msgstr ""
+msgstr "Chromium"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
@@ -1134,6 +1136,10 @@ msgstr "Дебиан Sensible браузър"
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
 msgstr "Дебиан X Терминал"
+
+#: ../exo-helper/helpers/dillo.desktop.in.in.h:1
+msgid "Dillo"
+msgstr "Dillo"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -1163,13 +1169,21 @@ msgstr "Galeon Интернет браузър"
 msgid "GNOME Terminal"
 msgstr "GNOME Терминал"
 
+#: ../exo-helper/helpers/icecat.desktop.in.in.h:1
+msgid "Icecat"
+msgstr "Icecat"
+
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
 msgstr "Icedove Интернет браузър"
 
 #: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
 msgid "Iceweasel"
-msgstr ""
+msgstr "Iceweasel"
+
+#: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
+msgid "Jumanji"
+msgstr "Jumanji"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1227,13 +1241,29 @@ msgstr "Опера Поща"
 msgid "PCMan File Manager"
 msgstr "PCMan файлов мениджър"
 
-#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Claws Mail"
-msgstr "Claws Поща"
+#: ../exo-helper/helpers/rodent.desktop.in.in.h:1
+msgid "Rodent File Manager"
+msgstr "Rodent файлов мениджър"
+
+#: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
+msgid "ROX-Filer"
+msgstr "ROX-Filer"
+
+#: ../exo-helper/helpers/sakura.desktop.in.in.h:1
+msgid "Sakura"
+msgstr "Sakura"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
 msgstr "Sylpheed"
+
+#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
+msgid "Claws Mail"
+msgstr "Claws Поща"
+
+#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
+msgid "Thunar"
+msgstr "Thunar"
 
 #: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
 msgid "Mozilla Thunderbird"
@@ -1247,47 +1277,50 @@ msgstr "RXVT Unicode"
 msgid "W3M Text Browser"
 msgstr "W3M текстов Интернет браузър"
 
+#: ../exo-helper/helpers/xfce4-terminal.desktop.in.in.h:1
+msgid "Xfce Terminal"
+msgstr "Xfce Терминал"
+
+#: ../exo-helper/helpers/xfe.desktop.in.in.h:1
+msgid "Xfe File Manager"
+msgstr "Файлов мениджър на Xfce"
+
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
 msgstr "Х Терминал"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
-msgstr "Употреба: exo-open [URLs...]"
+msgstr "Употреба: exo-open [URL адреси...]"
 
 #: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr "       exo-open --launch TYPE [PARAMETERs...]"
+msgstr "       exo-open --launch ТИП [ПАРАМЕТРИ...]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
-"  -?, --help                          Изпиши това помощно съобщение и излез"
+msgstr "  -?, --help                          Изпиши това помощно съобщение и излез"
 
 #: ../exo-open/main.c:113
-msgid ""
-"  -V, --version                       Print version information and exit"
+msgid "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Изписва инфо за версията и изход"
 
 #: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
-"  --launch TYPE [PARAMETERs...]      Стартирай предпочитаните програми от\n"
-"                                      TYPE с възможни PARAMETERs, където\n"
-"                                      TYPE има една от следните стойности."
+"  --launch ТИП [ПАРАМЕТРИ...]      Стартирай предпочитаните програми от\n"
+"                                      ТИП с възможни ПАРАМЕТРИ, където\n"
+"                                      ТИП има една от следните стойности."
 
 #: ../exo-open/main.c:119
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
-"  --working-directory DIRECTORY       Работната папка по подразбиране за "
-"програмите,\n"
+"  --working-directory ДИРЕКТОРИЯ       Работната папка по подразбиране за програмите,\n"
 "                                     когато се използва  --launch опцията."
 
 #: ../exo-open/main.c:122
@@ -1317,15 +1350,16 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
+"Ако, не зададете --launch опцията (стартиране), exo-open ще отвори всички зададени\n"
+"URL адреси с техните URL манипулатори по подразбиране. Също, ако зададете --launch\n"
+"опцията, вие можете да зададете продпочитана програма, която да стартира, и\n"
+"да зададете допълнителни параметри на програмата (например, за TerminalEmulator\n"
+"вие може да зададете опция за стартиране в терминал)."
 
 #: ../exo-open/main.c:195
 #, c-format
-msgid ""
-"Launching desktop files is not supported when %s is compiled without GIO-"
-"Unix features."
-msgstr ""
-"Стартирането на десктоп файл не се поддържа, ако %s е компилиран без GIO-"
-"Unix добавки."
+msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
+msgstr "Стартирането на десктоп файл не се поддържа, ако %s е компилиран без GIO-Unix добавки."
 
 #: ../exo-open/main.c:260
 #, c-format
@@ -1342,9 +1376,9 @@ msgstr "Не може да се открие URI схемата на \"%s\"."
 msgid "Failed to open URI \"%s\"."
 msgstr "Не може да се отвори URI \"%s\"."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "Browse the file system"
-msgstr "Разгледай файловата система"
+msgstr "Преглед на файловата система"
 
 #: ../exo-open/exo-mail-reader.desktop.in.h:2
 msgid "Read your email"
@@ -1354,9 +1388,9 @@ msgstr "Прочети си пощата"
 msgid "Use the command line"
 msgstr "Използвай командния ред"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
-msgstr "Разгледай мрежата"
+msgstr "Сърфиране в  мрежа"
 
 #~ msgid "Selection Box Color"
 #~ msgstr "Цвят на кутията за избор"
