@@ -25,6 +25,7 @@
 #define __EXO_UTILS_H__
 
 #include <glib.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
@@ -34,6 +35,8 @@ gint                    exo_noop_zero   (void) G_GNUC_PURE;
 gpointer                exo_noop_null   (void) G_GNUC_PURE;
 gboolean                exo_noop_true   (void) G_GNUC_PURE;
 gboolean                exo_noop_false  (void) G_GNUC_PURE;
+
+#if !GTK_CHECK_VERSION (3, 0, 0)
 
 /* inline function implementations */
 #if (defined(G_CAN_INLINE) && defined(__GNUC__) && defined(__i386__) && defined(__OPTIMIZE__)) || defined(__EXO_UTILS_C__)
@@ -105,6 +108,8 @@ exo_atomic_dec (gint *value)
 #define exo_atomic_dec(value) (g_atomic_int_dec_and_test ((value)))
 
 #endif /* (G_CAN_INLINE && __GNUC__ && __i386__ && __OPTIMIZE__) || __EXO_UTILS_C__ */
+
+#endif
 
 G_END_DECLS
 

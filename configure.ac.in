@@ -165,6 +165,14 @@ XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.10.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-1], [4.10.0])
 XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.30.0], [gio-unix], [GIO-Unix features])
 
+dnl ***********************************************************
+dnl *** Optional support for a GTK+3 version of the library ***
+dnl ***********************************************************
+XDT_CHECK_OPTIONAL_PACKAGE([GTK3],
+                           [gtk+-3.0], [3.6.0], [gtk3],
+                           [GTK+ 3 support])
+AM_CONDITIONAL([ENABLE_GTK3_LIBRARY], [test "x$GTK3_FOUND" = "xyes"])
+
 dnl *********************
 dnl *** Check for X11 ***
 dnl *********************
@@ -232,6 +240,7 @@ docs/reference/Makefile
 docs/reference/version.xml
 exo/Makefile
 exo/exo-1.pc
+exo/exo-2.pc
 exo/exo-config.h
 exo-csource/Makefile
 exo-desktop-item-edit/Makefile
