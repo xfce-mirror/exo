@@ -1292,24 +1292,27 @@ msgstr "Xfce brskalnik datotek"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
-msgstr ""
+msgstr "X terminal"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
-msgstr ""
+msgstr "Poraba: exo-open [URLs...]"
 
 #: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr ""
+msgstr "exo-open --launch TIP [PARAMETERs...]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
 msgstr ""
+" \t\r\n"
+"\r\n"
+"-?, --help Natisni sporočilo pomoči in izstopi"
 
 #: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr ""
+msgstr "-V, --version Natisni informacije o različici in izstopi"
 
 #: ../exo-open/main.c:115
 msgid ""
@@ -1318,6 +1321,9 @@ msgid ""
 "where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
+"--launch TIP [PARAMETERs...] Zaženi želeno aplikacijo\n"
+" TIP z izbranimi PARAMETERs, kjer je\n"
+" TIP ena izmed sledečih vrednosti."
 
 #: ../exo-open/main.c:119
 msgid ""
@@ -1325,10 +1331,12 @@ msgid ""
 "applications\n"
 "                                      when using the --launch option."
 msgstr ""
+"--working-directory DIRECTORY Privzeti delovni imenik za aplikacije\n"
+" ob uporabi --launch opcije."
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr ""
+msgstr "Naslednji TIPi so podprti za --launch ukaz:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
@@ -1341,6 +1349,10 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"WebBrowser - želeni spletni brskalnik.\n"
+" MailReader - želeni bralnik pošte.\n"
+" FileManager - želeni upravljalnik datotek.\n"
+" TerminalEmulator - želeni terminalski emulator."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1350,41 +1362,46 @@ msgid ""
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
 msgstr ""
+"Če ne navedete --launch opcije, bo exo-open odprl vse navedene\n"
+"URLje v njihovih izbranih URL upravljalcih. Če pa navedete --launch\n"
+"opcijo, lahko izberete zaželeno aplikacijo za zagon in\n"
+"dodate parametre v aplikacijo (npr. za TerminalEmulator\n"
+"lahko dodate ukazno vrstico, ki se naj zažene v terminalu)."
 
 #: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr ""
+msgstr "Zaganjanje namiznih datotek ni podprto, ko je %s kompiliran brez GIO-Unix funkcij."
 
 #: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr ""
+msgstr "Napaka pri zaganjanju želene aplikacije za \"%s\" kategorijo."
 
 #: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "Napaka pri zaznavanju URI-sheme za \"%s\"."
 
 #: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr ""
+msgstr "Napaka pri odpiranju URI \"%s\"."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "Browse the file system"
-msgstr ""
+msgstr "Brskajte po datotečnem sistemu"
 
 #: ../exo-open/exo-mail-reader.desktop.in.h:2
 msgid "Read your email"
-msgstr ""
+msgstr "Preberite svojo pošto"
 
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:2
 msgid "Use the command line"
-msgstr ""
+msgstr "Izberi ukazno vrstico"
 
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Browse the web"
-msgstr ""
+msgstr "Brskaj po spletu"
