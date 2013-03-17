@@ -1055,17 +1055,17 @@ msgstr "Priključek upravljalca nastavitev"
 
 #: ../exo-helper/main.c:72
 msgid "SOCKET ID"
-msgstr ""
+msgstr "ID PRIKLJUČKA"
 
 #: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
 "one of the following values."
-msgstr ""
+msgstr "Zaženi privzeti pomočnik TIP z iz izbirnim PARAMETER, kjer je TIP ena od sledečih vrednosti."
 
 #: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
-msgstr ""
+msgstr "TIP [PARAMETER]"
 
 #: ../exo-helper/main.c:102
 msgid ""
@@ -1076,16 +1076,22 @@ msgid ""
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
+"Naslednji TIPi so podprti za --launch command:\n"
+"\n"
+" WebBrowser - želeni spletni brskalnik.\n"
+" MailReader - želeni bralnik pošte.\n"
+" FileManager - želeni upravljalnik datotek.\n"
+" TerminalEmulator - želeni terminalski emulator."
 
 #: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr ""
+msgstr "Natipkajte '%s --help' za uporabo."
 
 #: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr ""
+msgstr "Nepravilen pomočnik tipa \"%s\""
 
 #: ../exo-helper/main.c:213
 #, c-format
@@ -1101,78 +1107,88 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr ""
+"%s (Xfce %s)\n"
+"\n"
+"Copyright (c) 2003-2006\n"
+" os-cillation e.K. Vse pravice pridržane.\n"
+"\n"
+"Napisal Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+"Zgrajeno z Gtk+-%d.%d.%d, teče na Gtk+-%d.%d.%d.\n"
+"\n"
+"Prosim, prijavite hroše na <%s>.\n"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
-msgstr ""
+msgstr "aterm"
 
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
-msgstr ""
+msgstr "Balsa"
 
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
-msgstr ""
+msgstr "Caja upravljalnik datotek"
 
 #: ../exo-helper/helpers/chromium.desktop.in.in.h:1
 msgid "Chromium"
-msgstr ""
+msgstr "Chromium"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
-msgstr ""
+msgstr "Debian Sensible brskalnik"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr ""
+msgstr "Debianov X terminalski emulator"
 
 #: ../exo-helper/helpers/dillo.desktop.in.in.h:1
 msgid "Dillo"
-msgstr ""
+msgstr "Dillo"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
-msgstr ""
+msgstr "Encompass"
 
 #: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
 msgid "Epiphany Web Browser"
-msgstr ""
+msgstr "Epiphany spletni brskalnik"
 
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr ""
+msgstr "Enlightened terminalski emulator"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Evolution"
-msgstr ""
+msgstr "Evolution"
 
 #: ../exo-helper/helpers/firefox.desktop.in.in.h:1
 msgid "Mozilla Firefox"
-msgstr ""
+msgstr "Mozilla Firefox"
 
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
-msgstr ""
+msgstr "Galeon spletni brskalnik"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
-msgstr ""
+msgstr "GNOME terminal"
 
 #: ../exo-helper/helpers/icecat.desktop.in.in.h:1
 msgid "Icecat"
-msgstr ""
+msgstr "Icecat"
 
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
-msgstr ""
+msgstr "Icedove"
 
 #: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
 msgid "Iceweasel"
-msgstr ""
+msgstr "Iceweasel"
 
 #: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
 msgid "Jumanji"
-msgstr ""
+msgstr "Jumanji"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
