@@ -1,23 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Petar <petar.koretic@gmail.com>, 2011.
 # 
+# Translators:
+# Ivica  Kolić <ikoli@yahoo.com>, 2013
+# Petar <petar.koretic@gmail.com>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: exo\n"
+"Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-17 12:03+0000\n"
-"PO-Revision-Date: 2011-01-09 00:29+0100\n"
-"Last-Translator: Petar <petar.koretic@gmail.com>\n"
-"Language-Team: Croatian <petar.koretic@gmail.com>\n"
+"POT-Creation-Date: 2013-07-02 22:30+0200\n"
+"PO-Revision-Date: 2013-07-19 00:23+0000\n"
+"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
+"Language-Team: Croatian (http://www.transifex.com/projects/p/xfce/language/hr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Country: CROATIA\n"
 "Language: hr\n"
-"X-Poedit-Language: Croatian\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -65,11 +65,8 @@ msgstr "Neuspješno čitanje datoteke \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Neuspješno učitavanje slike  \"%s\": Nepoznati razlog, vjerojatno oštećena "
-"slika"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Neuspješno učitavanje slike  \"%s\": Nepoznati razlog, vjerojatno oštećena slika"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -78,11 +75,11 @@ msgstr "Neuspješno otvaranje \"%s\"."
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
 msgid "Orientation"
-msgstr "Orjentacija"
+msgstr "Orijentacija"
 
 #: ../exo/exo-icon-bar.c:278
 msgid "The orientation of the iconbar"
-msgstr "Orjentacija trake sa ikonama"
+msgstr "Orijentacija trake ikona"
 
 #: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
 msgid "Pixbuf column"
@@ -98,15 +95,15 @@ msgstr "Stupac teksta"
 
 #: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
 msgid "Model column used to retrieve the text from"
-msgstr "Model stupca za uzimanje teksta"
+msgstr "Model stupca za uzimanje teksta "
 
 #: ../exo/exo-icon-bar.c:323
 msgid "Icon Bar Model"
-msgstr "Model Trake Ikona"
+msgstr "Model trake ikona"
 
 #: ../exo/exo-icon-bar.c:324
 msgid "Model for the icon bar"
-msgstr "Model trake sa ikonama"
+msgstr "Model za traku ikona"
 
 #: ../exo/exo-icon-bar.c:340
 msgid "Active"
@@ -114,7 +111,7 @@ msgstr "Aktivno"
 
 #: ../exo/exo-icon-bar.c:341
 msgid "Active item index"
-msgstr "Aktivan indeks stavke"
+msgstr "Indeks aktivne stavke"
 
 #: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Active item fill color"
@@ -153,7 +150,7 @@ msgstr "Animacije"
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Application Icons"
-msgstr "Ikone aplikacije"
+msgstr "Ikone programa"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:115
@@ -524,12 +521,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr ""
-"Copyright (c) %s\n"
-" os-cillation e.K. Sva prava pridržana..\n"
-"\n"
-"Napisao Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
+msgstr "Copyright (c) %s\n os-cillation e.K. Sva prava pridržana..\n\nNapisao Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
@@ -650,10 +642,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr ""
-"Odaberite ovu opciju kako bi se omogućila obavijest pokretanja kada se "
-"naredba pokreće iz upravitelja datotekama ili izbornika.Ne podržava svaki "
-"program obavijesti pokretanja."
+msgstr "Odaberite ovu opciju kako bi se omogućila obavijest pokretanja kada se naredba pokreće iz upravitelja datotekama ili izbornika.Ne podržava svaki program obavijesti pokretanja."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -817,7 +806,7 @@ msgid "_Internet"
 msgstr "_Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Web preglednik"
 
@@ -825,9 +814,7 @@ msgstr "Web preglednik"
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr ""
-"Zadani Web preglednik će se koristiti kod otvaranja\n"
-" web poveznica i za prikaz pomoćnog sadržaja."
+msgstr "Zadani Web preglednik će se koristiti kod otvaranja\n web poveznica i za prikaz pomoćnog sadržaja."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -838,9 +825,7 @@ msgstr "Čitač pošte"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr ""
-"Zadani Email čitač će se koristiti za pisanje\n"
-" email poruka kada se klikne na email adresu."
+msgstr "Zadani Email čitač će se koristiti za pisanje\n email poruka kada se klikne na email adresu."
 
 #. Utilities
 #. 
@@ -849,7 +834,7 @@ msgid "_Utilities"
 msgstr "_Uslužni programi"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Upravitelj datoteka"
 
@@ -857,9 +842,7 @@ msgstr "Upravitelj datoteka"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr ""
-"Zadani upravitelj datoteka će se koristiti\n"
-" za pregled sadržaja u mapama."
+msgstr "Zadani upravitelj datoteka će se koristiti\n za pregled sadržaja u mapama."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -870,9 +853,7 @@ msgstr "Emulator terminala"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr ""
-"Željeni emulator terminala će biti korišten za\n"
-"pokretanje naredbi koje zahtjeva okruženje naredbenog retka"
+msgstr "Željeni emulator terminala će biti korišten za\npokretanje naredbi koje zahtjeva okruženje naredbenog retka"
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -928,33 +909,25 @@ msgstr "Izaberite prilagođeni emulator terminala"
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
-msgstr ""
-"Odaberite aplikaciju koju želite koristiti\n"
-" kao zadani Web preglednik."
+msgstr "Odaberite aplikaciju koju želite koristiti\n kao zadani Web preglednik."
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr ""
-"Odaberite aplikaciju koju želite koristiti\n"
-" kao zadani Email čitač"
+msgstr "Odaberite aplikaciju koju želite koristiti\n kao zadani Email čitač"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr ""
-"Odaberite aplikaciju koju želite koristiti\n"
-" kao zadani Upravitelj datoteka"
+msgstr "Odaberite aplikaciju koju želite koristiti\n kao zadani Upravitelj datoteka"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr ""
-"Odredite program koji želite koristiti\n"
-"kao zadani emulator terminala za Xfce:"
+msgstr "Odredite program koji želite koristiti\nkao zadani emulator terminala za Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -976,33 +949,25 @@ msgstr "Izaberite željeni program"
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
-msgstr ""
-"Molim izaberite vaš željeni Web\n"
-"preglednik i kliknite U redu za nastavak."
+msgstr "Molim izaberite vaš željeni Web\npreglednik i kliknite U redu za nastavak."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
-msgstr ""
-"Molim izaberite vaš željeni čitač pošte\n"
-"sada  i kliknite U redu za nastavak."
+msgstr "Molim izaberite vaš željeni čitač pošte\nsada  i kliknite U redu za nastavak."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr ""
-"Molim izaberite vaš željeni upravitelj datotekama\n"
-"sada i kliknite U redu za nastavak."
+msgstr "Molim izaberite vaš željeni upravitelj datotekama\nsada i kliknite U redu za nastavak."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
-msgstr ""
-"Molim izaberite vaš željeni emulator\n"
-"terminala  i kliknite U redu za nastavak."
+msgstr "Molim izaberite vaš željeni emulator\nterminala  i kliknite U redu za nastavak."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -1015,7 +980,8 @@ msgid "Failed to open %s for writing"
 msgstr "Neuspjelo otvaranje %s za pisanje"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
+msgid ""
+"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Željeni programi (Web preglednik,čitač pošte i emulator terminala)"
 
 #: ../exo-helper/main.c:41
@@ -1038,9 +1004,7 @@ msgstr "Neuspjelo izvešenje zadanog emulatora terminala"
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr ""
-"Otvori željene programe\n"
-"konfiguracijski dijalog"
+msgstr "Otvori željene programe\nkonfiguracijski dijalog"
 
 #: ../exo-helper/main.c:72
 msgid "Settings manager socket"
@@ -1052,8 +1016,8 @@ msgstr ""
 
 #: ../exo-helper/main.c:73
 msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
+" one of the following values."
 msgstr ""
 
 #: ../exo-helper/main.c:73
@@ -1068,12 +1032,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"Slijedeći TIPovi su podržani za --launch command:\n"
-"  Webpreglednik       - Zadanii Web preglednik.\n"
-"  Čitačpošte       - Zadani čitač pošte.\n"
-"  Upraviteljdatotekama      - Zadani upravitelj datotekama.\n"
-"  Emulatortermiala - Zadani emulator terminala."
+msgstr "Slijedeći TIPovi su podržani za --launch command:\n  Webpreglednik       - Zadanii Web preglednik.\n  Čitačpošte       - Zadani čitač pošte.\n  Upraviteljdatotekama      - Zadani upravitelj datotekama.\n  Emulatortermiala - Zadani emulator terminala."
 
 #: ../exo-helper/main.c:112
 #, c-format
@@ -1296,15 +1255,13 @@ msgstr "-V, --version Ispiši informacije o verziji i izađi"
 #: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr ""
 
 #: ../exo-open/main.c:119
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr ""
 
@@ -1322,11 +1279,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"Webpreglednik - Zadani Web preglednik.\n"
-" Čitačpošte - Zadani čitač pošte.\n"
-" Upravitelj datotekama - Zadani upravitelj datotekama.\n"
-" Emulatorterminala - Zadani emulator terminala"
+msgstr "Webpreglednik - Zadani Web preglednik.\n Čitačpošte - Zadani čitač pošte.\n Upravitelj datotekama - Zadani upravitelj datotekama.\n Emulatorterminala - Zadani emulator terminala"
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1359,7 +1312,7 @@ msgstr ""
 msgid "Failed to open URI \"%s\"."
 msgstr "Nisam uspio otvoriti URI \"% s\"."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "Pregledaj datotečni sustav"
 
@@ -1371,45 +1324,6 @@ msgstr "Čitaj svoju poštu"
 msgid "Use the command line"
 msgstr "Koristi naredbeni redak"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "Pregledaj web"
-
-#~ msgid "Selection Box Color"
-#~ msgstr "Okvir za odabir boje"
-
-#~ msgid "Color of the selection box"
-#~ msgstr "Boja okvira za odabir"
-
-#~ msgid "Selection Box Alpha"
-#~ msgstr "Okvir za odabir Alfa"
-
-#~ msgid "Opacity of the selection box"
-#~ msgstr "Neprozirnost okvira za odabir"
-
-#~ msgid "Failed to open the documentation browser."
-#~ msgstr "Neuspjelo otvaranje preglednika dokumentacije"
-
-#~ msgid "%s Music Player"
-#~ msgstr "%s Svirač glazbe"
-
-#~ msgid "%s Digital Camera"
-#~ msgstr "%s Digitalna kamera"
-
-#~ msgid "Drive"
-#~ msgstr "Uređaj"
-
-#~ msgid "Blank %s Disc"
-#~ msgstr "Prazni %s medij"
-
-#~ msgid "%s Disc"
-#~ msgstr "%s Medij"
-
-#~ msgid "Audio CD"
-#~ msgstr "Audio CD"
-
-#~ msgid "%s Volume"
-#~ msgstr "%s Glasnoča"
-
-#~ msgid "Unknown error"
-#~ msgstr "Nepoznata greška"
