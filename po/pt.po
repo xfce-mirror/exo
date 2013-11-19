@@ -1,22 +1,21 @@
-# European Portuguese translations for exo package.
-# Copyright (C) 2004-2006 os-cillation e.K.
-# This file is distributed under the same license as the exo package.
-# Nuno Miguel <nunomgue@gmail.com>, 2007-2012.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: exo\n"
+"Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-15 15:00+0000\n"
-"PO-Revision-Date: 2012-04-26 23:16+0100\n"
-"Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2013-07-02 22:55+0200\n"
+"PO-Revision-Date: 2013-11-19 14:58+0000\n"
+"Last-Translator: Nick <nick@xfce.org>\n"
+"Language-Team: Portuguese (http://www.transifex.com/projects/p/xfce/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: PORTUGAL\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -72,8 +71,7 @@ msgstr "Falha ao carregar a imagem \"%s\": Motivo desconhecido, provavelmente um
 msgid "Failed to open \"%s\"."
 msgstr "Falha ao abrir \"%s\"."
 
-#: ../exo/exo-icon-bar.c:277
-#: ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
 msgid "Orientation"
 msgstr "Orientação"
 
@@ -81,23 +79,19 @@ msgstr "Orientação"
 msgid "The orientation of the iconbar"
 msgstr "A orientação da barra de ícones"
 
-#: ../exo/exo-icon-bar.c:294
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:793
 msgid "Pixbuf column"
 msgstr "Coluna Pixbuf"
 
-#: ../exo/exo-icon-bar.c:295
-#: ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:794
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Coluna de modelo usada para retirar o ícone pixbuf"
 
-#: ../exo/exo-icon-bar.c:310
-#: ../exo/exo-icon-view.c:920
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:920
 msgid "Text column"
 msgstr "Coluna de texto"
 
-#: ../exo/exo-icon-bar.c:311
-#: ../exo/exo-icon-view.c:921
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:921
 msgid "Model column used to retrieve the text from"
 msgstr "Coluna de modelo usada para retirar o texto"
 
@@ -117,33 +111,27 @@ msgstr "Ativo"
 msgid "Active item index"
 msgstr "Índice de item ativo"
 
-#: ../exo/exo-icon-bar.c:347
-#: ../exo/exo-icon-bar.c:348
+#: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Active item fill color"
 msgstr "Cor de preenchimento de item ativo"
 
-#: ../exo/exo-icon-bar.c:354
-#: ../exo/exo-icon-bar.c:355
+#: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Active item border color"
 msgstr "Cor de contorno de item ativo"
 
-#: ../exo/exo-icon-bar.c:361
-#: ../exo/exo-icon-bar.c:362
+#: ../exo/exo-icon-bar.c:361 ../exo/exo-icon-bar.c:362
 msgid "Active item text color"
 msgstr "Cor de texto de item ativo"
 
-#: ../exo/exo-icon-bar.c:368
-#: ../exo/exo-icon-bar.c:369
+#: ../exo/exo-icon-bar.c:368 ../exo/exo-icon-bar.c:369
 msgid "Cursor item fill color"
 msgstr "Cor de preenchimento do cursor"
 
-#: ../exo/exo-icon-bar.c:375
-#: ../exo/exo-icon-bar.c:376
+#: ../exo/exo-icon-bar.c:375 ../exo/exo-icon-bar.c:376
 msgid "Cursor item border color"
 msgstr "Cor de contorno do cursor"
 
-#: ../exo/exo-icon-bar.c:382
-#: ../exo/exo-icon-bar.c:383
+#: ../exo/exo-icon-bar.c:382 ../exo/exo-icon-bar.c:383
 msgid "Cursor item text color"
 msgstr "Cor de texto do cursor"
 
@@ -213,8 +201,7 @@ msgid "All Icons"
 msgstr "Todos os ícones"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:139
-#: ../exo/exo-icon-chooser-dialog.c:285
+#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
 msgid "Image Files"
 msgstr "Ficheiros de imagens"
 
@@ -297,7 +284,8 @@ msgid "The model for the icon view"
 msgstr "O modelo para a visualização de ícone"
 
 #: ../exo/exo-icon-view.c:777
-msgid "How the text and icon of each item are positioned relative to each other"
+msgid ""
+"How the text and icon of each item are positioned relative to each other"
 msgstr "Como o texto e o ícone de cada item são posicionados em relação um ao outro"
 
 #: ../exo/exo-icon-view.c:809
@@ -332,24 +320,22 @@ msgstr "Modo de seleção"
 msgid "The selection mode"
 msgstr "O modo de seleção"
 
-#: ../exo/exo-icon-view.c:871
-#: ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:871 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Um clique"
 
-#: ../exo/exo-icon-view.c:872
-#: ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:872 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Se os itens na vista podem ser ativados com um clique"
 
-#: ../exo/exo-icon-view.c:888
-#: ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:888 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Duração do clique"
 
-#: ../exo/exo-icon-view.c:889
-#: ../exo/exo-tree-view.c:172
-msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+#: ../exo/exo-icon-view.c:889 ../exo/exo-tree-view.c:172
+msgid ""
+"The amount of time after which the item under the mouse cursor will be "
+"selected automatically in single click mode"
 msgstr "O espaço de tempo após a qual o item sob o ponteiro do rato será selecionado automaticamente no modo de um clique"
 
 #: ../exo/exo-icon-view.c:904
@@ -380,8 +366,7 @@ msgstr "A opacidade da caixa de seleção"
 msgid "Preview"
 msgstr "Antevisão "
 
-#: ../exo/exo-thumbnail-preview.c:129
-#: ../exo/exo-thumbnail-preview.c:271
+#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
 msgid "No file selected"
 msgstr "Nenhum ficheiro selecionado"
 
@@ -410,7 +395,9 @@ msgid "_Add a new toolbar"
 msgstr "_Adicionar nova barra de ferramentas"
 
 #: ../exo/exo-toolbars-editor.c:221
-msgid "Drag an item onto the toolbars above to add it, from the toolbars in the items table to remove it."
+msgid ""
+"Drag an item onto the toolbars above to add it, from the toolbars in the "
+"items table to remove it."
 msgstr "Arraste um item sobre as barras de ferramentas para o adicionar, das barras de ferramentas para a tabela de itens para o remover."
 
 #: ../exo/exo-toolbars-editor.c:538
@@ -539,8 +526,7 @@ msgstr "  --strip-comments  Remove comentários de ficheiros XML\n"
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Remove nós de conteúdo de ficheiros XML\n"
 
-#: ../exo-csource/main.c:304
-#: ../exo-desktop-item-edit/main.c:193
+#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
 #: ../exo-open/main.c:496
 #, c-format
 msgid ""
@@ -549,15 +535,9 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr ""
-"Direitos de autor(c) %s\n"
-"        os-cillation e.K. Todos os direitos reservados.\n"
-"\n"
-"Desenvolvido por Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
+msgstr "Direitos de autor(c) %s\n        os-cillation e.K. Todos os direitos reservados.\n\nDesenvolvido por Benedikt Meurer <benny@xfce.org>.\n\n"
 
-#: ../exo-csource/main.c:308
-#: ../exo-desktop-item-edit/main.c:197
+#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
 #: ../exo-open/main.c:500
 #, c-format
 msgid ""
@@ -566,15 +546,9 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr ""
-"%s vem SEM QUALQUER GARANTIA,\n"
-"Pode distribuir cópias de %s nos termos da\n"
-"GNU LGPL que pode ser encontrada no pacote do código\n"
-"fonte de %s.\n"
-"\n"
+msgstr "%s vem SEM QUALQUER GARANTIA,\nPode distribuir cópias de %s nos termos da\nGNU LGPL que pode ser encontrada no pacote do código\nfonte de %s.\n\n"
 
-#: ../exo-csource/main.c:312
-#: ../exo-desktop-item-edit/main.c:201
+#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -672,20 +646,23 @@ msgstr "Opções:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "U_sar notificação de arranque"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
-msgid "Select this option to enable startup notification when the command is run from the file manager or the menu. Not every application supports startup notification."
+msgid ""
+"Select this option to enable startup notification when the command is run "
+"from the file manager or the menu. Not every application supports startup "
+"notification."
 msgstr "Selecione esta opção para ativar a notificação de arranque ao executar o comando no gestor de ficheiros ou menu. Nem todas as aplicações têm suporte à notificação de arranque."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#.
+#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Executar no _terminal"
@@ -761,8 +738,7 @@ msgstr "URL pré-definido ao criar uma ligação"
 msgid "Preset icon when creating a desktop file"
 msgstr "Ícone pré-definido ao criar um ficheiro do ambiente de trabalho"
 
-#: ../exo-desktop-item-edit/main.c:85
-#: ../exo-helper/main.c:70
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
 msgstr "Mostra as informações da versão e sai"
 
@@ -838,13 +814,13 @@ msgid "Select default applications for various services"
 msgstr "Selecione as aplicações por omissão dos vários serviços"
 
 #. Internet
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Navegador web"
 
@@ -852,9 +828,7 @@ msgstr "Navegador web"
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr ""
-"O navegador web preferido será utilizado para abrir\n"
-"ligações e exibir o conteúdo das ajudas."
+msgstr "O navegador web preferido será utilizado para abrir\nligações e exibir o conteúdo das ajudas."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -865,18 +839,16 @@ msgstr "Leitor de correio eletrónico"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr ""
-"O leitor de correio eletrónico preferido será usado para escrever\n"
-"mensagens ao clicar nos endereços eletrónicos."
+msgstr "O leitor de correio eletrónico preferido será usado para escrever\nmensagens ao clicar nos endereços eletrónicos."
 
 #. Utilities
-#.
+#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Utilitários"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Gestor de ficheiros"
 
@@ -884,9 +856,7 @@ msgstr "Gestor de ficheiros"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr ""
-"O gestor de ficheiros preferido será\n"
-"utilizado para explorar o conteúdo das pastas."
+msgstr "O gestor de ficheiros preferido será\nutilizado para explorar o conteúdo das pastas."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -897,9 +867,7 @@ msgstr "Emulador de terminal"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr ""
-"O emulador de terminal preferido será utilizado para\n"
-"executar os comandos que necessitem de uma linha de comandos."
+msgstr "O emulador de terminal preferido será utilizado para\nexecutar os comandos que necessitem de uma linha de comandos."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -955,33 +923,25 @@ msgstr "Escolha um emulador de terminal"
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
-msgstr ""
-"Especifique a aplicação que pretende utilizar como\n"
-"o navegador web preferido para o Xfce:"
+msgstr "Especifique a aplicação que pretende utilizar como\no navegador web preferido para o Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr ""
-"Especifique a aplicação que pretende utilizar como\n"
-"leitor de correio preferido para o Xfce:"
+msgstr "Especifique a aplicação que pretende utilizar como\nleitor de correio preferido para o Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr ""
-"Especifique a aplicação que pretende utilizar como\n"
-"gestor de ficheiros preferido para o Xfce:"
+msgstr "Especifique a aplicação que pretende utilizar como\ngestor de ficheiros preferido para o Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr ""
-"Especifique a aplicação que pretende utilizar como\n"
-"emulador de terminal preferido para o Xfce:"
+msgstr "Especifique a aplicação que pretende utilizar como\nemulador de terminal preferido para o Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -1003,47 +963,39 @@ msgstr "Escolha a aplicação preferida"
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
-msgstr ""
-"Por favor, escolha o seu navegador web\n"
-"preferido e clique OK para continuar."
+msgstr "Por favor, escolha o seu navegador web\npreferido e clique OK para continuar."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
-msgstr ""
-"Por favor, escolha o seu leitor de correio\n"
-"preferido e clique OK para continuar."
+msgstr "Por favor, escolha o seu leitor de correio\npreferido e clique OK para continuar."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr ""
-"Por favor, escolha o seu gestor de ficheiros\n"
-"preferido e clique OK para continuar."
+msgstr "Por favor, escolha o seu gestor de ficheiros\npreferido e clique OK para continuar."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
-msgstr ""
-"Por favor, escolha o seu emulador de terminal\n"
-"preferido e clique OK para continuar."
+msgstr "Por favor, escolha o seu emulador de terminal\npreferido e clique OK para continuar."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
 msgid "No command specified"
 msgstr "Nenhum comando especificado"
 
-#: ../exo-helper/exo-helper.c:688
-#: ../exo-helper/exo-helper.c:722
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Falha ao abrir %s para escrita"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
+msgid ""
+"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Aplicações preferidas (Navegador web, Leitor de correio e Emulador de terminal)"
 
 #: ../exo-helper/main.c:41
@@ -1066,9 +1018,7 @@ msgstr "Falhou ao executar o emulador de terminal"
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr ""
-"Abrir a janela de configuração das\n"
-"aplicações preferidas"
+msgstr "Abrir a janela de configuração das\naplicações preferidas"
 
 #: ../exo-helper/main.c:72
 msgid "Settings manager socket"
@@ -1079,7 +1029,9 @@ msgid "SOCKET ID"
 msgstr "ID do SOCKET"
 
 #: ../exo-helper/main.c:73
-msgid "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgid ""
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
+" one of the following values."
 msgstr "Iniciar assistente de TIPO com o PARÂMETRO opcional, onde TIPO é um dos seguintes valores."
 
 #: ../exo-helper/main.c:73
@@ -1094,13 +1046,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"Os seguintes TIPOS são suportados pelo comando --launch:\n"
-"\n"
-"  WebBrowser       - O navegador web preferido.\n"
-"  MailReader       - O leitor de correio preferido.\n"
-"  FileManager      - O gestor de ficheiros preferido.\n"
-"  TerminalEmulator - O emulador de terminal preferido."
+msgstr "Os seguintes TIPOS são suportados pelo comando --launch:\n\n  WebBrowser       - O navegador web preferido.\n  MailReader       - O leitor de correio preferido.\n  FileManager      - O gestor de ficheiros preferido.\n  TerminalEmulator - O emulador de terminal preferido."
 
 #: ../exo-helper/main.c:112
 #, c-format
@@ -1125,17 +1071,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr ""
-"%s (Xfce %s)\n"
-"\n"
-"Direitos de autor (c) 2003-2006\n"
-"        os-cillation e.K. Todos os direitos reservados.\n"
-"\n"
-"Desenvolvido por Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-"Compilado com Gtk+-%d.%d.%d, executado em Gtk+-%d.%d.%d.\n"
-"\n"
-"Por favor, reporte os erros em <%s>.\n"
+msgstr "%s (Xfce %s)\n\nDireitos de autor (c) 2003-2006\n        os-cillation e.K. Todos os direitos reservados.\n\nDesenvolvido por Benedikt Meurer <benny@xfce.org>.\n\nCompilado com Gtk+-%d.%d.%d, executado em Gtk+-%d.%d.%d.\n\nPor favor, reporte os erros em <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1294,7 +1230,8 @@ msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Mostra esta mensagem de ajuda e sai"
 
 #: ../exo-open/main.c:113
-msgid "  -V, --version                       Print version information and exit"
+msgid ""
+"  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Mostra as informações da versão e sai"
 
 #: ../exo-open/main.c:115
@@ -1302,18 +1239,13 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr ""
-"  --launch TIPO [PARÂMETROS...]       Executar a aplicação preferida do\n"
-"                                      TIPO com PARÂMETROs opcionais, onde\n"
-"                                      TIPO é um dos seguintes valores."
+msgstr "  --launch TIPO [PARÂMETROS...]       Executar a aplicação preferida do\n                                      TIPO com PARÂMETROs opcionais, onde\n                                      TIPO é um dos seguintes valores."
 
 #: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr ""
-"  --working-directory DIRETÓRIO       Diretório de trabalho por omissão para\n"
-"                                      aplicações ao utilizar a opção --launch."
+msgstr "  --working-directory DIRETÓRIO       Diretório de trabalho por omissão para\n                                      aplicações ao utilizar a opção --launch."
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1322,18 +1254,14 @@ msgstr "Os seguintes TIPOS são suportados pelo comando --launch:"
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
+#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"  WebBrowser       - O navegador web preferido.\n"
-"  MailReader       - O leitor de correio preferido.\n"
-"  FileManager      - O gestor de ficheiros preferido.\n"
-"  TerminalEmulator - O emulador de terminal preferido."
+msgstr "  WebBrowser       - O navegador web preferido.\n  MailReader       - O leitor de correio preferido.\n  FileManager      - O gestor de ficheiros preferido.\n  TerminalEmulator - O emulador de terminal preferido."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1342,17 +1270,13 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
-"Se não especificar a opção --launch, exo-open irá abrir todos os URLs\n"
-"especificadas com seus gestores de URL preferidos. Se especificar\n"
-"a opção --launch, pode selecionar a aplicação preferida que deseja\n"
-"executar e transmitir parâmetros adicionais para a aplicação (i.e.para\n"
-"TerminalEmulator pode transmitir a linha de comandos que deve ser\n"
-"executada no terminal)."
+msgstr "Se não especificar a opção --launch, exo-open irá abrir todos os URLs\nespecificadas com seus gestores de URL preferidos. Se especificar\na opção --launch, pode selecionar a aplicação preferida que deseja\nexecutar e transmitir parâmetros adicionais para a aplicação (i.e.para\nTerminalEmulator pode transmitir a linha de comandos que deve ser\nexecutada no terminal)."
 
 #: ../exo-open/main.c:195
 #, c-format
-msgid "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
+msgid ""
+"Launching desktop files is not supported when %s is compiled without GIO-"
+"Unix features."
 msgstr "Carregar ficheiros desktop não é suportado se %s for compilado sem funcionalidades GIO-Unix."
 
 #: ../exo-open/main.c:260
@@ -1370,7 +1294,7 @@ msgstr "Incapaz de detetar o esquema URI de \"%s\"."
 msgid "Failed to open URI \"%s\"."
 msgstr "Falha ao abrir o URI \"%s\"."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "Explorar sistema de ficheiros"
 
@@ -1382,9 +1306,6 @@ msgstr "Ler o correio eletrónico"
 msgid "Use the command line"
 msgstr "Utilizar a linha de comandos"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "Navegar na web"
-
-#~ msgid "Failed to open the documentation browser."
-#~ msgstr "Falha ao abrir o navegador de documentação"
