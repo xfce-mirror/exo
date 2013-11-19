@@ -1,22 +1,21 @@
-# Romanian translation for the exo library.
-# Copyright (C) 2006-2012 THE exo'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the exo package.
-# Mișu Moldovan <dumol@xfce.org>, 2006-2012.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: exo 0.7\n"
+"Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-20 10:00+0000\n"
-"PO-Revision-Date: 2012-04-27 15:23+0300\n"
-"Last-Translator: Mișu Moldovan <dumol@xfce.org>\n"
-"Language-Team: Romanian <diacritice@googlegroups.com>\n"
+"POT-Creation-Date: 2013-07-02 22:55+0200\n"
+"PO-Revision-Date: 2013-11-19 14:58+0000\n"
+"Last-Translator: Nick <nick@xfce.org>\n"
+"Language-Team: Romanian (http://www.transifex.com/projects/p/xfce/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.6.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -64,11 +63,8 @@ msgstr "Nu s-a putut citi fișierul „%s”: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Dintr-un motiv necunoscut, nu s-a putut încărca imaginea „%s”, probabil că "
-"fișierul de tip imagine e corupt"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Dintr-un motiv necunoscut, nu s-a putut încărca imaginea „%s”, probabil că fișierul de tip imagine e corupt"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -245,8 +241,7 @@ msgstr "Activează căutarea"
 
 #: ../exo/exo-icon-view.c:677
 msgid "View allows user to search through columns interactively"
-msgstr ""
-"Mod de vizualizare ce permite utilizatorului să caute interactiv în coloane"
+msgstr "Mod de vizualizare ce permite utilizatorului să caute interactiv în coloane"
 
 #: ../exo/exo-icon-view.c:694
 msgid "Width for each item"
@@ -278,9 +273,7 @@ msgstr "Coloană de tip markup"
 
 #: ../exo/exo-icon-view.c:748
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Model de coloană utilizat pentru extragerea textului când se utilizează "
-"markup Pango"
+msgstr "Model de coloană utilizat pentru extragerea textului când se utilizează markup Pango"
 
 #: ../exo/exo-icon-view.c:762
 msgid "Icon View Model"
@@ -295,7 +288,6 @@ msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Modul de poziționare relativă a textului și iconiței fiecărui element"
 
-# Ai altă idee mai bună? Nici „reorderable” nu există în engleză...
 #: ../exo/exo-icon-view.c:809
 msgid "Reorderable"
 msgstr "Reordonabil"
@@ -344,9 +336,7 @@ msgstr "Limită de timp pentru clic simplu"
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr ""
-"Durata minimă pentru selectarea automată a elementului aflat sub cursor când "
-"se utilizează clic simplu"
+msgstr "Durata minimă pentru selectarea automată a elementului aflat sub cursor când se utilizează clic simplu"
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -408,9 +398,7 @@ msgstr "_Adăugați o nouă bară cu unelte"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr ""
-"Trageți un element deasupra unei bare cu unelte pentru a-l adăuga, ori din "
-"bara cu unelte între celelalte elemente pentru a-l scoate."
+msgstr "Trageți un element deasupra unei bare cu unelte pentru a-l adăuga, ori din bara cu unelte între celelalte elemente pentru a-l scoate."
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -547,12 +535,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr ""
-"Drepturi de autor © %s\n"
-"        os-cillation e.K. Toate drepturile rezervate.\n"
-"\n"
-"Scris de Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
+msgstr "Drepturi de autor © %s\n        os-cillation e.K. Toate drepturile rezervate.\n\nScris de Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
 #: ../exo-open/main.c:500
@@ -563,11 +546,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr ""
-"%s nu vine cu ABSOLUT NICIO GARANȚIE.\n"
-"Puteți redistribui cópii %s sub termenii\n"
-"licenței GNU LGPL, disponibilă în pachetul cu sursele %s.\n"
-"\n"
+msgstr "%s nu vine cu ABSOLUT NICIO GARANȚIE.\nPuteți redistribui cópii %s sub termenii\nlicenței GNU LGPL, disponibilă în pachetul cu sursele %s.\n\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
 #: ../exo-open/main.c:504
@@ -677,10 +656,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr ""
-"Selectați această opțiune pentru a activa notificarea la pornire atunci când "
-"comanda este executată din managerul de fișiere sau din meniu. Nu toate "
-"programele suportă notificarea la pornire."
+msgstr "Selectați această opțiune pentru a activa notificarea la pornire atunci când comanda este executată din managerul de fișiere sau din meniu. Nu toate programele suportă notificarea la pornire."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -844,7 +820,7 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Navigator"
 
@@ -852,9 +828,7 @@ msgstr "Navigator"
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr ""
-"Navigatorul implicit va fi utilizat pentru deschiderea\n"
-"adreselor de Internet și afișarea informațiilor de ajutor."
+msgstr "Navigatorul implicit va fi utilizat pentru deschiderea\nadreselor de Internet și afișarea informațiilor de ajutor."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -865,9 +839,7 @@ msgstr "Client de mail"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr ""
-"Clientul de mail implicit va fi utilizat pentru a \n"
-"compune noi mailuri la un clic pe o adresă de mail."
+msgstr "Clientul de mail implicit va fi utilizat pentru a \ncompune noi mailuri la un clic pe o adresă de mail."
 
 #. Utilities
 #. 
@@ -876,7 +848,7 @@ msgid "Utilities"
 msgstr "Utilitare"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Manager de fișiere"
 
@@ -884,9 +856,7 @@ msgstr "Manager de fișiere"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr ""
-"Managerul de fișiere implicit va fi utilizat pentru\n"
-"navigarea în sistemul de fișiere și afișarea dosarelor."
+msgstr "Managerul de fișiere implicit va fi utilizat pentru\nnavigarea în sistemul de fișiere și afișarea dosarelor."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -897,9 +867,7 @@ msgstr "Emulator de terminal"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr ""
-"Emulatorul de terminal implicit va fi utilizat\n"
-"pentru a executa comenzi ce necesită un mediu CLI."
+msgstr "Emulatorul de terminal implicit va fi utilizat\npentru a executa comenzi ce necesită un mediu CLI."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -955,33 +923,25 @@ msgstr "Alegeți un alt emulator de terminal"
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
-msgstr ""
-"Specificați ce program doriți să utilizați\n"
-"ca navigator implicit în Xfce:"
+msgstr "Specificați ce program doriți să utilizați\nca navigator implicit în Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr ""
-"Specificați ce program doriți să utilizați\n"
-"ca client de mail implicit în Xfce:"
+msgstr "Specificați ce program doriți să utilizați\nca client de mail implicit în Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr ""
-"Specificați ce program doriți să utilizați\n"
-"ca manager de fișiere implicit în Xfce:"
+msgstr "Specificați ce program doriți să utilizați\nca manager de fișiere implicit în Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr ""
-"Specificați ce program doriți să utilizați\n"
-"ca emulator de terminal implicit în Xfce:"
+msgstr "Specificați ce program doriți să utilizați\nca emulator de terminal implicit în Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -1003,33 +963,25 @@ msgstr "Alegeți un program preferat"
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
-msgstr ""
-"Selectați navigatorul preferat\n"
-"și alegeți OK pentru a continua."
+msgstr "Selectați navigatorul preferat\nși alegeți OK pentru a continua."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
-msgstr ""
-"Selectați clientul de mail preferat\n"
-"și alegeți OK pentru a continua."
+msgstr "Selectați clientul de mail preferat\nși alegeți OK pentru a continua."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr ""
-"Selectați managerul de fișiere preferat\n"
-"și alegeți OK pentru a continua."
+msgstr "Selectați managerul de fișiere preferat\nși alegeți OK pentru a continua."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
-msgstr ""
-"Selectați emulatorul de terminal preferat\n"
-"și alegeți OK pentru a continua."
+msgstr "Selectați emulatorul de terminal preferat\nși alegeți OK pentru a continua."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -1042,7 +994,8 @@ msgid "Failed to open %s for writing"
 msgstr "Nu s-a putut deschide „%s” pentru scriere"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
+msgid ""
+"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Programe preferate (navigator, client de mail etc.)"
 
 #: ../exo-helper/main.c:41
@@ -1065,9 +1018,7 @@ msgstr "Nu s-a putut porni emulatorul de terminal implicit"
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr ""
-"Deschide fereastra de configurare\n"
-"a programelor preferate"
+msgstr "Deschide fereastra de configurare\na programelor preferate"
 
 #: ../exo-helper/main.c:72
 msgid "Settings manager socket"
@@ -1079,11 +1030,9 @@ msgstr "ID SOCKET"
 
 #: ../exo-helper/main.c:73
 msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
-msgstr ""
-"Lansează programul TIP cu parametrul opțional PARAMETRU, unde TIP are una "
-"dintre următoarele valori:"
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
+" one of the following values."
+msgstr "Lansează programul TIP cu parametrul opțional PARAMETRU, unde TIP are una dintre următoarele valori:"
 
 #: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
@@ -1097,13 +1046,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"Următoarele valori TIP sunt posibile cu comanda „--launch”:\n"
-"\n"
-"  WebBrowser       - Navigatorul preferat.\n"
-"  MailReader       - Clientul de mail preferat.\n"
-"  FileManager      - Managerul de fișiere preferat.\n"
-"  TerminalEmulator - Emulatorul de terminal preferat."
+msgstr "Următoarele valori TIP sunt posibile cu comanda „--launch”:\n\n  WebBrowser       - Navigatorul preferat.\n  MailReader       - Clientul de mail preferat.\n  FileManager      - Managerul de fișiere preferat.\n  TerminalEmulator - Emulatorul de terminal preferat."
 
 #: ../exo-helper/main.c:112
 #, c-format
@@ -1128,17 +1071,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr ""
-"%s (Xfce %s)\n"
-"\n"
-"Drepturi de autor © 2003-2006\n"
-"        os-cillation e.K. Toate drepturile rezervate.\n"
-"\n"
-"Scris de Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-"Compilat cu Gtk+-%d.%d.%d, pornit cu Gtk+-%d.%d.%d.\n"
-"\n"
-"Raportați orice probleme la <%s>.\n"
+msgstr "%s (Xfce %s)\n\nDrepturi de autor © 2003-2006\n        os-cillation e.K. Toate drepturile rezervate.\n\nScris de Benedikt Meurer <benny@xfce.org>.\n\nCompilat cu Gtk+-%d.%d.%d, pornit cu Gtk+-%d.%d.%d.\n\nRaportați orice probleme la <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1304,25 +1237,15 @@ msgstr "  -V, --version                       Arată versiunea curentă"
 #: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr ""
-"  --launch TIP [PARAMETRI...]         Pornește programul preferat de tipul "
-"TIP\n"
-"                                      cu parametrii opționali PARAMETRI, "
-"unde\n"
-"                                      TIP are una dintre valorile de mai jos."
+msgstr "  --launch TIP [PARAMETRI...]         Pornește programul preferat de tipul TIP\n                                      cu parametrii opționali PARAMETRI, unde\n                                      TIP are una dintre valorile de mai jos."
 
 #: ../exo-open/main.c:119
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr ""
-"  --working-directory DIRECTOR        Director de lucru implicit pentru "
-"programe\n"
-"                                      când se utilizează comanda „--launch”."
+msgstr "  --working-directory DIRECTOR        Director de lucru implicit pentru programe\n                                      când se utilizează comanda „--launch”."
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1338,11 +1261,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"  WebBrowser       - Navigatorul preferat.\n"
-"  MailReader       - Clientul de mail preferat.\n"
-"  FileManager      - Managerul de fișiere preferat.\n"
-"  TerminalEmulator - Emulatorul de terminal preferat."
+msgstr "  WebBrowser       - Navigatorul preferat.\n  MailReader       - Clientul de mail preferat.\n  FileManager      - Managerul de fișiere preferat.\n  TerminalEmulator - Emulatorul de terminal preferat."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1351,21 +1270,14 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
-"Dacă nu specificați comanda „--launch”, exo-open va deschide URL-urile\n"
-"specificate cu programele preferate. Dacă specificați comanda „--launch”,\n"
-"puteți selecta ce programe preferate doriți să porniți și puteți transmite\n"
-"parametri suplimentari acelui program (de ex. pentru TerminalEmulator\n"
-"puteți transmite o comandă de executat în acel terminal la pornire)."
+msgstr "Dacă nu specificați comanda „--launch”, exo-open va deschide URL-urile\nspecificate cu programele preferate. Dacă specificați comanda „--launch”,\nputeți selecta ce programe preferate doriți să porniți și puteți transmite\nparametri suplimentari acelui program (de ex. pentru TerminalEmulator\nputeți transmite o comandă de executat în acel terminal la pornire)."
 
 #: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr ""
-"Nu există suport pentru lansarea de fișiere desktop când %s este compilat "
-"fără facilități GIO-Unix"
+msgstr "Nu există suport pentru lansarea de fișiere desktop când %s este compilat fără facilități GIO-Unix"
 
 #: ../exo-open/main.c:260
 #, c-format
@@ -1382,7 +1294,7 @@ msgstr "Nu s-a putut detecta schema URI pentru „%s”."
 msgid "Failed to open URI \"%s\"."
 msgstr "Nu s-a putut deschide URI-ul „%s”."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "Parcurgeți sistemul de fișiere"
 
@@ -1394,9 +1306,6 @@ msgstr "Citiți-vă mailul"
 msgid "Use the command line"
 msgstr "Utilizați linia de comandă"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "Navigați pe net"
-
-#~ msgid "Failed to open the documentation browser."
-#~ msgstr "Nu s-a putut deschide navigatorul documentației."
