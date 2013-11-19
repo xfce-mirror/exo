@@ -1,22 +1,23 @@
-# Hungarian translation of libexo-0.3
-# SZERVÁC Attila <sas at 321 dot hu>, 2006, 2007, 2008, 2009.
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2009, 2010.
-# Copyright (C) 2009, 2010, Free Software Foundation, Inc.
-# This file is distributed under the same license as the libexo-0.3 package.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2009-2010
+# SZERVÁC Attila <sas at 321 dot hu>, 2006-2009
 msgid ""
 msgstr ""
-"Project-Id-Version: hu\n"
+"Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-20 17:51+0000\n"
-"PO-Revision-Date: 2010-02-05 22:43+0100\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
-"Language-Team: Hungarian <gnome at fsf dot hu>\n"
+"POT-Creation-Date: 2013-07-02 22:30+0200\n"
+"PO-Revision-Date: 2013-11-19 13:01+0000\n"
+"Last-Translator: Nick <nick@xfce.org>\n"
+"Language-Team: Hungarian (http://www.transifex.com/projects/p/xfce/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -64,11 +65,8 @@ msgstr "A fájl („%s”) olvasása meghiúsult: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"A fájl („%s”) betöltése meghiúsult: az ok ismeretlen, valószínűleg megsérült "
-"a fájl"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "A fájl („%s”) betöltése meghiúsult: az ok ismeretlen, valószínűleg megsérült a fájl"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -277,9 +275,7 @@ msgstr "Jelölőkódoszlop"
 
 #: ../exo/exo-icon-view.c:778
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"A modellnek a szöveg lekérdezéséhez használt oszlopa Pango jelölőkódok "
-"használata esetén"
+msgstr "A modellnek a szöveg lekérdezéséhez használt oszlopa Pango jelölőkódok használata esetén"
 
 #: ../exo/exo-icon-view.c:792
 msgid "Icon View Model"
@@ -342,9 +338,7 @@ msgstr "Egyszeres kattintás időkorlátja"
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr ""
-"Az egérkurzor alatti elem ennyi idő után automatikusan kijelölésre kerül "
-"egyszeres kattintás módban"
+msgstr "Az egérkurzor alatti elem ennyi idő után automatikusan kijelölésre kerül egyszeres kattintás módban"
 
 #: ../exo/exo-icon-view.c:934
 msgid "Spacing"
@@ -390,9 +384,7 @@ msgstr "Új _eszköztár hozzáadása"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr ""
-"Húzzon egy elemet a fenti eszköztárakra a felvételéhez, az eszköztárakról az "
-"elemtáblába az eltávolításához."
+msgstr "Húzzon egy elemet a fenti eszköztárakra a felvételéhez, az eszköztárakról az elemtáblába az eltávolításához."
 
 #: ../exo/exo-toolbars-editor.c:537
 msgid "Separator"
@@ -529,12 +521,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. Minden jog fenntartva.\n"
-"\n"
-"Írta: Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
+msgstr "Copyright (c) %s\n        os-cillation e.K. Minden jog fenntartva.\n\nÍrta: Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
@@ -545,11 +532,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr ""
-"A(z) %s programra NINCS SEMMILYEN GARANCIA.\n"
-"A(z) %s másolatai továbbterjeszthetők a GNU Lesser General Public License\n"
-" feltételei szerint, amely megtalálható a(z) %s forráscsomagban.\n"
-"\n"
+msgstr "A(z) %s programra NINCS SEMMILYEN GARANCIA.\nA(z) %s másolatai továbbterjeszthetők a GNU Lesser General Public License\n feltételei szerint, amely megtalálható a(z) %s forráscsomagban.\n\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
@@ -659,10 +642,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr ""
-"Válassza ezt a lehetőséget indítási értesítés használatához a parancs "
-"fájlkezelőből vagy a menüből való futtatásakor. Nem minden alkalmazás "
-"támogatja az indítási értesítést."
+msgstr "Válassza ezt a lehetőséget indítási értesítés használatához a parancs fájlkezelőből vagy a menüből való futtatásakor. Nem minden alkalmazás támogatja az indítási értesítést."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -675,8 +655,7 @@ msgstr "_Terminálban fusson"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
-msgstr ""
-"Válassza ezt a lehetőséget a parancs terminálablakban való futtatásához."
+msgstr "Válassza ezt a lehetőséget a parancs terminálablakban való futtatásához."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:590
@@ -827,7 +806,7 @@ msgid "_Internet"
 msgstr "_Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Webböngésző"
 
@@ -835,9 +814,7 @@ msgstr "Webböngésző"
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr ""
-"A hiperhivatkozások és súgótartalom az alapértelmezett\n"
-"webböngészővel fognak megjelenni."
+msgstr "A hiperhivatkozások és súgótartalom az alapértelmezett\nwebböngészővel fognak megjelenni."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -848,9 +825,7 @@ msgstr "Levelező"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr ""
-"E-mail címekre kattintva az alapértelmezett levelező nyílik meg\n"
-"levelek írásához."
+msgstr "E-mail címekre kattintva az alapértelmezett levelező nyílik meg\nlevelek írásához."
 
 #. Utilities
 #. 
@@ -859,7 +834,7 @@ msgid "_Utilities"
 msgstr "Segé_dprogramok"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Fájlkezelő"
 
@@ -867,9 +842,7 @@ msgstr "Fájlkezelő"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr ""
-"A mappák tartalmának tallózása az alapértelmezett\n"
-"fájlkezelővel fog történni."
+msgstr "A mappák tartalmának tallózása az alapértelmezett\nfájlkezelővel fog történni."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -880,9 +853,7 @@ msgstr "Terminálemulátor"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr ""
-"A parancssori környezetet igénylő parancsok futtatásához\n"
-"az alapértelmezett terminálemulátor nyílik meg."
+msgstr "A parancssori környezetet igénylő parancsok futtatásához\naz alapértelmezett terminálemulátor nyílik meg."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -938,33 +909,25 @@ msgstr "Válasszon egyéni terminálemulátort"
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
-msgstr ""
-"Adja meg az Xfce alapértelmezett webböngészőjeként\n"
-"használni kívánt alkalmazást:"
+msgstr "Adja meg az Xfce alapértelmezett webböngészőjeként\nhasználni kívánt alkalmazást:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr ""
-"Adja meg az Xfce alapértelmezett levelezőjeként\n"
-"használni kívánt alkalmazást:"
+msgstr "Adja meg az Xfce alapértelmezett levelezőjeként\nhasználni kívánt alkalmazást:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr ""
-"Adja meg az Xfce alapértelmezett fájlkezelőjeként\n"
-"használni kívánt alkalmazást:"
+msgstr "Adja meg az Xfce alapértelmezett fájlkezelőjeként\nhasználni kívánt alkalmazást:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr ""
-"Adja meg az Xfce alapértelmezett terminálemulátoraként\n"
-"használni kívánt alkalmazást:"
+msgstr "Adja meg az Xfce alapértelmezett terminálemulátoraként\nhasználni kívánt alkalmazást:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -986,33 +949,25 @@ msgstr "Válasszon alapértelmezett alkalmazást"
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
-msgstr ""
-"Válassza ki az alapértelmezett webböngészőt,\n"
-"és nyomja meg az OK gombot a folytatáshoz."
+msgstr "Válassza ki az alapértelmezett webböngészőt,\nés nyomja meg az OK gombot a folytatáshoz."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
-msgstr ""
-"Válassza ki az alapértelmezett levelezőt,\n"
-"és nyomja meg az OK gombot a folytatáshoz."
+msgstr "Válassza ki az alapértelmezett levelezőt,\nés nyomja meg az OK gombot a folytatáshoz."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr ""
-"Válassza ki az alapértelmezett fájlkezelőt,\n"
-"és nyomja meg az OK gombot a folytatáshoz."
+msgstr "Válassza ki az alapértelmezett fájlkezelőt,\nés nyomja meg az OK gombot a folytatáshoz."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
-msgstr ""
-"Válassza ki az alapértelmezett terminálemulátort,\n"
-"és nyomja meg az OK gombot a folytatáshoz."
+msgstr "Válassza ki az alapértelmezett terminálemulátort,\nés nyomja meg az OK gombot a folytatáshoz."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -1025,7 +980,8 @@ msgid "Failed to open %s for writing"
 msgstr "A %s nem nyitható meg írásra"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
+msgid ""
+"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Alapértelmezett alkalmazások (webböngésző, levelező, terminálemulátor)"
 
 #: ../exo-helper/main.c:41
@@ -1048,9 +1004,7 @@ msgstr "Az alapértelmezett terminálemulátor végrehajtása meghiúsult"
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr ""
-"Az Alapértelmezett alkalmazások\n"
-"beállítóablak megnyitása"
+msgstr "Az Alapértelmezett alkalmazások\nbeállítóablak megnyitása"
 
 #: ../exo-helper/main.c:72
 msgid "Settings manager socket"
@@ -1062,11 +1016,9 @@ msgstr "FOGLALATAZONOSÍTÓ"
 
 #: ../exo-helper/main.c:73
 msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
-msgstr ""
-"Az alapértelmezett segédprogram elindítása a TÍPUSHOZ, az elhagyható "
-"PARAMÉTERREL, ahol a TÍPUS a következők egyike."
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
+" one of the following values."
+msgstr "Az alapértelmezett segédprogram elindítása a TÍPUSHOZ, az elhagyható PARAMÉTERREL, ahol a TÍPUS a következők egyike."
 
 #: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
@@ -1080,13 +1032,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"A következő TÍPUSOK támogatottak a --launch parancshoz:\n"
-"\n"
-"  WebBrowser       - Az alapértelmezett webböngésző.\n"
-"  MailReader       - Az alapértelmezett levelező.\n"
-"  FileManager      - Az alapértelmezett fájlkezelő.\n"
-"  TerminalEmulator - Az alapértelmezett terminálemulátor."
+msgstr "A következő TÍPUSOK támogatottak a --launch parancshoz:\n\n  WebBrowser       - Az alapértelmezett webböngésző.\n  MailReader       - Az alapértelmezett levelező.\n  FileManager      - Az alapértelmezett fájlkezelő.\n  TerminalEmulator - Az alapértelmezett terminálemulátor."
 
 #: ../exo-helper/main.c:112
 #, c-format
@@ -1111,17 +1057,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr ""
-"%s (Xfce %s)\n"
-"\n"
-"Copyright (c) 2003-2006\n"
-"        os-cillation e.K. Minden jog fenntartva.\n"
-"\n"
-"Írta: Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-"Készült a Gtk+-%d.%d.%d használatával, fut: Gtk+-%d.%d.%d.\n"
-"\n"
-"A hibákat ezen a címen jelentse: <%s>.\n"
+msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. Minden jog fenntartva.\n\nÍrta: Benedikt Meurer <benny@xfce.org>.\n\nKészült a Gtk+-%d.%d.%d használatával, fut: Gtk+-%d.%d.%d.\n\nA hibákat ezen a címen jelentse: <%s>.\n"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1314,30 +1250,20 @@ msgstr "  -?, --help                          Ezen súgó kiírása és kilépé
 #: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr ""
-"  -V, --version                       Verzióinformációk kiírása és kilépés"
+msgstr "  -V, --version                       Verzióinformációk kiírása és kilépés"
 
 #: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr ""
-"  --launch TÍPUS [PARAMÉTEREK…]       Az adott TÍPUSÚ alapértelmezett\n"
-"                                      alkalmazás indítása a PARAMÉTEREKKEL,\n"
-"                                      ahol a TÍPUS a következő értékek "
-"egyike."
+msgstr "  --launch TÍPUS [PARAMÉTEREK…]       Az adott TÍPUSÚ alapértelmezett\n                                      alkalmazás indítása a PARAMÉTEREKKEL,\n                                      ahol a TÍPUS a következő értékek egyike."
 
 #: ../exo-open/main.c:119
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr ""
-"  --working-directory KÖNYVTÁR      Alkalmazások alapértelmezett "
-"munkakönyvtára\n"
-"                                    a --launch kapcsolóval való indításkor."
+msgstr "  --working-directory KÖNYVTÁR      Alkalmazások alapértelmezett munkakönyvtára\n                                    a --launch kapcsolóval való indításkor."
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1353,11 +1279,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"  WebBrowser       - Az alapértelmezett webböngésző.\n"
-"  MailReader       - Az alapértelmezett levelező.\n"
-"  FileManager      - Az alapértelmezett fájlkezelő.\n"
-"  TerminalEmulator - Az alapértelmezett terminálemulátor."
+msgstr "  WebBrowser       - Az alapértelmezett webböngésző.\n  MailReader       - Az alapértelmezett levelező.\n  FileManager      - Az alapértelmezett fájlkezelő.\n  TerminalEmulator - Az alapértelmezett terminálemulátor."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1366,23 +1288,14 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
-"Ha nem adja meg a --launch kapcsolót, az exo-open az összes megadott URL "
-"címet\n"
-"megnyitja az alapértelmezett URL kezelővel. Egyébként a --launch kapcsoló\n"
-"megadásakor kiválaszthatja a futtatandó alapértelmezett alkalmazást és "
-"további\n"
-"paramétereket adhat meg az alkalmazásnak (például a TerminalEmulator\n"
-"esetén átadhatja a terminálban futtatandó parancssort)."
+msgstr "Ha nem adja meg a --launch kapcsolót, az exo-open az összes megadott URL címet\nmegnyitja az alapértelmezett URL kezelővel. Egyébként a --launch kapcsoló\nmegadásakor kiválaszthatja a futtatandó alapértelmezett alkalmazást és további\nparamétereket adhat meg az alkalmazásnak (például a TerminalEmulator\nesetén átadhatja a terminálban futtatandó parancssort)."
 
 #: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr ""
-"Az asztali fájlok indítása nem támogatott, ha a(z) %s a GIO-Unix "
-"szolgáltatások nélkül van fordítva."
+msgstr "Az asztali fájlok indítása nem támogatott, ha a(z) %s a GIO-Unix szolgáltatások nélkül van fordítva."
 
 #: ../exo-open/main.c:260
 #, c-format
@@ -1399,7 +1312,7 @@ msgstr "A(z) („%s”) URI-sémája nem ismerhető fel."
 msgid "Failed to open URI \"%s\"."
 msgstr "Az URI („%s”) megnyitása meghiúsult."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "Fájlrendszer tallózása"
 
@@ -1411,211 +1324,6 @@ msgstr "E-mail olvasása"
 msgid "Use the command line"
 msgstr "Parancssor használata"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "Webböngészés"
-
-#~ msgid "Selection Box Color"
-#~ msgstr "Választómező színe"
-
-#~ msgid "Color of the selection box"
-#~ msgstr "A választómező színe"
-
-#~ msgid "Selection Box Alpha"
-#~ msgstr "A választómező alfa csatornája"
-
-#~ msgid "Opacity of the selection box"
-#~ msgstr "A választómező átlátszatlansága"
-
-#~ msgid "Failed to open the documentation browser."
-#~ msgstr "A dokumentációböngésző megnyitása meghiúsult."
-
-#~ msgid "External %s Drive"
-#~ msgstr "Külső %s meghajtó"
-
-#~ msgid "%s Drive"
-#~ msgstr "%s meghajtó"
-
-#~ msgid "External Floppy Drive"
-#~ msgstr "Külső hajlékonylemezes meghajtó"
-
-#~ msgid "Floppy Drive"
-#~ msgstr "Hajlékonylemezes meghajtó"
-
-#~ msgid "Compact Flash Drive"
-#~ msgstr "Compact Flash meghajtó"
-
-#~ msgid "Memory Stick Drive"
-#~ msgstr "Memory Stick meghajtó"
-
-#~ msgid "Smart Media Drive"
-#~ msgstr "Smart Media meghajtó"
-
-#~ msgid "SD/MMC Drive"
-#~ msgstr "SD/MMC meghajtó"
-
-#~ msgid "Zip Drive"
-#~ msgstr "Zip-meghajtó"
-
-#~ msgid "Jaz Drive"
-#~ msgstr "Jaz-meghajtó"
-
-#~ msgid "Pen Drive"
-#~ msgstr "Pen meghajtó"
-
-#~ msgid "%s Music Player"
-#~ msgstr "%s zenelejátszó"
-
-#~ msgid "%s Digital Camera"
-#~ msgstr "%s digitális fényképezőgép"
-
-#~ msgid "Drive"
-#~ msgstr "Meghajtó"
-
-#~ msgid "Blank %s Disc"
-#~ msgstr "Üres %s lemez"
-
-#~ msgid "%s Disc"
-#~ msgstr "%s lemez"
-
-#~ msgid "Audio CD"
-#~ msgstr "Hang-CD"
-
-#~ msgid "%s Removable Volume"
-#~ msgstr "%s eltávolítható kötet"
-
-#~ msgid "%s Volume"
-#~ msgstr "%s kötet"
-
-#~ msgid "Given device \"%s\" is not a volume or drive"
-#~ msgstr "Az eszköz („%s”) nem kötet vagy meghajtó"
-
-#~ msgid "Device \"%s\" not found in file system device table"
-#~ msgstr "Az eszköz („%s”) nem található a fájlrendszer-eszközök táblázatában"
-
-#~ msgid "You are not privileged to eject the volume \"%s\""
-#~ msgstr "Nincs jogosultsága kiadni a kötetet („%s”)"
-
-#~ msgid "An application is preventing the volume \"%s\" from being ejected"
-#~ msgstr "Egy alkalmazás megakadályozza a kötet („%s”) kiadását"
-
-#~ msgid "You are not privileged to mount the volume \"%s\""
-#~ msgstr "Nincs jogosultsága a kötet („%s”) csatolására"
-
-#~ msgid ""
-#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
-#~ "to record audio or data on the disc"
-#~ msgstr ""
-#~ "Az üres lemezek nem csatolhatók, ehelyett egy CD-író alkalmazás (például "
-#~ "az Xfburn) használatával adatokat vagy hangot rögzíthet rá"
-
-#~ msgid ""
-#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
-#~ "audio tracks"
-#~ msgstr ""
-#~ "A hang-CD-k nem csatolhatók, a hangsávokat a kedvenc hanglejátszójával "
-#~ "játszhatja le"
-
-#~ msgid "You are not privileged to teardown the crypto layer"
-#~ msgstr "Nincs jogosultsága leválasztani a titkosítási réteget"
-
-#~ msgid "An application is preventing the crypto layer from being torn down"
-#~ msgstr "Egy alkalmazás megakadályozza a titkosítási réteg leválasztását"
-
-#~ msgid "You are not privileged to unmount the volume \"%s\""
-#~ msgstr "Nincs jogosultsága a kötet („%s”) leválasztására"
-
-#~ msgid "An application is preventing the volume \"%s\" from being unmounted"
-#~ msgstr "Egy alkalmazás megakadályozza a kötet („%s”) leválasztását"
-
-#~ msgid "The volume \"%s\" was probably mounted manually on the command line"
-#~ msgstr "A kötetet („%s”) valószínűleg parancssorból csatolták"
-
-#~ msgid "Eject rather than mount"
-#~ msgstr "Csatolás helyett kiadás"
-
-#~ msgid "Unmount rather than mount"
-#~ msgstr "Csatolás helyett leválasztás"
-
-#~ msgid "Mount by HAL device UDI"
-#~ msgstr "Csatolás HAL eszköz UDI szerint"
-
-#~ msgid "Mount by HAL device UDI (not supported)"
-#~ msgstr "Csatolás HAL eszköz UDI szerint (nem támogatott)"
-
-#~ msgid "Mount by device file"
-#~ msgstr "Csatolás eszközfájl szerint"
-
-#~ msgid "Don't show any dialogs"
-#~ msgstr "Ne jelenítsen meg párbeszédablakokat"
-
-#~ msgid "Unknown error"
-#~ msgstr "Ismeretlen hiba"
-
-#~ msgid ""
-#~ "%s is compiled without GIO-Unix features. Therefore it will probably not "
-#~ "work on this system."
-#~ msgstr ""
-#~ "%s a GIO-Unix szolgáltatások nélkül lett fordítva. Emiatt valószínűleg "
-#~ "nem fog működni ezen a rendszeren."
-
-#~ msgid "Must specify HAL device UDI or device file"
-#~ msgstr "Meg kell adnia a HAL eszköz UDI-t vagy az eszközfájlt"
-
-#~ msgid ""
-#~ "Must not specify both a HAL device UDI and a device file simultaneously"
-#~ msgstr "Nem adhat meg egyszerre HAL eszköz UDI-t és eszközfájlt is"
-
-#~ msgid ""
-#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
-#~ "build"
-#~ msgstr ""
-#~ "Nem lehet HAL eszköz UDI szerint csatolni, mert a HAL támogatás nem "
-#~ "engedélyezett"
-
-#~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-#~ msgstr "A megadott UDI („%s”) nem érvényes HAL eszköz UDI"
-
-#~ msgid "Cannot eject and unmount simultaneously"
-#~ msgstr "Nem lehet egyszerre kiadni és leválasztani is"
-
-#~ msgid "Failed to eject \"%s\""
-#~ msgstr "„%s” kiadása meghiúsult"
-
-#~ msgid "Failed to unmount \"%s\""
-#~ msgstr "„%s” leválasztása meghiúsult"
-
-#~ msgid "Failed to mount \"%s\""
-#~ msgstr "„%s” csatolása meghiúsult"
-
-#~ msgid "The device \"%s\" is now safe to remove."
-#~ msgstr "Az eszköz („%s”) már biztonságosan eltávolítható."
-
-#~ msgid "Device is now safe to remove"
-#~ msgstr "Az eszköz már biztonságosan eltávolítható"
-
-#~ msgid "Ejecting device"
-#~ msgstr "Eszköz kiadása"
-
-#~ msgid "The device \"%s\" is being ejected. This may take some time."
-#~ msgstr "Az eszköz („%s”) kiadása folyamatban. Ez eltarthat egy ideig."
-
-#~ msgid "Unmounting device"
-#~ msgstr "Eszköz leválasztása"
-
-#~ msgid ""
-#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
-#~ "the media or disconnect the drive."
-#~ msgstr ""
-#~ "Az eszköz („%s”) leválasztása folyamatban. Ne távolítsa el az "
-#~ "adathordozót és ne kapcsolja le a meghajtót."
-
-#~ msgid "Writing data to device"
-#~ msgstr "Adatok írása az eszközre"
-
-#~ msgid ""
-#~ "There is data that needs to be written to the device \"%s\" before it can "
-#~ "be removed. Please do not remove the media or disconnect the drive."
-#~ msgstr ""
-#~ "Adatokat kell az eszközre („%s”) írni annak eltávolítása előtt. Ne "
-#~ "távolítsa el az adathordozót és ne kapcsolja le a meghajtót."
