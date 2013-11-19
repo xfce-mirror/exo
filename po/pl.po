@@ -1,23 +1,24 @@
-# Polish translations for exo package.
-# Copyright (C) 2004-2006 os-cillation e.K.
-# This file is distributed under the same license as the exo package.
-# Piotr Maliński <admin@rk.edu.pl>, 2006.
-# Szymon Kałasz <szymon_maestro@gazeta.pl>, 2006.
-# Piotr Sokół <psokol@jabster.pl>, 2009, 2011.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Piotr Maliński <admin@rk.edu.pl>, 2006
+# Piotr Sokół <psokol@jabster.pl>, 2009,2011
+# Szymon Kałasz <szymon_maestro@gazeta.pl>, 2006
 msgid ""
 msgstr ""
-"Project-Id-Version: exo 0.5.4\n"
+"Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-14 02:57+0000\n"
-"PO-Revision-Date: 2011-02-21 15:58+0100\n"
-"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
-"Language-Team: Polish <>\n"
+"POT-Creation-Date: 2013-07-02 22:55+0200\n"
+"PO-Revision-Date: 2013-11-19 14:58+0000\n"
+"Last-Translator: Nick <nick@xfce.org>\n"
+"Language-Team: Polish (http://www.transifex.com/projects/p/xfce/language/pl/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20)) ? 1 : 2));\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -65,11 +66,8 @@ msgstr "Nie udało się odczytać pliku „%s”: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Nie udało się wczytać obrazu „%s”: przyczyna nieznana, prawdopodobnie "
-"uszkodzony plik obrazu"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Nie udało się wczytać obrazu „%s”: przyczyna nieznana, prawdopodobnie uszkodzony plik obrazu"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -278,9 +276,7 @@ msgstr "Kolumna znaczników"
 
 #: ../exo/exo-icon-view.c:748
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr ""
-"Modelowa kolumna używana do pozyskania tekstu w przypadku stosowania "
-"znaczników Pango"
+msgstr "Modelowa kolumna używana do pozyskania tekstu w przypadku stosowania znaczników Pango"
 
 #: ../exo/exo-icon-view.c:762
 msgid "Icon View Model"
@@ -343,9 +339,7 @@ msgstr "Limit czasowy pojedynczego kliknięcia"
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr ""
-"Opóźnienie czasowe, po którym element zostanie automatycznie zaznaczony "
-"przez stojący nad nim kursor myszy"
+msgstr "Opóźnienie czasowe, po którym element zostanie automatycznie zaznaczony przez stojący nad nim kursor myszy"
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -407,9 +401,7 @@ msgstr "_Dodaj nowy pasek narzędziowy"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr ""
-"Proszę przeciągnąć jeden z powyższych elementów na pasek narzędziowy aby go "
-"dodać, lub element z paska narzędziowego na listę elementów, aby go usunąć."
+msgstr "Proszę przeciągnąć jeden z powyższych elementów na pasek narzędziowy aby go dodać, lub element z paska narzędziowego na listę elementów, aby go usunąć."
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -546,12 +538,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. Wszelkie prawa zastrzeżone.\n"
-"\n"
-"Autor: Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
+msgstr "Copyright (c) %s\n        os-cillation e.K. Wszelkie prawa zastrzeżone.\n\nAutor: Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
 #: ../exo-open/main.c:500
@@ -562,12 +549,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr ""
-"Program %s jest rozprowadzany bez ŻADNYCH GWARANCJI.\n"
-"Kopie programu %s można rozprowadzać na warunkach Powszechnej\n"
-"Licencji Publicznej GNU Lesser, której treść można odnaleźć w\n"
-"pakiecie źródłowy %s.\n"
-"\n"
+msgstr "Program %s jest rozprowadzany bez ŻADNYCH GWARANCJI.\nKopie programu %s można rozprowadzać na warunkach Powszechnej\nLicencji Publicznej GNU Lesser, której treść można odnaleźć w\npakiecie źródłowy %s.\n\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
 #: ../exo-open/main.c:504
@@ -677,9 +659,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr ""
-"Powiadamia o uruchomieniu polecenia z menedżera plików lub menu. Nie każdy "
-"program jest obsługiwany."
+msgstr "Powiadamia o uruchomieniu polecenia z menedżera plików lub menu. Nie każdy program jest obsługiwany."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -843,7 +823,7 @@ msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Przeglądarka internetowa"
 
@@ -851,9 +831,7 @@ msgstr "Przeglądarka internetowa"
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr ""
-"Określa preferowany program używany do otwierania\n"
-"odnośników i wyświetlania zawartości pomocy."
+msgstr "Określa preferowany program używany do otwierania\nodnośników i wyświetlania zawartości pomocy."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -864,10 +842,7 @@ msgstr "Czytnik poczty"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr ""
-"Określa preferowany program pocztowy używany do\n"
-"tworzenia wiadomości e-mail, po kliknięciu w odnośnik\n"
-"adresu e-mail."
+msgstr "Określa preferowany program pocztowy używany do\ntworzenia wiadomości e-mail, po kliknięciu w odnośnik\nadresu e-mail."
 
 #. Utilities
 #. 
@@ -876,7 +851,7 @@ msgid "Utilities"
 msgstr "Narzędzia"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Menedżer plików"
 
@@ -884,9 +859,7 @@ msgstr "Menedżer plików"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr ""
-"Określa preferowany program do przeglądania\n"
-"zawartości systemów plików."
+msgstr "Określa preferowany program do przeglądania\nzawartości systemów plików."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -897,9 +870,7 @@ msgstr "Emulator terminala"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr ""
-"Określa preferowany program używany do uruchamiania\n"
-"poleceń, wymagających środowiska CLI."
+msgstr "Określa preferowany program używany do uruchamiania\npoleceń, wymagających środowiska CLI."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -955,33 +926,25 @@ msgstr "Wybór programu"
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
-msgstr ""
-"Proszę wybrać program, który będzie używany\n"
-"jako domyślna przeglądarka internetowa:"
+msgstr "Proszę wybrać program, który będzie używany\njako domyślna przeglądarka internetowa:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr ""
-"Proszę wybrać program, który będzie używany\n"
-"jako domyślny program pocztowy:"
+msgstr "Proszę wybrać program, który będzie używany\njako domyślny program pocztowy:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr ""
-"Proszę wybrać program, który będzie używany\n"
-"jako domyślny menedżer plików:"
+msgstr "Proszę wybrać program, który będzie używany\njako domyślny menedżer plików:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr ""
-"Proszę wybrać program, który będzie używany\n"
-"jako domyślny emulator terminala:"
+msgstr "Proszę wybrać program, który będzie używany\njako domyślny emulator terminala:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -1003,33 +966,25 @@ msgstr "Wybierz preferowany program"
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
-msgstr ""
-"Proszę wybrać preferowaną przeglądarkę\n"
-"internetową i kliknąć OK, aby kontynuować."
+msgstr "Proszę wybrać preferowaną przeglądarkę\ninternetową i kliknąć OK, aby kontynuować."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
-msgstr ""
-"Proszę wybrać preferowany program pocztowy\n"
-"i kliknąć OK, aby kontynuować."
+msgstr "Proszę wybrać preferowany program pocztowy\ni kliknąć OK, aby kontynuować."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr ""
-"Proszę wybrać preferowany menedżer plików\n"
-"i kliknąć OK, aby kontynuować."
+msgstr "Proszę wybrać preferowany menedżer plików\ni kliknąć OK, aby kontynuować."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
-msgstr ""
-"Proszę wybrać preferowany emulator\n"
-"terminala i kliknąć OK, aby kontynuować."
+msgstr "Proszę wybrać preferowany emulator\nterminala i kliknąć OK, aby kontynuować."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -1042,7 +997,8 @@ msgid "Failed to open %s for writing"
 msgstr "Nie udało się otworzyć pliku %s do zapisu"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
+msgid ""
+"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Wybiera domyślne programy dla różnych usług"
 
 #: ../exo-helper/main.c:41
@@ -1077,8 +1033,8 @@ msgstr "ID gniazda"
 
 #: ../exo-helper/main.c:73
 msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
+" one of the following values."
 msgstr "Uruchamia domyślny program określonego typu z opcjonalnymi parametrami"
 
 #: ../exo-helper/main.c:73
@@ -1093,12 +1049,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"Parametr --launch obsługuje następujące TYPY:\n"
-"\n"
-"  WebBrowser       - Preferowana przeglądarka internetowa,\n"
-"  MailReader       - Preferowany program pocztowy,\n"
-"  TerminalEmulator - Preferowany emulator terminala."
+msgstr "Parametr --launch obsługuje następujące TYPY:\n\n  WebBrowser       - Preferowana przeglądarka internetowa,\n  MailReader       - Preferowany program pocztowy,\n  TerminalEmulator - Preferowany emulator terminala."
 
 #: ../exo-helper/main.c:112
 #, c-format
@@ -1123,18 +1074,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr ""
-"%s (Xfce %s)\n"
-"\n"
-"Copyright (c) 2003-2006\n"
-"        os-cillation e.K. Wszelkie prawa zastrzeżone.\n"
-"\n"
-"Autor: Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-"Skompilowano przy użyciu Gtk+-%d.%d.%d, uruchomiono przy użyciu Gtk+-%d.%d."
-"%d.\n"
-"\n"
-"Proszę zgłaszać błędy na adres <%s>.\n"
+msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. Wszelkie prawa zastrzeżone.\n\nAutor: Benedikt Meurer <benny@xfce.org>.\n\nSkompilowano przy użyciu Gtk+-%d.%d.%d, uruchomiono przy użyciu Gtk+-%d.%d.%d.\n\nProszę zgłaszać błędy na adres <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1290,33 +1230,25 @@ msgstr "        exo-open --launch TYP [PARAMETR...]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
-msgstr ""
-"  -?, --help                          Wypisuje komunikat pomocy i kończy"
+msgstr "  -?, --help                          Wypisuje komunikat pomocy i kończy"
 
 #: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr ""
-"  -V, --version                       Wypisuje informacje o wersji i kończy"
+msgstr "  -V, --version                       Wypisuje informacje o wersji i kończy"
 
 #: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr ""
-"  --launch TYP [PARAMETR...]          Uruchamia preferowany program dla "
-"określonego typu z opcjonalnymi parametrami."
+msgstr "  --launch TYP [PARAMETR...]          Uruchamia preferowany program dla określonego typu z opcjonalnymi parametrami."
 
 #: ../exo-open/main.c:119
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr ""
-"  --working-directory KATALOG         Określa domyślny katalog roboczy "
-"programu używając opcji --launch"
+msgstr "  --working-directory KATALOG         Określa domyślny katalog roboczy programu używając opcji --launch"
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1332,10 +1264,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"  WebBrowser       - Preferowana przeglądarka internetowa,\n"
-"  MailReader       - Preferowany program pocztowy,\n"
-"  TerminalEmulator - Preferowany emulator terminala."
+msgstr "  WebBrowser       - Preferowana przeglądarka internetowa,\n  MailReader       - Preferowany program pocztowy,\n  TerminalEmulator - Preferowany emulator terminala."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1344,21 +1273,14 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
-"Jeśli opcja --launch nie zostanie użyta, program automatycznie otworzy "
-"wszystkie podane adresy URL za pomocą preferowanego programu.\n"
-"Użycie opcji --launch umożliwia wybór preferowanego programu i przekazanie "
-"mu dodatkowych parametrów (np. dla TerminalEmulator można podać polecenie, "
-"które ma zostać uruchomione wewnątrz terminala)."
+msgstr "Jeśli opcja --launch nie zostanie użyta, program automatycznie otworzy wszystkie podane adresy URL za pomocą preferowanego programu.\nUżycie opcji --launch umożliwia wybór preferowanego programu i przekazanie mu dodatkowych parametrów (np. dla TerminalEmulator można podać polecenie, które ma zostać uruchomione wewnątrz terminala)."
 
 #: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr ""
-"Uruchamianie plików na pulpicie nie jest wspierane jeśli %s jest "
-"skompilowany bez obsługi GIO-Unix."
+msgstr "Uruchamianie plików na pulpicie nie jest wspierane jeśli %s jest skompilowany bez obsługi GIO-Unix."
 
 #: ../exo-open/main.c:260
 #, c-format
@@ -1375,7 +1297,7 @@ msgstr "Nie można wykryć schematu adresu URI „%s”."
 msgid "Failed to open URI \"%s\"."
 msgstr "Nie udało się otworzyć adresu URI „%s”."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "Przegląda system plików i zarządza jego zawartością"
 
@@ -1387,224 +1309,6 @@ msgstr "Odbiera i wysyła pocztę elektroniczną"
 msgid "Use the command line"
 msgstr "Wprowadza i wykonuje wiersze poleceń"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "Przegląda zawartość sieci internetowej"
-
-#~ msgid "Failed to open the documentation browser."
-#~ msgstr "Nie udało się otworzyć przeglądarki dokumentacji."
-
-#~ msgid "External %s Drive"
-#~ msgstr "Zewnętrzny napęd %s"
-
-#~ msgid "%s Drive"
-#~ msgstr "Napęd %s"
-
-#~ msgid "External Floppy Drive"
-#~ msgstr "Zewnętrzna stacja dyskietek"
-
-#~ msgid "Floppy Drive"
-#~ msgstr "Stacja dyskietek"
-
-#~ msgid "Compact Flash Drive"
-#~ msgstr "Nośnik Flash"
-
-#~ msgid "Memory Stick Drive"
-#~ msgstr "Nośnik wymienny"
-
-#~ msgid "Smart Media Drive"
-#~ msgstr "Nośnik Smart Media"
-
-#~ msgid "SD/MMC Drive"
-#~ msgstr "Nośnik SD/MMC"
-
-#~ msgid "Zip Drive"
-#~ msgstr "Stacja ZIP"
-
-#~ msgid "Jaz Drive"
-#~ msgstr "Stacja Jaz"
-
-#~ msgid "Pen Drive"
-#~ msgstr "Pen Drive"
-
-#~ msgid "%s Music Player"
-#~ msgstr "Odtwarzacz muzyczny %s"
-
-#~ msgid "%s Digital Camera"
-#~ msgstr "Kamera cyfrowa %s"
-
-#~ msgid "Drive"
-#~ msgstr "Napęd"
-
-#~ msgid "Blank %s Disc"
-#~ msgstr "Pusta płyta %s"
-
-#~ msgid "%s Disc"
-#~ msgstr "Płyta %s"
-
-#~ msgid "Audio CD"
-#~ msgstr "Płyta Audio CD"
-
-#~ msgid "%s Removable Volume"
-#~ msgstr "Nośnik wymienny %s "
-
-#~ msgid "%s Volume"
-#~ msgstr "Wolumen %s"
-
-#~ msgid "Given device \"%s\" is not a volume or drive"
-#~ msgstr "Podane urządzenie „%s” nie jest wolumenem ani napędem"
-
-#~ msgid "Device \"%s\" not found in file system device table"
-#~ msgstr ""
-#~ "Urządzenie „%s” nie zostało znalezione w systemowej tablicy urządzeń"
-
-#~ msgid "You are not privileged to eject the volume \"%s\""
-#~ msgstr "Brak wystarczających uprawnień by wysunąć wolumen „%s”"
-
-#~ msgid "An application is preventing the volume \"%s\" from being ejected"
-#~ msgstr "Program uniemożliwia wysunięcie wolumenu „%s”"
-
-#~ msgid "You are not privileged to mount the volume \"%s\""
-#~ msgstr "Brak wystarczających uprawnień by zamontować nośnik „%s”"
-
-#~ msgid ""
-#~ "Blank discs cannot be mounted, use a CD recording application like Xfburn "
-#~ "to record audio or data on the disc"
-#~ msgstr ""
-#~ "Puste płyty nie są montowane. Płytę można nagrać przy użyciu programu "
-#~ "takiego jak Xfburn"
-
-#~ msgid ""
-#~ "Audio CDs cannot be mounted, use your favorite audio player to play the "
-#~ "audio tracks"
-#~ msgstr ""
-#~ "Płyty Audio nie są montowane. Płytę można odtworzyć przy użyciu użyć "
-#~ "programu takiego jak Xfmedia"
-
-#~ msgid "You are not privileged to teardown the crypto layer"
-#~ msgstr "Brak uprawnień by zniszczyć warstwę kryptograficzną"
-
-#~ msgid "An application is preventing the crypto layer from being torn down"
-#~ msgstr "Program uniemożliwia zniszczenie warstwy kryptograficznej"
-
-#~ msgid "You are not privileged to unmount the volume \"%s\""
-#~ msgstr "Brak wystarczających uprawnień by odmontować wolumen „%s”"
-
-#~ msgid "An application is preventing the volume \"%s\" from being unmounted"
-#~ msgstr "Program uniemożliwia odmontowanie wolumenu „%s”"
-
-#~ msgid "The volume \"%s\" was probably mounted manually on the command line"
-#~ msgstr ""
-#~ "Wolumen „%s” został prawdopodobnie ręcznie zamontowany za pomocą terminala"
-
-#~ msgid "Eject rather than mount"
-#~ msgstr "Preferuje wysuwanie zamiast odmontowywania"
-
-#~ msgid "Unmount rather than mount"
-#~ msgstr "Preferuje odmontowywanie zamiast montowania"
-
-#~ msgid "Mount by HAL device UDI"
-#~ msgstr "Montuje za pośrednictwem UDI urządzenia HAL"
-
-#~ msgid "Mount by HAL device UDI (not supported)"
-#~ msgstr "Montuje za pośrednictwem UDI urządzenia HAL (nie obsługiwane)"
-
-#~ msgid "Mount by device file"
-#~ msgstr "Montuje za pośrednictwem pliku urządzenia"
-
-#~ msgid "Don't show any dialogs"
-#~ msgstr "Nie wyświetla okien dialogowych"
-
-#~ msgid "Unknown error"
-#~ msgstr "Nieznany błąd"
-
-#~ msgid "Must specify HAL device UDI or device file"
-#~ msgstr "Należy określić UDI lub plik urządzenia HAL"
-
-#~ msgid ""
-#~ "Must not specify both a HAL device UDI and a device file simultaneously"
-#~ msgstr "Nie można podawać jednocześnie pliku urządzenia i jego HALowego UDI"
-
-#~ msgid ""
-#~ "Cannot mount by HAL device UDI, because HAL support was disabled for this "
-#~ "build"
-#~ msgstr ""
-#~ "Nie można zamontować poprzez UDI urządzenia HAL, ponieważ obsługa HAL "
-#~ "została wyłączona w tej kompilacji programu"
-
-#~ msgid "The specified UDI \"%s\" is not a valid HAL device UDI"
-#~ msgstr "Podany UDI „%s” nie jest prawidłowym UDI urządzenia HAL"
-
-#~ msgid "Cannot eject and unmount simultaneously"
-#~ msgstr "Nie można jednocześnie wysunąć i odmontować"
-
-#~ msgid "Failed to eject \"%s\""
-#~ msgstr "Nie udało się wysunąć „%s”."
-
-#~ msgid "Failed to unmount \"%s\""
-#~ msgstr "Nie udało się odmontować „%s”"
-
-#~ msgid "Failed to mount \"%s\""
-#~ msgstr "Nie udało się zamontować „%s”"
-
-#~ msgid "The device \"%s\" is now safe to remove."
-#~ msgstr "Urządzenie „%s” może zostać teraz bezpiecznie odłączone."
-
-#~ msgid "Device is now safe to remove"
-#~ msgstr "Urządzenie może zostać teraz bezpiecznie odłączone."
-
-#~ msgid "Ejecting device"
-#~ msgstr "Wysuwanie urządzenia"
-
-#~ msgid "The device \"%s\" is being ejected. This may take some time."
-#~ msgstr "Urządzenie „%s” jest wysuwane. To może chwilę potrwać."
-
-#~ msgid "Unmounting device"
-#~ msgstr "Odmontowywanie urządzenia"
-
-#~ msgid ""
-#~ "The device \"%s\" is being unmounted by the system. Please do not remove "
-#~ "the media or disconnect the drive."
-#~ msgstr ""
-#~ "Urządzenie „%s” jest odmontowywane z systemu. Proszę nie odłączać "
-#~ "urządzenia ani nie wyjmować nośnika."
-
-#~ msgid "Writing data to device"
-#~ msgstr "Zapisywanie danych na urządzeniu"
-
-#~ msgid ""
-#~ "There is data that needs to be written to the device \"%s\" before it can "
-#~ "be removed. Please do not remove the media or disconnect the drive."
-#~ msgstr ""
-#~ "Pewne dane muszą zostać zapisane na urządzeniu „%s” przed odłączeniem. "
-#~ "Proszę nie odłączać urządzenia ani nie wyjmować nośnika."
-
-#~ msgid "Unable to open \"%s\""
-#~ msgstr "Nie można otworzyć „%s”"
-
-#~ msgid "The URL \"%s\" is not supported"
-#~ msgstr "Adres URL „%s” nie jest obsługiwany"
-
-#~ msgid "Unknown helper arguments.\n"
-#~ msgstr "Nieznany argument.\n"
-
-#~ msgid "Xfce 4 Preferred Applications"
-#~ msgstr "Preferowane aplikacje Xfce 4"
-
-#~ msgid "Failed to launch exo-preferred-applications"
-#~ msgstr "Nie udało się uruchomić preferowanych aplikacji exo"
-
-#~ msgid "Button Label|Preferred Applications"
-#~ msgstr "Preferowane Aplikacje"
-
-#~ msgid "Sylpheed Claws"
-#~ msgstr "Sylpheed Claws"
-
-#~ msgid "Failed to open display: %s"
-#~ msgstr "Nie udało się otworzyć ekranu: %s."
-
-#~ msgid "Select an Icon"
-#~ msgstr "Wybierz ikonę"
-
-#~ msgid "Default Web Browser"
-#~ msgstr "Domyślna przeglądarka WWW"
