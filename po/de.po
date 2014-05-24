@@ -6,14 +6,15 @@
 # Jannis Pohlmann <jannis@xfce.org>, 2008
 # Nico Schümann <nico@prog.nico22.de>, 2007
 # Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2010
+# to_ba, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:55+0200\n"
-"PO-Revision-Date: 2013-11-19 14:58+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/xfce/language/de/)\n"
+"PO-Revision-Date: 2014-05-24 15:23+0000\n"
+"Last-Translator: to_ba\n"
+"Language-Team: German (http://www.transifex.com/projects/p/exo/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -141,7 +142,7 @@ msgstr "Textfarbe des Elements unter dem Zeiger"
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Action Icons"
-msgstr "Aktionen"
+msgstr "Aktionssymbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:111
@@ -151,17 +152,17 @@ msgstr "Animationen"
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Application Icons"
-msgstr "Anwendungen"
+msgstr "Anwendungssymbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Menu Icons"
-msgstr "Menüs"
+msgstr "Menüsymbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
 #: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Device Icons"
-msgstr "Geräte"
+msgstr "Gerätesymbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:119
@@ -181,22 +182,22 @@ msgstr "International"
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:125
 msgid "File Type Icons"
-msgstr "Dateitypen"
+msgstr "Dateitypensymbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
 #: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Location Icons"
-msgstr "Orte"
+msgstr "Ortsymbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:129
 msgid "Status Icons"
-msgstr "Status"
+msgstr "Statussymbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:131
 msgid "Uncategorized Icons"
-msgstr "Diverse"
+msgstr "nicht kategorisierte Symbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:135
@@ -216,7 +217,7 @@ msgstr "_Symbol wählen aus:"
 #. search filter
 #: ../exo/exo-icon-chooser-dialog.c:225
 msgid "_Search icon:"
-msgstr "_Suchspalte"
+msgstr "_Suchsymbol"
 
 #: ../exo/exo-icon-chooser-dialog.c:236
 msgid "Clear search field"
@@ -437,7 +438,7 @@ msgstr "Werkzeugleiste _entfernen"
 
 #: ../exo/exo-toolbars-view.c:818
 msgid "Customize Toolbar..."
-msgstr "Werkzeugleiste anpassen..."
+msgstr "Werkzeugleiste anpassen …"
 
 #: ../exo/exo-wrap-table.c:148
 msgid "Column spacing"
@@ -487,7 +488,7 @@ msgstr "Aufruf: %s [Optionen] [Datei]\n"
 #: ../exo-csource/main.c:285
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [Optionen] --build-list [[Name Datei]...]\n"
+msgstr "       %s [Optionen] --build-list [[Name Datei] …]\n"
 
 #: ../exo-csource/main.c:287
 #, c-format
@@ -649,7 +650,6 @@ msgstr "Optionen:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "_Visuelle Rückmeldung über den Programmstart"
@@ -659,13 +659,12 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Wählen Sie diese Option, um eine Rückmeldung zu erhalten, wenn die Anwendung aus dem Dateimanager oder dem Menü heraus gestartet wird. Nicht jede Anwendung unterstützt dies."
+msgstr "Diese Option auswählen, um eine Startbenachrichtigungen zu erhalten, wenn die Anwendung aus der Dateiverwaltung oder dem Menü heraus gestartet wird. Nicht jede Anwendung unterstützt Startbenachrichtigungen."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Im _Terminal ausführen"
@@ -817,7 +816,6 @@ msgid "Select default applications for various services"
 msgstr "Definieren Sie Standardanwendungen für bestimmte Zwecke"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
@@ -845,7 +843,6 @@ msgid ""
 msgstr "Das E-Mail-Programm wird verwendet, um E-Mails zu verfassen, wenn\nSie zum Beispiel auf eine E-Mail-Adresse klicken."
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Werkzeuge"
@@ -853,13 +850,13 @@ msgstr "Werkzeuge"
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
-msgstr "Dateimanager"
+msgstr "Dateiverwaltung"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:226
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr "Der bevorzugte Dateimanager wird verwendet, um den Inhalt des Ordners darzustellen."
+msgstr "Die bevorzugte Dateiverwaltung wird verwendet, um den Inhalt des Ordners darzustellen."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -895,7 +892,7 @@ msgstr "Konnte das bevorzugte E-Mail-Programm nicht festlegen"
 
 #: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
-msgstr "Konnte den bevorzugten Dateimanager nicht festlegen"
+msgstr "Die vorgegebene Dateiverwaltung konnte nicht festgelegt werden"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
@@ -916,7 +913,7 @@ msgstr "Eigenes E-Mail-Programm angeben"
 
 #: ../exo-helper/exo-helper-chooser.c:503
 msgid "Choose a custom File Manager"
-msgstr "Eigenen Dateimanager angeben"
+msgstr "Benutzerdefinierte Dateiverwaltung auswählen"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
@@ -938,7 +935,7 @@ msgstr "Geben Sie die Anwendung an, die Sie als\nbevorzugtes E-Mail-Programm ver
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr "Geben Sie die Anwendung an, die Sie als\nbevorzugten Dateimanager verwenden wollen:"
+msgstr "Die Anwendung angeben, die Sie als\nvorgegebene Dateiverwaltung verwenden wollen:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
@@ -952,7 +949,7 @@ msgstr "Das Dateisystem durchsuchen, um einen eigenen Befehl zu wählen"
 
 #: ../exo-helper/exo-helper-chooser.c:762
 msgid "_Other..."
-msgstr "_Andere..."
+msgstr "_Andere …"
 
 #: ../exo-helper/exo-helper-chooser.c:763
 msgid "Use a custom application which is not included in the above list."
@@ -978,7 +975,7 @@ msgstr "Bitte wählen Sie Ihr bevorzugtes E-Mail-Programm\naus und klicken Sie a
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr "Bitte wählen Sie jetzt Ihren bevorzugten Dateimanager\naus und klicken Sie auf OK um fortzufahren."
+msgstr "Bitte wählen Sie jetzt Ihre bevorzugte Dateiverwaltung\naus und klicken Sie auf OK, um fortzufahren."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
@@ -1011,7 +1008,7 @@ msgstr "Konnte das bevorzugte E-Mail-Programm nicht ausführen"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default File Manager"
-msgstr "Konnte den bevorzugten Dateimanager nicht ausführen"
+msgstr "Die vorgegebene Dateiverwaltung konnte nicht gestartet werden"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
@@ -1049,7 +1046,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Die folgenden TYPen werden für den Befehl »--launch« unterstützt:\n  WebBrowser - Der bevorzugte Webbrowser.\n  MailReader - Das bevorzugte E-Mail-Programm.\n FileManager - Der bevorzugte Dateimanager.\n  TerminalEmulator - Das bevorzugte Terminal."
+msgstr "Die folgenden Typen unterstützen den »--launch«-Befehl:\n\nWebBrowser - Der bevorzugte Internetbrowser.\nMailReader - Das bevorzugte E-Mail-Programm.\nFileManager - Die bevorzugte Dateiverwaltung.\nTerminalEmulator - Das bevorzugte Terminal."
 
 #: ../exo-helper/main.c:112
 #, c-format
@@ -1194,7 +1191,7 @@ msgstr "Opera Mail"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr "Dateimanager PCMan"
+msgstr "PCMan-Dateiverwaltung"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
@@ -1222,11 +1219,11 @@ msgstr "X-Terminal"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
-msgstr "Aufruf: exo-open [URLs...]"
+msgstr "Aufruf: exo-open [Adressen …]"
 
 #: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr "        exo-open --launch TYP [PARAMETER...]"
+msgstr "        exo-open --launch TYP [PARAMETER …]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
@@ -1242,7 +1239,7 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch TYP [PARAMETER...]         Die bevorzugte Anwendung für den TYP\n                                      mit den optionalen PARAMETERn starten,\n                                      wobei TYP einen der folgenden Werte\n                                      annehmen kann."
+msgstr "  --launch TYP [PARAMETER …]         Die bevorzugte Anwendung für den TYP\n                                      mit den optionalen PARAMETERn starten,\n                                      wobei TYP einen der folgenden Werte\n                                      annehmen kann."
 
 #: ../exo-open/main.c:119
 msgid ""
@@ -1257,14 +1254,13 @@ msgstr "Die folgenden TYPen für --launch werden derzeit unterstützt:"
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser - Der bevorzugte Webbrowser.\n  MailReader - Das bevorzugte E-Mail-Programm.\n Dateimanager - Der bevorzugte Dateimanager.\n TerminalEmulator - Das bevorzugte Terminal."
+msgstr "WebBrowser - Der bevorzugte Internetbrowser.\nMailReader - Das bevorzugte E-Mail-Programm.\nFileManager - Die bevorzugte Dateiverwaltung.\nTerminalEmulator - Das bevorzugte Terminal."
 
 #: ../exo-open/main.c:133
 msgid ""
