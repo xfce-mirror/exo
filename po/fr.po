@@ -4,16 +4,20 @@
 # 
 # Translators:
 # Douart Patrick <patrick.2@laposte.net>, 2009
+# Guillaume Bernard <filorin@laposte.net>, 2014
 # jc1 <jc1>, 2012
+# jc1 <jc1.quebecos@gmail.com>, 2013
+# jc1 <jc1.quebecos@gmail.com>, 2013
 # Jérôme Guelfucci <jeromeg@xfce.org>, 2009
+# Yannick Le Guen <leguen.yannick@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:30+0200\n"
-"PO-Revision-Date: 2013-08-01 16:01+0000\n"
-"Last-Translator: jc1 <jc1.quebecos@gmail.com>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/xfce/language/fr/)\n"
+"PO-Revision-Date: 2014-07-02 09:05+0000\n"
+"Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/exo/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -88,7 +92,7 @@ msgstr "Colonne pour les pixbuf"
 
 #: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Colonne du model où prendre les pixbuf"
+msgstr "Colonne du modèle utilisé pour récupérer l'icône de pixbuf de"
 
 #: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
 msgid "Text column"
@@ -96,7 +100,7 @@ msgstr "Colonne pour le texte"
 
 #: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
 msgid "Model column used to retrieve the text from"
-msgstr "Colonne du model où prendre le texte"
+msgstr "Colonne du modèle utilisé pour récupérer le texte de"
 
 #: ../exo/exo-icon-bar.c:323
 msgid "Icon Bar Model"
@@ -171,7 +175,7 @@ msgstr "Emblèmes"
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Emoticons"
-msgstr "Emoticônes"
+msgstr "Émoticônes"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:123
@@ -276,7 +280,7 @@ msgstr "Colonne pour le balisage"
 
 #: ../exo/exo-icon-view.c:778
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Colonne du model où prendre le texte, dans le cas où le balisage Pango est utilisé."
+msgstr "Colonne du modèle utilisé pour récupérer le texte si vous utilisez le balisage Pango"
 
 #: ../exo/exo-icon-view.c:792
 msgid "Icon View Model"
@@ -313,7 +317,7 @@ msgstr "Colonne de recherche"
 
 #: ../exo/exo-icon-view.c:871
 msgid "Model column to search through when searching through item"
-msgstr "Colonne du model où effectuer la recherche quand un élément est recherché"
+msgstr "Colonne du modèle où effectuer la recherche quand un élément est recherché"
 
 #: ../exo/exo-icon-view.c:885
 msgid "Selection mode"
@@ -329,7 +333,7 @@ msgstr "Simple clic"
 
 #: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
-msgstr "Si les éléments dans la zone peuvent être activés ou non avec un simple clic"
+msgstr "Si les éléments dans la zone peuvent être activés ou non avec des simples clics"
 
 #: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
@@ -539,7 +543,7 @@ msgstr "%s est distribué SANS AUCUNE GARANTIE,\nvous pouvez redistribuer des co
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "Veuillez signaler tout bogue sur <%s>.\n"
+msgstr "Veuillez signaler les bogues à <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:255
@@ -633,7 +637,6 @@ msgstr "Options :"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Utili_ser la notification de démarrage"
@@ -643,20 +646,19 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Sélectionner cette option pour activer la notification au démarrage lorsque la commande est exécutée depuis le gestionnaire de fichiers ou le menu. La notification au démarrage n'est pas utilisable avec toutes les applications."
+msgstr "Sélectionner cette option pour activer la notification au démarrage lorsque la commande est exécutée depuis le gestionnaire de fichiers ou le menu. Toutes les applications ne prennent pas en charge la notification au démarrage."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
-msgstr "Exécuter dans _terminal"
+msgstr "Exécuter dans un _terminal"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
-msgstr "Sélectionner cette option pour exécuter la commande dans une fenêtre d'un terminal."
+msgstr "Sélectionner cette option pour exécuter la commande dans une fenêtre de terminal."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:590
@@ -666,11 +668,11 @@ msgstr "Sélectionner une icône"
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:637
 msgid "Select a working directory"
-msgstr "Sélectionnez un répertoire de travail"
+msgstr "Sélectionner un répertoire de travail"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
-msgstr "L' emplacement du fichier n'est pas un fichier ou répertoire normal"
+msgstr "L'emplacement du fichier n'est pas un fichier ou répertoire normal"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:52
@@ -699,19 +701,19 @@ msgstr "Éditer un répertoire"
 
 #: ../exo-desktop-item-edit/main.c:78
 msgid "Create a new desktop file in the given directory"
-msgstr "Créer un nouveau fichier Desktop dans le dossier spécifié"
+msgstr "Créer un nouveau fichier du bureau dans le dossier spécifié"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Type du fichier Desktop à créer (Application ou lien)"
+msgstr "Type du fichier du bureau à créer (Application ou lien)"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Preset name when creating a desktop file"
-msgstr "Nom par défaut à la création d'un fichier Desktop"
+msgstr "Nom par défaut à la création d'un fichier du bureau"
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Preset comment when creating a desktop file"
-msgstr "Commentaire par défaut à la création d'un fichier Desktop"
+msgstr "Commentaire par défaut à la création d'un fichier du bureau"
 
 #: ../exo-desktop-item-edit/main.c:82
 msgid "Preset command when creating a launcher"
@@ -723,7 +725,7 @@ msgstr "URL par défaut à la création d'un lien"
 
 #: ../exo-desktop-item-edit/main.c:84
 msgid "Preset icon when creating a desktop file"
-msgstr "Icône par défaut à la création d'un fichier Desktop"
+msgstr "Icône par défaut à la création d'un fichier du bureau"
 
 #: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
@@ -741,7 +743,7 @@ msgstr "Impossible d'ouvrir l'affichage"
 
 #: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
-msgstr "Aucun fichier/dossier n'a été précisé"
+msgstr "Aucun fichier/dossier spécifié"
 
 #: ../exo-desktop-item-edit/main.c:276
 #, c-format
@@ -751,7 +753,7 @@ msgstr "Impossible d'ouvrir le fichier « %s » : %s"
 #: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr "Le fichier « %s » ne contient aucune données"
+msgstr "Le fichier « %s » ne contient aucune donnée"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:294
@@ -769,7 +771,7 @@ msgstr "Le fichier « %s »  n'a pas de clé type"
 #: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Type de fichier Desktop non pris en charge : « %s »"
+msgstr "Type de fichier du bureau non pris en charge : « %s »"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:340
@@ -801,7 +803,6 @@ msgid "Select default applications for various services"
 msgstr "Sélectionner les applications par défaut pour différents services"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "_Internet"
 msgstr "_Internet"
@@ -815,7 +816,7 @@ msgstr "Navigateur Web"
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr "Le navigateur Web favori sera utilisé pour ouvrir les liens\nhypertexte et afficher l'aide."
+msgstr "Le navigateur Web favori sera utilisé pour ouvrir\nles liens hypertextes et afficher l'aide."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -826,10 +827,9 @@ msgstr "Client de messagerie"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr "Le client de messagerie favori sera utilisé pour composer des courriels\nquand vous cliquez sur une adresse électronique."
+msgstr "Le client de messagerie favori sera utilisé pour composer \ndes courriels quand vous cliquez sur une adresse électronique."
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "_Utilities"
 msgstr "_Utilitaires"
@@ -843,7 +843,7 @@ msgstr "Gestionnaire de fichiers"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr "Le Gestionnaire de fichiers favori sera utilisé pour\nhypertexte et afficher l'aide."
+msgstr "Le gestionnaire de fichiers favori sera utilisé pour\nparcourir le contenu des dossiers."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -871,19 +871,19 @@ msgstr "Aucune application n'est sélectionnée"
 
 #: ../exo-helper/exo-helper-chooser.c:315
 msgid "Failed to set default Web Browser"
-msgstr "Impossible de régler le navigateur Web par défaut"
+msgstr "Impossible de définir le navigateur Web par défaut"
 
 #: ../exo-helper/exo-helper-chooser.c:316
 msgid "Failed to set default Mail Reader"
-msgstr "Impossible de régler le client de messagerie par défaut"
+msgstr "Impossible de définir le client de messagerie par défaut"
 
 #: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
-msgstr "Impossible de sélectionner le Gestionnaire de fichiers par défault"
+msgstr "Impossible de définir le gestionnaire de fichiers par défaut"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
-msgstr "Impossible de régler l'émulateur de terminal par défaut"
+msgstr "Impossible de définir l'émulateur de terminal par défaut"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:388
@@ -900,7 +900,7 @@ msgstr "Choisir un client de messagerie personnalisé"
 
 #: ../exo-helper/exo-helper-chooser.c:503
 msgid "Choose a custom File Manager"
-msgstr "Choisir un Gestionnaire de fichiers personnalisé"
+msgstr "Choisir un gestionnaire de fichiers personnalisé"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
@@ -940,7 +940,7 @@ msgstr "_Autre..."
 
 #: ../exo-helper/exo-helper-chooser.c:763
 msgid "Use a custom application which is not included in the above list."
-msgstr "Utiliser une application personnalisée qui n'est pas inclue ci-dessus."
+msgstr "Utiliser une application personnalisée qui n'est pas incluse ci-dessus."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:113
 msgid "Choose Preferred Application"
@@ -962,7 +962,7 @@ msgstr "Veuillez choisir votre client de messagerie\nfavori et cliquer sur OK po
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr "Veuillez choisir votre Gestionnaire de fichiers préféré\nfavori et cliquer sur OK pour valider."
+msgstr "Veuillez choisir votre gestionnaire de fichiers\nfavori et cliquer sur OK pour valider."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
@@ -973,7 +973,7 @@ msgstr "Veuillez choisir votre émulateur de terminal\nfavori et cliquer sur OK 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
 msgid "No command specified"
-msgstr "Aucune commande n'a été précisée"
+msgstr "Aucune commande spécifiée"
 
 #: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
@@ -995,7 +995,7 @@ msgstr "Impossible de lancer le client de messagerie par défaut"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default File Manager"
-msgstr "Impossible de lancer le Gestionnaire de fichiers par défaut"
+msgstr "Impossible de lancer le gestionnaire de fichiers par défaut"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
@@ -1019,7 +1019,7 @@ msgstr "ID SOCKET"
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
-msgstr "Lancer l'application par défaut pour TYPE  avec les PARAMETRES optionnels, TYPE pouvant être l'une des valeurs suivantes."
+msgstr "Lancer l'assistant par défaut pour TYPE  avec les PARAMÈTRES optionnels, TYPE pouvant être l'une des valeurs suivantes."
 
 #: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
@@ -1043,7 +1043,7 @@ msgstr "Saisissez '%s --help' pour afficher l'aide."
 #: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Type d'application incorrect « %s »"
+msgstr "Type d'assistant incorrect « %s »"
 
 #: ../exo-helper/main.c:213
 #, c-format
@@ -1058,7 +1058,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. Tous droits réservés.\n\nÉcrit par Benedikt Meurer <benny@xfce.org>.\n\nCompilé avec Gtk+-%d.%d.%d, exécutant Gtk+-%d.%d.%d.\n\nVeuillez signaler les bogues à <%s>.\n"
+msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. Tous droits réservés.\n\nÉcrit par Benedikt Meurer <benny@xfce.org>.\n\nCompilé avec Gtk+-%d.%d.%d, exécutant Gtk+-%d.%d.%d.\n\nVeuillez signaler les bogues à <%s>.\n\n"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1158,7 +1158,7 @@ msgstr "Navigateur Mozilla"
 
 #: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
 msgid "Mozilla Mail"
-msgstr "Mozilla Mail"
+msgstr "Mail Mozilla"
 
 #: ../exo-helper/helpers/mutt.desktop.in.in.h:1
 msgid "Mutt"
@@ -1182,11 +1182,11 @@ msgstr "Navigateur Opera"
 
 #: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
 msgid "Opera Mail"
-msgstr "Opera Mail"
+msgstr "Mail Opera"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr "PCMan Gestionnaire de fichiers"
+msgstr "Gestionnaire de fichiers PCMan"
 
 #: ../exo-helper/helpers/rodent.desktop.in.in.h:1
 msgid "Rodent File Manager"
@@ -1206,7 +1206,7 @@ msgstr "Sylpheed"
 
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
-msgstr "Claws Mail"
+msgstr "Mail Claws"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
@@ -1273,7 +1273,6 @@ msgstr "Les TYPEs suivants sont pris en charge par la commande --launch :"
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1289,7 +1288,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr "Si vous ne spécifiez pas l'option --launch, exo-open ouvrira toutes les URLs\nspécifiées avec leur lanceurs d'URL favori. Sinon, si vous spécifiez l'option\n--launch, vous pouvez sélectionner avec quelle application favorite vous\nvoulez les lancer, et passer des paramètres additionnels à cette application\n(ie. pour TerminalEmulator vous pouvez passer la ligne de commande qui\ndevrait être exécutée dans le Terminal)."
+msgstr "Si vous ne spécifiez pas l'option --launch, exo-open ouvrira toutes les URL\nspécifiées avec leur lanceur d'URL favori. Sinon, si vous spécifiez l'option\n--launch, vous pouvez sélectionner avec quelle application favorite vous\nvoulez les lancer, et passer des paramètres additionnels à cette application\n(ie. pour l'émulateur de terminal vous pouvez passer la ligne de commande qui\ndevrait être exécutée dans le Terminal)."
 
 #: ../exo-open/main.c:195
 #, c-format
@@ -1306,12 +1305,12 @@ msgstr "Impossible de lancer l'application favorite pour la catégorie « %s �
 #: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "Impossible de détecter le schéma URL de « %s »."
+msgstr "Impossible de détecter le schéma URI de « %s »."
 
 #: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Impossible d'ouvrir l'URL « %s »."
+msgstr "Impossible d'ouvrir l'URI « %s »."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
