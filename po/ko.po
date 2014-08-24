@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Darkcircle <darkcircle.0426@gmail.com>, 2013-2014
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:30+0200\n"
-"PO-Revision-Date: 2014-04-12 04:27+0000\n"
-"Last-Translator: Darkcircle <darkcircle.0426@gmail.com>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/xfce/language/ko/)\n"
+"PO-Revision-Date: 2014-08-24 09:47+0000\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/exo/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -50,7 +50,7 @@ msgstr "크기"
 
 #: ../exo/exo-cell-renderer-icon.c:208
 msgid "The size of the icon to render in pixels."
-msgstr "표시할 아이폰의 픽셀단위 크기입니다."
+msgstr "표시할 아이콘의 픽셀 단위 크기입니다."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
@@ -86,15 +86,15 @@ msgstr "픽셀버퍼 내용"
 
 #: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "아이콘 픽셀 버퍼 검색에 사용할 모델 내용"
+msgstr "아이콘 픽셀 버퍼 검색에 사용할 모델 컬럼 수"
 
 #: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
 msgid "Text column"
-msgstr "텍스트 내용"
+msgstr "텍스트 컬럼"
 
 #: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
 msgid "Model column used to retrieve the text from"
-msgstr "텍스트를 검색하려 사용할 모델 내용 입니다"
+msgstr "텍스트를 검색하려 사용할 모델 컬럼 수 입니다"
 
 #: ../exo/exo-icon-bar.c:323
 msgid "Icon Bar Model"
@@ -102,7 +102,7 @@ msgstr "아이콘 바 모델"
 
 #: ../exo/exo-icon-bar.c:324
 msgid "Model for the icon bar"
-msgstr "아이콘 바를 위한 모델"
+msgstr "아이콘 표시줄 모델"
 
 #: ../exo/exo-icon-bar.c:340
 msgid "Active"
@@ -520,7 +520,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr "Copyright (c) %s\n        os-cillation e.K. All rights reserved.\n\nBenedikt Meurer<benny@xfce.org>가 작성하였습니다.\n\n"
+msgstr "Copyright (c) %s\n        os-cillation e.K. All rights reserved.\n\nBenedikt Meurer<benny@xfce.org>가 작성했습니다.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
@@ -1052,7 +1052,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. All rights reserved.\n\nBenedikt Meurer가 작성함 <benny@xfce.org>.\n\nGtk+-%d.%d.%d(으)로 빌드하였고, Gtk+-%d.%d.%d에서 실행중입니다.\n\n<%s>(으)로 버그를 알려주십시오.\n"
+msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\nos-cillation e.K. All rights reserved.\n\nBenedikt Meurer가 작성함 <benny@xfce.org>.\n\nGtk+-%d.%d.%d(으)로 빌드했고, Gtk+-%d.%d.%d에서 실행중입니다.\n\n<%s>(으)로 버그를 알려주십시오.\n"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1282,7 +1282,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr "--launch 옵션을 정의하지 않았다면, exo-open은 지정된 URL 핸들러에 따른 모든\n정의된 URL을 열 것입니다. 반면에 --launch 옵션을 정의하였다면, 실행을 원하는\n기본 프로그램을 선택할 수 있으며, 프로그램에 추가적 인자를 전달할 수 있습니다\n(예. 터미널 에뮬레이터에 대해 터미널에서 실행할 명령줄을 전달할 수 있습니다).\n "
+msgstr "--launch 옵션을 정의하지 않았다면, exo-open은 지정된 URL 핸들러에 따른 모든\n정의된 URL을 엽니다. 반면에 --launch 옵션을 정의했다면, 실행을 원하는\n기본 프로그램을 선택할 수 있으며, 프로그램에 추가적 인자를 전달할 수 있습니다\n(예. 터미널 에뮬레이터에 대해 터미널에서 실행할 명령줄을 전달할 수 있습니다).\n "
 
 #: ../exo-open/main.c:195
 #, c-format
