@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:55+0200\n"
-"PO-Revision-Date: 2014-09-11 16:25+0000\n"
+"PO-Revision-Date: 2014-09-11 22:09+0000\n"
 "Last-Translator: Tobias Bannert\n"
 "Language-Team: German (http://www.transifex.com/projects/p/exo/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -752,7 +752,7 @@ msgstr "[DATEI|ORDNER]"
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:181
 msgid "Failed to open display"
-msgstr "Konnte Anzeige nicht öffnen"
+msgstr "Anzeige konnte nicht geöffnet werden"
 
 #: ../exo-desktop-item-edit/main.c:208
 msgid "No file/folder specified"
@@ -761,7 +761,7 @@ msgstr "Keine Datei bzw. kein Ordner angegeben"
 #: ../exo-desktop-item-edit/main.c:274
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Konnte den Inhalt aus »%s« nicht laden: %s"
+msgstr "Der Inhalt aus »%s« konnte nicht geladen werden: %s"
 
 #: ../exo-desktop-item-edit/main.c:279
 #, c-format
@@ -772,13 +772,13 @@ msgstr "Die Datei »%s« enthält keine Daten"
 #: ../exo-desktop-item-edit/main.c:292
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Konnte die Datei »%s« nicht parsen: %s"
+msgstr "Die Datei »%s« konnte nicht analysiert werden: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:304
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr "Die Datei »%s« hat keinen Schlüssel für den Typ"
+msgstr "Die Datei »%s« hat keinen Typschlüssel"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:314
@@ -799,12 +799,12 @@ msgstr "Dateinamen eingeben"
 #: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Konnte »%s« nicht erstellen."
+msgstr "»%s« konnte nicht erstellt werden."
 
 #: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Konnte »%s« nicht speichern."
+msgstr "»%s« konnte nicht gespeichert werden."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -823,13 +823,13 @@ msgstr "Internet"
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
-msgstr "Webbrowser"
+msgstr "Internetnavigator"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:153
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr "Der Webbrowser wird verwendet, um Links und Hilfeseiten zu öffnen."
+msgstr "Der Internetnavigator wird verwendet, um Verweise und Hilfeseiten zu öffnen."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -840,7 +840,7 @@ msgstr "E-Mail-Programm"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr "Das E-Mail-Programm wird verwendet, um E-Mails zu verfassen, wenn\nSie zum Beispiel auf eine E-Mail-Adresse klicken."
+msgstr "Das E-Mail-Programm wird verwendet, um E-Mails zu verfassen,\nwenn Sie auf eine E-Mail-Adresse klicken."
 
 #. Utilities
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
@@ -867,12 +867,12 @@ msgstr "Terminal"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr "Das Terminal wird verwendet, um Befehle auszuführen, die\neine Kommandozeilenumgebung benötigen."
+msgstr "Das Terminal wird verwendet, um Befehle auszuführen,\ndie eine Kommandozeilenumgebung benötigen."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
 msgid "Press left mouse button to change the selected application."
-msgstr "Drücken Sie die linke Maustaste, um eine andere Anwendung auszuwählen."
+msgstr "Die linke Maustaste drücken, um eine andere Anwendung auszuwählen."
 
 #: ../exo-helper/exo-helper-chooser.c:155
 msgid "Application Chooser Button"
@@ -884,19 +884,19 @@ msgstr "Keine Anwendung ausgewählt"
 
 #: ../exo-helper/exo-helper-chooser.c:315
 msgid "Failed to set default Web Browser"
-msgstr "Konnte den bevorzugten Webbrowser nicht festlegen"
+msgstr "Der bevorzugten Internetnavigator konnte nicht eingestellt werden"
 
 #: ../exo-helper/exo-helper-chooser.c:316
 msgid "Failed to set default Mail Reader"
-msgstr "Konnte das bevorzugte E-Mail-Programm nicht festlegen"
+msgstr "Das vorgegebene E-Mail-Programm konnte nicht eingestellt werden"
 
 #: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
-msgstr "Die vorgegebene Dateiverwaltung konnte nicht festgelegt werden"
+msgstr "Die vorgegebene Dateiverwaltung konnte nicht eingestellt werden"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
-msgstr "Konnte das bevorzugte Terminal nicht festlegen"
+msgstr "Das vorgegebene Terminal konnte nicht eingestellt werden"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:388
@@ -905,11 +905,11 @@ msgstr "Anwendung auswählen"
 
 #: ../exo-helper/exo-helper-chooser.c:501
 msgid "Choose a custom Web Browser"
-msgstr "Eigenen Webbrowser angeben"
+msgstr "Benutzerdefinierten Internetnavigator auswählen"
 
 #: ../exo-helper/exo-helper-chooser.c:502
 msgid "Choose a custom Mail Reader"
-msgstr "Eigenes E-Mail-Programm angeben"
+msgstr "Benutzerdefiniertes E-Mail-Programm auswählen"
 
 #: ../exo-helper/exo-helper-chooser.c:503
 msgid "Choose a custom File Manager"
@@ -917,31 +917,31 @@ msgstr "Benutzerdefinierte Dateiverwaltung auswählen"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
-msgstr "Eigenes Terminal angeben"
+msgstr "Benutzerdefiniertes Terminal auswählen"
 
 #: ../exo-helper/exo-helper-chooser.c:509
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
-msgstr "Geben Sie die Anwendung an, die Sie als\nbevorzugten Webbrowser verwenden wollen:"
+msgstr "Bitte die Anwendung angeben, die Sie als\nvorgegebenen Internetnavigator verwenden wollen:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr "Geben Sie die Anwendung an, die Sie als\nbevorzugtes E-Mail-Programm verwenden\nwollen:"
+msgstr "Bitte die Anwendung angeben, die Sie als\nvorgegebenes E-Mail-Programm verwenden wollen:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr "Die Anwendung angeben, die Sie als\nvorgegebene Dateiverwaltung verwenden wollen:"
+msgstr "Bitte die Anwendung angeben, die Sie als\nvorgegebene Dateiverwaltung verwenden wollen:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr "Geben Sie die Anwendung an, die Sie als\nbevorzugtes Terminal verwenden wollen:"
+msgstr "Bitte die Anwendung angeben, die Sie als\nvorgegebenes Terminal verwenden wollen:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -963,25 +963,25 @@ msgstr "Bevorzugte Anwendung wählen"
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
-msgstr "Bitte wählen Sie Ihren bevorzugten Webbrowser\naus und klicken Sie auf OK um fortzufahren."
+msgstr "Bitte Ihren bevorzugten Internetnavigator\nauswählen und auf OK klicken, um fortzufahren."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
-msgstr "Bitte wählen Sie Ihr bevorzugtes E-Mail-Programm\naus und klicken Sie auf OK um fortzufahren."
+msgstr "Bitte Ihr bevorzugtes E-Mail-Programm\nauswählen und auf OK klicken, um fortzufahren."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr "Bitte wählen Sie jetzt Ihre bevorzugte Dateiverwaltung\naus und klicken Sie auf OK, um fortzufahren."
+msgstr "Bitte Ihre bevorzugte Dateiverwaltung\nauswählen und auf OK klicken, um fortzufahren."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
-msgstr "Bitte wählen Sie Ihr bevorzugtes Terminal aus\nund klicken Sie auf OK um fortzufahren."
+msgstr "Bitte Ihr bevorzugtes Terminal\nauswählen und auf OK klicken, um fortzufahren."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -991,20 +991,20 @@ msgstr "Kein Befehl angegeben"
 #: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
-msgstr "Konnte »%s« nicht zum Schreiben öffnen"
+msgstr "»%s« konnte nicht zum Schreiben geöffnet werden"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid ""
 "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Bevorzugte Anwendungen (Webbrowser, E-Mail-Programm und Terminal)"
+msgstr "Bevorzugte Anwendungen (Internetnavigator, E-Mail-Programm und Terminal)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
-msgstr "Konnte den bevorzugten Webbrowser nicht ausführen"
+msgstr "Der vorgegebene Internetnavigator konnte nicht gestartet werden"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Mail Reader"
-msgstr "Konnte das bevorzugte E-Mail-Programm nicht ausführen"
+msgstr "Das vorgegebene E-Mail-Programm konnte nicht gestartet werden"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default File Manager"
@@ -1012,7 +1012,7 @@ msgstr "Die vorgegebene Dateiverwaltung konnte nicht gestartet werden"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
-msgstr "Konnte das bevorzugte Terminal nicht ausführen"
+msgstr "Das vorgegebene Terminal konnte nicht gestartet werden"
 
 #: ../exo-helper/main.c:71
 msgid ""
@@ -1051,7 +1051,7 @@ msgstr "Die folgenden Typen unterstützen den »--launch«-Befehl:\n\nWebBrowser
 #: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr "Geben Sie »%s --help« ein, um Hilfe zum Aufruf des Programms zu erhalten."
+msgstr "»%s --help« eingeben, um Hilfe zum Aufruf des Programms zu erhalten."
 
 #: ../exo-helper/main.c:165
 #, c-format
@@ -1071,7 +1071,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. Alle Rechte vorbehalten.\n\nEntwickelt von Benedikt Meurer <benny@xfce.org>.\n\nKompiliert mit Gtk+-%d.%d.%d, momentan laufend unter Gtk+-%d.%d.%d.\n\nBitte melden Sie Fehler an <%s>.\n"
+msgstr "%s (Xfce %s)\n\nUrheberrecht (c) 2003-2006\n        os-cillation e.K. Alle Rechte vorbehalten.\n\nEntwickelt von Benedikt Meurer <benny@xfce.org>.\n\nKompiliert mit Gtk+-%d.%d.%d, momentan laufend unter Gtk+-%d.%d.%d.\n\nBitte Fehler an <%s> melden.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1095,7 +1095,7 @@ msgstr "Chromium"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
-msgstr "Debians voreingestellter Webbrowser"
+msgstr "Debians voreingestellter Internetnavigator"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
