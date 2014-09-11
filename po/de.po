@@ -6,14 +6,14 @@
 # Jannis Pohlmann <jannis@xfce.org>, 2008
 # Nico Schümann <nico@prog.nico22.de>, 2007
 # Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2010
-# to_ba, 2014
+# Tobias Bannert, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:55+0200\n"
-"PO-Revision-Date: 2014-05-24 15:23+0000\n"
-"Last-Translator: to_ba\n"
+"PO-Revision-Date: 2014-09-11 16:25+0000\n"
+"Last-Translator: Tobias Bannert\n"
 "Language-Team: German (http://www.transifex.com/projects/p/exo/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -197,7 +197,7 @@ msgstr "Statussymbole"
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:131
 msgid "Uncategorized Icons"
-msgstr "nicht kategorisierte Symbole"
+msgstr "Nicht kategorisierte Symbole"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:135
@@ -269,7 +269,7 @@ msgstr "Rand"
 
 #: ../exo/exo-icon-view.c:731
 msgid "Space which is inserted at the edges of the icon view"
-msgstr "An den Rändern der Symbolansicht eingefügter Platz"
+msgstr "An den Rändern der Symbolansicht eingefügter Zwischenraum"
 
 #: ../exo/exo-icon-view.c:747
 msgid "Markup column"
@@ -290,7 +290,7 @@ msgstr "Das Modell für die Symbolansicht"
 #: ../exo/exo-icon-view.c:777
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
-msgstr "Legt fest, wie Text und Symbol jedes Elements relativ zueinandner angeordnet werden"
+msgstr "Legt fest, wie Text und Symbol jedes Elementes relativ zueinandner angeordnet werden"
 
 #: ../exo/exo-icon-view.c:809
 msgid "Reorderable"
@@ -348,7 +348,7 @@ msgstr "Abstand"
 
 #: ../exo/exo-icon-view.c:905
 msgid "Space which is inserted between cells of an item"
-msgstr "Zwischen den Zellen eines Elements eingefügter Platz"
+msgstr "Zwischen den Zellen eines Elements eingefügter Zwischenraum"
 
 #: ../exo/exo-icon-view.c:928
 msgid "Selection Box Color"
@@ -503,12 +503,12 @@ msgstr "  -V, --version     Programmversion anzeigen und beenden\n"
 #: ../exo-csource/main.c:289
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
-msgstr "  --extern          extern-Symbole erzeugen\n"
+msgstr "  --extern          Externe Symbole erstellen\n"
 
 #: ../exo-csource/main.c:290
 #, c-format
 msgid "  --static          Generate static symbols\n"
-msgstr "  --static          static-Symbole erzeugen\n"
+msgstr "  --static          Statische Symbole erstellen\n"
 
 #: ../exo-csource/main.c:291
 #, c-format
@@ -539,7 +539,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr "Copyright (c) %s\n        os-cillation e.K. Alle Rechte vorbehalten.\n\nEntwickelt von Benedikt Meurer <benny@xfce.org>.\n\n"
+msgstr "Urheberrecht (c) %s\n        os-cillation e.K. Alle Rechte vorbehalten.\n\nEntwickelt von Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
 #: ../exo-open/main.c:500
@@ -556,7 +556,7 @@ msgstr "%s kommt ABSOLUT OHNE GEWÄHR.\nSie können im Rahmen der GNU Lesser Gen
 #: ../exo-open/main.c:504
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "Bitte melden Sie Fehler an <%s>.\n"
+msgstr "Bitte Fehler an <%s> melden.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:255
@@ -671,7 +671,7 @@ msgstr "Im _Terminal ausführen"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
-msgstr "Wählen Sie diese Option, um den oben angegebenen Befehl in einem Terminal-Fenster auszuführen."
+msgstr "Diese Option auswählen, um den oben angegebenen Befehl in einem Terminal-Fenster auszuführen."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:590
@@ -681,11 +681,11 @@ msgstr "Ein Symbol auswählen"
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:637
 msgid "Select a working directory"
-msgstr "Wählen Sie ein Arbeitsverzeichnis aus"
+msgstr "Ein Arbeitsverzeichnis auswählen"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
-msgstr "Diese Angabe ist keine gültige Datei oder Ordner"
+msgstr "Dateiziel ist ist keine normale Datei oder Verzeichnis"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:52
@@ -718,7 +718,7 @@ msgstr "Eine neue Datei im angegebenen Ordner erstellen"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Typ der zu erstellenden Datei (Application oder Link)"
+msgstr "Typ der zu erstellenden Datei (Anwendung der Verknüpfung)"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Preset name when creating a desktop file"
@@ -734,7 +734,7 @@ msgstr "Voreingestellter Befehl (nur für Starter)"
 
 #: ../exo-desktop-item-edit/main.c:83
 msgid "Preset URL when creating a link"
-msgstr "Voreingestellte URL (nur für Verknüpfungen)"
+msgstr "Voreingestellte Adresse (nur für Verknüpfungen)"
 
 #: ../exo-desktop-item-edit/main.c:84
 msgid "Preset icon when creating a desktop file"
@@ -813,7 +813,7 @@ msgstr "Bevorzugte Anwendungen"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
-msgstr "Definieren Sie Standardanwendungen für bestimmte Zwecke"
+msgstr "Standardanwendungen für unterschiedliche Dienste auswählen"
 
 #. Internet
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
