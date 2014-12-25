@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2014
+# Adolfo Jayme Barrientos <fito@libreoffice.org>, 2014
 # Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
 # Patricio Carr <pato@patocarr.com>, 2005
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:30+0200\n"
-"PO-Revision-Date: 2014-07-04 05:00+0000\n"
+"PO-Revision-Date: 2014-12-25 09:13+0000\n"
 "Last-Translator: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/exo/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -457,11 +457,11 @@ msgstr "Líder del grupo de ventanas"
 
 #: ../exo/exo-xsession-client.c:221
 msgid "Restart command"
-msgstr "Comando de reinicio"
+msgstr "Orden de reinicio"
 
 #: ../exo/exo-xsession-client.c:222
 msgid "Session restart command"
-msgstr "Comando de reinicio de sesión"
+msgstr "Orden de reinicio de sesión"
 
 #: ../exo-csource/main.c:284
 #, c-format
@@ -533,7 +533,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr "%s se ofrece ABSOLUTAMENTE SIN GARANTÍA,\nPuede redistribuir copias de %s bajo los términos de\nla Licencia Pública General Reducida de GNU, la cual se encuentra\nen el paquete de fuentes de %s.\n\n"
+msgstr "%s se ofrece ABSOLUTAMENTE SIN NINGUNA GARANTÍA,\nPuede redistribuir copias de %s bajo los términos de\nla Licencia Pública General Reducida de GNU, la cual se encuentra\nen el paquete de fuentes de %s.\n\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
 #: ../exo-open/main.c:504
@@ -559,22 +559,22 @@ msgstr "Archivos ejecutables"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:284
 #: ../exo-helper/exo-helper-chooser.c:418
 msgid "Perl Scripts"
-msgstr "Scripts de Perl"
+msgstr "Intérprete de órdenes de Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:290
 #: ../exo-helper/exo-helper-chooser.c:424
 msgid "Python Scripts"
-msgstr "Scripts de Python"
+msgstr "Intérprete de órdenes de Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:296
 #: ../exo-helper/exo-helper-chooser.c:430
 msgid "Ruby Scripts"
-msgstr "Scripts de Ruby"
+msgstr "Intérprete de órdenes de Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:302
 #: ../exo-helper/exo-helper-chooser.c:436
 msgid "Shell Scripts"
-msgstr "Scripts de shell"
+msgstr "Intérprete de órdenes"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:288
 #, c-format
@@ -597,7 +597,7 @@ msgstr "C_omentario:"
 #. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
-msgstr "Com_ando:"
+msgstr "Ord_en:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
@@ -642,7 +642,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Seleccione esta opción para activar la notificación de inicio cuando el comando se ejecuta desde el administrador de archivos o el menú. No todas las aplicaciones soportan la notificación de inicio."
+msgstr "Seleccione esta opción para activar la notificación de inicio cuando la orden se ejecute desde el administrador de archivos o el menú. No todas las aplicaciones soportan la notificación de inicio."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -654,7 +654,7 @@ msgstr "Ejecutar en _terminal"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
-msgstr "Seleccionar esta opción para ejecutar el comando en una ventana de terminal."
+msgstr "Seleccionar esta opción para ejecutar la orden en una ventana de terminal."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:590
@@ -705,19 +705,19 @@ msgstr "Tipo de archivo de escritorio a crear (applicación o enlace)"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Preset name when creating a desktop file"
-msgstr "Nombre por defecto al crear un archivo de escritorio"
+msgstr "Nombre predeterminado al crear un archivo de escritorio"
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Preset comment when creating a desktop file"
-msgstr "Comentario por defecto al crear un archivo de escritorio"
+msgstr "Comentario predeterminado al crear un archivo de escritorio"
 
 #: ../exo-desktop-item-edit/main.c:82
 msgid "Preset command when creating a launcher"
-msgstr "Comando por defecto al crear un lanzador"
+msgstr "Orden predeterminada al crear un lanzador"
 
 #: ../exo-desktop-item-edit/main.c:83
 msgid "Preset URL when creating a link"
-msgstr "URL por defecto al crear un enlace"
+msgstr "Dirección URL predeterminada al crear un enlace"
 
 #: ../exo-desktop-item-edit/main.c:84
 msgid "Preset icon when creating a desktop file"
@@ -735,7 +735,7 @@ msgstr "[DIRECTORIO]"
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
-msgstr "Fallo al abrir el display"
+msgstr "No se pudo abrir el visor"
 
 #: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
@@ -744,30 +744,30 @@ msgstr "No se especificó el archivo/directorio"
 #: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Fallo al cargar contenido desde \"%s\": %s"
+msgstr "No se pudo cargar contenido desde «%s»: %s"
 
 #: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr "El archivo \"%s\" no contiene datos"
+msgstr "El archivo «%s» no contiene datos"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Fallo al analizar el contenido de\"%s\": %s"
+msgstr "No se pudo analizar el contenido de «%s»: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr "El archivo \"%s\" no tiene ningún tipo de clave"
+msgstr "El archivo «%s» no tiene ningún tipo de clave"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Tipo de archivo de directorio \"%s\" no soportado"
+msgstr "Tipo de archivo de directorio «%s» no soportado"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:340
@@ -782,12 +782,12 @@ msgstr "Elegir nombre de archivo"
 #: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Fallo al crear \"%s\"."
+msgstr "No se pudo crear «%s»."
 
 #: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Fallo al guardar \"%s\"."
+msgstr "No se pudo guardar «%s»."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -850,7 +850,7 @@ msgstr "Emulador de terminal"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr "El emulador de terminal preferido se usará para\nejecutar comandos que requieran un entorno de\ninterfaz de línea de comandos."
+msgstr "El emulador de terminal preferido se usará para\nejecutar órdenes que requieran un entorno de\ninterfaz de línea de órdenes."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -867,19 +867,19 @@ msgstr "Ninguna aplicación seleccionada"
 
 #: ../exo-helper/exo-helper-chooser.c:315
 msgid "Failed to set default Web Browser"
-msgstr "Fallo al establecer el navegador web predeterminado"
+msgstr "No se pudo establecer el navegador web predeterminado"
 
 #: ../exo-helper/exo-helper-chooser.c:316
 msgid "Failed to set default Mail Reader"
-msgstr "Fallo al establecer el lector de correo predeterminado"
+msgstr "No se pudo establecer el lector de correo predeterminado"
 
 #: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
-msgstr "Fallo al establecer por defecto el administrador de archivos"
+msgstr "No se pudo establecer por defecto el administrador de archivos"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
-msgstr "Fallo al establecer el emulador de terminal predeterminado"
+msgstr "No se pudo establecer el emulador de terminal predeterminado"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:388
@@ -918,7 +918,7 @@ msgstr "Especifique la aplicación que quiere usar\ncomo lector de correo predet
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr "Especifique la aplicación que quiere utilizar\ncomo administrador de archivos predeterminado para Xfce:"
+msgstr "Especifique la aplicación que quiera utilizar\ncomo administrador de archivos predeterminado para Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
@@ -974,7 +974,7 @@ msgstr "No se especificó ningún comando"
 #: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
 #, c-format
 msgid "Failed to open %s for writing"
-msgstr "Fallo al abrir %s para escritura"
+msgstr "No se pudo abrir %s para escritura"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid ""
@@ -983,19 +983,19 @@ msgstr "Aplicaciones preferidas (navegador web, lector de correo y emulador de t
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
-msgstr "Fallo al ejecutar el navegador web predeterminado"
+msgstr "No se pudo ejecutar el navegador web predeterminado"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Mail Reader"
-msgstr "Fallo al ejecutar el lector de correo predeterminado"
+msgstr "No se pudo ejecutar el lector de correo predeterminado"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default File Manager"
-msgstr "Fallo al ejecutar el administardor de archivos predeterminado"
+msgstr "No se pudo ejecutar el administardor de archivos predeterminado"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
-msgstr "Fallo al ejecutar el emulador de terminal predeterminado"
+msgstr "No se pudo ejecutar el emulador de terminal predeterminado"
 
 #: ../exo-helper/main.c:71
 msgid ""
@@ -1029,17 +1029,17 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Los siguientes TIPOs son soportados por el comando --launch:\n\n  WebBrowser       - El navegador web preferido.\n  MailReader       - El lector de correo preferido.\n  TerminalEmulator - El emulador de terminal preferido."
+msgstr "Los siguientes TIPOS son soportados por la orden --launch:\n\n WebBrowser         - El navegador web preferido.\n MailReader         - El lector de correo preferido.\n FileManager        - El administrador de archivos preferido.\n TerminalEmulator   - El emulador de terminal preferido."
 
 #: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr "Escriba '%s --help' para ver opciones de uso."
+msgstr "Escriba «%s --help» para ver opciones de uso."
 
 #: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Tipo de aplicación auxiliar \"%s\" no válido"
+msgstr "Tipo de aplicación auxiliar «%s» no válido"
 
 #: ../exo-helper/main.c:213
 #, c-format
@@ -1074,11 +1074,11 @@ msgstr "Chromium"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
-msgstr "Debian Sensible Browser"
+msgstr "Navegador sensible de Debian"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr "Emulador de X terminal de Debian"
+msgstr "Emulador de terminal X de Debian"
 
 #: ../exo-helper/helpers/dillo.desktop.in.in.h:1
 msgid "Dillo"
@@ -1094,7 +1094,7 @@ msgstr "Navegador web Epiphany"
 
 #: ../exo-helper/helpers/eterm.desktop.in.in.h:1
 msgid "Enlightened Terminal Emulator"
-msgstr "Emulador de Enlightened Terminal"
+msgstr "Emulador de terminal liviano"
 
 #: ../exo-helper/helpers/evolution.desktop.in.in.h:1
 msgid "Evolution"
@@ -1182,7 +1182,7 @@ msgstr "Correo Opera"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr "PCMan File Manager"
+msgstr "Administrador de archivos PCMan"
 
 #: ../exo-helper/helpers/rodent.desktop.in.in.h:1
 msgid "Rodent File Manager"
@@ -1230,7 +1230,7 @@ msgstr "Administrador de archivos Xfe"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
-msgstr "X Terminal"
+msgstr "Terminal X"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
@@ -1264,7 +1264,7 @@ msgstr "  --working-directory DIRECTORIO       Directorio de trabajo predetermin
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr "Los siguientes TIPOs son soportados por la opción --launch:"
+msgstr "Los siguientes TIPOS son soportados por la opción --launch:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
@@ -1275,7 +1275,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - El navegador web preferido.\n  MailReader       - El lector de correo preferido.\n  TerminalEmulator - El emulador de terminal preferido."
+msgstr "  WebBrowser         - El navegador web preferido.\n MailReader         - El lector de correo preferido.\n FileManager        - El administrador de archivos preferido.\n TerminalEmulator   - El emulador de terminal preferido."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1284,7 +1284,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr "Si no especifica la opción --launch, exo-open abrirá todas las URLs\nespecificadas con sus gestores de URLs preferidos. En caso contrario,\nsi usted especifica la opción --launch, podrá elegir qué aplicación preferida\nquiere ejecutar y pasar parámetros adicionales a dicha aplicación (i.e. para el\nEmulador de Terminal, puede pasar la línea de comando que se debería\nejecutar dentro del terminal)."
+msgstr "Si no especifica la opción --launch, exo-open abrirá todas las URLs\nespecificadas con sus gestores de URLs preferidos. En caso contrario,\nsi especifica la opción --launch, podrá elegir qué aplicación preferida\nquiere ejecutar y pasar parámetros adicionales a dicha aplicación (i.e. para el\nEmulador de terminal, puede pasar la línea de órdenes que se debería\nejecutar dentro del terminal)."
 
 #: ../exo-open/main.c:195
 #, c-format
@@ -1296,17 +1296,17 @@ msgstr "Ejecutar archivos de escritorio no está soportado cuando %s se ha compi
 #: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Fallo al ejecutar la aplicación preferida para la categoría \"%s\"."
+msgstr "No se pudo ejecutar la aplicación preferida para la categoría «%s»."
 
 #: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "No se puede detectar el esquema URI de\"%s\"."
+msgstr "No se puede detectar el esquema URI de «%s»."
 
 #: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Fallo al abrir la URL \"%s\"."
+msgstr "No se pudo abrir la dirreción URL «%s»."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
@@ -1318,8 +1318,8 @@ msgstr "Leer correo"
 
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:2
 msgid "Use the command line"
-msgstr "Usar la línea de comandos"
+msgstr "Usar la línea de órdenes"
 
 #: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
-msgstr "Navegar por la web"
+msgstr "Navegar por la red"
