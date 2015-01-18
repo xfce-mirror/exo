@@ -9,14 +9,15 @@
 # Dmitrij Smirnov <other@igus.lv>, 2010
 # Maxim Zenin <webmechanics@gmail.com>, 2006
 # NIkitaBelobrov <qvzqvz@gmail.com>, 2008
+# Lowrider <pams@imail.ru>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:55+0200\n"
-"PO-Revision-Date: 2013-11-19 14:58+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/xfce/language/ru/)\n"
+"PO-Revision-Date: 2015-01-18 10:48+0000\n"
+"Last-Translator: Lowrider <pams@imail.ru>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/exo/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -174,7 +175,7 @@ msgstr "Эмблемы"
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Emoticons"
-msgstr "Смайлики"
+msgstr "Эмотиконы"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:123
@@ -194,7 +195,7 @@ msgstr "Значки места"
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:129
 msgid "Status Icons"
-msgstr "Значки статуса"
+msgstr "Значки состояния"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:131
@@ -578,22 +579,22 @@ msgstr "Исполняемые файлы"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:284
 #: ../exo-helper/exo-helper-chooser.c:418
 msgid "Perl Scripts"
-msgstr "Скрипты Perl"
+msgstr "Сценарии Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:290
 #: ../exo-helper/exo-helper-chooser.c:424
 msgid "Python Scripts"
-msgstr "Скрипты Python"
+msgstr "Сценарии Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:296
 #: ../exo-helper/exo-helper-chooser.c:430
 msgid "Ruby Scripts"
-msgstr "Скрипты Ruby"
+msgstr "Сценарии Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:302
 #: ../exo-helper/exo-helper-chooser.c:436
 msgid "Shell Scripts"
-msgstr "Скрипты Shell"
+msgstr "Сценарии Shell"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:284
 #, c-format
@@ -610,7 +611,7 @@ msgstr "_Имя:"
 #. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
-msgstr "_Комментарий:"
+msgstr "_Описание:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
@@ -652,7 +653,6 @@ msgstr "Параметры:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Использовать _уведомление о запуске"
@@ -668,7 +668,6 @@ msgstr "Отметьте этот параметр, чтобы включить 
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Запускать в _терминале"
@@ -730,7 +729,7 @@ msgstr "Задать имя создаваемого desktop-файла"
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Preset comment when creating a desktop file"
-msgstr "Задать комментарий создаваемого desktop-файла"
+msgstr "Задать описание создаваемого desktop-файла"
 
 #: ../exo-desktop-item-edit/main.c:82
 msgid "Preset command when creating a launcher"
@@ -760,7 +759,7 @@ msgstr "Не удалось открыть дисплей"
 
 #: ../exo-desktop-item-edit/main.c:208
 msgid "No file/folder specified"
-msgstr "Не указан файл/папка"
+msgstr "Не указан файл или папка"
 
 #: ../exo-desktop-item-edit/main.c:274
 #, c-format
@@ -820,7 +819,6 @@ msgid "Select default applications for various services"
 msgstr "Выберите приложения по умолчанию для различных задач"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Интернет"
@@ -848,10 +846,9 @@ msgid ""
 msgstr "Выбранная почтовая программа будет использоваться для\nсоставления писем при щелчке по адресу электронной почты."
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
-msgstr "Утилиты"
+msgstr "Средства"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:1
@@ -1260,7 +1257,6 @@ msgstr "Для команды --launch поддерживаются следую
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
