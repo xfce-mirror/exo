@@ -716,11 +716,16 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
     }
 
   /* open the mimeapp.list file to set the default handler of the mime type */
-  rc = xfce_rc_config_open (XFCE_RESOURCE_DATA, "applications/mimeapps.list", FALSE);
+  rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "mimeapps.list", FALSE);
   if (G_UNLIKELY (rc == NULL))
     {
-      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_IO, _("Failed to open %s for writing"), "mimeapps.list");
-      return FALSE;
+      /* deprecated location (glib < 2.41) */
+      rc = xfce_rc_config_open (XFCE_RESOURCE_DATA, "applications/mimeapps.list", FALSE);
+      if (G_UNLIKELY (rc == NULL))
+        {
+          g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_IO, _("Failed to open %s for writing"), "mimeapps.list");
+          return FALSE;
+        }
     }
 
   /* open the exo desktop file to read the mimetypes the file supports */
