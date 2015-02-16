@@ -1161,7 +1161,7 @@ exo_icon_bar_calculate_item_size (ExoIconBar      *icon_bar,
   gint       focus_width;
   gint       focus_pad;
 
-  if (G_LIKELY (item->width != -1 && item->width != -1))
+  if (G_LIKELY (item->width != -1 && item->height != -1))
     return;
 
   gtk_widget_style_get (GTK_WIDGET (icon_bar),
