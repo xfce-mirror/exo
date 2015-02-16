@@ -40,6 +40,7 @@ my $mailtoUrl = url($ARGV[2]);
 # mailto:-components
 my @to = ();
 my @cc = ();
+my @bcc = ();
 my $subject = undef;
 my $body = undef;
 my @attachments = ();
@@ -52,6 +53,9 @@ for (my $n = 0; $n < $#headers; $n += 2) {
 	}
 	elsif ($headers[$n] =~ /^cc$/i ) {
 		push (@cc, $headers[$n + 1]);
+	}
+	elsif ($headers[$n] =~ /^bcc$/i ) {
+		push (@bcc, $headers[$n + 1]);
 	}
 	elsif ($headers[$n] =~ /^subject$/i ) {
 		$subject = $headers[$n + 1];
@@ -74,6 +78,7 @@ if ($style eq 'mozilla') {
 	# similar to mozilla-remote, but with --compose
 	my $command = "to='" . join(",", @to) . "'";
 	$command .= ",cc='" . join(",", @cc) . "'";
+	$command .= ",bcc='" . join(",", @bcc) . "'";
 	$command .= ",attachment='" . join(",", @attachments) . "'";
 	$subject and $command .= ",subject='$subject'";
 	$body and $command .= ",body='$body'";
@@ -87,6 +92,7 @@ elsif ($style eq 'mozilla-remote') {
 	my $command = 'xfeDoCommand(composeMessage';
 	$command .= ",to='" . join(",", @to) . "'";
 	$command .= ",cc='" . join(",", @cc) . "'";
+	$command .= ",bcc='" . join(",", @bcc) . "'";
 	$command .= ",attachment='" . join(",", @attachments) . "'";
 	$subject and $command .= ",subject='$subject'";
 	$body and $command .= ",body='$body'";
@@ -110,6 +116,9 @@ elsif ($style eq 'evolution') {
 	for my $cc (@cc) {
 		$mailto .= 'cc=' . uri_escape($cc) . '&';
 	}
+	for my $bcc (@bcc) {
+		$mailto .= 'bcc=' . uri_escape($bcc) . '&';
+	}
 	for my $attachment (@attachments) {
 		$mailto .= "attach=$attachment&";
 	}
@@ -127,6 +136,9 @@ elsif ($style eq 'kmail') {
 	for my $cc (@cc) {
 		push (@argv, '--cc', $cc);
 	}
+	for my $bcc (@bcc) {
+		push (@argv, '--bcc', $bcc);
+	}
 	for my $attachment (@attachments) {
 		push (@argv, '--attach', $attachment);
 	}
@@ -134,6 +146,7 @@ elsif ($style eq 'kmail') {
 	$body and push (@argv, '--body', $body);
 	push (@argv, '--composer');
 	(@to > 0) and push (@argv, $to[0]);
+    print @argv;
 }
 elsif ($style eq 'sylpheed') {
 	# generate the mailto:-URI (somewhat like Evolution)
@@ -143,6 +156,9 @@ elsif ($style eq 'sylpheed') {
 	}
 	for my $cc (@cc) {
 		$mailto .= 'cc=' . $cc . '&';
+	}
+	for my $bcc (@bcc) {
+		$mailto .= 'bcc=' . $bcc . '&';
 	}
 	$subject and $mailto .= 'subject=' . uri_escape($subject) . '&';
 	$body and $mailto .= 'body=' . uri_escape($body);
@@ -171,6 +187,9 @@ elsif ($style eq 'balsa') {
 	for my $cc (@cc) {
 		$mailto .= 'cc=' . uri_escape($cc) . '&';
 	}
+	for my $bcc (@bcc) {
+		$mailto .= 'bcc=' . uri_escape($bcc) . '&';
+	}
 	$subject and $mailto .= 'subject=' . uri_escape($subject) . '&';
 	$body and $mailto .= 'body=' . uri_escape($body);
 
@@ -184,6 +203,9 @@ elsif ($style eq 'mutt') {
 	# generate the parameters for mutt
 	for my $cc (@cc) {
 		push (@argv, '-c', $cc);
+	}
+	for my $bcc (@bcc) {
+		push (@argv, '-b', $bcc);
 	}
 	for my $uri (@attachments) {
 		push (@argv, '-a', $uri->path ());
