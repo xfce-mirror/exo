@@ -36,14 +36,19 @@ desktop_in_in_files =							\
 	opera-browser.desktop.in.in					\
 	opera-mailer.desktop.in.in					\
 	pcmanfm.desktop.in.in						\
+	qterminal.desktop.in.in						\
+	qtfm.desktop.in.in							\
+	qupzilla.desktop.in.in						\
 	rodent.desktop.in.in						\
 	rox-filer.desktop.in.in						\
 	sakura.desktop.in.in						\
+	surf.desktop.in.in							\
 	sylpheed.desktop.in.in						\
 	sylpheed-claws.desktop.in.in					\
 	Thunar.desktop.in.in						\
 	thunderbird.desktop.in.in					\
 	urxvt.desktop.in.in						\
+	vimprobable2.desktop.in.in				\
 	w3m.desktop.in.in						\
 	xfce4-terminal.desktop.in.in					\
 	xfe.desktop.in.in						\
