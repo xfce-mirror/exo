@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2008
+# Yarema aka Knedlyk <yupadmin@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-02 22:30+0200\n"
-"PO-Revision-Date: 2013-11-19 13:01+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Ukrainian (http://www.transifex.com/projects/p/xfce/language/uk/)\n"
+"POT-Creation-Date: 2015-02-17 06:30+0100\n"
+"PO-Revision-Date: 2015-02-18 23:05+0000\n"
+"Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
+"Language-Team: Ukrainian (http://www.transifex.com/projects/p/exo/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +73,7 @@ msgstr "Неможливо завантажити малюнок \"%s\": Нев�
 msgid "Failed to open \"%s\"."
 msgstr "Помилка відкриття \"%s\"."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:813
 msgid "Orientation"
 msgstr "Орієнтація"
 
@@ -80,19 +81,19 @@ msgstr "Орієнтація"
 msgid "The orientation of the iconbar"
 msgstr "Орієнтація панелі запуску"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:830
 msgid "Pixbuf column"
 msgstr "Стовпчик Pixbuf"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:831
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Модель стовпчика використовувана для отримання значка pixbuf з"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:975
 msgid "Text column"
 msgstr "Текстового стовпчика"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:976
 msgid "Model column used to retrieve the text from"
 msgstr "Модель стовпчика використовувана для отримання тексту з"
 
@@ -220,130 +221,139 @@ msgstr "_Пошук значка:"
 msgid "Clear search field"
 msgstr "Очистити поле пошуку"
 
-#: ../exo/exo-icon-view.c:674
+#: ../exo/exo-icon-view.c:681
 msgid "Column Spacing"
 msgstr "Відстань між стовпчиками"
 
-#: ../exo/exo-icon-view.c:675
+#: ../exo/exo-icon-view.c:682
 msgid "Space which is inserted between grid column"
 msgstr "Проміжок вставлений між сіткою стовпчиків"
 
-#: ../exo/exo-icon-view.c:691
+#: ../exo/exo-icon-view.c:698
 msgid "Number of columns"
 msgstr "Кількість стовпчиків"
 
-#: ../exo/exo-icon-view.c:692
+#: ../exo/exo-icon-view.c:699
 msgid "Number of columns to display"
 msgstr "Кількість стовпчиків для показу"
 
-#: ../exo/exo-icon-view.c:706
+#: ../exo/exo-icon-view.c:713
 msgid "Enable Search"
 msgstr "Дозволити пошук"
 
-#: ../exo/exo-icon-view.c:707
+#: ../exo/exo-icon-view.c:714
 msgid "View allows user to search through columns interactively"
 msgstr "Перегляд дозволів користувача для пошуку через стовпчики інтерактивно"
 
-#: ../exo/exo-icon-view.c:724
+#: ../exo/exo-icon-view.c:731
 msgid "Width for each item"
 msgstr "Ширина кожного елемента"
 
-#: ../exo/exo-icon-view.c:725
+#: ../exo/exo-icon-view.c:732
 msgid "The width used for each item"
 msgstr "Ширина використовувана для кожного елемента"
 
-#: ../exo/exo-icon-view.c:743
+#: ../exo/exo-icon-view.c:750
 msgid "Layout mode"
 msgstr "Режим розкладки"
 
-#: ../exo/exo-icon-view.c:744
+#: ../exo/exo-icon-view.c:751
 msgid "The layout mode"
 msgstr "Режим розкладки"
 
-#: ../exo/exo-icon-view.c:760
+#: ../exo/exo-icon-view.c:767
 msgid "Margin"
 msgstr "Поле"
 
-#: ../exo/exo-icon-view.c:761
+#: ../exo/exo-icon-view.c:768
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Простір введений на краї перегляду значка"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:784
 msgid "Markup column"
 msgstr "Стовпчик відміток"
 
-#: ../exo/exo-icon-view.c:778
+#: ../exo/exo-icon-view.c:785
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Модель стовпчиків, що використовується для отримання тексту якщо застосовується маркування Pango"
 
-#: ../exo/exo-icon-view.c:792
+#: ../exo/exo-icon-view.c:799
 msgid "Icon View Model"
 msgstr "Режим перегляду значками"
 
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-view.c:800
 msgid "The model for the icon view"
 msgstr "Режим перегляду у вигляді значків"
 
-#: ../exo/exo-icon-view.c:807
+#: ../exo/exo-icon-view.c:814
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Як текст і значок кожного елемента розташовується відповідно до іншого"
 
-#: ../exo/exo-icon-view.c:839
+#: ../exo/exo-icon-view.c:848
+msgid "Icon column"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:849
+msgid ""
+"Model column used to retrieve the absolute path of an image file to render"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:864
 msgid "Reorderable"
 msgstr "Можливість впорядкування"
 
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:865
 msgid "View is reorderable"
 msgstr "Перегляд впорядкований"
 
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:880
 msgid "Row Spacing"
 msgstr "Відстань між рядками"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:881
 msgid "Space which is inserted between grid rows"
 msgstr "Проміжок, що вставляється між сусідніми рядками"
 
-#: ../exo/exo-icon-view.c:870
+#: ../exo/exo-icon-view.c:895
 msgid "Search Column"
 msgstr "Пошук у стовпчиках"
 
-#: ../exo/exo-icon-view.c:871
+#: ../exo/exo-icon-view.c:896
 msgid "Model column to search through when searching through item"
 msgstr "Модель стовпчика для пошуку з допомогою пошуку елемента"
 
-#: ../exo/exo-icon-view.c:885
+#: ../exo/exo-icon-view.c:910
 msgid "Selection mode"
 msgstr "Режим вибору"
 
-#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-icon-view.c:911
 msgid "The selection mode"
 msgstr "Режим вибору"
 
-#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:926 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Одинарне клацання"
 
-#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:927 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Можливість активації перегляду елементів одинарним клацанням мишки"
 
-#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:943 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Затримка разового клацання"
 
-#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:944 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Інтервал часу після якого елемент під курсором мишки буде вибрано автоматично в режимі одинарного клацання"
 
-#: ../exo/exo-icon-view.c:934
+#: ../exo/exo-icon-view.c:959
 msgid "Spacing"
 msgstr "Проміжки"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:960
 msgid "Space which is inserted between cells of an item"
 msgstr "Проміжок який вставляється між клітинками елемента"
 
@@ -631,7 +641,6 @@ msgstr "Параметри:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Використовувати пов_ідомлення про запуск"
@@ -647,7 +656,6 @@ msgstr "Виберіть цей параметр для повідомлення
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Запустити в _терміналі"
@@ -799,7 +807,6 @@ msgid "Select default applications for various services"
 msgstr "Виберіть типову програму для відповідного сервісу"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "_Internet"
 msgstr "_Інтернет"
@@ -827,7 +834,6 @@ msgid ""
 msgstr "Типовий Поштовий клієнт використовується для   \nстворення повідомлень при виборі email адрес."
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "_Utilities"
 msgstr "_Утиліти"
@@ -973,7 +979,7 @@ msgstr "Виберіть типовий Емулятор\nтерміналу і 
 msgid "No command specified"
 msgstr "Команду не призначено"
 
-#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:726
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Помилка відкриття %s для запису"
@@ -1186,6 +1192,18 @@ msgstr "Переглядач пошти Opera Mail"
 msgid "PCMan File Manager"
 msgstr "Файловий менеджер PCMan"
 
+#: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
+msgid "QTerminal"
+msgstr "QTerminal"
+
+#: ../exo-helper/helpers/qtfm.desktop.in.in.h:1
+msgid "qtFM"
+msgstr "qtFM"
+
+#: ../exo-helper/helpers/qupzilla.desktop.in.in.h:1
+msgid "QupZilla"
+msgstr "QupZilla"
+
 #: ../exo-helper/helpers/rodent.desktop.in.in.h:1
 msgid "Rodent File Manager"
 msgstr "Файловий менеджер Rodent"
@@ -1197,6 +1215,10 @@ msgstr "ROX-Filer"
 #: ../exo-helper/helpers/sakura.desktop.in.in.h:1
 msgid "Sakura"
 msgstr "Sakura"
+
+#: ../exo-helper/helpers/surf.desktop.in.in.h:1
+msgid "Surf"
+msgstr "Surf"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1217,6 +1239,10 @@ msgstr "Переглядач пошти Mozilla Thunderbird"
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
 msgstr "Термінал RXVT Unicode"
+
+#: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
+msgid "Vimprobable2"
+msgstr "Vimprobable2"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
@@ -1271,7 +1297,6 @@ msgstr "Наступні ТИПИ підтримуються для --launch к�
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
