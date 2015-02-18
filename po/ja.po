@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-02 22:30+0200\n"
-"PO-Revision-Date: 2013-12-08 13:02+0000\n"
+"POT-Creation-Date: 2015-02-17 06:30+0100\n"
+"PO-Revision-Date: 2015-02-18 11:39+0000\n"
 "Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/xfce/language/ja/)\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/exo/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,14 +65,14 @@ msgstr "ファイル \"%s\" を読み込めませんでした: %s"
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "画像 \"%s\" の読み込みに失敗しました: 理由は不明ですが、恐らく画像ファイルが破損しています"
+msgstr "画像 \"%s\" の読み込みに失敗しました: 理由は不明ですが、おそらく画像ファイルが破損しています"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "\"%s\" を開けませんでした。"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:813
 msgid "Orientation"
 msgstr "方向"
 
@@ -80,19 +80,19 @@ msgstr "方向"
 msgid "The orientation of the iconbar"
 msgstr "アイコンバーが延びる方向です。"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:830
 msgid "Pixbuf column"
 msgstr "ピクセルバッファー欄"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:831
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "アイコンのピクセルバッファーを取得するために使用されるモデル欄です。"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:975
 msgid "Text column"
 msgstr "文字欄"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:976
 msgid "Model column used to retrieve the text from"
 msgstr "文字を取得するために使用されるモデル欄です。"
 
@@ -220,130 +220,139 @@ msgstr "アイコンの検索(_S):"
 msgid "Clear search field"
 msgstr "検索フィールドのクリア"
 
-#: ../exo/exo-icon-view.c:674
+#: ../exo/exo-icon-view.c:681
 msgid "Column Spacing"
 msgstr "表示欄スペース"
 
-#: ../exo/exo-icon-view.c:675
+#: ../exo/exo-icon-view.c:682
 msgid "Space which is inserted between grid column"
 msgstr "グリッド欄の間に挿入されるスペースです。"
 
-#: ../exo/exo-icon-view.c:691
+#: ../exo/exo-icon-view.c:698
 msgid "Number of columns"
 msgstr "表示欄の数"
 
-#: ../exo/exo-icon-view.c:692
+#: ../exo/exo-icon-view.c:699
 msgid "Number of columns to display"
 msgstr "表示する表示欄の数です。"
 
-#: ../exo/exo-icon-view.c:706
+#: ../exo/exo-icon-view.c:713
 msgid "Enable Search"
 msgstr "検索を有効にする"
 
-#: ../exo/exo-icon-view.c:707
+#: ../exo/exo-icon-view.c:714
 msgid "View allows user to search through columns interactively"
 msgstr "表示欄をインタラクティブに検索できるようにします。"
 
-#: ../exo/exo-icon-view.c:724
+#: ../exo/exo-icon-view.c:731
 msgid "Width for each item"
 msgstr "アイテムの幅"
 
-#: ../exo/exo-icon-view.c:725
+#: ../exo/exo-icon-view.c:732
 msgid "The width used for each item"
 msgstr "それぞれのアイテムに使用する幅です。"
 
-#: ../exo/exo-icon-view.c:743
+#: ../exo/exo-icon-view.c:750
 msgid "Layout mode"
 msgstr "レイアウトモード"
 
-#: ../exo/exo-icon-view.c:744
+#: ../exo/exo-icon-view.c:751
 msgid "The layout mode"
 msgstr "レイアウトモードです。"
 
-#: ../exo/exo-icon-view.c:760
+#: ../exo/exo-icon-view.c:767
 msgid "Margin"
 msgstr "余白"
 
-#: ../exo/exo-icon-view.c:761
+#: ../exo/exo-icon-view.c:768
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "アイテム表示の端に挿入されるスペースです。"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:784
 msgid "Markup column"
 msgstr "マークアップ欄"
 
-#: ../exo/exo-icon-view.c:778
+#: ../exo/exo-icon-view.c:785
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Pango のマークアップが使用されている場合に文字を取得するためのモデル欄です。"
 
-#: ../exo/exo-icon-view.c:792
+#: ../exo/exo-icon-view.c:799
 msgid "Icon View Model"
 msgstr "アイコン表示モデル"
 
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-view.c:800
 msgid "The model for the icon view"
 msgstr "アイコン表示のためのモデルです。"
 
-#: ../exo/exo-icon-view.c:807
+#: ../exo/exo-icon-view.c:814
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "それぞれのアイテムの文字とアイコンがお互いにどの位置に置かれるかを選択します。"
 
-#: ../exo/exo-icon-view.c:839
+#: ../exo/exo-icon-view.c:848
+msgid "Icon column"
+msgstr "アイコン欄"
+
+#: ../exo/exo-icon-view.c:849
+msgid ""
+"Model column used to retrieve the absolute path of an image file to render"
+msgstr "描画する画像ファイルの絶対パスを取得するために使用されるモデル欄です。"
+
+#: ../exo/exo-icon-view.c:864
 msgid "Reorderable"
 msgstr "並べ替え可能"
 
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:865
 msgid "View is reorderable"
 msgstr "表示は並べ替え可能です。"
 
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:880
 msgid "Row Spacing"
 msgstr "行スペース"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:881
 msgid "Space which is inserted between grid rows"
 msgstr "グリッド行の間に挿入されるスペースです。"
 
-#: ../exo/exo-icon-view.c:870
+#: ../exo/exo-icon-view.c:895
 msgid "Search Column"
 msgstr "検索欄"
 
-#: ../exo/exo-icon-view.c:871
+#: ../exo/exo-icon-view.c:896
 msgid "Model column to search through when searching through item"
-msgstr "アイテムを検索する時に検索するモデル欄です。"
+msgstr "アイテムを検索するときに検索するモデル欄です。"
 
-#: ../exo/exo-icon-view.c:885
+#: ../exo/exo-icon-view.c:910
 msgid "Selection mode"
 msgstr "選択モード"
 
-#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-icon-view.c:911
 msgid "The selection mode"
 msgstr "選択モードです。"
 
-#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:926 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "シングルクリック"
 
-#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:927 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "表示されているアイテムを一回のクリックで有効にするかどうか指定します。"
 
-#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:943 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "シングルクリックのタイムアウト"
 
-#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:944 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "シングルクリックモードの時にマウスカーソルの下にあるアイテムが自動的に選択状態になるまでの時間です。"
 
-#: ../exo/exo-icon-view.c:934
+#: ../exo/exo-icon-view.c:959
 msgid "Spacing"
 msgstr "スペース"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:960
 msgid "Space which is inserted between cells of an item"
 msgstr "アイテムのセルの間に挿入されるスペースです。"
 
@@ -631,7 +640,6 @@ msgstr "オプション:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "起動通知を行う(_S)"
@@ -641,13 +649,12 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "このオプションを選択すると、ファイルマネージャーやメニューからコマンドが実行される時に起動通知を行います。すべてのアプリケーションが起動通知に対応しているわけではありません。"
+msgstr "このオプションを選択すると、ファイルマネージャーやメニューからコマンドが実行されるときに起動通知を行います。すべてのアプリケーションが起動通知に対応しているわけではありません。"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "ターミナルで実行する(_T)"
@@ -799,7 +806,6 @@ msgid "Select default applications for various services"
 msgstr "各種サービスのためのデフォルトアプリケーションを選択します"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "_Internet"
 msgstr "インターネット(_I)"
@@ -827,7 +833,6 @@ msgid ""
 msgstr "ここで指定したお気に入りのメーラーは、\nメールアドレスをクリックしてメールを作成する際に\n使用されます。"
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "_Utilities"
 msgstr "ユーティリティ(_U)"
@@ -938,7 +943,7 @@ msgstr "その他(_O)..."
 
 #: ../exo-helper/exo-helper-chooser.c:763
 msgid "Use a custom application which is not included in the above list."
-msgstr "上のリストには無いアプリケーションを使用します。"
+msgstr "上のリストにはないアプリケーションを使用します。"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:113
 msgid "Choose Preferred Application"
@@ -973,7 +978,7 @@ msgstr "お気に入りのターミナルエミュレーターを\n選択して�
 msgid "No command specified"
 msgstr "コマンドが指定されていません"
 
-#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:726
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "書き込むために %s を開くことに失敗しました"
@@ -1186,6 +1191,18 @@ msgstr "Opera Mail"
 msgid "PCMan File Manager"
 msgstr "PCMan File Manager"
 
+#: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
+msgid "QTerminal"
+msgstr "QTerminal"
+
+#: ../exo-helper/helpers/qtfm.desktop.in.in.h:1
+msgid "qtFM"
+msgstr "qtFM"
+
+#: ../exo-helper/helpers/qupzilla.desktop.in.in.h:1
+msgid "QupZilla"
+msgstr "QupZilla"
+
 #: ../exo-helper/helpers/rodent.desktop.in.in.h:1
 msgid "Rodent File Manager"
 msgstr "Rodent File Manager"
@@ -1197,6 +1214,10 @@ msgstr "ROX-Filer"
 #: ../exo-helper/helpers/sakura.desktop.in.in.h:1
 msgid "Sakura"
 msgstr "Sakura"
+
+#: ../exo-helper/helpers/surf.desktop.in.in.h:1
+msgid "Surf"
+msgstr "Surf"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1217,6 +1238,10 @@ msgstr "Mozilla Thunderbird"
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
 msgstr "RXVT Unicode"
+
+#: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
+msgid "Vimprobable2"
+msgstr "Vimprobable2"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
@@ -1262,7 +1287,7 @@ msgstr "  --launch TYPE [PARAMETERs...]       TYPE のアプリケーション�
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory DIRECTORY      --launch オプションを使用した時の\n                                     アプリケーションの既定の作業フォルダー\n                                     を指定する。"
+msgstr "  --working-directory DIRECTORY      --launch オプションを使用したときの\n                                     アプリケーションの既定の作業フォルダー\n                                     を指定する。"
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1271,7 +1296,6 @@ msgstr "次の TYPE が --launch コマンドでサポートされます:"
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1294,7 +1318,7 @@ msgstr "オプション --launch を指定しない場合、exo-open は指定�
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr "%s が GIO-Unix 機能なしでコンパイルされている時、デスクトップファイルの起動はサポートされません。"
+msgstr "%s が GIO-Unix 機能なしでコンパイルされているとき、デスクトップファイルの起動はサポートされません。"
 
 #: ../exo-open/main.c:260
 #, c-format
