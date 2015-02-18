@@ -3805,11 +3805,7 @@ exo_icon_view_get_item_at_coords (const ExoIconView    *icon_view,
 
                   box = item->box[info->position];
                   if ((x >= box.x && x <= box.x + box.width &&
-                       y >= box.y && y <= box.y + box.height) ||
-                      (x >= box.x  &&
-                       x <= box.x + box.width &&
-                       y >= box.y &&
-                       y <= box.y + box.height))
+                       y >= box.y && y <= box.y + box.height))
                     {
                       if (cell_at_pos != NULL)
                         *cell_at_pos = info;
@@ -4172,7 +4168,6 @@ find_cell (ExoIconView     *icon_view,
   if (cell < 0)
     {
       current = step > 0 ? 0 : n_focusable - 1;
-      cell = focusable[current];
     }
 
   if (current + *count < 0)
@@ -5954,6 +5949,9 @@ exo_icon_view_set_cursor (ExoIconView     *icon_view,
 
   /* scroll to the item (maybe delayed) */
   exo_icon_view_scroll_to_path (icon_view, path, FALSE, 0.0f, 0.0f);
+
+  if (!info)
+    return;
 
   if (start_editing)
     exo_icon_view_start_editing (icon_view, item, info, NULL);

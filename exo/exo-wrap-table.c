@@ -264,7 +264,7 @@ exo_wrap_table_size_request (GtkWidget      *widget,
   gint          max_height = 0;
   gint          num_children;
   gint          num_cols;
-  gint          num_rows;
+  gint          num_rows = 0;
 
   /* determine the max size request */
   num_children = exo_wrap_table_get_max_child_size (table, &max_width, &max_height);
@@ -275,7 +275,8 @@ exo_wrap_table_size_request (GtkWidget      *widget,
       num_cols = exo_wrap_table_get_num_fitting (widget->allocation.width
                                                  - GTK_CONTAINER (widget)->border_width * 2,
                                                  table->priv->col_spacing, max_width);
-      num_rows = num_children / num_cols;
+      if (G_LIKELY (num_cols > 0))
+        num_rows = num_children / num_cols;
       num_rows = MAX (num_rows, 1);
 
       if ((num_children % num_rows) > 0)

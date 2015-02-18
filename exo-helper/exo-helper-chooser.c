@@ -255,7 +255,7 @@ exo_helper_chooser_update (ExoHelperChooser *chooser)
   const gchar  *icon_name;
   ExoHelper    *helper;
   GdkPixbuf    *icon = NULL;
-  gint          icon_size;
+  gint          icon_size = 0;
 
   g_return_if_fail (EXO_IS_HELPER_CHOOSER (chooser));
 

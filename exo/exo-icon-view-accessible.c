@@ -871,7 +871,7 @@ exo_icon_view_item_accessible_is_showing (ExoIconViewItemAccessible *item)
   if (icon_view->priv->hadjustment)
     visible_rect.x += icon_view->priv->hadjustment->value;
   visible_rect.y = 0;
-  if (icon_view->priv->hadjustment)
+  if (icon_view->priv->vadjustment)
     visible_rect.y += icon_view->priv->vadjustment->value;
   visible_rect.width = item->widget->allocation.width;
   visible_rect.height = item->widget->allocation.height;
