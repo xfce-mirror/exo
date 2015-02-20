@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Theppitak Karoonboonyanan <thep@linux.thai.net>, 2013
+# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-02 22:30+0200\n"
-"PO-Revision-Date: 2013-11-06 04:58+0000\n"
-"Last-Translator: theppitak <theppitak@gmail.com>\n"
-"Language-Team: Thai (http://www.transifex.com/projects/p/xfce/language/th/)\n"
+"POT-Creation-Date: 2015-02-17 06:30+0100\n"
+"PO-Revision-Date: 2015-02-20 07:24+0000\n"
+"Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
+"Language-Team: Thai (http://www.transifex.com/projects/p/exo/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +73,7 @@ msgstr "โหลดภาพ \"%s\" ไม่สำเร็จ: ไม่ท�
 msgid "Failed to open \"%s\"."
 msgstr "เปิด \"%s\" ไม่สำเร็จ"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:813
 msgid "Orientation"
 msgstr "แนววาง"
 
@@ -80,19 +81,19 @@ msgstr "แนววาง"
 msgid "The orientation of the iconbar"
 msgstr "แนววางของแถบไอคอน"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:830
 msgid "Pixbuf column"
 msgstr "คอลัมน์ pixbuf"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:831
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "หมายเลขคอลัมน์ในโมเดลที่จะดึงข้อมูล pixbuf ของไอคอน"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:975
 msgid "Text column"
 msgstr "คอลัมน์ข้อความ"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:976
 msgid "Model column used to retrieve the text from"
 msgstr "หมายเลขคอลัมน์ในโมเดลที่จะดึงข้อความ"
 
@@ -220,130 +221,139 @@ msgstr "_ค้นหาไอคอน:"
 msgid "Clear search field"
 msgstr "ล้างช่องค้น"
 
-#: ../exo/exo-icon-view.c:674
+#: ../exo/exo-icon-view.c:681
 msgid "Column Spacing"
 msgstr "ช่องไฟระหว่างคอลัมน์"
 
-#: ../exo/exo-icon-view.c:675
+#: ../exo/exo-icon-view.c:682
 msgid "Space which is inserted between grid column"
 msgstr "ช่องว่างที่แทรกระหว่างคอลัมน์ของตาราง"
 
-#: ../exo/exo-icon-view.c:691
+#: ../exo/exo-icon-view.c:698
 msgid "Number of columns"
 msgstr "จำนวนคอลัมน์"
 
-#: ../exo/exo-icon-view.c:692
+#: ../exo/exo-icon-view.c:699
 msgid "Number of columns to display"
 msgstr "จำนวนของคอลัมน์ที่จะแสดง"
 
-#: ../exo/exo-icon-view.c:706
+#: ../exo/exo-icon-view.c:713
 msgid "Enable Search"
 msgstr "เปิดใช้การค้นหา"
 
-#: ../exo/exo-icon-view.c:707
+#: ../exo/exo-icon-view.c:714
 msgid "View allows user to search through columns interactively"
 msgstr "ให้ผู้ใช้สามารถค้นหาข้อมูลในคอลัมน์แบบโต้ตอบได้"
 
-#: ../exo/exo-icon-view.c:724
+#: ../exo/exo-icon-view.c:731
 msgid "Width for each item"
 msgstr "ความกว้างของแต่ละรายการ"
 
-#: ../exo/exo-icon-view.c:725
+#: ../exo/exo-icon-view.c:732
 msgid "The width used for each item"
 msgstr "ความกว้างของแต่ละรายการ"
 
-#: ../exo/exo-icon-view.c:743
+#: ../exo/exo-icon-view.c:750
 msgid "Layout mode"
 msgstr "โหมดการจัดวาง"
 
-#: ../exo/exo-icon-view.c:744
+#: ../exo/exo-icon-view.c:751
 msgid "The layout mode"
 msgstr "โหมดการจัดวาง"
 
-#: ../exo/exo-icon-view.c:760
+#: ../exo/exo-icon-view.c:767
 msgid "Margin"
 msgstr "ระยะกั้นขอบ"
 
-#: ../exo/exo-icon-view.c:761
+#: ../exo/exo-icon-view.c:768
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "ช่องว่างที่แทรกที่ขอบของมุมมองไอคอน"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:784
 msgid "Markup column"
 msgstr "คอลัมน์มาร์กอัป"
 
-#: ../exo/exo-icon-view.c:778
+#: ../exo/exo-icon-view.c:785
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "หมายเลขคอลัมน์ในโมเดลที่ใช้ดึงข้อความซึ่งใช้มาร์กอัปแบบ Pango"
 
-#: ../exo/exo-icon-view.c:792
+#: ../exo/exo-icon-view.c:799
 msgid "Icon View Model"
 msgstr "โมเดลของมุมมองไอคอน"
 
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-view.c:800
 msgid "The model for the icon view"
 msgstr "โมเดลสำหรับมุมมองไอคอน"
 
-#: ../exo/exo-icon-view.c:807
+#: ../exo/exo-icon-view.c:814
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "วิธีการจัดตำแหน่งของข้อความเทียบกับไอคอนของแต่ละรายการ"
 
-#: ../exo/exo-icon-view.c:839
+#: ../exo/exo-icon-view.c:848
+msgid "Icon column"
+msgstr "คอลัมน์ไอคอน"
+
+#: ../exo/exo-icon-view.c:849
+msgid ""
+"Model column used to retrieve the absolute path of an image file to render"
+msgstr "หมายเลขคอลัมน์ในโมเดลที่จะใช้ดึงพาธเต็มของรูปภาพที่จะวาดแสดง"
+
+#: ../exo/exo-icon-view.c:864
 msgid "Reorderable"
 msgstr "เปลี่ยนลำดับได้"
 
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:865
 msgid "View is reorderable"
 msgstr "มุมมองสามารถสับเปลี่ยนลำดับได้"
 
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:880
 msgid "Row Spacing"
 msgstr "ช่องไฟระหว่างแถว"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:881
 msgid "Space which is inserted between grid rows"
 msgstr "ช่องว่างที่แทรกระหว่างแถวของตาราง"
 
-#: ../exo/exo-icon-view.c:870
+#: ../exo/exo-icon-view.c:895
 msgid "Search Column"
 msgstr "คอลัมน์ค้นหา"
 
-#: ../exo/exo-icon-view.c:871
+#: ../exo/exo-icon-view.c:896
 msgid "Model column to search through when searching through item"
 msgstr "หมายเลขคอลัมน์ในโมเดลที่จะใช้ค้นหาเมื่อสั่งค้นหาในรายการ"
 
-#: ../exo/exo-icon-view.c:885
+#: ../exo/exo-icon-view.c:910
 msgid "Selection mode"
 msgstr "โหมดการเลือก"
 
-#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-icon-view.c:911
 msgid "The selection mode"
 msgstr "โหมดของการเลือก"
 
-#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:926 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "คลิกเดียว"
 
-#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:927 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "กำหนดว่ารายการต่างๆ ในมุมมองสามารถเรียกใช้ได้ด้วยคลิกเดียวหรือไม่"
 
-#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:943 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "กำหนดเวลาในโหมดคลิกเดียว"
 
-#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:944 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "ระยะเวลาที่จะคอยก่อนที่จะเลือกรายการใต้ตัวชี้เมาส์โดยอัตโนมัติในโหมดคลิกเดียว"
 
-#: ../exo/exo-icon-view.c:934
+#: ../exo/exo-icon-view.c:959
 msgid "Spacing"
 msgstr "ช่องไฟระหว่างช่องตาราง"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:960
 msgid "Space which is inserted between cells of an item"
 msgstr "ช่องว่างที่แทรกระหว่างช่องต่างๆ ของรายการหนึ่งๆ"
 
@@ -631,7 +641,6 @@ msgstr "ตัวเลือก:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "ใช้การแจ้งเหตุขณะเ_ริ่ม"
@@ -647,7 +656,6 @@ msgstr "เลือกตัวเลือกนี้หากต้องก
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "ทำงานในเ_ทอร์มินัล"
@@ -799,7 +807,6 @@ msgid "Select default applications for various services"
 msgstr "เลือกโปรแกรมปริยายสำหรับบริการต่างๆ"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "_Internet"
 msgstr "_อินเทอร์เน็ต"
@@ -827,7 +834,6 @@ msgid ""
 msgstr "โปรแกรมอ่านเมลที่เลือกจะถูกใช้ในการเขียนอีเมล\nเมื่อคุณคลิกที่ที่อยู่อีเมล"
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "_Utilities"
 msgstr "เ_ครื่องมือทั่วไป"
@@ -973,7 +979,7 @@ msgstr "กรุณาเลือกโปรแกรมจำลองเท
 msgid "No command specified"
 msgstr "ไม่ได้ระบุคำสั่ง"
 
-#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:726
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "เปิด %s เพื่อเขียนไม่สำเร็จ"
@@ -1186,6 +1192,18 @@ msgstr "Opera Mail"
 msgid "PCMan File Manager"
 msgstr "โปรแกรมจัดการแฟ้ม PCMan"
 
+#: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
+msgid "QTerminal"
+msgstr "QTerminal"
+
+#: ../exo-helper/helpers/qtfm.desktop.in.in.h:1
+msgid "qtFM"
+msgstr "qtFM"
+
+#: ../exo-helper/helpers/qupzilla.desktop.in.in.h:1
+msgid "QupZilla"
+msgstr "QupZilla"
+
 #: ../exo-helper/helpers/rodent.desktop.in.in.h:1
 msgid "Rodent File Manager"
 msgstr "โปรแกรมจัดการแฟ้ม Rodent"
@@ -1197,6 +1215,10 @@ msgstr "ROX-Filer"
 #: ../exo-helper/helpers/sakura.desktop.in.in.h:1
 msgid "Sakura"
 msgstr "Sakura"
+
+#: ../exo-helper/helpers/surf.desktop.in.in.h:1
+msgid "Surf"
+msgstr "Surf"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1217,6 +1239,10 @@ msgstr "Mozilla Thunderbird"
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
 msgstr "RXVT Unicode"
+
+#: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
+msgid "Vimprobable2"
+msgstr "Vimprobable2"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
@@ -1271,7 +1297,6 @@ msgstr "คำสั่ง --launch รองรับ \"ชนิด\" ต่�
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
