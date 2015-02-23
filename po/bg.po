@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Lyubomir Vasilev, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:55+0200\n"
-"PO-Revision-Date: 2013-11-19 14:58+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce/language/bg/)\n"
+"PO-Revision-Date: 2015-02-23 06:40+0000\n"
+"Last-Translator: Lyubomir Vasilev\n"
+"Language-Team: Bulgarian (http://www.transifex.com/projects/p/exo/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,22 +55,22 @@ msgstr "Размер на иконата в пиксели."
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Не може да се отвори файл \"%s\": %s"
+msgstr "Не може да се отвори файл „%s“: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:849
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Не може да се прочете файл \"%s\": %s"
+msgstr "Не може да се прочете файл „%s“: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Не може да се зареди изображението \"%s\": неясна причина, може би повреден файл"
+msgstr "Не може да се зареди изображението „%s“: неясна причина, може би повреден файл"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Не може да се отвори \"%s\"."
+msgstr "Не може да се отвори „%s“."
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:776
 msgid "Orientation"
@@ -646,7 +647,6 @@ msgstr "Опции:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Известяване при стартиране"
@@ -662,7 +662,6 @@ msgstr "Избери тази опция за известяване при ст
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Изпълнение в терминал"
@@ -759,30 +758,30 @@ msgstr "Не са указани файл/папка"
 #: ../exo-desktop-item-edit/main.c:274
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Не може да се зареди  съдържанието от \"%s\": %s"
+msgstr "Не може да се зареди  съдържанието от „%s“: %s"
 
 #: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr "Файлът \"%s\" не съдържа данни."
+msgstr "Файлът „%s“ не съдържа данни."
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:292
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Не може да се направи разбор на съдържанието на \"%s\": %s"
+msgstr "Не може да се направи разбор на съдържанието на „%s“: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:304
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr "Файлът \"%s\" няма типов клавиш"
+msgstr "Файлът „%s“ няма ключ за тип"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:314
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Неподдържан тип на десктоп файл \"%s\""
+msgstr "Неподдържан тип на файл за работен плот „%s“"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:338
@@ -797,12 +796,12 @@ msgstr "Избери име на файл"
 #: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Не може да се създаде \"%s\"."
+msgstr "Не може да се създаде „%s“."
 
 #: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Не може да се запази \"%s\"."
+msgstr "Не може да се запази „%s“."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -814,7 +813,6 @@ msgid "Select default applications for various services"
 msgstr "Изберете приложенията по подразбиране за различни услуги"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Интернет"
@@ -842,7 +840,6 @@ msgid ""
 msgstr "Предпочитаният Четец на поща ще се използва\nза писане на писма, когато кликнете върху email адрес."
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Инструменти"
@@ -1056,7 +1053,7 @@ msgstr "Напишете '%s --help' за начин на употреба."
 #: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Невалиден помощен тип \"%s\""
+msgstr "Невалиден помощен тип „%s“"
 
 #: ../exo-helper/main.c:213
 #, c-format
@@ -1254,7 +1251,6 @@ msgstr "Следните типове се поддържат от команд�
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1282,17 +1278,17 @@ msgstr "Стартирането на десктоп файл не се подд
 #: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "Не може да се изпълни предпочитаната програма за категория \"%s\""
+msgstr "Не може да се изпълни предпочитаната програма за категория „%s“"
 
 #: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "Не може да се открие URI-схемата на \"%s\"."
+msgstr "Не може да се открие URI-схемата на „%s“."
 
 #: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Не може да се отвори URI \"%s\"."
+msgstr "Не може да се отвори URI „%s“."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
