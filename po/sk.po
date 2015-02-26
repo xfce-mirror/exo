@@ -4,15 +4,16 @@
 # 
 # Translators:
 # Robert Hartl <hartl.robert@gmail.com>, 2009
-# Tomáš Vadina <tomasvadina+transifex@myopera.com>, 2011-2012
+# Slavko <linux@slavino.sk>, 2015
+# Tomáš Vadina <tomasvadina+transifex@cryptolab.net>, 2011-2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-02 22:30+0200\n"
-"PO-Revision-Date: 2013-11-19 13:01+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Slovak (http://www.transifex.com/projects/p/xfce/language/sk/)\n"
+"POT-Creation-Date: 2015-02-17 06:30+0100\n"
+"PO-Revision-Date: 2015-02-26 09:48+0000\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/exo/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,7 +74,7 @@ msgstr "Nepodarilo sa načítať obrázok \"%s\": Neznámy dôvod, pravdepodobne
 msgid "Failed to open \"%s\"."
 msgstr "Nepodarilo sa otvoriť \"%s\"."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:813
 msgid "Orientation"
 msgstr "Orientácia"
 
@@ -81,19 +82,19 @@ msgstr "Orientácia"
 msgid "The orientation of the iconbar"
 msgstr "Orientácia panela ikon."
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:830
 msgid "Pixbuf column"
 msgstr "Stĺpec pixbuf"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:831
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Stĺpec modelu používaný pre získanie pixbufu ikony z"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:975
 msgid "Text column"
 msgstr "Textový stĺpec"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:976
 msgid "Model column used to retrieve the text from"
 msgstr "Stĺpec modelu používaný pre získanie textu z"
 
@@ -221,130 +222,139 @@ msgstr "Náj_sť ikonu:"
 msgid "Clear search field"
 msgstr "Vymazať pole pre vyhľadávanie"
 
-#: ../exo/exo-icon-view.c:674
+#: ../exo/exo-icon-view.c:681
 msgid "Column Spacing"
 msgstr "Šírka stĺpca"
 
-#: ../exo/exo-icon-view.c:675
+#: ../exo/exo-icon-view.c:682
 msgid "Space which is inserted between grid column"
 msgstr "Priestor, ktorý sa vkladá medzi mriežku stĺpcov"
 
-#: ../exo/exo-icon-view.c:691
+#: ../exo/exo-icon-view.c:698
 msgid "Number of columns"
 msgstr "Počet stĺpcov"
 
-#: ../exo/exo-icon-view.c:692
+#: ../exo/exo-icon-view.c:699
 msgid "Number of columns to display"
 msgstr "Počet stĺpcov pre zobrazenie"
 
-#: ../exo/exo-icon-view.c:706
+#: ../exo/exo-icon-view.c:713
 msgid "Enable Search"
 msgstr "Povoliť hľadanie"
 
-#: ../exo/exo-icon-view.c:707
+#: ../exo/exo-icon-view.c:714
 msgid "View allows user to search through columns interactively"
 msgstr "Pohľad umožní užívateľovi interaktívne hľadať v stĺpcoch"
 
-#: ../exo/exo-icon-view.c:724
+#: ../exo/exo-icon-view.c:731
 msgid "Width for each item"
 msgstr "Šírka pre každú položku"
 
-#: ../exo/exo-icon-view.c:725
+#: ../exo/exo-icon-view.c:732
 msgid "The width used for each item"
 msgstr "Šírka použitá pre každú položku"
 
-#: ../exo/exo-icon-view.c:743
+#: ../exo/exo-icon-view.c:750
 msgid "Layout mode"
 msgstr "Režim rozloženia"
 
-#: ../exo/exo-icon-view.c:744
+#: ../exo/exo-icon-view.c:751
 msgid "The layout mode"
 msgstr "Režim rozloženia"
 
-#: ../exo/exo-icon-view.c:760
+#: ../exo/exo-icon-view.c:767
 msgid "Margin"
 msgstr "Okraj"
 
-#: ../exo/exo-icon-view.c:761
+#: ../exo/exo-icon-view.c:768
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Priestor vložený na okraje ikonového zobrazenia"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:784
 msgid "Markup column"
 msgstr "Označiť stĺpec"
 
-#: ../exo/exo-icon-view.c:778
+#: ../exo/exo-icon-view.c:785
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Stĺpec modelu používaný pre získanie textu, ak sa používajú značky Pango"
 
-#: ../exo/exo-icon-view.c:792
+#: ../exo/exo-icon-view.c:799
 msgid "Icon View Model"
 msgstr "Model ikonového pohľadu"
 
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-view.c:800
 msgid "The model for the icon view"
 msgstr "Model pre ikonový pohľad"
 
-#: ../exo/exo-icon-view.c:807
+#: ../exo/exo-icon-view.c:814
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Ako sú text a ikony každej položky navzájom relatívne umiestnené"
 
-#: ../exo/exo-icon-view.c:839
+#: ../exo/exo-icon-view.c:848
+msgid "Icon column"
+msgstr "Stĺpec ikony"
+
+#: ../exo/exo-icon-view.c:849
+msgid ""
+"Model column used to retrieve the absolute path of an image file to render"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:864
 msgid "Reorderable"
 msgstr "Preusporiadateľné"
 
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:865
 msgid "View is reorderable"
 msgstr "Pohľad je preusporiadaný"
 
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:880
 msgid "Row Spacing"
 msgstr "Výška riadka"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:881
 msgid "Space which is inserted between grid rows"
 msgstr "Priestor, ktorý sa vkladá medzi mriežku riadkov"
 
-#: ../exo/exo-icon-view.c:870
+#: ../exo/exo-icon-view.c:895
 msgid "Search Column"
 msgstr "Stĺpec hľadania"
 
-#: ../exo/exo-icon-view.c:871
+#: ../exo/exo-icon-view.c:896
 msgid "Model column to search through when searching through item"
 msgstr "Model stĺpca pre vyhľadávanie pri hľadaní v položke"
 
-#: ../exo/exo-icon-view.c:885
+#: ../exo/exo-icon-view.c:910
 msgid "Selection mode"
 msgstr "Režim výberu"
 
-#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-icon-view.c:911
 msgid "The selection mode"
 msgstr "Režim výberu"
 
-#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:926 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Jednoduché kliknutie"
 
-#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:927 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Či môžu byť zobrazené položky aktivované jednoduchým kliknutím"
 
-#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:943 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Vypršanie limitu pre jednoduché kliknutie"
 
-#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:944 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Doba, po ktorej pod kurzorom myši v režime jednoduchého kliknutia sa označí sama"
 
-#: ../exo/exo-icon-view.c:934
+#: ../exo/exo-icon-view.c:959
 msgid "Spacing"
 msgstr "Rozostupy"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:960
 msgid "Space which is inserted between cells of an item"
 msgstr "Priestor medzi bunkami položiek"
 
@@ -632,7 +642,6 @@ msgstr "Možnosti:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Použiť oznámenie pri _spustení"
@@ -648,7 +657,6 @@ msgstr "Zvoľte túto voľbu pre povolenie oznámenia pri spustení, ak je prík
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Spustiť v _termináli"
@@ -800,10 +808,9 @@ msgid "Select default applications for various services"
 msgstr "Vyberte predvolenú aplikáciu pre rôzne služby"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "_Internet"
-msgstr ""
+msgstr "_Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:1
@@ -828,10 +835,9 @@ msgid ""
 msgstr "Zvolený e-mailový klient bude používaný ako\npredvolený program pre písanie elektronickej\npošty pri kliknutí na e-mailovú adresu."
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "_Utilities"
-msgstr ""
+msgstr "_Nástroje"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:1
@@ -974,7 +980,7 @@ msgstr "Vyberte si prosím svoj uprednostňovaný\nemulátor terminálu a klikni
 msgid "No command specified"
 msgstr "Nebol zadaný žiadny príkaz"
 
-#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
+#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:726
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Nepodarilo sa otvoriť %s pre zápis"
@@ -1069,7 +1075,7 @@ msgstr "Balsa"
 
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
-msgstr ""
+msgstr "Správca súborov Caja"
 
 #: ../exo-helper/helpers/chromium.desktop.in.in.h:1
 msgid "Chromium"
@@ -1085,7 +1091,7 @@ msgstr "Debian X Terminal Emulator"
 
 #: ../exo-helper/helpers/dillo.desktop.in.in.h:1
 msgid "Dillo"
-msgstr ""
+msgstr "Dillo"
 
 #: ../exo-helper/helpers/encompass.desktop.in.in.h:1
 msgid "Encompass"
@@ -1117,7 +1123,7 @@ msgstr "GNOME Terminál"
 
 #: ../exo-helper/helpers/icecat.desktop.in.in.h:1
 msgid "Icecat"
-msgstr ""
+msgstr "Icecat"
 
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
@@ -1129,7 +1135,7 @@ msgstr "Iceweasel"
 
 #: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
 msgid "Jumanji"
-msgstr ""
+msgstr "Jumanji"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1187,17 +1193,33 @@ msgstr "Opera Mail"
 msgid "PCMan File Manager"
 msgstr "PCMan správca súborov"
 
+#: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
+msgid "QTerminal"
+msgstr "QTerminal"
+
+#: ../exo-helper/helpers/qtfm.desktop.in.in.h:1
+msgid "qtFM"
+msgstr "qtFM"
+
+#: ../exo-helper/helpers/qupzilla.desktop.in.in.h:1
+msgid "QupZilla"
+msgstr "QupZilla"
+
 #: ../exo-helper/helpers/rodent.desktop.in.in.h:1
 msgid "Rodent File Manager"
-msgstr ""
+msgstr "Správca súborov Rodent"
 
 #: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
 msgid "ROX-Filer"
-msgstr ""
+msgstr "ROX-Filer"
 
 #: ../exo-helper/helpers/sakura.desktop.in.in.h:1
 msgid "Sakura"
-msgstr ""
+msgstr "Sakura"
+
+#: ../exo-helper/helpers/surf.desktop.in.in.h:1
+msgid "Surf"
+msgstr "Surf"
 
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
@@ -1219,6 +1241,10 @@ msgstr "Mozilla Thunderbird"
 msgid "RXVT Unicode"
 msgstr "RXVT Unicode"
 
+#: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
+msgid "Vimprobable2"
+msgstr "Vimprobable2"
+
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
 msgstr "W3M Text Browser"
@@ -1229,7 +1255,7 @@ msgstr "Terminál Xfce"
 
 #: ../exo-helper/helpers/xfe.desktop.in.in.h:1
 msgid "Xfe File Manager"
-msgstr ""
+msgstr "Správca súborov Xfe"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -1272,7 +1298,6 @@ msgstr "Pri použití prepínača --launch sú podporované nasledujúce typy:"
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
