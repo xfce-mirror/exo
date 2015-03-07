@@ -43,6 +43,7 @@
 #include <unistd.h>
 #endif
 
+#include <libxfce4ui/libxfce4ui.h>
 #include <exo-helper/exo-helper.h>
 #include <exo-helper/exo-helper-utils.h>
 
@@ -346,17 +347,12 @@ exo_helper_execute (ExoHelper   *helper,
                     const gchar *parameter,
                     GError     **error)
 {
-  GTimeVal      previous;
-  GTimeVal      current;
   gboolean      succeed = FALSE;
   GError       *err = NULL;
   gchar       **commands;
   gchar       **argv;
   gchar        *command;
   guint         n;
-  gint          status;
-  gint          result;
-  gint          pid;
   const gchar  *real_parameter = parameter;
 
   g_return_val_if_fail (EXO_IS_HELPER (helper), FALSE);
