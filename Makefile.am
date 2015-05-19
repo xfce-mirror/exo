@@ -50,6 +50,7 @@ DISTCLEANFILES =							\
 DISTCHECK_CONFIGURE_FLAGS =						\
 	--enable-gtk-doc						\
 	--enable-gen-doc						\
-	--with-gio-module-dir=distcheck
+	--with-gio-module-dir=distcheck 				\
+	--disable-debug
 
 # vi:set ts=8 sw=8 noet ai nocindent:
