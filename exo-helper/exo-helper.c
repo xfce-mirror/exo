@@ -359,6 +359,8 @@ exo_helper_execute (ExoHelper   *helper,
   gint          pid;
   const gchar  *real_parameter = parameter;
 
+  // FIXME: startup-notification
+
   g_return_val_if_fail (EXO_IS_HELPER (helper), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
   g_return_val_if_fail (screen == NULL || GDK_IS_SCREEN (screen), FALSE);
@@ -397,14 +399,58 @@ exo_helper_execute (ExoHelper   *helper,
         continue;
 
       /* try to run the command */
-      succeed = xfce_spawn_on_screen (screen, NULL, argv, NULL, G_SPAWN_SEARCH_PATH, helper->startup_notify, gtk_get_current_event_time (), NULL, &err);
+      succeed = gdk_spawn_on_screen (screen, NULL, argv, NULL, G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH, NULL, NULL, &pid, &err);
 
       /* cleanup */
       g_strfreev (argv);
 
-      /* check if we should retry with the next command */
+      /* check if the execution was successful */
       if (G_LIKELY (succeed))
-        break;
+        {
+          /* determine the current time */
+          g_get_current_time (&previous);
+
+          /* wait up to 5 seconds to see whether the command worked */
+          for (;;)
+            {
+              /* check if the command exited with an error */
+              result = waitpid (pid, &status, WNOHANG);
+              if (result < 0)
+                {
+                  /* something weird happened */
+                  err = g_error_new_literal (G_FILE_ERROR, g_file_error_from_errno (errno), g_strerror (errno));
+                  succeed = FALSE;
+                  break;
+                }
+              else if (result > 0 && status != 0)
+                {
+                  /* the command failed */
+                  err = g_error_new_literal (G_FILE_ERROR, g_file_error_from_errno (EIO), g_strerror (EIO));
+                  succeed = FALSE;
+                  break;
+                }
+              else if (result == pid)
+                {
+                  /* the command succeed */
+                  succeed = TRUE;
+                  break;
+                }
+
+              /* determine the current time */
+              g_get_current_time (&current);
+
+              /* check if the command is still running after 5 seconds (which indicates that the command worked) */
+              if (((current.tv_sec - previous.tv_sec) * 1000ll + (current.tv_usec - previous.tv_usec) / 1000ll) > 5000ll)
+                break;
+
+              /* wait some time */
+              g_usleep (50 * 1000);
+            }
+
+          /* check if we should retry with the next command */
+          if (G_LIKELY (succeed))
+            break;
+        }
     }
 
   /* propagate the error */
