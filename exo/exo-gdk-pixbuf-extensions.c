@@ -787,7 +787,6 @@ err1: /* initialize the library's i18n support */
       g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (sverrno), _("Failed to open file \"%s\": %s"), display_name, g_strerror (sverrno));
       g_free (display_name);
 
-      close(fd);
       return NULL;
     }
 
