@@ -336,7 +336,7 @@ exo_open_uri (const gchar  *uri,
   scheme = g_file_get_uri_scheme (file);
 
   /* try to launch common schemes for know preferred applications */
-  if (scheme != NULL && exo_open_uri_known_category (escaped, scheme, &retval))
+  if (scheme != NULL && exo_open_uri_known_category (uri, scheme, &retval))
     {
       g_free (scheme);
       g_free (escaped);
