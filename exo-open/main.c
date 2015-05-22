@@ -307,6 +307,7 @@ exo_open_uri (const gchar  *uri,
 {
   GFile               *file;
   gchar               *scheme;
+  gchar               *escaped;
   GFileInfo           *file_info;
   gboolean             succeed = FALSE;
   gboolean             retval = FALSE;
@@ -330,13 +331,15 @@ exo_open_uri (const gchar  *uri,
   g_free (scheme);
 #endif
 
-  file = g_file_new_for_uri (uri);
+  escaped = g_uri_escape_string (uri, G_URI_RESERVED_CHARS_ALLOWED_IN_PATH, TRUE);
+  file = g_file_new_for_uri (escaped);
   scheme = g_file_get_uri_scheme (file);
 
   /* try to launch common schemes for know preferred applications */
-  if (scheme != NULL && exo_open_uri_known_category (uri, scheme, &retval))
+  if (scheme != NULL && exo_open_uri_known_category (escaped, scheme, &retval))
     {
       g_free (scheme);
+      g_free (escaped);
       return retval;
     }
 
@@ -353,7 +356,7 @@ exo_open_uri (const gchar  *uri,
           g_debug ("file is directory, use filemanager");
 #endif
           /* directories should go fine with a file manager */
-          retval = exo_open_launch_category ("FileManager", uri);
+          retval = exo_open_launch_category ("FileManager", escaped);
           succeed = TRUE;
         }
       else
@@ -379,7 +382,7 @@ exo_open_uri (const gchar  *uri,
                   if (executable == NULL
                       || strcmp (executable, "exo-open") != 0)
                     {
-                      fake_list.data = (gpointer) uri;
+                      fake_list.data = (gpointer) escaped;
                       fake_list.prev = fake_list.next = NULL;
 
                       /* launch it */
@@ -407,7 +410,7 @@ exo_open_uri (const gchar  *uri,
               /* found scheme, open in file manager */
               if (strcmp (scheme, schemes[i]) == 0)
                 {
-                  retval = succeed = exo_open_launch_category ("FileManager", uri);
+                  retval = succeed = exo_open_launch_category ("FileManager", escaped);
                   break;
                 }
             }
@@ -426,12 +429,13 @@ exo_open_uri (const gchar  *uri,
       /* try ftp uris if the file manager/gio failed to recognize it */
       if (scheme != NULL
           && (strcmp (scheme, "ftp") == 0 || strcmp (scheme, "ftps") == 0))
-        retval = exo_open_launch_category ("WebBrowser", uri);
+        retval = exo_open_launch_category ("WebBrowser", escaped);
       else
-        retval = gtk_show_uri (NULL, uri, 0, error);
+        retval = gtk_show_uri (NULL, escaped, 0, error);
     }
 
   g_free (scheme);
+  g_free (escaped);
 
   if (!retval && error != NULL)
     *error = err;
