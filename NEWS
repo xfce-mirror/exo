@@ -1,3 +1,8 @@
+0.10.6
+======
+- Close fd with error state goto (CID 30797), extension of previous
+  fix "File descriptor was never opened if < 0 (CID #85387)"
+
 0.10.5
 ======
 - Added --disable-debug to distcheck rules, this will allow building
