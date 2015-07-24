@@ -199,7 +199,16 @@ exo_open_launch_desktop_file (const gchar *arg)
 #endif
 }
 
-
+static gchar *
+exo_open_get_path (const gchar *string)
+{
+  gchar *escaped;
+  gchar *uri;
+  escaped = g_uri_escape_string (string, G_URI_RESERVED_CHARS_ALLOWED_IN_PATH, TRUE);
+  uri = g_strconcat ("file://", escaped, NULL);
+  g_free (escaped);
+  return uri;
+}
 
 static gchar *
 exo_open_find_scheme (const gchar *string)
@@ -210,7 +219,7 @@ exo_open_find_scheme (const gchar *string)
 
   /* is an absolute path, return file uri */
   if (g_path_is_absolute (string))
-    return g_strconcat ("file://", string, NULL);
+    return exo_open_get_path (string);
 
   /* treat it like a relative path */
   current_dir = g_get_current_dir ();
@@ -220,7 +229,7 @@ exo_open_find_scheme (const gchar *string)
   /* verify that a file of the given name exists */
   if (g_file_test (path, G_FILE_TEST_EXISTS))
     {
-       uri = g_strconcat ("file://", path, NULL);
+       uri = exo_open_get_path (path);
        g_free (path);
        return uri;
     }
