@@ -339,7 +339,7 @@ main (int argc, char **argv)
   /* add the "Create"/"Save" button (as default) */
   button = gtk_button_new_from_stock (opt_create_new ? _("C_reate") : GTK_STOCK_SAVE);
   gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, GTK_RESPONSE_ACCEPT);
-  GTK_WIDGET_SET_FLAGS (button, GTK_CAN_DEFAULT);
+  gtk_widget_set_can_default (button, TRUE);
   gtk_widget_grab_default (button);
   gtk_widget_show (button);
 
@@ -348,7 +348,7 @@ main (int argc, char **argv)
   exo_die_editor_set_mode (EXO_DIE_EDITOR (editor), mode);
   gtk_container_set_border_width (GTK_CONTAINER (editor), 12);
   exo_binding_new (G_OBJECT (editor), "complete", G_OBJECT (button), "sensitive");
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), editor, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), editor, TRUE, TRUE, 0);
   gtk_widget_show (editor);
 
   /* setup the name */
@@ -427,11 +427,13 @@ main (int argc, char **argv)
       xwindow = gdk_window_foreign_new ((GdkNativeWindow) opt_xid);
       if (G_LIKELY (xwindow != NULL))
         {
+          GtkAllocation allocation;
+
           /* realize the dialog first... */
           gtk_widget_realize (dialog);
 
           /* ...and set the "transient for" relation */
-          gdk_window_set_transient_for (dialog->window, xwindow);
+          gdk_window_set_transient_for (gtk_widget_get_window (dialog), xwindow);
           gtk_window_set_screen (GTK_WINDOW (dialog),
               gdk_drawable_get_screen (GDK_DRAWABLE (xwindow)));
 
@@ -439,8 +441,9 @@ main (int argc, char **argv)
           gdk_window_get_root_origin (xwindow, &ox, &oy);
           gdk_window_get_geometry (xwindow, NULL, NULL, &ow, &oh, NULL);
 
-          ox += (ow - dialog->allocation.width) / 2;
-          oy += (oh - dialog->allocation.height) / 2;
+          gtk_widget_get_allocation (dialog, &allocation);
+          ox += (ow - allocation.width) / 2;
+          oy += (oh - allocation.height) / 2;
 
           gtk_window_move (GTK_WINDOW (dialog), MAX (ox, 0), MAX (oy, 0));
         }

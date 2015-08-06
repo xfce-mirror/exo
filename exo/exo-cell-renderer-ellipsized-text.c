@@ -201,6 +201,10 @@ exo_cell_renderer_ellipsized_text_get_size (GtkCellRenderer *renderer,
   gint                                  focus_padding;
   gint                                  text_height;
   gint                                  text_width;
+  gfloat                                renderer_xalign;
+  gfloat                                renderer_yalign;
+
+  gtk_cell_renderer_get_alignment (renderer, &renderer_xalign, &renderer_yalign);
 
   /* determine the dimensions of the text from the GtkCellRendererText */
   (*GTK_CELL_RENDERER_CLASS (exo_cell_renderer_ellipsized_text_parent_class)->get_size) (renderer, widget, NULL, NULL, NULL, &text_width, &text_height);
@@ -229,14 +233,14 @@ exo_cell_renderer_ellipsized_text_get_size (GtkCellRenderer *renderer,
     {
       if (G_LIKELY (x_offset != NULL))
         {
-          *x_offset = ((gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL) ? (1.0 - renderer->xalign) : renderer->xalign)
+          *x_offset = ((gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL) ? (1.0 - renderer_xalign) : renderer_xalign)
                     * (cell_area->width - text_width);
           *x_offset = MAX (*x_offset, 0);
         }
 
       if (G_LIKELY (y_offset != NULL))
         {
-          *y_offset = renderer->yalign * (cell_area->height - text_height);
+          *y_offset = renderer_yalign * (cell_area->height - text_height);
           *y_offset = MAX (*y_offset, 0);
         }
     }
@@ -275,19 +279,19 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer     *renderer,
       /* determine the widget state */
       if ((flags & GTK_CELL_RENDERER_SELECTED) == GTK_CELL_RENDERER_SELECTED)
         {
-          if (GTK_WIDGET_HAS_FOCUS (widget))
+          if (gtk_widget_has_focus (widget))
             state = GTK_STATE_SELECTED;
           else
             state = GTK_STATE_ACTIVE;
         }
       else if ((flags & GTK_CELL_RENDERER_PRELIT) == GTK_CELL_RENDERER_PRELIT
-            && GTK_WIDGET_STATE (widget) == GTK_STATE_PRELIGHT)
+            && gtk_widget_get_state (widget) == GTK_STATE_PRELIGHT)
         {
           state = GTK_STATE_PRELIGHT;
         }
       else
         {
-          if (GTK_WIDGET_STATE (widget) == GTK_STATE_INSENSITIVE)
+          if (gtk_widget_get_state (widget) == GTK_STATE_INSENSITIVE)
             state = GTK_STATE_INSENSITIVE;
           else
             state = GTK_STATE_NORMAL;
@@ -333,7 +337,7 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer     *renderer,
               cairo_curve_to (cr, x0 + 5, y1, x0, y1, x0, y1 - 5);
               cairo_line_to (cr, x0, y0 + 5);
               cairo_curve_to (cr, x0, y0 + 5, x0, y0, x0 + 5, y0);
-              gdk_cairo_set_source_color (cr, &widget->style->base[state]);
+              gdk_cairo_set_source_color (cr, &gtk_widget_get_style (widget)->base[state]);
               cairo_fill (cr);
               cairo_destroy (cr);
             }
@@ -341,7 +345,7 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer     *renderer,
           /* draw the focus indicator */
           if ((flags & GTK_CELL_RENDERER_FOCUSED) != 0)
             {
-              gtk_paint_focus (widget->style, window, GTK_WIDGET_STATE (widget), NULL, widget, "icon_view", x0, y0, text_width, text_height);
+              gtk_paint_focus (gtk_widget_get_style (widget), window, gtk_widget_get_state (widget), NULL, widget, "icon_view", x0, y0, text_width, text_height);
               flags &= ~GTK_CELL_RENDERER_FOCUSED;
             }
         }

@@ -381,7 +381,7 @@ browse_clicked (GtkWidget *button,
 
   /* determine the toplevel window */
   toplevel = gtk_widget_get_toplevel (entry);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the chooser */
@@ -540,13 +540,13 @@ menu_activate_other (GtkWidget        *item,
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
   gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), GTK_RESPONSE_OK, FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 6);
-  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog)->action_area), 5);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->action_area), 6);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 6);
+  gtk_container_set_border_width (GTK_CONTAINER (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), 5);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), 6);
   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 
   hbox = g_object_new (GTK_TYPE_HBOX, "border-width", 5, "spacing", 12, NULL);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), hbox, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), hbox, TRUE, TRUE, 0);
   gtk_widget_show (hbox);
 
   image = gtk_image_new_from_icon_name ("preferences-desktop-default-applications", GTK_ICON_SIZE_DIALOG);
@@ -639,7 +639,7 @@ menu_position (GtkMenu  *menu,
   gtk_widget_size_request (GTK_WIDGET (chooser), &chooser_request);
   gtk_widget_size_request (GTK_WIDGET (menu), &menu_request);
 
-  gdk_window_get_position (GTK_WIDGET (chooser)->window, x, y);
+  gdk_window_get_position (gtk_widget_get_window (GTK_WIDGET (chooser)), x, y);
 
   *y += y0;
   *x += x0;
@@ -674,19 +674,21 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   GdkPixbuf      *icon;
   GtkWidget      *image;
   GtkWidget      *menu;
+  GtkAllocation   menu_allocation;
   GtkWidget      *item;
   GList          *helpers;
   GList          *lp;
   gint            icon_size;
+  GtkAllocation   chooser_allocation;
 
   g_return_if_fail (EXO_IS_HELPER_CHOOSER (chooser));
   g_return_if_fail (GTK_IS_BUTTON (button));
 
   /* set a watch cursor while loading the menu */
-  if (G_LIKELY (button->window != NULL))
+  if (G_LIKELY (gtk_widget_get_window (button) != NULL))
     {
       cursor = gdk_cursor_new (GDK_WATCH);
-      gdk_window_set_cursor (button->window, cursor);
+      gdk_window_set_cursor (gtk_widget_get_window (button), cursor);
       gdk_cursor_unref (cursor);
       gdk_flush ();
     }
@@ -766,12 +768,14 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   gtk_widget_show (item);
 
   /* make sure the menu has atleast the same width as the chooser */
-  if (menu->allocation.width < GTK_WIDGET (chooser)->allocation.width)
-    gtk_widget_set_size_request (menu, GTK_WIDGET (chooser)->allocation.width, -1);
+  gtk_widget_get_allocation (menu, &menu_allocation);
+  gtk_widget_get_allocation (GTK_WIDGET (chooser), &chooser_allocation);
+  if (menu_allocation.width < chooser_allocation.width)
+    gtk_widget_set_size_request (menu, chooser_allocation.width, -1);
 
   /* reset the watch cursor on the chooser */
-  if (G_LIKELY (button->window != NULL))
-    gdk_window_set_cursor (button->window, NULL);
+  if (G_LIKELY (gtk_widget_get_window (button) != NULL))
+    gdk_window_set_cursor (gtk_widget_get_window (button), NULL);
 
   /* allocate a new main loop */
   loop = g_main_loop_new (NULL, FALSE);

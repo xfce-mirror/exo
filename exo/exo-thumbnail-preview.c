@@ -148,11 +148,11 @@ exo_thumbnail_preview_style_set (GtkWidget           *ebox,
   _exo_return_if_fail (GTK_IS_EVENT_BOX (ebox));
 
   /* check if the ebox is already realized */
-  if (GTK_WIDGET_REALIZED (ebox))
+  if (gtk_widget_get_realized (ebox))
     {
       /* set background color (using the base color) */
       g_signal_handlers_block_by_func (G_OBJECT (ebox), exo_thumbnail_preview_style_set, thumbnail_preview);
-      gtk_widget_modify_bg (ebox, GTK_STATE_NORMAL, &ebox->style->base[GTK_STATE_NORMAL]);
+      gtk_widget_modify_bg (ebox, GTK_STATE_NORMAL, &gtk_widget_get_style (ebox)->base[GTK_STATE_NORMAL]);
       g_signal_handlers_unblock_by_func (G_OBJECT (ebox), exo_thumbnail_preview_style_set, thumbnail_preview);
     }
 }

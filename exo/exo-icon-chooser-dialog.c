@@ -196,7 +196,7 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   /* add the main box */
   vbox = gtk_vbox_new (FALSE, 6);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (icon_chooser_dialog)->vbox), vbox, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (icon_chooser_dialog))), vbox, TRUE, TRUE, 0);
   gtk_widget_show (vbox);
 
   /* add the header table */
@@ -344,11 +344,11 @@ exo_icon_chooser_dialog_close (GtkDialog *dialog)
   GdkEvent *event;
 
   /* verify that the dialog is realized */
-  if (G_LIKELY (GTK_WIDGET_REALIZED (dialog)))
+  if (G_LIKELY (gtk_widget_get_realized (GTK_WIDGET (dialog))))
     {
       /* send a delete event to the dialog */
       event = gdk_event_new (GDK_DELETE);
-      event->any.window = g_object_ref (GTK_WIDGET (dialog)->window);
+      event->any.window = g_object_ref (gtk_widget_get_window (GTK_WIDGET (dialog)));
       event->any.send_event = TRUE;
       gtk_main_do_event (event);
       gdk_event_free (event);

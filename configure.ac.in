@@ -239,6 +239,11 @@ dnl *************************************
 XDT_SUPPORTED_FLAGS([GTK_DOC_EXTRA_CFLAGS], [-Wno-sign-compare])
 AC_SUBST([GTK_DOC_EXTRA_CFLAGS])
 
+dnl *************************************
+dnl *** Use GSEAL if possible         ***
+dnl *************************************
+XDT_SUPPORTED_FLAGS([CFLAGS], [-DGSEAL_ENABLE])
+
 AC_OUTPUT([
 Makefile
 docs/Makefile

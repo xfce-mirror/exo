@@ -583,7 +583,7 @@ exo_die_editor_icon_clicked (GtkWidget    *button,
 
   /* determine the toplevel widget */
   toplevel = gtk_widget_get_toplevel (button);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the icon chooser dialog */
@@ -630,7 +630,7 @@ exo_die_editor_path_clicked (GtkWidget    *button,
 
   /* determine the toplevel widget */
   toplevel = gtk_widget_get_toplevel (button);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the file chooser dialog */
@@ -1188,8 +1188,8 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
       g_object_notify (G_OBJECT (editor), "icon");
 
       /* drop the previous icon button child */
-      if (GTK_BIN (editor->icon_button)->child != NULL)
-        gtk_widget_destroy (GTK_BIN (editor->icon_button)->child);
+      if (gtk_bin_get_child (GTK_BIN (editor->icon_button)) != NULL)
+        gtk_widget_destroy (gtk_bin_get_child (GTK_BIN (editor->icon_button)));
 
       /* check the icon depending on the type */
       if (icon != NULL && g_path_is_absolute (icon))

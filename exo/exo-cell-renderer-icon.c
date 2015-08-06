@@ -325,20 +325,25 @@ exo_cell_renderer_icon_get_size (GtkCellRenderer *renderer,
                                  gint            *height)
 {
   const ExoCellRendererIconPrivate *priv = EXO_CELL_RENDERER_ICON_GET_PRIVATE (renderer);
+  gfloat xalign, yalign;
+  gint   xpad, ypad;
+
+  gtk_cell_renderer_get_alignment (renderer, &xalign, &yalign);
+  gtk_cell_renderer_get_padding (renderer, &xpad, &ypad);
 
   if (cell_area != NULL)
     {
       if (x_offset != NULL)
         {
-          *x_offset = ((gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL) ? 1.0 - renderer->xalign : renderer->xalign)
+          *x_offset = ((gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL) ? 1.0 - xalign : xalign)
                     * (cell_area->width - priv->size);
-          *x_offset = MAX (*x_offset, 0) + renderer->xpad;
+          *x_offset = MAX (*x_offset, 0) + xpad;
         }
 
       if (y_offset != NULL)
         {
-          *y_offset = renderer->yalign * (cell_area->height - priv->size);
-          *y_offset = MAX (*y_offset, 0) + renderer->ypad;
+          *y_offset = yalign * (cell_area->height - priv->size);
+          *y_offset = MAX (*y_offset, 0) + ypad;
         }
     }
   else
@@ -351,10 +356,10 @@ exo_cell_renderer_icon_get_size (GtkCellRenderer *renderer,
     }
 
   if (G_LIKELY (width != NULL))
-    *width = (gint) renderer->xpad * 2 + priv->size;
+    *width = (gint) xpad * 2 + priv->size;
 
   if (G_LIKELY (height != NULL))
-    *height = (gint) renderer->ypad * 2 + priv->size;
+    *height = (gint) ypad * 2 + priv->size;
 }
 
 
@@ -501,8 +506,8 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         {
           if ((flags & GTK_CELL_RENDERER_SELECTED) != 0)
             {
-              state = GTK_WIDGET_HAS_FOCUS (widget) ? GTK_STATE_SELECTED : GTK_STATE_ACTIVE;
-              temp = exo_gdk_pixbuf_colorize (icon, &widget->style->base[state]);
+              state = gtk_widget_has_focus (widget) ? GTK_STATE_SELECTED : GTK_STATE_ACTIVE;
+              temp = exo_gdk_pixbuf_colorize (icon, &gtk_widget_get_style (widget)->base[state]);
               g_object_unref (G_OBJECT (icon));
               icon = temp;
             }
@@ -516,7 +521,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         }
 
       /* check if we should render an insensitive icon */
-      if (G_UNLIKELY (GTK_WIDGET_STATE (widget) == GTK_STATE_INSENSITIVE || !renderer->sensitive))
+      if (G_UNLIKELY (gtk_widget_get_state (widget) == GTK_STATE_INSENSITIVE || !gtk_cell_renderer_get_sensitive (renderer)))
         {
           /* allocate an icon source */
           icon_source = gtk_icon_source_new ();
@@ -525,7 +530,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
           gtk_icon_source_set_size (icon_source, GTK_ICON_SIZE_SMALL_TOOLBAR);
 
           /* render the insensitive icon */
-          temp = gtk_style_render_icon (widget->style, icon_source, gtk_widget_get_direction (widget),
+          temp = gtk_style_render_icon (gtk_widget_get_style (widget), icon_source, gtk_widget_get_direction (widget),
                                         GTK_STATE_INSENSITIVE, -1, widget, "gtkcellrendererpixbuf");
           g_object_unref (G_OBJECT (icon));
           icon = temp;
@@ -535,7 +540,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         }
 
       /* render the invalid parts of the icon */
-      gdk_draw_pixbuf (window, widget->style->black_gc, icon,
+      gdk_draw_pixbuf (window, gtk_widget_get_style (widget)->black_gc, icon,
                        draw_area.x - icon_area.x, draw_area.y - icon_area.y,
                        draw_area.x, draw_area.y, draw_area.width, draw_area.height,
                        GDK_RGB_DITHER_NORMAL, 0, 0);

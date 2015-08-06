@@ -434,7 +434,7 @@ exo_icon_bar_init (ExoIconBar *icon_bar)
   icon_bar->priv->layout = gtk_widget_create_pango_layout (GTK_WIDGET (icon_bar), NULL);
   pango_layout_set_width (icon_bar->priv->layout, -1);
 
-  GTK_WIDGET_UNSET_FLAGS (icon_bar, GTK_CAN_FOCUS);
+  gtk_widget_set_can_focus (GTK_WIDGET (icon_bar), FALSE);
 
   exo_icon_bar_set_adjustments (icon_bar, NULL, NULL);
 }
@@ -549,10 +549,10 @@ exo_icon_bar_style_set (GtkWidget *widget,
 
   (*GTK_WIDGET_CLASS (exo_icon_bar_parent_class)->style_set) (widget, previous_style);
 
-  if (GTK_WIDGET_REALIZED (widget))
+  if (gtk_widget_get_realized (widget))
     {
       gdk_window_set_background (icon_bar->priv->bin_window,
-                                 &widget->style->base[widget->state]);
+                                 &gtk_widget_get_style (widget)->base[gtk_widget_get_state (widget)]);
     }
 }
 
@@ -564,28 +564,30 @@ exo_icon_bar_realize (GtkWidget *widget)
   GdkWindowAttr attributes;
   ExoIconBar   *icon_bar = EXO_ICON_BAR (widget);
   gint          attributes_mask;
+  GtkAllocation allocation;
 
-  GTK_WIDGET_SET_FLAGS (widget, GTK_REALIZED);
+  gtk_widget_set_realized (widget, TRUE);
+  gtk_widget_get_allocation (widget, &allocation);
 
   attributes.window_type = GDK_WINDOW_CHILD;
-  attributes.x = widget->allocation.x;
-  attributes.y = widget->allocation.y;
-  attributes.width = widget->allocation.width;
-  attributes.height = widget->allocation.height;
+  attributes.x = allocation.x;
+  attributes.y = allocation.y;
+  attributes.width = allocation.width;
+  attributes.height = allocation.height;
   attributes.wclass = GDK_INPUT_OUTPUT;
   attributes.visual = gtk_widget_get_visual (widget);
   attributes.colormap = gtk_widget_get_colormap (widget);
   attributes.event_mask = GDK_VISIBILITY_NOTIFY_MASK;
   attributes_mask = GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL | GDK_WA_COLORMAP;
 
-  widget->window = gdk_window_new (gtk_widget_get_parent_window (widget),
-                                   &attributes, attributes_mask);
-  gdk_window_set_user_data (widget->window, widget);
+  gtk_widget_set_window (widget, gdk_window_new (gtk_widget_get_parent_window (widget),
+                                                 &attributes, attributes_mask));
+  gdk_window_set_user_data (gtk_widget_get_window (widget), widget);
 
   attributes.x = 0;
   attributes.y = 0;
-  attributes.width = MAX (icon_bar->priv->width, widget->allocation.width);
-  attributes.height = MAX (icon_bar->priv->height, widget->allocation.height);
+  attributes.width = MAX (icon_bar->priv->width, allocation.width);
+  attributes.height = MAX (icon_bar->priv->height, allocation.height);
   attributes.event_mask = (GDK_SCROLL_MASK
                            | GDK_EXPOSURE_MASK
                            | GDK_LEAVE_NOTIFY_MASK
@@ -597,13 +599,13 @@ exo_icon_bar_realize (GtkWidget *widget)
                           | gtk_widget_get_events (widget);
   attributes_mask = GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL | GDK_WA_COLORMAP;
 
-  icon_bar->priv->bin_window = gdk_window_new (widget->window,
+  icon_bar->priv->bin_window = gdk_window_new (gtk_widget_get_window (widget),
                                                &attributes, attributes_mask);
   gdk_window_set_user_data (icon_bar->priv->bin_window, widget);
 
-  widget->style = gtk_style_attach (widget->style, widget->window);
-  gdk_window_set_background (widget->window, &widget->style->base[widget->state]);
-  gdk_window_set_background (icon_bar->priv->bin_window, &widget->style->base[widget->state]);
+  gtk_widget_set_style (widget, gtk_style_attach (gtk_widget_get_style (widget), gtk_widget_get_window (widget)));
+  gdk_window_set_background (gtk_widget_get_window (widget), &gtk_widget_get_style (widget)->base[gtk_widget_get_state (widget)]);
+  gdk_window_set_background (icon_bar->priv->bin_window, &gtk_widget_get_style (widget)->base[gtk_widget_get_state (widget)]);
   gdk_window_show (icon_bar->priv->bin_window);
 }
 
@@ -678,11 +680,11 @@ exo_icon_bar_size_allocate (GtkWidget     *widget,
 {
   ExoIconBar *icon_bar = EXO_ICON_BAR (widget);
 
-  widget->allocation = *allocation;
+  gtk_widget_set_allocation (widget, allocation);
 
-  if (GTK_WIDGET_REALIZED (widget))
+  if (gtk_widget_get_realized (widget))
     {
-      gdk_window_move_resize (widget->window,
+      gdk_window_move_resize (gtk_widget_get_window (widget),
                               allocation->x,
                               allocation->y,
                               allocation->width,
@@ -692,18 +694,18 @@ exo_icon_bar_size_allocate (GtkWidget     *widget,
                          MAX (icon_bar->priv->height, allocation->height));
     }
 
-  icon_bar->priv->hadjustment->page_size = allocation->width;
-  icon_bar->priv->hadjustment->page_increment = allocation->width * 0.9;
-  icon_bar->priv->hadjustment->step_increment = allocation->width * 0.1;
-  icon_bar->priv->hadjustment->lower = 0;
-  icon_bar->priv->hadjustment->upper = MAX (allocation->width, icon_bar->priv->width);
+  gtk_adjustment_set_page_size (icon_bar->priv->hadjustment, allocation->width);
+  gtk_adjustment_set_page_increment (icon_bar->priv->hadjustment, allocation->width * 0.9);
+  gtk_adjustment_set_step_increment (icon_bar->priv->hadjustment, allocation->width * 0.1);
+  gtk_adjustment_set_lower (icon_bar->priv->hadjustment, 0);
+  gtk_adjustment_set_upper (icon_bar->priv->hadjustment, MAX (allocation->width, icon_bar->priv->width));
   gtk_adjustment_changed (icon_bar->priv->hadjustment);
 
-  icon_bar->priv->vadjustment->page_size = allocation->height;
-  icon_bar->priv->vadjustment->page_increment = allocation->height * 0.9;
-  icon_bar->priv->vadjustment->step_increment = allocation->height * 0.1;
-  icon_bar->priv->vadjustment->lower = 0;
-  icon_bar->priv->vadjustment->upper = MAX (allocation->height, icon_bar->priv->height);
+  gtk_adjustment_set_page_size (icon_bar->priv->vadjustment, allocation->height);
+  gtk_adjustment_set_page_increment (icon_bar->priv->vadjustment, allocation->height * 0.9);
+  gtk_adjustment_set_step_increment (icon_bar->priv->vadjustment, allocation->height * 0.1);
+  gtk_adjustment_set_lower (icon_bar->priv->vadjustment, 0);
+  gtk_adjustment_set_upper (icon_bar->priv->vadjustment, MAX (allocation->height, icon_bar->priv->height));
   gtk_adjustment_changed (icon_bar->priv->vadjustment);
 
   if (icon_bar->priv->orientation == GTK_ORIENTATION_VERTICAL)
@@ -810,7 +812,7 @@ exo_icon_bar_button_press (GtkWidget      *widget,
   ExoIconBarItem  *item;
   ExoIconBar      *icon_bar = EXO_ICON_BAR (widget);
 
-  if (!GTK_WIDGET_HAS_FOCUS (widget))
+  if (!gtk_widget_has_focus (widget))
     gtk_widget_grab_focus (widget);
 
   if (event->button == 1 && event->type == GDK_BUTTON_PRESS)
@@ -888,11 +890,11 @@ static void
 exo_icon_bar_adjustment_changed (GtkAdjustment *adjustment,
                                  ExoIconBar    *icon_bar)
 {
-  if (GTK_WIDGET_REALIZED (icon_bar))
+  if (gtk_widget_get_realized (GTK_WIDGET (icon_bar)))
     {
       gdk_window_move (icon_bar->priv->bin_window,
-                       - icon_bar->priv->hadjustment->value,
-                       - icon_bar->priv->vadjustment->value);
+                       - gtk_adjustment_get_value (icon_bar->priv->hadjustment),
+                       - gtk_adjustment_get_value (icon_bar->priv->vadjustment));
 
       gdk_window_process_updates (icon_bar->priv->bin_window, TRUE);
     }
@@ -935,7 +937,7 @@ exo_icon_bar_queue_draw_item (ExoIconBar     *icon_bar,
 {
   GdkRectangle area;
 
-  if (GTK_WIDGET_REALIZED (icon_bar))
+  if (gtk_widget_get_realized (GTK_WIDGET (icon_bar)))
     {
       if (icon_bar->priv->orientation == GTK_ORIENTATION_VERTICAL)
         {
@@ -1015,13 +1017,13 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
 
       if (fill_color == NULL)
         {
-          fill_color = gdk_color_copy (&GTK_WIDGET (icon_bar)->style->base[GTK_STATE_SELECTED]);
+          fill_color = gdk_color_copy (&gtk_widget_get_style (GTK_WIDGET (icon_bar))->base[GTK_STATE_SELECTED]);
           gdk_color_parse ("#c1d2ee", fill_color);
         }
 
       if (border_color == NULL)
         {
-          border_color = gdk_color_copy (&GTK_WIDGET (icon_bar)->style->base[GTK_STATE_SELECTED]);
+          border_color = gdk_color_copy (&gtk_widget_get_style (GTK_WIDGET (icon_bar))->base[GTK_STATE_SELECTED]);
           gdk_color_parse ("#316ac5", border_color);
         }
 
@@ -1053,13 +1055,13 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
 
       if (fill_color == NULL)
         {
-          fill_color = gdk_color_copy (&GTK_WIDGET (icon_bar)->style->base[GTK_STATE_SELECTED]);
+          fill_color = gdk_color_copy (&gtk_widget_get_style (GTK_WIDGET (icon_bar))->base[GTK_STATE_SELECTED]);
           gdk_color_parse ("#e0e8f6", fill_color);
         }
 
       if (border_color == NULL)
         {
-          border_color = gdk_color_copy (&GTK_WIDGET (icon_bar)->style->base[GTK_STATE_SELECTED]);
+          border_color = gdk_color_copy (&gtk_widget_get_style (GTK_WIDGET (icon_bar))->base[GTK_STATE_SELECTED]);
           gdk_color_parse ("#98b4e2", border_color);
         }
 
@@ -1108,12 +1110,12 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
 
           if (text_color == NULL)
             {
-              text_color = gdk_color_copy (&GTK_WIDGET (icon_bar)->style->base[GTK_STATE_SELECTED]);
+              text_color = gdk_color_copy (&gtk_widget_get_style (GTK_WIDGET (icon_bar))->base[GTK_STATE_SELECTED]);
               gdk_color_parse ("#000000", text_color);
             }
 
           gc = gdk_gc_new (GDK_DRAWABLE (icon_bar->priv->bin_window));
-          gdk_gc_copy (gc, GTK_WIDGET (icon_bar)->style->text_gc[GTK_STATE_SELECTED]);
+          gdk_gc_copy (gc, gtk_widget_get_style (GTK_WIDGET (icon_bar))->text_gc[GTK_STATE_SELECTED]);
           gdk_gc_set_clip_rectangle (gc, area);
           gdk_gc_set_rgb_fg_color (gc, text_color);
           gdk_draw_layout (icon_bar->priv->bin_window, gc, lx, ly, icon_bar->priv->layout);
@@ -1128,12 +1130,12 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
 
           if (text_color == NULL)
             {
-              text_color = gdk_color_copy (&GTK_WIDGET (icon_bar)->style->base[GTK_STATE_SELECTED]);
+              text_color = gdk_color_copy (&gtk_widget_get_style (GTK_WIDGET (icon_bar))->base[GTK_STATE_SELECTED]);
               gdk_color_parse ("#000000", text_color);
             }
 
           gc = gdk_gc_new (GDK_DRAWABLE (icon_bar->priv->bin_window));
-          gdk_gc_copy (gc, GTK_WIDGET (icon_bar)->style->text_gc[GTK_STATE_SELECTED]);
+          gdk_gc_copy (gc, gtk_widget_get_style (GTK_WIDGET (icon_bar))->text_gc[GTK_STATE_SELECTED]);
           gdk_gc_set_clip_rectangle (gc, area);
           gdk_gc_set_rgb_fg_color (gc, text_color);
           gdk_draw_layout (icon_bar->priv->bin_window, gc, lx, ly, icon_bar->priv->layout);
@@ -1142,7 +1144,7 @@ exo_icon_bar_paint_item (ExoIconBar     *icon_bar,
         }
       else
         {
-          gtk_paint_layout (GTK_WIDGET (icon_bar)->style,
+          gtk_paint_layout (gtk_widget_get_style (GTK_WIDGET (icon_bar)),
                             icon_bar->priv->bin_window,
                             GTK_STATE_NORMAL, TRUE, area,
                             GTK_WIDGET (icon_bar), "icon_bar",
