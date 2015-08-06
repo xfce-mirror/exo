@@ -2827,8 +2827,7 @@ exo_icon_view_set_adjustments (ExoIconView   *icon_view,
   if (icon_view->priv->hadjustment != hadj)
     {
       icon_view->priv->hadjustment = hadj;
-      g_object_ref (icon_view->priv->hadjustment);
-      gtk_object_sink (GTK_OBJECT (icon_view->priv->hadjustment));
+      g_object_ref_sink (icon_view->priv->hadjustment);
 
       g_signal_connect (icon_view->priv->hadjustment, "value-changed",
                         G_CALLBACK (exo_icon_view_adjustment_changed),
@@ -2839,8 +2838,7 @@ exo_icon_view_set_adjustments (ExoIconView   *icon_view,
   if (icon_view->priv->vadjustment != vadj)
     {
       icon_view->priv->vadjustment = vadj;
-      g_object_ref (icon_view->priv->vadjustment);
-      gtk_object_sink (GTK_OBJECT (icon_view->priv->vadjustment));
+      g_object_ref_sink (icon_view->priv->vadjustment);
 
       g_signal_connect (icon_view->priv->vadjustment, "value-changed",
                         G_CALLBACK (exo_icon_view_adjustment_changed),
@@ -4821,8 +4819,7 @@ exo_icon_view_cell_layout_pack_start (GtkCellLayout   *layout,
   _exo_return_if_fail (GTK_IS_CELL_RENDERER (renderer));
   _exo_return_if_fail (exo_icon_view_get_cell_info (icon_view, renderer) == NULL);
 
-  g_object_ref (renderer);
-  gtk_object_sink (GTK_OBJECT (renderer));
+  g_object_ref_sink (renderer);
 
   info = g_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
@@ -4850,8 +4847,7 @@ exo_icon_view_cell_layout_pack_end (GtkCellLayout   *layout,
   _exo_return_if_fail (GTK_IS_CELL_RENDERER (renderer));
   _exo_return_if_fail (exo_icon_view_get_cell_info (icon_view, renderer) == NULL);
 
-  g_object_ref (renderer);
-  gtk_object_sink (GTK_OBJECT (renderer));
+  g_object_ref_sink (renderer);
 
   info = g_slice_new0 (ExoIconViewCellInfo);
   info->cell = renderer;
