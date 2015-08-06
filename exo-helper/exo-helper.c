@@ -352,7 +352,9 @@ exo_helper_execute (ExoHelper   *helper,
   GError       *err = NULL;
   gchar       **commands;
   gchar       **argv;
+  gchar       **envp;
   gchar        *command;
+  gchar        *display;
   guint         n;
   gint          status;
   gint          result;
@@ -398,11 +400,18 @@ exo_helper_execute (ExoHelper   *helper,
       if (G_UNLIKELY (!succeed))
         continue;
 
+      /* set the display variable */
+      envp = g_get_environ ();
+      display = gdk_screen_make_display_name (screen);
+      envp = g_environ_setenv (envp, "DISPLAY", display, TRUE);
+
       /* try to run the command */
-      succeed = gdk_spawn_on_screen (screen, NULL, argv, NULL, G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH, NULL, NULL, &pid, &err);
+      succeed = g_spawn_async (NULL, argv, envp, G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH, NULL, NULL, &pid, &err);
 
       /* cleanup */
       g_strfreev (argv);
+      g_strfreev (envp);
+      g_free (display);
 
       /* check if the execution was successful */
       if (G_LIKELY (succeed))
