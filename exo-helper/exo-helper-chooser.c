@@ -69,7 +69,6 @@ struct _ExoHelperChooser
 
   GtkWidget         *image;
   GtkWidget         *label;
-  GtkTooltips       *tooltips;
 
   ExoHelperDatabase *database;
   ExoHelperCategory  category;
@@ -139,14 +138,11 @@ exo_helper_chooser_init (ExoHelperChooser *chooser)
 
   chooser->database = exo_helper_database_get ();
 
-  chooser->tooltips = gtk_tooltips_new ();
-  g_object_ref_sink (G_OBJECT (chooser->tooltips));
-
   gtk_widget_push_composite_child ();
 
   button = gtk_button_new ();
   g_signal_connect_swapped (G_OBJECT (button), "pressed", G_CALLBACK (exo_helper_chooser_pressed), chooser);
-  gtk_tooltips_set_tip (chooser->tooltips, button, _("Press left mouse button to change the selected application."), NULL);
+  gtk_widget_set_tooltip_text (button, _("Press left mouse button to change the selected application."));
   gtk_container_add (GTK_CONTAINER (chooser), button);
   gtk_widget_show (button);
 
@@ -193,7 +189,6 @@ exo_helper_chooser_finalize (GObject *object)
   ExoHelperChooser *chooser = EXO_HELPER_CHOOSER (object);
 
   g_object_unref (G_OBJECT (chooser->database));
-  g_object_unref (G_OBJECT (chooser->tooltips));
 
   (*G_OBJECT_CLASS (exo_helper_chooser_parent_class)->finalize) (object);
 }
@@ -576,7 +571,7 @@ menu_activate_other (GtkWidget        *item,
   gtk_widget_show (entry);
 
   button = gtk_button_new ();
-  gtk_tooltips_set_tip (chooser->tooltips, button, _("Browse the file system to choose a custom command."), NULL);
+  gtk_widget_set_tooltip_text (button, _("Browse the file system to choose a custom command."));
   g_signal_connect (G_OBJECT (button), "clicked", G_CALLBACK (browse_clicked), entry);
   gtk_box_pack_start (GTK_BOX (hbox), button, FALSE, FALSE, 0);
   gtk_widget_show (button);
@@ -762,7 +757,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
     }
 
   item = gtk_menu_item_new_with_mnemonic (_("_Other..."));
-  gtk_tooltips_set_tip (chooser->tooltips, item, _("Use a custom application which is not included in the above list."), NULL);
+  gtk_widget_set_tooltip_text (item, _("Use a custom application which is not included in the above list."));
   g_signal_connect (G_OBJECT (item), "activate", G_CALLBACK (menu_activate_other), chooser);
   gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
   gtk_widget_show (item);
