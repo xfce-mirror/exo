@@ -606,7 +606,6 @@ exo_icon_chooser_dialog_new (const gchar *title,
   g_return_val_if_fail (parent == NULL || GTK_IS_WINDOW (parent), NULL);
 
   dialog = g_object_new (EXO_TYPE_ICON_CHOOSER_DIALOG,
-                         "has-separator", FALSE,
                          "title", title,
                          NULL);
 

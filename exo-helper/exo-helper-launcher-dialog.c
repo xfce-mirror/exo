@@ -108,7 +108,6 @@ exo_helper_launcher_dialog_init (ExoHelperLauncherDialog *launcher_dialog)
   gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
   gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), GTK_STOCK_OK, GTK_RESPONSE_OK);
   gtk_dialog_set_default_response (GTK_DIALOG (launcher_dialog), GTK_RESPONSE_OK);
-  gtk_dialog_set_has_separator (GTK_DIALOG (launcher_dialog), FALSE);
   gtk_window_set_resizable (GTK_WINDOW (launcher_dialog), FALSE);
   gtk_window_set_title (GTK_WINDOW (launcher_dialog), _("Choose Preferred Application"));
 

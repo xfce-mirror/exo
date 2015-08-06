@@ -97,7 +97,6 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   g_assert (EXO_HELPER_N_CATEGORIES == 4);
 
   gtk_dialog_add_button (GTK_DIALOG (chooser_dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
-  gtk_dialog_set_has_separator (GTK_DIALOG (chooser_dialog), FALSE);
   gtk_window_set_icon_name (GTK_WINDOW (chooser_dialog), "preferences-desktop-default-applications");
   gtk_window_set_title (GTK_WINDOW (chooser_dialog), _("Preferred Applications"));
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (chooser_dialog), _("Select default applications for various services"));

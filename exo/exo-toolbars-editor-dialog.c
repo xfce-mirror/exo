@@ -90,7 +90,6 @@ exo_toolbars_editor_dialog_init (ExoToolbarsEditorDialog *dialog)
 
   dialog->priv = EXO_TOOLBARS_EDITOR_DIALOG_GET_PRIVATE (dialog);
 
-  gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
   gtk_window_set_default_size (GTK_WINDOW (dialog), -1, 300);
 
   dialog->priv->editor = g_object_new (EXO_TYPE_TOOLBARS_EDITOR, NULL);
