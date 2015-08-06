@@ -388,6 +388,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   gint                             *icon_sizes;
   gint                              icon_size;
   gint                              n;
+  cairo_t                          *cr;
 
   /* verify that we have an icon */
   if (G_UNLIKELY (priv->icon == NULL && priv->gicon == NULL))
@@ -540,10 +541,11 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         }
 
       /* render the invalid parts of the icon */
-      gdk_draw_pixbuf (window, gtk_widget_get_style (widget)->black_gc, icon,
-                       draw_area.x - icon_area.x, draw_area.y - icon_area.y,
-                       draw_area.x, draw_area.y, draw_area.width, draw_area.height,
-                       GDK_RGB_DITHER_NORMAL, 0, 0);
+      cr = gdk_cairo_create (window);
+      gdk_cairo_set_source_pixbuf (cr, icon, icon_area.x, icon_area.y);
+      cairo_rectangle (cr, draw_area.x, draw_area.y, draw_area.width, draw_area.height);
+      cairo_fill (cr);
+      cairo_destroy (cr);
     }
 
   /* release the file's icon */
