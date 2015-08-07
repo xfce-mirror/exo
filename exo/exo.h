@@ -35,9 +35,11 @@
 
 #include <exo/exo-config.h>
 
+#include <exo/exo-binding.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-gdk-pixbuf-extensions.h>
+#include <exo/exo-gobject-extensions.h>
 #include <exo/exo-execute.h>
 #include <exo/exo-job.h>
 #include <exo/exo-simple-job.h>
@@ -50,10 +52,8 @@
 #if !GTK_CHECK_VERSION (3, 0, 0)
 #include <libxfce4util/libxfce4util.h>
 
-#include <exo/exo-binding.h>
 #include <exo/exo-cell-renderer-ellipsized-text.h>
 #include <exo/exo-gtk-extensions.h>
-#include <exo/exo-gobject-extensions.h>
 #include <exo/exo-icon-bar.h>
 #include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-toolbars-editor.h>

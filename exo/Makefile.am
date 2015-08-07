@@ -122,9 +122,11 @@ lib_LTLIBRARIES += libexo-2.la
 
 libexo_2_include_HEADERS =						\
 	exo.h								\
+	exo-binding.h							\
 	exo-config.h							\
 	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
+	exo-gobject-extensions.h					\
 	exo-job.h							\
 	exo-simple-job.h						\
 	exo-string.h							\
@@ -137,6 +139,7 @@ libexo_2_include_HEADERS =						\
 
 libexo_2_la_SOURCES =							\
 	$(libexo_2_include_HEADERS)					\
+	exo-binding.c							\
 	exo-marshal.c							\
 	exo-marshal.h							\
 	exo-private.c							\
@@ -144,6 +147,7 @@ libexo_2_la_SOURCES =							\
 	exo-config.c							\
 	exo-execute.c							\
 	exo-gdk-pixbuf-extensions.c					\
+	exo-gobject-extensions.c					\
 	exo-job.c							\
 	exo-simple-job.c						\
 	exo-string.c							\
