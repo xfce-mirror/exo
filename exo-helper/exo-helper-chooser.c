@@ -60,12 +60,12 @@ static void exo_helper_chooser_pressed      (ExoHelperChooser       *chooser,
 
 struct _ExoHelperChooserClass
 {
-  GtkAlignmentClass __parent__;
+  GtkBinClass __parent__;
 };
 
 struct _ExoHelperChooser
 {
-  GtkAlignment __parent__;
+  GtkBin __parent__;
 
   GtkWidget         *image;
   GtkWidget         *label;
@@ -78,7 +78,7 @@ struct _ExoHelperChooser
 
 
 
-G_DEFINE_TYPE (ExoHelperChooser, exo_helper_chooser, GTK_TYPE_ALIGNMENT)
+G_DEFINE_TYPE (ExoHelperChooser, exo_helper_chooser, GTK_TYPE_BIN)
 
 
 
@@ -138,7 +138,7 @@ exo_helper_chooser_init (ExoHelperChooser *chooser)
 
   chooser->database = exo_helper_database_get ();
 
-  gtk_widget_push_composite_child ();
+  /*gtk_widget_push_composite_child ();*/
 
   button = gtk_button_new ();
   g_signal_connect_swapped (G_OBJECT (button), "pressed", G_CALLBACK (exo_helper_chooser_pressed), chooser);
@@ -151,7 +151,7 @@ exo_helper_chooser_init (ExoHelperChooser *chooser)
   atk_object_set_name (object, _("Application Chooser Button"));
   atk_object_set_description (object, _("Press left mouse button to change the selected application."));
 
-  hbox = gtk_hbox_new (FALSE, 4);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
   gtk_container_add (GTK_CONTAINER (button), hbox);
   gtk_widget_show (hbox);
 
@@ -170,15 +170,15 @@ exo_helper_chooser_init (ExoHelperChooser *chooser)
   atk_relation_set_add (relations, relation);
   g_object_unref (G_OBJECT (relation));
 
-  separator = g_object_new (GTK_TYPE_VSEPARATOR, "height-request", 16, NULL);
+  separator = g_object_new (GTK_TYPE_SEPARATOR, "orientation", GTK_ORIENTATION_VERTICAL, "height-request", 16, NULL);
   gtk_box_pack_start (GTK_BOX (hbox), separator, FALSE, FALSE, 0);
   gtk_widget_show (separator);
 
-  arrow = gtk_arrow_new (GTK_ARROW_DOWN, GTK_SHADOW_NONE);
+  arrow = gtk_image_new_from_icon_name ("pan-down-symbolic", GTK_ICON_SIZE_BUTTON);
   gtk_box_pack_start (GTK_BOX (hbox), arrow, FALSE, FALSE, 0);
   gtk_widget_show (arrow);
 
-  gtk_widget_pop_composite_child ();
+  /*gtk_widget_pop_composite_child ();*/
 }
 
 
@@ -383,8 +383,8 @@ browse_clicked (GtkWidget *button,
   chooser = gtk_file_chooser_dialog_new (_("Select application"),
                                          GTK_WINDOW (toplevel),
                                          GTK_FILE_CHOOSER_ACTION_OPEN,
-                                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                         GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+                                         _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                         _("_Open"), GTK_RESPONSE_ACCEPT,
                                          NULL);
   gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), TRUE);
 
@@ -527,29 +527,26 @@ menu_activate_other (GtkWidget        *item,
   dialog = gtk_dialog_new_with_buttons (dgettext (GETTEXT_PACKAGE, BROWSE_TITLES[chooser->category]),
                                         GTK_WINDOW (toplevel),
                                         GTK_DIALOG_DESTROY_WITH_PARENT
-                                        | GTK_DIALOG_NO_SEPARATOR
                                         | GTK_DIALOG_MODAL,
-                                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                        GTK_STOCK_OK, GTK_RESPONSE_OK,
+                                        _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                        _("_OK"), GTK_RESPONSE_OK,
                                         NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
   gtk_dialog_set_response_sensitive (GTK_DIALOG (dialog), GTK_RESPONSE_OK, FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 6);
-  gtk_container_set_border_width (GTK_CONTAINER (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), 5);
-  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), 6);
   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 
-  hbox = g_object_new (GTK_TYPE_HBOX, "border-width", 5, "spacing", 12, NULL);
+  hbox = g_object_new (GTK_TYPE_BOX, "orientation", GTK_ORIENTATION_HORIZONTAL, "border-width", 5, "spacing", 12, NULL);
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), hbox, TRUE, TRUE, 0);
   gtk_widget_show (hbox);
 
   image = gtk_image_new_from_icon_name ("preferences-desktop-default-applications", GTK_ICON_SIZE_DIALOG);
-  gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
+  g_object_set (image, "halign", GTK_ALIGN_CENTER, "valign", GTK_ALIGN_START, NULL);
   gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
   gtk_widget_show (image);
 
-  vbox = gtk_vbox_new (FALSE, 6);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
   gtk_widget_show (vbox);
 
@@ -561,7 +558,7 @@ menu_activate_other (GtkWidget        *item,
   gtk_box_pack_start (GTK_BOX (vbox), label, FALSE, TRUE, 0);
   gtk_widget_show (label);
 
-  hbox = gtk_hbox_new (FALSE, 3);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 3);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, TRUE, 0);
   gtk_widget_show (hbox);
 
@@ -576,7 +573,7 @@ menu_activate_other (GtkWidget        *item,
   gtk_box_pack_start (GTK_BOX (hbox), button, FALSE, FALSE, 0);
   gtk_widget_show (button);
 
-  image = gtk_image_new_from_stock (GTK_STOCK_OPEN, GTK_ICON_SIZE_BUTTON);
+  image = gtk_image_new_from_icon_name ("document-open", GTK_ICON_SIZE_BUTTON);
   gtk_container_add (GTK_CONTAINER (button), image);
   gtk_widget_show (image);
 
@@ -620,8 +617,8 @@ menu_position (GtkMenu  *menu,
                gboolean *push_in,
                gpointer  chooser)
 {
-  GtkRequisition chooser_request;
-  GtkRequisition menu_request;
+  GtkAllocation  chooser_allocation;
+  GtkAllocation  menu_allocation;
   GdkRectangle   geometry;
   GdkScreen     *screen;
   GtkWidget     *toplevel = gtk_widget_get_toplevel (chooser);
@@ -631,8 +628,8 @@ menu_position (GtkMenu  *menu,
 
   gtk_widget_translate_coordinates (GTK_WIDGET (chooser), toplevel, 0, 0, &x0, &y0);
 
-  gtk_widget_size_request (GTK_WIDGET (chooser), &chooser_request);
-  gtk_widget_size_request (GTK_WIDGET (menu), &menu_request);
+  gtk_widget_get_allocation (GTK_WIDGET (chooser), &chooser_allocation);
+  gtk_widget_get_allocation (GTK_WIDGET (menu), &menu_allocation);
 
   gdk_window_get_position (gtk_widget_get_window (GTK_WIDGET (chooser)), x, y);
 
@@ -645,8 +642,8 @@ menu_position (GtkMenu  *menu,
     {
       monitor = gdk_screen_get_monitor_at_point (screen, *x, *y);
       gdk_screen_get_monitor_geometry (screen, monitor, &geometry);
-      if (*y + menu_request.height > geometry.y + geometry.height)
-        *y -= menu_request.height - chooser_request.height;
+      if (*y + menu_allocation.height > geometry.y + geometry.height)
+        *y -= menu_allocation.height - chooser_allocation.height;
     }
 
   *push_in = TRUE;
@@ -671,6 +668,8 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   GtkWidget      *menu;
   GtkAllocation   menu_allocation;
   GtkWidget      *item;
+  GtkWidget      *item_hbox;
+  GtkWidget      *item_label;
   GList          *helpers;
   GList          *lp;
   gint            icon_size;
@@ -682,9 +681,9 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   /* set a watch cursor while loading the menu */
   if (G_LIKELY (gtk_widget_get_window (button) != NULL))
     {
-      cursor = gdk_cursor_new (GDK_WATCH);
+      cursor = gdk_cursor_new_for_display (gdk_window_get_display (gtk_widget_get_window (button)), GDK_WATCH);
       gdk_window_set_cursor (gtk_widget_get_window (button), cursor);
-      gdk_cursor_unref (cursor);
+      g_object_unref (cursor);
       gdk_flush ();
     }
 
@@ -713,12 +712,13 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
       /* determine the helper */
       helper = EXO_HELPER (lp->data);
 
-      /* add a menu item for the helper */
-      item = gtk_image_menu_item_new_with_label (exo_helper_get_name (helper));
-      g_object_set_data_full (G_OBJECT (item), I_("exo-helper"), helper, g_object_unref);
-      g_signal_connect (G_OBJECT (item), "activate", G_CALLBACK (menu_activate), chooser);
-      gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
-      gtk_widget_show (item);
+      /* create a menu item for the helper */
+      item_label = gtk_label_new (exo_helper_get_name (helper));
+      g_object_set (item_label, "xalign", 0.0f, "yalign", 0.5f, NULL);
+      item_hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+      gtk_box_pack_end (GTK_BOX (item_hbox), item_label, TRUE, TRUE, 0);
+      item = gtk_menu_item_new ();
+      gtk_container_add (GTK_CONTAINER (item), item_hbox);
 
       /* try to load the icon for the helper */
       icon_name = exo_helper_get_icon (helper);
@@ -743,10 +743,15 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
       if (G_LIKELY (icon != NULL))
         {
           image = gtk_image_new_from_pixbuf (icon);
-          gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
+          gtk_box_pack_start (GTK_BOX (item_hbox), image, FALSE, FALSE, 0);
           g_object_unref (G_OBJECT (icon));
-          gtk_widget_show (image);
         }
+
+      /* finish setting up the menu item and add it */
+      g_object_set_data_full (G_OBJECT (item), I_("exo-helper"), helper, g_object_unref);
+      g_signal_connect (G_OBJECT (item), "activate", G_CALLBACK (menu_activate), chooser);
+      gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+      gtk_widget_show_all (item);
     }
 
   if (G_LIKELY (helpers != NULL))
@@ -783,7 +788,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   gtk_grab_remove (menu);
   g_main_loop_unref (loop);
 
-  gtk_button_released (GTK_BUTTON (button));
+  g_signal_emit_by_name (button, "button-release-event");
   g_object_unref (G_OBJECT (menu));
 }
 

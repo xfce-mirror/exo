@@ -23,6 +23,7 @@
 #include <exo-helper/exo-helper-chooser.h>
 #include <exo-helper/exo-helper-enum-types.h>
 #include <exo-helper/exo-helper-launcher-dialog.h>
+#include <gtk/gtkx.h>
 
 
 
@@ -105,23 +106,23 @@ exo_helper_launcher_dialog_init (ExoHelperLauncherDialog *launcher_dialog)
   GtkWidget      *hbox;
   GtkWidget      *vbox;
 
-  gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
-  gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), GTK_STOCK_OK, GTK_RESPONSE_OK);
+  gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), _("_Cancel"), GTK_RESPONSE_CANCEL);
+  gtk_dialog_add_button (GTK_DIALOG (launcher_dialog), _("_OK"), GTK_RESPONSE_OK);
   gtk_dialog_set_default_response (GTK_DIALOG (launcher_dialog), GTK_RESPONSE_OK);
   gtk_window_set_resizable (GTK_WINDOW (launcher_dialog), FALSE);
   gtk_window_set_title (GTK_WINDOW (launcher_dialog), _("Choose Preferred Application"));
 
-  hbox = gtk_hbox_new (FALSE, 12);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_container_set_border_width (GTK_CONTAINER (hbox), 12);
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (launcher_dialog))), hbox, TRUE, TRUE, 0);
   gtk_widget_show (hbox);
 
   image = gtk_image_new_from_icon_name ("preferences-desktop-default-applications", GTK_ICON_SIZE_DIALOG);
-  gtk_misc_set_alignment (GTK_MISC (image), 0.5f, 0.0f);
+  g_object_set (image, "halign", GTK_ALIGN_CENTER, "valign", GTK_ALIGN_START, NULL);
   gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
   gtk_widget_show (image);
 
-  vbox = gtk_vbox_new (FALSE, 12);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
   gtk_box_pack_start (GTK_BOX (hbox), vbox, FALSE, FALSE, 0);
   gtk_widget_show (vbox);
 
@@ -131,7 +132,7 @@ exo_helper_launcher_dialog_init (ExoHelperLauncherDialog *launcher_dialog)
 
   chooser = g_object_new (EXO_TYPE_HELPER_CHOOSER, NULL);
   g_signal_connect (G_OBJECT (chooser), "notify::is-valid", G_CALLBACK (exo_helper_launcher_dialog_notify_is_valid), launcher_dialog);
-  exo_binding_new (G_OBJECT (launcher_dialog), "category", G_OBJECT (chooser), "category");
+  g_object_bind_property (G_OBJECT (launcher_dialog), "category", G_OBJECT (chooser), "category", G_BINDING_SYNC_CREATE);
   gtk_box_pack_start (GTK_BOX (vbox), chooser, FALSE, FALSE, 0);
   gtk_widget_show (chooser);
 
