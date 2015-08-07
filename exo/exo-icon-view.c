@@ -63,7 +63,24 @@
  * rubberband selection, which is controlled by dragging the pointer.
  **/
 
+/* resurrect dead gdk apis for Gtk3
+ * This is easier than using #ifs everywhere
+ */
+#if GTK_CHECK_VERSION (3, 0, 0)
 
+# define GdkRectangle cairo_rectangle_int_t
+# define GdkRegion    cairo_region_t
+# define gdk_region_rectangle(rect) cairo_region_create_rectangle (rect)
+# define gdk_region_destroy(region) cairo_region_destroy (region)
+# define gdk_region_subtract(dst, other) cairo_region_subtract (dst, other)
+# define gdk_region_union_with_rect(dst, rect) cairo_region_union_rectangle (dst, rect)
+
+# ifdef gdk_cursor_unref
+#   undef gdk_cursor_unref
+# endif
+# define gdk_cursor_unref(cursor) g_object_unref (cursor)
+
+# endif
 
 /* the search dialog timeout (in ms) */
 #define EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT (5000)
@@ -95,6 +112,10 @@ enum
   PROP_SINGLE_CLICK_TIMEOUT,
   PROP_ENABLE_SEARCH,
   PROP_SEARCH_COLUMN,
+  PROP_HADJUSTMENT,
+  PROP_VADJUSTMENT,
+  PROP_VSCROLL_POLICY,
+  PROP_HSCROLL_POLICY
 };
 
 /* Signal identifiers */
@@ -151,14 +172,30 @@ static void                 exo_icon_view_set_property                   (GObjec
                                                                           GParamSpec             *pspec);
 static void                 exo_icon_view_realize                        (GtkWidget              *widget);
 static void                 exo_icon_view_unrealize                      (GtkWidget              *widget);
+#if !GTK_CHECK_VERSION (3, 0, 0)
 static void                 exo_icon_view_size_request                   (GtkWidget              *widget,
                                                                           GtkRequisition         *requisition);
+#else
+static void                 exo_icon_view_get_preferred_width            (GtkWidget              *widget,
+                                                                          gint                   *minimal_width,
+                                                                          gint                   *natural_width);
+static void                 exo_icon_view_get_preferred_height           (GtkWidget              *widget,
+                                                                          gint                   *minimal_height,
+                                                                          gint                   *natural_height);
+#endif
 static void                 exo_icon_view_size_allocate                  (GtkWidget              *widget,
                                                                           GtkAllocation          *allocation);
+#if !GTK_CHECK_VERSION (3, 0, 0)
 static void                 exo_icon_view_style_set                      (GtkWidget              *widget,
                                                                           GtkStyle               *previous_style);
+#endif
+#if GTK_CHECK_VERSION (3, 0, 0)
+static gboolean             exo_icon_view_draw                           (GtkWidget              *widget,
+                                                                          cairo_t                *cr);
+#else
 static gboolean             exo_icon_view_expose_event                   (GtkWidget              *widget,
                                                                           GdkEventExpose         *event);
+#endif
 static gboolean             exo_icon_view_motion_notify_event            (GtkWidget              *widget,
                                                                           GdkEventMotion         *event);
 static gboolean             exo_icon_view_button_press_event             (GtkWidget              *widget,
@@ -201,6 +238,14 @@ static gint                 exo_icon_view_layout_rows                    (ExoIco
                                                                           gint                   *maximum_width,
                                                                           gint                    max_cols);
 static void                 exo_icon_view_layout                         (ExoIconView            *icon_view);
+#if GTK_CHECK_VERSION (3, 0, 0)
+static void                 exo_icon_view_paint_item                     (ExoIconView            *icon_view,
+                                                                          ExoIconViewItem        *item,
+                                                                          cairo_t                *cr,
+                                                                          gint                    x,
+                                                                          gint                    y,
+                                                                          gboolean                draw_focus);
+#else
 static void                 exo_icon_view_paint_item                     (ExoIconView            *icon_view,
                                                                           ExoIconViewItem        *item,
                                                                           GdkRectangle           *area,
@@ -208,6 +253,8 @@ static void                 exo_icon_view_paint_item                     (ExoIco
                                                                           gint                    x,
                                                                           gint                    y,
                                                                           gboolean                draw_focus);
+
+#endif
 static void                 exo_icon_view_queue_draw_item                (ExoIconView            *icon_view,
                                                                           ExoIconViewItem        *item);
 static void                 exo_icon_view_queue_layout                   (ExoIconView            *icon_view);
@@ -469,6 +516,10 @@ struct _ExoIconViewPrivate
 
   GtkAdjustment *hadjustment;
   GtkAdjustment *vadjustment;
+#if GTK_CHECK_VERSION (3, 0, 0)
+  GtkScrollablePolicy hscroll_policy;
+  GtkScrollablePolicy vscroll_policy;
+#endif
 
   guint layout_idle_id;
 
@@ -582,7 +633,11 @@ static guint icon_view_signals[LAST_SIGNAL];
 
 
 G_DEFINE_TYPE_WITH_CODE (ExoIconView, exo_icon_view, GTK_TYPE_CONTAINER,
-    G_IMPLEMENT_INTERFACE (GTK_TYPE_CELL_LAYOUT, exo_icon_view_cell_layout_init))
+    G_IMPLEMENT_INTERFACE (GTK_TYPE_CELL_LAYOUT, exo_icon_view_cell_layout_init)
+#if GTK_CHECK_VERSION (3, 0, 0)
+    G_IMPLEMENT_INTERFACE (GTK_TYPE_SCROLLABLE, NULL)
+#endif
+                        )
 
 static AtkObject *
 exo_icon_view_get_accessible (GtkWidget *widget)
@@ -633,11 +688,22 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   gtkwidget_class = GTK_WIDGET_CLASS (klass);
   gtkwidget_class->realize = exo_icon_view_realize;
   gtkwidget_class->unrealize = exo_icon_view_unrealize;
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtkwidget_class->get_preferred_width = exo_icon_view_get_preferred_width;
+  gtkwidget_class->get_preferred_height = exo_icon_view_get_preferred_height;
+#else
   gtkwidget_class->size_request = exo_icon_view_size_request;
+#endif
   gtkwidget_class->size_allocate = exo_icon_view_size_allocate;
+#if !GTK_CHECK_VERSION (3, 0, 0)
   gtkwidget_class->style_set = exo_icon_view_style_set;
+#endif
   gtkwidget_class->get_accessible = exo_icon_view_get_accessible;
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtkwidget_class->draw = exo_icon_view_draw;
+#else
   gtkwidget_class->expose_event = exo_icon_view_expose_event;
+#endif
   gtkwidget_class->motion_notify_event = exo_icon_view_motion_notify_event;
   gtkwidget_class->button_press_event = exo_icon_view_button_press_event;
   gtkwidget_class->button_release_event = exo_icon_view_button_release_event;
@@ -977,6 +1043,13 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                                                      -1, G_MAXINT, -1,
                                                      EXO_PARAM_READWRITE));
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  g_object_class_override_property (gobject_class, PROP_HADJUSTMENT, "hadjustment");
+  g_object_class_override_property (gobject_class, PROP_VADJUSTMENT, "vadjustment");
+  g_object_class_override_property (gobject_class, PROP_HSCROLL_POLICY, "hscroll-policy");
+  g_object_class_override_property (gobject_class, PROP_VSCROLL_POLICY, "vscroll-policy");
+#endif
+
   /**
    * ExoIconView::item-activated:
    * @icon_view : a #ExoIconView.
@@ -1005,6 +1078,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                   g_cclosure_marshal_VOID__VOID,
                   G_TYPE_NONE, 0);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
   /**
    * ExoIconView::set-scroll-adjustments:
    * @icon_view   : a #ExoIconView.
@@ -1020,6 +1094,7 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                   _exo_marshal_VOID__OBJECT_OBJECT,
                   G_TYPE_NONE, 2,
                   GTK_TYPE_ADJUSTMENT, GTK_TYPE_ADJUSTMENT);
+#endif
 
   /**
    * ExoIconView::select-all:
@@ -1173,6 +1248,11 @@ exo_icon_view_cell_layout_init (GtkCellLayoutIface *iface)
 static void
 exo_icon_view_init (ExoIconView *icon_view)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_style_context_add_class (gtk_widget_get_style_context (GTK_WIDGET (icon_view)),
+                               GTK_STYLE_CLASS_VIEW);
+#endif
+
   icon_view->priv = EXO_ICON_VIEW_GET_PRIVATE (icon_view);
 
   icon_view->priv->selection_mode = GTK_SELECTION_SINGLE;
@@ -1362,6 +1442,24 @@ exo_icon_view_get_property (GObject      *object,
       g_value_set_enum (value, priv->layout_mode);
       break;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+    case PROP_HADJUSTMENT:
+      g_value_set_object (value, priv->hadjustment);
+      break;
+
+    case PROP_VADJUSTMENT:
+      g_value_set_object (value, priv->vadjustment);
+      break;
+
+    case PROP_HSCROLL_POLICY:
+      g_value_set_enum (value, priv->hscroll_policy);
+      break;
+
+    case PROP_VSCROLL_POLICY:
+      g_value_set_enum (value, priv->vscroll_policy);
+      break;
+#endif
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1448,6 +1546,34 @@ exo_icon_view_set_property (GObject      *object,
       exo_icon_view_set_layout_mode (icon_view, g_value_get_enum (value));
       break;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+    case PROP_HADJUSTMENT:
+      exo_icon_view_set_adjustments (icon_view, g_value_get_object (value), icon_view->priv->vadjustment);
+      break;
+
+    case PROP_VADJUSTMENT:
+      exo_icon_view_set_adjustments (icon_view, icon_view->priv->hadjustment, g_value_get_object (value));
+      break;
+
+    case PROP_HSCROLL_POLICY:
+      if (icon_view->priv->hscroll_policy != (GtkScrollablePolicy)g_value_get_enum (value))
+        {
+          icon_view->priv->hscroll_policy = g_value_get_enum (value);
+          gtk_widget_queue_resize (GTK_WIDGET (icon_view));
+          g_object_notify_by_pspec (object, pspec);
+        }
+      break;
+
+    case PROP_VSCROLL_POLICY:
+      if (icon_view->priv->vscroll_policy != (GtkScrollablePolicy)g_value_get_enum (value))
+        {
+          icon_view->priv->vscroll_policy = g_value_get_enum (value);
+          gtk_widget_queue_resize (GTK_WIDGET (icon_view));
+          g_object_notify_by_pspec (object, pspec);
+        }
+      break;
+#endif
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1475,7 +1601,11 @@ exo_icon_view_realize (GtkWidget *widget)
   attributes.height = allocation.height;
   attributes.wclass = GDK_INPUT_OUTPUT;
   attributes.visual = gtk_widget_get_visual (widget);
+#if !GTK_CHECK_VERSION (3, 0, 0)
   attributes.colormap = gtk_widget_get_colormap (widget);
+#else
+#  define GDK_WA_COLORMAP 0
+#endif
   attributes.event_mask = GDK_VISIBILITY_NOTIFY_MASK;
   attributes_mask = GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL | GDK_WA_COLORMAP;
   gtk_widget_set_window (widget, gdk_window_new (gtk_widget_get_parent_window (widget), &attributes, attributes_mask));
@@ -1497,16 +1627,16 @@ exo_icon_view_realize (GtkWidget *widget)
   priv->bin_window = gdk_window_new (gtk_widget_get_window (widget), &attributes, attributes_mask);
   gdk_window_set_user_data (priv->bin_window, widget);
 
-  /* Attach style/background */
+  /* Gtk2: Attach style/background - Gtk3 is rendered using CSS */
+#if !GTK_CHECK_VERSION (3, 0, 0)
   gtk_widget_set_style (widget, gtk_style_attach (gtk_widget_get_style (widget), gtk_widget_get_window (widget)));
   gdk_window_set_background (priv->bin_window, &gtk_widget_get_style (widget)->base[gtk_widget_get_state (widget)]);
   gdk_window_set_background (gtk_widget_get_window (widget), &gtk_widget_get_style (widget)->base[gtk_widget_get_state (widget)]);
+#endif
 
   /* map the icons window */
   gdk_window_show (priv->bin_window);
 }
-
-
 
 static void
 exo_icon_view_unrealize (GtkWidget *widget)
@@ -1523,7 +1653,52 @@ exo_icon_view_unrealize (GtkWidget *widget)
     (*GTK_WIDGET_CLASS (exo_icon_view_parent_class)->unrealize) (widget);
 }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+static void
+exo_icon_view_get_preferred_width (GtkWidget *widget,
+                                   gint      *minimal_width,
+                                   gint      *natural_width)
+{
+  const ExoIconViewPrivate *priv = EXO_ICON_VIEW (widget)->priv;
+  ExoIconViewChild         *child;
+  gint                      child_minimal, child_natural;
+  GList                    *lp;
 
+  /* well, this is easy */
+  *minimal_width = *natural_width = priv->width;
+
+  /* handle the child widgets */
+  for (lp = priv->children; lp != NULL; lp = lp->next)
+    {
+      child = lp->data;
+      if (gtk_widget_get_visible (child->widget))
+        gtk_widget_get_preferred_width (child->widget, &child_minimal, &child_natural);
+    }
+}
+
+static void
+exo_icon_view_get_preferred_height (GtkWidget *widget,
+                                    gint      *minimal_height,
+                                    gint      *natural_height)
+{
+  const ExoIconViewPrivate *priv = EXO_ICON_VIEW (widget)->priv;
+  ExoIconViewChild         *child;
+  gint                      child_minimal, child_natural;
+  GList                    *lp;
+
+  /* well, this is easy */
+  *natural_height = *minimal_height = priv->height;
+
+  /* handle the child widgets */
+  for (lp = priv->children; lp != NULL; lp = lp->next)
+    {
+      child = lp->data;
+      if (gtk_widget_get_visible (child->widget))
+        gtk_widget_get_preferred_height (child->widget, &child_minimal, &child_natural);
+    }
+}
+
+#else
 
 static void
 exo_icon_view_size_request (GtkWidget      *widget,
@@ -1547,7 +1722,7 @@ exo_icon_view_size_request (GtkWidget      *widget,
     }
 }
 
-
+#endif
 
 static void
 exo_icon_view_allocate_children (ExoIconView *icon_view)
@@ -1633,6 +1808,7 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
 
 
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 static void
 exo_icon_view_style_set (GtkWidget *widget,
                          GtkStyle  *previous_style)
@@ -1646,8 +1822,191 @@ exo_icon_view_style_set (GtkWidget *widget,
   if (gtk_widget_get_realized (widget))
     gdk_window_set_background (icon_view->priv->bin_window, &gtk_widget_get_style (widget)->base[gtk_widget_get_state (widget)]);
 }
+#endif
 
 
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+static gboolean
+exo_icon_view_draw (GtkWidget *widget,
+                    cairo_t   *cr)
+{
+  ExoIconViewDropPosition dest_pos;
+  ExoIconViewPrivate     *priv = EXO_ICON_VIEW (widget)->priv;
+  ExoIconViewItem        *dest_item = NULL;
+  ExoIconViewItem        *item;
+  ExoIconView            *icon_view = EXO_ICON_VIEW (widget);
+  GtkTreePath            *path;
+  GdkRectangle            rect;
+  GdkRectangle            clip;
+  GdkRectangle            paint_area;
+  const GList            *lp;
+  gint                    dest_index = -1;
+  GtkStyleContext        *context;
+
+  /* verify that the expose happened on the icon window */
+  if (!gtk_cairo_should_draw_window (cr, priv->bin_window))
+    return FALSE;
+
+  /* don't handle expose if the layout isn't done yet; the layout
+   * method will schedule a redraw when done.
+   */
+  if (G_UNLIKELY (priv->layout_idle_id != 0))
+    return FALSE;
+
+  /* "returns [...] FALSE if all of cr is clipped and all drawing can be skipped" [sic] */
+  if (!gdk_cairo_get_clip_rectangle (cr, &clip))
+    return FALSE;
+
+  context = gtk_widget_get_style_context (widget);
+
+  /* draw a background according to the css theme */
+  gtk_render_background (context, cr,
+                         0, 0,
+                         gtk_widget_get_allocated_width (widget),
+                         gtk_widget_get_allocated_height (widget));
+
+  /* transform coordinates so our old calculations work */
+  gtk_cairo_transform_to_window (cr, widget, icon_view->priv->bin_window);
+
+  /* retrieve the clipping rectangle again, with the transformed coordinates */
+  gdk_cairo_get_clip_rectangle (cr, &clip);
+
+  /* scroll to the previously remembered path (if any) */
+  if (G_UNLIKELY (priv->scroll_to_path != NULL))
+    {
+      /* grab the path from the reference and invalidate the reference */
+      path = gtk_tree_row_reference_get_path (priv->scroll_to_path);
+      gtk_tree_row_reference_free (priv->scroll_to_path);
+      priv->scroll_to_path = NULL;
+
+      /* check if the reference was still valid */
+      if (G_LIKELY (path != NULL))
+        {
+          /* try to scroll again */
+          exo_icon_view_scroll_to_path (icon_view, path,
+                                        priv->scroll_to_use_align,
+                                        priv->scroll_to_row_align,
+                                        priv->scroll_to_col_align);
+
+          /* release the path */
+          gtk_tree_path_free (path);
+        }
+    }
+
+  /* check if we need to draw a drag indicator */
+  exo_icon_view_get_drag_dest_item (icon_view, &path, &dest_pos);
+  if (G_UNLIKELY (path != NULL))
+    {
+      dest_index = gtk_tree_path_get_indices (path)[0];
+      gtk_tree_path_free (path);
+    }
+
+  /* paint all items that are affected by the expose event */
+  for (lp = priv->items; lp != NULL; lp = lp->next)
+    {
+      item = EXO_ICON_VIEW_ITEM (lp->data);
+
+      /* FIXME: padding? */
+      paint_area.x      = item->area.x;
+      paint_area.y      = item->area.y;
+      paint_area.width  = item->area.width;
+      paint_area.height = item->area.height;
+
+      /* check whether we are clipped fully */
+      if (!gdk_rectangle_intersect (&paint_area, &clip, NULL))
+        continue;
+
+      /* paint the item */
+      exo_icon_view_paint_item (icon_view, item, cr, item->area.x, item->area.y, TRUE);
+      if (G_UNLIKELY (dest_index >= 0 && dest_item == NULL))
+        {
+          if (dest_index == g_list_index (priv->items, item))
+            dest_item = item;
+        }
+    }
+
+  /* draw the drag indicator */
+  if (G_UNLIKELY (dest_item != NULL))
+    {
+      switch (dest_pos)
+        {
+        case EXO_ICON_VIEW_DROP_INTO:
+          gtk_render_focus (context,
+                            cr,
+                            dest_item->area.x, dest_item->area.y,
+                            dest_item->area.width, dest_item->area.height);
+          break;
+
+        case EXO_ICON_VIEW_DROP_ABOVE:
+          gtk_render_focus (context,
+                            cr,
+                            dest_item->area.x, dest_item->area.y - 1,
+                            dest_item->area.width, 2);
+          break;
+
+        case EXO_ICON_VIEW_DROP_LEFT:
+          gtk_render_focus (context,
+                            cr,
+                            dest_item->area.x - 1, dest_item->area.y,
+                            2, dest_item->area.height);
+          break;
+
+        case EXO_ICON_VIEW_DROP_BELOW:
+          gtk_render_focus (context,
+                            cr,
+                            dest_item->area.x, dest_item->area.y + dest_item->area.height - 1,
+                            dest_item->area.width, 2);
+          break;
+
+        case EXO_ICON_VIEW_DROP_RIGHT:
+          gtk_render_focus (context,
+                            cr,
+                            dest_item->area.x + dest_item->area.width - 1, dest_item->area.y,
+                            2, dest_item->area.height);
+
+        case EXO_ICON_VIEW_NO_DROP:
+          break;
+
+        default:
+          g_assert_not_reached ();
+        }
+    }
+
+  /* draw the rubberband border */
+  if (G_UNLIKELY (priv->doing_rubberband))
+    {
+      cairo_save (cr);
+
+      rect.x = MIN (icon_view->priv->rubberband_x_1, icon_view->priv->rubberband_x2);
+      rect.y = MIN (icon_view->priv->rubberband_y_1, icon_view->priv->rubberband_y2);
+      rect.width = ABS (icon_view->priv->rubberband_x_1 - icon_view->priv->rubberband_x2) + 1;
+      rect.height = ABS (icon_view->priv->rubberband_y_1 - icon_view->priv->rubberband_y2) + 1;
+
+      gtk_style_context_save (context);
+      gtk_style_context_add_class (context, GTK_STYLE_CLASS_RUBBERBAND);
+
+      gdk_cairo_rectangle (cr, &rect);
+      cairo_clip (cr);
+
+      gtk_render_background (context, cr,
+                             rect.x, rect.y,
+                             rect.width, rect.height);
+      gtk_render_frame (context, cr,
+                        rect.x, rect.y,
+                        rect.width, rect.height);
+
+      gtk_style_context_restore (context);
+      cairo_restore (cr);
+    }
+
+  /* let the GtkContainer forward the draw event to all children */
+  GTK_WIDGET_CLASS (exo_icon_view_parent_class)->draw (widget, cr);
+
+  return FALSE;
+}
+
+#else
 
 static gboolean
 exo_icon_view_expose_event (GtkWidget      *widget,
@@ -1840,6 +2199,7 @@ exo_icon_view_expose_event (GtkWidget      *widget,
   return FALSE;
 }
 
+#endif
 
 
 static gboolean
@@ -1848,8 +2208,6 @@ rubberband_scroll_timeout (gpointer user_data)
   GtkAdjustment *adjustment;
   ExoIconView   *icon_view = EXO_ICON_VIEW (user_data);
   gdouble        value;
-
-  GDK_THREADS_ENTER ();
 
   /* determine the adjustment for the scroll direction */
   adjustment = (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS)
@@ -1864,8 +2222,6 @@ rubberband_scroll_timeout (gpointer user_data)
 
   /* update the rubberband */
   exo_icon_view_update_rubberband (icon_view);
-
-  GDK_THREADS_LEAVE ();
 
   return TRUE;
 }
@@ -1918,8 +2274,8 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
           icon_view->priv->event_last_y = event->y;
 
           if (icon_view->priv->scroll_timeout_id == 0)
-            icon_view->priv->scroll_timeout_id = g_timeout_add (30, rubberband_scroll_timeout,
-                                                                icon_view);
+            icon_view->priv->scroll_timeout_id = gdk_threads_add_timeout (30, rubberband_scroll_timeout,
+                                                                          icon_view);
         }
       else
         {
@@ -1944,7 +2300,7 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
               if (G_LIKELY (item != NULL))
                 {
                   /* hand2 seems to be what we should use */
-                  cursor = gdk_cursor_new (GDK_HAND2);
+                  cursor = gdk_cursor_new_for_display (gdk_window_get_display (event->window), GDK_HAND2);
                   gdk_window_set_cursor (event->window, cursor);
                   gdk_cursor_unref (cursor);
                 }
@@ -1965,7 +2321,7 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
                   icon_view->priv->single_click_timeout_state = event->state;
 
                   /* schedule a new timeout */
-                  icon_view->priv->single_click_timeout_id = g_timeout_add_full (G_PRIORITY_LOW, icon_view->priv->single_click_timeout,
+                  icon_view->priv->single_click_timeout_id = gdk_threads_add_timeout_full (G_PRIORITY_LOW, icon_view->priv->single_click_timeout,
                                                                                  exo_icon_view_single_click_timeout, icon_view,
                                                                                  exo_icon_view_single_click_timeout_destroy);
                 }
@@ -2577,10 +2933,20 @@ exo_icon_view_update_rubberband (gpointer data)
   GdkRectangle new_area;
   GdkRectangle common;
   GdkRegion *invalid_region;
+#if GTK_CHECK_VERSION (3, 0, 0)
+  GdkDeviceManager *device_manager;
+  GdkDevice        *pointer_dev;
+#endif
 
   icon_view = EXO_ICON_VIEW (data);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  device_manager = gdk_display_get_device_manager (gdk_window_get_display (icon_view->priv->bin_window));
+  pointer_dev = gdk_device_manager_get_client_pointer (device_manager);
+  gdk_window_get_device_position (icon_view->priv->bin_window, pointer_dev, &x, &y, NULL);
+#else
   gdk_window_get_pointer (icon_view->priv->bin_window, &x, &y, NULL);
+#endif
 
   x = MAX (x, 0);
   y = MAX (y, 0);
@@ -3305,7 +3671,13 @@ exo_icon_view_layout (ExoIconView *icon_view)
     return;
 
   gtk_widget_get_allocation (GTK_WIDGET (icon_view), &allocation);
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_widget_get_preferred_width (GTK_WIDGET (icon_view), NULL, &requisition.width);
+  gtk_widget_get_preferred_height (GTK_WIDGET (icon_view), NULL, &requisition.height);
+#else
   gtk_widget_get_requisition (GTK_WIDGET (icon_view), &requisition);
+#endif
 
   /* determine the layout mode */
   if (G_LIKELY (priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS))
@@ -3450,10 +3822,22 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
       if (G_UNLIKELY (!gtk_cell_renderer_get_visible (info->cell)))
         continue;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+      {
+        GtkRequisition req;
+
+        gtk_cell_renderer_get_preferred_size (info->cell, GTK_WIDGET (icon_view),
+                                              &req, NULL);
+
+        item->box[info->position].width = req.width;
+        item->box[info->position].height = req.height;
+      }
+#else
       gtk_cell_renderer_get_size (info->cell, GTK_WIDGET (icon_view),
                                   NULL, NULL, NULL,
                                   &item->box[info->position].width,
                                   &item->box[info->position].height);
+#endif
 
       if (icon_view->priv->orientation == GTK_ORIENTATION_HORIZONTAL)
         {
@@ -3584,7 +3968,93 @@ exo_icon_view_invalidate_sizes (ExoIconView *icon_view)
 }
 
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+static void
+exo_icon_view_paint_item (ExoIconView     *icon_view,
+                          ExoIconViewItem *item,
+                          cairo_t         *cr,
+                          gint             x,
+                          gint             y,
+                          gboolean         draw_focus)
+{
+  GtkCellRendererState flags = 0;
+  ExoIconViewCellInfo *info;
+  GtkStateType         state;
+  GdkRectangle         cell_area;
+  GtkStyleContext     *style_context;
+  GList               *lp;
 
+  if (G_UNLIKELY (icon_view->priv->model == NULL))
+    return;
+
+  exo_icon_view_set_cell_data (icon_view, item);
+
+  style_context = gtk_widget_get_style_context (GTK_WIDGET (icon_view));
+  state = gtk_widget_get_state_flags (GTK_WIDGET (icon_view));
+
+  gtk_style_context_save (style_context);
+  gtk_style_context_add_class (style_context, GTK_STYLE_CLASS_CELL);
+
+  state &= ~(GTK_STATE_FLAG_SELECTED | GTK_STATE_FLAG_PRELIGHT);
+
+  if (G_UNLIKELY (EXO_ICON_VIEW_FLAG_SET (icon_view, EXO_ICON_VIEW_DRAW_KEYFOCUS)
+    && (state & GTK_STATE_FLAG_FOCUSED) && item == icon_view->priv->cursor_item))
+    {
+      flags |= GTK_CELL_RENDERER_FOCUSED;
+    }
+
+  if (G_UNLIKELY (item->selected))
+    {
+      state |= GTK_STATE_FLAG_SELECTED;
+      flags |= GTK_CELL_RENDERER_SELECTED;
+    }
+
+  if (G_UNLIKELY (icon_view->priv->prelit_item == item))
+    {
+      state |= GTK_STATE_FLAG_PRELIGHT;
+      flags |= GTK_CELL_RENDERER_PRELIT;
+    }
+
+  gtk_style_context_set_state (style_context, state);
+
+  for (lp = icon_view->priv->cell_list; lp != NULL; lp = lp->next)
+    {
+      info = EXO_ICON_VIEW_CELL_INFO (lp->data);
+
+      cairo_save (cr);
+
+      if (G_UNLIKELY (!gtk_cell_renderer_get_visible (info->cell)))
+        continue;
+
+      exo_icon_view_get_cell_area (icon_view, item, info, &cell_area);
+
+      cell_area.x = x - item->area.x + cell_area.x;
+      cell_area.y = y - item->area.y + cell_area.y;
+
+      /* FIXME: this is bad CSS usage */
+      if (info->is_text)
+        {
+          gtk_render_background (style_context, cr,
+                                 cell_area.x, cell_area.y,
+                                 cell_area.width, cell_area.height);
+
+          gtk_render_frame (style_context, cr,
+                            cell_area.x, cell_area.y,
+                            cell_area.width, cell_area.height);
+        }
+
+      gtk_cell_renderer_render (info->cell,
+                                cr,
+                                GTK_WIDGET (icon_view),
+                                &cell_area, &cell_area, flags);
+
+      cairo_restore (cr);
+    }
+
+  gtk_style_context_restore (style_context);
+}
+
+#else
 static void
 exo_icon_view_paint_item (ExoIconView     *icon_view,
                           ExoIconViewItem *item,
@@ -3712,7 +4182,7 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
 
     }
 }
-
+#endif
 
 
 static void
@@ -3742,9 +4212,7 @@ layout_callback (gpointer user_data)
 {
   ExoIconView *icon_view = EXO_ICON_VIEW (user_data);
 
-  GDK_THREADS_ENTER ();
   exo_icon_view_layout (icon_view);
-  GDK_THREADS_LEAVE();
 
   return FALSE;
 }
@@ -3763,7 +4231,7 @@ static void
 exo_icon_view_queue_layout (ExoIconView *icon_view)
 {
   if (G_UNLIKELY (icon_view->priv->layout_idle_id == 0))
-    icon_view->priv->layout_idle_id = g_idle_add_full (G_PRIORITY_DEFAULT_IDLE, layout_callback, icon_view, layout_destroy);
+    icon_view->priv->layout_idle_id = gdk_threads_add_idle_full (G_PRIORITY_DEFAULT_IDLE, layout_callback, icon_view, layout_destroy);
 }
 
 
@@ -4668,7 +5136,7 @@ static void
 exo_icon_view_scroll_to_item (ExoIconView     *icon_view,
                               ExoIconViewItem *item)
 {
-  gint x, y, width, height;
+  gint x, y;
   gint focus_width;
   gint item_width, item_height;
   GtkAllocation allocation;
@@ -4677,8 +5145,6 @@ exo_icon_view_scroll_to_item (ExoIconView     *icon_view,
                         "focus-line-width", &focus_width,
                         NULL);
 
-  gdk_drawable_get_size (GDK_DRAWABLE (icon_view->priv->bin_window),
-                         &width, &height);
   gdk_window_get_position (icon_view->priv->bin_window, &x, &y);
   exo_icon_view_get_item_needed_size (icon_view, item, &item_width, &item_height);
   gtk_widget_get_allocation (GTK_WIDGET (icon_view), &allocation);
@@ -6670,8 +7136,19 @@ exo_icon_view_autoscroll (ExoIconView *icon_view)
   gint hoffset, voffset;
   gfloat value;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  GdkDeviceManager *dev_manager;
+  GdkDevice        *pointer_dev;
+
+  dev_manager = gdk_display_get_device_manager (gdk_window_get_display (gtk_widget_get_window (GTK_WIDGET (icon_view))));
+  pointer_dev = gdk_device_manager_get_client_pointer (dev_manager);
+
+  gdk_window_get_device_position (gtk_widget_get_window (GTK_WIDGET (icon_view)), pointer_dev, &px, &py, NULL);
+  gdk_window_get_geometry (gtk_widget_get_window (GTK_WIDGET (icon_view)), &x, &y, &width, &height);
+#else
   gdk_window_get_pointer (gtk_widget_get_window (GTK_WIDGET (icon_view)), &px, &py, NULL);
   gdk_window_get_geometry (gtk_widget_get_window (GTK_WIDGET (icon_view)), &x, &y, &width, &height, NULL);
+#endif
 
   /* see if we are near the edge. */
   voffset = py - (y + 2 * SCROLL_EDGE_SIZE);
@@ -6704,11 +7181,7 @@ drag_scroll_timeout (gpointer data)
 {
   ExoIconView *icon_view = EXO_ICON_VIEW (data);
 
-  GDK_THREADS_ENTER ();
-
   exo_icon_view_autoscroll (icon_view);
-
-  GDK_THREADS_LEAVE ();
 
   return TRUE;
 }
@@ -6915,11 +7388,20 @@ exo_icon_view_maybe_begin_drag (ExoIconView    *icon_view,
 
   retval = TRUE;
 
+#if GTK_CHECK_VERSION (3, 10, 0)
+  context = gtk_drag_begin_with_coordinates (GTK_WIDGET (icon_view),
+                                             icon_view->priv->source_targets,
+                                             icon_view->priv->source_actions,
+                                             button,
+                                             (GdkEvent *)event,
+                                             event->x, event->y);
+#else
   context = gtk_drag_begin (GTK_WIDGET (icon_view),
                             icon_view->priv->source_targets,
                             icon_view->priv->source_actions,
                             button,
                             (GdkEvent*)event);
+#endif
 
   set_source_row (context, model, path);
 
@@ -6937,8 +7419,12 @@ exo_icon_view_drag_begin (GtkWidget      *widget,
 {
   ExoIconView *icon_view;
   ExoIconViewItem *item;
+#if GTK_CHECK_VERSION (3, 0, 0)
+  cairo_surface_t *icon;
+#else
   GdkPixmap *icon;
   gint x, y;
+#endif
   GtkTreePath *path;
 
   icon_view = EXO_ICON_VIEW (widget);
@@ -6955,18 +7441,24 @@ exo_icon_view_drag_begin (GtkWidget      *widget,
 
   _exo_return_if_fail (item != NULL);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
   x = icon_view->priv->press_start_x - item->area.x + 1;
   y = icon_view->priv->press_start_y - item->area.y + 1;
+#endif
 
   path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
   icon = exo_icon_view_create_drag_icon (icon_view, path);
   gtk_tree_path_free (path);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_drag_set_icon_surface (context, icon);
+#else
   gtk_drag_set_icon_pixmap (context,
                             gdk_drawable_get_colormap (icon),
                             icon,
                             NULL,
                             x, y);
+#endif
 
   g_object_unref (icon);
 }
@@ -7102,7 +7594,7 @@ exo_icon_view_drag_motion (GtkWidget      *widget,
   else
     {
       if (icon_view->priv->scroll_timeout_id == 0)
-        icon_view->priv->scroll_timeout_id = g_timeout_add (50, drag_scroll_timeout, icon_view);
+        icon_view->priv->scroll_timeout_id = gdk_threads_add_timeout (50, drag_scroll_timeout, icon_view);
 
       if (target == gdk_atom_intern ("GTK_TREE_MODEL_ROW", FALSE))
         {
@@ -7555,6 +8047,62 @@ exo_icon_view_get_dest_item_at_pos (ExoIconView              *icon_view,
 
 
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+/**
+ * exo_icon_view_create_drag_icon:
+ * @icon_view : a #ExoIconView
+ * @path      : a #GtkTreePath in @icon_view
+ *
+ * Creates a #cairo_surface_t representation of the item at @path.
+ * This image is used for a drag icon.
+ *
+ * Returns: a newly-allocated pixmap of the drag icon.
+ *
+ * Since: 0.3.1
+ **/
+cairo_surface_t*
+exo_icon_view_create_drag_icon (ExoIconView *icon_view,
+                                GtkTreePath *path)
+{
+  cairo_surface_t *surface;
+  cairo_t         *cr;
+  GList           *lp;
+  gint             idx;
+  ExoIconViewItem *item;
+
+  g_return_val_if_fail (EXO_IS_ICON_VIEW (icon_view), NULL);
+  g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, NULL);
+
+  /* verify that the widget is realized */
+  if (G_UNLIKELY (!gtk_widget_get_realized (GTK_WIDGET (icon_view))))
+    return NULL;
+
+  idx = gtk_tree_path_get_indices (path)[0];
+
+  for (lp = icon_view->priv->items; lp != NULL; lp = lp->next)
+    {
+      item = lp->data;
+      if (G_UNLIKELY (idx == g_list_index (icon_view->priv->items, item)))
+        {
+          surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32,
+                                                item->area.width + 2,
+                                                item->area.height + 2);
+
+          cr = cairo_create (surface);
+
+          /* TODO: background / rectangles */
+
+          exo_icon_view_paint_item (icon_view, item, cr, 1, 1, FALSE);
+
+          cairo_destroy (cr);
+
+          return surface;
+        }
+    }
+
+  return NULL;
+}
+#else
 /**
  * exo_icon_view_create_drag_icon:
  * @icon_view : a #ExoIconView
@@ -7620,6 +8168,7 @@ exo_icon_view_create_drag_icon (ExoIconView *icon_view,
 
   return NULL;
 }
+#endif
 
 
 
@@ -7860,8 +8409,6 @@ exo_icon_view_single_click_timeout (gpointer user_data)
   gboolean         dirty = FALSE;
   ExoIconView     *icon_view = EXO_ICON_VIEW (user_data);
 
-  GDK_THREADS_ENTER ();
-
   /* verify that we are in single-click mode, have focus and a prelit item */
   if (gtk_widget_has_focus (GTK_WIDGET (icon_view)) && icon_view->priv->single_click && icon_view->priv->prelit_item != NULL)
     {
@@ -7926,8 +8473,6 @@ exo_icon_view_single_click_timeout (gpointer user_data)
       /* emit "selection-changed" */
       g_signal_emit (G_OBJECT (icon_view), icon_view_signals[SELECTION_CHANGED], 0);
     }
-
-  GDK_THREADS_LEAVE ();
 
   return FALSE;
 }
@@ -8243,7 +8788,11 @@ exo_icon_view_search_ensure_directory (ExoIconView *icon_view)
   gtk_widget_show (frame);
 
   /* allocate the vertical box */
+#if GTK_CHECK_VERSION (3, 0, 0)
+  vbox = g_object_new (GTK_TYPE_BOX, "orientation", GTK_ORIENTATION_VERTICAL, "border-width", 3, NULL);
+#else
   vbox = g_object_new (GTK_TYPE_VBOX, "border-width", 3, NULL);
+#endif
   gtk_container_add (GTK_CONTAINER (frame), vbox);
   gtk_widget_show (vbox);
 
@@ -8287,7 +8836,7 @@ exo_icon_view_search_init (GtkWidget   *search_entry,
       g_source_remove (icon_view->priv->search_timeout_id);
 
       /* schedule a new timeout */
-      icon_view->priv->search_timeout_id = g_timeout_add_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
+      icon_view->priv->search_timeout_id = gdk_threads_add_timeout_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
                                                                exo_icon_view_search_timeout, icon_view,
                                                                exo_icon_view_search_timeout_destroy);
     }
@@ -8425,7 +8974,7 @@ exo_icon_view_search_preedit_changed (GtkEntry     *entry,
   if (G_LIKELY (icon_view->priv->search_timeout_id != 0))
     {
       g_source_remove (icon_view->priv->search_timeout_id);
-      icon_view->priv->search_timeout_id = g_timeout_add_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
+      icon_view->priv->search_timeout_id = gdk_threads_add_timeout_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
                                                                exo_icon_view_search_timeout, icon_view,
                                                                exo_icon_view_search_timeout_destroy);
     }
@@ -8478,7 +9027,7 @@ exo_icon_view_search_start (ExoIconView *icon_view,
     }
 
   /* start the search timeout */
-  icon_view->priv->search_timeout_id = g_timeout_add_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
+  icon_view->priv->search_timeout_id = gdk_threads_add_timeout_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
                                                            exo_icon_view_search_timeout, icon_view,
                                                            exo_icon_view_search_timeout_destroy);
 
@@ -8571,7 +9120,7 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
   GtkRequisition requisition;
   GdkRectangle   monitor;
   GdkWindow     *view_window = gtk_widget_get_window (GTK_WIDGET (icon_view));
-  GdkScreen     *screen = gdk_drawable_get_screen (view_window);
+  GdkScreen     *screen = gdk_window_get_screen (view_window);
   gint           view_width, view_height;
   gint           view_x, view_y;
   gint           monitor_num;
@@ -8585,8 +9134,15 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
   gtk_widget_realize (search_dialog);
 
   gdk_window_get_origin (view_window, &view_x, &view_y);
-  gdk_drawable_get_size (view_window, &view_width, &view_height);
+  view_width = gdk_window_get_width (view_window);
+  view_height = gdk_window_get_height (view_window);
+#if GTK_CHECK_VERSION (3, 0, 0)
+  /* FIXME: make actual use of new Gtk3 layout system */
+  gtk_widget_get_preferred_width (search_dialog, NULL, &requisition.width);
+  gtk_widget_get_preferred_height (search_dialog, NULL, &requisition.height);
+#else
   gtk_widget_size_request (search_dialog, &requisition);
+#endif
 
   if (view_x + view_width - requisition.width > gdk_screen_get_width (screen))
     x = gdk_screen_get_width (screen) - requisition.width;
@@ -8695,7 +9251,7 @@ exo_icon_view_search_key_press_event (GtkWidget   *widget,
       g_source_remove (icon_view->priv->search_timeout_id);
 
       /* schedule a new timeout */
-      icon_view->priv->search_timeout_id = g_timeout_add_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
+      icon_view->priv->search_timeout_id = gdk_threads_add_timeout_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
                                                                exo_icon_view_search_timeout, icon_view,
                                                                exo_icon_view_search_timeout_destroy);
     }
@@ -8732,9 +9288,7 @@ exo_icon_view_search_timeout (gpointer user_data)
 {
   ExoIconView *icon_view = EXO_ICON_VIEW (user_data);
 
-  GDK_THREADS_ENTER ();
   exo_icon_view_search_dialog_hide (icon_view->priv->search_window, icon_view);
-  GDK_THREADS_LEAVE ();
 
   return FALSE;
 }

@@ -127,7 +127,12 @@ libexo_2_include_HEADERS =						\
 	exo-job.h							\
 	exo-simple-job.h						\
 	exo-string.h							\
-	exo-utils.h
+	exo-utils.h							\
+	exo-icon-view.h							\
+	exo-enum-types.h						\
+	exo-toolbars-model.h						\
+	exo-cell-renderer-icon.h					\
+	exo-thumbnail.h
 
 libexo_2_la_SOURCES =							\
 	$(libexo_2_include_HEADERS)					\
@@ -140,7 +145,11 @@ libexo_2_la_SOURCES =							\
 	exo-job.c							\
 	exo-simple-job.c						\
 	exo-string.c							\
-	exo-utils.c
+	exo-utils.c							\
+	exo-icon-view.c							\
+	exo-enum-types.c						\
+	exo-cell-renderer-icon.c					\
+	exo-thumbnail.c
 
 libexo_2_la_CFLAGS =							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
