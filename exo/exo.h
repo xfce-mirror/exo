@@ -45,6 +45,8 @@
 #include <exo/exo-simple-job.h>
 #include <exo/exo-string.h>
 #include <exo/exo-utils.h>
+#include <exo/exo-gtk-extensions.h>
+#include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-toolbars-model.h>
 
@@ -53,9 +55,7 @@
 #include <libxfce4util/libxfce4util.h>
 
 #include <exo/exo-cell-renderer-ellipsized-text.h>
-#include <exo/exo-gtk-extensions.h>
 #include <exo/exo-icon-bar.h>
-#include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-editor-dialog.h>
 #include <exo/exo-toolbars-view.h>

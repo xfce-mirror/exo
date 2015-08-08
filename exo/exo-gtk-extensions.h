@@ -30,7 +30,11 @@
 
 G_BEGIN_DECLS
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+void      exo_gtk_object_destroy_later                (GtkWidget      *object);
+#else
 void      exo_gtk_object_destroy_later                (GtkObject      *object);
+#endif
 
 void      exo_gtk_file_chooser_add_thumbnail_preview  (GtkFileChooser *chooser);
 

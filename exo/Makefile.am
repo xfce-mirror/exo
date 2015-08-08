@@ -126,16 +126,20 @@ libexo_2_include_HEADERS =						\
 	exo-config.h							\
 	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
+	exo-gtk-extensions.h						\
 	exo-gobject-extensions.h					\
 	exo-job.h							\
 	exo-simple-job.h						\
 	exo-string.h							\
 	exo-utils.h							\
+	exo-icon-chooser-dialog.h					\
+	exo-icon-chooser-model.h					\
 	exo-icon-view.h							\
 	exo-enum-types.h						\
 	exo-toolbars-model.h						\
 	exo-cell-renderer-icon.h					\
-	exo-thumbnail.h
+	exo-thumbnail.h							\
+	exo-thumbnail-preview.h
 
 libexo_2_la_SOURCES =							\
 	$(libexo_2_include_HEADERS)					\
@@ -147,15 +151,19 @@ libexo_2_la_SOURCES =							\
 	exo-config.c							\
 	exo-execute.c							\
 	exo-gdk-pixbuf-extensions.c					\
+	exo-gtk-extensions.c						\
 	exo-gobject-extensions.c					\
 	exo-job.c							\
 	exo-simple-job.c						\
 	exo-string.c							\
 	exo-utils.c							\
+	exo-icon-chooser-dialog.c					\
+	exo-icon-chooser-model.c					\
 	exo-icon-view.c							\
 	exo-enum-types.c						\
 	exo-cell-renderer-icon.c					\
-	exo-thumbnail.c
+	exo-thumbnail.c							\
+	exo-thumbnail-preview.c
 
 libexo_2_la_CFLAGS =							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
