@@ -49,7 +49,7 @@
 #include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-toolbars-model.h>
-
+#include <exo/exo-tree-view.h>
 
 #if !GTK_CHECK_VERSION (3, 0, 0)
 #include <libxfce4util/libxfce4util.h>
@@ -59,7 +59,6 @@
 #include <exo/exo-toolbars-editor.h>
 #include <exo/exo-toolbars-editor-dialog.h>
 #include <exo/exo-toolbars-view.h>
-#include <exo/exo-tree-view.h>
 #include <exo/exo-wrap-table.h>
 #include <exo/exo-xsession-client.h>
 #endif

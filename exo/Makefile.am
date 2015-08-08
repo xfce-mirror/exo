@@ -139,7 +139,8 @@ libexo_2_include_HEADERS =						\
 	exo-toolbars-model.h						\
 	exo-cell-renderer-icon.h					\
 	exo-thumbnail.h							\
-	exo-thumbnail-preview.h
+	exo-thumbnail-preview.h						\
+	exo-tree-view.h
 
 libexo_2_la_SOURCES =							\
 	$(libexo_2_include_HEADERS)					\
@@ -163,7 +164,8 @@ libexo_2_la_SOURCES =							\
 	exo-enum-types.c						\
 	exo-cell-renderer-icon.c					\
 	exo-thumbnail.c							\
-	exo-thumbnail-preview.c
+	exo-thumbnail-preview.c						\
+	exo-tree-view.c
 
 libexo_2_la_CFLAGS =							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
