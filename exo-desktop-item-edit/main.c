@@ -322,13 +322,13 @@ main (int argc, char **argv)
 
   /* allocate the dialog */
   dialog = xfce_titled_dialog_new_with_buttons (opt_create_new ? _(CREATE_TITLES[mode]) : _(EDIT_TITLES[mode]),
-                                                NULL, GTK_DIALOG_NO_SEPARATOR,
-                                                GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                                NULL, 0,
+                                                _("_Cancel"), GTK_RESPONSE_CANCEL,
                                                 NULL);
   gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 375);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), ICON_NAMES[mode]);
 
-  button = gtk_button_new_from_stock (GTK_STOCK_HELP);
+  button = gtk_button_new_with_mnemonic (_("_Help"));
   bbox = gtk_dialog_get_action_area (GTK_DIALOG (dialog));
   gtk_box_pack_start (GTK_BOX (bbox), button, FALSE, FALSE, 0);
   gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (bbox), button, TRUE);
@@ -337,7 +337,7 @@ main (int argc, char **argv)
   gtk_widget_show (button);
 
   /* add the "Create"/"Save" button (as default) */
-  button = gtk_button_new_from_stock (opt_create_new ? _("C_reate") : GTK_STOCK_SAVE);
+  button = gtk_button_new_with_mnemonic (opt_create_new ? _("C_reate") : _("_Save"));
   gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, GTK_RESPONSE_ACCEPT);
   gtk_widget_set_can_default (button, TRUE);
   gtk_widget_grab_default (button);
@@ -424,7 +424,7 @@ main (int argc, char **argv)
   if (G_UNLIKELY (opt_xid != 0))
     {
       /* try to determine the window for the id */
-      xwindow = gdk_window_foreign_new ((GdkNativeWindow) opt_xid);
+      xwindow = gdk_x11_window_foreign_new_for_display (gdk_display_get_default(), opt_xid);
       if (G_LIKELY (xwindow != NULL))
         {
           GtkAllocation allocation;
@@ -435,11 +435,11 @@ main (int argc, char **argv)
           /* ...and set the "transient for" relation */
           gdk_window_set_transient_for (gtk_widget_get_window (dialog), xwindow);
           gtk_window_set_screen (GTK_WINDOW (dialog),
-              gdk_drawable_get_screen (GDK_DRAWABLE (xwindow)));
+              gdk_window_get_screen (GDK_WINDOW (xwindow)));
 
           /* center on parent */
           gdk_window_get_root_origin (xwindow, &ox, &oy);
-          gdk_window_get_geometry (xwindow, NULL, NULL, &ow, &oh, NULL);
+          gdk_window_get_geometry (xwindow, NULL, NULL, &ow, &oh);
 
           gtk_widget_get_allocation (dialog, &allocation);
           ox += (ow - allocation.width) / 2;
@@ -516,8 +516,8 @@ main (int argc, char **argv)
               chooser = gtk_file_chooser_dialog_new (_("Choose filename"),
                                                      GTK_WINDOW (dialog),
                                                      GTK_FILE_CHOOSER_ACTION_SAVE,
-                                                     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                                     GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+                                                     _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                                     _("_Save"), GTK_RESPONSE_ACCEPT,
                                                      NULL);
               gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), TRUE);
               gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
