@@ -296,6 +296,7 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
                            "wrap-mode", PANGO_WRAP_WORD_CHAR,
                            "wrap-width", 104,
                            "xalign", 0.5f,
+                           "alignment", PANGO_ALIGN_CENTER,
                            "yalign", 0.0f,
                            NULL);
   gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, FALSE);
