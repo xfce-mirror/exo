@@ -3981,6 +3981,7 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
   ExoIconViewCellInfo *info;
   GtkStateType         state;
   GdkRectangle         cell_area;
+  GdkRectangle         aligned_area;
   GtkStyleContext     *style_context;
   GList               *lp;
 
@@ -4034,13 +4035,19 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
       /* FIXME: this is bad CSS usage */
       if (info->is_text)
         {
+          gtk_cell_renderer_get_aligned_area (info->cell,
+                                              GTK_WIDGET (icon_view),
+                                              flags,
+                                              &cell_area,
+                                              &aligned_area);
+
           gtk_render_background (style_context, cr,
-                                 cell_area.x, cell_area.y,
-                                 cell_area.width, cell_area.height);
+                                 aligned_area.x, aligned_area.y,
+                                 aligned_area.width, aligned_area.height);
 
           gtk_render_frame (style_context, cr,
-                            cell_area.x, cell_area.y,
-                            cell_area.width, cell_area.height);
+                            aligned_area.x, aligned_area.y,
+                            aligned_area.width, aligned_area.height);
         }
 
       gtk_cell_renderer_render (info->cell,
