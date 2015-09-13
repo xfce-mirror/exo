@@ -111,59 +111,6 @@ libexo_1_la_LIBADD =							\
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = exo-$(LIBEXO_VERSION_API).pc
 
-##
-## GTK+ 3 support library
-##
-if ENABLE_GTK3_LIBRARY
-
-libexo_2_includedir = $(includedir)/exo-2/exo
-
-lib_LTLIBRARIES += libexo-2.la
-
-libexo_2_include_HEADERS =						\
-	exo.h								\
-	exo-config.h							\
-	exo-gdk-pixbuf-extensions.h					\
-	exo-job.h							\
-	exo-simple-job.h						\
-	exo-string.h							\
-	exo-utils.h
-
-libexo_2_la_SOURCES =							\
-	$(libexo_2_include_HEADERS)					\
-	exo-marshal.c							\
-	exo-marshal.h							\
-	exo-private.c							\
-	exo-private.h							\
-	exo-config.c							\
-	exo-gdk-pixbuf-extensions.c					\
-	exo-job.c							\
-	exo-simple-job.c						\
-	exo-string.c							\
-	exo-utils.c
-
-libexo_2_la_CFLAGS =							\
-	$(LIBXFCE4UTIL_CFLAGS)						\
-	$(GIO_CFLAGS)							\
-	$(GTK3_CFLAGS)							\
-	$(LIBX11_CFLAGS)
-
-libexo_2_la_LDFLAGS =							\
-	-export-dynamic							\
-	-version-info $(LIBEXO_VERINFO)					\
-	-export-symbols-regex "^[^_].*"					\
-	-no-undefined
-
-libexo_2_la_LIBADD =							\
-	$(LIBXFCE4UTIL_LIBS)						\
-	$(GIO_LIBS)							\
-	$(GTK3_LIBS)							\
-	$(LIBX11_LIBS)							\
-	-lm
-
-pkgconfig_DATA += exo-2.pc
-
-endif
 
 ##
 ## Rules to auto-generate built sources
