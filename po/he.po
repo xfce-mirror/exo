@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:55+0200\n"
-"PO-Revision-Date: 2016-01-31 20:11+0000\n"
+"PO-Revision-Date: 2016-02-01 12:12+0000\n"
 "Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/exo/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -495,7 +495,7 @@ msgstr "  -h, --help        Print this help message and exit\n"
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr ""
+msgstr "  -V, --version     הדפס מידע גרסה וצא\n"
 
 #: ../exo-csource/main.c:289
 #, c-format
@@ -510,12 +510,12 @@ msgstr "  --static          צור סמלים סטטיים\n"
 #: ../exo-csource/main.c:291
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr ""
+msgstr "  --name=identifier מקרו C/שם משתנה\n"
 
 #: ../exo-csource/main.c:292
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr ""
+msgstr "  --build-list      נתח זוגות (שם,קובץ)\n"
 
 #: ../exo-csource/main.c:293
 #, c-format
@@ -775,178 +775,178 @@ msgstr "נכשל לנתח תוכן של \"%s\": %s "
 #: ../exo-desktop-item-edit/main.c:304
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr ""
+msgstr "קובץ \"%s\" ללא מפתח סוג"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:314
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr ""
+msgstr "סוג קובץ שולחן עבודה \"%s\" לא נתמך"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:338
 msgid "C_reate"
-msgstr ""
+msgstr "צור"
 
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:511
 msgid "Choose filename"
-msgstr ""
+msgstr "בחר שם קובץ"
 
 #: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr ""
+msgstr "נכשל ליצור \"%s\". "
 
 #: ../exo-desktop-item-edit/main.c:618
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr ""
+msgstr "נכשל לשמור \"%s\". "
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
-msgstr ""
+msgstr "תוכנות מועדפות"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
-msgstr ""
+msgstr "בחר תוכנות ברירת מחדל לשירותים שונים"
 
 #. Internet
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
-msgstr ""
+msgstr "אינטרנט"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
-msgstr ""
+msgstr "דפדפן אינטרנט"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:153
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr ""
+msgstr "דפדפן האינטרנט המועדף ישמש לפתיחת היפרלינקים ולהצגת תכני עזרה."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
 msgid "Mail Reader"
-msgstr ""
+msgstr "קורא דואר"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:185
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr ""
+msgstr "קורא הדואר המועדף ישמש לעריכת\nאימיילים כאשר אתה מבצע קליק על כתובות אימייל."
 
 #. Utilities
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
-msgstr ""
+msgstr "עזרים"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
-msgstr ""
+msgstr "מנהל קבצים"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:226
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr ""
+msgstr "מנהל הקבצים המועדף ישמש\nלסיור בתוכן של תיקיות."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
-msgstr ""
+msgstr "מחקה מסוף"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr ""
+msgstr "מחקה המסוף המועדף ישמש\nלהרצת פקודות הדורשות סביבת CLI. "
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
 msgid "Press left mouse button to change the selected application."
-msgstr ""
+msgstr "לחץ על כפתור העכבר השמאלי לשינוי התוכנה הנבחרת."
 
 #: ../exo-helper/exo-helper-chooser.c:155
 msgid "Application Chooser Button"
-msgstr ""
+msgstr "כפתור בחירת תוכנה"
 
 #: ../exo-helper/exo-helper-chooser.c:299
 msgid "No application selected"
-msgstr ""
+msgstr "אף תוכנה לא נבחרה"
 
 #: ../exo-helper/exo-helper-chooser.c:315
 msgid "Failed to set default Web Browser"
-msgstr ""
+msgstr "נכשל לקבוע דפדפן אינטרנט ברירת מחדל"
 
 #: ../exo-helper/exo-helper-chooser.c:316
 msgid "Failed to set default Mail Reader"
-msgstr ""
+msgstr "נכשל לקבוע קורא דואר ברירת מחדל"
 
 #: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
-msgstr ""
+msgstr "נכשל לקבוע מנהל קבצים ברירת מחדל"
 
 #: ../exo-helper/exo-helper-chooser.c:318
 msgid "Failed to set default Terminal Emulator"
-msgstr ""
+msgstr "נכשל לקבוע מחקה מסוף ברירת מחדל"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:388
 msgid "Select application"
-msgstr ""
+msgstr "בחר תוכנה"
 
 #: ../exo-helper/exo-helper-chooser.c:501
 msgid "Choose a custom Web Browser"
-msgstr ""
+msgstr "בחר דפדפן אינטרנט מותאם אישית"
 
 #: ../exo-helper/exo-helper-chooser.c:502
 msgid "Choose a custom Mail Reader"
-msgstr ""
+msgstr "בחר קורא דואר מותאם אישית"
 
 #: ../exo-helper/exo-helper-chooser.c:503
 msgid "Choose a custom File Manager"
-msgstr ""
+msgstr "בחר מנהל קבצים מותאם אישית"
 
 #: ../exo-helper/exo-helper-chooser.c:504
 msgid "Choose a custom Terminal Emulator"
-msgstr ""
+msgstr "בחר מחקה מסוף מותאם אישית"
 
 #: ../exo-helper/exo-helper-chooser.c:509
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
-msgstr ""
+msgstr "ציין את התוכנה שבה אתה רוצה להשתמש\nכדפדפן אינטרנט ברירת מחדל ל-Xfce: "
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr ""
+msgstr "ציין את התוכנה שבה אתה רוצה להשתמש\nכקורא דואר ברירת מחדל ל-Xfce: "
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr ""
+msgstr "ציין את התוכנה שבה אתה רוצה להשתמש\nכמנהל קבצים ברירת מחדל ל-Xfce: "
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr ""
+msgstr "ציין את התוכנה שבה אתה רוצה להשתמש\nכמחקה מסוף ברירת מחדל ל-Xfce: "
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
-msgstr ""
+msgstr "סייר במערכת הקבצים לבחירת פקודה מותאמת אישית."
 
 #: ../exo-helper/exo-helper-chooser.c:762
 msgid "_Other..."
-msgstr ""
+msgstr "אחר..."
 
 #: ../exo-helper/exo-helper-chooser.c:763
 msgid "Use a custom application which is not included in the above list."
