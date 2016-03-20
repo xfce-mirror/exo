@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-17 06:30+0100\n"
-"PO-Revision-Date: 2016-03-20 11:18+0000\n"
+"PO-Revision-Date: 2016-03-20 12:11+0000\n"
 "Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/exo/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -765,13 +765,13 @@ msgstr "הקובץ \"%s\" אינו מכיל נתונים"
 #: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Failed to parse contents of \"%s\": %s"
+msgstr "נכשל לנתח תוכן של \"%s\":%s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr "File \"%s\" has no type key"
+msgstr "קובץ \"%s\" ללא מפתח סוג"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:316
@@ -792,12 +792,12 @@ msgstr "בחר שם קובץ"
 #: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Failed to create \"%s\"."
+msgstr "נכשל ליצור \"%s\"."
 
 #: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Failed to save \"%s\"."
+msgstr "נכשל לשמור \"%s\"."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
@@ -806,7 +806,7 @@ msgstr "יישומים מועדפים"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
-msgstr "בחר יישום ברירת מחדל לשירותים"
+msgstr "בחר יישומי ברירת מחדל לשירותים שונים"
 
 #. Internet
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
@@ -816,13 +816,13 @@ msgstr "_אינטרנט"
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
-msgstr "דפדפן אינטרנט"
+msgstr "דפדפן רשת"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:153
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr "דפדפן האינטרנט המועדף ישמש לפתיחת קישורים\nלרשת ולהצגת תכני עזרה."
+msgstr "דפדפן הרשת המועדף ישמש לפתיחת קישורים\nלרשת ולהצגת תכני עזרה."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -833,7 +833,7 @@ msgstr "קורא דואר"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr "קורא הדוא\"ל המועדף ישמש לחיבור\nהודעות דוא\"ל כשאר תלחץ כתובת דוא\"ל."
+msgstr "קורא הדואר המועדף ישמש לחיבור\nהודעות דוא\"ל כשאתה מקליק על כתובות דוא\"ל."
 
 #. Utilities
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
@@ -849,18 +849,18 @@ msgstr "מנהל קבצים"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr "יעשה שימוש במנהל הקבצים שנבחר כברירת מחדל\nלעיון בתכני תיקיות."
+msgstr "מנהל הקבצים המועדף ישמש\nלסיור בתכני תיקיות."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
-msgstr "מסוף"
+msgstr "מדמה מסוף"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:258
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr "מדמה המסוף המועדף ישמש להרצת פקודות\nהדורשות מנשק שורת פקודה."
+msgstr "מדמה המסוף המועדף ישמש להפעלת פקודות\nהדורשות סביבת ממשק שורת פקודה."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -877,11 +877,11 @@ msgstr "לא נבחר יישום"
 
 #: ../exo-helper/exo-helper-chooser.c:315
 msgid "Failed to set default Web Browser"
-msgstr "כשל בהגדרת ברירת המחדל לדפדפן אינטרנט"
+msgstr "כשל בהגדרת ברירת המחדל לדפדפן רשת"
 
 #: ../exo-helper/exo-helper-chooser.c:316
 msgid "Failed to set default Mail Reader"
-msgstr "כשל בהגדרת ברירת המחדל לקורא דוא\"ל"
+msgstr "כשל בהגדרת ברירת המחדל לקורא דואר"
 
 #: ../exo-helper/exo-helper-chooser.c:317
 msgid "Failed to set default File Manager"
@@ -898,11 +898,11 @@ msgstr "בחירת יישום"
 
 #: ../exo-helper/exo-helper-chooser.c:501
 msgid "Choose a custom Web Browser"
-msgstr "בחירת דפדפן אינטרנט מותאם אישית"
+msgstr "בחירת דפדפן רשת מותאם אישית"
 
 #: ../exo-helper/exo-helper-chooser.c:502
 msgid "Choose a custom Mail Reader"
-msgstr "בחירת קורא דוא\"ל מותאם אישית"
+msgstr "בחירת קורא דואר מותאם אישית"
 
 #: ../exo-helper/exo-helper-chooser.c:503
 msgid "Choose a custom File Manager"
@@ -916,25 +916,25 @@ msgstr "בחירת מדמה מסוף מותאם אישית"
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
-msgstr "הגדרת היישום בו ברצונך להשתמש\nכברירת מחדל לדפדפן אינטרנט עבוד xfce:"
+msgstr "הגדרת היישום בו ברצונך להשתמש\nכברירת מחדל לדפדפן רשת עבור Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:510
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr "הגדרת היישום בו ברצונך להשתמש\nכברירת המחדל לקורא דוא\"ל עבור Xfce:"
+msgstr "הגדרת היישום בו ברצונך להשתמש\nכברירת מחדל לקורא דואר עבור Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr "ציון היישום בו ברצונך להשתמש\nכמנהל הקבצים כברירת מחדל עבור Xfce:"
+msgstr "הגדרת היישום בו ברצונך להשתמש\nכברירת מחדל למנהל הקבצים עבור Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr "הגדרת היישום בו ברצונך להשתמש\nכברירת המחדל למדמה מסוף עבור Xfce:"
+msgstr "הגדרת היישום בו ברצונך להשתמש\nכברירת מחדל למדמה מסוף עבור Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -950,7 +950,7 @@ msgstr "השתמש ביישום מותאם אישית אשר אינו נכלל �
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:113
 msgid "Choose Preferred Application"
-msgstr "בחירת יישום מועדפים"
+msgstr "בחירת יישום מועדף"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:256
 msgid ""
@@ -979,7 +979,7 @@ msgstr "אנא בחר כעת מדמה מסוף מועדף\nוהקלק על אי�
 #: ../exo-helper/exo-helper.c:382
 #, c-format
 msgid "No command specified"
-msgstr "לא נבחרה פקודה."
+msgstr "לא צוינה פקודה."
 
 #: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:726
 #, c-format
@@ -989,43 +989,43 @@ msgstr "פתיחת %s לכתיבה נכשלה"
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid ""
 "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "יישומים מועדפים (דפדפנים, קוראי דואר ומסופים)"
+msgstr "יישומים מועדפים (דפדפן רשת, קורא דואר ומדמה מסוף)"
 
 #: ../exo-helper/main.c:41
 msgid "Failed to execute default Web Browser"
-msgstr "Failed to execute default Web Browser"
+msgstr "נכשל לבצע דפדפן רשת ברירת מחדל"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Mail Reader"
-msgstr "Failed to execute default Mail Reader"
+msgstr "נכשל לבצע קורא דואר ברירת מחדל"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default File Manager"
-msgstr "Failed to execute default File Manager"
+msgstr "נכשל לבצע מנהל קבצים ברירת מחדל"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default Terminal Emulator"
-msgstr "Failed to execute default Terminal Emulator"
+msgstr "נכשל לבצע מדמה מסוף ברירת מחדל"
 
 #: ../exo-helper/main.c:71
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr "Open the Preferred Applications\nconfiguration dialog"
+msgstr "פתח את דו שיח ההגדרה של\nיישומים מועדפים"
 
 #: ../exo-helper/main.c:72
 msgid "Settings manager socket"
-msgstr "Settings manager socket"
+msgstr "שקע מנהל הגדרות"
 
 #: ../exo-helper/main.c:72
 msgid "SOCKET ID"
-msgstr "SOCKET ID"
+msgstr "זהות שקע"
 
 #: ../exo-helper/main.c:73
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
-msgstr "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."
+msgstr "הפעל את עוזר ברירת מחדל של TYPE עם ה-PARAMETER האופציונלי, כאשר TYPE הוא אחד מהערכים הבאים."
 
 #: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
@@ -1039,17 +1039,17 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "The following TYPEs are supported for the --launch command:\n\n  WebBrowser       - The preferred Web Browser.\n  MailReader       - The preferred Mail Reader.\n  FileManager      - The preferred File Manager.\n  TerminalEmulator - The preferred Terminal Emulator."
+msgstr "ה-TYPEs הבאים נתמכים לפקודת --launch:\nWebBrowser - דפדפן הרשת המועדף.\nMailReader - קורא הדואר המועדף.\nFileManager - מנהל הקבצים המועדף.\nTerminalEmulator - מדמה המסוף המועדף."
 
 #: ../exo-helper/main.c:112
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr "Type '%s --help' for usage."
+msgstr "הקלד '%s --help' לשימוש."
 
 #: ../exo-helper/main.c:165
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "Invalid helper type \"%s\""
+msgstr "סוג עוזר לא חוקי \"%s\" "
 
 #: ../exo-helper/main.c:213
 #, c-format
@@ -1064,7 +1064,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. All rights reserved.\n\nWritten by Benedikt Meurer <benny@xfce.org>.\n\nBuilt with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n\nPlease report bugs to <%s>.\n"
+msgstr "%s (Xfce %s)\n\nזכות יוצרים (c) 2003-2006\n        os-cillation e.K. כל הזכויות שמורות.\n\nנכתב ע\"י בנדיקט מיורר <benny@xfce.org>.\n\nנבנה עם Gtk+-%d.%d.%d, מופעל עם Gtk+-%d.%d.%d. \nאנא דווח באגים ל <%s>.\n"
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1084,11 +1084,11 @@ msgstr "Chromium"
 
 #: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
 msgid "Debian Sensible Browser"
-msgstr "Debian Sensible Browser"
+msgstr "דפדפן בשימוש דביאן"
 
 #: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
 msgid "Debian X Terminal Emulator"
-msgstr "Debian X Terminal Emulator"
+msgstr "מדמה מסוף X דביאן"
 
 #: ../exo-helper/helpers/dillo.desktop.in.in.h:1
 msgid "Dillo"
@@ -1264,7 +1264,7 @@ msgstr "מסוף X"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
-msgstr "Usage: exo-open [URLs...]"
+msgstr "שימוש: exo-open [URLs...]"
 
 #: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
@@ -1272,29 +1272,29 @@ msgstr "       exo-open --launch TYPE [PARAMETERs...]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -?, --help                          Print this help message and exit"
+msgstr "  -?, --help                          הדפס מסר עזרה זה וצא"
 
 #: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr "  -V, --version                       Print version information and exit"
+msgstr "  -V, --version                       הדפס מידע גרסה וצא"
 
 #: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n                                      TYPE with the optional PARAMETERs, where\n                                      TYPE is one of the following values."
+msgstr "--launch TYPE [PARAMETERs...]\nהפעל את הישום המועדף של\nTYPE עם ה-PARAMETERs האופציונלים, כאשר\nTYPE הוא אחד מהערכים הבאים."
 
 #: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory DIRECTORY       Default working directory for applications\n                                      when using the --launch option."
+msgstr "--working-directory DIRECTORY \nספרית עבודה ברירת מחדל לישומים\nכאשר משתמשים באפשרות --launch. "
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr "The following TYPEs are supported for the --launch command:"
+msgstr "ה-TYPEs הבאים נתמכים עבור פקודת --launch: "
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
@@ -1305,7 +1305,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - The preferred Web Browser.\n  MailReader       - The preferred Mail Reader.\n  FileManager      - The preferred File Manager.\n  TerminalEmulator - The preferred Terminal Emulator."
+msgstr "WebBrowser - דפדפן הרשת המועדף.\nMailReader - קורא הדואר המועדף.\nFileManager - מנהל הקבצים המועדף.\nTerminalEmulator - מדמה המסוף המועדף."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1314,29 +1314,29 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr "If you don't specify the --launch option, exo-open will open all specified\nURLs with their preferred URL handlers. Else, if you specify the --launch\noption, you can select which preferred application you want to run, and\npass additional parameters to the application (i.e. for TerminalEmulator\nyou can pass the command line that should be run in the terminal)."
+msgstr "אם אתה לא מציין את אפשרות --launch, ה-URL המצויינות ייפתחו ע\"י exo-open \nעם מטפלי ה-URL המועדפים שלהן. אחרת, אם אתה מציין את האפשרות\n--launch אתה יכול לבחור איזה ישום מועדף אתה רוצה להפעיל,\nולהעביר פרמטרים נוספים לישום (למשל עבור TerminalEmulator\nאתה יכול להעביר את שורת הפקודה שאמורה לפעול במסוף)."
 
 #: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr "Launching desktop files is not supported when %s is compiled without GIO-Unix features."
+msgstr "הפעלת קבצי שולחן עבודה אינה נתמכת כאשר %s עובר הדרה ללא מאפייני GIO-Unix."
 
 #: ../exo-open/main.c:260
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "כשל בשיגור היישום המועדף לקבוצה \"%s\"."
+msgstr "כשל בהפעלת היישום המועדף לקבוצה \"%s\"."
 
 #: ../exo-open/main.c:577
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "Unable to detect the URI-scheme of \"%s\"."
+msgstr "לא יכול לגלות URI-scheme של \"%s\". "
 
 #: ../exo-open/main.c:591
 #, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Failed to open URI \"%s\"."
+msgstr "נכשל לפתוח URI \"%s\". "
 
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
