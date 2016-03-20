@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-17 06:30+0100\n"
-"PO-Revision-Date: 2016-03-16 16:31+0000\n"
+"PO-Revision-Date: 2016-03-20 11:18+0000\n"
 "Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/exo/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr "איקון"
 
 #: ../exo/exo-cell-renderer-icon.c:167
 msgid "The icon to render."
-msgstr "הסמל להצגה."
+msgstr "האיקון למימוש."
 
 #: ../exo/exo-cell-renderer-icon.c:185
 msgid "GIcon"
@@ -45,7 +45,7 @@ msgstr "GIcon"
 
 #: ../exo/exo-cell-renderer-icon.c:186
 msgid "The GIcon to render."
-msgstr "סמל GIcon להצגה."
+msgstr "איקון GIcon למימוש."
 
 #: ../exo/exo-cell-renderer-icon.c:207
 msgid "size"
@@ -68,7 +68,7 @@ msgstr "קריאת קובץ \"%s\" נכשלה: %s"
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "טעינת תמונה \"%s\" נכשלה: סיבה לא ידועה, כנראה התמונה פגומה"
+msgstr "טעינת תמונה \"%s\" נכשלה: סיבה לא ידועה, כנראה קובץ תמונה פגום"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -476,7 +476,7 @@ msgstr "פקודת הפעלה מחדש של סשן"
 #: ../exo-csource/main.c:284
 #, c-format
 msgid "Usage: %s [options] [file]\n"
-msgstr "Usage: %s [options] [file]\n"
+msgstr "שימוש: %s [options] [file]\n"
 
 #: ../exo-csource/main.c:285
 #, c-format
@@ -486,42 +486,42 @@ msgstr "       %s [options] --build-list [[name file]...]\n"
 #: ../exo-csource/main.c:287
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help        Print this help message and exit\n"
+msgstr "  -h, --help        הדפס מסר עזרה זה וצא\n"
 
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version     Print version information and exit\n"
+msgstr "  -V, --version     הדפס מידע גרסה וצא\n"
 
 #: ../exo-csource/main.c:289
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
-msgstr "  --extern          Generate extern symbols\n"
+msgstr "  --extern          צור סמלי extern\n"
 
 #: ../exo-csource/main.c:290
 #, c-format
 msgid "  --static          Generate static symbols\n"
-msgstr "  --static          Generate static symbols\n"
+msgstr "  --static          צור סמלים סטטיים\n"
 
 #: ../exo-csource/main.c:291
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=identifier C macro/variable name\n"
+msgstr "  --name=identifier מקרו C/שם משתנה\n"
 
 #: ../exo-csource/main.c:292
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list      Parse (name, file) pairs\n"
+msgstr "  --build-list      נתח זוגות (שם,קובץ)\n"
 
 #: ../exo-csource/main.c:293
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "  --strip-comments  Remove comments from XML files\n"
+msgstr "  --strip-comments  הסר הערות מקבצי XML \n"
 
 #: ../exo-csource/main.c:294
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   Remove node contents from XML files\n"
+msgstr "  --strip-content   הסר תוכן צומת מקבצי XML \n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
 #: ../exo-open/main.c:496
@@ -532,7 +532,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr "Copyright (c) %s\n        os-cillation e.K. All rights reserved.\n\nWritten by Benedikt Meurer <benny@xfce.org>.\n\n"
+msgstr "זכות יוצרים (c) %s\n        os-cillation e.K. כל הזכויות שמורות.\n\nנכתב ע\"י בנדיקט מיורר <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
 #: ../exo-open/main.c:500
@@ -564,7 +564,7 @@ msgstr "כל הקבצים"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:269
 #: ../exo-helper/exo-helper-chooser.c:403
 msgid "Executable Files"
-msgstr "קבצים ברי-הרצה"
+msgstr "קבצים ברי-ביצוע"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:284
 #: ../exo-helper/exo-helper-chooser.c:418
@@ -589,7 +589,7 @@ msgstr "תסריטי Shell"
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:288
 #, c-format
 msgid "Create Launcher <b>%s</b>"
-msgstr "צור משגר <b>%s</b>"
+msgstr "צור מפעיל <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -613,19 +613,19 @@ msgstr "_פקודה:"
 #. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
-msgstr "_כתובת:"
+msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
-msgstr "תיקיית ה_פעילות:"
+msgstr "ספרית _עבודה:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
-msgstr "_סמל:"
+msgstr "_איקון:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
@@ -633,7 +633,7 @@ msgstr "_סמל:"
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
 msgid "No icon"
-msgstr "אין סמל"
+msgstr "אין איקון"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:412
 msgid "Options:"
@@ -645,14 +645,14 @@ msgstr "אפשרויות:"
 #. and xfce4-panel.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
-msgstr "השתמש _בהתראת הפעלה"
+msgstr "השתמש _בהודעת הפעלה"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "בחר באפשרות זו כדי לאפשר התראה בהפעלה כאשר הפקודה רצה מסייר הקבצים או התפריט. לא כל יישמום תומך בהתראת הפעלה."
+msgstr "בחר באפשרות זו כדי לאפשר הודעת הפעלה כאשר הפקודה פועלת ממנהל הקבצים או התפריט. לא כל ישום תומך בהודעת הפעלה."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -660,30 +660,30 @@ msgstr "בחר באפשרות זו כדי לאפשר התראה בהפעלה כ�
 #. and xfce4-panel.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
-msgstr "הרץ בתוך _מסוף"
+msgstr "הפעל בתוך _מסוף"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Select this option to run the command in a terminal window."
-msgstr "בחר באפשרות זו כדי להריץ את הפקודה מחלון המסוף."
+msgstr "בחר באפשרות זו כדי להפעיל את הפקודה בחלון מסוף."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:590
 msgid "Select an icon"
-msgstr "בחר סמל"
+msgstr "בחר איקון"
 
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:637
 msgid "Select a working directory"
-msgstr "בחירת תיקיית הפעילות"
+msgstr "בחירת ספרית עבודה"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
-msgstr "מיקום הקובץ אינו קובץ רגיל או תיקייה"
+msgstr "מיקום הקובץ אינו קובץ רגיל או ספריה"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:52
 msgid "Create Launcher"
-msgstr "צור משגר"
+msgstr "צור מפעיל"
 
 #: ../exo-desktop-item-edit/main.c:52
 msgid "Create Link"
@@ -691,11 +691,11 @@ msgstr "צור קישור"
 
 #: ../exo-desktop-item-edit/main.c:52
 msgid "Create Directory"
-msgstr "יצירת תיקייה"
+msgstr "יצירת ספריה"
 
 #: ../exo-desktop-item-edit/main.c:53
 msgid "Edit Launcher"
-msgstr "ערוך משגר"
+msgstr "ערוך מפעיל"
 
 #: ../exo-desktop-item-edit/main.c:53
 msgid "Edit Link"
@@ -703,7 +703,7 @@ msgstr "ערוך קישור"
 
 #: ../exo-desktop-item-edit/main.c:53
 msgid "Edit Directory"
-msgstr "עריכת תיקייה"
+msgstr "עריכת ספריה"
 
 #: ../exo-desktop-item-edit/main.c:78
 msgid "Create a new desktop file in the given directory"
@@ -711,7 +711,7 @@ msgstr "צור קובץ שולחן עבודה חדש בספרייה הנתונה
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "איזה סוג קובץ שולחן עבודה ליצור (יישום או קישור)?"
+msgstr "סוג קובץ שולחן עבודה ליצירה (יישום או קישור)"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Preset name when creating a desktop file"
@@ -723,19 +723,19 @@ msgstr "קבע מראש הערה כאשר יוצרים קובץ שולחן עב�
 
 #: ../exo-desktop-item-edit/main.c:82
 msgid "Preset command when creating a launcher"
-msgstr "קבע מראש פקודה כאשר יוצרים משגר"
+msgstr "קבע מראש פקודה כאשר יוצרים מפעיל"
 
 #: ../exo-desktop-item-edit/main.c:83
 msgid "Preset URL when creating a link"
-msgstr "קבע מראש כתובת כאשר יוצרים קישור"
+msgstr "קבע מראש URL כאשר יוצרים קישור"
 
 #: ../exo-desktop-item-edit/main.c:84
 msgid "Preset icon when creating a desktop file"
-msgstr "קבע מראש סמל כאשר יוצרים קובץ שולחן עבודה"
+msgstr "קבע מראש איקון כאשר יוצרים קובץ שולחן עבודה"
 
 #: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
 msgid "Print version information and exit"
-msgstr "Print version information and exit"
+msgstr "הדפס מידע גירסה וצא"
 
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:171
@@ -745,11 +745,11 @@ msgstr "[FILE|FOLDER]"
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:183
 msgid "Failed to open display"
-msgstr "Failed to open display"
+msgstr "נכשל לפתוח תצוגה"
 
 #: ../exo-desktop-item-edit/main.c:210
 msgid "No file/folder specified"
-msgstr "No file/folder specified"
+msgstr "לא צוין קובץ/תיקיה"
 
 #: ../exo-desktop-item-edit/main.c:276
 #, c-format
@@ -956,25 +956,25 @@ msgstr "בחירת יישום מועדפים"
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
-msgstr "אנא בחר דפדפן רשת מועדף\nכעת לחץ על אישור כדי להמשיך."
+msgstr "אנא בחר כעת דפדפן רשת מועדף\nוהקלק על אישור כדי להמשיך."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
-msgstr "אנא בחר קורא דוא\"ל מועדף\nכעת לחץ על אישור כדי להמשיך."
+msgstr "אנא בחר כעת קורא דוא\"ל מועדף\nוהקלק על אישור כדי להמשיך."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr "אנא בחר מנהל קבצים מועדף\nכעת לחץ על אישור כדי להמשיך."
+msgstr "אנא בחר כעת מנהל קבצים מועדף\nוהקלק על אישור כדי להמשיך."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
-msgstr "אנא בחר מדמה מסוף מועדף\nכעת לחץ אישור כדי להמשיך."
+msgstr "אנא בחר כעת מדמה מסוף מועדף\nוהקלק על אישור כדי להמשיך."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -1184,11 +1184,11 @@ msgstr "NXterm"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
-msgstr "Opera Browser"
+msgstr "דפדפן Opera "
 
 #: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
 msgid "Opera Mail"
-msgstr "Opera Mail"
+msgstr "דואר Opera "
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
@@ -1340,7 +1340,7 @@ msgstr "Failed to open URI \"%s\"."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
-msgstr "עיין במערכת הקבצים"
+msgstr "סייר במערכת הקבצים"
 
 #: ../exo-open/exo-mail-reader.desktop.in.h:2
 msgid "Read your email"
@@ -1352,4 +1352,4 @@ msgstr "השתמש בשורת הפקודה"
 
 #: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
-msgstr "גלוש ברשת"
+msgstr "סייר ברשת"
