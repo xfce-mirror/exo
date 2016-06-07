@@ -382,7 +382,7 @@ exo_toolbars_view_get_toolbar_position (ExoToolbarsView *view,
   gint   position;
 
   children = gtk_container_get_children (GTK_CONTAINER (view));
-  position = g_list_index (children, toolbar->parent);
+  position = g_list_index (children, gtk_widget_get_parent (toolbar));
   g_list_free (children);
 
   return position;
@@ -454,9 +454,9 @@ exo_toolbars_view_drag_data_delete (GtkWidget       *item,
   gint toolbar_position;
   gint item_position;
 
-  item_position = gtk_toolbar_get_item_index (GTK_TOOLBAR (item->parent),
+  item_position = gtk_toolbar_get_item_index (GTK_TOOLBAR (gtk_widget_get_parent (item)),
                                               GTK_TOOL_ITEM (item));
-  toolbar_position = exo_toolbars_view_get_toolbar_position (view, item->parent);
+  toolbar_position = exo_toolbars_view_get_toolbar_position (view, gtk_widget_get_parent (item));
   exo_toolbars_model_remove_item (view->priv->model, toolbar_position, item_position);
 }
 
@@ -482,7 +482,7 @@ exo_toolbars_view_drag_data_get (GtkWidget        *item,
   else
     target = exo_toolbars_model_get_item_data (view->priv->model, type, id);
 
-  gtk_selection_data_set (selection_data, selection_data->target,
+  gtk_selection_data_set (selection_data, gtk_selection_data_get_target(selection_data),
                           8, (guchar *) target, strlen (target));
 
   g_free (target);
@@ -647,7 +647,7 @@ exo_toolbars_view_drag_data_received (GtkWidget         *toolbar,
 
   target = gtk_drag_dest_find_target (toolbar, context, NULL);
   type = exo_toolbars_model_get_item_type (view->priv->model, target);
-  id = exo_toolbars_model_get_item_id (view->priv->model, type, (const gchar *) selection_data->data);
+  id = exo_toolbars_model_get_item_id (view->priv->model, type, (const gchar *) gtk_selection_data_get_data (selection_data));
 
   if (G_UNLIKELY (id == NULL))
     {
@@ -670,12 +670,12 @@ exo_toolbars_view_drag_data_received (GtkWidget         *toolbar,
       item_position = gtk_toolbar_get_drop_index (GTK_TOOLBAR (toolbar), x, y);
       toolbar_position = exo_toolbars_view_get_toolbar_position (view, toolbar);
 
-      if (data_is_separator ((const gchar *) selection_data->data))
+      if (data_is_separator ((const gchar *) gtk_selection_data_get_data (selection_data)))
         exo_toolbars_model_add_separator (view->priv->model, toolbar_position, item_position);
       else
         exo_toolbars_model_add_item (view->priv->model, toolbar_position, item_position, id, type);
 
-      gtk_drag_finish (context, TRUE, context->action == GDK_ACTION_MOVE, drag_time);
+      gtk_drag_finish (context, TRUE, gdk_drag_context_get_selected_action (context) == GDK_ACTION_MOVE, drag_time);
     }
 
   g_free (type);
@@ -882,8 +882,10 @@ exo_toolbars_view_drag_motion (GtkWidget        *toolbar,
   GdkAtom               target;
   gint                  toolbar_position;
   gint                  idx;
+  GdkDragAction         suggested_action;
 
   source = gtk_drag_get_source_widget (context);
+  suggested_action = gdk_drag_context_get_suggested_action (context);
   if (G_LIKELY (source != NULL))
     {
       toolbar_position = exo_toolbars_view_get_toolbar_position (view, toolbar);
@@ -899,8 +901,9 @@ exo_toolbars_view_drag_motion (GtkWidget        *toolbar,
           return FALSE;
         }
 
+      /* FIXME how to set the suggested action on the context? */
       if (gtk_widget_is_ancestor (source, toolbar))
-        context->suggested_action = GDK_ACTION_MOVE;
+        suggested_action = GDK_ACTION_MOVE;
     }
 
   target = gtk_drag_dest_find_target (toolbar, context, NULL);
@@ -933,7 +936,7 @@ exo_toolbars_view_drag_motion (GtkWidget        *toolbar,
                                            idx);
     }
 
-  gdk_drag_status (context, context->suggested_action, drag_time);
+  gdk_drag_status (context, suggested_action, drag_time);
 
   return TRUE;
 }

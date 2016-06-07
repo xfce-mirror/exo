@@ -177,7 +177,10 @@ dnl ***********************************************************
 XDT_CHECK_OPTIONAL_PACKAGE([GTK3],
                            [gtk+-3.0], [3.6.0], [gtk3],
                            [GTK+ 3 support])
-AM_CONDITIONAL([ENABLE_GTK3_LIBRARY], [test "x$GTK3_FOUND" = "xyes"])
+XDT_CHECK_OPTIONAL_PACKAGE([LIBXFCE4UI2],
+                           [libxfce4ui-2], [4.12.0], [libxfce4ui2],
+                           [GTK+ 3 support: libxfce4ui-2])
+AM_CONDITIONAL([ENABLE_GTK3_LIBRARY], [test "x$GTK3_FOUND" = "xyes" && test "x$LIBXFCE4UI2_FOUND" = "xyes" ])
 
 dnl *********************
 dnl *** Check for X11 ***
@@ -238,6 +241,11 @@ dnl *** Compensate for broken gtk-doc ***
 dnl *************************************
 XDT_SUPPORTED_FLAGS([GTK_DOC_EXTRA_CFLAGS], [-Wno-sign-compare])
 AC_SUBST([GTK_DOC_EXTRA_CFLAGS])
+
+dnl *************************************
+dnl *** Use GSEAL if possible         ***
+dnl *************************************
+XDT_SUPPORTED_FLAGS([CFLAGS], [-DGSEAL_ENABLE])
 
 AC_OUTPUT([
 Makefile

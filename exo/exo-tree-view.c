@@ -316,7 +316,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
       /* if no custom select function is set, we simply use exo_noop_false here,
        * to tell the tree view that it may not alter the selection.
        */
-      if (G_LIKELY (selection->user_func == NULL))
+      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == NULL))
         gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) exo_noop_false, NULL, NULL);
       else
         selected_paths = gtk_tree_selection_get_selected_rows (selection, NULL);
@@ -365,7 +365,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
       && path != NULL && gtk_tree_selection_path_is_selected (selection, path))
     {
       /* check if we have to restore paths */
-      if (G_LIKELY (selection->user_func != (GtkTreeSelectionFunc) exo_noop_false))
+      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) != (GtkTreeSelectionFunc) exo_noop_false))
         {
           /* select all previously selected paths */
           for (lp = selected_paths; lp != NULL; lp = lp->next)
@@ -374,12 +374,12 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
     }
 
   /* see bug http://bugzilla.xfce.org/show_bug.cgi?id=6230 for more information */
-  if (G_LIKELY (selection->user_func == (GtkTreeSelectionFunc) exo_noop_false))
+  if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) exo_noop_false))
     {
       /* just reset the select function (previously set to exo_noop_false),
        * there's no clean way to do this, so what the heck.
        */
-      selection->user_func = NULL;
+      gtk_tree_selection_set_select_function (selection, NULL, NULL, NULL);
     }
 
   /* release the path (if any) */
@@ -575,7 +575,7 @@ exo_tree_view_leave_notify_event (GtkWidget        *widget,
     }
 
   /* reset the cursor for the tree view internal window */
-  if (GTK_WIDGET_REALIZED (tree_view))
+  if (gtk_widget_get_realized (GTK_WIDGET (tree_view)))
     gdk_window_set_cursor (gtk_tree_view_get_bin_window (GTK_TREE_VIEW (tree_view)), NULL);
 
   /* the next button-release-event should not activate */
@@ -621,7 +621,7 @@ exo_tree_view_move_cursor (GtkTreeView    *view,
     }
 
   /* reset the cursor for the tree view internal window */
-  if (GTK_WIDGET_REALIZED (tree_view))
+  if (gtk_widget_get_realized (GTK_WIDGET (tree_view)))
     gdk_window_set_cursor (gtk_tree_view_get_bin_window (GTK_TREE_VIEW (tree_view)), NULL);
 
   /* call the parent's handler */
@@ -646,7 +646,7 @@ exo_tree_view_single_click_timeout (gpointer user_data)
   GDK_THREADS_ENTER ();
 
   /* verify that we are in single-click mode, have focus and a hover path */
-  if (GTK_WIDGET_HAS_FOCUS (tree_view) && tree_view->priv->single_click && tree_view->priv->hover_path != NULL)
+  if (gtk_widget_has_focus (GTK_WIDGET (tree_view)) && tree_view->priv->single_click && tree_view->priv->hover_path != NULL)
     {
       /* transform the hover_path to a tree iterator */
       model = gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view));

@@ -52,7 +52,11 @@
 static gboolean
 later_destroy (gpointer object)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_widget_destroy (GTK_WIDGET (object));
+#else
   gtk_object_destroy (GTK_OBJECT (object));
+#endif
   g_object_unref (G_OBJECT (object));
   return FALSE;
 }
@@ -66,6 +70,16 @@ later_destroy (gpointer object)
  * Schedules an idle function to destroy the specified @object
  * when the application enters the main loop the next time.
  **/
+#if GTK_CHECK_VERSION (3, 0, 0)
+void
+exo_gtk_object_destroy_later (GtkWidget *object)
+{
+  g_return_if_fail (GTK_IS_WIDGET (object));
+
+  g_idle_add_full (G_PRIORITY_HIGH, later_destroy, object, NULL);
+  g_object_ref_sink (object);
+}
+#else
 void
 exo_gtk_object_destroy_later (GtkObject *object)
 {
@@ -74,6 +88,7 @@ exo_gtk_object_destroy_later (GtkObject *object)
   g_idle_add_full (G_PRIORITY_HIGH, later_destroy, object, NULL);
   g_object_ref_sink (object);
 }
+#endif
 
 
 

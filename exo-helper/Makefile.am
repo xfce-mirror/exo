@@ -36,18 +36,18 @@ exo_helper_1_SOURCES =						\
 	main.c
 
 exo_helper_1_CFLAGS =							\
-	$(GTK_CFLAGS)							\
+	$(GTK3_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
-	$(LIBXFCE4UI_CFLAGS)
+	$(LIBXFCE4UI2_CFLAGS)
 
 exo_helper_1_DEPENDENCIES =						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
+	$(top_builddir)/exo/libexo-2.la
 
 exo_helper_1_LDADD =							\
-	$(GTK_LIBS)							\
+	$(GTK3_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
-	$(LIBXFCE4UI_LIBS)						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
+	$(LIBXFCE4UI2_LIBS)						\
+	$(top_builddir)/exo/libexo-2.la
 
 bin_SCRIPTS =								\
 	exo-preferred-applications

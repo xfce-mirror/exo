@@ -89,35 +89,29 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   GtkWidget      *button;
   GtkWidget      *frame;
   GtkWidget      *label;
-  GtkWidget      *topcontainer;
   GtkWidget      *vbox;
   GtkWidget      *box;
 
   /* verify category settings */
   g_assert (EXO_HELPER_N_CATEGORIES == 4);
 
-  gtk_dialog_add_button (GTK_DIALOG (chooser_dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
-  gtk_dialog_set_has_separator (GTK_DIALOG (chooser_dialog), FALSE);
+  gtk_dialog_add_button (GTK_DIALOG (chooser_dialog), _("_Close"), GTK_RESPONSE_CLOSE);
   gtk_window_set_icon_name (GTK_WINDOW (chooser_dialog), "preferences-desktop-default-applications");
   gtk_window_set_title (GTK_WINDOW (chooser_dialog), _("Preferred Applications"));
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (chooser_dialog), _("Select default applications for various services"));
 
   /* add the "Help" button */
-  button = gtk_button_new_from_stock (GTK_STOCK_HELP);
+  button = gtk_button_new_with_mnemonic (_("_Help"));
   g_signal_connect_swapped (G_OBJECT (button), "clicked", G_CALLBACK (exo_helper_chooser_dialog_show_help), chooser_dialog);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->action_area), button, FALSE, TRUE, 0);
-  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (GTK_DIALOG (chooser_dialog)->action_area), button, TRUE);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (chooser_dialog))), button, FALSE, TRUE, 0);
+  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (gtk_dialog_get_action_area (GTK_DIALOG (chooser_dialog))), button, TRUE);
   gtk_widget_show (button);
 
-  topcontainer = gtk_alignment_new (0.0, 0.0, 1.0, 1.0);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (chooser_dialog)->vbox), topcontainer, TRUE, TRUE, 0);
-  gtk_widget_show (topcontainer);
-  chooser_dialog->plug_child = topcontainer;
-
   notebook = gtk_notebook_new ();
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (chooser_dialog))), notebook, TRUE, TRUE, 0);
   gtk_container_set_border_width (GTK_CONTAINER (notebook), 6);
-  gtk_container_add (GTK_CONTAINER (topcontainer), notebook);
   gtk_widget_show (notebook);
+  chooser_dialog->plug_child = notebook;
 
   /* allocate shared bold label attributes */
   attr_list_bold = pango_attr_list_new ();
@@ -130,7 +124,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
      Internet
    */
   label = gtk_label_new_with_mnemonic (_("_Internet"));
-  vbox = g_object_new (GTK_TYPE_VBOX, "border-width", 12, "spacing", 24, NULL);
+  vbox = g_object_new (GTK_TYPE_BOX, "orientation", GTK_ORIENTATION_VERTICAL, "border-width", 12, "spacing", 24, NULL);
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox, label);
   gtk_widget_show (label);
   gtk_widget_show (vbox);
@@ -146,13 +140,13 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_frame_set_label_widget (GTK_FRAME (frame), label);
   gtk_widget_show (label);
 
-  box = g_object_new (GTK_TYPE_VBOX, "border-width", 12, "spacing", 12, NULL);
+  box = g_object_new (GTK_TYPE_BOX, "orientation", GTK_ORIENTATION_VERTICAL, "border-width", 12, "spacing", 12, NULL);
   gtk_container_add (GTK_CONTAINER (frame), box);
   gtk_widget_show (box);
 
   label = gtk_label_new (_("The preferred Web Browser will be used to open\n"
                            "hyperlinks and display help contents."));
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.0f);
+  g_object_set (label, "xalign", 0.0f, "yalign", 0.0f, NULL);
   gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
   gtk_widget_show (label);
 
@@ -178,13 +172,13 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_frame_set_label_widget (GTK_FRAME (frame), label);
   gtk_widget_show (label);
 
-  box = g_object_new (GTK_TYPE_VBOX, "border-width", 12, "spacing", 12, NULL);
+  box = g_object_new (GTK_TYPE_BOX, "orientation", GTK_ORIENTATION_VERTICAL, "border-width", 12, "spacing", 12, NULL);
   gtk_container_add (GTK_CONTAINER (frame), box);
   gtk_widget_show (box);
 
   label = gtk_label_new (_("The preferred Mail Reader will be used to compose\n"
                            "emails when you click on email addresses."));
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.0f);
+  g_object_set (label, "xalign", 0.0f, "yalign", 0.0f, NULL);
   gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
   gtk_widget_show (label);
 
@@ -203,7 +197,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
      Utilities
    */
   label = gtk_label_new_with_mnemonic (_("_Utilities"));
-  vbox = g_object_new (GTK_TYPE_VBOX, "border-width", 12, "spacing", 24, NULL);
+  vbox = g_object_new (GTK_TYPE_BOX, "orientation", GTK_ORIENTATION_VERTICAL, "border-width", 12, "spacing", 24, NULL);
   gtk_notebook_append_page (GTK_NOTEBOOK (notebook), vbox, label);
   gtk_widget_show (label);
   gtk_widget_show (vbox);
@@ -219,13 +213,13 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_frame_set_label_widget (GTK_FRAME (frame), label);
   gtk_widget_show (label);
 
-  box = g_object_new (GTK_TYPE_VBOX, "border-width", 12, "spacing", 12, NULL);
+  box = g_object_new (GTK_TYPE_BOX, "orientation", GTK_ORIENTATION_VERTICAL, "border-width", 12, "spacing", 12, NULL);
   gtk_container_add (GTK_CONTAINER (frame), box);
   gtk_widget_show (box);
 
   label = gtk_label_new (_("The preferred File Manager will be used to\n"
                            "browse the contents of folders."));
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.0f);
+  g_object_set (label, "xalign", 0.0f, "yalign", 0.0f, NULL);
   gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
   gtk_widget_show (label);
 
@@ -251,13 +245,13 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   gtk_frame_set_label_widget (GTK_FRAME (frame), label);
   gtk_widget_show (label);
 
-  box = g_object_new (GTK_TYPE_VBOX, "border-width", 12, "spacing", 12, NULL);
+  box = g_object_new (GTK_TYPE_BOX, "orientation", GTK_ORIENTATION_VERTICAL, "border-width", 12, "spacing", 12, NULL);
   gtk_container_add (GTK_CONTAINER (frame), box);
   gtk_widget_show (box);
 
   label = gtk_label_new (_("The preferred Terminal Emulator will be used to\n"
                            "run commands that require a CLI environment."));
-  gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.0f);
+  g_object_set (label, "xalign", 0.0f, "yalign", 0.0f, NULL);
   gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
   gtk_widget_show (label);
 

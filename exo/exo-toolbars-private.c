@@ -39,14 +39,14 @@ fake_expose_widget (GtkWidget *widget,
   event.type = GDK_EXPOSE;
   event.window = pixmap;
   event.send_event = FALSE;
-  event.area = widget->allocation;
+  gtk_widget_get_allocation (widget, &event.area);
   event.region = NULL;
   event.count = 0;
 
-  tmp_window = widget->window;
-  widget->window = pixmap;
+  tmp_window = gtk_widget_get_window (widget);
+  gtk_widget_set_window (widget, pixmap);
   gtk_widget_send_expose (widget, (GdkEvent *) &event);
-  widget->window = tmp_window;
+  gtk_widget_set_window (widget, tmp_window);
 }
 
 
@@ -99,13 +99,13 @@ new_pixbuf_from_widget (GtkWidget *widget)
   gtk_widget_size_request (window, &requisition);
 
   /* Create a pixmap */
-  pixmap = gdk_pixmap_new (GDK_DRAWABLE (window->window), icon_width, icon_height, -1);
+  pixmap = gdk_pixmap_new (gtk_widget_get_window (window), icon_width, icon_height, -1);
   gdk_drawable_set_colormap (GDK_DRAWABLE (pixmap), gtk_widget_get_colormap (window));
 
   /* Draw the window */
   gtk_widget_ensure_style (window);
-  g_assert (window->style);
-  g_assert (window->style->font_desc);
+  g_assert (gtk_widget_get_style (window));
+  g_assert (gtk_widget_get_style (window)->font_desc);
 
   fake_expose_widget (window, pixmap);
   fake_expose_widget (widget, pixmap);
@@ -341,12 +341,12 @@ _exo_toolbars_set_drag_cursor (GtkWidget *widget)
   GdkCursor *cursor;
   GdkPixbuf *pixbuf;
 
-  if (G_LIKELY (widget->window != NULL))
+  if (G_LIKELY (gtk_widget_get_window (widget) != NULL))
     {
       pixbuf = gdk_pixbuf_new_from_inline (-1, drag_cursor_data, FALSE, NULL);
       cursor = gdk_cursor_new_from_pixbuf (gtk_widget_get_display (widget),
                                            pixbuf, 12, 12);
-      gdk_window_set_cursor (widget->window, cursor);
+      gdk_window_set_cursor (gtk_widget_get_window (widget), cursor);
       g_object_unref (G_OBJECT (pixbuf));
       gdk_cursor_unref (cursor);
     }
@@ -361,8 +361,8 @@ _exo_toolbars_set_drag_cursor (GtkWidget *widget)
 void
 _exo_toolbars_unset_drag_cursor (GtkWidget *widget)
 {
-  if (G_LIKELY (widget->window != NULL))
-    gdk_window_set_cursor (widget->window, NULL);
+  if (G_LIKELY (gtk_widget_get_window (widget) != NULL))
+    gdk_window_set_cursor (gtk_widget_get_window (widget), NULL);
 }
 
 

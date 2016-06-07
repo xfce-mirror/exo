@@ -72,12 +72,12 @@ static void     exo_die_editor_cell_data_func (GtkCellLayout      *cell_layout,
 
 struct _ExoDieEditorClass
 {
-  GtkTableClass __parent__;
+  GtkGridClass __parent__;
 };
 
 struct _ExoDieEditor
 {
-  GtkTable         __parent__;
+  GtkGrid         __parent__;
   GtkWidget       *name_entry;
   GtkWidget       *icon_button;
   ExoDieEditorMode mode;
@@ -93,7 +93,7 @@ struct _ExoDieEditor
 
 
 
-G_DEFINE_TYPE (ExoDieEditor, exo_die_editor, GTK_TYPE_TABLE)
+G_DEFINE_TYPE (ExoDieEditor, exo_die_editor, GTK_TYPE_GRID)
 
 
 
@@ -270,7 +270,6 @@ static void
 exo_die_editor_init (ExoDieEditor *editor)
 {
   GtkWidget *button;
-  GtkWidget *align;
   GtkWidget *entry;
   GtkWidget *label;
   GtkWidget *image;
@@ -287,23 +286,23 @@ exo_die_editor_init (ExoDieEditor *editor)
   editor->path = g_strdup ("");
 
   /* configure the table */
-  gtk_table_resize (GTK_TABLE (editor), 8, 2);
-  gtk_table_set_col_spacings (GTK_TABLE (editor), 12);
-  gtk_table_set_row_spacings (GTK_TABLE (editor), 0);
+  gtk_grid_set_column_spacing (GTK_GRID (editor), 12);
+  gtk_grid_set_row_spacing (GTK_GRID (editor), 6);
 
   row = 0;
 
   /* TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts */
   label = gtk_label_new_with_mnemonic (_("_Name:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
-  gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
+  g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
+  gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
   gtk_widget_show (label);
 
   editor->name_entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (editor->name_entry), TRUE);
   exo_mutual_binding_new (G_OBJECT (editor), "name", G_OBJECT (editor->name_entry), "text");
-  gtk_table_attach (GTK_TABLE (editor), editor->name_entry, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), editor->name_entry, 1, row, 1, 1);
+  g_object_set (editor->name_entry, "hexpand", TRUE, NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), editor->name_entry);
   gtk_widget_show (editor->name_entry);
 
@@ -312,14 +311,15 @@ exo_die_editor_init (ExoDieEditor *editor)
   /* TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts */
   label = gtk_label_new_with_mnemonic (_("C_omment:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
-  gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
+  g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
+  gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
   gtk_widget_show (label);
 
   entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   exo_mutual_binding_new (G_OBJECT (editor), "comment", G_OBJECT (entry), "text");
-  gtk_table_attach (GTK_TABLE (editor), entry, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), entry, 1, row, 1, 1);
+  g_object_set (entry, "hexpand", TRUE, NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
   gtk_widget_show (entry);
 
@@ -328,14 +328,15 @@ exo_die_editor_init (ExoDieEditor *editor)
   /* TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts */
   label = gtk_label_new_with_mnemonic (_("Comm_and:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
+  g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (label), "visible", exo_die_true_if_application, NULL, NULL);
-  gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
   entry = exo_die_command_entry_new ();
   exo_mutual_binding_new (G_OBJECT (editor), "command", G_OBJECT (entry), "text");
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (entry), "visible", exo_die_true_if_application, NULL, NULL);
-  gtk_table_attach (GTK_TABLE (editor), entry, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), entry, 1, row, 1, 1);
+  g_object_set (entry, "hexpand", TRUE, NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
 
   row += 1;
@@ -343,15 +344,16 @@ exo_die_editor_init (ExoDieEditor *editor)
   /* TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts */
   label = gtk_label_new_with_mnemonic (_("_URL:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
+  g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (label), "visible", exo_die_true_if_link, NULL, NULL);
-  gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
   entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   exo_mutual_binding_new (G_OBJECT (editor), "url", G_OBJECT (entry), "text");
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (entry), "visible", exo_die_true_if_link, NULL, NULL);
-  gtk_table_attach (GTK_TABLE (editor), entry, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), entry, 1, row, 1, 1);
+  g_object_set (entry, "hexpand", TRUE, NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
 
   row += 1;
@@ -359,12 +361,13 @@ exo_die_editor_init (ExoDieEditor *editor)
   /* TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts */
   label = gtk_label_new_with_mnemonic (_("Working _Directory:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
+  g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (label), "visible", exo_die_true_if_application, NULL, NULL);
-  gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
-  box = gtk_hbox_new (FALSE, 6);
-  gtk_table_attach (GTK_TABLE (editor), box, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
+  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+  gtk_grid_attach (GTK_GRID (editor), box, 1, row, 1, 1);
+  g_object_set (box, "hexpand", TRUE, NULL);
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (box), "visible", exo_die_true_if_application, NULL, NULL);
 
   entry = gtk_entry_new ();
@@ -379,7 +382,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   gtk_box_pack_start (GTK_BOX (box), button, FALSE, FALSE, 0);
   gtk_widget_show (button);
 
-  image = gtk_image_new_from_stock (GTK_STOCK_DIRECTORY, GTK_ICON_SIZE_MENU);
+  image = gtk_image_new_from_icon_name ("folder", GTK_ICON_SIZE_MENU);
   gtk_container_add (GTK_CONTAINER (button), image);
   gtk_widget_show (image);
 
@@ -388,19 +391,16 @@ exo_die_editor_init (ExoDieEditor *editor)
   /* TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts */
   label = gtk_label_new_with_mnemonic (_("_Icon:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
-  gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
+  g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
+  gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
   gtk_widget_show (label);
-
-  align = gtk_alignment_new (0.0f, 0.5f, 0.0f, 0.0f);
-  gtk_table_attach (GTK_TABLE (editor), align, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
-  gtk_widget_show (align);
 
   editor->icon_button = gtk_button_new ();
   g_signal_connect (G_OBJECT (editor->icon_button), "clicked", G_CALLBACK (exo_die_editor_icon_clicked), editor);
-  gtk_container_add (GTK_CONTAINER (align), editor->icon_button);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), editor->icon_button);
   gtk_widget_show (editor->icon_button);
+  gtk_grid_attach (GTK_GRID (editor), editor->icon_button, 1, row, 1, 1);
+  g_object_set (editor->icon_button, "expand", FALSE, "halign", GTK_ALIGN_START, "valign", GTK_ALIGN_CENTER, NULL);
 
   /* TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected */
   label = gtk_label_new (_("No icon"));
@@ -411,9 +411,9 @@ exo_die_editor_init (ExoDieEditor *editor)
 
   label = gtk_label_new (_("Options:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label), 1.0f, 0.5f);
+  g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (label), "visible", exo_die_true_if_application, NULL, NULL);
-  gtk_table_attach (GTK_TABLE (editor), label, 0, 1, row, row + 1, GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
 
   /* TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
    *              and sync your translations with the translations in Thunar and xfce4-panel.
@@ -424,7 +424,8 @@ exo_die_editor_init (ExoDieEditor *editor)
                                          "startup notification."));
   exo_mutual_binding_new (G_OBJECT (editor), "snotify", G_OBJECT (button), "active");
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (button), "visible", exo_die_true_if_application, NULL, NULL);
-  gtk_table_attach (GTK_TABLE (editor), button, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), button, 1, row, 1, 1);
+  g_object_set (button, "hexpand", TRUE, NULL);
 
   row += 1;
 
@@ -435,7 +436,8 @@ exo_die_editor_init (ExoDieEditor *editor)
   gtk_widget_set_tooltip_text (button, _("Select this option to run the command in a terminal window."));
   exo_mutual_binding_new (G_OBJECT (editor), "terminal", G_OBJECT (button), "active");
   exo_binding_new_full (G_OBJECT (editor), "mode", G_OBJECT (button), "visible", exo_die_true_if_application, NULL, NULL);
-  gtk_table_attach (GTK_TABLE (editor), button, 1, 2, row, row + 1, GTK_EXPAND | GTK_FILL, GTK_FILL, 0, 3);
+  gtk_grid_attach (GTK_GRID (editor), button, 1, row, 1, 1);
+  g_object_set (button, "hexpand", TRUE, NULL);
 }
 
 
@@ -583,14 +585,14 @@ exo_die_editor_icon_clicked (GtkWidget    *button,
 
   /* determine the toplevel widget */
   toplevel = gtk_widget_get_toplevel (button);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the icon chooser dialog */
   chooser = exo_icon_chooser_dialog_new (_("Select an icon"),
                                          GTK_WINDOW (toplevel),
-                                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                         GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+                                         _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                         _("_OK"), GTK_RESPONSE_ACCEPT,
                                          NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
   gtk_dialog_set_alternative_button_order (GTK_DIALOG (chooser),
@@ -630,15 +632,15 @@ exo_die_editor_path_clicked (GtkWidget    *button,
 
   /* determine the toplevel widget */
   toplevel = gtk_widget_get_toplevel (button);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the file chooser dialog */
   chooser = gtk_file_chooser_dialog_new (_("Select a working directory"),
                                          GTK_WINDOW (toplevel),
                                          GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-                                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                         GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+                                         _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                         _("_OK"), GTK_RESPONSE_ACCEPT,
                                          NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
   gtk_dialog_set_alternative_button_order (GTK_DIALOG (chooser),
@@ -1188,8 +1190,8 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
       g_object_notify (G_OBJECT (editor), "icon");
 
       /* drop the previous icon button child */
-      if (GTK_BIN (editor->icon_button)->child != NULL)
-        gtk_widget_destroy (GTK_BIN (editor->icon_button)->child);
+      if (gtk_bin_get_child (GTK_BIN (editor->icon_button)) != NULL)
+        gtk_widget_destroy (gtk_bin_get_child (GTK_BIN (editor->icon_button)));
 
       /* check the icon depending on the type */
       if (icon != NULL && g_path_is_absolute (icon))

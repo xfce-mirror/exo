@@ -384,8 +384,6 @@ exo_die_command_model_collect_idle (gpointer user_data)
   g_return_val_if_fail (EXO_DIE_IS_COMMAND_MODEL (command_model), FALSE);
   g_return_val_if_fail (command_model->items == NULL, FALSE);
 
-  GDK_THREADS_ENTER ();
-
   /* move the collected items "online" */
   command_model->items = command_model->collect_items;
   command_model->collect_items = NULL;
@@ -415,8 +413,6 @@ exo_die_command_model_collect_idle (gpointer user_data)
 
   /* tell the consumer that we are loaded */
   g_signal_emit (G_OBJECT (command_model), command_model_signals[LOADED], 0);
-
-  GDK_THREADS_LEAVE ();
 
   return FALSE;
 }
@@ -508,7 +504,7 @@ exo_die_command_model_collect_thread (gpointer user_data)
       command_model->collect_items = items;
 
       /* and schedule an idle source */
-      command_model->collect_idle_id = g_idle_add_full (G_PRIORITY_LOW, exo_die_command_model_collect_idle,
+      command_model->collect_idle_id = gdk_threads_add_idle_full (G_PRIORITY_LOW, exo_die_command_model_collect_idle,
                                                         command_model, exo_die_command_model_collect_idle_destroy);
     }
   else

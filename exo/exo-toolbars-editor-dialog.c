@@ -90,17 +90,16 @@ exo_toolbars_editor_dialog_init (ExoToolbarsEditorDialog *dialog)
 
   dialog->priv = EXO_TOOLBARS_EDITOR_DIALOG_GET_PRIVATE (dialog);
 
-  gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
   gtk_window_set_default_size (GTK_WINDOW (dialog), -1, 300);
 
   dialog->priv->editor = g_object_new (EXO_TYPE_TOOLBARS_EDITOR, NULL);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), dialog->priv->editor, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), dialog->priv->editor, TRUE, TRUE, 0);
   gtk_widget_show (dialog->priv->editor);
 
   button = gtk_button_new ();
   g_signal_connect_swapped (G_OBJECT (button), "clicked",
                             G_CALLBACK (exo_toolbars_editor_dialog_add_toolbar), dialog);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->action_area), button, FALSE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), button, FALSE, TRUE, 0);
   gtk_widget_show (button);
 
   align = gtk_alignment_new (0.5, 0.5, 1.0, 1.0);
@@ -122,7 +121,7 @@ exo_toolbars_editor_dialog_init (ExoToolbarsEditorDialog *dialog)
   button = gtk_button_new_from_stock (GTK_STOCK_CLOSE);
   g_signal_connect_swapped (G_OBJECT (button), "clicked",
                             G_CALLBACK (gtk_widget_destroy), dialog);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->action_area), button, FALSE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), button, FALSE, TRUE, 0);
   gtk_widget_show (button);
 }
 

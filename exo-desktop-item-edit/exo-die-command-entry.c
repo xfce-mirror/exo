@@ -77,7 +77,7 @@ struct _ExoDieCommandEntry
 
 
 
-G_DEFINE_TYPE (ExoDieCommandEntry, exo_die_command_entry, GTK_TYPE_HBOX)
+G_DEFINE_TYPE (ExoDieCommandEntry, exo_die_command_entry, GTK_TYPE_BOX)
 
 
 
@@ -135,13 +135,15 @@ exo_die_command_entry_init (ExoDieCommandEntry *command_entry)
   GtkWidget *image;
 
   /* setup the box */
+  gtk_orientable_set_orientation (GTK_ORIENTABLE (command_entry), GTK_ORIENTATION_HORIZONTAL);
   gtk_box_set_spacing (GTK_BOX (command_entry), 6);
 
   /* allocate the command model */
   command_entry->model = exo_die_command_model_new ();
   g_signal_connect (G_OBJECT (command_entry->model), "loaded", G_CALLBACK (exo_die_command_entry_model_loaded), command_entry);
 
-  gtk_widget_push_composite_child ();
+  /* TODO: switch to widget templates
+  gtk_widget_push_composite_child ();*/
 
   command_entry->entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (command_entry->entry), TRUE);
@@ -154,11 +156,11 @@ exo_die_command_entry_init (ExoDieCommandEntry *command_entry)
   gtk_box_pack_start (GTK_BOX (command_entry), button, FALSE, FALSE, 0);
   gtk_widget_show (button);
 
-  image = gtk_image_new_from_stock (GTK_STOCK_OPEN, GTK_ICON_SIZE_MENU);
+  image = gtk_image_new_from_icon_name ("document-open", GTK_ICON_SIZE_MENU);
   gtk_container_add (GTK_CONTAINER (button), image);
   gtk_widget_show (image);
 
-  gtk_widget_pop_composite_child ();
+  /*gtk_widget_pop_composite_child ();*/
 }
 
 
@@ -248,15 +250,15 @@ exo_die_command_entry_button_clicked (GtkWidget          *button,
 
   /* determine the toplevel window */
   toplevel = gtk_widget_get_toplevel (button);
-  if (toplevel == NULL || !GTK_WIDGET_TOPLEVEL (toplevel))
+  if (toplevel == NULL || !gtk_widget_is_toplevel (toplevel))
     return;
 
   /* allocate the file chooser */
   chooser = gtk_file_chooser_dialog_new (_("Select an Application"),
                                          GTK_WINDOW (toplevel),
                                          GTK_FILE_CHOOSER_ACTION_OPEN,
-                                         GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                         GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+                                         _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                         _("_Open"), GTK_RESPONSE_ACCEPT,
                                          NULL);
   gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), TRUE);
 
