@@ -854,6 +854,7 @@ exo_icon_view_item_accessible_is_showing (ExoIconViewItemAccessible *item)
   ExoIconView *icon_view;
   GdkRectangle visible_rect;
   gboolean is_showing;
+  GtkAllocation allocation;
 
   /*
    * An item is considered "SHOWING" if any part of the item is in the
@@ -869,12 +870,14 @@ exo_icon_view_item_accessible_is_showing (ExoIconViewItemAccessible *item)
   icon_view = EXO_ICON_VIEW (item->widget);
   visible_rect.x = 0;
   if (icon_view->priv->hadjustment)
-    visible_rect.x += icon_view->priv->hadjustment->value;
+    visible_rect.x += gtk_adjustment_get_value (icon_view->priv->hadjustment);
   visible_rect.y = 0;
   if (icon_view->priv->vadjustment)
-    visible_rect.y += icon_view->priv->vadjustment->value;
-  visible_rect.width = item->widget->allocation.width;
-  visible_rect.height = item->widget->allocation.height;
+    visible_rect.y += gtk_adjustment_get_value (icon_view->priv->vadjustment);
+
+  gtk_widget_get_allocation (item->widget, &allocation);
+  visible_rect.width = allocation.width;
+  visible_rect.height = allocation.height;
 
   if (((item->item->area.x + item->item->area.width) < visible_rect.x) ||
      ((item->item->area.y + item->item->area.height) < (visible_rect.y)) ||
@@ -1149,7 +1152,7 @@ exo_icon_view_accessible_get_n_children (AtkObject *accessible)
   ExoIconView *icon_view;
   GtkWidget *widget;
 
-  widget = GTK_ACCESSIBLE (accessible)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (accessible));
   if (!widget)
       return 0;
 
@@ -1189,7 +1192,7 @@ exo_icon_view_accessible_ref_child (AtkObject *accessible,
   AtkObject *obj;
   ExoIconViewItemAccessible *a11y_item;
 
-  widget = GTK_ACCESSIBLE (accessible)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (accessible));
   if (!widget)
     return NULL;
 
@@ -1248,7 +1251,7 @@ exo_icon_view_accessible_traverse_items (ExoIconViewAccessible *view,
       GtkWidget *widget;
       gboolean act_on_item;
 
-      widget = GTK_ACCESSIBLE (view)->widget;
+      widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (view));
       if (widget == NULL)
         return;
 
@@ -1368,7 +1371,7 @@ exo_icon_view_accessible_model_row_changed (GtkTreeModel *tree_model,
 
   if (a11y_item)
     {
-      widget = GTK_ACCESSIBLE (atk_obj)->widget;
+      widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (atk_obj));
       icon_view = EXO_ICON_VIEW (widget);
       item = a11y_item->item;
 
@@ -1727,9 +1730,9 @@ exo_icon_view_accessible_destroyed (GtkWidget *widget,
 static void
 exo_icon_view_accessible_connect_widget_destroyed (GtkAccessible *accessible)
 {
-  if (accessible->widget)
+  if (gtk_accessible_get_widget (accessible))
     {
-      g_signal_connect_after (accessible->widget,
+      g_signal_connect_after (gtk_accessible_get_widget (accessible),
                               "destroy",
                               G_CALLBACK (exo_icon_view_accessible_destroyed),
                               accessible);
@@ -1771,7 +1774,7 @@ exo_icon_view_accessible_ref_accessible_at_point (AtkComponent *component,
   gint x_pos, y_pos;
   gint idx;
 
-  widget = GTK_ACCESSIBLE (component)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (component));
   if (widget == NULL)
   /* State is defunct */
     return NULL;
@@ -1800,7 +1803,7 @@ exo_icon_view_accessible_add_selection (AtkSelection *selection,
   ExoIconView *icon_view;
   ExoIconViewItem *item;
 
-  widget = GTK_ACCESSIBLE (selection)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (selection));
   if (widget == NULL)
     return FALSE;
 
@@ -1822,7 +1825,7 @@ exo_icon_view_accessible_clear_selection (AtkSelection *selection)
   GtkWidget *widget;
   ExoIconView *icon_view;
 
-  widget = GTK_ACCESSIBLE (selection)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (selection));
   if (widget == NULL)
     return FALSE;
 
@@ -1842,7 +1845,7 @@ exo_icon_view_accessible_ref_selection (AtkSelection *selection,
   ExoIconViewItem *item;
   gint idx;
 
-  widget = GTK_ACCESSIBLE (selection)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (selection));
   if (widget == NULL)
     return NULL;
 
@@ -1876,7 +1879,7 @@ exo_icon_view_accessible_get_selection_count (AtkSelection *selection)
   GList *l;
   gint count;
 
-  widget = GTK_ACCESSIBLE (selection)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (selection));
   if (widget == NULL)
     return 0;
 
@@ -1905,7 +1908,7 @@ exo_icon_view_accessible_is_child_selected (AtkSelection *selection,
   ExoIconView *icon_view;
   ExoIconViewItem *item;
 
-  widget = GTK_ACCESSIBLE (selection)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (selection));
   if (widget == NULL)
     return FALSE;
 
@@ -1928,7 +1931,7 @@ exo_icon_view_accessible_remove_selection (AtkSelection *selection,
   GList *l;
   gint count;
 
-  widget = GTK_ACCESSIBLE (selection)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (selection));
   if (widget == NULL)
     return FALSE;
 
@@ -1959,7 +1962,7 @@ exo_icon_view_accessible_select_all_selection (AtkSelection *selection)
   GtkWidget *widget;
   ExoIconView *icon_view;
 
-  widget = GTK_ACCESSIBLE (selection)->widget;
+  widget = gtk_accessible_get_widget (GTK_ACCESSIBLE (selection));
   if (widget == NULL)
     return FALSE;
 

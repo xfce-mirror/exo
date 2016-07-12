@@ -11,7 +11,7 @@ exo_open_SOURCES =							\
 	main.c
 
 exo_open_CFLAGS =							\
-	$(GTK_CFLAGS)							\
+	$(GTK3_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(GIO_CFLAGS)							\
 	$(GIO_UNIX_CFLAGS)
@@ -20,11 +20,11 @@ exo_open_LDFLAGS =							\
 	-no-undefined
 
 exo_open_LDADD =							\
-	$(GTK_LIBS)							\
+	$(GTK3_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(GIO_LIBS)							\
 	$(GIO_UNIX_LIBS)						\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
+	$(top_builddir)/exo/libexo-2.la
 
 desktopdir = $(datadir)/applications
 desktop_in_files =							\

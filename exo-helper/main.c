@@ -33,6 +33,7 @@
 #include <exo-helper/exo-helper-chooser-dialog.h>
 #include <exo-helper/exo-helper-launcher-dialog.h>
 #include <exo-helper/exo-helper-utils.h>
+#include <gtk/gtkx.h>
 
 
 
@@ -62,7 +63,7 @@ main (int argc, char **argv)
   gboolean           opt_version = FALSE;
   gboolean           opt_configure = FALSE;
   gchar             *opt_launch_type = NULL;
-  GdkNativeWindow    opt_socket_id = 0;
+  Window             opt_socket_id = 0;
 
   GOptionContext    *opt_ctx;
   GOptionGroup      *gtk_option_group;
@@ -140,7 +141,13 @@ main (int argc, char **argv)
           g_signal_connect (plug, "delete-event", G_CALLBACK (gtk_main_quit), NULL);
 
           plug_child = exo_helper_chooser_dialog_get_plug_child (EXO_HELPER_CHOOSER_DIALOG (dialog));
-          gtk_widget_reparent (plug_child, plug);
+
+          g_object_ref (plug_child);
+          if (gtk_widget_get_parent (plug_child))
+            gtk_container_remove (GTK_CONTAINER (gtk_widget_get_parent (plug_child)), plug_child);
+          gtk_container_add (GTK_CONTAINER (plug), plug_child);
+          g_object_unref (plug_child);
+
           gtk_widget_show (plug_child);
 
           /* End startup notification */

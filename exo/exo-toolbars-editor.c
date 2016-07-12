@@ -310,7 +310,7 @@ exo_toolbars_editor_drag_data_get (GtkWidget          *item,
 
   action = g_object_get_data (G_OBJECT (item), I_("gtk-action"));
   target = (action != NULL) ? gtk_action_get_name (action) : "separator";
-  gtk_selection_data_set (selection_data, selection_data->target,
+  gtk_selection_data_set (selection_data, gtk_selection_data_get_target (selection_data),
                           8, (const guchar *) target, strlen (target));
 }
 

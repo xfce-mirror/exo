@@ -427,8 +427,6 @@ exo_die_desktop_model_collect_idle (gpointer user_data)
   g_return_val_if_fail (EXO_DIE_IS_DESKTOP_MODEL (desktop_model), FALSE);
   g_return_val_if_fail (desktop_model->items == NULL, FALSE);
 
-  GDK_THREADS_ENTER ();
-
   /* move the collected items "online" */
   desktop_model->items = desktop_model->collect_items;
   desktop_model->collect_items = NULL;
@@ -455,8 +453,6 @@ exo_die_desktop_model_collect_idle (gpointer user_data)
       lp->next = np;
     }
   gtk_tree_path_free (path);
-
-  GDK_THREADS_LEAVE ();
 
   return FALSE;
 }
@@ -546,7 +542,7 @@ exo_die_desktop_model_collect_thread (gpointer user_data)
       desktop_model->collect_items = g_slist_sort (items, exo_die_desktop_item_compare);
 
       /* and schedule an idle source */
-      desktop_model->collect_idle_id = g_idle_add_full (G_PRIORITY_LOW, exo_die_desktop_model_collect_idle,
+      desktop_model->collect_idle_id = gdk_threads_add_idle_full (G_PRIORITY_LOW, exo_die_desktop_model_collect_idle,
                                                         desktop_model, exo_die_desktop_model_collect_idle_destroy);
     }
   else

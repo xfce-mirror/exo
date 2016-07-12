@@ -53,7 +53,10 @@
 #define EXO_CELL_RENDERER_ICON_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
     EXO_TYPE_CELL_RENDERER_ICON, ExoCellRendererIconPrivate))
 
-
+/* HACK: fix dead API via #define */
+#if GTK_CHECK_VERSION (3, 0, 0)
+# define gtk_icon_info_free(info) g_object_unref (info)
+#endif
 
 /* Property identifiers */
 enum
@@ -78,11 +81,23 @@ static void exo_cell_renderer_icon_set_property (GObject                  *objec
                                                  GParamSpec               *pspec);
 static void exo_cell_renderer_icon_get_size     (GtkCellRenderer          *renderer,
                                                  GtkWidget                *widget,
+#if GTK_CHECK_VERSION (3, 0, 0)
+                                                 const GdkRectangle       *cell_area,
+#else
                                                  GdkRectangle             *cell_area,
+#endif
                                                  gint                     *x_offset,
                                                  gint                     *y_offset,
                                                  gint                     *width,
                                                  gint                     *height);
+#if GTK_CHECK_VERSION (3, 0, 0)
+static void exo_cell_renderer_icon_render       (GtkCellRenderer          *renderer,
+                                                 cairo_t                  *cr,
+                                                 GtkWidget                *widget,
+                                                 const GdkRectangle       *background_area,
+                                                 const GdkRectangle       *cell_area,
+                                                 GtkCellRendererState      flags);
+#else
 static void exo_cell_renderer_icon_render       (GtkCellRenderer          *renderer,
                                                  GdkWindow                *window,
                                                  GtkWidget                *widget,
@@ -90,6 +105,7 @@ static void exo_cell_renderer_icon_render       (GtkCellRenderer          *rende
                                                  GdkRectangle             *cell_area,
                                                  GdkRectangle             *expose_area,
                                                  GtkCellRendererState      flags);
+#endif
 
 
 
@@ -318,27 +334,36 @@ exo_cell_renderer_icon_set_property (GObject      *object,
 static void
 exo_cell_renderer_icon_get_size (GtkCellRenderer *renderer,
                                  GtkWidget       *widget,
+#if GTK_CHECK_VERSION (3, 0, 0)
+                                 const GdkRectangle *cell_area,
+#else
                                  GdkRectangle    *cell_area,
+#endif
                                  gint            *x_offset,
                                  gint            *y_offset,
                                  gint            *width,
                                  gint            *height)
 {
   const ExoCellRendererIconPrivate *priv = EXO_CELL_RENDERER_ICON_GET_PRIVATE (renderer);
+  gfloat xalign, yalign;
+  gint   xpad, ypad;
+
+  gtk_cell_renderer_get_alignment (renderer, &xalign, &yalign);
+  gtk_cell_renderer_get_padding (renderer, &xpad, &ypad);
 
   if (cell_area != NULL)
     {
       if (x_offset != NULL)
         {
-          *x_offset = ((gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL) ? 1.0 - renderer->xalign : renderer->xalign)
+          *x_offset = ((gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL) ? 1.0 - xalign : xalign)
                     * (cell_area->width - priv->size);
-          *x_offset = MAX (*x_offset, 0) + renderer->xpad;
+          *x_offset = MAX (*x_offset, 0) + xpad;
         }
 
       if (y_offset != NULL)
         {
-          *y_offset = renderer->yalign * (cell_area->height - priv->size);
-          *y_offset = MAX (*y_offset, 0) + renderer->ypad;
+          *y_offset = yalign * (cell_area->height - priv->size);
+          *y_offset = MAX (*y_offset, 0) + ypad;
         }
     }
   else
@@ -351,14 +376,28 @@ exo_cell_renderer_icon_get_size (GtkCellRenderer *renderer,
     }
 
   if (G_LIKELY (width != NULL))
-    *width = (gint) renderer->xpad * 2 + priv->size;
+    *width = (gint) xpad * 2 + priv->size;
 
   if (G_LIKELY (height != NULL))
-    *height = (gint) renderer->ypad * 2 + priv->size;
+    *height = (gint) ypad * 2 + priv->size;
 }
 
 
-
+#if GTK_CHECK_VERSION (3, 0, 0)
+static void
+exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
+                               cairo_t             *cr,
+                               GtkWidget           *widget,
+                               const GdkRectangle  *background_area,
+                               const GdkRectangle  *cell_area,
+                               GtkCellRendererState flags)
+{
+    GdkRectangle        clip_area;
+    GdkRectangle       *expose_area = &clip_area;
+    GdkRGBA             color_rgba;
+    GdkColor            color_gdk;
+    GtkStyleContext    *style_context;
+#else
 static void
 exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
                                GdkWindow           *window,
@@ -368,12 +407,14 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
                                GdkRectangle        *expose_area,
                                GtkCellRendererState flags)
 {
-  const ExoCellRendererIconPrivate *priv = EXO_CELL_RENDERER_ICON_GET_PRIVATE (renderer);
+  cairo_t *cr = gdk_cairo_create (window);
   GtkIconSource                    *icon_source;
+  GtkStateType                      state;
+#endif
+  const ExoCellRendererIconPrivate *priv = EXO_CELL_RENDERER_ICON_GET_PRIVATE (renderer);
   GtkIconTheme                     *icon_theme;
   GdkRectangle                      icon_area;
   GdkRectangle                      draw_area;
-  GtkStateType                      state;
   const gchar                      *filename;
   GtkIconInfo                      *icon_info = NULL;
   GdkPixbuf                        *icon = NULL;
@@ -383,6 +424,10 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   gint                             *icon_sizes;
   gint                              icon_size;
   gint                              n;
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gdk_cairo_get_clip_rectangle (cr, expose_area);
+#endif
 
   /* verify that we have an icon */
   if (G_UNLIKELY (priv->icon == NULL && priv->gicon == NULL))
@@ -493,7 +538,8 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   icon_area.x = cell_area->x + (cell_area->width - icon_area.width) / 2;
   icon_area.y = cell_area->y + (cell_area->height - icon_area.height) / 2;
 
-  /* check whether the icon is affected by the expose event */
+  /* Gtk2: check whether the icon is affected by the expose event */
+  /* Gtk3: we don't have any expose rectangle and just draw everything */
   if (gdk_rectangle_intersect (expose_area, &icon_area, &draw_area))
     {
       /* colorize the icon if we should follow the selection state */
@@ -501,8 +547,22 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         {
           if ((flags & GTK_CELL_RENDERER_SELECTED) != 0)
             {
-              state = GTK_WIDGET_HAS_FOCUS (widget) ? GTK_STATE_SELECTED : GTK_STATE_ACTIVE;
-              temp = exo_gdk_pixbuf_colorize (icon, &widget->style->base[state]);
+#if GTK_CHECK_VERSION (3, 0, 0)
+              style_context = gtk_widget_get_style_context (widget);
+              gtk_style_context_get_background_color (style_context,
+                                                      gtk_style_context_get_state (style_context),
+                                                      &color_rgba);
+
+              color_gdk.pixel = 0;
+              color_gdk.red = color_rgba.red * 65535.0;
+              color_gdk.blue = color_rgba.blue * 65535.0;
+              color_gdk.green = color_rgba.green * 65535.0;
+              temp = exo_gdk_pixbuf_colorize (icon, &color_gdk);
+#else
+              state = gtk_widget_has_focus (widget) ? GTK_STATE_SELECTED : GTK_STATE_ACTIVE;
+
+              temp = exo_gdk_pixbuf_colorize (icon, &gtk_widget_get_style (widget)->base[state]);
+#endif
               g_object_unref (G_OBJECT (icon));
               icon = temp;
             }
@@ -515,8 +575,11 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
             }
         }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+          /* FIXME */
+#else
       /* check if we should render an insensitive icon */
-      if (G_UNLIKELY (GTK_WIDGET_STATE (widget) == GTK_STATE_INSENSITIVE || !renderer->sensitive))
+      if (G_UNLIKELY (gtk_widget_get_state (widget) == GTK_STATE_INSENSITIVE || !gtk_cell_renderer_get_sensitive (renderer)))
         {
           /* allocate an icon source */
           icon_source = gtk_icon_source_new ();
@@ -525,7 +588,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
           gtk_icon_source_set_size (icon_source, GTK_ICON_SIZE_SMALL_TOOLBAR);
 
           /* render the insensitive icon */
-          temp = gtk_style_render_icon (widget->style, icon_source, gtk_widget_get_direction (widget),
+          temp = gtk_style_render_icon (gtk_widget_get_style (widget), icon_source, gtk_widget_get_direction (widget),
                                         GTK_STATE_INSENSITIVE, -1, widget, "gtkcellrendererpixbuf");
           g_object_unref (G_OBJECT (icon));
           icon = temp;
@@ -533,16 +596,20 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
           /* release the icon source */
           gtk_icon_source_free (icon_source);
         }
+#endif
 
       /* render the invalid parts of the icon */
-      gdk_draw_pixbuf (window, widget->style->black_gc, icon,
-                       draw_area.x - icon_area.x, draw_area.y - icon_area.y,
-                       draw_area.x, draw_area.y, draw_area.width, draw_area.height,
-                       GDK_RGB_DITHER_NORMAL, 0, 0);
+      gdk_cairo_set_source_pixbuf (cr, icon, icon_area.x, icon_area.y);
+      cairo_rectangle (cr, draw_area.x, draw_area.y, draw_area.width, draw_area.height);
+      cairo_fill (cr);
     }
 
   /* release the file's icon */
   g_object_unref (G_OBJECT (icon));
+
+#if !GTK_CHECK_VERSION (3, 0, 0)
+  cairo_destroy (cr);
+#endif
 }
 
 

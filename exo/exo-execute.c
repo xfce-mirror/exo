@@ -119,12 +119,15 @@ gboolean
 exo_execute_preferred_application_on_screen (const gchar *category,
                                              const gchar *parameter,
                                              const gchar *working_directory,
-                                             gchar      **envp,
+                                             gchar      **envp_in,
                                              GdkScreen   *screen,
                                              GError     **error)
 {
-  gchar *argv[5];
-  gint   argc = 0;
+  gchar   *argv[5];
+  gchar   *display;
+  gchar  **envp = g_strdupv (envp_in);
+  gint     argc = 0;
+  gboolean success;
 
   g_return_val_if_fail (category != NULL, FALSE);
   g_return_val_if_fail (GDK_IS_SCREEN (screen), FALSE);
@@ -142,8 +145,16 @@ exo_execute_preferred_application_on_screen (const gchar *category,
   /* null terminate the argument vector */
   argv[argc] = NULL;
 
+  /* set the display environment variable */
+  display = gdk_screen_make_display_name (screen);
+  envp = g_environ_setenv (envp, "DISPLAY", display, TRUE);
+
   /* launch the command */
-  return gdk_spawn_on_screen (screen, working_directory, argv, envp, 0, NULL, NULL, NULL, error);
+  success = g_spawn_async (working_directory, argv, envp, 0, NULL, NULL, NULL, error);
+
+  g_free (display);
+  g_strfreev (envp);
+  return success;
 }
 
 
