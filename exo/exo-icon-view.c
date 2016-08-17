@@ -5429,8 +5429,6 @@ exo_icon_view_cell_layout_reorder (GtkCellLayout   *layout,
   GList               *lp;
   gint                 n;
 
-  icon_view = EXO_ICON_VIEW (layout);
-
   info = exo_icon_view_get_cell_info (icon_view, cell);
   if (G_LIKELY (info != NULL))
     {
