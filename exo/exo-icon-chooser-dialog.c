@@ -96,7 +96,6 @@ struct _ExoIconChooserDialogPrivate
   GtkWidget *filter_entry;
   GtkWidget *icon_chooser;
   GtkWidget *file_chooser;
-  GtkWidget *file_preview;
   gchar     *casefolded_text;
 };
 
