@@ -43,6 +43,18 @@
 
 
 
+/* resurrect dead gdk apis for Gtk3
+ * This is easier than using #ifs everywhere
+ */
+#if GTK_CHECK_VERSION (3, 0, 0)
+
+# ifdef gdk_cursor_unref
+#   undef gdk_cursor_unref
+# endif
+# define gdk_cursor_unref(cursor) g_object_unref (cursor)
+
+# endif
+
 #define EXO_TREE_VIEW_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
     EXO_TYPE_TREE_VIEW, ExoTreeViewPrivate))
 
@@ -516,7 +528,7 @@ exo_tree_view_motion_notify_event (GtkWidget      *widget,
               if (G_LIKELY (path != NULL))
                 {
                   /* setup the hand cursor to indicate that the row at the pointer can be activated with a single click */
-                  cursor = gdk_cursor_new (GDK_HAND2);
+                  cursor = gdk_cursor_new_for_display (gdk_window_get_display (event->window), GDK_HAND2);
                   gdk_window_set_cursor (event->window, cursor);
                   gdk_cursor_unref (cursor);
                 }
