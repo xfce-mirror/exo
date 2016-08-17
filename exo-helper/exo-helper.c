@@ -325,7 +325,12 @@ exo_helper_get_command (const ExoHelper *helper)
   return *helper->commands_with_parameter;
 }
 
-
+/* Set the DISPLAY variable, to be use by g_spawn_async. */
+static void
+set_environment (gchar *display)
+{
+  g_setenv ("DISPLAY", display, TRUE);
+}
 
 /**
  * exo_helper_execute:
@@ -352,7 +357,6 @@ exo_helper_execute (ExoHelper   *helper,
   GError       *err = NULL;
   gchar       **commands;
   gchar       **argv;
-  gchar       **envp;
   gchar        *command;
   gchar        *display;
   guint         n;
@@ -401,16 +405,20 @@ exo_helper_execute (ExoHelper   *helper,
         continue;
 
       /* set the display variable */
-      envp = g_get_environ ();
       display = gdk_screen_make_display_name (screen);
-      envp = g_environ_setenv (envp, "DISPLAY", display, TRUE);
 
       /* try to run the command */
-      succeed = g_spawn_async (NULL, argv, envp, G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH, NULL, NULL, &pid, &err);
+      succeed = g_spawn_async (NULL,
+        argv,
+        NULL,
+        G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH,
+        (GSpawnChildSetupFunc) set_environment,
+        display,
+        &pid,
+        &err);
 
       /* cleanup */
       g_strfreev (argv);
-      g_strfreev (envp);
       g_free (display);
 
       /* check if the execution was successful */

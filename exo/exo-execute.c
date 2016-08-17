@@ -82,7 +82,12 @@ exo_execute_preferred_application (const gchar *category,
   return exo_execute_preferred_application_on_screen (category, parameter, working_directory, envp, gdk_screen_get_default (), error);
 }
 
-
+/* Set the DISPLAY variable, to be use by g_spawn_async. */
+static void
+set_environment (gchar *display)
+{
+  g_setenv ("DISPLAY", display, TRUE);
+}
 
 /**
  * exo_execute_preferred_application_on_screen:
@@ -119,13 +124,12 @@ gboolean
 exo_execute_preferred_application_on_screen (const gchar *category,
                                              const gchar *parameter,
                                              const gchar *working_directory,
-                                             gchar      **envp_in,
+                                             gchar      **envp,
                                              GdkScreen   *screen,
                                              GError     **error)
 {
   gchar   *argv[5];
   gchar   *display;
-  gchar  **envp = g_strdupv (envp_in);
   gint     argc = 0;
   gboolean success;
 
@@ -147,13 +151,18 @@ exo_execute_preferred_application_on_screen (const gchar *category,
 
   /* set the display environment variable */
   display = gdk_screen_make_display_name (screen);
-  envp = g_environ_setenv (envp, "DISPLAY", display, TRUE);
 
   /* launch the command */
-  success = g_spawn_async (working_directory, argv, envp, 0, NULL, NULL, NULL, error);
+  success = g_spawn_async (working_directory,
+    argv,
+    envp,
+    0,
+    (GSpawnChildSetupFunc) set_environment,
+    display,
+    NULL,
+    error);
 
   g_free (display);
-  g_strfreev (envp);
   return success;
 }
 
