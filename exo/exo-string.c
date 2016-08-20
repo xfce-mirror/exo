@@ -389,7 +389,7 @@ exo_strndupv (gchar **strv,
 
   /* duplicate the first @num string */
   result = g_new (gchar *, num + 1);
-  for (i = 0; strv[i] != NULL && i < num; i++)
+  for (i = 0; i < num && strv[i] != NULL; i++)
     result[i] = g_strdup (strv[i]);
   result[i] = NULL;
 
