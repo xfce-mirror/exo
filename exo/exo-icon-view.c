@@ -643,11 +643,11 @@ static AtkObject *
 exo_icon_view_get_accessible (GtkWidget *widget)
 {
   static gboolean initited = FALSE;
-  GType derived_type; 
+  GType derived_type;
   AtkObjectFactory *factory;
   AtkRegistry *registry;
   GType derived_atk_type;
-  
+
   if (!initited)
     {
       derived_type = g_type_parent (EXO_TYPE_ICON_VIEW);
@@ -2097,7 +2097,7 @@ exo_icon_view_expose_event (GtkWidget      *widget,
         {
           exo_icon_view_paint_item (icon_view, item, &event_area, event->window, item->area.x, item->area.y, TRUE);
           if (G_UNLIKELY (dest_index >= 0 && dest_item == NULL)) {
-                  
+
            if (dest_index == g_list_index (priv->items, item))
             dest_item = item;}
         }
@@ -5428,8 +5428,6 @@ exo_icon_view_cell_layout_reorder (GtkCellLayout   *layout,
   ExoIconView         *icon_view = EXO_ICON_VIEW (layout);
   GList               *lp;
   gint                 n;
-
-  icon_view = EXO_ICON_VIEW (layout);
 
   info = exo_icon_view_get_cell_info (icon_view, cell);
   if (G_LIKELY (info != NULL))
