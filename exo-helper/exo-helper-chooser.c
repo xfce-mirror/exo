@@ -159,7 +159,7 @@ exo_helper_chooser_init (ExoHelperChooser *chooser)
   gtk_box_pack_start (GTK_BOX (hbox), chooser->image, FALSE, FALSE, 0);
   gtk_widget_show (chooser->image);
 
-  chooser->label = g_object_new (GTK_TYPE_LABEL, "xalign", 0.0f, "yalign", 0.0f, NULL);
+  chooser->label = g_object_new (GTK_TYPE_LABEL, "xalign", 0.0f, "yalign", 0.5f, NULL);
   gtk_box_pack_start (GTK_BOX (hbox), chooser->label, TRUE, TRUE, 0);
   gtk_widget_show (chooser->label);
 
