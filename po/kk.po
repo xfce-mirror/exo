@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009,2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-17 06:30+0100\n"
-"PO-Revision-Date: 2015-02-19 14:35+0000\n"
+"POT-Creation-Date: 2016-07-12 06:30+0200\n"
+"PO-Revision-Date: 2016-09-04 12:54+0000\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
-"Language-Team: Kazakh (http://www.transifex.com/projects/p/exo/language/kk/)\n"
+"Language-Team: Kazakh (http://www.transifex.com/xfce/exo/language/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,36 +19,36 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
-#: ../exo/exo-cell-renderer-icon.c:144
+#: ../exo/exo-cell-renderer-icon.c:160
 msgid "Follow state"
 msgstr "Күйін сақтау"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:132
-#: ../exo/exo-cell-renderer-icon.c:145
+#: ../exo/exo-cell-renderer-icon.c:161
 msgid "Render differently based on the selection state."
 msgstr "Ерекшеленгеннің күйіне байланысты өндеу."
 
-#: ../exo/exo-cell-renderer-icon.c:166
+#: ../exo/exo-cell-renderer-icon.c:182
 msgid "Icon"
 msgstr "Таңбаша"
 
-#: ../exo/exo-cell-renderer-icon.c:167
+#: ../exo/exo-cell-renderer-icon.c:183
 msgid "The icon to render."
 msgstr "Өнделетін таңбаша."
 
-#: ../exo/exo-cell-renderer-icon.c:185
+#: ../exo/exo-cell-renderer-icon.c:201
 msgid "GIcon"
 msgstr "GIcon"
 
-#: ../exo/exo-cell-renderer-icon.c:186
+#: ../exo/exo-cell-renderer-icon.c:202
 msgid "The GIcon to render."
 msgstr "Өнделетін GIcon."
 
-#: ../exo/exo-cell-renderer-icon.c:207
+#: ../exo/exo-cell-renderer-icon.c:223
 msgid "size"
 msgstr "өлшемі"
 
-#: ../exo/exo-cell-renderer-icon.c:208
+#: ../exo/exo-cell-renderer-icon.c:224
 msgid "The size of the icon to render in pixels."
 msgstr "Өнделетін таңбашаның пиксельдегі өлшемі."
 
@@ -57,22 +57,22 @@ msgstr "Өнделетін таңбашаның пиксельдегі өлше�
 msgid "Failed to open file \"%s\": %s"
 msgstr "\"%s\" файлын ашу мүмкін емес: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:849
+#: ../exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
 msgstr "\"%s\" файлын оқу мүмкін емес: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:890
+#: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "\"%s\" суретін жүктеу мүмкін емес: Себебі белгісіз, мүмкін, ол файл зақымдалған"
 
-#: ../exo/exo-gtk-extensions.c:227
+#: ../exo/exo-gtk-extensions.c:242
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "\"%s\" ашу сәтсіз аяқталды."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:813
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:879
 msgid "Orientation"
 msgstr "Бағдары"
 
@@ -80,19 +80,19 @@ msgstr "Бағдары"
 msgid "The orientation of the iconbar"
 msgstr "Таңбаша жолағының бағдарлануы"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:830
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:896
 msgid "Pixbuf column"
 msgstr "Pixbuf бағаны"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:831
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:897
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Таңбаша алынатын баған"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:975
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1041
 msgid "Text column"
 msgstr "Мәтін бағаны"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:976
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1042
 msgid "Model column used to retrieve the text from"
 msgstr "Мәтін алынатын баған"
 
@@ -137,254 +137,254 @@ msgid "Cursor item text color"
 msgstr "Курсордың элемент мәтін түсі"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:109
+#: ../exo/exo-icon-chooser-dialog.c:108
 msgid "Action Icons"
 msgstr "Әрекеттер таңбашалары"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:111
+#: ../exo/exo-icon-chooser-dialog.c:110
 msgid "Animations"
 msgstr "Анимациялар"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:113
+#: ../exo/exo-icon-chooser-dialog.c:112
 msgid "Application Icons"
 msgstr "Қолданбалар таңбашалары"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:114
 msgid "Menu Icons"
 msgstr "Мәзір таңбашалары"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:117
+#: ../exo/exo-icon-chooser-dialog.c:116
 msgid "Device Icons"
 msgstr "Құрылғылар таңбашалары"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:119
+#: ../exo/exo-icon-chooser-dialog.c:118
 msgid "Emblems"
 msgstr "Эмблемалар"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:120
 msgid "Emoticons"
 msgstr "Смайликтер"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:122
 msgid "International Denominations"
 msgstr "Халықаралық өлшем бірліктер"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:124
 msgid "File Type Icons"
 msgstr "Файл түрлердің таңбашалары"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:127
+#: ../exo/exo-icon-chooser-dialog.c:126
 msgid "Location Icons"
 msgstr "Орналасудың таңбашалары"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:129
+#: ../exo/exo-icon-chooser-dialog.c:128
 msgid "Status Icons"
 msgstr "Қалып-күй таңбашалары"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:131
+#: ../exo/exo-icon-chooser-dialog.c:130
 msgid "Uncategorized Icons"
 msgstr "Санатсыз таңбашалар"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:135
+#: ../exo/exo-icon-chooser-dialog.c:134
 msgid "All Icons"
 msgstr "Барлық таңбашалар"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
+#: ../exo/exo-icon-chooser-dialog.c:138 ../exo/exo-icon-chooser-dialog.c:316
 msgid "Image Files"
 msgstr "Сурет файлдары"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:210
+#: ../exo/exo-icon-chooser-dialog.c:222
 msgid "Select _icon from:"
 msgstr "Таңба_шаны қайдан алу:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:225
+#: ../exo/exo-icon-chooser-dialog.c:246
 msgid "_Search icon:"
 msgstr "_Таңбашаны іздеу:"
 
-#: ../exo/exo-icon-chooser-dialog.c:236
+#: ../exo/exo-icon-chooser-dialog.c:266
 msgid "Clear search field"
 msgstr "Іздеу өрісін тазарту"
 
-#: ../exo/exo-icon-view.c:681
+#: ../exo/exo-icon-view.c:747
 msgid "Column Spacing"
 msgstr "Бағандар аралығы"
 
-#: ../exo/exo-icon-view.c:682
+#: ../exo/exo-icon-view.c:748
 msgid "Space which is inserted between grid column"
 msgstr "Тор бағандарының арасындағы аралық"
 
-#: ../exo/exo-icon-view.c:698
+#: ../exo/exo-icon-view.c:764
 msgid "Number of columns"
 msgstr "Бағандар саны"
 
-#: ../exo/exo-icon-view.c:699
+#: ../exo/exo-icon-view.c:765
 msgid "Number of columns to display"
 msgstr "Көрсетілетін бағандар саны"
 
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:779
 msgid "Enable Search"
 msgstr "Іздеуді іске қосу"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:780
 msgid "View allows user to search through columns interactively"
 msgstr "Көрініс пайдаланушыға бағандардан интерактивті іздеуге мүмкіндік береді"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:797
 msgid "Width for each item"
 msgstr "Әр элемент ені"
 
-#: ../exo/exo-icon-view.c:732
+#: ../exo/exo-icon-view.c:798
 msgid "The width used for each item"
 msgstr "Әр элемент ені ретінде алынатын ен"
 
-#: ../exo/exo-icon-view.c:750
+#: ../exo/exo-icon-view.c:816
 msgid "Layout mode"
 msgstr "Парақ бағдарлауы"
 
-#: ../exo/exo-icon-view.c:751
+#: ../exo/exo-icon-view.c:817
 msgid "The layout mode"
 msgstr "Парақ бағдарлауы"
 
-#: ../exo/exo-icon-view.c:767
+#: ../exo/exo-icon-view.c:833
 msgid "Margin"
 msgstr "Шет"
 
-#: ../exo/exo-icon-view.c:768
+#: ../exo/exo-icon-view.c:834
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Таңбаша көрінісінде бұрыштардағы орын"
 
-#: ../exo/exo-icon-view.c:784
+#: ../exo/exo-icon-view.c:850
 msgid "Markup column"
 msgstr "Белгі бағаны"
 
-#: ../exo/exo-icon-view.c:785
+#: ../exo/exo-icon-view.c:851
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Pango markup қолданып мәтінді алу үшін модель бағаны"
 
-#: ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-view.c:865
 msgid "Icon View Model"
 msgstr "Таңбашалар көрінісі"
 
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-view.c:866
 msgid "The model for the icon view"
 msgstr "Таңбашалар көрініс түрі"
 
-#: ../exo/exo-icon-view.c:814
+#: ../exo/exo-icon-view.c:880
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Мәтін мен таңбаша өзара орналасуын көрсетеді"
 
-#: ../exo/exo-icon-view.c:848
+#: ../exo/exo-icon-view.c:914
 msgid "Icon column"
 msgstr "Таңбашалар бағаны"
 
-#: ../exo/exo-icon-view.c:849
+#: ../exo/exo-icon-view.c:915
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "Өңдеу үшін сурет файлының абсолютті орналасу жолын алу үшін қолданылатын модель бағаны"
 
-#: ../exo/exo-icon-view.c:864
+#: ../exo/exo-icon-view.c:930
 msgid "Reorderable"
 msgstr "Қайта реттелетін"
 
-#: ../exo/exo-icon-view.c:865
+#: ../exo/exo-icon-view.c:931
 msgid "View is reorderable"
 msgstr "Көрініс қайта реттеледі"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:946
 msgid "Row Spacing"
 msgstr "Жол арасындағы орын"
 
-#: ../exo/exo-icon-view.c:881
+#: ../exo/exo-icon-view.c:947
 msgid "Space which is inserted between grid rows"
 msgstr "Тор жолдары арасындағы орын"
 
-#: ../exo/exo-icon-view.c:895
+#: ../exo/exo-icon-view.c:961
 msgid "Search Column"
 msgstr "Іздеу бағаны"
 
-#: ../exo/exo-icon-view.c:896
+#: ../exo/exo-icon-view.c:962
 msgid "Model column to search through when searching through item"
 msgstr "Элемент іздегенді қолданылатын модель баған"
 
-#: ../exo/exo-icon-view.c:910
+#: ../exo/exo-icon-view.c:976
 msgid "Selection mode"
 msgstr "Ерекшелеу түрі"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:977
 msgid "The selection mode"
 msgstr "Ерекшелеудің түрі"
 
-#: ../exo/exo-icon-view.c:926 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Бірлік шерту"
 
-#: ../exo/exo-icon-view.c:927 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Көріністегі элементтер бірлік шертумен белсендіріледі"
 
-#: ../exo/exo-icon-view.c:943 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Бірлік шерту уақыты"
 
-#: ../exo/exo-icon-view.c:944 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Бірлік шерту кезіндегі тышқан курсорының астындағы элементті автобелсендірілу уақыты"
 
-#: ../exo/exo-icon-view.c:959
+#: ../exo/exo-icon-view.c:1025
 msgid "Spacing"
 msgstr "Аралығы"
 
-#: ../exo/exo-icon-view.c:960
+#: ../exo/exo-icon-view.c:1026
 msgid "Space which is inserted between cells of an item"
 msgstr "Элемент ұяшықтары арасындағы бос орын"
 
-#: ../exo/exo-thumbnail-preview.c:113
+#: ../exo/exo-thumbnail-preview.c:120
 msgid "Preview"
 msgstr "Алдын-ала қарау"
 
-#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
+#: ../exo/exo-thumbnail-preview.c:141 ../exo/exo-thumbnail-preview.c:286
 msgid "No file selected"
 msgstr "Ешбір файл ерекшеленбеген"
 
-#: ../exo/exo-thumbnail-preview.c:289
+#: ../exo/exo-thumbnail-preview.c:304
 msgid "Block Device"
 msgstr "Блоктық құрылғы"
 
-#: ../exo/exo-thumbnail-preview.c:294
+#: ../exo/exo-thumbnail-preview.c:309
 msgid "Character Device"
 msgstr "Символық құрылғы"
 
-#: ../exo/exo-thumbnail-preview.c:299
+#: ../exo/exo-thumbnail-preview.c:314
 msgid "Folder"
 msgstr "Бума"
 
-#: ../exo/exo-thumbnail-preview.c:304
+#: ../exo/exo-thumbnail-preview.c:319
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../exo/exo-thumbnail-preview.c:309
+#: ../exo/exo-thumbnail-preview.c:324
 msgid "Socket"
 msgstr "Сокет"
 
-#: ../exo/exo-toolbars-editor-dialog.c:118
+#: ../exo/exo-toolbars-editor-dialog.c:117
 msgid "_Add a new toolbar"
 msgstr "Ж_аңа саймандар панелін қосу"
 
@@ -521,7 +521,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   XML файлдарынан node құрамасын өшіру\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
-#: ../exo-open/main.c:496
+#: ../exo-open/main.c:505
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -532,7 +532,7 @@ msgid ""
 msgstr "Copyright (c) %s\n        os-cillation e.K. Барлық құқықтары қорғалған.\n\nBenedikt Meurer <benny@xfce.org> жазған.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
-#: ../exo-open/main.c:500
+#: ../exo-open/main.c:509
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -543,43 +543,58 @@ msgid ""
 msgstr "%s ЕШҚАНДАЙ КЕПІЛДЕМЕСІЗ таратылады,\nСіз %s көшірмелерін %s  бастапқы код дестесінен табылатын\nGNU Lesser General Public License аясында тарата аласыз.\n\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
-#: ../exo-open/main.c:504
+#: ../exo-open/main.c:513
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Ақаулықтар жөнінде хабарлаңыз: <%s>.\n"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:255
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:257
 msgid "Select an Application"
 msgstr "Қолданбаны таңдаңыз"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:264
-#: ../exo-helper/exo-helper-chooser.c:398
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:260
+#: ../exo-desktop-item-edit/exo-die-editor.c:594
+#: ../exo-desktop-item-edit/exo-die-editor.c:642
+#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
+#: ../exo-helper/exo-helper-chooser.c:386
+#: ../exo-helper/exo-helper-chooser.c:531
+#: ../exo-helper/exo-helper-launcher-dialog.c:109
+msgid "_Cancel"
+msgstr "Ба_с тарту"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:261
+#: ../exo-helper/exo-helper-chooser.c:387
+msgid "_Open"
+msgstr "_Ашу"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:266
+#: ../exo-helper/exo-helper-chooser.c:393
 msgid "All Files"
 msgstr "Барлық файлдар"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:269
-#: ../exo-helper/exo-helper-chooser.c:403
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:271
+#: ../exo-helper/exo-helper-chooser.c:398
 msgid "Executable Files"
 msgstr "Орындалатын файлдар"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:284
-#: ../exo-helper/exo-helper-chooser.c:418
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:286
+#: ../exo-helper/exo-helper-chooser.c:413
 msgid "Perl Scripts"
 msgstr "Perl скриптері"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:290
-#: ../exo-helper/exo-helper-chooser.c:424
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:292
+#: ../exo-helper/exo-helper-chooser.c:419
 msgid "Python Scripts"
 msgstr "Python скриптері"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:296
-#: ../exo-helper/exo-helper-chooser.c:430
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:298
+#: ../exo-helper/exo-helper-chooser.c:425
 msgid "Ruby Scripts"
 msgstr "Ruby скриптері"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:302
-#: ../exo-helper/exo-helper-chooser.c:436
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-helper/exo-helper-chooser.c:431
 msgid "Shell Scripts"
 msgstr "Shell скриптері"
 
@@ -590,13 +605,13 @@ msgstr "<b>%s</b> жөнелткішін жасау"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:297
+#: ../exo-desktop-item-edit/exo-die-editor.c:295
 msgid "_Name:"
 msgstr "_Аты:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:313
+#: ../exo-desktop-item-edit/exo-die-editor.c:312
 msgid "C_omment:"
 msgstr "А_нықтамасы:"
 
@@ -608,19 +623,19 @@ msgstr "Ко_манда:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:344
+#: ../exo-desktop-item-edit/exo-die-editor.c:345
 msgid "_URL:"
 msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:360
+#: ../exo-desktop-item-edit/exo-die-editor.c:362
 msgid "Working _Directory:"
 msgstr "Жұмыс _бумасы:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:389
+#: ../exo-desktop-item-edit/exo-die-editor.c:392
 msgid "_Icon:"
 msgstr "Таңба_ша:"
 
@@ -628,7 +643,7 @@ msgstr "Таңба_ша:"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1233
+#: ../exo-desktop-item-edit/exo-die-editor.c:1235
 msgid "No icon"
 msgstr "Таңбашасы жоқ"
 
@@ -655,21 +670,28 @@ msgstr "Бұл опцияны таңдасаңыз, команда файлда�
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: ../exo-desktop-item-edit/exo-die-editor.c:434
+#: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Run in _terminal"
 msgstr "Т_ерминалда орындау"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:435
+#: ../exo-desktop-item-edit/exo-die-editor.c:436
 msgid "Select this option to run the command in a terminal window."
 msgstr "Бұл опцияны таңдасаңыз, команда терминалда орындалады."
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:590
+#: ../exo-desktop-item-edit/exo-die-editor.c:592
 msgid "Select an icon"
 msgstr "Таңбашаны таңдаңыз"
 
+#: ../exo-desktop-item-edit/exo-die-editor.c:595
+#: ../exo-desktop-item-edit/exo-die-editor.c:643
+#: ../exo-helper/exo-helper-chooser.c:532
+#: ../exo-helper/exo-helper-launcher-dialog.c:110
+msgid "_OK"
+msgstr "_ОК"
+
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:637
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
 msgid "Select a working directory"
 msgstr "Жұмыс бумасын таңдаңыз"
 
@@ -730,7 +752,7 @@ msgstr "Сілтемені жасауда алдын-ала орнатылған
 msgid "Preset icon when creating a desktop file"
 msgstr "Desktop файлын жасауда алдын-ала орнатылған таңбаша"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
 msgid "Print version information and exit"
 msgstr "Нұсқа ақпаратын шығару мен шығу"
 
@@ -776,172 +798,186 @@ msgstr "\"%s\" файлында түр кілті жоқ"
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Қолдауы жоқ desktop \"%s\" файл түрі"
 
+#. add the "Help" button
+#: ../exo-desktop-item-edit/main.c:331
+#: ../exo-helper/exo-helper-chooser-dialog.c:104
+msgid "_Help"
+msgstr "Кө_мек"
+
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "Ж_асау"
 
+#: ../exo-desktop-item-edit/main.c:340 ../exo-desktop-item-edit/main.c:520
+msgid "_Save"
+msgstr "_Сақтау"
+
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:513
+#: ../exo-desktop-item-edit/main.c:516
 msgid "Choose filename"
 msgstr "Файл атын таңдаңыз"
 
-#: ../exo-desktop-item-edit/main.c:620
+#: ../exo-desktop-item-edit/main.c:623
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\" жасау сәтсіз."
 
-#: ../exo-desktop-item-edit/main.c:620
+#: ../exo-desktop-item-edit/main.c:623
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" сақтау сәтсіз."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:102
+#: ../exo-helper/exo-helper-chooser-dialog.c:98
+msgid "_Close"
+msgstr "_Жабу"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Таңдамалы қолданбалар"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:103
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
 msgid "Select default applications for various services"
 msgstr "Кейбір қызметтер үшін негізгі қолданбаларды таңдаңыз"
 
 #. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:132
+#: ../exo-helper/exo-helper-chooser-dialog.c:126
 msgid "_Internet"
 msgstr "_Интернет"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:145
+#: ../exo-helper/exo-helper-chooser-dialog.c:139
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Веб браузері"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:153
+#: ../exo-helper/exo-helper-chooser-dialog.c:147
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr "Сілтемелерді ашу мен көмек ақпаратын көрсетуге арналған\nтаңдамалы веб браузер."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:177
+#: ../exo-helper/exo-helper-chooser-dialog.c:171
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
 msgid "Mail Reader"
 msgstr "Пошта қолданбасы"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:185
+#: ../exo-helper/exo-helper-chooser-dialog.c:179
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr "Эл. пошта адреске шерткен кезде поштаны жазуға арналған\nтаңдамалы пошта қолданбасы."
 
 #. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:205
+#: ../exo-helper/exo-helper-chooser-dialog.c:199
 msgid "_Utilities"
 msgstr "_Утилиталар"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:218
+#: ../exo-helper/exo-helper-chooser-dialog.c:212
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Файлдар басқарушысы"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:226
+#: ../exo-helper/exo-helper-chooser-dialog.c:220
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr "Бумалардың құрамасын шолу үшін арналған\nтаңдамалы файлдар басқарушысы."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:250
+#: ../exo-helper/exo-helper-chooser-dialog.c:244
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
 msgstr "Терминал эмуляторы"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:258
+#: ../exo-helper/exo-helper-chooser-dialog.c:252
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr "Командалық жолды талап ететін командаларды жөнелтуге\nарналған таңдамалы терминал эмуляторы."
 
-#: ../exo-helper/exo-helper-chooser.c:149
-#: ../exo-helper/exo-helper-chooser.c:156
+#: ../exo-helper/exo-helper-chooser.c:145
+#: ../exo-helper/exo-helper-chooser.c:152
 msgid "Press left mouse button to change the selected application."
 msgstr "Ерекшеленген қолданбаны өзгерту үшін тышқанның сол жақпен шертіңіз."
 
-#: ../exo-helper/exo-helper-chooser.c:155
+#: ../exo-helper/exo-helper-chooser.c:151
 msgid "Application Chooser Button"
 msgstr "Қолданбаларды таңдау батырмасы"
 
-#: ../exo-helper/exo-helper-chooser.c:299
+#: ../exo-helper/exo-helper-chooser.c:294
 msgid "No application selected"
 msgstr "Қолданба таңдалмады"
 
-#: ../exo-helper/exo-helper-chooser.c:315
+#: ../exo-helper/exo-helper-chooser.c:310
 msgid "Failed to set default Web Browser"
 msgstr "Негізгі веб браузерді орнату сәтсіз аяқталды"
 
-#: ../exo-helper/exo-helper-chooser.c:316
+#: ../exo-helper/exo-helper-chooser.c:311
 msgid "Failed to set default Mail Reader"
 msgstr "Негізгі пошта қолданбасын орнату сәтсіз аяқталды"
 
-#: ../exo-helper/exo-helper-chooser.c:317
+#: ../exo-helper/exo-helper-chooser.c:312
 msgid "Failed to set default File Manager"
 msgstr "Негізгі файлдар басқарушысын орнату сәтсіз аяқталды"
 
-#: ../exo-helper/exo-helper-chooser.c:318
+#: ../exo-helper/exo-helper-chooser.c:313
 msgid "Failed to set default Terminal Emulator"
 msgstr "Негізгі терминал эмуляторын орнату сәтсіз аяқталды"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:388
+#: ../exo-helper/exo-helper-chooser.c:383
 msgid "Select application"
 msgstr "Қолданбаны таңдаңыз"
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:496
 msgid "Choose a custom Web Browser"
 msgstr "Таңдауыңызша веб браузерді көрсету"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:497
 msgid "Choose a custom Mail Reader"
 msgstr "Таңдауыңызша пошта қолданбасын көрсету"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:498
 msgid "Choose a custom File Manager"
 msgstr "Таңдауыңызша файлдар басқарушысын көрсету"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:499
 msgid "Choose a custom Terminal Emulator"
 msgstr "Таңдауыңызша терминал эмуляторын көрсету"
 
-#: ../exo-helper/exo-helper-chooser.c:509
+#: ../exo-helper/exo-helper-chooser.c:504
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Xfce үшін негізгі веб браузер ретінде қолданғыңыз\nкелетін қолданбаны көрсетіңіз:"
 
-#: ../exo-helper/exo-helper-chooser.c:510
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Xfce үшін негізгі пошта қолданбасы ретінде қолданғыңыз\nкелетін қолданбаны көрсетіңіз:"
 
-#: ../exo-helper/exo-helper-chooser.c:511
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Xfce үшін негізгі файлдар басқарушысы ретінде қолданғыңыз\nкелетін қолданбаны көрсетіңіз:"
 
-#: ../exo-helper/exo-helper-chooser.c:512
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Xfce үшін негізгі терминал эмуляторы ретінде қолданғыңыз\nкелетін қолданбаны көрсетіңіз:"
 
-#: ../exo-helper/exo-helper-chooser.c:579
+#: ../exo-helper/exo-helper-chooser.c:571
 msgid "Browse the file system to choose a custom command."
 msgstr "Таңдауыңызша команда орнату үшін файлдық жүйені шолу."
 
-#: ../exo-helper/exo-helper-chooser.c:762
+#: ../exo-helper/exo-helper-chooser.c:764
 msgid "_Other..."
 msgstr "_Басқа..."
 
-#: ../exo-helper/exo-helper-chooser.c:763
+#: ../exo-helper/exo-helper-chooser.c:765
 msgid "Use a custom application which is not included in the above list."
 msgstr "Жоғарыдағы тізімде жоқ басқа қолданбаны қолдану."
 
@@ -973,12 +1009,12 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Таңдамалы терминал эмуляторыңызды көрсетіп,\nОК батырмасын басыңыз."
 
-#: ../exo-helper/exo-helper.c:382
+#: ../exo-helper/exo-helper.c:384
 #, c-format
 msgid "No command specified"
 msgstr "Команда көрсетілмеген"
 
-#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:726
+#: ../exo-helper/exo-helper.c:697 ../exo-helper/exo-helper.c:735
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Жазу үшін %s ашу сәтсіз аяқталды"
@@ -988,47 +1024,47 @@ msgid ""
 "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Таңдамалы қолданбалар (веб браузер, пошта қолданбасы мен терминал эмуляторы)"
 
-#: ../exo-helper/main.c:41
+#: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
 msgstr "Негізгі веб браузерді жөнелту сәтсіз аяқталды"
 
-#: ../exo-helper/main.c:42
+#: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
 msgstr "Негізгі пошта қолданбасын жөнелту сәтсіз аяқталды"
 
-#: ../exo-helper/main.c:43
+#: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
 msgstr "Негізгі файлдар басқарушысын жөнелту сәтсіз аяқталды"
 
-#: ../exo-helper/main.c:44
+#: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Негізгі терминал эмуляторын жөнелту сәтсіз аяқталды"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Таңдамалы қолданбалар сұхбат\nтерезесін ашу"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "Settings manager socket"
 msgstr "Баптаулар басқарушысы сокеті"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "ТҮР үшін негізгі көмекшіні жөнелту, міндетті емес ПАРАМЕТРмен, бұл жердегі ТҮР - төмендегі мәндердің біреуі."
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "TYPE [PARAMETER]"
 msgstr "ТҮРІ [ПАРАМЕТР]"
 
-#: ../exo-helper/main.c:102
+#: ../exo-helper/main.c:103
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1038,17 +1074,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr "Келесі ТҮРлерге ғана --launch командасында қолдау бар:\n\n  WebBrowser       - Таңдамалы веб браузер.\n  MailReader       - Таңдамалы пошта қолданбасы.\n  FileManager      - Таңдамалы файлдар басқарушысы.\n  TerminalEmulator - Таңдамалы терминал эмуляторы."
 
-#: ../exo-helper/main.c:112
+#: ../exo-helper/main.c:113
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Көмек алу үшін '%s --help' енгізіңіз."
 
-#: ../exo-helper/main.c:165
+#: ../exo-helper/main.c:172
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Қате көмекші түрі \"%s\""
 
-#: ../exo-helper/main.c:213
+#: ../exo-helper/main.c:220
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1320,17 +1356,17 @@ msgid ""
 "Unix features."
 msgstr "%s нұсқасы GIO-Unix мүмкіндіктерінсіз жиналған кезде desktop файлдарын жөнелтуге болмайды."
 
-#: ../exo-open/main.c:260
+#: ../exo-open/main.c:269
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "\"%s\" санаты үшін таңдамалы қолданбаны жөнелту сәтсіз аяқталды."
 
-#: ../exo-open/main.c:577
+#: ../exo-open/main.c:586
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" үшін URI-схемасын анықтау мүмкін емес."
 
-#: ../exo-open/main.c:591
+#: ../exo-open/main.c:600
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "\"%s\" URI-ын ашу сәтсіз аяқталды."
