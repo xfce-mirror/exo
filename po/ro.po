@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Mișu Moldovan <dumol@xfce.org>, 2015
+# vyper <xvirusxx@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-17 06:30+0100\n"
-"PO-Revision-Date: 2015-02-27 12:25+0000\n"
-"Last-Translator: Mișu Moldovan <dumol@l10n.ro>\n"
-"Language-Team: Romanian (http://www.transifex.com/projects/p/exo/language/ro/)\n"
+"POT-Creation-Date: 2016-07-12 06:30+0200\n"
+"PO-Revision-Date: 2016-09-25 22:35+0000\n"
+"Last-Translator: vyper <xvirusxx@gmail.com>\n"
+"Language-Team: Romanian (http://www.transifex.com/xfce/exo/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,36 +20,36 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
-#: ../exo/exo-cell-renderer-icon.c:144
+#: ../exo/exo-cell-renderer-icon.c:160
 msgid "Follow state"
 msgstr "Urmează starea"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:132
-#: ../exo/exo-cell-renderer-icon.c:145
+#: ../exo/exo-cell-renderer-icon.c:161
 msgid "Render differently based on the selection state."
 msgstr "Afișează diferit în funcție de starea selecției."
 
-#: ../exo/exo-cell-renderer-icon.c:166
+#: ../exo/exo-cell-renderer-icon.c:182
 msgid "Icon"
 msgstr "Iconiță"
 
-#: ../exo/exo-cell-renderer-icon.c:167
+#: ../exo/exo-cell-renderer-icon.c:183
 msgid "The icon to render."
 msgstr "Iconiță de afișat."
 
-#: ../exo/exo-cell-renderer-icon.c:185
+#: ../exo/exo-cell-renderer-icon.c:201
 msgid "GIcon"
 msgstr "GIcon"
 
-#: ../exo/exo-cell-renderer-icon.c:186
+#: ../exo/exo-cell-renderer-icon.c:202
 msgid "The GIcon to render."
 msgstr "Elementul GIcon de afișat."
 
-#: ../exo/exo-cell-renderer-icon.c:207
+#: ../exo/exo-cell-renderer-icon.c:223
 msgid "size"
 msgstr "mărime"
 
-#: ../exo/exo-cell-renderer-icon.c:208
+#: ../exo/exo-cell-renderer-icon.c:224
 msgid "The size of the icon to render in pixels."
 msgstr "Dimensiunile în pixeli ale iconiței de afișat."
 
@@ -57,22 +58,22 @@ msgstr "Dimensiunile în pixeli ale iconiței de afișat."
 msgid "Failed to open file \"%s\": %s"
 msgstr "Nu s-a putut deschide fișierul „%s”: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:849
+#: ../exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
 msgstr "Nu s-a putut citi fișierul „%s”: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:890
+#: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Dintr-un motiv necunoscut, nu s-a putut încărca imaginea „%s”, probabil că fișierul de tip imagine e corupt"
 
-#: ../exo/exo-gtk-extensions.c:227
+#: ../exo/exo-gtk-extensions.c:242
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Nu s-a putut deschide „%s”."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:813
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:879
 msgid "Orientation"
 msgstr "Orientare"
 
@@ -80,19 +81,19 @@ msgstr "Orientare"
 msgid "The orientation of the iconbar"
 msgstr "Orientarea barei cu iconițe"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:830
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:896
 msgid "Pixbuf column"
 msgstr "Coloană pixbuf"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:831
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:897
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Coloană model utilizată pentru extragerea iconiței pixbuf"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:975
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1041
 msgid "Text column"
 msgstr "Coloană de text"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:976
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1042
 msgid "Model column used to retrieve the text from"
 msgstr "Coloană model utilizată pentru extragerea textului"
 
@@ -137,254 +138,254 @@ msgid "Cursor item text color"
 msgstr "Culoarea textului pentru cursor"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:109
+#: ../exo/exo-icon-chooser-dialog.c:108
 msgid "Action Icons"
 msgstr "Iconițele pentru acțiuni"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:111
+#: ../exo/exo-icon-chooser-dialog.c:110
 msgid "Animations"
 msgstr "Animații"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:113
+#: ../exo/exo-icon-chooser-dialog.c:112
 msgid "Application Icons"
 msgstr "Iconițele programelor"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:114
 msgid "Menu Icons"
 msgstr "Iconițele pentru meniuri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:117
+#: ../exo/exo-icon-chooser-dialog.c:116
 msgid "Device Icons"
 msgstr "Iconițele de dispozitive"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:119
+#: ../exo/exo-icon-chooser-dialog.c:118
 msgid "Emblems"
 msgstr "Embleme"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:120
 msgid "Emoticons"
 msgstr "Iconițele simbolice"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:122
 msgid "International Denominations"
 msgstr "Denominările internaționale"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:124
 msgid "File Type Icons"
 msgstr "Iconițele pentru tipuri de fișiere"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:127
+#: ../exo/exo-icon-chooser-dialog.c:126
 msgid "Location Icons"
 msgstr "Iconițele pentru locuri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:129
+#: ../exo/exo-icon-chooser-dialog.c:128
 msgid "Status Icons"
 msgstr "Iconițele de status"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:131
+#: ../exo/exo-icon-chooser-dialog.c:130
 msgid "Uncategorized Icons"
 msgstr "Iconițele necategorisite"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:135
+#: ../exo/exo-icon-chooser-dialog.c:134
 msgid "All Icons"
 msgstr "Toate iconițele"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
+#: ../exo/exo-icon-chooser-dialog.c:138 ../exo/exo-icon-chooser-dialog.c:316
 msgid "Image Files"
 msgstr "Fișierele de tip imagine"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:210
+#: ../exo/exo-icon-chooser-dialog.c:222
 msgid "Select _icon from:"
 msgstr "Selectați _iconița dintre:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:225
+#: ../exo/exo-icon-chooser-dialog.c:246
 msgid "_Search icon:"
 msgstr "_Căutare în iconițe:"
 
-#: ../exo/exo-icon-chooser-dialog.c:236
+#: ../exo/exo-icon-chooser-dialog.c:266
 msgid "Clear search field"
 msgstr "Curăță câmpul de căutare"
 
-#: ../exo/exo-icon-view.c:681
+#: ../exo/exo-icon-view.c:747
 msgid "Column Spacing"
 msgstr "Spațiere între coloane"
 
-#: ../exo/exo-icon-view.c:682
+#: ../exo/exo-icon-view.c:748
 msgid "Space which is inserted between grid column"
 msgstr "Spațiu inserat între coloanele grilei"
 
-#: ../exo/exo-icon-view.c:698
+#: ../exo/exo-icon-view.c:764
 msgid "Number of columns"
 msgstr "Număr de coloane"
 
-#: ../exo/exo-icon-view.c:699
+#: ../exo/exo-icon-view.c:765
 msgid "Number of columns to display"
 msgstr "Număr de coloane de afișat"
 
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:779
 msgid "Enable Search"
 msgstr "Activează căutarea"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:780
 msgid "View allows user to search through columns interactively"
 msgstr "Mod de vizualizare ce permite utilizatorului să caute interactiv în coloane"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:797
 msgid "Width for each item"
 msgstr "Lățime pentru fiecare element"
 
-#: ../exo/exo-icon-view.c:732
+#: ../exo/exo-icon-view.c:798
 msgid "The width used for each item"
 msgstr "Lățime utilizată pentru fiecare element"
 
-#: ../exo/exo-icon-view.c:750
+#: ../exo/exo-icon-view.c:816
 msgid "Layout mode"
 msgstr "Mod de afișare"
 
-#: ../exo/exo-icon-view.c:751
+#: ../exo/exo-icon-view.c:817
 msgid "The layout mode"
 msgstr "Modul de afișare"
 
-#: ../exo/exo-icon-view.c:767
+#: ../exo/exo-icon-view.c:833
 msgid "Margin"
 msgstr "Margine"
 
-#: ../exo/exo-icon-view.c:768
+#: ../exo/exo-icon-view.c:834
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Spațiu adăugat la marginile vizualizării de iconițe"
 
-#: ../exo/exo-icon-view.c:784
+#: ../exo/exo-icon-view.c:850
 msgid "Markup column"
 msgstr "Coloană de tip markup"
 
-#: ../exo/exo-icon-view.c:785
+#: ../exo/exo-icon-view.c:851
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Model de coloană utilizat pentru extragerea textului când se utilizează markup Pango"
 
-#: ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-view.c:865
 msgid "Icon View Model"
 msgstr "Model de vizualizare cu iconițe"
 
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-view.c:866
 msgid "The model for the icon view"
 msgstr "Model pentru vizualizarea cu iconițe"
 
-#: ../exo/exo-icon-view.c:814
+#: ../exo/exo-icon-view.c:880
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Modul de poziționare relativă a textului și iconiței fiecărui element"
 
-#: ../exo/exo-icon-view.c:848
+#: ../exo/exo-icon-view.c:914
 msgid "Icon column"
 msgstr "Coloană cu iconițe"
 
-#: ../exo/exo-icon-view.c:849
+#: ../exo/exo-icon-view.c:915
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "Model de coloană utilizat pentru a obține calea completă pentru fișierul de tip imagine de afișat"
 
-#: ../exo/exo-icon-view.c:864
+#: ../exo/exo-icon-view.c:930
 msgid "Reorderable"
 msgstr "Reordonabil"
 
-#: ../exo/exo-icon-view.c:865
+#: ../exo/exo-icon-view.c:931
 msgid "View is reorderable"
 msgstr "Vizualizarea este reordonabilă"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:946
 msgid "Row Spacing"
 msgstr "Spațiere între rânduri"
 
-#: ../exo/exo-icon-view.c:881
+#: ../exo/exo-icon-view.c:947
 msgid "Space which is inserted between grid rows"
 msgstr "Spațiu inserat între rândurile grilei"
 
-#: ../exo/exo-icon-view.c:895
+#: ../exo/exo-icon-view.c:961
 msgid "Search Column"
 msgstr "Coloană de căutare"
 
-#: ../exo/exo-icon-view.c:896
+#: ../exo/exo-icon-view.c:962
 msgid "Model column to search through when searching through item"
 msgstr "Model de coloană pentru căutare când se face căutarea într-un element"
 
-#: ../exo/exo-icon-view.c:910
+#: ../exo/exo-icon-view.c:976
 msgid "Selection mode"
 msgstr "Mod de selectare"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:977
 msgid "The selection mode"
 msgstr "Modul de selectare"
 
-#: ../exo/exo-icon-view.c:926 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Clic unic"
 
-#: ../exo/exo-icon-view.c:927 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Specifică dacă elementele vizualizării pot fi activate cu un singur clic"
 
-#: ../exo/exo-icon-view.c:943 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Limită de timp pentru clic unic"
 
-#: ../exo/exo-icon-view.c:944 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Durata minimă pentru selectarea automată a elementului aflat sub cursor când se utilizează un singur clic"
 
-#: ../exo/exo-icon-view.c:959
+#: ../exo/exo-icon-view.c:1025
 msgid "Spacing"
 msgstr "Spațiere"
 
-#: ../exo/exo-icon-view.c:960
+#: ../exo/exo-icon-view.c:1026
 msgid "Space which is inserted between cells of an item"
 msgstr "Spațiu inserat între celulele unui element"
 
-#: ../exo/exo-thumbnail-preview.c:113
+#: ../exo/exo-thumbnail-preview.c:120
 msgid "Preview"
 msgstr "Previzualizare"
 
-#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
+#: ../exo/exo-thumbnail-preview.c:141 ../exo/exo-thumbnail-preview.c:286
 msgid "No file selected"
 msgstr "Niciun fișier nu e selectat"
 
-#: ../exo/exo-thumbnail-preview.c:289
+#: ../exo/exo-thumbnail-preview.c:304
 msgid "Block Device"
 msgstr "Dispozitiv de tip «block»"
 
-#: ../exo/exo-thumbnail-preview.c:294
+#: ../exo/exo-thumbnail-preview.c:309
 msgid "Character Device"
 msgstr "Dispozitiv de tip «character»"
 
-#: ../exo/exo-thumbnail-preview.c:299
+#: ../exo/exo-thumbnail-preview.c:314
 msgid "Folder"
 msgstr "Dosar"
 
-#: ../exo/exo-thumbnail-preview.c:304
+#: ../exo/exo-thumbnail-preview.c:319
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../exo/exo-thumbnail-preview.c:309
+#: ../exo/exo-thumbnail-preview.c:324
 msgid "Socket"
 msgstr "Socket"
 
-#: ../exo/exo-toolbars-editor-dialog.c:118
+#: ../exo/exo-toolbars-editor-dialog.c:117
 msgid "_Add a new toolbar"
 msgstr "_Adăugați o nouă bară cu unelte"
 
@@ -521,7 +522,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Șterge conținutul nodurilor din fișierele XML\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
-#: ../exo-open/main.c:496
+#: ../exo-open/main.c:505
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -532,7 +533,7 @@ msgid ""
 msgstr "Drepturi de autor © %s\n        os-cillation e.K. Toate drepturile rezervate.\n\nScris de Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
-#: ../exo-open/main.c:500
+#: ../exo-open/main.c:509
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -543,43 +544,58 @@ msgid ""
 msgstr "%s nu vine cu ABSOLUT NICIO GARANȚIE.\nPuteți redistribui copii ale %s în termenii\nlicenței GNU LGPL, disponibilă în pachetul cu sursele %s.\n\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
-#: ../exo-open/main.c:504
+#: ../exo-open/main.c:513
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Raportați eventualele probleme la <%s>.\n"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:255
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:257
 msgid "Select an Application"
 msgstr "Selectați un program"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:264
-#: ../exo-helper/exo-helper-chooser.c:398
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:260
+#: ../exo-desktop-item-edit/exo-die-editor.c:594
+#: ../exo-desktop-item-edit/exo-die-editor.c:642
+#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
+#: ../exo-helper/exo-helper-chooser.c:386
+#: ../exo-helper/exo-helper-chooser.c:531
+#: ../exo-helper/exo-helper-launcher-dialog.c:109
+msgid "_Cancel"
+msgstr "_Renunță"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:261
+#: ../exo-helper/exo-helper-chooser.c:387
+msgid "_Open"
+msgstr "_Deschide"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:266
+#: ../exo-helper/exo-helper-chooser.c:393
 msgid "All Files"
 msgstr "Toate fișierele"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:269
-#: ../exo-helper/exo-helper-chooser.c:403
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:271
+#: ../exo-helper/exo-helper-chooser.c:398
 msgid "Executable Files"
 msgstr "Fișierele executabile"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:284
-#: ../exo-helper/exo-helper-chooser.c:418
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:286
+#: ../exo-helper/exo-helper-chooser.c:413
 msgid "Perl Scripts"
 msgstr "Scripturile Perl"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:290
-#: ../exo-helper/exo-helper-chooser.c:424
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:292
+#: ../exo-helper/exo-helper-chooser.c:419
 msgid "Python Scripts"
 msgstr "Scripturile Python"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:296
-#: ../exo-helper/exo-helper-chooser.c:430
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:298
+#: ../exo-helper/exo-helper-chooser.c:425
 msgid "Ruby Scripts"
 msgstr "Scripturile Ruby"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:302
-#: ../exo-helper/exo-helper-chooser.c:436
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-helper/exo-helper-chooser.c:431
 msgid "Shell Scripts"
 msgstr "Scripturile shell"
 
@@ -590,13 +606,13 @@ msgstr "Creați un lansator <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:297
+#: ../exo-desktop-item-edit/exo-die-editor.c:295
 msgid "_Name:"
 msgstr "_Nume:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:313
+#: ../exo-desktop-item-edit/exo-die-editor.c:312
 msgid "C_omment:"
 msgstr "C_omentariu:"
 
@@ -608,19 +624,19 @@ msgstr "Co_mandă:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:344
+#: ../exo-desktop-item-edit/exo-die-editor.c:345
 msgid "_URL:"
 msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:360
+#: ../exo-desktop-item-edit/exo-die-editor.c:362
 msgid "Working _Directory:"
 msgstr "_Director de lucru:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:389
+#: ../exo-desktop-item-edit/exo-die-editor.c:392
 msgid "_Icon:"
 msgstr "_Iconiță:"
 
@@ -628,7 +644,7 @@ msgstr "_Iconiță:"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1233
+#: ../exo-desktop-item-edit/exo-die-editor.c:1235
 msgid "No icon"
 msgstr "Fără iconiță"
 
@@ -655,21 +671,28 @@ msgstr "Selectați această opțiune pentru a activa notificarea la pornire atun
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: ../exo-desktop-item-edit/exo-die-editor.c:434
+#: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Run in _terminal"
 msgstr "Pornește în _terminal"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:435
+#: ../exo-desktop-item-edit/exo-die-editor.c:436
 msgid "Select this option to run the command in a terminal window."
 msgstr "Selectați această opțiune pentru a executa comanda într-un terminal."
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:590
+#: ../exo-desktop-item-edit/exo-die-editor.c:592
 msgid "Select an icon"
 msgstr "Selectați o iconiță"
 
+#: ../exo-desktop-item-edit/exo-die-editor.c:595
+#: ../exo-desktop-item-edit/exo-die-editor.c:643
+#: ../exo-helper/exo-helper-chooser.c:532
+#: ../exo-helper/exo-helper-launcher-dialog.c:110
+msgid "_OK"
+msgstr "_OK"
+
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:637
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
 msgid "Select a working directory"
 msgstr "Selectați un director de lucru"
 
@@ -730,7 +753,7 @@ msgstr "URL predefinit la crearea unui link"
 msgid "Preset icon when creating a desktop file"
 msgstr "Iconiță predefinită la crearea unui fișier desktop"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
 msgid "Print version information and exit"
 msgstr "Arată detaliile de versiune și ieși"
 
@@ -776,172 +799,186 @@ msgstr "Fișierul „%s” nu are o cheie „type”"
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Nu există suport pentru acest tip de fișier desktop: „%s”"
 
+#. add the "Help" button
+#: ../exo-desktop-item-edit/main.c:331
+#: ../exo-helper/exo-helper-chooser-dialog.c:104
+msgid "_Help"
+msgstr "_Ajutor"
+
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "_Creează"
 
+#: ../exo-desktop-item-edit/main.c:340 ../exo-desktop-item-edit/main.c:520
+msgid "_Save"
+msgstr "_Salvează"
+
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:513
+#: ../exo-desktop-item-edit/main.c:516
 msgid "Choose filename"
 msgstr "Alegeți un nume de fișier"
 
-#: ../exo-desktop-item-edit/main.c:620
+#: ../exo-desktop-item-edit/main.c:623
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Nu s-a putut crea „%s”."
 
-#: ../exo-desktop-item-edit/main.c:620
+#: ../exo-desktop-item-edit/main.c:623
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Nu s-a putut salva „%s”."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:102
+#: ../exo-helper/exo-helper-chooser-dialog.c:98
+msgid "_Close"
+msgstr "_Închide"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Programe preferate"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:103
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
 msgid "Select default applications for various services"
 msgstr "Selectați programele implicite pentru anumite servicii"
 
 #. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:132
+#: ../exo-helper/exo-helper-chooser-dialog.c:126
 msgid "_Internet"
 msgstr "_Internet"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:145
+#: ../exo-helper/exo-helper-chooser-dialog.c:139
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Navigator"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:153
+#: ../exo-helper/exo-helper-chooser-dialog.c:147
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr "Navigatorul implicit va fi utilizat pentru deschiderea\nadreselor de Internet și afișarea informațiilor de ajutor."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:177
+#: ../exo-helper/exo-helper-chooser-dialog.c:171
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
 msgid "Mail Reader"
 msgstr "Client de mail"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:185
+#: ../exo-helper/exo-helper-chooser-dialog.c:179
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr "Clientul de mail implicit va fi utilizat pentru a \ncompune noi mailuri la un clic pe o adresă de mail."
 
 #. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:205
+#: ../exo-helper/exo-helper-chooser-dialog.c:199
 msgid "_Utilities"
 msgstr "_Utilitare"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:218
+#: ../exo-helper/exo-helper-chooser-dialog.c:212
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Manager de fișiere"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:226
+#: ../exo-helper/exo-helper-chooser-dialog.c:220
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr "Managerul de fișiere implicit va fi utilizat pentru\ngestionarea fișierelor din sistem și afișarea dosarelor."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:250
+#: ../exo-helper/exo-helper-chooser-dialog.c:244
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
 msgstr "Emulator de terminal"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:258
+#: ../exo-helper/exo-helper-chooser-dialog.c:252
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr "Emulatorul de terminal implicit va fi utilizat\npentru a executa comenzi ce necesită un mediu CLI."
 
-#: ../exo-helper/exo-helper-chooser.c:149
-#: ../exo-helper/exo-helper-chooser.c:156
+#: ../exo-helper/exo-helper-chooser.c:145
+#: ../exo-helper/exo-helper-chooser.c:152
 msgid "Press left mouse button to change the selected application."
 msgstr "Cu un clic stânga puteți schimba programul selectat."
 
-#: ../exo-helper/exo-helper-chooser.c:155
+#: ../exo-helper/exo-helper-chooser.c:151
 msgid "Application Chooser Button"
 msgstr "Buton selector de programe"
 
-#: ../exo-helper/exo-helper-chooser.c:299
+#: ../exo-helper/exo-helper-chooser.c:294
 msgid "No application selected"
 msgstr "Nu ați selectat niciun program"
 
-#: ../exo-helper/exo-helper-chooser.c:315
+#: ../exo-helper/exo-helper-chooser.c:310
 msgid "Failed to set default Web Browser"
 msgstr "Nu s-a putut defini navigatorul implicit"
 
-#: ../exo-helper/exo-helper-chooser.c:316
+#: ../exo-helper/exo-helper-chooser.c:311
 msgid "Failed to set default Mail Reader"
 msgstr "Nu s-a putut defini clientul de mail implicit"
 
-#: ../exo-helper/exo-helper-chooser.c:317
+#: ../exo-helper/exo-helper-chooser.c:312
 msgid "Failed to set default File Manager"
 msgstr "Nu s-a putut defini managerul de fișiere implicit"
 
-#: ../exo-helper/exo-helper-chooser.c:318
+#: ../exo-helper/exo-helper-chooser.c:313
 msgid "Failed to set default Terminal Emulator"
 msgstr "Nu s-a putut defini emulatorul de terminal implicit"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:388
+#: ../exo-helper/exo-helper-chooser.c:383
 msgid "Select application"
 msgstr "Selectați un program"
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:496
 msgid "Choose a custom Web Browser"
 msgstr "Alegeți un alt navigator"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:497
 msgid "Choose a custom Mail Reader"
 msgstr "Alegeți un alt client de mail"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:498
 msgid "Choose a custom File Manager"
 msgstr "Alegeți un alt manager de fișiere"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:499
 msgid "Choose a custom Terminal Emulator"
 msgstr "Alegeți un alt emulator de terminal"
 
-#: ../exo-helper/exo-helper-chooser.c:509
+#: ../exo-helper/exo-helper-chooser.c:504
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Specificați ce program doriți să utilizați\nca navigator implicit în Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:510
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Specificați ce program doriți să utilizați\nca client de mail implicit în Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:511
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Specificați ce program doriți să utilizați\nca manager de fișiere implicit în Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:512
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Specificați ce program doriți să utilizați\nca emulator de terminal implicit în Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:579
+#: ../exo-helper/exo-helper-chooser.c:571
 msgid "Browse the file system to choose a custom command."
 msgstr "Parcurgeți sistemul de fișiere pentru a alege o altă comandă."
 
-#: ../exo-helper/exo-helper-chooser.c:762
+#: ../exo-helper/exo-helper-chooser.c:764
 msgid "_Other..."
 msgstr "Altce_va..."
 
-#: ../exo-helper/exo-helper-chooser.c:763
+#: ../exo-helper/exo-helper-chooser.c:765
 msgid "Use a custom application which is not included in the above list."
 msgstr "Utilizați un program ce nu este inclus în lista de mai sus."
 
@@ -973,12 +1010,12 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Selectați emulatorul de terminal preferat\nși alegeți OK pentru a continua."
 
-#: ../exo-helper/exo-helper.c:382
+#: ../exo-helper/exo-helper.c:384
 #, c-format
 msgid "No command specified"
 msgstr "Nu s-a specificat o comandă"
 
-#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:726
+#: ../exo-helper/exo-helper.c:697 ../exo-helper/exo-helper.c:735
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Nu s-a putut deschide „%s” pentru scriere"
@@ -988,47 +1025,47 @@ msgid ""
 "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Programe preferate (navigator, client de mail etc.)"
 
-#: ../exo-helper/main.c:41
+#: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
 msgstr "Nu s-a putut porni navigatorul implicit"
 
-#: ../exo-helper/main.c:42
+#: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
 msgstr "Nu s-a putut porni clientul de mail implicit"
 
-#: ../exo-helper/main.c:43
+#: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
 msgstr "Nu s-a putut porni managerul de fișiere implicit"
 
-#: ../exo-helper/main.c:44
+#: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Nu s-a putut porni emulatorul de terminal implicit"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Deschide fereastra de configurare\na programelor preferate"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "Settings manager socket"
 msgstr "Socket al managerului opțiunilor"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "SOCKET ID"
 msgstr "ID SOCKET"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "Lansează programul TIP cu parametrul opțional PARAMETRU, unde TIP are una dintre următoarele valori:"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "TYPE [PARAMETER]"
 msgstr "TIP [PARAMETRU]"
 
-#: ../exo-helper/main.c:102
+#: ../exo-helper/main.c:103
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1038,17 +1075,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr "Următoarele valori TIP sunt posibile cu comanda --launch:\n\n  WebBrowser       - Navigatorul preferat.\n  MailReader       - Clientul de mail preferat.\n  FileManager      - Managerul de fișiere preferat.\n  TerminalEmulator - Emulatorul de terminal preferat."
 
-#: ../exo-helper/main.c:112
+#: ../exo-helper/main.c:113
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Încercați „%s --help” pentru detalii de utilizare."
 
-#: ../exo-helper/main.c:165
+#: ../exo-helper/main.c:172
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Tipul asocierii „%s” este nevalid"
 
-#: ../exo-helper/main.c:213
+#: ../exo-helper/main.c:220
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1320,17 +1357,17 @@ msgid ""
 "Unix features."
 msgstr "Nu există suport pentru lansarea de fișiere desktop când %s este compilat fără facilități GIO-Unix"
 
-#: ../exo-open/main.c:260
+#: ../exo-open/main.c:269
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Nu s-a putut lansa programul preferat pentru categoria „%s”."
 
-#: ../exo-open/main.c:577
+#: ../exo-open/main.c:586
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Nu s-a putut detecta schema URI pentru „%s”."
 
-#: ../exo-open/main.c:591
+#: ../exo-open/main.c:600
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Nu s-a putut deschide URI-ul „%s”."
