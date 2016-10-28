@@ -385,13 +385,9 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
         }
     }
 
-  /* see bug http://bugzilla.xfce.org/show_bug.cgi?id=6230 for more information */
   if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) exo_noop_false))
     {
-      /* just reset the select function (previously set to exo_noop_false),
-       * there's no clean way to do this, so what the heck.
-       */
-      gtk_tree_selection_set_select_function (selection, NULL, NULL, NULL);
+      gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) exo_noop_true, NULL, NULL);
     }
 
   /* release the path (if any) */
