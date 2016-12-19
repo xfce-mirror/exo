@@ -9,14 +9,14 @@
 # Adolfo Jayme-Barrientos, 2014
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
-# Pablo Lezaeta Reyes [pˈaβ̞lo lˌe̞θaˈeta rˈejɛ] <prflr88@gmail.com>, 2013-2015
+# Pablo Roberto “Jristz” Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
 # Patricio Carr <pato@patocarr.com>, 2005
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-12 06:30+0200\n"
-"PO-Revision-Date: 2016-07-17 15:34+0000\n"
+"PO-Revision-Date: 2016-12-19 17:53+0000\n"
 "Last-Translator: Manolo Díaz <diaz.manolo@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/exo/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -221,7 +221,7 @@ msgstr "Seleccionar _iconos de:"
 #. search filter
 #: ../exo/exo-icon-chooser-dialog.c:246
 msgid "_Search icon:"
-msgstr "Icono de _búsqueda:"
+msgstr "_Buscar icono:"
 
 #: ../exo/exo-icon-chooser-dialog.c:266
 msgid "Clear search field"
@@ -399,7 +399,7 @@ msgstr "_Añadir una nueva barra de herramientas"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr "Arrastrar un elemento sobre la barra de herramientas de encima para añadirlo; desde la barra de herramientas a la tabla de elementos para borrarlo."
+msgstr "Arrastre un elemento sobre la barra de herramientas de encima para añadirlo; desde la barra de herramientas a la tabla de elementos para borrarlo."
 
 #: ../exo/exo-toolbars-editor.c:537
 msgid "Separator"
@@ -459,7 +459,7 @@ msgstr "Homogéneo"
 
 #: ../exo/exo-wrap-table.c:179
 msgid "Whether the children should be all the same size"
-msgstr "Define si el hijo debería ser del mismo tamaño"
+msgstr "Define si los hijos deberían ser todos del mismo tamaño"
 
 #: ../exo/exo-xsession-client.c:210
 msgid "Window group"
@@ -490,12 +490,12 @@ msgstr "       %s [opciones] --build-list [[nombre de archivo]]...]\n"
 #: ../exo-csource/main.c:287
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help        Mostrar este mensaje de ayuda y salir\n"
+msgstr "  -h, --help        Muestra este mensaje de ayuda y sale\n"
 
 #: ../exo-csource/main.c:288
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version     Mostrar información sobre la versión y salir\n"
+msgstr "  -V, --version     Muestra información sobre la versión y sale\n"
 
 #: ../exo-csource/main.c:289
 #, c-format
@@ -683,7 +683,7 @@ msgstr "Ejecutar en _terminal"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:436
 msgid "Select this option to run the command in a terminal window."
-msgstr "Seleccionar esta opción para ejecutar la orden en una ventana de terminal."
+msgstr "Seleccione esta opción para ejecutar la orden en una ventana de terminal."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:592
@@ -803,7 +803,7 @@ msgstr "El archivo «%s» no tiene ningún tipo de clave"
 #: ../exo-desktop-item-edit/main.c:316
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Tipo de archivo de escritorio «%s» no soportado"
+msgstr "Tipo de archivo de escritorio «%s» incompatible"
 
 #. add the "Help" button
 #: ../exo-desktop-item-edit/main.c:331
@@ -823,7 +823,7 @@ msgstr "_Guardar"
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:516
 msgid "Choose filename"
-msgstr "Elegir nombre de archivo"
+msgstr "Elija un nombre de archivo"
 
 #: ../exo-desktop-item-edit/main.c:623
 #, c-format
@@ -1079,7 +1079,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Los siguientes TIPOS son soportados por la orden --launch:\n\n WebBrowser         - El navegador web preferido.\n MailReader         - El lector de correo preferido.\n FileManager        - El administrador de archivos preferido.\n TerminalEmulator   - El emulador de terminal preferido."
+msgstr "Los siguientes TIPOS son soportados por la orden --launch:\n\nWebBrowser         - El navegador web preferido.\n MailReader         - El lector de correo preferido.\n FileManager        - El administrador de archivos preferido.\n TerminalEmulator   - El emulador de terminal preferido."
 
 #: ../exo-helper/main.c:113
 #, c-format
@@ -1308,7 +1308,7 @@ msgstr "Uso: exo-open [DIRECCIONES URL...]"
 
 #: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr "       exo-open --launch TIPO [PARÁMETROS...]"
+msgstr "     exo-open --launch TIPO [PARÁMETROS...]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
@@ -1330,7 +1330,7 @@ msgstr "  --launch TIPO [PARÁMETROs...]       Lanza la aplicación preferida de
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory DIRECTORIO       Directorio de trabajo predeterminado para aplicaciones\n                                      cuando se usa la opción --launch."
+msgstr "  --working-directory DIRECTORIO       Directorio de trabajo predeterminado para aplicaciones\n                                       cuando se usa la opción --launch."
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
