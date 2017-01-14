@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# scootergrisen, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:55+0200\n"
-"PO-Revision-Date: 2013-11-19 14:58+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/xfce/language/da/)\n"
+"PO-Revision-Date: 2017-01-14 09:33+0000\n"
+"Last-Translator: scootergrisen\n"
+"Language-Team: Danish (http://www.transifex.com/xfce/exo/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -168,7 +169,7 @@ msgstr "Emblemer"
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Emoticons"
-msgstr "Emoticons (smileyer)"
+msgstr "Emotikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:123
@@ -524,7 +525,7 @@ msgstr "  --strip-comments  Fjern kommentarer fra XML-filer\n"
 #: ../exo-csource/main.c:294
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   Fjern knudeindhold fra XML-filer (node)\n"
+msgstr "  --strip-content   Fjern knudeindhold fra XML-filer\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
 #: ../exo-open/main.c:496
@@ -646,7 +647,6 @@ msgstr "Indstillinger:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Brug op_startsbesked"
@@ -662,7 +662,6 @@ msgstr "Vælg denne indstilling for at slå opstartsbesked til, når kommandoen 
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Kør i _terminal"
@@ -716,7 +715,7 @@ msgstr "Opret en ny skrivebordsfil i den valgte mappe"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Skal skrivebordsfilen være af typen program eller henvisning?"
+msgstr "Den type skrivebordsfil som skal oprettes (program eller henvisning)"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Preset name when creating a desktop file"
@@ -814,7 +813,6 @@ msgid "Select default applications for various services"
 msgstr "Vælg foretrukne programmer for forskellige tjenester"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
@@ -842,7 +840,6 @@ msgid ""
 msgstr "Det foretrukne postprogram vil blive brugt til at\nskrive nye e-breve, når du klikker på e-post-adresser."
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Værktøjer"
@@ -1071,7 +1068,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nOphavsret (c) 2003-2006\n        os-cillation e.K. Alle rettigheder forbeholdes.\n\nSkrevet af Benedikt Meurer <benny@xfce.org>.\n\nKompileret med  Gtk+-%d.%d.%d, kørende Gtk+-%d.%d.%d.\n\nRapportér venligst fejl til <%s>.\n"
+msgstr "%s (Xfce %s)\n\nOphavsret (c) 2003-2006\n        os-cillation e.K. Alle rettigheder forbeholdes.\n\nSkrevet af Benedikt Meurer <benny@xfce.org>.\n\nKompileret med Gtk+-%d.%d.%d, kørende Gtk+-%d.%d.%d.\n\nRapportér venligst fejl til <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1254,7 +1251,6 @@ msgstr "Følgende TYPEr understøttes af kommandoen --launch:"
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
