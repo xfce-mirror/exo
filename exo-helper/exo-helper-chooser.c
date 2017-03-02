@@ -675,6 +675,10 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   gint            icon_size;
   GtkAllocation   chooser_allocation;
 
+  /* Catch button-release-event params and discard */
+  GdkEvent       *event;
+  gboolean        handled;
+
   g_return_if_fail (EXO_IS_HELPER_CHOOSER (chooser));
   g_return_if_fail (GTK_IS_BUTTON (button));
 
@@ -788,7 +792,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   gtk_grab_remove (menu);
   g_main_loop_unref (loop);
 
-  g_signal_emit_by_name (button, "button-release-event");
+  g_signal_emit_by_name (button, "button-release-event", &event, &handled);
   g_object_unref (G_OBJECT (menu));
 }
 
