@@ -1687,7 +1687,7 @@ exo_icon_view_get_preferred_height (GtkWidget *widget,
   GList                    *lp;
 
   /* well, this is easy */
-  *natural_height = priv->height;
+  *natural_height = *minimal_height = priv->height;
 
   /* handle the child widgets */
   for (lp = priv->children; lp != NULL; lp = lp->next)
