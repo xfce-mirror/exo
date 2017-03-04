@@ -3,17 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Pjotr <pjotrvertaalt@gmail.com>, 2015
+# Pjotr <pjotrvertaalt@gmail.com>, 2015-2017
 # Pjotr pjotrvertaalt@gmail.com, 2011,2013
 # Stephan Arts <psyBSD@gmail.com>, 2006
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-17 06:30+0100\n"
-"PO-Revision-Date: 2015-02-18 10:48+0000\n"
+"POT-Creation-Date: 2016-07-12 06:30+0200\n"
+"PO-Revision-Date: 2017-03-04 09:47+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/exo/language/nl/)\n"
+"Language-Team: Dutch (http://www.transifex.com/xfce/exo/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,36 +21,36 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
-#: ../exo/exo-cell-renderer-icon.c:144
+#: ../exo/exo-cell-renderer-icon.c:160
 msgid "Follow state"
 msgstr "Volg status"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:132
-#: ../exo/exo-cell-renderer-icon.c:145
+#: ../exo/exo-cell-renderer-icon.c:161
 msgid "Render differently based on the selection state."
 msgstr "Geef verschillend weer, gebaseerd op de selectiestatus."
 
-#: ../exo/exo-cell-renderer-icon.c:166
+#: ../exo/exo-cell-renderer-icon.c:182
 msgid "Icon"
 msgstr "Pictogram"
 
-#: ../exo/exo-cell-renderer-icon.c:167
+#: ../exo/exo-cell-renderer-icon.c:183
 msgid "The icon to render."
 msgstr "Het weer te geven pictogram."
 
-#: ../exo/exo-cell-renderer-icon.c:185
+#: ../exo/exo-cell-renderer-icon.c:201
 msgid "GIcon"
 msgstr "GPictogram"
 
-#: ../exo/exo-cell-renderer-icon.c:186
+#: ../exo/exo-cell-renderer-icon.c:202
 msgid "The GIcon to render."
 msgstr "Het weer te geven Gpictogram."
 
-#: ../exo/exo-cell-renderer-icon.c:207
+#: ../exo/exo-cell-renderer-icon.c:223
 msgid "size"
 msgstr "grootte"
 
-#: ../exo/exo-cell-renderer-icon.c:208
+#: ../exo/exo-cell-renderer-icon.c:224
 msgid "The size of the icon to render in pixels."
 msgstr "De grootte van het weer te geven pictogram in pixels."
 
@@ -59,22 +59,22 @@ msgstr "De grootte van het weer te geven pictogram in pixels."
 msgid "Failed to open file \"%s\": %s"
 msgstr "Kon bestand '%s' niet openen: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:849
+#: ../exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
 msgstr "Kon bestand '%s' niet lezen: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:890
+#: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Kon afbeelding '%s' niet laden: onbekende reden, waarschijnlijk een beschadigd afbeeldingbestand"
 
-#: ../exo/exo-gtk-extensions.c:227
+#: ../exo/exo-gtk-extensions.c:242
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Kon '%s' niet openen."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:813
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:879
 msgid "Orientation"
 msgstr "Oriëntatie"
 
@@ -82,19 +82,19 @@ msgstr "Oriëntatie"
 msgid "The orientation of the iconbar"
 msgstr "De oriëntatie van de pictogrammenbalk"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:830
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:896
 msgid "Pixbuf column"
 msgstr "Pixbuf-kolom"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:831
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:897
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Modelkolom die gebruikt wordt voor het ophalen van de pictogram-pixbuf"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:975
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1041
 msgid "Text column"
 msgstr "Tekstkolom"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:976
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1042
 msgid "Model column used to retrieve the text from"
 msgstr "Modelkolom die gebruikt wordt voor het ophalen van de tekst"
 
@@ -139,254 +139,254 @@ msgid "Cursor item text color"
 msgstr "Tekstkleur van aanwijzer-element"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:109
+#: ../exo/exo-icon-chooser-dialog.c:108
 msgid "Action Icons"
 msgstr "Actiepictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:111
+#: ../exo/exo-icon-chooser-dialog.c:110
 msgid "Animations"
 msgstr "Animaties"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:113
+#: ../exo/exo-icon-chooser-dialog.c:112
 msgid "Application Icons"
 msgstr "Toepassingspictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:114
 msgid "Menu Icons"
 msgstr "Menupictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:117
+#: ../exo/exo-icon-chooser-dialog.c:116
 msgid "Device Icons"
 msgstr "Apparaatpictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:119
+#: ../exo/exo-icon-chooser-dialog.c:118
 msgid "Emblems"
 msgstr "Emblemen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:120
 msgid "Emoticons"
 msgstr "Emotiepictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:122
 msgid "International Denominations"
 msgstr "Internationale aanduidingen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:124
 msgid "File Type Icons"
 msgstr "Bestandtype-pictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:127
+#: ../exo/exo-icon-chooser-dialog.c:126
 msgid "Location Icons"
 msgstr "Locatiepictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:129
+#: ../exo/exo-icon-chooser-dialog.c:128
 msgid "Status Icons"
 msgstr "Statuspictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:131
+#: ../exo/exo-icon-chooser-dialog.c:130
 msgid "Uncategorized Icons"
 msgstr "Ongecategoriseerde pictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:135
+#: ../exo/exo-icon-chooser-dialog.c:134
 msgid "All Icons"
 msgstr "Alle pictogrammen"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
+#: ../exo/exo-icon-chooser-dialog.c:138 ../exo/exo-icon-chooser-dialog.c:316
 msgid "Image Files"
 msgstr "Afbeeldingbestanden"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:210
+#: ../exo/exo-icon-chooser-dialog.c:222
 msgid "Select _icon from:"
 msgstr "Kies p_ictogram vanuit:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:225
+#: ../exo/exo-icon-chooser-dialog.c:246
 msgid "_Search icon:"
 msgstr "_Zoek pictogram:"
 
-#: ../exo/exo-icon-chooser-dialog.c:236
+#: ../exo/exo-icon-chooser-dialog.c:266
 msgid "Clear search field"
 msgstr "Maak zoekveld leeg"
 
-#: ../exo/exo-icon-view.c:681
+#: ../exo/exo-icon-view.c:747
 msgid "Column Spacing"
 msgstr "Kolom-spatiëring"
 
-#: ../exo/exo-icon-view.c:682
+#: ../exo/exo-icon-view.c:748
 msgid "Space which is inserted between grid column"
 msgstr "Ruimte die tussen rasterkolommen geplaatst wordt"
 
-#: ../exo/exo-icon-view.c:698
+#: ../exo/exo-icon-view.c:764
 msgid "Number of columns"
 msgstr "Aantal kolommen"
 
-#: ../exo/exo-icon-view.c:699
+#: ../exo/exo-icon-view.c:765
 msgid "Number of columns to display"
 msgstr "Aantal weer te geven kolommen"
 
-#: ../exo/exo-icon-view.c:713
+#: ../exo/exo-icon-view.c:779
 msgid "Enable Search"
 msgstr "Zoeken inschakelen"
 
-#: ../exo/exo-icon-view.c:714
+#: ../exo/exo-icon-view.c:780
 msgid "View allows user to search through columns interactively"
 msgstr "Weergave laat gebruikers kolommen interactief doorzoeken"
 
-#: ../exo/exo-icon-view.c:731
+#: ../exo/exo-icon-view.c:797
 msgid "Width for each item"
 msgstr "Breedte voor elk element"
 
-#: ../exo/exo-icon-view.c:732
+#: ../exo/exo-icon-view.c:798
 msgid "The width used for each item"
 msgstr "De gebruikte breedte voor elk element"
 
-#: ../exo/exo-icon-view.c:750
+#: ../exo/exo-icon-view.c:816
 msgid "Layout mode"
 msgstr "Vormgevingmodus"
 
-#: ../exo/exo-icon-view.c:751
+#: ../exo/exo-icon-view.c:817
 msgid "The layout mode"
 msgstr "De vormgevingmodus"
 
-#: ../exo/exo-icon-view.c:767
+#: ../exo/exo-icon-view.c:833
 msgid "Margin"
 msgstr "Marge"
 
-#: ../exo/exo-icon-view.c:768
+#: ../exo/exo-icon-view.c:834
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Ruimte die aan de randen van de pictogramweergave geplaatst wordt"
 
-#: ../exo/exo-icon-view.c:784
+#: ../exo/exo-icon-view.c:850
 msgid "Markup column"
 msgstr "Opmaakkolom"
 
-#: ../exo/exo-icon-view.c:785
+#: ../exo/exo-icon-view.c:851
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Modelkolom die gebruikt wordt voor het ophalen van de tekst bij gebruik van Pango-opmaak."
 
-#: ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-view.c:865
 msgid "Icon View Model"
 msgstr "Pictogramweergave-model"
 
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-view.c:866
 msgid "The model for the icon view"
 msgstr "Het model van de pictogramweergave"
 
-#: ../exo/exo-icon-view.c:814
+#: ../exo/exo-icon-view.c:880
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Hoe de tekst en pictogram van elk element ten opzichte van elkaar zijn geplaatst"
 
-#: ../exo/exo-icon-view.c:848
+#: ../exo/exo-icon-view.c:914
 msgid "Icon column"
 msgstr "Pictogrammenkolom"
 
-#: ../exo/exo-icon-view.c:849
+#: ../exo/exo-icon-view.c:915
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "Modelkolom om het absolute pad te verkrijgen naar een weer te geven afbeeldingbestand"
 
-#: ../exo/exo-icon-view.c:864
+#: ../exo/exo-icon-view.c:930
 msgid "Reorderable"
 msgstr "Herschikbaar"
 
-#: ../exo/exo-icon-view.c:865
+#: ../exo/exo-icon-view.c:931
 msgid "View is reorderable"
 msgstr "Weergave is herschikbaar"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:946
 msgid "Row Spacing"
 msgstr "Rij-spatiëring"
 
-#: ../exo/exo-icon-view.c:881
+#: ../exo/exo-icon-view.c:947
 msgid "Space which is inserted between grid rows"
 msgstr "Ruimte die tussen de rasterrijen geplaatst wordt"
 
-#: ../exo/exo-icon-view.c:895
+#: ../exo/exo-icon-view.c:961
 msgid "Search Column"
 msgstr "Zoekkolom"
 
-#: ../exo/exo-icon-view.c:896
+#: ../exo/exo-icon-view.c:962
 msgid "Model column to search through when searching through item"
 msgstr "Modelkolom om te doorzoeken indien element wordt doorzocht"
 
-#: ../exo/exo-icon-view.c:910
+#: ../exo/exo-icon-view.c:976
 msgid "Selection mode"
 msgstr "Selectiemodus"
 
-#: ../exo/exo-icon-view.c:911
+#: ../exo/exo-icon-view.c:977
 msgid "The selection mode"
 msgstr "De selectiemodus"
 
-#: ../exo/exo-icon-view.c:926 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:154
 msgid "Single Click"
 msgstr "Enkele klik"
 
-#: ../exo/exo-icon-view.c:927 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:155
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Of de elementen in de weergave te activeren zijn met een enkele klik"
 
-#: ../exo/exo-icon-view.c:943 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:171
 msgid "Single Click Timeout"
 msgstr "Enkele-klik-blokkeertijd"
 
-#: ../exo/exo-icon-view.c:944 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:172
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "De hoeveelheid tijd waarna een element onder de muispijl automatisch wordt geselecteerd in enkele-klik-modus"
 
-#: ../exo/exo-icon-view.c:959
+#: ../exo/exo-icon-view.c:1025
 msgid "Spacing"
 msgstr "Spatiëring"
 
-#: ../exo/exo-icon-view.c:960
+#: ../exo/exo-icon-view.c:1026
 msgid "Space which is inserted between cells of an item"
 msgstr "Ruimte die tussen de cellen van een element geplaatst wordt"
 
-#: ../exo/exo-thumbnail-preview.c:113
+#: ../exo/exo-thumbnail-preview.c:120
 msgid "Preview"
 msgstr "Voorbeeldweergave"
 
-#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
+#: ../exo/exo-thumbnail-preview.c:141 ../exo/exo-thumbnail-preview.c:286
 msgid "No file selected"
 msgstr "Geen bestand geselecteerd"
 
-#: ../exo/exo-thumbnail-preview.c:289
+#: ../exo/exo-thumbnail-preview.c:304
 msgid "Block Device"
 msgstr "Blokapparaat"
 
-#: ../exo/exo-thumbnail-preview.c:294
+#: ../exo/exo-thumbnail-preview.c:309
 msgid "Character Device"
 msgstr "Tekenapparaat"
 
-#: ../exo/exo-thumbnail-preview.c:299
+#: ../exo/exo-thumbnail-preview.c:314
 msgid "Folder"
 msgstr "Map"
 
-#: ../exo/exo-thumbnail-preview.c:304
+#: ../exo/exo-thumbnail-preview.c:319
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../exo/exo-thumbnail-preview.c:309
+#: ../exo/exo-thumbnail-preview.c:324
 msgid "Socket"
 msgstr "Contactpunt"
 
-#: ../exo/exo-toolbars-editor-dialog.c:118
+#: ../exo/exo-toolbars-editor-dialog.c:117
 msgid "_Add a new toolbar"
 msgstr "Voeg een nieuwe werkb_alk toe"
 
@@ -523,7 +523,7 @@ msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Verwijder node-informatie uit XML-bestanden\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
-#: ../exo-open/main.c:496
+#: ../exo-open/main.c:505
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -534,7 +534,7 @@ msgid ""
 msgstr "Auteursrecht (c) %s\n        os-cillation e.K. Alle rechten voorbehouden.\n\nGeschreven door Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
-#: ../exo-open/main.c:500
+#: ../exo-open/main.c:509
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -545,43 +545,58 @@ msgid ""
 msgstr "Op %s zit GEEN ENKELE GARANTIE,\nU mag %s herdistribueren onder de voorwaarden van\nde GNU Lesser General Public License, welke gevonden kan worden\nin het %s bronpakket.\n\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
-#: ../exo-open/main.c:504
+#: ../exo-open/main.c:513
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Meld fouten a.u.b. aan <%s>.\n"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:255
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:257
 msgid "Select an Application"
 msgstr "Kies een toepassing"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:264
-#: ../exo-helper/exo-helper-chooser.c:398
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:260
+#: ../exo-desktop-item-edit/exo-die-editor.c:594
+#: ../exo-desktop-item-edit/exo-die-editor.c:642
+#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
+#: ../exo-helper/exo-helper-chooser.c:386
+#: ../exo-helper/exo-helper-chooser.c:531
+#: ../exo-helper/exo-helper-launcher-dialog.c:109
+msgid "_Cancel"
+msgstr "_Afbreken"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:261
+#: ../exo-helper/exo-helper-chooser.c:387
+msgid "_Open"
+msgstr "_Openen"
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:266
+#: ../exo-helper/exo-helper-chooser.c:393
 msgid "All Files"
 msgstr "Alle bestanden"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:269
-#: ../exo-helper/exo-helper-chooser.c:403
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:271
+#: ../exo-helper/exo-helper-chooser.c:398
 msgid "Executable Files"
 msgstr "Uitvoerbare bestanden"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:284
-#: ../exo-helper/exo-helper-chooser.c:418
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:286
+#: ../exo-helper/exo-helper-chooser.c:413
 msgid "Perl Scripts"
 msgstr "Perl scripts"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:290
-#: ../exo-helper/exo-helper-chooser.c:424
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:292
+#: ../exo-helper/exo-helper-chooser.c:419
 msgid "Python Scripts"
 msgstr "Python scripts"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:296
-#: ../exo-helper/exo-helper-chooser.c:430
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:298
+#: ../exo-helper/exo-helper-chooser.c:425
 msgid "Ruby Scripts"
 msgstr "Ruby scripts"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:302
-#: ../exo-helper/exo-helper-chooser.c:436
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-helper/exo-helper-chooser.c:431
 msgid "Shell Scripts"
 msgstr "Shell scripts"
 
@@ -592,13 +607,13 @@ msgstr "Maak starter <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:297
+#: ../exo-desktop-item-edit/exo-die-editor.c:295
 msgid "_Name:"
 msgstr "_Naam:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:313
+#: ../exo-desktop-item-edit/exo-die-editor.c:312
 msgid "C_omment:"
 msgstr "_Opmerking:"
 
@@ -610,19 +625,19 @@ msgstr "Opdr_acht:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:344
+#: ../exo-desktop-item-edit/exo-die-editor.c:345
 msgid "_URL:"
 msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:360
+#: ../exo-desktop-item-edit/exo-die-editor.c:362
 msgid "Working _Directory:"
 msgstr "_Werkmap:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:389
+#: ../exo-desktop-item-edit/exo-die-editor.c:392
 msgid "_Icon:"
 msgstr "_Pictogram:"
 
@@ -630,7 +645,7 @@ msgstr "_Pictogram:"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1233
+#: ../exo-desktop-item-edit/exo-die-editor.c:1235
 msgid "No icon"
 msgstr "Geen pictogram"
 
@@ -657,21 +672,28 @@ msgstr "Selecteer deze optie om opstartmelding in te schakelen wanneer deze opdr
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: ../exo-desktop-item-edit/exo-die-editor.c:434
+#: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Run in _terminal"
 msgstr "In _terminal uitvoeren"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:435
+#: ../exo-desktop-item-edit/exo-die-editor.c:436
 msgid "Select this option to run the command in a terminal window."
 msgstr "Selecteer deze optie om de opdracht in een terminalvenster uit te voeren."
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:590
+#: ../exo-desktop-item-edit/exo-die-editor.c:592
 msgid "Select an icon"
 msgstr "Kies een pictogram"
 
+#: ../exo-desktop-item-edit/exo-die-editor.c:595
+#: ../exo-desktop-item-edit/exo-die-editor.c:643
+#: ../exo-helper/exo-helper-chooser.c:532
+#: ../exo-helper/exo-helper-launcher-dialog.c:110
+msgid "_OK"
+msgstr "O_K"
+
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:637
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
 msgid "Select a working directory"
 msgstr "Kies een werkmap"
 
@@ -732,7 +754,7 @@ msgstr "Vooringestelde URL bij het maken van een nieuwe koppeling"
 msgid "Preset icon when creating a desktop file"
 msgstr "Vooringesteld pictogram bij het maken van een nieuw bureaubladbestand"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
 msgid "Print version information and exit"
 msgstr "Druk versie-informatie af en sluit af"
 
@@ -778,172 +800,186 @@ msgstr "Bestand '%s' heeft geen typetoets"
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Niet-ondersteund type bureaubladbestand '%s'"
 
+#. add the "Help" button
+#: ../exo-desktop-item-edit/main.c:331
+#: ../exo-helper/exo-helper-chooser-dialog.c:104
+msgid "_Help"
+msgstr "_Hulp"
+
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:340
 msgid "C_reate"
 msgstr "M_aken"
 
+#: ../exo-desktop-item-edit/main.c:340 ../exo-desktop-item-edit/main.c:520
+msgid "_Save"
+msgstr "O_pslaan"
+
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:513
+#: ../exo-desktop-item-edit/main.c:516
 msgid "Choose filename"
 msgstr "Kies bestandnaam"
 
-#: ../exo-desktop-item-edit/main.c:620
+#: ../exo-desktop-item-edit/main.c:623
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Kon '%s' niet maken."
 
-#: ../exo-desktop-item-edit/main.c:620
+#: ../exo-desktop-item-edit/main.c:623
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Kon '%s' niet opslaan."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:102
+#: ../exo-helper/exo-helper-chooser-dialog.c:98
+msgid "_Close"
+msgstr "_Sluiten"
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:100
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Voorkeurtoepassingen"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:103
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
 msgid "Select default applications for various services"
 msgstr "Selecteer standaardtoepassingen voor diverse diensten"
 
 #. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:132
+#: ../exo-helper/exo-helper-chooser-dialog.c:126
 msgid "_Internet"
 msgstr "Internet"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:145
+#: ../exo-helper/exo-helper-chooser-dialog.c:139
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Webbrowser"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:153
+#: ../exo-helper/exo-helper-chooser-dialog.c:147
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr "De voorkeurs-webbrowser zal gebruikt worden om\nwebkoppelingen te openen en hulppagina's weer te geven."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:177
+#: ../exo-helper/exo-helper-chooser-dialog.c:171
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
 msgid "Mail Reader"
 msgstr "E-mailprogramma"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:185
+#: ../exo-helper/exo-helper-chooser-dialog.c:179
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr "Het voorkeurs-emailprogramma zal worden gebruikt\nom e-mails te schrijven als u op e-mail-adressen klikt."
 
 #. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:205
+#: ../exo-helper/exo-helper-chooser-dialog.c:199
 msgid "_Utilities"
 msgstr "Hulpprogramma's"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:218
+#: ../exo-helper/exo-helper-chooser-dialog.c:212
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Bestandbeheerder"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:226
+#: ../exo-helper/exo-helper-chooser-dialog.c:220
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr "De voorkeurs-bestandbeheerder zal gebruikt worden om\nde inhoud van mappen te doorzoeken."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:250
+#: ../exo-helper/exo-helper-chooser-dialog.c:244
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
 msgstr "Terminalvenster"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:258
+#: ../exo-helper/exo-helper-chooser-dialog.c:252
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr "Het voorkeurs-terminalvenster zal worden gebruikt\nom opdrachten uit te voeren die een terminalomgeving vereisen"
 
-#: ../exo-helper/exo-helper-chooser.c:149
-#: ../exo-helper/exo-helper-chooser.c:156
+#: ../exo-helper/exo-helper-chooser.c:145
+#: ../exo-helper/exo-helper-chooser.c:152
 msgid "Press left mouse button to change the selected application."
 msgstr "Klik met de linker muistoets om de gekozen toepassing te wijzigen."
 
-#: ../exo-helper/exo-helper-chooser.c:155
+#: ../exo-helper/exo-helper-chooser.c:151
 msgid "Application Chooser Button"
 msgstr "Knop voor toepassingkeuze"
 
-#: ../exo-helper/exo-helper-chooser.c:299
+#: ../exo-helper/exo-helper-chooser.c:294
 msgid "No application selected"
 msgstr "Geen toepassing geselecteerd"
 
-#: ../exo-helper/exo-helper-chooser.c:315
+#: ../exo-helper/exo-helper-chooser.c:310
 msgid "Failed to set default Web Browser"
 msgstr "Kon de standaard-webbrowser niet instellen"
 
-#: ../exo-helper/exo-helper-chooser.c:316
+#: ../exo-helper/exo-helper-chooser.c:311
 msgid "Failed to set default Mail Reader"
 msgstr "Kon het standaard-e-mailprogramma niet instellen"
 
-#: ../exo-helper/exo-helper-chooser.c:317
+#: ../exo-helper/exo-helper-chooser.c:312
 msgid "Failed to set default File Manager"
 msgstr "Kon de standaard-bestandbeheerder niet instellen"
 
-#: ../exo-helper/exo-helper-chooser.c:318
+#: ../exo-helper/exo-helper-chooser.c:313
 msgid "Failed to set default Terminal Emulator"
 msgstr "Kon het standaard-terminalvenster niet instellen"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:388
+#: ../exo-helper/exo-helper-chooser.c:383
 msgid "Select application"
 msgstr "Kies toepassing"
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:496
 msgid "Choose a custom Web Browser"
 msgstr "Kies een aangepaste webbrowser"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:497
 msgid "Choose a custom Mail Reader"
 msgstr "Kies een aangepast e-mailprogramma"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:498
 msgid "Choose a custom File Manager"
 msgstr "Kies een aangepaste bestandbeheerder"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:499
 msgid "Choose a custom Terminal Emulator"
 msgstr "Kies een aangepast terminalvenster"
 
-#: ../exo-helper/exo-helper-chooser.c:509
+#: ../exo-helper/exo-helper-chooser.c:504
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Kies de toepassing die u als standaard-\nwebbrowser wil gebruiken voor Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:510
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Kies de toepassing die u als standaard-\ne-mailprogramma wil gebruiken voor Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:511
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Kies de toepassing die u wil gebruiken\nals standaard-bestandbeheerder voor Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:512
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Kies de toepassing die u als standaard-\nterminalvenster wil gebruiken voor Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:579
+#: ../exo-helper/exo-helper-chooser.c:571
 msgid "Browse the file system to choose a custom command."
 msgstr "Blader door het bestandssysteem om een aangepaste opdracht te kiezen"
 
-#: ../exo-helper/exo-helper-chooser.c:762
+#: ../exo-helper/exo-helper-chooser.c:764
 msgid "_Other..."
 msgstr "_Overige..."
 
-#: ../exo-helper/exo-helper-chooser.c:763
+#: ../exo-helper/exo-helper-chooser.c:765
 msgid "Use a custom application which is not included in the above list."
 msgstr "Gebruik een aangepaste toepassing die niet in bovenstaande lijst staat."
 
@@ -975,12 +1011,12 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Kies nu uw voorkeurs-terminalvenster\nen klik op OK om door te gaan."
 
-#: ../exo-helper/exo-helper.c:382
+#: ../exo-helper/exo-helper.c:384
 #, c-format
 msgid "No command specified"
 msgstr "Geen opdracht opgegeven"
 
-#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:726
+#: ../exo-helper/exo-helper.c:697 ../exo-helper/exo-helper.c:735
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Kon %s niet openen om naar te schrijven"
@@ -990,47 +1026,47 @@ msgid ""
 "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Voorkeurstoepassingen (webbrowser, e-mailprogramma en terminalvenster)"
 
-#: ../exo-helper/main.c:41
+#: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
 msgstr "Kon de standaard-webbrowser niet uitvoeren"
 
-#: ../exo-helper/main.c:42
+#: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
 msgstr "Kon het standaard-emailprogramma niet uitvoeren"
 
-#: ../exo-helper/main.c:43
+#: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
 msgstr "Kon de standaard-bestandbeheerder niet uitvoeren"
 
-#: ../exo-helper/main.c:44
+#: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Kon het standaard-terminalvenster niet uitvoeren"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:72
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Open het dialoogscherm voor configuratie\nvan voorkeurtoepassingen"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "Settings manager socket"
 msgstr "Contactpunt voor instellingenbeheerder"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "Start de standaardhulp van TYPE met de optionele PARAMETER, waar TYPE één van de volgende waarden is."
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
-#: ../exo-helper/main.c:102
+#: ../exo-helper/main.c:103
 msgid ""
 "The following TYPEs are supported for the --launch command:\n"
 "\n"
@@ -1040,17 +1076,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr "De volgende TYPEs worden ondersteund voor de --launch opdracht:\n\n WebBrowser - De voorkeurs-webbladeraar.\n MailReader - De voorkeurs-emaillezer.\n FileManager - De voorkeurs-bestandbeheerder.\n TerminalEmulator - Het voorkeurs-terminalvenster."
 
-#: ../exo-helper/main.c:112
+#: ../exo-helper/main.c:113
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Tik '%s --help' voor gebruik"
 
-#: ../exo-helper/main.c:165
+#: ../exo-helper/main.c:172
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Ongeldig hulptype '%s'"
 
-#: ../exo-helper/main.c:213
+#: ../exo-helper/main.c:220
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1322,17 +1358,17 @@ msgid ""
 "Unix features."
 msgstr "Het starten van bureaubladbestanden wordt niet ondersteund wanneer %s wordt gecompileerd zonder GIO-Unix-eigenschappen."
 
-#: ../exo-open/main.c:260
+#: ../exo-open/main.c:269
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Kon voorkeurstoepassing voor categorie '%s' niet starten."
 
-#: ../exo-open/main.c:577
+#: ../exo-open/main.c:586
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Kon het URI-schema van '%s' niet vaststellen."
 
-#: ../exo-open/main.c:591
+#: ../exo-open/main.c:600
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Kon URI '%s' niet openen."
