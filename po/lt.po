@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-12 06:30+0200\n"
-"PO-Revision-Date: 2017-03-01 11:14+0000\n"
+"PO-Revision-Date: 2017-04-13 13:37+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/exo/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -475,12 +475,12 @@ msgstr "Seanso paleidimo iš naujo komanda"
 #: ../exo-csource/main.c:284
 #, c-format
 msgid "Usage: %s [options] [file]\n"
-msgstr "Naudojimas: %s [parinktys] [failas]\n"
+msgstr "Naudojimas: %s [parametrai] [failas]\n"
 
 #: ../exo-csource/main.c:285
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [parinktys] --build-list [[vardas failas]...]\n"
+msgstr "       %s [parametrai] --build-list [[vardas failas]...]\n"
 
 #: ../exo-csource/main.c:287
 #, c-format
@@ -651,7 +651,7 @@ msgstr "Nėra piktogramos"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:412
 msgid "Options:"
-msgstr "Parinktys:"
+msgstr "Parametrai:"
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -666,7 +666,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Pasirinkite šią parinktį norėdami įjungti paleidimo pranešimą, kai komanda paleidžiama iš failų tvarkytuvės ar meniu. Ne visos programos palaiko paleidimo pranešimą."
+msgstr "Pasirinkite šį parametrą, norėdami įjungti paleidimo pranešimą, kai komanda paleidžiama iš failų tvarkytuvės ar meniu. Ne visos programos palaiko paleidimo pranešimą."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -678,7 +678,7 @@ msgstr "Paleisti _terminale"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:436
 msgid "Select this option to run the command in a terminal window."
-msgstr "Pasirinkite šią parinktį, jei norite, kad komanda būtų paleista terminalo lange."
+msgstr "Pasirinkite šį parametrą, jei norite, kad komanda būtų paleista terminalo lange."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:592
@@ -1325,11 +1325,11 @@ msgstr "  --launch TIPAS [PARAMETRAI...]       Paleisti pageidaujamą TIPO progr
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory APLANKAS       Numatytasis darbinis aplankas programoms\n                                      naudojant --launch parinktį."
+msgstr "  --working-directory KATALOGAS       Numatytasis darbinis katalogas programoms\n                                      naudojant --launch parametrą."
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr "Šie tipai yra palaikomi --launch parinkties:"
+msgstr "Šie tipai yra palaikomi --launch parametro:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
@@ -1349,7 +1349,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr "Jei nenurodysite --launch parinkties, exo-open atvers visus nurodytus URL\nsu jų numatytomis programomis. Jei nurodysite --launch parinktį, galėsite\npasirinkti pageidaujamą programą kurią norėsite vykdyti ir programai perduoti\nparametrus (t.y. terminalo emuliatoriuj galėsite perduoti komandą kurią vykdyti)."
+msgstr "Jei nenurodysite --launch parametro, exo-open atvers visus nurodytus URL\nsu jų numatytomis programomis. Jei nurodysite --launch parametrą, galėsite\npasirinkti pageidaujamą programą kurią norėsite vykdyti ir programai perduoti\nparametrus (t.y. terminalo emuliatoriui galėsite perduoti komandą kurią vykdyti)."
 
 #: ../exo-open/main.c:195
 #, c-format
