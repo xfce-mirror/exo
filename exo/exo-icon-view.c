@@ -1801,9 +1801,11 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   if (gtk_adjustment_get_value (vadjustment) > gtk_adjustment_get_upper (vadjustment) - gtk_adjustment_get_page_size (vadjustment))
     gtk_adjustment_set_value (vadjustment, MAX (0, gtk_adjustment_get_upper (vadjustment) - gtk_adjustment_get_page_size (vadjustment)));
 
-  /* we need to emit "changed" ourselves */
+  /* Prior to GTK 3.18, we need to emit "changed" ourselves */
+#if !GTK_CHECK_VERSION (3, 18, 0)
   gtk_adjustment_changed (hadjustment);
   gtk_adjustment_changed (vadjustment);
+#endif
 }
 
 
@@ -2933,14 +2935,21 @@ exo_icon_view_update_rubberband (gpointer data)
   GdkRectangle new_area;
   GdkRectangle common;
   GdkRegion *invalid_region;
-#if GTK_CHECK_VERSION (3, 0, 0)
+#if GTK_CHECK_VERSION (3, 16, 0)
+  GdkSeat *seat;
+  GdkDevice        *pointer_dev;
+#elif GTK_CHECK_VERSION (3, 0, 0)
   GdkDeviceManager *device_manager;
   GdkDevice        *pointer_dev;
 #endif
 
   icon_view = EXO_ICON_VIEW (data);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
+#if GTK_CHECK_VERSION (3, 16, 0)
+  seat = gdk_display_get_default_seat (gdk_window_get_display (icon_view->priv->bin_window));
+  pointer_dev = gdk_seat_get_pointer (seat);
+  gdk_window_get_device_position (icon_view->priv->bin_window, pointer_dev, &x, &y, NULL);
+#elif GTK_CHECK_VERSION (3, 0, 0)
   device_manager = gdk_display_get_device_manager (gdk_window_get_display (icon_view->priv->bin_window));
   pointer_dev = gdk_device_manager_get_client_pointer (device_manager);
   gdk_window_get_device_position (icon_view->priv->bin_window, pointer_dev, &x, &y, NULL);
@@ -3554,20 +3563,30 @@ exo_icon_view_set_adjustment_upper (GtkAdjustment *adj,
   if (upper != gtk_adjustment_get_upper (adj))
     {
       gdouble min = MAX (0.0, upper - gtk_adjustment_get_page_size (adj));
+#if !GTK_CHECK_VERSION (3, 18, 0)
       gboolean value_changed = FALSE;
+#endif
 
       gtk_adjustment_set_upper (adj, upper);
 
       if (gtk_adjustment_get_value (adj) > min)
         {
           gtk_adjustment_set_value (adj, min);
+#if !GTK_CHECK_VERSION (3, 18, 0)
           value_changed = TRUE;
+#endif
         }
 
+      /* Prior to GTK 3.18, we need to emit "changed" ourselves */
+#if !GTK_CHECK_VERSION (3, 18, 0)
       gtk_adjustment_changed (adj);
+#endif
 
+      /* Prior to GTK 3.18, we need to emit "value-changed" ourselves */
+#if !GTK_CHECK_VERSION (3, 18, 0)
       if (value_changed)
         gtk_adjustment_value_changed (adj);
+#endif
     }
 }
 
@@ -5194,8 +5213,11 @@ exo_icon_view_scroll_to_item (ExoIconView     *icon_view,
                                        x + item->area.x + item_width + focus_width - allocation.width));
     }
 
+  /* Prior to GTK 3.18, we need to emit "changed" ourselves */
+#if !GTK_CHECK_VERSION (3, 18, 0)
   gtk_adjustment_changed (icon_view->priv->hadjustment);
   gtk_adjustment_changed (icon_view->priv->vadjustment);
+#endif
 }
 
 
@@ -6586,8 +6608,11 @@ exo_icon_view_scroll_to_path (ExoIconView *icon_view,
                          gtk_adjustment_get_upper (icon_view->priv->hadjustment) - gtk_adjustment_get_page_size (icon_view->priv->hadjustment));
           gtk_adjustment_set_value (icon_view->priv->hadjustment, value);
 
+          /* Prior to GTK 3.18, we need to emit "changed" ourselves */
+#if !GTK_CHECK_VERSION (3, 18, 0)
           gtk_adjustment_changed (icon_view->priv->hadjustment);
           gtk_adjustment_changed (icon_view->priv->vadjustment);
+#endif
         }
       else
         {
@@ -7141,7 +7166,16 @@ exo_icon_view_autoscroll (ExoIconView *icon_view)
   gint hoffset, voffset;
   gfloat value;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
+#if GTK_CHECK_VERSION (3, 16, 0)
+  GdkSeat          *seat;
+  GdkDevice        *pointer_dev;
+
+  seat = gdk_display_get_default_seat (gdk_window_get_display (gtk_widget_get_window (GTK_WIDGET (icon_view))));
+  pointer_dev = gdk_seat_get_pointer (seat);
+
+  gdk_window_get_device_position (gtk_widget_get_window (GTK_WIDGET (icon_view)), pointer_dev, &px, &py, NULL);
+  gdk_window_get_geometry (gtk_widget_get_window (GTK_WIDGET (icon_view)), &x, &y, &width, &height);
+#elif GTK_CHECK_VERSION (3, 0, 0)
   GdkDeviceManager *dev_manager;
   GdkDevice        *pointer_dev;
 

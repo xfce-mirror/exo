@@ -595,10 +595,6 @@ exo_die_editor_icon_clicked (GtkWidget    *button,
                                          _("_OK"), GTK_RESPONSE_ACCEPT,
                                          NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
-  gtk_dialog_set_alternative_button_order (GTK_DIALOG (chooser),
-                                           GTK_RESPONSE_ACCEPT,
-                                           GTK_RESPONSE_CANCEL,
-                                           -1);
 
   /* check if we have an icon to set for the chooser */
   if (G_LIKELY (!exo_str_is_empty (editor->icon)))
@@ -643,10 +639,6 @@ exo_die_editor_path_clicked (GtkWidget    *button,
                                          _("_OK"), GTK_RESPONSE_ACCEPT,
                                          NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
-  gtk_dialog_set_alternative_button_order (GTK_DIALOG (chooser),
-                                           GTK_RESPONSE_ACCEPT,
-                                           GTK_RESPONSE_CANCEL,
-                                           -1);
 
   /* check if we have a path to set for the chooser */
   if (G_LIKELY (!exo_str_is_empty (editor->path)))
@@ -1332,8 +1324,3 @@ exo_die_editor_set_terminal (ExoDieEditor *editor,
       g_object_notify (G_OBJECT (editor), "terminal");
     }
 }
-
-
-
-
-

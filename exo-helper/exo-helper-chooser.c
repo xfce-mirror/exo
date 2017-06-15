@@ -609,7 +609,7 @@ menu_activate_other (GtkWidget        *item,
 }
 
 
-
+#if !GTK_CHECK_VERSION (3, 22, 0)
 static void
 menu_position (GtkMenu  *menu,
                gint     *x,
@@ -648,6 +648,7 @@ menu_position (GtkMenu  *menu,
 
   *push_in = TRUE;
 }
+#endif
 
 
 
@@ -787,7 +788,11 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
 
   /* run the loop for the menu */
   gtk_grab_add (menu);
+#if GTK_CHECK_VERSION (3, 22, 0)
+  gtk_menu_popup_at_widget (GTK_MENU (menu), button, GDK_GRAVITY_SOUTH_WEST, GDK_GRAVITY_NORTH_WEST, NULL);
+#else
   gtk_menu_popup (GTK_MENU (menu), NULL, NULL, menu_position, button, 0, gtk_get_current_event_time ());
+#endif
   g_main_loop_run (loop);
   gtk_grab_remove (menu);
   g_main_loop_unref (loop);

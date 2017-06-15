@@ -309,5 +309,3 @@ exo_helper_chooser_dialog_get_plug_child (ExoHelperChooserDialog *dialog)
 {
   return dialog->plug_child;
 }
-
-

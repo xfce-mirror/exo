@@ -205,7 +205,9 @@ exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
                                gpointer        user_data)
 {
   GtkWidget *message;
+#if !GTK_CHECK_VERSION (3, 22, 0)
   GdkScreen *screen;
+#endif
   GError    *error = NULL;
   gchar     *uri, *escaped;
 
@@ -224,11 +226,15 @@ exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
       uri = g_strdup (address);
     }
 
+  /* try to open the url on the given screen */
+#if GTK_CHECK_VERSION (3, 22, 0)
+  if (!gtk_show_uri_on_window (GTK_WINDOW(about_dialog), uri, gtk_get_current_event_time (), &error))
+#else
   /* determine the screen from the about dialog */
   screen = gtk_widget_get_screen (GTK_WIDGET (about_dialog));
 
-  /* try to open the url on the given screen */
   if (!gtk_show_uri (screen, uri, gtk_get_current_event_time (), &error))
+#endif
     {
       /* make sure to initialize i18n support first,
        * so we'll see a translated message.

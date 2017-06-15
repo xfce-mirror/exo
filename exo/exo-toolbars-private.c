@@ -364,7 +364,3 @@ _exo_toolbars_unset_drag_cursor (GtkWidget *widget)
   if (G_LIKELY (gtk_widget_get_window (widget) != NULL))
     gdk_window_set_cursor (gtk_widget_get_window (widget), NULL);
 }
-
-
-
-
