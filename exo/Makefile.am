@@ -114,7 +114,6 @@ pkgconfig_DATA = exo-$(LIBEXO_VERSION_API).pc
 ##
 ## GTK+ 3 support library
 ##
-if ENABLE_GTK3_LIBRARY
 
 libexo_2_includedir = $(includedir)/exo-2/exo
 
@@ -187,8 +186,6 @@ libexo_2_la_LIBADD =							\
 	-lm
 
 pkgconfig_DATA += exo-2.pc
-
-endif
 
 ##
 ## Rules to auto-generate built sources
