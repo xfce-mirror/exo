@@ -193,6 +193,8 @@ dnl *** Check for linker optimizations ***
 dnl **************************************
 XDT_FEATURE_LINKER_OPTS()
 
+CFLAGS="$CFLAGS -Wno-error"
+
 dnl ****************************************
 dnl *** Check for ELF visibility support ***
 dnl ****************************************
