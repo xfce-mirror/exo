@@ -42,6 +42,7 @@
 #include <glib.h>
 #include <glib/gi18n-lib.h>
 #include <glib/gprintf.h>
+#include <glib/gstdio.h>
 
 
 
@@ -63,6 +64,7 @@ static gboolean     gen_stripcomments = FALSE;
 static gboolean     gen_stripcontent = FALSE;
 static const gchar *gen_linkage = "static ";
 static const gchar *gen_varname = "my_data";
+static const gchar *out_name = NULL;
 
 
 
@@ -130,6 +132,23 @@ parse_args (gint    *argc_p,
       else if (strcmp (argv[n], "--strip-content") == 0)
         {
           gen_stripcontent = TRUE;
+          argv[n] = NULL;
+        }
+      else if (strcmp (argv[n], "--output") == 0
+        || strncmp (argv[n], "--output=", 9) == 0)
+        {
+          s = argv[n] + 8;
+
+          if (G_LIKELY (*s == '='))
+            {
+              out_name = g_strdup (s + 1);
+            }
+          else if (n + 1 < argc)
+            {
+              out_name = g_strdup (argv[n + 1]);
+              argv[n++] = NULL;
+            }
+
           argv[n] = NULL;
         }
     }
@@ -292,6 +311,7 @@ print_usage (void)
   g_print (_("  --build-list      Parse (name, file) pairs\n"));
   g_print (_("  --strip-comments  Remove comments from XML files\n"));
   g_print (_("  --strip-content   Remove node contents from XML files\n"));
+  g_print (_("  --output=filename Write generated csource to specified file\n"));
   g_print ("\n");
 }
 
@@ -324,6 +344,7 @@ main (int argc, char **argv)
   gchar   *data;
   gsize    length;
   gint     n;
+  FILE    *out_file;
 
   bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
 
@@ -348,6 +369,17 @@ main (int argc, char **argv)
           return EXIT_FAILURE;
         }
 
+      if (out_name == NULL)
+          out_file = stdout;
+      else
+        {
+          out_file = g_fopen (out_name, "w");
+          if (out_file == NULL) {
+            g_fprintf (stderr, "Failed to open output file \"%s\"\n", out_name);
+            return EXIT_FAILURE;
+          }
+        }
+        
 #ifdef G_OS_WIN32
       filename = g_local_to_utf8 (argv[1], -1, NULL, NULL, NULL);
 #else
@@ -362,7 +394,10 @@ main (int argc, char **argv)
           return EXIT_FAILURE;
         }
 
-      print_csource (stdout, data, length, filename);
+      print_csource (out_file, data, length, filename);
+
+      if (out_file != NULL && out_file != stdout)
+        fclose (out_file);
 
       g_free (data);
     }
