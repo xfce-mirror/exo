@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-15 06:30+0200\n"
-"PO-Revision-Date: 2017-06-15 10:37+0000\n"
+"POT-Creation-Date: 2017-06-16 06:30+0200\n"
+"PO-Revision-Date: 2017-06-16 13:12+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/xfce/exo/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -759,7 +759,7 @@ msgstr "Vooringestelde URL bij het maken van een nieuwe koppeling"
 msgid "Preset icon when creating a desktop file"
 msgstr "Vooringesteld pictogram bij het maken van een nieuw bureaubladbestand"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "Druk versie-informatie af en sluit af"
 
@@ -1022,6 +1022,7 @@ msgid "No command specified"
 msgstr "Geen opdracht opgegeven"
 
 #: ../exo-helper/exo-helper.c:705 ../exo-helper/exo-helper.c:743
+#: ../exo-helper/exo-helper.c:810 ../exo-helper/exo-helper.c:848
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Kon %s niet openen om naar te schrijven"
@@ -1047,51 +1048,56 @@ msgstr "Kon de standaard-bestandbeheerder niet uitvoeren"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Kon het standaard-terminalvenster niet uitvoeren"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Open het dialoogscherm voor configuratie\nvan voorkeurtoepassingen"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "Settings manager socket"
 msgstr "Contactpunt voor instellingenbeheerder"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "Start de standaardhulp van TYPE met de optionele PARAMETER, waar TYPE één van de volgende waarden is."
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75 ../exo-helper/main.c:76
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
-#: ../exo-helper/main.c:103
+#: ../exo-helper/main.c:76
 msgid ""
-"The following TYPEs are supported for the --launch command:\n"
+"Query the default helper of TYPE, where TYPE is one of the following values."
+msgstr "Zoek de standaardhelper van TYPE, waar TYPE één der volgende waarden is."
+
+#: ../exo-helper/main.c:105
+msgid ""
+"The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "De volgende TYPEs worden ondersteund voor de --launch opdracht:\n\n WebBrowser - De voorkeurs-webbladeraar.\n MailReader - De voorkeurs-emaillezer.\n FileManager - De voorkeurs-bestandbeheerder.\n TerminalEmulator - Het voorkeurs-terminalvenster."
+msgstr "De volgende TYPEs worden ondersteund voor de opdrachten --launch en --query:\n\n  WebBrowser       - De webverkenner van uw voorkeur.\n  MailReader       - Het e-mailprogramma van uw voorkeur.\n  FileManager      - De bestandverkenner van uw voorkeur.\n  TerminalEmulator - Het terminalvenster van uw voorkeur."
 
-#: ../exo-helper/main.c:113
+#: ../exo-helper/main.c:115
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Tik '%s --help' voor gebruik"
 
-#: ../exo-helper/main.c:172
+#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Ongeldig hulptype '%s'"
 
-#: ../exo-helper/main.c:220
+#: ../exo-helper/main.c:224
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1105,6 +1111,11 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nAuteursrecht (c) 2003-2006\n os-cillation e.K. Alle rechten voorbehouden.\n\nGeschreven door Benedikt Meurer <benny@xfce.org>.\n\nGebouwd met Gtk+-%d.%d.%d, met gebruikmaking van Gtk+-%d.%d.%d.\n\nGelieve fouten te melden aan <%s>.\n"
+
+#: ../exo-helper/main.c:250
+#, c-format
+msgid "No helper defined for \"%s\"."
+msgstr "Geen helper bepaald voor '%s'."
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
