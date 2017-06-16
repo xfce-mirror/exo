@@ -5166,6 +5166,25 @@ exo_icon_view_scroll_to_item (ExoIconView     *icon_view,
   gint focus_width;
   gint item_width, item_height;
   GtkAllocation allocation;
+  GtkTreePath *path;
+
+  /* Delay scrolling if either not realized or pending layout() */
+  if (!gtk_widget_get_realized (GTK_WIDGET(icon_view)) || icon_view->priv->layout_idle_id != 0)
+    {
+      /* release the previous scroll_to_path reference */
+      if (G_UNLIKELY (icon_view->priv->scroll_to_path != NULL))
+        gtk_tree_row_reference_free (icon_view->priv->scroll_to_path);
+
+      /* remember a reference for the new path and settings */
+
+      path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
+      icon_view->priv->scroll_to_path = gtk_tree_row_reference_new_proxy (G_OBJECT (icon_view), icon_view->priv->model, path);
+      gtk_tree_path_free (path);
+
+      icon_view->priv->scroll_to_use_align = FALSE;
+
+      return;
+    }
 
   gtk_widget_style_get (GTK_WIDGET (icon_view),
                         "focus-line-width", &focus_width,
