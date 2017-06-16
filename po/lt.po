@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-12 06:30+0200\n"
-"PO-Revision-Date: 2017-04-13 13:37+0000\n"
+"POT-Creation-Date: 2017-06-16 06:30+0200\n"
+"PO-Revision-Date: 2017-06-16 21:38+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/exo/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr "Nepavyko perskaityti failo „%s“: %s"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Nepavyko įkelti paveikslo „%s“: nežinoma priežastis, tikriausiai sugadintas failas"
 
-#: ../exo/exo-gtk-extensions.c:242
+#: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Nepavyko atverti „%s“."
@@ -139,86 +139,86 @@ msgid "Cursor item text color"
 msgstr "Žymeklio elemento teksto spalva"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:108
+#: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Action Icons"
 msgstr "Veiksmų piktogramos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:110
+#: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Animations"
 msgstr "Animacijos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:112
+#: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Application Icons"
 msgstr "Programų piktogramos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:114
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Menu Icons"
 msgstr "Meniu piktogramos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:116
+#: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Device Icons"
 msgstr "Įrenginių piktogramos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:118
+#: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Emblems"
 msgstr "Emblemos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:120
+#: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Emoticons"
 msgstr "Jaustukai"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:122
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "International Denominations"
 msgstr "Tarptautiniai nominalai"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:124
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "File Type Icons"
 msgstr "Failų tipų piktogramos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:126
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Location Icons"
 msgstr "Vietų pikrogramos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:128
+#: ../exo/exo-icon-chooser-dialog.c:125
 msgid "Status Icons"
 msgstr "Būsenos piktogramos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:130
+#: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Uncategorized Icons"
 msgstr "Nekategarizuotos piktogramos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:134
+#: ../exo/exo-icon-chooser-dialog.c:131
 msgid "All Icons"
 msgstr "Visos piktogramos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:138 ../exo/exo-icon-chooser-dialog.c:316
+#: ../exo/exo-icon-chooser-dialog.c:135 ../exo/exo-icon-chooser-dialog.c:311
 msgid "Image Files"
 msgstr "Paveikslų failai"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:222
+#: ../exo/exo-icon-chooser-dialog.c:219
 msgid "Select _icon from:"
 msgstr "Pasirinkite _piktogramą iš:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:246
+#: ../exo/exo-icon-chooser-dialog.c:243
 msgid "_Search icon:"
 msgstr "_Ieškoti piktogramos:"
 
-#: ../exo/exo-icon-chooser-dialog.c:266
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Clear search field"
 msgstr "Išvalyti paieškos eilutę"
 
@@ -302,11 +302,11 @@ msgstr "Modelio stulpelis, naudojamas absoliutaus, atvaizduojamo paveikslo kelio
 
 #: ../exo/exo-icon-view.c:930
 msgid "Reorderable"
-msgstr "Perrūšiuojamas"
+msgstr "Pertvarkomas"
 
 #: ../exo/exo-icon-view.c:931
 msgid "View is reorderable"
-msgstr "Vaizdas yra rūšiuojamas"
+msgstr "Rodinys yra pertvarkomas"
 
 #: ../exo/exo-icon-view.c:946
 msgid "Row Spacing"
@@ -332,19 +332,19 @@ msgstr "Pasirinkimo veiksena"
 msgid "The selection mode"
 msgstr "Parinkimo veiksena"
 
-#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Vienkartis spustelėjimas"
 
-#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Ar elementas peržiūroje gali būti aktyvuotas vienkarčiu spustelėjimu"
 
-#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Vienkarčio spustelėjimo trukmė"
 
-#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -472,58 +472,63 @@ msgstr "Paleisti komandą iš naujo"
 msgid "Session restart command"
 msgstr "Seanso paleidimo iš naujo komanda"
 
-#: ../exo-csource/main.c:284
+#: ../exo-csource/main.c:303
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Naudojimas: %s [parametrai] [failas]\n"
 
-#: ../exo-csource/main.c:285
+#: ../exo-csource/main.c:304
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [parametrai] --build-list [[vardas failas]...]\n"
 
-#: ../exo-csource/main.c:287
+#: ../exo-csource/main.c:306
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help          Parodyti šį pagalbos pranešimą ir išeiti\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:307
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
 msgstr "  -V,  --version     Parodyti versiją ir išeiti\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:308
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Generuoti išorinius simbolius\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:309
 #, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Generuoti statinius simbolius\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:310
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifikatorius C macro/kintamojo vardas\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:311
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Apdoroti (vardas, failas) poras\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:312
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Pašalinti komentarus iš XML failų\n"
 
-#: ../exo-csource/main.c:294
+#: ../exo-csource/main.c:313
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Pašalinti mazgo turinį iš XML failų\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
-#: ../exo-open/main.c:505
+#: ../exo-csource/main.c:314
+#, c-format
+msgid "  --output=filename Write generated csource to specified file\n"
+msgstr "  --output=failo_pavadinimas Rašyti sugeneruotą csource į nurodytą failą\n"
+
+#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:195
+#: ../exo-open/main.c:509
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -533,8 +538,8 @@ msgid ""
 "\n"
 msgstr "Autorinės teisės (c) %s\n        os-cillation e.K. Visos teisės saugomos.\n\nSukūrė Benedikt Meurer <benny@xfce.org>.\n\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
-#: ../exo-open/main.c:509
+#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:199
+#: ../exo-open/main.c:513
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -544,11 +549,11 @@ msgid ""
 "\n"
 msgstr "%s platinama BE JOKIŲ GARANTIJŲ,\nGali platinti kopijas %s pagal\nGNU Lesser General Public License sąlygas, kurias galite rasti\n%s pradinio kodo pakete.\n\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
-#: ../exo-open/main.c:513
+#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:203
+#: ../exo-open/main.c:517
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "Apie klaidas praneškite <%s>.\n"
+msgstr "Prašome apie klaidas pranešti <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
@@ -557,7 +562,7 @@ msgstr "Pasirinkite programą"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
-#: ../exo-desktop-item-edit/exo-die-editor.c:642
+#: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
 #: ../exo-helper/exo-helper-chooser.c:386
 #: ../exo-helper/exo-helper-chooser.c:531
@@ -645,7 +650,7 @@ msgstr "P_iktograma:"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1235
+#: ../exo-desktop-item-edit/exo-die-editor.c:1227
 msgid "No icon"
 msgstr "Nėra piktogramos"
 
@@ -686,14 +691,14 @@ msgid "Select an icon"
 msgstr "Pasirinkite piktogramą"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
-#: ../exo-desktop-item-edit/exo-die-editor.c:643
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
 #: ../exo-helper/exo-helper-chooser.c:532
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_Gerai"
 
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-desktop-item-edit/exo-die-editor.c:635
 msgid "Select a working directory"
 msgstr "Pasirinkite darbinį aplanką"
 
@@ -754,7 +759,7 @@ msgstr "Išankstinių nustatymų rinkinio URL kuriant nuorodą"
 msgid "Preset icon when creating a desktop file"
 msgstr "Išankstinių nustatymų rinkinio piktograma darbalaukio failo kūrimui"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "Parodyti versijos informaciją ir išeiti"
 
@@ -975,11 +980,11 @@ msgstr "Pasirinkite programą kurią naudosite kaip\nnumatytąjį terminalo emul
 msgid "Browse the file system to choose a custom command."
 msgstr "Naršyti failų sistemą pasirinktinės komandos pasirinkimui."
 
-#: ../exo-helper/exo-helper-chooser.c:764
+#: ../exo-helper/exo-helper-chooser.c:769
 msgid "_Other..."
 msgstr "_Kita..."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:770
 msgid "Use a custom application which is not included in the above list."
 msgstr "Naudoti pasirinktinę programą kurios nėra aukščiau esančiame sąraše."
 
@@ -1011,12 +1016,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Pasirinkite pageidaujamą terminalo emuliatorių\nir spustelėkite Gerai, norėdami tęsti."
 
-#: ../exo-helper/exo-helper.c:384
+#: ../exo-helper/exo-helper.c:388
 #, c-format
 msgid "No command specified"
 msgstr "Nenurodyta komanda"
 
-#: ../exo-helper/exo-helper.c:697 ../exo-helper/exo-helper.c:735
+#: ../exo-helper/exo-helper.c:705 ../exo-helper/exo-helper.c:743
+#: ../exo-helper/exo-helper.c:810 ../exo-helper/exo-helper.c:848
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Nepavyko atverti %s rašymui"
@@ -1042,51 +1048,56 @@ msgstr "Nepavyko paleisti numatytosios failų tvarkytuvės"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Nepavyko paleisti numatytojo terminalo emuliatoriaus"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Atverti pageidaujamų programų\nkonfigūracijos dialogą"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "Settings manager socket"
 msgstr "Nustatymų tvarkytuvės lizdas"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "SOCKET ID"
 msgstr "LIZDO ID"
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "Paleisti numatytąjį TIPO padėjėją su nebūtinu PARAMETRU, TIPAS gali būti viena iš šių reikšmių."
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75 ../exo-helper/main.c:76
 msgid "TYPE [PARAMETER]"
 msgstr "TIPAS [PARAMETRAS]"
 
-#: ../exo-helper/main.c:103
+#: ../exo-helper/main.c:76
 msgid ""
-"The following TYPEs are supported for the --launch command:\n"
+"Query the default helper of TYPE, where TYPE is one of the following values."
+msgstr "Užklausti numatytąjį TIPO pagelbiklį, kuriame TIPAS yra viena iš šių reikšmių."
+
+#: ../exo-helper/main.c:105
+msgid ""
+"The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Šie tipai palaikomi --launch komandos:\n\n  WebBrowser       - Pageidaujama saityno naršyklė.\n  MailReader       - Pageidaujama pašto programa.\n  FileManager      - Pageidaujama failų tvarkytuvė.\n  TerminalEmulator - Pageidaujamas terminalo emuliatorius."
+msgstr "Komandoms --launch ir --query yra palaikomi šie TIPAI:\n\n  WebBrowser       - Pageidaujama saityno naršyklė.\n  MailReader       - Pageidaujama pašto programa.\n  FileManager      - Pageidaujama failų tvarkytuvė.\n  TerminalEmulator - Pageidaujamas terminalo emuliatorius."
 
-#: ../exo-helper/main.c:113
+#: ../exo-helper/main.c:115
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Bandykite „%s --help“ dėl naudojimo."
 
-#: ../exo-helper/main.c:172
+#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Netinkamas padėjėjo tipas „%s“"
 
-#: ../exo-helper/main.c:220
+#: ../exo-helper/main.c:224
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1100,6 +1111,11 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nAutorinės teisės (c) 2003-2006\n        os-cillation e.K. Visos teisės saugomos.\n\nSukūrė Benedikt Meurer <benny@xfce.org>.\n\nSukompiliuota su Gtk+-%d.%d.%d, veikia Gtk+-%d.%d.%d.\n\nApie klaidas praneškite <%s>.\n"
+
+#: ../exo-helper/main.c:250
+#, c-format
+msgid "No helper defined for \"%s\"."
+msgstr "Nėra apibrėžta jokio pagelbiklio, skirto \"%s\"."
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1183,11 +1199,11 @@ msgstr "Konqueror saityno naršyklė"
 
 #: ../exo-helper/helpers/links.desktop.in.in.h:1
 msgid "Links Text Browser"
-msgstr "Links Text Browser"
+msgstr "Links tekstinė naršyklė"
 
 #: ../exo-helper/helpers/lynx.desktop.in.in.h:1
 msgid "Lynx Text Browser"
-msgstr "Lynx Text Browser"
+msgstr "Lynx tekstinė naršyklė"
 
 #: ../exo-helper/helpers/midori.desktop.in.in.h:1
 msgid "Midori"
@@ -1363,12 +1379,12 @@ msgstr "Darbalaukio failų paleidimas nepalaikomas, kai %s yra sukompiliuota be 
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Nepavyko paleisti pageidaujamos programos kategorijai „%s“."
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:590
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Nepavyko nustatyti URI schemos „%s“."
 
-#: ../exo-open/main.c:600
+#: ../exo-open/main.c:604
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Nepavyko atverti URI „%s“."
