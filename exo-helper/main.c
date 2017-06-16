@@ -63,6 +63,7 @@ main (int argc, char **argv)
   gboolean           opt_version = FALSE;
   gboolean           opt_configure = FALSE;
   gchar             *opt_launch_type = NULL;
+  gchar             *opt_query_type = NULL;
   Window             opt_socket_id = 0;
 
   GOptionContext    *opt_ctx;
@@ -72,6 +73,7 @@ main (int argc, char **argv)
     { "configure", 'c', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &opt_configure, N_("Open the Preferred Applications\nconfiguration dialog"), NULL, },
     { "socket-id", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &opt_socket_id, N_("Settings manager socket"), N_("SOCKET ID"), },
     { "launch", 'l', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &opt_launch_type, N_("Launch the default helper of TYPE with the optional PARAMETER, where TYPE is one of the following values."), N_("TYPE [PARAMETER]"), },
+    { "query", 'q', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &opt_query_type, N_("Query the default helper of TYPE, where TYPE is one of the following values."), N_("TYPE [PARAMETER]"), },
     { NULL, },
   };
 
@@ -100,7 +102,7 @@ main (int argc, char **argv)
    * not accept localized TYPEs.
    */
   g_option_context_set_description (opt_ctx,
-                                    _("The following TYPEs are supported for the --launch command:\n\n"
+                                    _("The following TYPEs are supported for the --launch and --query commands:\n\n"
                                       "  WebBrowser       - The preferred Web Browser.\n"
                                       "  MailReader       - The preferred Mail Reader.\n"
                                       "  FileManager      - The preferred File Manager.\n"
@@ -229,6 +231,27 @@ main (int argc, char **argv)
                  GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION,
                  gtk_major_version, gtk_minor_version, gtk_micro_version,
                  PACKAGE_BUGREPORT);
+    }
+  else if (opt_query_type != NULL)
+    {
+      /* try to parse the type */
+      if (!exo_helper_category_from_string (opt_query_type, &category))
+        {
+          g_warning (_("Invalid helper type \"%s\""), opt_query_type);
+          return EXIT_FAILURE;
+        }
+
+      /* determine the default helper for the category */
+      database = exo_helper_database_get ();
+      helper = exo_helper_database_get_default (database, category);
+
+      if (G_UNLIKELY (helper == NULL))
+        {
+          g_printerr (_("No helper defined for \"%s\"."), opt_launch_type);
+          return EXIT_FAILURE;
+        }
+
+      g_print ("%s\n", exo_helper_get_id (helper));
     }
   else
     {
