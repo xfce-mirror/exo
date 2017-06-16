@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-15 06:30+0200\n"
-"PO-Revision-Date: 2017-06-15 17:42+0000\n"
+"POT-Creation-Date: 2017-06-16 06:30+0200\n"
+"PO-Revision-Date: 2017-06-16 11:54+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/exo/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -758,7 +758,7 @@ msgstr "Foruddefineret URL når man opretter en henvisning"
 msgid "Preset icon when creating a desktop file"
 msgstr "Foruddefineret ikon når man opretter en skrivebordsfil"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "Udskriv versionsinformation og afslut"
 
@@ -1021,6 +1021,7 @@ msgid "No command specified"
 msgstr "Ingen kommando valgt"
 
 #: ../exo-helper/exo-helper.c:705 ../exo-helper/exo-helper.c:743
+#: ../exo-helper/exo-helper.c:810 ../exo-helper/exo-helper.c:848
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Kunne ikke åbne %s til skrivning"
@@ -1046,51 +1047,56 @@ msgstr "Kunne ikke køre forvalgt filhåndtering"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Kunne ikke køre foretrukne terminal-emulator"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Åbn de foretrukne programmers\nindstillingsdialog"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "Settings manager socket"
 msgstr "Sokkel til indstillingshåndtering"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "SOCKET ID"
 msgstr "SOKKEL-ID"
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "Start standardhjælpen af TYPE med mulige PARAMETRE, hvor TYPE er en af følgende værdier."
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75 ../exo-helper/main.c:76
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETRE]"
 
-#: ../exo-helper/main.c:103
+#: ../exo-helper/main.c:76
 msgid ""
-"The following TYPEs are supported for the --launch command:\n"
+"Query the default helper of TYPE, where TYPE is one of the following values."
+msgstr ""
+
+#: ../exo-helper/main.c:105
+msgid ""
+"The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "De følgende TYPEr er understøttet for --launch kommandoen:\n\n  WebBrowser       - Den foretrukne webbrowser.\n  MailReader       - Det foretrukne postprogram.\n  Filemanager      - Den foretrukne filhåndtering.\n  TerminalEmulator - Den foretrukne terminal-emulator."
+msgstr ""
 
-#: ../exo-helper/main.c:113
+#: ../exo-helper/main.c:115
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Skriv \"%s --help\" for anvendelse."
 
-#: ../exo-helper/main.c:172
+#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Ugyldig hjælpertype \"%s\""
 
-#: ../exo-helper/main.c:220
+#: ../exo-helper/main.c:224
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1104,6 +1110,11 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nOphavsret (c) 2003-2006\n        os-cillation e.K. Alle rettigheder forbeholdes.\n\nSkrevet af Benedikt Meurer <benny@xfce.org>.\n\nKompileret med  Gtk+-%d.%d.%d, kørende Gtk+-%d.%d.%d.\n\nRapportér venligst fejl til <%s>.\n"
+
+#: ../exo-helper/main.c:250
+#, c-format
+msgid "No helper defined for \"%s\"."
+msgstr "Ingen hjælper defineret for \"%s\"."
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
