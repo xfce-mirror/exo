@@ -186,6 +186,8 @@ main (int argc, char **argv)
             gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
           if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_OK)
             helper = exo_helper_database_get_default (database, category);
+          else
+            exo_helper_database_clear_default (database, category, NULL);
           gtk_widget_destroy (dialog);
 
           /* iterate the mainloop until the dialog is fully destroyed */

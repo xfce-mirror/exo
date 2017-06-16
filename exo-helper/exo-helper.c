@@ -774,6 +774,111 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
 
 
 
+/**
+ * exo_helper_database_clear_default:
+ * @database : an #ExoHelperDatabase.
+ * @category : an #ExoHelperCategory.
+ * @error    : return location for errors or %NULL.
+ *
+ * Clears the default #ExoHelper for @category in @database.
+ * Returns %TRUE on success, %FALSE if @error is set.
+ *
+ * Return value: %TRUE on success, %FALSE if @error is set.
+ *
+ * Since: 0.11.3
+ **/
+gboolean
+exo_helper_database_clear_default (ExoHelperDatabase *database,
+                                   ExoHelperCategory  category,
+                                   GError           **error)
+{
+  XfceRc       *rc, *desktop_file;
+  gchar        *key;
+  const gchar  *filename;
+  gchar       **mimetypes;
+  guint         i;
+  gchar        *path;
+
+  g_return_val_if_fail (category < EXO_HELPER_N_CATEGORIES, FALSE);
+  g_return_val_if_fail (EXO_IS_HELPER_DATABASE (database), FALSE);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  /* open the helpers.rc for writing */
+  rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "xfce4/helpers.rc", FALSE);
+  if (G_UNLIKELY (rc == NULL))
+    {
+      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_IO, _("Failed to open %s for writing"), "helpers.rc");
+      return FALSE;
+    }
+
+  /* save the new setting */
+  key = exo_helper_category_to_string (category);
+  xfce_rc_delete_entry (rc, key, FALSE);
+  xfce_rc_close (rc);
+  g_free (key);
+
+  /* get the desktop filename */
+  switch (category)
+    {
+      case EXO_HELPER_WEBBROWSER:
+        filename = "exo-web-browser.desktop";
+        break;
+
+      case EXO_HELPER_MAILREADER:
+        filename = "exo-mail-reader.desktop";
+        break;
+
+      case EXO_HELPER_FILEMANAGER:
+        filename = "exo-file-manager.desktop";
+        break;
+
+      default:
+        /* no mimetype support for terminals */
+        return TRUE;
+    }
+
+  /* open the mimeapp.list file to set the default handler of the mime type */
+  rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "mimeapps.list", FALSE);
+  if (G_UNLIKELY (rc == NULL))
+    {
+      /* deprecated location (glib < 2.41) */
+      rc = xfce_rc_config_open (XFCE_RESOURCE_DATA, "applications/mimeapps.list", FALSE);
+      if (G_UNLIKELY (rc == NULL))
+        {
+          g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_IO, _("Failed to open %s for writing"), "mimeapps.list");
+          return FALSE;
+        }
+    }
+
+  /* open the exo desktop file to read the mimetypes the file supports */
+  path = g_build_filename ("applications", filename, NULL);
+  desktop_file = xfce_rc_config_open (XFCE_RESOURCE_DATA, path, TRUE);
+  g_free (path);
+
+  if (G_UNLIKELY (desktop_file != NULL))
+    {
+      xfce_rc_set_group (desktop_file, "Desktop Entry");
+      mimetypes = xfce_rc_read_list_entry (desktop_file, "X-XFCE-MimeType", ";");
+      if (mimetypes != NULL)
+        {
+          xfce_rc_set_group (rc, "Added Associations");
+
+          for (i = 0; mimetypes[i] != NULL; i++)
+            if (!exo_str_is_empty (mimetypes[i]))
+              xfce_rc_delete_entry (rc, mimetypes[i], FALSE);
+          g_strfreev (mimetypes);
+        }
+
+      xfce_rc_close (desktop_file);
+    }
+
+  xfce_rc_close (rc);
+
+  return TRUE;
+}
+
+
+
 static gint
 helper_compare (gconstpointer a,
                 gconstpointer b)

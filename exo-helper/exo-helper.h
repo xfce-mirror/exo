@@ -72,6 +72,9 @@ gboolean            exo_helper_database_set_default     (ExoHelperDatabase *data
                                                          ExoHelperCategory  category,
                                                          ExoHelper         *helper,
                                                          GError           **error);
+gboolean            exo_helper_database_clear_default   (ExoHelperDatabase *database,
+                                                         ExoHelperCategory  category,
+                                                         GError           **error);
 GList              *exo_helper_database_get_all         (ExoHelperDatabase *database,
                                                          ExoHelperCategory  category);
 ExoHelper          *exo_helper_database_get_custom      (ExoHelperDatabase *database,
