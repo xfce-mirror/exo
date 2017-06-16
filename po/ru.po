@@ -11,13 +11,14 @@
 # Maxim Zenin <webmechanics@gmail.com>, 2006
 # NIkitaBelobrov <qvzqvz@gmail.com>, 2008
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2015-2016
+# Александр, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-12 06:30+0200\n"
-"PO-Revision-Date: 2016-09-24 21:21+0000\n"
-"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
+"POT-Creation-Date: 2017-06-15 06:30+0200\n"
+"PO-Revision-Date: 2017-06-15 18:35+0000\n"
+"Last-Translator: Александр\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/exo/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +75,7 @@ msgstr "Не удалось прочитать файл «%s»: %s"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Не удалось загрузить изображение «%s»: причина неизвестна, возможно файл изображения повреждён"
 
-#: ../exo/exo-gtk-extensions.c:242
+#: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Не удалось открыть «%s»."
@@ -144,86 +145,86 @@ msgid "Cursor item text color"
 msgstr "Цвет текста курсора"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:108
+#: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Action Icons"
 msgstr "Значки действий"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:110
+#: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Animations"
 msgstr "Анимация"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:112
+#: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Application Icons"
 msgstr "Значки приложений"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:114
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Menu Icons"
 msgstr "Значки меню"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:116
+#: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Device Icons"
 msgstr "Значки устройств"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:118
+#: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Emblems"
 msgstr "Эмблемы"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:120
+#: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Emoticons"
 msgstr "Смайлики"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:122
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "International Denominations"
 msgstr "Международные обозначения"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:124
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "File Type Icons"
 msgstr "Значки типов файлов"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:126
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Location Icons"
 msgstr "Значки места"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:128
+#: ../exo/exo-icon-chooser-dialog.c:125
 msgid "Status Icons"
 msgstr "Значки статуса"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:130
+#: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Uncategorized Icons"
 msgstr "Прочие значки"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:134
+#: ../exo/exo-icon-chooser-dialog.c:131
 msgid "All Icons"
 msgstr "Все значки"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:138 ../exo/exo-icon-chooser-dialog.c:316
+#: ../exo/exo-icon-chooser-dialog.c:135 ../exo/exo-icon-chooser-dialog.c:311
 msgid "Image Files"
 msgstr "Файлы изображений"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:222
+#: ../exo/exo-icon-chooser-dialog.c:219
 msgid "Select _icon from:"
 msgstr "Выбрать _значок из:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:246
+#: ../exo/exo-icon-chooser-dialog.c:243
 msgid "_Search icon:"
 msgstr "_Искать значок:"
 
-#: ../exo/exo-icon-chooser-dialog.c:266
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Clear search field"
 msgstr "Очистить поле поиска"
 
@@ -337,19 +338,19 @@ msgstr "Режим выделения"
 msgid "The selection mode"
 msgstr "Режим выделения"
 
-#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Одиночный щелчок"
 
-#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Активируются ли объекты при одиночном щелчке"
 
-#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Таймаут одиночного щелчка"
 
-#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -477,58 +478,63 @@ msgstr "Команда перезапуска"
 msgid "Session restart command"
 msgstr "Команда перезапуска сессии"
 
-#: ../exo-csource/main.c:284
+#: ../exo-csource/main.c:303
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Использование: %s [параметры] [файл]\n"
 
-#: ../exo-csource/main.c:285
+#: ../exo-csource/main.c:304
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [параметры] --build-list [[файл]...]\n"
 
-#: ../exo-csource/main.c:287
+#: ../exo-csource/main.c:306
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Показать эту справку и выйти\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:307
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
 msgstr "  -V, --version     Показать информацию о версии и выйти\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:308
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Генерировать extern символы\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:309
 #, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Генерировать статические символы\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:310
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifier Имя переменной или макроса С\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:311
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Разбор пар (имя, файл)\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:312
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Удалить комментарии из файлов XML\n"
 
-#: ../exo-csource/main.c:294
+#: ../exo-csource/main.c:313
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Удалить содержимое узлов из файлов XML\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
-#: ../exo-open/main.c:505
+#: ../exo-csource/main.c:314
+#, c-format
+msgid "  --output=filename Write generated csource to specified file\n"
+msgstr "  --output=filename Запись сгенерированного источника в указанный файл\n"
+
+#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:195
+#: ../exo-open/main.c:509
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -538,8 +544,8 @@ msgid ""
 "\n"
 msgstr "Copyright (c) %s\n        os-cillation e.K. Все права защищены.\n\nАвтор: Benedikt Meurer <benny@xfce.org>.\n\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
-#: ../exo-open/main.c:509
+#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:199
+#: ../exo-open/main.c:513
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -549,8 +555,8 @@ msgid ""
 "\n"
 msgstr "%s распространяется БЕЗ КАКОЙ-ЛИБО ГАРАНТИИ,\nразрешено распространение копий %s на условиях\nGNU Lesser General Public License, полный текст лицензии\nнаходится в пакете исходных кодов %s.\n\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
-#: ../exo-open/main.c:513
+#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:203
+#: ../exo-open/main.c:517
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Об ошибках сообщайте на <%s>.\n"
@@ -562,7 +568,7 @@ msgstr "Выбор приложения"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
-#: ../exo-desktop-item-edit/exo-die-editor.c:642
+#: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
 #: ../exo-helper/exo-helper-chooser.c:386
 #: ../exo-helper/exo-helper-chooser.c:531
@@ -650,7 +656,7 @@ msgstr "_Значок:"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1235
+#: ../exo-desktop-item-edit/exo-die-editor.c:1227
 msgid "No icon"
 msgstr "Без значка"
 
@@ -691,14 +697,14 @@ msgid "Select an icon"
 msgstr "Выбор значка"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
-#: ../exo-desktop-item-edit/exo-die-editor.c:643
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
 #: ../exo-helper/exo-helper-chooser.c:532
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_ОК"
 
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-desktop-item-edit/exo-die-editor.c:635
 msgid "Select a working directory"
 msgstr "Выбор рабочего каталога"
 
@@ -980,11 +986,11 @@ msgstr "Укажите приложение, которое вы хотите и
 msgid "Browse the file system to choose a custom command."
 msgstr "Просмотреть файловую систему для выбора нужной команды."
 
-#: ../exo-helper/exo-helper-chooser.c:764
+#: ../exo-helper/exo-helper-chooser.c:769
 msgid "_Other..."
 msgstr "_Другой..."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:770
 msgid "Use a custom application which is not included in the above list."
 msgstr "Использовать другое приложение, не из этого списка."
 
@@ -1016,12 +1022,12 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Пожалуйста, выберите предпочитаемый эмулятор\nтерминала  и щёлкните OK для продолжения."
 
-#: ../exo-helper/exo-helper.c:384
+#: ../exo-helper/exo-helper.c:388
 #, c-format
 msgid "No command specified"
 msgstr "Не указана команда"
 
-#: ../exo-helper/exo-helper.c:697 ../exo-helper/exo-helper.c:735
+#: ../exo-helper/exo-helper.c:705 ../exo-helper/exo-helper.c:743
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Не удалось открыть «%s» для записи"
@@ -1368,12 +1374,12 @@ msgstr "Запуск файлов на рабочем столе невозмо�
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Не удалось запустить предпочитаемое приложение для категории «%s»."
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:590
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Не удалось распознать схему URI в «%s»."
 
-#: ../exo-open/main.c:600
+#: ../exo-open/main.c:604
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Не удалось открыть URI «%s»."
