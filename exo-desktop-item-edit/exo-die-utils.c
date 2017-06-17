@@ -81,6 +81,8 @@ exo_die_g_key_file_set_locale_value (GKeyFile    *key_file,
  * @mode     : file mode for .directory or .desktop suffix.
  * @error    : return location for errors or %NULL.
  *
+ * Writes changes to the @key_file .desktop or .directory file.
+ *
  * Return value: %TRUE if successfull, %FALSE otherwise.
  **/
 gboolean
@@ -208,7 +210,3 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
 
   return result;
 }
-
-
-
-

@@ -50,6 +50,8 @@ typedef struct _ExoToolbarsModel        ExoToolbarsModel;
  * @EXO_TOOLBARS_MODEL_OVERRIDE_STYLE    : If set, the #ExoToolbarsModel
  *                                         accepts a custom #GtkToolbarStyle. See
  *                                         exo_toolbars_model_set_style().
+ *
+ * Flags available for #ExoToolbarsModel.
  */
 typedef enum
 {

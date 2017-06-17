@@ -258,6 +258,9 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
   /**
    * ExoToolbarsView::action-request:
    * @view  : An #ExoToolbarsView.
+   *
+   * This signal is emitted when a new #GtkToolItem is created from a
+   * #GtkAction in the #ExoToolbarsView.
    **/
   toolbars_view_signals[ACTION_REQUEST] =
     g_signal_new (I_("action-request"),

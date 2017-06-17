@@ -125,6 +125,16 @@ typedef enum
   EXO_ICON_VIEW_LAYOUT_COLS
 } ExoIconViewLayoutMode;
 
+/**
+ * ExoIconView:
+ *
+ * #ExoIconView provides an alternative view on a list model.
+ * It displays the model as a grid of icons with labels. Like
+ * #GtkTreeView, it allows to select one or multiple items
+ * (depending on the selection mode, see exo_icon_view_set_selection_mode()).
+ * In addition to selection with the arrow keys, #ExoIconView supports
+ * rubberband selection, which is controlled by dragging the pointer.
+ **/
 struct _ExoIconView
 {
   GtkContainer        __parent__;

@@ -31,6 +31,9 @@ G_BEGIN_DECLS
  * @EXO_DIE_EDITOR_MODE_APPLICATION : application launcher editing.
  * @EXO_DIE_EDITOR_MODE_LINK        : link editing.
  * @EXO_DIE_EDITOR_MODE_DIRECTORY   : menu directory editing.
+ *
+ * Editing mode for exo-desktop-item-edit
+ *
  **/
 typedef enum
 {

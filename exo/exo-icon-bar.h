@@ -45,6 +45,9 @@ typedef struct _ExoIconBar        ExoIconBar;
  * ExoIconBarClass:
  * @set_scroll_adjustments : Used internally to make the ExoIconBar scrollable.
  * @selection_changed      : This signal is emitted whenever the currently selected icon changes.
+ *
+ * The #ExoIconBar class contains only private fields and should not
+ * be directly accessed.
  **/
 struct _ExoIconBarClass
 {
@@ -110,4 +113,3 @@ void            exo_icon_bar_set_active_iter    (ExoIconBar     *icon_bar,
 G_END_DECLS
 
 #endif /* !__EXO_ICON_BAR_H__ */
-

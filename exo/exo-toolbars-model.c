@@ -289,6 +289,9 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 
   /**
    * ExoToolbarsModel::get-item-type:
+   *
+   * This signal is emitted whenever the exo_toolbars_model_get_item_type()
+   * method is called.
    **/
   toolbars_model_signals[GET_ITEM_TYPE] =
     g_signal_new (I_("get-item-type"),
@@ -302,6 +305,9 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 
   /**
    * ExoToolbarsModel::get-item-id:
+   *
+   * This signal is emitted whenever the exo_toolbars_model_get_item_id()
+   * method is called.
    **/
   toolbars_model_signals[GET_ITEM_ID] =
     g_signal_new (I_("get-item-id"),
@@ -316,6 +322,9 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 
   /**
    * ExoToolbarsModel::get-item-data:
+   *
+   * This signal is emitted whenever the exo_toolbars_model_get_item_data()
+   * method is called.
    **/
   toolbars_model_signals[GET_ITEM_DATA] =
     g_signal_new (I_("get-item-data"),

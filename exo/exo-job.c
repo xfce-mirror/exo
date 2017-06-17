@@ -573,7 +573,7 @@ exo_job_set_error_if_cancelled (ExoJob  *job,
  * @job           : an #ExoJob.
  * @signal_id     : the signal id.
  * @signal_detail : the signal detail.
- * @Varargs       : a list of parameters to be passed to the signal,
+ * @...           : a list of parameters to be passed to the signal,
  *                  followed by a location for the return value. If the
  *                  return type of the signal is G_TYPE_NONE, the return
  *                  value location can be omitted.
@@ -602,7 +602,7 @@ exo_job_emit (ExoJob *job,
  * exo_job_info_message:
  * @job     : an #ExoJob.
  * @format  : a format string.
- * @Varargs : parameters for the format string.
+ * @...     : parameters for the format string.
  *
  * Generates and emits an "info-message" signal and sends it to the
  * application's main loop.

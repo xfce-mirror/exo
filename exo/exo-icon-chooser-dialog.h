@@ -55,6 +55,13 @@ struct _ExoIconChooserDialogClass
   void (*reserved6) (void);
 };
 
+/**
+ * ExoIconChooserDialog:
+ *
+ * The #ExoIconChooserDialog class provides an easy to use dialog to ask
+ * the user to select either a named icon from the selected icon theme,
+ * or an image file from the local file system.
+ **/
 struct _ExoIconChooserDialog
 {
   /*< private >*/

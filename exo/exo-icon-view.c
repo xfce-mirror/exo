@@ -1054,6 +1054,13 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * ExoIconView::item-activated:
    * @icon_view : a #ExoIconView.
    * @path      : the #GtkTreePath of the activated item.
+   *
+   * The ::item-activated signal is emitted when the method
+   * exo_icon_view_item_activated() is called, when the user double clicks
+   * an item with the "activate-on-single-click" property set to %FALSE, or
+   * when the user single clicks an item when the "activate-on-single-click"
+   * property set to %TRUE. It is also emitted when a non-editable item is
+   * selected and one of the keys: Space, Return or Enter is pressed.
    **/
   icon_view_signals[ITEM_ACTIVATED] =
     g_signal_new (I_("item-activated"),
@@ -1068,6 +1075,9 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   /**
    * ExoIconView::selection-changed:
    * @icon_view : a #ExoIconView.
+   *
+   * The ::selection-changed signal is emitted when the selection
+   * (i.e. the set of selected items) changes.
    **/
   icon_view_signals[SELECTION_CHANGED] =
     g_signal_new (I_("selection-changed"),
@@ -1084,6 +1094,9 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * @icon_view   : a #ExoIconView.
    * @hadjustment : the new horizontal #GtkAdjustment.
    * @vadjustment : the new vertical #GtkAdjustment.
+   *
+   * The ::set-scroll-adjustments signal is emitted when the scroll
+   * adjustments have changed.
    **/
   gtkwidget_class->set_scroll_adjustments_signal =
     g_signal_new (I_("set-scroll-adjustments"),
@@ -1099,6 +1112,14 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   /**
    * ExoIconView::select-all:
    * @icon_view : a #ExoIconView.
+   *
+   * A #GtkBindingSignal which gets emitted when the user selects all items.
+   *
+   * Applications should not connect to it, but may emit it with
+   * g_signal_emit_by_name() if they need to control selection
+   * programmatically.
+   *
+   * The default binding for this signal is Ctrl-a.
    **/
   icon_view_signals[SELECT_ALL] =
     g_signal_new (I_("select-all"),
@@ -1112,6 +1133,14 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   /**
    * ExoIconView::unselect-all:
    * @icon_view : a #ExoIconView.
+   *
+   * A #GtkBindingSignal which gets emitted when the user unselects all items.
+   *
+   * Applications should not connect to it, but may emit it with
+   * g_signal_emit_by_name() if they need to control selection
+   * programmatically.
+   *
+   * The default binding for this signal is Ctrl-Shift-a.
    **/
   icon_view_signals[UNSELECT_ALL] =
     g_signal_new (I_("unselect-all"),
@@ -1125,6 +1154,15 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   /**
    * ExoIconView::select-cursor-item:
    * @icon_view : a #ExoIconView.
+   *
+   * A #GtkBindingSignal which gets emitted when the user selects the item
+   * that is currently focused.
+   *
+   * Applications should not connect to it, but may emit it with
+   * g_signal_emit_by_name() if they need to control selection
+   * programmatically.
+   *
+   * There is no default binding for this signal.
    **/
   icon_view_signals[SELECT_CURSOR_ITEM] =
     g_signal_new (I_("select-cursor-item"),
@@ -1138,6 +1176,16 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   /**
    * ExoIconView::toggle-cursor-item:
    * @icon_view : a #ExoIconView.
+   *
+   * A #GtkBindingSignal which gets emitted when the user toggles whether
+   * the currently focused item is selected or not. The exact effect of
+   * this depend on the selection mode.
+   *
+   * Applications should not connect to it, but may emit it with
+   * g_signal_emit_by_name() if they need to control selection
+   * programmatically.
+   *
+   * There is no default binding for this signal is Ctrl-Space.
    **/
   icon_view_signals[TOGGLE_CURSOR_ITEM] =
     g_signal_new (I_("toggle-cursor-item"),
@@ -1152,7 +1200,14 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * ExoIconView::activate-cursor-item:
    * @icon_view : a #ExoIconView.
    *
-   * Returns:
+   * A #GtkBindingSignal which gets emitted when the user activates the
+   * currently focused item.
+   *
+   * Applications should not connect to it, but may emit it with
+   * g_signal_emit_by_name() if they need to control activation
+   * programmatically.
+   *
+   * The default bindings for this signal are Space, Return and Enter.
    **/
   icon_view_signals[ACTIVATE_CURSOR_ITEM] =
     g_signal_new (I_("activate-cursor-item"),
@@ -1165,9 +1220,10 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
 
   /**
    * ExoIconView::start-interactive-search:
-   * @iconb_view : a #ExoIconView.
+   * @icon_view : a #ExoIconView.
    *
-   * Returns:
+   * The ::start-interative-search signal is emitted when the user starts
+   * typing to jump to an item in the icon view.
    **/
   icon_view_signals[START_INTERACTIVE_SEARCH] =
     g_signal_new (I_("start-interactive-search"),
@@ -1181,10 +1237,21 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   /**
    * ExoIconView::move-cursor:
    * @icon_view : a #ExoIconView.
-   * @step      :
-   * @count     :
+   * @step      : the granularity of the move, as a #GtkMovementStep
+   * @count     : the number of @step units to move
    *
-   * Returns:
+   * The ::move-cursor signal is a keybinding signal which gets emitted when
+   * the user initiates a cursor movement.
+   *
+   * Applications should not connect to it, but may emit it with
+   * g_signal_emit_by_name() if they need to control the cursor
+   * programmatically.
+   *
+   * The default bindings for this signal include
+   * * Arrow keys which move by individual steps
+   * * Home/End keys which move to the first/last item
+   * * PageUp/PageDown which move by "pages" All of these will extend the
+   * selection when combined with the Shift modifier.
    **/
   icon_view_signals[MOVE_CURSOR] =
     g_signal_new (I_("move-cursor"),

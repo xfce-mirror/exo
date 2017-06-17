@@ -190,6 +190,9 @@ _exo_toolbars_new_separator_image (void)
  * @ui_manager  : A #GtkUIManager.
  * @name        : The name of an action in @ui_manager.
  *
+ * Searches for the last #GtkAction named @name in @ui_manager, returning
+ * %NULL on failure.
+ *
  * Returns: The last #GtkAction named @name in @ui_manager or %NULL.
  **/
 GtkAction*
@@ -334,6 +337,8 @@ static const guint8 drag_cursor_data[] =
 /**
  * _exo_toolbars_set_drag_cursor:
  * @widget  : A #GtkWidget.
+ *
+ * Changes the #GdkCursor to the dragging appearance.
  **/
 void
 _exo_toolbars_set_drag_cursor (GtkWidget *widget)
@@ -357,6 +362,8 @@ _exo_toolbars_set_drag_cursor (GtkWidget *widget)
 /**
  * _exo_toolbars_unset_drag_cursor:
  * @widget  : A #GtkWidget.
+ *
+ * Restores the #GdkCursor to it's default appearance.
  **/
 void
 _exo_toolbars_unset_drag_cursor (GtkWidget *widget)
