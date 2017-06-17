@@ -2938,9 +2938,6 @@ exo_icon_view_update_rubberband (gpointer data)
 #if GTK_CHECK_VERSION (3, 16, 0)
   GdkSeat *seat;
   GdkDevice        *pointer_dev;
-#elif GTK_CHECK_VERSION (3, 0, 0)
-  GdkDeviceManager *device_manager;
-  GdkDevice        *pointer_dev;
 #endif
 
   icon_view = EXO_ICON_VIEW (data);
@@ -2948,10 +2945,6 @@ exo_icon_view_update_rubberband (gpointer data)
 #if GTK_CHECK_VERSION (3, 16, 0)
   seat = gdk_display_get_default_seat (gdk_window_get_display (icon_view->priv->bin_window));
   pointer_dev = gdk_seat_get_pointer (seat);
-  gdk_window_get_device_position (icon_view->priv->bin_window, pointer_dev, &x, &y, NULL);
-#elif GTK_CHECK_VERSION (3, 0, 0)
-  device_manager = gdk_display_get_device_manager (gdk_window_get_display (icon_view->priv->bin_window));
-  pointer_dev = gdk_device_manager_get_client_pointer (device_manager);
   gdk_window_get_device_position (icon_view->priv->bin_window, pointer_dev, &x, &y, NULL);
 #else
   gdk_window_get_pointer (icon_view->priv->bin_window, &x, &y, NULL);
@@ -3577,13 +3570,10 @@ exo_icon_view_set_adjustment_upper (GtkAdjustment *adj,
 #endif
         }
 
-      /* Prior to GTK 3.18, we need to emit "changed" ourselves */
+      /* Prior to GTK 3.18, we need to emit "changed" and "value-changed" ourselves */
 #if !GTK_CHECK_VERSION (3, 18, 0)
       gtk_adjustment_changed (adj);
-#endif
 
-      /* Prior to GTK 3.18, we need to emit "value-changed" ourselves */
-#if !GTK_CHECK_VERSION (3, 18, 0)
       if (value_changed)
         gtk_adjustment_value_changed (adj);
 #endif
@@ -7191,15 +7181,6 @@ exo_icon_view_autoscroll (ExoIconView *icon_view)
 
   seat = gdk_display_get_default_seat (gdk_window_get_display (gtk_widget_get_window (GTK_WIDGET (icon_view))));
   pointer_dev = gdk_seat_get_pointer (seat);
-
-  gdk_window_get_device_position (gtk_widget_get_window (GTK_WIDGET (icon_view)), pointer_dev, &px, &py, NULL);
-  gdk_window_get_geometry (gtk_widget_get_window (GTK_WIDGET (icon_view)), &x, &y, &width, &height);
-#elif GTK_CHECK_VERSION (3, 0, 0)
-  GdkDeviceManager *dev_manager;
-  GdkDevice        *pointer_dev;
-
-  dev_manager = gdk_display_get_device_manager (gdk_window_get_display (gtk_widget_get_window (GTK_WIDGET (icon_view))));
-  pointer_dev = gdk_device_manager_get_client_pointer (dev_manager);
 
   gdk_window_get_device_position (gtk_widget_get_window (GTK_WIDGET (icon_view)), pointer_dev, &px, &py, NULL);
   gdk_window_get_geometry (gtk_widget_get_window (GTK_WIDGET (icon_view)), &x, &y, &width, &height);
