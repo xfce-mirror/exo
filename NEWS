@@ -1,14 +1,39 @@
+0.11.3 (Development Release)
+======
+- New Features:
+  - exo-csource: Add --output flag to write output to a file (Xfce #12901)
+  - exo-helper: Add --query flag to query the preferred application (Xfce #8579)
+- Build Changes:
+  - Requirements updated: GTK 2.24, GTK 3.20, GLib 2.42, libxfce4ui 4.12
+  - GTK 3 libraries are no longer optional
+  - Default debug for development builds is now "yes" instead of "full"
+- Bug Fixes:
+  - Discard preferred application selection if dialog is canceled (Xfce #8802)
+  - Do not ship generic category icons, these are standard (Xfce #9992)
+  - Do not abort builds due to deprecated declarations (Xfce #11556)
+  - Fix crash in Thunar on selection change after directory change (Xfce #13238)
+  - Fix crash in exo-helper-1 from GTK 3 migration (Xfce #13374)
+  - Fix ExoIconView being unable to decrease its size (Xfce #13402)
+- Documentation Updates:
+  - Add missing per-release API indices
+  - Resolve undocumented symbols
+  - Updated project documentation (HACKING, README, THANKS)
+- Translation Updates: Amharic, Asturian, Catalan, Chinese (Taiwan), Croatian,
+  Danish, Dutch, Finnish, Galician, Greek, Indonesian, Kazakh, Korean,
+  Lithuanian, Norwegian Bokmal, Norwegian Nynorsk, Occitan,
+  Portuguese (Brazil), Russian, Serbian, Slovenian, Spanish, Thai
+
 0.11.2 (Development Release)
 ======
 - Several improvements from f2404:
   - Remove unused struct member
-  - Check index range before accessing array	
+  - Check index range before accessing array
   - Do not assign value twice
   - Resolve gdk_cursor_* deprecated warnings
   - Resolve gdk_threads_* deprecated warnings
-- Fixed vertical alignment of options in preferred applications	
+- Fixed vertical alignment of options in preferred applications
 - Fixed issue with Thunar detailed view losing selection (Xfce #12916)
-- Translation updates: Asturian, English (Australia), Italian, Kazakh, 
+- Translation updates: Asturian, English (Australia), Italian, Kazakh,
   Lithuanian, Malay, Polish, Portuguese, Romanian, Russian, Thai
 
 0.11.1 (Development Release)
@@ -126,25 +151,25 @@
 - Don't invert direction in RTL languages (bug #4285).
 - Check if uris also contain a slash (bug #9244).
 - Set anchor item if the cursor is set.
-- Translation updates: Danish, Greek, Spanish (Castilian), Basque, 
-  French, Hebrew, Croatian, Hungarian, Indonesian, Italian, Kazakh, 
-  Korean, Dutch (Flemish), Polish, Portuguese, Portuguese (Brazilian), 
-  Russian, Serbian, Swedish, Uyghur, Ukrainian, Chinese (China), 
+- Translation updates: Danish, Greek, Spanish (Castilian), Basque,
+  French, Hebrew, Croatian, Hungarian, Indonesian, Italian, Kazakh,
+  Korean, Dutch (Flemish), Polish, Portuguese, Portuguese (Brazilian),
+  Russian, Serbian, Swedish, Uyghur, Ukrainian, Chinese (China),
   Chinese (Taiwan).
 
 0.8.0
 =====
 - Rename "Novell Evolution" to "Evolution" (bug #8703).
 - Add Iceweasel helper (bug #8704).
-- Translation updates: Arabic, Asturian, Belarusian, Bulgarian, 
-  Bengali, Catalan (Valencian), Czech, Welsh, Danish, German, Dzongkha, 
-  Greek, English (United Kingdom), Spanish (Castilian), Estonian, 
-  Basque, Finnish, French, Galician, Hebrew, Croatian, Hungarian, 
-  Indonesian, Icelandic, Italian, Japanese, Georgian, Kazakh, Korean, 
-  Kurdish, Lithuanian, Latvian, Macedonian, Norwegian Bokmal, Dutch 
-  (Flemish), Norwegian Nynorsk, Panjabi (Punjabi), Polish, Portuguese, 
-  Portuguese (Brazilian), Romanian, Russian, Sinhala, Slovak, 
-  Slovenian, Albanian, Swedish, Tagalog (Philippines), Turkish, Uyghur, 
+- Translation updates: Arabic, Asturian, Belarusian, Bulgarian,
+  Bengali, Catalan (Valencian), Czech, Welsh, Danish, German, Dzongkha,
+  Greek, English (United Kingdom), Spanish (Castilian), Estonian,
+  Basque, Finnish, French, Galician, Hebrew, Croatian, Hungarian,
+  Indonesian, Icelandic, Italian, Japanese, Georgian, Kazakh, Korean,
+  Kurdish, Lithuanian, Latvian, Macedonian, Norwegian Bokmal, Dutch
+  (Flemish), Norwegian Nynorsk, Panjabi (Punjabi), Polish, Portuguese,
+  Portuguese (Brazilian), Romanian, Russian, Sinhala, Slovak,
+  Slovenian, Albanian, Swedish, Tagalog (Philippines), Turkish, Uyghur,
   Ukrainian, Urdu, Urdu (Pakistan), Chinese (China), Chinese (Taiwan).
 
 0.7.3
