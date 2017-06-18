@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Edin Veskovic <edin.veskovic@openmailbox.org>, 2015
+# Edin Veskovic <edin.veskovic@openmailbox.org>, 2015,2017
 # Ivica  Kolić <ikoli@yahoo.com>, 2013,2017
 # Lovro Kudelić <lovro.kudelic@outlook.com>, 2016
 # Luka Mikec, 2013
@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-12 06:30+0200\n"
-"PO-Revision-Date: 2017-02-25 22:18+0000\n"
-"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
+"POT-Creation-Date: 2017-06-16 06:30+0200\n"
+"PO-Revision-Date: 2017-06-18 08:49+0000\n"
+"Last-Translator: Edin Veskovic <edin.veskovic@openmailbox.org>\n"
 "Language-Team: Croatian (http://www.transifex.com/xfce/exo/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,7 +72,7 @@ msgstr "Neuspješno čitanje datoteke \"%s\": %s"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Neuspješno učitavanje slike  \"%s\": Nepoznati razlog, vjerojatno oštećena slika"
 
-#: ../exo/exo-gtk-extensions.c:242
+#: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Neuspješno otvaranje \"%s\"."
@@ -142,86 +142,86 @@ msgid "Cursor item text color"
 msgstr "Boja teksta stavke pokazivača"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:108
+#: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Action Icons"
 msgstr "Ikone radnje"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:110
+#: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Animations"
 msgstr "Animacije"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:112
+#: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Application Icons"
 msgstr "Ikone programa"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:114
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Menu Icons"
 msgstr "Ikone izbornika"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:116
+#: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Device Icons"
 msgstr "Ikone uređaja"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:118
+#: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Emblems"
 msgstr "Amblemi"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:120
+#: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Emoticons"
 msgstr "Emotikone"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:122
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "International Denominations"
 msgstr "Međunarodne denominacije"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:124
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "File Type Icons"
 msgstr "Ikone tipova datoteka"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:126
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Location Icons"
 msgstr "Ikone lokacije"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:128
+#: ../exo/exo-icon-chooser-dialog.c:125
 msgid "Status Icons"
 msgstr "Ikone statusa"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:130
+#: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Uncategorized Icons"
 msgstr "Nekategorizirane ikone"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:134
+#: ../exo/exo-icon-chooser-dialog.c:131
 msgid "All Icons"
 msgstr "Sve Ikone"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:138 ../exo/exo-icon-chooser-dialog.c:316
+#: ../exo/exo-icon-chooser-dialog.c:135 ../exo/exo-icon-chooser-dialog.c:311
 msgid "Image Files"
 msgstr "Slike"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:222
+#: ../exo/exo-icon-chooser-dialog.c:219
 msgid "Select _icon from:"
 msgstr "Odaberi_ikonu iz:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:246
+#: ../exo/exo-icon-chooser-dialog.c:243
 msgid "_Search icon:"
 msgstr "_Traži ikonu"
 
-#: ../exo/exo-icon-chooser-dialog.c:266
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Clear search field"
 msgstr "Očisti polje traženja"
 
@@ -335,19 +335,19 @@ msgstr "Način odabira"
 msgid "The selection mode"
 msgstr "Način odabira"
 
-#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Jednostruki klik"
 
-#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Hoće li se stavke u prikazu aktivirati jednostrukim klikom"
 
-#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Vremensko ograničenje jednostrukog klika"
 
-#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
@@ -475,58 +475,63 @@ msgstr " Naredba ponovno pokreni"
 msgid "Session restart command"
 msgstr "Naredba  ponovno pokreni sesiju"
 
-#: ../exo-csource/main.c:284
+#: ../exo-csource/main.c:303
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Upotreba: %s [opcije] [datoteka]\n"
 
-#: ../exo-csource/main.c:285
+#: ../exo-csource/main.c:304
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "%s [opcije] --build-list [[ime datoteka]...]\n"
 
-#: ../exo-csource/main.c:287
+#: ../exo-csource/main.c:306
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Ispiši ovu poruku i izađi\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:307
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
 msgstr "  -V, --version    Ispiši informacije o verziji i izađi\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:308
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "--extern Generiraj eksterne simbole\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:309
 #, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "--static Generiraj statične simbole\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:310
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "--name=identifikator C ime makroa/varijable\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:311
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "--build-list Parsiraj (ime, datoteka) parove\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:312
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "--strip-comments Ukloni komentare iz XML datoteka\n"
 
-#: ../exo-csource/main.c:294
+#: ../exo-csource/main.c:313
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "--strip-content Obriši sadržaj čvorova iz XML datoteka\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
-#: ../exo-open/main.c:505
+#: ../exo-csource/main.c:314
+#, c-format
+msgid "  --output=filename Write generated csource to specified file\n"
+msgstr "  --output=filename Piše generirani csource u specificiranu datoteku\n"
+
+#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:195
+#: ../exo-open/main.c:509
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -536,8 +541,8 @@ msgid ""
 "\n"
 msgstr "Copyright (c) %s\n os-cillation e.K. Sva prava pridržana..\n\nNapisao Benedikt Meurer <benny@xfce.org>.\n\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
-#: ../exo-open/main.c:509
+#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:199
+#: ../exo-open/main.c:513
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -547,8 +552,8 @@ msgid ""
 "\n"
 msgstr "%s dolazi BEZ APSOLUTNO IKAKVOG JAMSTVA,\nSmijete redistribuirati %s pod uvjetima\nGNU Lesser General Public License koju možete pronaći u \npaketu izvornog koda %s.\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
-#: ../exo-open/main.c:513
+#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:203
+#: ../exo-open/main.c:517
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Molimo prijavite bugove na  <%s>.\n"
@@ -560,7 +565,7 @@ msgstr "Odaberite program"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
-#: ../exo-desktop-item-edit/exo-die-editor.c:642
+#: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
 #: ../exo-helper/exo-helper-chooser.c:386
 #: ../exo-helper/exo-helper-chooser.c:531
@@ -648,7 +653,7 @@ msgstr "_Ikona:"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1235
+#: ../exo-desktop-item-edit/exo-die-editor.c:1227
 msgid "No icon"
 msgstr "Nema ikone"
 
@@ -689,14 +694,14 @@ msgid "Select an icon"
 msgstr "Odaberite ikonu"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
-#: ../exo-desktop-item-edit/exo-die-editor.c:643
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
 #: ../exo-helper/exo-helper-chooser.c:532
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_U redu"
 
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-desktop-item-edit/exo-die-editor.c:635
 msgid "Select a working directory"
 msgstr "Odaberite radni direktorij"
 
@@ -757,7 +762,7 @@ msgstr "Unaprijed zadan URL kod izrade poveznice"
 msgid "Preset icon when creating a desktop file"
 msgstr "Unaprijed zadana ikona kod izrade datoteke za radnu površinu"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
+#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "Ispiši informacije o verziji i izađi"
 
@@ -978,11 +983,11 @@ msgstr "Odredite program koji želite koristiti\nkao zadani emulator terminala z
 msgid "Browse the file system to choose a custom command."
 msgstr "Pregledaj datotečni sustav za odabir prilagođene naredbe."
 
-#: ../exo-helper/exo-helper-chooser.c:764
+#: ../exo-helper/exo-helper-chooser.c:769
 msgid "_Other..."
 msgstr "_Ostalo..."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:770
 msgid "Use a custom application which is not included in the above list."
 msgstr "Koristi prilagođeni program koji nije uključen u gornju listu"
 
@@ -1014,12 +1019,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Molim izaberite vaš željeni emulator\nterminala  i kliknite U redu za nastavak."
 
-#: ../exo-helper/exo-helper.c:384
+#: ../exo-helper/exo-helper.c:388
 #, c-format
 msgid "No command specified"
 msgstr "Nije određena naredba"
 
-#: ../exo-helper/exo-helper.c:697 ../exo-helper/exo-helper.c:735
+#: ../exo-helper/exo-helper.c:705 ../exo-helper/exo-helper.c:743
+#: ../exo-helper/exo-helper.c:810 ../exo-helper/exo-helper.c:848
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Neuspjelo otvaranje %s za pisanje"
@@ -1045,51 +1051,56 @@ msgstr "Neuspjelo izvešenje zadanog upravitelja datotekama"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Neuspjelo izvršenje zadanog emulatora terminala"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Otvori konfiguracijski dijalog\nželjenih programa"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "Settings manager socket"
 msgstr "Socket upravljanja postavkama"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "Pokreni uobičajenog pomoćnika za TIP s neobaveznim parametrom PARAMETAR, gdje je TIP jedna od idućih vrijednosti."
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75 ../exo-helper/main.c:76
 msgid "TYPE [PARAMETER]"
 msgstr "TIP [PARAMETAR]"
 
-#: ../exo-helper/main.c:103
+#: ../exo-helper/main.c:76
 msgid ""
-"The following TYPEs are supported for the --launch command:\n"
+"Query the default helper of TYPE, where TYPE is one of the following values."
+msgstr "Potraži uobičajenog pomoćnika za tip TYPE, gdje je TYPE jedna od slijedećih vrijednosti."
+
+#: ../exo-helper/main.c:105
+msgid ""
+"The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Slijedeći TIPovi su podržani za --launch command:\n  Webpreglednik       - Zadanii Web preglednik.\n  Čitačpošte       - Zadani čitač pošte.\n  Upraviteljdatotekama      - Zadani upravitelj datotekama.\n  Emulatortermiala - Zadani emulator terminala."
+msgstr "Slijedeći TYPEovi su podržani za --launch i --query naredbu:\n\n  WebBrowser - Zadanii Web preglednik.\n  MailReader - Zadani preglednik pošte.\n  FileManager - Zadani upravitelj datotekama.\n  TerminalEmulator - Zadani emulator terminala."
 
-#: ../exo-helper/main.c:113
+#: ../exo-helper/main.c:115
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Upišite '%s --help' za uporabu."
 
-#: ../exo-helper/main.c:172
+#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Pogrešan tip pomoćnika za \"%s\""
 
-#: ../exo-helper/main.c:220
+#: ../exo-helper/main.c:224
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1103,6 +1114,11 @@ msgid ""
 "\n"
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\nos-cillation e.K. Sva prava zadržana.\n\nNapisao Benedikt Meurer <benny@xfce.org>.\n\nIzgrađeno pomoću Gtk+-%d.%d.%d, pokreće Gtk+-%d.%d.%d.\n\nMolimo prijavite greške na <%s>.\n"
+
+#: ../exo-helper/main.c:250
+#, c-format
+msgid "No helper defined for \"%s\"."
+msgstr "Niije definiran pomoćnik za \"%s\"."
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1366,12 +1382,12 @@ msgstr "Pokretanje datoteka na radnoj površini nije podržano kad je %s kompajl
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Neuspjelo pokretanje željenog programa za kategoriju \"%s\"."
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:590
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Nije moguće detektirati URI-shemu od \"%s\"."
 
-#: ../exo-open/main.c:600
+#: ../exo-open/main.c:604
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Nisam uspio otvoriti URI \"% s\"."
