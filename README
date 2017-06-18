@@ -1,9 +1,9 @@
 What is it?
 ===========
 
-This is libexo, an extension library to Xfce, developed by os-cillation. While
-Xfce comes with quite a few libraries that are targeted at desktop development,
-libexo is targeted at application development.
+This is libexo, an extension library to Xfce, originally developed by
+os-cillation. While Xfce comes with quite a few libraries that are targeted at
+desktop development, libexo is targeted at application development.
 
 
 Current state
@@ -22,26 +22,30 @@ The file 'INSTALL' contains generic installation instructions.
 Debugging Support
 =================
 
-libexo currently supports three different levels of debugging support, which
+libexo currently supports four different levels of debugging support, which
 can be setup using the configure flag `--enable-debug' (check the output of
 `configure --help'):
 
-  `yes'		This is the default for SVN snapshot builds. It adds all kinds
-  		of checks to the code, and is therefore likely to run slower.
-		Use this for development of libexo and locating bugs in libexo.
+  `full'    This is the strongest option. Deprecation and some coding style
+            checks are made and will cause the build to fail for any errors
+            or warnings.
 
-  `minimum'	This is the default for release builds. This is the recommended
-  		behaviour.
+  `yes'     This is the default for Git snapshot builds. It adds all kinds
+            of checks to the code, and is therefore likely to run slower.
+            Use this for development of libexo and locating bugs in libexo.
 
-  `no'		Disables all sanity checks. Don't use this unless you know
-  		exactly what you do.
+  `minimum' This is the default for release builds. This is the recommended
+            behavior.
+
+  `no'      Disables all sanity checks. Don't use this unless you know
+            exactly what you do.
 
 
 How to report bugs?
 ===================
 
 Bugs should be reported to the Xfce bug tracking system
-(http://bugzilla.xfce.org, product libexo). You will need
+(https://bugzilla.xfce.org, product Exo). You will need
 to create an account for yourself.
 
 Please read the HACKING file for information on where to send changes

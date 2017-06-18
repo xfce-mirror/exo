@@ -1,7 +1,7 @@
 Bug tracking system
 ===================
 
-libexo uses the bug tracking system at http://bugzilla.xfce.org/
+libexo uses the bug tracking system at https://bugzilla.xfce.org/
 hosted and maintained by the Xfce project.
 
 
@@ -13,17 +13,17 @@ people listed in the AUTHORS file. Your patch should be in unified
 diff format (the -u option to GNU diff).
 
 Please and send a patch against a recent version of this package. Patches
-against the Subversion trunk branch are most preferable. You can always
-access the trunk branch from 
+against the Git master branch are most preferable. You can always
+access the master branch from
 
-  http://svn.xfce.org/listing.php?repname=xfce4&path=/libexo/#/libexo/
+  https://git.xfce.org/xfce/exo
 
 
 Feature requests
 ================
 
 Please file feature requests to the Xfce bug tracking system
-(http://bugzilla.xfce.org, product libexo) with a Severity of
+(https://bugzilla.xfce.org, product Exo) with a Severity of
 enhancement. Make sure that your feature request wasn't reported
 already before; requesting a feature several times won't increase
 the chance that it gets added.
@@ -39,27 +39,4 @@ Coding Style
 Release process
 ===============
 
-  1) Check out a fresh copy from Subversion
-  2) Increment the version number in configure.in.in and the major version
-     number of the library whenever new functions got added
-  3) Update NEWS and ChangeLog, and don't forget to add a note about the new
-     release to ChangeLog, so people can see which changes appeared in which
-     release.
-  4) Check the gtk-doc.
-  5) Run make update-po in po/ and update po/de.po (don't forget the header)!
-  6) Unset libexo_version_tag in configure.in.in and reset it after the
-     release is done.
-  7) Verify that make dist works.
-  8) "svn commit" the changes.
-  9) Create a simple tag for the release,
-      "svn copy https://xfce.org/svn/xfce/libexo/trunk
-                https://xfce.org/svn/xfce/libexo/tags/exo-X.Y.Ztag"
-     where X.Y.Z is the version number and tag is the version tag, i.e. beta1.
- 10) Upload the tarballs to os-cillation ftp
- 11) Upload the tarballs to os-works
- 12) Upload the tarballs to Berlios
- 13) Create a new release at Berlios
- 14) Upload the new online documentation (to both .com and .de).
- 15) Upload the new online documentation to www.xfce.org.
- 16) Update the os-cillation website (don't forget the Download section)
- 17) Update freshmeat entry.
+  Please see https://wiki.xfce.org/releng/individual-releases
