@@ -15,7 +15,7 @@ SUBDIRS =								\
 distclean-local:
 	rm -rf *.cache *~
 
-distuninstallcheck_listfiles = 						\ 
+distuninstallcheck_listfiles = 						\
 	find . -type f -print | grep -v ./share/icons/hicolor/icon-theme.cache
 
 .PHONY: ChangeLog
@@ -50,7 +50,6 @@ DISTCLEANFILES =							\
 DISTCHECK_CONFIGURE_FLAGS =						\
 	--enable-gtk-doc						\
 	--enable-gen-doc						\
-	--with-gio-module-dir=distcheck 				\
-	--disable-debug
+	--with-gio-module-dir=distcheck
 
 # vi:set ts=8 sw=8 noet ai nocindent:
