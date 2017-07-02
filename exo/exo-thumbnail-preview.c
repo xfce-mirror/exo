@@ -282,7 +282,7 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
     {
       /* the preview widget is insensitive if we don't have an URI */
       gtk_widget_set_sensitive (GTK_WIDGET (thumbnail_preview), FALSE);
-      gtk_image_set_from_icon_name (GTK_IMAGE (thumbnail_preview->image), "missing-image", GTK_ICON_SIZE_DIALOG);
+      gtk_image_set_from_icon_name (GTK_IMAGE (thumbnail_preview->image), "image-missing", GTK_ICON_SIZE_DIALOG);
       gtk_label_set_text (GTK_LABEL (thumbnail_preview->name_label), _("No file selected"));
     }
   else
@@ -378,7 +378,7 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
           else
             {
               /* no thumbnail, cannot display anything useful then */
-              gtk_image_set_from_icon_name (GTK_IMAGE (thumbnail_preview->image), "missing-image", GTK_ICON_SIZE_DIALOG);
+              gtk_image_set_from_icon_name (GTK_IMAGE (thumbnail_preview->image), "image-missing", GTK_ICON_SIZE_DIALOG);
             }
         }
 
