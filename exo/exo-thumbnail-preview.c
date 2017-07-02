@@ -300,27 +300,27 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
               /* icon and size label depends on the mode */
               if (S_ISBLK (statb.st_mode))
                 {
-                  icon_name = g_strdup ("gnome-fs-blockdev");
+                  icon_name = g_strdup ("drive-harddisk");
                   size_name = g_strdup (_("Block Device"));
                 }
               else if (S_ISCHR (statb.st_mode))
                 {
-                  icon_name = g_strdup ("gnome-fs-chardev");
+                  icon_name = g_strdup ("drive-harddisk");
                   size_name = g_strdup (_("Character Device"));
                 }
               else if (S_ISDIR (statb.st_mode))
                 {
-                  icon_name = g_strdup ("gnome-fs-directory");
+                  icon_name = g_strdup ("folder");
                   size_name = g_strdup (_("Folder"));
                 }
               else if (S_ISFIFO (statb.st_mode))
                 {
-                  icon_name = g_strdup ("gnome-fs-fifo");
+                  icon_name = g_strdup ("drive-harddisk");
                   size_name = g_strdup (_("FIFO"));
                 }
               else if (S_ISSOCK (statb.st_mode))
                 {
-                  icon_name = g_strdup ("gnome-fs-socket");
+                  icon_name = g_strdup ("drive-harddisk");
                   size_name = g_strdup (_("Socket"));
                 }
               else if (S_ISREG (statb.st_mode))
