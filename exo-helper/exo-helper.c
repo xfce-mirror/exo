@@ -353,12 +353,13 @@ exo_helper_execute (ExoHelper   *helper,
 {
   GTimeVal      previous;
   GTimeVal      current;
+  GdkDisplay   *display;
   gboolean      succeed = FALSE;
   GError       *err = NULL;
   gchar       **commands;
   gchar       **argv;
   gchar        *command;
-  gchar        *display;
+  gchar        *display_name;
   guint         n;
   gint          status;
   gint          result;
@@ -405,7 +406,8 @@ exo_helper_execute (ExoHelper   *helper,
         continue;
 
       /* set the display variable */
-      display = gdk_screen_make_display_name (screen);
+      display = gdk_screen_get_display (screen);
+      display_name = g_strdup (gdk_display_get_name (display));
 
       /* try to run the command */
       succeed = g_spawn_async (NULL,
@@ -413,13 +415,13 @@ exo_helper_execute (ExoHelper   *helper,
         NULL,
         G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH,
         (GSpawnChildSetupFunc) set_environment,
-        display,
+        display_name,
         &pid,
         &err);
 
       /* cleanup */
       g_strfreev (argv);
-      g_free (display);
+      g_free (display_name);
 
       /* check if the execution was successful */
       if (G_LIKELY (succeed))
