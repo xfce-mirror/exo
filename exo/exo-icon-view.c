@@ -9224,17 +9224,11 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
                                     gpointer     user_data)
 {
   GtkRequisition requisition;
-  GdkRectangle   monitor;
   GdkWindow     *view_window = gtk_widget_get_window (GTK_WIDGET (icon_view));
   GdkScreen     *screen = gdk_window_get_screen (view_window);
   gint           view_width, view_height;
   gint           view_x, view_y;
-  gint           monitor_num;
   gint           x, y;
-
-  /* determine the monitor geometry */
-  monitor_num = gdk_screen_get_monitor_at_window (screen, view_window);
-  gdk_screen_get_monitor_geometry (screen, monitor_num, &monitor);
 
   /* make sure the search dialog is realized */
   gtk_widget_realize (search_dialog);
