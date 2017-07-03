@@ -276,10 +276,6 @@ exo_helper_chooser_update (ExoHelperChooser *chooser)
       if (G_UNLIKELY (icon == NULL))
         icon = gtk_icon_theme_load_icon (icon_theme, "application-x-executable", icon_size, 0, NULL);
 
-      /* fallback to gnome-mime-application-x-executable */
-      if (G_UNLIKELY (icon == NULL))
-        icon = gtk_icon_theme_load_icon (icon_theme, "gnome-mime-application-x-executable", icon_size, 0, NULL);
-
       /* setup the icon for the chooser image */
       gtk_image_set_from_pixbuf (GTK_IMAGE (chooser->image), icon);
       if (G_LIKELY (icon != NULL))
