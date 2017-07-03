@@ -356,10 +356,13 @@ static void                 exo_icon_view_start_editing                  (ExoIco
                                                                           GdkEvent               *event);
 static void                 exo_icon_view_stop_editing                   (ExoIconView            *icon_view,
                                                                           gboolean                cancel_editing);
-static void                 exo_icon_view_set_pixbuf_column              (ExoIconView              *icon_view,
-                                                                          gint                      column);
-static void                 exo_icon_view_set_icon_column                (ExoIconView              *icon_view,
-                                                                          gint                      column);
+static void                 exo_icon_view_set_pixbuf_column              (ExoIconView            *icon_view,
+                                                                          gint                    column);
+static void                 exo_icon_view_set_icon_column                (ExoIconView            *icon_view,
+                                                                          gint                    column);
+
+static void                 exo_icon_view_get_screen_dimensions          (gint                   *width,
+                                                                          gint                   *height);
 
 /* Source side drag signals */
 static void exo_icon_view_drag_begin       (GtkWidget        *widget,
@@ -666,6 +669,52 @@ exo_icon_view_get_accessible (GtkWidget *widget)
     }
 
   return GTK_WIDGET_CLASS (exo_icon_view_parent_class)->get_accessible (widget);
+}
+
+static void
+exo_icon_view_get_screen_dimensions (gint *width, gint *height)
+{
+#if GTK_CHECK_VERSION(3, 22, 0)
+  GdkDisplay   *display;
+  GdkMonitor   *monitor;
+  GdkRectangle  geometry;
+
+  display = gdk_display_get_default ();
+  monitor = gdk_display_get_primary_monitor (display);
+  gdk_monitor_get_geometry (monitor, &geometry);
+
+  if (width != NULL)
+    *width = geometry.width;
+  if (height != NULL)
+    *height = geometry.height;
+#else
+  if (width != NULL)
+    *width = gdk_screen_width ();
+  if (height != NULL)
+    *height = gdk_screen_height ();
+#endif
+}
+
+static gint
+exo_icon_view_get_screen_width (void)
+{
+    gint width;
+    gint height;
+
+    exo_icon_view_get_screen_dimensions (&width, &height);
+
+    return width;
+}
+
+static gint
+exo_icon_view_get_screen_height (void)
+{
+    gint width;
+    gint height;
+
+    exo_icon_view_get_screen_dimensions (&width, &height);
+
+    return height;
 }
 
 static void
@@ -2870,7 +2919,6 @@ exo_icon_view_key_press_event (GtkWidget   *widget,
                                GdkEventKey *event)
 {
   ExoIconView *icon_view = EXO_ICON_VIEW (widget);
-  GdkScreen   *screen;
   GdkEvent    *new_event;
   gboolean     retval;
   gulong       popup_menu_id;
@@ -2897,10 +2945,9 @@ exo_icon_view_key_press_event (GtkWidget   *widget,
   popup_menu_id = g_signal_connect (G_OBJECT (icon_view->priv->search_entry), "popup-menu", G_CALLBACK (gtk_true), NULL);
 
   /* move the search window offscreen */
-  screen = gtk_widget_get_screen (GTK_WIDGET (icon_view));
   gtk_window_move (GTK_WINDOW (icon_view->priv->search_window),
-                   gdk_screen_get_width (screen) + 1,
-                   gdk_screen_get_height (screen) + 1);
+                   exo_icon_view_get_screen_width () + 1,
+                   exo_icon_view_get_screen_height () + 1);
   gtk_widget_show (icon_view->priv->search_window);
 
   /* allocate a new event to forward */
@@ -9225,7 +9272,6 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
 {
   GtkRequisition requisition;
   GdkWindow     *view_window = gtk_widget_get_window (GTK_WIDGET (icon_view));
-  GdkScreen     *screen = gdk_window_get_screen (view_window);
   gint           view_width, view_height;
   gint           view_x, view_y;
   gint           x, y;
@@ -9244,15 +9290,15 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
   gtk_widget_size_request (search_dialog, &requisition);
 #endif
 
-  if (view_x + view_width - requisition.width > gdk_screen_get_width (screen))
-    x = gdk_screen_get_width (screen) - requisition.width;
+  if (view_x + view_width - requisition.width > exo_icon_view_get_screen_width ())
+    x = exo_icon_view_get_screen_width () - requisition.width;
   else if (view_x + view_width - requisition.width < 0)
     x = 0;
   else
     x = view_x + view_width - requisition.width;
 
-  if (view_y + view_height > gdk_screen_get_height (screen))
-    y = gdk_screen_get_height (screen) - requisition.height;
+  if (view_y + view_height > exo_icon_view_get_screen_height ())
+    y = exo_icon_view_get_screen_height () - requisition.height;
   else if (view_y + view_height < 0) /* isn't really possible ... */
     y = 0;
   else
