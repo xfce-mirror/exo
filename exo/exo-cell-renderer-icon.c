@@ -576,7 +576,23 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         }
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-          /* FIXME */
+      /* check if we should render an insensitive icon */
+      if (G_UNLIKELY (gtk_widget_get_state_flags(widget) & GTK_STATE_INSENSITIVE || !gtk_cell_renderer_get_sensitive (renderer)))
+        {
+          style_context = gtk_widget_get_style_context (widget);
+          gtk_style_context_get (style_context, GTK_STATE_FLAG_INSENSITIVE,
+                                 GTK_STYLE_PROPERTY_COLOR,
+                                 &color_rgba, NULL);
+
+          color_gdk.pixel = 0;
+          color_gdk.red = color_rgba.red * 65535.0;
+          color_gdk.blue = color_rgba.blue * 65535.0;
+          color_gdk.green = color_rgba.green * 65535.0;
+          temp = exo_gdk_pixbuf_colorize (icon, &color_gdk);
+
+          g_object_unref (G_OBJECT (icon));
+          icon = temp;
+        }
 #else
       /* check if we should render an insensitive icon */
       if (G_UNLIKELY (gtk_widget_get_state (widget) == GTK_STATE_INSENSITIVE || !gtk_cell_renderer_get_sensitive (renderer)))
