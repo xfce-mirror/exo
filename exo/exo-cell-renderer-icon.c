@@ -549,9 +549,9 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
             {
 #if GTK_CHECK_VERSION (3, 0, 0)
               style_context = gtk_widget_get_style_context (widget);
-              gtk_style_context_get_background_color (style_context,
-                                                      gtk_style_context_get_state (style_context),
-                                                      &color_rgba);
+              gtk_style_context_get (style_context, GTK_STATE_FLAG_NORMAL,
+                                     GTK_STYLE_PROPERTY_BACKGROUND_COLOR,
+                                     &color_rgba, NULL);
 
               color_gdk.pixel = 0;
               color_gdk.red = color_rgba.red * 65535.0;
