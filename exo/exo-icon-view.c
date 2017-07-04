@@ -3457,7 +3457,9 @@ exo_icon_view_adjustment_changed (GtkAdjustment *adjustment,
       if (G_UNLIKELY (icon_view->priv->doing_rubberband))
         exo_icon_view_update_rubberband (GTK_WIDGET (icon_view));
 
+#if !GTK_CHECK_VERSION (3, 22, 0)
       gdk_window_process_updates (icon_view->priv->bin_window, TRUE);
+#endif
     }
 }
 
