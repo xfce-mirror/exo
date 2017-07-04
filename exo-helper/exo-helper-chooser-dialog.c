@@ -23,6 +23,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <libxfce4ui/libxfce4ui.h>
 
+#include <exo/exo-common.h>
 #include <exo-helper/exo-helper-chooser-dialog.h>
 
 
@@ -103,8 +104,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   /* add the "Help" button */
   button = gtk_button_new_with_mnemonic (_("_Help"));
   g_signal_connect_swapped (G_OBJECT (button), "clicked", G_CALLBACK (exo_helper_chooser_dialog_show_help), chooser_dialog);
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (chooser_dialog))), button, FALSE, TRUE, 0);
-  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (gtk_dialog_get_action_area (GTK_DIALOG (chooser_dialog))), button, TRUE);
+  exo_dialog_add_secondary_button (GTK_DIALOG (chooser_dialog), GTK_WIDGET (button));
   gtk_widget_show (button);
 
   notebook = gtk_notebook_new ();

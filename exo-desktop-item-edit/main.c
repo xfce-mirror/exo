@@ -36,6 +36,7 @@
 
 #include <gio/gio.h>
 #include <libxfce4ui/libxfce4ui.h>
+#include <exo/exo-common.h>
 #include <exo-desktop-item-edit/exo-die-editor.h>
 #include <exo-desktop-item-edit/exo-die-utils.h>
 
@@ -128,7 +129,6 @@ main (int argc, char **argv)
   GtkWidget       *chooser;
   GtkWidget       *message;
   GtkWidget       *button;
-  GtkWidget       *bbox;
   GtkWidget       *dialog;
   GtkWidget       *editor;
   GKeyFile        *key_file;
@@ -329,9 +329,7 @@ main (int argc, char **argv)
   gtk_window_set_icon_name (GTK_WINDOW (dialog), ICON_NAMES[mode]);
 
   button = gtk_button_new_with_mnemonic (_("_Help"));
-  bbox = gtk_dialog_get_action_area (GTK_DIALOG (dialog));
-  gtk_box_pack_start (GTK_BOX (bbox), button, FALSE, FALSE, 0);
-  gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (bbox), button, TRUE);
+  exo_dialog_add_secondary_button(GTK_DIALOG (dialog), GTK_WIDGET (button));
   g_signal_connect (G_OBJECT (button), "clicked",
       G_CALLBACK (exo_die_help), dialog);
   gtk_widget_show (button);

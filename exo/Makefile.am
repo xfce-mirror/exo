@@ -14,6 +14,7 @@ libexo_headers =							\
 	exo-binding.h							\
 	exo-cell-renderer-ellipsized-text.h				\
 	exo-cell-renderer-icon.h					\
+	exo-common.h					\
 	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
 	exo-gtk-extensions.h						\
@@ -58,6 +59,7 @@ libexo_1_la_SOURCES =							\
 	exo-binding.c							\
 	exo-cell-renderer-ellipsized-text.c				\
 	exo-cell-renderer-icon.c					\
+	exo-common.c							\
 	exo-config.c							\
 	exo-execute.c							\
 	exo-gdk-pixbuf-extensions.c					\
@@ -122,6 +124,7 @@ lib_LTLIBRARIES += libexo-2.la
 libexo_2_include_HEADERS =						\
 	exo.h								\
 	exo-binding.h							\
+	exo-common.h							\
 	exo-config.h							\
 	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
@@ -148,6 +151,7 @@ libexo_2_la_SOURCES =							\
 	exo-marshal.h							\
 	exo-private.c							\
 	exo-private.h							\
+	exo-common.c							\
 	exo-config.c							\
 	exo-execute.c							\
 	exo-gdk-pixbuf-extensions.c					\

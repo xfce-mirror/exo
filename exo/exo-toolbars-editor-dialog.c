@@ -33,6 +33,7 @@
 
 #include <libxfce4util/libxfce4util.h>
 
+#include <exo/exo-common.h>
 #include <exo/exo-private.h>
 #include <exo/exo-string.h>
 #include <exo/exo-toolbars-editor.h>
@@ -99,7 +100,7 @@ exo_toolbars_editor_dialog_init (ExoToolbarsEditorDialog *dialog)
   button = gtk_button_new ();
   g_signal_connect_swapped (G_OBJECT (button), "clicked",
                             G_CALLBACK (exo_toolbars_editor_dialog_add_toolbar), dialog);
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), button, FALSE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (exo_dialog_get_action_area (GTK_DIALOG (dialog))), button, FALSE, TRUE, 0);
   gtk_widget_show (button);
 
   align = gtk_alignment_new (0.5, 0.5, 1.0, 1.0);
@@ -121,7 +122,7 @@ exo_toolbars_editor_dialog_init (ExoToolbarsEditorDialog *dialog)
   button = gtk_button_new_from_stock (GTK_STOCK_CLOSE);
   g_signal_connect_swapped (G_OBJECT (button), "clicked",
                             G_CALLBACK (gtk_widget_destroy), dialog);
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_action_area (GTK_DIALOG (dialog))), button, FALSE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (exo_dialog_get_action_area (GTK_DIALOG (dialog))), button, FALSE, TRUE, 0);
   gtk_widget_show (button);
 }
 
