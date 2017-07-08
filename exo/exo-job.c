@@ -395,9 +395,9 @@ exo_job_emit_valist (ExoJob *job,
   G_VA_COPY (data.var_args, var_args);
 
   /* emit the signal in the main loop */
-  g_io_scheduler_job_send_to_mainloop (job->priv->scheduler_job,
-                                       exo_job_emit_valist_in_mainloop,
-                                       &data, NULL);
+  exo_job_send_to_mainloop (job,
+                            exo_job_emit_valist_in_mainloop,
+                            &data, NULL);
 }
 
 
@@ -474,9 +474,11 @@ exo_job_launch (ExoJob *job)
   g_main_context_ref (job->priv->context);
 #endif
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   g_io_scheduler_push_job (exo_job_scheduler_job_func, g_object_ref (job),
                            (GDestroyNotify) g_object_unref,
                            G_PRIORITY_HIGH, job->priv->cancellable);
+G_GNUC_END_IGNORE_DEPRECATIONS
 
   return job;
 }
@@ -670,8 +672,10 @@ exo_job_send_to_mainloop (ExoJob        *job,
   _exo_return_val_if_fail (EXO_IS_JOB (job), FALSE);
   _exo_return_val_if_fail (job->priv->scheduler_job != NULL, FALSE);
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   return g_io_scheduler_job_send_to_mainloop (job->priv->scheduler_job, func, user_data,
                                               destroy_notify);
+G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 
