@@ -2215,7 +2215,6 @@ exo_icon_view_expose_event (GtkWidget      *widget,
         {
           exo_icon_view_paint_item (icon_view, item, &event_area, event->window, item->area.x, item->area.y, TRUE);
           if (G_UNLIKELY (dest_index >= 0 && dest_item == NULL)) {
-
            if (dest_index == g_list_index (priv->items, item))
             dest_item = item;}
         }
@@ -4311,7 +4310,6 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
                                 drawable,
                                 GTK_WIDGET (icon_view),
                                 &cell_area, &cell_area, area, flags);
-
     }
 }
 #endif
@@ -4653,7 +4651,6 @@ exo_icon_view_add_move_binding (GtkBindingSet  *binding_set,
                                 GtkMovementStep step,
                                 gint            count)
 {
-
   gtk_binding_entry_add_signal (binding_set, keyval, modmask, "move-cursor", 2, G_TYPE_ENUM, step, G_TYPE_INT, count);
 
   /* skip shift+n and shift+p because this blocks type-ahead search.

@@ -88,7 +88,7 @@ new_pixbuf_from_widget (GtkWidget *widget)
    * This is needed mostly for pixmap based themes.
    */
   gtk_window_set_default_size (GTK_WINDOW (window), icon_width, icon_height);
-  gtk_window_get_size (GTK_WINDOW (window),&icon_width, &icon_height);
+  gtk_window_get_size (GTK_WINDOW (window), &icon_width, &icon_height);
 
   gtk_widget_size_request (window, &requisition);
   allocation.x = 0;

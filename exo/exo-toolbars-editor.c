@@ -527,7 +527,7 @@ exo_toolbars_editor_update (ExoToolbarsEditor *editor)
 
       if (++x >= width)
         {
-          x= 0; ++y;
+          x = 0; ++y;
         }
     }
   g_list_free (actions);

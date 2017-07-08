@@ -379,7 +379,7 @@ main (int argc, char **argv)
             return EXIT_FAILURE;
           }
         }
-        
+
 #ifdef G_OS_WIN32
       filename = g_local_to_utf8 (argv[1], -1, NULL, NULL, NULL);
 #else

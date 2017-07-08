@@ -333,7 +333,7 @@ exo_strdup_strftime (const gchar     *format,
 
           if (*piece == '0')
             {
-              while (*++piece == '\0') ;
+              while (*++piece == '\0');
               if (!g_ascii_isdigit (*piece))
                 --piece;
             }

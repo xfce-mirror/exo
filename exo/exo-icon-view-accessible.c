@@ -1,4 +1,5 @@
 /*-
+ * Copyright (c) 2012 Nick Schermer <nick@xfce.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -54,7 +55,7 @@ typedef struct
 
 #define accessible_item_index(item) (g_list_index (EXO_ICON_VIEW (item->widget)->priv->items, item->item))
 
-static const gchar *const exo_icon_view_item_accessible_action_names[] = 
+static const gchar *const exo_icon_view_item_accessible_action_names[] =
 {
   "activate",
   NULL
@@ -68,7 +69,6 @@ static const gchar *const exo_icon_view_item_accessible_action_descriptions[] =
 typedef struct _ExoIconViewItemAccessibleClass
 {
   AtkObjectClass parent_class;
-
 } ExoIconViewItemAccessibleClass;
 
 static gboolean exo_icon_view_item_accessible_is_showing (ExoIconViewItemAccessible *item);
@@ -100,7 +100,7 @@ exo_icon_view_item_accessible_action_do_action (AtkAction *action,
 {
   ExoIconViewItemAccessible *item;
 
-  if (i < 0 || i >= LAST_ACTION) 
+  if (i < 0 || i >= LAST_ACTION)
     return FALSE;
 
   item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (action);
@@ -120,8 +120,7 @@ exo_icon_view_item_accessible_action_do_action (AtkAction *action,
     default:
       g_assert_not_reached ();
       return FALSE;
-
-    }        
+    }
   return TRUE;
 }
 
@@ -137,7 +136,7 @@ exo_icon_view_item_accessible_action_get_description (AtkAction *action,
 {
   ExoIconViewItemAccessible *item;
 
-  if (i < 0 || i >= LAST_ACTION) 
+  if (i < 0 || i >= LAST_ACTION)
     return NULL;
 
   item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (action);
@@ -152,7 +151,7 @@ static const gchar *
 exo_icon_view_item_accessible_action_get_name (AtkAction *action,
                                                gint       i)
 {
-  if (i < 0 || i >= LAST_ACTION) 
+  if (i < 0 || i >= LAST_ACTION)
     return NULL;
 
   return exo_icon_view_item_accessible_action_names[i];
@@ -165,7 +164,7 @@ exo_icon_view_item_accessible_action_set_description (AtkAction   *action,
 {
   ExoIconViewItemAccessible *item;
 
-  if (i < 0 || i >= LAST_ACTION) 
+  if (i < 0 || i >= LAST_ACTION)
     return FALSE;
 
   item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (action);
@@ -223,7 +222,7 @@ get_pixbuf_box (ExoIconView     *icon_view,
   for (l = icon_view->priv->cell_list, n = 0; l; l = l->next, n++)
     {
       ExoIconViewCellInfo *info = l->data;
-      
+
       pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (info->cell), "pixmap");
       if (pspec != NULL)
         {
@@ -246,7 +245,7 @@ get_text (ExoIconView     *icon_view,
   for (l = icon_view->priv->cell_list; l; l = l->next)
     {
       ExoIconViewCellInfo *info = l->data;
-      
+
       text_spec = g_object_class_find_property (G_OBJECT_GET_CLASS (info->cell), "text");
       if (text_spec != NULL
           && G_PARAM_SPEC_STRING (text_spec))
@@ -278,7 +277,7 @@ exo_icon_view_item_accessible_image_get_image_size (AtkImage *image,
   if (get_pixbuf_box (EXO_ICON_VIEW (item->widget), item->item, &box))
     {
       *width = box.width;
-      *height = box.height;  
+      *height = box.height;
     }
 }
 
@@ -306,7 +305,6 @@ exo_icon_view_item_accessible_image_get_image_position (AtkImage    *image,
       *x+= box.x - item->item->area.x;
       *y+= box.y - item->item->area.y;
     }
-
 }
 
 static void
@@ -405,7 +403,7 @@ exo_icon_view_item_accessible_text_get_text_before_offset (AtkText         *text
       return g_strdup ("");
     }
   gtk_text_buffer_get_iter_at_offset (buffer, &start, offset);
-   
+
   end = start;
 
   switch (boundary_type)
@@ -459,8 +457,8 @@ exo_icon_view_item_accessible_text_get_text_before_offset (AtkText         *text
             break;
         }
       break;
-   case ATK_TEXT_BOUNDARY_LINE_START:
-   case ATK_TEXT_BOUNDARY_LINE_END:
+    case ATK_TEXT_BOUNDARY_LINE_START:
+    case ATK_TEXT_BOUNDARY_LINE_END:
       break;
     }
 
@@ -498,7 +496,7 @@ exo_icon_view_item_accessible_text_get_text_at_offset (AtkText         *text,
       return g_strdup ("");
     }
   gtk_text_buffer_get_iter_at_offset (buffer, &start, offset);
-   
+
   end = start;
 
   switch (boundary_type)
@@ -550,8 +548,8 @@ exo_icon_view_item_accessible_text_get_text_at_offset (AtkText         *text,
         }
       gtk_text_iter_forward_sentence_end (&end);
       break;
-   case ATK_TEXT_BOUNDARY_LINE_START:
-   case ATK_TEXT_BOUNDARY_LINE_END:
+    case ATK_TEXT_BOUNDARY_LINE_START:
+    case ATK_TEXT_BOUNDARY_LINE_END:
       break;
     }
 
@@ -590,7 +588,7 @@ exo_icon_view_item_accessible_text_get_text_after_offset (AtkText         *text,
       return g_strdup ("");
     }
   gtk_text_buffer_get_iter_at_offset (buffer, &start, offset);
-   
+
   end = start;
 
   switch (boundary_type)
@@ -649,8 +647,8 @@ exo_icon_view_item_accessible_text_get_text_after_offset (AtkText         *text,
       if (!gtk_text_iter_is_end (&end))
         gtk_text_iter_forward_sentence_end (&end);
       break;
-   case ATK_TEXT_BOUNDARY_LINE_START:
-   case ATK_TEXT_BOUNDARY_LINE_END:
+    case ATK_TEXT_BOUNDARY_LINE_START:
+    case ATK_TEXT_BOUNDARY_LINE_END:
       break;
     }
   *start_offset = gtk_text_iter_get_offset (&start);
@@ -978,7 +976,7 @@ exo_icon_view_item_accessible_get_index_in_parent (AtkObject *obj)
   g_return_val_if_fail (EXO_IS_ICON_VIEW_ITEM_ACCESSIBLE (obj), 0);
   item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (obj);
 
-  return accessible_item_index (item); 
+  return accessible_item_index (item);
 }
 
 static AtkStateSet *
@@ -1091,7 +1089,7 @@ static GType exo_icon_view_accessible_get_type (void);
 
 typedef struct
 {
-   AtkObject parent;
+  AtkObject parent;
 } ExoIconViewAccessible;
 
 typedef struct
@@ -1108,7 +1106,6 @@ typedef struct
   GtkAdjustment *old_vadj;
 
   GtkTreeModel *model;
-
 } ExoIconViewAccessiblePrivate;
 
 static ExoIconViewAccessiblePrivate *
@@ -1177,7 +1174,7 @@ exo_icon_view_accessible_find_child (AtkObject *accessible,
       info = items->data;
       if (info->index == idx)
         return info->item;
-      items = items->next; 
+      items = items->next;
     }
   return NULL;
 }
@@ -1203,7 +1200,7 @@ exo_icon_view_accessible_ref_child (AtkObject *accessible,
     {
       ExoIconViewItem *item = icons->data;
       gint item_index = g_list_index (icon_view->priv->items, item);
-   
+
       g_return_val_if_fail (item_index == idx, NULL);
       obj = exo_icon_view_accessible_find_child (accessible, idx);
       if (!obj)
@@ -1226,7 +1223,7 @@ exo_icon_view_accessible_ref_child (AtkObject *accessible,
             {
               gtk_text_buffer_set_text (a11y_item->text_buffer, text, -1);
               g_free (text);
-            } 
+            }
 
           exo_icon_view_item_accessible_set_visibility (a11y_item, FALSE);
           g_object_add_weak_pointer (G_OBJECT (widget), (gpointer) &(a11y_item->widget));
@@ -1244,7 +1241,7 @@ exo_icon_view_accessible_traverse_items (ExoIconViewAccessible *view,
   ExoIconViewItemAccessibleInfo *info;
   ExoIconViewItemAccessible *item;
   GList *items;
-  
+
   priv =  exo_icon_view_accessible_get_priv (ATK_OBJECT (view));
   if (priv->items)
     {
@@ -1261,7 +1258,6 @@ exo_icon_view_accessible_traverse_items (ExoIconViewAccessible *view,
 
       while (items)
         {
-
           info = (ExoIconViewItemAccessibleInfo *)items->data;
           item = EXO_ICON_VIEW_ITEM_ACCESSIBLE (info->item);
 
@@ -1272,8 +1268,8 @@ exo_icon_view_accessible_traverse_items (ExoIconViewAccessible *view,
             exo_icon_view_item_accessible_set_visibility (item, TRUE);
 
           items = items->next;
-       }
-   }
+        }
+    }
 }
 
 static void
@@ -1309,7 +1305,7 @@ exo_icon_view_accessible_set_scroll_adjustments (GtkWidget      *widget,
         {
           g_object_remove_weak_pointer (G_OBJECT (priv->old_hadj),
                                         (gpointer *)&priv->old_hadj);
-          
+
           g_signal_handlers_disconnect_by_func (priv->old_hadj,
                                                 (gpointer) exo_icon_view_accessible_adjustment_changed,
                                                 widget);
@@ -1331,7 +1327,7 @@ exo_icon_view_accessible_set_scroll_adjustments (GtkWidget      *widget,
         {
           g_object_remove_weak_pointer (G_OBJECT (priv->old_vadj),
                                         (gpointer *)&priv->old_vadj);
-          
+
           g_signal_handlers_disconnect_by_func (priv->old_vadj,
                                                 (gpointer) exo_icon_view_accessible_adjustment_changed,
                                                 widget);
@@ -1424,10 +1420,10 @@ exo_icon_view_accessible_model_row_inserted (GtkTreeModel *tree_model,
         {
           if (info->index < idx)
             g_warning ("Unexpected index value on insertion %d %d", idx, info->index);
- 
+
           if (tmp_list == NULL)
             tmp_list = items;
-   
+
           info->index = accessible_item_index (item);
         }
 
@@ -1475,7 +1471,7 @@ exo_icon_view_accessible_model_row_deleted (GtkTreeModel *tree_model,
         {
           if (tmp_list == NULL)
             tmp_list = items;
-            
+
           info->index = accessible_item_index (item);
         }
 
@@ -1526,7 +1522,7 @@ exo_icon_view_accessible_model_rows_reordered (GtkTreeModel *tree_model,
 
   order = g_new (gint, length);
   for (i = 0; i < length; i++)
-    order [new_order[i]] = i;
+    order[new_order[i]] = i;
 
   items = priv->items;
   while (items)
@@ -1538,7 +1534,7 @@ exo_icon_view_accessible_model_rows_reordered (GtkTreeModel *tree_model,
       items = items->next;
     }
   g_free (order);
-  priv->items = g_list_sort (priv->items, 
+  priv->items = g_list_sort (priv->items,
                              (GCompareFunc)exo_icon_view_accessible_item_compare);
 
   return;
@@ -1567,13 +1563,13 @@ exo_icon_view_accessible_connect_model_signals (ExoIconView *icon_view)
                          (GCallback) exo_icon_view_accessible_model_row_changed,
                          icon_view, NULL, 0);
   g_signal_connect_data (obj, "row-inserted",
-                         (GCallback) exo_icon_view_accessible_model_row_inserted, 
+                         (GCallback) exo_icon_view_accessible_model_row_inserted,
                          icon_view, NULL, G_CONNECT_AFTER);
   g_signal_connect_data (obj, "row-deleted",
-                         (GCallback) exo_icon_view_accessible_model_row_deleted, 
+                         (GCallback) exo_icon_view_accessible_model_row_deleted,
                          icon_view, NULL, G_CONNECT_AFTER);
   g_signal_connect_data (obj, "rows-reordered",
-                         (GCallback) exo_icon_view_accessible_model_rows_reordered, 
+                         (GCallback) exo_icon_view_accessible_model_rows_reordered,
                          icon_view, NULL, G_CONNECT_AFTER);
 }
 
@@ -1606,7 +1602,7 @@ exo_icon_view_accessible_notify_gtk (GObject *obj,
 
   if (strcmp (pspec->name, "model") == 0)
     {
-      widget = GTK_WIDGET (obj); 
+      widget = GTK_WIDGET (obj);
       atk_obj = gtk_widget_get_accessible (widget);
       priv = exo_icon_view_accessible_get_priv (atk_obj);
       if (priv->model)
@@ -1654,7 +1650,7 @@ exo_icon_view_accessible_initialize (AtkObject *accessible,
                         "value-changed",
                         G_CALLBACK (exo_icon_view_accessible_adjustment_changed),
                         icon_view);
-    } 
+    }
   if (icon_view->priv->vadjustment)
     {
       priv->old_vadj = icon_view->priv->vadjustment;
@@ -1679,7 +1675,7 @@ exo_icon_view_accessible_initialize (AtkObject *accessible,
       g_object_add_weak_pointer (G_OBJECT (priv->model), (gpointer *)&priv->model);
       exo_icon_view_accessible_connect_model_signals (icon_view);
     }
-                          
+
   accessible->role = ATK_ROLE_LAYERED_PANE;
 }
 
@@ -1709,7 +1705,7 @@ exo_icon_view_accessible_destroyed (GtkWidget *widget,
     {
       g_object_remove_weak_pointer (G_OBJECT (priv->old_hadj),
                                     (gpointer *)&priv->old_hadj);
-          
+
       g_signal_handlers_disconnect_by_func (priv->old_hadj,
                                             (gpointer) exo_icon_view_accessible_adjustment_changed,
                                             widget);
@@ -1719,7 +1715,7 @@ exo_icon_view_accessible_destroyed (GtkWidget *widget,
     {
       g_object_remove_weak_pointer (G_OBJECT (priv->old_vadj),
                                     (gpointer *)&priv->old_vadj);
-          
+
       g_signal_handlers_disconnect_by_func (priv->old_vadj,
                                             (gpointer) exo_icon_view_accessible_adjustment_changed,
                                             widget);
@@ -1955,7 +1951,7 @@ exo_icon_view_accessible_remove_selection (AtkSelection *selection,
 
   return FALSE;
 }
- 
+
 static gboolean
 exo_icon_view_accessible_select_all_selection (AtkSelection *selection)
 {
@@ -2026,15 +2022,15 @@ exo_icon_view_accessible_get_type (void)
       GType derived_atk_type;
 
       derived_type = g_type_parent (GTK_TYPE_ICON_VIEW);
-      factory = atk_registry_get_factory (atk_get_default_registry (), 
+      factory = atk_registry_get_factory (atk_get_default_registry (),
                                           derived_type);
       derived_atk_type = atk_object_factory_get_accessible_type (factory);
       g_type_query (derived_atk_type, &query);
       tinfo.class_size = query.class_size;
       tinfo.instance_size = query.instance_size;
- 
-      type = g_type_register_static (derived_atk_type, 
-                                     I_("ExoIconViewAccessible"), 
+
+      type = g_type_register_static (derived_atk_type,
+                                     I_("ExoIconViewAccessible"),
                                      &tinfo, 0);
       g_type_add_interface_static (type, ATK_TYPE_COMPONENT,
                                    &atk_component_info);
@@ -2097,7 +2093,7 @@ exo_icon_view_accessible_factory_get_type (void)
         NULL, NULL
       };
 
-      type = g_type_register_static (ATK_TYPE_OBJECT_FACTORY, 
+      type = g_type_register_static (ATK_TYPE_OBJECT_FACTORY,
                                     I_("ExoIconViewAccessibleFactory"),
                                     &tinfo, 0);
     }

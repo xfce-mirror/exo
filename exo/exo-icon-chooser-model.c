@@ -557,7 +557,7 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
   g_hash_table_foreach (items, exo_icon_chooser_model_item_to_list, &icons);
   g_hash_table_destroy (items);
 
-   /* insert the items into the model */
+  /* insert the items into the model */
   iter.stamp = model->stamp;
   for (lp = g_list_last (icons); lp != NULL; lp = lp->prev)
     {

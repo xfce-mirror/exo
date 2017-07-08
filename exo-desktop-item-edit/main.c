@@ -45,7 +45,7 @@
 #endif
 
 /* string with fallback spoort */
-#define STR_FB(string,fallback) ((string != NULL && *string != '\0') ? string : fallback)
+#define STR_FB(string, fallback) ((string != NULL && *string != '\0') ? string : fallback)
 
 
 
@@ -161,7 +161,7 @@ main (int argc, char **argv)
   g_log_set_always_fatal (G_LOG_LEVEL_CRITICAL | G_LOG_LEVEL_WARNING);
 #endif
 
-#if !GLIB_CHECK_VERSION(2,32,0)
+#if !GLIB_CHECK_VERSION(2, 32, 0)
   /* initialize the GThread system */
   if (!g_thread_supported ())
     g_thread_init (NULL);
@@ -249,7 +249,6 @@ main (int argc, char **argv)
                                 G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, "bookmark-new"));
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_URL, STR_FB (opt_url, ""));
-
         }
       else if (exo_str_is_equal (opt_type, G_KEY_FILE_DESKTOP_TYPE_DIRECTORY))
         {

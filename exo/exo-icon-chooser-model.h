@@ -90,7 +90,7 @@ G_GNUC_INTERNAL ExoIconChooserModel   *_exo_icon_chooser_model_get_for_icon_them
 
 G_GNUC_INTERNAL gboolean               _exo_icon_chooser_model_get_iter_for_icon_name (ExoIconChooserModel *model,
                                                                                        GtkTreeIter         *iter,
-                                                                                       const gchar         *icon_name) ;
+                                                                                       const gchar         *icon_name);
 
 G_END_DECLS
 

@@ -54,7 +54,7 @@
 #define MIN_TOOLBAR_HEIGHT  20
 
 #define EXO_TOOLBARS_VIEW_GET_PRIVATE(obj)  (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-   EXO_TYPE_TOOLBARS_VIEW, ExoToolbarsViewPrivate))
+  EXO_TYPE_TOOLBARS_VIEW, ExoToolbarsViewPrivate))
 
 
 
