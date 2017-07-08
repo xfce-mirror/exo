@@ -6,6 +6,7 @@ desktopdir = $(datadir)/xfce4/helpers
 desktop_in_in_files =							\
 	aterm.desktop.in.in						\
 	balsa.desktop.in.in						\
+	brave.desktop.in.in						\
 	caja.desktop.in.in						\
 	chromium.desktop.in.in						\
 	debian-sensible-browser.desktop.in.in				\
