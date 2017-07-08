@@ -17,6 +17,7 @@ desktop_in_in_files =							\
 	evolution.desktop.in.in						\
 	firefox.desktop.in.in						\
 	galeon.desktop.in.in						\
+	google-chrome.desktop.in.in						\
 	gnome-terminal.desktop.in.in					\
 	icecat.desktop.in.in						\
 	icedove.desktop.in.in						\
