@@ -9,15 +9,15 @@
 # Chris K. Zhang <plutino@gmail.com>, 2009
 # Hunt Xu <huntxu@live.cn>, 2009-2010,2012
 # Mingcong Bai <jeffbai@aosc.xyz>, 2016
-# 玉堂白鹤 <yjwork@qq.com>, 2015
+# 玉堂白鹤 <yjwork@qq.com>, 2015,2017
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-12 06:30+0200\n"
-"PO-Revision-Date: 2016-08-07 03:51+0000\n"
-"Last-Translator: Mingcong Bai <jeffbai@aosc.xyz>\n"
+"POT-Creation-Date: 2017-07-08 12:30+0200\n"
+"PO-Revision-Date: 2017-07-09 03:52+0000\n"
+"Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/xfce/exo/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,12 +74,12 @@ msgstr "无法读取文件 “%s”：%s"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "无法载入图片 “%s”：未知原因，可能是一已损坏图片文件。"
 
-#: ../exo/exo-gtk-extensions.c:242
+#: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "无法打开 “%s”。"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:879
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
 msgstr "方向"
 
@@ -87,19 +87,19 @@ msgstr "方向"
 msgid "The orientation of the iconbar"
 msgstr "图标栏的方向"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:896
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:945
 msgid "Pixbuf column"
 msgstr "Pixbuf 栏"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:897
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:946
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "获取图标的 Pixbuf 所使用的模板栏"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1041
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1090
 msgid "Text column"
 msgstr "文字栏"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1042
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1091
 msgid "Model column used to retrieve the text from"
 msgstr "用来获取文字的模板栏"
 
@@ -144,222 +144,222 @@ msgid "Cursor item text color"
 msgstr "光标项目的文字颜色"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:108
+#: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Action Icons"
 msgstr "动作图标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:110
+#: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Animations"
 msgstr "动画"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:112
+#: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Application Icons"
 msgstr "应用程序图标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:114
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Menu Icons"
 msgstr "菜单图标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:116
+#: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Device Icons"
 msgstr "设备图标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:118
+#: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Emblems"
 msgstr "徽标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:120
+#: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Emoticons"
 msgstr "表情"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:122
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "International Denominations"
 msgstr "国际化名称"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:124
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "File Type Icons"
 msgstr "文件类型图标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:126
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Location Icons"
 msgstr "位置图标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:128
+#: ../exo/exo-icon-chooser-dialog.c:125
 msgid "Status Icons"
 msgstr "状态图标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:130
+#: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Uncategorized Icons"
 msgstr "未分类图标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:134
+#: ../exo/exo-icon-chooser-dialog.c:131
 msgid "All Icons"
 msgstr "所有图标"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:138 ../exo/exo-icon-chooser-dialog.c:316
+#: ../exo/exo-icon-chooser-dialog.c:135 ../exo/exo-icon-chooser-dialog.c:311
 msgid "Image Files"
 msgstr "图片文件"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:222
+#: ../exo/exo-icon-chooser-dialog.c:219
 msgid "Select _icon from:"
 msgstr "从此选择图标(_I)："
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:246
+#: ../exo/exo-icon-chooser-dialog.c:243
 msgid "_Search icon:"
 msgstr "搜索图标(_S)："
 
-#: ../exo/exo-icon-chooser-dialog.c:266
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Clear search field"
 msgstr "清除搜索框"
 
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:796
 msgid "Column Spacing"
 msgstr "栏距"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:797
 msgid "Space which is inserted between grid column"
 msgstr "插入两栏之间的间距"
 
-#: ../exo/exo-icon-view.c:764
+#: ../exo/exo-icon-view.c:813
 msgid "Number of columns"
 msgstr "栏数"
 
-#: ../exo/exo-icon-view.c:765
+#: ../exo/exo-icon-view.c:814
 msgid "Number of columns to display"
 msgstr "要显示的栏数"
 
-#: ../exo/exo-icon-view.c:779
+#: ../exo/exo-icon-view.c:828
 msgid "Enable Search"
 msgstr "启用搜索"
 
-#: ../exo/exo-icon-view.c:780
+#: ../exo/exo-icon-view.c:829
 msgid "View allows user to search through columns interactively"
 msgstr "用户可以通过栏交互搜索的视图"
 
-#: ../exo/exo-icon-view.c:797
+#: ../exo/exo-icon-view.c:846
 msgid "Width for each item"
 msgstr "各项目宽度"
 
-#: ../exo/exo-icon-view.c:798
+#: ../exo/exo-icon-view.c:847
 msgid "The width used for each item"
 msgstr "各项目所用宽度"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:865
 msgid "Layout mode"
 msgstr "布局模式"
 
-#: ../exo/exo-icon-view.c:817
+#: ../exo/exo-icon-view.c:866
 msgid "The layout mode"
 msgstr "布局模式"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:882
 msgid "Margin"
 msgstr "边界"
 
-#: ../exo/exo-icon-view.c:834
+#: ../exo/exo-icon-view.c:883
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "图标视图中插入边缘的间距"
 
-#: ../exo/exo-icon-view.c:850
+#: ../exo/exo-icon-view.c:899
 msgid "Markup column"
 msgstr "标记栏"
 
-#: ../exo/exo-icon-view.c:851
+#: ../exo/exo-icon-view.c:900
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "使用 Pango 标记时用来获取文字的模板栏"
 
-#: ../exo/exo-icon-view.c:865
+#: ../exo/exo-icon-view.c:914
 msgid "Icon View Model"
 msgstr "图标视图模板"
 
-#: ../exo/exo-icon-view.c:866
+#: ../exo/exo-icon-view.c:915
 msgid "The model for the icon view"
 msgstr "图标视图使用的模板"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:929
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "各项目的图标和文字的相对位置如何排放"
 
-#: ../exo/exo-icon-view.c:914
+#: ../exo/exo-icon-view.c:963
 msgid "Icon column"
 msgstr "图标栏"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:964
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "用于获取需要的渲染图像绝对路径的模态列"
 
-#: ../exo/exo-icon-view.c:930
+#: ../exo/exo-icon-view.c:979
 msgid "Reorderable"
 msgstr "可重排序"
 
-#: ../exo/exo-icon-view.c:931
+#: ../exo/exo-icon-view.c:980
 msgid "View is reorderable"
 msgstr "视图可重排序"
 
-#: ../exo/exo-icon-view.c:946
+#: ../exo/exo-icon-view.c:995
 msgid "Row Spacing"
 msgstr "行距"
 
-#: ../exo/exo-icon-view.c:947
+#: ../exo/exo-icon-view.c:996
 msgid "Space which is inserted between grid rows"
 msgstr "列表中行的间距"
 
-#: ../exo/exo-icon-view.c:961
+#: ../exo/exo-icon-view.c:1010
 msgid "Search Column"
 msgstr "搜索栏"
 
-#: ../exo/exo-icon-view.c:962
+#: ../exo/exo-icon-view.c:1011
 msgid "Model column to search through when searching through item"
 msgstr "通过项目搜索时要搜索的模板栏"
 
-#: ../exo/exo-icon-view.c:976
+#: ../exo/exo-icon-view.c:1025
 msgid "Selection mode"
 msgstr "选择模式"
 
-#: ../exo/exo-icon-view.c:977
+#: ../exo/exo-icon-view.c:1026
 msgid "The selection mode"
 msgstr "选择模式"
 
-#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:1041 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "单击"
 
-#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:1042 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "是否可以用单击激活视图中的项目"
 
-#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:1058 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "单击时效"
 
-#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:1059 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "在单击模式中，自动选中鼠标光标下项目的时间"
 
-#: ../exo/exo-icon-view.c:1025
+#: ../exo/exo-icon-view.c:1074
 msgid "Spacing"
 msgstr "间距"
 
-#: ../exo/exo-icon-view.c:1026
+#: ../exo/exo-icon-view.c:1075
 msgid "Space which is inserted between cells of an item"
 msgstr "插入项目单元之间的间距"
 
@@ -391,7 +391,7 @@ msgstr "FIFO"
 msgid "Socket"
 msgstr "套接字"
 
-#: ../exo/exo-toolbars-editor-dialog.c:117
+#: ../exo/exo-toolbars-editor-dialog.c:118
 msgid "_Add a new toolbar"
 msgstr "添加新的工具栏(_A)"
 
@@ -405,35 +405,35 @@ msgstr "把一个项目拖到工具栏中来添加，从工具栏拖走来移除
 msgid "Separator"
 msgstr "分隔符"
 
-#: ../exo/exo-toolbars-view.c:752
+#: ../exo/exo-toolbars-view.c:755
 msgid "Toolbar _Style"
 msgstr "工具栏样式(_S)"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:762
 msgid "_Desktop Default"
 msgstr "桌面默认(_D)"
 
-#: ../exo/exo-toolbars-view.c:768
+#: ../exo/exo-toolbars-view.c:771
 msgid "_Icons only"
 msgstr "仅图标(_I)"
 
-#: ../exo/exo-toolbars-view.c:777
+#: ../exo/exo-toolbars-view.c:780
 msgid "_Text only"
 msgstr "仅文字(_T)"
 
-#: ../exo/exo-toolbars-view.c:786
+#: ../exo/exo-toolbars-view.c:789
 msgid "Text for _All Icons"
 msgstr "所有图标显示文字(_A)"
 
-#: ../exo/exo-toolbars-view.c:795
+#: ../exo/exo-toolbars-view.c:798
 msgid "Text for I_mportant Icons"
 msgstr "重要图标显示文字(_M)"
 
-#: ../exo/exo-toolbars-view.c:803
+#: ../exo/exo-toolbars-view.c:806
 msgid "_Remove Toolbar"
 msgstr "移除工具栏(_R)"
 
-#: ../exo/exo-toolbars-view.c:818
+#: ../exo/exo-toolbars-view.c:821
 msgid "Customize Toolbar..."
 msgstr "自定义工具栏..."
 
@@ -477,58 +477,63 @@ msgstr "重启命令"
 msgid "Session restart command"
 msgstr "会话重启命令"
 
-#: ../exo-csource/main.c:284
+#: ../exo-csource/main.c:303
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "用法：%s [选项] [文件]\n"
 
-#: ../exo-csource/main.c:285
+#: ../exo-csource/main.c:304
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "        %s [选项] --build-list [[名称文件]...]\n"
 
-#: ../exo-csource/main.c:287
+#: ../exo-csource/main.c:306
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help            列印帮助信息后退出\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:307
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
 msgstr "  -V, --version         列印版本信息后退出\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:308
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern              生成外部符号\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:309
 #, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static              生成静态符号\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:310
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name 为标识符         C 语言宏／变量名\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:311
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list          解析(名称，文件)对\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:312
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments      移除 XML 文件中的注释\n"
 
-#: ../exo-csource/main.c:294
+#: ../exo-csource/main.c:313
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content       移除 XML 文件中的节点内容\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
-#: ../exo-open/main.c:505
+#: ../exo-csource/main.c:314
+#, c-format
+msgid "  --output=filename Write generated csource to specified file\n"
+msgstr ""
+
+#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:195
+#: ../exo-open/main.c:509
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -538,8 +543,8 @@ msgid ""
 "\n"
 msgstr "版权 (c) %s\n          os-cillation e.K. 版权所有。\n\n由 Benedikt Meurer <benny@xfce.org> 撰写。\n\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
-#: ../exo-open/main.c:509
+#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:199
+#: ../exo-open/main.c:513
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -549,8 +554,8 @@ msgid ""
 "\n"
 msgstr "%1$s 绝对没有任何担保，\n您可以在 %3$s 的源码包中找到 GNU 宽通用公共\n许可协议并在此协议的约束下重新发布 %2$s 的副本。\n\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
-#: ../exo-open/main.c:513
+#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:203
+#: ../exo-open/main.c:517
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "请向 <%s> 报告缺陷。\n"
@@ -562,46 +567,46 @@ msgstr "选择应用程序"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
-#: ../exo-desktop-item-edit/exo-die-editor.c:642
-#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
-#: ../exo-helper/exo-helper-chooser.c:386
-#: ../exo-helper/exo-helper-chooser.c:531
+#: ../exo-desktop-item-edit/exo-die-editor.c:638
+#: ../exo-desktop-item-edit/main.c:325 ../exo-desktop-item-edit/main.c:516
+#: ../exo-helper/exo-helper-chooser.c:382
+#: ../exo-helper/exo-helper-chooser.c:527
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "取消(_C)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:387
+#: ../exo-helper/exo-helper-chooser.c:383
 msgid "_Open"
 msgstr "打开(_O)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:393
+#: ../exo-helper/exo-helper-chooser.c:389
 msgid "All Files"
 msgstr "所有文件"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:398
+#: ../exo-helper/exo-helper-chooser.c:394
 msgid "Executable Files"
 msgstr "可执行文件"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:413
+#: ../exo-helper/exo-helper-chooser.c:409
 msgid "Perl Scripts"
 msgstr "Perl 脚本"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:419
+#: ../exo-helper/exo-helper-chooser.c:415
 msgid "Python Scripts"
 msgstr "Python 脚本"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:425
+#: ../exo-helper/exo-helper-chooser.c:421
 msgid "Ruby Scripts"
 msgstr "Ruby 脚本"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:431
+#: ../exo-helper/exo-helper-chooser.c:427
 msgid "Shell Scripts"
 msgstr "Shell 脚本"
 
@@ -650,7 +655,7 @@ msgstr "图标(_I)："
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1235
+#: ../exo-desktop-item-edit/exo-die-editor.c:1227
 msgid "No icon"
 msgstr "无图标"
 
@@ -691,75 +696,75 @@ msgid "Select an icon"
 msgstr "选择图标"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
-#: ../exo-desktop-item-edit/exo-die-editor.c:643
-#: ../exo-helper/exo-helper-chooser.c:532
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-helper/exo-helper-chooser.c:528
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "确定(_O)"
 
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-desktop-item-edit/exo-die-editor.c:635
 msgid "Select a working directory"
 msgstr "选择工作目录"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:169
+#: ../exo-desktop-item-edit/exo-die-utils.c:171
 msgid "File location is not a regular file or directory"
 msgstr "文件位置不是常规的文件或目录"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Launcher"
 msgstr "创建启动器"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Link"
 msgstr "创建链接"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Directory"
 msgstr "创建目录"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Launcher"
 msgstr "编辑启动器"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Link"
 msgstr "编辑链接"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Directory"
 msgstr "编辑目录"
 
-#: ../exo-desktop-item-edit/main.c:78
+#: ../exo-desktop-item-edit/main.c:79
 msgid "Create a new desktop file in the given directory"
 msgstr "在给定的目录下创建新的桌面文件"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "要创建的桌面文件类型(应用程序或链接)"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Preset name when creating a desktop file"
 msgstr "创建桌面文件时的预设名称"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset comment when creating a desktop file"
 msgstr "创建桌面文件时的预设注释"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset command when creating a launcher"
 msgstr "创建启动器时的预设命令"
 
-#: ../exo-desktop-item-edit/main.c:83
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset URL when creating a link"
 msgstr "创建链接时的预设 URL"
 
-#: ../exo-desktop-item-edit/main.c:84
+#: ../exo-desktop-item-edit/main.c:85
 msgid "Preset icon when creating a desktop file"
 msgstr "创建桌面文件时的预设图标"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
+#: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "列印版本信息后退出"
 
@@ -777,74 +782,74 @@ msgstr "无法打开显示"
 msgid "No file/folder specified"
 msgstr "未指定文件/目录"
 
-#: ../exo-desktop-item-edit/main.c:276
+#: ../exo-desktop-item-edit/main.c:275
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "无法从 “%s” 载入内容：%s"
 
-#: ../exo-desktop-item-edit/main.c:281
+#: ../exo-desktop-item-edit/main.c:280
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "文件 “%s” 不包含数据"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:294
+#: ../exo-desktop-item-edit/main.c:293
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "无法解析 “%s” 的内容：%s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:306
+#: ../exo-desktop-item-edit/main.c:305
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "文件 “%s” 没有类型关键字"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:316
+#: ../exo-desktop-item-edit/main.c:315
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "不支持的桌面文件类型 “%s”"
 
 #. add the "Help" button
-#: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:104
+#: ../exo-desktop-item-edit/main.c:330
+#: ../exo-helper/exo-helper-chooser-dialog.c:105
 msgid "_Help"
 msgstr "帮助(_H)"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:340
+#: ../exo-desktop-item-edit/main.c:337
 msgid "C_reate"
 msgstr "创建(_R)"
 
-#: ../exo-desktop-item-edit/main.c:340 ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:337 ../exo-desktop-item-edit/main.c:517
 msgid "_Save"
 msgstr "保存(_S)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:516
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "选择文件名"
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "无法创建 “%s”。"
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "无法保存 “%s”。"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:98
+#: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:100
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "首选应用程序"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
+#: ../exo-helper/exo-helper-chooser-dialog.c:102
 msgid "Select default applications for various services"
 msgstr "为各种服务选择默认应用程序"
 
@@ -911,80 +916,80 @@ msgstr "按左键来更改选中的应用程序。"
 msgid "Application Chooser Button"
 msgstr "应用程序选择器按钮"
 
-#: ../exo-helper/exo-helper-chooser.c:294
+#: ../exo-helper/exo-helper-chooser.c:290
 msgid "No application selected"
 msgstr "未选中应用程序"
 
-#: ../exo-helper/exo-helper-chooser.c:310
+#: ../exo-helper/exo-helper-chooser.c:306
 msgid "Failed to set default Web Browser"
 msgstr "无法设置默认网络浏览器"
 
-#: ../exo-helper/exo-helper-chooser.c:311
+#: ../exo-helper/exo-helper-chooser.c:307
 msgid "Failed to set default Mail Reader"
 msgstr "无法设置默认邮件阅读器"
 
-#: ../exo-helper/exo-helper-chooser.c:312
+#: ../exo-helper/exo-helper-chooser.c:308
 msgid "Failed to set default File Manager"
 msgstr "无法设置默认文件管理器"
 
-#: ../exo-helper/exo-helper-chooser.c:313
+#: ../exo-helper/exo-helper-chooser.c:309
 msgid "Failed to set default Terminal Emulator"
 msgstr "无法设置默认终端模拟器"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:379
 msgid "Select application"
 msgstr "选择应用程序"
 
-#: ../exo-helper/exo-helper-chooser.c:496
+#: ../exo-helper/exo-helper-chooser.c:492
 msgid "Choose a custom Web Browser"
 msgstr "选择自定义网络浏览器"
 
-#: ../exo-helper/exo-helper-chooser.c:497
+#: ../exo-helper/exo-helper-chooser.c:493
 msgid "Choose a custom Mail Reader"
 msgstr "选择自定义邮件阅读器"
 
-#: ../exo-helper/exo-helper-chooser.c:498
+#: ../exo-helper/exo-helper-chooser.c:494
 msgid "Choose a custom File Manager"
 msgstr "选择自定义文件管理器"
 
-#: ../exo-helper/exo-helper-chooser.c:499
+#: ../exo-helper/exo-helper-chooser.c:495
 msgid "Choose a custom Terminal Emulator"
 msgstr "选择自定义终端模拟器"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:500
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "指定您要用作 Xfce 默认网络浏览器的应用程序："
 
-#: ../exo-helper/exo-helper-chooser.c:505
+#: ../exo-helper/exo-helper-chooser.c:501
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "指定您要用作 Xfce 默认邮件阅读器的应用程序："
 
-#: ../exo-helper/exo-helper-chooser.c:506
+#: ../exo-helper/exo-helper-chooser.c:502
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "指定您要用作 Xfce 默认文件管理器的应用程序："
 
-#: ../exo-helper/exo-helper-chooser.c:507
+#: ../exo-helper/exo-helper-chooser.c:503
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "指定您要用作 Xfce 默认终端模拟器的应用程序："
 
-#: ../exo-helper/exo-helper-chooser.c:571
+#: ../exo-helper/exo-helper-chooser.c:567
 msgid "Browse the file system to choose a custom command."
 msgstr "浏览文件系统选择自定义命令。"
 
-#: ../exo-helper/exo-helper-chooser.c:764
+#: ../exo-helper/exo-helper-chooser.c:765
 msgid "_Other..."
 msgstr "其它(_O)..."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:766
 msgid "Use a custom application which is not included in the above list."
 msgstr "使用不在以上列表中的自定义应用程序。"
 
@@ -1016,12 +1021,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "现在请选择您的首选终端模拟器，\n点确定继续。"
 
-#: ../exo-helper/exo-helper.c:384
+#: ../exo-helper/exo-helper.c:389
 #, c-format
 msgid "No command specified"
 msgstr "没有指定命令"
 
-#: ../exo-helper/exo-helper.c:697 ../exo-helper/exo-helper.c:735
+#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
+#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "无法打开 %s 来写入"
@@ -1047,51 +1053,56 @@ msgstr "无法执行默认的文件管理器"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "无法执行默认的终端模拟器"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "打开首选应用程序配置对话框"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "Settings manager socket"
 msgstr "设置管理器套接字"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "SOCKET ID"
 msgstr "套接字 ID"
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "用可选 ‘参数’ 来启动 ‘类型’ 的默认辅助程序，‘类型’ 可以是以下值之一。"
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75 ../exo-helper/main.c:76
 msgid "TYPE [PARAMETER]"
 msgstr "类型 [参数]"
 
-#: ../exo-helper/main.c:103
+#: ../exo-helper/main.c:76
 msgid ""
-"The following TYPEs are supported for the --launch command:\n"
+"Query the default helper of TYPE, where TYPE is one of the following values."
+msgstr ""
+
+#: ../exo-helper/main.c:105
+msgid ""
+"The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "--launch 命令支持以下类型：\n\n  WebBrowser       - 首选网络浏览器。\n  MailReader       - 首选邮件阅读器。\n  FileManager      - 首选文件管理器。\n  TerminalEmulator - 首选终端模拟器。"
+msgstr "--launch 和 --query 命令支持以下类型：\n\n  WebBrowser       - 首选网络浏览器。\n  MailReader       - 首选邮件阅读器。\n  FileManager      - 首选文件管理器。\n  TerminalEmulator - 首选终端模拟器。"
 
-#: ../exo-helper/main.c:113
+#: ../exo-helper/main.c:115
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "输入 ‘%s --help’ 获取用法。"
 
-#: ../exo-helper/main.c:172
+#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "无效的外围程序类型 “%s”"
 
-#: ../exo-helper/main.c:220
+#: ../exo-helper/main.c:224
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1106,6 +1117,11 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s(Xfce %s)\n\n版权 (c) 2003-2006\n        os-cillation e.K. 版权所有。\n\n由 Benedikt Meurer <benny@xfce.org> 撰写。\n\n用 Gtk+-%d.%d.%d 编译，运行 Gtk+-%d.%d.%d。\n\n请向 <%s> 报告缺陷。\n"
 
+#: ../exo-helper/main.c:250
+#, c-format
+msgid "No helper defined for \"%s\"."
+msgstr ""
+
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
 msgstr "Aterm"
@@ -1113,6 +1129,10 @@ msgstr "Aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/brave.desktop.in.in.h:1
+msgid "Brave"
+msgstr ""
 
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
@@ -1157,6 +1177,14 @@ msgstr "Mozilla Firefox"
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
 msgstr "Galeon 网络浏览器"
+
+#: ../exo-helper/helpers/geary.desktop.in.in.h:1
+msgid "Geary"
+msgstr "Geary"
+
+#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
+msgid "Google Chrome"
+msgstr "谷歌 Chrome"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
@@ -1226,10 +1254,6 @@ msgstr "NXterm"
 msgid "Opera Browser"
 msgstr "Opera 浏览器"
 
-#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
-msgid "Opera Mail"
-msgstr "Opera 邮件"
-
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "PCMan 文件管理器"
@@ -1285,6 +1309,10 @@ msgstr "RXVT Unicode"
 #: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
 msgid "Vimprobable2"
 msgstr "Vimprobable2"
+
+#: ../exo-helper/helpers/vivaldi.desktop.in.in.h:1
+msgid "Vivaldi"
+msgstr "Vivaldi"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
@@ -1368,12 +1396,12 @@ msgstr "%s 未编译支持 GIO-Unix 功能时，不支持启动桌面文件。"
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "无法启动类别 “%s” 的首选应用程序。"
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:590
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "未能检测 “%s” 的 URI-scheme。"
 
-#: ../exo-open/main.c:600
+#: ../exo-open/main.c:604
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "无法打开 URI “%s”。"
