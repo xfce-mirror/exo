@@ -258,5 +258,48 @@ exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
 
 
 
+/**
+ * exo_gtk_dialog_get_action_area:
+ * @dialog : a #GtkDialog.
+ *
+ * Returns the action area of a #GtkDialog. The internal function has been
+ * deprecated in GTK+, so this wraps and dispels the deprecation warning.
+ *
+ * Returns: the action area.
+ *
+ * Since: 0.11.4
+ **/
+GtkWidget *
+exo_gtk_dialog_get_action_area (GtkDialog *dialog)
+{
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+    return gtk_dialog_get_action_area (dialog);
+G_GNUC_END_IGNORE_DEPRECATIONS
+}
+
+
+
+/**
+ * exo_gtk_dialog_add_secondary_button:
+ * @dialog : a #GtkDialog.
+ * @button : a #GtkButton to add and mark as secondary.
+ *
+ * Convenience function to add a secondary button to a #GtkDialog.
+ *
+ * Since: 0.11.4
+ **/
+void
+exo_gtk_dialog_add_secondary_button (GtkDialog *dialog,
+                                     GtkWidget *button)
+{
+    GtkWidget *button_box;
+
+    button_box = exo_gtk_dialog_get_action_area (dialog);
+    gtk_box_pack_start (GTK_BOX (button_box), button, FALSE, FALSE, 0);
+    gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (button_box), button, TRUE);
+}
+
+
+
 #define __EXO_GTK_EXTENSIONS_C__
 #include <exo/exo-aliasdef.c>

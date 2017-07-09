@@ -76,4 +76,3 @@ _exo_gtk_widget_send_focus_change (GtkWidget *widget,
   g_object_unref (G_OBJECT (widget));
   gdk_event_free (fevent);
 }
-
