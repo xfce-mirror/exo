@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-15 06:30+0200\n"
-"PO-Revision-Date: 2017-06-15 17:05+0000\n"
+"POT-Creation-Date: 2017-07-08 12:30+0200\n"
+"PO-Revision-Date: 2017-07-10 01:08+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/xfce/exo/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -73,7 +73,7 @@ msgstr "\"%s\" 그림을 불러오는데 실패했습니다: 이유를 알 수 �
 msgid "Failed to open \"%s\"."
 msgstr "\"%s\"을(를) 여는데 실패했습니다."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:879
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
 msgstr "방향"
 
@@ -81,19 +81,19 @@ msgstr "방향"
 msgid "The orientation of the iconbar"
 msgstr "아이콘 바의 방향"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:896
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:945
 msgid "Pixbuf column"
 msgstr "픽셀버퍼 내용"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:897
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:946
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "아이콘 픽셀 버퍼 검색에 사용할 모델 컬럼 수"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1041
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1090
 msgid "Text column"
 msgstr "텍스트 컬럼"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1042
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1091
 msgid "Model column used to retrieve the text from"
 msgstr "텍스트를 검색하려 사용할 모델 컬럼 수 입니다"
 
@@ -221,139 +221,139 @@ msgstr "아이콘 검색(_S):"
 msgid "Clear search field"
 msgstr "검색 필드 지우기"
 
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:796
 msgid "Column Spacing"
 msgstr "내용 여백"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:797
 msgid "Space which is inserted between grid column"
 msgstr "격자 내용 사이에 들어간 공간"
 
-#: ../exo/exo-icon-view.c:764
+#: ../exo/exo-icon-view.c:813
 msgid "Number of columns"
 msgstr "칸 수"
 
-#: ../exo/exo-icon-view.c:765
+#: ../exo/exo-icon-view.c:814
 msgid "Number of columns to display"
 msgstr "표시할 칸 수"
 
-#: ../exo/exo-icon-view.c:779
+#: ../exo/exo-icon-view.c:828
 msgid "Enable Search"
 msgstr "검색 활성화"
 
-#: ../exo/exo-icon-view.c:780
+#: ../exo/exo-icon-view.c:829
 msgid "View allows user to search through columns interactively"
 msgstr "사용자가 내용을 통해 상호적 검색을 할 수 있도록 하는 뷰"
 
-#: ../exo/exo-icon-view.c:797
+#: ../exo/exo-icon-view.c:846
 msgid "Width for each item"
 msgstr "각각의 항목에 대한 폭"
 
-#: ../exo/exo-icon-view.c:798
+#: ../exo/exo-icon-view.c:847
 msgid "The width used for each item"
 msgstr "각각의 항목이 사용하는 폭"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:865
 msgid "Layout mode"
 msgstr "배치 모드"
 
-#: ../exo/exo-icon-view.c:817
+#: ../exo/exo-icon-view.c:866
 msgid "The layout mode"
 msgstr "배치 모드"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:882
 msgid "Margin"
 msgstr "여백"
 
-#: ../exo/exo-icon-view.c:834
+#: ../exo/exo-icon-view.c:883
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "아이콘 보기의 모서리에 삽입된 공간"
 
-#: ../exo/exo-icon-view.c:850
+#: ../exo/exo-icon-view.c:899
 msgid "Markup column"
 msgstr "마크업 내용"
 
-#: ../exo/exo-icon-view.c:851
+#: ../exo/exo-icon-view.c:900
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Pango 마크업을 사용할 때 텍스트 검색에 사용할 모델 내용"
 
-#: ../exo/exo-icon-view.c:865
+#: ../exo/exo-icon-view.c:914
 msgid "Icon View Model"
 msgstr "아이콘 뷰 모델"
 
-#: ../exo/exo-icon-view.c:866
+#: ../exo/exo-icon-view.c:915
 msgid "The model for the icon view"
 msgstr "아이콘 뷰를 위한 모델"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:929
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "각각의 항목에 대한 텍스트와 아이콘을 서로 관계적으로 위치시키는 방법"
 
-#: ../exo/exo-icon-view.c:914
+#: ../exo/exo-icon-view.c:963
 msgid "Icon column"
 msgstr "아이콘 컬럼"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:964
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "표시할 이미지 파일의 절대 경로를 가져올때 사용할 모델 컬럼"
 
-#: ../exo/exo-icon-view.c:930
+#: ../exo/exo-icon-view.c:979
 msgid "Reorderable"
 msgstr "재정렬 가능"
 
-#: ../exo/exo-icon-view.c:931
+#: ../exo/exo-icon-view.c:980
 msgid "View is reorderable"
 msgstr "뷰는 재정렬가능합니다"
 
-#: ../exo/exo-icon-view.c:946
+#: ../exo/exo-icon-view.c:995
 msgid "Row Spacing"
 msgstr "줄 공간"
 
-#: ../exo/exo-icon-view.c:947
+#: ../exo/exo-icon-view.c:996
 msgid "Space which is inserted between grid rows"
 msgstr "줄 격자 사이에 삽입된 공간"
 
-#: ../exo/exo-icon-view.c:961
+#: ../exo/exo-icon-view.c:1010
 msgid "Search Column"
 msgstr "검색 내용"
 
-#: ../exo/exo-icon-view.c:962
+#: ../exo/exo-icon-view.c:1011
 msgid "Model column to search through when searching through item"
 msgstr "항목을 검색할 때 검색할 모델 내용 입니다."
 
-#: ../exo/exo-icon-view.c:976
+#: ../exo/exo-icon-view.c:1025
 msgid "Selection mode"
 msgstr "삽입 모드"
 
-#: ../exo/exo-icon-view.c:977
+#: ../exo/exo-icon-view.c:1026
 msgid "The selection mode"
 msgstr "삽입 모드"
 
-#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:1041 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "한 번 누르기"
 
-#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:1042 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "한 번 눌러서 보기의 항목을 활성화 할 수 있는지에 대한 여부입니다"
 
-#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:1058 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "한 번 누르기 경과시간"
 
-#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:184
+#: ../exo/exo-icon-view.c:1059 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "마우스 커서를 항목 위에 위치 시켰을 때 한 번 누르기 모드에서 자동으로 선택하는데 소요할 시간입니다"
 
-#: ../exo/exo-icon-view.c:1025
+#: ../exo/exo-icon-view.c:1074
 msgid "Spacing"
 msgstr "공간"
 
-#: ../exo/exo-icon-view.c:1026
+#: ../exo/exo-icon-view.c:1075
 msgid "Space which is inserted between cells of an item"
 msgstr "항목의 칸 사이에 삽입된 공간"
 
@@ -385,7 +385,7 @@ msgstr "FIFO"
 msgid "Socket"
 msgstr "소켓"
 
-#: ../exo/exo-toolbars-editor-dialog.c:117
+#: ../exo/exo-toolbars-editor-dialog.c:118
 msgid "_Add a new toolbar"
 msgstr "새로운 도구 모음 추가(_A)"
 
@@ -399,35 +399,35 @@ msgstr "추가하려면 항목을 끌어다 도구 모음 위에 놓고, 제거�
 msgid "Separator"
 msgstr "구분선"
 
-#: ../exo/exo-toolbars-view.c:752
+#: ../exo/exo-toolbars-view.c:755
 msgid "Toolbar _Style"
 msgstr "도구 모음 형태(_S)"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:762
 msgid "_Desktop Default"
 msgstr "데스크톱 기본(_D)"
 
-#: ../exo/exo-toolbars-view.c:768
+#: ../exo/exo-toolbars-view.c:771
 msgid "_Icons only"
 msgstr "아이콘만 표시(_I)"
 
-#: ../exo/exo-toolbars-view.c:777
+#: ../exo/exo-toolbars-view.c:780
 msgid "_Text only"
 msgstr "글자만 표시(_T)"
 
-#: ../exo/exo-toolbars-view.c:786
+#: ../exo/exo-toolbars-view.c:789
 msgid "Text for _All Icons"
 msgstr "모든 아이콘을 위해 텍스트 표시(_A)"
 
-#: ../exo/exo-toolbars-view.c:795
+#: ../exo/exo-toolbars-view.c:798
 msgid "Text for I_mportant Icons"
 msgstr "중요한 아이콘을 위해 텍스트 표시(_M)"
 
-#: ../exo/exo-toolbars-view.c:803
+#: ../exo/exo-toolbars-view.c:806
 msgid "_Remove Toolbar"
 msgstr "도구 모음 제거(_R)"
 
-#: ../exo/exo-toolbars-view.c:818
+#: ../exo/exo-toolbars-view.c:821
 msgid "Customize Toolbar..."
 msgstr "도구 모음 사용자 지정..."
 
@@ -562,45 +562,45 @@ msgstr "프로그램 선택"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
-#: ../exo-helper/exo-helper-chooser.c:386
-#: ../exo-helper/exo-helper-chooser.c:531
+#: ../exo-desktop-item-edit/main.c:325 ../exo-desktop-item-edit/main.c:516
+#: ../exo-helper/exo-helper-chooser.c:382
+#: ../exo-helper/exo-helper-chooser.c:527
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "취소(_C)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:387
+#: ../exo-helper/exo-helper-chooser.c:383
 msgid "_Open"
 msgstr "열기(_O)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:393
+#: ../exo-helper/exo-helper-chooser.c:389
 msgid "All Files"
 msgstr "모든 파일"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:398
+#: ../exo-helper/exo-helper-chooser.c:394
 msgid "Executable Files"
 msgstr "실행 가능한 파일"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:413
+#: ../exo-helper/exo-helper-chooser.c:409
 msgid "Perl Scripts"
 msgstr "펄 스크립트"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:419
+#: ../exo-helper/exo-helper-chooser.c:415
 msgid "Python Scripts"
 msgstr "파이선 스크립트"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:425
+#: ../exo-helper/exo-helper-chooser.c:421
 msgid "Ruby Scripts"
 msgstr "루비 스크립트"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:431
+#: ../exo-helper/exo-helper-chooser.c:427
 msgid "Shell Scripts"
 msgstr "쉘 스크립트"
 
@@ -691,7 +691,7 @@ msgstr "아이콘 선택"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:532
+#: ../exo-helper/exo-helper-chooser.c:528
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "확인(_O)"
@@ -701,64 +701,64 @@ msgstr "확인(_O)"
 msgid "Select a working directory"
 msgstr "작업 디렉터리 선택"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:169
+#: ../exo-desktop-item-edit/exo-die-utils.c:171
 msgid "File location is not a regular file or directory"
 msgstr "파일의 위치가 일반적인 파일이나 디렉터리가 아닙니다"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Launcher"
 msgstr "실행 아이콘 만들기"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Link"
 msgstr "링크 만들기"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Directory"
 msgstr "디렉터리 만들기"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Launcher"
 msgstr "실행 아이콘 편집"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Link"
 msgstr "연결 편집"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Directory"
 msgstr "디렉터리 편집"
 
-#: ../exo-desktop-item-edit/main.c:78
+#: ../exo-desktop-item-edit/main.c:79
 msgid "Create a new desktop file in the given directory"
 msgstr "주어진 디렉터리에 새로운 데스크톱 파일을 만듭니다"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "만들 데스크톱 파일의 형식(프로그램 또는 링크)"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Preset name when creating a desktop file"
 msgstr "데스크톱 파일을 만들 때 미리 설정하는 이름"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset comment when creating a desktop file"
 msgstr "데스크톱 파일을 만들 때 미리 설정하는 주석"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset command when creating a launcher"
 msgstr "실행 아이콘을 만들 때 미리 설정하는 명령"
 
-#: ../exo-desktop-item-edit/main.c:83
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset URL when creating a link"
 msgstr "연결을 만들 때 미리 설정하는 URL"
 
-#: ../exo-desktop-item-edit/main.c:84
+#: ../exo-desktop-item-edit/main.c:85
 msgid "Preset icon when creating a desktop file"
 msgstr "데스크톱 파일을 만들 때 미리 설정하는 아이콘"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
+#: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "버전 정보를 출력하고 끝냅니다"
 
@@ -776,74 +776,74 @@ msgstr "화면을 여는데 실패했습니다"
 msgid "No file/folder specified"
 msgstr "지정된 파일이나 폴더가 없습니다"
 
-#: ../exo-desktop-item-edit/main.c:276
+#: ../exo-desktop-item-edit/main.c:275
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "\"%s\"에서 내용을 불러오는데 실패했습니다: %s"
 
-#: ../exo-desktop-item-edit/main.c:281
+#: ../exo-desktop-item-edit/main.c:280
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "파일 \"%s\"에 데이터가 없습니다"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:294
+#: ../exo-desktop-item-edit/main.c:293
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "\"%s\" 내용 해석에 실패했습니다: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:306
+#: ../exo-desktop-item-edit/main.c:305
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "파일 \"%s\"에 키의 유형이 없습니다"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:316
+#: ../exo-desktop-item-edit/main.c:315
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "지원하지 않는 데스크톱 파일 유형 \"%s\" 입니다"
 
 #. add the "Help" button
-#: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:104
+#: ../exo-desktop-item-edit/main.c:330
+#: ../exo-helper/exo-helper-chooser-dialog.c:105
 msgid "_Help"
 msgstr "도움말(_H)"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:340
+#: ../exo-desktop-item-edit/main.c:337
 msgid "C_reate"
 msgstr "만들기(_R)"
 
-#: ../exo-desktop-item-edit/main.c:340 ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:337 ../exo-desktop-item-edit/main.c:517
 msgid "_Save"
 msgstr "저장(_S)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:516
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "파일 이름 선택"
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\"을(를) 만드는데 실패했습니다."
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" 저장에 실패했습니다."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:98
+#: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
 msgstr "닫기(_C)"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:100
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "기본 프로그램"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
+#: ../exo-helper/exo-helper-chooser-dialog.c:102
 msgid "Select default applications for various services"
 msgstr "다양한 서비스에 대한 기본 프로그램을 선택합니다"
 
@@ -910,80 +910,80 @@ msgstr "선택한 프로그램을 바꾸려면 왼쪽 마우스 단추를 누릅
 msgid "Application Chooser Button"
 msgstr "프로그램 선택 단추"
 
-#: ../exo-helper/exo-helper-chooser.c:294
+#: ../exo-helper/exo-helper-chooser.c:290
 msgid "No application selected"
 msgstr "선택한 프로그램이 없습니다"
 
-#: ../exo-helper/exo-helper-chooser.c:310
+#: ../exo-helper/exo-helper-chooser.c:306
 msgid "Failed to set default Web Browser"
 msgstr "기본 웹 브라우저 설정에 실패했습니다"
 
-#: ../exo-helper/exo-helper-chooser.c:311
+#: ../exo-helper/exo-helper-chooser.c:307
 msgid "Failed to set default Mail Reader"
 msgstr "기본 메일 보기 프로그램 설정에 실패했습니다"
 
-#: ../exo-helper/exo-helper-chooser.c:312
+#: ../exo-helper/exo-helper-chooser.c:308
 msgid "Failed to set default File Manager"
 msgstr "기본 파일 관리자 설정에 실패했습니다"
 
-#: ../exo-helper/exo-helper-chooser.c:313
+#: ../exo-helper/exo-helper-chooser.c:309
 msgid "Failed to set default Terminal Emulator"
 msgstr "기본 터미널 에뮬레이터 설정에 실패했습니다"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:379
 msgid "Select application"
 msgstr "프로그램 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:496
+#: ../exo-helper/exo-helper-chooser.c:492
 msgid "Choose a custom Web Browser"
 msgstr "사용자 정의 웹 브라우저 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:497
+#: ../exo-helper/exo-helper-chooser.c:493
 msgid "Choose a custom Mail Reader"
 msgstr "사용자 정의 메일 보기 프로그램 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:498
+#: ../exo-helper/exo-helper-chooser.c:494
 msgid "Choose a custom File Manager"
 msgstr "사용자 정의 파일 관리자 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:499
+#: ../exo-helper/exo-helper-chooser.c:495
 msgid "Choose a custom Terminal Emulator"
 msgstr "사용자 정의 터미널 에뮬레이터 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:500
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Xfce에서 기본으로 사용할 웹 브라우저를\n지정합니다:"
 
-#: ../exo-helper/exo-helper-chooser.c:505
+#: ../exo-helper/exo-helper-chooser.c:501
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Xfce에서 기본으로 사용할 메일 보기 프로그램을\n지정합니다:"
 
-#: ../exo-helper/exo-helper-chooser.c:506
+#: ../exo-helper/exo-helper-chooser.c:502
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Xfce에서 기본으로 사용할 파일 관리자 프로그램을\n지정합니다:"
 
-#: ../exo-helper/exo-helper-chooser.c:507
+#: ../exo-helper/exo-helper-chooser.c:503
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Xfce에서 기본으로 사용할 터미널 에뮬레이터를\n지정합니다:"
 
-#: ../exo-helper/exo-helper-chooser.c:571
+#: ../exo-helper/exo-helper-chooser.c:567
 msgid "Browse the file system to choose a custom command."
 msgstr "사용자 정의 명령을 선택하려면 파일 시스템을 탐색합니다."
 
-#: ../exo-helper/exo-helper-chooser.c:769
+#: ../exo-helper/exo-helper-chooser.c:765
 msgid "_Other..."
 msgstr "기타(_O)..."
 
-#: ../exo-helper/exo-helper-chooser.c:770
+#: ../exo-helper/exo-helper-chooser.c:766
 msgid "Use a custom application which is not included in the above list."
 msgstr "위 목록에 포함하지 않은 사용자 정의 프로그램을 사용합니다."
 
@@ -1015,12 +1015,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "기본 터미널 에뮬레이터를 선택하여 주시고\n실행을 위해 OK를 눌러주십시오."
 
-#: ../exo-helper/exo-helper.c:388
+#: ../exo-helper/exo-helper.c:389
 #, c-format
 msgid "No command specified"
 msgstr "정의된 명령이 없습니다"
 
-#: ../exo-helper/exo-helper.c:705 ../exo-helper/exo-helper.c:743
+#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
+#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "기록을 위한 %s을(를) 여는데 실패했습니다"
@@ -1046,51 +1047,56 @@ msgstr "기본 파일 관리자 실행에 실패했습니다"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "기본 터미널 에뮬레이터 실행에 실패했습니다"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "기본 프로그램 열기\n환경설정 대화상자"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "Settings manager socket"
 msgstr "설정 관리자 소켓"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "SOCKET ID"
 msgstr "SOCKET ID"
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "선택적 PARAMETER을 이용하여 TYPE의 기본 도우미를 실행하며, TYPE의 자리에는 다음 값 중 하나가 위치합니다."
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75 ../exo-helper/main.c:76
 msgid "TYPE [PARAMETER]"
 msgstr "TYPE [PARAMETER]"
 
-#: ../exo-helper/main.c:103
+#: ../exo-helper/main.c:76
 msgid ""
-"The following TYPEs are supported for the --launch command:\n"
+"Query the default helper of TYPE, where TYPE is one of the following values."
+msgstr "도움말에서 기본 TYPE를 물어보세요, TYPE는 다음 값들 중 하나입니다."
+
+#: ../exo-helper/main.c:105
+msgid ""
+"The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "다음 유형이 --launch 명령을 위해 지원합니다:\n\n  WebBrowser       - 기본 웹 브라우저입니다.\n  MailReader       - 기본 메일 보기입니다.\n  FileManager      - 기본 파일 관리자입니다.\n  TerminalEmulator - 기본 터미널 에뮬레이터입니다."
+msgstr "아래는 --launch와 --query 명령을 위한 TYPE입니다:\n\n  WebBrowser       - 기본 웹 브라우저.\n  MailReader       - 기본 메일 리더.\n  FileManager      - 기본 파일 매니저.\n  TerminalEmulator - 기본 터미널 에뮬레이터."
 
-#: ../exo-helper/main.c:113
+#: ../exo-helper/main.c:115
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "사용방법을 보시려면 '%s --help'를 입력하십시오."
 
-#: ../exo-helper/main.c:172
+#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "도우미 유형 \"%s\"이(가) 잘못되었습니다"
 
-#: ../exo-helper/main.c:220
+#: ../exo-helper/main.c:224
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1105,6 +1111,11 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\nos-cillation e.K. All rights reserved.\n\nBenedikt Meurer가 작성함 <benny@xfce.org>.\n\nGtk+-%d.%d.%d(으)로 빌드했고, Gtk+-%d.%d.%d에서 실행중입니다.\n\n<%s>(으)로 버그를 알려주십시오.\n"
 
+#: ../exo-helper/main.c:250
+#, c-format
+msgid "No helper defined for \"%s\"."
+msgstr "\"%s\"에 해당하는 도움말이 없습니다."
+
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
 msgstr "aterm"
@@ -1112,6 +1123,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/brave.desktop.in.in.h:1
+msgid "Brave"
+msgstr "브레이브"
 
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
@@ -1156,6 +1171,14 @@ msgstr "모질라 파이어폭스"
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
 msgstr "갈레온 웹 브라우저"
+
+#: ../exo-helper/helpers/geary.desktop.in.in.h:1
+msgid "Geary"
+msgstr "기어리"
+
+#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
+msgid "Google Chrome"
+msgstr "구글 크롬"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
@@ -1225,10 +1248,6 @@ msgstr "NXTerm"
 msgid "Opera Browser"
 msgstr "Opera 브라우저"
 
-#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
-msgid "Opera Mail"
-msgstr "Opera 메일"
-
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "PCMan 파일 관리자"
@@ -1284,6 +1303,10 @@ msgstr "RXVT 유니코드"
 #: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
 msgid "Vimprobable2"
 msgstr "Vimprobable2"
+
+#: ../exo-helper/helpers/vivaldi.desktop.in.in.h:1
+msgid "Vivaldi"
+msgstr "비발디"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
