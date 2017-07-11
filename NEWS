@@ -1,3 +1,30 @@
+0.11.4 (Development Release)
+======
+From a development standpoint, this release can be considered the first release
+candidate for the 0.12.x series. Full GTK+ 2 and 3 support is now available
+and should meet the needs for any Xfce application development.
+- New Features:
+  - GTK Extensions: Added new exo_gtk_dialog_get_action_area and
+    exo_gtk_dialog_add_secondary_button
+  - GTK3: Added support for insensitive state in exo_cell_renderer_icon
+  - Helpers: Added Brave, Google Chrome, and Vivaldi (WebBrowser)
+  - Helpers: Added Geary (MailReader)
+  - Helpers: Dropped Opera Mail (no longer available for Linux)
+- Bug Fixes:
+  - Removed --disable-debug flag from distcheck (Xfce #11556)
+- Icons:
+  - Replaced non-standard gnome-* icons
+  - Replaced non-existent "missing-image" icon
+- Deprecations:
+  - Dropped gdk_window_process_updates for GTK+ 3.22
+  - Replaced gdk_pixbuf_new_from_inline usage
+  - Replaced gdk_screen_* usage
+  - Replaced gtk_style_context_get_background_color usage
+  - Removed warnings for gtk_dialog_get_action_area and GioScheduler
+- Translation Updates: Arabic, Catalan, Chinese (China), Danish, Dutch, French,
+  German, Hebrew, Indonesian, Korean, Lithuanian, Portuguese (Brazil), Russian,
+  Spanish, Swedish
+
 0.11.3 (Development Release)
 ======
 - New Features:
