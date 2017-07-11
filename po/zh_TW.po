@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-16 06:30+0200\n"
-"PO-Revision-Date: 2017-06-17 02:53+0000\n"
+"POT-Creation-Date: 2017-07-08 12:30+0200\n"
+"PO-Revision-Date: 2017-07-11 05:29+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/xfce/exo/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +74,7 @@ msgstr "無法載入影像「%s」：原因未知，可能肇因於影像檔案�
 msgid "Failed to open \"%s\"."
 msgstr "無法開啟「%s」。"
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:879
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
 msgstr "方向"
 
@@ -82,19 +82,19 @@ msgstr "方向"
 msgid "The orientation of the iconbar"
 msgstr "圖示列的方向"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:896
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:945
 msgid "Pixbuf column"
 msgstr "Pixbuf 欄"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:897
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:946
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "用來接收圖示 pixbuf 的模型欄"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1041
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1090
 msgid "Text column"
 msgstr "文字欄"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1042
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1091
 msgid "Model column used to retrieve the text from"
 msgstr "用來接收文字的模型欄"
 
@@ -222,139 +222,139 @@ msgstr "搜尋圖示(_S)："
 msgid "Clear search field"
 msgstr "清除搜尋欄位"
 
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:796
 msgid "Column Spacing"
 msgstr "欄間隔"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:797
 msgid "Space which is inserted between grid column"
 msgstr "在欄之間要插入的空格"
 
-#: ../exo/exo-icon-view.c:764
+#: ../exo/exo-icon-view.c:813
 msgid "Number of columns"
 msgstr "欄數"
 
-#: ../exo/exo-icon-view.c:765
+#: ../exo/exo-icon-view.c:814
 msgid "Number of columns to display"
 msgstr "要顯示的欄數"
 
-#: ../exo/exo-icon-view.c:779
+#: ../exo/exo-icon-view.c:828
 msgid "Enable Search"
 msgstr "啟用搜尋"
 
-#: ../exo/exo-icon-view.c:780
+#: ../exo/exo-icon-view.c:829
 msgid "View allows user to search through columns interactively"
 msgstr "「檢視」允許使用者進行欄的互動式搜尋"
 
-#: ../exo/exo-icon-view.c:797
+#: ../exo/exo-icon-view.c:846
 msgid "Width for each item"
 msgstr "每項的寬度"
 
-#: ../exo/exo-icon-view.c:798
+#: ../exo/exo-icon-view.c:847
 msgid "The width used for each item"
 msgstr "每個項目所佔的寬度"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:865
 msgid "Layout mode"
 msgstr "配置模式"
 
-#: ../exo/exo-icon-view.c:817
+#: ../exo/exo-icon-view.c:866
 msgid "The layout mode"
 msgstr "配置模式"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:882
 msgid "Margin"
 msgstr "邊界"
 
-#: ../exo/exo-icon-view.c:834
+#: ../exo/exo-icon-view.c:883
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "要插入圖示檢視邊緣的空間"
 
-#: ../exo/exo-icon-view.c:850
+#: ../exo/exo-icon-view.c:899
 msgid "Markup column"
 msgstr "標記欄"
 
-#: ../exo/exo-icon-view.c:851
+#: ../exo/exo-icon-view.c:900
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "用來接收是否使用 Pango 標記的文字的模型欄"
 
-#: ../exo/exo-icon-view.c:865
+#: ../exo/exo-icon-view.c:914
 msgid "Icon View Model"
 msgstr "圖示檢視模型"
 
-#: ../exo/exo-icon-view.c:866
+#: ../exo/exo-icon-view.c:915
 msgid "The model for the icon view"
 msgstr "圖示檢視的模型"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:929
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "該如何配置每個項目文字與圖示間的相對位置"
 
-#: ../exo/exo-icon-view.c:914
+#: ../exo/exo-icon-view.c:963
 msgid "Icon column"
 msgstr "圖示欄"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:964
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "型號欄用於擷取圖片檔的絕對路徑以供呈現"
 
-#: ../exo/exo-icon-view.c:930
+#: ../exo/exo-icon-view.c:979
 msgid "Reorderable"
 msgstr "可重新調配順序"
 
-#: ../exo/exo-icon-view.c:931
+#: ../exo/exo-icon-view.c:980
 msgid "View is reorderable"
 msgstr "可以重新調配「檢視」的順序"
 
-#: ../exo/exo-icon-view.c:946
+#: ../exo/exo-icon-view.c:995
 msgid "Row Spacing"
 msgstr "列間隔"
 
-#: ../exo/exo-icon-view.c:947
+#: ../exo/exo-icon-view.c:996
 msgid "Space which is inserted between grid rows"
 msgstr "在列之間要插入的空格"
 
-#: ../exo/exo-icon-view.c:961
+#: ../exo/exo-icon-view.c:1010
 msgid "Search Column"
 msgstr "搜尋欄"
 
-#: ../exo/exo-icon-view.c:962
+#: ../exo/exo-icon-view.c:1011
 msgid "Model column to search through when searching through item"
 msgstr "進行項目搜尋時要搜尋的模型欄"
 
-#: ../exo/exo-icon-view.c:976
+#: ../exo/exo-icon-view.c:1025
 msgid "Selection mode"
 msgstr "選取模式"
 
-#: ../exo/exo-icon-view.c:977
+#: ../exo/exo-icon-view.c:1026
 msgid "The selection mode"
 msgstr "選取模式"
 
-#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:1041 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "單擊"
 
-#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:1042 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "在此檢視的項目可否以單擊啟動之"
 
-#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:1058 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "單一點擊逾時期"
 
-#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:184
+#: ../exo/exo-icon-view.c:1059 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "在單一點擊模式下，當滑鼠游標指向某個物件超過此量的時間後將會自動選取該項目"
 
-#: ../exo/exo-icon-view.c:1025
+#: ../exo/exo-icon-view.c:1074
 msgid "Spacing"
 msgstr "間隔"
 
-#: ../exo/exo-icon-view.c:1026
+#: ../exo/exo-icon-view.c:1075
 msgid "Space which is inserted between cells of an item"
 msgstr "要插入項目的格子間的空間"
 
@@ -386,7 +386,7 @@ msgstr "FIFO"
 msgid "Socket"
 msgstr "Socket"
 
-#: ../exo/exo-toolbars-editor-dialog.c:117
+#: ../exo/exo-toolbars-editor-dialog.c:118
 msgid "_Add a new toolbar"
 msgstr "新增工具列(_A)"
 
@@ -400,35 +400,35 @@ msgstr "將某個項目拖曳至工具列上以加入它，或是某項目從工
 msgid "Separator"
 msgstr "分隔線"
 
-#: ../exo/exo-toolbars-view.c:752
+#: ../exo/exo-toolbars-view.c:755
 msgid "Toolbar _Style"
 msgstr "工具列風格(_S)"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:762
 msgid "_Desktop Default"
 msgstr "桌面預設(_D)"
 
-#: ../exo/exo-toolbars-view.c:768
+#: ../exo/exo-toolbars-view.c:771
 msgid "_Icons only"
 msgstr "僅圖示(_I)"
 
-#: ../exo/exo-toolbars-view.c:777
+#: ../exo/exo-toolbars-view.c:780
 msgid "_Text only"
 msgstr "僅文字(_T)"
 
-#: ../exo/exo-toolbars-view.c:786
+#: ../exo/exo-toolbars-view.c:789
 msgid "Text for _All Icons"
 msgstr "文字附於所有圖示(_A)"
 
-#: ../exo/exo-toolbars-view.c:795
+#: ../exo/exo-toolbars-view.c:798
 msgid "Text for I_mportant Icons"
 msgstr "文字附於重要文字(_M)"
 
-#: ../exo/exo-toolbars-view.c:803
+#: ../exo/exo-toolbars-view.c:806
 msgid "_Remove Toolbar"
 msgstr "移除工具列(_R)"
 
-#: ../exo/exo-toolbars-view.c:818
+#: ../exo/exo-toolbars-view.c:821
 msgid "Customize Toolbar..."
 msgstr "設定工具列..."
 
@@ -563,45 +563,45 @@ msgstr "選取應用程式"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
-#: ../exo-helper/exo-helper-chooser.c:386
-#: ../exo-helper/exo-helper-chooser.c:531
+#: ../exo-desktop-item-edit/main.c:325 ../exo-desktop-item-edit/main.c:516
+#: ../exo-helper/exo-helper-chooser.c:382
+#: ../exo-helper/exo-helper-chooser.c:527
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "取消(_C)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:387
+#: ../exo-helper/exo-helper-chooser.c:383
 msgid "_Open"
 msgstr "開啟(_O)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:393
+#: ../exo-helper/exo-helper-chooser.c:389
 msgid "All Files"
 msgstr "所有檔案"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:398
+#: ../exo-helper/exo-helper-chooser.c:394
 msgid "Executable Files"
 msgstr "可執行檔"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:413
+#: ../exo-helper/exo-helper-chooser.c:409
 msgid "Perl Scripts"
 msgstr "Perl 指令稿"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:419
+#: ../exo-helper/exo-helper-chooser.c:415
 msgid "Python Scripts"
 msgstr "Python 指令稿"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:425
+#: ../exo-helper/exo-helper-chooser.c:421
 msgid "Ruby Scripts"
 msgstr "Ruby 指令稿"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:431
+#: ../exo-helper/exo-helper-chooser.c:427
 msgid "Shell Scripts"
 msgstr "Shell 指令稿"
 
@@ -692,7 +692,7 @@ msgstr "選擇圖示"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:532
+#: ../exo-helper/exo-helper-chooser.c:528
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "確定(_O)"
@@ -702,64 +702,64 @@ msgstr "確定(_O)"
 msgid "Select a working directory"
 msgstr "選取工作目錄"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:169
+#: ../exo-desktop-item-edit/exo-die-utils.c:171
 msgid "File location is not a regular file or directory"
 msgstr "檔案位置不是一般的檔案或目錄"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Launcher"
 msgstr "建立啟動器"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Link"
 msgstr "建立連結"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:53
 msgid "Create Directory"
 msgstr "建立目錄"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Launcher"
 msgstr "編輯啟動器"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Link"
 msgstr "編輯連結"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Edit Directory"
 msgstr "編輯目錄"
 
-#: ../exo-desktop-item-edit/main.c:78
+#: ../exo-desktop-item-edit/main.c:79
 msgid "Create a new desktop file in the given directory"
 msgstr "於給定目錄建立新的桌面檔"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "欲建立之桌面檔類型 (應用程式或連結)"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Preset name when creating a desktop file"
 msgstr "預先設定建立桌面檔時的名稱"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset comment when creating a desktop file"
 msgstr "預先設定建立桌面檔時的註解"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset command when creating a launcher"
 msgstr "預先設定建立啟動器的指令"
 
-#: ../exo-desktop-item-edit/main.c:83
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset URL when creating a link"
 msgstr "預先設定建立連結時的 URL"
 
-#: ../exo-desktop-item-edit/main.c:84
+#: ../exo-desktop-item-edit/main.c:85
 msgid "Preset icon when creating a desktop file"
 msgstr "預先設定建立桌面檔時的圖示"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:72
+#: ../exo-desktop-item-edit/main.c:86 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "顯示版本資訊並離開"
 
@@ -777,74 +777,74 @@ msgstr "未能開啟顯示器"
 msgid "No file/folder specified"
 msgstr "沒有指定的檔案/資料夾"
 
-#: ../exo-desktop-item-edit/main.c:276
+#: ../exo-desktop-item-edit/main.c:275
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "無法從「%s」載入內容：%s"
 
-#: ../exo-desktop-item-edit/main.c:281
+#: ../exo-desktop-item-edit/main.c:280
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "檔案「%s」不包含資料"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:294
+#: ../exo-desktop-item-edit/main.c:293
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "無法解析「%s」的內容：%s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:306
+#: ../exo-desktop-item-edit/main.c:305
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "檔案「%s」沒有類型的鍵"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:316
+#: ../exo-desktop-item-edit/main.c:315
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "未支援的桌面檔類型「%s」"
 
 #. add the "Help" button
-#: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:104
+#: ../exo-desktop-item-edit/main.c:330
+#: ../exo-helper/exo-helper-chooser-dialog.c:105
 msgid "_Help"
 msgstr "說明(_H)"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:340
+#: ../exo-desktop-item-edit/main.c:337
 msgid "C_reate"
 msgstr "建立(_R)"
 
-#: ../exo-desktop-item-edit/main.c:340 ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:337 ../exo-desktop-item-edit/main.c:517
 msgid "_Save"
 msgstr "儲存(_S)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:516
+#: ../exo-desktop-item-edit/main.c:513
 msgid "Choose filename"
 msgstr "選擇檔案名稱"
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "建立「%s」失敗。"
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:620
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "儲存「%s」失敗。"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:98
+#: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
 msgstr "關閉(_C)"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:100
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "偏好的應用程式"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
+#: ../exo-helper/exo-helper-chooser-dialog.c:102
 msgid "Select default applications for various services"
 msgstr "為各種服務選擇預設的應用程式"
 
@@ -911,80 +911,80 @@ msgstr "請按滑鼠左鍵以變更所選的應用程式。"
 msgid "Application Chooser Button"
 msgstr "應用程式選擇鈕"
 
-#: ../exo-helper/exo-helper-chooser.c:294
+#: ../exo-helper/exo-helper-chooser.c:290
 msgid "No application selected"
 msgstr "未選取應用程式"
 
-#: ../exo-helper/exo-helper-chooser.c:310
+#: ../exo-helper/exo-helper-chooser.c:306
 msgid "Failed to set default Web Browser"
 msgstr "設定預設網路瀏覽器失敗"
 
-#: ../exo-helper/exo-helper-chooser.c:311
+#: ../exo-helper/exo-helper-chooser.c:307
 msgid "Failed to set default Mail Reader"
 msgstr "設定預設郵件閱讀器失敗"
 
-#: ../exo-helper/exo-helper-chooser.c:312
+#: ../exo-helper/exo-helper-chooser.c:308
 msgid "Failed to set default File Manager"
 msgstr "設定預設檔案管理員失敗"
 
-#: ../exo-helper/exo-helper-chooser.c:313
+#: ../exo-helper/exo-helper-chooser.c:309
 msgid "Failed to set default Terminal Emulator"
 msgstr "設定預設終端機模擬器失敗"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:379
 msgid "Select application"
 msgstr "選取應用程式"
 
-#: ../exo-helper/exo-helper-chooser.c:496
+#: ../exo-helper/exo-helper-chooser.c:492
 msgid "Choose a custom Web Browser"
 msgstr "選擇自訂的網路瀏覽器"
 
-#: ../exo-helper/exo-helper-chooser.c:497
+#: ../exo-helper/exo-helper-chooser.c:493
 msgid "Choose a custom Mail Reader"
 msgstr "選擇自訂的郵件閱讀器"
 
-#: ../exo-helper/exo-helper-chooser.c:498
+#: ../exo-helper/exo-helper-chooser.c:494
 msgid "Choose a custom File Manager"
 msgstr "選擇自訂的檔案管理員"
 
-#: ../exo-helper/exo-helper-chooser.c:499
+#: ../exo-helper/exo-helper-chooser.c:495
 msgid "Choose a custom Terminal Emulator"
 msgstr "選擇自訂的終端機模擬器"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:500
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "請指定您想要用來做 Xfce 預設\n網路瀏覽器的應用程式："
 
-#: ../exo-helper/exo-helper-chooser.c:505
+#: ../exo-helper/exo-helper-chooser.c:501
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "請指定您想要用來做 Xfce 預設\n郵件閱讀器的應用程式："
 
-#: ../exo-helper/exo-helper-chooser.c:506
+#: ../exo-helper/exo-helper-chooser.c:502
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "請指定您想要用來做 Xfce 預設\n檔案管理員的應用程式："
 
-#: ../exo-helper/exo-helper-chooser.c:507
+#: ../exo-helper/exo-helper-chooser.c:503
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "請指定您想要用來做 Xfce 預設\n終端機模擬器的應用程式："
 
-#: ../exo-helper/exo-helper-chooser.c:571
+#: ../exo-helper/exo-helper-chooser.c:567
 msgid "Browse the file system to choose a custom command."
 msgstr "瀏覽檔案系統以選擇自訂的指令。"
 
-#: ../exo-helper/exo-helper-chooser.c:769
+#: ../exo-helper/exo-helper-chooser.c:765
 msgid "_Other..."
 msgstr "其它(_O)..."
 
-#: ../exo-helper/exo-helper-chooser.c:770
+#: ../exo-helper/exo-helper-chooser.c:766
 msgid "Use a custom application which is not included in the above list."
 msgstr "使用不包含在上方清單內的自訂應用程式。"
 
@@ -1016,13 +1016,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "現在請您選擇偏好的終端機模\n擬器並點擊「確認」以繼續。"
 
-#: ../exo-helper/exo-helper.c:388
+#: ../exo-helper/exo-helper.c:389
 #, c-format
 msgid "No command specified"
 msgstr "尚未指定指令"
 
-#: ../exo-helper/exo-helper.c:705 ../exo-helper/exo-helper.c:743
-#: ../exo-helper/exo-helper.c:810 ../exo-helper/exo-helper.c:848
+#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
+#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "無法開啟要寫入的 %s"
@@ -1125,6 +1125,10 @@ msgstr "aterm"
 msgid "Balsa"
 msgstr "Balsa"
 
+#: ../exo-helper/helpers/brave.desktop.in.in.h:1
+msgid "Brave"
+msgstr "Brave"
+
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
 msgstr "Caja 檔案管理員"
@@ -1168,6 +1172,14 @@ msgstr "Mozilla Firefox"
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
 msgstr "Galeon 網路瀏覽器"
+
+#: ../exo-helper/helpers/geary.desktop.in.in.h:1
+msgid "Geary"
+msgstr "Geary"
+
+#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
+msgid "Google Chrome"
+msgstr "Google Chrome"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
@@ -1237,10 +1249,6 @@ msgstr "NXterm"
 msgid "Opera Browser"
 msgstr "Opera 瀏覽器"
 
-#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
-msgid "Opera Mail"
-msgstr "Opera 郵件"
-
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "PCMan 檔案管理員"
@@ -1296,6 +1304,10 @@ msgstr "RXVT Unicode"
 #: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
 msgid "Vimprobable2"
 msgstr "Vimprobable2"
+
+#: ../exo-helper/helpers/vivaldi.desktop.in.in.h:1
+msgid "Vivaldi"
+msgstr "Vivaldi"
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
