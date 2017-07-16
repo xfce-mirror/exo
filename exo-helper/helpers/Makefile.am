@@ -51,7 +51,6 @@ desktop_in_in_files =							\
 	thunderbird.desktop.in.in					\
 	urxvt.desktop.in.in							\
 	vimprobable2.desktop.in.in					\
-	vivaldi.desktop.in.in						\
 	w3m.desktop.in.in							\
 	xfce4-terminal.desktop.in.in				\
 	xfe.desktop.in.in							\
