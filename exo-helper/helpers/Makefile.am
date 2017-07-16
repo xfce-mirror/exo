@@ -47,6 +47,7 @@ desktop_in_in_files =							\
 	surf.desktop.in.in							\
 	sylpheed.desktop.in.in						\
 	sylpheed-claws.desktop.in.in				\
+	terminator.desktop.in.in					\
 	Thunar.desktop.in.in						\
 	thunderbird.desktop.in.in					\
 	urxvt.desktop.in.in							\
