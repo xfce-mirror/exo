@@ -1056,8 +1056,13 @@ exo_helper_database_set_custom (ExoHelperDatabase *database,
           xfce_rc_write_entry (rc, "Name", name);
           g_free (name);
 
-          /* use only the binary for the Commands */
-          xfce_rc_write_entry (rc, "X-XFCE-Commands", *argv);
+          if (strstr (command, "%s") == NULL) {
+            /* trust the user, they defined the command without a parameter (bug #4093) */
+            xfce_rc_write_entry (rc, "X-XFCE-Commands", command);
+          } else {
+            /* use only the binary for the Commands */
+            xfce_rc_write_entry (rc, "X-XFCE-Commands", *argv);
+          }
 
           /* cleanup */
           g_strfreev (argv);
