@@ -70,6 +70,7 @@ struct _ExoHelper
   gchar            *name;
   gchar           **commands;
   gchar           **commands_with_parameter;
+  gchar           **commands_with_flag;
   ExoHelperCategory category;
 };
 
@@ -102,6 +103,7 @@ exo_helper_finalize (GObject *object)
 {
   ExoHelper *helper = EXO_HELPER (object);
 
+  g_strfreev (helper->commands_with_flag);
   g_strfreev (helper->commands_with_parameter);
   g_strfreev (helper->commands);
   g_free (helper->name);
@@ -153,6 +155,7 @@ static ExoHelper*
 exo_helper_new (const gchar *id,
                 XfceRc      *rc)
 {
+  const gchar *commands_with_flag;
   const gchar *commands_with_parameter;
   const gchar *commands;
   const gchar *str;
@@ -197,6 +200,8 @@ exo_helper_new (const gchar *id,
   if (G_UNLIKELY (commands == NULL))
     goto failed;
 
+  commands_with_flag = exo_str_replace (commands, ";", " %s;");
+
   /* determine the commands (with parameter) */
   commands_with_parameter = xfce_rc_read_entry_untranslated (rc, "X-XFCE-CommandsWithParameter", NULL);
   if (G_UNLIKELY (commands_with_parameter == NULL))
@@ -224,6 +229,7 @@ exo_helper_new (const gchar *id,
 
   /* substitute the binary (if any) */
   helper->commands = substitute_binary (commands, binary);
+  helper->commands_with_flag = substitute_binary (commands_with_flag, binary);
   helper->commands_with_parameter = substitute_binary (commands_with_parameter, binary);
   g_free (binary);
 
@@ -381,7 +387,13 @@ exo_helper_execute (ExoHelper   *helper,
     real_parameter = parameter + 7;
 
   /* determine the command set to use */
-  commands = !exo_str_is_empty (real_parameter) ? helper->commands_with_parameter : helper->commands;
+  if (exo_str_is_flag (real_parameter)) {
+    commands = helper->commands_with_flag;
+  } else if (exo_str_is_empty (real_parameter)) {
+    commands = helper->commands;
+  } else {
+    commands = helper->commands_with_parameter;
+  }
 
   /* verify that we have atleast one command */
   if (G_UNLIKELY (*commands == NULL))

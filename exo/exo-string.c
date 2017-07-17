@@ -437,5 +437,27 @@ exo_str_looks_like_an_uri (const gchar *str)
 
 
 
+/**
+ * exo_str_is_flag:
+ * @str : an input string.
+ *
+ * Check if @str looks like a commandline flag. This function simply
+ * checks if the string begins with a single dash.
+ *
+ * Returns: %TRUE if the @str looks like a flag, %FALSE otherwise.
+ *
+ * Since: 0.11.5
+ **/
+gboolean
+exo_str_is_flag (const gchar *str)
+{
+  if (G_UNLIKELY (str == NULL))
+    return FALSE;
+
+  return g_str_has_prefix (str, "-");
+}
+
+
+
 #define __EXO_STRING_C__
 #include <exo/exo-aliasdef.c>

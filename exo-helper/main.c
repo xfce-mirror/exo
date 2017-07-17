@@ -97,6 +97,7 @@ main (int argc, char **argv)
   g_option_context_add_group (opt_ctx, gtk_option_group);
 
   g_option_context_add_main_entries (opt_ctx, option_entries, NULL);
+  g_option_context_set_ignore_unknown_options (opt_ctx, TRUE);
   /* Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
    * FileManager and TerminalEmulator), since the exo-helper utility will
    * not accept localized TYPEs.

@@ -47,6 +47,7 @@ gchar               **exo_strndupv               (gchar          **strv,
 
 gboolean              exo_str_looks_like_an_uri  (const gchar     *str);
 
+gboolean              exo_str_is_flag            (const gchar     *str);
 
 
 /**
