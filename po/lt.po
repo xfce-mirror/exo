@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-16 06:30+0200\n"
-"PO-Revision-Date: 2017-07-06 22:50+0000\n"
+"POT-Creation-Date: 2017-07-17 00:30+0200\n"
+"PO-Revision-Date: 2017-07-17 09:15+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/exo/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +74,7 @@ msgstr "Nepavyko įkelti paveikslo „%s“: nežinoma priežastis, tikriausiai 
 msgid "Failed to open \"%s\"."
 msgstr "Nepavyko atverti „%s“."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:879
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
 msgstr "Orientacija"
 
@@ -82,19 +82,19 @@ msgstr "Orientacija"
 msgid "The orientation of the iconbar"
 msgstr "Piktogramų juostos orientacija"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:896
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:945
 msgid "Pixbuf column"
 msgstr "Pixbuf stulpelis"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:897
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:946
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Modelio stulpelis iš kurio gaunamas piktogramos pixbuf"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1041
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1090
 msgid "Text column"
 msgstr "Teksto stulpelis"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1042
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1091
 msgid "Model column used to retrieve the text from"
 msgstr "Modelio stulpelis iš kurio gaunamas tekstas"
 
@@ -222,139 +222,139 @@ msgstr "_Ieškoti piktogramos:"
 msgid "Clear search field"
 msgstr "Išvalyti paieškos eilutę"
 
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:796
 msgid "Column Spacing"
 msgstr "Tarpai tarp stulpelių"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:797
 msgid "Space which is inserted between grid column"
 msgstr "Tarpas įterpiamas tarp grotelių stulpelių"
 
-#: ../exo/exo-icon-view.c:764
+#: ../exo/exo-icon-view.c:813
 msgid "Number of columns"
 msgstr "Stulpelių skaičius"
 
-#: ../exo/exo-icon-view.c:765
+#: ../exo/exo-icon-view.c:814
 msgid "Number of columns to display"
 msgstr "Rodomų stulpelių skaičius"
 
-#: ../exo/exo-icon-view.c:779
+#: ../exo/exo-icon-view.c:828
 msgid "Enable Search"
 msgstr "Įjungti paiešką"
 
-#: ../exo/exo-icon-view.c:780
+#: ../exo/exo-icon-view.c:829
 msgid "View allows user to search through columns interactively"
 msgstr "Rodinys leidžia naudotojams gali vykdyti interaktyvią paiešką tarp stulpelių"
 
-#: ../exo/exo-icon-view.c:797
+#: ../exo/exo-icon-view.c:846
 msgid "Width for each item"
 msgstr "Kiekvieno elemento plotis"
 
-#: ../exo/exo-icon-view.c:798
+#: ../exo/exo-icon-view.c:847
 msgid "The width used for each item"
 msgstr "Kiekvieno elemento plotis"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:865
 msgid "Layout mode"
 msgstr "Išdėstymo būdas"
 
-#: ../exo/exo-icon-view.c:817
+#: ../exo/exo-icon-view.c:866
 msgid "The layout mode"
 msgstr "Išdėstymo būdas"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:882
 msgid "Margin"
 msgstr "Paraštė"
 
-#: ../exo/exo-icon-view.c:834
+#: ../exo/exo-icon-view.c:883
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Tarpas, įterpiamas piktogramų rodinio kraštuose"
 
-#: ../exo/exo-icon-view.c:850
+#: ../exo/exo-icon-view.c:899
 msgid "Markup column"
 msgstr "Žymėjimo stulpelis"
 
-#: ../exo/exo-icon-view.c:851
+#: ../exo/exo-icon-view.c:900
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Modelio stulpelis naudojamas gauti tekstui, kai naudojamas Pango žymėjimas"
 
-#: ../exo/exo-icon-view.c:865
+#: ../exo/exo-icon-view.c:914
 msgid "Icon View Model"
 msgstr "Piktogramų rodinio modelis"
 
-#: ../exo/exo-icon-view.c:866
+#: ../exo/exo-icon-view.c:915
 msgid "The model for the icon view"
 msgstr "Piktogramų rodinio modelis"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:929
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Kaip tekstas ir piktogramos išsidėstę vienas kito atžvilgiu"
 
-#: ../exo/exo-icon-view.c:914
+#: ../exo/exo-icon-view.c:963
 msgid "Icon column"
 msgstr "Piktogramos stulpelis"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:964
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "Modelio stulpelis, naudojamas absoliutaus, atvaizduojamo paveikslo kelio, gavimui"
 
-#: ../exo/exo-icon-view.c:930
+#: ../exo/exo-icon-view.c:979
 msgid "Reorderable"
 msgstr "Pertvarkomas"
 
-#: ../exo/exo-icon-view.c:931
+#: ../exo/exo-icon-view.c:980
 msgid "View is reorderable"
 msgstr "Rodinys yra pertvarkomas"
 
-#: ../exo/exo-icon-view.c:946
+#: ../exo/exo-icon-view.c:995
 msgid "Row Spacing"
 msgstr "Tarpai tarp eilučių"
 
-#: ../exo/exo-icon-view.c:947
+#: ../exo/exo-icon-view.c:996
 msgid "Space which is inserted between grid rows"
 msgstr "Tarpas, įterpiamas tarp grotelių eilučių"
 
-#: ../exo/exo-icon-view.c:961
+#: ../exo/exo-icon-view.c:1010
 msgid "Search Column"
 msgstr "Paieškos stulpelis"
 
-#: ../exo/exo-icon-view.c:962
+#: ../exo/exo-icon-view.c:1011
 msgid "Model column to search through when searching through item"
 msgstr "Stulpelio modelis pagal kurį ieškoti"
 
-#: ../exo/exo-icon-view.c:976
+#: ../exo/exo-icon-view.c:1025
 msgid "Selection mode"
 msgstr "Pasirinkimo veiksena"
 
-#: ../exo/exo-icon-view.c:977
+#: ../exo/exo-icon-view.c:1026
 msgid "The selection mode"
 msgstr "Parinkimo veiksena"
 
-#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:166
+#: ../exo/exo-icon-view.c:1041 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Vienkartis spustelėjimas"
 
-#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:167
+#: ../exo/exo-icon-view.c:1042 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Ar elementas rodinyje gali būti aktyvuotas vienkarčiu spustelėjimu"
 
-#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:183
+#: ../exo/exo-icon-view.c:1058 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Vienkarčio spustelėjimo trukmė"
 
-#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:184
+#: ../exo/exo-icon-view.c:1059 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Laiko tarpas po kurio elementas po pelės žymekliu bus automatiškai pasirinktas vienkarčio spustelėjimo veiksena"
 
-#: ../exo/exo-icon-view.c:1025
+#: ../exo/exo-icon-view.c:1074
 msgid "Spacing"
 msgstr "Išretinimas"
 
-#: ../exo/exo-icon-view.c:1026
+#: ../exo/exo-icon-view.c:1075
 msgid "Space which is inserted between cells of an item"
 msgstr "Tarpas, įterpiamas tarp elemento langelių"
 
@@ -386,7 +386,7 @@ msgstr "FIFO"
 msgid "Socket"
 msgstr "Lizdas"
 
-#: ../exo/exo-toolbars-editor-dialog.c:117
+#: ../exo/exo-toolbars-editor-dialog.c:118
 msgid "_Add a new toolbar"
 msgstr "Pridėti _naują įrankių juostą"
 
@@ -400,35 +400,35 @@ msgstr "Užtempkite elementą ant aukščiau esančios įrankių juostos tam, ka
 msgid "Separator"
 msgstr "Skirtukas"
 
-#: ../exo/exo-toolbars-view.c:752
+#: ../exo/exo-toolbars-view.c:755
 msgid "Toolbar _Style"
 msgstr "Įrankių juostos _stilius"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:762
 msgid "_Desktop Default"
 msgstr "_Darbalaukio numatytasis"
 
-#: ../exo/exo-toolbars-view.c:768
+#: ../exo/exo-toolbars-view.c:771
 msgid "_Icons only"
 msgstr "Tik _piktogramos"
 
-#: ../exo/exo-toolbars-view.c:777
+#: ../exo/exo-toolbars-view.c:780
 msgid "_Text only"
 msgstr "Tik _tekstas"
 
-#: ../exo/exo-toolbars-view.c:786
+#: ../exo/exo-toolbars-view.c:789
 msgid "Text for _All Icons"
 msgstr "Tekstas _visoms piktogramoms"
 
-#: ../exo/exo-toolbars-view.c:795
+#: ../exo/exo-toolbars-view.c:798
 msgid "Text for I_mportant Icons"
 msgstr "Tekstas _svarbioms piktogramoms"
 
-#: ../exo/exo-toolbars-view.c:803
+#: ../exo/exo-toolbars-view.c:806
 msgid "_Remove Toolbar"
 msgstr "Ša_linti įrankių juostą"
 
-#: ../exo/exo-toolbars-view.c:818
+#: ../exo/exo-toolbars-view.c:821
 msgid "Customize Toolbar..."
 msgstr "Tinkinti įrankių juostą..."
 
@@ -527,7 +527,7 @@ msgstr "  --strip-content   Pašalinti mazgo turinį iš XML failų\n"
 msgid "  --output=filename Write generated csource to specified file\n"
 msgstr "  --output=failo_pavadinimas Rašyti sugeneruotą csource į nurodytą failą\n"
 
-#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:195
+#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
 #: ../exo-open/main.c:509
 #, c-format
 msgid ""
@@ -538,7 +538,7 @@ msgid ""
 "\n"
 msgstr "Autorinės teisės (c) %s\n        os-cillation e.K. Visos teisės saugomos.\n\nSukūrė Benedikt Meurer <benny@xfce.org>.\n\n"
 
-#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:199
+#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:200
 #: ../exo-open/main.c:513
 #, c-format
 msgid ""
@@ -549,7 +549,7 @@ msgid ""
 "\n"
 msgstr "%s platinama BE JOKIŲ GARANTIJŲ,\nGali platinti kopijas %s pagal\nGNU Lesser General Public License sąlygas, kurias galite rasti\n%s pradinio kodo pakete.\n\n"
 
-#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:203
+#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:204
 #: ../exo-open/main.c:517
 #, c-format
 msgid "Please report bugs to <%s>.\n"
@@ -563,45 +563,45 @@ msgstr "Pasirinkite programą"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
-#: ../exo-helper/exo-helper-chooser.c:386
-#: ../exo-helper/exo-helper-chooser.c:531
+#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
+#: ../exo-helper/exo-helper-chooser.c:382
+#: ../exo-helper/exo-helper-chooser.c:527
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "_Atsisakyti"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:387
+#: ../exo-helper/exo-helper-chooser.c:383
 msgid "_Open"
 msgstr "_Atverti"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:393
+#: ../exo-helper/exo-helper-chooser.c:389
 msgid "All Files"
 msgstr "Visi failai"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:398
+#: ../exo-helper/exo-helper-chooser.c:394
 msgid "Executable Files"
 msgstr "Vykdomieji failai"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:413
+#: ../exo-helper/exo-helper-chooser.c:409
 msgid "Perl Scripts"
 msgstr "Perl scenarijai"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:419
+#: ../exo-helper/exo-helper-chooser.c:415
 msgid "Python Scripts"
 msgstr "Python scenarijai"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:425
+#: ../exo-helper/exo-helper-chooser.c:421
 msgid "Ruby Scripts"
 msgstr "Ruby scenarijai"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:431
+#: ../exo-helper/exo-helper-chooser.c:427
 msgid "Shell Scripts"
 msgstr "Shell scenarijai"
 
@@ -692,7 +692,7 @@ msgstr "Pasirinkite piktogramą"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:532
+#: ../exo-helper/exo-helper-chooser.c:528
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_Gerai"
@@ -702,78 +702,78 @@ msgstr "_Gerai"
 msgid "Select a working directory"
 msgstr "Pasirinkite darbinį katalogą"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:169
+#: ../exo-desktop-item-edit/exo-die-utils.c:171
 msgid "File location is not a regular file or directory"
 msgstr "Failo vieta nėra paprastas failas ar katalogas"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Create Launcher"
 msgstr "Sukurti leistuką"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Create Link"
 msgstr "Sukurti nuorodą"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Create Directory"
 msgstr "Sukurti katalogą"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Launcher"
 msgstr "Taisyti leistuką"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Link"
 msgstr "Taisyti nuorodą"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Directory"
 msgstr "Taisyti katalogą"
 
-#: ../exo-desktop-item-edit/main.c:78
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Create a new desktop file in the given directory"
 msgstr "Sukurti nurodytame kataloge naują darbalaukio failą"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Darbalaukio failo tipas (programa ar nuoroda)"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset name when creating a desktop file"
 msgstr "Išankstinių nustatymų rinkinio pavadinimas, darbalaukio failo kūrimui"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset comment when creating a desktop file"
 msgstr "Išankstinių nustatymų rinkinio komentaras, darbalaukio failo kūrimui"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset command when creating a launcher"
 msgstr "Išankstinių nustatymų rinkinio komanda kuriant leistuką"
 
-#: ../exo-desktop-item-edit/main.c:83
+#: ../exo-desktop-item-edit/main.c:85
 msgid "Preset URL when creating a link"
 msgstr "Išankstinių nustatymų rinkinio URL kuriant nuorodą"
 
-#: ../exo-desktop-item-edit/main.c:84
+#: ../exo-desktop-item-edit/main.c:86
 msgid "Preset icon when creating a desktop file"
 msgstr "Išankstinių nustatymų rinkinio piktograma darbalaukio failo kūrimui"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:72
+#: ../exo-desktop-item-edit/main.c:87 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "Parodyti versijos informaciją ir išeiti"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:171
+#: ../exo-desktop-item-edit/main.c:172
 msgid "[FILE|FOLDER]"
 msgstr "[FAILAS|APLANKAS]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:183
+#: ../exo-desktop-item-edit/main.c:184
 msgid "Failed to open display"
 msgstr "Nepavyko atverti ekrano"
 
-#: ../exo-desktop-item-edit/main.c:210
+#: ../exo-desktop-item-edit/main.c:211
 msgid "No file/folder specified"
 msgstr "Nenurodytas failas/aplankas"
 
@@ -807,44 +807,44 @@ msgstr "Nepalaikomas darbalaukio failo tipas „%s“"
 
 #. add the "Help" button
 #: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:104
+#: ../exo-helper/exo-helper-chooser-dialog.c:105
 msgid "_Help"
 msgstr "_Žinynas"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:340
+#: ../exo-desktop-item-edit/main.c:338
 msgid "C_reate"
 msgstr "Suku_rti"
 
-#: ../exo-desktop-item-edit/main.c:340 ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:338 ../exo-desktop-item-edit/main.c:518
 msgid "_Save"
 msgstr "Į_rašyti"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:516
+#: ../exo-desktop-item-edit/main.c:514
 msgid "Choose filename"
 msgstr "Pasirinkite failo pavadinimą"
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Nepavyko sukurti „%s“."
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Nepavyko įrašyti „%s“."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:98
+#: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
 msgstr "_Užverti"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:100
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Pageidaujamos programos"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
+#: ../exo-helper/exo-helper-chooser-dialog.c:102
 msgid "Select default applications for various services"
 msgstr "Pasirinkite numatytas programas įvairioms tarnyboms"
 
@@ -911,80 +911,80 @@ msgstr "Paspauskite kairįjį pelės mygtuką, norėdami pakeisti pasirinktą pr
 msgid "Application Chooser Button"
 msgstr "Programos pasirinkimo mygtukas"
 
-#: ../exo-helper/exo-helper-chooser.c:294
+#: ../exo-helper/exo-helper-chooser.c:290
 msgid "No application selected"
 msgstr "Nepasirinkta jokio programa"
 
-#: ../exo-helper/exo-helper-chooser.c:310
+#: ../exo-helper/exo-helper-chooser.c:306
 msgid "Failed to set default Web Browser"
 msgstr "Nepavyko nustatyti numatytosios saityno naršyklės"
 
-#: ../exo-helper/exo-helper-chooser.c:311
+#: ../exo-helper/exo-helper-chooser.c:307
 msgid "Failed to set default Mail Reader"
 msgstr "Nepavyko nustatyti numatytosios pašto programos"
 
-#: ../exo-helper/exo-helper-chooser.c:312
+#: ../exo-helper/exo-helper-chooser.c:308
 msgid "Failed to set default File Manager"
 msgstr "Nepavyko nustatyti numatytosios failų tvarkytuvės"
 
-#: ../exo-helper/exo-helper-chooser.c:313
+#: ../exo-helper/exo-helper-chooser.c:309
 msgid "Failed to set default Terminal Emulator"
 msgstr "Nepavyko nustatyti numatytojo terminalo emuliatoriaus"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:379
 msgid "Select application"
 msgstr "Pasirinkite programą"
 
-#: ../exo-helper/exo-helper-chooser.c:496
+#: ../exo-helper/exo-helper-chooser.c:492
 msgid "Choose a custom Web Browser"
 msgstr "Pasirinkite pasirinktinę saityno naršyklę"
 
-#: ../exo-helper/exo-helper-chooser.c:497
+#: ../exo-helper/exo-helper-chooser.c:493
 msgid "Choose a custom Mail Reader"
 msgstr "Pasirinkite pasirinktinę pašto programą"
 
-#: ../exo-helper/exo-helper-chooser.c:498
+#: ../exo-helper/exo-helper-chooser.c:494
 msgid "Choose a custom File Manager"
 msgstr "Pasirinkite pasirinktinę failų tvarkytuvę"
 
-#: ../exo-helper/exo-helper-chooser.c:499
+#: ../exo-helper/exo-helper-chooser.c:495
 msgid "Choose a custom Terminal Emulator"
 msgstr "Pasirinkite pasirinktinį terminalo emuliatorių"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:500
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Pasirinkite programą, kurią naudosite kaip\nnumatytąją saityno naršyklę Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:505
+#: ../exo-helper/exo-helper-chooser.c:501
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Pasirinkite programą kurią naudosite kaip\nnumatytąją pašto programą XFce:"
 
-#: ../exo-helper/exo-helper-chooser.c:506
+#: ../exo-helper/exo-helper-chooser.c:502
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Pasirinkite programą, kurią naudosite kaip\nnumatytąją failų tvarkytuvę Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:507
+#: ../exo-helper/exo-helper-chooser.c:503
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Pasirinkite programą kurią naudosite kaip\nnumatytąjį terminalo emuliatorių XFce:"
 
-#: ../exo-helper/exo-helper-chooser.c:571
+#: ../exo-helper/exo-helper-chooser.c:567
 msgid "Browse the file system to choose a custom command."
 msgstr "Naršyti failų sistemą pasirinktinės komandos pasirinkimui."
 
-#: ../exo-helper/exo-helper-chooser.c:769
+#: ../exo-helper/exo-helper-chooser.c:765
 msgid "_Other..."
 msgstr "_Kita..."
 
-#: ../exo-helper/exo-helper-chooser.c:770
+#: ../exo-helper/exo-helper-chooser.c:766
 msgid "Use a custom application which is not included in the above list."
 msgstr "Naudoti pasirinktinę programą kurios nėra aukščiau esančiame sąraše."
 
@@ -1016,13 +1016,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Pasirinkite pageidaujamą terminalo emuliatorių\nir spustelėkite Gerai, norėdami tęsti."
 
-#: ../exo-helper/exo-helper.c:388
+#: ../exo-helper/exo-helper.c:389
 #, c-format
 msgid "No command specified"
 msgstr "Nenurodyta komanda"
 
-#: ../exo-helper/exo-helper.c:705 ../exo-helper/exo-helper.c:743
-#: ../exo-helper/exo-helper.c:810 ../exo-helper/exo-helper.c:848
+#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
+#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Nepavyko atverti %s rašymui"
@@ -1125,6 +1125,10 @@ msgstr "aterm"
 msgid "Balsa"
 msgstr "Balsa"
 
+#: ../exo-helper/helpers/brave.desktop.in.in.h:1
+msgid "Brave"
+msgstr "Brave"
+
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
 msgstr "Caja failų tvarkytuvė"
@@ -1168,6 +1172,14 @@ msgstr "Mozilla Firefox"
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
 msgstr "Galeon saityno naršyklė"
+
+#: ../exo-helper/helpers/geary.desktop.in.in.h:1
+msgid "Geary"
+msgstr "Geary"
+
+#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
+msgid "Google Chrome"
+msgstr "Google Chrome"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
@@ -1237,10 +1249,6 @@ msgstr "NXterm"
 msgid "Opera Browser"
 msgstr "Opera naršyklė"
 
-#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
-msgid "Opera Mail"
-msgstr "Opera paštas"
-
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "PCMan failų tvarkytuvė"
@@ -1280,6 +1288,10 @@ msgstr "Sylpheed"
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
 msgstr "Claws Mail"
+
+#: ../exo-helper/helpers/terminator.desktop.in.in.h:1
+msgid "Terminator"
+msgstr "Terminator"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
