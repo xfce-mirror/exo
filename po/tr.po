@@ -6,15 +6,15 @@
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010
 # Gökmen Görgen <gkmngrgn_gmail.com>, 2008
 # Natavan Mirzayeva <mirzayevanatavan@gmail.com>, 2015
-# Necdet Yücel <necdetyucel@gmail.com>, 2016
+# Necdet Yücel <necdetyucel@gmail.com>, 2016-2017
 # Nimet Senem Özkızıklı <nimetsenem_gmail.com>, 2008
 # Volkan Gezer <volkangezer@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-12 06:30+0200\n"
-"PO-Revision-Date: 2016-07-25 08:16+0000\n"
+"POT-Creation-Date: 2017-07-17 00:30+0200\n"
+"PO-Revision-Date: 2017-07-24 08:22+0000\n"
 "Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/exo/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -72,12 +72,12 @@ msgstr "\"%s\" dosyası okunamadı: %s"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "\"%s\" kalıbı yüklenemedi: Bilinmeyen neden, büyük olasılıkla bozuk dosya"
 
-#: ../exo/exo-gtk-extensions.c:242
+#: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "\"%s\" açılamadı."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:879
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
 msgstr "Uyumlaştırma"
 
@@ -85,19 +85,19 @@ msgstr "Uyumlaştırma"
 msgid "The orientation of the iconbar"
 msgstr "Simge çubuğunun uyumlaştırılması"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:896
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:945
 msgid "Pixbuf column"
 msgstr "Pixbuf dikeci"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:897
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:946
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Pixbuf simgesini yeniden düzenlemek amacıyla kullanılan model dikeci"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1041
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1090
 msgid "Text column"
 msgstr "Metin dikeci"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1042
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1091
 msgid "Model column used to retrieve the text from"
 msgstr "Metin formunu yeniden düzenlemek amacıyla kullanılan model dikeci"
 
@@ -142,222 +142,222 @@ msgid "Cursor item text color"
 msgstr "İmleç öğesi metin rengi"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:108
+#: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Action Icons"
 msgstr "Eylem Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:110
+#: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Animations"
 msgstr "Canlandırmalar"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:112
+#: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Application Icons"
 msgstr "Uygulama Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:114
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Menu Icons"
 msgstr "Menü Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:116
+#: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Device Icons"
 msgstr "Sürücü Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:118
+#: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Emblems"
 msgstr "Semboller"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:120
+#: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Emoticons"
 msgstr "Duygu Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:122
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "International Denominations"
 msgstr "Uluslararası İsimlendirmeler"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:124
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "File Type Icons"
 msgstr "Dosya Tipi Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:126
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Location Icons"
 msgstr "Konum Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:128
+#: ../exo/exo-icon-chooser-dialog.c:125
 msgid "Status Icons"
 msgstr "Durum Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:130
+#: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Uncategorized Icons"
 msgstr "Sınıflandırılmamış Simgeler"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:134
+#: ../exo/exo-icon-chooser-dialog.c:131
 msgid "All Icons"
 msgstr "Bütün Simgeler"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:138 ../exo/exo-icon-chooser-dialog.c:316
+#: ../exo/exo-icon-chooser-dialog.c:135 ../exo/exo-icon-chooser-dialog.c:311
 msgid "Image Files"
 msgstr "Kalıp Dosyaları"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:222
+#: ../exo/exo-icon-chooser-dialog.c:219
 msgid "Select _icon from:"
 msgstr "S_imgeyi şuradan seç :"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:246
+#: ../exo/exo-icon-chooser-dialog.c:243
 msgid "_Search icon:"
 msgstr "_Arama simgesi:"
 
-#: ../exo/exo-icon-chooser-dialog.c:266
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Clear search field"
 msgstr "Arama alanını temizle"
 
-#: ../exo/exo-icon-view.c:747
+#: ../exo/exo-icon-view.c:796
 msgid "Column Spacing"
 msgstr "Dikeç Aralıklandırması"
 
-#: ../exo/exo-icon-view.c:748
+#: ../exo/exo-icon-view.c:797
 msgid "Space which is inserted between grid column"
 msgstr "Izgaradaki dikeç aralıkları"
 
-#: ../exo/exo-icon-view.c:764
+#: ../exo/exo-icon-view.c:813
 msgid "Number of columns"
 msgstr "Dikeçlerin sayısı"
 
-#: ../exo/exo-icon-view.c:765
+#: ../exo/exo-icon-view.c:814
 msgid "Number of columns to display"
 msgstr "Gösterilecek dikeç sayısı"
 
-#: ../exo/exo-icon-view.c:779
+#: ../exo/exo-icon-view.c:828
 msgid "Enable Search"
 msgstr "Aramayı etkinleştir"
 
-#: ../exo/exo-icon-view.c:780
+#: ../exo/exo-icon-view.c:829
 msgid "View allows user to search through columns interactively"
 msgstr "Kullanıcıların dikeçler arasından etkileşimli arama yapmasına izin ver"
 
-#: ../exo/exo-icon-view.c:797
+#: ../exo/exo-icon-view.c:846
 msgid "Width for each item"
 msgstr "Öğe genişliği"
 
-#: ../exo/exo-icon-view.c:798
+#: ../exo/exo-icon-view.c:847
 msgid "The width used for each item"
 msgstr "Her öğe için kullanılan genişlik"
 
-#: ../exo/exo-icon-view.c:816
+#: ../exo/exo-icon-view.c:865
 msgid "Layout mode"
 msgstr "Yerleşim modu"
 
-#: ../exo/exo-icon-view.c:817
+#: ../exo/exo-icon-view.c:866
 msgid "The layout mode"
 msgstr "Yerleşim modu"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:882
 msgid "Margin"
 msgstr "Kenar boşluğu"
 
-#: ../exo/exo-icon-view.c:834
+#: ../exo/exo-icon-view.c:883
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Simge görüntüsünün kenarlarına eklenmiş boşluk"
 
-#: ../exo/exo-icon-view.c:850
+#: ../exo/exo-icon-view.c:899
 msgid "Markup column"
 msgstr "Biçimleme dikeci"
 
-#: ../exo/exo-icon-view.c:851
+#: ../exo/exo-icon-view.c:900
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Pango biçimlemesi kullanılırken metni yeniden düzenlemek amacıyla kullanılan model dikeci"
 
-#: ../exo/exo-icon-view.c:865
+#: ../exo/exo-icon-view.c:914
 msgid "Icon View Model"
 msgstr "Simge görünüm modeli"
 
-#: ../exo/exo-icon-view.c:866
+#: ../exo/exo-icon-view.c:915
 msgid "The model for the icon view"
 msgstr "Simge görünümü için model"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:929
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Her bir öğenin metin ve simgesinin birbiriyle ilişkili olarak nasıl konumlandırılacağı"
 
-#: ../exo/exo-icon-view.c:914
+#: ../exo/exo-icon-view.c:963
 msgid "Icon column"
 msgstr "Simge dikeci"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:964
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "Gerçeklenecek bir resim dosyasının tam yolunu getirmek için kullanılan model sütunu"
 
-#: ../exo/exo-icon-view.c:930
+#: ../exo/exo-icon-view.c:979
 msgid "Reorderable"
 msgstr "Yeniden düzenlenebilir"
 
-#: ../exo/exo-icon-view.c:931
+#: ../exo/exo-icon-view.c:980
 msgid "View is reorderable"
 msgstr "Görüntü yeniden düzenlenebilir"
 
-#: ../exo/exo-icon-view.c:946
+#: ../exo/exo-icon-view.c:995
 msgid "Row Spacing"
 msgstr "Dizeç Aralığı"
 
-#: ../exo/exo-icon-view.c:947
+#: ../exo/exo-icon-view.c:996
 msgid "Space which is inserted between grid rows"
 msgstr "Izgaradaki dizeç aralıkları"
 
-#: ../exo/exo-icon-view.c:961
+#: ../exo/exo-icon-view.c:1010
 msgid "Search Column"
 msgstr "Arama Dikeci"
 
-#: ../exo/exo-icon-view.c:962
+#: ../exo/exo-icon-view.c:1011
 msgid "Model column to search through when searching through item"
 msgstr "Öğeler arasında arama yapmak için kullanılacak model dikeci"
 
-#: ../exo/exo-icon-view.c:976
+#: ../exo/exo-icon-view.c:1025
 msgid "Selection mode"
 msgstr "Seçim modu"
 
-#: ../exo/exo-icon-view.c:977
+#: ../exo/exo-icon-view.c:1026
 msgid "The selection mode"
 msgstr "Seçim modu"
 
-#: ../exo/exo-icon-view.c:992 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:1041 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Tek Tıklama"
 
-#: ../exo/exo-icon-view.c:993 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:1042 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Görünen öğeler için etkinleştirilmiş tek tıklama"
 
-#: ../exo/exo-icon-view.c:1009 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:1058 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Tek Tıklama Zaman Aşımı"
 
-#: ../exo/exo-icon-view.c:1010 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:1059 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Tek tıklama modundayken fare imlecinin altındaki öğenin otomatik olarak seçilmesinden sonraki geçen zaman"
 
-#: ../exo/exo-icon-view.c:1025
+#: ../exo/exo-icon-view.c:1074
 msgid "Spacing"
 msgstr "Aralık"
 
-#: ../exo/exo-icon-view.c:1026
+#: ../exo/exo-icon-view.c:1075
 msgid "Space which is inserted between cells of an item"
 msgstr "Bir öğenin hücreleri arasına eklenen boşluk"
 
@@ -389,7 +389,7 @@ msgstr "FIFO"
 msgid "Socket"
 msgstr "Yuva"
 
-#: ../exo/exo-toolbars-editor-dialog.c:117
+#: ../exo/exo-toolbars-editor-dialog.c:118
 msgid "_Add a new toolbar"
 msgstr "Yeni bir _araç çubuğu ekle"
 
@@ -403,35 +403,35 @@ msgstr "Bir öğeyi eklemek için onu araç çubuklarının üzerine; kaldırmak
 msgid "Separator"
 msgstr "Ayırıcı"
 
-#: ../exo/exo-toolbars-view.c:752
+#: ../exo/exo-toolbars-view.c:755
 msgid "Toolbar _Style"
 msgstr "Araç Çubuğu _Düzeni"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:762
 msgid "_Desktop Default"
 msgstr "Öntanımlı M_asaüstü"
 
-#: ../exo/exo-toolbars-view.c:768
+#: ../exo/exo-toolbars-view.c:771
 msgid "_Icons only"
 msgstr "Sadece S_imgeler"
 
-#: ../exo/exo-toolbars-view.c:777
+#: ../exo/exo-toolbars-view.c:780
 msgid "_Text only"
 msgstr "Sadece Me_tin"
 
-#: ../exo/exo-toolbars-view.c:786
+#: ../exo/exo-toolbars-view.c:789
 msgid "Text for _All Icons"
 msgstr "Bütün Simgeler için _Metin"
 
-#: ../exo/exo-toolbars-view.c:795
+#: ../exo/exo-toolbars-view.c:798
 msgid "Text for I_mportant Icons"
 msgstr "Öne_mli Simgeler için Metin"
 
-#: ../exo/exo-toolbars-view.c:803
+#: ../exo/exo-toolbars-view.c:806
 msgid "_Remove Toolbar"
 msgstr "A_raç Çubuğunu Kaldır"
 
-#: ../exo/exo-toolbars-view.c:818
+#: ../exo/exo-toolbars-view.c:821
 msgid "Customize Toolbar..."
 msgstr "Araç Çubuğunu Özelleştir..."
 
@@ -475,58 +475,63 @@ msgstr "Yeniden başlatma komutu"
 msgid "Session restart command"
 msgstr "Oturumu yeniden başlatma komutu"
 
-#: ../exo-csource/main.c:284
+#: ../exo-csource/main.c:303
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Kullanım: %s [seçenekler] [dosya]\n"
 
-#: ../exo-csource/main.c:285
+#: ../exo-csource/main.c:304
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [seçenekler] --build-list [[dosya adı]...]\n"
 
-#: ../exo-csource/main.c:287
+#: ../exo-csource/main.c:306
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help        Bu yardım mesajını yazdır ve çık\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:307
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
 msgstr "  -V, --version     Sürüm bilgisini yazdır ve çık\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:308
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Dış simgeler oluştur\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:309
 #, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static          Durağan simgeler oluştur\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:310
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=tanıtıcı C makro/değişken ismi\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:311
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Ayrıştırma (isim, dosya) çiftleri\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:312
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Yorumları XML dosyalarından kaldır\n"
 
-#: ../exo-csource/main.c:294
+#: ../exo-csource/main.c:313
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Düğüm bileşenlerini XML dosyalarından kaldır\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
-#: ../exo-open/main.c:505
+#: ../exo-csource/main.c:314
+#, c-format
+msgid "  --output=filename Write generated csource to specified file\n"
+msgstr "  --output=dosyadı Oluşturulan csource belirtilen dosyaya yazılsın\n"
+
+#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
+#: ../exo-open/main.c:509
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -536,8 +541,8 @@ msgid ""
 "\n"
 msgstr "Copyright (c) %s\n        os-cillation e.K. Tüm hakları saklıdır.\n\nBenedikt Meurer tarafından yazılmıştır, <benny@xfce.org>.\n\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
-#: ../exo-open/main.c:509
+#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:200
+#: ../exo-open/main.c:513
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -547,8 +552,8 @@ msgid ""
 "\n"
 msgstr "%s HİÇBİR GARANTİ İLE gelmez,\n\"GNU Lesser General Public License\" isimli lisansın %s altındaki\nsözleşme şartlarına uygun bir biçimde, kopyalarını dağıtabilirsiniz.\nBu %s kaynak paketi, GNU Lesser General Public License ile\nlisanslanmıştır.\n\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
-#: ../exo-open/main.c:513
+#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:204
+#: ../exo-open/main.c:517
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Lütfen hataları bildirin: <%s>.\n"
@@ -560,46 +565,46 @@ msgstr "Bir Uygulama Seçin"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
-#: ../exo-desktop-item-edit/exo-die-editor.c:642
-#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:519
-#: ../exo-helper/exo-helper-chooser.c:386
-#: ../exo-helper/exo-helper-chooser.c:531
+#: ../exo-desktop-item-edit/exo-die-editor.c:638
+#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
+#: ../exo-helper/exo-helper-chooser.c:382
+#: ../exo-helper/exo-helper-chooser.c:527
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "_İptal"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:387
+#: ../exo-helper/exo-helper-chooser.c:383
 msgid "_Open"
 msgstr "_Aç"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:393
+#: ../exo-helper/exo-helper-chooser.c:389
 msgid "All Files"
 msgstr "Tüm Dosyalar"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:398
+#: ../exo-helper/exo-helper-chooser.c:394
 msgid "Executable Files"
 msgstr "Çalıştırılabilir Dosyalar"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:413
+#: ../exo-helper/exo-helper-chooser.c:409
 msgid "Perl Scripts"
 msgstr "Perl Betikleri"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:419
+#: ../exo-helper/exo-helper-chooser.c:415
 msgid "Python Scripts"
 msgstr "Python Betikleri"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:425
+#: ../exo-helper/exo-helper-chooser.c:421
 msgid "Ruby Scripts"
 msgstr "Ruby Betikleri"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:431
+#: ../exo-helper/exo-helper-chooser.c:427
 msgid "Shell Scripts"
 msgstr "Kabuk Betikleri"
 
@@ -648,7 +653,7 @@ msgstr "S_imge:"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1235
+#: ../exo-desktop-item-edit/exo-die-editor.c:1227
 msgid "No icon"
 msgstr "Simge yok"
 
@@ -689,89 +694,89 @@ msgid "Select an icon"
 msgstr "Bir simge seçin"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
-#: ../exo-desktop-item-edit/exo-die-editor.c:643
-#: ../exo-helper/exo-helper-chooser.c:532
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-helper/exo-helper-chooser.c:528
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_Tamam"
 
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-desktop-item-edit/exo-die-editor.c:635
 msgid "Select a working directory"
 msgstr "Çalışma dizinini seçin"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:169
+#: ../exo-desktop-item-edit/exo-die-utils.c:171
 msgid "File location is not a regular file or directory"
 msgstr "Dosya yeri düzenli dosya veya dizin değil"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Create Launcher"
 msgstr "Başlatıcı Oluştur"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Create Link"
 msgstr "Bağlantı Oluştur"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Create Directory"
 msgstr "Dizin Oluştur"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Launcher"
 msgstr "Başlatıcıyı Düzenle"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Link"
 msgstr "Bağlantıyı Düzenle"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Directory"
 msgstr "Dizini Düzenle"
 
-#: ../exo-desktop-item-edit/main.c:78
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Create a new desktop file in the given directory"
 msgstr "Verilen dizinde yeni bir masaüstü dosyası oluşturun"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Oluşturulacak masaüstü dosyasının türü (Uygulama veya Bağlantı)"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset name when creating a desktop file"
 msgstr "Bir masaüstü dosyası oluşturulurken, önceden belirlenmiş isim"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset comment when creating a desktop file"
 msgstr "Bir masaüstü dosyası oluşturulurken, önceden belirlenmiş açıklama"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset command when creating a launcher"
 msgstr "Bir başlatıcı oluşturulurken, önceden belirlenmiş komut"
 
-#: ../exo-desktop-item-edit/main.c:83
+#: ../exo-desktop-item-edit/main.c:85
 msgid "Preset URL when creating a link"
 msgstr "Bir bağlantı oluşturulurken, önceden belirlenmiş bağlantı adresi"
 
-#: ../exo-desktop-item-edit/main.c:84
+#: ../exo-desktop-item-edit/main.c:86
 msgid "Preset icon when creating a desktop file"
 msgstr "Bir masaüstü dosyası oluşturulurken, önceden belirlenmiş simge"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:71
+#: ../exo-desktop-item-edit/main.c:87 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "Sürüm bilgisini yazdır ve çık"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:171
+#: ../exo-desktop-item-edit/main.c:172
 msgid "[FILE|FOLDER]"
 msgstr "[FILE|FOLDER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:183
+#: ../exo-desktop-item-edit/main.c:184
 msgid "Failed to open display"
 msgstr "Görüntü açılamadı"
 
-#: ../exo-desktop-item-edit/main.c:210
+#: ../exo-desktop-item-edit/main.c:211
 msgid "No file/folder specified"
 msgstr "Belirlenmiş dosya / dizin yok"
 
@@ -805,44 +810,44 @@ msgstr "Desteklenmeyen masaüstü dosya tipi: \"%s\""
 
 #. add the "Help" button
 #: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:104
+#: ../exo-helper/exo-helper-chooser-dialog.c:105
 msgid "_Help"
 msgstr "_Yardım"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:340
+#: ../exo-desktop-item-edit/main.c:338
 msgid "C_reate"
 msgstr "Oluştu_r"
 
-#: ../exo-desktop-item-edit/main.c:340 ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:338 ../exo-desktop-item-edit/main.c:518
 msgid "_Save"
 msgstr "_Kaydet"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:516
+#: ../exo-desktop-item-edit/main.c:514
 msgid "Choose filename"
 msgstr "Dosya ismi seç"
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\" oluşturulamadı."
 
-#: ../exo-desktop-item-edit/main.c:623
+#: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" kaydedilemedi."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:98
+#: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
 msgstr "K_apat"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:100
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Tercih Edilen Uygulamalar"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
+#: ../exo-helper/exo-helper-chooser-dialog.c:102
 msgid "Select default applications for various services"
 msgstr "Çeşitli servisler için öntanımlı uygulamaları seçin"
 
@@ -909,80 +914,80 @@ msgstr "Seçili uygulamayı değiştirmek için sol fare tuşuna basın."
 msgid "Application Chooser Button"
 msgstr "Uygulama Seçici Buton"
 
-#: ../exo-helper/exo-helper-chooser.c:294
+#: ../exo-helper/exo-helper-chooser.c:290
 msgid "No application selected"
 msgstr "Seçili uygulama yok"
 
-#: ../exo-helper/exo-helper-chooser.c:310
+#: ../exo-helper/exo-helper-chooser.c:306
 msgid "Failed to set default Web Browser"
 msgstr "Öntanımlı İnternet Tarayıcısı ayarlanamadı"
 
-#: ../exo-helper/exo-helper-chooser.c:311
+#: ../exo-helper/exo-helper-chooser.c:307
 msgid "Failed to set default Mail Reader"
 msgstr "Öntanımlı Eposta Okuyucusu ayarlanamadı"
 
-#: ../exo-helper/exo-helper-chooser.c:312
+#: ../exo-helper/exo-helper-chooser.c:308
 msgid "Failed to set default File Manager"
 msgstr "Öntanımlı Dosya Yöneticisi ayarlanamadı"
 
-#: ../exo-helper/exo-helper-chooser.c:313
+#: ../exo-helper/exo-helper-chooser.c:309
 msgid "Failed to set default Terminal Emulator"
 msgstr "Öntanımlı Uçbirim Öykünücüsü ayarlanamadı"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:379
 msgid "Select application"
 msgstr "Uygulama seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:496
+#: ../exo-helper/exo-helper-chooser.c:492
 msgid "Choose a custom Web Browser"
 msgstr "Özel bir İnternet Tarayıcısı seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:497
+#: ../exo-helper/exo-helper-chooser.c:493
 msgid "Choose a custom Mail Reader"
 msgstr "Özel bir Eposta Okuyucusu seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:498
+#: ../exo-helper/exo-helper-chooser.c:494
 msgid "Choose a custom File Manager"
 msgstr "Özel bir Dosya Yöneticisi seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:499
+#: ../exo-helper/exo-helper-chooser.c:495
 msgid "Choose a custom Terminal Emulator"
 msgstr "Özel bir Uçbirim Öykünücüsü seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:500
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Xfce için öntanımlı İnternet Tarayıcısı olarak\nkullanmak üzere, bir uygulama belirtin:"
 
-#: ../exo-helper/exo-helper-chooser.c:505
+#: ../exo-helper/exo-helper-chooser.c:501
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Xfce için öntanımlı Eposta Okuyucusu olarak\nkullanmak üzere, bir uygulama belirtin:"
 
-#: ../exo-helper/exo-helper-chooser.c:506
+#: ../exo-helper/exo-helper-chooser.c:502
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Xfce için Dosya Yöneticisi olarak\nkullanmak üzere, bir uygulama belirtin:"
 
-#: ../exo-helper/exo-helper-chooser.c:507
+#: ../exo-helper/exo-helper-chooser.c:503
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Xfce için öntanımlı Uçbirim Öykünücüsü olarak\nkullanmak üzere, bir uygulama belirtin:"
 
-#: ../exo-helper/exo-helper-chooser.c:571
+#: ../exo-helper/exo-helper-chooser.c:567
 msgid "Browse the file system to choose a custom command."
 msgstr "Özel bir komut seçmek için, dosya sistemini tara."
 
-#: ../exo-helper/exo-helper-chooser.c:764
+#: ../exo-helper/exo-helper-chooser.c:765
 msgid "_Other..."
 msgstr "_Diğer..."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:766
 msgid "Use a custom application which is not included in the above list."
 msgstr "Yukarıdaki listede yer almayan bir uygulama seç."
 
@@ -1014,12 +1019,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Lütfen şimdi tercih ettiğiniz Uçbirim Öykünücüsü'nü seçin\nve devam etmek için TAMAM'ı tıklayın."
 
-#: ../exo-helper/exo-helper.c:384
+#: ../exo-helper/exo-helper.c:389
 #, c-format
 msgid "No command specified"
 msgstr "Belirlenmiş komut yok"
 
-#: ../exo-helper/exo-helper.c:697 ../exo-helper/exo-helper.c:735
+#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
+#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "%s, yazılacak şekilde açılamadı"
@@ -1045,51 +1051,56 @@ msgstr "Dosya Yöneticisi başlatılamadı"
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Öntanımlı Uçbirim Öykünücüsü başlatılamadı"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:73
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Tercih Edilen Uygulamaları aç\nYapılandırma penceresi"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "Settings manager socket"
 msgstr "Ayarlar yöneticisi yuvası"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:74
 msgid "SOCKET ID"
 msgstr "YUVA ID'si"
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "Aşağıdaki TİPlerden birinin öntanımlı yardımcısını, seçenekli PARAMETRE'lerle başlat."
 
-#: ../exo-helper/main.c:74
+#: ../exo-helper/main.c:75 ../exo-helper/main.c:76
 msgid "TYPE [PARAMETER]"
 msgstr "TİP [PARAMETRE]"
 
-#: ../exo-helper/main.c:103
+#: ../exo-helper/main.c:76
 msgid ""
-"The following TYPEs are supported for the --launch command:\n"
+"Query the default helper of TYPE, where TYPE is one of the following values."
+msgstr "TYPE varsayılan yardımcısı için sorgu, burada TYPE aşağıdaki değerlerden birini alır."
+
+#: ../exo-helper/main.c:105
+msgid ""
+"The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Aşağıdaki TÜRLER --launch komutunu desteklemektedir:\n\n  WebBrowser       - Tercih edilen İnternet Tarayıcısı.\n  MailReader       - Tercih edilen Posta Okuyucusu.\n  TerminalEmulator - Tercih edilen Uçbirim Öykünücüsü."
+msgstr "--launch ve --query komutları için aşağıdaki TÜRLER desteklenmektedir:\n\n  WebBrowser       - Tercih edilen Web Tarayıcısı.\n  MailReader       - Tercih edilen Posta Okuyucusu.\n  FileManager      - Tercih edilen Dosya Yöneticisi.\n  TerminalEmulator - Tercih edilen Uçbirim Öykünücüsü."
 
-#: ../exo-helper/main.c:113
+#: ../exo-helper/main.c:115
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Kullanım bilgisi için '%s --help' yazın."
 
-#: ../exo-helper/main.c:172
+#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Geçersiz yardım tipi, \"%s\""
 
-#: ../exo-helper/main.c:220
+#: ../exo-helper/main.c:224
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1104,6 +1115,11 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nTelif hakkı (c) 2003-2006\n        os-cillation e.K. Tüm hakları saklıdır.\n\nBenedikt Meurer tarafından yazılmıştır, <benny@xfce.org>.\n\nGtk+-%d.%d.%d ile inşa edilmiştir, Gtk+-%d.%d.%d ile çalıştırılıyor.\n\nHataları lütfen <%s> adresine bildirin.\n"
 
+#: ../exo-helper/main.c:250
+#, c-format
+msgid "No helper defined for \"%s\"."
+msgstr "\"%s\" için yardımcı tanımlanmadı."
+
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
 msgstr "aterm"
@@ -1111,6 +1127,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/brave.desktop.in.in.h:1
+msgid "Brave"
+msgstr "Brave"
 
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
@@ -1155,6 +1175,14 @@ msgstr "Mozilla Firefox"
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
 msgstr "Galeon Web Browser"
+
+#: ../exo-helper/helpers/geary.desktop.in.in.h:1
+msgid "Geary"
+msgstr "Geary"
+
+#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
+msgid "Google Chrome"
+msgstr "Google Chrome"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
@@ -1224,10 +1252,6 @@ msgstr "NXterm"
 msgid "Opera Browser"
 msgstr "Opera Browser"
 
-#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
-msgid "Opera Mail"
-msgstr "Opera Mail"
-
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "PCMan Dosya Yöneticisi"
@@ -1267,6 +1291,10 @@ msgstr "Sylpheed"
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
 msgstr "Claws Mail"
+
+#: ../exo-helper/helpers/terminator.desktop.in.in.h:1
+msgid "Terminator"
+msgstr "Sonlandırıcı"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
@@ -1366,12 +1394,12 @@ msgstr "%s GIO-Unix özellikleri olmadan derlendiğinde Masaüstü dosyası baş
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Tercih edilen uygulama, \"%s\" sıralamasına göre açılamadı."
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:590
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" ögesinin URI-planını taramak olanaksız."
 
-#: ../exo-open/main.c:600
+#: ../exo-open/main.c:604
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "URI\"%s\" açma başarısız."
