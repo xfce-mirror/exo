@@ -10,10 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-02 22:30+0200\n"
-"PO-Revision-Date: 2013-11-19 13:01+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Latvian (http://www.transifex.com/projects/p/xfce/language/lv/)\n"
+"POT-Creation-Date: 2017-07-17 00:30+0200\n"
+"PO-Revision-Date: 2017-08-03 16:30+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"Language-Team: Latvian (http://www.transifex.com/xfce/exo/language/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,36 +21,36 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
-#: ../exo/exo-cell-renderer-icon.c:144
+#: ../exo/exo-cell-renderer-icon.c:160
 msgid "Follow state"
 msgstr "Sekot stāvoklim"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:132
-#: ../exo/exo-cell-renderer-icon.c:145
+#: ../exo/exo-cell-renderer-icon.c:161
 msgid "Render differently based on the selection state."
 msgstr "Attēlot atkarībā no atlases stāvokļa."
 
-#: ../exo/exo-cell-renderer-icon.c:166
+#: ../exo/exo-cell-renderer-icon.c:182
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../exo/exo-cell-renderer-icon.c:167
+#: ../exo/exo-cell-renderer-icon.c:183
 msgid "The icon to render."
 msgstr "Attēlojamā ikona."
 
-#: ../exo/exo-cell-renderer-icon.c:185
+#: ../exo/exo-cell-renderer-icon.c:201
 msgid "GIcon"
 msgstr "GIkona"
 
-#: ../exo/exo-cell-renderer-icon.c:186
+#: ../exo/exo-cell-renderer-icon.c:202
 msgid "The GIcon to render."
 msgstr "Attēlojamā GIcon."
 
-#: ../exo/exo-cell-renderer-icon.c:207
+#: ../exo/exo-cell-renderer-icon.c:223
 msgid "size"
 msgstr "izmērs"
 
-#: ../exo/exo-cell-renderer-icon.c:208
+#: ../exo/exo-cell-renderer-icon.c:224
 msgid "The size of the icon to render in pixels."
 msgstr "Attēlojamās ikonas izmērs pikseļos."
 
@@ -59,22 +59,22 @@ msgstr "Attēlojamās ikonas izmērs pikseļos."
 msgid "Failed to open file \"%s\": %s"
 msgstr "Neizdevās atvērt failu \"%s\": %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:849
+#: ../exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
 msgstr "Neizdevās nolasīt failu \"%s\": %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:890
+#: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Neizdevās ielādēt attēlu \"%s\": Iemesls nav zināms, iespējams attēla fails ir bojāts"
 
-#: ../exo/exo-gtk-extensions.c:227
+#: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Neizdevās atvērt \"%s\"."
 
-#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:806
+#: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
 msgstr "Novietojums"
 
@@ -82,19 +82,19 @@ msgstr "Novietojums"
 msgid "The orientation of the iconbar"
 msgstr "Ikonjoslas novietojums"
 
-#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:823
+#: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:945
 msgid "Pixbuf column"
 msgstr "Pixbuf kolonna"
 
-#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:824
+#: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:946
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Izmantota modeļa kolonna, lai iegūtu ikonas pixbuf no"
 
-#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1090
 msgid "Text column"
 msgstr "Teksta kolonna"
 
-#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:951
+#: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1091
 msgid "Model column used to retrieve the text from"
 msgstr "Izmantota modeļa kolonna, lai iegūtu tekstu no"
 
@@ -139,241 +139,250 @@ msgid "Cursor item text color"
 msgstr "Kursora vienuma teksta krāsa"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:109
+#: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Action Icons"
 msgstr "Darbību ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:111
+#: ../exo/exo-icon-chooser-dialog.c:107
 msgid "Animations"
 msgstr "Animācijas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:113
+#: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Application Icons"
 msgstr "Lietotņu ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:115
+#: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Menu Icons"
 msgstr "Izvēlņu ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:117
+#: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Device Icons"
 msgstr "Ierīču ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:119
+#: ../exo/exo-icon-chooser-dialog.c:115
 msgid "Emblems"
 msgstr "Emblēmas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Emoticons"
 msgstr "Emocijzīmes"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "International Denominations"
 msgstr "Starptautiskais nosaukums"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "File Type Icons"
 msgstr "Faila tipa ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:127
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Location Icons"
 msgstr "Vietu ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:129
+#: ../exo/exo-icon-chooser-dialog.c:125
 msgid "Status Icons"
 msgstr "Statusa ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:131
+#: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Uncategorized Icons"
 msgstr "Negrupētās ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:135
+#: ../exo/exo-icon-chooser-dialog.c:131
 msgid "All Icons"
 msgstr "Visas ikonas"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:139 ../exo/exo-icon-chooser-dialog.c:285
+#: ../exo/exo-icon-chooser-dialog.c:135 ../exo/exo-icon-chooser-dialog.c:311
 msgid "Image Files"
 msgstr "Attēlu faili"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:210
+#: ../exo/exo-icon-chooser-dialog.c:219
 msgid "Select _icon from:"
 msgstr "Izvēlēties _ikonu no:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:225
+#: ../exo/exo-icon-chooser-dialog.c:243
 msgid "_Search icon:"
 msgstr ""
 
-#: ../exo/exo-icon-chooser-dialog.c:236
+#: ../exo/exo-icon-chooser-dialog.c:262
 msgid "Clear search field"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:674
+#: ../exo/exo-icon-view.c:796
 msgid "Column Spacing"
 msgstr "Kolonnu atstarpe"
 
-#: ../exo/exo-icon-view.c:675
+#: ../exo/exo-icon-view.c:797
 msgid "Space which is inserted between grid column"
 msgstr "Atstarpe starp režģa kolonnām"
 
-#: ../exo/exo-icon-view.c:691
+#: ../exo/exo-icon-view.c:813
 msgid "Number of columns"
 msgstr "Kolonnu skaits"
 
-#: ../exo/exo-icon-view.c:692
+#: ../exo/exo-icon-view.c:814
 msgid "Number of columns to display"
 msgstr "Attēlojamo kolonnu skaits"
 
-#: ../exo/exo-icon-view.c:706
+#: ../exo/exo-icon-view.c:828
 msgid "Enable Search"
 msgstr "Ieslēgt meklēšanu"
 
-#: ../exo/exo-icon-view.c:707
+#: ../exo/exo-icon-view.c:829
 msgid "View allows user to search through columns interactively"
 msgstr "Skats ļauj lietotājiem interaktīvi meklēt kolonnās"
 
-#: ../exo/exo-icon-view.c:724
+#: ../exo/exo-icon-view.c:846
 msgid "Width for each item"
 msgstr "Katra vienuma platums"
 
-#: ../exo/exo-icon-view.c:725
+#: ../exo/exo-icon-view.c:847
 msgid "The width used for each item"
 msgstr "Katra vienuma platums"
 
-#: ../exo/exo-icon-view.c:743
+#: ../exo/exo-icon-view.c:865
 msgid "Layout mode"
 msgstr "Izkārtojuma režīms"
 
-#: ../exo/exo-icon-view.c:744
+#: ../exo/exo-icon-view.c:866
 msgid "The layout mode"
 msgstr "Izkārtojuma režīms"
 
-#: ../exo/exo-icon-view.c:760
+#: ../exo/exo-icon-view.c:882
 msgid "Margin"
 msgstr "Mala"
 
-#: ../exo/exo-icon-view.c:761
+#: ../exo/exo-icon-view.c:883
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Atstarpe, pie ikonu skata malām"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:899
 msgid "Markup column"
 msgstr "Iezīmēšanas kolonna"
 
-#: ../exo/exo-icon-view.c:778
+#: ../exo/exo-icon-view.c:900
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Modeļa kolonna, lai iegūtu tekstu, ja izmanto Pango iezīmēšanu"
 
-#: ../exo/exo-icon-view.c:792
+#: ../exo/exo-icon-view.c:914
 msgid "Icon View Model"
 msgstr "Ikonu skata modelis"
 
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-view.c:915
 msgid "The model for the icon view"
 msgstr "Modelis ikonu skatam"
 
-#: ../exo/exo-icon-view.c:807
+#: ../exo/exo-icon-view.c:929
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Kā teksts un ikona tiek novietoti attiecībā viens pret otru"
 
-#: ../exo/exo-icon-view.c:839
+#: ../exo/exo-icon-view.c:963
+msgid "Icon column"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:964
+msgid ""
+"Model column used to retrieve the absolute path of an image file to render"
+msgstr ""
+
+#: ../exo/exo-icon-view.c:979
 msgid "Reorderable"
 msgstr "Pārkārtojams"
 
-#: ../exo/exo-icon-view.c:840
+#: ../exo/exo-icon-view.c:980
 msgid "View is reorderable"
 msgstr "Skats ir pārkārtojams"
 
-#: ../exo/exo-icon-view.c:855
+#: ../exo/exo-icon-view.c:995
 msgid "Row Spacing"
 msgstr "Rindu atstarpe"
 
-#: ../exo/exo-icon-view.c:856
+#: ../exo/exo-icon-view.c:996
 msgid "Space which is inserted between grid rows"
 msgstr "Atstarpe starp režģa rindām"
 
-#: ../exo/exo-icon-view.c:870
+#: ../exo/exo-icon-view.c:1010
 msgid "Search Column"
 msgstr "Meklēšanas kolonna"
 
-#: ../exo/exo-icon-view.c:871
+#: ../exo/exo-icon-view.c:1011
 msgid "Model column to search through when searching through item"
 msgstr "Modeļa kolonna meklēšanai, kad meklē vienumos"
 
-#: ../exo/exo-icon-view.c:885
+#: ../exo/exo-icon-view.c:1025
 msgid "Selection mode"
 msgstr "Atlases režīms"
 
-#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-icon-view.c:1026
 msgid "The selection mode"
 msgstr "Atlases režīms"
 
-#: ../exo/exo-icon-view.c:901 ../exo/exo-tree-view.c:154
+#: ../exo/exo-icon-view.c:1041 ../exo/exo-tree-view.c:166
 msgid "Single Click"
 msgstr "Viens klikšķis"
 
-#: ../exo/exo-icon-view.c:902 ../exo/exo-tree-view.c:155
+#: ../exo/exo-icon-view.c:1042 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Vai skatā esošie vienumi ir aktivizējami ar vienu klikšķi"
 
-#: ../exo/exo-icon-view.c:918 ../exo/exo-tree-view.c:171
+#: ../exo/exo-icon-view.c:1058 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
 msgstr "Viena klikšķa noildze"
 
-#: ../exo/exo-icon-view.c:919 ../exo/exo-tree-view.c:172
+#: ../exo/exo-icon-view.c:1059 ../exo/exo-tree-view.c:184
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Laika daudzums, pēc kura vienums zem kursora, tiks automātiski iekrāsots, viena klikšķa režīmā"
 
-#: ../exo/exo-icon-view.c:934
+#: ../exo/exo-icon-view.c:1074
 msgid "Spacing"
 msgstr "Atstarpe"
 
-#: ../exo/exo-icon-view.c:935
+#: ../exo/exo-icon-view.c:1075
 msgid "Space which is inserted between cells of an item"
 msgstr "Atstarpe, starp vienuma šūnām"
 
-#: ../exo/exo-thumbnail-preview.c:113
+#: ../exo/exo-thumbnail-preview.c:120
 msgid "Preview"
 msgstr "Priekšskatījums"
 
-#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:271
+#: ../exo/exo-thumbnail-preview.c:141 ../exo/exo-thumbnail-preview.c:286
 msgid "No file selected"
 msgstr "Neviens fails nav atlasīts"
 
-#: ../exo/exo-thumbnail-preview.c:289
+#: ../exo/exo-thumbnail-preview.c:304
 msgid "Block Device"
 msgstr "Bloka iekārta"
 
-#: ../exo/exo-thumbnail-preview.c:294
+#: ../exo/exo-thumbnail-preview.c:309
 msgid "Character Device"
 msgstr "Rakstzīmju iekārta"
 
-#: ../exo/exo-thumbnail-preview.c:299
+#: ../exo/exo-thumbnail-preview.c:314
 msgid "Folder"
 msgstr "Mape"
 
-#: ../exo/exo-thumbnail-preview.c:304
+#: ../exo/exo-thumbnail-preview.c:319
 msgid "FIFO"
 msgstr "Rinda (FIFO)"
 
-#: ../exo/exo-thumbnail-preview.c:309
+#: ../exo/exo-thumbnail-preview.c:324
 msgid "Socket"
 msgstr "Ligzda"
 
@@ -391,35 +400,35 @@ msgstr "Velciet vienumu uz augšējām rīkjoslām, lai pievienotu, vai no rīkj
 msgid "Separator"
 msgstr "Atdalītājs"
 
-#: ../exo/exo-toolbars-view.c:752
+#: ../exo/exo-toolbars-view.c:755
 msgid "Toolbar _Style"
 msgstr "Rīkjoslas _stils"
 
-#: ../exo/exo-toolbars-view.c:759
+#: ../exo/exo-toolbars-view.c:762
 msgid "_Desktop Default"
 msgstr "Noklusētā darbvirsma"
 
-#: ../exo/exo-toolbars-view.c:768
+#: ../exo/exo-toolbars-view.c:771
 msgid "_Icons only"
 msgstr "Tikai _ikonas"
 
-#: ../exo/exo-toolbars-view.c:777
+#: ../exo/exo-toolbars-view.c:780
 msgid "_Text only"
 msgstr "Tikai _tekstu"
 
-#: ../exo/exo-toolbars-view.c:786
+#: ../exo/exo-toolbars-view.c:789
 msgid "Text for _All Icons"
 msgstr "Tekstu _visām ikonām"
 
-#: ../exo/exo-toolbars-view.c:795
+#: ../exo/exo-toolbars-view.c:798
 msgid "Text for I_mportant Icons"
 msgstr "Tekstu svarī_gajām ikonām"
 
-#: ../exo/exo-toolbars-view.c:803
+#: ../exo/exo-toolbars-view.c:806
 msgid "_Remove Toolbar"
 msgstr "_Noņemt rīkjoslu"
 
-#: ../exo/exo-toolbars-view.c:818
+#: ../exo/exo-toolbars-view.c:821
 msgid "Customize Toolbar..."
 msgstr "Pielāgot rīkjoslu..."
 
@@ -463,58 +472,63 @@ msgstr "Atiestates komanda"
 msgid "Session restart command"
 msgstr "Sesijas atiestates komanda"
 
-#: ../exo-csource/main.c:284
+#: ../exo-csource/main.c:303
 #, c-format
 msgid "Usage: %s [options] [file]\n"
 msgstr "Izmantošana: %s [opcijas] [fails]\n"
 
-#: ../exo-csource/main.c:285
+#: ../exo-csource/main.c:304
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
 msgstr "       %s [opcijas] --build-list [[faila nosaukums]...]\n"
 
-#: ../exo-csource/main.c:287
+#: ../exo-csource/main.c:306
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
 msgstr "  -h, --help         Izdrukā šo ziņu un iziet\n"
 
-#: ../exo-csource/main.c:288
+#: ../exo-csource/main.c:307
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
 msgstr "  -V, --version     Izdrukā versijas informāciju un iziet\n"
 
-#: ../exo-csource/main.c:289
+#: ../exo-csource/main.c:308
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
 msgstr "  --extern          Veidot ārējos simbolus\n"
 
-#: ../exo-csource/main.c:290
+#: ../exo-csource/main.c:309
 #, c-format
 msgid "  --static          Generate static symbols\n"
 msgstr "  --static           Veidot statiskos simbolus\n"
 
-#: ../exo-csource/main.c:291
+#: ../exo-csource/main.c:310
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
 msgstr "  --name=identifikātors, C makro/mainīgā vārds\n"
 
-#: ../exo-csource/main.c:292
+#: ../exo-csource/main.c:311
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
 msgstr "  --build-list      Parsē (nosaukums, fails) pārus\n"
 
-#: ../exo-csource/main.c:293
+#: ../exo-csource/main.c:312
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
 msgstr "  --strip-comments  Dzēš komentārus no XML failiem\n"
 
-#: ../exo-csource/main.c:294
+#: ../exo-csource/main.c:313
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
 msgstr "  --strip-content   Dzēš mezglu saturu XML failos\n"
 
-#: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:195
-#: ../exo-open/main.c:496
+#: ../exo-csource/main.c:314
+#, c-format
+msgid "  --output=filename Write generated csource to specified file\n"
+msgstr ""
+
+#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
+#: ../exo-open/main.c:509
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -524,8 +538,8 @@ msgid ""
 "\n"
 msgstr "Autortiesības (c) %s\n        os-cillation e.K. Visas tiesības paturētas.\n\nAutors Benedikt Meurer <benny@xfce.org>.\n\n"
 
-#: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:199
-#: ../exo-open/main.c:500
+#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:200
+#: ../exo-open/main.c:513
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -535,44 +549,59 @@ msgid ""
 "\n"
 msgstr "%s ir BEZ JEBKĀDĀM GARANTIJĀM,\nJūs varat izplatīt %s zem GNU Lesser General Public License\nnosacījumiem, kuri ir atrodami pirmavota pakotnē %s \n\n\n"
 
-#: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:203
-#: ../exo-open/main.c:504
+#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:204
+#: ../exo-open/main.c:517
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Lūdzu ziņojiet par kļūdām uz <%s>.\n"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:255
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:257
 msgid "Select an Application"
 msgstr "Norādiet lietotni"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:264
-#: ../exo-helper/exo-helper-chooser.c:398
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:260
+#: ../exo-desktop-item-edit/exo-die-editor.c:594
+#: ../exo-desktop-item-edit/exo-die-editor.c:638
+#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
+#: ../exo-helper/exo-helper-chooser.c:382
+#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-launcher-dialog.c:109
+msgid "_Cancel"
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:261
+#: ../exo-helper/exo-helper-chooser.c:383
+msgid "_Open"
+msgstr ""
+
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:266
+#: ../exo-helper/exo-helper-chooser.c:389
 msgid "All Files"
 msgstr "Visi faili"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:269
-#: ../exo-helper/exo-helper-chooser.c:403
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:271
+#: ../exo-helper/exo-helper-chooser.c:394
 msgid "Executable Files"
 msgstr "Izpildāmie faili"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:284
-#: ../exo-helper/exo-helper-chooser.c:418
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:286
+#: ../exo-helper/exo-helper-chooser.c:409
 msgid "Perl Scripts"
 msgstr "Perl skripti"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:290
-#: ../exo-helper/exo-helper-chooser.c:424
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:292
+#: ../exo-helper/exo-helper-chooser.c:415
 msgid "Python Scripts"
 msgstr "Python skripti"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:296
-#: ../exo-helper/exo-helper-chooser.c:430
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:298
+#: ../exo-helper/exo-helper-chooser.c:421
 msgid "Ruby Scripts"
 msgstr "Ruby skripti"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:302
-#: ../exo-helper/exo-helper-chooser.c:436
+#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: ../exo-helper/exo-helper-chooser.c:427
 msgid "Shell Scripts"
 msgstr "Čaulas skripti"
 
@@ -583,13 +612,13 @@ msgstr "Izveidot palaidēju <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:297
+#: ../exo-desktop-item-edit/exo-die-editor.c:295
 msgid "_Name:"
 msgstr "_Nosaukums:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:313
+#: ../exo-desktop-item-edit/exo-die-editor.c:312
 msgid "C_omment:"
 msgstr "K_omentārs:"
 
@@ -601,19 +630,19 @@ msgstr "Kom_anda:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:344
+#: ../exo-desktop-item-edit/exo-die-editor.c:345
 msgid "_URL:"
 msgstr "_URL:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:360
+#: ../exo-desktop-item-edit/exo-die-editor.c:362
 msgid "Working _Directory:"
 msgstr ""
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:389
+#: ../exo-desktop-item-edit/exo-die-editor.c:392
 msgid "_Icon:"
 msgstr "_Ikona:"
 
@@ -621,7 +650,7 @@ msgstr "_Ikona:"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1233
+#: ../exo-desktop-item-edit/exo-die-editor.c:1227
 msgid "No icon"
 msgstr "Nav ikonas"
 
@@ -633,7 +662,6 @@ msgstr "Opcijas:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Izmantot _sāknēšanas paziņošanu"
@@ -649,97 +677,103 @@ msgstr "Izvēlaties šo opciju, lai ieslēgtu sāknēšanas paziņošanu, kad ko
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
-#: ../exo-desktop-item-edit/exo-die-editor.c:434
+#: ../exo-desktop-item-edit/exo-die-editor.c:435
 msgid "Run in _terminal"
 msgstr "Palaist _terminālī"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:435
+#: ../exo-desktop-item-edit/exo-die-editor.c:436
 msgid "Select this option to run the command in a terminal window."
 msgstr "Izvēlaties, šo opciju, ja vēlaties, lai komanda tiek izpildīta termināla logā"
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:590
+#: ../exo-desktop-item-edit/exo-die-editor.c:592
 msgid "Select an icon"
 msgstr "Norādiet ikonu"
 
+#: ../exo-desktop-item-edit/exo-die-editor.c:595
+#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-launcher-dialog.c:110
+msgid "_OK"
+msgstr ""
+
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:637
+#: ../exo-desktop-item-edit/exo-die-editor.c:635
 msgid "Select a working directory"
 msgstr ""
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:169
+#: ../exo-desktop-item-edit/exo-die-utils.c:171
 msgid "File location is not a regular file or directory"
 msgstr "Fila atrašanās vieta nav parasts fails vai direktorija"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Create Launcher"
 msgstr "Izveidot palaidēju"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Create Link"
 msgstr "Izveidot saiti"
 
-#: ../exo-desktop-item-edit/main.c:52
+#: ../exo-desktop-item-edit/main.c:54
 msgid "Create Directory"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Launcher"
 msgstr "Rediģēt palaidēju"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Link"
 msgstr "Rediģēt saiti"
 
-#: ../exo-desktop-item-edit/main.c:53
+#: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Directory"
 msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:78
+#: ../exo-desktop-item-edit/main.c:80
 msgid "Create a new desktop file in the given directory"
 msgstr "Izveidot jaunu darbvirsmas failu, dotajā direktorijā"
 
-#: ../exo-desktop-item-edit/main.c:79
+#: ../exo-desktop-item-edit/main.c:81
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Veidojamā darbvirsmas faila tips (lietotne vai saite)"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: ../exo-desktop-item-edit/main.c:82
 msgid "Preset name when creating a desktop file"
 msgstr "Noklusētais nosaukums, kad veido darbvirsmas failu"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: ../exo-desktop-item-edit/main.c:83
 msgid "Preset comment when creating a desktop file"
 msgstr "Noklusētais komentārs, kad veido darbvirsmas failu"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: ../exo-desktop-item-edit/main.c:84
 msgid "Preset command when creating a launcher"
 msgstr "Noklusētā komanda, kad veido palaidēju"
 
-#: ../exo-desktop-item-edit/main.c:83
+#: ../exo-desktop-item-edit/main.c:85
 msgid "Preset URL when creating a link"
 msgstr "Noklusētais URL, kad veido saiti"
 
-#: ../exo-desktop-item-edit/main.c:84
+#: ../exo-desktop-item-edit/main.c:86
 msgid "Preset icon when creating a desktop file"
 msgstr "Noklusētā ikona, kad veido darbvirsmas failu"
 
-#: ../exo-desktop-item-edit/main.c:85 ../exo-helper/main.c:70
+#: ../exo-desktop-item-edit/main.c:87 ../exo-helper/main.c:72
 msgid "Print version information and exit"
 msgstr "Izdrukāt versijas informāciju un iziet"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:171
+#: ../exo-desktop-item-edit/main.c:172
 msgid "[FILE|FOLDER]"
 msgstr "[FAILS|MAPE]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:183
+#: ../exo-desktop-item-edit/main.c:184
 msgid "Failed to open display"
 msgstr "Neizdevās atvērt displeju"
 
-#: ../exo-desktop-item-edit/main.c:210
+#: ../exo-desktop-item-edit/main.c:211
 msgid "No file/folder specified"
 msgstr "Nav norādīts fails/mape"
 
@@ -771,174 +805,186 @@ msgstr "Failam \"%s\" nav tipa atslēga"
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Darbvirsmas faila tips \"%s\" netiek atbalstīts"
 
+#. add the "Help" button
+#: ../exo-desktop-item-edit/main.c:331
+#: ../exo-helper/exo-helper-chooser-dialog.c:105
+msgid "_Help"
+msgstr ""
+
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:340
+#: ../exo-desktop-item-edit/main.c:338
 msgid "C_reate"
 msgstr "Iz_veidot"
 
+#: ../exo-desktop-item-edit/main.c:338 ../exo-desktop-item-edit/main.c:518
+msgid "_Save"
+msgstr ""
+
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:513
+#: ../exo-desktop-item-edit/main.c:514
 msgid "Choose filename"
 msgstr "Norādiet faila nosaukumu"
 
-#: ../exo-desktop-item-edit/main.c:620
+#: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Neizdevās izveidot \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:620
+#: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Neizdevās saglabāt \"%s\""
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:102
+#: ../exo-helper/exo-helper-chooser-dialog.c:99
+msgid "_Close"
+msgstr ""
+
+#: ../exo-helper/exo-helper-chooser-dialog.c:101
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Vēlamās lietotnes"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:103
+#: ../exo-helper/exo-helper-chooser-dialog.c:102
 msgid "Select default applications for various services"
 msgstr "Norādiet noklusētās lietotnes, dažādiem pakalpojumiem"
 
 #. Internet
-#. 
-#: ../exo-helper/exo-helper-chooser-dialog.c:132
+#: ../exo-helper/exo-helper-chooser-dialog.c:126
 msgid "_Internet"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:145
+#: ../exo-helper/exo-helper-chooser-dialog.c:139
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Tīmekļa pārlūks"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:153
+#: ../exo-helper/exo-helper-chooser-dialog.c:147
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
 msgstr "Vēlamais tīmekļa pārlūks, kurš tiks izmantots, lai\nvērtu hipersaites un attēlotu palīdzības saturu."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:177
+#: ../exo-helper/exo-helper-chooser-dialog.c:171
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
 msgid "Mail Reader"
 msgstr "Pasta lasītājs"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:185
+#: ../exo-helper/exo-helper-chooser-dialog.c:179
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
 msgstr "Vēlamais pasta lasītājs, kurš tiks izmantots, lai rakstītu\ne-pastus, kad jūs uzklikšķiniet uz e-pasta adreses."
 
 #. Utilities
-#. 
-#: ../exo-helper/exo-helper-chooser-dialog.c:205
+#: ../exo-helper/exo-helper-chooser-dialog.c:199
 msgid "_Utilities"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:218
+#: ../exo-helper/exo-helper-chooser-dialog.c:212
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Faila pārvaldnieks"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:226
+#: ../exo-helper/exo-helper-chooser-dialog.c:220
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
 msgstr "Vēlamais failu pārvaldnieks, kurš tiks izmantots, lai\npārvaldītu mapju saturu."
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:250
+#: ../exo-helper/exo-helper-chooser-dialog.c:244
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
 msgstr "Termināla emulators"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:258
+#: ../exo-helper/exo-helper-chooser-dialog.c:252
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
 msgstr "Vēlamais termināla emulators, kurš tiks izmantots, lai izpildītu\nkomandas, kurām nepieciešama CLI vide."
 
-#: ../exo-helper/exo-helper-chooser.c:149
-#: ../exo-helper/exo-helper-chooser.c:156
+#: ../exo-helper/exo-helper-chooser.c:145
+#: ../exo-helper/exo-helper-chooser.c:152
 msgid "Press left mouse button to change the selected application."
 msgstr "Nospiediet kreiso peles taustiņu, lai mainītu izvēlēto lietotni."
 
-#: ../exo-helper/exo-helper-chooser.c:155
+#: ../exo-helper/exo-helper-chooser.c:151
 msgid "Application Chooser Button"
 msgstr "Lietotņu izvēles poga"
 
-#: ../exo-helper/exo-helper-chooser.c:299
+#: ../exo-helper/exo-helper-chooser.c:290
 msgid "No application selected"
 msgstr "Nav norādīta neviena lietotne"
 
-#: ../exo-helper/exo-helper-chooser.c:315
+#: ../exo-helper/exo-helper-chooser.c:306
 msgid "Failed to set default Web Browser"
 msgstr "Neizdevās uzstādīt noklusēto tīmekļa pārlūku"
 
-#: ../exo-helper/exo-helper-chooser.c:316
+#: ../exo-helper/exo-helper-chooser.c:307
 msgid "Failed to set default Mail Reader"
 msgstr "Neizdevās uzstādīt noklusēto pasta lasītāju"
 
-#: ../exo-helper/exo-helper-chooser.c:317
+#: ../exo-helper/exo-helper-chooser.c:308
 msgid "Failed to set default File Manager"
 msgstr "Neizdevās uzstādīt noklusēto failu pārvaldnieku"
 
-#: ../exo-helper/exo-helper-chooser.c:318
+#: ../exo-helper/exo-helper-chooser.c:309
 msgid "Failed to set default Terminal Emulator"
 msgstr "Neizdevās uzstādīt noklusēto termināla emulatoru"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:388
+#: ../exo-helper/exo-helper-chooser.c:379
 msgid "Select application"
 msgstr "Norādiet lietotni"
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:492
 msgid "Choose a custom Web Browser"
 msgstr "Norādiet tīmekļa pārlūku"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:493
 msgid "Choose a custom Mail Reader"
 msgstr "Norādiet pasta lasītāju"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:494
 msgid "Choose a custom File Manager"
 msgstr "Norādiet pielāgoto failu pārvaldnieku"
 
-#: ../exo-helper/exo-helper-chooser.c:504
+#: ../exo-helper/exo-helper-chooser.c:495
 msgid "Choose a custom Terminal Emulator"
 msgstr "Norādiet termināla emulatoru"
 
-#: ../exo-helper/exo-helper-chooser.c:509
+#: ../exo-helper/exo-helper-chooser.c:500
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Norādiet lietotni, kuru vēlaties izmantot,\nkā noklusēto tīmekļa pārlūku:"
 
-#: ../exo-helper/exo-helper-chooser.c:510
+#: ../exo-helper/exo-helper-chooser.c:501
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Norādiet lietotni, kuru vēlaties izmantot,\nkā noklusēto pasta lasītāju:"
 
-#: ../exo-helper/exo-helper-chooser.c:511
+#: ../exo-helper/exo-helper-chooser.c:502
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Norādiet lietotni, kuru vēlaties izmantot,\nkā noklusēto failu pārvaldnieku:"
 
-#: ../exo-helper/exo-helper-chooser.c:512
+#: ../exo-helper/exo-helper-chooser.c:503
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Norādiet lietotni, kuru vēlaties izmantot,\nkā noklusēto termināla emulatoru:"
 
-#: ../exo-helper/exo-helper-chooser.c:579
+#: ../exo-helper/exo-helper-chooser.c:567
 msgid "Browse the file system to choose a custom command."
 msgstr "Pārlūkot faila sistēmu, lai norādītu izmantojamo komandu."
 
-#: ../exo-helper/exo-helper-chooser.c:762
+#: ../exo-helper/exo-helper-chooser.c:765
 msgid "_Other..."
 msgstr "_Cits..."
 
-#: ../exo-helper/exo-helper-chooser.c:763
+#: ../exo-helper/exo-helper-chooser.c:766
 msgid "Use a custom application which is not included in the above list."
 msgstr "Izmantot lietotni, kura nav iekļauta sarakstā."
 
@@ -970,12 +1016,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Lūdzu norādiet savu vēlamo termināla\nemulatoru un apstipriniet, lai turpinātu."
 
-#: ../exo-helper/exo-helper.c:382
+#: ../exo-helper/exo-helper.c:389
 #, c-format
 msgid "No command specified"
 msgstr "Nav norādīta komanda"
 
-#: ../exo-helper/exo-helper.c:688 ../exo-helper/exo-helper.c:722
+#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
+#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Neizdevās atvērt %s rakstīšanai"
@@ -985,67 +1032,72 @@ msgid ""
 "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Vēlamās lietotnes (tīmekļa pārlūks, pasta lasītājs un termināla emulators)"
 
-#: ../exo-helper/main.c:41
+#: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
 msgstr "Neizdevās izpildīt noklusēto Tīmekļa pārlūku"
 
-#: ../exo-helper/main.c:42
+#: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
 msgstr "Neizdevās izpildīt noklusēto Pasta lasītāju"
 
-#: ../exo-helper/main.c:43
+#: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
 msgstr "Neizdevās izpildīt noklusēto Failu pārvaldnieku"
 
-#: ../exo-helper/main.c:44
+#: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
 msgstr "Neizdevās izpildīt noklusēto Termināla emulatoru"
 
-#: ../exo-helper/main.c:71
+#: ../exo-helper/main.c:73
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
 msgstr "Atvērt Vēlamo lietotņu\nkonfigurācijas dialoga logu"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:74
 msgid "Settings manager socket"
 msgstr "Uzstādījumi soketu pārvaldniekam"
 
-#: ../exo-helper/main.c:72
+#: ../exo-helper/main.c:74
 msgid "SOCKET ID"
 msgstr "SOKETA ID"
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:75
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
 msgstr "Palaist noklusēto palīdzības TIPU ar neobligātajiem PARAMETRIEM, kur TIPS ir viena no sekojošām vērtībām."
 
-#: ../exo-helper/main.c:73
+#: ../exo-helper/main.c:75 ../exo-helper/main.c:76
 msgid "TYPE [PARAMETER]"
 msgstr "TIPS [PARAMETRI]"
 
-#: ../exo-helper/main.c:102
+#: ../exo-helper/main.c:76
 msgid ""
-"The following TYPEs are supported for the --launch command:\n"
+"Query the default helper of TYPE, where TYPE is one of the following values."
+msgstr ""
+
+#: ../exo-helper/main.c:105
+msgid ""
+"The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Sekojoši TIPI tiek atbalstīti ar --launch komandu:\n\n  WebBrowser        - Vēlamais tīmekļa pārlūks.\n  MailReader           - Vēlamais pasta lasītājs.\n  FileManager          - Vēlamais failu pārvaldnieks  TerminalEmulator  - Vēlamais termināla emulators."
+msgstr ""
 
-#: ../exo-helper/main.c:112
+#: ../exo-helper/main.c:115
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Ievadiet \"%s --help\", lai izdrukātu lietošanas instrukcijas."
 
-#: ../exo-helper/main.c:165
+#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Nederīgs palīdzības tips \"%s\""
 
-#: ../exo-helper/main.c:213
+#: ../exo-helper/main.c:224
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1060,6 +1112,11 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nAutortiesības (c) 2003-2006\n        os-cillation e.K. Visas tiesības paturētas.\n\nAutors Benedikt Meurer <benny@xfce.org>.\n\nBūvēts ar Gtk+-%d.%d.%d, skrien Gtk+-%d.%d.%d.\n\nLūdzu, ziņojiet par kļūdām uz <%s>.\n"
 
+#: ../exo-helper/main.c:250
+#, c-format
+msgid "No helper defined for \"%s\"."
+msgstr ""
+
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
 msgstr "aterm"
@@ -1067,6 +1124,10 @@ msgstr "aterm"
 #: ../exo-helper/helpers/balsa.desktop.in.in.h:1
 msgid "Balsa"
 msgstr "Balsa"
+
+#: ../exo-helper/helpers/brave.desktop.in.in.h:1
+msgid "Brave"
+msgstr ""
 
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
@@ -1111,6 +1172,14 @@ msgstr "Mozilla Firefox"
 #: ../exo-helper/helpers/galeon.desktop.in.in.h:1
 msgid "Galeon Web Browser"
 msgstr "Galeon tīmekļa pārlūks"
+
+#: ../exo-helper/helpers/geary.desktop.in.in.h:1
+msgid "Geary"
+msgstr ""
+
+#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
+msgid "Google Chrome"
+msgstr ""
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
@@ -1180,13 +1249,21 @@ msgstr "NXterm"
 msgid "Opera Browser"
 msgstr "Opera Browser"
 
-#: ../exo-helper/helpers/opera-mailer.desktop.in.in.h:1
-msgid "Opera Mail"
-msgstr "Opera Mail"
-
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "PCMan failu pārvaldnieks"
+
+#: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
+msgid "QTerminal"
+msgstr ""
+
+#: ../exo-helper/helpers/qtfm.desktop.in.in.h:1
+msgid "qtFM"
+msgstr ""
+
+#: ../exo-helper/helpers/qupzilla.desktop.in.in.h:1
+msgid "QupZilla"
+msgstr ""
 
 #: ../exo-helper/helpers/rodent.desktop.in.in.h:1
 msgid "Rodent File Manager"
@@ -1200,6 +1277,10 @@ msgstr ""
 msgid "Sakura"
 msgstr ""
 
+#: ../exo-helper/helpers/surf.desktop.in.in.h:1
+msgid "Surf"
+msgstr ""
+
 #: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
 msgid "Sylpheed"
 msgstr "Sylpheed"
@@ -1207,6 +1288,10 @@ msgstr "Sylpheed"
 #: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
 msgid "Claws Mail"
 msgstr "Claws Mail"
+
+#: ../exo-helper/helpers/terminator.desktop.in.in.h:1
+msgid "Terminator"
+msgstr ""
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
@@ -1219,6 +1304,10 @@ msgstr "Mozilla Thunderbird"
 #: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
 msgid "RXVT Unicode"
 msgstr "RXVT Unicode"
+
+#: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
+msgid "Vimprobable2"
+msgstr ""
 
 #: ../exo-helper/helpers/w3m.desktop.in.in.h:1
 msgid "W3M Text Browser"
@@ -1273,7 +1362,6 @@ msgstr "--lunch komandas atbalstītie TIPI:"
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1298,17 +1386,17 @@ msgid ""
 "Unix features."
 msgstr "Darbavirsmas faila palaišana netiek atbalstīta, kad %s ir kompilēts bez GIO-Unix iespējām."
 
-#: ../exo-open/main.c:260
+#: ../exo-open/main.c:269
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Neizdevās palaist vēlamo aplikāciju no kategorijas \"%s\"."
 
-#: ../exo-open/main.c:577
+#: ../exo-open/main.c:590
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Nevar noteikt URI-shēmu priekš \"%s\"."
 
-#: ../exo-open/main.c:591
+#: ../exo-open/main.c:604
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Neizdevās atvērt URI \"%s\"."
