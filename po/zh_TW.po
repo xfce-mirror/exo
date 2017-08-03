@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Walter Cheuk <wwycheuk@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:55+0200\n"
-"PO-Revision-Date: 2013-11-19 14:58+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce/language/zh_TW/)\n"
+"PO-Revision-Date: 2017-08-03 16:30+0000\n"
+"Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/xfce/exo/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -163,7 +164,7 @@ msgstr "設備圖示"
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:119
 msgid "Emblems"
-msgstr "標誌"
+msgstr "標記"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:121
@@ -253,11 +254,11 @@ msgstr "每個項目所佔的寬度"
 
 #: ../exo/exo-icon-view.c:713
 msgid "Layout mode"
-msgstr "輸出模式"
+msgstr "配置模式"
 
 #: ../exo/exo-icon-view.c:714
 msgid "The layout mode"
-msgstr "輸出模式"
+msgstr "配置模式"
 
 #: ../exo/exo-icon-view.c:730
 msgid "Margin"
@@ -392,7 +393,7 @@ msgstr "Socket"
 
 #: ../exo/exo-toolbars-editor-dialog.c:118
 msgid "_Add a new toolbar"
-msgstr "新增一工具列(_A)"
+msgstr "新增工具列(_A)"
 
 #: ../exo/exo-toolbars-editor.c:221
 msgid ""
@@ -509,7 +510,7 @@ msgstr "  --static          產生靜態符號\n"
 #: ../exo-csource/main.c:291
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=identifier C macro/variable name\n"
+msgstr "  --name=identifier C 巨集/變量名稱\n"
 
 #: ../exo-csource/main.c:292
 #, c-format
@@ -524,7 +525,7 @@ msgstr "  --strip-comments  從 XML 檔案移除註解\n"
 #: ../exo-csource/main.c:294
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   從 XML 檔案移除 node 內容\n"
+msgstr "  --strip-content   從 XML 檔案移除節點內容\n"
 
 #: ../exo-csource/main.c:304 ../exo-desktop-item-edit/main.c:193
 #: ../exo-open/main.c:496
@@ -557,7 +558,7 @@ msgstr "若遭遇錯誤，請回報至 <%s>>\n"
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:255
 msgid "Select an Application"
-msgstr "選取一應用程式"
+msgstr "選取應用程式"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:264
 #: ../exo-helper/exo-helper-chooser.c:398
@@ -646,7 +647,6 @@ msgstr "選項："
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "使用起始通知(_S)"
@@ -662,7 +662,6 @@ msgstr "選取此選項以啟用當指令從檔案管理員或是選單執行時
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "在終端機中執行(_T)"
@@ -679,7 +678,7 @@ msgstr "選擇圖示"
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:637
 msgid "Select a working directory"
-msgstr "選取工作中目錄"
+msgstr "選取工作目錄"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:169
 msgid "File location is not a regular file or directory"
@@ -712,11 +711,11 @@ msgstr "編輯目錄"
 
 #: ../exo-desktop-item-edit/main.c:78
 msgid "Create a new desktop file in the given directory"
-msgstr "建立新的桌面檔於給定的目錄"
+msgstr "於給定目錄建立新的桌面檔"
 
 #: ../exo-desktop-item-edit/main.c:79
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "欲建立之桌面檔案的類型(應用程式或連結)"
+msgstr "欲建立之桌面檔類型 (應用程式或連結)"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Preset name when creating a desktop file"
@@ -750,7 +749,7 @@ msgstr "[檔案|資料夾]"
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:181
 msgid "Failed to open display"
-msgstr "開啟顯示失敗"
+msgstr "未能開啟顯示器"
 
 #: ../exo-desktop-item-edit/main.c:208
 msgid "No file/folder specified"
@@ -814,7 +813,6 @@ msgid "Select default applications for various services"
 msgstr "為各種服務選擇預設的應用程式"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "網際網路"
@@ -842,7 +840,6 @@ msgid ""
 msgstr "所偏好的郵件讀取器將在您點擊電子郵件地址時\n用來撰寫電子郵件。"
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "公用程式"
@@ -867,7 +864,7 @@ msgstr "終端機模擬程式"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr "偏好的終端機模擬器將用來\n執行需要 CLI 環境的指令。"
+msgstr "偏好的終端機模擬器將用來\n執行需要指令列介面環境的指令。"
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -1254,7 +1251,6 @@ msgstr "--launch 指令支援下列「類型」："
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
