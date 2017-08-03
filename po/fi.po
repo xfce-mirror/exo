@@ -1,20 +1,21 @@
-# Finnish translations for exo package.
-# Copyright (C) 2004-2007 os-cillation e.K.
-# This file is distributed under the same license as the exo package.
-# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2005-2012.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: exo\n"
+"Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-27 10:09+0000\n"
-"PO-Revision-Date: 2012-04-27 13:56+0300\n"
-"Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
-"Language-Team: Finnish <xfce-i18n@xfce.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2013-07-02 22:55+0200\n"
+"PO-Revision-Date: 2017-08-03 16:31+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Finnish (http://www.transifex.com/xfce/exo/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -62,11 +63,8 @@ msgstr "Tiedoston \"%s\" lukeminen epäonnistui: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:890
 #, c-format
-msgid ""
-"Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr ""
-"Kuvan \"%s\" lataus epäonnistui: Syy tuntematon, kuvatiedosto luultavasti "
-"viallinen"
+msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
+msgstr "Kuvan \"%s\" lataus epäonnistui: Syy tuntematon, kuvatiedosto luultavasti viallinen"
 
 #: ../exo/exo-gtk-extensions.c:227
 #, c-format
@@ -338,9 +336,7 @@ msgstr "Kertanapsautusviive"
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr ""
-"Viive, jonka jälkeen hiiren osoittimen alla oleva kohde valitaan "
-"automaattisesti kertanapsautustilassa"
+msgstr "Viive, jonka jälkeen hiiren osoittimen alla oleva kohde valitaan automaattisesti kertanapsautustilassa"
 
 #: ../exo/exo-icon-view.c:904
 msgid "Spacing"
@@ -402,8 +398,7 @@ msgstr "_Lisää uusi välinepalkki"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr ""
-"Lisää ja poista ylläolevissa välinepalkeissa olevia kohteita raahaamalla."
+msgstr "Lisää ja poista ylläolevissa välinepalkeissa olevia kohteita raahaamalla."
 
 #: ../exo/exo-toolbars-editor.c:538
 msgid "Separator"
@@ -540,12 +535,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. Kaikki oikeudet pidätetään.\n"
-"\n"
-"Kirjoittanut Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
+msgstr "Copyright (c) %s\n        os-cillation e.K. Kaikki oikeudet pidätetään.\n\nKirjoittanut Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:308 ../exo-desktop-item-edit/main.c:197
 #: ../exo-open/main.c:500
@@ -556,12 +546,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr ""
-"%s ei ole MINKÄÄNLAISEN TAKUUN ALAINEN.\n"
-"Voit levittää ja kopioida %s -ohjelmistoa GNU Lesser General\n"
-"Public License -lisenssin ehtojen mukaisesti. Lisenssin löydät\n"
-"%s -lähdekoodipakkauksesta.\n"
-"\n"
+msgstr "%s ei ole MINKÄÄNLAISEN TAKUUN ALAINEN.\nVoit levittää ja kopioida %s -ohjelmistoa GNU Lesser General\nPublic License -lisenssin ehtojen mukaisesti. Lisenssin löydät\n%s -lähdekoodipakkauksesta.\n\n"
 
 #: ../exo-csource/main.c:312 ../exo-desktop-item-edit/main.c:201
 #: ../exo-open/main.c:504
@@ -609,37 +594,44 @@ msgstr "Komentotulkin skriptit"
 msgid "Create Launcher <b>%s</b>"
 msgstr "Luo käynnistin <b>%s</b>"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:297
 msgid "_Name:"
 msgstr "_Nimi:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:313
 msgid "C_omment:"
 msgstr "Ko_mmentti:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
 msgstr "_Komento:"
 
-#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:344
 msgid "_URL:"
 msgstr "_URL:"
 
-#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
+#. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:360
 msgid "Working _Directory:"
 msgstr "_Työkansio:"
 
-#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to avoid mnemonic conflicts
+#. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
+#. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:389
 msgid "_Icon:"
 msgstr "Ku_vake:"
 
-#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link" dialog if no icon selected
+#. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
+#. dialog if no icon selected
 #. setup a label to tell that no icon was selected
 #: ../exo-desktop-item-edit/exo-die-editor.c:406
 #: ../exo-desktop-item-edit/exo-die-editor.c:1233
@@ -650,9 +642,10 @@ msgstr "Ei kuvaketta"
 msgid "Options:"
 msgstr "Valinnat:"
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Käytä käynnistyksen _huomautusta"
@@ -662,14 +655,12 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr ""
-"Valitse tämä ottaaksesi käyttöön käynnistyksen huomautuksen, kun komento "
-"suoritetaan tiedostonhallinnasta tai valikosta. Kaikki sovellukset eivät tue "
-"käynnistyksen huomautusta."
+msgstr "Valitse tämä ottaaksesi käyttöön käynnistyksen huomautuksen, kun komento suoritetaan tiedostonhallinnasta tai valikosta. Kaikki sovellukset eivät tue käynnistyksen huomautusta."
 
-#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to avoid mnemonic conflicts
-#. *              and sync your translations with the translations in Thunar and xfce4-panel.
-#.
+#. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
+#. avoid mnemonic conflicts
+#. *              and sync your translations with the translations in Thunar
+#. and xfce4-panel.
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Suorita _päätteessä"
@@ -820,15 +811,13 @@ msgstr "Oletussovellukset"
 msgid "Select default applications for various services"
 msgstr "Valitse oletussovellukset erinäisille palveluille"
 
-#.
 #. Internet
-#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Internet"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:145
-#: ../exo-open/exo-web-browser.desktop.in.h:2
+#: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Web-selain"
 
@@ -836,9 +825,7 @@ msgstr "Web-selain"
 msgid ""
 "The preferred Web Browser will be used to open\n"
 "hyperlinks and display help contents."
-msgstr ""
-"Oletusarvoista web-selainta käytetään hyperlinkkien\n"
-"avaamiseen ja ohjeiden näyttämiseen."
+msgstr "Oletusarvoista web-selainta käytetään hyperlinkkien\navaamiseen ja ohjeiden näyttämiseen."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:177
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -849,19 +836,15 @@ msgstr "Sähkopostiohjelma"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr ""
-"Oletusarvoista sähköpostiohjelmaa käytetään sähköpostin\n"
-"kirjoittamiseen osoitetta napsautettuasi."
+msgstr "Oletusarvoista sähköpostiohjelmaa käytetään sähköpostin\nkirjoittamiseen osoitetta napsautettuasi."
 
-#.
 #. Utilities
-#.
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Apuohjelmat"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:218
-#: ../exo-open/exo-file-manager.desktop.in.h:2
+#: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Tiedostonhallinta"
 
@@ -869,9 +852,7 @@ msgstr "Tiedostonhallinta"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr ""
-"Oletusarvoista tiedostonhallintaa käytetään\n"
-"kansioiden sisällön selaamiseen."
+msgstr "Oletusarvoista tiedostonhallintaa käytetään\nkansioiden sisällön selaamiseen."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:250
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -882,9 +863,7 @@ msgstr "Pääteohjelma"
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr ""
-"Oletusarvoista pääteohjelmaa käytetään komentorivi-\n"
-"sovellusten suorittamiseen."
+msgstr "Oletusarvoista pääteohjelmaa käytetään komentorivi-\nsovellusten suorittamiseen."
 
 #: ../exo-helper/exo-helper-chooser.c:149
 #: ../exo-helper/exo-helper-chooser.c:156
@@ -946,25 +925,19 @@ msgstr "Määritä Xfce:n oletusarvoinen web-selain:"
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr ""
-"Määritä Xfce:n oletusarvoinen\n"
-"sähköpostiohjelma:"
+msgstr "Määritä Xfce:n oletusarvoinen\nsähköpostiohjelma:"
 
 #: ../exo-helper/exo-helper-chooser.c:511
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr ""
-"Määritä Xfce:n oletusarvoinen\n"
-"tiedostonhallintasovellus:"
+msgstr "Määritä Xfce:n oletusarvoinen\ntiedostonhallintasovellus:"
 
 #: ../exo-helper/exo-helper-chooser.c:512
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr ""
-"Määritä Xfce:n oletusarvoinen\n"
-"päätesovellus:"
+msgstr "Määritä Xfce:n oletusarvoinen\npäätesovellus:"
 
 #: ../exo-helper/exo-helper-chooser.c:579
 msgid "Browse the file system to choose a custom command."
@@ -986,33 +959,25 @@ msgstr "Valitse oletussovellus"
 msgid ""
 "Please choose your preferred Web\n"
 "Browser now and click OK to proceed."
-msgstr ""
-"Valitse haluamasi web-selain ja\n"
-"napsauta OK jatkaaksesi."
+msgstr "Valitse haluamasi web-selain ja\nnapsauta OK jatkaaksesi."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:258
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
-msgstr ""
-"Valitse haluamasi sähköpostiohjelma ja\n"
-"napsauta OK jatkaaksesi."
+msgstr "Valitse haluamasi sähköpostiohjelma ja\nnapsauta OK jatkaaksesi."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr ""
-"Valitse haluamasi tiedostonhallinta ja\n"
-"napsauta OK jatkaaksesi."
+msgstr "Valitse haluamasi tiedostonhallinta ja\nnapsauta OK jatkaaksesi."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
 "Please choose your preferred Terminal\n"
 "Emulator now and click OK to proceed."
-msgstr ""
-"Valitse haluamasi pääteohjelma ja\n"
-"napsauta OK jatkaaksesi."
+msgstr "Valitse haluamasi pääteohjelma ja\nnapsauta OK jatkaaksesi."
 
 #: ../exo-helper/exo-helper.c:382
 #, c-format
@@ -1025,7 +990,8 @@ msgid "Failed to open %s for writing"
 msgstr "Tiedoston %s avaaminen kirjoitettavaksi epäonnistui"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
+msgid ""
+"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
 msgstr "Oletussovellukset (web-selain, sähköposti ja pääteohjelma)"
 
 #: ../exo-helper/main.c:41
@@ -1048,9 +1014,7 @@ msgstr "Oletuspäätteen käynnistys epäonnistui"
 msgid ""
 "Open the Preferred Applications\n"
 "configuration dialog"
-msgstr ""
-"Avaa oletussovellusten\n"
-"asetusdialogi"
+msgstr "Avaa oletussovellusten\nasetusdialogi"
 
 #: ../exo-helper/main.c:72
 msgid "Settings manager socket"
@@ -1062,11 +1026,9 @@ msgstr "PISTOKE"
 
 #: ../exo-helper/main.c:73
 msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is "
-"one of the following values."
-msgstr ""
-"Käynnistä TYYPIN oletussovellus käyttäen valinnaista VALITSINTA. TYYPPI on "
-"yksi seuraavista arvoista."
+"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
+" one of the following values."
+msgstr "Käynnistä TYYPIN oletussovellus käyttäen valinnaista VALITSINTA. TYYPPI on yksi seuraavista arvoista."
 
 #: ../exo-helper/main.c:73
 msgid "TYPE [PARAMETER]"
@@ -1080,13 +1042,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"Anna --launch -komennon tyypiksi yksi seuraavista:\n"
-"\n"
-"  WebBrowser       - Oletusarvoinen web-selain.\n"
-"  MailReader       - Oletusarvoinen sähköpostiohjelma.\n"
-"  FileManager      - Oletusarvoinen tiedostonhallinta.\n"
-"  TerminalEmulator - Oletusarvoinen pääteohjelma."
+msgstr "Anna --launch -komennon tyypiksi yksi seuraavista:\n\n  WebBrowser       - Oletusarvoinen web-selain.\n  MailReader       - Oletusarvoinen sähköpostiohjelma.\n  FileManager      - Oletusarvoinen tiedostonhallinta.\n  TerminalEmulator - Oletusarvoinen pääteohjelma."
 
 #: ../exo-helper/main.c:112
 #, c-format
@@ -1111,15 +1067,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr ""
-"%s (Xfce %s)\n"
-"\n"
-"Copyright (c) 2003-2006\n"
-"        os-cillation e.K. Kaikki oikeudet pidätetään.\n"
-"\n"
-"Käännettäessä Gtk+-%d.%d.%d, nyt käytössä Gtk+-%d.%d.%d.\n"
-"\n"
-"Ilmoita ohjelmavirheistä osoitteeseen <%s>.\n"
+msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. Kaikki oikeudet pidätetään.\n\nKäännettäessä Gtk+-%d.%d.%d, nyt käytössä Gtk+-%d.%d.%d.\n\nIlmoita ohjelmavirheistä osoitteeseen <%s>.\n"
 
 #: ../exo-helper/helpers/Terminal.desktop.in.in.h:1
 msgid "Xfce Terminal"
@@ -1285,41 +1233,30 @@ msgstr "  -V, --version                       Näytä versiotiedot ja poistu"
 #: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
-"                                      TYPE with the optional PARAMETERs, "
-"where\n"
+"                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr ""
-"  --launch TYYPPI [PARAMETRIT...]     Suorita TYYPIN oletussovellus\n"
-"                                      käyttäen valinnaisia PARAMETREJA,\n"
-"                                      kun TYYPPI on joku alla luetelluista."
+msgstr "  --launch TYYPPI [PARAMETRIT...]     Suorita TYYPIN oletussovellus\n                                      käyttäen valinnaisia PARAMETREJA,\n                                      kun TYYPPI on joku alla luetelluista."
 
 #: ../exo-open/main.c:119
 msgid ""
-"  --working-directory DIRECTORY       Default working directory for "
-"applications\n"
+"  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr ""
-"  --working-directory KANSIO          Sovellusten oletusarvoinen työkansio\n"
-"                                      käytettäessä --launch -valitsinta."
+msgstr "  --working-directory KANSIO          Sovellusten oletusarvoinen työkansio\n                                      käytettäessä --launch -valitsinta."
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Komento --launch tukee seuraavia TYYPPEJÄ:"
 
-#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
+#. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
+#. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#.
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-"  WebBrowser       - Oletusarvoinen web-selain.\n"
-"  MailReader       - Oletusarvoinen sähköpostiohjelma.\n"
-"  FileManager      - Oletusarvoinen tiedostonhallinta.\n"
-"  TerminalEmulator - Oletusarvoinen pääteohjelma."
+msgstr "  WebBrowser       - Oletusarvoinen web-selain.\n  MailReader       - Oletusarvoinen sähköpostiohjelma.\n  FileManager      - Oletusarvoinen tiedostonhallinta.\n  TerminalEmulator - Oletusarvoinen pääteohjelma."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1328,20 +1265,14 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
-"Jos et määritä --launch -valitsinta, exo-open avaa kaikki määritetyt URL:t\n"
-"niiden oletuskäsittelijöillä. Muussa tapauksessa voit valita suoritettavan\n"
-"sovelluksen ja antaa sille lisäparametreja (voit esimerkiksi määrittää\n"
-"päätteessä suoritettavan komentorivin)."
+msgstr "Jos et määritä --launch -valitsinta, exo-open avaa kaikki määritetyt URL:t\nniiden oletuskäsittelijöillä. Muussa tapauksessa voit valita suoritettavan\nsovelluksen ja antaa sille lisäparametreja (voit esimerkiksi määrittää\npäätteessä suoritettavan komentorivin)."
 
 #: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr ""
-"Työpöytätiedostojen käynnistystä ei tueta, kun %s on käännetty ilman GIO-"
-"Unix -toiminnallisuutta."
+msgstr "Työpöytätiedostojen käynnistystä ei tueta, kun %s on käännetty ilman GIO-Unix -toiminnallisuutta."
 
 #: ../exo-open/main.c:260
 #, c-format
@@ -1358,7 +1289,7 @@ msgstr "Kohteen \"%s\" URI-skeemaa ei tunnistettu."
 msgid "Failed to open URI \"%s\"."
 msgstr "URI:n \"%s\" avaaminen epäonnistui."
 
-#: ../exo-open/exo-file-manager.desktop.in.h:1
+#: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
 msgstr "Selaa tiedostojärjestelmää"
 
@@ -1370,7 +1301,6 @@ msgstr "Käytä sähköpostiasi"
 msgid "Use the command line"
 msgstr "Käytä komentoriviä"
 
-#: ../exo-open/exo-web-browser.desktop.in.h:1
+#: ../exo-open/exo-web-browser.desktop.in.h:2
 msgid "Browse the web"
 msgstr "Selaa verkkosivuja"
-
