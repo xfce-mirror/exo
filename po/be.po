@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-02 22:55+0200\n"
-"PO-Revision-Date: 2013-11-19 14:58+0000\n"
-"Last-Translator: Nick <nick@xfce.org>\n"
-"Language-Team: Belarusian (http://www.transifex.com/projects/p/xfce/language/be/)\n"
+"PO-Revision-Date: 2017-08-03 16:30+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"Language-Team: Belarusian (http://www.transifex.com/xfce/exo/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: be\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:144
@@ -647,7 +647,6 @@ msgstr "Опцыі:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
 msgstr "Ін_фармаваньне пра запуск"
@@ -663,7 +662,6 @@ msgstr "Вылучыце гэтую опцыю, каб уключыць інфа
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#. 
 #: ../exo-desktop-item-edit/exo-die-editor.c:434
 msgid "Run in _terminal"
 msgstr "Выконваць у _тэрмінале"
@@ -815,7 +813,6 @@ msgid "Select default applications for various services"
 msgstr "Вылучыце прадвызначаныя дастасаваньні для розных патрэбаў"
 
 #. Internet
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:132
 msgid "Internet"
 msgstr "Інтэрнэт"
@@ -843,7 +840,6 @@ msgid ""
 msgstr "Пераважны паштовы кліент будзе выкарыстоўвацца для\nстварэньня лістоў, калі вы націсьніце на электронны адрас."
 
 #. Utilities
-#. 
 #: ../exo-helper/exo-helper-chooser-dialog.c:205
 msgid "Utilities"
 msgstr "Дробязі"
@@ -1255,7 +1251,6 @@ msgstr "Загадам --launch падтрымліваюцца наступны�
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the exo-helper utility will not accept localized TYPEs.
-#. 
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
