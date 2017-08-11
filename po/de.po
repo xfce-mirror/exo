@@ -9,13 +9,14 @@
 # Nico Schümann <nico@prog.nico22.de>, 2007
 # Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2010
 # Tobias Bannert <tobannert@gmail.com>, 2014-2017
+# Vinzenz Vietzke <vinz@vinzv.de>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-08-03 16:30+0000\n"
-"Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
+"PO-Revision-Date: 2017-08-10 23:41+0000\n"
+"Last-Translator: Vinzenz Vietzke <vinz@vinzv.de>\n"
 "Language-Team: German (http://www.transifex.com/xfce/exo/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -528,7 +529,7 @@ msgstr "  --strip-content   Knoteninhalte aus XML-Dateien entfernen\n"
 #: ../exo-csource/main.c:314
 #, c-format
 msgid "  --output=filename Write generated csource to specified file\n"
-msgstr ""
+msgstr "--output=Dateiname Schreibe erstellten csource in angegeben Datei\n"
 
 #: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
 #: ../exo-open/main.c:509
@@ -1078,7 +1079,7 @@ msgstr "TYP [PARAMETER]"
 #: ../exo-helper/main.c:76
 msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
-msgstr ""
+msgstr "Frage den Standard-Helfer für TYP ab, wobei TYP einer der folgenden Werte ist."
 
 #: ../exo-helper/main.c:105
 msgid ""
@@ -1088,7 +1089,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
+msgstr "Die folgenden TYPen werden von den --launch und --query Befehlen unterstützt:\n\n WebBrowser       - Der bevorzugte Webbrowser.\n MailReader        - Das bevorzugte Email-Programm.\n FileManager        - Der bevorzugte Dateimanager.\n TerminalEmulator - Der bevorzugte Terminal-Emulator."
 
 #: ../exo-helper/main.c:115
 #, c-format
@@ -1118,7 +1119,7 @@ msgstr "%s (Xfce %s)\n\nUrheberrecht (c) 2003-2006\n        os-cillation e.K. Al
 #: ../exo-helper/main.c:250
 #, c-format
 msgid "No helper defined for \"%s\"."
-msgstr ""
+msgstr "Kein Helfer für \"%s\" festgelegt."
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
