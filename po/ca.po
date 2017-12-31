@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-12-31 06:29+0000\n"
+"PO-Revision-Date: 2017-12-31 18:47+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/exo/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -58,22 +58,22 @@ msgstr "La mida en píxels de la icona a representar."
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "No s'ha pogut obrir «%s»: %s"
+msgstr "Ha fallat l'obriment de «%s»: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "No s'ha pogut crear «%s»: %s"
+msgstr "Ha fallat la lectura del fitxer «%s»: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "No s'ha pogut carregar la imatge «%s»: raó desconeguda; probablement el fitxer està corromput."
+msgstr "Ha fallat la càrrega de la imatge «%s»: raó desconeguda; probablement el fitxer està malmès."
 
 #: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "No s'ha pogut obrir «%s»."
+msgstr "Ha fallat l'obriment de «%s»."
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
@@ -772,7 +772,7 @@ msgstr "[FITXER|CARPETA]"
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:184
 msgid "Failed to open display"
-msgstr "No s'ha pogut obrir la pantalla"
+msgstr "Ha fallat l'obriment de la pantalla"
 
 #: ../exo-desktop-item-edit/main.c:211
 msgid "No file/folder specified"
@@ -781,7 +781,7 @@ msgstr "No heu especificat cap fitxer o carpeta"
 #: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "No s'ha pogut carregar el contingut de «%s»: %s"
+msgstr "Ha fallat la càrrega del contingut de «%s»: %s"
 
 #: ../exo-desktop-item-edit/main.c:281
 #, c-format
@@ -792,7 +792,7 @@ msgstr "El fitxer «%s» no conté dades"
 #: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "No s'ha pogut analitzar el contingut de «%s»: %s"
+msgstr "Ha fallat l'anàlisi del contingut de «%s»: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:306
@@ -829,12 +829,12 @@ msgstr "Trieu un nom de fitxer"
 #: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "No s'ha pogut crear «%s»."
+msgstr "Ha fallat la creació de «%s»."
 
 #: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "No s'ha pogut desar «%s»."
+msgstr "Ha fallat el desament de «%s»."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
@@ -918,19 +918,19 @@ msgstr "No s'ha seleccionat cap aplicació"
 
 #: ../exo-helper/exo-helper-chooser.c:306
 msgid "Failed to set default Web Browser"
-msgstr "No s'ha pogut definir el navegador web predeterminat"
+msgstr "Ha fallat l'establiment del navegador web predeterminat"
 
 #: ../exo-helper/exo-helper-chooser.c:307
 msgid "Failed to set default Mail Reader"
-msgstr "No s'ha pogut definir el client de correu predeterminat"
+msgstr "Ha fallat l'establiment del client de correu predeterminat"
 
 #: ../exo-helper/exo-helper-chooser.c:308
 msgid "Failed to set default File Manager"
-msgstr "No s'ha pogut definir el gestor de fitxers predeterminat"
+msgstr "Ha fallat l'establiment del gestor de fitxers predeterminat"
 
 #: ../exo-helper/exo-helper-chooser.c:309
 msgid "Failed to set default Terminal Emulator"
-msgstr "No s'ha pogut definir l'emulador de terminal predeterminat"
+msgstr "Ha fallat l'establiment de l'emulador de terminal predeterminat"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:379
@@ -1026,7 +1026,7 @@ msgstr "No heu especificat cap ordre"
 #: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
 #, c-format
 msgid "Failed to open %s for writing"
-msgstr "No s'ha pogut obrir %s per escriptura"
+msgstr "Ha fallat l'obriment de %s per a l'escriptura"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid ""
@@ -1035,19 +1035,19 @@ msgstr "Aplicacions preferides (navegador web, lector de correu i emulador de te
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
-msgstr "No s'ha pogut executar el navegador web per defecte"
+msgstr "Ha fallat l'execució del navegador web predeterminat"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
-msgstr "No s'ha pogut executar el lector de correus per defecte"
+msgstr "Ha fallat l'execució del lector de correus predeterminat"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
-msgstr "No s'ha pogut executar el gestor de fitxers per defecte"
+msgstr "Ha fallat l'execució del gestor de fitxers predeterminat"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
-msgstr "No s'ha pogut executar l'emulador de terminal per defecte"
+msgstr "Ha fallat l'execució de l'emulador de terminal predeterminat"
 
 #: ../exo-helper/main.c:73
 msgid ""
@@ -1390,7 +1390,7 @@ msgstr "No es poden llançar els fitxers d'escriptori si %s no s'ha compilat amb
 #: ../exo-open/main.c:269
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "No s'ha pogut llançar l'aplicació preferida de la categoria «%s»."
+msgstr "Ha fallat el llançament de l'aplicació preferida per a la categoria «%s»."
 
 #: ../exo-open/main.c:590
 #, c-format
@@ -1400,7 +1400,7 @@ msgstr "No s'ha pogut detectar l'esquema URI de «%s»."
 #: ../exo-open/main.c:604
 #, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "No s'ha pogut obrir l'URL «%s»."
+msgstr "Ha fallat l'obriment de l'URI «%s»."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
