@@ -9248,7 +9248,7 @@ exo_icon_view_search_equal_func (GtkTreeModel *model,
       case_normalized_key = g_utf8_casefold (normalized_key, -1);
 
       /* compare the casefolded strings */
-      if (strncmp (case_normalized_key, case_normalized_string, strlen (case_normalized_key)) == 0)
+      if (strnstr (case_normalized_string, case_normalized_key, strlen (case_normalized_string)) != NULL)
         retval = FALSE;
     }
 
