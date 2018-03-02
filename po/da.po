@@ -5,14 +5,15 @@
 # Translators:
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013,2015
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013,2015
+# Linuxbruger <y.z@live.dk>, 2018
 # scootergrisen, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-11-27 21:28+0000\n"
-"Last-Translator: scootergrisen\n"
+"PO-Revision-Date: 2018-03-02 23:22+0000\n"
+"Last-Translator: Linuxbruger <y.z@live.dk>\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/exo/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,12 +24,12 @@ msgstr ""
 #: ../exo/exo-cell-renderer-ellipsized-text.c:131
 #: ../exo/exo-cell-renderer-icon.c:160
 msgid "Follow state"
-msgstr "Følg tilstand"
+msgstr "Følge-tilstand"
 
 #: ../exo/exo-cell-renderer-ellipsized-text.c:132
 #: ../exo/exo-cell-renderer-icon.c:161
 msgid "Render differently based on the selection state."
-msgstr "Rendér anderledes baseret på valgte tilstand."
+msgstr "Rendér anderledes, baseret på den valgte tilstand."
 
 #: ../exo/exo-cell-renderer-icon.c:182
 msgid "Icon"
@@ -36,7 +37,7 @@ msgstr "Ikon"
 
 #: ../exo/exo-cell-renderer-icon.c:183
 msgid "The icon to render."
-msgstr "Ikonet der skal renderes."
+msgstr "Ikonet at rendére."
 
 #: ../exo/exo-cell-renderer-icon.c:201
 msgid "GIcon"
@@ -44,7 +45,7 @@ msgstr "G-ikon"
 
 #: ../exo/exo-cell-renderer-icon.c:202
 msgid "The GIcon to render."
-msgstr "G-ikonet der skal renderes."
+msgstr "G-ikonet at rendére."
 
 #: ../exo/exo-cell-renderer-icon.c:223
 msgid "size"
@@ -52,27 +53,27 @@ msgstr "størrelse"
 
 #: ../exo/exo-cell-renderer-icon.c:224
 msgid "The size of the icon to render in pixels."
-msgstr "Størrelsen af ikonet der skal renderes i pixels."
+msgstr "Størrelsen af ikonet at rendére i pixels."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Kunne ikke åbne filen \"%s\": %s"
+msgstr "Fejlede med at åbne filen \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Kunne ikke læse fil \"%s\": %s"
+msgstr "Fejlede med at læse filen \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Kunne ikke indlæse billede \"%s\": Ukendt årsag, højst sandsynligt en ødelagt billedfil"
+msgstr "Fejlede med at indlæse billede \"%s\": Ukendt årsag, højst sandsynligt en korrupt billede-fil"
 
 #: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Kunne ikke åbne \"%s\"."
+msgstr "Fejlede i at åbne \"%s\"."
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
@@ -80,7 +81,7 @@ msgstr "Orientering"
 
 #: ../exo/exo-icon-bar.c:278
 msgid "The orientation of the iconbar"
-msgstr "Orienteringen af ikonlinjen"
+msgstr "Orienteringen af ikon-baren"
 
 #: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:945
 msgid "Pixbuf column"
@@ -88,7 +89,7 @@ msgstr "Pixbuf-kolonne"
 
 #: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:946
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Modelkolonne som bliver brugt til at hente ikon-pixbuf fra"
+msgstr "Modelkolonne brugt til at hente ikon-pixbuf fra"
 
 #: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1090
 msgid "Text column"
@@ -96,7 +97,7 @@ msgstr "Tekstkolonne"
 
 #: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1091
 msgid "Model column used to retrieve the text from"
-msgstr "Modelkolonne som bliver brugt til at hente teksten fra"
+msgstr "Modelkolonne brugt til at hente teksten fra"
 
 #: ../exo/exo-icon-bar.c:323
 msgid "Icon Bar Model"
@@ -104,7 +105,7 @@ msgstr "Ikonlinjemodel"
 
 #: ../exo/exo-icon-bar.c:324
 msgid "Model for the icon bar"
-msgstr "Model for ikonlinjen"
+msgstr "Model for ikon-baren"
 
 #: ../exo/exo-icon-bar.c:340
 msgid "Active"
@@ -112,36 +113,36 @@ msgstr "Aktiv"
 
 #: ../exo/exo-icon-bar.c:341
 msgid "Active item index"
-msgstr "Indeks for aktive element"
+msgstr "Aktiv element-indeks"
 
 #: ../exo/exo-icon-bar.c:347 ../exo/exo-icon-bar.c:348
 msgid "Active item fill color"
-msgstr "Udfyldningsfarve for aktive element"
+msgstr "Aktiv element udfyldningsfarve"
 
 #: ../exo/exo-icon-bar.c:354 ../exo/exo-icon-bar.c:355
 msgid "Active item border color"
-msgstr "Kantfarve for aktive element"
+msgstr "Aktiv element grænse-farve"
 
 #: ../exo/exo-icon-bar.c:361 ../exo/exo-icon-bar.c:362
 msgid "Active item text color"
-msgstr "Tekstfarve for aktive element"
+msgstr "Aktiv element tekstfarve"
 
 #: ../exo/exo-icon-bar.c:368 ../exo/exo-icon-bar.c:369
 msgid "Cursor item fill color"
-msgstr "Udfyldningsfarve for markørelement"
+msgstr "Markør-elementets udfyldningsfarve"
 
 #: ../exo/exo-icon-bar.c:375 ../exo/exo-icon-bar.c:376
 msgid "Cursor item border color"
-msgstr "Kantfarve for markørelement"
+msgstr "Markør-elementets kantfarve"
 
 #: ../exo/exo-icon-bar.c:382 ../exo/exo-icon-bar.c:383
 msgid "Cursor item text color"
-msgstr "Tekstfarve for markørelement"
+msgstr "Tekstfarve for markør-element"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:105
 msgid "Action Icons"
-msgstr "Handlingsikoner"
+msgstr "Handlings-ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
 #: ../exo/exo-icon-chooser-dialog.c:107
@@ -151,17 +152,17 @@ msgstr "Animationer"
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
 #: ../exo/exo-icon-chooser-dialog.c:109
 msgid "Application Icons"
-msgstr "Programikoner"
+msgstr "Applikations-ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
 #: ../exo/exo-icon-chooser-dialog.c:111
 msgid "Menu Icons"
-msgstr "Menuikoner"
+msgstr "Menu-ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
 #: ../exo/exo-icon-chooser-dialog.c:113
 msgid "Device Icons"
-msgstr "Enhedsikoner"
+msgstr "Enheds-ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:115
@@ -171,37 +172,37 @@ msgstr "Emblemer"
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Emoticons"
-msgstr "Emotikoner"
+msgstr "Humør-ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
 #: ../exo/exo-icon-chooser-dialog.c:119
 msgid "International Denominations"
-msgstr "Internationale denominationer"
+msgstr "IInternationale Denominationer"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:121
 msgid "File Type Icons"
-msgstr "Filtypeikoner"
+msgstr "Filtype-ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
 #: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Location Icons"
-msgstr "Placeringsikoner"
+msgstr "Lokations-ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
 #: ../exo/exo-icon-chooser-dialog.c:125
 msgid "Status Icons"
-msgstr "Statusikoner"
+msgstr "Status-ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Uncategorized Icons"
-msgstr "Ikoner udenfor kategori"
+msgstr "Ikke-kategoriseret ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:131
 msgid "All Icons"
-msgstr "Alle ikoner"
+msgstr "Alle Ikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
 #: ../exo/exo-icon-chooser-dialog.c:135 ../exo/exo-icon-chooser-dialog.c:311
@@ -224,7 +225,7 @@ msgstr "Ryd søgefelt"
 
 #: ../exo/exo-icon-view.c:796
 msgid "Column Spacing"
-msgstr "Kolonneafstand"
+msgstr "Kolonne-afstand"
 
 #: ../exo/exo-icon-view.c:797
 msgid "Space which is inserted between grid column"
