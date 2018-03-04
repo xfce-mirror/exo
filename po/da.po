@@ -6,13 +6,13 @@
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013,2015
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013,2015
 # Linuxbruger <y.z@live.dk>, 2018
-# scootergrisen, 2016-2017
+# scootergrisen, 2016-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2018-03-03 19:10+0000\n"
+"PO-Revision-Date: 2018-03-04 20:30+0000\n"
 "Last-Translator: Linuxbruger <y.z@live.dk>\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/exo/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -58,22 +58,22 @@ msgstr "Størrelsen af ikonet at rendére i pixels."
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Fejlede med at åbne filen \"%s\": %s"
+msgstr "Fejl med at åbne filen \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Fejlede med at læse filen \"%s\": %s"
+msgstr "Fejl med at læse filen \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Fejlede med at indlæse billede \"%s\": Ukendt årsag, højst sandsynligt en korrupt billede-fil"
+msgstr "Fejl med at indlæse billede \"%s\": Ukendt årsag, højst sandsynligt en korrupt billede-fil"
 
 #: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Fejlede i at åbne \"%s\"."
+msgstr "Fej i at åbne \"%s\"."
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
@@ -895,13 +895,13 @@ msgstr "Den foretrukne fil-håndterings applikation vil bruges til at\ngennemse 
 #: ../exo-helper/exo-helper-chooser-dialog.c:244
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
-msgstr "Terminal-Emulator"
+msgstr "Terminalemulator"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:252
 msgid ""
 "The preferred Terminal Emulator will be used to\n"
 "run commands that require a CLI environment."
-msgstr "Den foretrukne terminal-emulator vil bruges til at\nkøre kommandoer, der kræver et CLI-miljø."
+msgstr "Den foretrukne terminalemulator vil bruges til at\nkøre kommandoer, der kræver et CLI-miljø."
 
 #: ../exo-helper/exo-helper-chooser.c:145
 #: ../exo-helper/exo-helper-chooser.c:152
@@ -930,7 +930,7 @@ msgstr "Fejlede med at indstille standard Fil-håndtering"
 
 #: ../exo-helper/exo-helper-chooser.c:309
 msgid "Failed to set default Terminal Emulator"
-msgstr "Fejlede med at sætte standard Terminal-Emulator"
+msgstr "Kunne ikke vælge standard terminalemulator"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:379
@@ -951,7 +951,7 @@ msgstr "Vælg en bruger-defineret fil-håndterer"
 
 #: ../exo-helper/exo-helper-chooser.c:495
 msgid "Choose a custom Terminal Emulator"
-msgstr "Vælg en brugerdefineret Terminal-Emulator"
+msgstr "Vælg en brugerdefineret terminalemulator"
 
 #: ../exo-helper/exo-helper-chooser.c:500
 msgid ""
@@ -975,7 +975,7 @@ msgstr "Specifér applikationen du vil bruge\nsom standard fil-håndtering for X
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr "Specifér applikationen du vil bruge\nsom standard Terminal-Emulator for Xfce:"
+msgstr "Specifér applikationen du vil bruge\nsom standard terminalemulator for Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:567
 msgid "Browse the file system to choose a custom command."
@@ -1031,23 +1031,23 @@ msgstr "Fejlede med at åbne %s til skrivning"
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid ""
 "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Foretrukne Applikationer (Web-Browser, Mail-Læser og Terminal-Emulator)"
+msgstr "Foretrukne programmer (webbrowser, postprogram og terminalemulator)"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
-msgstr "Fejlede med at køre standard Web-Browser"
+msgstr "Fejl med at køre standard Web-Browser"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
-msgstr "Fejlede med at køre standaad Mail-Læser"
+msgstr "Fejl med at køre standaad Mail-Læser"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
-msgstr "Fejlede med at køre standard Fil-Håndterer"
+msgstr "Fejl med at køre standard Fil-Håndterer"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
-msgstr "Fejlede med at køre standard Terminal-Emulator"
+msgstr "Kunne ikke køre standard terminalemulator"
 
 #: ../exo-helper/main.c:73
 msgid ""
@@ -1086,7 +1086,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Følgende TYPEr understøttes af kommandoerne --launch og --query:\n\n  WebBrowser       - Den fortrukne Web-Browser.\n  MailReader       - Den fortrukne Mail-Læser.\n  FileManager      - Den fortrukne Fil-håndterer.\n  TerminalEmulator - Den fortrukne Terminal-Emulator."
+msgstr "Følgende TYPEr understøttes af kommandoerne --launch og --query:\n\n  WebBrowser       - Den fortrukne webbrowser.\n  MailReader       - Det fortrukne postprogram.\n  FileManager      - Den fortrukne filhåndtering.\n  TerminalEmulator - Den fortrukne terminalemulator."
 
 #: ../exo-helper/main.c:115
 #, c-format
@@ -1111,7 +1111,7 @@ msgid ""
 "Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
 "\n"
 "Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nOphavsret (c) 2003-2006\n        os-cillation e.K. Alle rettigheder forbeholdes.\n\nSkrevet af Benedikt Meurer <benny@xfce.org>.\n\nBygget med  Gtk+-%d.%d.%d, kørende Gtk+-%d.%d.%d.\n\nRapportér venligst fejl til <%s>.\n"
+msgstr "%s (Xfce %s)\n\nOphavsret (c) 2003-2006\n        os-cillation e.K. Alle rettigheder forbeholdes.\n\nSkrevet af Benedikt Meurer <benny@xfce.org>.\n\nBygget med Gtk+-%d.%d.%d, kørende Gtk+-%d.%d.%d.\n\nRapportér venligst fejl til <%s>.\n"
 
 #: ../exo-helper/main.c:250
 #, c-format
@@ -1369,7 +1369,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - Den foretrukne Web-Browser.\n  MailReader       - Den foretrukne Mail-Læser.\n  FileManager      - Den foretrukne Fil-Håndtering.\n  TerminalEmulator - Den foretrukne Terminal-Emulator."
+msgstr "  WebBrowser       - Den foretrukne webbrowser.\n  MailReader       - Det foretrukne postprogram.\n  FileManager      - Den foretrukne filhåndtering.\n  TerminalEmulator - Den foretrukne terminalemulator."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1400,7 +1400,7 @@ msgstr "Kunne ikke registrere URI-skemaet for \"%s\"."
 #: ../exo-open/main.c:604
 #, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "Fejlede med at åbne URI'en \"%s\"."
+msgstr "Fejl med at åbne URI'en \"%s\"."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
