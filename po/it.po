@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2018-03-31 10:52+0000\n"
+"PO-Revision-Date: 2018-04-02 12:22+0000\n"
 "Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.me>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/exo/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -36,15 +36,15 @@ msgstr "Icona"
 
 #: ../exo/exo-cell-renderer-icon.c:183
 msgid "The icon to render."
-msgstr "L'icona da disegnare."
+msgstr "L'icona da visualizzare."
 
 #: ../exo/exo-cell-renderer-icon.c:201
 msgid "GIcon"
-msgstr "GIcona"
+msgstr "GIcon"
 
 #: ../exo/exo-cell-renderer-icon.c:202
 msgid "The GIcon to render."
-msgstr "La GIcona da disegnare."
+msgstr "L'oggetto GIcon da visualizzare."
 
 #: ../exo/exo-cell-renderer-icon.c:223
 msgid "size"
@@ -52,35 +52,35 @@ msgstr "dimensione"
 
 #: ../exo/exo-cell-renderer-icon.c:224
 msgid "The size of the icon to render in pixels."
-msgstr "La dimensione in pixel dell'icona da disegnare."
+msgstr "La dimensione in pixel dell'icona da visualizzare."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "Apertura del file «%s» non riuscita: %s"
+msgstr "Apertura del file \"%s\" non riuscita: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "Lettura del file «%s» non riuscita: %s"
+msgstr "Lettura del file \"%s\" non riuscita: %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "Caricamento dell'immagine «%s» non riuscita: ragione sconosciuta; probabilmente il file è danneggiato"
+msgstr "Caricamento dell'immagine \"%s\" non riuscito per ragione sconosciuta, probabilmente il file è danneggiato"
 
 #: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "Apertura di «%s» non riuscita."
+msgstr "Apertura di \"%s\" non riuscita."
 
 #: ../exo/exo-icon-bar.c:277 ../exo/exo-icon-view.c:928
 msgid "Orientation"
-msgstr "Orientazione"
+msgstr "Orientamento"
 
 #: ../exo/exo-icon-bar.c:278
 msgid "The orientation of the iconbar"
-msgstr "L'orientazione della barra delle icone"
+msgstr "L'orientamento della barra delle icone"
 
 #: ../exo/exo-icon-bar.c:294 ../exo/exo-icon-view.c:945
 msgid "Pixbuf column"
@@ -88,7 +88,7 @@ msgstr "Colonna Pixbuf"
 
 #: ../exo/exo-icon-bar.c:295 ../exo/exo-icon-view.c:946
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Colonna modello usata per recuperare il pixbuf dell'icona"
+msgstr "Colonna del modello usata per recuperare il pixbuf dell'icona"
 
 #: ../exo/exo-icon-bar.c:310 ../exo/exo-icon-view.c:1090
 msgid "Text column"
@@ -96,15 +96,15 @@ msgstr "Colonna del testo"
 
 #: ../exo/exo-icon-bar.c:311 ../exo/exo-icon-view.c:1091
 msgid "Model column used to retrieve the text from"
-msgstr "Colonna modello, usata per recuperare il testo"
+msgstr "Colonna del modello usata per recuperare il testo"
 
 #: ../exo/exo-icon-bar.c:323
 msgid "Icon Bar Model"
-msgstr "Modello della barra dell'icona"
+msgstr "Modello della barra delle icone"
 
 #: ../exo/exo-icon-bar.c:324
 msgid "Model for the icon bar"
-msgstr "Modello per la barra dell'icona"
+msgstr "Modello per la barra delle icone"
 
 #: ../exo/exo-icon-bar.c:340
 msgid "Active"
@@ -128,15 +128,15 @@ msgstr "Colore del testo dell'elemento attivo"
 
 #: ../exo/exo-icon-bar.c:368 ../exo/exo-icon-bar.c:369
 msgid "Cursor item fill color"
-msgstr "Colore di riempimento dell'elemento cursore"
+msgstr "Colore di riempimento del cursore"
 
 #: ../exo/exo-icon-bar.c:375 ../exo/exo-icon-bar.c:376
 msgid "Cursor item border color"
-msgstr "Colore del bordo dell'elemento cursore"
+msgstr "Colore del bordo del cursore"
 
 #: ../exo/exo-icon-bar.c:382 ../exo/exo-icon-bar.c:383
 msgid "Cursor item text color"
-msgstr "Colore del testo dell'elemento cursore"
+msgstr "Colore del testo del cursore"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:105
@@ -224,7 +224,7 @@ msgstr "Pulisci il campo di ricerca"
 
 #: ../exo/exo-icon-view.c:796
 msgid "Column Spacing"
-msgstr "Spaziatore di colonna"
+msgstr "Spaziatura della colonna"
 
 #: ../exo/exo-icon-view.c:797
 msgid "Space which is inserted between grid column"
@@ -272,11 +272,11 @@ msgstr "Spazio inserito ai bordi della vista a icone"
 
 #: ../exo/exo-icon-view.c:899
 msgid "Markup column"
-msgstr "Colonna di markup"
+msgstr "Colonna di marcatura"
 
 #: ../exo/exo-icon-view.c:900
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Modello di colonna usato per ottenere il testo se si usa il markup Pango"
+msgstr "Modello di colonna usato per ottenere il testo se si usa il marcatore Pango"
 
 #: ../exo/exo-icon-view.c:914
 msgid "Icon View Model"
@@ -293,12 +293,12 @@ msgstr "Come il testo e l'icona di ogni elemento sono posizionati reciprocamente
 
 #: ../exo/exo-icon-view.c:963
 msgid "Icon column"
-msgstr "Colonna icona"
+msgstr "Colonna dell'icona"
 
 #: ../exo/exo-icon-view.c:964
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
-msgstr "Colonna modello usata per recuperare il percorso assoluto a un file immagine da visualizzare"
+msgstr "Modello di colonna usata per recuperare il percorso assoluto di un file immagine da visualizzare"
 
 #: ../exo/exo-icon-view.c:979
 msgid "Reorderable"
@@ -338,7 +338,7 @@ msgstr "Singolo clic"
 
 #: ../exo/exo-icon-view.c:1042 ../exo/exo-tree-view.c:167
 msgid "Whether the items in the view can be activated with single clicks"
-msgstr "Se gli elementi nella vista possono essere attivati con un singolo clic"
+msgstr "Se gli elementi nella vista possono essere attivati con singoli click"
 
 #: ../exo/exo-icon-view.c:1058 ../exo/exo-tree-view.c:183
 msgid "Single Click Timeout"
@@ -406,7 +406,7 @@ msgstr "_Stile della barra degli strumenti"
 
 #: ../exo/exo-toolbars-view.c:762
 msgid "_Desktop Default"
-msgstr "_Predefinite della scrivania"
+msgstr "_Predefinito della scrivania"
 
 #: ../exo/exo-toolbars-view.c:771
 msgid "_Icons only"
