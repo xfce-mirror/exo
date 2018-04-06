@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2018-04-02 12:22+0000\n"
+"PO-Revision-Date: 2018-04-06 19:16+0000\n"
 "Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.me>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/exo/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -475,57 +475,57 @@ msgstr "Comando di riavvio della sessione"
 #: ../exo-csource/main.c:303
 #, c-format
 msgid "Usage: %s [options] [file]\n"
-msgstr "Utilizzo: %s [opzione] [file]\n"
+msgstr "Utilizzo: %s [opzioni] [file]\n"
 
 #: ../exo-csource/main.c:304
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "%s [opzione] --build-list [[nome del file]...]\n"
+msgstr "          %s [opzioni] --build-list [[nome del file]...]\n"
 
 #: ../exo-csource/main.c:306
 #, c-format
 msgid "  -h, --help        Print this help message and exit\n"
-msgstr "-h, --help Mostra questo messaggio di aiuto ed esce\n"
+msgstr "  -h, --help        Mostra questo messaggio di aiuto ed esce\n"
 
 #: ../exo-csource/main.c:307
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "-V, --version Mostra le informazioni sulla versione ed esce\n"
+msgstr "  -V, --version     Mostra le informazioni sulla versione ed esce\n"
 
 #: ../exo-csource/main.c:308
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
-msgstr "--extern Genera simboli esterni\n"
+msgstr "  --extern          Genera simboli esterni\n"
 
 #: ../exo-csource/main.c:309
 #, c-format
 msgid "  --static          Generate static symbols\n"
-msgstr "--static Genera simboli statici\n"
+msgstr "  --static          Genera simboli statici\n"
 
 #: ../exo-csource/main.c:310
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr "--name=identifier Nome della macro/variabile C\n"
+msgstr "  --name=identifier Nome della macro/variabile C\n"
 
 #: ../exo-csource/main.c:311
 #, c-format
 msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "--build-list Analizza le coppie (nome, file)\n"
+msgstr "  --build-list      Analizza le coppie (nome, file)\n"
 
 #: ../exo-csource/main.c:312
 #, c-format
 msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "--strip-comments Rimuove i commenti dai file XML\n"
+msgstr "  --strip-comments  Rimuove i commenti dai file XML\n"
 
 #: ../exo-csource/main.c:313
 #, c-format
 msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "--strip-content Rimuove i contenuti nodali dai file XML\n"
+msgstr "  --strip-content   Rimuove i contenuti nodali dai file XML\n"
 
 #: ../exo-csource/main.c:314
 #, c-format
 msgid "  --output=filename Write generated csource to specified file\n"
-msgstr "--output=filename Scrive il file csource generato nel file specificato\n"
+msgstr "  --output=filename Scrive il file csource generato nel file specificato\n"
 
 #: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
 #: ../exo-open/main.c:509
@@ -536,7 +536,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr "Copyright (c) %s\nos-cillation e.K. Tutti i diritti riservati.\n\nScritto da Benedikt Meurer <benny@xfce.org>.\n\n"
+msgstr "Copyright (c) %s\n        os-cillation e.K. Tutti i diritti riservati.\n\nScritto da Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:200
 #: ../exo-open/main.c:513
@@ -547,13 +547,13 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr "%s viene distribuito senza NESSUNA GARANZIA.\nÈ possibile ridistribuire copie di %s secondo i termini\ndella GNU Lesser General Public License presente nel\npacchetto dei sorgenti di %s.\n\n"
+msgstr "%s viene distribuito senza NESSUNA GARANZIA.\nÈ possibile ridistribuire copie di %s secondo i termini\ndella licenza GNU Lesser General Public License presente nel\npacchetto dei sorgenti di %s.\n\n"
 
 #: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:204
 #: ../exo-open/main.c:517
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "Segnalare i problemi a <%s>.\n"
+msgstr "Si possono segnalare problemi a <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
@@ -671,7 +671,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Selezionare questa opzione per abilitare la notifica di avvio quando il comando è eseguito dal gestore di file o dal menu. Non tutte le applicazioni supportano la notifica di avvio"
+msgstr "Selezionare questa opzione per abilitare la notifica di avvio quando il comando è eseguito dal gestore dei file o dal menu. Non tutte le applicazioni supportano la notifica di avvio."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -683,7 +683,7 @@ msgstr "Esegui nel _terminale"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:436
 msgid "Select this option to run the command in a terminal window."
-msgstr "Selezionare questa opzione per eseguire il comando in una finestra di terminale"
+msgstr "Selezionare questa opzione per eseguire il comando in una finestra di terminale."
 
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:592
@@ -704,7 +704,7 @@ msgstr "Selezionare una cartella di lavoro"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:171
 msgid "File location is not a regular file or directory"
-msgstr "La posizione del file non è una cartella o un file regolare"
+msgstr "La posizione del file non è un file regolare od una cartella"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:54
@@ -733,7 +733,7 @@ msgstr "Modifica cartella"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Create a new desktop file in the given directory"
-msgstr "Crea un nuovo file desktop nella cartella data"
+msgstr "Crea un nuovo file desktop nella cartella specificata"
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Type of desktop file to create (Application or Link)"
@@ -780,24 +780,24 @@ msgstr "Non è stato specificato alcun file o cartella"
 #: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "Caricamento del contenuto da «%s» non riuscito: %s"
+msgstr "Caricamento del contenuto da \"%s\" non riuscito: %s"
 
 #: ../exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr "Il file «%s» non contiene dati"
+msgstr "Il file \"%s\" non contiene dati"
 
 #. failed to parse the file
 #: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "Analisi del contenuto di «%s» non riuscita: %s"
+msgstr "Analisi del contenuto di \"%s\" non riuscita: %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:306
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr "Il file «%s» non ha una chiave tipo"
+msgstr "Il file \"%s\" non ha una chiave che specifica il tipo"
 
 #. tell the user that we don't support the type
 #: ../exo-desktop-item-edit/main.c:316
@@ -823,17 +823,17 @@ msgstr "_Salva"
 #. create failed, ask the user to specify a file name
 #: ../exo-desktop-item-edit/main.c:514
 msgid "Choose filename"
-msgstr "Selezione del nome del file"
+msgstr "Selezionare il nome del file"
 
 #: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "Impossibile creare «%s»."
+msgstr "Creazione di \"%s\" non riuscita."
 
 #: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "Impossibile salvare «%s»."
+msgstr "Salvataggio di \"%s\" non riuscito."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
@@ -846,7 +846,7 @@ msgstr "Applicazioni preferite"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:102
 msgid "Select default applications for various services"
-msgstr "Selezione delle applicazioni predefinite per i vari servizi"
+msgstr "Selezionare le applicazioni predefinite per i vari servizi"
 
 #. Internet
 #: ../exo-helper/exo-helper-chooser-dialog.c:126
@@ -873,7 +873,7 @@ msgstr "Lettore di email"
 msgid ""
 "The preferred Mail Reader will be used to compose\n"
 "emails when you click on email addresses."
-msgstr "Il lettore di email preferito verrà utilizzato per comporre\nle email quando si fa clic sugli indirizzi."
+msgstr "Il lettore di email preferito verrà utilizzato per comporre\nle email quando si fa clic sugli indirizzi email."
 
 #. Utilities
 #: ../exo-helper/exo-helper-chooser-dialog.c:199
@@ -889,7 +889,7 @@ msgstr "Gestore dei file"
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr "Il gestore dei file preferito verrà utilizzato per sfogliare\nil contenuto delle cartelle."
+msgstr "Il gestore dei file preferito verrà utilizzato per esplorare\nil contenuto delle cartelle."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:244
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -934,23 +934,23 @@ msgstr "Impostazione dell'emulatore di terminale predefinito non riuscita"
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:379
 msgid "Select application"
-msgstr "Selezione dell'applicazione"
+msgstr "Selezionare l'applicazione"
 
 #: ../exo-helper/exo-helper-chooser.c:492
 msgid "Choose a custom Web Browser"
-msgstr "Browser web personalizzato"
+msgstr "Selezionare un browser web personalizzato"
 
 #: ../exo-helper/exo-helper-chooser.c:493
 msgid "Choose a custom Mail Reader"
-msgstr "Lettore di email personalizzato"
+msgstr "Selezionare un lettore di email personalizzato"
 
 #: ../exo-helper/exo-helper-chooser.c:494
 msgid "Choose a custom File Manager"
-msgstr "Gestore dei file personalizzato"
+msgstr "Selezionare un gestore dei file personalizzato"
 
 #: ../exo-helper/exo-helper-chooser.c:495
 msgid "Choose a custom Terminal Emulator"
-msgstr "Emulatore di terminale personalizzato"
+msgstr "Selezionare un emulatore di terminale personalizzato"
 
 #: ../exo-helper/exo-helper-chooser.c:500
 msgid ""
