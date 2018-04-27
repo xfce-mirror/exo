@@ -250,7 +250,9 @@ exo_helper_chooser_update (ExoHelperChooser *chooser)
   const gchar  *icon_name;
   ExoHelper    *helper;
   GdkPixbuf    *icon = NULL;
+  GIcon        *gicon = NULL;
   gint          icon_size = 0;
+  gboolean      gicon_set = FALSE;
 
   g_return_if_fail (EXO_IS_HELPER_CHOOSER (chooser));
 
@@ -266,20 +268,31 @@ exo_helper_chooser_update (ExoHelperChooser *chooser)
       if (G_LIKELY (icon_name != NULL))
         {
           gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &icon_size, &icon_size);
-          if (g_path_is_absolute (icon_name))
-            icon = gdk_pixbuf_new_from_file_at_scale (icon_name, icon_size, icon_size, TRUE, NULL);
-          else
-            icon = gtk_icon_theme_load_icon (icon_theme, icon_name, icon_size, 0, NULL);
+          if (g_path_is_absolute (icon_name)) {
+            icon = gdk_pixbuf_new_from_file_at_size (icon_name, icon_size, icon_size, NULL);
+          }
+          else {
+            gicon = g_themed_icon_new_with_default_fallbacks (icon_name);
+            gicon_set = TRUE;
+          }
         }
 
       /* fallback to application-x-executable */
-      if (G_UNLIKELY (icon == NULL))
+      if (G_UNLIKELY (icon == NULL) && !gicon_set)
         icon = gtk_icon_theme_load_icon (icon_theme, "application-x-executable", icon_size, 0, NULL);
 
       /* setup the icon for the chooser image */
-      gtk_image_set_from_pixbuf (GTK_IMAGE (chooser->image), icon);
-      if (G_LIKELY (icon != NULL))
-        g_object_unref (G_OBJECT (icon));
+      if (gicon_set)
+        {
+          gtk_image_set_from_gicon (GTK_IMAGE (chooser->image), gicon, GTK_ICON_SIZE_MENU);
+          gtk_image_set_pixel_size (GTK_IMAGE (chooser->image), icon_size);
+        }
+      else
+        {
+          gtk_image_set_from_pixbuf (GTK_IMAGE (chooser->image), icon);
+          if (G_LIKELY (icon != NULL))
+            g_object_unref (G_OBJECT (icon));
+        }
 
       gtk_label_set_text (GTK_LABEL (chooser->label), exo_helper_get_name (helper));
       g_object_unref (G_OBJECT (helper));
@@ -661,6 +674,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   GMainLoop      *loop;
   GdkCursor      *cursor;
   GdkPixbuf      *icon;
+  GIcon          *gicon = NULL;
   GtkWidget      *image;
   GtkWidget      *menu;
   GtkAllocation   menu_allocation;
@@ -671,6 +685,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
   GList          *lp;
   gint            icon_size;
   GtkAllocation   chooser_allocation;
+  gboolean        gicon_set = FALSE;
 
   /* Catch button-release-event params and discard */
   GdkEvent       *event;
@@ -726,22 +741,31 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
       if (G_LIKELY (icon_name != NULL))
         {
           /* load the icon */
-          if (g_path_is_absolute (icon_name))
-            icon = gdk_pixbuf_new_from_file_at_scale (icon_name, icon_size, icon_size, TRUE, NULL);
-          else
-            icon = gtk_icon_theme_load_icon (icon_theme, icon_name, icon_size, 0, NULL);
+          if (g_path_is_absolute (icon_name)) {
+            icon = gdk_pixbuf_new_from_file_at_size (icon_name, icon_size, icon_size, NULL);
+          }
+          else {
+            gicon = g_themed_icon_new_with_default_fallbacks (icon_name);
+            gicon_set = TRUE;
+          }
         }
 
       /* fallback to application-x-executable */
-      if (G_UNLIKELY (icon == NULL))
+      if (G_UNLIKELY (icon == NULL) && !gicon_set)
         icon = gtk_icon_theme_load_icon (icon_theme, "application-x-executable", icon_size, 0, NULL);
 
       /* fallback to gnome-mime-application-x-executable */
-      if (G_UNLIKELY (icon == NULL))
+      if (G_UNLIKELY (icon == NULL) && !gicon_set)
         icon = gtk_icon_theme_load_icon (icon_theme, "gnome-mime-application-x-executable", icon_size, 0, NULL);
 
       /* setup the icon */
-      if (G_LIKELY (icon != NULL))
+      if (gicon_set)
+        {
+          image = gtk_image_new_from_gicon (gicon, GTK_ICON_SIZE_MENU);
+          gtk_image_set_pixel_size (GTK_IMAGE (image), icon_size);
+          gtk_box_pack_start (GTK_BOX (item_hbox), image, FALSE, FALSE, 0);
+        }
+      else if (G_LIKELY (icon != NULL))
         {
           image = gtk_image_new_from_pixbuf (icon);
           gtk_box_pack_start (GTK_BOX (item_hbox), image, FALSE, FALSE, 0);
