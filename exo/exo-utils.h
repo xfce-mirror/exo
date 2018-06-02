@@ -29,7 +29,7 @@
 
 G_BEGIN_DECLS
 
-void                    exo_noop        (void) G_GNUC_PURE;
+void                    exo_noop        (void);
 gint                    exo_noop_one    (void) G_GNUC_PURE;
 gint                    exo_noop_zero   (void) G_GNUC_PURE;
 gpointer                exo_noop_null   (void) G_GNUC_PURE;
