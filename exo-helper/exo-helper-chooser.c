@@ -685,7 +685,7 @@ exo_helper_chooser_pressed (ExoHelperChooser *chooser,
       cursor = gdk_cursor_new_for_display (gdk_window_get_display (gtk_widget_get_window (button)), GDK_WATCH);
       gdk_window_set_cursor (gtk_widget_get_window (button), cursor);
       g_object_unref (cursor);
-      gdk_flush ();
+      gdk_display_flush (gdk_display_get_default ());
     }
 
   /* allocate a new menu */

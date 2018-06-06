@@ -596,7 +596,7 @@ exo_gdk_pixbuf_scale_down (GdkPixbuf *source,
 
   /* check if we need to scale */
   if (G_UNLIKELY (source_width <= dest_width && source_height <= dest_height))
-    return g_object_ref (G_OBJECT (source));
+    return GDK_PIXBUF (g_object_ref (G_OBJECT (source)));
 
   /* check if aspect ratio should be preserved */
   if (G_LIKELY (preserve_aspect_ratio))

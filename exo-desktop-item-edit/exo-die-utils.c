@@ -121,14 +121,14 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
       g_free (name);
       if (desktop_suffix)
         {
-          file = g_object_ref (G_OBJECT (base));
+          file = G_FILE (g_object_ref (G_OBJECT (base)));
         }
       else
         {
           file_type = g_file_query_file_type (base, G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL);
           if (file_type == G_FILE_TYPE_REGULAR)
             {
-              file = g_object_ref (G_OBJECT (base));
+              file = G_FILE (g_object_ref (G_OBJECT (base)));
             }
           else if (file_type == G_FILE_TYPE_DIRECTORY)
             {
@@ -176,7 +176,7 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
   else
     {
       /* base is the file */
-      file = g_object_ref (G_OBJECT (base));
+      file = G_FILE (g_object_ref (G_OBJECT (base)));
     }
 
   /* determine the data for the key file */
