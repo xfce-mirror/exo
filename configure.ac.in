@@ -233,6 +233,11 @@ dnl *************************************
 XDT_SUPPORTED_FLAGS([GTK_DOC_EXTRA_CFLAGS], [-Wno-sign-compare])
 AC_SUBST([GTK_DOC_EXTRA_CFLAGS])
 
+dnl **********************************************
+dnl *** Disable -Wexpansion-to-defined (gcc 7) ***
+dnl **********************************************
+XDT_SUPPORTED_FLAGS([CFLAGS], [-Wno-expansion-to-defined])
+
 dnl *************************************
 dnl *** Use GSEAL if possible         ***
 dnl *************************************
