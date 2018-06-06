@@ -38,6 +38,7 @@ desktop_in_in_files =							\
 	nxterm.desktop.in.in						\
 	opera-browser.desktop.in.in					\
 	pcmanfm.desktop.in.in						\
+	pcmanfm-qt.desktop.in.in						\
 	qterminal.desktop.in.in						\
 	qtfm.desktop.in.in							\
 	qupzilla.desktop.in.in						\
