@@ -247,7 +247,7 @@ main (int argc, char **argv)
       if (exo_str_is_equal (opt_type, G_KEY_FILE_DESKTOP_TYPE_LINK))
         {
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
-                                G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, "bookmark-new"));
+                                G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, "user-bookmarks"));
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_URL, STR_FB (opt_url, ""));
         }
