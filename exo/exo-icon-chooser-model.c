@@ -464,6 +464,17 @@ exo_icon_chooser_model_merge_symlinks (gpointer key,
 
 
 
+static gboolean
+icon_name_is_symbolic (const gchar *icon_name)
+{
+  return g_str_has_suffix (icon_name, "-symbolic")
+      || g_str_has_suffix (icon_name, "-symbolic-ltr")
+      || g_str_has_suffix (icon_name, "-symbolic-rtl")
+      || g_str_has_suffix (icon_name, ".symbolic");
+}
+
+
+
 static void
 exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
                                            ExoIconChooserModel *model)
@@ -502,6 +513,12 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
   icons = gtk_icon_theme_list_icons (icon_theme, NULL);
   for (lp = icons; lp != NULL; lp = lp->next)
     {
+      /* Skip symbolic icons since they lead to double processing */
+      if (icon_name_is_symbolic (lp->data))
+      {
+        continue;
+      }
+
       item = g_slice_new0 (ExoIconChooserModelItem);
       item->icon_name = lp->data;
       item->context = EXO_ICON_CHOOSER_CONTEXT_OTHER;
@@ -534,6 +551,12 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
       icons = gtk_icon_theme_list_icons (icon_theme, CONTEXT_NAMES[context]);
       for (lp = icons; lp != NULL; lp = lp->next)
         {
+          /* Skip symbolic icons since they lead to double processing */
+          if (icon_name_is_symbolic (lp->data))
+          {
+            continue;
+          }
+
           /* lookup the item in one of the hash tables */
           item = g_hash_table_lookup (items, lp->data);
           if (item == NULL)
