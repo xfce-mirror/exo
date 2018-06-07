@@ -99,7 +99,7 @@ struct _ExoIconChooserDialogPrivate
 
 
 
-static const gchar CONTEXT_TITLES[][20] =
+static const gchar CONTEXT_TITLES[][80] =
 {
   /* EXO_ICON_CHOOSER_CONTEXT_ACTIONS */
   N_("Action Icons"),
