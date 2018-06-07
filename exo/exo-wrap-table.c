@@ -407,6 +407,8 @@ exo_wrap_table_layout (ExoWrapTable *table)
   if (G_UNLIKELY (num_children <= 0))
     return;
 
+  gtk_widget_get_allocation (GTK_WIDGET (table), &allocation);
+
   /* determine the number of columns */
   num_cols = exo_wrap_table_get_num_fitting (allocation.width
                                              - gtk_container_get_border_width (GTK_CONTAINER (table)) * 2,
@@ -421,7 +423,6 @@ exo_wrap_table_layout (ExoWrapTable *table)
     }
 
   /* determine the horizontal bounds */
-  gtk_widget_get_allocation (GTK_WIDGET (table), &allocation);
   x0 = allocation.x + gtk_container_get_border_width (GTK_CONTAINER (table));
   x1 = x0 + allocation.width - gtk_container_get_border_width (GTK_CONTAINER (table));
 
