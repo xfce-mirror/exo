@@ -99,7 +99,7 @@ struct _ExoIconChooserDialogPrivate
 
 
 
-static const gchar CONTEXT_TITLES[][28] =
+static const gchar CONTEXT_TITLES[][20] =
 {
   /* EXO_ICON_CHOOSER_CONTEXT_ACTIONS */
   N_("Action Icons"),
@@ -115,14 +115,14 @@ static const gchar CONTEXT_TITLES[][28] =
   N_("Emblems"),
   /* EXO_ICON_CHOOSER_CONTEXT_EMOTES */
   N_("Emoticons"),
-  /* EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL */
-  N_("International Denominations"),
   /* EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES */
   N_("File Type Icons"),
   /* EXO_ICON_CHOOSER_CONTEXT_PLACES */
   N_("Location Icons"),
   /* EXO_ICON_CHOOSER_CONTEXT_STATUS */
   N_("Status Icons"),
+  /* EXO_ICON_CHOOSER_CONTEXT_STOCK */
+  N_("Stock Icons"),
   /* EXO_ICON_CHOOSER_CONTEXT_OTHER */
   N_("Uncategorized Icons"),
   /* separator */

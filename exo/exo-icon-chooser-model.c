@@ -113,7 +113,7 @@ struct _ExoIconChooserModelItem
 
 
 
-static const gchar CONTEXT_NAMES[][14] =
+static const gchar CONTEXT_NAMES[][13] =
 {
   "Actions",        /* EXO_ICON_CHOOSER_CONTEXT_ACTIONS */
   "Animations",     /* EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS */
@@ -122,10 +122,10 @@ static const gchar CONTEXT_NAMES[][14] =
   "Devices",        /* EXO_ICON_CHOOSER_CONTEXT_DEVICES */
   "Emblems",        /* EXO_ICON_CHOOSER_CONTEXT_EMBLEMS */
   "Emotes",         /* EXO_ICON_CHOOSER_CONTEXT_EMOTES */
-  "International",  /* EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL */
   "MimeTypes",      /* EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES */
   "Places",         /* EXO_ICON_CHOOSER_CONTEXT_PLACES */
   "Status",         /* EXO_ICON_CHOOSER_CONTEXT_STATUS */
+  "Stock",          /* EXO_ICON_CHOOSER_CONTEXT_STOCK */
 };
 
 
