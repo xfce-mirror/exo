@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Cheng-Chia Tseng <pswo10680@gmail.com>, 2017
-# Jeff Huang <s8321414@gmail.com>, 2015-2017
+# Jeff Huang <s8321414@gmail.com>, 2015-2018
 # Walter Cheuk <wwycheuk@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-09-19 18:02+0000\n"
+"POT-Creation-Date: 2018-06-07 06:30+0200\n"
+"PO-Revision-Date: 2018-06-08 01:15+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/xfce/exo/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -173,25 +173,25 @@ msgstr "標記"
 msgid "Emoticons"
 msgstr "表情"
 
-#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:119
-msgid "International Denominations"
-msgstr "國際化表述"
-
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "File Type Icons"
 msgstr "檔案類型圖示"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Location Icons"
 msgstr "位置圖示"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Status Icons"
 msgstr "狀態圖示"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STOCK
+#: ../exo/exo-icon-chooser-dialog.c:125
+msgid "Stock Icons"
+msgstr "原始圖示"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
@@ -564,44 +564,44 @@ msgstr "選取應用程式"
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:382
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:395
+#: ../exo-helper/exo-helper-chooser.c:540
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "取消(_C)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "開啟(_O)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "所有檔案"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:394
+#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "可執行檔"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:409
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "Perl 指令稿"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:415
+#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "Python 指令稿"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:421
+#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "Ruby 指令稿"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:427
+#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "Shell 指令稿"
 
@@ -692,7 +692,7 @@ msgstr "選擇圖示"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:541
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "確定(_O)"
@@ -911,80 +911,80 @@ msgstr "請按滑鼠左鍵以變更所選的應用程式。"
 msgid "Application Chooser Button"
 msgstr "應用程式選擇鈕"
 
-#: ../exo-helper/exo-helper-chooser.c:290
+#: ../exo-helper/exo-helper-chooser.c:303
 msgid "No application selected"
 msgstr "未選取應用程式"
 
-#: ../exo-helper/exo-helper-chooser.c:306
+#: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
 msgstr "設定預設網路瀏覽器失敗"
 
-#: ../exo-helper/exo-helper-chooser.c:307
+#: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
 msgstr "設定預設郵件閱讀器失敗"
 
-#: ../exo-helper/exo-helper-chooser.c:308
+#: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
 msgstr "設定預設檔案管理員失敗"
 
-#: ../exo-helper/exo-helper-chooser.c:309
+#: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
 msgstr "設定預設終端機模擬器失敗"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:379
+#: ../exo-helper/exo-helper-chooser.c:392
 msgid "Select application"
 msgstr "選取應用程式"
 
-#: ../exo-helper/exo-helper-chooser.c:492
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Web Browser"
 msgstr "選擇自訂的網路瀏覽器"
 
-#: ../exo-helper/exo-helper-chooser.c:493
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid "Choose a custom Mail Reader"
 msgstr "選擇自訂的郵件閱讀器"
 
-#: ../exo-helper/exo-helper-chooser.c:494
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid "Choose a custom File Manager"
 msgstr "選擇自訂的檔案管理員"
 
-#: ../exo-helper/exo-helper-chooser.c:495
+#: ../exo-helper/exo-helper-chooser.c:508
 msgid "Choose a custom Terminal Emulator"
 msgstr "選擇自訂的終端機模擬器"
 
-#: ../exo-helper/exo-helper-chooser.c:500
+#: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "請指定您想要用來做 Xfce 預設\n網路瀏覽器的應用程式："
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:514
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "請指定您想要用來做 Xfce 預設\n郵件閱讀器的應用程式："
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:515
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "請指定您想要用來做 Xfce 預設\n檔案管理員的應用程式："
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:516
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "請指定您想要用來做 Xfce 預設\n終端機模擬器的應用程式："
 
-#: ../exo-helper/exo-helper-chooser.c:567
+#: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
 msgstr "瀏覽檔案系統以選擇自訂的指令。"
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:789
 msgid "_Other..."
 msgstr "其它(_O)..."
 
-#: ../exo-helper/exo-helper-chooser.c:766
+#: ../exo-helper/exo-helper-chooser.c:790
 msgid "Use a custom application which is not included in the above list."
 msgstr "使用不包含在上方清單內的自訂應用程式。"
 
@@ -1016,13 +1016,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "現在請您選擇偏好的終端機模\n擬器並點擊「確認」以繼續。"
 
-#: ../exo-helper/exo-helper.c:389
+#: ../exo-helper/exo-helper.c:401
 #, c-format
 msgid "No command specified"
 msgstr "尚未指定指令"
 
-#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
-#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
+#: ../exo-helper/exo-helper.c:719 ../exo-helper/exo-helper.c:757
+#: ../exo-helper/exo-helper.c:824 ../exo-helper/exo-helper.c:862
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "無法開啟要寫入的 %s"
@@ -1077,7 +1077,7 @@ msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
 msgstr "查詢預設的「類型」助手，當「類型」是以下的的其中一個值時。"
 
-#: ../exo-helper/main.c:105
+#: ../exo-helper/main.c:106
 msgid ""
 "The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
@@ -1087,17 +1087,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr "--launch 與 --query 指令支援下列「類型」：\n\n  WebBrowser       - 偏好的網路瀏覽器。\n  MailReader       - 偏好的郵件閱讀器。\n  FileManager      - 偏好的檔案管理員。\n  TerminalEmulator - 偏好的終端機模擬器。"
 
-#: ../exo-helper/main.c:115
+#: ../exo-helper/main.c:116
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "輸入 '%s --help' 以瞭解用法。"
 
-#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
+#: ../exo-helper/main.c:175 ../exo-helper/main.c:241
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "無效的輔助程式類型「%s」"
 
-#: ../exo-helper/main.c:224
+#: ../exo-helper/main.c:225
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1112,7 +1112,7 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\n版權所有 (c) 2003-2006\n        os-cillation e.K. 保留所有權利。\n\n由 Benedikt Meurer 所編寫 <benny@xfce.org>。\n\n以 Gtk+-%d.%d.%d 組建，正在執行 Gtk+-%d.%d.%d。\n\n若遭遇錯誤，請回報至 <%s>。\n"
 
-#: ../exo-helper/main.c:250
+#: ../exo-helper/main.c:251
 #, c-format
 msgid "No helper defined for \"%s\"."
 msgstr "\"%s\" 的助手程式未定義。"
@@ -1252,6 +1252,10 @@ msgstr "Opera 瀏覽器"
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "PCMan 檔案管理員"
+
+#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
+msgid "PCManFM-Qt File Manager"
+msgstr "PCManFM-Qt 檔案管理員"
 
 #: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
 msgid "QTerminal"
