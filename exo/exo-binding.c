@@ -357,7 +357,7 @@ exo_binding_new_full (GObject            *src_object,
   dst_pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (dst_object), dst_property);
 
   if (transform == NULL)
-    transform = (ExoBindingTransform) g_value_transform;
+    transform = (ExoBindingTransform) (void (*)(void)) g_value_transform;
 
   exo_bind_properties_transfer (src_object,
                                 src_pspec,
@@ -404,7 +404,7 @@ exo_binding_new_with_negation (GObject      *src_object,
                                GObject      *dst_object,
                                const gchar  *dst_property)
 {
-  ExoBindingTransform transform = (ExoBindingTransform) exo_g_value_transform_negate;
+  ExoBindingTransform transform = (ExoBindingTransform) (void (*)(void)) exo_g_value_transform_negate;
 
   return exo_binding_new_full (src_object, src_property,
                                dst_object, dst_property,
@@ -503,10 +503,10 @@ exo_mutual_binding_new_full (GObject            *object1,
   pspec2 = g_object_class_find_property (G_OBJECT_GET_CLASS (object2), property2);
 
   if (transform == NULL)
-    transform = (ExoBindingTransform) g_value_transform;
+    transform = (ExoBindingTransform) (void (*)(void)) g_value_transform;
 
   if (reverse_transform == NULL)
-    reverse_transform = (ExoBindingTransform) g_value_transform;
+    reverse_transform = (ExoBindingTransform) (void (*)(void)) g_value_transform;
 
   exo_bind_properties_transfer (object1,
                                 pspec1,
@@ -567,7 +567,7 @@ exo_mutual_binding_new_with_negation (GObject     *object1,
                                       GObject     *object2,
                                       const gchar *property2)
 {
-  ExoBindingTransform transform = (ExoBindingTransform) exo_g_value_transform_negate;
+  ExoBindingTransform transform = (ExoBindingTransform) (void (*)(void)) exo_g_value_transform_negate;
 
   return exo_mutual_binding_new_full (object1, property1,
                                       object2, property2,

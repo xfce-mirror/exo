@@ -175,11 +175,11 @@ exo_die_command_model_finalize (GObject *object)
     g_source_remove (command_model->collect_idle_id);
 
   /* release collected items (if any) */
-  g_slist_foreach (command_model->collect_items, (GFunc) g_free, NULL);
+  g_slist_foreach (command_model->collect_items, (GFunc) (void (*)(void)) g_free, NULL);
   g_slist_free (command_model->collect_items);
 
   /* release all items */
-  g_slist_foreach (command_model->items, (GFunc) g_free, NULL);
+  g_slist_foreach (command_model->items, (GFunc) (void (*)(void)) g_free, NULL);
   g_slist_free (command_model->items);
 
   (*G_OBJECT_CLASS (exo_die_command_model_parent_class)->finalize) (object);
@@ -510,7 +510,7 @@ exo_die_command_model_collect_thread (gpointer user_data)
   else
     {
       /* release the collected items */
-      g_slist_foreach (items, (GFunc) g_free, NULL);
+      g_slist_foreach (items, (GFunc) (void (*)(void)) g_free, NULL);
       g_slist_free (items);
     }
 

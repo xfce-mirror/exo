@@ -905,7 +905,7 @@ exo_icon_bar_adjustment_changed (GtkAdjustment *adjustment,
 static void
 exo_icon_bar_invalidate (ExoIconBar *icon_bar)
 {
-  g_list_foreach (icon_bar->priv->items, (GFunc) exo_icon_bar_item_invalidate, NULL);
+  g_list_foreach (icon_bar->priv->items, (GFunc) (void (*)(void)) exo_icon_bar_item_invalidate, NULL);
   gtk_widget_queue_resize (GTK_WIDGET (icon_bar));
 }
 
@@ -1569,7 +1569,7 @@ exo_icon_bar_set_model (ExoIconBar    *icon_bar,
 
       g_object_unref (G_OBJECT (icon_bar->priv->model));
 
-      g_list_foreach (icon_bar->priv->items, (GFunc) exo_icon_bar_item_free, NULL);
+      g_list_foreach (icon_bar->priv->items, (GFunc) (void (*)(void)) exo_icon_bar_item_free, NULL);
       g_list_free (icon_bar->priv->items);
       icon_bar->priv->active_item = NULL;
       icon_bar->priv->cursor_item = NULL;

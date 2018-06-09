@@ -329,7 +329,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
        * to tell the tree view that it may not alter the selection.
        */
       if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == NULL))
-        gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) exo_noop_false, NULL, NULL);
+        gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false, NULL, NULL);
       else
         selected_paths = gtk_tree_selection_get_selected_rows (selection, NULL);
     }
@@ -377,7 +377,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
       && path != NULL && gtk_tree_selection_path_is_selected (selection, path))
     {
       /* check if we have to restore paths */
-      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) != (GtkTreeSelectionFunc) exo_noop_false))
+      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) != (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
         {
           /* select all previously selected paths */
           for (lp = selected_paths; lp != NULL; lp = lp->next)
@@ -385,9 +385,9 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
         }
     }
 
-  if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) exo_noop_false))
+  if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
     {
-      gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) exo_noop_true, NULL, NULL);
+      gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
     }
 
   /* release the path (if any) */
@@ -395,7 +395,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
     gtk_tree_path_free (path);
 
   /* release the selected paths list */
-  g_list_foreach (selected_paths, (GFunc) gtk_tree_path_free, NULL);
+  g_list_foreach (selected_paths, (GFunc) (void (*)(void)) gtk_tree_path_free, NULL);
   g_list_free (selected_paths);
 
   return result;

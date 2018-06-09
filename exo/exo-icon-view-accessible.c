@@ -1032,36 +1032,36 @@ exo_icon_view_item_accessible_get_type (void)
         sizeof (ExoIconViewItemAccessibleClass),
         (GBaseInitFunc) NULL, /* base init */
         (GBaseFinalizeFunc) NULL, /* base finalize */
-        (GClassInitFunc) exo_icon_view_item_accessible_class_init, /* class init */
+        (GClassInitFunc) (void (*)(void)) exo_icon_view_item_accessible_class_init, /* class init */
         (GClassFinalizeFunc) NULL, /* class finalize */
         NULL, /* class data */
         sizeof (ExoIconViewItemAccessible), /* instance size */
         0, /* nb preallocs */
-        (GInstanceInitFunc) exo_icon_view_item_accessible_object_init, /* instance init */
+        (GInstanceInitFunc) (void (*)(void)) exo_icon_view_item_accessible_object_init, /* instance init */
         NULL /* value table */
       };
 
       const GInterfaceInfo atk_component_info =
       {
-        (GInterfaceInitFunc) atk_component_item_interface_init,
+        (GInterfaceInitFunc) (void (*)(void)) atk_component_item_interface_init,
         (GInterfaceFinalizeFunc) NULL,
         NULL
       };
       const GInterfaceInfo atk_action_info =
       {
-        (GInterfaceInitFunc) atk_action_item_interface_init,
+        (GInterfaceInitFunc) (void (*)(void)) atk_action_item_interface_init,
         (GInterfaceFinalizeFunc) NULL,
         NULL
       };
       const GInterfaceInfo atk_image_info =
       {
-        (GInterfaceInitFunc) atk_image_item_interface_init,
+        (GInterfaceInitFunc) (void (*)(void)) atk_image_item_interface_init,
         (GInterfaceFinalizeFunc) NULL,
         NULL
       };
       const GInterfaceInfo atk_text_info =
       {
-        (GInterfaceInitFunc) atk_text_item_interface_init,
+        (GInterfaceInitFunc) (void (*)(void)) atk_text_item_interface_init,
         (GInterfaceFinalizeFunc) NULL,
         NULL
       };
@@ -1991,7 +1991,7 @@ exo_icon_view_accessible_get_type (void)
         0, /* class size */
         (GBaseInitFunc) NULL, /* base init */
         (GBaseFinalizeFunc) NULL, /* base finalize */
-        (GClassInitFunc) exo_icon_view_accessible_class_init,
+        (GClassInitFunc) (void (*)(void)) exo_icon_view_accessible_class_init,
         (GClassFinalizeFunc) NULL, /* class finalize */
         NULL, /* class data */
         0, /* instance size */
@@ -2001,13 +2001,13 @@ exo_icon_view_accessible_get_type (void)
       };
       const GInterfaceInfo atk_component_info =
       {
-        (GInterfaceInitFunc) atk_component_interface_init,
+        (GInterfaceInitFunc) (void (*)(void)) atk_component_interface_init,
         (GInterfaceFinalizeFunc) NULL,
         NULL
       };
       const GInterfaceInfo atk_selection_info =
       {
-        (GInterfaceInitFunc) exo_icon_view_accessible_selection_interface_init,
+        (GInterfaceInitFunc) (void (*)(void)) exo_icon_view_accessible_selection_interface_init,
         (GInterfaceFinalizeFunc) NULL,
         NULL
       };
@@ -2085,7 +2085,7 @@ exo_icon_view_accessible_factory_get_type (void)
         sizeof (AtkObjectFactoryClass),
         NULL,           /* base_init */
         NULL,           /* base_finalize */
-        (GClassInitFunc) exo_icon_view_accessible_factory_class_init,
+        (GClassInitFunc) (void (*)(void)) exo_icon_view_accessible_factory_class_init,
         NULL,           /* class_finalize */
         NULL,           /* class_data */
         sizeof (AtkObjectFactory),

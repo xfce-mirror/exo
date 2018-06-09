@@ -65,7 +65,7 @@ exo_helper_chooser_dialog_get_type (void)
         NULL,
         sizeof (ExoHelperChooserDialog),
         0,
-        (GInstanceInitFunc) exo_helper_chooser_dialog_init,
+        (GInstanceInitFunc) (void (*)(void)) exo_helper_chooser_dialog_init,
         NULL,
       };
 

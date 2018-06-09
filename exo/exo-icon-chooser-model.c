@@ -188,7 +188,7 @@ exo_icon_chooser_model_finalize (GObject *object)
     }
 
   /* release all items */
-  g_list_foreach (model->items, (GFunc) exo_icon_chooser_model_item_free, NULL);
+  g_list_foreach (model->items, (GFunc) (void (*)(void)) exo_icon_chooser_model_item_free, NULL);
   g_list_free (model->items);
 
   (*G_OBJECT_CLASS (exo_icon_chooser_model_parent_class)->finalize) (object);

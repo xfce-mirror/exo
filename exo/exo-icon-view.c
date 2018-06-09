@@ -5506,7 +5506,7 @@ exo_icon_view_cell_layout_clear (GtkCellLayout *layout)
 {
   ExoIconView *icon_view = EXO_ICON_VIEW (layout);
 
-  g_list_foreach (icon_view->priv->cell_list, (GFunc) free_cell_info, NULL);
+  g_list_foreach (icon_view->priv->cell_list, (GFunc) (void (*)(void)) free_cell_info, NULL);
   g_list_free (icon_view->priv->cell_list);
   icon_view->priv->cell_list = NULL;
   icon_view->priv->n_cells = 0;

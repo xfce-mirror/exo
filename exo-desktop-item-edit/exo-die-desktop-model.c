@@ -174,11 +174,11 @@ exo_die_desktop_model_finalize (GObject *object)
     g_source_remove (desktop_model->collect_idle_id);
 
   /* release collected items (if any) */
-  g_slist_foreach (desktop_model->collect_items, (GFunc) exo_die_desktop_item_free, NULL);
+  g_slist_foreach (desktop_model->collect_items, (GFunc) (void (*)(void)) exo_die_desktop_item_free, NULL);
   g_slist_free (desktop_model->collect_items);
 
   /* release all items */
-  g_slist_foreach (desktop_model->items, (GFunc) exo_die_desktop_item_free, NULL);
+  g_slist_foreach (desktop_model->items, (GFunc) (void (*)(void)) exo_die_desktop_item_free, NULL);
   g_slist_free (desktop_model->items);
 
   (*G_OBJECT_CLASS (exo_die_desktop_model_parent_class)->finalize) (object);
@@ -548,7 +548,7 @@ exo_die_desktop_model_collect_thread (gpointer user_data)
   else
     {
       /* release the collected items */
-      g_slist_foreach (items, (GFunc) exo_die_desktop_item_free, NULL);
+      g_slist_foreach (items, (GFunc) (void (*)(void)) exo_die_desktop_item_free, NULL);
       g_slist_free (items);
     }
 

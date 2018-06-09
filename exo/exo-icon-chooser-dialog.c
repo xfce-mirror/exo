@@ -522,7 +522,7 @@ exo_icon_chooser_dialog_combo_changed (GtkWidget            *combo,
         {
           /* make sure the selected item is visible */
           exo_icon_view_scroll_to_path (EXO_ICON_VIEW (priv->icon_chooser), selected_items->data, FALSE, 0.0f, 0.0f);
-          g_list_foreach (selected_items, (GFunc) gtk_tree_path_free, NULL);
+          g_list_foreach (selected_items, (GFunc) (void (*)(void)) gtk_tree_path_free, NULL);
           g_list_free (selected_items);
         }
     }
@@ -689,7 +689,7 @@ exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_dialog)
             gtk_tree_model_get (model, &iter, EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME, &icon, -1);
 
           /* release the list of selected items */
-          g_list_foreach (selected_items, (GFunc) gtk_tree_path_free, NULL);
+          g_list_foreach (selected_items, (GFunc) (void (*)(void)) gtk_tree_path_free, NULL);
           g_list_free (selected_items);
         }
     }
