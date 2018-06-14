@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010
+# Demiray “tulliana” Muhterem <mdemiray@msn.com>, 2018
 # Gökmen Görgen <gkmngrgn_gmail.com>, 2008
 # Natavan Mirzayeva <mirzayevanatavan@gmail.com>, 2015
 # Necdet Yücel <necdetyucel@gmail.com>, 2016-2017
@@ -13,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-09-19 18:02+0000\n"
-"Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
+"POT-Creation-Date: 2018-06-07 06:30+0200\n"
+"PO-Revision-Date: 2018-06-14 08:19+0000\n"
+"Last-Translator: Demiray “tulliana” Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/exo/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -176,25 +177,25 @@ msgstr "Semboller"
 msgid "Emoticons"
 msgstr "Duygu Simgeleri"
 
-#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:119
-msgid "International Denominations"
-msgstr "Uluslararası İsimlendirmeler"
-
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "File Type Icons"
 msgstr "Dosya Tipi Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Location Icons"
 msgstr "Konum Simgeleri"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Status Icons"
 msgstr "Durum Simgeleri"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STOCK
+#: ../exo/exo-icon-chooser-dialog.c:125
+msgid "Stock Icons"
+msgstr "Temel Simgeler"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
@@ -567,44 +568,44 @@ msgstr "Bir Uygulama Seçin"
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:382
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:395
+#: ../exo-helper/exo-helper-chooser.c:540
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "_İptal"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "_Aç"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "Tüm Dosyalar"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:394
+#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "Çalıştırılabilir Dosyalar"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:409
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "Perl Betikleri"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:415
+#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "Python Betikleri"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:421
+#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "Ruby Betikleri"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:427
+#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "Kabuk Betikleri"
 
@@ -695,7 +696,7 @@ msgstr "Bir simge seçin"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:541
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_Tamam"
@@ -914,80 +915,80 @@ msgstr "Seçili uygulamayı değiştirmek için sol fare tuşuna basın."
 msgid "Application Chooser Button"
 msgstr "Uygulama Seçici Buton"
 
-#: ../exo-helper/exo-helper-chooser.c:290
+#: ../exo-helper/exo-helper-chooser.c:303
 msgid "No application selected"
 msgstr "Seçili uygulama yok"
 
-#: ../exo-helper/exo-helper-chooser.c:306
+#: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
 msgstr "Öntanımlı İnternet Tarayıcısı ayarlanamadı"
 
-#: ../exo-helper/exo-helper-chooser.c:307
+#: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
 msgstr "Öntanımlı Eposta Okuyucusu ayarlanamadı"
 
-#: ../exo-helper/exo-helper-chooser.c:308
+#: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
 msgstr "Öntanımlı Dosya Yöneticisi ayarlanamadı"
 
-#: ../exo-helper/exo-helper-chooser.c:309
+#: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
 msgstr "Öntanımlı Uçbirim Öykünücüsü ayarlanamadı"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:379
+#: ../exo-helper/exo-helper-chooser.c:392
 msgid "Select application"
 msgstr "Uygulama seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:492
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Web Browser"
 msgstr "Özel bir İnternet Tarayıcısı seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:493
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid "Choose a custom Mail Reader"
 msgstr "Özel bir Eposta Okuyucusu seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:494
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid "Choose a custom File Manager"
 msgstr "Özel bir Dosya Yöneticisi seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:495
+#: ../exo-helper/exo-helper-chooser.c:508
 msgid "Choose a custom Terminal Emulator"
 msgstr "Özel bir Uçbirim Öykünücüsü seçin"
 
-#: ../exo-helper/exo-helper-chooser.c:500
+#: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Xfce için öntanımlı İnternet Tarayıcısı olarak\nkullanmak üzere, bir uygulama belirtin:"
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:514
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Xfce için öntanımlı Eposta Okuyucusu olarak\nkullanmak üzere, bir uygulama belirtin:"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:515
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Xfce için Dosya Yöneticisi olarak\nkullanmak üzere, bir uygulama belirtin:"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:516
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Xfce için öntanımlı Uçbirim Öykünücüsü olarak\nkullanmak üzere, bir uygulama belirtin:"
 
-#: ../exo-helper/exo-helper-chooser.c:567
+#: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
 msgstr "Özel bir komut seçmek için, dosya sistemini tara."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:789
 msgid "_Other..."
 msgstr "_Diğer..."
 
-#: ../exo-helper/exo-helper-chooser.c:766
+#: ../exo-helper/exo-helper-chooser.c:790
 msgid "Use a custom application which is not included in the above list."
 msgstr "Yukarıdaki listede yer almayan bir uygulama seç."
 
@@ -1019,13 +1020,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Lütfen şimdi tercih ettiğiniz Uçbirim Öykünücüsü'nü seçin\nve devam etmek için TAMAM'ı tıklayın."
 
-#: ../exo-helper/exo-helper.c:389
+#: ../exo-helper/exo-helper.c:401
 #, c-format
 msgid "No command specified"
 msgstr "Belirlenmiş komut yok"
 
-#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
-#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
+#: ../exo-helper/exo-helper.c:719 ../exo-helper/exo-helper.c:757
+#: ../exo-helper/exo-helper.c:824 ../exo-helper/exo-helper.c:862
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "%s, yazılacak şekilde açılamadı"
@@ -1080,7 +1081,7 @@ msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
 msgstr "TYPE varsayılan yardımcısı için sorgu, burada TYPE aşağıdaki değerlerden birini alır."
 
-#: ../exo-helper/main.c:105
+#: ../exo-helper/main.c:106
 msgid ""
 "The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
@@ -1090,17 +1091,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr "--launch ve --query komutları için aşağıdaki TÜRLER desteklenmektedir:\n\n  WebBrowser       - Tercih edilen Web Tarayıcısı.\n  MailReader       - Tercih edilen Posta Okuyucusu.\n  FileManager      - Tercih edilen Dosya Yöneticisi.\n  TerminalEmulator - Tercih edilen Uçbirim Öykünücüsü."
 
-#: ../exo-helper/main.c:115
+#: ../exo-helper/main.c:116
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Kullanım bilgisi için '%s --help' yazın."
 
-#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
+#: ../exo-helper/main.c:175 ../exo-helper/main.c:241
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Geçersiz yardım tipi, \"%s\""
 
-#: ../exo-helper/main.c:224
+#: ../exo-helper/main.c:225
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1115,7 +1116,7 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nTelif hakkı (c) 2003-2006\n        os-cillation e.K. Tüm hakları saklıdır.\n\nBenedikt Meurer tarafından yazılmıştır, <benny@xfce.org>.\n\nGtk+-%d.%d.%d ile inşa edilmiştir, Gtk+-%d.%d.%d ile çalıştırılıyor.\n\nHataları lütfen <%s> adresine bildirin.\n"
 
-#: ../exo-helper/main.c:250
+#: ../exo-helper/main.c:251
 #, c-format
 msgid "No helper defined for \"%s\"."
 msgstr "\"%s\" için yardımcı tanımlanmadı."
@@ -1252,13 +1253,13 @@ msgstr "NXterm"
 msgid "Opera Browser"
 msgstr "Opera Browser"
 
-#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
-msgid "PCManFM-Qt File Manager"
-msgstr "PCManFM-Qt"
-
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "PCMan Dosya Yöneticisi"
+
+#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
+msgid "PCManFM-Qt File Manager"
+msgstr "PCManFM-Qt Dosya Yöneticisi"
 
 #: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
 msgid "QTerminal"
