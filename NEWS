@@ -6,15 +6,17 @@
   - Remove pure attribute of function that returns void (Xfce #14427)
   - Missing varargs init or cleanup (CID #30799)
   - Uninitialized scalar variable (CID #127777)
-- Compiler Support (GCC 7):
-  - Disable -Wexpansion-to-defined
-  - Fix various other compiler warnings
+- Compiler Support:
+  - Disable -Wexpansion-to-defined (GCC 7)
+  - Fix various other compiler warnings (GCC 7)
+  - Fix -Wcast-function-type (GCC 8)
 - Helpers:
   - Add PCManFM-Qt (from LXQt) to supported file managers (Xfce #14333)
 - ExoIconChooserDialog
   - Drop deprecated International icon context, add Stock icon context
   - Increase icon chooser context title length to support long translations
   - Skip symbolic icons to boost performance
+  - Added GTK 3 test to test suite
 
 0.12.0 (Stable Release)
 ======
