@@ -40,8 +40,8 @@ main (int argc, char **argv)
   gtk_init (&argc, &argv);
 
   dialog = exo_icon_chooser_dialog_new ("Select an icon", NULL,
-                                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                        GTK_STOCK_OK, GTK_RESPONSE_ACCEPT,
+                                        "Cancel", GTK_RESPONSE_CANCEL,
+                                        "OK", GTK_RESPONSE_ACCEPT,
                                         NULL);
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
   if (argc > 1)

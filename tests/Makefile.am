@@ -16,6 +16,7 @@ check_PROGRAMS =							\
 	test-exo-noop							\
 	test-exo-string							\
 	test-exo-icon-chooser-dialog					\
+	test-exo-icon-chooser-dialog-gtk3					\
 	test-exo-wrap-table
 
 test_exo_csource_SOURCES =						\
@@ -69,6 +70,20 @@ test_exo_icon_chooser_dialog_DEPENDENCIES =				\
 test_exo_icon_chooser_dialog_LDADD =					\
 	$(GTK_LIBS)							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
+
+test_exo_icon_chooser_dialog_gtk3_SOURCES =					\
+	test-exo-icon-chooser-dialog.c
+
+test_exo_icon_chooser_dialog_gtk3_CFLAGS =					\
+	$(GTK3_CFLAGS)							\
+	$(LIBXFCE4UTIL_CFLAGS)
+
+test_exo_icon_chooser_dialog_gtk3_DEPENDENCIES =				\
+	$(top_builddir)/exo/libexo-2.la
+
+test_exo_icon_chooser_dialog_gtk3_LDADD =					\
+	$(GTK3_LIBS)							\
+	$(top_builddir)/exo/libexo-2.la
 
 test_exo_wrap_table_SOURCES =						\
 	test-exo-wrap-table.c
