@@ -393,7 +393,6 @@ exo_job_emit_valist (ExoJob *job,
 
   /* copy the variable argument list */
   G_VA_COPY (data.var_args, var_args);
-  va_end (data.var_args);
 
   /* emit the signal in the main loop */
   exo_job_send_to_mainloop (job,
