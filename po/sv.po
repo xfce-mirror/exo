@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2018-04-29 14:50+0000\n"
-"Last-Translator: Andre Miranda <andre42m@gmail.com>\n"
+"POT-Creation-Date: 2018-06-07 06:30+0200\n"
+"PO-Revision-Date: 2018-07-02 13:09+0000\n"
+"Last-Translator: Påvel Nicklasson <pavel2@frimix.se>\n"
 "Language-Team: Swedish (http://www.transifex.com/xfce/exo/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -175,25 +175,25 @@ msgstr "Emblem"
 msgid "Emoticons"
 msgstr "Känsloikoner"
 
-#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:119
-msgid "International Denominations"
-msgstr "Internationella beteckningar"
-
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "File Type Icons"
 msgstr "Filtypsikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Location Icons"
 msgstr "Platsikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Status Icons"
 msgstr "Statusikoner"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STOCK
+#: ../exo/exo-icon-chooser-dialog.c:125
+msgid "Stock Icons"
+msgstr "Standardikoner"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
@@ -566,44 +566,44 @@ msgstr "Välj ett program"
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:382
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:395
+#: ../exo-helper/exo-helper-chooser.c:540
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "_Avbryt"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "_Öppna"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "Alla filer"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:394
+#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "Körbara filer"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:409
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "Perl-skript"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:415
+#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "Python-skript"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:421
+#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "Ruby-skript"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:427
+#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "Skalskript"
 
@@ -694,7 +694,7 @@ msgstr "Välj en ikon"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:541
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_OK"
@@ -913,80 +913,80 @@ msgstr "Vänsterklicka för att ändra det valda programmet."
 msgid "Application Chooser Button"
 msgstr "Programväljarknapp"
 
-#: ../exo-helper/exo-helper-chooser.c:290
+#: ../exo-helper/exo-helper-chooser.c:303
 msgid "No application selected"
 msgstr "Inget program valt"
 
-#: ../exo-helper/exo-helper-chooser.c:306
+#: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
 msgstr "Misslyckades med att ställa in den föredragna webbläsaren"
 
-#: ../exo-helper/exo-helper-chooser.c:307
+#: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
 msgstr "Misslyckades med att ställa in den föredragna e-postklienten"
 
-#: ../exo-helper/exo-helper-chooser.c:308
+#: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
 msgstr "Misslyckades med att ställa in den föredragna filhanteraren"
 
-#: ../exo-helper/exo-helper-chooser.c:309
+#: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
 msgstr "Misslyckades med att ställa in den föredragna terminalemulatorn"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:379
+#: ../exo-helper/exo-helper-chooser.c:392
 msgid "Select application"
 msgstr "Välj program"
 
-#: ../exo-helper/exo-helper-chooser.c:492
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Web Browser"
 msgstr "Välj en anpassad webbläsare"
 
-#: ../exo-helper/exo-helper-chooser.c:493
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid "Choose a custom Mail Reader"
 msgstr "Välj en anpassad e-postklient"
 
-#: ../exo-helper/exo-helper-chooser.c:494
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid "Choose a custom File Manager"
 msgstr "Välj en anpassad filhanterare"
 
-#: ../exo-helper/exo-helper-chooser.c:495
+#: ../exo-helper/exo-helper-chooser.c:508
 msgid "Choose a custom Terminal Emulator"
 msgstr "Välj en anpassad terminalemulator"
 
-#: ../exo-helper/exo-helper-chooser.c:500
+#: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Välj det program som du vill använda\nsom föredragen webbläsare för Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:514
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Välj det program som du vill använda\nsom föredragen e-postklient för Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:515
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Välj det program som du vill använda\nsom föredragen filhanterare för Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:516
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Välj det program som du vill använda\nsom föredragen terminalemulator för Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:567
+#: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
 msgstr "Bläddra genom filsystemet för att välja ett anpassat kommando."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:789
 msgid "_Other..."
 msgstr "_Annat..."
 
-#: ../exo-helper/exo-helper-chooser.c:766
+#: ../exo-helper/exo-helper-chooser.c:790
 msgid "Use a custom application which is not included in the above list."
 msgstr "Använd ett anpassat program som inte finns i ovanstående lista."
 
@@ -1018,13 +1018,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Välj den terminalemulator som du\nföredrar och tryck på OK för att fortsätta."
 
-#: ../exo-helper/exo-helper.c:389
+#: ../exo-helper/exo-helper.c:401
 #, c-format
 msgid "No command specified"
 msgstr "Inget kommando angavs"
 
-#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
-#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
+#: ../exo-helper/exo-helper.c:719 ../exo-helper/exo-helper.c:757
+#: ../exo-helper/exo-helper.c:824 ../exo-helper/exo-helper.c:862
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Misslyckades med att öppna %s för skrivning"
@@ -1079,7 +1079,7 @@ msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
 msgstr "Fråga standardhjälpen om TYPE, då TYPE är ett av följande värden."
 
-#: ../exo-helper/main.c:105
+#: ../exo-helper/main.c:106
 msgid ""
 "The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
@@ -1089,17 +1089,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr "Följande TYPEs srtöds för --launch och --query kommandona:\n\n  WebBrowser       - Föredragen webbläsare.\n  MailReader       - Föredraget e-postprogram.\n  FileManager      - Föredragen filhanterare.\n  TerminalEmulator - Föredragen terminalemulator."
 
-#: ../exo-helper/main.c:115
+#: ../exo-helper/main.c:116
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Ange \"%s --help\" för användning."
 
-#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
+#: ../exo-helper/main.c:175 ../exo-helper/main.c:241
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Ogiltig hjälpartyp \"%s\""
 
-#: ../exo-helper/main.c:224
+#: ../exo-helper/main.c:225
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1114,7 +1114,7 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nCopyright © 2003-2006\n        os-cillation e.K. Alla rättigheter är reserverade.\n\nSkrivet av Benedikt Meurer <benny@xfce.org>.\n\nByggt med Gtk+-%d.%d.%d, kör Gtk+-%d.%d.%d.\n\nRapportera fel till <%s>.\nSkicka synpunkter på översättningen till <tp-sv@listor.tp-sv.se>.\n"
 
-#: ../exo-helper/main.c:250
+#: ../exo-helper/main.c:251
 #, c-format
 msgid "No helper defined for \"%s\"."
 msgstr "Ingen hjälpare definierad för \"%s\"."
@@ -1254,6 +1254,10 @@ msgstr "Webbläsaren Opera"
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "Filhanteraren PCMan"
+
+#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
+msgid "PCManFM-Qt File Manager"
+msgstr "PCManFM-Qt Filhanterare"
 
 #: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
 msgid "QTerminal"
