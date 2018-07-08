@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Adriano Winter Bess <awbess@gmail.com>, 2006
-# Andre Miranda <andre42m@gmail.com>, 2017
+# Andre Miranda <andre42m@gmail.com>, 2017-2018
 # Andre Miranda <andre42m@gmail.com>, 2016
 # Andre Miranda <andre42m@gmail.com>, 2015
 # Joao Pedrosa <joaopedrosa@gmail.com>, 2005
@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-09-23 19:02+0000\n"
-"Last-Translator: Michael Martins <michaelfm21@gmail.com>\n"
+"POT-Creation-Date: 2018-06-07 06:30+0200\n"
+"PO-Revision-Date: 2018-07-08 16:20+0000\n"
+"Last-Translator: Andre Miranda <andre42m@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/exo/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -178,25 +178,25 @@ msgstr "Emblemas"
 msgid "Emoticons"
 msgstr "Emoticons"
 
-#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:119
-msgid "International Denominations"
-msgstr "Denominações internacionais"
-
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "File Type Icons"
 msgstr "Ícones de tipos de arquivos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Location Icons"
 msgstr "Ícones de locais"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Status Icons"
 msgstr "Ícones de status"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STOCK
+#: ../exo/exo-icon-chooser-dialog.c:125
+msgid "Stock Icons"
+msgstr "Ícones padrões"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
@@ -569,44 +569,44 @@ msgstr "Selecione um aplicativo"
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:382
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:395
+#: ../exo-helper/exo-helper-chooser.c:540
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "_Cancelar"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "_Abrir"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "Todos os arquivos"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:394
+#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "Arquivos executáveis"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:409
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "Scripts em Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:415
+#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "Scripts em Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:421
+#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "Scripts em Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:427
+#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "Scripts em Shell"
 
@@ -697,7 +697,7 @@ msgstr "Selecione um ícone"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:541
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_OK"
@@ -916,80 +916,80 @@ msgstr "Pressione o botão esquerdo do mouse para mudar o aplicativo selecionado
 msgid "Application Chooser Button"
 msgstr "Botão de escolha de aplicativo"
 
-#: ../exo-helper/exo-helper-chooser.c:290
+#: ../exo-helper/exo-helper-chooser.c:303
 msgid "No application selected"
 msgstr "Nenhum aplicativo selecionado"
 
-#: ../exo-helper/exo-helper-chooser.c:306
+#: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
 msgstr "Falha ao definir o navegador web padrão"
 
-#: ../exo-helper/exo-helper-chooser.c:307
+#: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
 msgstr "Falha ao definir o cliente de e-mail padrão"
 
-#: ../exo-helper/exo-helper-chooser.c:308
+#: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
 msgstr "Falha ao definir o gerenciador de arquivos padrão"
 
-#: ../exo-helper/exo-helper-chooser.c:309
+#: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
 msgstr "Falha ao definir o emulador de terminal padrão"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:379
+#: ../exo-helper/exo-helper-chooser.c:392
 msgid "Select application"
 msgstr "Selecione o aplicativo"
 
-#: ../exo-helper/exo-helper-chooser.c:492
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Web Browser"
 msgstr "Escolha um outro navegador web"
 
-#: ../exo-helper/exo-helper-chooser.c:493
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid "Choose a custom Mail Reader"
 msgstr "Escolha um outro cliente de e-mail"
 
-#: ../exo-helper/exo-helper-chooser.c:494
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid "Choose a custom File Manager"
 msgstr "Escolha um outro gerenciador de arquivos"
 
-#: ../exo-helper/exo-helper-chooser.c:495
+#: ../exo-helper/exo-helper-chooser.c:508
 msgid "Choose a custom Terminal Emulator"
 msgstr "Escolha um outro emulador de terminal"
 
-#: ../exo-helper/exo-helper-chooser.c:500
+#: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Especifique o aplicativo que você deseja usar\ncomo navegador web padrão para o Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:514
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Especifique o aplicativo que você deseja usar\ncomo cliente de e-mail padrão para o Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:515
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Especifique o aplicativo que você deseja usar\ncomo gerenciador de arquivos padrão para o Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:516
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Especifique o aplicativo que você deseja usar\ncomo emulador de terminal padrão para o Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:567
+#: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
 msgstr "Navegue pelo sistema de arquivos para escolher um outro comando."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:789
 msgid "_Other..."
 msgstr "_Outro..."
 
-#: ../exo-helper/exo-helper-chooser.c:766
+#: ../exo-helper/exo-helper-chooser.c:790
 msgid "Use a custom application which is not included in the above list."
 msgstr "Usar um aplicativo que não esteja incluído na lista acima."
 
@@ -1021,13 +1021,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Por favor escolha o seu emulador de terminal\npreferido e clique em OK para prosseguir."
 
-#: ../exo-helper/exo-helper.c:389
+#: ../exo-helper/exo-helper.c:401
 #, c-format
 msgid "No command specified"
 msgstr "Nenhum comando especificado"
 
-#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
-#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
+#: ../exo-helper/exo-helper.c:719 ../exo-helper/exo-helper.c:757
+#: ../exo-helper/exo-helper.c:824 ../exo-helper/exo-helper.c:862
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Falha ao abrir %s para escrita"
@@ -1082,7 +1082,7 @@ msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
 msgstr "Consulte o ajudante padrão de TIPO, onde TIPO é um dos seguintes valores."
 
-#: ../exo-helper/main.c:105
+#: ../exo-helper/main.c:106
 msgid ""
 "The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
@@ -1092,17 +1092,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr "Os TIPOS a seguir são suportados para os comandos --launch e --query:\n\n  WebBrowser       - O navegador web preferido.\n  MailReader       - O cliente de e-mail preferido.\n  FileManager      - O gerenciador de arquivos preferido.\n  TerminalEmulator - O emulador de terminal preferido."
 
-#: ../exo-helper/main.c:115
+#: ../exo-helper/main.c:116
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Digite \"%s --help\" para opções de uso."
 
-#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
+#: ../exo-helper/main.c:175 ../exo-helper/main.c:241
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Assistente de tipo \"%s\" inválido"
 
-#: ../exo-helper/main.c:224
+#: ../exo-helper/main.c:225
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1117,7 +1117,7 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. Todos os direitos reservados.\n\nEscrito por Benedikt Meurer <benny@xfce.org>.\n\nCompilado com Gtk+-%d.%d.%d em ambiente\nde execução Gtk+-%d.%d.%d.\n\nPor favor relatar erros para <%s>.\n"
 
-#: ../exo-helper/main.c:250
+#: ../exo-helper/main.c:251
 #, c-format
 msgid "No helper defined for \"%s\"."
 msgstr "Nenhum ajudante definido para \"%s\"."
@@ -1254,13 +1254,13 @@ msgstr "NXTerm"
 msgid "Opera Browser"
 msgstr "Navegador Opera"
 
-#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
-msgid "PCManFM-Qt File Manager"
-msgstr "Gerenciador de Arquivos PCManFM-Qt"
-
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "Gerenciador de arquivos PCManFM"
+
+#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
+msgid "PCManFM-Qt File Manager"
+msgstr "Gerenciador de arquivos PCManFM-Qt"
 
 #: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
 msgid "QTerminal"
