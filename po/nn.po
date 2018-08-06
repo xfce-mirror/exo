@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Eivind Ødegård <gingermig@yahoo.no>, 2012
-# Kevin Brubeck Unhammer <unhammer+dill@mm.st>, 2015-2016
+# Kevin Brubeck Unhammer <unhammer+dill@mm.st>, 2015-2016,2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-09-19 18:02+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2018-06-07 06:30+0200\n"
+"PO-Revision-Date: 2018-08-06 09:34+0000\n"
+"Last-Translator: Kevin Brubeck Unhammer <unhammer+dill@mm.st>\n"
 "Language-Team: Norwegian Nynorsk (http://www.transifex.com/xfce/exo/language/nn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -172,25 +172,25 @@ msgstr "Emblem"
 msgid "Emoticons"
 msgstr "Smileys"
 
-#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:119
-msgid "International Denominations"
-msgstr "Internasjonale nemningar"
-
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "File Type Icons"
 msgstr "Filtypeikon"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Location Icons"
 msgstr "Plasseringsikon"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Status Icons"
 msgstr "Statusikon"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STOCK
+#: ../exo/exo-icon-chooser-dialog.c:125
+msgid "Stock Icons"
+msgstr ""
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
@@ -563,44 +563,44 @@ msgstr "Vel eit program"
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:382
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:395
+#: ../exo-helper/exo-helper-chooser.c:540
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "Av_bryt"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "_Opna"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "Alle filer"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:394
+#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "Kjørbare filer"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:409
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "Perlskript"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:415
+#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "Pythonscript"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:421
+#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "Rubyskript"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:427
+#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "Skallskript"
 
@@ -670,7 +670,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Vel dette valet for å slå på oppstartsvarsel når kommandoen blir køyrt frå filhandsamaren eller frå menyen. Ikkje alle program støttar oppstartsvarsel."
+msgstr "Vel dette valet for å slå på oppstartsvarsel når kommandoen blir køyrt frå filutforskaren eller frå menyen. Ikkje alle program støttar oppstartsvarsel."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -691,7 +691,7 @@ msgstr "Vel eit ikon"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:541
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_OK"
@@ -882,13 +882,13 @@ msgstr "_Verktøy"
 #: ../exo-helper/exo-helper-chooser-dialog.c:212
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
-msgstr "Filhandsamar"
+msgstr "Filutforskar"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:220
 msgid ""
 "The preferred File Manager will be used to\n"
 "browse the contents of folders."
-msgstr "Du kan bruka standard-filhandsamaren til å\nnavigera i mapper og filer."
+msgstr "Du kan bruka standard-filutforskaren til å\nnavigera i mapper og filer."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:244
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -910,80 +910,80 @@ msgstr "Bruk venstre museknapp for å endra valt program."
 msgid "Application Chooser Button"
 msgstr "Programveljarknapp"
 
-#: ../exo-helper/exo-helper-chooser.c:290
+#: ../exo-helper/exo-helper-chooser.c:303
 msgid "No application selected"
 msgstr "Ingen program valde"
 
-#: ../exo-helper/exo-helper-chooser.c:306
+#: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
 msgstr "Klarte ikkje setje standard nettlesar"
 
-#: ../exo-helper/exo-helper-chooser.c:307
+#: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
 msgstr "Klarte ikkje setje standard epostlesar"
 
-#: ../exo-helper/exo-helper-chooser.c:308
+#: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
-msgstr "Klarte ikkje setja standard-filhandsamar"
+msgstr "Klarte ikkje setja standard-filutforskar"
 
-#: ../exo-helper/exo-helper-chooser.c:309
+#: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
 msgstr "Klarte ikkje setja standard-terminalprogram"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:379
+#: ../exo-helper/exo-helper-chooser.c:392
 msgid "Select application"
 msgstr "Vel program"
 
-#: ../exo-helper/exo-helper-chooser.c:492
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Web Browser"
 msgstr "Vel din eigen nettlesar"
 
-#: ../exo-helper/exo-helper-chooser.c:493
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid "Choose a custom Mail Reader"
 msgstr "Vel din eigen epostlesar"
 
-#: ../exo-helper/exo-helper-chooser.c:494
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid "Choose a custom File Manager"
-msgstr "Vel din eigen filhandsamar"
+msgstr "Vel din eigen filutforskar"
 
-#: ../exo-helper/exo-helper-chooser.c:495
+#: ../exo-helper/exo-helper-chooser.c:508
 msgid "Choose a custom Terminal Emulator"
 msgstr "Vel ditt eige terminalprogram"
 
-#: ../exo-helper/exo-helper-chooser.c:500
+#: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Vel programmet du ynskjer å bruka som\nstandard nettlesar i Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:514
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Vel programmet du ynskjer å bruka som\nstandard epostlesar i Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:515
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr "Vel programmet du ynskjer å bruka som\nstandard filhandsamar i Xfce:"
+msgstr "Vel programmet du ynskjer å bruka som\nstandard filutforskar i Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:516
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Vel programmet du ynskjer å bruka som\nstandard teminalprogram i Xfce:"
 
-#: ../exo-helper/exo-helper-chooser.c:567
+#: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
 msgstr "Bla gjennom filsystemet for å velja kommando."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:789
 msgid "_Other..."
 msgstr "_Andre ..."
 
-#: ../exo-helper/exo-helper-chooser.c:766
+#: ../exo-helper/exo-helper-chooser.c:790
 msgid "Use a custom application which is not included in the above list."
 msgstr "Bruk sjølvvalt program som ikkje ligg i lista ovanfor"
 
@@ -1007,7 +1007,7 @@ msgstr "Vel favoritt-epostlesaren din no\nog klikk OK for å halda fram."
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr "Vel favoritt-filhandsamaren din no\nog klikk OK for å halda fram."
+msgstr "Vel favoritt-filutforskaren din no\nog klikk OK for å halda fram."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
@@ -1015,13 +1015,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Vel favoritt-terminalprogrammet ditt no\nog klikk OK for å halda fram."
 
-#: ../exo-helper/exo-helper.c:389
+#: ../exo-helper/exo-helper.c:401
 #, c-format
 msgid "No command specified"
 msgstr "Ingen kommando er nemnd"
 
-#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
-#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
+#: ../exo-helper/exo-helper.c:719 ../exo-helper/exo-helper.c:757
+#: ../exo-helper/exo-helper.c:824 ../exo-helper/exo-helper.c:862
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Klarte ikkje opna %s for skriving"
@@ -1041,7 +1041,7 @@ msgstr "Klarte ikkje starta standard epostlesar"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
-msgstr "Klarte ikkje starta standard filhandsamar"
+msgstr "Klarte ikkje starta standard filutforskar"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
@@ -1076,7 +1076,7 @@ msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
 msgstr ""
 
-#: ../exo-helper/main.c:105
+#: ../exo-helper/main.c:106
 msgid ""
 "The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
@@ -1086,17 +1086,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
 
-#: ../exo-helper/main.c:115
+#: ../exo-helper/main.c:116
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Skriv '%s --help' for bruksinstruksjonar"
 
-#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
+#: ../exo-helper/main.c:175 ../exo-helper/main.c:241
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "Ugyldig hjelpertype \"%s\""
 
-#: ../exo-helper/main.c:224
+#: ../exo-helper/main.c:225
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1111,10 +1111,10 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nOpphavsrettt (c) 2003-2006\n        osar-cillation e.K. Alle rettar reservert.\n\nSkrive av Benedikt Meurer <benny@xfce.org>.\n\nBygd med Gtk+-%d.%d.%d, køyrar Gtk+-%d.%d.%d.\n\nMeld feil til <%s>.\n"
 
-#: ../exo-helper/main.c:250
+#: ../exo-helper/main.c:251
 #, c-format
 msgid "No helper defined for \"%s\"."
-msgstr ""
+msgstr "Ingen hjelpar definert for «%s»."
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1126,11 +1126,11 @@ msgstr "Balsa"
 
 #: ../exo-helper/helpers/brave.desktop.in.in.h:1
 msgid "Brave"
-msgstr ""
+msgstr "Brave"
 
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
-msgstr "Caja filhandsamar"
+msgstr "Caja filutforskar"
 
 #: ../exo-helper/helpers/chromium.desktop.in.in.h:1
 msgid "Chromium"
@@ -1174,11 +1174,11 @@ msgstr "Galeon nettlesar"
 
 #: ../exo-helper/helpers/geary.desktop.in.in.h:1
 msgid "Geary"
-msgstr ""
+msgstr "Geary"
 
 #: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
 msgid "Google Chrome"
-msgstr ""
+msgstr "Google Chrome"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
@@ -1250,7 +1250,11 @@ msgstr "Opera nettlesar"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
-msgstr "PCMan filhandsamar"
+msgstr "PCMan filutforskar"
+
+#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
+msgid "PCManFM-Qt File Manager"
+msgstr "PCManFM-Qt filutforskar"
 
 #: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
 msgid "QTerminal"
@@ -1266,7 +1270,7 @@ msgstr "QupZilla"
 
 #: ../exo-helper/helpers/rodent.desktop.in.in.h:1
 msgid "Rodent File Manager"
-msgstr "Rodent filhandsamar"
+msgstr "Rodent filutforskar"
 
 #: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
 msgid "ROX-Filer"
@@ -1290,7 +1294,7 @@ msgstr "Claws Epost"
 
 #: ../exo-helper/helpers/terminator.desktop.in.in.h:1
 msgid "Terminator"
-msgstr ""
+msgstr "Terminator"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
@@ -1318,7 +1322,7 @@ msgstr "Xfce-terminal"
 
 #: ../exo-helper/helpers/xfe.desktop.in.in.h:1
 msgid "Xfe File Manager"
-msgstr "Xfe filhandsamar"
+msgstr "Xfe filutforskar"
 
 #: ../exo-helper/helpers/xterm.desktop.in.in.h:1
 msgid "X Terminal"
@@ -1367,7 +1371,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - Standard nettlesar.\n  MailReader       - Standard epostlesar.\n FileManager - Standard filhandsamar\n TerminalEmulator - Standard teminalprogram."
+msgstr "  WebBrowser       - Standard nettlesar.\n  MailReader       - Standard epostlesar.\n FileManager       - Standard filutforskar\n TerminalEmulator - Standard teminalprogram."
 
 #: ../exo-open/main.c:133
 msgid ""
