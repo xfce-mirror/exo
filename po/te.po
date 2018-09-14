@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-09-19 18:02+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2018-09-02 00:30+0200\n"
+"PO-Revision-Date: 2018-09-14 00:27+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
 "Language-Team: Telugu (http://www.transifex.com/xfce/exo/language/te/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -172,25 +172,25 @@ msgstr "జ్ఞాపికలు"
 msgid "Emoticons"
 msgstr "భావప్రతీకలు"
 
-#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:119
-msgid "International Denominations"
-msgstr "అంతర్జాతీయ డినామినేషన్స్"
-
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "File Type Icons"
 msgstr "దస్త్ర రకపు ప్రతీకలు"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Location Icons"
 msgstr "స్థానపు ప్రతీకలు"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Status Icons"
 msgstr "స్థితి ప్రతీకలు"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STOCK
+#: ../exo/exo-icon-chooser-dialog.c:125
+msgid "Stock Icons"
+msgstr ""
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
@@ -563,44 +563,44 @@ msgstr "ఒక అనువర్తనాన్ని ఎంచుకోండ�
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:382
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:395
+#: ../exo-helper/exo-helper-chooser.c:540
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
-msgstr ""
+msgstr "రద్దుచేయి (_C)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
-msgstr ""
+msgstr "తెరువు (_O)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "అన్ని దస్త్రాలు"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:394
+#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "ఎక్జిక్యూటబుల్ దస్త్రాలు"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:409
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "పెర్ల్ స్క్రిప్టులు"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:415
+#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "పైథాన్ స్క్రిప్టులు"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:421
+#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "రుబి స్క్రిప్టులు"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:427
+#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "షెల్ స్క్రిప్టులు"
 
@@ -691,7 +691,7 @@ msgstr "ఒక ప్రతీకను ఎంచుకోండి"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:541
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr ""
@@ -806,9 +806,9 @@ msgstr ""
 
 #. add the "Help" button
 #: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:105
+#: ../exo-helper/exo-helper-chooser-dialog.c:106
 msgid "_Help"
-msgstr ""
+msgstr "సహాయం (_H)"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:338
@@ -836,31 +836,31 @@ msgstr "\"%s\" భద్రపరుచుటలో విఫలమైంది.
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
-msgstr ""
+msgstr "మూసివేయి (_C)"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:101
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "ప్రాధాన్య అనువర్తనాలు"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:102
+#: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
 msgstr ""
 
 #. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:126
+#: ../exo-helper/exo-helper-chooser-dialog.c:127
 msgid "_Internet"
 msgstr "అంతర్జాలం (_I)"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:139
+#: ../exo-helper/exo-helper-chooser-dialog.c:140
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "జాల విహారకం"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:147
+#: ../exo-helper/exo-helper-chooser-dialog.c:148
 msgid ""
-"The preferred Web Browser will be used to open\n"
-"hyperlinks and display help contents."
+"The preferred Web Browser will be used to open hyperlinks and display help "
+"contents."
 msgstr ""
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:171
@@ -870,35 +870,34 @@ msgstr "మెయిల్ చదువరి"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:179
 msgid ""
-"The preferred Mail Reader will be used to compose\n"
-"emails when you click on email addresses."
+"The preferred Mail Reader will be used to compose emails when you click on "
+"email addresses."
 msgstr ""
 
 #. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:199
+#: ../exo-helper/exo-helper-chooser-dialog.c:198
 msgid "_Utilities"
 msgstr "ప్రయోజనాలు (_U)"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:212
+#: ../exo-helper/exo-helper-chooser-dialog.c:211
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "దస్త్ర నిర్వాహకం"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:220
+#: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
-"The preferred File Manager will be used to\n"
-"browse the contents of folders."
+"The preferred File Manager will be used to browse the contents of folders."
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:244
+#: ../exo-helper/exo-helper-chooser-dialog.c:242
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
 msgstr "టెర్మినల్ ఎమ్యులేటర్"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:252
+#: ../exo-helper/exo-helper-chooser-dialog.c:250
 msgid ""
-"The preferred Terminal Emulator will be used to\n"
-"run commands that require a CLI environment."
+"The preferred Terminal Emulator will be used to run commands that require a "
+"CLI environment."
 msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:145
@@ -910,80 +909,80 @@ msgstr ""
 msgid "Application Chooser Button"
 msgstr "అనువర్తన ఎంపిక బొత్తాం"
 
-#: ../exo-helper/exo-helper-chooser.c:290
+#: ../exo-helper/exo-helper-chooser.c:303
 msgid "No application selected"
 msgstr "ఏ అనువర్తనం ఎంచుకోబడలేదు"
 
-#: ../exo-helper/exo-helper-chooser.c:306
+#: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
 msgstr "అప్రమేయ జాల విహారకాన్ని అమర్చుటలో విఫలమైంది"
 
-#: ../exo-helper/exo-helper-chooser.c:307
+#: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
 msgstr "అప్రమేయ మెయిల్ చదువరిని అమర్చుటలో విఫలమైంది"
 
-#: ../exo-helper/exo-helper-chooser.c:308
+#: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
 msgstr "అప్రమేయ దస్త్ర నిర్వాహకాన్ని అమర్చుటలో విఫలమైంది"
 
-#: ../exo-helper/exo-helper-chooser.c:309
+#: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
 msgstr "అప్రమేయ టెర్మినల్ ఎమ్యులేటరును అమర్చుటలో విఫలమైంది"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:379
+#: ../exo-helper/exo-helper-chooser.c:392
 msgid "Select application"
 msgstr "అనువర్తనాన్ని ఎంచుకోండి"
 
-#: ../exo-helper/exo-helper-chooser.c:492
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Web Browser"
 msgstr "ఒక అనురూపిత జాల విహారకాన్ని ఎంచుకోండి"
 
-#: ../exo-helper/exo-helper-chooser.c:493
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid "Choose a custom Mail Reader"
 msgstr "ఒక అనురూపిత మెయిల్ చదువరిని ఎంచుకోండి"
 
-#: ../exo-helper/exo-helper-chooser.c:494
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid "Choose a custom File Manager"
 msgstr "ఒక అనురూపిత దస్త్ర నిర్వాహకాన్ని ఎంచుకోండి"
 
-#: ../exo-helper/exo-helper-chooser.c:495
+#: ../exo-helper/exo-helper-chooser.c:508
 msgid "Choose a custom Terminal Emulator"
 msgstr "ఒక అనురూపిత టెర్మినల్ ఎమ్యులేటరును ఎంచుకోండి"
 
-#: ../exo-helper/exo-helper-chooser.c:500
+#: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:514
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:515
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:516
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:567
+#: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:789
 msgid "_Other..."
 msgstr "ఇతరాలు...(_O)"
 
-#: ../exo-helper/exo-helper-chooser.c:766
+#: ../exo-helper/exo-helper-chooser.c:790
 msgid "Use a custom application which is not included in the above list."
 msgstr ""
 
@@ -1015,13 +1014,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr ""
 
-#: ../exo-helper/exo-helper.c:389
+#: ../exo-helper/exo-helper.c:401
 #, c-format
 msgid "No command specified"
 msgstr "ఏ ఆదేశం పేర్కొనలేదు"
 
-#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
-#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
+#: ../exo-helper/exo-helper.c:719 ../exo-helper/exo-helper.c:757
+#: ../exo-helper/exo-helper.c:824 ../exo-helper/exo-helper.c:862
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "వ్రాయుట కొరకు %s తెరచుట విఫలమైంది"
@@ -1076,7 +1075,7 @@ msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
 msgstr ""
 
-#: ../exo-helper/main.c:105
+#: ../exo-helper/main.c:106
 msgid ""
 "The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
@@ -1086,17 +1085,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
 
-#: ../exo-helper/main.c:115
+#: ../exo-helper/main.c:116
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "వినియోగం కోసం '%s --help' టంకించండి."
 
-#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
+#: ../exo-helper/main.c:175 ../exo-helper/main.c:241
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "చెల్లని సహాయకం రకం \"%s\""
 
-#: ../exo-helper/main.c:224
+#: ../exo-helper/main.c:225
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1111,7 +1110,7 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr ""
 
-#: ../exo-helper/main.c:250
+#: ../exo-helper/main.c:251
 #, c-format
 msgid "No helper defined for \"%s\"."
 msgstr ""
@@ -1251,6 +1250,10 @@ msgstr "ఒపెరా విహారకం"
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "పీసీమ్యాన్ దస్త్ర నిర్వాహకం"
+
+#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
+msgid "PCManFM-Qt File Manager"
+msgstr ""
 
 #: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
 msgid "QTerminal"
