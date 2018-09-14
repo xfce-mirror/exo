@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-11-14 11:58+0000\n"
-"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
+"POT-Creation-Date: 2018-09-02 00:30+0200\n"
+"PO-Revision-Date: 2018-09-14 00:27+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
 "Language-Team: Korean (http://www.transifex.com/xfce/exo/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -172,25 +172,25 @@ msgstr "엠블럼"
 msgid "Emoticons"
 msgstr "이모티콘"
 
-#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:119
-msgid "International Denominations"
-msgstr "국제적 이모티콘"
-
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "File Type Icons"
 msgstr "파일 유형 아이콘"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Location Icons"
 msgstr "위치 아이콘"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Status Icons"
 msgstr "상태 아이콘"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STOCK
+#: ../exo/exo-icon-chooser-dialog.c:125
+msgid "Stock Icons"
+msgstr ""
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
@@ -563,44 +563,44 @@ msgstr "프로그램 선택"
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:382
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:395
+#: ../exo-helper/exo-helper-chooser.c:540
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
 msgstr "취소(_C)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "열기(_O)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "모든 파일"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:394
+#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "실행 가능한 파일"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:409
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "펄 스크립트"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:415
+#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "파이선 스크립트"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:421
+#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "루비 스크립트"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:427
+#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "쉘 스크립트"
 
@@ -691,7 +691,7 @@ msgstr "아이콘 선택"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:541
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "확인(_O)"
@@ -806,7 +806,7 @@ msgstr "지원하지 않는 데스크톱 파일 유형 \"%s\" 입니다"
 
 #. add the "Help" button
 #: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:105
+#: ../exo-helper/exo-helper-chooser-dialog.c:106
 msgid "_Help"
 msgstr "도움말(_H)"
 
@@ -843,25 +843,25 @@ msgstr "닫기(_C)"
 msgid "Preferred Applications"
 msgstr "기본 프로그램"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:102
+#: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
 msgstr "다양한 서비스에 대한 기본 프로그램을 선택합니다"
 
 #. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:126
+#: ../exo-helper/exo-helper-chooser-dialog.c:127
 msgid "_Internet"
 msgstr "인터넷(_I)"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:139
+#: ../exo-helper/exo-helper-chooser-dialog.c:140
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "웹 브라우저"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:147
+#: ../exo-helper/exo-helper-chooser-dialog.c:148
 msgid ""
-"The preferred Web Browser will be used to open\n"
-"hyperlinks and display help contents."
-msgstr "기본 웹 브라우저는 하이퍼링크를 열거나\n도움말 내용을 보여줄 때 사용합니다."
+"The preferred Web Browser will be used to open hyperlinks and display help "
+"contents."
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:171
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -870,36 +870,35 @@ msgstr "메일 보기"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:179
 msgid ""
-"The preferred Mail Reader will be used to compose\n"
-"emails when you click on email addresses."
-msgstr "기본 메일 보기 프로그램은 전자메일 주소를 눌렀을 때\n전자메일 작성에 사용합니다."
+"The preferred Mail Reader will be used to compose emails when you click on "
+"email addresses."
+msgstr ""
 
 #. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:199
+#: ../exo-helper/exo-helper-chooser-dialog.c:198
 msgid "_Utilities"
 msgstr "유틸리티(_U)"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:212
+#: ../exo-helper/exo-helper-chooser-dialog.c:211
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "파일 관리자"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:220
+#: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
-"The preferred File Manager will be used to\n"
-"browse the contents of folders."
-msgstr "기본 파일 관리자는 폴더 내용 탐색에\n사용합니다."
+"The preferred File Manager will be used to browse the contents of folders."
+msgstr ""
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:244
+#: ../exo-helper/exo-helper-chooser-dialog.c:242
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
 msgstr "터미널 에뮬레이터"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:252
+#: ../exo-helper/exo-helper-chooser-dialog.c:250
 msgid ""
-"The preferred Terminal Emulator will be used to\n"
-"run commands that require a CLI environment."
-msgstr "기본 터미널 에뮬레이터는 CLI 환경이 필요한 명령\n실행에 사용합니다."
+"The preferred Terminal Emulator will be used to run commands that require a "
+"CLI environment."
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:145
 #: ../exo-helper/exo-helper-chooser.c:152
@@ -910,80 +909,80 @@ msgstr "선택한 프로그램을 바꾸려면 왼쪽 마우스 단추를 누릅
 msgid "Application Chooser Button"
 msgstr "프로그램 선택 단추"
 
-#: ../exo-helper/exo-helper-chooser.c:290
+#: ../exo-helper/exo-helper-chooser.c:303
 msgid "No application selected"
 msgstr "선택한 프로그램이 없습니다"
 
-#: ../exo-helper/exo-helper-chooser.c:306
+#: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
 msgstr "기본 웹 브라우저 설정에 실패했습니다"
 
-#: ../exo-helper/exo-helper-chooser.c:307
+#: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
 msgstr "기본 메일 보기 프로그램 설정에 실패했습니다"
 
-#: ../exo-helper/exo-helper-chooser.c:308
+#: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
 msgstr "기본 파일 관리자 설정에 실패했습니다"
 
-#: ../exo-helper/exo-helper-chooser.c:309
+#: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
 msgstr "기본 터미널 에뮬레이터 설정에 실패했습니다"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:379
+#: ../exo-helper/exo-helper-chooser.c:392
 msgid "Select application"
 msgstr "프로그램 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:492
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Web Browser"
 msgstr "사용자 정의 웹 브라우저 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:493
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid "Choose a custom Mail Reader"
 msgstr "사용자 정의 메일 보기 프로그램 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:494
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid "Choose a custom File Manager"
 msgstr "사용자 정의 파일 관리자 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:495
+#: ../exo-helper/exo-helper-chooser.c:508
 msgid "Choose a custom Terminal Emulator"
 msgstr "사용자 정의 터미널 에뮬레이터 선택"
 
-#: ../exo-helper/exo-helper-chooser.c:500
+#: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr "Xfce에서 기본으로 사용할 웹 브라우저를\n지정합니다:"
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:514
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr "Xfce에서 기본으로 사용할 메일 보기 프로그램을\n지정합니다:"
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:515
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr "Xfce에서 기본으로 사용할 파일 관리자 프로그램을\n지정합니다:"
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:516
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr "Xfce에서 기본으로 사용할 터미널 에뮬레이터를\n지정합니다:"
 
-#: ../exo-helper/exo-helper-chooser.c:567
+#: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
 msgstr "사용자 정의 명령을 선택하려면 파일 시스템을 탐색합니다."
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:789
 msgid "_Other..."
 msgstr "기타(_O)..."
 
-#: ../exo-helper/exo-helper-chooser.c:766
+#: ../exo-helper/exo-helper-chooser.c:790
 msgid "Use a custom application which is not included in the above list."
 msgstr "위 목록에 포함하지 않은 사용자 정의 프로그램을 사용합니다."
 
@@ -1015,13 +1014,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "기본 터미널 에뮬레이터를 선택하여 주시고\n실행을 위해 OK를 눌러주십시오."
 
-#: ../exo-helper/exo-helper.c:389
+#: ../exo-helper/exo-helper.c:401
 #, c-format
 msgid "No command specified"
 msgstr "정의된 명령이 없습니다"
 
-#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
-#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
+#: ../exo-helper/exo-helper.c:719 ../exo-helper/exo-helper.c:757
+#: ../exo-helper/exo-helper.c:824 ../exo-helper/exo-helper.c:862
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "기록을 위한 %s을(를) 여는데 실패했습니다"
@@ -1076,7 +1075,7 @@ msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
 msgstr "도움말에서 기본 TYPE를 물어보세요, TYPE는 다음 값들 중 하나입니다."
 
-#: ../exo-helper/main.c:105
+#: ../exo-helper/main.c:106
 msgid ""
 "The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
@@ -1086,17 +1085,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr "아래는 --launch와 --query 명령을 위한 TYPE입니다:\n\n  WebBrowser       - 기본 웹 브라우저.\n  MailReader       - 기본 메일 리더.\n  FileManager      - 기본 파일 매니저.\n  TerminalEmulator - 기본 터미널 에뮬레이터."
 
-#: ../exo-helper/main.c:115
+#: ../exo-helper/main.c:116
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "사용방법을 보시려면 '%s --help'를 입력하십시오."
 
-#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
+#: ../exo-helper/main.c:175 ../exo-helper/main.c:241
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr "도우미 유형 \"%s\"이(가) 잘못되었습니다"
 
-#: ../exo-helper/main.c:224
+#: ../exo-helper/main.c:225
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1111,7 +1110,7 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\nos-cillation e.K. All rights reserved.\n\nBenedikt Meurer가 작성함 <benny@xfce.org>.\n\nGtk+-%d.%d.%d(으)로 빌드했고, Gtk+-%d.%d.%d에서 실행중입니다.\n\n<%s>(으)로 버그를 알려주십시오.\n"
 
-#: ../exo-helper/main.c:250
+#: ../exo-helper/main.c:251
 #, c-format
 msgid "No helper defined for \"%s\"."
 msgstr "\"%s\"에 해당하는 도움말이 없습니다."
@@ -1251,6 +1250,10 @@ msgstr "Opera 브라우저"
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "PCMan 파일 관리자"
+
+#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
+msgid "PCManFM-Qt File Manager"
+msgstr ""
 
 #: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
 msgid "QTerminal"
