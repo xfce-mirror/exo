@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-17 00:30+0200\n"
-"PO-Revision-Date: 2017-09-19 18:02+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2018-09-02 00:30+0200\n"
+"PO-Revision-Date: 2018-09-14 00:27+0000\n"
+"Last-Translator: Nguyên Bình <crziter@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/xfce/exo/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -171,25 +171,25 @@ msgstr "Biểu tượng phụ"
 msgid "Emoticons"
 msgstr "Biểu tượng cảm xúc"
 
-#. EXO_ICON_CHOOSER_CONTEXT_INTERNATIONAL
-#: ../exo/exo-icon-chooser-dialog.c:119
-msgid "International Denominations"
-msgstr ""
-
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:121
+#: ../exo/exo-icon-chooser-dialog.c:119
 msgid "File Type Icons"
 msgstr "Biểu tượng loại tệp tin"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:123
+#: ../exo/exo-icon-chooser-dialog.c:121
 msgid "Location Icons"
 msgstr "Biểu tượng địa điểm"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:125
+#: ../exo/exo-icon-chooser-dialog.c:123
 msgid "Status Icons"
 msgstr "Biểu tượng trạng thái"
+
+#. EXO_ICON_CHOOSER_CONTEXT_STOCK
+#: ../exo/exo-icon-chooser-dialog.c:125
+msgid "Stock Icons"
+msgstr ""
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
@@ -350,7 +350,7 @@ msgstr ""
 
 #: ../exo/exo-icon-view.c:1074
 msgid "Spacing"
-msgstr ""
+msgstr "Khoảng trống"
 
 #: ../exo/exo-icon-view.c:1075
 msgid "Space which is inserted between cells of an item"
@@ -396,7 +396,7 @@ msgstr ""
 
 #: ../exo/exo-toolbars-editor.c:537
 msgid "Separator"
-msgstr ""
+msgstr "Phần ngăn cách"
 
 #: ../exo/exo-toolbars-view.c:755
 msgid "Toolbar _Style"
@@ -562,44 +562,44 @@ msgstr "Chọn ứng dụng"
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
 #: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:382
-#: ../exo-helper/exo-helper-chooser.c:527
+#: ../exo-helper/exo-helper-chooser.c:395
+#: ../exo-helper/exo-helper-chooser.c:540
 #: ../exo-helper/exo-helper-launcher-dialog.c:109
 msgid "_Cancel"
-msgstr ""
+msgstr "_Huỷ bỏ"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:383
+#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
-msgstr ""
+msgstr "_Mở"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:389
+#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "Mọi tệp tin"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:394
+#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "Tệp tin thực thi"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:409
+#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "Kịch bản Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:415
+#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "Kịch bản Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:421
+#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "Kịch bản Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:427
+#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "Kịch bản Shell"
 
@@ -669,7 +669,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr ""
+msgstr "Dùng tùy chọn này để bật tính năng thông báo khởi động khi lệnh được chạy từ trình quản lí hoặc menu. Không phải mọi ứng dụng đều hỗ trợ tính năng này."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -690,7 +690,7 @@ msgstr "Chọn biểu tượng"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:528
+#: ../exo-helper/exo-helper-chooser.c:541
 #: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr ""
@@ -805,9 +805,9 @@ msgstr ""
 
 #. add the "Help" button
 #: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:105
+#: ../exo-helper/exo-helper-chooser-dialog.c:106
 msgid "_Help"
-msgstr ""
+msgstr "Trợ giúp "
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:338
@@ -835,32 +835,32 @@ msgstr "Lưu \"%s\", thất bại."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
-msgstr ""
+msgstr "Đóng"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:101
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:1
 msgid "Preferred Applications"
 msgstr "Ứng dụng ưa thích"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:102
+#: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
 msgstr "Chọn ứng dụng mặc định cho nhiều dịch vụ"
 
 #. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:126
+#: ../exo-helper/exo-helper-chooser-dialog.c:127
 msgid "_Internet"
 msgstr "_Internet"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:139
+#: ../exo-helper/exo-helper-chooser-dialog.c:140
 #: ../exo-open/exo-web-browser.desktop.in.h:1
 msgid "Web Browser"
 msgstr "Trình duyệt"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:147
+#: ../exo-helper/exo-helper-chooser-dialog.c:148
 msgid ""
-"The preferred Web Browser will be used to open\n"
-"hyperlinks and display help contents."
-msgstr "Trình duyệt ưa thích sẽ được dùng để mở\nsiêu liên kết và hiển thị nội dung trợ giúp."
+"The preferred Web Browser will be used to open hyperlinks and display help "
+"contents."
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:171
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -869,36 +869,35 @@ msgstr "Trình đọc thư"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:179
 msgid ""
-"The preferred Mail Reader will be used to compose\n"
-"emails when you click on email addresses."
-msgstr "Trình đọc thư ưa thích sẽ được dùng để soạn thư điện tử\nkhi bạn nhấn vào địa chỉ thư điện tử."
+"The preferred Mail Reader will be used to compose emails when you click on "
+"email addresses."
+msgstr ""
 
 #. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:199
+#: ../exo-helper/exo-helper-chooser-dialog.c:198
 msgid "_Utilities"
 msgstr "T_iện ích"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:212
+#: ../exo-helper/exo-helper-chooser-dialog.c:211
 #: ../exo-open/exo-file-manager.desktop.in.h:1
 msgid "File Manager"
 msgstr "Trình quản lý tệp tin"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:220
+#: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
-"The preferred File Manager will be used to\n"
-"browse the contents of folders."
-msgstr "Trình quản lý tệp tin ưa thích sẽ được dùng để\nduyệt nội dung của các thư mục."
+"The preferred File Manager will be used to browse the contents of folders."
+msgstr ""
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:244
+#: ../exo-helper/exo-helper-chooser-dialog.c:242
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
 msgid "Terminal Emulator"
 msgstr "Trình giả lập dòng lệnh"
 
-#: ../exo-helper/exo-helper-chooser-dialog.c:252
+#: ../exo-helper/exo-helper-chooser-dialog.c:250
 msgid ""
-"The preferred Terminal Emulator will be used to\n"
-"run commands that require a CLI environment."
-msgstr "Trình giả lập dòng lệnh ưa thích sẽ được dùng để\nchạy các lệnh yêu cầu môi trường dòng lệnh."
+"The preferred Terminal Emulator will be used to run commands that require a "
+"CLI environment."
+msgstr ""
 
 #: ../exo-helper/exo-helper-chooser.c:145
 #: ../exo-helper/exo-helper-chooser.c:152
@@ -909,80 +908,80 @@ msgstr "Nhấn chuột trái để thay đổi ứng dụng được chọn."
 msgid "Application Chooser Button"
 msgstr "Nút lựa chọn ứng dụng"
 
-#: ../exo-helper/exo-helper-chooser.c:290
+#: ../exo-helper/exo-helper-chooser.c:303
 msgid "No application selected"
 msgstr "Không ứng dụng nào được chọn"
 
-#: ../exo-helper/exo-helper-chooser.c:306
+#: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
 msgstr "Đặt trình duyệt mặc định, thất bại"
 
-#: ../exo-helper/exo-helper-chooser.c:307
+#: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
 msgstr "Đặt trình đọc thư mặc định, thất bại"
 
-#: ../exo-helper/exo-helper-chooser.c:308
+#: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
 msgstr "Đặt trình quản lý tệp tin mặc định, thất bại"
 
-#: ../exo-helper/exo-helper-chooser.c:309
+#: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
 msgstr "Đặt trình giả lập dòng lệnh mặc định, thất bại"
 
 #. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:379
+#: ../exo-helper/exo-helper-chooser.c:392
 msgid "Select application"
 msgstr "Chọn ứng dụng"
 
-#: ../exo-helper/exo-helper-chooser.c:492
+#: ../exo-helper/exo-helper-chooser.c:505
 msgid "Choose a custom Web Browser"
 msgstr "Chọn một trình duyệt tùy thích"
 
-#: ../exo-helper/exo-helper-chooser.c:493
+#: ../exo-helper/exo-helper-chooser.c:506
 msgid "Choose a custom Mail Reader"
 msgstr "Chọn một trình đọc thư tùy thích"
 
-#: ../exo-helper/exo-helper-chooser.c:494
+#: ../exo-helper/exo-helper-chooser.c:507
 msgid "Choose a custom File Manager"
 msgstr "Chọn một trình duyệt tệp tin tùy thích"
 
-#: ../exo-helper/exo-helper-chooser.c:495
+#: ../exo-helper/exo-helper-chooser.c:508
 msgid "Choose a custom Terminal Emulator"
 msgstr "Chọn một trình giả lập dòng lệnh tùy thích"
 
-#: ../exo-helper/exo-helper-chooser.c:500
+#: ../exo-helper/exo-helper-chooser.c:513
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:501
+#: ../exo-helper/exo-helper-chooser.c:514
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:502
+#: ../exo-helper/exo-helper-chooser.c:515
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:503
+#: ../exo-helper/exo-helper-chooser.c:516
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:567
+#: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
 msgstr ""
 
-#: ../exo-helper/exo-helper-chooser.c:765
+#: ../exo-helper/exo-helper-chooser.c:789
 msgid "_Other..."
 msgstr "_Khác..."
 
-#: ../exo-helper/exo-helper-chooser.c:766
+#: ../exo-helper/exo-helper-chooser.c:790
 msgid "Use a custom application which is not included in the above list."
 msgstr "Sử dụng ứng dụng tùy chọn không được liệt kê trong danh sách trên."
 
@@ -1014,13 +1013,13 @@ msgid ""
 "Emulator now and click OK to proceed."
 msgstr "Hãy chọn trình giả lập dòng lệnh ưa thích ngay\nbây giờ và nhất OK để tiếp tục."
 
-#: ../exo-helper/exo-helper.c:389
+#: ../exo-helper/exo-helper.c:401
 #, c-format
 msgid "No command specified"
 msgstr ""
 
-#: ../exo-helper/exo-helper.c:707 ../exo-helper/exo-helper.c:745
-#: ../exo-helper/exo-helper.c:812 ../exo-helper/exo-helper.c:850
+#: ../exo-helper/exo-helper.c:719 ../exo-helper/exo-helper.c:757
+#: ../exo-helper/exo-helper.c:824 ../exo-helper/exo-helper.c:862
 #, c-format
 msgid "Failed to open %s for writing"
 msgstr "Mở %s để ghi, thất bại"
@@ -1058,7 +1057,7 @@ msgstr ""
 
 #: ../exo-helper/main.c:74
 msgid "SOCKET ID"
-msgstr ""
+msgstr "SOCKET ID"
 
 #: ../exo-helper/main.c:75
 msgid ""
@@ -1075,7 +1074,7 @@ msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
 msgstr ""
 
-#: ../exo-helper/main.c:105
+#: ../exo-helper/main.c:106
 msgid ""
 "The following TYPEs are supported for the --launch and --query commands:\n"
 "\n"
@@ -1085,17 +1084,17 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr ""
 
-#: ../exo-helper/main.c:115
+#: ../exo-helper/main.c:116
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr ""
+msgstr "Gõ \"%s --help\" để xem cách dùng"
 
-#: ../exo-helper/main.c:174 ../exo-helper/main.c:240
+#: ../exo-helper/main.c:175 ../exo-helper/main.c:241
 #, c-format
 msgid "Invalid helper type \"%s\""
 msgstr ""
 
-#: ../exo-helper/main.c:224
+#: ../exo-helper/main.c:225
 #, c-format
 msgid ""
 "%s (Xfce %s)\n"
@@ -1110,7 +1109,7 @@ msgid ""
 "Please report bugs to <%s>.\n"
 msgstr "%s (Xfce %s)\n\nBản quyền (c) 2003-2006\nos-cillation e.K. Mọi quyền đã được bảo lưu.\n\nĐược viết bởi Benedikt Meurer <benny@xfce.org>.\n\nTạo bằng Gtk+-%d.%d.%d, đang chạy Gtk+-%d.%d.%d.\n\nHãy thông báo lỗi tới <%s>.\n"
 
-#: ../exo-helper/main.c:250
+#: ../exo-helper/main.c:251
 #, c-format
 msgid "No helper defined for \"%s\"."
 msgstr ""
@@ -1250,6 +1249,10 @@ msgstr "Trình duyệt Opera"
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
 msgstr "Trình quản lý tệp tin PCMan"
+
+#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
+msgid "PCManFM-Qt File Manager"
+msgstr ""
 
 #: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
 msgid "QTerminal"
