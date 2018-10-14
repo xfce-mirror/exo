@@ -425,6 +425,7 @@ static void     exo_icon_view_search_move               (GtkWidget      *widget,
                                                          ExoIconView    *icon_view,
                                                          gboolean        move_up);
 static void     exo_icon_view_search_preedit_changed    (GtkEntry       *entry,
+                                                         gchar          *preedit,
                                                          ExoIconView    *icon_view);
 static gboolean exo_icon_view_search_start              (ExoIconView    *icon_view,
                                                          gboolean        keybinding);
@@ -9118,6 +9119,7 @@ exo_icon_view_search_move (GtkWidget   *widget,
 
 static void
 exo_icon_view_search_preedit_changed (GtkEntry     *entry,
+                                      gchar        *preedit,
                                       ExoIconView  *icon_view)
 {
   icon_view->priv->search_imcontext_changed = TRUE;
