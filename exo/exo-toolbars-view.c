@@ -53,9 +53,6 @@
 
 #define MIN_TOOLBAR_HEIGHT  20
 
-#define EXO_TOOLBARS_VIEW_GET_PRIVATE(obj)  (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-  EXO_TYPE_TOOLBARS_VIEW, ExoToolbarsViewPrivate))
-
 
 
 enum
@@ -187,7 +184,7 @@ static guint  toolbars_view_signals[LAST_SIGNAL];
 
 
 
-G_DEFINE_TYPE (ExoToolbarsView, exo_toolbars_view, GTK_TYPE_VBOX)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoToolbarsView, exo_toolbars_view, GTK_TYPE_VBOX)
 
 
 
@@ -198,8 +195,6 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
 
   /* initialize exo i18n support */
   _exo_i18n_init ();
-
-  g_type_class_add_private (klass, sizeof (ExoToolbarsViewPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_toolbars_view_finalize;
@@ -299,7 +294,7 @@ exo_toolbars_view_class_init (ExoToolbarsViewClass *klass)
 static void
 exo_toolbars_view_init (ExoToolbarsView *view)
 {
-  view->priv = EXO_TOOLBARS_VIEW_GET_PRIVATE (view);
+  view->priv = exo_toolbars_view_get_instance_private (view);
 }
 
 

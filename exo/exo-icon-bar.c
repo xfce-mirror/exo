@@ -85,8 +85,6 @@
 #define MINIMUM_ICON_ITEM_WIDTH 32
 #define ICON_TEXT_PADDING 1
 
-#define EXO_ICON_BAR_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_ICON_BAR, ExoIconBarPrivate))
-
 #define EXO_ICON_BAR_VALID_MODEL_AND_COLUMNS(obj) ((obj)->priv->model != NULL && \
                                                    (obj)->priv->pixbuf_column != -1 && \
                                                    (obj)->priv->text_column != -1)
@@ -230,7 +228,7 @@ static guint icon_bar_signals[LAST_SIGNAL];
 
 
 
-G_DEFINE_TYPE (ExoIconBar, exo_icon_bar, GTK_TYPE_CONTAINER)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoIconBar, exo_icon_bar, GTK_TYPE_CONTAINER)
 
 
 
@@ -240,8 +238,6 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
   GtkObjectClass *gtkobject_class;
   GtkWidgetClass *gtkwidget_class;
   GObjectClass   *gobject_class;
-
-  g_type_class_add_private (klass, sizeof (ExoIconBarPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_icon_bar_finalize;
@@ -425,7 +421,7 @@ exo_icon_bar_class_init (ExoIconBarClass *klass)
 static void
 exo_icon_bar_init (ExoIconBar *icon_bar)
 {
-  icon_bar->priv = EXO_ICON_BAR_GET_PRIVATE (icon_bar);
+  icon_bar->priv = exo_icon_bar_get_instance_private (icon_bar);
 
   icon_bar->priv->orientation = GTK_ORIENTATION_VERTICAL;
   icon_bar->priv->pixbuf_column = -1;

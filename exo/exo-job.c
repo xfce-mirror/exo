@@ -57,11 +57,6 @@
 
 
 
-#define EXO_JOB_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    EXO_TYPE_JOB, ExoJobPrivate))
-
-
-
 /* Signal identifiers */
 enum
 {
@@ -109,7 +104,7 @@ static guint job_signals[LAST_SIGNAL];
 
 
 
-G_DEFINE_ABSTRACT_TYPE (ExoJob, exo_job, G_TYPE_OBJECT)
+G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (ExoJob, exo_job, G_TYPE_OBJECT)
 
 
 
@@ -117,8 +112,6 @@ static void
 exo_job_class_init (ExoJobClass *klass)
 {
   GObjectClass *gobject_class;
-
-  g_type_class_add_private (klass, sizeof (ExoJobPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_job_finalize;
@@ -217,7 +210,7 @@ exo_job_class_init (ExoJobClass *klass)
 static void
 exo_job_init (ExoJob *job)
 {
-  job->priv = EXO_JOB_GET_PRIVATE (job);
+  job->priv = exo_job_get_instance_private (job);
   job->priv->cancellable = g_cancellable_new ();
   job->priv->running = FALSE;
   job->priv->scheduler_job = NULL;

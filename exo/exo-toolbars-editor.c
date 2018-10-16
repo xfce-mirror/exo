@@ -57,11 +57,6 @@
 
 
 
-#define EXO_TOOLBARS_EDITOR_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    EXO_TYPE_TOOLBARS_EDITOR, ExoToolbarsEditorPrivate))
-
-
-
 enum
 {
   PROP_0,
@@ -115,7 +110,7 @@ static const GtkTargetEntry targets[] =
 
 
 
-G_DEFINE_TYPE (ExoToolbarsEditor, exo_toolbars_editor, GTK_TYPE_VBOX)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoToolbarsEditor, exo_toolbars_editor, GTK_TYPE_VBOX)
 
 
 
@@ -123,8 +118,6 @@ static void
 exo_toolbars_editor_class_init (ExoToolbarsEditorClass *klass)
 {
   GObjectClass *gobject_class;
-
-  g_type_class_add_private (klass, sizeof (ExoToolbarsEditorPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_toolbars_editor_finalize;
@@ -180,7 +173,7 @@ exo_toolbars_editor_init (ExoToolbarsEditor *editor)
   GtkWidget *image;
   GtkWidget *label;
 
-  editor->priv = EXO_TOOLBARS_EDITOR_GET_PRIVATE (editor);
+  editor->priv = exo_toolbars_editor_get_instance_private (editor);
 
   g_object_set (G_OBJECT (editor),
                 "border-width", 12,

@@ -51,11 +51,6 @@
 
 
 
-#define EXO_TOOLBARS_MODEL_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    EXO_TYPE_TOOLBARS_MODEL, ExoToolbarsModelPrivate))
-
-
-
 typedef struct _ExoToolbarsToolbar ExoToolbarsToolbar;
 typedef struct _ExoToolbarsItem    ExoToolbarsItem;
 typedef struct _UiParser           UiParser;
@@ -156,7 +151,7 @@ static guint toolbars_model_signals[LAST_SIGNAL];
 
 
 
-G_DEFINE_TYPE (ExoToolbarsModel, exo_toolbars_model, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoToolbarsModel, exo_toolbars_model, G_TYPE_OBJECT)
 
 
 
@@ -178,8 +173,6 @@ static void
 exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 {
   GObjectClass *gobject_class;
-
-  g_type_class_add_private (klass, sizeof (ExoToolbarsModelPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_toolbars_model_finalize;
@@ -343,7 +336,7 @@ exo_toolbars_model_class_init (ExoToolbarsModelClass *klass)
 static void
 exo_toolbars_model_init (ExoToolbarsModel *model)
 {
-  model->priv = EXO_TOOLBARS_MODEL_GET_PRIVATE (model);
+  model->priv = exo_toolbars_model_get_instance_private (model);
 }
 
 

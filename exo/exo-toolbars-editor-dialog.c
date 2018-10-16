@@ -52,11 +52,6 @@
 
 
 
-#define EXO_TOOLBARS_EDITOR_DIALOG_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    EXO_TYPE_TOOLBARS_EDITOR_DIALOG, ExoToolbarsEditorDialogPrivate))
-
-
-
 static void exo_toolbars_editor_dialog_add_toolbar  (ExoToolbarsEditorDialog      *dialog);
 
 
@@ -68,14 +63,13 @@ struct _ExoToolbarsEditorDialogPrivate
 
 
 
-G_DEFINE_TYPE (ExoToolbarsEditorDialog, exo_toolbars_editor_dialog, GTK_TYPE_DIALOG)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoToolbarsEditorDialog, exo_toolbars_editor_dialog, GTK_TYPE_DIALOG)
 
 
 
 static void
 exo_toolbars_editor_dialog_class_init (ExoToolbarsEditorDialogClass *klass)
 {
-  g_type_class_add_private (klass, sizeof (ExoToolbarsEditorDialogPrivate));
 }
 
 
@@ -89,7 +83,7 @@ exo_toolbars_editor_dialog_init (ExoToolbarsEditorDialog *dialog)
   GtkWidget *image;
   GtkWidget *label;
 
-  dialog->priv = EXO_TOOLBARS_EDITOR_DIALOG_GET_PRIVATE (dialog);
+  dialog->priv = exo_toolbars_editor_dialog_get_instance_private (dialog);
 
   gtk_window_set_default_size (GTK_WINDOW (dialog), -1, 300);
 

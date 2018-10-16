@@ -727,7 +727,9 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   GObjectClass      *gobject_class;
 
   /* add our private data to the type's instances */
+  G_GNUC_BEGIN_IGNORE_DEPRECATIONS /* GObject 2.58 */
   g_type_class_add_private (klass, sizeof (ExoIconViewPrivate));
+  G_GNUC_END_IGNORE_DEPRECATIONS
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->dispose = exo_icon_view_dispose;

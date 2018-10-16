@@ -48,9 +48,6 @@
  * property is %TRUE.
  **/
 
-#define EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT, ExoCellRendererEllipsizedTextPrivate))
-
 /* Property identifiers */
 enum
 {
@@ -92,7 +89,7 @@ struct _ExoCellRendererEllipsizedTextPrivate
 
 
 
-G_DEFINE_TYPE (ExoCellRendererEllipsizedText, exo_cell_renderer_ellipsized_text, GTK_TYPE_CELL_RENDERER_TEXT)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoCellRendererEllipsizedText, exo_cell_renderer_ellipsized_text, GTK_TYPE_CELL_RENDERER_TEXT)
 
 
 
@@ -101,9 +98,6 @@ exo_cell_renderer_ellipsized_text_class_init (ExoCellRendererEllipsizedTextClass
 {
   GtkCellRendererClass *gtkcell_renderer_class;
   GObjectClass         *gobject_class;
-
-  /* add our private data to the type's instances */
-  g_type_class_add_private (klass, sizeof (ExoCellRendererEllipsizedTextPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->get_property = exo_cell_renderer_ellipsized_text_get_property;
@@ -149,7 +143,7 @@ exo_cell_renderer_ellipsized_text_get_property (GObject    *object,
                                                 GValue     *value,
                                                 GParamSpec *pspec)
 {
-  ExoCellRendererEllipsizedTextPrivate *priv = EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_PRIVATE (object);
+  ExoCellRendererEllipsizedTextPrivate *priv = exo_cell_renderer_ellipsized_text_get_instance_private (EXO_CELL_RENDERER_ELLIPSIZED_TEXT (object));
 
   switch (prop_id)
     {
@@ -171,7 +165,7 @@ exo_cell_renderer_ellipsized_text_set_property (GObject      *object,
                                                 const GValue *value,
                                                 GParamSpec   *pspec)
 {
-  ExoCellRendererEllipsizedTextPrivate *priv = EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_PRIVATE (object);
+  ExoCellRendererEllipsizedTextPrivate *priv = exo_cell_renderer_ellipsized_text_get_instance_private (EXO_CELL_RENDERER_ELLIPSIZED_TEXT (object));
 
   switch (prop_id)
     {
@@ -196,7 +190,7 @@ exo_cell_renderer_ellipsized_text_get_size (GtkCellRenderer *renderer,
                                             gint            *width,
                                             gint            *height)
 {
-  ExoCellRendererEllipsizedTextPrivate *priv = EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_PRIVATE (renderer);
+  ExoCellRendererEllipsizedTextPrivate *priv = exo_cell_renderer_ellipsized_text_get_instance_private (EXO_CELL_RENDERER_ELLIPSIZED_TEXT (renderer));
   gint                                  focus_line_width;
   gint                                  focus_padding;
   gint                                  text_height;
@@ -257,7 +251,7 @@ exo_cell_renderer_ellipsized_text_render (GtkCellRenderer     *renderer,
                                           GdkRectangle        *expose_area,
                                           GtkCellRendererState flags)
 {
-  ExoCellRendererEllipsizedTextPrivate *priv = EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_PRIVATE (renderer);
+  ExoCellRendererEllipsizedTextPrivate *priv = exo_cell_renderer_ellipsized_text_get_instance_private (EXO_CELL_RENDERER_ELLIPSIZED_TEXT (renderer));
   GdkRectangle                          text_area;
   GtkStateType                          state;
   cairo_t                              *cr;

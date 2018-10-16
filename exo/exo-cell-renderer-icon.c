@@ -50,9 +50,6 @@
  * property is set.
  **/
 
-#define EXO_CELL_RENDERER_ICON_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    EXO_TYPE_CELL_RENDERER_ICON, ExoCellRendererIconPrivate))
-
 /* HACK: fix dead API via #define */
 #if GTK_CHECK_VERSION (3, 0, 0)
 # define gtk_icon_info_free(info) g_object_unref (info)
@@ -120,7 +117,7 @@ struct _ExoCellRendererIconPrivate
 
 
 
-G_DEFINE_TYPE (ExoCellRendererIcon, exo_cell_renderer_icon, GTK_TYPE_CELL_RENDERER)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoCellRendererIcon, exo_cell_renderer_icon, GTK_TYPE_CELL_RENDERER)
 
 
 
@@ -129,9 +126,6 @@ exo_cell_renderer_icon_class_init (ExoCellRendererIconClass *klass)
 {
   GtkCellRendererClass *gtkcell_renderer_class;
   GObjectClass         *gobject_class;
-
-  /* add our private data to the type's instances */
-  g_type_class_add_private (klass, sizeof (ExoCellRendererIconPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_cell_renderer_icon_finalize;
@@ -238,7 +232,7 @@ exo_cell_renderer_icon_init (ExoCellRendererIcon *icon_undocked)
 static void
 exo_cell_renderer_icon_finalize (GObject *object)
 {
-  const ExoCellRendererIconPrivate *priv = EXO_CELL_RENDERER_ICON_GET_PRIVATE (object);
+  const ExoCellRendererIconPrivate *priv = exo_cell_renderer_icon_get_instance_private (EXO_CELL_RENDERER_ICON (object));
 
   /* free the icon if not static */
   if (!priv->icon_static)
@@ -259,7 +253,7 @@ exo_cell_renderer_icon_get_property (GObject    *object,
                                      GValue     *value,
                                      GParamSpec *pspec)
 {
-  const ExoCellRendererIconPrivate *priv = EXO_CELL_RENDERER_ICON_GET_PRIVATE (object);
+  const ExoCellRendererIconPrivate *priv = exo_cell_renderer_icon_get_instance_private (EXO_CELL_RENDERER_ICON (object));
 
   switch (prop_id)
     {
@@ -293,7 +287,7 @@ exo_cell_renderer_icon_set_property (GObject      *object,
                                      const GValue *value,
                                      GParamSpec   *pspec)
 {
-  ExoCellRendererIconPrivate *priv = EXO_CELL_RENDERER_ICON_GET_PRIVATE (object);
+  ExoCellRendererIconPrivate *priv = exo_cell_renderer_icon_get_instance_private (EXO_CELL_RENDERER_ICON (object));
   const gchar                *icon;
 
   switch (prop_id)
@@ -344,7 +338,7 @@ exo_cell_renderer_icon_get_size (GtkCellRenderer *renderer,
                                  gint            *width,
                                  gint            *height)
 {
-  const ExoCellRendererIconPrivate *priv = EXO_CELL_RENDERER_ICON_GET_PRIVATE (renderer);
+  const ExoCellRendererIconPrivate *priv = exo_cell_renderer_icon_get_instance_private (EXO_CELL_RENDERER_ICON (renderer));
   gfloat xalign, yalign;
   gint   xpad, ypad;
 
@@ -411,7 +405,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   GtkIconSource                    *icon_source;
   GtkStateType                      state;
 #endif
-  const ExoCellRendererIconPrivate *priv = EXO_CELL_RENDERER_ICON_GET_PRIVATE (renderer);
+  const ExoCellRendererIconPrivate *priv = exo_cell_renderer_icon_get_instance_private (EXO_CELL_RENDERER_ICON (renderer));
   GtkIconTheme                     *icon_theme;
   GdkRectangle                      icon_area;
   GdkRectangle                      draw_area;

@@ -130,11 +130,6 @@
 
 
 
-#define EXO_XSESSION_CLIENT_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    EXO_TYPE_XSESSION_CLIENT, ExoXsessionClientPrivate))
-
-
-
 enum
 {
   PROP_0,
@@ -182,7 +177,7 @@ static guint client_signals[LAST_SIGNAL];
 
 
 
-G_DEFINE_TYPE (ExoXsessionClient, exo_xsession_client, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoXsessionClient, exo_xsession_client, G_TYPE_OBJECT)
 
 
 
@@ -193,8 +188,6 @@ exo_xsession_client_class_init (ExoXsessionClientClass *klass)
 
   /* initialize the libexo i18n support */
   _exo_i18n_init ();
-
-  g_type_class_add_private (klass, sizeof (ExoXsessionClientPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->dispose = exo_xsession_client_dispose;
@@ -246,7 +239,7 @@ exo_xsession_client_class_init (ExoXsessionClientClass *klass)
 static void
 exo_xsession_client_init (ExoXsessionClient *client)
 {
-  client->priv = EXO_XSESSION_CLIENT_GET_PRIVATE (client);
+  client->priv = exo_xsession_client_get_instance_private (client);
 }
 
 

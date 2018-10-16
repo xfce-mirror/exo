@@ -43,11 +43,6 @@
 
 
 
-#define EXO_WRAP_TABLE_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    EXO_TYPE_WRAP_TABLE, ExoWrapTablePrivate))
-
-
-
 /* Property identifiers */
 enum
 {
@@ -105,7 +100,7 @@ struct _ExoWrapTablePrivate
 
 
 
-G_DEFINE_TYPE (ExoWrapTable, exo_wrap_table, GTK_TYPE_CONTAINER)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoWrapTable, exo_wrap_table, GTK_TYPE_CONTAINER)
 
 
 
@@ -115,9 +110,6 @@ exo_wrap_table_class_init (ExoWrapTableClass *klass)
   GtkContainerClass *gtkcontainer_class;
   GtkWidgetClass    *gtkwidget_class;
   GObjectClass      *gobject_class;
-
-  /* add our private data to the class */
-  g_type_class_add_private (klass, sizeof (ExoWrapTablePrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->get_property = exo_wrap_table_get_property;
@@ -187,7 +179,7 @@ static void
 exo_wrap_table_init (ExoWrapTable *table)
 {
   /* grab a pointer on the private data */
-  table->priv = EXO_WRAP_TABLE_GET_PRIVATE (table);
+  table->priv = exo_wrap_table_get_instance_private (table);
 
   /* we don't provide our own window */
   gtk_widget_set_has_window (GTK_WIDGET (table), FALSE);

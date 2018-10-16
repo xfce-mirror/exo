@@ -55,9 +55,6 @@
 
 # endif
 
-#define EXO_TREE_VIEW_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
-    EXO_TYPE_TREE_VIEW, ExoTreeViewPrivate))
-
 
 
 /* Property identifiers */
@@ -120,7 +117,7 @@ struct _ExoTreeViewPrivate
 
 
 
-G_DEFINE_TYPE (ExoTreeView, exo_tree_view, GTK_TYPE_TREE_VIEW)
+G_DEFINE_TYPE_WITH_PRIVATE (ExoTreeView, exo_tree_view, GTK_TYPE_TREE_VIEW)
 
 
 
@@ -130,9 +127,6 @@ exo_tree_view_class_init (ExoTreeViewClass *klass)
   GtkTreeViewClass *gtktree_view_class;
   GtkWidgetClass   *gtkwidget_class;
   GObjectClass     *gobject_class;
-
-  /* add our private data to the class */
-  g_type_class_add_private (klass, sizeof (ExoTreeViewPrivate));
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_tree_view_finalize;
@@ -192,7 +186,7 @@ static void
 exo_tree_view_init (ExoTreeView *tree_view)
 {
   /* grab a pointer on the private data */
-  tree_view->priv = EXO_TREE_VIEW_GET_PRIVATE (tree_view);
+  tree_view->priv = exo_tree_view_get_instance_private (tree_view);
   tree_view->priv->single_click_timeout_id = -1;
 }
 
