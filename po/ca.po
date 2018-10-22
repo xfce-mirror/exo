@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-02 00:30+0200\n"
-"PO-Revision-Date: 2018-10-22 11:17+0000\n"
+"PO-Revision-Date: 2018-10-22 19:47+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/exo/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -868,13 +868,13 @@ msgstr "El navegador web preferit que s'utilitzarà per obrir els hiperenllaços
 #: ../exo-helper/exo-helper-chooser-dialog.c:171
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
 msgid "Mail Reader"
-msgstr "Client de correu electrònic"
+msgstr "Client de correu"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:179
 msgid ""
 "The preferred Mail Reader will be used to compose emails when you click on "
 "email addresses."
-msgstr "El client de correu electrònic preferit que s'utilitzarà per redactar correus quan feu clic a una adreça de correu electrònic."
+msgstr "El client de correu preferit que s'utilitzarà per redactar correus quan feu clic a una adreça de correu electrònic."
 
 #. Utilities
 #: ../exo-helper/exo-helper-chooser-dialog.c:198
@@ -921,7 +921,7 @@ msgstr "Ha fallat l'establiment del navegador web predeterminat"
 
 #: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
-msgstr "Ha fallat l'establiment del client de correu electrònic predeterminat"
+msgstr "Ha fallat l'establiment del client de correu predeterminat"
 
 #: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
@@ -942,7 +942,7 @@ msgstr "Escolliu un navegador web"
 
 #: ../exo-helper/exo-helper-chooser.c:506
 msgid "Choose a custom Mail Reader"
-msgstr "Escolliu un client de correu electrònic personalitzat"
+msgstr "Escolliu un client de correu personalitzat"
 
 #: ../exo-helper/exo-helper-chooser.c:507
 msgid "Choose a custom File Manager"
@@ -956,25 +956,25 @@ msgstr "Escolliu un emulador de terminal"
 msgid ""
 "Specify the application you want to use\n"
 "as default Web Browser for Xfce:"
-msgstr "Especifiqueu l'aplicació que voleu utilitzar\ncom a navegador web predeterminat per a Xfce:"
+msgstr "Especifiqueu l'aplicació que voleu utilitzar com a\nnavegador web predeterminat per a Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:514
 msgid ""
 "Specify the application you want to use\n"
 "as default Mail Reader for Xfce:"
-msgstr "Especifiqueu l'aplicació que voleu utilitzar com a\nclient de correu electrònic predeterminat per a Xfce:"
+msgstr "Especifiqueu l'aplicació que voleu utilitzar com a\nclient de correu predeterminat per a Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:515
 msgid ""
 "Specify the application you want to use\n"
 "as default File Manager for Xfce:"
-msgstr "Especifiqueu l'aplicació que voleu utilitzar\ncom a gestor de fitxers predeterminat per a Xfce:"
+msgstr "Especifiqueu l'aplicació que voleu utilitzar com a\ngestor de fitxers predeterminat per a Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:516
 msgid ""
 "Specify the application you want to use\n"
 "as default Terminal Emulator for Xfce:"
-msgstr "Especifiqueu l'aplicació que voleu utilitzar\ncom a emulador de terminal predeterminat per a Xfce:"
+msgstr "Especifiqueu l'aplicació que voleu utilitzar com a\nemulador de terminal predeterminat per a Xfce:"
 
 #: ../exo-helper/exo-helper-chooser.c:580
 msgid "Browse the file system to choose a custom command."
@@ -1002,7 +1002,7 @@ msgstr "Trieu el navegador web preferit\ni feu clic «D'acord» per continuar."
 msgid ""
 "Please choose your preferred Mail Reader\n"
 "now and click OK to proceed."
-msgstr "Trieu ara el client de correu electrònic preferit i feu\nclic a «D'acord» per continuar."
+msgstr "Trieu ara el client de correu preferit i feu\nclic a «D'acord» per continuar."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:260
 msgid ""
@@ -1030,7 +1030,7 @@ msgstr "Ha fallat l'obriment de %s per a l'escriptura"
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid ""
 "Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Aplicacions preferides (navegador web, client de correu electrònic i emulador de terminal)"
+msgstr "Aplicacions preferides (navegador web, client de correu i emulador de terminal)"
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
@@ -1038,7 +1038,7 @@ msgstr "Ha fallat l'execució del navegador web predeterminat"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
-msgstr "Ha fallat l'execució del client de correu electrònic predeterminat"
+msgstr "Ha fallat l'execució del client de correu predeterminat"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
@@ -1085,7 +1085,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "S'admeten els següents TIPUS per a les ordres --launch i --query:\n\n  WebBrowser       - El navegador web preferit.\n  MailReader       - El client de correu electrònic preferit.\n  FileManager      - El gestor de fitxers preferit.\n  TerminalEmulator - L'emulador de terminal preferit."
+msgstr "S'admeten els següents TIPUS per a les ordres --launch i --query:\n\n  WebBrowser       - El navegador web preferit.\n  MailReader       - El client de correu preferit.\n  FileManager      - El gestor de fitxers preferit.\n  TerminalEmulator - L'emulador de terminal preferit."
 
 #: ../exo-helper/main.c:116
 #, c-format
@@ -1372,7 +1372,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - El navegador web preferit.\n  MailReader       - El client de correu electrònic preferit.\n  FileManager      - El gestor de fitxers preferit.\n  TerminalEmulator - L'emulador de terminal preferit."
+msgstr "  WebBrowser       - El navegador web preferit.\n  MailReader       - El client de correu preferit.\n  FileManager      - El gestor de fitxers preferit.\n  TerminalEmulator - L'emulador de terminal preferit."
 
 #: ../exo-open/main.c:133
 msgid ""
