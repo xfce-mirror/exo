@@ -10,15 +10,15 @@
 # Igor <f2404@yandex.ru>, 2016-2018
 # Maxim Zenin <webmechanics@gmail.com>, 2006
 # NIkitaBelobrov <qvzqvz@gmail.com>, 2008
-# Sergey Alyoshin <alyoshin.s@gmail.com>, 2015-2016
+# Sergey Alyoshin <alyoshin.s@gmail.com>, 2015-2016,2018
 # AlexanderFilev, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-02 00:30+0200\n"
-"PO-Revision-Date: 2018-09-14 00:27+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2018-12-02 10:38+0000\n"
+"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/exo/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -177,7 +177,7 @@ msgstr "Эмблемы"
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:117
 msgid "Emoticons"
-msgstr "Смайлики"
+msgstr "Эмотиконы"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
 #: ../exo/exo-icon-chooser-dialog.c:119
@@ -197,7 +197,7 @@ msgstr "Значки статуса"
 #. EXO_ICON_CHOOSER_CONTEXT_STOCK
 #: ../exo/exo-icon-chooser-dialog.c:125
 msgid "Stock Icons"
-msgstr "Стоковые значки"
+msgstr "Стандартные значки"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
@@ -501,17 +501,17 @@ msgstr "  -V, --version     Показать информацию о верси�
 #: ../exo-csource/main.c:308
 #, c-format
 msgid "  --extern          Generate extern symbols\n"
-msgstr "  --extern          Генерировать extern символы\n"
+msgstr "  --extern          Создать внешне символы\n"
 
 #: ../exo-csource/main.c:309
 #, c-format
 msgid "  --static          Generate static symbols\n"
-msgstr "  --static          Генерировать статические символы\n"
+msgstr "  --static          Создать статические символы\n"
 
 #: ../exo-csource/main.c:310
 #, c-format
 msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=identifier Имя переменной или макроса С\n"
+msgstr "  --name=identifier Имя переменной или макроса C\n"
 
 #: ../exo-csource/main.c:311
 #, c-format
@@ -531,7 +531,7 @@ msgstr "  --strip-content   Удалить содержимое узлов из 
 #: ../exo-csource/main.c:314
 #, c-format
 msgid "  --output=filename Write generated csource to specified file\n"
-msgstr "  --output=filename Записать сгенерированный csource в указанный файл\n"
+msgstr "  --output=filename Записать созданный код C в указанный файл\n"
 
 #: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
 #: ../exo-open/main.c:509
@@ -650,7 +650,7 @@ msgstr "Рабочий _каталог:"
 #. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:392
 msgid "_Icon:"
-msgstr "_Значок:"
+msgstr "З_начок:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
@@ -755,11 +755,11 @@ msgstr "Задать комментарий создаваемого desktop-ф�
 
 #: ../exo-desktop-item-edit/main.c:84
 msgid "Preset command when creating a launcher"
-msgstr "Задать команду создаваемого desktop-файла"
+msgstr "Задать команду для создаваемого значка запуска"
 
 #: ../exo-desktop-item-edit/main.c:85
 msgid "Preset URL when creating a link"
-msgstr "Задать URL-адрес создаваемого desktop-файла"
+msgstr "Задать URL-адрес создаваемой ссылки"
 
 #: ../exo-desktop-item-edit/main.c:86
 msgid "Preset icon when creating a desktop file"
@@ -868,7 +868,7 @@ msgstr "Веб-браузер"
 msgid ""
 "The preferred Web Browser will be used to open hyperlinks and display help "
 "contents."
-msgstr "Предпочитаемый веб-браузер будет использоваться для открытия гиперссылок и просмотра справки."
+msgstr "Предпочитаемый веб-браузер будет использован для открытия гиперссылок и просмотра справки."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:171
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -879,7 +879,7 @@ msgstr "Почтовая программа"
 msgid ""
 "The preferred Mail Reader will be used to compose emails when you click on "
 "email addresses."
-msgstr "Предпочитаемая почтовая программа будет использоваться для составления писем при щелчке по адресу электронной почты."
+msgstr "Предпочитаемая почтовая программа будет использована для составления писем при щелчке по адресу электронной почты."
 
 #. Utilities
 #: ../exo-helper/exo-helper-chooser-dialog.c:198
@@ -894,7 +894,7 @@ msgstr "Файловый менеджер"
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
 "The preferred File Manager will be used to browse the contents of folders."
-msgstr "Предпочитаемый файловый менеджер будет использоваться для просмотра содержимого каталогов."
+msgstr "Предпочитаемый файловый менеджер будет использован для просмотра содержимого каталогов."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:242
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -905,7 +905,7 @@ msgstr "Эмулятор терминала"
 msgid ""
 "The preferred Terminal Emulator will be used to run commands that require a "
 "CLI environment."
-msgstr "Предпочитаемый эмулятор терминала будет использоваться для запуска команд, которым требуется окружение командной строки."
+msgstr "Предпочитаемый эмулятор терминала будет использован для запуска команд, которым требуется окружение командной строки."
 
 #: ../exo-helper/exo-helper-chooser.c:145
 #: ../exo-helper/exo-helper-chooser.c:152
@@ -1080,7 +1080,7 @@ msgstr "ТИП [ПАРАМЕТР]"
 #: ../exo-helper/main.c:76
 msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
-msgstr "Запросить вспомогательное предпочитаемое приложение выбранного ТИПа, где ТИП может принимать одно из следующих значений."
+msgstr "Запросить предпочитаемое вспомогательное приложение указанного ТИПа, где ТИП может принимать одно из следующих значений."
 
 #: ../exo-helper/main.c:106
 msgid ""
