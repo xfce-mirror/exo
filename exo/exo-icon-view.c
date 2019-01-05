@@ -361,8 +361,8 @@ static void                 exo_icon_view_set_pixbuf_column              (ExoIco
 static void                 exo_icon_view_set_icon_column                (ExoIconView            *icon_view,
                                                                           gint                    column);
 
-static void                 exo_icon_view_get_screen_dimensions          (gint                   *width,
-                                                                          gint                   *height);
+static void                 exo_icon_view_get_work_area_dimensions       (GdkWindow              *window,
+                                                                          GdkRectangle           *dimensions);
 
 /* Source side drag signals */
 static void exo_icon_view_drag_begin       (GtkWidget        *widget,
@@ -424,9 +424,6 @@ static gboolean exo_icon_view_search_iter               (ExoIconView    *icon_vi
 static void     exo_icon_view_search_move               (GtkWidget      *widget,
                                                          ExoIconView    *icon_view,
                                                          gboolean        move_up);
-static void     exo_icon_view_search_preedit_changed    (GtkEntry       *entry,
-                                                         gchar          *preedit,
-                                                         ExoIconView    *icon_view);
 static gboolean exo_icon_view_search_start              (ExoIconView    *icon_view,
                                                          gboolean        keybinding);
 static gboolean exo_icon_view_search_equal_func         (GtkTreeModel   *model,
@@ -607,7 +604,6 @@ struct _ExoIconViewPrivate
 
   /* Interactive search support */
   guint                         enable_search : 1;
-  guint                         search_imcontext_changed : 1;
   gint                          search_column;
   gint                          search_selected_iter;
   guint                         search_timeout_id;
@@ -673,50 +669,37 @@ exo_icon_view_get_accessible (GtkWidget *widget)
 }
 
 static void
-exo_icon_view_get_screen_dimensions (gint *width, gint *height)
+exo_icon_view_get_work_area_dimensions (GdkWindow *window, GdkRectangle *dimensions)
 {
-#if GTK_CHECK_VERSION(3, 22, 0)
   GdkDisplay   *display;
-  GdkMonitor   *monitor;
   GdkRectangle  geometry;
 
-  display = gdk_display_get_default ();
-  monitor = gdk_display_get_primary_monitor (display);
-  gdk_monitor_get_geometry (monitor, &geometry);
+#if GTK_CHECK_VERSION(3, 22, 0)
+  GdkMonitor   *monitor;
 
-  if (width != NULL)
-    *width = geometry.width;
-  if (height != NULL)
-    *height = geometry.height;
+  display = gdk_window_get_display (window);
+  monitor = gdk_display_get_monitor_at_window (display, window);
+  gdk_monitor_get_workarea (monitor, &geometry);
 #else
-  if (width != NULL)
-    *width = gdk_screen_width ();
-  if (height != NULL)
-    *height = gdk_screen_height ();
+  GdkScreen    *screen;
+  gint          num_monitor_at_window;
+
+  display = gdk_window_get_display (window);
+  screen = gdk_display_get_default_screen (display);
+  num_monitor_at_window = gdk_screen_get_monitor_at_window (screen, window);
+  gdk_screen_get_monitor_geometry (screen, num_monitor_at_window, &geometry);
 #endif
+
+  if (dimensions != NULL)
+    {
+       dimensions->x = geometry.x;
+       dimensions->y = geometry.y;
+       dimensions->width = geometry.width;
+       dimensions->height = geometry.height;
+    }
 }
 
-static gint
-exo_icon_view_get_screen_width (void)
-{
-    gint width;
-    gint height;
 
-    exo_icon_view_get_screen_dimensions (&width, &height);
-
-    return width;
-}
-
-static gint
-exo_icon_view_get_screen_height (void)
-{
-    gint width;
-    gint height;
-
-    exo_icon_view_get_screen_dimensions (&width, &height);
-
-    return height;
-}
 
 static void
 exo_icon_view_class_init (ExoIconViewClass *klass)
@@ -2924,8 +2907,6 @@ exo_icon_view_key_press_event (GtkWidget   *widget,
   GdkEvent    *new_event;
   gboolean     retval;
   gulong       popup_menu_id;
-  gchar       *new_text;
-  gchar       *old_text;
 
   /* let the parent class handle the key bindings and stuff */
   if ((*GTK_WIDGET_CLASS (exo_icon_view_parent_class)->key_press_event) (widget, event))
@@ -2937,60 +2918,45 @@ exo_icon_view_key_press_event (GtkWidget   *widget,
 
   exo_icon_view_search_ensure_directory (icon_view);
 
-  /* make sure the search window is realized */
-  gtk_widget_realize (icon_view->priv->search_window);
-
-  /* make a copy of the current text */
-  old_text = gtk_editable_get_chars (GTK_EDITABLE (icon_view->priv->search_entry), 0, -1);
-
-  /* make sure we don't accidently popup the context menu */
-  popup_menu_id = g_signal_connect (G_OBJECT (icon_view->priv->search_entry), "popup-menu", G_CALLBACK (gtk_true), NULL);
-
-  /* move the search window offscreen */
-  gtk_window_move (GTK_WINDOW (icon_view->priv->search_window),
-                   exo_icon_view_get_screen_width () + 1,
-                   exo_icon_view_get_screen_height () + 1);
-  gtk_widget_show (icon_view->priv->search_window);
-
-  /* allocate a new event to forward */
-  new_event = gdk_event_copy ((GdkEvent *) event);
-  g_object_unref (G_OBJECT (new_event->key.window));
-  new_event->key.window = GDK_WINDOW (g_object_ref (G_OBJECT (gtk_widget_get_window (icon_view->priv->search_entry))));
-
-  /* send the event to the search entry. If the "preedit-changed" signal is
-   * emitted during this event, priv->search_imcontext_changed will be set.
-   */
-  icon_view->priv->search_imcontext_changed = FALSE;
-  retval = gtk_widget_event (icon_view->priv->search_entry, new_event);
-  gtk_widget_hide (icon_view->priv->search_window);
-
-  /* release the temporary event */
-  gdk_event_free (new_event);
-
-  /* disconnect the popup menu prevention */
-  g_signal_handler_disconnect (G_OBJECT (icon_view->priv->search_entry), popup_menu_id);
-
-  /* we check to make sure that the entry tried to handle the,
-   * and that the text has actually changed.
-   */
-  new_text = gtk_editable_get_chars (GTK_EDITABLE (icon_view->priv->search_entry), 0, -1);
-  retval = retval && (strcmp (new_text, old_text) != 0);
-  g_free (old_text);
-  g_free (new_text);
-
-  /* if we're in a preedit or the text was modified */
-  if (icon_view->priv->search_imcontext_changed || retval)
+  if (!gtk_widget_get_visible (icon_view->priv->search_window))
     {
-      if (exo_icon_view_search_start (icon_view, FALSE))
+      /* check if keypress results in a text change in search_entry; prevents showing the search
+       * window when only modifier keys (shift, control, ...) are pressed */
+      retval = gtk_entry_im_context_filter_keypress (GTK_ENTRY (icon_view->priv->search_entry), event);
+
+      if (retval)
         {
-          gtk_widget_grab_focus (GTK_WIDGET (icon_view));
-          return TRUE;
+          if (exo_icon_view_search_start (icon_view, FALSE))
+            {
+              gtk_widget_grab_focus (GTK_WIDGET (icon_view));
+              return TRUE;
+            }
+          else
+            {
+              gtk_entry_set_text (GTK_ENTRY (icon_view->priv->search_entry), "");
+              return FALSE;
+            }
         }
-      else
-        {
-          gtk_entry_set_text (GTK_ENTRY (icon_view->priv->search_entry), "");
-          return FALSE;
-        }
+    }
+  else
+    {
+      /* allocate a new event to forward to the search entry */
+      new_event = gdk_event_copy ((GdkEvent *) event);
+      g_object_unref (G_OBJECT (new_event->key.window));
+      new_event->key.window = GDK_WINDOW (g_object_ref (G_OBJECT (gtk_widget_get_window (icon_view->priv->search_entry))));
+
+      /* make sure we don't accidently popup the context menu */
+      popup_menu_id = g_signal_connect (G_OBJECT (icon_view->priv->search_entry), "popup-menu", G_CALLBACK (gtk_true), NULL);
+
+      /* make sure the search window is realized and send the event */
+      gtk_widget_realize (icon_view->priv->search_window);
+      gtk_widget_event (icon_view->priv->search_entry, new_event);
+
+      /* release the temporary event */
+      gdk_event_free (new_event);
+
+      /* disconnect the popup menu prevention */
+      g_signal_handler_disconnect (G_OBJECT (icon_view->priv->search_entry), popup_menu_id);
     }
 
   return FALSE;
@@ -8954,8 +8920,6 @@ exo_icon_view_search_ensure_directory (ExoIconView *icon_view)
   /* allocate the search entry widget */
   icon_view->priv->search_entry = gtk_entry_new ();
   g_signal_connect (G_OBJECT (icon_view->priv->search_entry), "activate", G_CALLBACK (exo_icon_view_search_activate), icon_view);
-  g_signal_connect (G_OBJECT (icon_view->priv->search_entry), "preedit-changed",
-                    G_CALLBACK (exo_icon_view_search_preedit_changed), icon_view);
   gtk_box_pack_start (GTK_BOX (vbox), icon_view->priv->search_entry, TRUE, TRUE, 0);
   gtk_widget_realize (icon_view->priv->search_entry);
   gtk_widget_show (icon_view->priv->search_entry);
@@ -9119,30 +9083,13 @@ exo_icon_view_search_move (GtkWidget   *widget,
 
 
 
-static void
-exo_icon_view_search_preedit_changed (GtkEntry     *entry,
-                                      gchar        *preedit,
-                                      ExoIconView  *icon_view)
-{
-  icon_view->priv->search_imcontext_changed = TRUE;
-
-  /* re-register the search timeout */
-  if (G_LIKELY (icon_view->priv->search_timeout_id != 0))
-    {
-      g_source_remove (icon_view->priv->search_timeout_id);
-      icon_view->priv->search_timeout_id = gdk_threads_add_timeout_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
-                                                               exo_icon_view_search_timeout, icon_view,
-                                                               exo_icon_view_search_timeout_destroy);
-    }
-}
-
-
-
 static gboolean
 exo_icon_view_search_start (ExoIconView *icon_view,
                             gboolean     keybinding)
 {
+#if !GTK_CHECK_VERSION (3,16,0)
   GTypeClass *klass;
+#endif
 
   /* check if typeahead is enabled */
   if (G_UNLIKELY (!icon_view->priv->enable_search && !keybinding))
@@ -9172,6 +9119,17 @@ exo_icon_view_search_start (ExoIconView *icon_view,
   /* determine the position for the search dialog */
   (*icon_view->priv->search_position_func) (icon_view, icon_view->priv->search_window, icon_view->priv->search_position_data);
 
+#if GTK_CHECK_VERSION (3,16,0)
+  gtk_entry_grab_focus_without_selecting (GTK_ENTRY (icon_view->priv->search_entry));
+#else
+  /* grab focus will select all the text, we don't want that to happen, so we
+   * call the parent instance and bypass the selection change. This is probably
+   * really hackish, but GtkTreeView does it as well *hrhr*
+   */
+  klass = g_type_class_peek_parent (GTK_ENTRY_GET_CLASS (icon_view->priv->search_entry));
+  (*GTK_WIDGET_CLASS (klass)->grab_focus) (icon_view->priv->search_entry);
+#endif
+
   /* display the search dialog */
   gtk_widget_show (icon_view->priv->search_window);
 
@@ -9186,13 +9144,6 @@ exo_icon_view_search_start (ExoIconView *icon_view,
   icon_view->priv->search_timeout_id = gdk_threads_add_timeout_full (G_PRIORITY_LOW, EXO_ICON_VIEW_SEARCH_DIALOG_TIMEOUT,
                                                            exo_icon_view_search_timeout, icon_view,
                                                            exo_icon_view_search_timeout_destroy);
-
-  /* grab focus will select all the text, we don't want that to happen, so we
-   * call the parent instance and bypass the selection change. This is probably
-   * really hackish, but GtkTreeView does it as well *hrhr*
-   */
-  klass = g_type_class_peek_parent (GTK_ENTRY_GET_CLASS (icon_view->priv->search_entry));
-  (*GTK_WIDGET_CLASS (klass)->grab_focus) (icon_view->priv->search_entry);
 
   /* send focus-in event */
   _exo_gtk_widget_send_focus_change (icon_view->priv->search_entry, TRUE);
@@ -9275,6 +9226,7 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
 {
   GtkRequisition requisition;
   GdkWindow     *view_window = gtk_widget_get_window (GTK_WIDGET (icon_view));
+  GdkRectangle   work_area_dimensions;
   gint           view_width, view_height;
   gint           view_x, view_y;
   gint           x, y;
@@ -9285,6 +9237,7 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
   gdk_window_get_origin (view_window, &view_x, &view_y);
   view_width = gdk_window_get_width (view_window);
   view_height = gdk_window_get_height (view_window);
+
 #if GTK_CHECK_VERSION (3, 0, 0)
   /* FIXME: make actual use of new Gtk3 layout system */
   gtk_widget_get_preferred_width (search_dialog, NULL, &requisition.width);
@@ -9293,17 +9246,18 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
   gtk_widget_size_request (search_dialog, &requisition);
 #endif
 
-  if (view_x + view_width - requisition.width > exo_icon_view_get_screen_width ())
-    x = exo_icon_view_get_screen_width () - requisition.width;
-  else if (view_x + view_width - requisition.width < 0)
-    x = 0;
+  exo_icon_view_get_work_area_dimensions (view_window, &work_area_dimensions);
+  if (view_x + view_width > work_area_dimensions.x + work_area_dimensions.width)
+    x = work_area_dimensions.x + work_area_dimensions.width - requisition.width;
+  else if (view_x + view_width - requisition.width < work_area_dimensions.x)
+    x = work_area_dimensions.x;
   else
     x = view_x + view_width - requisition.width;
 
-  if (view_y + view_height > exo_icon_view_get_screen_height ())
-    y = exo_icon_view_get_screen_height () - requisition.height;
-  else if (view_y + view_height < 0) /* isn't really possible ... */
-    y = 0;
+  if (view_y + view_height > work_area_dimensions.y + work_area_dimensions.height)
+    y = work_area_dimensions.y + work_area_dimensions.height - requisition.height;
+  else if (view_y + view_height < work_area_dimensions.y)
+    y = work_area_dimensions.y;
   else
     y = view_y + view_height;
 
