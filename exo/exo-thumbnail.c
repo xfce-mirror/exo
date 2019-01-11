@@ -220,7 +220,7 @@ _exo_thumbnail_get_for_file (const gchar     *filename,
           g_free (md5);
 
           /* determine the path of the thumbnail */
-          path = xfce_get_homefile (".thumbnails", (size == EXO_THUMBNAIL_SIZE_NORMAL) ? "normal" : "large", name, NULL);
+          path = g_build_path ("/", g_get_user_cache_dir(), "thumbnails", (size == EXO_THUMBNAIL_SIZE_NORMAL) ? "normal" : "large", name, NULL);
           g_free (name);
 
           /* try to load the thumbnail */
@@ -283,7 +283,7 @@ _exo_thumbnail_get_for_uri (const gchar     *uri,
   g_free (md5);
 
   /* determine the path of the thumbnail */
-  path = xfce_get_homefile (".thumbnails", (size == EXO_THUMBNAIL_SIZE_NORMAL) ? "normal" : "large", name, NULL);
+  path = g_build_path ("/", g_get_user_cache_dir(), "thumbnails", (size == EXO_THUMBNAIL_SIZE_NORMAL) ? "normal" : "large", name, NULL);
   g_free (name);
 
   /* try to load the thumbnail */
