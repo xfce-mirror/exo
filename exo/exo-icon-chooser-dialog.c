@@ -273,13 +273,16 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   gtk_widget_show (priv->icon_chooser);
 
   /* setup the icon renderer */
-  renderer = exo_cell_renderer_icon_new ();
+  renderer = gtk_cell_renderer_pixbuf_new ();
   gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, TRUE);
-  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, "icon", EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME, NULL);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (priv->icon_chooser), renderer, "icon-name", EXO_ICON_CHOOSER_MODEL_COLUMN_ICON_NAME, NULL);
+  g_object_set (G_OBJECT (renderer),
+                  "stock-size", GTK_ICON_SIZE_DIALOG,
+                  "follow-state", TRUE,
+                  NULL);
 
   /* setup the text renderer */
   renderer = g_object_new (GTK_TYPE_CELL_RENDERER_TEXT,
-                           /*"follow-state", TRUE,*/
                            "wrap-mode", PANGO_WRAP_WORD_CHAR,
                            "wrap-width", 104,
                            "xalign", 0.5f,
