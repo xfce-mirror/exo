@@ -388,7 +388,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
 {
     GdkRectangle        clip_area;
     GdkRectangle       *expose_area = &clip_area;
-    GdkRGBA             color_rgba;
+    GdkRGBA            *color_rgba;
     GdkColor            color_gdk;
     GtkStyleContext    *style_context;
 #else
@@ -543,14 +543,15 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
             {
 #if GTK_CHECK_VERSION (3, 0, 0)
               style_context = gtk_widget_get_style_context (widget);
-              gtk_style_context_get (style_context, GTK_STATE_FLAG_NORMAL,
-                                     GTK_STYLE_PROPERTY_BACKGROUND_COLOR,
-                                     &color_rgba, NULL);
+              gtk_style_context_get (style_context, gtk_widget_has_focus (widget) ? GTK_STATE_FLAG_SELECTED : GTK_STATE_FLAG_ACTIVE,
+                                     GTK_STYLE_PROPERTY_BACKGROUND_COLOR, &color_rgba,
+                                     NULL);
 
               color_gdk.pixel = 0;
-              color_gdk.red = color_rgba.red * 65535.0;
-              color_gdk.blue = color_rgba.blue * 65535.0;
-              color_gdk.green = color_rgba.green * 65535.0;
+              color_gdk.red = color_rgba->red * 65535;
+              color_gdk.blue = color_rgba->blue * 65535;
+              color_gdk.green = color_rgba->green * 65535;
+              gdk_rgba_free (color_rgba);
               temp = exo_gdk_pixbuf_colorize (icon, &color_gdk);
 #else
               state = gtk_widget_has_focus (widget) ? GTK_STATE_SELECTED : GTK_STATE_ACTIVE;
@@ -575,13 +576,14 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         {
           style_context = gtk_widget_get_style_context (widget);
           gtk_style_context_get (style_context, GTK_STATE_FLAG_INSENSITIVE,
-                                 GTK_STYLE_PROPERTY_COLOR,
-                                 &color_rgba, NULL);
+                                 GTK_STYLE_PROPERTY_COLOR, &color_rgba,
+                                 NULL);
 
           color_gdk.pixel = 0;
-          color_gdk.red = color_rgba.red * 65535.0;
-          color_gdk.blue = color_rgba.blue * 65535.0;
-          color_gdk.green = color_rgba.green * 65535.0;
+          color_gdk.red = color_rgba->red * 65535;
+          color_gdk.blue = color_rgba->blue * 65535;
+          color_gdk.green = color_rgba->green * 65535;
+          gdk_rgba_free (color_rgba);
           temp = exo_gdk_pixbuf_colorize (icon, &color_gdk);
 
           g_object_unref (G_OBJECT (icon));

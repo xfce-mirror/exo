@@ -279,7 +279,6 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
 
   /* setup the text renderer */
   renderer = g_object_new (GTK_TYPE_CELL_RENDERER_TEXT,
-                           /*"follow-state", TRUE,*/
                            "wrap-mode", PANGO_WRAP_WORD_CHAR,
                            "wrap-width", 104,
                            "xalign", 0.5f,
