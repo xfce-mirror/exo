@@ -9230,6 +9230,14 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
   gint           view_width, view_height;
   gint           view_x, view_y;
   gint           x, y;
+  GdkDisplay    *display;
+  GdkRectangle   monitor_dimensions;
+#if GTK_CHECK_VERSION (3, 22, 0)
+  GdkMonitor    *monitor;
+#else
+  GdkScreen     *screen;
+  gint           monitor_num;
+#endif
 
   /* make sure the search dialog is realized */
   gtk_widget_realize (search_dialog);
@@ -9260,6 +9268,29 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
     y = work_area_dimensions.y;
   else
     y = view_y + view_height;
+
+  display = gdk_window_get_display (view_window);
+  if (display)
+    {
+#if GTK_CHECK_VERSION (3, 22, 0)
+      monitor = gdk_display_get_monitor_at_window (display, view_window);
+      if (monitor)
+        {
+          gdk_monitor_get_geometry (monitor, &monitor_dimensions);
+          if (y + requisition.height > monitor_dimensions.height)
+            y = monitor_dimensions.height - requisition.height;
+        }
+#else
+      screen = gdk_display_get_default_screen (display);
+      monitor_num = gdk_screen_get_monitor_at_window (screen, view_window);
+      if (monitor_num >= 0)
+        {
+          gdk_screen_get_monitor_geometry (screen, monitor_num, &monitor_dimensions);
+          if (y + requisition.height > monitor_dimensions.height)
+            y = monitor_dimensions.height - requisition.height;
+        }
+#endif
+    }
 
   gtk_window_move (GTK_WINDOW (search_dialog), x, y);
 }
