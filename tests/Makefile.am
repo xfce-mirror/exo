@@ -33,7 +33,7 @@ test_exo_noop_SOURCES =							\
 	test-exo-noop.c
 
 test_exo_noop_CFLAGS =							\
-	$(GTK_CFLAGS)							\
+	$(GTK2_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_noop_DEPENDENCIES =						\
@@ -47,7 +47,7 @@ test_exo_string_SOURCES =						\
 	test-exo-string.c
 
 test_exo_string_CFLAGS =						\
-	$(GTK_CFLAGS)							\
+	$(GTK2_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_string_DEPENDENCIES =						\
@@ -61,14 +61,14 @@ test_exo_icon_chooser_dialog_SOURCES =					\
 	test-exo-icon-chooser-dialog.c
 
 test_exo_icon_chooser_dialog_CFLAGS =					\
-	$(GTK_CFLAGS)							\
+	$(GTK2_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_icon_chooser_dialog_DEPENDENCIES =				\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_icon_chooser_dialog_LDADD =					\
-	$(GTK_LIBS)							\
+	$(GTK2_LIBS)							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_icon_chooser_dialog_gtk3_SOURCES =					\
@@ -89,14 +89,14 @@ test_exo_wrap_table_SOURCES =						\
 	test-exo-wrap-table.c
 
 test_exo_wrap_table_CFLAGS =						\
-	$(GTK_CFLAGS)							\
+	$(GTK2_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_wrap_table_DEPENDENCIES =					\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 test_exo_wrap_table_LDADD =						\
-	$(GTK_LIBS)							\
+	$(GTK2_LIBS)							\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 DISTCLEANFILES = test-exo-csource-data.c

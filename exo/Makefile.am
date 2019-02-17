@@ -8,7 +8,6 @@ AM_CPPFLAGS = 								\
 	-DLIBEXO_VERSION_API=\"$(LIBEXO_VERSION_API)\"			\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
-lib_LTLIBRARIES = libexo-1.la
 
 libexo_headers =							\
 	exo-binding.h							\
@@ -52,64 +51,6 @@ libexoinclude_HEADERS =							\
 	exo.h								\
 	exo-config.h
 
-libexo_1_la_SOURCES =							\
-	$(libexoinclude_HEADERS)					\
-	$(libexo_built_sources)						\
-	exo-binding.c							\
-	exo-cell-renderer-ellipsized-text.c				\
-	exo-cell-renderer-icon.c					\
-	exo-config.c							\
-	exo-execute.c							\
-	exo-gdk-pixbuf-extensions.c					\
-	exo-gtk-extensions.c						\
-	exo-gobject-extensions.c					\
-	exo-icon-bar.c							\
-	exo-icon-chooser-dialog.c					\
-	exo-icon-chooser-model.c					\
-	exo-icon-chooser-model.h					\
-	exo-icon-view.c							\
-	exo-job.c							\
-	exo-job.h							\
-	exo-simple-job.c						\
-	exo-private.c							\
-	exo-private.h							\
-	exo-string.c							\
-	exo-thumbnail-preview.c						\
-	exo-thumbnail-preview.h						\
-	exo-thumbnail.c							\
-	exo-thumbnail.h							\
-	exo-toolbars-editor-dialog.c					\
-	exo-toolbars-editor.c						\
-	exo-toolbars-model.c						\
-	exo-toolbars-private.c						\
-	exo-toolbars-private.h						\
-	exo-toolbars-view.c						\
-	exo-tree-view.c							\
-	exo-utils.c							\
-	exo-wrap-table.c						\
-	exo-xsession-client.c
-
-libexo_1_la_CFLAGS =							\
-	$(GIO_CFLAGS)							\
-	$(GTK_CFLAGS)							\
-	$(LIBX11_CFLAGS)						\
-	$(LIBXFCE4UTIL_CFLAGS)
-
-libexo_1_la_LDFLAGS =							\
-	-export-dynamic							\
-	-version-info $(LIBEXO_VERINFO)					\
-	-export-symbols-regex "^[^_].*"					\
-	-no-undefined
-
-libexo_1_la_LIBADD =							\
-	$(GIO_LIBS)							\
-	$(GTK_LIBS)							\
-	$(LIBX11_LIBS)							\
-	$(LIBXFCE4UTIL_LIBS)						\
-	-lm
-
-pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = exo-$(LIBEXO_VERSION_API).pc
 
 ##
 ## GTK+ 3 support library
@@ -117,7 +58,7 @@ pkgconfig_DATA = exo-$(LIBEXO_VERSION_API).pc
 
 libexo_2_includedir = $(includedir)/exo-2/exo
 
-lib_LTLIBRARIES += libexo-2.la
+lib_LTLIBRARIES = libexo-2.la
 
 libexo_2_include_HEADERS =						\
 	exo.h								\
@@ -185,7 +126,75 @@ libexo_2_la_LIBADD =							\
 	$(LIBX11_LIBS)							\
 	-lm
 
-pkgconfig_DATA += exo-2.pc
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = exo-2.pc
+
+#
+# Gtk+ 2 support library
+#
+if ENABLE_GTK2_LIBRARY
+
+lib_LTLIBRARIES += libexo-1.la
+
+libexo_1_la_SOURCES =							\
+	$(libexoinclude_HEADERS)					\
+	$(libexo_built_sources)						\
+	exo-binding.c							\
+	exo-cell-renderer-ellipsized-text.c				\
+	exo-cell-renderer-icon.c					\
+	exo-config.c							\
+	exo-execute.c							\
+	exo-gdk-pixbuf-extensions.c					\
+	exo-gtk-extensions.c						\
+	exo-gobject-extensions.c					\
+	exo-icon-bar.c							\
+	exo-icon-chooser-dialog.c					\
+	exo-icon-chooser-model.c					\
+	exo-icon-chooser-model.h					\
+	exo-icon-view.c							\
+	exo-job.c							\
+	exo-job.h							\
+	exo-simple-job.c						\
+	exo-private.c							\
+	exo-private.h							\
+	exo-string.c							\
+	exo-thumbnail-preview.c						\
+	exo-thumbnail-preview.h						\
+	exo-thumbnail.c							\
+	exo-thumbnail.h							\
+	exo-toolbars-editor-dialog.c					\
+	exo-toolbars-editor.c						\
+	exo-toolbars-model.c						\
+	exo-toolbars-private.c						\
+	exo-toolbars-private.h						\
+	exo-toolbars-view.c						\
+	exo-tree-view.c							\
+	exo-utils.c							\
+	exo-wrap-table.c						\
+	exo-xsession-client.c
+
+libexo_1_la_CFLAGS =							\
+	$(GIO_CFLAGS)							\
+	$(GTK2_CFLAGS)							\
+	$(LIBX11_CFLAGS)						\
+	$(LIBXFCE4UTIL_CFLAGS)
+
+libexo_1_la_LDFLAGS =							\
+	-export-dynamic							\
+	-version-info $(LIBEXO_VERINFO)					\
+	-export-symbols-regex "^[^_].*"					\
+	-no-undefined
+
+libexo_1_la_LIBADD =							\
+	$(GIO_LIBS)							\
+	$(GTK2_LIBS)							\
+	$(LIBX11_LIBS)							\
+	$(LIBXFCE4UTIL_LIBS)						\
+	-lm
+
+pkgconfig_DATA += exo-1.pc
+
+endif
 
 ##
 ## Rules to auto-generate built sources
