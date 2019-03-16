@@ -2904,9 +2904,10 @@ exo_icon_view_key_press_event (GtkWidget   *widget,
                                GdkEventKey *event)
 {
   ExoIconView *icon_view = EXO_ICON_VIEW (widget);
-  GdkEvent    *new_event;
   gboolean     retval;
-  gulong       popup_menu_id;
+#if !GTK_CHECK_VERSION (3,16,0)
+  GTypeClass *klass;
+#endif
 
   /* let the parent class handle the key bindings and stuff */
   if ((*GTK_WIDGET_CLASS (exo_icon_view_parent_class)->key_press_event) (widget, event))
@@ -2918,45 +2919,27 @@ exo_icon_view_key_press_event (GtkWidget   *widget,
 
   exo_icon_view_search_ensure_directory (icon_view);
 
-  if (!gtk_widget_get_visible (icon_view->priv->search_window))
-    {
-      /* check if keypress results in a text change in search_entry; prevents showing the search
-       * window when only modifier keys (shift, control, ...) are pressed */
-      retval = gtk_entry_im_context_filter_keypress (GTK_ENTRY (icon_view->priv->search_entry), event);
+  /* check if keypress results in a text change in search_entry; prevents showing the search
+   * window when only modifier keys (shift, control, ...) are pressed */
+  retval = gtk_entry_im_context_filter_keypress (GTK_ENTRY (icon_view->priv->search_entry), event);
 
-      if (retval)
+  if (retval)
+    {
+      if (exo_icon_view_search_start (icon_view, FALSE))
         {
-          if (exo_icon_view_search_start (icon_view, FALSE))
-            {
-              gtk_widget_grab_focus (GTK_WIDGET (icon_view));
-              return TRUE;
-            }
-          else
-            {
-              gtk_entry_set_text (GTK_ENTRY (icon_view->priv->search_entry), "");
-              return FALSE;
-            }
+#if GTK_CHECK_VERSION (3,16,0)
+          gtk_entry_grab_focus_without_selecting (GTK_ENTRY (icon_view->priv->search_entry));
+#else
+          klass = g_type_class_peek_parent (GTK_ENTRY_GET_CLASS (icon_view->priv->search_entry));
+          (*GTK_WIDGET_CLASS (klass)->grab_focus) (icon_view->priv->search_entry);
+#endif
+          return TRUE;
         }
-    }
-  else
-    {
-      /* allocate a new event to forward to the search entry */
-      new_event = gdk_event_copy ((GdkEvent *) event);
-      g_object_unref (G_OBJECT (new_event->key.window));
-      new_event->key.window = GDK_WINDOW (g_object_ref (G_OBJECT (gtk_widget_get_window (icon_view->priv->search_entry))));
-
-      /* make sure we don't accidently popup the context menu */
-      popup_menu_id = g_signal_connect (G_OBJECT (icon_view->priv->search_entry), "popup-menu", G_CALLBACK (gtk_true), NULL);
-
-      /* make sure the search window is realized and send the event */
-      gtk_widget_realize (icon_view->priv->search_window);
-      gtk_widget_event (icon_view->priv->search_entry, new_event);
-
-      /* release the temporary event */
-      gdk_event_free (new_event);
-
-      /* disconnect the popup menu prevention */
-      g_signal_handler_disconnect (G_OBJECT (icon_view->priv->search_entry), popup_menu_id);
+      else
+        {
+          gtk_entry_set_text (GTK_ENTRY (icon_view->priv->search_entry), "");
+          return FALSE;
+        }
     }
 
   return FALSE;
