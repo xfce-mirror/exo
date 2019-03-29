@@ -1,5 +1,5 @@
 
-pixmapsdir = $(datadir)/pixmaps/exo-$(LIBEXO2_VERSION_API)
+pixmapsdir = $(datadir)/pixmaps/exo
 pixmaps_DATA =								\
 	exo-thumbnail-frame.png
 

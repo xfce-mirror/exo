@@ -236,8 +236,8 @@ thumbnail_add_frame (GdkPixbuf *thumbnail)
     }
 
   /* try to load the frame image */
-  frame = gdk_pixbuf_new_from_file (DATADIR G_DIR_SEPARATOR_S "pixmaps" G_DIR_SEPARATOR_S "exo-"
-                                    LIBEXO2_VERSION_API G_DIR_SEPARATOR_S "exo-thumbnail-frame.png", NULL);
+  frame = gdk_pixbuf_new_from_file (DATADIR G_DIR_SEPARATOR_S "pixmaps" G_DIR_SEPARATOR_S "exo"
+                                    G_DIR_SEPARATOR_S "exo-thumbnail-frame.png", NULL);
   if (G_LIKELY (frame != NULL))
     {
       /* add a frame to the thumbnail */
