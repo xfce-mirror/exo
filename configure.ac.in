@@ -10,6 +10,7 @@ dnl *** Version information ***
 dnl ***************************
 m4_define([libexo_verinfo], [1:0:1])
 m4_define([libexo_version_api], [1])
+m4_define([libexo2_version_api], [2])
 m4_define([libexo_version_major], [0])
 m4_define([libexo_version_minor], [12])
 m4_define([libexo_version_micro], [4])
@@ -57,10 +58,12 @@ dnl ****************************
 dnl *** Subst libexo version ***
 dnl ****************************
 LIBEXO_VERSION_API=libexo_version_api()
+LIBEXO2_VERSION_API=libexo2_version_api()
 LIBEXO_VERSION_MAJOR=libexo_version_major()
 LIBEXO_VERSION_MINOR=libexo_version_minor()
 LIBEXO_VERSION_MICRO=libexo_version_micro()
 AC_SUBST([LIBEXO_VERSION_API])
+AC_SUBST([LIBEXO2_VERSION_API])
 AC_SUBST([LIBEXO_VERSION_MAJOR])
 AC_SUBST([LIBEXO_VERSION_MINOR])
 AC_SUBST([LIBEXO_VERSION_MICRO])

@@ -62,12 +62,14 @@ desktop_in_in_files =							\
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 %.desktop.in: %.desktop.in.in
-	sed -e 's,\@HELPERDIR\@,$(HELPER_PATH_PREFIX)/xfce4/exo-$(LIBEXO_VERSION_API),g' < $< > $@
+	sed -e 's,\@HELPERDIR\@,$(HELPER_PATH_PREFIX)/xfce4/exo-$(LIBEXO2_VERSION_API),g' \
+	    -e 's,@LIBEXO2_VERSION_API\@,$(LIBEXO2_VERSION_API),g' \
+		< $< > $@
 @INTLTOOL_DESKTOP_RULE@
 
-exo_composedir = $(HELPER_PATH_PREFIX)/xfce4/exo-$(LIBEXO_VERSION_API)
+exo_composedir = $(HELPER_PATH_PREFIX)/xfce4/exo-$(LIBEXO2_VERSION_API)
 exo_compose_SCRIPTS =							\
-	exo-compose-mail-$(LIBEXO_VERSION_API)
+	exo-compose-mail-$(LIBEXO2_VERSION_API)
 
 DISTCLEANFILES =							\
 	$(desktop_in_files)						\
@@ -76,6 +78,6 @@ DISTCLEANFILES =							\
 EXTRA_DIST =								\
 	$(defaults_DATA)						\
 	$(desktop_in_in_files)						\
-	exo-compose-mail-$(LIBEXO_VERSION_API)
+	exo-compose-mail-$(LIBEXO2_VERSION_API)
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
