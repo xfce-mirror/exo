@@ -7,4 +7,4 @@ StartupNotify=false
 X-XFCE-Binaries=mutt;
 X-XFCE-Category=MailReader
 X-XFCE-Commands=exo-open --launch TerminalEmulator %B;
-X-XFCE-CommandsWithParameter=exo-open --launch TerminalEmulator @HELPERDIR@/exo-compose-mail-@LIBEXO2_VERSION_API@ mutt %B "mailto:%s";
+X-XFCE-CommandsWithParameter=exo-open --launch TerminalEmulator @HELPERDIR@/exo-compose-mail mutt %B "mailto:%s";
