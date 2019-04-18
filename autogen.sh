@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (c) 2002-2009
+# Copyright (c) 2002-2019
 #         The Xfce development team. All rights reserved.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -27,7 +27,7 @@ autogen.sh: You don't seem to have the Xfce development tools (at least
             version $XDT_REQURED_VERSION) installed on your system, which
             are required to build this software.
             Please install the xfce4-dev-tools package first; it is available
-            from https://xfce.org/.
+            from https://www.xfce.org/.
 EOF
   exit 1
 }

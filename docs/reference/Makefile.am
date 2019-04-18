@@ -48,12 +48,14 @@ content_files = 							\
 
 # CFLAGS and LDFLAGS for compiling scan program. Only needed
 # if $(DOC_MODULE).types is non-empty.
-AM_CPPFLAGS =	 							\
+# We need to use GTK2 exo flags because the GTK3 version does not have
+# all symbols (exo_toolbars etc)
+# We can't build the doc with --disable-gtk2 for now
+GTKDOC_CFLAGS =	 							\
 	-I$(top_srcdir) 						\
 	-I$(top_builddir) 						\
 	$(GTK2_CFLAGS)							\
-	$(LIBXFCE4UTIL_CFLAGS)						\
-	$(GTK_DOC_EXTRA_CFLAGS)
+	$(LIBXFCE4UTIL_CFLAGS)
 
 GTKDOC_LIBS =  								\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la \

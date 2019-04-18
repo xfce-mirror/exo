@@ -1,5 +1,6 @@
 dnl
 dnl Copyright (c) 2004-2009 os-cillation.
+dnl Copyright (c) 2009-2019 Xfce Development Team <xfce4-dev@xfce.org>
 dnl All rights reserved.
 dnl
 dnl Written by Benedikt Meurer <benny@xfce.org>.
@@ -33,7 +34,7 @@ dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2004-2010 os-cillation.
-Copyright (c) 2004-2018 Xfce Development Team])
+Copyright (c) 2004-2019 Xfce Development Team])
 AC_INIT([exo], [libexo_version], [https://bugzilla.xfce.org/])
 AC_PREREQ([2.60])
 AC_CONFIG_MACRO_DIR([m4])
@@ -46,7 +47,7 @@ dnl ***************************
 AM_INIT_AUTOMAKE([1.11 dist-bzip2 tar-ustar no-dist-gzip])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE()
-m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+AM_SILENT_RULES([yes])
 
 dnl **************************
 dnl *** Libtool versioning ***
@@ -171,7 +172,6 @@ XDT_CHECK_PACKAGE([GIO], [gio-2.0], [2.42.0])
 XDT_CHECK_PACKAGE([GTK3], [gtk+-3.0], [3.22.0])
 XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.42.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.12.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-1], [4.12.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UI2], [libxfce4ui-2], [4.12.0])
 XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.42.0], [gio-unix], [GIO-Unix features])
 
@@ -236,12 +236,6 @@ if test x"$have_gnuc_visibility" = x"yes"; then
   CPPFLAGS="$CPPFLAGS -DHAVE_GNUC_VISIBILITY"
 fi
 AM_CONDITIONAL([HAVE_GNUC_VISIBILITY], [test x"$have_gnuc_visibility" = x"yes"])
-
-dnl *************************************
-dnl *** Compensate for broken gtk-doc ***
-dnl *************************************
-XDT_SUPPORTED_FLAGS([GTK_DOC_EXTRA_CFLAGS], [-Wno-sign-compare])
-AC_SUBST([GTK_DOC_EXTRA_CFLAGS])
 
 dnl *************************************
 dnl *** Use GSEAL if possible         ***
