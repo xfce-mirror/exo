@@ -4,13 +4,13 @@
 # 
 # Translators:
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2017
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2013-2016,2018
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2013-2016,2018-2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-02 00:30+0200\n"
-"PO-Revision-Date: 2018-11-10 12:29+0000\n"
+"PO-Revision-Date: 2019-04-22 01:06+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/xfce/exo/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -195,7 +195,7 @@ msgstr "스톡 아이콘"
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:127
 msgid "Uncategorized Icons"
-msgstr "미분류된 아이콘"
+msgstr "미분류 아이콘"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
 #: ../exo/exo-icon-chooser-dialog.c:131
@@ -283,7 +283,7 @@ msgstr "아이콘 뷰 모델"
 
 #: ../exo/exo-icon-view.c:915
 msgid "The model for the icon view"
-msgstr "아이콘 뷰를 위한 모델"
+msgstr "아이콘 보기용 모델"
 
 #: ../exo/exo-icon-view.c:929
 msgid ""
@@ -453,7 +453,7 @@ msgstr "동종"
 
 #: ../exo/exo-wrap-table.c:179
 msgid "Whether the children should be all the same size"
-msgstr "자식요소가 모두 같은 사이즈인지에 대한 여부"
+msgstr "하 요소가 모두 같은 크기인지 여부"
 
 #: ../exo/exo-xsession-client.c:210
 msgid "Window group"
@@ -474,12 +474,12 @@ msgstr "세션 다시 시작 명령"
 #: ../exo-csource/main.c:303
 #, c-format
 msgid "Usage: %s [options] [file]\n"
-msgstr "Usage: %s [options] [file]\n"
+msgstr "사용법: %s [<옵션>] [<파일>]\n"
 
 #: ../exo-csource/main.c:304
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [options] --build-list [[name file]...]\n"
+msgstr "       %s [<옵션>] --build-list [[<이름> <파일>]...]\n"
 
 #: ../exo-csource/main.c:306
 #, c-format
@@ -670,7 +670,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "파일 관리자나 메뉴에서 명령을 실행할 때 시작 알리미를 활성화 하려면 이 옵션을 선택합니다. 모든 프로그램이 시작 알리미를 지원하는 것은 아닙니다."
+msgstr "파일 관리자나 메뉴에서 명령을 실행할 때 시작 알리미를 활성화 하려면 이 옵션을 선택합니다. 모든 프로그램이 시작 알리미를 지원하지는 않습니다."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -712,7 +712,7 @@ msgstr "실행 아이콘 만들기"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Create Link"
-msgstr "링크 만들기"
+msgstr "연결 만들기"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Create Directory"
@@ -765,7 +765,7 @@ msgstr "버전 정보를 출력하고 끝냅니다"
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:172
 msgid "[FILE|FOLDER]"
-msgstr "[FILE|FOLDER]"
+msgstr "[<파일>|<폴더>]"
 
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:184
@@ -827,7 +827,7 @@ msgstr "파일 이름 선택"
 #: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "\"%s\"을(를) 만드는데 실패했습니다."
+msgstr "\"%s\" 만들기에 실패했습니다."
 
 #: ../exo-desktop-item-edit/main.c:621
 #, c-format
@@ -1058,22 +1058,22 @@ msgstr "설정 관리자 소켓"
 
 #: ../exo-helper/main.c:74
 msgid "SOCKET ID"
-msgstr "SOCKET ID"
+msgstr "<소켓 ID>"
 
 #: ../exo-helper/main.c:75
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
-msgstr "선택적 PARAMETER을 이용하여 TYPE의 기본 도우미를 실행하며, TYPE의 자리에는 다음 값 중 하나가 위치합니다."
+msgstr "선택적 <매개변수>로 <형식>의 기본 도우미를 실행하며, <형식>의 자리에는 다음 값 중 하나가 위치합니다."
 
 #: ../exo-helper/main.c:75 ../exo-helper/main.c:76
 msgid "TYPE [PARAMETER]"
-msgstr "TYPE [PARAMETER]"
+msgstr "<형식> [<매개변수>]"
 
 #: ../exo-helper/main.c:76
 msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
-msgstr "도움말에서 기본 TYPE를 물어보세요, TYPE는 다음 값들 중 하나입니다."
+msgstr "다음 값 중 하나로 지정할 수 있는 <형식>의 기본 도우미를 요청합니다."
 
 #: ../exo-helper/main.c:106
 msgid ""
@@ -1083,17 +1083,17 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "아래는 --launch와 --query 명령을 위한 TYPE입니다:\n\n  WebBrowser       - 기본 웹 브라우저.\n  MailReader       - 기본 메일 리더.\n  FileManager      - 기본 파일 매니저.\n  TerminalEmulator - 기본 터미널 에뮬레이터."
+msgstr "다음 <형식>은 --launch와 --query 명령을 지원합니다:\n\n  WebBrowser       - 기본 웹 브라우저.\n  MailReader       - 기본 메일 보기.\n  FileManager      - 기본 파일 관리자.\n  TerminalEmulator - 기본 터미널 에뮬레이터."
 
 #: ../exo-helper/main.c:116
 #, c-format
 msgid "Type '%s --help' for usage."
-msgstr "사용방법을 보시려면 '%s --help'를 입력하십시오."
+msgstr "사용법을 보시려면 '%s --help'를 입력하십시오."
 
 #: ../exo-helper/main.c:175 ../exo-helper/main.c:241
 #, c-format
 msgid "Invalid helper type \"%s\""
-msgstr "도우미 유형 \"%s\"이(가) 잘못되었습니다"
+msgstr "\"%s\" 도우미 형식이 잘못되었습니다"
 
 #: ../exo-helper/main.c:225
 #, c-format
@@ -1185,11 +1185,11 @@ msgstr "그놈 터미널"
 
 #: ../exo-helper/helpers/icecat.desktop.in.in.h:1
 msgid "Icecat"
-msgstr "Icecat"
+msgstr "아이스캣"
 
 #: ../exo-helper/helpers/icedove.desktop.in.in.h:1
 msgid "Icedove"
-msgstr "Icedove"
+msgstr "아이스도브"
 
 #: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
 msgid "Iceweasel"
@@ -1197,7 +1197,7 @@ msgstr "아이스위즐"
 
 #: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
 msgid "Jumanji"
-msgstr "Jumanji"
+msgstr "쥬만지"
 
 #: ../exo-helper/helpers/kmail.desktop.in.in.h:1
 msgid "KMail"
@@ -1245,7 +1245,7 @@ msgstr "NXTerm"
 
 #: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
 msgid "Opera Browser"
-msgstr "Opera 브라우저"
+msgstr "오페라 브라우저"
 
 #: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
 msgid "PCMan File Manager"
@@ -1333,7 +1333,7 @@ msgstr "사용법: exo-open [URLs...]"
 
 #: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr "       exo-open --launch TYPE [PARAMETERs...]"
+msgstr "       exo-open --launch <형식> [<매개변수>...]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
@@ -1349,13 +1349,13 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch TYPE [PARAMETERs...]       선택적 PARAMETER을 이용하여 TYPE의 기본 \n                                      프로그램을 실행하며, TYPE의 자리에는 다음\n                                      값 중 하나가 위치합니다."
+msgstr "  --launch <형식> [<매개변수>...]       선택적 <매개변수>로 <형식>의 기본 \n                                      프로그램을 실행하며, <형식> 에는 다음\n                                      값 중 하나가 해당합니다."
 
 #: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory DIRECTORY       --launch 옵션을 사용했을 때 프로그램을 위한\n                                      기본 작업 디렉터리"
+msgstr "  --working-directory <디렉터리>       --launch 옵션을 사용했을 때 프로그램을 위한\n                                      기본 작업 디렉터리"
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
@@ -1370,7 +1370,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - 기본 웹 브라우저입니다.\n  MailReader       - 기본 메일 보기입니다.\n  FileManager      - 기본 파일 관리자입니다.\n  TerminalEmulator - 기본 터미널 에뮬레이터입니다."
+msgstr "  WebBrowser       - 기본 웹 브라우저.\n  MailReader       - 기본 메일 보기.\n  FileManager      - 기본 파일 관리자.\n  TerminalEmulator - 기본 터미널 에뮬레이터."
 
 #: ../exo-open/main.c:133
 msgid ""
