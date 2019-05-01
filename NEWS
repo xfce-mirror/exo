@@ -1,3 +1,23 @@
+0.12.5
+======
+- Bug Fixes:
+  - Fix typehead in ExoIconView (Xfce #15100)
+- Build Updates:
+  - Building libexo-1 can now be disabled (Xfce #15138, #15199)
+    - Building documentation still requires libexo-1 since some older
+      symbols exists only in the GTK+ 2 library
+  - Several components were moved around to align with the correct
+    library versions:
+    - Helpers are now installed in exo-2 paths, and exo-helper-1 has
+      been renamed to exo-helper-2 to follow the library version
+    - Pixmaps were moved to an unversioned path (pixmaps/exo) since
+      they are used by both versions of the library
+    - exo-compose-mail has dropped the library version since it
+      does not depend on either version of the library
+  - The expansion-to-defined flag was re-enabled
+- Translation Updates: Albanian, Bulgarian, Danish, Dutch, 
+  English (United Kingdom), Finnish, Indonesian, Korean, Spanish
+
 0.12.4
 ======
 - General:
