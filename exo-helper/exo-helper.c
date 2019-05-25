@@ -43,6 +43,8 @@
 #include <unistd.h>
 #endif
 
+#include <gio/gdesktopappinfo.h>
+
 #include <exo-helper/exo-helper.h>
 #include <exo-helper/exo-helper-utils.h>
 
@@ -789,6 +791,8 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
       mimetypes = xfce_rc_read_list_entry (desktop_file, "X-XFCE-MimeType", ";");
       if (mimetypes != NULL)
         {
+          GDesktopAppInfo *info = g_desktop_app_info_new (filename);
+
           xfce_rc_set_group (rc, "Added Associations");
 
           for (i = 0; mimetypes[i] != NULL; i++)
@@ -797,8 +801,19 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
                 entry = g_strconcat (filename, ";", NULL);
                 xfce_rc_write_entry (rc, mimetypes[i], entry);
                 g_free (entry);
+
+                if (info != NULL)
+                  {
+                    g_app_info_set_as_default_for_type (G_APP_INFO (info),
+                                                        mimetypes[i],
+                                                        NULL);
+                  }
               }
           g_strfreev (mimetypes);
+          if (info != NULL)
+            {
+              g_object_unref (info);
+            }
         }
 
       xfce_rc_close (desktop_file);
