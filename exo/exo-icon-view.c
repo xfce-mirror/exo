@@ -8902,6 +8902,9 @@ exo_icon_view_search_ensure_directory (ExoIconView *icon_view)
 
   /* allocate the search entry widget */
   icon_view->priv->search_entry = gtk_entry_new ();
+#if GTK_CHECK_VERSION(3, 22, 20)
+  gtk_entry_set_input_hints (GTK_ENTRY (icon_view->priv->search_entry), GTK_INPUT_HINT_NO_EMOJI);
+#endif
   g_signal_connect (G_OBJECT (icon_view->priv->search_entry), "activate", G_CALLBACK (exo_icon_view_search_activate), icon_view);
   gtk_box_pack_start (GTK_BOX (vbox), icon_view->priv->search_entry, TRUE, TRUE, 0);
   gtk_widget_realize (icon_view->priv->search_entry);
