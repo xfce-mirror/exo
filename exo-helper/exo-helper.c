@@ -51,6 +51,7 @@
 static void       exo_helper_finalize   (GObject        *object);
 static ExoHelper *exo_helper_new        (const gchar    *id,
                                          XfceRc         *rc);
+static void       clear_bad_entries     (XfceRc         *rc);
 
 
 
@@ -682,6 +683,23 @@ exo_helper_database_get_default (ExoHelperDatabase *database,
 
 
 
+static XfceRc*
+mimeapps_open (gboolean readonly)
+{
+  XfceRc *rc;
+
+  rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "mimeapps.list", readonly);
+  if (G_UNLIKELY (rc == NULL))
+    {
+      /* deprecated location (glib < 2.41) */
+      rc = xfce_rc_config_open (XFCE_RESOURCE_DATA, "applications/mimeapps.list", readonly);
+    }
+
+  return rc;
+}
+
+
+
 /**
  * exo_helper_database_set_default:
  * @database : an #ExoHelperDatabase.
@@ -753,16 +771,11 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
     }
 
   /* open the mimeapp.list file to set the default handler of the mime type */
-  rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "mimeapps.list", FALSE);
+  rc = mimeapps_open (FALSE);
   if (G_UNLIKELY (rc == NULL))
     {
-      /* deprecated location (glib < 2.41) */
-      rc = xfce_rc_config_open (XFCE_RESOURCE_DATA, "applications/mimeapps.list", FALSE);
-      if (G_UNLIKELY (rc == NULL))
-        {
-          g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_IO, _("Failed to open %s for writing"), "mimeapps.list");
-          return FALSE;
-        }
+      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_IO, _("Failed to open %s for writing"), "mimeapps.list");
+      return FALSE;
     }
 
   /* open the exo desktop file to read the mimetypes the file supports */
@@ -790,6 +803,8 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
 
       xfce_rc_close (desktop_file);
     }
+
+  clear_bad_entries (rc);
 
   xfce_rc_close (rc);
 
@@ -867,16 +882,11 @@ exo_helper_database_clear_default (ExoHelperDatabase *database,
     }
 
   /* open the mimeapp.list file to set the default handler of the mime type */
-  rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "mimeapps.list", FALSE);
+  rc = mimeapps_open (FALSE);
   if (G_UNLIKELY (rc == NULL))
     {
-      /* deprecated location (glib < 2.41) */
-      rc = xfce_rc_config_open (XFCE_RESOURCE_DATA, "applications/mimeapps.list", FALSE);
-      if (G_UNLIKELY (rc == NULL))
-        {
-          g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_IO, _("Failed to open %s for writing"), "mimeapps.list");
-          return FALSE;
-        }
+      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_IO, _("Failed to open %s for writing"), "mimeapps.list");
+      return FALSE;
     }
 
   /* open the exo desktop file to read the mimetypes the file supports */
@@ -901,9 +911,67 @@ exo_helper_database_clear_default (ExoHelperDatabase *database,
       xfce_rc_close (desktop_file);
     }
 
+  clear_bad_entries (rc);
+
   xfce_rc_close (rc);
 
   return TRUE;
+}
+
+
+
+static void
+clear_bad_entry (XfceRc *rc,
+                 gchar  *key,
+                 gchar  *filename)
+{
+  gchar **values;
+
+  if (xfce_rc_has_entry (rc, key))
+    {
+      values = xfce_rc_read_list_entry (rc, key, ";");
+      if (values != NULL)
+        {
+          GSList *list = NULL, *item = NULL;
+          gint i;
+
+          for (i = 0; values[i] != NULL; i++)
+            {
+              if (!exo_str_is_empty(values[i]) && g_strcmp0(values[i], filename) != 0)
+                {
+                  list = g_slist_append (list, g_strdup(values[i]));
+                }
+            }
+          g_strfreev(values);
+
+          if (list == NULL)
+            {
+              xfce_rc_delete_entry (rc, key, FALSE);
+            }
+          else
+            {
+              gchar   *value;
+              GString *string = g_string_new (NULL);
+              for (item = list; item != NULL; item = g_slist_next (item))
+                {
+                  g_string_append_printf (string, "%s;", (gchar *)item->data);
+                }
+              value = g_string_free (string, FALSE);
+              xfce_rc_write_entry (rc, key, value);
+              g_slist_free_full (list, g_free);
+              g_free (value);
+            }
+        }
+    }
+}
+
+
+
+static void
+clear_bad_entries (XfceRc *rc)
+{
+  xfce_rc_set_group (rc, "Added Associations");
+  clear_bad_entry (rc, "x-scheme-handler/file", "exo-file-manager.desktop"); // Xfce #7257
 }
 
 
@@ -1116,8 +1184,6 @@ exo_helper_database_set_custom (ExoHelperDatabase *database,
 gboolean exo_helper_database_get_dismissed (ExoHelperDatabase *database,
                                             ExoHelperCategory  category)
 {
-  const gchar *value;
-  ExoHelper   *helper = NULL;
   XfceRc      *rc;
   gchar       *key;
   gboolean     dismissed = FALSE;
