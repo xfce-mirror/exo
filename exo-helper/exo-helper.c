@@ -723,6 +723,11 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
   /* save the new setting */
   key = exo_helper_category_to_string (category);
   xfce_rc_write_entry (rc, key, exo_helper_get_id (helper));
+  g_free (key);
+
+  /* clear the dismissed preference */
+  key = g_strconcat (exo_helper_category_to_string (category), "Dismissed", NULL);
+  xfce_rc_delete_entry (rc, key, FALSE);
   xfce_rc_close (rc);
   g_free (key);
 
@@ -827,6 +832,11 @@ exo_helper_database_clear_default (ExoHelperDatabase *database,
 
   /* save the new setting */
   key = exo_helper_category_to_string (category);
+  xfce_rc_delete_entry (rc, key, FALSE);
+  g_free (key);
+
+  /* clear the dismissed preference */
+  key = g_strconcat (exo_helper_category_to_string (category), "Dismissed", NULL);
   xfce_rc_delete_entry (rc, key, FALSE);
   xfce_rc_close (rc);
   g_free (key);
@@ -1086,4 +1096,78 @@ exo_helper_database_set_custom (ExoHelperDatabase *database,
   /* cleanup */
   g_free (category_string);
   g_free (file);
+}
+
+/**
+ * exo_helper_database_get_dismissed:
+ * @database : an #ExoHelperDatabase.
+ * @category : an #ExoHelperCategory.
+ *
+ * Returns %TRUE if errors should no longer be displayed
+ * on the default #ExoHelper for the @category in @database.
+ *
+ * Return value: %TRUE if dismissed, %FALSE otherwise.
+ **/
+gboolean exo_helper_database_get_dismissed (ExoHelperDatabase *database,
+                                            ExoHelperCategory  category)
+{
+  const gchar *value;
+  ExoHelper   *helper = NULL;
+  XfceRc      *rc;
+  gchar       *key;
+  gboolean     dismissed = FALSE;
+
+  g_return_val_if_fail (EXO_IS_HELPER_DATABASE (database), FALSE);
+  g_return_val_if_fail (category < EXO_HELPER_N_CATEGORIES, FALSE);
+
+  rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "xfce4/helpers.rc", TRUE);
+  if (G_LIKELY (rc != NULL))
+    {
+      key = g_strconcat (exo_helper_category_to_string (category), "Dismissed", NULL);
+      dismissed = xfce_rc_read_bool_entry (rc, key, FALSE);
+      xfce_rc_close (rc);
+      g_free (key);
+    }
+
+  return dismissed;
+}
+
+/**
+ * exo_helper_database_set_dismissed:
+ * @database  : an #ExoHelperDatabase.
+ * @category  : an #ExoHelperCategory.
+ * @dismissed : TRUE if the errr should no longer be displayed.
+ * @error     : return location for errors or %NULL.
+ *
+ * Dismisses future errors related to the selected helper category.
+ * This setting is cleared any time a new default is configured.
+ * Returns %TRUE on success, %FALSE if @error is set.
+ *
+ * Return value: %TRUE on success, %FALSE if @error is set.
+ **/
+gboolean
+exo_helper_database_set_dismissed (ExoHelperDatabase *database,
+                                   ExoHelperCategory  category,
+                                   gboolean           dismissed)
+{
+  XfceRc       *rc;
+  gchar        *key;
+
+  g_return_val_if_fail (category < EXO_HELPER_N_CATEGORIES, FALSE);
+  g_return_val_if_fail (EXO_IS_HELPER_DATABASE (database), FALSE);
+
+  /* open the helpers.rc for writing */
+  rc = xfce_rc_config_open (XFCE_RESOURCE_CONFIG, "xfce4/helpers.rc", FALSE);
+  if (G_UNLIKELY (rc == NULL))
+    {
+      return FALSE;
+    }
+
+  /* save the new setting */
+  key = g_strconcat (exo_helper_category_to_string (category), "Dismissed", NULL);
+  xfce_rc_write_bool_entry (rc, key, dismissed);
+  xfce_rc_close (rc);
+  g_free (key);
+
+  return TRUE;
 }

@@ -47,6 +47,55 @@ static const gchar *CATEGORY_EXEC_ERRORS[] =
 
 
 
+static void
+error_dialog_dismiss_toggled (GtkToggleButton *button,
+                              gboolean        *return_value)
+{
+  *return_value = gtk_toggle_button_get_active (button);
+}
+
+
+
+static GtkWidget *
+get_helper_error_dialog (ExoHelperCategory  category,
+                         GError            *error,
+                         gboolean          *return_value)
+{
+  GtkWidget *dialog;
+  GtkWidget *message_area;
+  GtkWidget *check_button;
+  GList     *children;
+
+  dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
+                                   "%s.", _(CATEGORY_EXEC_ERRORS[category]));
+  gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
+
+  /* Clear excess padding */
+  children = gtk_container_get_children (GTK_CONTAINER (dialog));
+  gtk_box_set_spacing (GTK_BOX (g_list_nth_data (children, 0)), 0);
+  g_list_free (children);
+
+  message_area = gtk_message_dialog_get_message_area (GTK_MESSAGE_DIALOG (dialog));
+
+  /* Align labels left */
+  children = gtk_container_get_children (GTK_CONTAINER (message_area));
+  gtk_widget_set_halign (GTK_WIDGET (g_list_nth_data (children, 0)), GTK_ALIGN_START);
+  gtk_widget_set_halign (GTK_WIDGET (g_list_nth_data (children, 1)), GTK_ALIGN_START);
+  g_list_free (children);
+
+  /* Enable permanently dismissing this error. */
+  check_button = gtk_check_button_new_with_mnemonic (_("Do _not show this message again"));
+  gtk_box_pack_end (GTK_BOX (message_area), check_button, FALSE, FALSE, 0);
+  gtk_widget_set_margin_top (check_button, 12);
+  gtk_widget_show (check_button);
+
+  g_signal_connect (G_OBJECT (check_button), "toggled", G_CALLBACK (error_dialog_dismiss_toggled), return_value);
+
+  return dialog;
+}
+
+
+
 int
 main (int argc, char **argv)
 {
@@ -198,27 +247,34 @@ main (int argc, char **argv)
             gtk_main_iteration ();
         }
 
-      /* release our reference on the database */
-      g_object_unref (G_OBJECT (database));
-
       /* check if we have a valid helper now */
       if (G_LIKELY (helper != NULL))
         {
           /* try to execute the helper with the given parameter */
           if (!exo_helper_execute (helper, NULL, (argc > 1) ? argv[1] : NULL, &error))
             {
-              dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
-                                               "%s.", _(CATEGORY_EXEC_ERRORS[category]));
-              gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", error->message);
-              if (startup_id != NULL)
-                gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
-              gtk_dialog_run (GTK_DIALOG (dialog));
-              gtk_widget_destroy (dialog);
+              if (!exo_helper_database_get_dismissed (database, category))
+                {
+                  gboolean dismissed = FALSE;
+                  dialog = get_helper_error_dialog (category, error, &dismissed);
+                  if (startup_id != NULL)
+                    gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
+                  gtk_dialog_run (GTK_DIALOG (dialog));
+                  gtk_widget_destroy (dialog);
+
+                  if (dismissed)
+                    {
+                      exo_helper_database_set_dismissed (database, category, dismissed);
+                    }
+                }
               g_error_free (error);
               result = EXIT_FAILURE;
             }
           g_object_unref (G_OBJECT (helper));
         }
+
+      /* release our reference on the database */
+      g_object_unref(G_OBJECT(database));
     }
   else if (opt_version == TRUE)
     {

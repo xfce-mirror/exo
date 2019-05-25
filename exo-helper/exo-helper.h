@@ -82,6 +82,11 @@ ExoHelper          *exo_helper_database_get_custom      (ExoHelperDatabase *data
 void                exo_helper_database_set_custom      (ExoHelperDatabase *database,
                                                          ExoHelperCategory  category,
                                                          const gchar       *command);
+gboolean            exo_helper_database_get_dismissed   (ExoHelperDatabase *database,
+                                                         ExoHelperCategory  category);
+gboolean            exo_helper_database_set_dismissed   (ExoHelperDatabase *database,
+                                                         ExoHelperCategory  category,
+                                                         gboolean           dismissed);
 
 G_END_DECLS
 
