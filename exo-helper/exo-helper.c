@@ -706,6 +706,7 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
   gchar       **mimetypes;
   guint         i;
   gchar        *path;
+  gchar        *entry;
 
   g_return_val_if_fail (category < EXO_HELPER_N_CATEGORIES, FALSE);
   g_return_val_if_fail (EXO_IS_HELPER_DATABASE (database), FALSE);
@@ -779,7 +780,11 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
 
           for (i = 0; mimetypes[i] != NULL; i++)
             if (!exo_str_is_empty (mimetypes[i]))
-              xfce_rc_write_entry (rc, mimetypes[i], filename);
+              {
+                entry = g_strconcat (filename, ";", NULL);
+                xfce_rc_write_entry (rc, mimetypes[i], entry);
+                g_free (entry);
+              }
           g_strfreev (mimetypes);
         }
 
