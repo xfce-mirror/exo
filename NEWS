@@ -1,3 +1,20 @@
+0.12.6
+======
+- Bug Fixes:
+  - Add trailing ";" to mimeapps.list (Xfce #15087)
+  - Clear bad entries from mimeapps.list (Xfce #15046, #15238)
+  - Synchronize default applications to gio-mime (Xfce #14633)
+  - Disable emoji menu in type-ahead search (Xfce #15451)
+  - Enable dismissal of "Failed to open default" dialogs
+    - Related: https://github.com/brave/brave-browser/issues/4142
+    - If the error can be safely ignored, the user is able to dismiss
+      it. After changing defaults, the dismissal is forgotten.
+- Translation Updates: Albanian, Armenian (Armenia), Bulgarian,
+  Chinese (China), Chinese (Taiwan), Croatian, Danish, French,
+  Galician, German, Hungarian, Icelandic, Interlingue, Italian,
+  Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Thai,
+  Turkish
+
 0.12.5
 ======
 - Bug Fixes:
@@ -15,7 +32,7 @@
     - exo-compose-mail has dropped the library version since it
       does not depend on either version of the library
   - The expansion-to-defined flag was re-enabled
-- Translation Updates: Albanian, Bulgarian, Danish, Dutch, 
+- Translation Updates: Albanian, Bulgarian, Danish, Dutch,
   English (United Kingdom), Finnish, Indonesian, Korean, Spanish
 
 0.12.4
