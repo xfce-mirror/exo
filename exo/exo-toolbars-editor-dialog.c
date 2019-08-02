@@ -105,7 +105,7 @@ exo_toolbars_editor_dialog_init (ExoToolbarsEditorDialog *dialog)
   gtk_container_add (GTK_CONTAINER (align), hbox);
   gtk_widget_show (hbox);
 
-  image = gtk_image_new_from_stock (GTK_STOCK_ADD, GTK_ICON_SIZE_BUTTON);
+  image = gtk_image_new_from_icon_name ("list-add", GTK_ICON_SIZE_BUTTON);
   gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
   gtk_widget_show (image);
 
@@ -113,7 +113,9 @@ exo_toolbars_editor_dialog_init (ExoToolbarsEditorDialog *dialog)
   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
   gtk_widget_show (label);
 
-  button = gtk_button_new_from_stock (GTK_STOCK_CLOSE);
+  button = gtk_button_new_with_mnemonic ("_Close");
+  image = gtk_image_new_from_icon_name ("window-close", GTK_ICON_SIZE_BUTTON);
+  gtk_button_set_image (GTK_BUTTON (button), image);
   g_signal_connect_swapped (G_OBJECT (button), "clicked",
                             G_CALLBACK (gtk_widget_destroy), dialog);
   gtk_box_pack_start (GTK_BOX (exo_gtk_dialog_get_action_area (GTK_DIALOG (dialog))), button, FALSE, TRUE, 0);
