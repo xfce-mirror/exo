@@ -88,6 +88,7 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   GtkWidget      *notebook;
   GtkWidget      *chooser;
   GtkWidget      *button;
+  GtkWidget      *image;
   GtkWidget      *frame;
   GtkWidget      *label;
   GtkWidget      *vbox;
@@ -96,14 +97,22 @@ exo_helper_chooser_dialog_init (ExoHelperChooserDialog *chooser_dialog)
   /* verify category settings */
   g_assert (EXO_HELPER_N_CATEGORIES == 4);
 
-  gtk_dialog_add_button (GTK_DIALOG (chooser_dialog), _("_Close"), GTK_RESPONSE_CLOSE);
   gtk_window_set_icon_name (GTK_WINDOW (chooser_dialog), "preferences-desktop-default-applications");
   gtk_window_set_title (GTK_WINDOW (chooser_dialog), _("Preferred Applications"));
   gtk_window_set_default_size (GTK_WINDOW (chooser_dialog), 350, -1);
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (chooser_dialog), _("Select default applications for various services"));
 
+  /* add the "Close" button */
+  button = gtk_button_new_with_mnemonic (_("_Close"));
+  image = gtk_image_new_from_icon_name ("window-close", GTK_ICON_SIZE_BUTTON);
+  gtk_button_set_image (GTK_BUTTON (button), image);
+  gtk_dialog_add_action_widget (GTK_DIALOG (chooser_dialog), button, GTK_RESPONSE_CLOSE);
+  gtk_widget_show (button);
+
   /* add the "Help" button */
   button = gtk_button_new_with_mnemonic (_("_Help"));
+  image = gtk_image_new_from_icon_name ("help-browser", GTK_ICON_SIZE_BUTTON);
+  gtk_button_set_image (GTK_BUTTON (button), image);
   g_signal_connect_swapped (G_OBJECT (button), "clicked", G_CALLBACK (exo_helper_chooser_dialog_show_help), chooser_dialog);
   exo_gtk_dialog_add_secondary_button (GTK_DIALOG (chooser_dialog), GTK_WIDGET (button));
   gtk_widget_show (button);
