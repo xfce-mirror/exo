@@ -37,6 +37,7 @@ exo_helper_2_SOURCES =						\
 
 exo_helper_2_CFLAGS =							\
 	$(GTK3_CFLAGS)							\
+	$(GIO_UNIX_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(LIBXFCE4UI2_CFLAGS)
 
@@ -45,6 +46,7 @@ exo_helper_2_DEPENDENCIES =						\
 
 exo_helper_2_LDADD =							\
 	$(GTK3_LIBS)							\
+	$(GIO_UNIX_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(LIBXFCE4UI2_LIBS)						\
 	$(top_builddir)/exo/libexo-2.la
