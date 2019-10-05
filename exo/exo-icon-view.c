@@ -1767,7 +1767,7 @@ exo_icon_view_get_preferred_width (GtkWidget *widget,
   GList                    *lp;
 
   /* well, this is easy */
-  *natural_width = priv->width;
+  *minimal_width = *natural_width = priv->width;
 
   /* handle the child widgets */
   for (lp = priv->children; lp != NULL; lp = lp->next)
