@@ -73,10 +73,43 @@ exo_die_g_key_file_set_locale_value (GKeyFile    *key_file,
 
 
 
+static void trust_launcher (GFile *gfile)
+{
+  /* trust the launcher since the user created it */
+  guint32 mode = 0111, mask = 0111;
+  guint32 old_mode, new_mode;
+  GFileInfo *info;
+
+  info = g_file_query_info (gfile,
+                            G_FILE_ATTRIBUTE_UNIX_MODE,
+                            G_FILE_QUERY_INFO_NONE,
+                            NULL,
+                            NULL);
+
+  if (info == NULL)
+    return;
+
+  old_mode = g_file_info_get_attribute_uint32 (info, G_FILE_ATTRIBUTE_UNIX_MODE);
+  new_mode = (old_mode & ~mask) | mode;
+
+  if (old_mode != new_mode) {
+    g_file_set_attribute_uint32 (gfile,
+                                 G_FILE_ATTRIBUTE_UNIX_MODE, new_mode,
+                                 G_FILE_QUERY_INFO_NONE,
+                                 NULL,
+                                 NULL);
+  }
+
+  g_object_unref (G_OBJECT (info));
+}
+
+
+
 /**
  * exo_die_g_key_file_save:
  * @key_file : the #GKeyFile.
  * @create   : whether to create.
+ * @trust    : whether to trust the launcher.
  * @base     : file or folder (if @create).
  * @mode     : file mode for .directory or .desktop suffix.
  * @error    : return location for errors or %NULL.
@@ -88,6 +121,7 @@ exo_die_g_key_file_set_locale_value (GKeyFile    *key_file,
 gboolean
 exo_die_g_key_file_save (GKeyFile          *key_file,
                          gboolean           create,
+                         gboolean           trust,
                          GFile             *base,
                          ExoDieEditorMode   mode,
                          GError           **error)
@@ -125,7 +159,7 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
         }
       else
         {
-          file_type = g_file_query_file_type (base, G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL);
+          file_type = g_file_query_file_type (base, G_FILE_QUERY_INFO_NONE, NULL);
           if (file_type == G_FILE_TYPE_REGULAR)
             {
               file = G_FILE (g_object_ref (G_OBJECT (base)));
@@ -203,6 +237,10 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
                                         G_FILE_CREATE_REPLACE_DESTINATION,
                                         NULL, NULL, error);
     }
+
+  if (trust) {
+    trust_launcher (file);
+  }
 
   /* cleanup */
   g_free (data);

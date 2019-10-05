@@ -452,6 +452,8 @@ main (int argc, char **argv)
   response = gtk_dialog_run (GTK_DIALOG (dialog));
   if (response == GTK_RESPONSE_ACCEPT)
     {
+      gboolean trusted_launcher = opt_create_new; // User-created launchers are launchable by default
+
       /* save common values (localized if possible) */
       exo_die_g_key_file_set_locale_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                            G_KEY_FILE_DESKTOP_KEY_NAME,
@@ -503,7 +505,7 @@ main (int argc, char **argv)
         }
 
       /* try to save the file */
-      if (!exo_die_g_key_file_save (key_file, opt_create_new, gfile, mode, &error))
+      if (!exo_die_g_key_file_save (key_file, opt_create_new, trusted_launcher, gfile, mode, &error))
         {
           if (opt_create_new)
             {
@@ -520,7 +522,7 @@ main (int argc, char **argv)
               gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), TRUE);
               gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
 
-              file_type = g_file_query_file_type (gfile, G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL);
+              file_type = g_file_query_file_type (gfile, G_FILE_QUERY_INFO_NONE, NULL);
 
               /* if base is a folder, enter the folder */
               if (file_type == G_FILE_TYPE_DIRECTORY)
@@ -552,7 +554,7 @@ main (int argc, char **argv)
 
                   /* try again to save to the new file */
                   gfile = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (chooser));
-                  exo_die_g_key_file_save (key_file, FALSE, gfile, mode, &error);
+                  exo_die_g_key_file_save (key_file, FALSE, trusted_launcher, gfile, mode, &error);
                 }
 
               /* destroy the chooser */
@@ -598,7 +600,7 @@ main (int argc, char **argv)
 
                       /* try another save */
                       gfile_local = g_file_new_for_path (path);
-                      exo_die_g_key_file_save (key_file, FALSE, gfile_local, mode, &error);
+                      exo_die_g_key_file_save (key_file, FALSE, trusted_launcher, gfile_local, mode, &error);
                       g_object_unref (G_OBJECT (gfile_local));
                     }
 

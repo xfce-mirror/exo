@@ -33,6 +33,7 @@ void      exo_die_g_key_file_set_locale_value (GKeyFile          *key_file,
 
 gboolean  exo_die_g_key_file_save             (GKeyFile          *key_file,
                                                gboolean           create,
+                                               gboolean           trust,
                                                GFile             *base,
                                                ExoDieEditorMode   mode,
                                                GError           **error);
