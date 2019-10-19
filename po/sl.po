@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-25 18:30+0200\n"
-"PO-Revision-Date: 2019-10-18 23:07+0000\n"
+"PO-Revision-Date: 2019-10-19 07:48+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/exo/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -193,7 +193,7 @@ msgstr "Ikone statusa"
 #. EXO_ICON_CHOOSER_CONTEXT_STOCK
 #: ../exo/exo-icon-chooser-dialog.c:120
 msgid "Stock Icons"
-msgstr "Prodajne ikone"
+msgstr "Zaloge ikon"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:122
@@ -527,7 +527,7 @@ msgstr "  --strip-content   Remove node contents from XML files\n"
 #: ../exo-csource/main.c:314
 #, c-format
 msgid "  --output=filename Write generated csource to specified file\n"
-msgstr "--output=filename Zapiši generiran csource v dolečno datoteko\n"
+msgstr "--output=filename Zapiši generiran csource v podano datoteko\n"
 
 #: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
 #: ../exo-open/main.c:509
@@ -864,7 +864,7 @@ msgstr "Spletni brskalnik"
 msgid ""
 "The preferred Web Browser will be used to open hyperlinks and display help "
 "contents."
-msgstr ""
+msgstr "Za odpiranje spletnih povezav in prikazovanje pomoči, bo uporabljen privzeti spletni brskalnik."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:171
 #: ../exo-open/exo-mail-reader.desktop.in.h:1
@@ -875,7 +875,7 @@ msgstr "Bralnik pošte"
 msgid ""
 "The preferred Mail Reader will be used to compose emails when you click on "
 "email addresses."
-msgstr ""
+msgstr "Za pisanje elektronske pošte, kadar kliknete na elektronski naslov, bo uporabljen privzeti bralnik elektronske pošte."
 
 #. Utilities
 #: ../exo-helper/exo-helper-chooser-dialog.c:198
@@ -890,7 +890,7 @@ msgstr "Upravljalnik datotek"
 #: ../exo-helper/exo-helper-chooser-dialog.c:219
 msgid ""
 "The preferred File Manager will be used to browse the contents of folders."
-msgstr ""
+msgstr "Za brskanje po vsebini map bo uporabljen privzeti upravljalnik datotek."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:242
 #: ../exo-open/exo-terminal-emulator.desktop.in.h:1
@@ -901,7 +901,7 @@ msgstr "Terminalski emulator"
 msgid ""
 "The preferred Terminal Emulator will be used to run commands that require a "
 "CLI environment."
-msgstr ""
+msgstr "Za izvajanje ukazov v ukazni vrstici, boo uporabljen privzeti emulator terminala."
 
 #: ../exo-helper/exo-helper-chooser.c:145
 #: ../exo-helper/exo-helper-chooser.c:152
@@ -1052,7 +1052,7 @@ msgstr "Napaka pri izvajanju želenega terminalskega emulatorja"
 #. Enable permanently dismissing this error.
 #: ../exo-helper/main.c:87
 msgid "Do _not show this message again"
-msgstr ""
+msgstr "Tega sporočila _ne prikaži več."
 
 #: ../exo-helper/main.c:122
 msgid ""
@@ -1081,7 +1081,7 @@ msgstr "TIP [PARAMETER]"
 #: ../exo-helper/main.c:125
 msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
-msgstr ""
+msgstr "Poizvedi v privzetem pomočniku za TIP, pri čemer ima lahko TIP eno od naslednjih vrednosti."
 
 #: ../exo-helper/main.c:155
 msgid ""
@@ -1091,7 +1091,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
+msgstr "Za -launch in -query ukaze so podprti naslednji TIPi;\n\nWebBrowser - Privzeti spletni brskalnik.\nMailReader - Privzeti bralnik pošte.\nFileManager - Privzeti upravljalnik datotek.\nTerminalEmulator - Privzeti emulator terminala."
 
 #: ../exo-helper/main.c:165
 #, c-format
@@ -1121,7 +1121,7 @@ msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n os-cillation e.K. Vse pravice 
 #: ../exo-helper/main.c:307
 #, c-format
 msgid "No helper defined for \"%s\"."
-msgstr ""
+msgstr "Za \"%s\" pomočnik ni določen."
 
 #: ../exo-helper/helpers/aterm.desktop.in.in.h:1
 msgid "aterm"
@@ -1133,7 +1133,7 @@ msgstr "Balsa"
 
 #: ../exo-helper/helpers/brave.desktop.in.in.h:1
 msgid "Brave"
-msgstr ""
+msgstr "Brave"
 
 #: ../exo-helper/helpers/caja.desktop.in.in.h:1
 msgid "Caja File Manager"
@@ -1181,11 +1181,11 @@ msgstr "Galeon spletni brskalnik"
 
 #: ../exo-helper/helpers/geary.desktop.in.in.h:1
 msgid "Geary"
-msgstr ""
+msgstr "Geary"
 
 #: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
 msgid "Google Chrome"
-msgstr ""
+msgstr "Google Chrome"
 
 #: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
 msgid "GNOME Terminal"
@@ -1261,7 +1261,7 @@ msgstr "PCMan brskalnik datotek"
 
 #: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
 msgid "PCManFM-Qt File Manager"
-msgstr ""
+msgstr "PCManFM-Qt File Manager"
 
 #: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
 msgid "QTerminal"
@@ -1301,7 +1301,7 @@ msgstr "Claws Mail"
 
 #: ../exo-helper/helpers/terminator.desktop.in.in.h:1
 msgid "Terminator"
-msgstr ""
+msgstr "Terminator"
 
 #: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
 msgid "Thunar"
