@@ -1721,6 +1721,7 @@ exo_icon_view_realize (GtkWidget *widget)
   attributes.event_mask = GDK_EXPOSURE_MASK
                         | GDK_SCROLL_MASK
                         | GDK_POINTER_MOTION_MASK
+                        | GDK_LEAVE_NOTIFY_MASK
                         | GDK_BUTTON_PRESS_MASK
                         | GDK_BUTTON_RELEASE_MASK
                         | GDK_KEY_PRESS_MASK
@@ -2977,9 +2978,18 @@ static gboolean
 exo_icon_view_leave_notify_event (GtkWidget        *widget,
                                   GdkEventCrossing *event)
 {
+  ExoIconView         *icon_view = EXO_ICON_VIEW (widget);
+
   /* reset cursor to default */
   if (gtk_widget_get_realized (widget))
     gdk_window_set_cursor (gtk_widget_get_window (widget), NULL);
+
+  /* reset the prelit item (if any) */
+  if (G_LIKELY (icon_view->priv->prelit_item != NULL))
+    {
+      exo_icon_view_queue_draw_item (icon_view, icon_view->priv->prelit_item);
+      icon_view->priv->prelit_item = NULL;
+    }
 
   /* call the parent's leave_notify_event (if any) */
   if (GTK_WIDGET_CLASS (exo_icon_view_parent_class)->leave_notify_event != NULL)
