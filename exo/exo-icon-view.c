@@ -3915,8 +3915,25 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
         gtk_cell_renderer_get_preferred_size (info->cell, GTK_WIDGET (icon_view),
                                               &req, NULL);
 
-        item->box[info->position].width = req.width;
-        item->box[info->position].height = req.height;
+        if (info->is_text)
+          {
+            GdkRectangle cell_area, aligned_area;
+            gint cell_xpad, cell_ypad;
+
+            cell_area.width = req.width;
+            cell_area.height = req.height;
+            gtk_cell_renderer_get_aligned_area (info->cell, GTK_WIDGET (icon_view),
+                                                0, &cell_area, &aligned_area);
+            gtk_cell_renderer_get_padding (info->cell, &cell_xpad, &cell_ypad);
+
+            item->box[info->position].width = aligned_area.width + 2*cell_xpad;
+            item->box[info->position].height = aligned_area.height + 2*cell_ypad;
+          }
+        else
+          {
+            item->box[info->position].width = req.width;
+            item->box[info->position].height = req.height;
+          }
       }
 #else
       gtk_cell_renderer_get_size (info->cell, GTK_WIDGET (icon_view),
