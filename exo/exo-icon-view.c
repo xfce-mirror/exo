@@ -1869,6 +1869,10 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   GtkAdjustment *vadjustment;
   ExoIconView   *icon_view = EXO_ICON_VIEW (widget);
 
+  /* hide the interactive search dialog (if any) */
+  if (G_LIKELY (icon_view->priv->search_window != NULL))
+    exo_icon_view_search_dialog_hide (icon_view->priv->search_window, icon_view);
+
   /* apply the new size allocation */
   gtk_widget_set_allocation (widget, allocation);
 
