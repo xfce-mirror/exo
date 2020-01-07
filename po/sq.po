@@ -5,13 +5,13 @@
 # Translators:
 # Besnik <besnik@programeshqip.org>, 2007
 # Besnik <besnik@programeshqip.org>, 2007
-# Besnik <besnik@programeshqip.org>, 2018-2019
+# Besnik <besnik@programeshqip.org>, 2018-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-25 18:30+0200\n"
-"PO-Revision-Date: 2019-05-26 09:41+0000\n"
+"PO-Revision-Date: 2020-01-07 18:23+0000\n"
 "Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/exo/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -57,22 +57,22 @@ msgstr "Madhësia në piksel e ikonës që duhet vizatuar."
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "U dështua në hapjen e kartelës \"%s\": %s"
+msgstr "S’u arrit të hapej kartela \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "U dështua në leximin e kartelës \"%s\": %s"
+msgstr "S’u arrit të lexohej kartela \"%s\": %s"
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "U dështua në ngarkimin e pamjes \"%s\": Arsye e panjohur, ka gjasa për kartelë e dëmtuar pamjeje"
+msgstr "S’u arrit të ngarkohej figura \"%s\": Arsye e panjohur, ka gjasa për kartelë e dëmtuar figure"
 
 #: ../exo/exo-gtk-extensions.c:248
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "U dështua në hapjen e \"%s\"."
+msgstr "S’u arrit të hapej \"%s\"."
 
 #: ../exo/exo-icon-bar.c:273 ../exo/exo-icon-view.c:914
 msgid "Orientation"
@@ -108,7 +108,7 @@ msgstr "Model për shtyllë ikonash"
 
 #: ../exo/exo-icon-bar.c:336
 msgid "Active"
-msgstr "Veprues"
+msgstr "Aktiv"
 
 #: ../exo/exo-icon-bar.c:337
 msgid "Active item index"
@@ -132,7 +132,7 @@ msgstr "Ngjyrë mbushjeje elementi kursori"
 
 #: ../exo/exo-icon-bar.c:371 ../exo/exo-icon-bar.c:372
 msgid "Cursor item border color"
-msgstr "Ngjyrë ane objekti kursori"
+msgstr "Ngjyrë ane elementi kursori"
 
 #: ../exo/exo-icon-bar.c:378 ../exo/exo-icon-bar.c:379
 msgid "Cursor item text color"
@@ -220,7 +220,7 @@ msgstr "_Kërkoni ikonë:"
 
 #: ../exo/exo-icon-chooser-dialog.c:254
 msgid "Clear search field"
-msgstr "Pastro fushë kërkimesh"
+msgstr "Spastro fushë kërkimesh"
 
 #: ../exo/exo-icon-view.c:782
 msgid "Column Spacing"
@@ -244,7 +244,7 @@ msgstr "Aktivizo Kërkimin"
 
 #: ../exo/exo-icon-view.c:815
 msgid "View allows user to search through columns interactively"
-msgstr "Pamja i lejon përdoruesit të kërkojë nëpër shtylla në mënyrë ndërvepruese"
+msgstr "Pamja i lejon përdoruesit të kërkojë në mënyrë ndërvepruese nëpër shtylla"
 
 #: ../exo/exo-icon-view.c:832
 msgid "Width for each item"
@@ -289,7 +289,7 @@ msgstr "Modeli për pamjen ikona"
 #: ../exo/exo-icon-view.c:915
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
-msgstr "Si vendosen në lidhje me njëri tjetrin teksti dhe ikona e secilit objekt"
+msgstr "Si vendosen në lidhje me njëri-tjetrin teksti dhe ikona e secilit objekt"
 
 #: ../exo/exo-icon-view.c:949
 msgid "Icon column"
@@ -771,7 +771,7 @@ msgstr "[KARTELË|DOSJE]"
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:184
 msgid "Failed to open display"
-msgstr "Dështoi në hapje ekrani"
+msgstr "S'u arrit të hapej ekrani"
 
 #: ../exo-desktop-item-edit/main.c:211
 msgid "No file/folder specified"
@@ -780,7 +780,7 @@ msgstr "S’u tregua kartelë/dosje"
 #: ../exo-desktop-item-edit/main.c:276
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "U dështua në ngarkim lënde prej \"%s\": %s"
+msgstr "S’u arrit të ngarkohej lëndë prej \"%s\": %s"
 
 #: ../exo-desktop-item-edit/main.c:281
 #, c-format
@@ -791,7 +791,7 @@ msgstr "Kartela \"%s\" s’përmban të dhëna"
 #: ../exo-desktop-item-edit/main.c:294
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "U dështua në përtypje lënde të \"%s\": %s"
+msgstr "S’u arrit të përtypej lëndë e \"%s\": %s"
 
 #. we cannot continue without a type
 #: ../exo-desktop-item-edit/main.c:306
@@ -828,12 +828,12 @@ msgstr "Zgjidhni emër kartele"
 #: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "U dështua në krijimin e \"%s\"."
+msgstr "S’u arrit të krijohej \"%s\"."
 
 #: ../exo-desktop-item-edit/main.c:621
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "U dështua në ruajtjen e \"%s\"."
+msgstr "S’u arrit të ruhej \"%s\"."
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:99
 msgid "_Close"
@@ -846,7 +846,7 @@ msgstr "Aplikacione të Parapëlqyera"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
-msgstr "Përzgjidhni aplikacione parazgjedhje për shërbime të ndryshëm"
+msgstr "Përzgjidhni aplikacione parazgjedhje për shërbime të ndryshme"
 
 #. Internet
 #: ../exo-helper/exo-helper-chooser-dialog.c:127
@@ -916,19 +916,19 @@ msgstr "S’ka aplikacion të përzgjedhur"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
-msgstr "U dështua në caktim Shfletuesi parazgjedhje"
+msgstr "S’u arrit të caktohet Shfletues parazgjedhje"
 
 #: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
-msgstr "U dështua në caktim Lexuesi parazgjedhje Poste"
+msgstr "S’u arrit të caktohej Lexues parazgjedhje Poste"
 
 #: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
-msgstr "U dështua në caktim Përgjegjësi Kartelash parazgjedhje"
+msgstr "S’u arrit të caktohet Përgjegjës parazgjedhje Kartelash"
 
 #: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
-msgstr "U dështua në caktim Emuluesi Terminali parazgjedhje"
+msgstr "S’u arrit të caktohej Emulues Terminali parazgjedhje"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:392
@@ -989,7 +989,7 @@ msgstr "Përdor një aplikacion vetjak që s’përfshihet në listën më sipë
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:113
 msgid "Choose Preferred Application"
-msgstr "Zgjidhni Zbatim të Parapëlqyer"
+msgstr "Zgjidhni Aplikacion të Parapëlqyer"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:256
 msgid ""
@@ -1024,7 +1024,7 @@ msgstr "S’u dha urdhër"
 #: ../exo-helper/exo-helper.c:834 ../exo-helper/exo-helper.c:877
 #, c-format
 msgid "Failed to open %s for writing"
-msgstr "U dështua në hapjen e %s për shkrim"
+msgstr "S’u arrit të hapej %s për shkrim"
 
 #: ../exo-helper/exo-preferred-applications.desktop.in.h:2
 msgid ""
@@ -1033,19 +1033,19 @@ msgstr "Aplikacione të Parapëlqyer (Shfletues, Lexues Poste dhe Emulues Termin
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
-msgstr "U dështua në xhirim Shfletuesi parazgjedhje"
+msgstr "S’u arrit të xhirohej Shfletues parazgjedhje"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
-msgstr "U dështua në xhirim Lexuesi parazgjedhje Poste"
+msgstr "S’u arrit të xhirohej Lexues parazgjedhje Poste"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
-msgstr "U dështua në xhirimin Përgjegjësi Kartelash parazgjedhje"
+msgstr "S’u arrit të xhirohej Përgjegjës parazgjedhje Kartelash"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
-msgstr "U dështua në xhirim Emuluesi Terminali parazgjedhje"
+msgstr "S’u arrit të xhirohej Emulues parazgjedhje Terminali"
 
 #. Enable permanently dismissing this error.
 #: ../exo-helper/main.c:87
@@ -1392,12 +1392,12 @@ msgstr "Nëse s’përcaktoni mundësinë --launch, exo-open do t’i hapë krej
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr "Nisja e kartelave desktop nuk mbulohet kur %s është përpiluar pa veçori GIO-Unix."
+msgstr "Nisja e kartelave desktop nuk mbulohet, kur %s është përpiluar pa veçori GIO-Unix."
 
 #: ../exo-open/main.c:269
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "U dështua në nisjen e aplikacionit parazgjedhje për kategorinë \"%s\"."
+msgstr "S’u arrit të nisej aplikacioni parazgjedhje për kategorinë \"%s\"."
 
 #: ../exo-open/main.c:590
 #, c-format
@@ -1407,7 +1407,7 @@ msgstr "S’arrihet të pikaset URI-scheme e \"%s\"."
 #: ../exo-open/main.c:604
 #, c-format
 msgid "Failed to open URI \"%s\"."
-msgstr "U dështua në hapjen e URI-t \"%s\"."
+msgstr "S’u arrit të hapej URI \"%s\"."
 
 #: ../exo-open/exo-file-manager.desktop.in.h:2
 msgid "Browse the file system"
