@@ -797,6 +797,12 @@ exo_helper_database_set_default (ExoHelperDatabase *database,
           GDesktopAppInfo *info = g_desktop_app_info_new (filename);
 #endif
 
+          xfce_rc_set_group (rc, "Default Applications");
+
+          for (i = 0; mimetypes[i] != NULL; i++)
+            if (!exo_str_is_empty (mimetypes[i]))
+                xfce_rc_write_entry (rc, mimetypes[i], filename);
+
           xfce_rc_set_group (rc, "Added Associations");
 
           for (i = 0; mimetypes[i] != NULL; i++)
@@ -923,6 +929,13 @@ exo_helper_database_clear_default (ExoHelperDatabase *database,
       mimetypes = xfce_rc_read_list_entry (desktop_file, "X-XFCE-MimeType", ";");
       if (mimetypes != NULL)
         {
+          xfce_rc_set_group (rc, "Default Applications");
+
+          for (i = 0; mimetypes[i] != NULL; i++)
+            if (!exo_str_is_empty (mimetypes[i]))
+              xfce_rc_delete_entry (rc, mimetypes[i], FALSE);
+          g_strfreev (mimetypes);
+
           xfce_rc_set_group (rc, "Added Associations");
 
           for (i = 0; mimetypes[i] != NULL; i++)
