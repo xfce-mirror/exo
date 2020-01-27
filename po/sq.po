@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-25 18:30+0200\n"
-"PO-Revision-Date: 2020-01-07 18:23+0000\n"
+"PO-Revision-Date: 2020-01-27 22:30+0000\n"
 "Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/exo/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -67,7 +67,7 @@ msgstr "S’u arrit të lexohej kartela \"%s\": %s"
 #: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "S’u arrit të ngarkohej figura \"%s\": Arsye e panjohur, ka gjasa për kartelë e dëmtuar figure"
+msgstr "S’u arrit të ngarkohej figura \"%s\": Arsye e panjohur, ka gjasa për kartelë të dëmtuar figure"
 
 #: ../exo/exo-gtk-extensions.c:248
 #, c-format
@@ -112,31 +112,31 @@ msgstr "Aktiv"
 
 #: ../exo/exo-icon-bar.c:337
 msgid "Active item index"
-msgstr "Tregues objektesh aktivë"
+msgstr "Tregues elementesh aktivë"
 
 #: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
 msgid "Active item fill color"
-msgstr "Ngjyrë mbushjeje objekti aktiv"
+msgstr "Ngjyrë mbushjeje elementësh aktivë"
 
 #: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
 msgid "Active item border color"
-msgstr "Ngjyrë ane objekti aktiv"
+msgstr "Ngjyrë ane elementësh aktivë"
 
 #: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
 msgid "Active item text color"
-msgstr "Ngjyrë teksti objekti aktiv"
+msgstr "Ngjyrë teksti elementësh aktivë"
 
 #: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
 msgid "Cursor item fill color"
-msgstr "Ngjyrë mbushjeje elementi kursori"
+msgstr "Ngjyrë mbushjeje elementi kursor"
 
 #: ../exo/exo-icon-bar.c:371 ../exo/exo-icon-bar.c:372
 msgid "Cursor item border color"
-msgstr "Ngjyrë ane elementi kursori"
+msgstr "Ngjyrë ane elementi kursor"
 
 #: ../exo/exo-icon-bar.c:378 ../exo/exo-icon-bar.c:379
 msgid "Cursor item text color"
-msgstr "Ngjyrë teksti elementi kursori"
+msgstr "Ngjyrë teksti elementi kursor"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:100
@@ -244,15 +244,15 @@ msgstr "Aktivizo Kërkimin"
 
 #: ../exo/exo-icon-view.c:815
 msgid "View allows user to search through columns interactively"
-msgstr "Pamja i lejon përdoruesit të kërkojë në mënyrë ndërvepruese nëpër shtylla"
+msgstr "Pamja i lejon përdoruesit të kërkojë nëpër shtylla në mënyrë ndërvepruese"
 
 #: ../exo/exo-icon-view.c:832
 msgid "Width for each item"
-msgstr "Gjerësi për çdo objekt"
+msgstr "Gjerësi për çdo element"
 
 #: ../exo/exo-icon-view.c:833
 msgid "The width used for each item"
-msgstr "Gjerësia e përdorur për çdo objekt"
+msgstr "Gjerësia e përdorur për çdo element"
 
 #: ../exo/exo-icon-view.c:851
 msgid "Layout mode"
@@ -268,7 +268,7 @@ msgstr "Mënjanë"
 
 #: ../exo/exo-icon-view.c:869
 msgid "Space which is inserted at the edges of the icon view"
-msgstr "Hapësirë që futet në skajet e pamjes ikonë"
+msgstr "Hapësirë që futet në caqet e pamjes ikonë"
 
 #: ../exo/exo-icon-view.c:885
 msgid "Markup column"
@@ -289,7 +289,7 @@ msgstr "Modeli për pamjen ikona"
 #: ../exo/exo-icon-view.c:915
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
-msgstr "Si vendosen në lidhje me njëri-tjetrin teksti dhe ikona e secilit objekt"
+msgstr "Si vendosen në lidhje me njëri tjetrin teksti dhe ikona e secilit element"
 
 #: ../exo/exo-icon-view.c:949
 msgid "Icon column"
@@ -298,7 +298,7 @@ msgstr "Shtyllë ikonash"
 #: ../exo/exo-icon-view.c:950
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
-msgstr "Shtyllë model e përdorur për të marrë shtegun absolut të një figure që duhet vizatuar"
+msgstr "Shtyllë model e përdorur për të marrë shtegun absolut të një kartele figure që duhet vizatuar"
 
 #: ../exo/exo-icon-view.c:965
 msgid "Reorderable"
@@ -322,7 +322,7 @@ msgstr "Shtyllë Kërkimesh"
 
 #: ../exo/exo-icon-view.c:997
 msgid "Model column to search through when searching through item"
-msgstr "Model shtylle për kërkim, kur kërkohet nëpër objekt"
+msgstr "Model shtylle për kërkim, kur kërkohet nëpër element"
 
 #: ../exo/exo-icon-view.c:1011
 msgid "Selection mode"
@@ -338,7 +338,7 @@ msgstr "Klikim Njësh"
 
 #: ../exo/exo-icon-view.c:1028 ../exo/exo-tree-view.c:161
 msgid "Whether the items in the view can be activated with single clicks"
-msgstr "Nëse mund të aktivizohen a jo me klikime njëshe objektet e pamjes"
+msgstr "Nëse mund të aktivizohen a jo me klikime njëshe elementet e pamjes"
 
 #: ../exo/exo-icon-view.c:1044 ../exo/exo-tree-view.c:177
 msgid "Single Click Timeout"
@@ -348,7 +348,7 @@ msgstr "Kohëmbarim për Klikim Njësh"
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr "Sasia e kohës pas së cilës objekti nën kursorin e miut do të përzgjidhet vetvetiu sipas mënyrës klikim njësh"
+msgstr "Sasia e kohës pas së cilës elementi nën kursorin e miut do të përzgjidhet vetvetiu sipas mënyrës klikim njësh"
 
 #: ../exo/exo-icon-view.c:1060
 msgid "Spacing"
@@ -356,7 +356,7 @@ msgstr "Hapësirë"
 
 #: ../exo/exo-icon-view.c:1061
 msgid "Space which is inserted between cells of an item"
-msgstr "Hapësirë që futet midis dy kutish të një objekti"
+msgstr "Hapësirë që futet midis dy kutish të një elementi"
 
 #: ../exo/exo-thumbnail-preview.c:120
 msgid "Preview"
@@ -394,7 +394,7 @@ msgstr "_Shto panel të ri"
 msgid ""
 "Drag an item onto the toolbars above to add it, from the toolbars in the "
 "items table to remove it."
-msgstr "Për ta shtuar, tërhiqni një objekt te panelet më sipër dhe, për ta hequr, prej paneleve te tabela e objekteve."
+msgstr "Për ta shtuar, tërhiqni një element te panelet më sipër dhe, për ta hequr, prej paneleve te tabela e elementeve."
 
 #: ../exo/exo-toolbars-editor.c:530
 msgid "Separator"
@@ -426,7 +426,7 @@ msgstr "Tekst për ikona të Rë_ndësishme"
 
 #: ../exo/exo-toolbars-view.c:801
 msgid "_Remove Toolbar"
-msgstr "_Hiq Panel"
+msgstr "_Hiqe Panelin"
 
 #: ../exo/exo-toolbars-view.c:816
 msgid "Customize Toolbar..."
@@ -480,7 +480,7 @@ msgstr "Përdorimi: %s [mundësi] [kartelë]\n"
 #: ../exo-csource/main.c:304
 #, c-format
 msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [mundësi] --build-list [[emër kartele]...]\n"
+msgstr "       %s [mundësi] --build-list [[emër kartele]…]\n"
 
 #: ../exo-csource/main.c:306
 #, c-format
@@ -525,7 +525,7 @@ msgstr "  --strip-content   Hiq lëndë nyjash prej kartelash XML\n"
 #: ../exo-csource/main.c:314
 #, c-format
 msgid "  --output=filename Write generated csource to specified file\n"
-msgstr "  --output=emër kartele Shkruaje te kartela e treguar csource-in e prodhuar\n"
+msgstr "  --output=emër kartele Shkruaje csource-in e prodhuar te kartela e treguar\n"
 
 #: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
 #: ../exo-open/main.c:509
@@ -664,7 +664,7 @@ msgstr "Mundësi:"
 #. and xfce4-panel.
 #: ../exo-desktop-item-edit/exo-die-editor.c:421
 msgid "Use _startup notification"
-msgstr "Përdor njoftime _nisjesh"
+msgstr "Përdor njoftime në _nisje"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:422
 msgid ""
@@ -771,7 +771,7 @@ msgstr "[KARTELË|DOSJE]"
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:184
 msgid "Failed to open display"
-msgstr "S'u arrit të hapej ekrani"
+msgstr "S’u arrit të hapej ekrani"
 
 #: ../exo-desktop-item-edit/main.c:211
 msgid "No file/folder specified"
@@ -846,7 +846,7 @@ msgstr "Aplikacione të Parapëlqyera"
 
 #: ../exo-helper/exo-helper-chooser-dialog.c:103
 msgid "Select default applications for various services"
-msgstr "Përzgjidhni aplikacione parazgjedhje për shërbime të ndryshme"
+msgstr "Përzgjidhni aplikacione parazgjedhje për shërbime të ndryshëm"
 
 #. Internet
 #: ../exo-helper/exo-helper-chooser-dialog.c:127
@@ -916,7 +916,7 @@ msgstr "S’ka aplikacion të përzgjedhur"
 
 #: ../exo-helper/exo-helper-chooser.c:319
 msgid "Failed to set default Web Browser"
-msgstr "S’u arrit të caktohet Shfletues parazgjedhje"
+msgstr "S’u arrit të caktohej Shfletues parazgjedhje"
 
 #: ../exo-helper/exo-helper-chooser.c:320
 msgid "Failed to set default Mail Reader"
@@ -924,11 +924,11 @@ msgstr "S’u arrit të caktohej Lexues parazgjedhje Poste"
 
 #: ../exo-helper/exo-helper-chooser.c:321
 msgid "Failed to set default File Manager"
-msgstr "S’u arrit të caktohet Përgjegjës parazgjedhje Kartelash"
+msgstr "S’u arrit të caktohej Përgjegjës parazgjedhje Kartelash"
 
 #: ../exo-helper/exo-helper-chooser.c:322
 msgid "Failed to set default Terminal Emulator"
-msgstr "S’u arrit të caktohej Emulues Terminali parazgjedhje"
+msgstr "S’u arrit të caktohej Emulues parazgjedhje Terminali"
 
 #. allocate the chooser
 #: ../exo-helper/exo-helper-chooser.c:392
@@ -989,7 +989,7 @@ msgstr "Përdor një aplikacion vetjak që s’përfshihet në listën më sipë
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:113
 msgid "Choose Preferred Application"
-msgstr "Zgjidhni Aplikacion të Parapëlqyer"
+msgstr "Zgjidhni Zbatim të Parapëlqyer"
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:256
 msgid ""
@@ -1007,7 +1007,7 @@ msgstr "Ju lutemi, zgjidhni tani Lexuesin tuaj parazgjedhje\ntë Postës dhe kli
 msgid ""
 "Please choose your preferred File Manager\n"
 "now and click OK to proceed."
-msgstr "Ju lutemi, zgjidhni tani Përgjegjësin tuaj të Kartelave\nparazgjedhje dhe klikoni OK që të vazhdohet."
+msgstr "Ju lutemi, zgjidhni tani Përgjegjësin tuaj parazgjedhje\ntë Kartelave dhe klikoni OK që të vazhdohet."
 
 #: ../exo-helper/exo-helper-launcher-dialog.c:262
 msgid ""
@@ -1033,19 +1033,19 @@ msgstr "Aplikacione të Parapëlqyer (Shfletues, Lexues Poste dhe Emulues Termin
 
 #: ../exo-helper/main.c:42
 msgid "Failed to execute default Web Browser"
-msgstr "S’u arrit të xhirohej Shfletues parazgjedhje"
+msgstr "S’u arrit të vihej në punë Shfletuesi parazgjedhje"
 
 #: ../exo-helper/main.c:43
 msgid "Failed to execute default Mail Reader"
-msgstr "S’u arrit të xhirohej Lexues parazgjedhje Poste"
+msgstr "S’u arrit të vihej në punë Lexuesi parazgjedhje i Postës"
 
 #: ../exo-helper/main.c:44
 msgid "Failed to execute default File Manager"
-msgstr "S’u arrit të xhirohej Përgjegjës parazgjedhje Kartelash"
+msgstr "S’u arrit të vihej në punë Përgjegjësi parazgjedhje për Kartelat"
 
 #: ../exo-helper/main.c:45
 msgid "Failed to execute default Terminal Emulator"
-msgstr "S’u arrit të xhirohej Emulues parazgjedhje Terminali"
+msgstr "S’u arrit të vihej në punë Emulues Terminali parazgjedhje"
 
 #. Enable permanently dismissing this error.
 #: ../exo-helper/main.c:87
@@ -1060,7 +1060,7 @@ msgstr "Hap dialogun e formësimit\ntë Aplikacioneve të Parapëlqyera"
 
 #: ../exo-helper/main.c:123
 msgid "Settings manager socket"
-msgstr "\"Socket\" përgjegjësi rregullimesh"
+msgstr "Socket përgjegjësi rregullimesh"
 
 #: ../exo-helper/main.c:123
 msgid "SOCKET ID"
@@ -1070,7 +1070,7 @@ msgstr "ID SOCKET-i"
 msgid ""
 "Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
 " one of the following values."
-msgstr "Nis ndihmësin parazgjedhje të LLOJIT me PARAMETËR opsional, ku LLOJ është një nga vlerat vijuese."
+msgstr "Nis ndihmësin parazgjedhje të LLOJIT me PARAMETRIN opsional, ku LLOJ është një nga vlerat vijuese."
 
 #: ../exo-helper/main.c:124 ../exo-helper/main.c:125
 msgid "TYPE [PARAMETER]"
@@ -1079,7 +1079,7 @@ msgstr "LLOJ [PARAMETËR]"
 #: ../exo-helper/main.c:125
 msgid ""
 "Query the default helper of TYPE, where TYPE is one of the following values."
-msgstr "Pyet ndihmësin parazgjedhje të LLOJIT, ku LLOJI është një nga vlerat vijuese."
+msgstr "Kërko ndihmësin parazgjedhje të LLOJIT, ku LLOJ është një nga vlerat vijuese."
 
 #: ../exo-helper/main.c:155
 msgid ""
@@ -1089,7 +1089,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Për urdhrat --launch dhe --query mbulohen LLOJET vijuese :\n\n  WebBrowser       - Shfletuesi i parapëlqyer.\n  MailReader       - Lexuesi i parapëlqyer i Postës.\n  FileManager      - Përgjegjësi i parapëlqyer i Kartelave.\n  TerminalEmulator - Emuluesi i parapëlqyer i Terminalit."
+msgstr "Për urdhrat --launch dhe --query mbulohen LLOJET vijuese:\n\n  WebBrowser       - Shfletuesi i parapëlqyer.\n  MailReader       - Lexuesi i parapëlqyer i Postës.\n  FileManager      - Përgjegjësi i parapëlqyer i Kartelave.\n  TerminalEmulator - Emuluesi i parapëlqyer i Terminalit."
 
 #: ../exo-helper/main.c:165
 #, c-format
@@ -1335,11 +1335,11 @@ msgstr "Terminal X"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
-msgstr "Përdorimi: exo-open [URLra...]"
+msgstr "Përdorimi: exo-open [URLra…]"
 
 #: ../exo-open/main.c:110
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
-msgstr "       exo-open --launch LLOJ [PARAMETËRa...]"
+msgstr "       exo-open --launch LLOJ [PARAMETËRa…]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
@@ -1355,7 +1355,7 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch LLOJ [PARAMETËR...]       Nis aplikacionin e parapëlqyer për\n                                      LLOJIN me PARAMETËR opsional, ku\n                                      LLOJI është një nga vlerat vijuese."
+msgstr "  --launch LLOJ [PARAMETËR…]       Nis aplikacionin e parapëlqyer për\n                                      LLOJIN me PARAMETËR opsional, ku\n                                      LLOJI është një nga vlerat vijuese."
 
 #: ../exo-open/main.c:119
 msgid ""
@@ -1376,7 +1376,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - Shfletuesi i parapëlqyer.\n  MailReader       - Lexuesi i parapëlqyer i postës.\n  FileManager      - Përgjegjësi i parapëlqyer i Kartelave.\n  TerminalEmulator - Emuluesi i parapëlqyer i Terminalit."
+msgstr "  WebBrowser       - Shfletuesi i parapëlqyer.\n  MailReader       - Lexuesi i parapëlqyer i Postës.\n  FileManager      - Përgjegjësi i parapëlqyer i Kartelave.\n  TerminalEmulator - Emuluesi i parapëlqyer i Terminalit."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -1385,24 +1385,24 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr "Nëse s’përcaktoni mundësinë --launch, exo-open do t’i hapë krejt URL-të\ne treguara me trajtuesit e tyre të parapëlqyer. Përndryshe, nëse përcaktoni\nmundësinë --launch, mund të përzgjidhni cili aplikacion i parapëlqyer doni të\ntë xhirohet, dhe t’i kaloni aplikacionit edhe parametra shtesë (p.sh. për TerminalEmulator\nmund të jepeni rreshtin e urdhrave që duhet xhiruar te terminali)."
+msgstr "Nëse s’jepni mundësinë --launch, exo-open do t’i hapë krejt URL-të e treguara\nme trajtuesit e tyre të parapëlqyer. Përndryshe, nëse jepni mundësinë --launch,\nmund të përzgjidhni cilin aplikacion të parapëlqyer doni të xhirohet dhe t’i kaloni\naplikacionit edhe parametra shtesë (p.sh., për TerminalEmulator mund të jepni\nrreshtin e urdhrave që duhet xhiruar te terminali)."
 
 #: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr "Nisja e kartelave desktop nuk mbulohet, kur %s është përpiluar pa veçori GIO-Unix."
+msgstr "Nuk mbulohet nisja e kartelave të desktopit, kur %s është përpiluar pa veçori GIO-Unix."
 
 #: ../exo-open/main.c:269
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "S’u arrit të nisej aplikacioni parazgjedhje për kategorinë \"%s\"."
+msgstr "U dështua në nisjen e aplikacionit parazgjedhje për kategorinë \"%s\"."
 
 #: ../exo-open/main.c:590
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr "S’arrihet të pikaset URI-scheme e \"%s\"."
+msgstr "S’arrihet të pikase skema e URI-t të \"%s\"."
 
 #: ../exo-open/main.c:604
 #, c-format
