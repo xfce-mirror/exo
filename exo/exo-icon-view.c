@@ -4134,6 +4134,14 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
           gtk_render_frame (style_context, cr,
                             aligned_area.x, aligned_area.y,
                             aligned_area.width, aligned_area.height);
+
+          /* draw outline if focused */
+          if (flags & GTK_CELL_RENDERER_FOCUSED)
+            {
+              gtk_render_focus (style_context, cr,
+                                aligned_area.x, aligned_area.y,
+                                aligned_area.width, aligned_area.height);
+            }
         }
 
       gtk_cell_renderer_render (info->cell,
