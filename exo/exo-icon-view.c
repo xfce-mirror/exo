@@ -2771,7 +2771,7 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
           exo_icon_view_stop_editing (icon_view, TRUE);
 
           if (icon_view->priv->selection_mode != GTK_SELECTION_BROWSE &&
-              !(event->state & GDK_CONTROL_MASK))
+              !(event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)))
             {
               dirty = exo_icon_view_unselect_all_internal (icon_view);
             }
