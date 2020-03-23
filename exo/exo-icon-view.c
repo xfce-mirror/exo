@@ -3171,6 +3171,9 @@ exo_icon_view_update_rubberband_selection (ExoIconView *icon_view)
           item->selected = selected;
           exo_icon_view_queue_draw_item (icon_view, item);
         }
+
+      if (item->selected)
+        icon_view->priv->cursor_item = item;
     }
 
   if (G_LIKELY (changed))
