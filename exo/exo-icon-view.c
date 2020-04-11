@@ -152,7 +152,6 @@ typedef struct _ExoIconViewItem     ExoIconViewItem;
 
 
 
-#define EXO_ICON_VIEW_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EXO_TYPE_ICON_VIEW, ExoIconViewPrivate))
 #define EXO_ICON_VIEW_CELL_INFO(obj)   ((ExoIconViewCellInfo *) (obj))
 #define EXO_ICON_VIEW_CHILD(obj)       ((ExoIconViewChild *) (obj))
 #define EXO_ICON_VIEW_ITEM(obj)        ((ExoIconViewItem *) (obj))
@@ -1355,7 +1354,7 @@ exo_icon_view_init (ExoIconView *icon_view)
                                GTK_STYLE_CLASS_VIEW);
 #endif
 
-  icon_view->priv = EXO_ICON_VIEW_GET_PRIVATE (icon_view);
+  icon_view->priv = exo_icon_view_get_instance_private (icon_view);
 
   icon_view->priv->selection_mode = GTK_SELECTION_SINGLE;
   icon_view->priv->pressed_button = -1;
