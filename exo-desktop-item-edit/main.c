@@ -110,10 +110,12 @@ exo_die_error (const gchar *format,
 
 
 static void
-exo_die_help (GtkWidget *button,
-              GtkWidget *dialog)
+exo_die_response_cb (GtkDialog *dialog,
+                     gint       response_id,
+                     gpointer   user_data)
 {
-  xfce_dialog_show_help (GTK_WINDOW (dialog), "exo", "desktop-item-edit", NULL);
+  if (response_id == GTK_RESPONSE_HELP)
+    xfce_dialog_show_help (GTK_WINDOW (dialog), "exo", "desktop-item-edit", NULL);
 }
 
 
@@ -321,25 +323,26 @@ main (int argc, char **argv)
   g_type_class_unref (enum_klass);
 
   /* allocate the dialog */
-  dialog = xfce_titled_dialog_new_with_buttons (opt_create_new ? _(CREATE_TITLES[mode]) : _(EDIT_TITLES[mode]),
-                                                NULL, 0,
-                                                _("_Cancel"), GTK_RESPONSE_CANCEL,
-                                                NULL);
+  dialog = xfce_titled_dialog_new_with_mixed_buttons (opt_create_new ? _(CREATE_TITLES[mode]) : _(EDIT_TITLES[mode]),
+                                                      NULL, 0,
+                                                      "help-browser", _("_Help"), GTK_RESPONSE_HELP,
+                                                      "", _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                                      opt_create_new ? ("document-new") : ("document-save"), opt_create_new ? _("C_reate") : _("_Save"), GTK_RESPONSE_ACCEPT,
+                                                      NULL);
   gtk_window_set_default_size (GTK_WINDOW (dialog), 350, 375);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), ICON_NAMES[mode]);
+  g_signal_connect (G_OBJECT (dialog), "response",
+                    G_CALLBACK (exo_die_response_cb), dialog);
 
-  button = gtk_button_new_with_mnemonic (_("_Help"));
-  exo_gtk_dialog_add_secondary_button(GTK_DIALOG (dialog), GTK_WIDGET (button));
-  g_signal_connect (G_OBJECT (button), "clicked",
-      G_CALLBACK (exo_die_help), dialog);
-  gtk_widget_show (button);
+#if LIBXFCE4UI_CHECK_VERSION (4, 15, 1)
+  xfce_titled_dialog_set_default_response (XFCE_TITLED_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
+#else
+  gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
+  gtk_button_box_set_child_secondary (exo_gtk_dialog_get_action_area (GTK_DIALOG (dialog)),
+                                      gtk_dialog_get_widget_for_response (GTK_RESPONSE_HELP),
+                                      TRUE);
+#endif
 
-  /* add the "Create"/"Save" button (as default) */
-  button = gtk_button_new_with_mnemonic (opt_create_new ? _("C_reate") : _("_Save"));
-  gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, GTK_RESPONSE_ACCEPT);
-  gtk_widget_set_can_default (button, TRUE);
-  gtk_widget_grab_default (button);
-  gtk_widget_show (button);
 
   /* allocate the editor widget */
   editor = exo_die_editor_new ();
