@@ -41,8 +41,8 @@ gboolean                exo_noop_false  (void) G_GNUC_PURE;
 /* inline function implementations */
 #if (defined(G_CAN_INLINE) && defined(__GNUC__) && defined(__i386__) && defined(__OPTIMIZE__)) || defined(__EXO_UTILS_C__)
 
-G_INLINE_FUNC void      exo_atomic_inc  (gint *value);
-G_INLINE_FUNC gboolean  exo_atomic_dec  (gint *value);
+static inline void      exo_atomic_inc  (gint *value);
+static inline gboolean  exo_atomic_dec  (gint *value);
 
 /**
  * exo_atomic_inc:
@@ -55,7 +55,7 @@ G_INLINE_FUNC gboolean  exo_atomic_dec  (gint *value);
  *
  * Since : 0.3.1
  **/
-G_INLINE_FUNC void
+static inline void
 exo_atomic_inc (gint *value)
 {
 #if defined(__GNUC__) && defined(__i386__) && defined(__OPTIMIZE__)
@@ -81,7 +81,7 @@ exo_atomic_inc (gint *value)
  *
  * Since : 0.3.1
  **/
-G_INLINE_FUNC gboolean
+static inline gboolean
 exo_atomic_dec (gint *value)
 {
 #if defined(__GNUC__) && defined(__i386__) && defined(__OPTIMIZE__)
