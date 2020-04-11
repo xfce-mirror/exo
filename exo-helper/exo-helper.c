@@ -362,8 +362,8 @@ exo_helper_execute (ExoHelper   *helper,
                     const gchar *parameter,
                     GError     **error)
 {
-  GTimeVal      previous;
-  GTimeVal      current;
+  gint64        previous;
+  gint64        current;
   GdkDisplay   *display;
   gboolean      succeed = FALSE;
   GError       *err = NULL;
@@ -444,7 +444,7 @@ exo_helper_execute (ExoHelper   *helper,
       if (G_LIKELY (succeed))
         {
           /* determine the current time */
-          g_get_current_time (&previous);
+          previous = g_get_monotonic_time ();
 
           /* wait up to 5 seconds to see whether the command worked */
           for (;;)
@@ -473,10 +473,10 @@ exo_helper_execute (ExoHelper   *helper,
                 }
 
               /* determine the current time */
-              g_get_current_time (&current);
+              current = g_get_monotonic_time ();
 
               /* check if the command is still running after 5 seconds (which indicates that the command worked) */
-              if (((current.tv_sec - previous.tv_sec) * 1000ll + (current.tv_usec - previous.tv_usec) / 1000ll) > 5000ll)
+              if ((current - previous) / G_USEC_PER_SEC > 5)
                 break;
 
               /* wait some time */
