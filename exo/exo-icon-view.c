@@ -636,7 +636,7 @@ G_DEFINE_TYPE_WITH_CODE (ExoIconView, exo_icon_view, GTK_TYPE_CONTAINER,
 #if GTK_CHECK_VERSION (3, 0, 0)
     G_IMPLEMENT_INTERFACE (GTK_TYPE_SCROLLABLE, NULL)
 #endif
-                        )
+    G_ADD_PRIVATE (ExoIconView))
 
 static AtkObject *
 exo_icon_view_get_accessible (GtkWidget *widget)
@@ -707,11 +707,6 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
   GtkWidgetClass    *gtkwidget_class;
   GtkBindingSet     *gtkbinding_set;
   GObjectClass      *gobject_class;
-
-  /* add our private data to the type's instances */
-  G_GNUC_BEGIN_IGNORE_DEPRECATIONS /* GObject 2.58 */
-  g_type_class_add_private (klass, sizeof (ExoIconViewPrivate));
-  G_GNUC_END_IGNORE_DEPRECATIONS
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->dispose = exo_icon_view_dispose;
