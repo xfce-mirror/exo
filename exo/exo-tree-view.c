@@ -362,22 +362,25 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   /* call the parent's button press handler */
   result = (*GTK_WIDGET_CLASS (exo_tree_view_parent_class)->button_press_event) (widget, event);
 
-  /* restore previous selection if the path is still selected */
-  if (event->type == GDK_BUTTON_PRESS && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0
-      && path != NULL && gtk_tree_selection_path_is_selected (selection, path))
+  if (GTK_IS_TREE_SELECTION (selection))
     {
-      /* check if we have to restore paths */
-      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) != (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
+      /* restore previous selection if the path is still selected */
+      if (event->type == GDK_BUTTON_PRESS && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0
+          && path != NULL && gtk_tree_selection_path_is_selected (selection, path))
         {
-          /* select all previously selected paths */
-          for (lp = selected_paths; lp != NULL; lp = lp->next)
-            gtk_tree_selection_select_path (selection, lp->data);
+          /* check if we have to restore paths */
+          if (G_LIKELY (gtk_tree_selection_get_select_function (selection) != (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
+            {
+              /* select all previously selected paths */
+              for (lp = selected_paths; lp != NULL; lp = lp->next)
+                gtk_tree_selection_select_path (selection, lp->data);
+            }
         }
-    }
 
-  if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
-    {
-      gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
+      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
+        {
+          gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
+        }
     }
 
   /* release the path (if any) */
