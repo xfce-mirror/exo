@@ -2341,6 +2341,11 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
 
   if (icon_view->priv->doing_rubberband)
     {
+      if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK)
+        icon_view->priv->ctrl_pressed = TRUE;
+      if ((event->state & GDK_SHIFT_MASK) == GDK_SHIFT_MASK)
+        icon_view->priv->shift_pressed = TRUE;
+
       exo_icon_view_update_rubberband (widget);
 
       if (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS)
@@ -3115,6 +3120,8 @@ exo_icon_view_stop_rubberbanding (ExoIconView *icon_view)
   if (G_LIKELY (icon_view->priv->doing_rubberband))
     {
       icon_view->priv->doing_rubberband = FALSE;
+      icon_view->priv->ctrl_pressed = FALSE;
+      icon_view->priv->shift_pressed = FALSE;
       gtk_grab_remove (GTK_WIDGET (icon_view));
       gtk_widget_queue_draw (GTK_WIDGET (icon_view));
 
@@ -3161,9 +3168,24 @@ exo_icon_view_update_rubberband_selection (ExoIconView *icon_view)
 
       if (G_UNLIKELY (item->selected != selected))
         {
-          changed = TRUE;
-          item->selected = selected;
-          exo_icon_view_queue_draw_item (icon_view, item);
+          /* extend */
+          if (icon_view->priv->shift_pressed && !icon_view->priv->ctrl_pressed)
+            {
+              if (!item->selected)
+                {
+                  changed = TRUE;
+                  item->selected = TRUE;
+                }
+            }
+          /* add/remove */
+          else
+            {
+              changed = TRUE;
+              item->selected = selected;
+            }
+
+          if (changed)
+            exo_icon_view_queue_draw_item (icon_view, item);
         }
 
       if (item->selected)
