@@ -8917,6 +8917,11 @@ exo_icon_view_search_ensure_directory (ExoIconView *icon_view)
   gtk_window_set_modal (GTK_WINDOW (icon_view->priv->search_window), TRUE);
   gtk_window_set_screen (GTK_WINDOW (icon_view->priv->search_window), gtk_widget_get_screen (GTK_WIDGET (icon_view)));
 
+  /* attach the popup window to the toplevel parent (only needed on wayland).
+   * see https://bugzilla.xfce.org/show_bug.cgi?id=16768
+   */
+  gtk_window_set_transient_for (GTK_WINDOW (icon_view->priv->search_window), GTK_WINDOW (toplevel));
+
   /* connect signal handlers */
   g_signal_connect (G_OBJECT (icon_view->priv->search_window), "delete-event", G_CALLBACK (exo_icon_view_search_delete_event), icon_view);
   g_signal_connect (G_OBJECT (icon_view->priv->search_window), "scroll-event", G_CALLBACK (exo_icon_view_search_scroll_event), icon_view);
