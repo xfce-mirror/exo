@@ -123,7 +123,7 @@ usage (void)
   g_print ("\n");
 
   /* Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader, TerminalEmulator),
-   * since the exo-helper utility will not accept localized TYPEs.
+   * since the xfce4-mime-helper utility will not accept localized TYPEs.
    */
   g_print ("%s\n", _("  WebBrowser       - The preferred Web Browser.\n"
                      "  MailReader       - The preferred Mail Reader.\n"
