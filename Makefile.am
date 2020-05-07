@@ -4,7 +4,6 @@ SUBDIRS =								\
 	exo								\
 	exo-csource							\
 	exo-desktop-item-edit						\
-	exo-helper							\
 	exo-open							\
 	docs								\
 	icons								\
