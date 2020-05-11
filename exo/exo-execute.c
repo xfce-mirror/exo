@@ -131,6 +131,7 @@ exo_execute_preferred_application_on_screen (const gchar *category,
   GdkDisplay *display;
   gchar      *argv[5];
   gchar      *display_name;
+  gchar      *helper;
   gint        argc = 0;
   gboolean    success;
 
@@ -139,7 +140,17 @@ exo_execute_preferred_application_on_screen (const gchar *category,
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   /* generate the argument vector */
-  argv[argc++] = HELPERDIR G_DIR_SEPARATOR_S "exo-helper-" LIBEXO2_VERSION_API;
+
+  helper = g_find_program_in_path ("xfce4-mime-helper");
+  if (G_LIKELY(helper != NULL))
+  {
+    argv[argc++] = helper;
+  }
+  else
+  {
+    argv[argc++] = "xfce4-mime-helper";
+  }
+
   argv[argc++] = "--launch";
   argv[argc++] = (gchar *) category;
 
@@ -163,6 +174,9 @@ exo_execute_preferred_application_on_screen (const gchar *category,
     display_name,
     NULL,
     error);
+
+  if (helper)
+    g_free (helper);
 
   g_free (display_name);
   return success;
