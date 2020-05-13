@@ -339,11 +339,11 @@ main (int argc, char **argv)
 #else
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
   gtk_button_box_set_child_secondary (exo_gtk_dialog_get_action_area (GTK_DIALOG (dialog)),
-                                      gtk_dialog_get_widget_for_response (GTK_RESPONSE_HELP),
+                                      gtk_dialog_get_widget_for_response (GTK_DIALOG (dialog), GTK_RESPONSE_HELP),
                                       TRUE);
 #endif
 
-  button = gtk_dialog_get_widget_for_response (GTK_RESPONSE_ACCEPT);
+  button = gtk_dialog_get_widget_for_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
 
   /* allocate the editor widget */
   editor = exo_die_editor_new ();
