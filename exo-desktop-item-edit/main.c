@@ -343,6 +343,7 @@ main (int argc, char **argv)
                                       TRUE);
 #endif
 
+  button = gtk_dialog_get_widget_for_response (GTK_RESPONSE_ACCEPT);
 
   /* allocate the editor widget */
   editor = exo_die_editor_new ();
