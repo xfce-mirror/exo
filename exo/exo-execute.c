@@ -21,6 +21,10 @@
 #include <config.h>
 #endif
 
+#ifdef HAVE_GIO_UNIX
+#include <gio/gdesktopappinfo.h>
+#endif
+
 #include <exo/exo-execute.h>
 #include <exo/exo-alias.h>
 
@@ -89,6 +93,121 @@ set_environment (gchar *display)
   g_setenv ("DISPLAY", display, TRUE);
 }
 
+static gchar *
+find_fallback_application_from_rc_file (const gchar *category)
+{
+  gchar    *cfg = NULL;
+  gchar    *data = NULL;
+  gchar    *contents = NULL;
+  gchar    *app = NULL;
+  gchar    *path = NULL;
+  GKeyFile *keyfile;
+
+  cfg = g_strconcat(g_get_user_config_dir(), "/xfce4/helpers.rc", NULL);
+
+  if (g_file_get_contents (cfg, &contents, NULL, NULL))
+  {
+    data = g_strconcat("[Default]\n", contents, NULL);
+    keyfile = g_key_file_new ();
+    if (g_key_file_load_from_data (keyfile, data, -1, G_KEY_FILE_NONE, NULL))
+    {
+      app = g_key_file_get_string (keyfile, "Default", category, NULL);
+      if (app != NULL)
+      {
+        path = g_find_program_in_path(app);
+        g_free (app);
+      }
+    }
+    g_key_file_free (keyfile);
+    g_free (data);
+    g_free (contents);
+  }
+
+  g_free (cfg);
+
+  return path;
+}
+
+#ifdef HAVE_GIO_UNIX
+static gchar *
+find_fallback_application_from_xdg_mime (const gchar *category)
+{
+  const gchar *query = NULL;
+  gchar *stdout = NULL;
+  gchar *cmd = NULL;
+  gchar *path = NULL;
+  GDesktopAppInfo *info = NULL;
+
+  if (g_strcmp0(category, "FileManager") == 0)
+  {
+    query = "xdg-mime query default inode/directory";
+  }
+  else if (g_strcmp0(category, "MailReader") == 0)
+  {
+    query = "xdg-mime query default x-scheme-handler/mailto";
+  }
+  else if (g_strcmp0(category, "WebBrowser") == 0)
+  {
+    query = "xdg-mime query default x-scheme-handler/http";
+  }
+  else if (g_strcmp0(category, "TerminalEmulator") == 0)
+  {
+    info = g_desktop_app_info_new("xfce4-terminal.desktop");
+  }
+  else
+  {
+    return NULL;
+  }
+
+  if (info == NULL && query != NULL)
+  {
+    if (g_spawn_command_line_sync(query, &stdout, NULL, NULL, NULL))
+    {
+      if (stdout != NULL)
+      {
+        cmd = g_utf8_substring(stdout, 0, g_utf8_strlen(stdout, -1) - 1);
+        g_free(stdout);
+        info = g_desktop_app_info_new(cmd);
+      }
+    }
+  }
+
+  if (info != NULL)
+  {
+    gchar *executable = g_strdup(g_app_info_get_executable(G_APP_INFO(info)));
+    if (g_strcmp0(executable, "exo-open") != 0)
+    {
+      path = g_find_program_in_path(executable);
+    }
+    g_free(executable);
+  }
+
+  if (cmd != NULL)
+  {
+    g_free(cmd);
+  }
+
+  return path;
+}
+#endif
+
+static gchar *
+find_fallback_application (const gchar *category)
+{
+  gchar *path = NULL;
+
+  path = find_fallback_application_from_rc_file (category);
+  if (path != NULL) {
+    return path;
+  }
+
+#ifdef HAVE_GIO_UNIX
+  path = find_fallback_application_from_xdg_mime (category);
+#endif
+
+  return path;
+}
+
 /**
  * exo_execute_preferred_application_on_screen:
  * @category          : the category of the preferred application to launch.
@@ -131,7 +250,7 @@ exo_execute_preferred_application_on_screen (const gchar *category,
   GdkDisplay *display;
   gchar      *argv[5];
   gchar      *display_name;
-  gchar      *helper;
+  gchar      *path = NULL;
   gint        argc = 0;
   gboolean    success;
 
@@ -141,18 +260,23 @@ exo_execute_preferred_application_on_screen (const gchar *category,
 
   /* generate the argument vector */
 
-  helper = g_find_program_in_path ("xfce4-mime-helper");
-  if (G_LIKELY(helper != NULL))
+  path = g_find_program_in_path ("xfce4-mime-helper");
+  if (G_LIKELY(path != NULL))
   {
-    argv[argc++] = helper;
+    argv[argc++] = path;
+    argv[argc++] = "--launch";
+    argv[argc++] = (gchar *)category;
   }
   else
   {
-    argv[argc++] = "xfce4-mime-helper";
+    // Fallback mode
+    path = find_fallback_application (category);
+    if (path == NULL) {
+      g_set_error (error, G_SPAWN_ERROR, 0, "Could not find fallback %s application", category);
+      return FALSE;
+    }
+    argv[argc++] = path;
   }
-
-  argv[argc++] = "--launch";
-  argv[argc++] = (gchar *) category;
 
   /* append parameter if given */
   if (G_LIKELY (parameter != NULL))
@@ -175,8 +299,8 @@ exo_execute_preferred_application_on_screen (const gchar *category,
     NULL,
     error);
 
-  if (helper)
-    g_free (helper);
+  if (path)
+    g_free (path);
 
   g_free (display_name);
   return success;

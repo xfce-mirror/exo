@@ -123,6 +123,7 @@ libexo_2_la_LDFLAGS =							\
 libexo_2_la_LIBADD =							\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(GIO_LIBS)							\
+	$(GIO_UNIX_LIBS)							\
 	$(GTK3_LIBS)							\
 	$(LIBX11_LIBS)							\
 	-lm
@@ -176,6 +177,7 @@ libexo_1_la_SOURCES =							\
 
 libexo_1_la_CFLAGS =							\
 	$(GIO_CFLAGS)							\
+	$(GIO_UNIX_CFLAGS)							\
 	$(GTK2_CFLAGS)							\
 	$(LIBX11_CFLAGS)						\
 	$(LIBXFCE4UTIL_CFLAGS)
@@ -188,6 +190,7 @@ libexo_1_la_LDFLAGS =							\
 
 libexo_1_la_LIBADD =							\
 	$(GIO_LIBS)							\
+	$(GIO_UNIX_LIBS)							\
 	$(GTK2_LIBS)							\
 	$(LIBX11_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
