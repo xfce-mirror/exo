@@ -46,14 +46,6 @@ exo_mutual_binding_unbind
 #endif
 #endif
 
-/* ExoCellRendererEllipsizedText methods */
-#if IN_HEADER(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_H__)
-#if IN_SOURCE(__EXO_CELL_RENDERER_ELLIPSIZED_TEXT_C__)
-exo_cell_renderer_ellipsized_text_get_type G_GNUC_CONST
-exo_cell_renderer_ellipsized_text_new G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
-#endif
-#endif
-
 /* ExoCellRendererIcon methods */
 #if IN_HEADER(__EXO_CELL_RENDERER_ICON_H__)
 #if IN_SOURCE(__EXO_CELL_RENDERER_ICON_C__)
@@ -79,7 +71,6 @@ exo_check_version
 #if IN_SOURCE(__EXO_ENUM_TYPES_C__)
 exo_icon_view_drop_position_get_type G_GNUC_CONST
 exo_icon_view_layout_mode_get_type G_GNUC_CONST
-exo_toolbars_model_flags_get_type G_GNUC_CONST
 #endif
 #endif
 
@@ -121,27 +112,6 @@ exo_gtk_file_chooser_add_thumbnail_preview
 exo_gtk_url_about_dialog_hook
 exo_gtk_dialog_get_action_area
 exo_gtk_dialog_add_secondary_button
-#endif
-#endif
-
-/* ExoIconBar methods */
-#if IN_HEADER(__EXO_ICON_BAR_H__)
-#if IN_SOURCE(__EXO_ICON_BAR_C__)
-exo_icon_bar_get_type G_GNUC_CONST
-exo_icon_bar_new
-exo_icon_bar_new_with_model
-exo_icon_bar_get_model
-exo_icon_bar_set_model
-exo_icon_bar_get_pixbuf_column
-exo_icon_bar_set_pixbuf_column
-exo_icon_bar_get_text_column
-exo_icon_bar_set_text_column
-exo_icon_bar_get_orientation
-exo_icon_bar_set_orientation
-exo_icon_bar_get_active
-exo_icon_bar_set_active
-exo_icon_bar_get_active_iter
-exo_icon_bar_set_active_iter
 #endif
 #endif
 
@@ -274,72 +244,6 @@ exo_str_looks_like_an_uri
 #endif
 #endif
 
-/* ExoToolbarsEditorDialog methods */
-#if IN_HEADER(__EXO_TOOLBARS_EDITOR_DIALOG_H__)
-#if IN_SOURCE(__EXO_TOOLBARS_EDITOR_DIALOG_C__)
-exo_toolbars_editor_dialog_get_type G_GNUC_CONST
-exo_toolbars_editor_dialog_new_with_model
-#endif
-#endif
-
-/* ExoToolbarsEditor methods */
-#if IN_HEADER(__EXO_TOOLBARS_EDITOR_H__)
-#if IN_SOURCE(__EXO_TOOLBARS_EDITOR_C__)
-exo_toolbars_editor_get_type G_GNUC_CONST
-exo_toolbars_editor_new
-exo_toolbars_editor_new_with_model
-exo_toolbars_editor_get_model
-exo_toolbars_editor_set_model
-exo_toolbars_editor_get_ui_manager
-exo_toolbars_editor_set_ui_manager
-#endif
-#endif
-
-/* ExoToolbarsModel methods */
-#if IN_HEADER(__EXO_TOOLBARS_MODEL_H__)
-#if IN_SOURCE(__EXO_TOOLBARS_MODEL_C__)
-exo_toolbars_model_get_type G_GNUC_CONST
-exo_toolbars_model_new
-exo_toolbars_model_set_actions
-exo_toolbars_model_get_actions
-exo_toolbars_model_load_from_file
-exo_toolbars_model_save_to_file
-exo_toolbars_model_get_flags
-exo_toolbars_model_set_flags
-exo_toolbars_model_get_style
-exo_toolbars_model_set_style
-exo_toolbars_model_unset_style
-exo_toolbars_model_get_item_type
-exo_toolbars_model_get_item_id
-exo_toolbars_model_get_item_data
-exo_toolbars_model_add_item
-exo_toolbars_model_add_separator
-exo_toolbars_model_add_toolbar
-exo_toolbars_model_move_item
-exo_toolbars_model_remove_item
-exo_toolbars_model_remove_toolbar
-exo_toolbars_model_n_items
-exo_toolbars_model_item_nth
-exo_toolbars_model_n_toolbars
-exo_toolbars_model_toolbar_nth
-#endif
-#endif
-
-/* ExoToolbarsView methods */
-#if IN_HEADER(__EXO_TOOLBARS_VIEW_H__)
-#if IN_SOURCE(__EXO_TOOLBARS_VIEW_C__)
-exo_toolbars_view_get_type G_GNUC_CONST
-exo_toolbars_view_new
-exo_toolbars_view_new_with_model
-exo_toolbars_view_get_editing
-exo_toolbars_view_set_editing
-exo_toolbars_view_get_model
-exo_toolbars_view_set_model
-exo_toolbars_view_get_ui_manager
-exo_toolbars_view_set_ui_manager
-#endif
-#endif
-
 #if IN_HEADER(__EXO_TREE_VIEW_H__)
 #if IN_SOURCE(__EXO_TREE_VIEW_C__)
 exo_tree_view_get_type G_GNUC_CONST
@@ -348,30 +252,5 @@ exo_tree_view_get_single_click
 exo_tree_view_set_single_click
 exo_tree_view_get_single_click_timeout
 exo_tree_view_set_single_click_timeout
-#endif
-#endif
-
-#if IN_HEADER(__EXO_WRAP_TABLE_H__)
-#if IN_SOURCE(__EXO_WRAP_TABLE_C__)
-exo_wrap_table_get_type G_GNUC_CONST
-exo_wrap_table_new G_GNUC_MALLOC
-exo_wrap_table_get_col_spacing
-exo_wrap_table_set_col_spacing
-exo_wrap_table_get_row_spacing
-exo_wrap_table_set_row_spacing
-exo_wrap_table_get_homogeneous
-exo_wrap_table_set_homogeneous
-#endif
-#endif
-
-/* ExoXsessionClient methods */
-#if IN_HEADER(__EXO_XSESSION_CLIENT_H__)
-#if IN_SOURCE(__EXO_XSESSION_CLIENT_C__)
-exo_xsession_client_get_type G_GNUC_CONST
-exo_xsession_client_new_with_group
-exo_xsession_client_get_group
-exo_xsession_client_set_group
-exo_xsession_client_get_restart_command
-exo_xsession_client_set_restart_command
 #endif
 #endif

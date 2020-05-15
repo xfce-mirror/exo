@@ -24,7 +24,7 @@
 
 /* be sure to have i18n macros available and libintl.h included! */
 #if defined(GETTEXT_PACKAGE)
-#include <glib/gi18n-lib.h>
+#include <glib/gi18n.h>
 #else
 #include <glib/gi18n.h>
 #endif
@@ -34,7 +34,6 @@
 #define EXO_INSIDE_EXO_H
 
 #include <exo/exo-config.h>
-
 #include <exo/exo-binding.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-cell-renderer-icon.h>
@@ -48,23 +47,7 @@
 #include <exo/exo-gtk-extensions.h>
 #include <exo/exo-icon-chooser-dialog.h>
 #include <exo/exo-icon-view.h>
-#include <exo/exo-toolbars-model.h>
 #include <exo/exo-tree-view.h>
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-#include <libxfce4util/libxfce4util.h>
-
-#include <exo/exo-cell-renderer-ellipsized-text.h>
-#include <exo/exo-icon-bar.h>
-#include <exo/exo-toolbars-editor.h>
-#include <exo/exo-toolbars-editor-dialog.h>
-#include <exo/exo-toolbars-view.h>
-#include <exo/exo-wrap-table.h>
-#include <exo/exo-xsession-client.h>
-#endif
-
-
-
 
 #undef EXO_INSIDE_EXO_H
 

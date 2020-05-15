@@ -172,41 +172,12 @@
     </para>
   </part>
 
-  <part id="exo-toolbars">
-    <title>Editable Toolbars</title>
-
-    <para>
-      These classes together provide a framework for editable
-      toolbars based on the GtkAction facility introduced with Gtk+
-      2.4. To create editable toolbars with exo, use the <link
-      linkend="ExoToolbarsModel">ExoToolbarsModel</link> class with the
-      <link linkend="ExoToolbarsView">ExoToolbarsView</link> widget. This
-      widget is designed around a <firstterm>Model/View/Controller</firstterm>
-      design and consists of three parts:
-
-      <simplelist>
-        <member>The toolbars widget (<structname>ExoToolbarsView</structname>)</member>
-        <member>The toolbars model (<structname>ExoToolbarsModel</structname>)</member>
-        <member>The toolbars editor widget (<structname>ExoToolbarsEditor</structname>)</member>
-      </simplelist>
-
-      The <link linkend="ExoToolbarsEditorDialog">ExoToolbarsEditorDialog</link> widget is provided
-      for convenience, it simply wraps the <link linkend="ExoToolbarsEditor">ExoToolbarsEditor</link>
-      component into a <structname>GtkDialog</structname>.
-    </para>
-
-    <xi:include href="xml/exo-toolbars-model.xml"/>
-    <xi:include href="xml/exo-toolbars-editor.xml"/>
-    <xi:include href="xml/exo-toolbars-editor-dialog.xml"/>
-    <xi:include href="xml/exo-toolbars-view.xml"/>
-  </part>
-
   <part id="exo-widgets">
     <title>Additional widgets</title>
 
     <para>
       This section describes the additional widgets provided by the <application>exo</application> library. The <link
-      linkend="ExoIconBar">ExoIconBar</link>, <link linkend="ExoIconView">ExoIconView</link> and <link linkend="ExoTreeView">ExoTreeView</link>
+      linkend="ExoIconView">ExoIconView</link> and <link linkend="ExoTreeView">ExoTreeView</link>
       are views that display data from a <link linkend="GtkTreeModel">GtkTreeModel</link>, and can be seen as extensions to the basic widgets
       in Gtk+. For example, both <link linkend="ExoIconView">ExoIconView</link> and <link linkend="ExoTreeView">ExoTreeView</link> offer support
       for single-click mode, which is not provided by their Gtk+ counterparts.
@@ -218,11 +189,9 @@
       select an icon, instead of just displaying a <link linkend="GtkFileChooserDialog">GtkFileChooserDialog</link>.
     </para>
 
-    <xi:include href="xml/exo-icon-bar.xml"/>
     <xi:include href="xml/exo-icon-chooser-dialog.xml"/>
     <xi:include href="xml/exo-icon-view.xml"/>
     <xi:include href="xml/exo-tree-view.xml"/>
-    <xi:include href="xml/exo-wrap-table.xml"/>
   </part>
 
   <part id="exo-cell-renderers">
@@ -236,9 +205,8 @@
     </para>
 
     <para>
-      Because of these issues, the <link linkend="ExoCellRendererEllipsizedText">ExoCellRendererEllipsizedText</link> (the name of the
-      class is rather confusing) and the <link linkend="ExoCellRendererIcon">ExoCellRendererIcon</link> classes are provided, which
-      both include a <literal>follow-state</literal> property that tells whether the renderer should follow the state of the view and
+      Because of these issues, the <link linkend="ExoCellRendererIcon">ExoCellRendererIcon</link> class is provided, which
+      includes a <literal>follow-state</literal> property that tells whether the renderer should follow the state of the view and
       draw appropriate indicators.
     </para>
 
@@ -248,7 +216,6 @@
       size for layouting and loads the icons only on-demand (utilizing the thumbnail database whenever possible).
     </para>
 
-    <xi:include href="xml/exo-cell-renderer-ellipsized-text.xml"/>
     <xi:include href="xml/exo-cell-renderer-icon.xml"/>
   </part>
 
@@ -288,7 +255,6 @@
     <xi:include href="xml/exo-execute.xml"/>
     <xi:include href="xml/exo-string.xml"/>
     <xi:include href="xml/exo-utils.xml"/>
-    <xi:include href="xml/exo-xsession-client.xml"/>
   </part>
 
   <part id="exo-tools">

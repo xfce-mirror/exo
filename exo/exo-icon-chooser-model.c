@@ -36,9 +36,7 @@
 
 
 /* GTK3 deprecated API resurrection */
-#if GTK_CHECK_VERSION (3, 0, 0)
 #define gtk_icon_info_free(info) g_object_unref (info)
-#endif
 
 
 

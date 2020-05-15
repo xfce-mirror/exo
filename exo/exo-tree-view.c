@@ -46,14 +46,10 @@
 /* resurrect dead gdk apis for Gtk3
  * This is easier than using #ifs everywhere
  */
-#if GTK_CHECK_VERSION (3, 0, 0)
-
-# ifdef gdk_cursor_unref
-#   undef gdk_cursor_unref
-# endif
-# define gdk_cursor_unref(cursor) g_object_unref (cursor)
-
-# endif
+#ifdef gdk_cursor_unref
+#undef gdk_cursor_unref
+#endif
+#define gdk_cursor_unref(cursor) g_object_unref (cursor)
 
 
 

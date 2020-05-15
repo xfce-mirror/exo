@@ -93,19 +93,11 @@ exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
   gtk_widget_set_sensitive (GTK_WIDGET (thumbnail_preview), FALSE);
 
   ebox = gtk_event_box_new ();
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  /* TODO: Gtk3 */
-  gtk_widget_modify_bg (ebox, GTK_STATE_NORMAL, &gtk_widget_get_style (ebox)->base[GTK_STATE_NORMAL]);
-#endif
   g_signal_connect (G_OBJECT (ebox), "style-set", G_CALLBACK (exo_thumbnail_preview_style_set), thumbnail_preview);
   gtk_container_add (GTK_CONTAINER (thumbnail_preview), ebox);
   gtk_widget_show (ebox);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-#else
-  vbox = gtk_vbox_new (FALSE, 0);
-#endif
   gtk_container_add (GTK_CONTAINER (ebox), vbox);
   gtk_widget_show (vbox);
 
@@ -122,11 +114,7 @@ exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
   gtk_container_add (GTK_CONTAINER (button), label);
   gtk_widget_show (label);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
-#else
-  box = gtk_vbox_new (FALSE, 2);
-#endif
 
   gtk_container_set_border_width (GTK_CONTAINER (box), 2);
   gtk_box_pack_start (GTK_BOX (vbox), box, FALSE, FALSE, 0);
@@ -164,10 +152,6 @@ exo_thumbnail_preview_style_set (GtkWidget           *ebox,
     {
       /* set background color (using the base color) */
       g_signal_handlers_block_by_func (G_OBJECT (ebox), exo_thumbnail_preview_style_set, thumbnail_preview);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-      /*TODO: Gtk3 */
-      gtk_widget_modify_bg (ebox, GTK_STATE_NORMAL, &gtk_widget_get_style (ebox)->base[GTK_STATE_NORMAL]);
-#endif
       g_signal_handlers_unblock_by_func (G_OBJECT (ebox), exo_thumbnail_preview_style_set, thumbnail_preview);
     }
 }

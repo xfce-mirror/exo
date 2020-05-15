@@ -11,7 +11,7 @@ exo_open_SOURCES =							\
 	main.c
 
 exo_open_CFLAGS =							\
-	$(GTK3_CFLAGS)							\
+	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(GIO_CFLAGS)							\
 	$(GIO_UNIX_CFLAGS)
@@ -20,7 +20,7 @@ exo_open_LDFLAGS =							\
 	-no-undefined
 
 exo_open_LDADD =							\
-	$(GTK3_LIBS)							\
+	$(GTK_LIBS)							\
 	$(LIBXFCE4UTIL_LIBS)						\
 	$(GIO_LIBS)							\
 	$(GIO_UNIX_LIBS)						\

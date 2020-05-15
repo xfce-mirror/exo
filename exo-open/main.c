@@ -437,11 +437,7 @@ exo_open_uri (const gchar  *uri,
           && (strcmp (scheme, "ftp") == 0 || strcmp (scheme, "ftps") == 0))
         retval = exo_open_launch_category ("WebBrowser", uri);
       else
-#if GTK_CHECK_VERSION (3, 22, 0)
         retval = gtk_show_uri_on_window (NULL, uri, 0, error);
-#else
-        retval = gtk_show_uri (NULL, uri, 0, error);
-#endif
     }
 
   g_free (scheme);

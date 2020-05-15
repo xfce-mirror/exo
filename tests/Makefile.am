@@ -15,9 +15,7 @@ check_PROGRAMS =							\
 	test-exo-csource						\
 	test-exo-noop							\
 	test-exo-string							\
-	test-exo-icon-chooser-dialog					\
-	test-exo-icon-chooser-dialog-gtk3					\
-	test-exo-wrap-table
+	test-exo-icon-chooser-dialog
 
 test_exo_csource_SOURCES =						\
 	test-exo-csource.c						\
@@ -32,8 +30,8 @@ test_exo_csource_LDADD =						\
 test_exo_noop_SOURCES =							\
 	test-exo-noop.c
 
-test_exo_noop_CFLAGS =							\
-	$(GTK2_CFLAGS)							\
+test_exo_noop_CFLAGS =                                                 \
+	$(GTK_CFLAGS)                                                  \
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_noop_DEPENDENCIES =						\
@@ -46,8 +44,8 @@ test_exo_noop_LDADD =							\
 test_exo_string_SOURCES =						\
 	test-exo-string.c
 
-test_exo_string_CFLAGS =						\
-	$(GTK2_CFLAGS)							\
+test_exo_string_CFLAGS =                                               \
+	$(GTK_CFLAGS)                                                  \
 	$(LIBXFCE4UTIL_CFLAGS)
 
 test_exo_string_DEPENDENCIES =						\
@@ -60,44 +58,22 @@ test_exo_string_LDADD =							\
 test_exo_icon_chooser_dialog_SOURCES =					\
 	test-exo-icon-chooser-dialog.c
 
-test_exo_icon_chooser_dialog_CFLAGS =					\
-	$(GTK2_CFLAGS)							\
-	$(LIBXFCE4UTIL_CFLAGS)
-
 test_exo_icon_chooser_dialog_DEPENDENCIES =				\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
-test_exo_icon_chooser_dialog_LDADD =					\
-	$(GTK2_LIBS)							\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
-
-test_exo_icon_chooser_dialog_gtk3_SOURCES =					\
+test_exo_icon_chooser_dialog_SOURCES =					\
 	test-exo-icon-chooser-dialog.c
 
-test_exo_icon_chooser_dialog_gtk3_CFLAGS =					\
-	$(GTK3_CFLAGS)							\
+test_exo_icon_chooser_dialog_CFLAGS =					\
+	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
-test_exo_icon_chooser_dialog_gtk3_DEPENDENCIES =				\
+test_exo_icon_chooser_dialog_DEPENDENCIES =				\
 	$(top_builddir)/exo/libexo-2.la
 
-test_exo_icon_chooser_dialog_gtk3_LDADD =					\
-	$(GTK3_LIBS)							\
+test_exo_icon_chooser_dialog_LDADD =					\
+	$(GTK_LIBS)							\
 	$(top_builddir)/exo/libexo-2.la
-
-test_exo_wrap_table_SOURCES =						\
-	test-exo-wrap-table.c
-
-test_exo_wrap_table_CFLAGS =						\
-	$(GTK2_CFLAGS)							\
-	$(LIBXFCE4UTIL_CFLAGS)
-
-test_exo_wrap_table_DEPENDENCIES =					\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
-
-test_exo_wrap_table_LDADD =						\
-	$(GTK2_LIBS)							\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 DISTCLEANFILES = test-exo-csource-data.c
 BUILT_SOURCES = test-exo-csource-data.c

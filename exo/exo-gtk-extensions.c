@@ -52,11 +52,7 @@
 static gboolean
 later_destroy (gpointer object)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
   gtk_widget_destroy (GTK_WIDGET (object));
-#else
-  gtk_object_destroy (GTK_OBJECT (object));
-#endif
   g_object_unref (G_OBJECT (object));
   return FALSE;
 }
@@ -70,7 +66,6 @@ later_destroy (gpointer object)
  * Schedules an idle function to destroy the specified @object
  * when the application enters the main loop the next time.
  **/
-#if GTK_CHECK_VERSION (3, 0, 0)
 void
 exo_gtk_object_destroy_later (GtkWidget *object)
 {
@@ -79,16 +74,6 @@ exo_gtk_object_destroy_later (GtkWidget *object)
   g_idle_add_full (G_PRIORITY_HIGH, later_destroy, object, NULL);
   g_object_ref_sink (object);
 }
-#else
-void
-exo_gtk_object_destroy_later (GtkObject *object)
-{
-  g_return_if_fail (GTK_IS_OBJECT (object));
-
-  g_idle_add_full (G_PRIORITY_HIGH, later_destroy, object, NULL);
-  g_object_ref_sink (object);
-}
-#endif
 
 
 
@@ -185,10 +170,6 @@ exo_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
  * <informalexample><programlisting>
  * static void show_about_dialog (void)
  * {
- * #if !GTK_CHECK_VERSION (2, 18, 0)
- *   gtk_about_dialog_set_email_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
- *   gtk_about_dialog_set_url_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
- * #endif
  *
  *   gtk_show_about_dialog (.....);
  * }
@@ -205,9 +186,6 @@ exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
                                gpointer        user_data)
 {
   GtkWidget *message;
-#if !GTK_CHECK_VERSION (3, 22, 0)
-  GdkScreen *screen;
-#endif
   GError    *error = NULL;
   gchar     *uri, *escaped;
 
@@ -227,14 +205,7 @@ exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
     }
 
   /* try to open the url on the given screen */
-#if GTK_CHECK_VERSION (3, 22, 0)
   if (!gtk_show_uri_on_window (GTK_WINDOW(about_dialog), uri, gtk_get_current_event_time (), &error))
-#else
-  /* determine the screen from the about dialog */
-  screen = gtk_widget_get_screen (GTK_WIDGET (about_dialog));
-
-  if (!gtk_show_uri (screen, uri, gtk_get_current_event_time (), &error))
-#endif
     {
       /* make sure to initialize i18n support first,
        * so we'll see a translated message.

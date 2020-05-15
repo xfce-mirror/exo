@@ -51,9 +51,7 @@
  **/
 
 /* HACK: fix dead API via #define */
-#if GTK_CHECK_VERSION (3, 0, 0)
 # define gtk_icon_info_free(info) g_object_unref (info)
-#endif
 
 /* Property identifiers */
 enum
@@ -78,31 +76,17 @@ static void exo_cell_renderer_icon_set_property (GObject                  *objec
                                                  GParamSpec               *pspec);
 static void exo_cell_renderer_icon_get_size     (GtkCellRenderer          *renderer,
                                                  GtkWidget                *widget,
-#if GTK_CHECK_VERSION (3, 0, 0)
                                                  const GdkRectangle       *cell_area,
-#else
-                                                 GdkRectangle             *cell_area,
-#endif
                                                  gint                     *x_offset,
                                                  gint                     *y_offset,
                                                  gint                     *width,
                                                  gint                     *height);
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void exo_cell_renderer_icon_render       (GtkCellRenderer          *renderer,
                                                  cairo_t                  *cr,
                                                  GtkWidget                *widget,
                                                  const GdkRectangle       *background_area,
                                                  const GdkRectangle       *cell_area,
                                                  GtkCellRendererState      flags);
-#else
-static void exo_cell_renderer_icon_render       (GtkCellRenderer          *renderer,
-                                                 GdkWindow                *window,
-                                                 GtkWidget                *widget,
-                                                 GdkRectangle             *background_area,
-                                                 GdkRectangle             *cell_area,
-                                                 GdkRectangle             *expose_area,
-                                                 GtkCellRendererState      flags);
-#endif
 
 
 
@@ -328,11 +312,7 @@ exo_cell_renderer_icon_set_property (GObject      *object,
 static void
 exo_cell_renderer_icon_get_size (GtkCellRenderer *renderer,
                                  GtkWidget       *widget,
-#if GTK_CHECK_VERSION (3, 0, 0)
                                  const GdkRectangle *cell_area,
-#else
-                                 GdkRectangle    *cell_area,
-#endif
                                  gint            *x_offset,
                                  gint            *y_offset,
                                  gint            *width,
@@ -377,7 +357,6 @@ exo_cell_renderer_icon_get_size (GtkCellRenderer *renderer,
 }
 
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void
 exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
                                cairo_t             *cr,
@@ -386,25 +365,11 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
                                const GdkRectangle  *cell_area,
                                GtkCellRendererState flags)
 {
-    GdkRectangle        clip_area;
-    GdkRectangle       *expose_area = &clip_area;
-    GdkRGBA            *color_rgba;
-    GdkColor            color_gdk;
-    GtkStyleContext    *style_context;
-#else
-static void
-exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
-                               GdkWindow           *window,
-                               GtkWidget           *widget,
-                               GdkRectangle        *background_area,
-                               GdkRectangle        *cell_area,
-                               GdkRectangle        *expose_area,
-                               GtkCellRendererState flags)
-{
-  cairo_t *cr = gdk_cairo_create (window);
-  GtkIconSource                    *icon_source;
-  GtkStateType                      state;
-#endif
+  GdkRectangle        clip_area;
+  GdkRectangle       *expose_area = &clip_area;
+  GdkRGBA            *color_rgba;
+  GdkColor            color_gdk;
+  GtkStyleContext    *style_context;
   const ExoCellRendererIconPrivate *priv = exo_cell_renderer_icon_get_instance_private (EXO_CELL_RENDERER_ICON (renderer));
   GtkIconTheme                     *icon_theme;
   GdkRectangle                      icon_area;
@@ -419,9 +384,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   gint                              icon_size;
   gint                              n;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   gdk_cairo_get_clip_rectangle (cr, expose_area);
-#endif
 
   /* verify that we have an icon */
   if (G_UNLIKELY (priv->icon == NULL && priv->gicon == NULL))
@@ -532,7 +495,6 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   icon_area.x = cell_area->x + (cell_area->width - icon_area.width) / 2;
   icon_area.y = cell_area->y + (cell_area->height - icon_area.height) / 2;
 
-  /* Gtk2: check whether the icon is affected by the expose event */
   /* Gtk3: we don't have any expose rectangle and just draw everything */
   if (gdk_rectangle_intersect (expose_area, &icon_area, &draw_area))
     {
@@ -541,7 +503,6 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         {
           if ((flags & GTK_CELL_RENDERER_SELECTED) != 0)
             {
-#if GTK_CHECK_VERSION (3, 0, 0)
               style_context = gtk_widget_get_style_context (widget);
               gtk_style_context_get (style_context, gtk_widget_has_focus (widget) ? GTK_STATE_FLAG_SELECTED : GTK_STATE_FLAG_ACTIVE,
                                      GTK_STYLE_PROPERTY_BACKGROUND_COLOR, &color_rgba,
@@ -553,11 +514,6 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
               color_gdk.green = color_rgba->green * 65535;
               gdk_rgba_free (color_rgba);
               temp = exo_gdk_pixbuf_colorize (icon, &color_gdk);
-#else
-              state = gtk_widget_has_focus (widget) ? GTK_STATE_SELECTED : GTK_STATE_ACTIVE;
-
-              temp = exo_gdk_pixbuf_colorize (icon, &gtk_widget_get_style (widget)->base[state]);
-#endif
               g_object_unref (G_OBJECT (icon));
               icon = temp;
             }
@@ -570,7 +526,6 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
             }
         }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
       /* check if we should render an insensitive icon */
       if (G_UNLIKELY (gtk_widget_get_state_flags(widget) & GTK_STATE_INSENSITIVE || !gtk_cell_renderer_get_sensitive (renderer)))
         {
@@ -589,26 +544,6 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
           g_object_unref (G_OBJECT (icon));
           icon = temp;
         }
-#else
-      /* check if we should render an insensitive icon */
-      if (G_UNLIKELY (gtk_widget_get_state (widget) == GTK_STATE_INSENSITIVE || !gtk_cell_renderer_get_sensitive (renderer)))
-        {
-          /* allocate an icon source */
-          icon_source = gtk_icon_source_new ();
-          gtk_icon_source_set_pixbuf (icon_source, icon);
-          gtk_icon_source_set_size_wildcarded (icon_source, FALSE);
-          gtk_icon_source_set_size (icon_source, GTK_ICON_SIZE_SMALL_TOOLBAR);
-
-          /* render the insensitive icon */
-          temp = gtk_style_render_icon (gtk_widget_get_style (widget), icon_source, gtk_widget_get_direction (widget),
-                                        GTK_STATE_INSENSITIVE, -1, widget, "gtkcellrendererpixbuf");
-          g_object_unref (G_OBJECT (icon));
-          icon = temp;
-
-          /* release the icon source */
-          gtk_icon_source_free (icon_source);
-        }
-#endif
 
       /* render the invalid parts of the icon */
       gdk_cairo_set_source_pixbuf (cr, icon, icon_area.x, icon_area.y);
@@ -618,10 +553,6 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
 
   /* release the file's icon */
   g_object_unref (G_OBJECT (icon));
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  cairo_destroy (cr);
-#endif
 }
 
 

@@ -36,7 +36,6 @@ EXTRA_DIST =								\
 	NEWS								\
 	README								\
 	THANKS								\
-	TODO								\
 	intltool-extract.in						\
 	intltool-merge.in						\
 	intltool-update.in

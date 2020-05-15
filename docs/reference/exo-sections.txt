@@ -1,137 +1,4 @@
 <SECTION>
-<FILE>exo-toolbars-model</FILE>
-<TITLE>ExoToolbarsModel</TITLE>
-ExoToolbarsModel
-ExoToolbarsModelFlags
-EXO_TOOLBARS_ITEM_TYPE
-exo_toolbars_model_new
-exo_toolbars_model_set_actions
-exo_toolbars_model_get_actions
-exo_toolbars_model_load_from_file
-exo_toolbars_model_save_to_file
-exo_toolbars_model_get_flags
-exo_toolbars_model_set_flags
-exo_toolbars_model_get_style
-exo_toolbars_model_set_style
-exo_toolbars_model_unset_style
-exo_toolbars_model_get_item_type
-exo_toolbars_model_get_item_id
-exo_toolbars_model_get_item_data
-exo_toolbars_model_add_item
-exo_toolbars_model_add_separator
-exo_toolbars_model_add_toolbar
-exo_toolbars_model_move_item
-exo_toolbars_model_remove_item
-exo_toolbars_model_remove_toolbar
-exo_toolbars_model_n_items
-exo_toolbars_model_item_nth
-exo_toolbars_model_n_toolbars
-exo_toolbars_model_toolbar_nth
-<SUBSECTION Standard>
-EXO_TOOLBARS_MODEL
-EXO_IS_TOOLBARS_MODEL
-EXO_TYPE_TOOLBARS_MODEL
-EXO_TOOLBARS_MODEL_CLASS
-EXO_IS_TOOLBARS_MODEL_CLASS
-EXO_TOOLBARS_MODEL_GET_CLASS
-<SUBSECTION Private>
-exo_toolbars_model_get_type
-</SECTION>
-
-<SECTION>
-<FILE>exo-toolbars-editor</FILE>
-ExoToolbarsEditor
-<TITLE>ExoToolbarsEditor</TITLE>
-exo_toolbars_editor_new
-exo_toolbars_editor_new_with_model
-exo_toolbars_editor_get_model
-exo_toolbars_editor_set_model
-exo_toolbars_editor_get_ui_manager
-exo_toolbars_editor_set_ui_manager
-<SUBSECTION Standard>
-EXO_TOOLBARS_EDITOR
-EXO_IS_TOOLBARS_EDITOR
-EXO_TYPE_TOOLBARS_EDITOR
-EXO_TOOLBARS_EDITOR_CLASS
-EXO_IS_TOOLBARS_EDITOR_CLASS
-EXO_TOOLBARS_EDITOR_GET_CLASS
-<SUBSECTION Private>
-exo_toolbars_editor_get_type
-</SECTION>
-
-<SECTION>
-<FILE>exo-toolbars-editor-dialog</FILE>
-ExoToolbarsEditorDialog
-<TITLE>ExoToolbarsEditorDialog</TITLE>
-exo_toolbars_editor_dialog_new_with_model
-<SUBSECTION Standard>
-EXO_TOOLBARS_EDITOR_DIALOG
-EXO_IS_TOOLBARS_EDITOR_DIALOG
-EXO_TYPE_TOOLBARS_EDITOR_DIALOG
-EXO_TOOLBARS_EDITOR_DIALOG_CLASS
-EXO_IS_TOOLBARS_EDITOR_DIALOG_CLASS
-EXO_TOOLBARS_EDITOR_DIALOG_GET_CLASS
-<SUBSECTION Private>
-exo_toolbars_editor_dialog_get_type
-</SECTION>
-
-<SECTION>
-<FILE>exo-toolbars-view</FILE>
-<TITLE>ExoToolbarsView</TITLE>
-ExoToolbarsView
-exo_toolbars_view_new
-exo_toolbars_view_new_with_model
-exo_toolbars_view_get_editing
-exo_toolbars_view_set_editing
-exo_toolbars_view_get_model
-exo_toolbars_view_set_model
-exo_toolbars_view_get_ui_manager
-exo_toolbars_view_set_ui_manager
-<SUBSECTION Standard>
-EXO_TOOLBARS_VIEW
-EXO_IS_TOOLBARS_VIEW
-EXO_TYPE_TOOLBARS_VIEW
-EXO_TOOLBARS_VIEW_CLASS
-EXO_IS_TOOLBARS_VIEW_CLASS
-EXO_TOOLBARS_VIEW_GET_CLASS
-<SUBSECTION Private>
-exo_toolbars_view_get_type
-</SECTION>
-
-
-
-<SECTION>
-<FILE>exo-icon-bar</FILE>
-<TITLE>ExoIconBar</TITLE>
-ExoIconBar
-exo_icon_bar_new
-exo_icon_bar_new_with_model
-exo_icon_bar_get_model
-exo_icon_bar_set_model
-exo_icon_bar_get_pixbuf_column
-exo_icon_bar_set_pixbuf_column
-exo_icon_bar_get_text_column
-exo_icon_bar_set_text_column
-exo_icon_bar_get_orientation
-exo_icon_bar_set_orientation
-exo_icon_bar_get_active
-exo_icon_bar_set_active
-exo_icon_bar_get_active_iter
-exo_icon_bar_set_active_iter
-<SUBSECTION Standard>
-ExoIconBarPrivate
-ExoIconBarClass
-EXO_TYPE_ICON_BAR
-EXO_ICON_BAR
-EXO_ICON_BAR_CLASS
-EXO_IS_ICON_BAR
-EXO_IS_ICON_BAR_CLASS
-EXO_ICON_BAR_GET_CLASS
-<SUBSECTION Private>
-exo_icon_bar_get_type
-</SECTION>
-
-<SECTION>
 <FILE>exo-icon-chooser-dialog</FILE>
 <TITLE>ExoIconChooserDialog</TITLE>
 ExoIconChooserDialog
@@ -259,48 +126,6 @@ exo_tree_view_get_type
 </SECTION>
 
 <SECTION>
-<FILE>exo-wrap-table</FILE>
-<TITLE>ExoWrapTable</TITLE>
-ExoWrapTable
-exo_wrap_table_new
-exo_wrap_table_get_col_spacing
-exo_wrap_table_set_col_spacing
-exo_wrap_table_get_row_spacing
-exo_wrap_table_set_row_spacing
-exo_wrap_table_get_homogeneous
-exo_wrap_table_set_homogeneous
-<SUBSECTION Standard>
-EXO_TYPE_WRAP_TABLE
-EXO_WRAP_TABLE
-EXO_WRAP_TABLE_CLASS
-EXO_IS_WRAP_TABLE
-EXO_IS_WRAP_TABLE_CLASS
-EXO_WRAP_TABLE_GET_CLASS
-<SUBSECTION Private>
-exo_wrap_table_get_type
-</SECTION>
-
-
-
-<SECTION>
-<FILE>exo-cell-renderer-ellipsized-text</FILE>
-<TITLE>ExoCellRendererEllipsizedText</TITLE>
-ExoCellRendererEllipsizedText
-exo_cell_renderer_ellipsized_text_new
-<SUBSECTION Standard>
-ExoCellRendererEllipsizedTextPrivate
-ExoCellRendererEllipsizedTextClass
-EXO_TYPE_CELL_RENDERER_ELLIPSIZED_TEXT
-EXO_CELL_RENDERER_ELLIPSIZED_TEXT
-EXO_CELL_RENDERER_ELLIPSIZED_TEXT_CLASS
-EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT
-EXO_IS_CELL_RENDERER_ELLIPSIZED_TEXT_CLASS
-EXO_CELL_RENDERER_ELLIPSIZED_TEXT_GET_CLASS
-<SUBSECTION Private>
-exo_cell_renderer_ellipsized_text_get_type
-</SECTION>
-
-<SECTION>
 <FILE>exo-cell-renderer-icon</FILE>
 <TITLE>ExoCellRendererIcon</TITLE>
 ExoCellRendererIcon
@@ -317,8 +142,6 @@ EXO_CELL_RENDERER_ICON_GET_CLASS
 <SUBSECTION Private>
 exo_cell_renderer_icon_get_type
 </SECTION>
-
-
 
 <SECTION>
 <FILE>exo-job</FILE>
@@ -346,8 +169,6 @@ EXO_JOB_GET_CLASS
 exo_job_get_type
 </SECTION>
 
-
-
 <SECTION>
 <FILE>exo-simple-job</FILE>
 <TITLE>ExoSimpleJob</TITLE>
@@ -365,8 +186,6 @@ EXO_SIMPLE_JOB_GET_CLASS
 <SUBSECTION Private>
 exo_simple_job_get_type
 </SECTION>
-
-
 
 <SECTION>
 <FILE>exo-gdk-pixbuf-extensions</FILE>
@@ -458,24 +277,4 @@ exo_noop_zero
 exo_noop_null
 exo_noop_true
 exo_noop_false
-</SECTION>
-
-<SECTION>
-<FILE>exo-xsession-client</FILE>
-<TITLE>ExoXsessionClient</TITLE>
-ExoXsessionClient
-exo_xsession_client_new_with_group
-exo_xsession_client_get_group
-exo_xsession_client_set_group
-exo_xsession_client_get_restart_command
-exo_xsession_client_set_restart_command
-<SUBSECTION Standard>
-EXO_TYPE_XSESSION_CLIENT
-EXO_XSESSION_CLIENT
-EXO_XSESSION_CLIENT_CLASS
-EXO_IS_XSESSION_CLIENT
-EXO_IS_XSESSION_CLIENT_CLASS
-EXO_XSESSION_CLIENT_GET_CLASS
-<SUBSECTION Private>
-exo_xsession_client_get_type
 </SECTION>

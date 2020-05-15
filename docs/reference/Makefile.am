@@ -34,11 +34,7 @@ EXTRA_HFILES=
 # Images to copy into HTML directory
 HTML_IMAGES =								\
 	$(srcdir)/images/exo-gtk-file-chooser-add-thumbnail-preview.png	\
-	$(srcdir)/images/exo-icon-chooser-dialog.png			\
-	$(srcdir)/images/exo-toolbars-editor.png			\
-	$(srcdir)/images/exo-toolbars-editor-dialog.png			\
-	$(srcdir)/images/exo-toolbars-view.png				\
-	$(srcdir)/images/exo-wrap-table.png
+	$(srcdir)/images/exo-icon-chooser-dialog.png
 
 # Extra SGML files that are included by DOC_MAIN_SGML_FILE
 content_files = 							\
@@ -48,18 +44,15 @@ content_files = 							\
 
 # CFLAGS and LDFLAGS for compiling scan program. Only needed
 # if $(DOC_MODULE).types is non-empty.
-# We need to use GTK2 exo flags because the GTK3 version does not have
-# all symbols (exo_toolbars etc)
-# We can't build the doc with --disable-gtk2 for now
 GTKDOC_CFLAGS =	 							\
 	-I$(top_srcdir) 						\
 	-I$(top_builddir) 						\
-	$(GTK2_CFLAGS)							\
+	$(GTK_CFLAGS)                                                  \
 	$(LIBXFCE4UTIL_CFLAGS)
 
 GTKDOC_LIBS =  								\
-	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la \
-	$(GTK2_LIBS)
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la	\
+	$(GTK_LIBS)
 
 include $(top_srcdir)/gtk-doc.make
 
