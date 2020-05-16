@@ -24,7 +24,7 @@
 
 /* be sure to have i18n macros available and libintl.h included! */
 #if defined(GETTEXT_PACKAGE)
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #else
 #include <glib/gi18n.h>
 #endif
