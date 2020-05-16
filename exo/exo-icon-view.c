@@ -3704,7 +3704,7 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
 {
   GtkCellRendererState flags = 0;
   ExoIconViewCellInfo *info;
-  GtkStateType         state;
+  GtkStateFlags        state;
   GdkRectangle         cell_area;
   GdkRectangle         aligned_area;
   GtkStyleContext     *style_context;
