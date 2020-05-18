@@ -1629,6 +1629,7 @@ exo_icon_view_realize (GtkWidget *widget)
   attributes.height = MAX (priv->height, allocation.height);
   attributes.event_mask = GDK_EXPOSURE_MASK
                         | GDK_SCROLL_MASK
+                        | GDK_SMOOTH_SCROLL_MASK
                         | GDK_POINTER_MOTION_MASK
                         | GDK_LEAVE_NOTIFY_MASK
                         | GDK_BUTTON_PRESS_MASK
@@ -2532,10 +2533,7 @@ static gboolean
 exo_icon_view_scroll_event (GtkWidget      *widget,
                             GdkEventScroll *event)
 {
-  GtkAdjustment *adjustment;
-  ExoIconView   *icon_view = EXO_ICON_VIEW (widget);
-  gdouble        delta;
-  gdouble        value;
+  ExoIconView *icon_view = EXO_ICON_VIEW (widget);
 
   /* we don't care for scroll events in "rows" layout mode, as
    * that's completely handled by GtkScrolledWindow.
@@ -2543,24 +2541,19 @@ exo_icon_view_scroll_event (GtkWidget      *widget,
   if (icon_view->priv->layout_mode != EXO_ICON_VIEW_LAYOUT_COLS)
     return FALSE;
 
-  /* also, we don't care for anything but Up/Down, as
-   * everything else will be handled by GtkScrolledWindow.
-   */
-  if (event->direction != GDK_SCROLL_UP && event->direction != GDK_SCROLL_DOWN)
-    return FALSE;
+  /* convert vertical scroll events to horizontal ones in "columns" layout mode */
+  if (event->direction == GDK_SCROLL_UP)
+    event->direction = GDK_SCROLL_LEFT;
+  else if (event->direction == GDK_SCROLL_DOWN)
+    event->direction = GDK_SCROLL_RIGHT;
+  else if (event->direction == GDK_SCROLL_SMOOTH)
+    {
+      event->delta_x = event->delta_y;
+      event->delta_y = 0.0;
+    }
 
-  /* determine the horizontal adjustment */
-  adjustment = icon_view->priv->hadjustment;
-
-  /* determine the scroll delta */
-  delta = pow (gtk_adjustment_get_page_size (adjustment), 2.0 / 3.0);
-  delta = (event->direction == GDK_SCROLL_UP) ? -delta : delta;
-
-  /* apply the new adjustment value */
-  value = CLAMP (gtk_adjustment_get_value (adjustment) + delta, gtk_adjustment_get_lower (adjustment), gtk_adjustment_get_upper (adjustment) - gtk_adjustment_get_page_size (adjustment));
-  gtk_adjustment_set_value (adjustment, value);
-
-  return TRUE;
+  /* scrolling will be handled by GtkScrolledWindow */
+  return FALSE;
 }
 
 
