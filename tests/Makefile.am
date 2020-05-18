@@ -61,19 +61,13 @@ test_exo_icon_chooser_dialog_SOURCES =					\
 test_exo_icon_chooser_dialog_DEPENDENCIES =				\
 	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
-test_exo_icon_chooser_dialog_SOURCES =					\
-	test-exo-icon-chooser-dialog.c
-
 test_exo_icon_chooser_dialog_CFLAGS =					\
 	$(GTK_CFLAGS)							\
 	$(LIBXFCE4UTIL_CFLAGS)
 
-test_exo_icon_chooser_dialog_DEPENDENCIES =				\
-	$(top_builddir)/exo/libexo-2.la
-
 test_exo_icon_chooser_dialog_LDADD =					\
 	$(GTK_LIBS)							\
-	$(top_builddir)/exo/libexo-2.la
+	$(top_builddir)/exo/libexo-$(LIBEXO_VERSION_API).la
 
 DISTCLEANFILES = test-exo-csource-data.c
 BUILT_SOURCES = test-exo-csource-data.c
