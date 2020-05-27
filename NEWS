@@ -1,3 +1,40 @@
+4.15.1
+======
+This release transitions several exo components to xfce-settings.
+Please use with xfce-settings 4.15.1 or later for best results.
+- Removed binaries: exo-compose-mail, exo-helper-2
+- Removed from API: ExoCellRendererEllipsizedText, 
+  ExoIconBar, ExoToolbarsEditor, ExoToolbarsEditorDialog, 
+  ExoToolbarsModel, ExoToolbarsView, ExoWrapTable, ExoXsessionClient,
+  exo_atomic_inc, exo_atomic_dec
+
+Other Updates:
+- state variable is a GtkStateFlags
+- Fix previous commit
+- desktop-item-edit: Fix sensitivity of save button (Bug #16813)
+- Add basic GitLab pipeline
+- Attach popup window to toplevel parent (Bug #16768)
+- Rename Thunar.desktop to thunar.desktop (Bug #16197)
+- Extend selection on shift+drag (Bug #7526)
+- Do not cancel selection on shift+drag
+- Rename Thunar.desktop to thunar.desktop (Bug #16197)
+- Fix type declaration (Bug #16678)
+- desktop-item-edit: Use new XfceTitledDialog API
+- Fix GTimeVal deprecation
+- Replace deprecated G_INLINE_FUNC macro
+- Replace deprecated macro
+- Wrong keyboard navigation after using rubberband in exo-icon-view (Bug #16286)
+- Cursor position in icon view not visible/highlighted when using ctrl + arrows (Bug #12227)
+- Make sure default applications are properly set in mimeapps.list
+- Translation Updates:
+  Albanian, Amharic, Arabic, Asturian, Basque, Belarusian, Bengali,
+  Catalan, Chinese (Hong Kong), Chinese (Taiwan), Danish, Dutch,
+  Estonian, Greek, Hungarian, Icelandic, Interlingue, Italian, Kannada,
+  Latvian, Lithuanian, Norwegian Bokmål, Norwegian Nynorsk, Occitan
+  (post 1500), Panjabi (Punjabi), Persian (Iran), Portuguese, Romanian,
+  Russian, Slovak, Spanish, Telugu, Turkish, Uighur, Urdu, Urdu
+  (Pakistan), Vietnamese
+
 0.12.11
 ======
 - General:
