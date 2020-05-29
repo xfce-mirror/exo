@@ -23,29 +23,13 @@ libexo_headers =							\
 	exo-tree-view.h							\
 	exo-utils.h
 
-libexo_built_public_sources =						\
-	exo-enum-types.h
-
-libexo_built_sources =							\
-	$(libexo_built_public_sources)					\
+libexo_2_built_sources =							\
+	exo-enum-types.h \
 	exo-alias.h							\
 	exo-aliasdef.c							\
 	exo-enum-types.c						\
 	exo-marshal.c							\
 	exo-marshal.h
-
-libexoincludedir = $(includedir)/exo-2/exo
-
-libexoinclude_HEADERS =							\
-	$(libexo_built_public_sources)					\
-	$(libexo_headers)						\
-	exo.h								\
-	exo-config.h
-
-
-##
-## GTK+ 3 support library
-##
 
 libexo_2_includedir = $(includedir)/exo-2/exo
 
@@ -141,10 +125,10 @@ CLEANFILES =								\
 DISTCLEANFILES =							\
 	stamp-exo-enum-types.h						\
 	stamp-exo-marshal.h						\
-	$(libexo_built_sources)
+	$(libexo_2_built_sources)
 
 BUILT_SOURCES =								\
-	$(libexo_built_sources)
+	$(libexo_2_built_sources)
 
 exo-alias.h: make-exo-alias.pl exo.symbols
 	$(AM_V_GEN) $(PERL) $(srcdir)/make-exo-alias.pl < $(srcdir)/exo.symbols > exo-alias.h
