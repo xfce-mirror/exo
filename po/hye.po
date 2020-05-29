@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-16 00:45+0200\n"
-"PO-Revision-Date: 2020-05-29 10:11+0000\n"
+"PO-Revision-Date: 2020-05-29 17:20+0000\n"
 "Last-Translator: Վահրամ Չալաբեան <vahram.chalabyan@realschool.am>\n"
 "Language-Team: Eastern Armenian (http://www.transifex.com/xfce/exo/language/hye/)\n"
 "MIME-Version: 1.0\n"
@@ -210,7 +210,7 @@ msgstr "Նշարկման սիւնակ"
 
 #: ../exo/exo-icon-view.c:828
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Սիւնակի տիպար, գործածուող Pango֊ի գործածման դէպքում, գրոյթի ստացման համար"
+msgstr "Սիւնակի տեսակ, գործածուող Pango֊ի գործածման դէպքում, գրոյթի ստացման համար"
 
 #: ../exo/exo-icon-view.c:842
 msgid "Icon View Model"
@@ -358,7 +358,7 @@ msgstr "-h, --help Ցոյց տալ աջակցութիւնը եւ դուրս գա
 #: ../exo-csource/main.c:307
 #, c-format
 msgid "  -V, --version     Print version information and exit\n"
-msgstr "-V, --version Ցոյց տալ տարբերակի մասին տեղեկոյթը եւ դուրս գալ4\n"
+msgstr "-V, --version Ցոյց տալ տարբերակի մասին տեղեկոյթը եւ դուրս գալ\n"
 
 #: ../exo-csource/main.c:308
 #, c-format
@@ -593,7 +593,7 @@ msgstr "Ստեղծել աշխատասեղանի նոր նիշ, տրուած նշ
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Type of desktop file to create (Application or Link)"
-msgstr "Ստեղծուող աշխատասեղանի նիշի տիպը (յաւելուած կամ յղում)"
+msgstr "Ստեղծուող աշխատասեղանի նիշի տեսակը  (յաւելուած կամ յղում)"
 
 #: ../exo-desktop-item-edit/main.c:82
 msgid "Preset name when creating a desktop file"
@@ -710,17 +710,17 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "--launch ՏԻՊ [ՅԱՐԱՉԱՓեր...] Թողարկել ՏԻՊի նախընտրելի յաւելուածները, ընտրուած ՅԱՐԱՉԱՓերի հետ միասին, երբ ՏԻՊը տրուած արժէքներից մեկն է։"
+msgstr "--launch ՏԵՍԱԿ [ՅԱՐԱՉԱՓեր...] Թողարկել ՏԵՍԱԿի նախընտրելի յաւելուածները,\n                                             ընտրուած ՅԱՐԱՉԱՓերի յետ միասին,\n                                             երբ ՏԵՍԱԿը տրուած արժէքներից մեկն է։"
 
 #: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "--working-directory ՆՇԱՐԱՆ Լռելեայն աշխատանքային նշարան յաւելուածների համար, երբ աւգտագործուում է --launch ընտրանքը։"
+msgstr "--working-directory ՆՇԱՐԱՆ Լռելեայն աշխատանքային նշարան յաւելուածների \n                                        համար, երբ աւգտագործուում է --launch ընտրանքը։"
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr "Տրված ՏԻՊերը սատարուում են --launch հրամանի համար․"
+msgstr "Տրուած ՏԵՍԱԿները սատարուում են --launch հրամանի համար․"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
@@ -731,7 +731,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "WebBrowser - նախընտրած զննարկիչ։\nMailReader - նախընտրած էլ֊փոստ։\nFileManager - նախընտրած նիշք։\nTerminalEmulator - նախընտրած վահանակ։"
+msgstr "WebBrowser - նախընտրած զննարկիչ։\nMailReader - նախընտրած էլ֊փոստի յաւելուած։\nFileManager - նախընտրած նիշային կառաւարիչ։\nTerminalEmulator - նախընտրած վահանակ։"
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -740,7 +740,7 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr "Եթե չէք սահմանել --launch ընտրանքը, ապա exo-open֊ը կը բացի բոլոր նշուած\nURL֊ները, կարգադրիչների հետ միասին։ Եթե սահմանել էք --launch ընտրանքը, կարող էք ընտրել այն յաւելուածը,\nորը ցանկանում էք գործարկել եւ փոխանցել աւելացուած յարաչափերը՝ յաւելուածներին (աւրինակ՝ հրահանգակին փոխանցել հրամանային տողը,\nորը պէտք է գործարկել)։"
+msgstr "Եթե չէք սահմանել --launch ընտրանքը, ապա exo-open֊ը կը բացի բոլոր սահմանուած\nգերյղումները, կարգադրիչների յետ միասին։ Եթե սահմանել էք --launch ընտրանքը, կարող էք ընտրել այն յաւելուածը,\nորը ցանկանում էք գործարկել եւ փոխանցել աւելացուած յարաչափերը՝ յաւելուածներին (աւրինակ՝ հրահանգակին փոխանցել հրամանային տողը,\nորը պէտք է գործարկել)։"
 
 #: ../exo-open/main.c:195
 #, c-format
