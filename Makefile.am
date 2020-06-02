@@ -2,7 +2,6 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 SUBDIRS =								\
 	exo								\
-	exo-csource							\
 	exo-desktop-item-edit						\
 	exo-open							\
 	docs								\

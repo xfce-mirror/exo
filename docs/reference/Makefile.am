@@ -38,7 +38,6 @@ HTML_IMAGES =								\
 
 # Extra SGML files that are included by DOC_MAIN_SGML_FILE
 content_files = 							\
-	exo-csource.xml							\
 	version.xml							\
 	visual-index.xml
 
@@ -58,13 +57,11 @@ include $(top_srcdir)/gtk-doc.make
 
 # Other files to distribute
 EXTRA_DIST += 								\
-	exo-csource.1							\
 	exo-open.1							\
 	version.xml.in
 
 # manual pages
 man_MANS =								\
-	exo-csource.1							\
 	exo-open.1
 
 if MAINTAINER_MODE
