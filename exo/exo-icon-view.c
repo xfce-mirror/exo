@@ -1669,7 +1669,9 @@ exo_icon_view_get_preferred_width (GtkWidget *widget,
   GList                    *lp;
 
   /* well, this is easy */
-  *minimal_width = *natural_width = priv->width;
+  if (priv->item_width < 0)
+    *minimal_width = priv->width;
+  *natural_width = priv->width;
 
   /* handle the child widgets */
   for (lp = priv->children; lp != NULL; lp = lp->next)
@@ -1691,7 +1693,8 @@ exo_icon_view_get_preferred_height (GtkWidget *widget,
   GList                    *lp;
 
   /* well, this is easy */
-  *natural_height = *minimal_height = priv->height;
+  *minimal_height = priv->height;
+  *natural_height = priv->height;
 
   /* handle the child widgets */
   for (lp = priv->children; lp != NULL; lp = lp->next)
