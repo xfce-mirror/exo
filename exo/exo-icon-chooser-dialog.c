@@ -128,6 +128,10 @@ static const gchar CONTEXT_TITLES[][80] =
   "#",
   /* EXO_ICON_CHOOSER_CONTEXT_FILE */
   N_("Image Files"),
+  /* separator */
+  "#",
+  /* EXO_ICON_CHOOSER_CONTEXT_NO_ICON */
+  N_("No Icon"),
 };
 
 
@@ -482,10 +486,17 @@ exo_icon_chooser_dialog_combo_changed (GtkWidget            *combo,
           g_list_free (selected_items);
         }
     }
-  else
+  else if (context == EXO_ICON_CHOOSER_CONTEXT_FILE)
     {
       /* show the file chooser/hide the icon chooser */
       gtk_widget_show (priv->file_chooser);
+      gtk_widget_hide (priv->icon_chooser);
+      gtk_widget_hide (priv->filter_entry);
+    }
+  else
+    {
+      /* only show context combo box */
+      gtk_widget_hide (priv->file_chooser);
       gtk_widget_hide (priv->icon_chooser);
       gtk_widget_hide (priv->filter_entry);
     }
@@ -625,6 +636,7 @@ gchar*
 exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_dialog)
 {
   ExoIconChooserDialogPrivate *priv = exo_icon_chooser_dialog_get_instance_private (icon_chooser_dialog);
+  ExoIconChooserContext        context;
   GtkTreeModel                *model;
   GtkTreeIter                  iter;
   GList                       *selected_items;
@@ -633,7 +645,8 @@ exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_dialog)
   g_return_val_if_fail (EXO_IS_ICON_CHOOSER_DIALOG (icon_chooser_dialog), NULL);
 
   /* determine the active context for the chooser */
-  if (gtk_combo_box_get_active (GTK_COMBO_BOX (priv->combo)) <= EXO_ICON_CHOOSER_CONTEXT_ALL)
+  context = gtk_combo_box_get_active (GTK_COMBO_BOX (priv->combo));
+  if (context <= EXO_ICON_CHOOSER_CONTEXT_ALL)
     {
       /* user is selecting a named icon, check if atleast one selected */
       selected_items = exo_icon_view_get_selected_items (EXO_ICON_VIEW (priv->icon_chooser));
@@ -649,7 +662,7 @@ exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_dialog)
           g_list_free (selected_items);
         }
     }
-  else
+  else if (context == EXO_ICON_CHOOSER_CONTEXT_FILE)
     {
       /* user is selecting an image file, so just return the absolute path to the image file */
       icon = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (priv->file_chooser));
@@ -659,6 +672,11 @@ exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_dialog)
           g_free (icon);
           icon = NULL;
         }
+    }
+  else
+    {
+      /* unset icon by returning an empty string */
+      icon = g_strdup ("");
     }
 
   return icon;
