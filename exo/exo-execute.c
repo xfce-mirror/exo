@@ -133,7 +133,7 @@ static gchar *
 find_fallback_application_from_xdg_mime (const gchar *category)
 {
   const gchar *query = NULL;
-  gchar *stdout = NULL;
+  gchar *output = NULL;
   gchar *cmd = NULL;
   gchar *path = NULL;
   GDesktopAppInfo *info = NULL;
@@ -161,12 +161,12 @@ find_fallback_application_from_xdg_mime (const gchar *category)
 
   if (info == NULL && query != NULL)
   {
-    if (g_spawn_command_line_sync(query, &stdout, NULL, NULL, NULL))
+    if (g_spawn_command_line_sync(query, &output, NULL, NULL, NULL))
     {
-      if (stdout != NULL)
+      if (output != NULL)
       {
-        cmd = g_utf8_substring(stdout, 0, g_utf8_strlen(stdout, -1) - 1);
-        g_free(stdout);
+        cmd = g_utf8_substring(output, 0, g_utf8_strlen(output, -1) - 1);
+        g_free(output);
         info = g_desktop_app_info_new(cmd);
       }
     }
