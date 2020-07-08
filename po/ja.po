@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008,2016-2019
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008,2016-2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 18:30+0200\n"
-"PO-Revision-Date: 2019-06-02 11:00+0000\n"
+"POT-Creation-Date: 2020-07-08 00:45+0200\n"
+"PO-Revision-Date: 2020-07-08 21:05+0000\n"
 "Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/xfce/exo/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -18,37 +18,35 @@ msgstr ""
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:125
-#: ../exo/exo-cell-renderer-icon.c:154
+#: ../exo/exo-cell-renderer-icon.c:138
 msgid "Follow state"
 msgstr "状況に応じる"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:126
-#: ../exo/exo-cell-renderer-icon.c:155
+#: ../exo/exo-cell-renderer-icon.c:139
 msgid "Render differently based on the selection state."
 msgstr "選択状況に応じて異なった描画を行います。"
 
-#: ../exo/exo-cell-renderer-icon.c:176
+#: ../exo/exo-cell-renderer-icon.c:160
 msgid "Icon"
 msgstr "アイコン"
 
-#: ../exo/exo-cell-renderer-icon.c:177
+#: ../exo/exo-cell-renderer-icon.c:161
 msgid "The icon to render."
 msgstr "表示するアイコンです。"
 
-#: ../exo/exo-cell-renderer-icon.c:195
+#: ../exo/exo-cell-renderer-icon.c:179
 msgid "GIcon"
 msgstr "GIcon"
 
-#: ../exo/exo-cell-renderer-icon.c:196
+#: ../exo/exo-cell-renderer-icon.c:180
 msgid "The GIcon to render."
 msgstr "表示する GIcon です。"
 
-#: ../exo/exo-cell-renderer-icon.c:217
+#: ../exo/exo-cell-renderer-icon.c:201
 msgid "size"
 msgstr "サイズ"
 
-#: ../exo/exo-cell-renderer-icon.c:218
+#: ../exo/exo-cell-renderer-icon.c:202
 msgid "The size of the icon to render in pixels."
 msgstr "表示するアイコンのサイズです (ピクセル単位)。"
 
@@ -67,74 +65,10 @@ msgstr "ファイル \"%s\" を読み込めませんでした: %s"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "画像 \"%s\" の読み込みに失敗しました: 理由は不明ですが、おそらく画像ファイルが破損しています"
 
-#: ../exo/exo-gtk-extensions.c:248
+#: ../exo/exo-gtk-extensions.c:219
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "\"%s\" を開けませんでした。"
-
-#: ../exo/exo-icon-bar.c:273 ../exo/exo-icon-view.c:914
-msgid "Orientation"
-msgstr "方向"
-
-#: ../exo/exo-icon-bar.c:274
-msgid "The orientation of the iconbar"
-msgstr "アイコンバーが延びる方向です。"
-
-#: ../exo/exo-icon-bar.c:290 ../exo/exo-icon-view.c:931
-msgid "Pixbuf column"
-msgstr "ピクセルバッファー欄"
-
-#: ../exo/exo-icon-bar.c:291 ../exo/exo-icon-view.c:932
-msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "アイコンのピクセルバッファーを取得するために使用されるモデル欄です。"
-
-#: ../exo/exo-icon-bar.c:306 ../exo/exo-icon-view.c:1076
-msgid "Text column"
-msgstr "文字欄"
-
-#: ../exo/exo-icon-bar.c:307 ../exo/exo-icon-view.c:1077
-msgid "Model column used to retrieve the text from"
-msgstr "文字を取得するために使用されるモデル欄です。"
-
-#: ../exo/exo-icon-bar.c:319
-msgid "Icon Bar Model"
-msgstr "アイコンバーのモデル"
-
-#: ../exo/exo-icon-bar.c:320
-msgid "Model for the icon bar"
-msgstr "アイコンバーのためのモデルです。"
-
-#: ../exo/exo-icon-bar.c:336
-msgid "Active"
-msgstr "アクティブ"
-
-#: ../exo/exo-icon-bar.c:337
-msgid "Active item index"
-msgstr "有効アイテムのインデックス"
-
-#: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
-msgid "Active item fill color"
-msgstr "有効アイテムの塗りつぶし色"
-
-#: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
-msgid "Active item border color"
-msgstr "有効アイテムの枠の色"
-
-#: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
-msgid "Active item text color"
-msgstr "有効アイテムの文字色"
-
-#: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
-msgid "Cursor item fill color"
-msgstr "カーソルアイテムの塗りつぶし色"
-
-#: ../exo/exo-icon-bar.c:371 ../exo/exo-icon-bar.c:372
-msgid "Cursor item border color"
-msgstr "カーソルアイテムの枠の色"
-
-#: ../exo/exo-icon-bar.c:378 ../exo/exo-icon-bar.c:379
-msgid "Cursor item text color"
-msgstr "カーソルアイテムの文字色"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:100
@@ -202,356 +136,212 @@ msgid "All Icons"
 msgstr "すべてのアイコン"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:302
+#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:275
 msgid "Image Files"
 msgstr "画像ファイル"
 
+#. EXO_ICON_CHOOSER_CONTEXT_NO_ICON
+#: ../exo/exo-icon-chooser-dialog.c:134
+msgid "No Icon"
+msgstr "アイコンなし"
+
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:211
+#: ../exo/exo-icon-chooser-dialog.c:200
 msgid "Select _icon from:"
 msgstr "アイコンを選択(_I):"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:235
+#: ../exo/exo-icon-chooser-dialog.c:216
 msgid "_Search icon:"
 msgstr "アイコンの検索(_S):"
 
-#: ../exo/exo-icon-chooser-dialog.c:254
+#: ../exo/exo-icon-chooser-dialog.c:227
 msgid "Clear search field"
 msgstr "検索フィールドのクリア"
 
-#: ../exo/exo-icon-view.c:782
+#: ../exo/exo-icon-view.c:724
 msgid "Column Spacing"
 msgstr "表示欄スペース"
 
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-view.c:725
 msgid "Space which is inserted between grid column"
 msgstr "グリッド欄の間に挿入されるスペースです。"
 
-#: ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-view.c:741
 msgid "Number of columns"
 msgstr "表示欄の数"
 
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-view.c:742
 msgid "Number of columns to display"
 msgstr "表示する表示欄の数です。"
 
-#: ../exo/exo-icon-view.c:814
+#: ../exo/exo-icon-view.c:756
 msgid "Enable Search"
 msgstr "検索を有効にする"
 
-#: ../exo/exo-icon-view.c:815
+#: ../exo/exo-icon-view.c:757
 msgid "View allows user to search through columns interactively"
 msgstr "表示欄をインタラクティブに検索できるようにします。"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:774
 msgid "Width for each item"
 msgstr "アイテムの幅"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:775
 msgid "The width used for each item"
 msgstr "それぞれのアイテムに使用する幅です。"
 
-#: ../exo/exo-icon-view.c:851
+#: ../exo/exo-icon-view.c:793
 msgid "Layout mode"
 msgstr "レイアウトモード"
 
-#: ../exo/exo-icon-view.c:852
+#: ../exo/exo-icon-view.c:794
 msgid "The layout mode"
 msgstr "レイアウトモードです。"
 
-#: ../exo/exo-icon-view.c:868
+#: ../exo/exo-icon-view.c:810
 msgid "Margin"
 msgstr "余白"
 
-#: ../exo/exo-icon-view.c:869
+#: ../exo/exo-icon-view.c:811
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "アイテム表示の端に挿入されるスペースです。"
 
-#: ../exo/exo-icon-view.c:885
+#: ../exo/exo-icon-view.c:827
 msgid "Markup column"
 msgstr "マークアップ欄"
 
-#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-icon-view.c:828
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Pango のマークアップが使用されている場合に文字を取得するためのモデル欄です。"
 
-#: ../exo/exo-icon-view.c:900
+#: ../exo/exo-icon-view.c:842
 msgid "Icon View Model"
 msgstr "アイコン表示モデル"
 
-#: ../exo/exo-icon-view.c:901
+#: ../exo/exo-icon-view.c:843
 msgid "The model for the icon view"
 msgstr "アイコン表示のためのモデルです。"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:856
+msgid "Orientation"
+msgstr "方向"
+
+#: ../exo/exo-icon-view.c:857
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "それぞれのアイテムの文字とアイコンがお互いにどの位置に置かれるかを選択します。"
 
-#: ../exo/exo-icon-view.c:949
+#: ../exo/exo-icon-view.c:873
+msgid "Pixbuf column"
+msgstr "ピクセルバッファー欄"
+
+#: ../exo/exo-icon-view.c:874
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "アイコンのピクセルバッファーを取得するために使用されるモデル欄です。"
+
+#: ../exo/exo-icon-view.c:891
 msgid "Icon column"
 msgstr "アイコン欄"
 
-#: ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-view.c:892
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "描画する画像ファイルの絶対パスを取得するために使用されるモデル欄です。"
 
-#: ../exo/exo-icon-view.c:965
+#: ../exo/exo-icon-view.c:907
 msgid "Reorderable"
 msgstr "並べ替え可能"
 
-#: ../exo/exo-icon-view.c:966
+#: ../exo/exo-icon-view.c:908
 msgid "View is reorderable"
 msgstr "表示は並べ替え可能です。"
 
-#: ../exo/exo-icon-view.c:981
+#: ../exo/exo-icon-view.c:923
 msgid "Row Spacing"
 msgstr "行スペース"
 
-#: ../exo/exo-icon-view.c:982
+#: ../exo/exo-icon-view.c:924
 msgid "Space which is inserted between grid rows"
 msgstr "グリッド行の間に挿入されるスペースです。"
 
-#: ../exo/exo-icon-view.c:996
+#: ../exo/exo-icon-view.c:938
 msgid "Search Column"
 msgstr "検索欄"
 
-#: ../exo/exo-icon-view.c:997
+#: ../exo/exo-icon-view.c:939
 msgid "Model column to search through when searching through item"
 msgstr "アイテムを検索するときに検索するモデル欄です。"
 
-#: ../exo/exo-icon-view.c:1011
+#: ../exo/exo-icon-view.c:953
 msgid "Selection mode"
 msgstr "選択モード"
 
-#: ../exo/exo-icon-view.c:1012
+#: ../exo/exo-icon-view.c:954
 msgid "The selection mode"
 msgstr "選択モードです。"
 
-#: ../exo/exo-icon-view.c:1027 ../exo/exo-tree-view.c:160
+#: ../exo/exo-icon-view.c:969 ../exo/exo-tree-view.c:156
 msgid "Single Click"
 msgstr "シングルクリック"
 
-#: ../exo/exo-icon-view.c:1028 ../exo/exo-tree-view.c:161
+#: ../exo/exo-icon-view.c:970 ../exo/exo-tree-view.c:157
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "表示されているアイテムを一回のクリックで有効にするかどうか指定します。"
 
-#: ../exo/exo-icon-view.c:1044 ../exo/exo-tree-view.c:177
+#: ../exo/exo-icon-view.c:986 ../exo/exo-tree-view.c:173
 msgid "Single Click Timeout"
 msgstr "シングルクリックのタイムアウト"
 
-#: ../exo/exo-icon-view.c:1045 ../exo/exo-tree-view.c:178
+#: ../exo/exo-icon-view.c:987 ../exo/exo-tree-view.c:174
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "シングルクリックモードの時にマウスカーソルの下にあるアイテムが自動的に選択状態になるまでの時間です。"
 
-#: ../exo/exo-icon-view.c:1060
+#: ../exo/exo-icon-view.c:1002
 msgid "Spacing"
 msgstr "スペース"
 
-#: ../exo/exo-icon-view.c:1061
+#: ../exo/exo-icon-view.c:1003
 msgid "Space which is inserted between cells of an item"
 msgstr "アイテムのセルの間に挿入されるスペースです。"
 
-#: ../exo/exo-thumbnail-preview.c:120
+#: ../exo/exo-icon-view.c:1018
+msgid "Text column"
+msgstr "文字欄"
+
+#: ../exo/exo-icon-view.c:1019
+msgid "Model column used to retrieve the text from"
+msgstr "文字を取得するために使用されるモデル欄です。"
+
+#: ../exo/exo-thumbnail-preview.c:112
 msgid "Preview"
 msgstr "プレビュー"
 
-#: ../exo/exo-thumbnail-preview.c:141 ../exo/exo-thumbnail-preview.c:286
+#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:270
 msgid "No file selected"
 msgstr "ファイルは選択されていません"
 
-#: ../exo/exo-thumbnail-preview.c:304
+#: ../exo/exo-thumbnail-preview.c:288
 msgid "Block Device"
 msgstr "ブロック型デバイス"
 
-#: ../exo/exo-thumbnail-preview.c:309
+#: ../exo/exo-thumbnail-preview.c:293
 msgid "Character Device"
 msgstr "キャラクター型デバイス"
 
-#: ../exo/exo-thumbnail-preview.c:314
+#: ../exo/exo-thumbnail-preview.c:298
 msgid "Folder"
 msgstr "フォルダー"
 
-#: ../exo/exo-thumbnail-preview.c:319
+#: ../exo/exo-thumbnail-preview.c:303
 msgid "FIFO"
 msgstr "名前付きパイプ"
 
-#: ../exo/exo-thumbnail-preview.c:324
+#: ../exo/exo-thumbnail-preview.c:308
 msgid "Socket"
 msgstr "ソケット"
-
-#: ../exo/exo-toolbars-editor-dialog.c:112
-msgid "_Add a new toolbar"
-msgstr "新しいツールバーを追加(_A)"
-
-#: ../exo/exo-toolbars-editor.c:214
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr "追加するにはアイテムをツールバーの上にドラッグしてください。ツールバーからドラッグすると削除されます。"
-
-#: ../exo/exo-toolbars-editor.c:530
-msgid "Separator"
-msgstr "セパレーター"
-
-#: ../exo/exo-toolbars-view.c:750
-msgid "Toolbar _Style"
-msgstr "ツールバーのスタイル(_S)"
-
-#: ../exo/exo-toolbars-view.c:757
-msgid "_Desktop Default"
-msgstr "デスクトップのデフォルト(_D)"
-
-#: ../exo/exo-toolbars-view.c:766
-msgid "_Icons only"
-msgstr "アイコンのみ(_I)"
-
-#: ../exo/exo-toolbars-view.c:775
-msgid "_Text only"
-msgstr "文字のみ(_T)"
-
-#: ../exo/exo-toolbars-view.c:784
-msgid "Text for _All Icons"
-msgstr "全アイコンに文字を添える(_A)"
-
-#: ../exo/exo-toolbars-view.c:793
-msgid "Text for I_mportant Icons"
-msgstr "重要アイコンに文字を添える(_M)"
-
-#: ../exo/exo-toolbars-view.c:801
-msgid "_Remove Toolbar"
-msgstr "ツールバーを削除(_R)"
-
-#: ../exo/exo-toolbars-view.c:816
-msgid "Customize Toolbar..."
-msgstr "ツールバーのカスタマイズ..."
-
-#: ../exo/exo-wrap-table.c:140
-msgid "Column spacing"
-msgstr "表示欄の間隔"
-
-#: ../exo/exo-wrap-table.c:141
-msgid "The amount of space between two consecutive columns"
-msgstr "二つの連続する表示欄の間隔です。"
-
-#: ../exo/exo-wrap-table.c:155
-msgid "Row spacing"
-msgstr "表示列の間隔"
-
-#: ../exo/exo-wrap-table.c:156
-msgid "The amount of space between two consecutive rows"
-msgstr "二つの連続する表示列の間隔です。"
-
-#: ../exo/exo-wrap-table.c:170
-msgid "Homogeneous"
-msgstr "均一"
-
-#: ../exo/exo-wrap-table.c:171
-msgid "Whether the children should be all the same size"
-msgstr "子ウィンドウをすべて同じサイズにするかどうかを指定します。"
-
-#: ../exo/exo-xsession-client.c:203
-msgid "Window group"
-msgstr "ウィンドウグループ"
-
-#: ../exo/exo-xsession-client.c:204
-msgid "Window group leader"
-msgstr "ウィンドウグループのリーダーです。"
-
-#: ../exo/exo-xsession-client.c:214
-msgid "Restart command"
-msgstr "再起動コマンド"
-
-#: ../exo/exo-xsession-client.c:215
-msgid "Session restart command"
-msgstr "セッションを再起動するコマンドです。"
-
-#: ../exo-csource/main.c:303
-#, c-format
-msgid "Usage: %s [options] [file]\n"
-msgstr "使用法: %s [オプション] [ファイル]\n"
-
-#: ../exo-csource/main.c:304
-#, c-format
-msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [オプション] --build-list [[名前 ファイル]...]\n"
-
-#: ../exo-csource/main.c:306
-#, c-format
-msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help        このヘルプメッセージを表示して終了します\n"
-
-#: ../exo-csource/main.c:307
-#, c-format
-msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version     Print version information and exit\n"
-
-#: ../exo-csource/main.c:308
-#, c-format
-msgid "  --extern          Generate extern symbols\n"
-msgstr "  --extern          extern シンボルを生成します\n"
-
-#: ../exo-csource/main.c:309
-#, c-format
-msgid "  --static          Generate static symbols\n"
-msgstr "  --static          static シンボルを生成します\n"
-
-#: ../exo-csource/main.c:310
-#, c-format
-msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=identifier C マクロ/変数名\n"
-
-#: ../exo-csource/main.c:311
-#, c-format
-msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list      解析する (名前、ファイルの) ペアを指定します\n"
-
-#: ../exo-csource/main.c:312
-#, c-format
-msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "  --strip-comments  XML ファイルからコメントを削除します\n"
-
-#: ../exo-csource/main.c:313
-#, c-format
-msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   XML ファイルからノード情報を削除します\n"
-
-#: ../exo-csource/main.c:314
-#, c-format
-msgid "  --output=filename Write generated csource to specified file\n"
-msgstr "  --output=filename 生成された C ソースを指定ファイルに書き出します\n"
-
-#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
-#: ../exo-open/main.c:509
-#, c-format
-msgid ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr "Copyright (c) %s\n        os-cillation e.K. All rights reserved.\n\nBenedikt Meurer <benny@xfce.org> が製作しました。\n\n"
-
-#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:200
-#: ../exo-open/main.c:513
-#, c-format
-msgid ""
-"%s comes with ABSOLUTELY NO WARRANTY,\n"
-"You may redistribute copies of %s under the terms of\n"
-"the GNU Lesser General Public License which can be found in the\n"
-"%s source package.\n"
-"\n"
-msgstr "%s comes with ABSOLUTELY NO WARRANTY,\nYou may redistribute copies of %s under the terms of\nthe GNU Lesser General Public License which can be found in the\n%s source package.\n\n"
-
-#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:204
-#: ../exo-open/main.c:517
-#, c-format
-msgid "Please report bugs to <%s>.\n"
-msgstr "バグは <%s> まで報告してください。\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
@@ -561,45 +351,35 @@ msgstr "アプリケーションを選択してください"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:395
-#: ../exo-helper/exo-helper-chooser.c:540
-#: ../exo-helper/exo-helper-launcher-dialog.c:109
+#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
 msgid "_Cancel"
 msgstr "キャンセル(_C)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "開く(_O)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "すべてのファイル"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "実行可能ファイル"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "Perl スクリプト"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "Python スクリプト"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "Ruby スクリプト"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "シェルスクリプト"
 
@@ -690,8 +470,6 @@ msgstr "アイコンを選択してください"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:541
-#: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "OK(_O)"
 
@@ -700,7 +478,7 @@ msgstr "OK(_O)"
 msgid "Select a working directory"
 msgstr "作業フォルダーを選択してください"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:171
+#: ../exo-desktop-item-edit/exo-die-utils.c:205
 msgid "File location is not a regular file or directory"
 msgstr "ファイルの場所は正規のファイルまたはディレクトリではありません"
 
@@ -757,579 +535,103 @@ msgstr "リンクを作成する場合のプリセット URL"
 msgid "Preset icon when creating a desktop file"
 msgstr "デスクトップファイルを作成する場合のプリセットアイコン"
 
-#: ../exo-desktop-item-edit/main.c:87 ../exo-helper/main.c:121
+#: ../exo-desktop-item-edit/main.c:87
 msgid "Print version information and exit"
 msgstr "バージョン情報を表示して終了する"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:172
+#: ../exo-desktop-item-edit/main.c:174
 msgid "[FILE|FOLDER]"
 msgstr "[ファイル|フォルダー]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:184
+#: ../exo-desktop-item-edit/main.c:186
 msgid "Failed to open display"
 msgstr "ディスプレイを開けませんでした"
 
-#: ../exo-desktop-item-edit/main.c:211
+#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#, c-format
+msgid ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr "Copyright (c) %s\n        os-cillation e.K. All rights reserved.\n\nBenedikt Meurer <benny@xfce.org> が製作しました。\n\n"
+
+#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr "%s comes with ABSOLUTELY NO WARRANTY,\nYou may redistribute copies of %s under the terms of\nthe GNU Lesser General Public License which can be found in the\n%s source package.\n\n"
+
+#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "バグは <%s> まで報告してください。\n"
+
+#: ../exo-desktop-item-edit/main.c:213
 msgid "No file/folder specified"
 msgstr "ファイル/フォルダーが指定されていません"
 
-#: ../exo-desktop-item-edit/main.c:276
+#: ../exo-desktop-item-edit/main.c:278
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "\"%s\" から内容を読み込むことに失敗しました: %s"
 
-#: ../exo-desktop-item-edit/main.c:281
+#: ../exo-desktop-item-edit/main.c:283
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "ファイル \"%s\" にはデータがありません"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:294
+#: ../exo-desktop-item-edit/main.c:296
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "\"%s\" の内容の解析に失敗しました: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:306
+#: ../exo-desktop-item-edit/main.c:308
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "ファイル \"%s\" には type キーがありません"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:316
+#: ../exo-desktop-item-edit/main.c:318
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "タイプ \"%s\" はデスクトップファイルとしてサポートされません"
 
-#. add the "Help" button
-#: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:106
+#: ../exo-desktop-item-edit/main.c:328
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:330
 msgid "C_reate"
 msgstr "作成(_R)"
 
-#: ../exo-desktop-item-edit/main.c:338 ../exo-desktop-item-edit/main.c:518
+#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
 msgid "_Save"
 msgstr "保存(_S)"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:514
+#: ../exo-desktop-item-edit/main.c:520
 msgid "Choose filename"
 msgstr "ファイル名を選択してください"
 
-#: ../exo-desktop-item-edit/main.c:621
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\" を作成できませんでした。"
 
-#: ../exo-desktop-item-edit/main.c:621
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" を保存できませんでした。"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:99
-msgid "_Close"
-msgstr "閉じる(_C)"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:1
-msgid "Preferred Applications"
-msgstr "お気に入りのアプリケーション"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:103
-msgid "Select default applications for various services"
-msgstr "各種サービスのためのデフォルトアプリケーションを選択します"
-
-#. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:127
-msgid "_Internet"
-msgstr "インターネット(_I)"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:140
-#: ../exo-open/exo-web-browser.desktop.in.h:1
-msgid "Web Browser"
-msgstr "ウェブブラウザー"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:148
-msgid ""
-"The preferred Web Browser will be used to open hyperlinks and display help "
-"contents."
-msgstr "ここで指定したお気に入りのウェブブラウザーは、リンクを開いたりヘルプの内容を表示する際に使用されます。"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:171
-#: ../exo-open/exo-mail-reader.desktop.in.h:1
-msgid "Mail Reader"
-msgstr "メーラー"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:179
-msgid ""
-"The preferred Mail Reader will be used to compose emails when you click on "
-"email addresses."
-msgstr "ここで指定したお気に入りのメーラーは、メールアドレスをクリックしてメールを作成する際に使用されます。"
-
-#. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:198
-msgid "_Utilities"
-msgstr "ユーティリティ(_U)"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:211
-#: ../exo-open/exo-file-manager.desktop.in.h:1
-msgid "File Manager"
-msgstr "ファイルマネージャー"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:219
-msgid ""
-"The preferred File Manager will be used to browse the contents of folders."
-msgstr "ここで指定したお気に入りのファイルマネージャーは、フォルダーの内容を表示する際に使用されます。"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:242
-#: ../exo-open/exo-terminal-emulator.desktop.in.h:1
-msgid "Terminal Emulator"
-msgstr "ターミナルエミュレーター"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:250
-msgid ""
-"The preferred Terminal Emulator will be used to run commands that require a "
-"CLI environment."
-msgstr "ここで指定したお気に入りのターミナルエミュレーターは、コマンドラインインターフェイスが必要なコマンドを実行する際に使用されます。"
-
-#: ../exo-helper/exo-helper-chooser.c:145
-#: ../exo-helper/exo-helper-chooser.c:152
-msgid "Press left mouse button to change the selected application."
-msgstr "選択されているアプリケーションを変更するにはマウスの左ボタンをクリックしてください。"
-
-#: ../exo-helper/exo-helper-chooser.c:151
-msgid "Application Chooser Button"
-msgstr "アプリケーション選択ボタン"
-
-#: ../exo-helper/exo-helper-chooser.c:303
-msgid "No application selected"
-msgstr "アプリケーションは選択されていません"
-
-#: ../exo-helper/exo-helper-chooser.c:319
-msgid "Failed to set default Web Browser"
-msgstr "デフォルトのウェブブラウザーの設定に失敗しました"
-
-#: ../exo-helper/exo-helper-chooser.c:320
-msgid "Failed to set default Mail Reader"
-msgstr "デフォルトのメーラーの設定に失敗しました"
-
-#: ../exo-helper/exo-helper-chooser.c:321
-msgid "Failed to set default File Manager"
-msgstr "デフォルトのファイルマネージャーの設定に失敗しました"
-
-#: ../exo-helper/exo-helper-chooser.c:322
-msgid "Failed to set default Terminal Emulator"
-msgstr "デフォルトのターミナルエミュレーターの設定に失敗しました"
-
-#. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:392
-msgid "Select application"
-msgstr "アプリケーションを選択してください"
-
-#: ../exo-helper/exo-helper-chooser.c:505
-msgid "Choose a custom Web Browser"
-msgstr "ウェブブラウザーを選択してください"
-
-#: ../exo-helper/exo-helper-chooser.c:506
-msgid "Choose a custom Mail Reader"
-msgstr "メーラーを選択してください"
-
-#: ../exo-helper/exo-helper-chooser.c:507
-msgid "Choose a custom File Manager"
-msgstr "ファイルマネージャーを選択してください"
-
-#: ../exo-helper/exo-helper-chooser.c:508
-msgid "Choose a custom Terminal Emulator"
-msgstr "ターミナルエミュレーターを選択してください"
-
-#: ../exo-helper/exo-helper-chooser.c:513
-msgid ""
-"Specify the application you want to use\n"
-"as default Web Browser for Xfce:"
-msgstr "Xfce でのデフォルトのウェブブラウザーとして使用したい\nアプリケーションを指定してください:"
-
-#: ../exo-helper/exo-helper-chooser.c:514
-msgid ""
-"Specify the application you want to use\n"
-"as default Mail Reader for Xfce:"
-msgstr "デフォルトのメーラーとして使用したい\nアプリケーションを指定してください:"
-
-#: ../exo-helper/exo-helper-chooser.c:515
-msgid ""
-"Specify the application you want to use\n"
-"as default File Manager for Xfce:"
-msgstr "Xfce のデフォルトのファイルマネージャーとして使用\nしたいアプリケーションを指定してください:"
-
-#: ../exo-helper/exo-helper-chooser.c:516
-msgid ""
-"Specify the application you want to use\n"
-"as default Terminal Emulator for Xfce:"
-msgstr "Xfce でのデフォルトのターミナルエミュレーターとして\n使用したいアプリケーションを指定してください:"
-
-#: ../exo-helper/exo-helper-chooser.c:580
-msgid "Browse the file system to choose a custom command."
-msgstr "指定コマンドを選ぶためにファイルシステムを参照します。"
-
-#: ../exo-helper/exo-helper-chooser.c:789
-msgid "_Other..."
-msgstr "その他(_O)..."
-
-#: ../exo-helper/exo-helper-chooser.c:790
-msgid "Use a custom application which is not included in the above list."
-msgstr "上のリストにはないアプリケーションを使用します。"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:113
-msgid "Choose Preferred Application"
-msgstr "お気に入りのアプリケーションを選択してください"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:256
-msgid ""
-"Please choose your preferred Web\n"
-"Browser now and click OK to proceed."
-msgstr "お気に入りのウェブブラウザーを選択して\n「OK」をクリックしてください。"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:258
-msgid ""
-"Please choose your preferred Mail Reader\n"
-"now and click OK to proceed."
-msgstr "お気に入りのメーラーを選択して\n「OK」をクリックしてください。"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:260
-msgid ""
-"Please choose your preferred File Manager\n"
-"now and click OK to proceed."
-msgstr "お気に入りのファイルマネージャーを選択して\n「OK」をクリックしてください。"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:262
-msgid ""
-"Please choose your preferred Terminal\n"
-"Emulator now and click OK to proceed."
-msgstr "お気に入りのターミナルエミュレーターを\n選択して「OK」をクリックしてください。"
-
-#: ../exo-helper/exo-helper.c:401
-#, c-format
-msgid "No command specified"
-msgstr "コマンドが指定されていません"
-
-#: ../exo-helper/exo-helper.c:720 ../exo-helper/exo-helper.c:763
-#: ../exo-helper/exo-helper.c:834 ../exo-helper/exo-helper.c:877
-#, c-format
-msgid "Failed to open %s for writing"
-msgstr "書き込むために %s を開くことに失敗しました"
-
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid ""
-"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "お気に入りのアプリケーション (ブラウザー、メーラーやターミナルエミュレーター)"
-
-#: ../exo-helper/main.c:42
-msgid "Failed to execute default Web Browser"
-msgstr "デフォルトのウェブブラウザーの実行に失敗しました"
-
-#: ../exo-helper/main.c:43
-msgid "Failed to execute default Mail Reader"
-msgstr "デフォルトのメーラーの実行に失敗しました"
-
-#: ../exo-helper/main.c:44
-msgid "Failed to execute default File Manager"
-msgstr "デフォルトのファイルマネージャーの実行に失敗しました"
-
-#: ../exo-helper/main.c:45
-msgid "Failed to execute default Terminal Emulator"
-msgstr "デフォルトのターミナルエミュレーターの実行に失敗しました"
-
-#. Enable permanently dismissing this error.
-#: ../exo-helper/main.c:87
-msgid "Do _not show this message again"
-msgstr "このメッセージを次回から表示しない(_N)"
-
-#: ../exo-helper/main.c:122
-msgid ""
-"Open the Preferred Applications\n"
-"configuration dialog"
-msgstr "お気に入りのアプリケーション設定\nダイアログを開きます"
-
-#: ../exo-helper/main.c:123
-msgid "Settings manager socket"
-msgstr "セッティングマネージャーソケット"
-
-#: ../exo-helper/main.c:123
-msgid "SOCKET ID"
-msgstr "SOCKET ID"
-
-#: ../exo-helper/main.c:124
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
-" one of the following values."
-msgstr "TYPE のデフォルトヘルパーを PARAMETER オプションを付けて起動する。TYPE は以下を参照。"
-
-#: ../exo-helper/main.c:124 ../exo-helper/main.c:125
-msgid "TYPE [PARAMETER]"
-msgstr "TYPE [PARAMETER]"
-
-#: ../exo-helper/main.c:125
-msgid ""
-"Query the default helper of TYPE, where TYPE is one of the following values."
-msgstr "TYPE のデフォルトヘルパーを問い合わせる。TYPE は以下を参照。"
-
-#: ../exo-helper/main.c:155
-msgid ""
-"The following TYPEs are supported for the --launch and --query commands:\n"
-"\n"
-"  WebBrowser       - The preferred Web Browser.\n"
-"  MailReader       - The preferred Mail Reader.\n"
-"  FileManager      - The preferred File Manager.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "--launch および --query commands では以下の TYPE がサポートされます:\n\n  WebBrowser       - お気に入りのウェブブラウザー。\n  MailReader       - お気に入りのメールリーダー。\n  FileManager      - お気に入りのファイルマネージャー。\n  TerminalEmulator - お気に入りのターミナルエミュレーター。"
-
-#: ../exo-helper/main.c:165
-#, c-format
-msgid "Type '%s --help' for usage."
-msgstr "'%s --help' と入力すると使用法が表示されます。"
-
-#: ../exo-helper/main.c:224 ../exo-helper/main.c:297
-#, c-format
-msgid "Invalid helper type \"%s\""
-msgstr "\"%s\" は不正なヘルパータイプです"
-
-#: ../exo-helper/main.c:281
-#, c-format
-msgid ""
-"%s (Xfce %s)\n"
-"\n"
-"Copyright (c) 2003-2006\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
-"\n"
-"Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. All rights reserved.\n\nBenedikt Meurer <benny@xfce.org> が製作しました。\n\nGtk+-%d.%d.%d でビルドされ、 Gtk+-%d.%d.%d で実行されています。\n\nバグは <%s> まで報告してください。\n"
-
-#: ../exo-helper/main.c:307
-#, c-format
-msgid "No helper defined for \"%s\"."
-msgstr "\"%s\" のヘルパーが定義されていません。"
-
-#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
-msgid "aterm"
-msgstr "aterm"
-
-#: ../exo-helper/helpers/balsa.desktop.in.in.h:1
-msgid "Balsa"
-msgstr "Balsa"
-
-#: ../exo-helper/helpers/brave.desktop.in.in.h:1
-msgid "Brave"
-msgstr "Brave"
-
-#: ../exo-helper/helpers/caja.desktop.in.in.h:1
-msgid "Caja File Manager"
-msgstr "Caja ファイルマネージャー"
-
-#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
-msgid "Chromium"
-msgstr "Chromium"
-
-#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
-msgid "Debian Sensible Browser"
-msgstr "Debian Sensible ブラウザー"
-
-#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
-msgid "Debian X Terminal Emulator"
-msgstr "Debian X ターミナルエミュレーター"
-
-#: ../exo-helper/helpers/dillo.desktop.in.in.h:1
-msgid "Dillo"
-msgstr "Dillo"
-
-#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
-msgid "Encompass"
-msgstr "Encompass"
-
-#: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
-msgid "Epiphany Web Browser"
-msgstr "Epiphany ウェブブラウザー"
-
-#: ../exo-helper/helpers/eterm.desktop.in.in.h:1
-msgid "Enlightened Terminal Emulator"
-msgstr "Enlightened ターミナルエミュレーター"
-
-#: ../exo-helper/helpers/evolution.desktop.in.in.h:1
-msgid "Evolution"
-msgstr "Evolution"
-
-#: ../exo-helper/helpers/firefox.desktop.in.in.h:1
-msgid "Mozilla Firefox"
-msgstr "Mozilla Firefox"
-
-#: ../exo-helper/helpers/galeon.desktop.in.in.h:1
-msgid "Galeon Web Browser"
-msgstr "Galeon ウェブブラウザー"
-
-#: ../exo-helper/helpers/geary.desktop.in.in.h:1
-msgid "Geary"
-msgstr "Geary"
-
-#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
-msgid "Google Chrome"
-msgstr "Google Chrome"
-
-#: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
-msgid "GNOME Terminal"
-msgstr "GNOME 端末"
-
-#: ../exo-helper/helpers/icecat.desktop.in.in.h:1
-msgid "Icecat"
-msgstr "Icecat"
-
-#: ../exo-helper/helpers/icedove.desktop.in.in.h:1
-msgid "Icedove"
-msgstr "Icedove"
-
-#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
-msgid "Iceweasel"
-msgstr "Iceweasel"
-
-#: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
-msgid "Jumanji"
-msgstr "Jumanji"
-
-#: ../exo-helper/helpers/kmail.desktop.in.in.h:1
-msgid "KMail"
-msgstr "KMail"
-
-#: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
-msgid "Konqueror Web Browser"
-msgstr "Konqueror ウェブブラウザー"
-
-#: ../exo-helper/helpers/links.desktop.in.in.h:1
-msgid "Links Text Browser"
-msgstr "Links テキストブラウザー"
-
-#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-msgid "Lynx Text Browser"
-msgstr "Lynx テキストブラウザー"
-
-#: ../exo-helper/helpers/midori.desktop.in.in.h:1
-msgid "Midori"
-msgstr "Midori"
-
-#: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
-msgid "Mozilla Browser"
-msgstr "Mozilla Browser"
-
-#: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
-msgid "Mozilla Mail"
-msgstr "Mozilla Mail"
-
-#: ../exo-helper/helpers/mutt.desktop.in.in.h:1
-msgid "Mutt"
-msgstr "Mutt"
-
-#: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
-msgid "Nautilus"
-msgstr "Nautilus"
-
-#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
-msgid "Netscape Navigator"
-msgstr "Netscape Navigator"
-
-#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
-msgid "NXterm"
-msgstr "NXterm"
-
-#: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
-msgid "Opera Browser"
-msgstr "Opera ブラウザー"
-
-#: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
-msgid "PCMan File Manager"
-msgstr "PCMan File Manager"
-
-#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
-msgid "PCManFM-Qt File Manager"
-msgstr "PCManFM-Qt ファイルマネージャー"
-
-#: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
-msgid "QTerminal"
-msgstr "QTerminal"
-
-#: ../exo-helper/helpers/qtfm.desktop.in.in.h:1
-msgid "qtFM"
-msgstr "qtFM"
-
-#: ../exo-helper/helpers/qupzilla.desktop.in.in.h:1
-msgid "QupZilla"
-msgstr "QupZilla"
-
-#: ../exo-helper/helpers/rodent.desktop.in.in.h:1
-msgid "Rodent File Manager"
-msgstr "Rodent File Manager"
-
-#: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
-msgid "ROX-Filer"
-msgstr "ROX-Filer"
-
-#: ../exo-helper/helpers/sakura.desktop.in.in.h:1
-msgid "Sakura"
-msgstr "Sakura"
-
-#: ../exo-helper/helpers/surf.desktop.in.in.h:1
-msgid "Surf"
-msgstr "Surf"
-
-#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-msgid "Sylpheed"
-msgstr "Sylpheed"
-
-#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Claws Mail"
-msgstr "Claws Mail"
-
-#: ../exo-helper/helpers/terminator.desktop.in.in.h:1
-msgid "Terminator"
-msgstr "Terminator"
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr "Thunar"
-
-#: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
-msgid "Mozilla Thunderbird"
-msgstr "Mozilla Thunderbird"
-
-#: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
-msgid "RXVT Unicode"
-msgstr "RXVT Unicode"
-
-#: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
-msgid "Vimprobable2"
-msgstr "Vimprobable2"
-
-#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-msgid "W3M Text Browser"
-msgstr "W3M テキストブラウザー"
-
-#: ../exo-helper/helpers/xfce4-terminal.desktop.in.in.h:1
-msgid "Xfce Terminal"
-msgstr "Xfce Terminal"
-
-#: ../exo-helper/helpers/xfe.desktop.in.in.h:1
-msgid "Xfe File Manager"
-msgstr "Xfe File Manager"
-
-#: ../exo-helper/helpers/xterm.desktop.in.in.h:1
-msgid "X Terminal"
-msgstr "X ターミナル"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
@@ -1367,7 +669,7 @@ msgstr "次の TYPE が --launch コマンドでサポートされます:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
-#. * since the exo-helper utility will not accept localized TYPEs.
+#. * since the xfce4-mime-helper utility will not accept localized TYPEs.
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1397,28 +699,12 @@ msgstr "%s が GIO-Unix 機能なしでコンパイルされているとき、�
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "タイプが \"%s\" のファイルを開くアプリケーションの実行に失敗しました。"
 
-#: ../exo-open/main.c:590
+#: ../exo-open/main.c:586
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" の URI スキームを検出できません。"
 
-#: ../exo-open/main.c:604
+#: ../exo-open/main.c:600
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "URI \"%s\" を開けませんでした。"
-
-#: ../exo-open/exo-file-manager.desktop.in.h:2
-msgid "Browse the file system"
-msgstr "ファイルシステムを参照します"
-
-#: ../exo-open/exo-mail-reader.desktop.in.h:2
-msgid "Read your email"
-msgstr "電子メールを読みます"
-
-#: ../exo-open/exo-terminal-emulator.desktop.in.h:2
-msgid "Use the command line"
-msgstr "コマンドラインを使用します"
-
-#: ../exo-open/exo-web-browser.desktop.in.h:2
-msgid "Browse the web"
-msgstr "ウェブを閲覧します"
