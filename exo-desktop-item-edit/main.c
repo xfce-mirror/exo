@@ -376,7 +376,8 @@ main (int argc, char **argv)
   /* setup the icon (automatically fixing broken icons) */
   value = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                         G_KEY_FILE_DESKTOP_KEY_ICON, NULL, NULL);
-  if (value != NULL && !g_path_is_absolute (value))
+  if (value != NULL && !g_path_is_absolute (value)
+      && !gtk_icon_theme_has_icon (gtk_icon_theme_get_default (), value))
     {
       /* check if this is an invalid icon declaration */
       s = strrchr (value, '.');
