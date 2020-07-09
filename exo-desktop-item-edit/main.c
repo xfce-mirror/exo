@@ -259,7 +259,7 @@ main (int argc, char **argv)
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, ""));
         }
-      else if (exo_str_is_equal (opt_type, G_KEY_FILE_DESKTOP_TYPE_APPLICATION))
+      else
         {
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_EXEC, STR_FB (opt_command, ""));
