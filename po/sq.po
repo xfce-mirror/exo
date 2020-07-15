@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-16 00:45+0200\n"
-"PO-Revision-Date: 2020-06-12 09:49+0000\n"
+"POT-Creation-Date: 2020-07-08 00:45+0200\n"
+"PO-Revision-Date: 2020-07-15 10:03+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/exo/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -138,21 +138,26 @@ msgid "All Icons"
 msgstr "Krejt Ikonat"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:271
+#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:275
 msgid "Image Files"
 msgstr "Kartela Figurash"
 
+#. EXO_ICON_CHOOSER_CONTEXT_NO_ICON
+#: ../exo/exo-icon-chooser-dialog.c:134
+msgid "No Icon"
+msgstr "Pa Ikonë"
+
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:196
+#: ../exo/exo-icon-chooser-dialog.c:200
 msgid "Select _icon from:"
 msgstr "Përzgjidhni _ikonë prej:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:212
+#: ../exo/exo-icon-chooser-dialog.c:216
 msgid "_Search icon:"
 msgstr "_Kërkoni ikonë:"
 
-#: ../exo/exo-icon-chooser-dialog.c:223
+#: ../exo/exo-icon-chooser-dialog.c:227
 msgid "Clear search field"
 msgstr "Spastro fushë kërkimesh"
 
@@ -339,89 +344,6 @@ msgstr "FIFO"
 #: ../exo/exo-thumbnail-preview.c:308
 msgid "Socket"
 msgstr "\"Socket\""
-
-#: ../exo-csource/main.c:303
-#, c-format
-msgid "Usage: %s [options] [file]\n"
-msgstr "Përdorimi: %s [mundësi] [kartelë]\n"
-
-#: ../exo-csource/main.c:304
-#, c-format
-msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [mundësi] --build-list [[emër kartele]…]\n"
-
-#: ../exo-csource/main.c:306
-#, c-format
-msgid "  -h, --help        Print this help message and exit\n"
-msgstr " -h,  --help        Shtyp këtë mesazh dhe dil\n"
-
-#: ../exo-csource/main.c:307
-#, c-format
-msgid "  -V, --version     Print version information and exit\n"
-msgstr " -V, --version      Shtyp të dhëna versioni dhe dil\n"
-
-#: ../exo-csource/main.c:308
-#, c-format
-msgid "  --extern          Generate extern symbols\n"
-msgstr "  --extern          Prodho simbole \"extern\"\n"
-
-#: ../exo-csource/main.c:309
-#, c-format
-msgid "  --static          Generate static symbols\n"
-msgstr "  --static          Prodho simbole statikë\n"
-
-#: ../exo-csource/main.c:310
-#, c-format
-msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=emër makroje/ndryshoreje identifikuesi C \n"
-
-#: ../exo-csource/main.c:311
-#, c-format
-msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list      Përtyp çifte (emër, kartelë)\n"
-
-#: ../exo-csource/main.c:312
-#, c-format
-msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "  --strip-comments  Hiq komentet prej kartelash XML\n"
-
-#: ../exo-csource/main.c:313
-#, c-format
-msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   Hiq lëndë nyjash prej kartelash XML\n"
-
-#: ../exo-csource/main.c:314
-#, c-format
-msgid "  --output=filename Write generated csource to specified file\n"
-msgstr "  --output=emër kartele Shkruaje csource-in e prodhuar te kartela e treguar\n"
-
-#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:198
-#: ../exo-open/main.c:505
-#, c-format
-msgid ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr "Të drejta Kopjimi (c) %s\n        os-cillation e.K. Tërë të drejtat të rezervuara.\n\nShkruar nga Benedikt Meurer <benny@xfce.org>.\n\n"
-
-#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:202
-#: ../exo-open/main.c:509
-#, c-format
-msgid ""
-"%s comes with ABSOLUTELY NO WARRANTY,\n"
-"You may redistribute copies of %s under the terms of\n"
-"the GNU Lesser General Public License which can be found in the\n"
-"%s source package.\n"
-"\n"
-msgstr "%s vjen ABSOLUTISHT PA GARANCI,\nMund të rishpërndani kopje të %s sipas kushteve të\nlicencës GNU Lesser General Public License e cila mund të\ngjendet në paketën burim të %-s.\n\n"
-
-#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:206
-#: ../exo-open/main.c:513
-#, c-format
-msgid "Please report bugs to <%s>.\n"
-msgstr "Ju lutemi, njoftoni të meta te <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
@@ -628,6 +550,31 @@ msgstr "[KARTELË|DOSJE]"
 #: ../exo-desktop-item-edit/main.c:186
 msgid "Failed to open display"
 msgstr "S’u arrit të hapej ekrani"
+
+#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#, c-format
+msgid ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr "Të drejta Kopjimi (c) %s\n        os-cillation e.K. Tërë të drejtat të rezervuara.\n\nShkruar nga Benedikt Meurer <benny@xfce.org>.\n\n"
+
+#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr "%s vjen ABSOLUTISHT PA GARANCI,\nMund të rishpërndani kopje të %s sipas kushteve të\nlicencës GNU Lesser General Public License e cila mund të\ngjendet në paketën burim të %-s.\n\n"
+
+#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "Ju lutemi, njoftoni të meta te <%s>.\n"
 
 #: ../exo-desktop-item-edit/main.c:213
 msgid "No file/folder specified"
