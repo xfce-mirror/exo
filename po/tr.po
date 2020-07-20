@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010
-# Demiray Muhterem <mdemiray@msn.com>, 2019
+# Demiray Muhterem <mdemiray@msn.com>, 2019-2020
 # Demiray Muhterem <mdemiray@msn.com>, 2018
 # Gökmen Görgen <gkmngrgn_gmail.com>, 2008
 # Natavan Mirzayeva <mirzayevanatavan@gmail.com>, 2015
@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-16 00:45+0200\n"
-"PO-Revision-Date: 2020-05-16 23:58+0000\n"
-"Last-Translator: Serdar Sağlam <teknomobil@msn.com>\n"
+"POT-Creation-Date: 2020-07-08 00:45+0200\n"
+"PO-Revision-Date: 2020-07-20 21:14+0000\n"
+"Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/exo/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -144,21 +144,26 @@ msgid "All Icons"
 msgstr "Tüm Simgeler"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:271
+#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:275
 msgid "Image Files"
 msgstr "Kalıp Dosyaları"
 
+#. EXO_ICON_CHOOSER_CONTEXT_NO_ICON
+#: ../exo/exo-icon-chooser-dialog.c:134
+msgid "No Icon"
+msgstr "Simge Yok"
+
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:196
+#: ../exo/exo-icon-chooser-dialog.c:200
 msgid "Select _icon from:"
 msgstr "S_imgeyi şuradan seç :"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:212
+#: ../exo/exo-icon-chooser-dialog.c:216
 msgid "_Search icon:"
 msgstr "_Arama simgesi:"
 
-#: ../exo/exo-icon-chooser-dialog.c:223
+#: ../exo/exo-icon-chooser-dialog.c:227
 msgid "Clear search field"
 msgstr "Arama alanını temizle"
 
@@ -345,89 +350,6 @@ msgstr "FIFO"
 #: ../exo/exo-thumbnail-preview.c:308
 msgid "Socket"
 msgstr "Yuva"
-
-#: ../exo-csource/main.c:303
-#, c-format
-msgid "Usage: %s [options] [file]\n"
-msgstr "Kullanım: %s [seçenekler] [dosya]\n"
-
-#: ../exo-csource/main.c:304
-#, c-format
-msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [seçenekler] --build-list [[dosya adı]...]\n"
-
-#: ../exo-csource/main.c:306
-#, c-format
-msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help        Bu yardım mesajını yazdır ve çık\n"
-
-#: ../exo-csource/main.c:307
-#, c-format
-msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version     Sürüm bilgisini yazdır ve çık\n"
-
-#: ../exo-csource/main.c:308
-#, c-format
-msgid "  --extern          Generate extern symbols\n"
-msgstr "  --extern          Dış simgeler oluştur\n"
-
-#: ../exo-csource/main.c:309
-#, c-format
-msgid "  --static          Generate static symbols\n"
-msgstr "  --static          Durağan simgeler oluştur\n"
-
-#: ../exo-csource/main.c:310
-#, c-format
-msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=tanıtıcı C makro/değişken ismi\n"
-
-#: ../exo-csource/main.c:311
-#, c-format
-msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list      Ayrıştırma (isim, dosya) çiftleri\n"
-
-#: ../exo-csource/main.c:312
-#, c-format
-msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "  --strip-comments  Yorumları XML dosyalarından kaldır\n"
-
-#: ../exo-csource/main.c:313
-#, c-format
-msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   Düğüm bileşenlerini XML dosyalarından kaldır\n"
-
-#: ../exo-csource/main.c:314
-#, c-format
-msgid "  --output=filename Write generated csource to specified file\n"
-msgstr "  --output=dosyadı Oluşturulan csource belirtilen dosyaya yazılsın\n"
-
-#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:198
-#: ../exo-open/main.c:505
-#, c-format
-msgid ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr "Copyright (c) %s\n        os-cillation e.K. Tüm hakları saklıdır.\n\nBenedikt Meurer tarafından yazılmıştır, <benny@xfce.org>.\n\n"
-
-#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:202
-#: ../exo-open/main.c:509
-#, c-format
-msgid ""
-"%s comes with ABSOLUTELY NO WARRANTY,\n"
-"You may redistribute copies of %s under the terms of\n"
-"the GNU Lesser General Public License which can be found in the\n"
-"%s source package.\n"
-"\n"
-msgstr "%s HİÇBİR GARANTİ İLE gelmez,\n\"GNU Lesser General Public License\" isimli lisansın %s altındaki\nsözleşme şartlarına uygun bir biçimde, kopyalarını dağıtabilirsiniz.\nBu %s kaynak paketi, GNU Lesser General Public License ile\nlisanslanmıştır.\n\n"
-
-#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:206
-#: ../exo-open/main.c:513
-#, c-format
-msgid "Please report bugs to <%s>.\n"
-msgstr "Lütfen hataları bildirin: <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
@@ -634,6 +556,31 @@ msgstr "[FILE|FOLDER]"
 #: ../exo-desktop-item-edit/main.c:186
 msgid "Failed to open display"
 msgstr "Görüntü açılamadı"
+
+#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#, c-format
+msgid ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr "Copyright (c) %s\n        os-cillation e.K. Tüm hakları saklıdır.\n\nBenedikt Meurer tarafından yazılmıştır, <benny@xfce.org>.\n\n"
+
+#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr "%s HİÇBİR GARANTİ İLE gelmez,\n\"GNU Lesser General Public License\" isimli lisansın %s altındaki\nsözleşme şartlarına uygun bir biçimde, kopyalarını dağıtabilirsiniz.\nBu %s kaynak paketi, GNU Lesser General Public License ile\nlisanslanmıştır.\n\n"
+
+#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "Lütfen hataları bildirin: <%s>.\n"
 
 #: ../exo-desktop-item-edit/main.c:213
 msgid "No file/folder specified"
