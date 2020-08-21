@@ -259,7 +259,7 @@ main (int argc, char **argv)
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, ""));
         }
-      else if (exo_str_is_equal (opt_type, G_KEY_FILE_DESKTOP_TYPE_APPLICATION))
+      else
         {
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_EXEC, STR_FB (opt_command, ""));
@@ -376,7 +376,8 @@ main (int argc, char **argv)
   /* setup the icon (automatically fixing broken icons) */
   value = g_key_file_get_locale_string (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                         G_KEY_FILE_DESKTOP_KEY_ICON, NULL, NULL);
-  if (value != NULL && !g_path_is_absolute (value))
+  if (value != NULL && !g_path_is_absolute (value)
+      && !gtk_icon_theme_has_icon (gtk_icon_theme_get_default (), value))
     {
       /* check if this is an invalid icon declaration */
       s = strrchr (value, '.');
