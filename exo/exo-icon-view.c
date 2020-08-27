@@ -3644,7 +3644,7 @@ exo_icon_view_calculate_item_size2 (ExoIconView     *icon_view,
             }
 
           box = item->box + info->position;
-          box->x = cell_area.x + (rtl ? (1.0 - cell_xalign) : cell_xalign) * (cell_area.width - box->width - (2 * cell_xpad));
+          box->x = cell_area.x + (rtl ? -cell_xalign : cell_xalign) * (cell_area.width - box->width - (2 * cell_xpad));
           box->x = MAX (box->x, 0);
           box->y = cell_area.y + cell_yalign * (cell_area.height - box->height - (2 * cell_ypad));
           box->y = MAX (box->y, 0);
