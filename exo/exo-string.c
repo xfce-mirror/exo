@@ -204,6 +204,11 @@ exo_str_replace (const gchar *str,
  * warning, so it's easy to notice use of the extensions without
  * testing with multiple versions of the library.
  *
+ * Do NOT pass in the value returned by localtime(3) as the parameter @tm, as
+ * this is a pointer to a shared static struct which can be changed by subsequent
+ * function calls, including any calls to g_warning() made by exo_strdup_strftime()
+ * itself. Use e.g. localtime_r(3) or make a copy of the struct to pass in instead.
+ *
  * Returns: a newly allocated string containing the formatted date/time.
  *
  * Since: 0.3.3
