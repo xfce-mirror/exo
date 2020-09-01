@@ -7053,7 +7053,23 @@ static void
 exo_icon_view_drag_end (GtkWidget      *widget,
                         GdkDragContext *context)
 {
-  /* do nothing */
+  ExoIconView *icon_view;
+
+  icon_view = EXO_ICON_VIEW (widget);
+
+  /* check if we're in single click mode */
+  if (G_UNLIKELY (icon_view->priv->single_click))
+    {
+      /* reset the cursor if we're still realized */
+      if (G_LIKELY (icon_view->priv->bin_window != NULL))
+        gdk_window_set_cursor (icon_view->priv->bin_window, NULL);
+
+      /* reset the last single clicked item */
+      icon_view->priv->last_single_clicked = NULL;
+    }
+
+  /* reset the pressed_button state */
+  icon_view->priv->pressed_button = -1;
 }
 
 static void
