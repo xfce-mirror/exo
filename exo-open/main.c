@@ -495,24 +495,7 @@ main (gint argc, gchar **argv)
   gtk_window_set_default_icon_name ("preferences-desktop-default-applications");
 
   /* check what to do */
-  if (G_UNLIKELY (opt_help))
-    {
-      usage ();
-    }
-  else if (G_UNLIKELY (opt_version))
-    {
-      g_print ("%s %s\n\n", g_get_prgname (), PACKAGE_VERSION);
-      g_print (_("Copyright (c) %s\n"
-                 "        os-cillation e.K. All rights reserved.\n\n"
-                 "Written by Benedikt Meurer <benny@xfce.org>.\n\n"),
-               "2005-2007");
-      g_print (_("%s comes with ABSOLUTELY NO WARRANTY,\n"
-                 "You may redistribute copies of %s under the terms of\n"
-                 "the GNU Lesser General Public License which can be found in the\n"
-                 "%s source package.\n\n"), g_get_prgname (), g_get_prgname (), PACKAGE_TARNAME);
-      g_print (_("Please report bugs to <%s>.\n"), PACKAGE_BUGREPORT);
-    }
-  else if (G_LIKELY (opt_launch != NULL))
+  if (G_LIKELY (opt_launch != NULL))
     {
       if (argc > 1)
         {
@@ -611,6 +594,23 @@ main (gint argc, gchar **argv)
 
           g_free (uri);
         }
+    }
+  else if (G_UNLIKELY (opt_help))
+    {
+      usage ();
+    }
+  else if (G_UNLIKELY (opt_version))
+    {
+      g_print ("%s %s\n\n", g_get_prgname (), PACKAGE_VERSION);
+      g_print (_("Copyright (c) %s\n"
+                 "        os-cillation e.K. All rights reserved.\n\n"
+                 "Written by Benedikt Meurer <benny@xfce.org>.\n\n"),
+               "2005-2007");
+      g_print (_("%s comes with ABSOLUTELY NO WARRANTY,\n"
+                 "You may redistribute copies of %s under the terms of\n"
+                 "the GNU Lesser General Public License which can be found in the\n"
+                 "%s source package.\n\n"), g_get_prgname (), g_get_prgname (), PACKAGE_TARNAME);
+      g_print (_("Please report bugs to <%s>.\n"), PACKAGE_BUGREPORT);
     }
   else
     {
