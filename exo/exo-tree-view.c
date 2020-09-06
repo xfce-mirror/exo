@@ -266,8 +266,6 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   ExoTreeView      *tree_view = EXO_TREE_VIEW (widget);
   GtkTreePath      *path = NULL;
   gboolean          result;
-  GList            *selected_paths = NULL;
-  GList            *lp;
   gpointer          drag_data;
 
   /* by default we won't emit "row-activated" on button-release-events */
@@ -308,22 +306,6 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
                                                    && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0);
     }
 
-  /* unfortunately GtkTreeView will unselect rows except the clicked one,
-   * which makes dragging from a GtkTreeView problematic. That's why we
-   * remember the selected paths here and restore them later.
-   */
-  if (event->type == GDK_BUTTON_PRESS && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0
-      && path != NULL && gtk_tree_selection_path_is_selected (selection, path))
-    {
-      /* if no custom select function is set, we simply use exo_noop_false here,
-       * to tell the tree view that it may not alter the selection.
-       */
-      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == NULL))
-        gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false, NULL, NULL);
-      else
-        selected_paths = gtk_tree_selection_get_selected_rows (selection, NULL);
-    }
-
   /* Rubberbanding in GtkTreeView 2.9.0 and above is rather buggy, unfortunately, and
    * doesn't interact properly with GTKs own DnD mechanism. So we need to block all
    * dragging here when pressing the mouse button on a not yet selected row if
@@ -359,22 +341,20 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
         }
     }
 
-  /* call the parent's button press handler */
-  result = (*GTK_WIDGET_CLASS (exo_tree_view_parent_class)->button_press_event) (widget, event);
-
-  /* restore previous selection if the path is still selected */
+  /* unfortunately GtkTreeView will unselect rows except the clicked one,
+   * which makes dragging from a GtkTreeView problematic.
+   * So we temporary disable selection updates if the path is still selected
+   */
   if (event->type == GDK_BUTTON_PRESS && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0
       && path != NULL && gtk_tree_selection_path_is_selected (selection, path))
     {
-      /* check if we have to restore paths */
-      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) != (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
-        {
-          /* select all previously selected paths */
-          for (lp = selected_paths; lp != NULL; lp = lp->next)
-            gtk_tree_selection_select_path (selection, lp->data);
-        }
+      gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false, NULL, NULL);
     }
 
+  /* call the parent's button press handler */
+  result = (*GTK_WIDGET_CLASS (exo_tree_view_parent_class)->button_press_event) (widget, event);
+
+  /* re-enable selection updates */
   if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
     {
       gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
@@ -383,10 +363,6 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   /* release the path (if any) */
   if (G_LIKELY (path != NULL))
     gtk_tree_path_free (path);
-
-  /* release the selected paths list */
-  g_list_foreach (selected_paths, (GFunc) (void (*)(void)) gtk_tree_path_free, NULL);
-  g_list_free (selected_paths);
 
   return result;
 }
@@ -638,8 +614,6 @@ exo_tree_view_single_click_timeout (gpointer user_data)
   GtkTreeIter        iter;
   ExoTreeView       *tree_view = EXO_TREE_VIEW (user_data);
   gboolean           hover_path_selected;
-  GList             *rows;
-  GList             *lp;
 
   /* verify that we are in single-click mode, have focus and a hover path */
   if (gtk_widget_has_focus (GTK_WIDGET (tree_view)) && tree_view->priv->single_click && tree_view->priv->hover_path != NULL)
@@ -687,22 +661,16 @@ exo_tree_view_single_click_timeout (gpointer user_data)
             }
           else
             {
-              /* remember the previously selected rows as set_cursor() clears the selection */
-              rows = gtk_tree_selection_get_selected_rows (selection, NULL);
-
               /* check if the hover path is selected (as it will be selected after the set_cursor() call) */
               hover_path_selected = gtk_tree_selection_path_is_selected (selection, tree_view->priv->hover_path);
+              /* disable selection updates if the path is still selected */
+              gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false, NULL, NULL);
 
               /* place the cursor on the hover row */
               gtk_tree_view_set_cursor (GTK_TREE_VIEW (tree_view), tree_view->priv->hover_path, cursor_column, FALSE);
 
-              /* restore the previous selection */
-              for (lp = rows; lp != NULL; lp = lp->next)
-                {
-                  gtk_tree_selection_select_path (selection, lp->data);
-                  gtk_tree_path_free (lp->data);
-                }
-              g_list_free (rows);
+              /* re-enable selection updates */
+              gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
 
               /* check what to do */
               if ((gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE ||
