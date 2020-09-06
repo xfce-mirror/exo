@@ -663,7 +663,6 @@ exo_tree_view_single_click_timeout (gpointer user_data)
             {
               /* check if the hover path is selected (as it will be selected after the set_cursor() call) */
               hover_path_selected = gtk_tree_selection_path_is_selected (selection, tree_view->priv->hover_path);
-              
               /* disable selection updates if the path is still selected */
               gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false, NULL, NULL);
 
