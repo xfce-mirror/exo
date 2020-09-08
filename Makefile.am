@@ -33,7 +33,6 @@ EXTRA_DIST =								\
 	HACKING								\
 	INSTALL								\
 	NEWS								\
-	README								\
 	THANKS								\
 	intltool-extract.in						\
 	intltool-merge.in						\
