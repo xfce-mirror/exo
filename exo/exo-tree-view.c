@@ -354,8 +354,11 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   /* call the parent's button press handler */
   result = (*GTK_WIDGET_CLASS (exo_tree_view_parent_class)->button_press_event) (widget, event);
 
-  /* re-enable selection updates */
-  if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
+  /* Re-enable selection updates. Note that since we have already "chained up" by calling the parent's button press handler,
+   * we must check that the selection is still valid with GTK_IS_TREE_SELECTION.
+   */
+  if (GTK_IS_TREE_SELECTION (selection) &&
+      G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
     {
       gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
     }
