@@ -32,7 +32,7 @@ EXTRA_DIST =								\
 	ChangeLog							\
 	HACKING								\
 	NEWS								\
-	README.md
+	README.md                           \
 	THANKS								\
 	intltool-extract.in						\
 	intltool-merge.in						\
