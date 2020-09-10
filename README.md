@@ -1,7 +1,7 @@
 [![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.xfce.org/xfce/exo/COPYING)
 
-exo
-====================
+# exo
+
 
 exo is an extension library used in the Xfce desktop. It has some helper
 applications that are used throughout the entire desktop, to manage preferred 
@@ -26,6 +26,7 @@ See [NEWS](https://gitlab.xfce.org/xfce/exo/-/blob/master/NEWS) for details on c
 [exo archive](https://archive.xfce.org/src/xfce/exo)
     or
 [exo tags](https://gitlab.xfce.org/xfce/exo/-/tags)
+
 ### Installation
 
 From source: 

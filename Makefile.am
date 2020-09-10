@@ -31,8 +31,8 @@ EXTRA_DIST =								\
 	COPYING.LIB							\
 	ChangeLog							\
 	HACKING								\
-	INSTALL								\
 	NEWS								\
+	README.md
 	THANKS								\
 	intltool-extract.in						\
 	intltool-merge.in						\
