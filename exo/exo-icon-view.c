@@ -2424,8 +2424,7 @@ exo_icon_view_button_press_event (GtkWidget      *widget,
               icon_view->priv->press_start_y = event->y;
             }
 
-          if (G_LIKELY (icon_view->priv->last_single_clicked == NULL))
-            icon_view->priv->last_single_clicked = item;
+          icon_view->priv->last_single_clicked = item;
 
           /* cancel the current editing, if it exists */
           exo_icon_view_stop_editing (icon_view, TRUE);
@@ -2499,17 +2498,23 @@ exo_icon_view_button_release_event (GtkWidget      *widget,
 
   if (icon_view->priv->pressed_button == (gint) event->button)
     {
-      /* check if we're in single click mode */
-      if (G_UNLIKELY (icon_view->priv->single_click && (event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) == 0))
+      if (G_LIKELY (event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) == 0)
         {
           /* determine the item at the mouse coords and check if this is the last single clicked one */
           item = exo_icon_view_get_item_at_coords (icon_view, event->x, event->y, TRUE, NULL);
           if (G_LIKELY (item != NULL && item == icon_view->priv->last_single_clicked))
             {
-              /* emit an "item-activated" signal for this item */
-              path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
-              exo_icon_view_item_activated (icon_view, path);
-              gtk_tree_path_free (path);
+              if (icon_view->priv->single_click)
+                {
+                  /* emit an "item-activated" signal for this item */
+                  path = gtk_tree_path_new_from_indices (g_list_index (icon_view->priv->items, item), -1);
+                  exo_icon_view_item_activated (icon_view, path);
+                  gtk_tree_path_free (path);
+                }
+
+              /* reduce the selection to just the clicked item  */
+              exo_icon_view_unselect_all_internal (icon_view);
+              exo_icon_view_select_item (icon_view, item);
             }
 
           /* reset the last single clicked item */
