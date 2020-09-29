@@ -4,15 +4,16 @@
 # 
 # Translators:
 # Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2015
+# Dabid Martinez <dabid@laborategia.eus>, 2020
 # Piarres Beobide <pi@beobide.net>, 2006-2007,2009,2011,2015,2017
 # Piarres Beobide <pi+debian@beobide.net>, 2009-2010
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 18:30+0200\n"
-"PO-Revision-Date: 2019-05-25 16:30+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2020-07-08 00:45+0200\n"
+"PO-Revision-Date: 2020-09-29 15:47+0000\n"
+"Last-Translator: Dabid Martinez <dabid@laborategia.eus>\n"
 "Language-Team: Basque (http://www.transifex.com/xfce/exo/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,37 +21,35 @@ msgstr ""
 "Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:125
-#: ../exo/exo-cell-renderer-icon.c:154
+#: ../exo/exo-cell-renderer-icon.c:138
 msgid "Follow state"
 msgstr "Jarraitu egoera"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:126
-#: ../exo/exo-cell-renderer-icon.c:155
+#: ../exo/exo-cell-renderer-icon.c:139
 msgid "Render differently based on the selection state."
 msgstr "Errendatu modu desberdinean hautapenaren egoeraren arabera."
 
-#: ../exo/exo-cell-renderer-icon.c:176
+#: ../exo/exo-cell-renderer-icon.c:160
 msgid "Icon"
 msgstr "Ikonoa"
 
-#: ../exo/exo-cell-renderer-icon.c:177
+#: ../exo/exo-cell-renderer-icon.c:161
 msgid "The icon to render."
 msgstr "Errendatzeko ikonoa."
 
-#: ../exo/exo-cell-renderer-icon.c:195
+#: ../exo/exo-cell-renderer-icon.c:179
 msgid "GIcon"
 msgstr "Gikonoa"
 
-#: ../exo/exo-cell-renderer-icon.c:196
+#: ../exo/exo-cell-renderer-icon.c:180
 msgid "The GIcon to render."
 msgstr "Errendatzeko GIkonoa."
 
-#: ../exo/exo-cell-renderer-icon.c:217
+#: ../exo/exo-cell-renderer-icon.c:201
 msgid "size"
 msgstr "tamaina"
 
-#: ../exo/exo-cell-renderer-icon.c:218
+#: ../exo/exo-cell-renderer-icon.c:202
 msgid "The size of the icon to render in pixels."
 msgstr "Errendatzeko ikonoaren tamaina pixeletan."
 
@@ -69,74 +68,10 @@ msgstr "Huts egin du \"%s\" fitxategia irakurtzerakoan: %s"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Huts egin du \"%s\" irudia kargatzerakoan: Errore ezezaguna, ziurrenik hondaturiko irudi fitxategia"
 
-#: ../exo/exo-gtk-extensions.c:248
+#: ../exo/exo-gtk-extensions.c:219
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Huts egin du \"%s\" irekitzerakoan."
-
-#: ../exo/exo-icon-bar.c:273 ../exo/exo-icon-view.c:914
-msgid "Orientation"
-msgstr "Orientazioa"
-
-#: ../exo/exo-icon-bar.c:274
-msgid "The orientation of the iconbar"
-msgstr "Ikono-barraren orientazioa"
-
-#: ../exo/exo-icon-bar.c:290 ../exo/exo-icon-view.c:931
-msgid "Pixbuf column"
-msgstr "Pixbuf zutabea"
-
-#: ../exo/exo-icon-bar.c:291 ../exo/exo-icon-view.c:932
-msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Ikono pixbuf-a eskuratzeko erabiliko den zutabe modeloa"
-
-#: ../exo/exo-icon-bar.c:306 ../exo/exo-icon-view.c:1076
-msgid "Text column"
-msgstr "Testu zutabea"
-
-#: ../exo/exo-icon-bar.c:307 ../exo/exo-icon-view.c:1077
-msgid "Model column used to retrieve the text from"
-msgstr "Testua hortik eskuratzeko erabiliko den zutabe modeloa"
-
-#: ../exo/exo-icon-bar.c:319
-msgid "Icon Bar Model"
-msgstr "Ikono barra modeloa"
-
-#: ../exo/exo-icon-bar.c:320
-msgid "Model for the icon bar"
-msgstr "Ikono barra modeloa"
-
-#: ../exo/exo-icon-bar.c:336
-msgid "Active"
-msgstr "Gaitua"
-
-#: ../exo/exo-icon-bar.c:337
-msgid "Active item index"
-msgstr "Gaituriko elementu indizea"
-
-#: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
-msgid "Active item fill color"
-msgstr "Gaitutako elementuaren barne kolorea"
-
-#: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
-msgid "Active item border color"
-msgstr "Gaitutako elementuaren ertz kolorea"
-
-#: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
-msgid "Active item text color"
-msgstr "Gaitutako elementuaren testu kolorea"
-
-#: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
-msgid "Cursor item fill color"
-msgstr "Kurtsore elementu barne kolorea"
-
-#: ../exo/exo-icon-bar.c:371 ../exo/exo-icon-bar.c:372
-msgid "Cursor item border color"
-msgstr "Kurtsore elementu ertz kolorea"
-
-#: ../exo/exo-icon-bar.c:378 ../exo/exo-icon-bar.c:379
-msgid "Cursor item text color"
-msgstr "Kurtsore elementu testu kolorea"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:100
@@ -191,7 +126,7 @@ msgstr "Egoera Ikonoak"
 #. EXO_ICON_CHOOSER_CONTEXT_STOCK
 #: ../exo/exo-icon-chooser-dialog.c:120
 msgid "Stock Icons"
-msgstr ""
+msgstr "Stockeko ikonoa"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
 #: ../exo/exo-icon-chooser-dialog.c:122
@@ -204,356 +139,212 @@ msgid "All Icons"
 msgstr "Ikono guztiak"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:302
+#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:275
 msgid "Image Files"
 msgstr "Irudi fitxategiak"
 
+#. EXO_ICON_CHOOSER_CONTEXT_NO_ICON
+#: ../exo/exo-icon-chooser-dialog.c:134
+msgid "No Icon"
+msgstr "Ikonorik ez"
+
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:211
+#: ../exo/exo-icon-chooser-dialog.c:200
 msgid "Select _icon from:"
 msgstr "Hautatu _ikonoa hemendik:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:235
+#: ../exo/exo-icon-chooser-dialog.c:216
 msgid "_Search icon:"
 msgstr "_Bilaketa ikonoa:"
 
-#: ../exo/exo-icon-chooser-dialog.c:254
+#: ../exo/exo-icon-chooser-dialog.c:227
 msgid "Clear search field"
 msgstr "Garbitu bilaketa eremua"
 
-#: ../exo/exo-icon-view.c:782
+#: ../exo/exo-icon-view.c:724
 msgid "Column Spacing"
 msgstr "Zutabe tartea"
 
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-view.c:725
 msgid "Space which is inserted between grid column"
 msgstr "Sareta zutabeen artean sartuko den tartea"
 
-#: ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-view.c:741
 msgid "Number of columns"
 msgstr "Zutabe kopurua"
 
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-view.c:742
 msgid "Number of columns to display"
 msgstr "Bistaratuko diren zutabe kopurua"
 
-#: ../exo/exo-icon-view.c:814
+#: ../exo/exo-icon-view.c:756
 msgid "Enable Search"
 msgstr "Gaitu bilaketa"
 
-#: ../exo/exo-icon-view.c:815
+#: ../exo/exo-icon-view.c:757
 msgid "View allows user to search through columns interactively"
 msgstr "Ikuspegiak erabiltzaileari zutabetan interaktibori bilatzeko aukera ematen dio"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:774
 msgid "Width for each item"
 msgstr "Elementu bakoitzaren zabalera"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:775
 msgid "The width used for each item"
 msgstr "Elementu bakoitzarentzat erabiliko den zabalera"
 
-#: ../exo/exo-icon-view.c:851
+#: ../exo/exo-icon-view.c:793
 msgid "Layout mode"
 msgstr "Aurkezpen modua"
 
-#: ../exo/exo-icon-view.c:852
+#: ../exo/exo-icon-view.c:794
 msgid "The layout mode"
 msgstr "Aurkezpen modua"
 
-#: ../exo/exo-icon-view.c:868
+#: ../exo/exo-icon-view.c:810
 msgid "Margin"
 msgstr "Marjina"
 
-#: ../exo/exo-icon-view.c:869
+#: ../exo/exo-icon-view.c:811
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Ikono ikuspegiaren ertzetan txertatuko den lekua"
 
-#: ../exo/exo-icon-view.c:885
+#: ../exo/exo-icon-view.c:827
 msgid "Markup column"
 msgstr "Markatu zutabea"
 
-#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-icon-view.c:828
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Pango markatzea erabiltzen bada testua eskuratzeko erabiliko den zutabe modeloa"
 
-#: ../exo/exo-icon-view.c:900
+#: ../exo/exo-icon-view.c:842
 msgid "Icon View Model"
 msgstr "Ikono ikuspegi modeloa"
 
-#: ../exo/exo-icon-view.c:901
+#: ../exo/exo-icon-view.c:843
 msgid "The model for the icon view"
 msgstr "Ikono ikuspegiaren modeloa"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:856
+msgid "Orientation"
+msgstr "Orientazioa"
+
+#: ../exo/exo-icon-view.c:857
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Elementu bakoitzaren testu eta ikonoaren kokapena bestearekiko"
 
-#: ../exo/exo-icon-view.c:949
+#: ../exo/exo-icon-view.c:873
+msgid "Pixbuf column"
+msgstr "Pixbuf zutabea"
+
+#: ../exo/exo-icon-view.c:874
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "Ikono pixbuf-a eskuratzeko erabiliko den zutabe modeloa"
+
+#: ../exo/exo-icon-view.c:891
 msgid "Icon column"
 msgstr "Ikono zutabea"
 
-#: ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-view.c:892
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "Errenderizatzeko irudi fitxategiaren bide osoa eskuratzeko erabiliko den zutabe modeloa"
 
-#: ../exo/exo-icon-view.c:965
+#: ../exo/exo-icon-view.c:907
 msgid "Reorderable"
 msgstr "Berrantolagarria"
 
-#: ../exo/exo-icon-view.c:966
+#: ../exo/exo-icon-view.c:908
 msgid "View is reorderable"
 msgstr "Ikuspegia berrantolagarria da"
 
-#: ../exo/exo-icon-view.c:981
+#: ../exo/exo-icon-view.c:923
 msgid "Row Spacing"
 msgstr "Lerro tartea"
 
-#: ../exo/exo-icon-view.c:982
+#: ../exo/exo-icon-view.c:924
 msgid "Space which is inserted between grid rows"
 msgstr "Sareta lerroen artean txertatuko den tartea"
 
-#: ../exo/exo-icon-view.c:996
+#: ../exo/exo-icon-view.c:938
 msgid "Search Column"
 msgstr "Bilaketa zutabea"
 
-#: ../exo/exo-icon-view.c:997
+#: ../exo/exo-icon-view.c:939
 msgid "Model column to search through when searching through item"
 msgstr "Elementuen artean bilatzerakoan erabiliko den zutabe modeloa"
 
-#: ../exo/exo-icon-view.c:1011
+#: ../exo/exo-icon-view.c:953
 msgid "Selection mode"
 msgstr "Aukeratze modua"
 
-#: ../exo/exo-icon-view.c:1012
+#: ../exo/exo-icon-view.c:954
 msgid "The selection mode"
 msgstr "Aukeratze modua"
 
-#: ../exo/exo-icon-view.c:1027 ../exo/exo-tree-view.c:160
+#: ../exo/exo-icon-view.c:969 ../exo/exo-tree-view.c:156
 msgid "Single Click"
 msgstr "Klik bakana"
 
-#: ../exo/exo-icon-view.c:1028 ../exo/exo-tree-view.c:161
+#: ../exo/exo-icon-view.c:970 ../exo/exo-tree-view.c:157
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Honela ikuspegiko elementuak klik bakan batez aktibatu daitezke"
 
-#: ../exo/exo-icon-view.c:1044 ../exo/exo-tree-view.c:177
+#: ../exo/exo-icon-view.c:986 ../exo/exo-tree-view.c:173
 msgid "Single Click Timeout"
 msgstr "Klik bakan denbora muga"
 
-#: ../exo/exo-icon-view.c:1045 ../exo/exo-tree-view.c:178
+#: ../exo/exo-icon-view.c:987 ../exo/exo-tree-view.c:174
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Klik bakaneko moduan kurtsorearen azpiko elementua automatikoki aukeratu pasa behar den denbora"
 
-#: ../exo/exo-icon-view.c:1060
+#: ../exo/exo-icon-view.c:1002
 msgid "Spacing"
 msgstr "Tartea"
 
-#: ../exo/exo-icon-view.c:1061
+#: ../exo/exo-icon-view.c:1003
 msgid "Space which is inserted between cells of an item"
 msgstr "Elementu baten gelaxkan artean txertatuko den tartea"
 
-#: ../exo/exo-thumbnail-preview.c:120
+#: ../exo/exo-icon-view.c:1018
+msgid "Text column"
+msgstr "Testu zutabea"
+
+#: ../exo/exo-icon-view.c:1019
+msgid "Model column used to retrieve the text from"
+msgstr "Testua hortik eskuratzeko erabiliko den zutabe modeloa"
+
+#: ../exo/exo-thumbnail-preview.c:112
 msgid "Preview"
 msgstr "Aurrebista"
 
-#: ../exo/exo-thumbnail-preview.c:141 ../exo/exo-thumbnail-preview.c:286
+#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:270
 msgid "No file selected"
 msgstr "Ez da fitxategirik hautatu"
 
-#: ../exo/exo-thumbnail-preview.c:304
+#: ../exo/exo-thumbnail-preview.c:288
 msgid "Block Device"
 msgstr "Bloke gailua"
 
-#: ../exo/exo-thumbnail-preview.c:309
+#: ../exo/exo-thumbnail-preview.c:293
 msgid "Character Device"
 msgstr "Karaktere gailua"
 
-#: ../exo/exo-thumbnail-preview.c:314
+#: ../exo/exo-thumbnail-preview.c:298
 msgid "Folder"
 msgstr "Karpeta"
 
-#: ../exo/exo-thumbnail-preview.c:319
+#: ../exo/exo-thumbnail-preview.c:303
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../exo/exo-thumbnail-preview.c:324
+#: ../exo/exo-thumbnail-preview.c:308
 msgid "Socket"
 msgstr "Socket-a"
-
-#: ../exo/exo-toolbars-editor-dialog.c:112
-msgid "_Add a new toolbar"
-msgstr "Tresna-barra berri_a gehitu"
-
-#: ../exo/exo-toolbars-editor.c:214
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr "Elementu bat tresna barra mugitu eta bertan gehitu, tresna-barratik kanpora mugitu berau ezabatzeko."
-
-#: ../exo/exo-toolbars-editor.c:530
-msgid "Separator"
-msgstr "Bereizlea"
-
-#: ../exo/exo-toolbars-view.c:750
-msgid "Toolbar _Style"
-msgstr "Tresna-barra e_stiloa"
-
-#: ../exo/exo-toolbars-view.c:757
-msgid "_Desktop Default"
-msgstr "Lehenetsiriko i_dazmahaia"
-
-#: ../exo/exo-toolbars-view.c:766
-msgid "_Icons only"
-msgstr "_Ikonoak bakarrik"
-
-#: ../exo/exo-toolbars-view.c:775
-msgid "_Text only"
-msgstr "_Testua bakarrik"
-
-#: ../exo/exo-toolbars-view.c:784
-msgid "Text for _All Icons"
-msgstr "Testua Ikono guztientz_at"
-
-#: ../exo/exo-toolbars-view.c:793
-msgid "Text for I_mportant Icons"
-msgstr "Testua Ikono ga_rrantzitsuentzat"
-
-#: ../exo/exo-toolbars-view.c:801
-msgid "_Remove Toolbar"
-msgstr "Ezabatu t_resna-barra"
-
-#: ../exo/exo-toolbars-view.c:816
-msgid "Customize Toolbar..."
-msgstr "Pertsonalizatu tresna-barra..."
-
-#: ../exo/exo-wrap-table.c:140
-msgid "Column spacing"
-msgstr "Zutabe tartea"
-
-#: ../exo/exo-wrap-table.c:141
-msgid "The amount of space between two consecutive columns"
-msgstr "Jarraian dauden bi zutabe artean txertatuko den tartea"
-
-#: ../exo/exo-wrap-table.c:155
-msgid "Row spacing"
-msgstr "Lerro tartea"
-
-#: ../exo/exo-wrap-table.c:156
-msgid "The amount of space between two consecutive rows"
-msgstr "Jarraian dauden bi lerro artean txertatuko den tartea"
-
-#: ../exo/exo-wrap-table.c:170
-msgid "Homogeneous"
-msgstr "Homogeneoa"
-
-#: ../exo/exo-wrap-table.c:171
-msgid "Whether the children should be all the same size"
-msgstr "Semeak tamaina berdina izan behar duen"
-
-#: ../exo/exo-xsession-client.c:203
-msgid "Window group"
-msgstr "Leiho taldea"
-
-#: ../exo/exo-xsession-client.c:204
-msgid "Window group leader"
-msgstr "Leiho talde nagusia"
-
-#: ../exo/exo-xsession-client.c:214
-msgid "Restart command"
-msgstr "Berrabiarazi komandoa"
-
-#: ../exo/exo-xsession-client.c:215
-msgid "Session restart command"
-msgstr "Saio berrabiarazte komandoa"
-
-#: ../exo-csource/main.c:303
-#, c-format
-msgid "Usage: %s [options] [file]\n"
-msgstr "Erabilera: %s [aukerak] [fitxategia]\n"
-
-#: ../exo-csource/main.c:304
-#, c-format
-msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [aukerak] --build-list [[izen fitxategia]...]\n"
-
-#: ../exo-csource/main.c:306
-#, c-format
-msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help        Laguntza testu hau bistarazi eta irten\n"
-
-#: ../exo-csource/main.c:307
-#, c-format
-msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version     Bertsio xehetasunak bistarazi eta irten\n"
-
-#: ../exo-csource/main.c:308
-#, c-format
-msgid "  --extern          Generate extern symbols\n"
-msgstr "  --extern          Kanpo sinboloak sortu\n"
-
-#: ../exo-csource/main.c:309
-#, c-format
-msgid "  --static          Generate static symbols\n"
-msgstr "  --static          Sinbolo finkoak sortu\n"
-
-#: ../exo-csource/main.c:310
-#, c-format
-msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=identifikatzailea C makro/aldagai izena\n"
-
-#: ../exo-csource/main.c:311
-#, c-format
-msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list      Bikoteak (izena, fitxategia) analizatu\n"
-
-#: ../exo-csource/main.c:312
-#, c-format
-msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "  --strip-comments  Iruzkinak kendu XML fitxategietatik\n"
-
-#: ../exo-csource/main.c:313
-#, c-format
-msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   Ezabatu nodo edukiak XML fitxategietatik\n"
-
-#: ../exo-csource/main.c:314
-#, c-format
-msgid "  --output=filename Write generated csource to specified file\n"
-msgstr ""
-
-#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
-#: ../exo-open/main.c:509
-#, c-format
-msgid ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr "Copyright (c) %s\n        os-cillation e.K. All rights reserved.\n\nBenedikt Meurer-ek <benny@xfce.org> idatzia.\n\n"
-
-#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:200
-#: ../exo-open/main.c:513
-#, c-format
-msgid ""
-"%s comes with ABSOLUTELY NO WARRANTY,\n"
-"You may redistribute copies of %s under the terms of\n"
-"the GNU Lesser General Public License which can be found in the\n"
-"%s source package.\n"
-"\n"
-msgstr "%s INONGO BERMERIK GABE banatzen da.\n%s kopiak partekatu ditzakezu %s iturburu paketean aurki daitekeen\n\"GNU Lesser General Public License\" lizentziaren arauetan.\n\n"
-
-#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:204
-#: ../exo-open/main.c:517
-#, c-format
-msgid "Please report bugs to <%s>.\n"
-msgstr "Erroreen berri eman <%s>-ra.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
@@ -563,45 +354,35 @@ msgstr "Hautatu aplikazio bat"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:395
-#: ../exo-helper/exo-helper-chooser.c:540
-#: ../exo-helper/exo-helper-launcher-dialog.c:109
+#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
 msgid "_Cancel"
 msgstr "Ut_zi"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "_ireki"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "Fitxategi guztiak"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "Fitxategi exekutagarriak"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "Perl Script-ak"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "Python Script-ak"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "Ruby Script-ak"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "Shell Script-ak"
 
@@ -692,8 +473,6 @@ msgstr "Hautatu ikono bat"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:541
-#: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "Ad_os"
 
@@ -702,7 +481,7 @@ msgstr "Ad_os"
 msgid "Select a working directory"
 msgstr "Hautatu lan direktorioa"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:171
+#: ../exo-desktop-item-edit/exo-die-utils.c:205
 msgid "File location is not a regular file or directory"
 msgstr "Fitxategi kokapena ez da ez fitxategi erregular bat ez direktorio bat"
 
@@ -759,579 +538,103 @@ msgstr "Idazmahai fitxategi bat sortzean URL-a aurrez ezarri"
 msgid "Preset icon when creating a desktop file"
 msgstr "Idazmahai fitxategi bat sortzean ikonoa aurrez ezarri"
 
-#: ../exo-desktop-item-edit/main.c:87 ../exo-helper/main.c:121
+#: ../exo-desktop-item-edit/main.c:87
 msgid "Print version information and exit"
 msgstr "Bertsio argibideak bistarazi eta irten"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:172
+#: ../exo-desktop-item-edit/main.c:174
 msgid "[FILE|FOLDER]"
 msgstr "[FITXATEGI|KARPETA]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:184
+#: ../exo-desktop-item-edit/main.c:186
 msgid "Failed to open display"
 msgstr "Huts pantaila irekitzerakoan"
 
-#: ../exo-desktop-item-edit/main.c:211
+#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#, c-format
+msgid ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr "Copyright (c) %s\n        os-cillation e.K. All rights reserved.\n\nBenedikt Meurer-ek <benny@xfce.org> idatzia.\n\n"
+
+#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr "%s INONGO BERMERIK GABE banatzen da.\n%s kopiak partekatu ditzakezu %s iturburu paketean aurki daitekeen\n\"GNU Lesser General Public License\" lizentziaren arauetan.\n\n"
+
+#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "Erroreen berri eman <%s>-ra.\n"
+
+#: ../exo-desktop-item-edit/main.c:213
 msgid "No file/folder specified"
 msgstr "Ez da fitxategi/karpeta ezarri"
 
-#: ../exo-desktop-item-edit/main.c:276
+#: ../exo-desktop-item-edit/main.c:278
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Huts \"%s\" fitxategiko edukiak irakurtzerakoan: %s"
 
-#: ../exo-desktop-item-edit/main.c:281
+#: ../exo-desktop-item-edit/main.c:283
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "\"%s\" fitxategiak ez du daturik"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:294
+#: ../exo-desktop-item-edit/main.c:296
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Huts \"%s\" edukiak analizatzerakoan: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:306
+#: ../exo-desktop-item-edit/main.c:308
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "\"%s\" fitxategiak ez du mota gakorik"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:316
+#: ../exo-desktop-item-edit/main.c:318
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "'\"%s\" idazmahai fitxategi mota ez da onartzen"
 
-#. add the "Help" button
-#: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:106
+#: ../exo-desktop-item-edit/main.c:328
 msgid "_Help"
 msgstr "_Laguntza"
 
-#. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:330
 msgid "C_reate"
 msgstr "So_rtu"
 
-#: ../exo-desktop-item-edit/main.c:338 ../exo-desktop-item-edit/main.c:518
+#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
 msgid "_Save"
 msgstr "_Gorde"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:514
+#: ../exo-desktop-item-edit/main.c:520
 msgid "Choose filename"
 msgstr "Fitxategi izena hautatu"
 
-#: ../exo-desktop-item-edit/main.c:621
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Huts \"%s\" sortzerakoan."
 
-#: ../exo-desktop-item-edit/main.c:621
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Huts \"%s\" gordetzerakoan."
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:99
-msgid "_Close"
-msgstr "It_xi"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:1
-msgid "Preferred Applications"
-msgstr "Hobetsiriko aplikazioak"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:103
-msgid "Select default applications for various services"
-msgstr "Zenbait erabilpenerako lehenetsiriko aplikazioak ezarri"
-
-#. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:127
-msgid "_Internet"
-msgstr "_Internet"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:140
-#: ../exo-open/exo-web-browser.desktop.in.h:1
-msgid "Web Browser"
-msgstr "Web nabigatzailea"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:148
-msgid ""
-"The preferred Web Browser will be used to open hyperlinks and display help "
-"contents."
-msgstr ""
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:171
-#: ../exo-open/exo-mail-reader.desktop.in.h:1
-msgid "Mail Reader"
-msgstr "Posta bezeroa"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:179
-msgid ""
-"The preferred Mail Reader will be used to compose emails when you click on "
-"email addresses."
-msgstr ""
-
-#. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:198
-msgid "_Utilities"
-msgstr "_Lanabesak"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:211
-#: ../exo-open/exo-file-manager.desktop.in.h:1
-msgid "File Manager"
-msgstr "Fitxategi kudeatzailea"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:219
-msgid ""
-"The preferred File Manager will be used to browse the contents of folders."
-msgstr ""
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:242
-#: ../exo-open/exo-terminal-emulator.desktop.in.h:1
-msgid "Terminal Emulator"
-msgstr "Terminal emuladorea"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:250
-msgid ""
-"The preferred Terminal Emulator will be used to run commands that require a "
-"CLI environment."
-msgstr ""
-
-#: ../exo-helper/exo-helper-chooser.c:145
-#: ../exo-helper/exo-helper-chooser.c:152
-msgid "Press left mouse button to change the selected application."
-msgstr "Saguaren eskuineko botoia sakatu aplikazioa aldatzeko."
-
-#: ../exo-helper/exo-helper-chooser.c:151
-msgid "Application Chooser Button"
-msgstr "Aplikazio hautatze botoia"
-
-#: ../exo-helper/exo-helper-chooser.c:303
-msgid "No application selected"
-msgstr "Ez da aplikaziorik hautatu"
-
-#: ../exo-helper/exo-helper-chooser.c:319
-msgid "Failed to set default Web Browser"
-msgstr "Huts lehenetsiriko web nabigatzailea ezartzerakoan"
-
-#: ../exo-helper/exo-helper-chooser.c:320
-msgid "Failed to set default Mail Reader"
-msgstr "Huts lehenetsiriko posta bezeroa ezartzerakoan"
-
-#: ../exo-helper/exo-helper-chooser.c:321
-msgid "Failed to set default File Manager"
-msgstr "Huts lehenetsiriko fitxategi kudeatzailea ezartzerakoan"
-
-#: ../exo-helper/exo-helper-chooser.c:322
-msgid "Failed to set default Terminal Emulator"
-msgstr "Huts lehenetsiriko terminal emuladorea ezartzerakoan"
-
-#. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:392
-msgid "Select application"
-msgstr "Hautatu aplikazioa"
-
-#: ../exo-helper/exo-helper-chooser.c:505
-msgid "Choose a custom Web Browser"
-msgstr "Pertsonalizatutako web nabigatzaile bat aukeratu"
-
-#: ../exo-helper/exo-helper-chooser.c:506
-msgid "Choose a custom Mail Reader"
-msgstr "Pertsonalizatutako posta bezero bat aukeratu"
-
-#: ../exo-helper/exo-helper-chooser.c:507
-msgid "Choose a custom File Manager"
-msgstr "Pertsonalizatutako fitxategi kudeatzaile bat aukeratu"
-
-#: ../exo-helper/exo-helper-chooser.c:508
-msgid "Choose a custom Terminal Emulator"
-msgstr "Pertsonalizatutako terminal emuladore bat aukeratu"
-
-#: ../exo-helper/exo-helper-chooser.c:513
-msgid ""
-"Specify the application you want to use\n"
-"as default Web Browser for Xfce:"
-msgstr "Xfce-ren lehenetsiriko nabigatzaile bezala erabili\nnahi duzun aplikazioa zehaztu:"
-
-#: ../exo-helper/exo-helper-chooser.c:514
-msgid ""
-"Specify the application you want to use\n"
-"as default Mail Reader for Xfce:"
-msgstr "Xfce-ren lehenetsiriko posta bezero bezala erabili\nnahi duzun aplikazioa zehaztu:"
-
-#: ../exo-helper/exo-helper-chooser.c:515
-msgid ""
-"Specify the application you want to use\n"
-"as default File Manager for Xfce:"
-msgstr "Xfce-ren lehenetsiriko fitxategi kudeatzaile bezala erabili\nnahi duzun aplikazioa zehaztu:"
-
-#: ../exo-helper/exo-helper-chooser.c:516
-msgid ""
-"Specify the application you want to use\n"
-"as default Terminal Emulator for Xfce:"
-msgstr "Xfce-ren lehenetsiriko terminal emuladore bezala erabili\nnahi duzun aplikazioa zehaztu:"
-
-#: ../exo-helper/exo-helper-chooser.c:580
-msgid "Browse the file system to choose a custom command."
-msgstr "Pertsonalizatutako komando bat aukeratzeko fitxategi-sistema arakatu."
-
-#: ../exo-helper/exo-helper-chooser.c:789
-msgid "_Other..."
-msgstr "_Besteak..."
-
-#: ../exo-helper/exo-helper-chooser.c:790
-msgid "Use a custom application which is not included in the above list."
-msgstr "Beheko zerrendan ez dagoen aplikazio pertsonalizatu bat aukeratu."
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:113
-msgid "Choose Preferred Application"
-msgstr "Hobetsiriko aplikazioa hautatu"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:256
-msgid ""
-"Please choose your preferred Web\n"
-"Browser now and click OK to proceed."
-msgstr "Mesedez hobetsiriko web nabigatzailea ezarri\neta Ados sakatu aurrera jarraitzeko."
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:258
-msgid ""
-"Please choose your preferred Mail Reader\n"
-"now and click OK to proceed."
-msgstr "Mesedez hobetsiriko posta bezeroa ezarri\neta Ados sakatu aurrera jarraitzeko."
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:260
-msgid ""
-"Please choose your preferred File Manager\n"
-"now and click OK to proceed."
-msgstr "Mesedez hobetsiriko fitxategi kudeatzailea ezarri\neta ados sakatu aurrera jarraitzeko."
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:262
-msgid ""
-"Please choose your preferred Terminal\n"
-"Emulator now and click OK to proceed."
-msgstr "Mesedez hobetsiriko terminal emuladorea ezarri\neta Ados sakatu aurrera jarraitzeko."
-
-#: ../exo-helper/exo-helper.c:401
-#, c-format
-msgid "No command specified"
-msgstr "Ez da komandoa ezarri"
-
-#: ../exo-helper/exo-helper.c:720 ../exo-helper/exo-helper.c:763
-#: ../exo-helper/exo-helper.c:834 ../exo-helper/exo-helper.c:877
-#, c-format
-msgid "Failed to open %s for writing"
-msgstr "Huts %s idazteko idazterakoan"
-
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid ""
-"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Hobetsiriko aplikazioa (web nabigatzailea, eposta bezero eta terminal emuladorea)"
-
-#: ../exo-helper/main.c:42
-msgid "Failed to execute default Web Browser"
-msgstr "Huts lehenetsiriko web nabigatzailea exekutatzean"
-
-#: ../exo-helper/main.c:43
-msgid "Failed to execute default Mail Reader"
-msgstr "Huts lehenetsiriko posta bezeroa exekutatzean"
-
-#: ../exo-helper/main.c:44
-msgid "Failed to execute default File Manager"
-msgstr "Huts lehenetsiriko fitxategi kudeatzailea exekutatzean"
-
-#: ../exo-helper/main.c:45
-msgid "Failed to execute default Terminal Emulator"
-msgstr "Huts lehenetsiriko terminal emuladorea exekutatzean"
-
-#. Enable permanently dismissing this error.
-#: ../exo-helper/main.c:87
-msgid "Do _not show this message again"
-msgstr ""
-
-#: ../exo-helper/main.c:122
-msgid ""
-"Open the Preferred Applications\n"
-"configuration dialog"
-msgstr "Ireki Xfce 4 hobetsiriko aplikazio\nkonfigurazio leihoa"
-
-#: ../exo-helper/main.c:123
-msgid "Settings manager socket"
-msgstr "Ezarpen kudeatzaile socket-a"
-
-#: ../exo-helper/main.c:123
-msgid "SOCKET ID"
-msgstr "SOCKET IDa"
-
-#: ../exo-helper/main.c:124
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
-" one of the following values."
-msgstr "Abiarazi MOTA laguntzailea aukerako PARAMETRO honez, non MOTA hauetako balio bat izan daitekeen."
-
-#: ../exo-helper/main.c:124 ../exo-helper/main.c:125
-msgid "TYPE [PARAMETER]"
-msgstr "MOTA [PARAMETROA]"
-
-#: ../exo-helper/main.c:125
-msgid ""
-"Query the default helper of TYPE, where TYPE is one of the following values."
-msgstr ""
-
-#: ../exo-helper/main.c:155
-msgid ""
-"The following TYPEs are supported for the --launch and --query commands:\n"
-"\n"
-"  WebBrowser       - The preferred Web Browser.\n"
-"  MailReader       - The preferred Mail Reader.\n"
-"  FileManager      - The preferred File Manager.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-
-#: ../exo-helper/main.c:165
-#, c-format
-msgid "Type '%s --help' for usage."
-msgstr "Idatzi '%s --help' erabilerarako."
-
-#: ../exo-helper/main.c:224 ../exo-helper/main.c:297
-#, c-format
-msgid "Invalid helper type \"%s\""
-msgstr "\"%s\" laguntzaile mota baliogabea"
-
-#: ../exo-helper/main.c:281
-#, c-format
-msgid ""
-"%s (Xfce %s)\n"
-"\n"
-"Copyright (c) 2003-2006\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
-"\n"
-"Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. All rights reserved.\n\nBenedikt Meurerek <benny@xfce.org> idatzia.\n\nGtk+-%d.%d.%d erabiliaz eraikia, Gtk+-%d.%d.%d erabiliaz exekutatua.\n\nPrograma erroreen berri hemen eman: <%s>.\n"
-
-#: ../exo-helper/main.c:307
-#, c-format
-msgid "No helper defined for \"%s\"."
-msgstr ""
-
-#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
-msgid "aterm"
-msgstr "aterm"
-
-#: ../exo-helper/helpers/balsa.desktop.in.in.h:1
-msgid "Balsa"
-msgstr "Balsa"
-
-#: ../exo-helper/helpers/brave.desktop.in.in.h:1
-msgid "Brave"
-msgstr ""
-
-#: ../exo-helper/helpers/caja.desktop.in.in.h:1
-msgid "Caja File Manager"
-msgstr "CAja fitxategi kudeatzailea"
-
-#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
-msgid "Chromium"
-msgstr "Chromium"
-
-#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
-msgid "Debian Sensible Browser"
-msgstr "Debian lehenetsiriko nabigatzailea"
-
-#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
-msgid "Debian X Terminal Emulator"
-msgstr "Debian X terminal emuladorea"
-
-#: ../exo-helper/helpers/dillo.desktop.in.in.h:1
-msgid "Dillo"
-msgstr "Dillo"
-
-#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
-msgid "Encompass"
-msgstr "Encompass"
-
-#: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
-msgid "Epiphany Web Browser"
-msgstr "Epiphany web nabigatzailea"
-
-#: ../exo-helper/helpers/eterm.desktop.in.in.h:1
-msgid "Enlightened Terminal Emulator"
-msgstr "Enlightened terminal emuladorea"
-
-#: ../exo-helper/helpers/evolution.desktop.in.in.h:1
-msgid "Evolution"
-msgstr "Evolution"
-
-#: ../exo-helper/helpers/firefox.desktop.in.in.h:1
-msgid "Mozilla Firefox"
-msgstr "Mozilla Firefox"
-
-#: ../exo-helper/helpers/galeon.desktop.in.in.h:1
-msgid "Galeon Web Browser"
-msgstr "Galeon web nabigatzailea"
-
-#: ../exo-helper/helpers/geary.desktop.in.in.h:1
-msgid "Geary"
-msgstr ""
-
-#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
-msgid "Google Chrome"
-msgstr "Google Chrome"
-
-#: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
-msgid "GNOME Terminal"
-msgstr "GNOME terminala"
-
-#: ../exo-helper/helpers/icecat.desktop.in.in.h:1
-msgid "Icecat"
-msgstr "Icecat"
-
-#: ../exo-helper/helpers/icedove.desktop.in.in.h:1
-msgid "Icedove"
-msgstr "Icedove"
-
-#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
-msgid "Iceweasel"
-msgstr "Iceweasel"
-
-#: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
-msgid "Jumanji"
-msgstr "Jumanji"
-
-#: ../exo-helper/helpers/kmail.desktop.in.in.h:1
-msgid "KMail"
-msgstr "KMail"
-
-#: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
-msgid "Konqueror Web Browser"
-msgstr "Konqueror web nabigatzailea"
-
-#: ../exo-helper/helpers/links.desktop.in.in.h:1
-msgid "Links Text Browser"
-msgstr "Links testu nabigatzailea"
-
-#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-msgid "Lynx Text Browser"
-msgstr "Lynx testu nabigatzailea"
-
-#: ../exo-helper/helpers/midori.desktop.in.in.h:1
-msgid "Midori"
-msgstr "Midori"
-
-#: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
-msgid "Mozilla Browser"
-msgstr "Mozilla nabigatzailea"
-
-#: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
-msgid "Mozilla Mail"
-msgstr "Mozilla posta"
-
-#: ../exo-helper/helpers/mutt.desktop.in.in.h:1
-msgid "Mutt"
-msgstr "Mutt"
-
-#: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
-msgid "Nautilus"
-msgstr "Nautilus"
-
-#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
-msgid "Netscape Navigator"
-msgstr "Netscape Navigator"
-
-#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
-msgid "NXterm"
-msgstr "NXterm"
-
-#: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
-msgid "Opera Browser"
-msgstr "Opera nabigatzailea"
-
-#: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
-msgid "PCMan File Manager"
-msgstr "PCM fitxategi kudeatzailea"
-
-#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
-msgid "PCManFM-Qt File Manager"
-msgstr ""
-
-#: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
-msgid "QTerminal"
-msgstr "QTerminal"
-
-#: ../exo-helper/helpers/qtfm.desktop.in.in.h:1
-msgid "qtFM"
-msgstr "qtFM"
-
-#: ../exo-helper/helpers/qupzilla.desktop.in.in.h:1
-msgid "QupZilla"
-msgstr "QupZilla"
-
-#: ../exo-helper/helpers/rodent.desktop.in.in.h:1
-msgid "Rodent File Manager"
-msgstr "Rodent fitxategi kudeatzailea"
-
-#: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
-msgid "ROX-Filer"
-msgstr "ROX-Filer"
-
-#: ../exo-helper/helpers/sakura.desktop.in.in.h:1
-msgid "Sakura"
-msgstr "Sakura"
-
-#: ../exo-helper/helpers/surf.desktop.in.in.h:1
-msgid "Surf"
-msgstr "Surf"
-
-#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-msgid "Sylpheed"
-msgstr "Sylpheed"
-
-#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Claws Mail"
-msgstr "Claws posta"
-
-#: ../exo-helper/helpers/terminator.desktop.in.in.h:1
-msgid "Terminator"
-msgstr ""
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr "Thunar"
-
-#: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
-msgid "Mozilla Thunderbird"
-msgstr "Mozilla Thunderbird"
-
-#: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
-msgid "RXVT Unicode"
-msgstr "RXVT Unicode"
-
-#: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
-msgid "Vimprobable2"
-msgstr "Vimprobable2"
-
-#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-msgid "W3M Text Browser"
-msgstr "W3M testu nabigatzailea"
-
-#: ../exo-helper/helpers/xfce4-terminal.desktop.in.in.h:1
-msgid "Xfce Terminal"
-msgstr "Xfce Terminala"
-
-#: ../exo-helper/helpers/xfe.desktop.in.in.h:1
-msgid "Xfe File Manager"
-msgstr "Xfce Fitxategi kudeatzailea"
-
-#: ../exo-helper/helpers/xterm.desktop.in.in.h:1
-msgid "X Terminal"
-msgstr "X terminala"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
@@ -1369,7 +672,7 @@ msgstr "Hurrengo MOTA hauek onartzen dira --launch komandoarentzat:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
-#. * since the exo-helper utility will not accept localized TYPEs.
+#. * since the xfce4-mime-helper utility will not accept localized TYPEs.
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1399,28 +702,12 @@ msgstr "Idazmahai fitxategi abiarazleak ez dira onartzen %s ez dagoenean GIO_Uni
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Huts \"%s\" ataleko hobetsiriko aplikazioa irekitzerakoan."
 
-#: ../exo-open/main.c:590
+#: ../exo-open/main.c:586
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Ezin da \"%s\"ren URI-eskema antzeman."
 
-#: ../exo-open/main.c:604
+#: ../exo-open/main.c:600
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Huts \"%s\" URIa irekitzerakoan."
-
-#: ../exo-open/exo-file-manager.desktop.in.h:2
-msgid "Browse the file system"
-msgstr "Arakatu fitxategi sistema"
-
-#: ../exo-open/exo-mail-reader.desktop.in.h:2
-msgid "Read your email"
-msgstr "Irakurri zure posta"
-
-#: ../exo-open/exo-terminal-emulator.desktop.in.h:2
-msgid "Use the command line"
-msgstr "Erabili komando lerroa"
-
-#: ../exo-open/exo-web-browser.desktop.in.h:2
-msgid "Browse the web"
-msgstr "Nabigatu web-a"
