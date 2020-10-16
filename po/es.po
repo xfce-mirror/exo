@@ -8,7 +8,7 @@
 # Adolfo Jayme-Barrientos, 2015
 # Adolfo Jayme-Barrientos, 2014
 # Alfredo Quintero <alfredomob@gmail.com>, 2019
-# Casper casper, 2019
+# Casper casper, 2019-2020
 # e49097353bae6e06d169bea93a448e3e, 2017
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
@@ -22,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-12 00:45+0200\n"
-"PO-Revision-Date: 2020-05-13 01:57+0000\n"
-"Last-Translator: Ignacio Poggi <ignaciop.3@gmail.com>\n"
+"POT-Creation-Date: 2020-07-08 00:45+0200\n"
+"PO-Revision-Date: 2020-07-31 06:56+0000\n"
+"Last-Translator: Casper casper\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/exo/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,37 +32,35 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:125
-#: ../exo/exo-cell-renderer-icon.c:154
+#: ../exo/exo-cell-renderer-icon.c:138
 msgid "Follow state"
 msgstr "Seguir el estado"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:126
-#: ../exo/exo-cell-renderer-icon.c:155
+#: ../exo/exo-cell-renderer-icon.c:139
 msgid "Render differently based on the selection state."
 msgstr "Representar de forma diferente según el estado de la selección."
 
-#: ../exo/exo-cell-renderer-icon.c:176
+#: ../exo/exo-cell-renderer-icon.c:160
 msgid "Icon"
 msgstr "Icono"
 
-#: ../exo/exo-cell-renderer-icon.c:177
+#: ../exo/exo-cell-renderer-icon.c:161
 msgid "The icon to render."
 msgstr "El icono que se representará."
 
-#: ../exo/exo-cell-renderer-icon.c:195
+#: ../exo/exo-cell-renderer-icon.c:179
 msgid "GIcon"
 msgstr "GIcon"
 
-#: ../exo/exo-cell-renderer-icon.c:196
+#: ../exo/exo-cell-renderer-icon.c:180
 msgid "The GIcon to render."
 msgstr "El GIcon que se representará."
 
-#: ../exo/exo-cell-renderer-icon.c:217
+#: ../exo/exo-cell-renderer-icon.c:201
 msgid "size"
 msgstr "tamaño"
 
-#: ../exo/exo-cell-renderer-icon.c:218
+#: ../exo/exo-cell-renderer-icon.c:202
 msgid "The size of the icon to render in pixels."
 msgstr "El tamaño del icono para representar en píxeles."
 
@@ -81,74 +79,10 @@ msgstr "No se pudo leer el archivo «%s»: %s"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "No se pudo cargar la imagen «%s»: motivo desconocido, probablemente el archivo está dañado."
 
-#: ../exo/exo-gtk-extensions.c:248
+#: ../exo/exo-gtk-extensions.c:219
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "No se pudo abrir «%s»."
-
-#: ../exo/exo-icon-bar.c:273 ../exo/exo-icon-view.c:908
-msgid "Orientation"
-msgstr "Orientación"
-
-#: ../exo/exo-icon-bar.c:274
-msgid "The orientation of the iconbar"
-msgstr "La orientación de la barra de iconos"
-
-#: ../exo/exo-icon-bar.c:290 ../exo/exo-icon-view.c:925
-msgid "Pixbuf column"
-msgstr "Columna del búfer de píxeles"
-
-#: ../exo/exo-icon-bar.c:291 ../exo/exo-icon-view.c:926
-msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Columna del modelo para recuperar el búfer de píxeles del icono"
-
-#: ../exo/exo-icon-bar.c:306 ../exo/exo-icon-view.c:1070
-msgid "Text column"
-msgstr "Columna de texto"
-
-#: ../exo/exo-icon-bar.c:307 ../exo/exo-icon-view.c:1071
-msgid "Model column used to retrieve the text from"
-msgstr "Columna del modelo para recuperar el texto"
-
-#: ../exo/exo-icon-bar.c:319
-msgid "Icon Bar Model"
-msgstr "Modelo de barra de iconos"
-
-#: ../exo/exo-icon-bar.c:320
-msgid "Model for the icon bar"
-msgstr "Modelo para la barra de iconos"
-
-#: ../exo/exo-icon-bar.c:336
-msgid "Active"
-msgstr "Activo"
-
-#: ../exo/exo-icon-bar.c:337
-msgid "Active item index"
-msgstr "Índice del elemento activo"
-
-#: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
-msgid "Active item fill color"
-msgstr "Color de relleno del elemento activo"
-
-#: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
-msgid "Active item border color"
-msgstr "Color del borde del elemento activo"
-
-#: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
-msgid "Active item text color"
-msgstr "Color del texto del elemento activo"
-
-#: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
-msgid "Cursor item fill color"
-msgstr "Color del relleno del cursor"
-
-#: ../exo/exo-icon-bar.c:371 ../exo/exo-icon-bar.c:372
-msgid "Cursor item border color"
-msgstr "Color del borde del cursor"
-
-#: ../exo/exo-icon-bar.c:378 ../exo/exo-icon-bar.c:379
-msgid "Cursor item text color"
-msgstr "Color del texto del cursor"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:100
@@ -216,356 +150,212 @@ msgid "All Icons"
 msgstr "Todos los iconos"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:302
+#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:275
 msgid "Image Files"
 msgstr "Archivos de imágenes"
 
+#. EXO_ICON_CHOOSER_CONTEXT_NO_ICON
+#: ../exo/exo-icon-chooser-dialog.c:134
+msgid "No Icon"
+msgstr "Sin Icono"
+
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:211
+#: ../exo/exo-icon-chooser-dialog.c:200
 msgid "Select _icon from:"
 msgstr "Seleccionar _icono de:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:235
+#: ../exo/exo-icon-chooser-dialog.c:216
 msgid "_Search icon:"
 msgstr "_Buscar un icono:"
 
-#: ../exo/exo-icon-chooser-dialog.c:254
+#: ../exo/exo-icon-chooser-dialog.c:227
 msgid "Clear search field"
 msgstr "Borrar el campo de búsqueda"
 
-#: ../exo/exo-icon-view.c:776
+#: ../exo/exo-icon-view.c:724
 msgid "Column Spacing"
 msgstr "Espacio entre columnas"
 
-#: ../exo/exo-icon-view.c:777
+#: ../exo/exo-icon-view.c:725
 msgid "Space which is inserted between grid column"
 msgstr "Espacio que se inserta entre las columnas de la cuadrícula"
 
-#: ../exo/exo-icon-view.c:793
+#: ../exo/exo-icon-view.c:741
 msgid "Number of columns"
 msgstr "Número de columnas"
 
-#: ../exo/exo-icon-view.c:794
+#: ../exo/exo-icon-view.c:742
 msgid "Number of columns to display"
 msgstr "Número de columnas para mostrar"
 
-#: ../exo/exo-icon-view.c:808
+#: ../exo/exo-icon-view.c:756
 msgid "Enable Search"
 msgstr "Activar la búsqueda"
 
-#: ../exo/exo-icon-view.c:809
+#: ../exo/exo-icon-view.c:757
 msgid "View allows user to search through columns interactively"
 msgstr "La vista permite al usuario buscar en las columnas interactivamente"
 
-#: ../exo/exo-icon-view.c:826
+#: ../exo/exo-icon-view.c:774
 msgid "Width for each item"
 msgstr "Ancho de cada elemento"
 
-#: ../exo/exo-icon-view.c:827
+#: ../exo/exo-icon-view.c:775
 msgid "The width used for each item"
 msgstr "El ancho usado para cada elemento"
 
-#: ../exo/exo-icon-view.c:845
+#: ../exo/exo-icon-view.c:793
 msgid "Layout mode"
 msgstr "Modo de disposición"
 
-#: ../exo/exo-icon-view.c:846
+#: ../exo/exo-icon-view.c:794
 msgid "The layout mode"
 msgstr "El modo de disposición"
 
-#: ../exo/exo-icon-view.c:862
+#: ../exo/exo-icon-view.c:810
 msgid "Margin"
 msgstr "Margen"
 
-#: ../exo/exo-icon-view.c:863
+#: ../exo/exo-icon-view.c:811
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Espacio que se inserta en los bordes de la vista de iconos"
 
-#: ../exo/exo-icon-view.c:879
+#: ../exo/exo-icon-view.c:827
 msgid "Markup column"
 msgstr "Columna de marcado"
 
-#: ../exo/exo-icon-view.c:880
+#: ../exo/exo-icon-view.c:828
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Columna del modelo para recuperar el texto si se usa marcado de Pango"
 
-#: ../exo/exo-icon-view.c:894
+#: ../exo/exo-icon-view.c:842
 msgid "Icon View Model"
 msgstr "Modelo de vista de iconos"
 
-#: ../exo/exo-icon-view.c:895
+#: ../exo/exo-icon-view.c:843
 msgid "The model for the icon view"
 msgstr "El modelo para la vista de iconos"
 
-#: ../exo/exo-icon-view.c:909
+#: ../exo/exo-icon-view.c:856
+msgid "Orientation"
+msgstr "Orientación"
+
+#: ../exo/exo-icon-view.c:857
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Cómo se posicionan el texto y el icono de cada elemento con respecto a los demás"
 
-#: ../exo/exo-icon-view.c:943
+#: ../exo/exo-icon-view.c:873
+msgid "Pixbuf column"
+msgstr "Columna del búfer de píxeles"
+
+#: ../exo/exo-icon-view.c:874
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "Columna del modelo para recuperar el búfer de píxeles del icono"
+
+#: ../exo/exo-icon-view.c:891
 msgid "Icon column"
 msgstr "Columna de iconos"
 
-#: ../exo/exo-icon-view.c:944
+#: ../exo/exo-icon-view.c:892
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "Modelo de columna para recuperar la ruta absoluta de un archivo de imagen para representar"
 
-#: ../exo/exo-icon-view.c:959
+#: ../exo/exo-icon-view.c:907
 msgid "Reorderable"
 msgstr "Reordenable"
 
-#: ../exo/exo-icon-view.c:960
+#: ../exo/exo-icon-view.c:908
 msgid "View is reorderable"
 msgstr "La vista es reordenable"
 
-#: ../exo/exo-icon-view.c:975
+#: ../exo/exo-icon-view.c:923
 msgid "Row Spacing"
 msgstr "Espacio entre filas"
 
-#: ../exo/exo-icon-view.c:976
+#: ../exo/exo-icon-view.c:924
 msgid "Space which is inserted between grid rows"
 msgstr "Espacio que se inserta entre las filas de la cuadrícula"
 
-#: ../exo/exo-icon-view.c:990
+#: ../exo/exo-icon-view.c:938
 msgid "Search Column"
 msgstr "Columna de búsqueda"
 
-#: ../exo/exo-icon-view.c:991
+#: ../exo/exo-icon-view.c:939
 msgid "Model column to search through when searching through item"
 msgstr "Modelo de columna para buscar entre elementos"
 
-#: ../exo/exo-icon-view.c:1005
+#: ../exo/exo-icon-view.c:953
 msgid "Selection mode"
 msgstr "Modo de selección"
 
-#: ../exo/exo-icon-view.c:1006
+#: ../exo/exo-icon-view.c:954
 msgid "The selection mode"
 msgstr "El modo de selección"
 
-#: ../exo/exo-icon-view.c:1021 ../exo/exo-tree-view.c:160
+#: ../exo/exo-icon-view.c:969 ../exo/exo-tree-view.c:156
 msgid "Single Click"
 msgstr "Un solo clic"
 
-#: ../exo/exo-icon-view.c:1022 ../exo/exo-tree-view.c:161
+#: ../exo/exo-icon-view.c:970 ../exo/exo-tree-view.c:157
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Define si los elementos de la vista se pueden activar con un solo clic"
 
-#: ../exo/exo-icon-view.c:1038 ../exo/exo-tree-view.c:177
+#: ../exo/exo-icon-view.c:986 ../exo/exo-tree-view.c:173
 msgid "Single Click Timeout"
 msgstr "Tiempo de espera para un solo clic"
 
-#: ../exo/exo-icon-view.c:1039 ../exo/exo-tree-view.c:178
+#: ../exo/exo-icon-view.c:987 ../exo/exo-tree-view.c:174
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "El tiempo después de la cual el elemento bajo el cursor del ratón se seleccionará automáticamente en el modo de un solo clic"
 
-#: ../exo/exo-icon-view.c:1054
+#: ../exo/exo-icon-view.c:1002
 msgid "Spacing"
 msgstr "Espaciado"
 
-#: ../exo/exo-icon-view.c:1055
+#: ../exo/exo-icon-view.c:1003
 msgid "Space which is inserted between cells of an item"
 msgstr "Espacio que se inserta entre las celdas de un elemento"
 
-#: ../exo/exo-thumbnail-preview.c:120
+#: ../exo/exo-icon-view.c:1018
+msgid "Text column"
+msgstr "Columna de texto"
+
+#: ../exo/exo-icon-view.c:1019
+msgid "Model column used to retrieve the text from"
+msgstr "Columna del modelo para recuperar el texto"
+
+#: ../exo/exo-thumbnail-preview.c:112
 msgid "Preview"
 msgstr "Vista previa"
 
-#: ../exo/exo-thumbnail-preview.c:141 ../exo/exo-thumbnail-preview.c:286
+#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:270
 msgid "No file selected"
 msgstr "No se seleccionó ningún archivo"
 
-#: ../exo/exo-thumbnail-preview.c:304
+#: ../exo/exo-thumbnail-preview.c:288
 msgid "Block Device"
 msgstr "Dispositivo de bloques"
 
-#: ../exo/exo-thumbnail-preview.c:309
+#: ../exo/exo-thumbnail-preview.c:293
 msgid "Character Device"
 msgstr "Dispositivo de caracteres"
 
-#: ../exo/exo-thumbnail-preview.c:314
+#: ../exo/exo-thumbnail-preview.c:298
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../exo/exo-thumbnail-preview.c:319
+#: ../exo/exo-thumbnail-preview.c:303
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../exo/exo-thumbnail-preview.c:324
+#: ../exo/exo-thumbnail-preview.c:308
 msgid "Socket"
 msgstr "Socket"
-
-#: ../exo/exo-toolbars-editor-dialog.c:112
-msgid "_Add a new toolbar"
-msgstr "_Añadir una barra de herramientas nueva"
-
-#: ../exo/exo-toolbars-editor.c:214
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr "Arrastre un elemento a las barras de herramientas de arriba para añadirlo. Arrástrelo desde las barras de herramientas a la tabla de elementos para eliminarlo."
-
-#: ../exo/exo-toolbars-editor.c:530
-msgid "Separator"
-msgstr "Separador"
-
-#: ../exo/exo-toolbars-view.c:750
-msgid "Toolbar _Style"
-msgstr "E_stilo de la barra de herramientas"
-
-#: ../exo/exo-toolbars-view.c:757
-msgid "_Desktop Default"
-msgstr "Escritorio _predeterminado"
-
-#: ../exo/exo-toolbars-view.c:766
-msgid "_Icons only"
-msgstr "Solo _iconos"
-
-#: ../exo/exo-toolbars-view.c:775
-msgid "_Text only"
-msgstr "Solo _texto"
-
-#: ../exo/exo-toolbars-view.c:784
-msgid "Text for _All Icons"
-msgstr "Texto p_ara todos los iconos"
-
-#: ../exo/exo-toolbars-view.c:793
-msgid "Text for I_mportant Icons"
-msgstr "Texto para los iconos _importantes"
-
-#: ../exo/exo-toolbars-view.c:801
-msgid "_Remove Toolbar"
-msgstr "Elimina_r la barra de herramientas"
-
-#: ../exo/exo-toolbars-view.c:816
-msgid "Customize Toolbar..."
-msgstr "Personalizar la barra de herramientas…"
-
-#: ../exo/exo-wrap-table.c:140
-msgid "Column spacing"
-msgstr "Espacio entre columnas"
-
-#: ../exo/exo-wrap-table.c:141
-msgid "The amount of space between two consecutive columns"
-msgstr "El espacio entre dos columnas consecutivas"
-
-#: ../exo/exo-wrap-table.c:155
-msgid "Row spacing"
-msgstr "Espacio entre filas"
-
-#: ../exo/exo-wrap-table.c:156
-msgid "The amount of space between two consecutive rows"
-msgstr "El espacio entre dos filas consecutivas"
-
-#: ../exo/exo-wrap-table.c:170
-msgid "Homogeneous"
-msgstr "Homogéneo"
-
-#: ../exo/exo-wrap-table.c:171
-msgid "Whether the children should be all the same size"
-msgstr "Define si los hijos deberían ser todos del mismo tamaño"
-
-#: ../exo/exo-xsession-client.c:203
-msgid "Window group"
-msgstr "Grupo de ventanas"
-
-#: ../exo/exo-xsession-client.c:204
-msgid "Window group leader"
-msgstr "Ventana principal del grupo"
-
-#: ../exo/exo-xsession-client.c:214
-msgid "Restart command"
-msgstr "Orden de reinicio"
-
-#: ../exo/exo-xsession-client.c:215
-msgid "Session restart command"
-msgstr "Orden de reinicio de la sesión"
-
-#: ../exo-csource/main.c:303
-#, c-format
-msgid "Usage: %s [options] [file]\n"
-msgstr "Uso: %s [opciones] [archivo]\n"
-
-#: ../exo-csource/main.c:304
-#, c-format
-msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [opciones] --build-list [[nombre de archivo]]...]\n"
-
-#: ../exo-csource/main.c:306
-#, c-format
-msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help        Mostrar este mensaje de ayuda y salir\n"
-
-#: ../exo-csource/main.c:307
-#, c-format
-msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version     Mostrar información sobre la versión y salir\n"
-
-#: ../exo-csource/main.c:308
-#, c-format
-msgid "  --extern          Generate extern symbols\n"
-msgstr "  --extern          Generar símbolos externos\n"
-
-#: ../exo-csource/main.c:309
-#, c-format
-msgid "  --static          Generate static symbols\n"
-msgstr "  --static          Generar símbolos estáticos\n"
-
-#: ../exo-csource/main.c:310
-#, c-format
-msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=identificador de macro de C/nombre de variable\n"
-
-#: ../exo-csource/main.c:311
-#, c-format
-msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list      Analizar las parejas (nombre, archivo)\n"
-
-#: ../exo-csource/main.c:312
-#, c-format
-msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "  --strip-comments  Eliminar comentarios de los archivos XML\n"
-
-#: ../exo-csource/main.c:313
-#, c-format
-msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   Eliminar el contenido de los nodos de los archivos XML\n"
-
-#: ../exo-csource/main.c:314
-#, c-format
-msgid "  --output=filename Write generated csource to specified file\n"
-msgstr "--output=nombre-archivo Escribir el código C generado en el archivo especificado\n"
-
-#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:198
-#: ../exo-open/main.c:509
-#, c-format
-msgid ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr "Derechos de autor (c) %s\n        os-cillation e.K. Todos los derechos reservados.\n\nEscrito por Benedikt Meurer <benny@xfce.org>.\n\n"
-
-#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:202
-#: ../exo-open/main.c:513
-#, c-format
-msgid ""
-"%s comes with ABSOLUTELY NO WARRANTY,\n"
-"You may redistribute copies of %s under the terms of\n"
-"the GNU Lesser General Public License which can be found in the\n"
-"%s source package.\n"
-"\n"
-msgstr "%s se ofrece ABSOLUTAMENTE SIN NINGUNA GARANTÍA,\nPuede redistribuir copias de %s bajo los términos de\nla Licencia Pública General Reducida de GNU, la cual se encuentra\nen el paquete de código fuente de %s.\n\n"
-
-#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:206
-#: ../exo-open/main.c:517
-#, c-format
-msgid "Please report bugs to <%s>.\n"
-msgstr "Informe de errores a <%s>.\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
@@ -575,7 +365,7 @@ msgstr "Seleccione una aplicación"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:522
+#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
 msgid "_Cancel"
 msgstr "_Cancelar"
 
@@ -773,6 +563,31 @@ msgstr "[ARCHIVO|CARPETA]"
 msgid "Failed to open display"
 msgstr "No se pudo abrir el visor"
 
+#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#, c-format
+msgid ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr "Derechos de autor (c) %s\n        os-cillation e.K. Todos los derechos reservados.\n\nEscrito por Benedikt Meurer <benny@xfce.org>.\n\n"
+
+#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr "%s se ofrece ABSOLUTAMENTE SIN NINGUNA GARANTÍA,\nPuede redistribuir copias de %s bajo los términos de\nla Licencia Pública General Reducida de GNU, la cual se encuentra\nen el paquete de código fuente de %s.\n\n"
+
+#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "Informe de errores a <%s>.\n"
+
 #: ../exo-desktop-item-edit/main.c:213
 msgid "No file/folder specified"
 msgstr "No se especificó el archivo o la carpeta"
@@ -813,21 +628,21 @@ msgstr "_Ayuda"
 msgid "C_reate"
 msgstr "C_rear"
 
-#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:523
+#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
 msgid "_Save"
 msgstr "_Guardar"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:519
+#: ../exo-desktop-item-edit/main.c:520
 msgid "Choose filename"
 msgstr "Elija un nombre de archivo"
 
-#: ../exo-desktop-item-edit/main.c:626
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "No se pudo crear «%s»."
 
-#: ../exo-desktop-item-edit/main.c:626
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "No se pudo guardar «%s»."
@@ -898,12 +713,12 @@ msgstr "No se pueden ejectuar archivos de escritorio si %s se ha compilado sin l
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "No se pudo ejecutar la aplicación preferida para la categoría «%s»."
 
-#: ../exo-open/main.c:590
+#: ../exo-open/main.c:586
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "No se puede detectar el esquema URI de «%s»."
 
-#: ../exo-open/main.c:604
+#: ../exo-open/main.c:600
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "No se pudo abrir el URL «%s»."
