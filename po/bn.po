@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 18:30+0200\n"
-"PO-Revision-Date: 2019-05-25 16:30+0000\n"
+"POT-Creation-Date: 2020-07-08 00:45+0200\n"
+"PO-Revision-Date: 2020-07-07 22:45+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Bengali (http://www.transifex.com/xfce/exo/language/bn/)\n"
 "MIME-Version: 1.0\n"
@@ -19,37 +19,35 @@ msgstr ""
 "Language: bn\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:125
-#: ../exo/exo-cell-renderer-icon.c:154
+#: ../exo/exo-cell-renderer-icon.c:138
 msgid "Follow state"
 msgstr "অবস্থা অনুসরণ করা হবে"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:126
-#: ../exo/exo-cell-renderer-icon.c:155
+#: ../exo/exo-cell-renderer-icon.c:139
 msgid "Render differently based on the selection state."
 msgstr "নির্বাচন অবস্থার উপর ভিত্তি করে বিভিন্নভাবে রূপান্তরিত করা হবে। "
 
-#: ../exo/exo-cell-renderer-icon.c:176
+#: ../exo/exo-cell-renderer-icon.c:160
 msgid "Icon"
 msgstr "আইকন"
 
-#: ../exo/exo-cell-renderer-icon.c:177
+#: ../exo/exo-cell-renderer-icon.c:161
 msgid "The icon to render."
 msgstr "রূপান্তর করার জন্য আইকন।"
 
-#: ../exo/exo-cell-renderer-icon.c:195
+#: ../exo/exo-cell-renderer-icon.c:179
 msgid "GIcon"
 msgstr "GIcon"
 
-#: ../exo/exo-cell-renderer-icon.c:196
+#: ../exo/exo-cell-renderer-icon.c:180
 msgid "The GIcon to render."
 msgstr "রূপান্তর করার জন্য GIcon."
 
-#: ../exo/exo-cell-renderer-icon.c:217
+#: ../exo/exo-cell-renderer-icon.c:201
 msgid "size"
 msgstr "আকার"
 
-#: ../exo/exo-cell-renderer-icon.c:218
+#: ../exo/exo-cell-renderer-icon.c:202
 msgid "The size of the icon to render in pixels."
 msgstr "পিক্সেলে রূপান্তর করার জন্য আইকনের আকার।"
 
@@ -68,74 +66,10 @@ msgstr "\"%s\": %s ফাইল পড়তে ব্যর্থ"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "\"%s\" চিত্র লোড করতে ব্যর্থ: কারন অজানা, সম্ভবত একটি ত্রুটিপূর্ণ ইমেজ ফাইল"
 
-#: ../exo/exo-gtk-extensions.c:248
+#: ../exo/exo-gtk-extensions.c:219
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "\"%s\" খুলতে ব্যর্থ।"
-
-#: ../exo/exo-icon-bar.c:273 ../exo/exo-icon-view.c:914
-msgid "Orientation"
-msgstr "দিকবিন্যাস"
-
-#: ../exo/exo-icon-bar.c:274
-msgid "The orientation of the iconbar"
-msgstr "আইকন বারের দিকবিন্যাস"
-
-#: ../exo/exo-icon-bar.c:290 ../exo/exo-icon-view.c:931
-msgid "Pixbuf column"
-msgstr "Pixbuf কলাম"
-
-#: ../exo/exo-icon-bar.c:291 ../exo/exo-icon-view.c:932
-msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "মডেল কলাম ব্যবহার করে pixbuf আইকনটি উদ্ধার করা হয়"
-
-#: ../exo/exo-icon-bar.c:306 ../exo/exo-icon-view.c:1076
-msgid "Text column"
-msgstr "পাঠ্য কলাম"
-
-#: ../exo/exo-icon-bar.c:307 ../exo/exo-icon-view.c:1077
-msgid "Model column used to retrieve the text from"
-msgstr "পাঠ্য উদ্ধার করতে মডেল কলাম ব্যবহার করা হয়"
-
-#: ../exo/exo-icon-bar.c:319
-msgid "Icon Bar Model"
-msgstr "আইকন বার মডেল"
-
-#: ../exo/exo-icon-bar.c:320
-msgid "Model for the icon bar"
-msgstr "আইকন বারের জন্য মডেল"
-
-#: ../exo/exo-icon-bar.c:336
-msgid "Active"
-msgstr "সক্রিয়"
-
-#: ../exo/exo-icon-bar.c:337
-msgid "Active item index"
-msgstr "সক্রিয় উপাদানের ইনডেক্স"
-
-#: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
-msgid "Active item fill color"
-msgstr "সক্রিয় উপাদানের ভরাট রং"
-
-#: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
-msgid "Active item border color"
-msgstr "সক্রিয় উপাদানের সীমানার রং"
-
-#: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
-msgid "Active item text color"
-msgstr "সক্রিয় উপাদানের পাঠ্যের রং"
-
-#: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
-msgid "Cursor item fill color"
-msgstr "কার্সার উপাদানের ভরাট রং"
-
-#: ../exo/exo-icon-bar.c:371 ../exo/exo-icon-bar.c:372
-msgid "Cursor item border color"
-msgstr "কার্সার উপাদানের সীমানার রং"
-
-#: ../exo/exo-icon-bar.c:378 ../exo/exo-icon-bar.c:379
-msgid "Cursor item text color"
-msgstr "কার্সার উপাদানের পাঠ্য রং"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:100
@@ -203,356 +137,212 @@ msgid "All Icons"
 msgstr "সমস্ত আইকন"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:302
+#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:275
 msgid "Image Files"
 msgstr "চিত্র পরিশোধক"
 
+#. EXO_ICON_CHOOSER_CONTEXT_NO_ICON
+#: ../exo/exo-icon-chooser-dialog.c:134
+msgid "No Icon"
+msgstr ""
+
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:211
+#: ../exo/exo-icon-chooser-dialog.c:200
 msgid "Select _icon from:"
 msgstr "থেকে আইকন নির্বাচন করা হবে: (_i)"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:235
+#: ../exo/exo-icon-chooser-dialog.c:216
 msgid "_Search icon:"
 msgstr "আিকন অনুসন্ধান করা হবে: (_S)"
 
-#: ../exo/exo-icon-chooser-dialog.c:254
+#: ../exo/exo-icon-chooser-dialog.c:227
 msgid "Clear search field"
 msgstr "অনুসন্ধান ক্ষেত্র মুছে ফেলা হবে"
 
-#: ../exo/exo-icon-view.c:782
+#: ../exo/exo-icon-view.c:724
 msgid "Column Spacing"
 msgstr "কলামের মধ্যবর্তী ফাকা স্থান"
 
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-view.c:725
 msgid "Space which is inserted between grid column"
 msgstr "গ্রিড কলামের মধ্যে প্রবেশ করানোর জন্য মধ্যবর্তী ফাঁকা স্থান"
 
-#: ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-view.c:741
 msgid "Number of columns"
 msgstr "কলামের সংখ্যা"
 
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-view.c:742
 msgid "Number of columns to display"
 msgstr "প্রদর্শন করার জন্য কলামের সংখ্যা"
 
-#: ../exo/exo-icon-view.c:814
+#: ../exo/exo-icon-view.c:756
 msgid "Enable Search"
 msgstr "অনুসন্ধান সক্রিয় করা হবে"
 
-#: ../exo/exo-icon-view.c:815
+#: ../exo/exo-icon-view.c:757
 msgid "View allows user to search through columns interactively"
 msgstr "কলামে অনুসন্ধাণ চালানোর জন্য ব্যবহারকারীকে প্রদর্শণ অনুমোদন করা হয়"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:774
 msgid "Width for each item"
 msgstr "প্রতিটি আইটেমের প্রস্থ"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:775
 msgid "The width used for each item"
 msgstr "প্রতিটি আইটেমে ব্যবহারের জন্য প্রস্থ"
 
-#: ../exo/exo-icon-view.c:851
+#: ../exo/exo-icon-view.c:793
 msgid "Layout mode"
 msgstr "বহির্বিন্যাস মোড"
 
-#: ../exo/exo-icon-view.c:852
+#: ../exo/exo-icon-view.c:794
 msgid "The layout mode"
 msgstr "বহির্বিন্যাস মোড"
 
-#: ../exo/exo-icon-view.c:868
+#: ../exo/exo-icon-view.c:810
 msgid "Margin"
 msgstr "মার্জিন"
 
-#: ../exo/exo-icon-view.c:869
+#: ../exo/exo-icon-view.c:811
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "আইকন ভিউ যা কিনারায় সাথ সন্নিবিষ্ট"
 
-#: ../exo/exo-icon-view.c:885
+#: ../exo/exo-icon-view.c:827
 msgid "Markup column"
 msgstr "মার্কআপ কলাম"
 
-#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-icon-view.c:828
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "যদি প্যানগো মার্কআপ ব্যবহার করে পাঠ্য উদ্ধার করতে মডেল কলাম ব্যবহার করা হয়"
 
-#: ../exo/exo-icon-view.c:900
+#: ../exo/exo-icon-view.c:842
 msgid "Icon View Model"
 msgstr "আইকন প্রদর্শন মডেল"
 
-#: ../exo/exo-icon-view.c:901
+#: ../exo/exo-icon-view.c:843
 msgid "The model for the icon view"
 msgstr "আইকন প্রদর্শনের জন্য মডেল"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:856
+msgid "Orientation"
+msgstr "দিকবিন্যাস"
+
+#: ../exo/exo-icon-view.c:857
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "পাঠ্য এবং আইটেম কিভাবে পরস্পরের সাথে সম্পর্কিত ভাবে থাকতে পারে"
 
-#: ../exo/exo-icon-view.c:949
+#: ../exo/exo-icon-view.c:873
+msgid "Pixbuf column"
+msgstr "Pixbuf কলাম"
+
+#: ../exo/exo-icon-view.c:874
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "মডেল কলাম ব্যবহার করে pixbuf আইকনটি উদ্ধার করা হয়"
+
+#: ../exo/exo-icon-view.c:891
 msgid "Icon column"
 msgstr "অাইকন কলাম"
 
-#: ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-view.c:892
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr ""
 
-#: ../exo/exo-icon-view.c:965
+#: ../exo/exo-icon-view.c:907
 msgid "Reorderable"
 msgstr "পূনর্বিন্যাসযোগ্য"
 
-#: ../exo/exo-icon-view.c:966
+#: ../exo/exo-icon-view.c:908
 msgid "View is reorderable"
 msgstr "প্রদর্শনী পূনর্বিন্যাসকরণযোগ্য"
 
-#: ../exo/exo-icon-view.c:981
+#: ../exo/exo-icon-view.c:923
 msgid "Row Spacing"
 msgstr "সারির মধ্যবর্তী ফাঁকা স্থান"
 
-#: ../exo/exo-icon-view.c:982
+#: ../exo/exo-icon-view.c:924
 msgid "Space which is inserted between grid rows"
 msgstr "গ্রিড সারির মাঝে সন্নিবিষ্ট ফাঁকা জায়গা"
 
-#: ../exo/exo-icon-view.c:996
+#: ../exo/exo-icon-view.c:938
 msgid "Search Column"
 msgstr "কলাম অনুসন্ধান করা হবে"
 
-#: ../exo/exo-icon-view.c:997
+#: ../exo/exo-icon-view.c:939
 msgid "Model column to search through when searching through item"
 msgstr "আইটেমের মাঝে অনুসন্ধাণের সময় মডেল কলাম অনুসন্ধাণ"
 
-#: ../exo/exo-icon-view.c:1011
+#: ../exo/exo-icon-view.c:953
 msgid "Selection mode"
 msgstr "নির্বাচন মোড"
 
-#: ../exo/exo-icon-view.c:1012
+#: ../exo/exo-icon-view.c:954
 msgid "The selection mode"
 msgstr "নির্বাচন মোড"
 
-#: ../exo/exo-icon-view.c:1027 ../exo/exo-tree-view.c:160
+#: ../exo/exo-icon-view.c:969 ../exo/exo-tree-view.c:156
 msgid "Single Click"
 msgstr "একক ক্লিক"
 
-#: ../exo/exo-icon-view.c:1028 ../exo/exo-tree-view.c:161
+#: ../exo/exo-icon-view.c:970 ../exo/exo-tree-view.c:157
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "প্রদর্শনীতে এক ক্লিকেই আইটেম খোলা হবে কিনা"
 
-#: ../exo/exo-icon-view.c:1044 ../exo/exo-tree-view.c:177
+#: ../exo/exo-icon-view.c:986 ../exo/exo-tree-view.c:173
 msgid "Single Click Timeout"
 msgstr "একক ক্লিক টাইম আউট"
 
-#: ../exo/exo-icon-view.c:1045 ../exo/exo-tree-view.c:178
+#: ../exo/exo-icon-view.c:987 ../exo/exo-tree-view.c:174
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "একক ক্লিক মোডে যে সময়ের ব্যবধানে নির্বাচিত আইটেমটি স্বয়ংক্রিয়ভাবে খুলবে"
 
-#: ../exo/exo-icon-view.c:1060
+#: ../exo/exo-icon-view.c:1002
 msgid "Spacing"
 msgstr "মধ্যবর্তী ফাঁকা স্থান"
 
-#: ../exo/exo-icon-view.c:1061
+#: ../exo/exo-icon-view.c:1003
 msgid "Space which is inserted between cells of an item"
 msgstr "একটি আইটেমের দুটি ঘরের মাঝে যে পরিমাণ ফাঁকা জায়গা আছে"
 
-#: ../exo/exo-thumbnail-preview.c:120
+#: ../exo/exo-icon-view.c:1018
+msgid "Text column"
+msgstr "পাঠ্য কলাম"
+
+#: ../exo/exo-icon-view.c:1019
+msgid "Model column used to retrieve the text from"
+msgstr "পাঠ্য উদ্ধার করতে মডেল কলাম ব্যবহার করা হয়"
+
+#: ../exo/exo-thumbnail-preview.c:112
 msgid "Preview"
 msgstr "পূর্বদর্শন"
 
-#: ../exo/exo-thumbnail-preview.c:141 ../exo/exo-thumbnail-preview.c:286
+#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:270
 msgid "No file selected"
 msgstr "কোন ফাইল নির্বাচন করা হয় নি"
 
-#: ../exo/exo-thumbnail-preview.c:304
+#: ../exo/exo-thumbnail-preview.c:288
 msgid "Block Device"
 msgstr "ব্লক ডিভাইস"
 
-#: ../exo/exo-thumbnail-preview.c:309
+#: ../exo/exo-thumbnail-preview.c:293
 msgid "Character Device"
 msgstr "অক্ষর ডিভাইস"
 
-#: ../exo/exo-thumbnail-preview.c:314
+#: ../exo/exo-thumbnail-preview.c:298
 msgid "Folder"
 msgstr "ফোল্ডার"
 
-#: ../exo/exo-thumbnail-preview.c:319
+#: ../exo/exo-thumbnail-preview.c:303
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../exo/exo-thumbnail-preview.c:324
+#: ../exo/exo-thumbnail-preview.c:308
 msgid "Socket"
 msgstr "সকেট"
-
-#: ../exo/exo-toolbars-editor-dialog.c:112
-msgid "_Add a new toolbar"
-msgstr "একটি নতুন টুলবার যোগ করুন (_A)"
-
-#: ../exo/exo-toolbars-editor.c:214
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr "একটি আইটেম যোগ করার জন্য একে টুলবার থেকে টেনে আনুন, এবং আইটেম টেবিল থেকে মুছে ফেলতেও টেনে আনুন।"
-
-#: ../exo/exo-toolbars-editor.c:530
-msgid "Separator"
-msgstr "বিভাজক"
-
-#: ../exo/exo-toolbars-view.c:750
-msgid "Toolbar _Style"
-msgstr "টুলবার শৈলী (_S)"
-
-#: ../exo/exo-toolbars-view.c:757
-msgid "_Desktop Default"
-msgstr "ডেক্সটপ ডিফল্ট (_D)"
-
-#: ../exo/exo-toolbars-view.c:766
-msgid "_Icons only"
-msgstr "শুধুমাত্র আইকন (_I)"
-
-#: ../exo/exo-toolbars-view.c:775
-msgid "_Text only"
-msgstr "শুধুমাত্র পাঠ্য (_T)"
-
-#: ../exo/exo-toolbars-view.c:784
-msgid "Text for _All Icons"
-msgstr "সকল আইকনের জন্য পাঠ্য"
-
-#: ../exo/exo-toolbars-view.c:793
-msgid "Text for I_mportant Icons"
-msgstr "গুরুত্বপূর্ন আইকনের জন্য পাঠ্য (_m)"
-
-#: ../exo/exo-toolbars-view.c:801
-msgid "_Remove Toolbar"
-msgstr "টুলবার অপসারণ করা হবে (_R)"
-
-#: ../exo/exo-toolbars-view.c:816
-msgid "Customize Toolbar..."
-msgstr "টুলবার স্বনির্ধারণ করা হবে..."
-
-#: ../exo/exo-wrap-table.c:140
-msgid "Column spacing"
-msgstr "কলামের মধ্যবর্তী ফাঁকা স্থান"
-
-#: ../exo/exo-wrap-table.c:141
-msgid "The amount of space between two consecutive columns"
-msgstr "ধারাবাহিক কলামের মাঝে ফাঁকা জায়গার পরিমাণ"
-
-#: ../exo/exo-wrap-table.c:155
-msgid "Row spacing"
-msgstr "সারির মধ্যবর্তী ফাঁকা স্থান"
-
-#: ../exo/exo-wrap-table.c:156
-msgid "The amount of space between two consecutive rows"
-msgstr "ধারাবাহিক সারি মাঝে ফাঁকা জায়গার পরিমাণ"
-
-#: ../exo/exo-wrap-table.c:170
-msgid "Homogeneous"
-msgstr "সমজাতীয়"
-
-#: ../exo/exo-wrap-table.c:171
-msgid "Whether the children should be all the same size"
-msgstr "চিল্ড্রেন সব একই আকারের করা হবে কিনা"
-
-#: ../exo/exo-xsession-client.c:203
-msgid "Window group"
-msgstr "উইন্ডো গ্রুপ"
-
-#: ../exo/exo-xsession-client.c:204
-msgid "Window group leader"
-msgstr "উইন্ডো গ্রুপ দলনেতা"
-
-#: ../exo/exo-xsession-client.c:214
-msgid "Restart command"
-msgstr "রিস্টার্ট কমান্ড"
-
-#: ../exo/exo-xsession-client.c:215
-msgid "Session restart command"
-msgstr "সেশন রিস্টর্ট কমান্ড"
-
-#: ../exo-csource/main.c:303
-#, c-format
-msgid "Usage: %s [options] [file]\n"
-msgstr "ব্যবহার: %s [options] [file]\n"
-
-#: ../exo-csource/main.c:304
-#, c-format
-msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "       %s [options] --build-list [[name file]...]\n"
-
-#: ../exo-csource/main.c:306
-#, c-format
-msgid "  -h, --help        Print this help message and exit\n"
-msgstr "  -h, --help        এই সহায়িকা বার্তাটি মুদ্রণ করে প্রস্থান করুন\n"
-
-#: ../exo-csource/main.c:307
-#, c-format
-msgid "  -V, --version     Print version information and exit\n"
-msgstr "  -V, --version     সংস্করণ সম্পর্কিত তথ্যাবলী মুদ্রণ করে প্রস্থান করুন\n"
-
-#: ../exo-csource/main.c:308
-#, c-format
-msgid "  --extern          Generate extern symbols\n"
-msgstr "  --extern          এক্সটার্ণ প্রতীক তৈরি করা হয়\n"
-
-#: ../exo-csource/main.c:309
-#, c-format
-msgid "  --static          Generate static symbols\n"
-msgstr "  --static          স্ট্যাটিক প্রতীক তৈরি করা হয়\n"
-
-#: ../exo-csource/main.c:310
-#, c-format
-msgid "  --name=identifier C macro/variable name\n"
-msgstr "  --name=identifier C macro/variable name\n"
-
-#: ../exo-csource/main.c:311
-#, c-format
-msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "  --build-list      পার্স (নাম, ফাইল) জোড়া\n"
-
-#: ../exo-csource/main.c:312
-#, c-format
-msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "  --strip-comments  XML ফাইল থেকে মন্তব্য অপসারণ করা হয়\n"
-
-#: ../exo-csource/main.c:313
-#, c-format
-msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "  --strip-content   XML ফাইল থেকে নোড বিষয়বস্তু অপসারণ করা হয়\n"
-
-#: ../exo-csource/main.c:314
-#, c-format
-msgid "  --output=filename Write generated csource to specified file\n"
-msgstr ""
-
-#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
-#: ../exo-open/main.c:509
-#, c-format
-msgid ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr "কপিরাইট (c) %s\n        os-cillation e.K. সর্বস্বত্ব সংরক্ষিত।\n\nBenedikt Meurer দ্বারা লিখিত<benny@xfce.org>।\n\n"
-
-#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:200
-#: ../exo-open/main.c:513
-#, c-format
-msgid ""
-"%s comes with ABSOLUTELY NO WARRANTY,\n"
-"You may redistribute copies of %s under the terms of\n"
-"the GNU Lesser General Public License which can be found in the\n"
-"%s source package.\n"
-"\n"
-msgstr "%s ABSOLUTELY NO WARRANTY সহ আসে,\nআপনি %s এর কপিগুলো\nGNU Lesser General Public License এর অধীণে পুনরায় বিলি করতে পারেন যা\n%s সোর্স প্যাকেজ হিসেবে পাওয়া যাবে।\n\n"
-
-#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:204
-#: ../exo-open/main.c:517
-#, c-format
-msgid "Please report bugs to <%s>.\n"
-msgstr "অনুগ্রহ করে <%s> তে বাগ রিপোর্ট পাঠান।\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
@@ -562,45 +352,35 @@ msgstr "একটি অ্যাপ্লিকেশন নির্বাচ�
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:395
-#: ../exo-helper/exo-helper-chooser.c:540
-#: ../exo-helper/exo-helper-launcher-dialog.c:109
+#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
 msgid "_Cancel"
 msgstr "বাতিল (_C)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "খুলুন (_O)"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "সকল ফাইল"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "এক্সিকিউটেবল ফাইল"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "পার্ল স্ক্রিপ্ট"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "পাইথন স্ক্রিপ্ট"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "রুবি স্ক্রিপ্ট"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "শেল স্ক্রিপ্ট"
 
@@ -691,8 +471,6 @@ msgstr "একটি আইকন নির্বাচন করুন"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:541
-#: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr ""
 
@@ -701,7 +479,7 @@ msgstr ""
 msgid "Select a working directory"
 msgstr ""
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:171
+#: ../exo-desktop-item-edit/exo-die-utils.c:205
 msgid "File location is not a regular file or directory"
 msgstr "ফাইলের অবস্থানটি একটি নিয়মিত ফাইল অথবা ডিরেক্টরি নয়"
 
@@ -758,579 +536,103 @@ msgstr "একটি লিম্ক তৈরি করার সময় বর�
 msgid "Preset icon when creating a desktop file"
 msgstr "একটি ডেস্কটপ ফাইল তৈরি করার সময় বর্তমান আইকন"
 
-#: ../exo-desktop-item-edit/main.c:87 ../exo-helper/main.c:121
+#: ../exo-desktop-item-edit/main.c:87
 msgid "Print version information and exit"
 msgstr "সংস্করণ সম্পর্কিত তথ্য মুদ্রণ করে প্রস্থান করা হবে"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:172
+#: ../exo-desktop-item-edit/main.c:174
 msgid "[FILE|FOLDER]"
 msgstr "[FILE|FOLDER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:184
+#: ../exo-desktop-item-edit/main.c:186
 msgid "Failed to open display"
 msgstr "প্রদর্শনী খুলতে ব্যর্থ"
 
-#: ../exo-desktop-item-edit/main.c:211
+#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#, c-format
+msgid ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr "কপিরাইট (c) %s\n        os-cillation e.K. সর্বস্বত্ব সংরক্ষিত।\n\nBenedikt Meurer দ্বারা লিখিত<benny@xfce.org>।\n\n"
+
+#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr "%s ABSOLUTELY NO WARRANTY সহ আসে,\nআপনি %s এর কপিগুলো\nGNU Lesser General Public License এর অধীণে পুনরায় বিলি করতে পারেন যা\n%s সোর্স প্যাকেজ হিসেবে পাওয়া যাবে।\n\n"
+
+#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "অনুগ্রহ করে <%s> তে বাগ রিপোর্ট পাঠান।\n"
+
+#: ../exo-desktop-item-edit/main.c:213
 msgid "No file/folder specified"
 msgstr "কোন ফাইল/ফোল্ডার উল্লেখ করা হয়নি"
 
-#: ../exo-desktop-item-edit/main.c:276
+#: ../exo-desktop-item-edit/main.c:278
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "\"%s\": %s থেকে বিষয়বস্তু লোড করতে ব্যর্থ"
 
-#: ../exo-desktop-item-edit/main.c:281
+#: ../exo-desktop-item-edit/main.c:283
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "\"%s\" ফাইলে কোন তথ্য নেই"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:294
+#: ../exo-desktop-item-edit/main.c:296
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "\"%s\": %s এর বিষয়বস্তু পার্স করতে ব্যর্থ"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:306
+#: ../exo-desktop-item-edit/main.c:308
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "\"%s\" ফাইলটির কোন টাইপ কী নেই"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:316
+#: ../exo-desktop-item-edit/main.c:318
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "অসমর্থিত ডেস্কটপ ফাইলের ধরণ \"%s\""
 
-#. add the "Help" button
-#: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:106
+#: ../exo-desktop-item-edit/main.c:328
 msgid "_Help"
 msgstr "সহায়তা (_H)"
 
-#. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:330
 msgid "C_reate"
 msgstr "তৈরি করা হবে (_r)"
 
-#: ../exo-desktop-item-edit/main.c:338 ../exo-desktop-item-edit/main.c:518
+#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
 msgid "_Save"
 msgstr ""
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:514
+#: ../exo-desktop-item-edit/main.c:520
 msgid "Choose filename"
 msgstr "ফাইলের নাম পছন্দ করা হবে"
 
-#: ../exo-desktop-item-edit/main.c:621
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\" তৈরি করতে ব্যর্থ।"
 
-#: ../exo-desktop-item-edit/main.c:621
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" সংরক্ষণ করতে ব্যর্থ।"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:99
-msgid "_Close"
-msgstr "বন্ধ (_C)"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:1
-msgid "Preferred Applications"
-msgstr "পছন্দসই অ্যাপ্লিকেশন"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:103
-msgid "Select default applications for various services"
-msgstr "বিভিন্ন সার্ভিসের জন্য ডিফল্ট অ্যাপ্লিকেশন নির্বাচন করুন"
-
-#. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:127
-msgid "_Internet"
-msgstr "ইন্টারনেট (_I)"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:140
-#: ../exo-open/exo-web-browser.desktop.in.h:1
-msgid "Web Browser"
-msgstr "ওয়েব ব্রাউজার"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:148
-msgid ""
-"The preferred Web Browser will be used to open hyperlinks and display help "
-"contents."
-msgstr ""
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:171
-#: ../exo-open/exo-mail-reader.desktop.in.h:1
-msgid "Mail Reader"
-msgstr "মেইল রিডার"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:179
-msgid ""
-"The preferred Mail Reader will be used to compose emails when you click on "
-"email addresses."
-msgstr ""
-
-#. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:198
-msgid "_Utilities"
-msgstr ""
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:211
-#: ../exo-open/exo-file-manager.desktop.in.h:1
-msgid "File Manager"
-msgstr "ফাইল ম্যানেজার"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:219
-msgid ""
-"The preferred File Manager will be used to browse the contents of folders."
-msgstr ""
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:242
-#: ../exo-open/exo-terminal-emulator.desktop.in.h:1
-msgid "Terminal Emulator"
-msgstr "টার্মিনাল ইম্যুলেটর"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:250
-msgid ""
-"The preferred Terminal Emulator will be used to run commands that require a "
-"CLI environment."
-msgstr ""
-
-#: ../exo-helper/exo-helper-chooser.c:145
-#: ../exo-helper/exo-helper-chooser.c:152
-msgid "Press left mouse button to change the selected application."
-msgstr "নির্বাচিত অ্যাপ্লিকেশন পরিবর্তন করতে মাউসের বাম বোতাম চাপুন।"
-
-#: ../exo-helper/exo-helper-chooser.c:151
-msgid "Application Chooser Button"
-msgstr "অ্যাপ্লিকেশন পছন্দ করার বোতাম"
-
-#: ../exo-helper/exo-helper-chooser.c:303
-msgid "No application selected"
-msgstr "কোন অ্যাপ্লিকেশন নির্বাচন করা হয়নি"
-
-#: ../exo-helper/exo-helper-chooser.c:319
-msgid "Failed to set default Web Browser"
-msgstr "ডিফল্ট ওয়েব ব্রাউজার নির্ধারণ করতে ব্যর্থ"
-
-#: ../exo-helper/exo-helper-chooser.c:320
-msgid "Failed to set default Mail Reader"
-msgstr "ডিফল্ট মেইল রিডার নির্ধারণ করতে ব্যর্থ"
-
-#: ../exo-helper/exo-helper-chooser.c:321
-msgid "Failed to set default File Manager"
-msgstr "ডিফল্ট ফাইল ম্যানেজার নির্ধারণ করতে ব্যর্থ"
-
-#: ../exo-helper/exo-helper-chooser.c:322
-msgid "Failed to set default Terminal Emulator"
-msgstr "ডিফল্ট টার্মিনাল ইম্যুলেটর নির্ধারণ করতে ব্যর্থ"
-
-#. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:392
-msgid "Select application"
-msgstr "অ্যাপ্লিকেশন নির্বাচন করা হবে"
-
-#: ../exo-helper/exo-helper-chooser.c:505
-msgid "Choose a custom Web Browser"
-msgstr "স্বনির্ধারিত ওয়েব ব্রাউজার নির্বাচন করা হবে"
-
-#: ../exo-helper/exo-helper-chooser.c:506
-msgid "Choose a custom Mail Reader"
-msgstr "একটি পছন্দসই মেইল রিডার নির্বাচন করা হবে"
-
-#: ../exo-helper/exo-helper-chooser.c:507
-msgid "Choose a custom File Manager"
-msgstr "একটি স্বনির্ধারিত ফাইল ম্যানেজার নির্বাচন করা হবে"
-
-#: ../exo-helper/exo-helper-chooser.c:508
-msgid "Choose a custom Terminal Emulator"
-msgstr "একটি স্বনির্ধারিত টার্মিনাল ইম্যুলেটর নির্বাচন করা হবে"
-
-#: ../exo-helper/exo-helper-chooser.c:513
-msgid ""
-"Specify the application you want to use\n"
-"as default Web Browser for Xfce:"
-msgstr "Xfce এর জন্য ডিফল্ট ওয়েব ব্রাউজার হিসেবে ব্যবহার করতে চান\nসে অ্যাপ্লিকেশন উল্লেখ করুন:"
-
-#: ../exo-helper/exo-helper-chooser.c:514
-msgid ""
-"Specify the application you want to use\n"
-"as default Mail Reader for Xfce:"
-msgstr "Xfce এর জন্য ডিফল্ট মেইল রিডার হিসেবে ব্যবহার করতে চান\nসে অ্যাপ্লিকেশন উল্লেখ করুন:"
-
-#: ../exo-helper/exo-helper-chooser.c:515
-msgid ""
-"Specify the application you want to use\n"
-"as default File Manager for Xfce:"
-msgstr "Xfce এর জন্য ডিফল্ট ফাইল ম্যানেজার হিসেবে ব্যবহার করতে চান\nসে অ্যাপ্লিকেশন উল্লেখ করুন:"
-
-#: ../exo-helper/exo-helper-chooser.c:516
-msgid ""
-"Specify the application you want to use\n"
-"as default Terminal Emulator for Xfce:"
-msgstr "Xfce এর জন্য ডিফল্ট টার্মিনাল ইমুলেটর হিসেবে ব্যবহার করতে চান\nসে অ্যাপ্লিকেশন উল্লেখ করুন:"
-
-#: ../exo-helper/exo-helper-chooser.c:580
-msgid "Browse the file system to choose a custom command."
-msgstr "পছন্দসই কমান্ড বেছে নিতে ফাইল সিস্টেম ব্রাউজ করুন।"
-
-#: ../exo-helper/exo-helper-chooser.c:789
-msgid "_Other..."
-msgstr "অন্যান্য... (_O)"
-
-#: ../exo-helper/exo-helper-chooser.c:790
-msgid "Use a custom application which is not included in the above list."
-msgstr "উপরের তালিকায় নেই এমন একটি পছন্দসই অ্যাপ্লিকেশন ব্যবহার করুন।"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:113
-msgid "Choose Preferred Application"
-msgstr "পছন্দসই অ্যাপ্লিকেশন নির্বাচন করা হবে"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:256
-msgid ""
-"Please choose your preferred Web\n"
-"Browser now and click OK to proceed."
-msgstr "অনুগ্রহ করে আপনার পছন্দসই ওয়েব ব্রাউজার বেছে নিন\nকাজ এগিয়ে নিয়ে যেতে \"ঠিক আছে\" ক্লিক করুন।"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:258
-msgid ""
-"Please choose your preferred Mail Reader\n"
-"now and click OK to proceed."
-msgstr "অনুগ্রহ করে আপনার পছন্দসই মেইল রিডার বেছে নিন\nকাজ এগিয়ে নিয়ে যেতে \"ঠিক আছে\" ক্লিক করুন।"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:260
-msgid ""
-"Please choose your preferred File Manager\n"
-"now and click OK to proceed."
-msgstr "অনুগ্রহ করে আপনার পছন্দসই ফাইল ম্যানেজার বেছে নিন\nকাজ এগিয়ে নিয়ে যেতে \"ঠিক আছে\" ক্লিক করুন।"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:262
-msgid ""
-"Please choose your preferred Terminal\n"
-"Emulator now and click OK to proceed."
-msgstr "অনুগ্রহ করে আপনার পছন্দসই টার্মিনাল ইমুলেটর বেছে নিন\nকাজ এগিয়ে নিয়ে যেতে \"ঠিক আছে\" ক্লিক করুন।"
-
-#: ../exo-helper/exo-helper.c:401
-#, c-format
-msgid "No command specified"
-msgstr "কোন কমান্ড উল্লেখ করা হয়নি"
-
-#: ../exo-helper/exo-helper.c:720 ../exo-helper/exo-helper.c:763
-#: ../exo-helper/exo-helper.c:834 ../exo-helper/exo-helper.c:877
-#, c-format
-msgid "Failed to open %s for writing"
-msgstr "লেখার জন্য %s খুলতে ব্যর্থ"
-
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid ""
-"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "পছন্দসই অ্যাপ্লিকেশন (ওয়েব ব্রাউজার, মেইল রিডার এবং টার্মিনাল ইম্যুলেটর)"
-
-#: ../exo-helper/main.c:42
-msgid "Failed to execute default Web Browser"
-msgstr "ডিফল্ট ওয়েব ব্রাউজার এক্সিকিউট করতে ব্যর্থ"
-
-#: ../exo-helper/main.c:43
-msgid "Failed to execute default Mail Reader"
-msgstr "ডিফল্ট মেইল রিডার এক্সিকিউট করতে ব্যর্থ"
-
-#: ../exo-helper/main.c:44
-msgid "Failed to execute default File Manager"
-msgstr "ডিফল্ট ফাইল ম্যানেজার এক্সিকিউট করতে ব্যর্থ"
-
-#: ../exo-helper/main.c:45
-msgid "Failed to execute default Terminal Emulator"
-msgstr "ডিফল্ট টার্মিনাল ইম্যুলেটর এক্সিকিউট করতে ব্যর্থ"
-
-#. Enable permanently dismissing this error.
-#: ../exo-helper/main.c:87
-msgid "Do _not show this message again"
-msgstr ""
-
-#: ../exo-helper/main.c:122
-msgid ""
-"Open the Preferred Applications\n"
-"configuration dialog"
-msgstr "পছন্দসই অ্যাপ্লিকেশন\nকনফিগারেশন ডায়ালগ খুলুন"
-
-#: ../exo-helper/main.c:123
-msgid "Settings manager socket"
-msgstr "ম্যানেজার সকেট নির্ধারণ করা হচ্ছে"
-
-#: ../exo-helper/main.c:123
-msgid "SOCKET ID"
-msgstr "SOCKET ID"
-
-#: ../exo-helper/main.c:124
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
-" one of the following values."
-msgstr "ঐচ্ছিক PARAMETER সহ ডিফল্ট সাহায্যকারী TYPE চালু করা হয়, যেখানে TYPE এর নিম্নোক্ত মান আছে:"
-
-#: ../exo-helper/main.c:124 ../exo-helper/main.c:125
-msgid "TYPE [PARAMETER]"
-msgstr "TYPE [PARAMETER]"
-
-#: ../exo-helper/main.c:125
-msgid ""
-"Query the default helper of TYPE, where TYPE is one of the following values."
-msgstr ""
-
-#: ../exo-helper/main.c:155
-msgid ""
-"The following TYPEs are supported for the --launch and --query commands:\n"
-"\n"
-"  WebBrowser       - The preferred Web Browser.\n"
-"  MailReader       - The preferred Mail Reader.\n"
-"  FileManager      - The preferred File Manager.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
-
-#: ../exo-helper/main.c:165
-#, c-format
-msgid "Type '%s --help' for usage."
-msgstr "ব্যবহারবিধির জন্য '%s --help' টাইপ করুন।"
-
-#: ../exo-helper/main.c:224 ../exo-helper/main.c:297
-#, c-format
-msgid "Invalid helper type \"%s\""
-msgstr "অবৈধ সহায়ক ধরণ \"%s\""
-
-#: ../exo-helper/main.c:281
-#, c-format
-msgid ""
-"%s (Xfce %s)\n"
-"\n"
-"Copyright (c) 2003-2006\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
-"\n"
-"Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nCopyright (c) 2003-2006\n        os-cillation e.K. All rights reserved.\n\nWritten by Benedikt Meurer <benny@xfce.org>.\n\nBuilt with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n\nPlease report bugs to <%s>.\n"
-
-#: ../exo-helper/main.c:307
-#, c-format
-msgid "No helper defined for \"%s\"."
-msgstr ""
-
-#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
-msgid "aterm"
-msgstr "অ্যাটার্ম"
-
-#: ../exo-helper/helpers/balsa.desktop.in.in.h:1
-msgid "Balsa"
-msgstr "বেলসা"
-
-#: ../exo-helper/helpers/brave.desktop.in.in.h:1
-msgid "Brave"
-msgstr ""
-
-#: ../exo-helper/helpers/caja.desktop.in.in.h:1
-msgid "Caja File Manager"
-msgstr ""
-
-#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
-msgid "Chromium"
-msgstr ""
-
-#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
-msgid "Debian Sensible Browser"
-msgstr "ডেবিয়ান সংবেদনশীল ব্রাউজার"
-
-#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
-msgid "Debian X Terminal Emulator"
-msgstr "ডেবিয়ান X টার্মিনাল ইম্যুলেটর"
-
-#: ../exo-helper/helpers/dillo.desktop.in.in.h:1
-msgid "Dillo"
-msgstr ""
-
-#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
-msgid "Encompass"
-msgstr "এনকম্পাস"
-
-#: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
-msgid "Epiphany Web Browser"
-msgstr "এপিফেনি ওয়েব ব্রাউজার"
-
-#: ../exo-helper/helpers/eterm.desktop.in.in.h:1
-msgid "Enlightened Terminal Emulator"
-msgstr "টার্মিনাল ইমুলেটর এনলাইটেনড"
-
-#: ../exo-helper/helpers/evolution.desktop.in.in.h:1
-msgid "Evolution"
-msgstr "নভেল ইভোল্যুশন"
-
-#: ../exo-helper/helpers/firefox.desktop.in.in.h:1
-msgid "Mozilla Firefox"
-msgstr "মজিলা ফায়ারফক্স"
-
-#: ../exo-helper/helpers/galeon.desktop.in.in.h:1
-msgid "Galeon Web Browser"
-msgstr "গ্যালিওন ওয়েব ব্রাউজার"
-
-#: ../exo-helper/helpers/geary.desktop.in.in.h:1
-msgid "Geary"
-msgstr ""
-
-#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
-msgid "Google Chrome"
-msgstr ""
-
-#: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
-msgid "GNOME Terminal"
-msgstr "GNOME টার্মিনাল"
-
-#: ../exo-helper/helpers/icecat.desktop.in.in.h:1
-msgid "Icecat"
-msgstr ""
-
-#: ../exo-helper/helpers/icedove.desktop.in.in.h:1
-msgid "Icedove"
-msgstr ""
-
-#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
-msgid "Iceweasel"
-msgstr ""
-
-#: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
-msgid "Jumanji"
-msgstr ""
-
-#: ../exo-helper/helpers/kmail.desktop.in.in.h:1
-msgid "KMail"
-msgstr "KMail"
-
-#: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
-msgid "Konqueror Web Browser"
-msgstr "কনকোয়ারার ওয়েব ব্রাউজার"
-
-#: ../exo-helper/helpers/links.desktop.in.in.h:1
-msgid "Links Text Browser"
-msgstr "পাঠ্য ব্রাউজার লিঙ্ক করা হয়"
-
-#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-msgid "Lynx Text Browser"
-msgstr "Lynx পাঠ্য ব্রাউজার"
-
-#: ../exo-helper/helpers/midori.desktop.in.in.h:1
-msgid "Midori"
-msgstr "মিডরি"
-
-#: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
-msgid "Mozilla Browser"
-msgstr "মজিলা ব্রাউজার"
-
-#: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
-msgid "Mozilla Mail"
-msgstr "মজিলা মেইল"
-
-#: ../exo-helper/helpers/mutt.desktop.in.in.h:1
-msgid "Mutt"
-msgstr "মাট"
-
-#: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
-msgid "Nautilus"
-msgstr "নটিলাস"
-
-#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
-msgid "Netscape Navigator"
-msgstr "নেটস্কেপ নেভিগেটর"
-
-#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
-msgid "NXterm"
-msgstr "NXterm"
-
-#: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
-msgid "Opera Browser"
-msgstr "অপেরা ব্রাউজার"
-
-#: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
-msgid "PCMan File Manager"
-msgstr "PCMan ফাইল ম্যানেজার"
-
-#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
-msgid "PCManFM-Qt File Manager"
-msgstr ""
-
-#: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
-msgid "QTerminal"
-msgstr ""
-
-#: ../exo-helper/helpers/qtfm.desktop.in.in.h:1
-msgid "qtFM"
-msgstr ""
-
-#: ../exo-helper/helpers/qupzilla.desktop.in.in.h:1
-msgid "QupZilla"
-msgstr ""
-
-#: ../exo-helper/helpers/rodent.desktop.in.in.h:1
-msgid "Rodent File Manager"
-msgstr ""
-
-#: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
-msgid "ROX-Filer"
-msgstr ""
-
-#: ../exo-helper/helpers/sakura.desktop.in.in.h:1
-msgid "Sakura"
-msgstr ""
-
-#: ../exo-helper/helpers/surf.desktop.in.in.h:1
-msgid "Surf"
-msgstr ""
-
-#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-msgid "Sylpheed"
-msgstr "Sylpheed"
-
-#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Claws Mail"
-msgstr "ক্লস মেইল"
-
-#: ../exo-helper/helpers/terminator.desktop.in.in.h:1
-msgid "Terminator"
-msgstr ""
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr "থানার"
-
-#: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
-msgid "Mozilla Thunderbird"
-msgstr "মজিলা থান্ডারবার্ড"
-
-#: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
-msgid "RXVT Unicode"
-msgstr "RXVT ইউনিকোড"
-
-#: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
-msgid "Vimprobable2"
-msgstr ""
-
-#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-msgid "W3M Text Browser"
-msgstr "W3M পাঠ্য ব্রাউজার"
-
-#: ../exo-helper/helpers/xfce4-terminal.desktop.in.in.h:1
-msgid "Xfce Terminal"
-msgstr "Xfce টার্মিনাল"
-
-#: ../exo-helper/helpers/xfe.desktop.in.in.h:1
-msgid "Xfe File Manager"
-msgstr ""
-
-#: ../exo-helper/helpers/xterm.desktop.in.in.h:1
-msgid "X Terminal"
-msgstr "X টার্মিনাল"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
@@ -1368,7 +670,7 @@ msgstr "নিম্নের TYPE --launch command সমর্থিত:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
-#. * since the exo-helper utility will not accept localized TYPEs.
+#. * since the xfce4-mime-helper utility will not accept localized TYPEs.
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1398,28 +700,12 @@ msgstr "ডেস্কটপ ফাইল চালুকরণ সমর্থ
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "\"%s\" শ্রেনীবিভাগের জন্য পছন্দসই অ্য়াপ্লিকেশন চালু করতে ব্যর্থ।"
 
-#: ../exo-open/main.c:590
+#: ../exo-open/main.c:586
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" এর URI-স্কিম সনাক্ত করতে ব্যর্থ।"
 
-#: ../exo-open/main.c:604
+#: ../exo-open/main.c:600
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "URI \"%s\" খুলতে ব্যর্থ।"
-
-#: ../exo-open/exo-file-manager.desktop.in.h:2
-msgid "Browse the file system"
-msgstr "ফাইল সিস্টেম ব্রাউজ করুন"
-
-#: ../exo-open/exo-mail-reader.desktop.in.h:2
-msgid "Read your email"
-msgstr "ইমেইল পড়ুন"
-
-#: ../exo-open/exo-terminal-emulator.desktop.in.h:2
-msgid "Use the command line"
-msgstr "কমান্ড লাইন ব্যবহার করুন"
-
-#: ../exo-open/exo-web-browser.desktop.in.h:2
-msgid "Browse the web"
-msgstr "ওয়েব ব্রাউজ করুন"
