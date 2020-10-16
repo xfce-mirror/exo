@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Hayk Andreasyan <hayk.andreasyan@realschool.am>, 2019
-# Real School <translator_students@realschool.am>, 2019
+# Real School <localization@ehayq.am>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 18:30+0200\n"
-"PO-Revision-Date: 2019-06-20 08:02+0000\n"
-"Last-Translator: Real School <translator_students@realschool.am>\n"
+"POT-Creation-Date: 2020-07-08 00:45+0200\n"
+"PO-Revision-Date: 2020-07-07 22:45+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Armenian (Armenia) (http://www.transifex.com/xfce/exo/language/hy_AM/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,37 +19,35 @@ msgstr ""
 "Language: hy_AM\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:125
-#: ../exo/exo-cell-renderer-icon.c:154
+#: ../exo/exo-cell-renderer-icon.c:138
 msgid "Follow state"
 msgstr "Հետեւման վիճակ"
 
-#: ../exo/exo-cell-renderer-ellipsized-text.c:126
-#: ../exo/exo-cell-renderer-icon.c:155
+#: ../exo/exo-cell-renderer-icon.c:139
 msgid "Render differently based on the selection state."
 msgstr "Ցուցադրել՝ հիմնուած ընտրութեան վիճակի վրայ։"
 
-#: ../exo/exo-cell-renderer-icon.c:176
+#: ../exo/exo-cell-renderer-icon.c:160
 msgid "Icon"
 msgstr "Պատկերակ"
 
-#: ../exo/exo-cell-renderer-icon.c:177
+#: ../exo/exo-cell-renderer-icon.c:161
 msgid "The icon to render."
 msgstr "Ցուցադրելի պատկերակ"
 
-#: ../exo/exo-cell-renderer-icon.c:195
+#: ../exo/exo-cell-renderer-icon.c:179
 msgid "GIcon"
 msgstr "GIcon"
 
-#: ../exo/exo-cell-renderer-icon.c:196
+#: ../exo/exo-cell-renderer-icon.c:180
 msgid "The GIcon to render."
 msgstr "Ցուցադրել GIcon պատկերակ։"
 
-#: ../exo/exo-cell-renderer-icon.c:217
+#: ../exo/exo-cell-renderer-icon.c:201
 msgid "size"
 msgstr "չափ"
 
-#: ../exo/exo-cell-renderer-icon.c:218
+#: ../exo/exo-cell-renderer-icon.c:202
 msgid "The size of the icon to render in pixels."
 msgstr "Պատկերակի չափը՝ պատկերատարրերով ցուցադրման համար։"
 
@@ -68,74 +66,10 @@ msgstr "Չյաջողուեց ընթերցել «%s» նիշը․ %s"
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Չյաջողուեց բեռնել «%s»: պատկերը․ անյայտ պատճառ՝ հնարաւոր է պատկերանիշը վնասուած է"
 
-#: ../exo/exo-gtk-extensions.c:248
+#: ../exo/exo-gtk-extensions.c:219
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Չյաջողուեց բացել «%s»֊ը։"
-
-#: ../exo/exo-icon-bar.c:273 ../exo/exo-icon-view.c:914
-msgid "Orientation"
-msgstr "Ուղղութիւն"
-
-#: ../exo/exo-icon-bar.c:274
-msgid "The orientation of the iconbar"
-msgstr "Պատկերագաւտու դիրք"
-
-#: ../exo/exo-icon-bar.c:290 ../exo/exo-icon-view.c:931
-msgid "Pixbuf column"
-msgstr "Pixbuf սիւնակ"
-
-#: ../exo/exo-icon-bar.c:291 ../exo/exo-icon-view.c:932
-msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Տիպարի սիւնակ՝ աւգտագործուող pixbuf պատկերակի առբերման համար"
-
-#: ../exo/exo-icon-bar.c:306 ../exo/exo-icon-view.c:1076
-msgid "Text column"
-msgstr "Գրոյթի սիւնակ"
-
-#: ../exo/exo-icon-bar.c:307 ../exo/exo-icon-view.c:1077
-msgid "Model column used to retrieve the text from"
-msgstr "Տիպարի սիւնակ՝ աւգտագործուող գրոյթի առբերման համար"
-
-#: ../exo/exo-icon-bar.c:319
-msgid "Icon Bar Model"
-msgstr "Պատկերագաւտու տիպար"
-
-#: ../exo/exo-icon-bar.c:320
-msgid "Model for the icon bar"
-msgstr "Տիպար՝ պատկերագաւտու համար"
-
-#: ../exo/exo-icon-bar.c:336
-msgid "Active"
-msgstr "Գործուն"
-
-#: ../exo/exo-icon-bar.c:337
-msgid "Active item index"
-msgstr "Գործուն տարրի դասիչ"
-
-#: ../exo/exo-icon-bar.c:343 ../exo/exo-icon-bar.c:344
-msgid "Active item fill color"
-msgstr "Գործուն տարրի գոյն"
-
-#: ../exo/exo-icon-bar.c:350 ../exo/exo-icon-bar.c:351
-msgid "Active item border color"
-msgstr "Գործուն տարրի եզրագծի գոյն"
-
-#: ../exo/exo-icon-bar.c:357 ../exo/exo-icon-bar.c:358
-msgid "Active item text color"
-msgstr "Գործուն տարրի գրոյթի գոյն"
-
-#: ../exo/exo-icon-bar.c:364 ../exo/exo-icon-bar.c:365
-msgid "Cursor item fill color"
-msgstr "Նշուած տարրի գոյն"
-
-#: ../exo/exo-icon-bar.c:371 ../exo/exo-icon-bar.c:372
-msgid "Cursor item border color"
-msgstr "Նշուած տարրի եզրագծի գոյն"
-
-#: ../exo/exo-icon-bar.c:378 ../exo/exo-icon-bar.c:379
-msgid "Cursor item text color"
-msgstr "Նշուած տարրի գրոյթի գոյն"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: ../exo/exo-icon-chooser-dialog.c:100
@@ -203,356 +137,212 @@ msgid "All Icons"
 msgstr "Բոլոր պատկերակները"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:302
+#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:275
 msgid "Image Files"
 msgstr "Պատկերանիշեր"
 
+#. EXO_ICON_CHOOSER_CONTEXT_NO_ICON
+#: ../exo/exo-icon-chooser-dialog.c:134
+msgid "No Icon"
+msgstr ""
+
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:211
+#: ../exo/exo-icon-chooser-dialog.c:200
 msgid "Select _icon from:"
 msgstr "Ընտրել _պատկերակը․"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:235
+#: ../exo/exo-icon-chooser-dialog.c:216
 msgid "_Search icon:"
 msgstr "_Որոնել պատկերակ․"
 
-#: ../exo/exo-icon-chooser-dialog.c:254
+#: ../exo/exo-icon-chooser-dialog.c:227
 msgid "Clear search field"
 msgstr "Մաքրել որոնման դաշտը"
 
-#: ../exo/exo-icon-view.c:782
+#: ../exo/exo-icon-view.c:724
 msgid "Column Spacing"
 msgstr "Սիւնակի միջակայք"
 
-#: ../exo/exo-icon-view.c:783
+#: ../exo/exo-icon-view.c:725
 msgid "Space which is inserted between grid column"
 msgstr "Բացատը, որն ընկնում է ցանցային սիւնակների միջեւ"
 
-#: ../exo/exo-icon-view.c:799
+#: ../exo/exo-icon-view.c:741
 msgid "Number of columns"
 msgstr "Սիւնակների քանակ"
 
-#: ../exo/exo-icon-view.c:800
+#: ../exo/exo-icon-view.c:742
 msgid "Number of columns to display"
 msgstr "Ցուցադրուող սիւանակների քանակը"
 
-#: ../exo/exo-icon-view.c:814
+#: ../exo/exo-icon-view.c:756
 msgid "Enable Search"
 msgstr "Թոյլատրել որոնում"
 
-#: ../exo/exo-icon-view.c:815
+#: ../exo/exo-icon-view.c:757
 msgid "View allows user to search through columns interactively"
 msgstr "Թոյլատրում է աւգտատիրոջը կատարել սիւնակների որոնում"
 
-#: ../exo/exo-icon-view.c:832
+#: ../exo/exo-icon-view.c:774
 msgid "Width for each item"
 msgstr "Իւրաքանչիւր տարրի լայնութիւնը"
 
-#: ../exo/exo-icon-view.c:833
+#: ../exo/exo-icon-view.c:775
 msgid "The width used for each item"
 msgstr "Ամեն տարրի համար գործածուող լայնութիւնը"
 
-#: ../exo/exo-icon-view.c:851
+#: ../exo/exo-icon-view.c:793
 msgid "Layout mode"
 msgstr "Շարակարգի եղանակ"
 
-#: ../exo/exo-icon-view.c:852
+#: ../exo/exo-icon-view.c:794
 msgid "The layout mode"
 msgstr "Շարակարգի եղանակ"
 
-#: ../exo/exo-icon-view.c:868
+#: ../exo/exo-icon-view.c:810
 msgid "Margin"
 msgstr "Լուսանցք"
 
-#: ../exo/exo-icon-view.c:869
+#: ../exo/exo-icon-view.c:811
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Բացատ՝ ներմուծուած պատկերակների եզրերի միջեւ"
 
-#: ../exo/exo-icon-view.c:885
+#: ../exo/exo-icon-view.c:827
 msgid "Markup column"
 msgstr "Նշարկման սիւնակ"
 
-#: ../exo/exo-icon-view.c:886
+#: ../exo/exo-icon-view.c:828
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Սիւնակի տիպար, գործածուող Pango֊ի գործածման դէպքում, գրոյթի ստացման համար"
 
-#: ../exo/exo-icon-view.c:900
+#: ../exo/exo-icon-view.c:842
 msgid "Icon View Model"
 msgstr "Պատկերակի ցուցադրման տիպար"
 
-#: ../exo/exo-icon-view.c:901
+#: ../exo/exo-icon-view.c:843
 msgid "The model for the icon view"
 msgstr "Տիպար՝ պատկերակի ցուցադրման համար"
 
-#: ../exo/exo-icon-view.c:915
+#: ../exo/exo-icon-view.c:856
+msgid "Orientation"
+msgstr "Ուղղութիւն"
+
+#: ../exo/exo-icon-view.c:857
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Որոշում է, թե ինչպէս են իւրաքանչիւր տարրի գրոյթն ու պատկերակը դիրքաւորուած իրար հանդեպ"
 
-#: ../exo/exo-icon-view.c:949
+#: ../exo/exo-icon-view.c:873
+msgid "Pixbuf column"
+msgstr "Pixbuf սիւնակ"
+
+#: ../exo/exo-icon-view.c:874
+msgid "Model column used to retrieve the icon pixbuf from"
+msgstr "Տիպարի սիւնակ՝ աւգտագործուող pixbuf պատկերակի առբերման համար"
+
+#: ../exo/exo-icon-view.c:891
 msgid "Icon column"
 msgstr "Պատկերակի սիւնակ"
 
-#: ../exo/exo-icon-view.c:950
+#: ../exo/exo-icon-view.c:892
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "Սիւնակի տիպար՝ գործածուող ցուցադրելի նիշի ամբողջական ուղու առբերման համար"
 
-#: ../exo/exo-icon-view.c:965
+#: ../exo/exo-icon-view.c:907
 msgid "Reorderable"
 msgstr "Վերամշակելի"
 
-#: ../exo/exo-icon-view.c:966
+#: ../exo/exo-icon-view.c:908
 msgid "View is reorderable"
 msgstr "Տեսքը վերամշակելի է"
 
-#: ../exo/exo-icon-view.c:981
+#: ../exo/exo-icon-view.c:923
 msgid "Row Spacing"
 msgstr "Տողամիջոց"
 
-#: ../exo/exo-icon-view.c:982
+#: ../exo/exo-icon-view.c:924
 msgid "Space which is inserted between grid rows"
 msgstr "Բացատ, որը ներդրուած է տողերի միջեւ"
 
-#: ../exo/exo-icon-view.c:996
+#: ../exo/exo-icon-view.c:938
 msgid "Search Column"
 msgstr "Որոնման սիւնակ"
 
-#: ../exo/exo-icon-view.c:997
+#: ../exo/exo-icon-view.c:939
 msgid "Model column to search through when searching through item"
 msgstr "Սիւնակի տիպարը՝ տարրերի որոնման ժամանակ աւգտագործելու համար"
 
-#: ../exo/exo-icon-view.c:1011
+#: ../exo/exo-icon-view.c:953
 msgid "Selection mode"
 msgstr "Ընտրութեան եղանակ"
 
-#: ../exo/exo-icon-view.c:1012
+#: ../exo/exo-icon-view.c:954
 msgid "The selection mode"
 msgstr "Ընտրութեան եղանակը"
 
-#: ../exo/exo-icon-view.c:1027 ../exo/exo-tree-view.c:160
+#: ../exo/exo-icon-view.c:969 ../exo/exo-tree-view.c:156
 msgid "Single Click"
 msgstr "Միասեղմում"
 
-#: ../exo/exo-icon-view.c:1028 ../exo/exo-tree-view.c:161
+#: ../exo/exo-icon-view.c:970 ../exo/exo-tree-view.c:157
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Որոշում է, թե արդեա՞ւք տարրերը պէտք է գործարկուեն միասեղմումով։"
 
-#: ../exo/exo-icon-view.c:1044 ../exo/exo-tree-view.c:177
+#: ../exo/exo-icon-view.c:986 ../exo/exo-tree-view.c:173
 msgid "Single Click Timeout"
 msgstr "Միասեղմման ժամանակ"
 
-#: ../exo/exo-icon-view.c:1045 ../exo/exo-tree-view.c:178
+#: ../exo/exo-icon-view.c:987 ../exo/exo-tree-view.c:174
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Ժամանակամիջոց միասեղմման համար, որից յետոյ ցուցիչի նշուած տարրերը կը լինեն միասեղմումով"
 
-#: ../exo/exo-icon-view.c:1060
+#: ../exo/exo-icon-view.c:1002
 msgid "Spacing"
 msgstr "Բացատում"
 
-#: ../exo/exo-icon-view.c:1061
+#: ../exo/exo-icon-view.c:1003
 msgid "Space which is inserted between cells of an item"
 msgstr "Բացատ, որը ներդրուում է տարրերի բջիջների մինչեւ"
 
-#: ../exo/exo-thumbnail-preview.c:120
+#: ../exo/exo-icon-view.c:1018
+msgid "Text column"
+msgstr "Գրոյթի սիւնակ"
+
+#: ../exo/exo-icon-view.c:1019
+msgid "Model column used to retrieve the text from"
+msgstr "Տիպարի սիւնակ՝ աւգտագործուող գրոյթի առբերման համար"
+
+#: ../exo/exo-thumbnail-preview.c:112
 msgid "Preview"
 msgstr "Նախատեսք"
 
-#: ../exo/exo-thumbnail-preview.c:141 ../exo/exo-thumbnail-preview.c:286
+#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:270
 msgid "No file selected"
 msgstr "Ընտրուած նիշ չկայ"
 
-#: ../exo/exo-thumbnail-preview.c:304
+#: ../exo/exo-thumbnail-preview.c:288
 msgid "Block Device"
 msgstr "Ընթերցման սարք"
 
-#: ../exo/exo-thumbnail-preview.c:309
+#: ../exo/exo-thumbnail-preview.c:293
 msgid "Character Device"
 msgstr "Գրանշանային սարք"
 
-#: ../exo/exo-thumbnail-preview.c:314
+#: ../exo/exo-thumbnail-preview.c:298
 msgid "Folder"
 msgstr "Պանակ"
 
-#: ../exo/exo-thumbnail-preview.c:319
+#: ../exo/exo-thumbnail-preview.c:303
 msgid "FIFO"
 msgstr "FIFO"
 
-#: ../exo/exo-thumbnail-preview.c:324
+#: ../exo/exo-thumbnail-preview.c:308
 msgid "Socket"
 msgstr "Բնիկ"
-
-#: ../exo/exo-toolbars-editor-dialog.c:112
-msgid "_Add a new toolbar"
-msgstr "_Աւելացնել նոր գործեշերտ"
-
-#: ../exo/exo-toolbars-editor.c:214
-msgid ""
-"Drag an item onto the toolbars above to add it, from the toolbars in the "
-"items table to remove it."
-msgstr "Տեղափոխել տարրը դէպի գործիքաշերտ այն աւելացնելու համար, կամ գործիքաշերտից՝ տարրերի աղիւսակ, հեռացնելու համար։"
-
-#: ../exo/exo-toolbars-editor.c:530
-msgid "Separator"
-msgstr "Բաժանիչ"
-
-#: ../exo/exo-toolbars-view.c:750
-msgid "Toolbar _Style"
-msgstr "Գործեշերտի _ձեւ"
-
-#: ../exo/exo-toolbars-view.c:757
-msgid "_Desktop Default"
-msgstr "_Լռելեայն աշխատասեղան"
-
-#: ../exo/exo-toolbars-view.c:766
-msgid "_Icons only"
-msgstr "Միայն _պատկերակներ"
-
-#: ../exo/exo-toolbars-view.c:775
-msgid "_Text only"
-msgstr "Միայն _գրոյթ"
-
-#: ../exo/exo-toolbars-view.c:784
-msgid "Text for _All Icons"
-msgstr "Գրոյթ՝ _բոլոր պատկերակների համար"
-
-#: ../exo/exo-toolbars-view.c:793
-msgid "Text for I_mportant Icons"
-msgstr "\"Գրոյթ՝ կա_րեւոր պատկերակների համար"
-
-#: ../exo/exo-toolbars-view.c:801
-msgid "_Remove Toolbar"
-msgstr "_Հեռացնել գործեշերտը"
-
-#: ../exo/exo-toolbars-view.c:816
-msgid "Customize Toolbar..."
-msgstr "Կարգաւորել գործեշերտը..."
-
-#: ../exo/exo-wrap-table.c:140
-msgid "Column spacing"
-msgstr "Սիւնակի միջակայք"
-
-#: ../exo/exo-wrap-table.c:141
-msgid "The amount of space between two consecutive columns"
-msgstr "Հեռաւորութիւն՝ ընկած երկու յաջորդական սիւնակների միջեւ"
-
-#: ../exo/exo-wrap-table.c:155
-msgid "Row spacing"
-msgstr "Տողամիջոց"
-
-#: ../exo/exo-wrap-table.c:156
-msgid "The amount of space between two consecutive rows"
-msgstr "Հեռաւորութիւն՝ ընկած երկու յաջորդական տողերի միջեւ"
-
-#: ../exo/exo-wrap-table.c:170
-msgid "Homogeneous"
-msgstr "Համասեռ"
-
-#: ../exo/exo-wrap-table.c:171
-msgid "Whether the children should be all the same size"
-msgstr "Որոշում է, թե արդեաւք առաջացած գործընթացները, բոլորը պէտք է լինեն նոյն չափի"
-
-#: ../exo/exo-xsession-client.c:203
-msgid "Window group"
-msgstr "Պատուհանների խումբ"
-
-#: ../exo/exo-xsession-client.c:204
-msgid "Window group leader"
-msgstr "Պատուհանների խմբի գլխաւոր"
-
-#: ../exo/exo-xsession-client.c:214
-msgid "Restart command"
-msgstr "Վերագործարկման հրաման"
-
-#: ../exo/exo-xsession-client.c:215
-msgid "Session restart command"
-msgstr "Նիստի վերագործարկման հրաման"
-
-#: ../exo-csource/main.c:303
-#, c-format
-msgid "Usage: %s [options] [file]\n"
-msgstr "Գործածում․ %s [ընտրանքներ] [նիշ]\n"
-
-#: ../exo-csource/main.c:304
-#, c-format
-msgid "       %s [options] --build-list [[name file]...]\n"
-msgstr "%s [ընտրանքներ] --build-list [[անուն]...]\n"
-
-#: ../exo-csource/main.c:306
-#, c-format
-msgid "  -h, --help        Print this help message and exit\n"
-msgstr "-h, --help Ցոյց տալ աջակցութիւնը եւ դուրս գալ\n"
-
-#: ../exo-csource/main.c:307
-#, c-format
-msgid "  -V, --version     Print version information and exit\n"
-msgstr "-V, --version Ցոյց տալ տարբերակի մասին տեղեկոյթը եւ դուրս գալ4\n"
-
-#: ../exo-csource/main.c:308
-#, c-format
-msgid "  --extern          Generate extern symbols\n"
-msgstr "--extern Ստեղծել արտաքին նշաններ\n"
-
-#: ../exo-csource/main.c:309
-#, c-format
-msgid "  --static          Generate static symbols\n"
-msgstr "--static Ստեղծել հաստատուն նշաններ\n"
-
-#: ../exo-csource/main.c:310
-#, c-format
-msgid "  --name=identifier C macro/variable name\n"
-msgstr "--name=identifier С մակրոյի/փոփոխականի անուն\n"
-
-#: ../exo-csource/main.c:311
-#, c-format
-msgid "  --build-list      Parse (name, file) pairs\n"
-msgstr "--build-list Վերլուծել (անուն, նիշ)  զոյգը\n"
-
-#: ../exo-csource/main.c:312
-#, c-format
-msgid "  --strip-comments  Remove comments from XML files\n"
-msgstr "--strip-comments Հեռացնել մեկնաբանութիւնները XML նիշերից\n"
-
-#: ../exo-csource/main.c:313
-#, c-format
-msgid "  --strip-content   Remove node contents from XML files\n"
-msgstr "--strip-content Հեռացնել հանգոյցի բովանդակութիւնը XML նիշերից\n"
-
-#: ../exo-csource/main.c:314
-#, c-format
-msgid "  --output=filename Write generated csource to specified file\n"
-msgstr "--output=filename Գրառել սկզբնաւորուած c աղբիւր սահմանուած նիշի համար\n"
-
-#: ../exo-csource/main.c:324 ../exo-desktop-item-edit/main.c:196
-#: ../exo-open/main.c:509
-#, c-format
-msgid ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr "Հեղինակային իրաւունք (c) %s \n        os-cillation e.K. Բոլոր իրաւունքները պաշտպանուած են։\n\nՀեղինակ․ Benedikt Meurer <benny@xfce.org>։\n"
-
-#: ../exo-csource/main.c:328 ../exo-desktop-item-edit/main.c:200
-#: ../exo-open/main.c:513
-#, c-format
-msgid ""
-"%s comes with ABSOLUTELY NO WARRANTY,\n"
-"You may redistribute copies of %s under the terms of\n"
-"the GNU Lesser General Public License which can be found in the\n"
-"%s source package.\n"
-"\n"
-msgstr "%s մշակուած է ԱՌԱՆՑ ՈՐեւԷ ԵՐԱՇԽԻՔԻ,0\nթոյլատրուած է տարածել %s֊ի պատճէնը\nGNU ընդհանուր հանրային արտաւնագրի կանոնների համաձայն, որը կարելի է գտնել\n%s ելակէտային փաթեթում։\n"
-
-#: ../exo-csource/main.c:332 ../exo-desktop-item-edit/main.c:204
-#: ../exo-open/main.c:517
-#, c-format
-msgid "Please report bugs to <%s>.\n"
-msgstr "Սխալների դէպքում զեկուցէք <%s> հասցէով։\n"
 
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
@@ -562,45 +352,35 @@ msgstr "Ընտրել յաւելուած"
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:326 ../exo-desktop-item-edit/main.c:517
-#: ../exo-helper/exo-helper-chooser.c:395
-#: ../exo-helper/exo-helper-chooser.c:540
-#: ../exo-helper/exo-helper-launcher-dialog.c:109
+#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
 msgid "_Cancel"
 msgstr "_Չեղարկել"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:261
-#: ../exo-helper/exo-helper-chooser.c:396
 msgid "_Open"
 msgstr "_Բացել"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:266
-#: ../exo-helper/exo-helper-chooser.c:402
 msgid "All Files"
 msgstr "Բոլորը"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:271
-#: ../exo-helper/exo-helper-chooser.c:407
 msgid "Executable Files"
 msgstr "Գործարկելիները"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
-#: ../exo-helper/exo-helper-chooser.c:422
 msgid "Perl Scripts"
 msgstr "Perl գրուածքներ"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
-#: ../exo-helper/exo-helper-chooser.c:428
 msgid "Python Scripts"
 msgstr "Python գրուածքներ"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
-#: ../exo-helper/exo-helper-chooser.c:434
 msgid "Ruby Scripts"
 msgstr "Ruby գրուածքներ"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
-#: ../exo-helper/exo-helper-chooser.c:440
 msgid "Shell Scripts"
 msgstr "Shell գրուածքներ"
 
@@ -691,8 +471,6 @@ msgstr "Ընտրել պատկերակ"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
-#: ../exo-helper/exo-helper-chooser.c:541
-#: ../exo-helper/exo-helper-launcher-dialog.c:110
 msgid "_OK"
 msgstr "_Բարի"
 
@@ -701,7 +479,7 @@ msgstr "_Բարի"
 msgid "Select a working directory"
 msgstr "Ընտրել աշխատանքային նշարան"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:171
+#: ../exo-desktop-item-edit/exo-die-utils.c:205
 msgid "File location is not a regular file or directory"
 msgstr "Նիշը սովորական նիշի կամ նշարանի տեղադրութիւնում չէ"
 
@@ -758,579 +536,103 @@ msgstr "Սահմանել գերյղում, երբ յղումը ստեղծուո�
 msgid "Preset icon when creating a desktop file"
 msgstr "Սահմանել պատկերակ, երբ նիշը ստեղծուում է"
 
-#: ../exo-desktop-item-edit/main.c:87 ../exo-helper/main.c:121
+#: ../exo-desktop-item-edit/main.c:87
 msgid "Print version information and exit"
 msgstr "Ցուցադրել տարբերակի վերաբերեալ տեղեկոյթը եւ դուրս գալ"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:172
+#: ../exo-desktop-item-edit/main.c:174
 msgid "[FILE|FOLDER]"
 msgstr "[ՆԻՇ|ՊԱՆԱԿ]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:184
+#: ../exo-desktop-item-edit/main.c:186
 msgid "Failed to open display"
 msgstr "Չյաջողուեց բացել ցուցադրիչը"
 
-#: ../exo-desktop-item-edit/main.c:211
+#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#, c-format
+msgid ""
+"Copyright (c) %s\n"
+"        os-cillation e.K. All rights reserved.\n"
+"\n"
+"Written by Benedikt Meurer <benny@xfce.org>.\n"
+"\n"
+msgstr "Հեղինակային իրաւունք (c) %s \n        os-cillation e.K. Բոլոր իրաւունքները պաշտպանուած են։\n\nՀեղինակ․ Benedikt Meurer <benny@xfce.org>։\n"
+
+#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#, c-format
+msgid ""
+"%s comes with ABSOLUTELY NO WARRANTY,\n"
+"You may redistribute copies of %s under the terms of\n"
+"the GNU Lesser General Public License which can be found in the\n"
+"%s source package.\n"
+"\n"
+msgstr "%s մշակուած է ԱՌԱՆՑ ՈՐեւԷ ԵՐԱՇԽԻՔԻ,0\nթոյլատրուած է տարածել %s֊ի պատճէնը\nGNU ընդհանուր հանրային արտաւնագրի կանոնների համաձայն, որը կարելի է գտնել\n%s ելակէտային փաթեթում։\n"
+
+#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#, c-format
+msgid "Please report bugs to <%s>.\n"
+msgstr "Սխալների դէպքում զեկուցէք <%s> հասցէով։\n"
+
+#: ../exo-desktop-item-edit/main.c:213
 msgid "No file/folder specified"
 msgstr "Սահմանուած նիշ/պանակ չկայ"
 
-#: ../exo-desktop-item-edit/main.c:276
+#: ../exo-desktop-item-edit/main.c:278
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Չյաջողուեց բեռնել բովանդակութիւնը «%s»֊ից. %s"
 
-#: ../exo-desktop-item-edit/main.c:281
+#: ../exo-desktop-item-edit/main.c:283
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "«%s» նիշը դատարկ է"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:294
+#: ../exo-desktop-item-edit/main.c:296
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Չյաջողուեց վերլուծել «%s»֊ի բովանդակութիւնը: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:306
+#: ../exo-desktop-item-edit/main.c:308
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "«%s» նիշը չունի գաղտնաբառ"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:316
+#: ../exo-desktop-item-edit/main.c:318
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Աշխատասեղանի անվաւեր «%s» նիշ"
 
-#. add the "Help" button
-#: ../exo-desktop-item-edit/main.c:331
-#: ../exo-helper/exo-helper-chooser-dialog.c:106
+#: ../exo-desktop-item-edit/main.c:328
 msgid "_Help"
 msgstr "_Աջակցութիւն"
 
-#. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:338
+#: ../exo-desktop-item-edit/main.c:330
 msgid "C_reate"
 msgstr "Ս_տեղծել"
 
-#: ../exo-desktop-item-edit/main.c:338 ../exo-desktop-item-edit/main.c:518
+#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
 msgid "_Save"
 msgstr "_Պահել"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:514
+#: ../exo-desktop-item-edit/main.c:520
 msgid "Choose filename"
 msgstr "Ընտրել նշանուն"
 
-#: ../exo-desktop-item-edit/main.c:621
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Չյաջողուեց ստեղծել «%s»֊ը։"
 
-#: ../exo-desktop-item-edit/main.c:621
+#: ../exo-desktop-item-edit/main.c:627
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Չյաջողուեց պահել «%s»֊ը։"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:99
-msgid "_Close"
-msgstr "_Փակել"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:101
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:1
-msgid "Preferred Applications"
-msgstr "Նախընտրելի յաւելուածներ"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:103
-msgid "Select default applications for various services"
-msgstr "Ընտրել լռելեայն յաւելուածներ, տարբեր ծառայութիւնների համար"
-
-#. Internet
-#: ../exo-helper/exo-helper-chooser-dialog.c:127
-msgid "_Internet"
-msgstr "_Համացանց"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:140
-#: ../exo-open/exo-web-browser.desktop.in.h:1
-msgid "Web Browser"
-msgstr "Ցանցային զննարկիչ"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:148
-msgid ""
-"The preferred Web Browser will be used to open hyperlinks and display help "
-"contents."
-msgstr "Լռելեայն զննարկիչը կաւգտագործուի յղումների բացման եւ աջակցութեան նիւթերի ցուցադրման համար։"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:171
-#: ../exo-open/exo-mail-reader.desktop.in.h:1
-msgid "Mail Reader"
-msgstr "Էլ֊փոստ"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:179
-msgid ""
-"The preferred Mail Reader will be used to compose emails when you click on "
-"email addresses."
-msgstr "Լռելեայն էլ֊փոստը կաւգտագործուի նամակների ուղարկման եւ ստացման համար։"
-
-#. Utilities
-#: ../exo-helper/exo-helper-chooser-dialog.c:198
-msgid "_Utilities"
-msgstr "_Աւժանդակ ծրագրեր"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:211
-#: ../exo-open/exo-file-manager.desktop.in.h:1
-msgid "File Manager"
-msgstr "Նիշք"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:219
-msgid ""
-"The preferred File Manager will be used to browse the contents of folders."
-msgstr "Լռելեայն նիշային կառավարիչը կաւգտագործուի պանակների բովանդակութեան զննման համար։"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:242
-#: ../exo-open/exo-terminal-emulator.desktop.in.h:1
-msgid "Terminal Emulator"
-msgstr "Վահանակ"
-
-#: ../exo-helper/exo-helper-chooser-dialog.c:250
-msgid ""
-"The preferred Terminal Emulator will be used to run commands that require a "
-"CLI environment."
-msgstr "Ընտրուած վահանակը կաւգտագործուի CLI միջավայր պահանջող հրամանների գործարկման համար։"
-
-#: ../exo-helper/exo-helper-chooser.c:145
-#: ../exo-helper/exo-helper-chooser.c:152
-msgid "Press left mouse button to change the selected application."
-msgstr "Սեղմել մկնիկի ձախ սեղմակը՝ ընտրուած յաւելուածը փոխելու համար։"
-
-#: ../exo-helper/exo-helper-chooser.c:151
-msgid "Application Chooser Button"
-msgstr "Յաւելուածի ընտրման կոճակ"
-
-#: ../exo-helper/exo-helper-chooser.c:303
-msgid "No application selected"
-msgstr "Ընտրուած յաւելուած չկայ"
-
-#: ../exo-helper/exo-helper-chooser.c:319
-msgid "Failed to set default Web Browser"
-msgstr "Չյաջողուեց սահմանել լռելեայն զննարկիչը"
-
-#: ../exo-helper/exo-helper-chooser.c:320
-msgid "Failed to set default Mail Reader"
-msgstr "Չյաջողուեց սահմանել լռելեայն էլ֊փոստը"
-
-#: ../exo-helper/exo-helper-chooser.c:321
-msgid "Failed to set default File Manager"
-msgstr "Չյաջողուեց սահմանել լռելեայն նիշքը"
-
-#: ../exo-helper/exo-helper-chooser.c:322
-msgid "Failed to set default Terminal Emulator"
-msgstr "Չյաջողուեց սահմանել լռելեայն վահանակը"
-
-#. allocate the chooser
-#: ../exo-helper/exo-helper-chooser.c:392
-msgid "Select application"
-msgstr "Ընտրել յաւելուած"
-
-#: ../exo-helper/exo-helper-chooser.c:505
-msgid "Choose a custom Web Browser"
-msgstr "Ընտրել լռելեայն զննարկիչ"
-
-#: ../exo-helper/exo-helper-chooser.c:506
-msgid "Choose a custom Mail Reader"
-msgstr "Ընտրել լռելեայն էլ֊փոստ"
-
-#: ../exo-helper/exo-helper-chooser.c:507
-msgid "Choose a custom File Manager"
-msgstr "Ընտրել լռելեայն նիշք"
-
-#: ../exo-helper/exo-helper-chooser.c:508
-msgid "Choose a custom Terminal Emulator"
-msgstr "Ընտրել լռելեայն վահանակ"
-
-#: ../exo-helper/exo-helper-chooser.c:513
-msgid ""
-"Specify the application you want to use\n"
-"as default Web Browser for Xfce:"
-msgstr "Ընտրել յաւելուած, որը կաւգտագործուի \nորպէս Xfce֊ի լռելեայն զննարկիչ․"
-
-#: ../exo-helper/exo-helper-chooser.c:514
-msgid ""
-"Specify the application you want to use\n"
-"as default Mail Reader for Xfce:"
-msgstr "Ընտրել յաւելուած, որը կաւգտագործուի \nորպէս Xfce֊ի լռելեայն էլ֊փոստ․"
-
-#: ../exo-helper/exo-helper-chooser.c:515
-msgid ""
-"Specify the application you want to use\n"
-"as default File Manager for Xfce:"
-msgstr "Ընտրել յաւելուած, որը կաւգտագործուի\n որպէս Xfce֊ի լռելեայն նիշք․"
-
-#: ../exo-helper/exo-helper-chooser.c:516
-msgid ""
-"Specify the application you want to use\n"
-"as default Terminal Emulator for Xfce:"
-msgstr "Ընտրել այն յաւելուածը, որը կաւգտագործուի \nորպէս Xfce֊ի լռելեայն վահանակ․"
-
-#: ../exo-helper/exo-helper-chooser.c:580
-msgid "Browse the file system to choose a custom command."
-msgstr "Որոնել այլ յաւելուածներ նիշային համակարգում։"
-
-#: ../exo-helper/exo-helper-chooser.c:789
-msgid "_Other..."
-msgstr "_Այլ․․․"
-
-#: ../exo-helper/exo-helper-chooser.c:790
-msgid "Use a custom application which is not included in the above list."
-msgstr "Աւգտագործել այլ յաւելուած, որը ներառուած չէ ցանկում։"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:113
-msgid "Choose Preferred Application"
-msgstr "Ընտրել նախընտրելի յաւելուած"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:256
-msgid ""
-"Please choose your preferred Web\n"
-"Browser now and click OK to proceed."
-msgstr "Ընտրէք նախընտրելի զննարկիչը եւ \nսեղմէք «Լաւ» շարունակելու համար։"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:258
-msgid ""
-"Please choose your preferred Mail Reader\n"
-"now and click OK to proceed."
-msgstr "Ընտրէք նախընտրելի էլ֊փոստը եւ \nսեղմէք «Լաւ» շարունակելու համար։"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:260
-msgid ""
-"Please choose your preferred File Manager\n"
-"now and click OK to proceed."
-msgstr "Ընտրէք նախընտրելի էլ֊փոստը եւ \nսեղմէք «Լաւ» շարունակելու համար։"
-
-#: ../exo-helper/exo-helper-launcher-dialog.c:262
-msgid ""
-"Please choose your preferred Terminal\n"
-"Emulator now and click OK to proceed."
-msgstr "Ընտրէք նախընտրելի վահանակը եւ \nսեղմէք «Լաւ» շարունակելու համար։"
-
-#: ../exo-helper/exo-helper.c:401
-#, c-format
-msgid "No command specified"
-msgstr "Սահմանուած հրամաններ չկան"
-
-#: ../exo-helper/exo-helper.c:720 ../exo-helper/exo-helper.c:763
-#: ../exo-helper/exo-helper.c:834 ../exo-helper/exo-helper.c:877
-#, c-format
-msgid "Failed to open %s for writing"
-msgstr "Չյաջողուեց բացել «%s»֊ը գրառման համար"
-
-#: ../exo-helper/exo-preferred-applications.desktop.in.h:2
-msgid ""
-"Preferred Applications (Web Browser, Mail Reader and Terminal Emulator)"
-msgstr "Նախընտրելի յաւելուածներ (Զննարկիչ, Էլ֊փոստ եւ Վահանակ)"
-
-#: ../exo-helper/main.c:42
-msgid "Failed to execute default Web Browser"
-msgstr "Չյաջողուեց գործարկել լռելեայն զննարկիչը"
-
-#: ../exo-helper/main.c:43
-msgid "Failed to execute default Mail Reader"
-msgstr "Չյաջողուեց գործարկել լռելեայն էլ֊փոստը"
-
-#: ../exo-helper/main.c:44
-msgid "Failed to execute default File Manager"
-msgstr "Չյաջողուեց գործարկել լռելեայն նիշքը"
-
-#: ../exo-helper/main.c:45
-msgid "Failed to execute default Terminal Emulator"
-msgstr "Չյաջողուեց գործարկել լռելեայն վահանակը"
-
-#. Enable permanently dismissing this error.
-#: ../exo-helper/main.c:87
-msgid "Do _not show this message again"
-msgstr "_Այլեւս չցուցադրել"
-
-#: ../exo-helper/main.c:122
-msgid ""
-"Open the Preferred Applications\n"
-"configuration dialog"
-msgstr "Բացել նախընտրելի յաւելուածների \nկազմաձեւման պատուհանը"
-
-#: ../exo-helper/main.c:123
-msgid "Settings manager socket"
-msgstr "Կարգաւորումների կառավարչի բնիկ"
-
-#: ../exo-helper/main.c:123
-msgid "SOCKET ID"
-msgstr "ԲՆԻԿԻ ID"
-
-#: ../exo-helper/main.c:124
-msgid ""
-"Launch the default helper of TYPE with the optional PARAMETER, where TYPE is"
-" one of the following values."
-msgstr "Գործարկել ՏԻՊԻ լռելեայն աջակիցը, կամընտրական PARAMETER֊ներով, որտեղ՝ TYPE֊ը տուեալ արժէքներից մեկն է։"
-
-#: ../exo-helper/main.c:124 ../exo-helper/main.c:125
-msgid "TYPE [PARAMETER]"
-msgstr "ՏԻՊ [ՅԱՐԱՉԱՓ]"
-
-#: ../exo-helper/main.c:125
-msgid ""
-"Query the default helper of TYPE, where TYPE is one of the following values."
-msgstr "Հայցել TYPE֊ի լռելեայն աջակիցը,  որտեղ TYPE֊ը տուեալ արժէքներից մեկն է։"
-
-#: ../exo-helper/main.c:155
-msgid ""
-"The following TYPEs are supported for the --launch and --query commands:\n"
-"\n"
-"  WebBrowser       - The preferred Web Browser.\n"
-"  MailReader       - The preferred Mail Reader.\n"
-"  FileManager      - The preferred File Manager.\n"
-"  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "Նշուած ՏԻՊԵՐԸ սատարուում են --launch հրամանի համար․\n\nWebBrowser - նախընտրած Զննարկիչ։\nMailReader - նախընտրած էլ֊փոստ։\nFileManager - նախընտրած նիշք։\nTerminalEmulator - նախընտրած վահանակ։"
-
-#: ../exo-helper/main.c:165
-#, c-format
-msgid "Type '%s --help' for usage."
-msgstr "\"Մուտքագրէք «%s --help» աջակցութեան համար։"
-
-#: ../exo-helper/main.c:224 ../exo-helper/main.c:297
-#, c-format
-msgid "Invalid helper type \"%s\""
-msgstr "Աջակիցի անվաւեր «%s» տիպ"
-
-#: ../exo-helper/main.c:281
-#, c-format
-msgid ""
-"%s (Xfce %s)\n"
-"\n"
-"Copyright (c) 2003-2006\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-"Built with Gtk+-%d.%d.%d, running Gtk+-%d.%d.%d.\n"
-"\n"
-"Please report bugs to <%s>.\n"
-msgstr "%s (Xfce %s)\n\nՀեղինակային իրաւունք (c) \n        os-cillation e.K. Բոլոր իրաւունքները պաշտպանուած են։2003-200604\nՀեղինակ․ Benedikt Meurer <benny@xfce.org>։\n\nԿառուցուած Gtk+-%d.%d.%d֊ով, գործարկուում է Gtk+-%d.%d.%d:\n\nՍխալների դէպքում կարող էք դիմել <%s> հասցէով։\n"
-
-#: ../exo-helper/main.c:307
-#, c-format
-msgid "No helper defined for \"%s\"."
-msgstr "\"%s\"֊ի համար սահմանուած աջակից չկայ։"
-
-#: ../exo-helper/helpers/aterm.desktop.in.in.h:1
-msgid "aterm"
-msgstr "aterm"
-
-#: ../exo-helper/helpers/balsa.desktop.in.in.h:1
-msgid "Balsa"
-msgstr "Balsa"
-
-#: ../exo-helper/helpers/brave.desktop.in.in.h:1
-msgid "Brave"
-msgstr "Brave"
-
-#: ../exo-helper/helpers/caja.desktop.in.in.h:1
-msgid "Caja File Manager"
-msgstr "Caja նիշք"
-
-#: ../exo-helper/helpers/chromium.desktop.in.in.h:1
-msgid "Chromium"
-msgstr "Chromium"
-
-#: ../exo-helper/helpers/debian-sensible-browser.desktop.in.in.h:1
-msgid "Debian Sensible Browser"
-msgstr "Debian զննարկիչ"
-
-#: ../exo-helper/helpers/debian-x-terminal-emulator.desktop.in.in.h:1
-msgid "Debian X Terminal Emulator"
-msgstr "Debian X վահանակ"
-
-#: ../exo-helper/helpers/dillo.desktop.in.in.h:1
-msgid "Dillo"
-msgstr "Dillo"
-
-#: ../exo-helper/helpers/encompass.desktop.in.in.h:1
-msgid "Encompass"
-msgstr "Encompass"
-
-#: ../exo-helper/helpers/epiphany.desktop.in.in.h:1
-msgid "Epiphany Web Browser"
-msgstr "Epiphany զննարկիչ"
-
-#: ../exo-helper/helpers/eterm.desktop.in.in.h:1
-msgid "Enlightened Terminal Emulator"
-msgstr "Enlightened վահանակ"
-
-#: ../exo-helper/helpers/evolution.desktop.in.in.h:1
-msgid "Evolution"
-msgstr "Evolution"
-
-#: ../exo-helper/helpers/firefox.desktop.in.in.h:1
-msgid "Mozilla Firefox"
-msgstr "Mozilla Firefox"
-
-#: ../exo-helper/helpers/galeon.desktop.in.in.h:1
-msgid "Galeon Web Browser"
-msgstr "Galeon զննարկիչ"
-
-#: ../exo-helper/helpers/geary.desktop.in.in.h:1
-msgid "Geary"
-msgstr "Geary"
-
-#: ../exo-helper/helpers/google-chrome.desktop.in.in.h:1
-msgid "Google Chrome"
-msgstr "Google Chrome"
-
-#: ../exo-helper/helpers/gnome-terminal.desktop.in.in.h:1
-msgid "GNOME Terminal"
-msgstr "GNOME վահանակ"
-
-#: ../exo-helper/helpers/icecat.desktop.in.in.h:1
-msgid "Icecat"
-msgstr "Icecat"
-
-#: ../exo-helper/helpers/icedove.desktop.in.in.h:1
-msgid "Icedove"
-msgstr "Icedove"
-
-#: ../exo-helper/helpers/iceweasel.desktop.in.in.h:1
-msgid "Iceweasel"
-msgstr "Iceweasel"
-
-#: ../exo-helper/helpers/jumanji.desktop.in.in.h:1
-msgid "Jumanji"
-msgstr "Jumanji"
-
-#: ../exo-helper/helpers/kmail.desktop.in.in.h:1
-msgid "KMail"
-msgstr "KMail"
-
-#: ../exo-helper/helpers/konqueror.desktop.in.in.h:1
-msgid "Konqueror Web Browser"
-msgstr "Konqueror զննարկիչ"
-
-#: ../exo-helper/helpers/links.desktop.in.in.h:1
-msgid "Links Text Browser"
-msgstr "Links գրոյթային զննարկիչ"
-
-#: ../exo-helper/helpers/lynx.desktop.in.in.h:1
-msgid "Lynx Text Browser"
-msgstr "Lynx գրոյթային զննարկիչ"
-
-#: ../exo-helper/helpers/midori.desktop.in.in.h:1
-msgid "Midori"
-msgstr "Midori"
-
-#: ../exo-helper/helpers/mozilla-browser.desktop.in.in.h:1
-msgid "Mozilla Browser"
-msgstr "Mozilla զննարկիչ"
-
-#: ../exo-helper/helpers/mozilla-mailer.desktop.in.in.h:1
-msgid "Mozilla Mail"
-msgstr "Mozilla փոստ"
-
-#: ../exo-helper/helpers/mutt.desktop.in.in.h:1
-msgid "Mutt"
-msgstr "Mutt"
-
-#: ../exo-helper/helpers/nautilus.desktop.in.in.h:1
-msgid "Nautilus"
-msgstr "Nautilus"
-
-#: ../exo-helper/helpers/netscape-navigator.desktop.in.in.h:1
-msgid "Netscape Navigator"
-msgstr "Netscape քարտեզներ"
-
-#: ../exo-helper/helpers/nxterm.desktop.in.in.h:1
-msgid "NXterm"
-msgstr "NXterm"
-
-#: ../exo-helper/helpers/opera-browser.desktop.in.in.h:1
-msgid "Opera Browser"
-msgstr "Opera զննարկիչ"
-
-#: ../exo-helper/helpers/pcmanfm.desktop.in.in.h:1
-msgid "PCMan File Manager"
-msgstr "PCMan նիշք"
-
-#: ../exo-helper/helpers/pcmanfm-qt.desktop.in.in.h:1
-msgid "PCManFM-Qt File Manager"
-msgstr "PCManFM-Qt նիշք"
-
-#: ../exo-helper/helpers/qterminal.desktop.in.in.h:1
-msgid "QTerminal"
-msgstr "Q վահանակ"
-
-#: ../exo-helper/helpers/qtfm.desktop.in.in.h:1
-msgid "qtFM"
-msgstr "qtFM"
-
-#: ../exo-helper/helpers/qupzilla.desktop.in.in.h:1
-msgid "QupZilla"
-msgstr "QupZilla"
-
-#: ../exo-helper/helpers/rodent.desktop.in.in.h:1
-msgid "Rodent File Manager"
-msgstr "Rodent նիշք"
-
-#: ../exo-helper/helpers/rox-filer.desktop.in.in.h:1
-msgid "ROX-Filer"
-msgstr "ROX-Filer"
-
-#: ../exo-helper/helpers/sakura.desktop.in.in.h:1
-msgid "Sakura"
-msgstr "Sakura"
-
-#: ../exo-helper/helpers/surf.desktop.in.in.h:1
-msgid "Surf"
-msgstr "Surf"
-
-#: ../exo-helper/helpers/sylpheed.desktop.in.in.h:1
-msgid "Sylpheed"
-msgstr "Sylpheed"
-
-#: ../exo-helper/helpers/sylpheed-claws.desktop.in.in.h:1
-msgid "Claws Mail"
-msgstr "Claws փոստ"
-
-#: ../exo-helper/helpers/terminator.desktop.in.in.h:1
-msgid "Terminator"
-msgstr "Terminator"
-
-#: ../exo-helper/helpers/Thunar.desktop.in.in.h:1
-msgid "Thunar"
-msgstr "Thunar նիշք"
-
-#: ../exo-helper/helpers/thunderbird.desktop.in.in.h:1
-msgid "Mozilla Thunderbird"
-msgstr "Mozilla Thunderbird"
-
-#: ../exo-helper/helpers/urxvt.desktop.in.in.h:1
-msgid "RXVT Unicode"
-msgstr "RXVT Unicode"
-
-#: ../exo-helper/helpers/vimprobable2.desktop.in.in.h:1
-msgid "Vimprobable2"
-msgstr "Vimprobable2"
-
-#: ../exo-helper/helpers/w3m.desktop.in.in.h:1
-msgid "W3M Text Browser"
-msgstr "W3M գրոյթային զննարկիչ"
-
-#: ../exo-helper/helpers/xfce4-terminal.desktop.in.in.h:1
-msgid "Xfce Terminal"
-msgstr "Xfce վահանակ"
-
-#: ../exo-helper/helpers/xfe.desktop.in.in.h:1
-msgid "Xfe File Manager"
-msgstr "Xfce նիշք"
-
-#: ../exo-helper/helpers/xterm.desktop.in.in.h:1
-msgid "X Terminal"
-msgstr "X վահանակ"
 
 #: ../exo-open/main.c:109
 msgid "Usage: exo-open [URLs...]"
@@ -1368,7 +670,7 @@ msgstr "Տրված ՏԻՊերը սատարուում են --launch հրաման�
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
-#. * since the exo-helper utility will not accept localized TYPEs.
+#. * since the xfce4-mime-helper utility will not accept localized TYPEs.
 #: ../exo-open/main.c:128
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
@@ -1398,28 +700,12 @@ msgstr "Եթե %s֊ը կազմարկուած է առանց GIO-Unix֊ի յատկ
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Չյաջողուեց գործարկել նախընտրած յաւելուածը «%s» կարգի համար։"
 
-#: ../exo-open/main.c:590
+#: ../exo-open/main.c:586
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Անհնար է յայտնաբերել «%s»֊ի URI կառուցուածքը։"
 
-#: ../exo-open/main.c:604
+#: ../exo-open/main.c:600
 #, c-format
 msgid "Failed to open URI \"%s\"."
 msgstr "Չյաջողուեց բացել «%s» URI֊ին։"
-
-#: ../exo-open/exo-file-manager.desktop.in.h:2
-msgid "Browse the file system"
-msgstr "Որոնել նիշային համակարգում"
-
-#: ../exo-open/exo-mail-reader.desktop.in.h:2
-msgid "Read your email"
-msgstr "Ընթերցել նամակները"
-
-#: ../exo-open/exo-terminal-emulator.desktop.in.h:2
-msgid "Use the command line"
-msgstr "Գործածել հրամանատողը"
-
-#: ../exo-open/exo-web-browser.desktop.in.h:2
-msgid "Browse the web"
-msgstr "Որոնել ցանցում"
