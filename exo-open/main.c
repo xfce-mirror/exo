@@ -457,6 +457,8 @@ main (gint argc, gchar **argv)
 {
   GOptionContext  *context;
   GtkWidget       *dialog;
+  GtkWidget       *message_area;
+  GtkWidget       *label;
   GError          *err = NULL;
   gchar           *parameter, *quoted;
   gint             result = EXIT_SUCCESS;
@@ -580,11 +582,21 @@ main (gint argc, gchar **argv)
                 {
                   /* display an error dialog */
                   dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,
-                                                   _("Failed to open URI \"%s\"."), uri);
+                                                   _("Failed to open URI."));
                   if (startup_id != NULL)
                     gtk_window_set_startup_id (GTK_WINDOW (dialog), startup_id);
                   gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s.", err->message);
                   g_error_free (err);
+
+                  /* add full URI to message area */
+                  message_area = gtk_message_dialog_get_message_area (GTK_DIALOG (dialog));
+                  label = gtk_label_new (uri);
+                  gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+                  gtk_label_set_line_wrap_mode (GTK_LABEL (label), PANGO_WRAP_CHAR);
+                  gtk_label_set_max_width_chars (GTK_LABEL (label), 50);
+                  gtk_container_add (GTK_CONTAINER (message_area), label);
+                  gtk_widget_show (label);
+
                   gtk_dialog_run (GTK_DIALOG (dialog));
                   gtk_widget_destroy (dialog);
                 }
