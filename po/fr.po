@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-08 00:45+0200\n"
-"PO-Revision-Date: 2020-07-12 09:06+0000\n"
+"POT-Creation-Date: 2020-10-24 12:45+0200\n"
+"PO-Revision-Date: 2020-10-25 19:37+0000\n"
 "Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/xfce/exo/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -358,10 +358,11 @@ msgstr "Socket"
 msgid "Select an Application"
 msgstr "Sélectionner une application"
 
+#. add the "Cancel" button
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
+#: ../exo-desktop-item-edit/main.c:343 ../exo-desktop-item-edit/main.c:532
 msgid "_Cancel"
 msgstr "Ann_uler"
 
@@ -550,16 +551,16 @@ msgid "Print version information and exit"
 msgstr "Afficher les informations sur la version et quitter"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:174
+#: ../exo-desktop-item-edit/main.c:175
 msgid "[FILE|FOLDER]"
 msgstr "[FICHIER|DOSSIER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:186
+#: ../exo-desktop-item-edit/main.c:187
 msgid "Failed to open display"
 msgstr "Impossible d’ouvrir l’affichage"
 
-#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#: ../exo-desktop-item-edit/main.c:199 ../exo-open/main.c:617
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -569,7 +570,7 @@ msgid ""
 "\n"
 msgstr "Copyright (c) %s\n        os-cillation e.K. Tous droits réservés.\n\nÉcrit par Benedikt Meurer <benny@xfce.org>.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#: ../exo-desktop-item-edit/main.c:203 ../exo-open/main.c:621
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -579,66 +580,68 @@ msgid ""
 "\n"
 msgstr "%s est distribué SANS AUCUNE GARANTIE,\nvous pouvez redistribuer des copies de %s sous les termes de\nla Licence Publique Générale Amoindrie GNU qui se\ntrouve dans l’archive de sources %s.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#: ../exo-desktop-item-edit/main.c:207 ../exo-open/main.c:625
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Veuillez signaler les bogues à <%s>.\n"
 
-#: ../exo-desktop-item-edit/main.c:213
+#: ../exo-desktop-item-edit/main.c:214
 msgid "No file/folder specified"
 msgstr "Aucun fichier/dossier spécifié"
 
-#: ../exo-desktop-item-edit/main.c:278
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Impossible de charger le contenu de « %s » : %s"
 
-#: ../exo-desktop-item-edit/main.c:283
+#: ../exo-desktop-item-edit/main.c:284
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Le fichier « %s » ne contient aucune donnée"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:296
+#: ../exo-desktop-item-edit/main.c:297
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Impossible d’analyser le contenu de « %s » : %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:308
+#: ../exo-desktop-item-edit/main.c:309
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Le fichier « %s »  n’a pas de clé type"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:318
+#: ../exo-desktop-item-edit/main.c:319
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Type de fichier desktop non pris en charge : « %s »"
 
-#: ../exo-desktop-item-edit/main.c:328
+#. add the "Help" button
+#: ../exo-desktop-item-edit/main.c:337
 msgid "_Help"
 msgstr "Aid_e"
 
-#: ../exo-desktop-item-edit/main.c:330
+#. add the "Create"/"Save" button (as default)
+#: ../exo-desktop-item-edit/main.c:347
 msgid "C_reate"
 msgstr "C_réer"
 
-#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
+#: ../exo-desktop-item-edit/main.c:347 ../exo-desktop-item-edit/main.c:533
 msgid "_Save"
 msgstr "_Enregistrer"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:529
 msgid "Choose filename"
 msgstr "Choisir un nom de fichier"
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Impossible de créer « %s »."
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Impossible d’enregistrer « %s »."
@@ -709,12 +712,11 @@ msgstr "Le lancement de fichiers desktop n’est pas pris en charge lorsque %s e
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Impossible de lancer l’application favorite pour la catégorie « %s »."
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:571
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Impossible de détecter le schéma URI de « %s »."
 
-#: ../exo-open/main.c:600
-#, c-format
-msgid "Failed to open URI \"%s\"."
-msgstr "Impossible d’ouvrir l’URI « %s »."
+#: ../exo-open/main.c:585
+msgid "Failed to open URI."
+msgstr "Impossible d’ouvrir l’URI."
