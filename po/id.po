@@ -8,12 +8,13 @@
 # Eri Hidayat <eriwhidayat@gmail.com>, 2017
 # Rendiyono Wahyu Saputro <rendi.7936@gmail.com>, 2015
 # Taufik Mulyana <taufik@nothinux.id>, 2018
+# Triyan W. Nugroho <triyan.wn@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-08 00:45+0200\n"
-"PO-Revision-Date: 2020-09-18 20:26+0000\n"
+"POT-Creation-Date: 2020-10-24 12:45+0200\n"
+"PO-Revision-Date: 2020-10-31 07:25+0000\n"
 "Last-Translator: Triyan W. Nugroho <triyan.wn@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/xfce/exo/language/id/)\n"
 "MIME-Version: 1.0\n"
@@ -352,10 +353,11 @@ msgstr "Soket"
 msgid "Select an Application"
 msgstr "Pilih Aplikasi"
 
+#. add the "Cancel" button
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
+#: ../exo-desktop-item-edit/main.c:343 ../exo-desktop-item-edit/main.c:532
 msgid "_Cancel"
 msgstr "_Batal"
 
@@ -544,16 +546,16 @@ msgid "Print version information and exit"
 msgstr "Cetak informasi versi dan keluar"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:174
+#: ../exo-desktop-item-edit/main.c:175
 msgid "[FILE|FOLDER]"
 msgstr "FOLDER"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:186
+#: ../exo-desktop-item-edit/main.c:187
 msgid "Failed to open display"
 msgstr "Gagal membuka tampilan"
 
-#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#: ../exo-desktop-item-edit/main.c:199 ../exo-open/main.c:617
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -563,7 +565,7 @@ msgid ""
 "\n"
 msgstr "Hak Cipta (c) %s\n        os-cillation e.K. Hak cipta dilindungi undang-undang.\n\nDitulis oleh Benedikt Meurer <benny@xfce.org>.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#: ../exo-desktop-item-edit/main.c:203 ../exo-open/main.c:621
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -573,66 +575,68 @@ msgid ""
 "\n"
 msgstr "%s hadir dengan SAMA SEKALI TANPA GARANSI,\nAnda dapat mendistribusikan salinan dari %s di bawah\nGNU Lesser General Public License yang dapat ditemukan di\npaket sumber %s.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#: ../exo-desktop-item-edit/main.c:207 ../exo-open/main.c:625
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Silakan laporkan kutu ke <%s>.\n"
 
-#: ../exo-desktop-item-edit/main.c:213
+#: ../exo-desktop-item-edit/main.c:214
 msgid "No file/folder specified"
 msgstr "Tak ada berkas/folder ditentukan"
 
-#: ../exo-desktop-item-edit/main.c:278
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Gagal memuat isi dari \"%s\": %s"
 
-#: ../exo-desktop-item-edit/main.c:283
+#: ../exo-desktop-item-edit/main.c:284
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Berkas \"%s\" tidak berisi data"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:296
+#: ../exo-desktop-item-edit/main.c:297
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Gagal mengurai isi dari \"%s\": %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:308
+#: ../exo-desktop-item-edit/main.c:309
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Berkas \"%s\" tidak mempunyai kunci tipe"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:318
+#: ../exo-desktop-item-edit/main.c:319
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Tipe berkas desktop \"%s\" tidak didukung"
 
-#: ../exo-desktop-item-edit/main.c:328
+#. add the "Help" button
+#: ../exo-desktop-item-edit/main.c:337
 msgid "_Help"
 msgstr "_Bantuan"
 
-#: ../exo-desktop-item-edit/main.c:330
+#. add the "Create"/"Save" button (as default)
+#: ../exo-desktop-item-edit/main.c:347
 msgid "C_reate"
 msgstr "B_uat"
 
-#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
+#: ../exo-desktop-item-edit/main.c:347 ../exo-desktop-item-edit/main.c:533
 msgid "_Save"
 msgstr "_Simpan"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:529
 msgid "Choose filename"
 msgstr "Pilih nama berkas"
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Gagal membuat \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Gagal menyimpan \"%s\"."
@@ -703,12 +707,11 @@ msgstr "Menjalankan berkas desktop tidak didukung jika %s dikompilasi tanpa fitu
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Gagal menjalankan aplikasi kesukaan untuk kategori \"%s\"."
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:571
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Tak dapat mendeteksi skema URI dari \"%s\"."
 
-#: ../exo-open/main.c:600
-#, c-format
-msgid "Failed to open URI \"%s\"."
-msgstr "Gagal membuka URI \"%s\"."
+#: ../exo-open/main.c:585
+msgid "Failed to open URI."
+msgstr "Gagal membuka URI."
