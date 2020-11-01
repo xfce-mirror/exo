@@ -1,3 +1,34 @@
+4.15.3
+======
+- Re-grab tree selection to prevent rare crash (Issue #46)
+- Remove unneeded RTL adjustment (Issue #45)
+- exo-open: Wrap long URI in error dialog (Issue #26)
+- Avoid truncated text in small zoom levels (#42)
+- Make ExoIconView reduce selection on a single click (issue #39)
+- Partially restore 6fcefce9 (Issue #18)
+- Adds new, foreign README.md
+- Add check for valid GtkTreeSelection (issue #40)
+- Reset cursor on drag end in single-click mode
+- exo-open: Change priority of command line parameters (Fixes #20)
+- Prevent label from overlapping icon in RTL (Fixes #36)
+- Prevent "selection_changed" bursts (#37)
+- Small change to documentation for exo_strdup_strftime
+- desktop-item-edit: Fix fallback for desktop file type detection
+- desktop-item-edit: Improve detection of invalid icon names (Fixes #33)
+- AC_CONFIG_MACRO_DIR → AC_CONFIG_MACRO_DIRS (Closes !9)
+- Translation Updates:
+  Albanian, Amharic, Arabic, Armenian, Armenian (Armenia), Asturian, 
+  Basque, Belarusian, Bengali, Bulgarian, Catalan, Chinese (China), 
+  Chinese (Hong Kong), Chinese (Taiwan), Croatian, Czech, Danish, Dutch, 
+  Eastern Armenian, English (Australia), English (United Kingdom), 
+  Estonian, Finnish, French, Galician, Greek, Hebrew, Hungarian, 
+  Icelandic, Indonesian, Interlingue, Italian, Japanese, Kannada, 
+  Latvian, Malay, Norwegian Bokmål, Norwegian Nynorsk, Occitan (post 
+  1500), Panjabi (Punjabi), Persian (Iran), Polish, Portuguese (Brazil), 
+  Romanian, Russian, Serbian, Slovak, Slovenian, Spanish, Swedish, 
+  Telugu, Thai, Turkish, Ukrainian, Urdu, Urdu (Pakistan), Uyghur, 
+  Vietnamese, 
+
 4.15.2
 ======
 - icon-chooser-dialog: Allow removing selected icon (Fixes #2)
