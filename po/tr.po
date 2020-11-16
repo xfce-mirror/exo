@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-24 12:45+0200\n"
-"PO-Revision-Date: 2020-10-27 09:02+0000\n"
+"PO-Revision-Date: 2020-11-16 20:59+0000\n"
 "Last-Translator: Emin Tufan <etcetin@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/exo/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,7 @@ msgstr "boyut"
 
 #: ../exo/exo-cell-renderer-icon.c:202
 msgid "The size of the icon to render in pixels."
-msgstr "Farklılaştırılacak simgenin piksel cinsinden değeri."
+msgstr "Farklılaştırılacak simgenin piksel türünden değeri."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
@@ -73,7 +73,7 @@ msgstr "\"%s\" dosyası okunamadı: %s"
 #: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "\"%s\" kalıbı yüklenemedi: Bilinmeyen neden, büyük olasılıkla bozuk dosya"
+msgstr "\"%s\" resmi yüklenemedi: Bilinmeyen neden, büyük olasılıkla bozuk resim dosyası"
 
 #: ../exo/exo-gtk-extensions.c:219
 #, c-format
@@ -108,7 +108,7 @@ msgstr "Sürücü Simgeleri"
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
 #: ../exo/exo-icon-chooser-dialog.c:110
 msgid "Emblems"
-msgstr "Amblemler"
+msgstr "Semboller"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
 #: ../exo/exo-icon-chooser-dialog.c:112
@@ -158,7 +158,7 @@ msgstr "Simge Yok"
 #. setup the context combo box
 #: ../exo/exo-icon-chooser-dialog.c:200
 msgid "Select _icon from:"
-msgstr "S_imgeyi şuradan seç :"
+msgstr "S_imgeyi şuradan seç:"
 
 #. search filter
 #: ../exo/exo-icon-chooser-dialog.c:216
@@ -223,7 +223,7 @@ msgstr "İşaretleme sütunu"
 
 #: ../exo/exo-icon-view.c:828
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Pango işaretlemesi kullanılıyorsa metni almak için kullanılan model sütunu"
+msgstr "Pango işaretlemesi kullanılıyorsa metni almada kullanılan model sütunu"
 
 #: ../exo/exo-icon-view.c:842
 msgid "Icon View Model"
@@ -248,7 +248,7 @@ msgstr "Pixbuf sütunu"
 
 #: ../exo/exo-icon-view.c:874
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Pixbuf simgesini yeniden düzenlemek amacıyla kullanılan model sütunu"
+msgstr "Pixbuf simgesini yeniden düzenlemede kullanılan model sütunu"
 
 #: ../exo/exo-icon-view.c:891
 msgid "Icon column"
@@ -257,7 +257,7 @@ msgstr "Simge sütunu"
 #: ../exo/exo-icon-view.c:892
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
-msgstr "Gerçeklenecek bir resim dosyasının tam yolunu getirmek için kullanılan model sütunu"
+msgstr "Gerçeklenecek resim dosyasının tam yolunu getirmede kullanılan model sütunu"
 
 #: ../exo/exo-icon-view.c:907
 msgid "Reorderable"
@@ -281,7 +281,7 @@ msgstr "Arama Sütunu"
 
 #: ../exo/exo-icon-view.c:939
 msgid "Model column to search through when searching through item"
-msgstr "Ögeler arasında arama yapmak için kullanılacak model sütunu"
+msgstr "Ögeler arası arama yapmada kullanılacak model sütunu"
 
 #: ../exo/exo-icon-view.c:953
 msgid "Selection mode"
@@ -356,7 +356,7 @@ msgstr "Yuva"
 #. allocate the file chooser
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:257
 msgid "Select an Application"
-msgstr "Bir Uygulama Seç"
+msgstr "Uygulama Seç"
 
 #. add the "Cancel" button
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
@@ -403,7 +403,7 @@ msgstr "Başlatıcı Oluştur <b>%s</b>"
 #. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:295
 msgid "_Name:"
-msgstr "İs_im:"
+msgstr "_Ad:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -460,7 +460,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Komut, dosya yöneticisi veya menüden çalışırken sistem açılış bildirimini etkinleştirmek için bu seçeneği seçin; fakat her uygulama, sistem açılış bildirimini desteklememektedir."
+msgstr "Komut, dosya yöneticisi veya menüden çalışırken sistem açılış bildirimini etkinleştirmek için bu seçeneği seçin; ancak her uygulama, sistem açılış bildirimini desteklememektedir."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -477,7 +477,7 @@ msgstr "Komutu uçbirim penceresinde çalıştırmak için bu seçeneği seçin.
 #. allocate the icon chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:592
 msgid "Select an icon"
-msgstr "Bir simge seç"
+msgstr "Simge seç"
 
 #: ../exo-desktop-item-edit/exo-die-editor.c:595
 #: ../exo-desktop-item-edit/exo-die-editor.c:639
@@ -520,7 +520,7 @@ msgstr "Dizini Düzenle"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Create a new desktop file in the given directory"
-msgstr "Verilen dizinde yeni bir masaüstü dosyası oluştur"
+msgstr "Verilen dizinde yeni masaüstü dosyası oluştur"
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Type of desktop file to create (Application or Link)"
@@ -528,23 +528,23 @@ msgstr "Oluşturulacak masaüstü dosyasının türü (Uygulama veya Bağlantı)
 
 #: ../exo-desktop-item-edit/main.c:82
 msgid "Preset name when creating a desktop file"
-msgstr "Bir masaüstü dosyası oluşturulurken, önceden belirlenmiş isim"
+msgstr "Masaüstü dosyası oluşturulurken, önceden belirlenmiş ad"
 
 #: ../exo-desktop-item-edit/main.c:83
 msgid "Preset comment when creating a desktop file"
-msgstr "Bir masaüstü dosyası oluşturulurken, önceden belirlenmiş açıklama"
+msgstr "Masaüstü dosyası oluşturulurken, önceden belirlenmiş açıklama"
 
 #: ../exo-desktop-item-edit/main.c:84
 msgid "Preset command when creating a launcher"
-msgstr "Bir başlatıcı oluşturulurken, önceden belirlenmiş komut"
+msgstr "Başlatıcı oluşturulurken, önceden belirlenmiş komut"
 
 #: ../exo-desktop-item-edit/main.c:85
 msgid "Preset URL when creating a link"
-msgstr "Bir bağlantı oluşturulurken, önceden belirlenmiş bağlantı adresi"
+msgstr "Bağlantı oluşturulurken, önceden belirlenmiş bağlantı adresi"
 
 #: ../exo-desktop-item-edit/main.c:86
 msgid "Preset icon when creating a desktop file"
-msgstr "Bir masaüstü dosyası oluşturulurken, önceden belirlenmiş simge"
+msgstr "Masaüstü dosyası oluşturulurken, önceden belirlenmiş simge"
 
 #: ../exo-desktop-item-edit/main.c:87
 msgid "Print version information and exit"
@@ -553,7 +553,7 @@ msgstr "Sürüm bilgisini yazdır ve çık"
 #. initialize Gtk+
 #: ../exo-desktop-item-edit/main.c:175
 msgid "[FILE|FOLDER]"
-msgstr "[FILE|FOLDER]"
+msgstr "[DOSYA|KLASÖR]"
 
 #. no error message, the GUI initialization failed
 #: ../exo-desktop-item-edit/main.c:187
@@ -578,7 +578,7 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr "%s HİÇBİR GARANTİ İLE gelmez,\n\"GNU Lesser General Public License\" isimli lisansın %s altındaki\nsözleşme şartlarına uygun bir biçimde, kopyalarını dağıtabilirsiniz.\nBu %s kaynak paketi, GNU Lesser General Public License ile\nlisanslanmıştır.\n\n"
+msgstr "%s HİÇBİR GARANTİ İLE gelmez,\n%s kopyalarını, \"GNU Lesser General Public License\" \nadlı lisansın koşullarına uygun biçimde yeniden dağıtabilirsiniz.\nİlgili lisans %s kaynak paketinde bulunabilir.\n\n"
 
 #: ../exo-desktop-item-edit/main.c:207 ../exo-open/main.c:625
 #, c-format
@@ -719,4 +719,4 @@ msgstr "\"%s\" ögesinin URI-planını taramak olanaksız."
 
 #: ../exo-open/main.c:585
 msgid "Failed to open URI."
-msgstr "URI açılamadı."
+msgstr "Kaynak adresi açılamadı."
