@@ -4352,7 +4352,7 @@ exo_icon_view_select_all_between (ExoIconView     *icon_view,
                                   ExoIconViewItem *cursor)
 {
   GList *items;
-  ExoIconViewItem *item, *last;
+  ExoIconViewItem *item, *last = NULL;
   gboolean dirty = FALSE;
 
   for (items = icon_view->priv->items; items; items = items->next)
