@@ -3560,7 +3560,8 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
 
         gtk_cell_renderer_get_preferred_size (info->cell, GTK_WIDGET (icon_view),
                                               &req, NULL);
-        if (info->is_text)
+
+        if (info->is_text && icon_view->priv->orientation == GTK_ORIENTATION_VERTICAL)
           {
             GdkRectangle cell_area, aligned_area;
 
