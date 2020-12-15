@@ -151,12 +151,7 @@ exo_die_command_model_init (ExoDieCommandModel *command_model)
   command_model->stamp = g_random_int ();
 
   /* spawn the collector thread */
-#if GLIB_CHECK_VERSION (2, 32, 0)
   command_model->collect_thread = g_thread_new ("ExoCommandCollect", exo_die_command_model_collect_thread, command_model);
-#else
-  command_model->collect_thread = g_thread_create_full (exo_die_command_model_collect_thread, command_model,
-                                                        0, TRUE, FALSE, G_THREAD_PRIORITY_LOW, NULL);
-#endif
 }
 
 

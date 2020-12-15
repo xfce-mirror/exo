@@ -150,12 +150,7 @@ exo_die_desktop_model_init (ExoDieDesktopModel *desktop_model)
   desktop_model->stamp = g_random_int ();
 
   /* spawn the collector thread */
-#if GLIB_CHECK_VERSION (2, 32, 0)
   desktop_model->collect_thread = g_thread_new ("ExoDesktopCollect", exo_die_desktop_model_collect_thread, desktop_model);
-#else
-  desktop_model->collect_thread = g_thread_create_full (exo_die_desktop_model_collect_thread, desktop_model,
-                                                        0, TRUE, FALSE, G_THREAD_PRIORITY_LOW, NULL);
-#endif
 }
 
 
