@@ -619,10 +619,13 @@ exo_tree_view_single_click_timeout (gpointer user_data)
   GtkTreeIter        iter;
   ExoTreeView       *tree_view = EXO_TREE_VIEW (user_data);
   gboolean           hover_path_selected;
+  GtkWidget         *toplevel = gtk_widget_get_toplevel (GTK_WIDGET (tree_view));
 
-  /* verify that we are in single-click mode, have focus and a hover path */
-  if (gtk_widget_has_focus (GTK_WIDGET (tree_view)) && tree_view->priv->single_click && tree_view->priv->hover_path != NULL)
+  /* verify that we are in single-click mode on an active window and have a hover path */
+  if (GTK_IS_WINDOW (toplevel) && gtk_window_is_active (GTK_WINDOW (toplevel)) && tree_view->priv->single_click && tree_view->priv->hover_path != NULL)
     {
+      gtk_widget_grab_focus (GTK_WIDGET (tree_view));
+
       /* transform the hover_path to a tree iterator */
       model = gtk_tree_view_get_model (GTK_TREE_VIEW (tree_view));
       if (model != NULL && gtk_tree_model_get_iter (model, &iter, tree_view->priv->hover_path))

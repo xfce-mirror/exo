@@ -7964,10 +7964,13 @@ exo_icon_view_single_click_timeout (gpointer user_data)
   ExoIconViewItem *item;
   gboolean         dirty = FALSE;
   ExoIconView     *icon_view = EXO_ICON_VIEW (user_data);
+  GtkWidget       *toplevel = gtk_widget_get_toplevel (GTK_WIDGET (icon_view));
 
-  /* verify that we are in single-click mode, have focus and a prelit item */
-  if (gtk_widget_has_focus (GTK_WIDGET (icon_view)) && icon_view->priv->single_click && icon_view->priv->prelit_item != NULL)
+  /* verify that we are in single-click mode on an active window and have a prelit item */
+  if (GTK_IS_WINDOW (toplevel) && gtk_window_is_active (GTK_WINDOW (toplevel)) && icon_view->priv->single_click && icon_view->priv->prelit_item != NULL)
     {
+      gtk_widget_grab_focus (GTK_WIDGET (icon_view));
+
       /* work on the prelit item */
       item = icon_view->priv->prelit_item;
 
