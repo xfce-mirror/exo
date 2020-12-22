@@ -1,3 +1,14 @@
+4.16.0
+======
+- Focus must not be required in single click mode (Issue #190)
+- Remove GLIB_CHECK_VERSION IFDEFs which are obsolete after glib bump
+- Adjust padding only for vertical item orientation (Issue #48)
+- bump glib (and gio, gthread, etc) to 2.50.0
+- Fix GCC warning (false negative)
+- Translation Updates:
+  Basque, Estonian, Norwegian Bokmål, Portuguese (Brazil), Russian,
+  Slovenian, Turkish, Vietnamese
+
 4.15.3
 ======
 - Re-grab tree selection to prevent rare crash (Issue #46)
