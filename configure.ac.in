@@ -131,7 +131,8 @@ AC_FUNC_MMAP()
 dnl ***************************************
 dnl *** Check for strftime() extensions ***
 dnl ***************************************
-AC_TRY_RUN([
+AC_CACHE_CHECK([for strftime %E and %O modifiers],
+  [ac_cv_have_strftime_extension], [AC_TRY_RUN([
   #include <string.h>
   #include <time.h>
   int
@@ -144,9 +145,13 @@ AC_TRY_RUN([
       return 0;
     return 1;
   }
-], [
+    ],
+    [ac_cv_have_strftime_extension=yes],
+    [ac_cv_have_strftime_extension=no],
+    [ac_cv_have_strftime_extension=cross])])
+if test x"$ac_cv_have_strftime_extension" != x"no"; then
   AC_DEFINE([HAVE_STRFTIME_EXTENSION], 1, [Define if strftime supports %E and %O modifiers.])
-])
+fi
 
 dnl ******************************
 dnl *** Check for i18n support ***
