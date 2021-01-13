@@ -4476,9 +4476,14 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
                                           GTK_DIR_TAB_BACKWARD :
                                           GTK_DIR_TAB_FORWARD);
             }
+
+          return;
         }
 
-      return;
+      /* check if we should select the cursor item */
+      item = icon_view->priv->cursor_item;
+      if (!item || item->selected)
+        return;
     }
 
   if (icon_view->priv->ctrl_pressed ||
@@ -4651,9 +4656,14 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
                                           GTK_DIR_TAB_BACKWARD :
                                           GTK_DIR_TAB_FORWARD);
             }
+
+          return;
         }
 
-      return;
+      /* check if we should select the cursor item */
+      item = icon_view->priv->cursor_item;
+      if (!item || item->selected)
+        return;
     }
 
   if (icon_view->priv->ctrl_pressed ||
