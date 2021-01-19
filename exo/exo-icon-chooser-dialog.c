@@ -280,8 +280,8 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   /* update the model */
   exo_icon_chooser_dialog_set_model (icon_chooser_dialog);
 
-  /* default to "Application Icons", since thats what users probably expect to see */
-  gtk_combo_box_set_active (GTK_COMBO_BOX (priv->combo), EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS);
+  /* default to "All Icons", as the user will be able to narrow the search using the interactive search */
+  gtk_combo_box_set_active (GTK_COMBO_BOX (priv->combo), EXO_ICON_CHOOSER_CONTEXT_ALL);
 }
 
 
