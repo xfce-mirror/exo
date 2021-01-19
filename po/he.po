@@ -5,16 +5,17 @@
 # Translators:
 # Dotan Kamber <kamberd@yahoo.com>, 2006
 # Elishai Eliyahu <elishai@mailfence.com>, 2016-2020
+# Elishai Eliyahu <elishai@mailfence.com>, 2020
 # GenghisKhan <genghiskhan@gmx.ca>, 2016
-# Omer I.S., 2020
-# Omer I.S., 2020
+# Omer I.S. <omeritzicschwartz@gmail.com>, 2020
+# Omer I.S. <omeritzicschwartz@gmail.com>, 2020
 # Yuval Tanny <tanai@int.gov.il>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-08 00:45+0200\n"
-"PO-Revision-Date: 2020-07-25 11:56+0000\n"
+"POT-Creation-Date: 2020-10-24 12:45+0200\n"
+"PO-Revision-Date: 2020-10-24 10:53+0000\n"
 "Last-Translator: Elishai Eliyahu <elishai@mailfence.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/exo/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -353,10 +354,11 @@ msgstr "שקע"
 msgid "Select an Application"
 msgstr "בחר יישום"
 
+#. add the "Cancel" button
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
+#: ../exo-desktop-item-edit/main.c:343 ../exo-desktop-item-edit/main.c:532
 msgid "_Cancel"
 msgstr "_ביטול"
 
@@ -545,16 +547,16 @@ msgid "Print version information and exit"
 msgstr "הדפס מידע גירסה וצא"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:174
+#: ../exo-desktop-item-edit/main.c:175
 msgid "[FILE|FOLDER]"
 msgstr "[FILE|FOLDER]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:186
+#: ../exo-desktop-item-edit/main.c:187
 msgid "Failed to open display"
 msgstr "נכשל לפתוח תצוגה"
 
-#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#: ../exo-desktop-item-edit/main.c:199 ../exo-open/main.c:617
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -564,7 +566,7 @@ msgid ""
 "\n"
 msgstr "זכות יוצרים (c) %s\n        os-cillation e.K. כל הזכויות שמורות.\n\nנכתב ע\"י בנדיקט מיורר <benny@xfce.org>.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#: ../exo-desktop-item-edit/main.c:203 ../exo-open/main.c:621
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -574,66 +576,68 @@ msgid ""
 "\n"
 msgstr "%s מגיעה באופן מוחלט ללא אחריות,\nבאפשרותך להפיץ עותקים של %s לפי תנאי\nרשיון ה-GNU Lesser General Public License אותו ניתן למצוא\nבחבילת קוד המקור של %s.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#: ../exo-desktop-item-edit/main.c:207 ../exo-open/main.c:625
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "נא לדווח על באגים ל- <%s>.\n"
 
-#: ../exo-desktop-item-edit/main.c:213
+#: ../exo-desktop-item-edit/main.c:214
 msgid "No file/folder specified"
 msgstr "לא צוין קובץ/תיקיה"
 
-#: ../exo-desktop-item-edit/main.c:278
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "ארע כשל בטעינת תכנים מ־\"%s\":‏ %s"
 
-#: ../exo-desktop-item-edit/main.c:283
+#: ../exo-desktop-item-edit/main.c:284
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "הקובץ \"%s\" אינו מכיל נתונים"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:296
+#: ../exo-desktop-item-edit/main.c:297
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "נכשל לנתח תוכן של \"%s\":%s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:308
+#: ../exo-desktop-item-edit/main.c:309
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "קובץ \"%s\" ללא מפתח סוג"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:318
+#: ../exo-desktop-item-edit/main.c:319
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "סוג קובץ שולחן עבודה לא נתמך \"%s\""
 
-#: ../exo-desktop-item-edit/main.c:328
+#. add the "Help" button
+#: ../exo-desktop-item-edit/main.c:337
 msgid "_Help"
 msgstr "_עזרה"
 
-#: ../exo-desktop-item-edit/main.c:330
+#. add the "Create"/"Save" button (as default)
+#: ../exo-desktop-item-edit/main.c:347
 msgid "C_reate"
 msgstr "_צור"
 
-#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
+#: ../exo-desktop-item-edit/main.c:347 ../exo-desktop-item-edit/main.c:533
 msgid "_Save"
 msgstr "_שמור"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:529
 msgid "Choose filename"
 msgstr "בחר שם קובץ"
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "נכשל ליצור \"%s\"."
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "נכשל לשמור \"%s\"."
@@ -704,12 +708,11 @@ msgstr "הפעלת קבצי שולחן עבודה אינה נתמכת כאשר %
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "כשל בהפעלת היישום המועדף לקבוצה \"%s\"."
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:571
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "לא יכול לגלות URI-scheme של \"%s\". "
 
-#: ../exo-open/main.c:600
-#, c-format
-msgid "Failed to open URI \"%s\"."
-msgstr "נכשל לפתוח URI \"%s\". "
+#: ../exo-open/main.c:585
+msgid "Failed to open URI."
+msgstr "נכשל לפתוח URI."
