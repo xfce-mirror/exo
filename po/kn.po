@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-08 00:45+0200\n"
-"PO-Revision-Date: 2020-07-07 22:45+0000\n"
+"POT-Creation-Date: 2020-10-24 12:45+0200\n"
+"PO-Revision-Date: 2020-10-24 10:45+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Kannada (http://www.transifex.com/xfce/exo/language/kn/)\n"
 "MIME-Version: 1.0\n"
@@ -347,10 +347,11 @@ msgstr "ಸಾಕೆಟ್"
 msgid "Select an Application"
 msgstr "ಅಪ್ಲಿಕೇಶನ್ ಆಯ್ಕೆಮಾಡಿ"
 
+#. add the "Cancel" button
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
+#: ../exo-desktop-item-edit/main.c:343 ../exo-desktop-item-edit/main.c:532
 msgid "_Cancel"
 msgstr "ರದ್ದುಮಾಡಿ"
 
@@ -539,16 +540,16 @@ msgid "Print version information and exit"
 msgstr " ಆವೃತ್ತಿ  ಮಾಹಿತಿಯನ್ನು ಮುದ್ರಿಸಿ  ಮತ್ತು ನಿರ್ಗಮಿಸಿ"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:174
+#: ../exo-desktop-item-edit/main.c:175
 msgid "[FILE|FOLDER]"
 msgstr "[ಕಡತ | ಕಡತ ಕೋಶ]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:186
+#: ../exo-desktop-item-edit/main.c:187
 msgid "Failed to open display"
 msgstr "ಪ್ರದರ್ಶನವನ್ನು ತೆರೆಯುವಲ್ಲಿ ವಿಫಲವಾಗಿದೆ"
 
-#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#: ../exo-desktop-item-edit/main.c:199 ../exo-open/main.c:617
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -558,7 +559,7 @@ msgid ""
 "\n"
 msgstr "ಕೃತಿಸ್ವಾಮ್ಯ (ಸಿ)%s \n         ಆಂ-ದೋಲನ ಇ.ಕೆ. ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.\n\nಬೆನೆಡಿಕ್ಟ್ ಮೌರರ್ ಬರೆದಿದ್ದಾರೆ <benny@xfce.org>.\n"
 
-#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#: ../exo-desktop-item-edit/main.c:203 ../exo-open/main.c:621
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -568,66 +569,68 @@ msgid ""
 "\n"
 msgstr "%s ಸಂಪೂರ್ಣವಾಗಿ ಯಾವುದೇ ಭರವಸೆ ಹೊಂದಿದೆ,\nನೀವು% s ಮೂಲ ಪ್ಯಾಕೇಜ್ನಲ್ಲಿ \nಕಾಣಬಹುದಾದ GNU ಲೆಸ್ಸರ್ ಜನರಲ್ ಪಬ್ಲಿಕ್ ಲೈಸೆನ್ಸ್ನ\n ನಿಯಮಗಳ ಅಡಿಯಲ್ಲಿ %s  ನ ಪ್ರತಿಗಳನ್ನು ವಿತರಿಸಬಹುದು.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#: ../exo-desktop-item-edit/main.c:207 ../exo-open/main.c:625
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "ದಯವಿಟ್ಟು ದೋಷಗಳನ್ನು <%s > ಗೆ ವರದಿ ಮಾಡಿ.\n"
 
-#: ../exo-desktop-item-edit/main.c:213
+#: ../exo-desktop-item-edit/main.c:214
 msgid "No file/folder specified"
 msgstr "ಯಾವುದೇ ಕಡತ / ಕಡತ ಕೋಶ ನಿರ್ದಿಷ್ಟಪಡಿಸಲಾಗಿಲ್ಲ"
 
-#: ../exo-desktop-item-edit/main.c:278
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "\"%s\" ನಿಂದ ವಿಷಯಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ:%s "
 
-#: ../exo-desktop-item-edit/main.c:283
+#: ../exo-desktop-item-edit/main.c:284
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "ಕಡತ \"%s\" ಯಾವುದೇ ಮಾಹಿತಿಯನ್ನು ಒಳಗೊಂಡಿಲ್ಲ"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:296
+#: ../exo-desktop-item-edit/main.c:297
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr " \"%s\" ವಿಷಯಗಳನ್ನು ಪಾರ್ಸ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ:%s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:308
+#: ../exo-desktop-item-edit/main.c:309
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "ಕಡತ  \"%s\" ಗೆ ವಿಧದ ಕೀ ಇಲ್ಲ"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:318
+#: ../exo-desktop-item-edit/main.c:319
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "ಬೆಂಬಲಿಸದ ಡೆಸ್ಕ್ಟಾಪ್ ಕಡತ  ಪ್ರಕಾರ \"%s\""
 
-#: ../exo-desktop-item-edit/main.c:328
+#. add the "Help" button
+#: ../exo-desktop-item-edit/main.c:337
 msgid "_Help"
 msgstr "_ಸಹಾಯ"
 
-#: ../exo-desktop-item-edit/main.c:330
+#. add the "Create"/"Save" button (as default)
+#: ../exo-desktop-item-edit/main.c:347
 msgid "C_reate"
 msgstr "ರ_ಚಿಸಿ"
 
-#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
+#: ../exo-desktop-item-edit/main.c:347 ../exo-desktop-item-edit/main.c:533
 msgid "_Save"
 msgstr "_ಉಳಿಸಿ"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:529
 msgid "Choose filename"
 msgstr "ಕಡತ ಹೆಸರನ್ನು ಆರಿಸಿ"
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "\"%s\" ರಚಿಸಲು ವಿಫಲವಾಗಿದೆ ."
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "\"%s\" ಉಳಿಸಲು ವಿಫಲವಾಗಿದೆ."
@@ -698,12 +701,11 @@ msgstr "GIO-Unix ವೈಶಿಷ್ಟ್ಯಗಳಿಲ್ಲದೆ %s ಅ�
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "\"%s\" ವಿಭಾಗಕ್ಕೆ ಆದ್ಯತೆಯ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಪ್ರಾರಂಭಿಸುವಲ್ಲಿ ವಿಫಲವಾಗಿದೆ."
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:571
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "\"%s\" URI- ಸ್ಕೀಮ್ ಅನ್ನು ಕಂಡುಹಿಡಿಯಲಾಗಲಿಲ್ಲ."
 
-#: ../exo-open/main.c:600
-#, c-format
-msgid "Failed to open URI \"%s\"."
-msgstr "URI \"%s\" ತೆರೆಯಲು ವಿಫಲವಾಗಿದೆ."
+#: ../exo-open/main.c:585
+msgid "Failed to open URI."
+msgstr ""
