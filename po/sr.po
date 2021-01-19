@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-08 00:45+0200\n"
-"PO-Revision-Date: 2020-07-29 12:47+0000\n"
+"POT-Creation-Date: 2020-10-24 12:45+0200\n"
+"PO-Revision-Date: 2020-10-24 21:30+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/xfce/exo/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -351,10 +351,11 @@ msgstr "Прикључница"
 msgid "Select an Application"
 msgstr "Изаберите програм"
 
+#. add the "Cancel" button
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:260
 #: ../exo-desktop-item-edit/exo-die-editor.c:594
 #: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:329 ../exo-desktop-item-edit/main.c:523
+#: ../exo-desktop-item-edit/main.c:343 ../exo-desktop-item-edit/main.c:532
 msgid "_Cancel"
 msgstr "_Откажи"
 
@@ -543,16 +544,16 @@ msgid "Print version information and exit"
 msgstr "Исписује податке о издању и излази"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:174
+#: ../exo-desktop-item-edit/main.c:175
 msgid "[FILE|FOLDER]"
 msgstr "[ДАТОТЕКА|ФАСЦИКЛА]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:186
+#: ../exo-desktop-item-edit/main.c:187
 msgid "Failed to open display"
 msgstr "Нисам успео да отворим приказ"
 
-#: ../exo-desktop-item-edit/main.c:198 ../exo-open/main.c:505
+#: ../exo-desktop-item-edit/main.c:199 ../exo-open/main.c:617
 #, c-format
 msgid ""
 "Copyright (c) %s\n"
@@ -562,7 +563,7 @@ msgid ""
 "\n"
 msgstr "Ауторска права (c) %s\n        ос-цилација е.К. Сва права су задржана.\n\nНаписао Бенедикт Мејер <benny@xfce.org>.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:202 ../exo-open/main.c:509
+#: ../exo-desktop-item-edit/main.c:203 ../exo-open/main.c:621
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -572,66 +573,68 @@ msgid ""
 "\n"
 msgstr "%s долази БЕЗ ИКАКВОГ ЈЕМСТВА\nМожете да расподељујете примерке %s под одредбама\nГнуове мање опште јавне лиценце коју можете пронаћи\nу %s изворном пакету.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:206 ../exo-open/main.c:513
+#: ../exo-desktop-item-edit/main.c:207 ../exo-open/main.c:625
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Грешке пријавите на <%s>.\n"
 
-#: ../exo-desktop-item-edit/main.c:213
+#: ../exo-desktop-item-edit/main.c:214
 msgid "No file/folder specified"
 msgstr "Није наведена датотека/фасцикла"
 
-#: ../exo-desktop-item-edit/main.c:278
+#: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Нисам успео да учитам садржаје са „%s“: %s"
 
-#: ../exo-desktop-item-edit/main.c:283
+#: ../exo-desktop-item-edit/main.c:284
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Датотека „%s“ не садржи податке"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:296
+#: ../exo-desktop-item-edit/main.c:297
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Нисам успео да обрадим садржаје „%s“: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:308
+#: ../exo-desktop-item-edit/main.c:309
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Датотека „%s“ нема кључ врсте"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:318
+#: ../exo-desktop-item-edit/main.c:319
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Неподржана врста датотеке радне површи „%s“"
 
-#: ../exo-desktop-item-edit/main.c:328
+#. add the "Help" button
+#: ../exo-desktop-item-edit/main.c:337
 msgid "_Help"
 msgstr "_Помоћ"
 
-#: ../exo-desktop-item-edit/main.c:330
+#. add the "Create"/"Save" button (as default)
+#: ../exo-desktop-item-edit/main.c:347
 msgid "C_reate"
 msgstr "_Направи"
 
-#: ../exo-desktop-item-edit/main.c:330 ../exo-desktop-item-edit/main.c:524
+#: ../exo-desktop-item-edit/main.c:347 ../exo-desktop-item-edit/main.c:533
 msgid "_Save"
 msgstr "_Сачувај"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:520
+#: ../exo-desktop-item-edit/main.c:529
 msgid "Choose filename"
 msgstr "Изаберите назив датотеке"
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Нисам успео да направим „%s“."
 
-#: ../exo-desktop-item-edit/main.c:627
+#: ../exo-desktop-item-edit/main.c:636
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Нисам успео да сачувам „%s“."
@@ -702,12 +705,11 @@ msgstr "Покретање датотека радне површи није п�
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Нисам успео да покренем омиљени програм за врсту „%s“."
 
-#: ../exo-open/main.c:586
+#: ../exo-open/main.c:571
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Нисам успео да откријем образац адресе за „%s“."
 
-#: ../exo-open/main.c:600
-#, c-format
-msgid "Failed to open URI \"%s\"."
-msgstr "Нисам успео да отворим адресу „%s“."
+#: ../exo-open/main.c:585
+msgid "Failed to open URI."
+msgstr "Нисам успео да отворим УРИ."
