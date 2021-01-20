@@ -43,6 +43,8 @@
 #include <exo/exo-private.h>
 #include <exo/exo-alias.h>
 
+#define FILTER_ENTRY_DELAY 500
+
 /**
  * SECTION: exo-icon-chooser-dialog
  * @title: ExoIconChooserDialog
@@ -74,8 +76,9 @@ static gboolean exo_icon_chooser_dialog_visible_func             (GtkTreeModel  
 static gboolean exo_icon_chooser_dialog_start_interactive_search (ExoIconChooserDialog       *icon_chooser_dialog);
 static void     exo_icon_chooser_dialog_combo_changed            (GtkWidget                  *combo,
                                                                   ExoIconChooserDialog       *icon_chooser_dialog);
-static void     exo_icon_chooser_dialog_entry_changed            (GtkWidget                  *entry,
+static void     exo_icon_chooser_dialog_entry_changed_delay      (GtkEntry                   *entry,
                                                                   ExoIconChooserDialog       *icon_chooser_dialog);
+static gboolean exo_icon_chooser_dialog_entry_changed            (gpointer                    user_data);
 static void     exo_icon_chooser_dialog_entry_clear              (GtkEntry                   *entry,
                                                                   GtkEntryIconPosition        icon_pos,
                                                                   GdkEvent                   *event);
@@ -87,6 +90,7 @@ struct _ExoIconChooserDialogPrivate
 {
   GtkWidget *combo;
   GtkWidget *filter_entry;
+  guint      filter_entry_timeout;
   GtkWidget *icon_chooser;
   GtkWidget *file_chooser;
   gchar     *casefolded_text;
@@ -217,12 +221,13 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   g_object_set (label, "xalign", 0.0f, "yalign", 0.5f, NULL);
   gtk_grid_attach (GTK_GRID (table), label, 0, 1, 1, 1);
 
+  priv->filter_entry_timeout = 0;
   priv->filter_entry = gtk_entry_new ();
   exo_binding_new (G_OBJECT (priv->filter_entry), "visible", G_OBJECT (label), "visible");
   gtk_grid_attach (GTK_GRID (table), priv->filter_entry, 1, 1, 1, 1);
   g_object_set (priv->filter_entry, "hexpand", TRUE, NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), priv->filter_entry);
-  g_signal_connect (G_OBJECT (priv->filter_entry), "changed", G_CALLBACK (exo_icon_chooser_dialog_entry_changed), icon_chooser_dialog);
+  g_signal_connect (G_OBJECT (priv->filter_entry), "changed", G_CALLBACK (exo_icon_chooser_dialog_entry_changed_delay), icon_chooser_dialog);
   gtk_entry_set_icon_from_icon_name (GTK_ENTRY (priv->filter_entry), GTK_ENTRY_ICON_SECONDARY, "edit-clear");
   gtk_entry_set_icon_tooltip_text (GTK_ENTRY (priv->filter_entry), GTK_ENTRY_ICON_SECONDARY, _("Clear search field"));
   gtk_entry_set_icon_sensitive (GTK_ENTRY (priv->filter_entry), GTK_ENTRY_ICON_SECONDARY, FALSE);
@@ -508,9 +513,28 @@ exo_icon_chooser_dialog_combo_changed (GtkWidget            *combo,
 
 
 static void
-exo_icon_chooser_dialog_entry_changed (GtkWidget            *combo,
-                                       ExoIconChooserDialog *icon_chooser_dialog)
+exo_icon_chooser_dialog_entry_changed_delay (GtkEntry             *entry,
+					     ExoIconChooserDialog *icon_chooser_dialog)
 {
+  ExoIconChooserDialogPrivate *priv = exo_icon_chooser_dialog_get_instance_private (icon_chooser_dialog);
+
+  if (priv->filter_entry_timeout != 0)
+    {
+      g_source_remove (priv->filter_entry_timeout);
+      priv->filter_entry_timeout = 0;
+    }
+
+  priv->filter_entry_timeout = g_timeout_add (FILTER_ENTRY_DELAY,
+					      exo_icon_chooser_dialog_entry_changed,
+					      icon_chooser_dialog);
+}
+
+
+
+static gboolean
+exo_icon_chooser_dialog_entry_changed (gpointer user_data)
+{
+  ExoIconChooserDialog        *icon_chooser_dialog = EXO_ICON_CHOOSER_DIALOG (user_data);
   ExoIconChooserDialogPrivate *priv = exo_icon_chooser_dialog_get_instance_private (icon_chooser_dialog);
   const gchar                 *text;
   gchar                       *normalized;
@@ -535,6 +559,10 @@ exo_icon_chooser_dialog_entry_changed (GtkWidget            *combo,
   model = exo_icon_view_get_model (EXO_ICON_VIEW (priv->icon_chooser));
   if (G_LIKELY (model != NULL))
     gtk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (model));
+
+  priv->filter_entry_timeout = 0;
+
+  return FALSE;
 }
 
 
