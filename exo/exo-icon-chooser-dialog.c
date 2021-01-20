@@ -242,7 +242,6 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   g_signal_connect_swapped (priv->icon_chooser, "selection-changed", G_CALLBACK (exo_icon_chooser_dialog_selection_changed), icon_chooser_dialog);
   g_signal_connect_swapped (priv->icon_chooser, "start-interactive-search", G_CALLBACK (exo_icon_chooser_dialog_start_interactive_search), icon_chooser_dialog);
   gtk_container_add (GTK_CONTAINER (scrolled_window), priv->icon_chooser);
-  gtk_window_set_focus (GTK_WINDOW (icon_chooser_dialog), priv->icon_chooser);
   gtk_widget_show (priv->icon_chooser);
 
   /* setup the icon renderer */
@@ -280,8 +279,11 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
   /* update the model */
   exo_icon_chooser_dialog_set_model (icon_chooser_dialog);
 
-  /* default to "Application Icons", since thats what users probably expect to see */
-  gtk_combo_box_set_active (GTK_COMBO_BOX (priv->combo), EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS);
+  /* default to "All Icons", as the user will be able to narrow the search using the interactive search */
+  gtk_combo_box_set_active (GTK_COMBO_BOX (priv->combo), EXO_ICON_CHOOSER_CONTEXT_ALL);
+
+  /* start with interactive search */
+  exo_icon_chooser_dialog_start_interactive_search (icon_chooser_dialog);
 }
 
 
