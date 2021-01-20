@@ -518,9 +518,9 @@ exo_icon_chooser_dialog_entry_changed_delay (GtkEntry             *entry,
 {
   ExoIconChooserDialogPrivate *priv = exo_icon_chooser_dialog_get_instance_private (icon_chooser_dialog);
 
-  if (priv->filter_entry_timeout)
+  if (priv->filter_entry_timeout != 0)
     {
-      g_source_remove(priv->filter_entry_timeout);
+      g_source_remove (priv->filter_entry_timeout);
       priv->filter_entry_timeout = 0;
     }
 
@@ -561,6 +561,7 @@ exo_icon_chooser_dialog_entry_changed (gpointer user_data)
     gtk_tree_model_filter_refilter (GTK_TREE_MODEL_FILTER (model));
 
   priv->filter_entry_timeout = 0;
+
   return FALSE;
 }
 
