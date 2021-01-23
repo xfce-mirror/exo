@@ -283,10 +283,9 @@ exo_icon_chooser_model_get_value (GtkTreeModel *tree_model,
                                   GValue       *value)
 {
   ExoIconChooserModelItem *item;
-  ExoIconChooserModel     *model = EXO_ICON_CHOOSER_MODEL (tree_model);
 
-  _exo_return_if_fail (EXO_IS_ICON_CHOOSER_MODEL (model));
-  _exo_return_if_fail (iter->stamp == model->stamp);
+  _exo_return_if_fail (EXO_IS_ICON_CHOOSER_MODEL (tree_model));
+  _exo_return_if_fail (iter->stamp == EXO_ICON_CHOOSER_MODEL (tree_model)->stamp);
 
   /* determine the item for the list position */
   item = ((GList *) iter->user_data)->data;
