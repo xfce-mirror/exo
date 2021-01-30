@@ -3,82 +3,34 @@
                       "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
 [
   <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+  <!ENTITY % gtkdocentities SYSTEM "xml/gtkdocentities.ent">
+  %gtkdocentities;
 ]>
 
-<book id="index" lang="en">
+<book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
   <bookinfo>
-    <title>Exo Reference Manual</title>
-    <releaseinfo>Version <xi:include href="version.xml" parse="text"/></releaseinfo>
-    <pubdate>December 2019</pubdate>
-
+    <title>&package_name; Reference Manual</title>
+    <releaseinfo>
+      For &package_string;.
+      The latest version of this documentation can be found on-line at
+      <ulink role="online-location" url="https://developer.xfce.org/&package_name;/index.html">https://developer.xfce.org/&package_name;/</ulink>.
+    </releaseinfo>
     <copyright>
-      <year>2004</year>
-      <year>2005</year>
-      <year>2006</year>
-      <year>2007</year>
+      <year>2004-2007</year>
       <holder>os-cillation e.K.</holder>
     </copyright>
 
     <copyright>
-      <year>2009</year>
-      <year>2010</year>
-      <year>2011</year>
-      <year>2012</year>
-      <year>2013</year>
-      <year>2014</year>
-      <year>2015</year>
-      <year>2016</year>
-      <year>2017</year>
-      <year>2018</year>
-      <year>2019</year>
+      <year>2009-2021</year>
       <holder>Xfce Development Team</holder>
     </copyright>
-
-    <legalnotice id="legalnotice">
-      <para>
-        Permission is granted to copy, distribute and/or modify this document
-        under the terms of the GNU Free Documentation License, Version 1.1 or
-        any later version published by the Free Software Foundation; with no
-        Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
-        Texts. The complete license text is available from the <ulink
-        type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.
-      </para>
-    </legalnotice>
-
-    <authorgroup>
-      <author>
-        <firstname>Benedikt</firstname>
-        <surname>Meurer</surname>
-        <affiliation>
-          <address><email>benny@xfce.org</email></address>
-          <orgname>os-cillation</orgname>
-          <orgdiv>System development</orgdiv>
-          <jobtitle>Software developer</jobtitle>
-        </affiliation>
-      </author>
-      <author>
-        <firstname>Jannis</firstname>
-        <surname>Pohlmann</surname>
-        <affiliation>
-          <address><email>jannis@xfce.org</email></address>
-        </affiliation>
-      </author>
-      <author>
-        <firstname>Sean</firstname>
-        <surname>Davis</surname>
-        <affiliation>
-          <address><email>bluesabre@xfce.org</email></address>
-        </affiliation>
-      </author>
-    </authorgroup>
   </bookinfo>
 
   <part id="exo-overview">
     <title>Overview</title>
     <para>
-      <ulink type="http" url="http://libexo.os-cillation.com/">libexo</ulink> is an extension
-      library for <ulink url="https://xfce.org/" type="http">Xfce</ulink>,
-      developed by <ulink url="http://www.os-cillation.com/" type="http">os-cillation</ulink>.
+      exo is an extension library for <ulink url="https://xfce.org/" type="http">Xfce</ulink>,
+      originally developed by <ulink url="https://www.os-cillation.com/" type="http">os-cillation</ulink>.
       While Xfce comes with quite a few libraries that are targeted at desktop development,
       libexo is targeted at application developement - in particular, developing applications for
       the Xfce Desktop Environment.
@@ -262,62 +214,54 @@
 
     <index id="api-index-full">
       <title>All symbols</title>
-      <xi:include href="xml/api-index-full.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.3.1">
       <title>Added in 0.3.1</title>
-      <xi:include href="xml/api-index-0.3.1.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.3.1.1">
       <title>Added in 0.3.1.1</title>
-      <xi:include href="xml/api-index-0.3.1.1.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.3.1.3">
       <title>Added in 0.3.1.3</title>
-      <xi:include href="xml/api-index-0.3.1.3.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.3.1.5">
       <title>Added in 0.3.1.5</title>
-      <xi:include href="xml/api-index-0.3.1.5.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.3.1.9">
       <title>Added in 0.3.1.9</title>
-      <xi:include href="xml/api-index-0.3.1.9.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.3.3">
       <title>Added in 0.3.3</title>
-      <xi:include href="xml/api-index-0.3.3.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.4.0">
       <title>Added in 0.4.0</title>
-      <xi:include href="xml/api-index-0.4.0.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.5.0">
       <title>Added in 0.5.0</title>
-      <xi:include href="xml/api-index-0.5.0.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.7.1">
       <title>Added in 0.7.1</title>
-      <xi:include href="xml/api-index-0.7.1.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.10.2">
       <title>Added in 0.10.2</title>
-      <xi:include href="xml/api-index-0.10.2.xml"><xi:fallback /></xi:include>
     </index>
 
     <index id="api-index-0.11.4">
       <title>Added in 0.11.4</title>
-      <xi:include href="xml/api-index-0.11.4.xml"><xi:fallback /></xi:include>
+    </index>
+
+    <index id="api-index-0.11.5">
+      <title>Added in 0.11.5</title>
     </index>
 
     <index id="api-index-deprecated">
@@ -326,14 +270,10 @@
     </index>
   </chapter>
 
-  <chapter>
-    <title>Visual Index</title>
-    <xi:include href="visual-index.xml"/>
-  </chapter>
-
   <index>
     <title>Index</title>
   </index>
+
 
 </book>
 
