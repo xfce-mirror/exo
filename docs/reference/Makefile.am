@@ -13,17 +13,17 @@ DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.xml
 SCAN_OPTIONS=--deprecated-guards="EXO_DISABLE_DEPRECATED"
 
 # The directory containing the source code. Relative to $(srcdir)
-DOC_SOURCE_DIR=../..
+DOC_SOURCE_DIR=$(top_srcdir)
 
 # Extra options to supply to gtkdoc-mkdb
-MKDB_OPTIONS=--output-format=xml --sgml-mode --name-space=exo
+MKDB_OPTIONS=--output-format=xml --xml-mode
 
 # Extra options to supply to gtkdoc-fixref
 FIXXREF_OPTIONS=
 
 # Used for dependencies
-HFILE_GLOB=$(top_srcdir)/exo/*.h
-CFILE_GLOB=$(top_srcdir)/exo/*.c
+HFILE_GLOB=
+CFILE_GLOB=
 
 # Header files to ignore when scanning
 IGNORE_HFILES=
@@ -32,14 +32,10 @@ IGNORE_HFILES=
 EXTRA_HFILES=
 
 # Images to copy into HTML directory
-HTML_IMAGES =								\
-	$(srcdir)/images/exo-gtk-file-chooser-add-thumbnail-preview.png	\
-	$(srcdir)/images/exo-icon-chooser-dialog.png
+HTML_IMAGES =
 
 # Extra SGML files that are included by DOC_MAIN_SGML_FILE
-content_files = 							\
-	version.xml							\
-	visual-index.xml
+content_files =
 
 # CFLAGS and LDFLAGS for compiling scan program. Only needed
 # if $(DOC_MODULE).types is non-empty.
@@ -57,19 +53,10 @@ include $(top_srcdir)/gtk-doc.make
 
 # Other files to distribute
 EXTRA_DIST += 								\
-	exo-open.1							\
-	version.xml.in
+	exo-open.1
 
 # manual pages
 man_MANS =								\
 	exo-open.1
-
-if MAINTAINER_MODE
-%.1: %.xml
-	xsltproc -nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
-endif
-
-# required for gtk-doc
-dist-hook: all
 
 # vi:set ts=8 sw=8 noet ai nocindent syntax=automake:
