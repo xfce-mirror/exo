@@ -35,7 +35,7 @@ dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2004-2010 os-cillation.
 Copyright (c) 2004-2019 Xfce Development Team])
 AC_INIT([exo], [libexo_version], [https://gitlab.xfce.org/xfce/exo])
-AC_PREREQ([2.60])
+AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
 AC_REVISION([@REVISION@])
 AC_CANONICAL_TARGET()
@@ -70,18 +70,11 @@ dnl ******************************
 dnl *** Set helper path prefix ***
 dnl ******************************
 AC_ARG_WITH([helper-path-prefix],
-            [AC_HELP_STRING([--with-helper-path-prefix=PATH],
+            [AS_HELP_STRING([--with-helper-path-prefix=PATH],
                             [Path prefix under which helper executables will be installed (default: $libdir)])],
             [HELPER_PATH_PREFIX="$withval"],
             [HELPER_PATH_PREFIX="$libdir"])
 AC_SUBST([HELPER_PATH_PREFIX])
-
-dnl *******************************
-dnl *** Check for UNIX variants ***
-dnl *******************************
-AC_AIX()
-AC_ISC_POSIX()
-AC_MINIX()
 
 dnl ********************************
 dnl *** Check for Win32 variants ***
@@ -117,7 +110,6 @@ AC_CHECK_PROGS([PERL], [perl5 perl])
 dnl ***************************************
 dnl *** Check for standard header files ***
 dnl ***************************************
-AC_HEADER_STDC()
 AC_CHECK_HEADERS([assert.h errno.h fcntl.h fnmatch.h libintl.h \
                   locale.h math.h mmintrin.h paths.h regex.h \
                   signal.h stdarg.h string.h sys/mman.h \
@@ -131,13 +123,13 @@ AC_FUNC_MMAP()
 dnl ***************************************************************************
 dnl *** Check for strftime() extensions                                     ***
 dnl ***                                                                     ***
-dnl *** AC_TRY_RUN must be able to build and execute programs natively on   ***
+dnl *** AC_RUN_IFELSE must be able to build and execute programs natively on   ***
 dnl *** the build system, so it fails when cross-compiling unless given an  ***
 dnl *** action in the fourth parameter.  This sets its results in a cache   ***
 dnl *** variable that users can override to specify target system behavior. ***
 dnl ***************************************************************************
 AC_CACHE_CHECK([for strftime %E and %O modifiers],
-  [ac_cv_have_strftime_extension], [AC_TRY_RUN([
+  [ac_cv_have_strftime_extension], [AC_RUN_IFELSE([AC_LANG_SOURCE([
   #include <string.h>
   #include <time.h>
   int
@@ -150,7 +142,7 @@ AC_CACHE_CHECK([for strftime %E and %O modifiers],
       return 0;
     return 1;
   }
-    ],
+    ])],
     [ac_cv_have_strftime_extension=yes],
     [ac_cv_have_strftime_extension=no],
     [ac_cv_have_strftime_extension=cross])])
@@ -161,7 +153,7 @@ fi
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
-XDT_I18N([@LINGUAS@], [exo-libexo_version_api()])
+XDT_I18N()
 
 dnl ***********************************
 dnl *** Check for required packages ***
@@ -182,7 +174,7 @@ XDT_CHECK_LIBX11_REQUIRE()
 dnl *************************
 dnl *** Check for gtk-doc ***
 dnl *************************
-GTK_DOC_CHECK([1.9])
+GTK_DOC_CHECK([1.20])
 
 dnl ***********************************
 dnl *** Check for debugging support ***
@@ -197,7 +189,7 @@ XDT_FEATURE_LINKER_OPTS()
 dnl ****************************************
 dnl *** Check for ELF visibility support ***
 dnl ****************************************
-AC_ARG_ENABLE([visibility], AC_HELP_STRING([--disable-visibility], [Do not use ELF visibility attributes]), [], [enable_visibility=yes])
+AC_ARG_ENABLE([visibility], AS_HELP_STRING([--disable-visibility],[Do not use ELF visibility attributes]), [], [enable_visibility=yes])
 have_gnuc_visibility=no
 if test x"$enable_visibility" != x"no"; then
   dnl Check whether the compiler supports the visibility attribute
@@ -233,11 +225,11 @@ dnl *** Use GSEAL if possible         ***
 dnl *************************************
 XDT_SUPPORTED_FLAGS([CFLAGS], [-DGSEAL_ENABLE])
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 docs/Makefile
 docs/reference/Makefile
-docs/reference/version.xml
+docs/man/Makefile
 exo/Makefile
 exo/exo-2.pc
 exo/exo-config.h
@@ -250,6 +242,7 @@ pixmaps/Makefile
 po/Makefile.in
 tests/Makefile
 ])
+AC_OUTPUT
 
 dnl ***************************
 dnl *** Print configuration ***
