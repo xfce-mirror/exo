@@ -512,11 +512,9 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
   icons = gtk_icon_theme_list_icons (icon_theme, NULL);
   for (lp = icons; lp != NULL; lp = lp->next)
     {
-      /* Skip symbolic icons since they lead to double processing */
+      /* skip symbolic icons since they lead to double processing */
       if (icon_name_is_symbolic (lp->data))
-      {
         continue;
-      }
 
       item = g_slice_new0 (ExoIconChooserModelItem);
       item->icon_name = lp->data;
@@ -550,11 +548,12 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
       icons = gtk_icon_theme_list_icons (icon_theme, CONTEXT_NAMES[context]);
       for (lp = icons; lp != NULL; lp = lp->next)
         {
-          /* Skip symbolic icons since they lead to double processing */
+          /* skip symbolic icons since they lead to double processing */
           if (icon_name_is_symbolic (lp->data))
-          {
-            continue;
-          }
+            {
+              g_free (lp->data);
+              continue;
+            }
 
           /* lookup the item in one of the hash tables */
           item = g_hash_table_lookup (items, lp->data);
@@ -562,7 +561,7 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
             item = g_hash_table_lookup (symlink_items, lp->data);
 
           /* set the categories */
-          if (item != NULL)
+          if (item != NULL && item->context == EXO_ICON_CHOOSER_CONTEXT_OTHER)
             item->context = context;
 
           g_free (lp->data);
@@ -771,6 +770,43 @@ _exo_icon_chooser_model_get_iter_for_icon_name (ExoIconChooserModel *model,
           iter->stamp = model->stamp;
           iter->user_data = lp;
           return TRUE;
+        }
+    }
+
+  return FALSE;
+}
+
+
+
+/**
+ * 
+ */
+gboolean
+_exo_icon_chooser_model_strstr_other_names (ExoIconChooserModel *model,
+                                            GtkTreeIter         *iter,
+                                            const gchar         *str)
+{
+  ExoIconChooserModelItem *item;
+  guint                    i;
+  const gchar             *other_name;
+
+  _exo_return_val_if_fail (EXO_IS_ICON_CHOOSER_MODEL (model), FALSE);
+  _exo_return_val_if_fail (str != NULL, FALSE);
+  _exo_return_val_if_fail (iter != NULL, FALSE);
+
+  /* determine the item */
+  item = ((GList *) iter->user_data)->data;
+
+  /* look in the alternative names */
+  if (item && item->other_names != NULL)
+    {
+      for (i = 0; i < item->other_names->len; ++i)
+        {
+          other_name = g_ptr_array_index (item->other_names, i);
+          // g_utf8_normalize
+          // g_utf8_casefold
+          if (strstr (other_name, str) != 0)
+            return TRUE;
         }
     }
 

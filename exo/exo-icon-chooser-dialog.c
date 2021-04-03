@@ -442,6 +442,10 @@ exo_icon_chooser_dialog_visible_func (GtkTreeModel *model,
 
       visible = (strstr (name_casefolded, priv->casefolded_text) != NULL);
 
+      /* check alternative names also */
+      if (!visible)
+        visible = _exo_icon_chooser_model_strstr_other_names (EXO_ICON_CHOOSER_MODEL (model), iter, priv->casefolded_text);
+
       g_free (name_casefolded);
 
       return visible;
