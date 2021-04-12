@@ -3565,6 +3565,7 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
           {
             GdkRectangle cell_area, aligned_area;
 
+            cell_area.x = cell_area.y = 0;
             cell_area.width = req.width;
             cell_area.height = req.height;
 
