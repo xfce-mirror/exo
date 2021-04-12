@@ -5,7 +5,6 @@ SUBDIRS =								\
 	exo-desktop-item-edit						\
 	exo-open							\
 	docs								\
-	icons								\
 	pixmaps								\
 	po								\
 	tests
