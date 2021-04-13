@@ -77,6 +77,8 @@ static gboolean           exo_icon_chooser_model_iter_parent        (GtkTreeMode
                                                                      GtkTreeIter               *child);
 static void               exo_icon_chooser_model_icon_theme_changed (GtkIconTheme              *icon_theme,
                                                                      ExoIconChooserModel       *model);
+static gint               exo_icon_chooser_model_item_compare       (gconstpointer              data_a,
+								     gconstpointer              data_b);
 static void               exo_icon_chooser_model_item_to_list       (gpointer                   key,
                                                                      gpointer                   value,
                                                                      gpointer                   data);
@@ -281,10 +283,9 @@ exo_icon_chooser_model_get_value (GtkTreeModel *tree_model,
                                   GValue       *value)
 {
   ExoIconChooserModelItem *item;
-  ExoIconChooserModel     *model = EXO_ICON_CHOOSER_MODEL (tree_model);
 
-  _exo_return_if_fail (EXO_IS_ICON_CHOOSER_MODEL (model));
-  _exo_return_if_fail (iter->stamp == model->stamp);
+  _exo_return_if_fail (EXO_IS_ICON_CHOOSER_MODEL (tree_model));
+  _exo_return_if_fail (iter->stamp == EXO_ICON_CHOOSER_MODEL (tree_model)->stamp);
 
   /* determine the item for the list position */
   item = ((GList *) iter->user_data)->data;
@@ -577,6 +578,7 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
   icons = NULL;
   g_hash_table_foreach (items, exo_icon_chooser_model_item_to_list, &icons);
   g_hash_table_destroy (items);
+  icons = g_list_sort (icons, exo_icon_chooser_model_item_compare);
 
   /* insert the items into the model */
   iter.stamp = model->stamp;
@@ -621,7 +623,7 @@ exo_icon_chooser_model_item_to_list (gpointer key,
   GList                   **list = data;
   ExoIconChooserModelItem  *item = value;
 
-  *list = g_list_insert_sorted (*list, item, exo_icon_chooser_model_item_compare);
+  *list = g_list_insert (*list, item, 0);
 }
 
 
