@@ -9,6 +9,7 @@
 # Adolfo Jayme-Barrientos, 2014
 # Alfredo Quintero <alfredomob@gmail.com>, 2019
 # Casper casper, 2019-2020
+# e49097353bae6e06d169bea93a448e3e, 2017-2018
 # e49097353bae6e06d169bea93a448e3e, 2017
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
 # gabrieltandil <gabriel.tandil@gmail.com>, 2015
@@ -17,13 +18,14 @@
 # prflr88 <prflr88@gmail.com>, 2013-2015
 # prflr88 <prflr88@gmail.com>, 2017
 # Patricio Carr <pato@patocarr.com>, 2005
+# prflr88 <prflr88@gmail.com>, 2017
 # Toni Estévez <toni.estevez@gmail.com>, 2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-24 12:45+0200\n"
-"PO-Revision-Date: 2021-03-07 13:41+0000\n"
+"PO-Revision-Date: 2021-04-24 09:04+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/exo/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +64,7 @@ msgstr "tamaño"
 
 #: ../exo/exo-cell-renderer-icon.c:202
 msgid "The size of the icon to render in pixels."
-msgstr "El tamaño del icono para representar en píxeles."
+msgstr "El tamaño del icono que se representará en píxeles."
 
 #: ../exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
@@ -77,7 +79,7 @@ msgstr "No se ha podido leer el archivo «%s»: %s"
 #: ../exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "No se ha podido cargar la imagen «%s»: motivo desconocido, probablemente el archivo está dañado."
+msgstr "No se ha podido cargar la imagen «%s»: motivo desconocido, probablemente el archivo está dañado"
 
 #: ../exo/exo-gtk-extensions.c:219
 #, c-format
@@ -157,7 +159,7 @@ msgstr "Archivos de imágenes"
 #. EXO_ICON_CHOOSER_CONTEXT_NO_ICON
 #: ../exo/exo-icon-chooser-dialog.c:134
 msgid "No Icon"
-msgstr "Sin Icono"
+msgstr "Sin icono"
 
 #. setup the context combo box
 #: ../exo/exo-icon-chooser-dialog.c:200
@@ -187,7 +189,7 @@ msgstr "Número de columnas"
 
 #: ../exo/exo-icon-view.c:742
 msgid "Number of columns to display"
-msgstr "Número de columnas para mostrar"
+msgstr "Número de columnas que se mostrarán"
 
 #: ../exo/exo-icon-view.c:756
 msgid "Enable Search"
@@ -195,15 +197,15 @@ msgstr "Activar la búsqueda"
 
 #: ../exo/exo-icon-view.c:757
 msgid "View allows user to search through columns interactively"
-msgstr "La vista permite al usuario buscar en las columnas interactivamente"
+msgstr "Vista que permite al usuario buscar en las columnas de forma interactiva"
 
 #: ../exo/exo-icon-view.c:774
 msgid "Width for each item"
-msgstr "Ancho de cada elemento"
+msgstr "Anchura de cada elemento"
 
 #: ../exo/exo-icon-view.c:775
 msgid "The width used for each item"
-msgstr "El ancho usado para cada elemento"
+msgstr "La anchura usada para cada elemento"
 
 #: ../exo/exo-icon-view.c:793
 msgid "Layout mode"
@@ -227,7 +229,7 @@ msgstr "Columna de marcado"
 
 #: ../exo/exo-icon-view.c:828
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Columna modelo para recuperar el texto si se usa el marcado Pango"
+msgstr "Columna modelo usada para recuperar el texto si se usa el marcado Pango"
 
 #: ../exo/exo-icon-view.c:842
 msgid "Icon View Model"
@@ -252,7 +254,7 @@ msgstr "Columna del búfer de píxeles"
 
 #: ../exo/exo-icon-view.c:874
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Columna modelo para recuperar el búfer de píxeles del icono"
+msgstr "Columna modelo usada para recuperar el búfer de píxeles del icono"
 
 #: ../exo/exo-icon-view.c:891
 msgid "Icon column"
@@ -261,7 +263,7 @@ msgstr "Columna de iconos"
 #: ../exo/exo-icon-view.c:892
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
-msgstr "Columna modelo para recuperar la ruta absoluta de un archivo de imagen para representar"
+msgstr "Columna modelo usada para recuperar la ruta absoluta de un archivo de imagen que se va a representar"
 
 #: ../exo/exo-icon-view.c:907
 msgid "Reorderable"
@@ -285,7 +287,7 @@ msgstr "Columna de búsqueda"
 
 #: ../exo/exo-icon-view.c:939
 msgid "Model column to search through when searching through item"
-msgstr "Columna modelo para buscar entre elementos"
+msgstr "Columna modelo usada para buscar entre elementos"
 
 #: ../exo/exo-icon-view.c:953
 msgid "Selection mode"
@@ -311,7 +313,7 @@ msgstr "Tiempo de espera para un solo clic"
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
-msgstr "El tiempo después de la cual el elemento bajo el cursor del ratón se seleccionará automáticamente en el modo de un solo clic"
+msgstr "El tiempo que transcurre para que el elemento bajo el cursor del ratón se seleccione automáticamente en el modo de un solo clic"
 
 #: ../exo/exo-icon-view.c:1002
 msgid "Spacing"
@@ -327,7 +329,7 @@ msgstr "Columna de texto"
 
 #: ../exo/exo-icon-view.c:1019
 msgid "Model column used to retrieve the text from"
-msgstr "Columna modelo para recuperar el texto"
+msgstr "Columna modelo usada para recuperar el texto"
 
 #: ../exo/exo-thumbnail-preview.c:112
 msgid "Preview"
@@ -384,19 +386,19 @@ msgstr "Archivos ejecutables"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:286
 msgid "Perl Scripts"
-msgstr "Secuencias de órdenes de Perl"
+msgstr "Guiones de Perl"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:292
 msgid "Python Scripts"
-msgstr "Secuencias de órdenes de Python"
+msgstr "Guiones de Python"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:298
 msgid "Ruby Scripts"
-msgstr "Secuencias de órdenes de Ruby"
+msgstr "Guiones de Ruby"
 
 #: ../exo-desktop-item-edit/exo-die-command-entry.c:304
 msgid "Shell Scripts"
-msgstr "Secuencias de órdenes de shell"
+msgstr "Guiones del intérprete de órdenes"
 
 #: ../exo-desktop-item-edit/exo-die-desktop-model.c:288
 #, c-format
@@ -464,7 +466,7 @@ msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
 "notification."
-msgstr "Seleccione esta opción para activar la notificación de inicio cuando la orden se ejecute desde el gestor de archivos o desde el menú. No todas las aplicaciones admiten la notificación de inicio."
+msgstr "Seleccione esta opción para activar la notificación de inicio al ejecutar la orden desde el gestor de archivos o desde el menú. No todas las aplicaciones admiten la notificación de inicio."
 
 #. TRANSLATORS: Check button label in "Create Launcher" dialog, make sure to
 #. avoid mnemonic conflicts
@@ -572,7 +574,7 @@ msgid ""
 "\n"
 "Written by Benedikt Meurer <benny@xfce.org>.\n"
 "\n"
-msgstr "Derechos de autor (c) %s\n        os-cillation e.K. Todos los derechos reservados.\n\nEscrito por Benedikt Meurer <benny@xfce.org>.\n\n"
+msgstr "Copyright (c) %s\n        os-cillation e.K. Todos los derechos reservados.\n\nEscrito por Benedikt Meurer <benny@xfce.org>.\n\n"
 
 #: ../exo-desktop-item-edit/main.c:203 ../exo-open/main.c:621
 #, c-format
@@ -582,12 +584,12 @@ msgid ""
 "the GNU Lesser General Public License which can be found in the\n"
 "%s source package.\n"
 "\n"
-msgstr "%s se ofrece ABSOLUTAMENTE SIN NINGUNA GARANTÍA,\nPuede redistribuir copias de %s según los términos de\nla Licencia Pública General Reducida de GNU, que se encuentra\nen el paquete de código fuente de %s.\n\n"
+msgstr "%s se ofrece SIN NINGÚN TIPO DE GARANTÍA,\nPuede redistribuir copias de %s según los términos de\nla Licencia Pública General Reducida de GNU, que se encuentra\nen el paquete de código fuente de %s.\n\n"
 
 #: ../exo-desktop-item-edit/main.c:207 ../exo-open/main.c:625
 #, c-format
 msgid "Please report bugs to <%s>.\n"
-msgstr "Informe de los errores a <%s>.\n"
+msgstr "Informe de errores a <%s>.\n"
 
 #: ../exo-desktop-item-edit/main.c:214
 msgid "No file/folder specified"
@@ -596,7 +598,7 @@ msgstr "No se ha especificado el archivo o la carpeta"
 #: ../exo-desktop-item-edit/main.c:279
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "No se ha podido cargar contenido desde «%s»: %s"
+msgstr "No se ha podido cargar el contenido de «%s»: %s"
 
 #: ../exo-desktop-item-edit/main.c:284
 #, c-format
@@ -619,12 +621,12 @@ msgstr "El archivo «%s» no tiene la clave de tipo"
 #: ../exo-desktop-item-edit/main.c:319
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "El tipo de archivo de escritorio «%s» es incompatible"
+msgstr "Tipo de archivo de escritorio no compatible «%s»"
 
 #. add the "Help" button
 #: ../exo-desktop-item-edit/main.c:337
 msgid "_Help"
-msgstr "_Ayuda"
+msgstr "Ay_uda"
 
 #. add the "Create"/"Save" button (as default)
 #: ../exo-desktop-item-edit/main.c:347
@@ -660,25 +662,25 @@ msgstr "     exo-open --launch TIPO [PARÁMETROS...]"
 
 #: ../exo-open/main.c:112
 msgid "  -?, --help                          Print this help message and exit"
-msgstr "  -h, --help        Mostrar este mensaje de ayuda y salir"
+msgstr "  -?, --help                          Mostrar este mensaje y salir"
 
 #: ../exo-open/main.c:113
 msgid ""
 "  -V, --version                       Print version information and exit"
-msgstr "  -V, --version     Mostrar información sobre la versión y salir"
+msgstr "  -V, --version                       Mostrar información de la versión y salir"
 
 #: ../exo-open/main.c:115
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr "  --launch TIPO [PARÁMETROS...]       Lanza la aplicación preferida del\n                                      TIPO con los PARÁMETROS opcionales, donde el\n                                      TIPO es uno de los siguientes valores."
+msgstr "  --launch TIPO [PARÁMETROS...]       Lanza la aplicación preferida del\n                                      TIPO con los PARÁMETROS opcionales, donde\n                                      TIPO es uno de los valores siguientes."
 
 #: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr "  --working-directory CARPETA           Carpeta de trabajo predeterminada para las aplicaciones\n                                       cuando se usa la opción --launch."
+msgstr "  --working-directory CARPETA         Carpeta de trabajo predeterminada para las aplicaciones\n                                      al usar la opción --launch."
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
@@ -693,7 +695,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr "  WebBrowser       - El navegador web preferido\n  MailReader       - El lector de correo preferido.\n  FileManager      - El gestor de archivos preferido.\n  TerminalEmulator - El emulador de terminal preferido."
+msgstr "  WebBrowser       - El navegador web preferido.\n  MailReader       - El lector de correo preferido.\n  FileManager      - El gestor de archivos preferido.\n  TerminalEmulator - El emulador de terminal preferido."
 
 #: ../exo-open/main.c:133
 msgid ""
