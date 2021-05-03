@@ -61,6 +61,15 @@ enum
   PROP_SINGLE_CLICK_TIMEOUT,
 };
 
+/* Signal identifiers */
+enum
+{
+  /* TODO: #32 - treeview signals to emit when searching */
+  SEARCH_IN_PROGRESS,
+  SEARCH_CONCLUDED,
+  LAST_SIGNAL
+};
+
 
 
 static void     exo_tree_view_finalize                      (GObject          *object);
@@ -88,6 +97,8 @@ static gboolean exo_tree_view_move_cursor                   (GtkTreeView      *v
 static gboolean exo_tree_view_single_click_timeout          (gpointer          user_data);
 static void     exo_tree_view_single_click_timeout_destroy  (gpointer          user_data);
 
+static void     exo_tree_view_emit_search_status            (GtkWidget        *widget,
+                                                             GdkEventFocus    *event);
 
 
 struct _ExoTreeViewPrivate
@@ -109,9 +120,13 @@ struct _ExoTreeViewPrivate
 
   /* the path below the pointer or NULL */
   GtkTreePath *hover_path;
+
+  /* a custom search entry */
+  GtkWidget   *search_entry;
 };
 
 
+static guint tree_view_signals[LAST_SIGNAL];
 
 G_DEFINE_TYPE_WITH_PRIVATE (ExoTreeView, exo_tree_view, GTK_TYPE_TREE_VIEW)
 
@@ -174,6 +189,38 @@ exo_tree_view_class_init (ExoTreeViewClass *klass)
                                                       _("The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"),
                                                       0, G_MAXUINT, 0,
                                                       EXO_PARAM_READWRITE));
+
+  /* TODO: #32 Create the signal for search-in-progress */
+  /**
+   * ExoTreeView::search-in-progress:
+   * @tree_view: a #ExoTreeView.
+   * @searching: Is search in progress (usually true)
+   *
+   * The ::search-in-progress signal is emitted when the search_entry gains focus
+   */
+  tree_view_signals[SEARCH_IN_PROGRESS] =
+    g_signal_new (I_("search-in-progress"),
+                    G_TYPE_FROM_CLASS (gobject_class),
+                    G_SIGNAL_RUN_LAST,
+                    0, NULL, NULL,
+                    g_cclosure_marshal_VOID__BOOLEAN,
+                    G_TYPE_NONE, 1, G_TYPE_BOOLEAN);
+
+  /* TODO: #32 Create the signal for search-concluded */
+  /**
+   * ExoTreeView::search-concluded
+   * @tree_view: a #ExoTreeView
+   * @searching: Is search in progress (usually false)
+   *
+   * The ::search-concluded signal is emitted when the search_entry looses focus
+   */
+  tree_view_signals[SEARCH_CONCLUDED] =
+    g_signal_new (I_("search-concluded"),
+                    G_TYPE_FROM_CLASS (gobject_class),
+                    G_SIGNAL_RUN_LAST,
+                    0, NULL, NULL,
+                    g_cclosure_marshal_VOID__BOOLEAN,
+                    G_TYPE_NONE, 1, G_TYPE_BOOLEAN);
 }
 
 
@@ -181,9 +228,20 @@ exo_tree_view_class_init (ExoTreeViewClass *klass)
 static void
 exo_tree_view_init (ExoTreeView *tree_view)
 {
+
   /* grab a pointer on the private data */
   tree_view->priv = exo_tree_view_get_instance_private (tree_view);
   tree_view->priv->single_click_timeout_id = -1;
+  tree_view->priv->search_entry = gtk_entry_new ();
+
+  g_signal_connect_swapped (G_OBJECT (tree_view->priv->search_entry),
+                            "focus-in-event",
+                            G_CALLBACK (exo_tree_view_emit_search_status), tree_view);
+  g_signal_connect_swapped (G_OBJECT (tree_view->priv->search_entry),
+                            "focus-out-event",
+                            G_CALLBACK (exo_tree_view_emit_search_status), tree_view);
+
+  gtk_tree_view_set_search_entry (GTK_TREE_VIEW (tree_view), GTK_ENTRY (tree_view->priv->search_entry));
 }
 
 
@@ -200,6 +258,14 @@ exo_tree_view_finalize (GObject *object)
   /* be sure to release the hover path */
   if (G_UNLIKELY (tree_view->priv->hover_path == NULL))
     gtk_tree_path_free (tree_view->priv->hover_path);
+
+  if (G_UNLIKELY (tree_view->priv->search_entry == NULL)) {
+    g_signal_handlers_disconnect_by_func (G_OBJECT (tree_view->priv->search_entry),
+                                          G_CALLBACK (exo_tree_view_emit_search_status),
+                                          tree_view);
+    gtk_tree_view_set_search_entry (GTK_TREE_VIEW (tree_view), NULL);
+    // TODO: #32 Do we free the entry??
+  }
 
   (*G_OBJECT_CLASS (exo_tree_view_parent_class)->finalize) (object);
 }
@@ -718,8 +784,21 @@ exo_tree_view_single_click_timeout_destroy (gpointer user_data)
   EXO_TREE_VIEW (user_data)->priv->single_click_timeout_id = -1;
 }
 
-
-
+static void
+exo_tree_view_emit_search_status (GtkWidget *widget, GdkEventFocus *event)
+{
+  ExoTreeView *tree_view = EXO_TREE_VIEW (widget);
+  if (event->in) {
+    /* TODO: #32 - search has started */
+    g_debug("Search is in progress");
+    g_signal_emit (tree_view, tree_view_signals[SEARCH_IN_PROGRESS], TRUE);
+  }
+  else {
+    /* TODO: #32 - search has ended */
+    g_debug("Search has stopped");
+    g_signal_emit (tree_view, tree_view_signals[SEARCH_CONCLUDED], FALSE);
+  }
+}
 /**
  * exo_tree_view_new:
  *
