@@ -127,6 +127,9 @@ enum
   MOVE_CURSOR,
   ACTIVATE_CURSOR_ITEM,
   START_INTERACTIVE_SEARCH,
+  /* TODO: #32 iconview signals to emit when searching */
+  SEARCH_IN_PROGRESS,
+  SEARCH_CONCLUDED,
   LAST_SIGNAL
 };
 
@@ -1187,6 +1190,42 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                   NULL, NULL,
                   _exo_marshal_BOOLEAN__VOID,
                   G_TYPE_BOOLEAN, 0);
+
+  /* TODO: #32 Create the signal for search-in-progress */
+  /**
+   * ExoIconView::search-in-progress:
+   * @icon_view: a #ExoIconView.
+   * @searching: Is search in progress (usually true)
+   *
+   * The ::search-in-progress signal is emitted the first time the search_entry
+   * is visible to the user.
+   * This usually occurs right after the start-interactive-search signal is emitted
+   * or typeahead search is activated
+   */
+  icon_view_signals[SEARCH_IN_PROGRESS] =
+    g_signal_new (I_("search-in-progress"),
+                  G_TYPE_FROM_CLASS (gobject_class),
+                  G_SIGNAL_RUN_LAST,
+                  0, NULL, NULL,
+                  g_cclosure_marshal_VOID__BOOLEAN,
+                  G_TYPE_NONE, 1, G_TYPE_BOOLEAN);
+
+  /* TODO: #32 Create the signal for search-concluded */
+  /**
+   * ExoIconView::search-concluded
+   * @icon_view: a #ExoIconView
+   * @searching: Is search in progress (usually false)
+   *
+   * The ::search-concluded signal is emitted the just after the search_entry
+   * is hidden, either due to a timeout or user intervention
+   */
+  icon_view_signals[SEARCH_CONCLUDED] =
+    g_signal_new (I_("search-concluded"),
+                  G_TYPE_FROM_CLASS (gobject_class),
+                  G_SIGNAL_RUN_LAST,
+                  0, NULL, NULL,
+                  g_cclosure_marshal_VOID__BOOLEAN,
+                  G_TYPE_NONE, 1, G_TYPE_BOOLEAN);
 
   /**
    * ExoIconView::move-cursor:
@@ -8305,6 +8344,9 @@ exo_icon_view_search_dialog_hide (GtkWidget   *search_dialog,
     {
       g_signal_handler_disconnect (G_OBJECT (icon_view->priv->search_entry), icon_view->priv->search_entry_changed_id);
       icon_view->priv->search_entry_changed_id = 0;
+      /* TODO: #32 - search has ended */
+      g_debug("Search has stopped");
+      g_signal_emit (icon_view, icon_view_signals[SEARCH_CONCLUDED], 0, FALSE);
     }
 
   /* disable the flush timeout */
@@ -8387,7 +8429,6 @@ exo_icon_view_search_init (GtkWidget   *search_entry,
   GtkTreeModel *model;
   GtkTreeIter   iter;
   const gchar  *text;
-  gint          length;
   gint          count = 0;
 
   _exo_return_if_fail (GTK_IS_ENTRY (search_entry));
@@ -8414,8 +8455,7 @@ exo_icon_view_search_init (GtkWidget   *search_entry,
     }
 
   /* verify that we have a search text */
-  length = strlen (text);
-  if (length < 1)
+  if (strlen (text) != 0)
     return;
 
   /* verify that we have a valid model */
@@ -8578,6 +8618,9 @@ exo_icon_view_search_start (ExoIconView *icon_view,
     {
       icon_view->priv->search_entry_changed_id = g_signal_connect (G_OBJECT (icon_view->priv->search_entry), "changed",
                                                                    G_CALLBACK (exo_icon_view_search_init), icon_view);
+      /* TODO: #32 - search has started */
+      g_debug("Search is in progress");
+      g_signal_emit (icon_view, icon_view_signals[SEARCH_IN_PROGRESS], 0, TRUE);
     }
 
   /* start the search timeout */
