@@ -198,7 +198,7 @@ exo_tree_view_finalize (GObject *object)
     g_source_remove (tree_view->priv->single_click_timeout_id);
 
   /* be sure to release the hover path */
-  if (G_UNLIKELY (tree_view->priv->hover_path == NULL))
+  if (G_UNLIKELY (tree_view->priv->hover_path != NULL))
     gtk_tree_path_free (tree_view->priv->hover_path);
 
   (*G_OBJECT_CLASS (exo_tree_view_parent_class)->finalize) (object);
