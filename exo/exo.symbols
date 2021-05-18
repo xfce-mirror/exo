@@ -32,20 +32,6 @@
 #define IN_SOURCE(x) 1
 #endif
 
-/* exo-binding functions */
-#if IN_HEADER(__EXO_BINDING_H__)
-#if IN_SOURCE(__EXO_BINDING_C__)
-exo_binding_new
-exo_binding_new_full
-exo_binding_new_with_negation
-exo_binding_unbind
-exo_mutual_binding_new
-exo_mutual_binding_new_full
-exo_mutual_binding_new_with_negation
-exo_mutual_binding_unbind
-#endif
-#endif
-
 /* ExoCellRendererIcon methods */
 #if IN_HEADER(__EXO_CELL_RENDERER_ICON_H__)
 #if IN_SOURCE(__EXO_CELL_RENDERER_ICON_C__)
