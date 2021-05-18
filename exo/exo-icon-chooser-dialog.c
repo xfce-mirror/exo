@@ -33,7 +33,6 @@
 
 #include <gdk/gdkkeysyms.h>
 
-#include <exo/exo-binding.h>
 #include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-gtk-extensions.h>
 #include <exo/exo-icon-chooser-dialog.h>
