@@ -9,7 +9,6 @@ AM_CPPFLAGS = 								\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 libexo_headers =							\
-	exo-binding.h							\
 	exo-cell-renderer-icon.h					\
 	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
@@ -37,7 +36,6 @@ lib_LTLIBRARIES = libexo-2.la
 
 libexo_2_include_HEADERS =						\
 	exo.h								\
-	exo-binding.h							\
 	exo-config.h							\
 	exo-execute.h							\
 	exo-gdk-pixbuf-extensions.h					\
@@ -58,7 +56,6 @@ libexo_2_include_HEADERS =						\
 
 libexo_2_la_SOURCES =							\
 	$(libexo_2_include_HEADERS)					\
-	exo-binding.c							\
 	exo-marshal.c							\
 	exo-marshal.h							\
 	exo-private.c							\

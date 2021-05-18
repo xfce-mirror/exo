@@ -34,7 +34,6 @@
 #define EXO_INSIDE_EXO_H
 
 #include <exo/exo-config.h>
-#include <exo/exo-binding.h>
 #include <exo/exo-enum-types.h>
 #include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-gdk-pixbuf-extensions.h>
