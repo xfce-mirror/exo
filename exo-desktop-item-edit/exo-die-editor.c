@@ -341,7 +341,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   g_object_bind_property (G_OBJECT (editor), "command", G_OBJECT (entry), "text", G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
   g_object_bind_property_full (editor, "mode", entry, "visible",
                                G_BINDING_SYNC_CREATE,
-                               exo_die_true_if_application,
+                               exo_die_true_if_application, NULL,
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), entry, 1, row, 1, 1);
   g_object_set (entry, "hexpand", TRUE, NULL);
@@ -363,6 +363,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   gtk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
   g_object_bind_property (G_OBJECT (editor), "url", G_OBJECT (entry), "text", G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
   g_object_bind_property_full (editor, "mode", entry, "visible",
+                               G_BINDING_SYNC_CREATE,
                                exo_die_true_if_link, NULL,
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), entry, 1, row, 1, 1);
@@ -376,6 +377,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
   g_object_bind_property_full (editor, "mode", label, "visible",
+                               G_BINDING_SYNC_CREATE,
                                exo_die_true_if_application, NULL,
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
@@ -384,6 +386,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   gtk_grid_attach (GTK_GRID (editor), box, 1, row, 1, 1);
   g_object_set (box, "hexpand", TRUE, NULL);
   g_object_bind_property_full (editor, "mode", box, "visible",
+                               G_BINDING_SYNC_CREATE,
                                exo_die_true_if_application, NULL,
                                NULL, NULL);
 
@@ -430,6 +433,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
   g_object_bind_property_full (editor, "mode", label, "visible",
+                               G_BINDING_SYNC_CREATE,
                                exo_die_true_if_application, NULL,
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), label, 0, row, 1, 1);
@@ -443,6 +447,7 @@ exo_die_editor_init (ExoDieEditor *editor)
                                          "startup notification."));
   g_object_bind_property (G_OBJECT (editor), "snotify", G_OBJECT (button), "active", G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
   g_object_bind_property_full (editor, "mode", button, "visible",
+                               G_BINDING_SYNC_CREATE,
                                exo_die_true_if_application, NULL,
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), button, 1, row, 1, 1);
@@ -457,6 +462,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   gtk_widget_set_tooltip_text (button, _("Select this option to run the command in a terminal window."));
   g_object_bind_property (G_OBJECT (editor), "terminal", G_OBJECT (button), "active", G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
   g_object_bind_property_full (editor, "mode", button, "visible",
+                               G_BINDING_SYNC_CREATE,
                                exo_die_true_if_application, NULL,
                                NULL, NULL);
   gtk_grid_attach (GTK_GRID (editor), button, 1, row, 1, 1);
