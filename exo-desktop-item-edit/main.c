@@ -351,7 +351,7 @@ main (int argc, char **argv)
   editor = exo_die_editor_new ();
   exo_die_editor_set_mode (EXO_DIE_EDITOR (editor), mode);
   gtk_container_set_border_width (GTK_CONTAINER (editor), 12);
-  exo_binding_new (G_OBJECT (editor), "complete", G_OBJECT (button), "sensitive");
+  g_object_bind_property (G_OBJECT (editor), "complete", G_OBJECT (button), "sensitive", G_BINDING_SYNC_CREATE);
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), editor, TRUE, TRUE, 0);
   gtk_widget_show (editor);
 
