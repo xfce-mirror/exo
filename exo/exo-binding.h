@@ -57,24 +57,29 @@ typedef gboolean  (*ExoBindingTransform)  (const GValue *src_value,
 ExoBinding        *exo_binding_new                      (GObject            *src_object,
                                                          const gchar        *src_property,
                                                          GObject            *dst_object,
-                                                         const gchar        *dst_property);
+                                                         const gchar        *dst_property)
+  G_GNUC_DEPRECATED_FOR (g_object_bind_property() with G_BINDING_SYNC_CREATE flag);
 ExoBinding        *exo_binding_new_full                 (GObject            *src_object,
                                                          const gchar        *src_property,
                                                          GObject            *dst_object,
                                                          const gchar        *dst_property,
                                                          ExoBindingTransform transform,
                                                          GDestroyNotify      destroy_notify,
-                                                         gpointer            user_data);
+                                                         gpointer            user_data)
+G_GNUC_DEPRECATED_FOR (g_object_bind_property_full() with G_BINDING_SYNC_CREATE flag);
 ExoBinding        *exo_binding_new_with_negation        (GObject            *src_object,
                                                          const gchar        *src_property,
                                                          GObject            *dst_object,
-                                                         const gchar        *dst_property);
-void               exo_binding_unbind                   (ExoBinding         *binding);
+                                                         const gchar        *dst_property)
+  G_GNUC_DEPRECATED_FOR (g_object_bind_property() with G_BINDING_INVERT_BOOLEAN | G_BINDING_SYNC_CREATE flag);
+void               exo_binding_unbind                   (ExoBinding         *binding)
+  G_GNUC_DEPRECATED_FOR (g_binding_unbind() or g_object_unref());
 
 ExoMutualBinding  *exo_mutual_binding_new               (GObject            *object1,
                                                          const gchar        *property1,
                                                          GObject            *object2,
-                                                         const gchar        *property2);
+                                                         const gchar        *property2)
+  G_GNUC_DEPRECATED_FOR (g_object_bind_property() with G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE flag);
 ExoMutualBinding  *exo_mutual_binding_new_full          (GObject            *object1,
                                                          const gchar        *property1,
                                                          GObject            *object2,
@@ -82,12 +87,15 @@ ExoMutualBinding  *exo_mutual_binding_new_full          (GObject            *obj
                                                          ExoBindingTransform transform,
                                                          ExoBindingTransform reverse_transform,
                                                          GDestroyNotify      destroy_notify,
-                                                         gpointer            user_data);
+                                                         gpointer            user_data)
+G_GNUC_DEPRECATED_FOR (g_object_bind_property_full() with G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE flag);
 ExoMutualBinding  *exo_mutual_binding_new_with_negation (GObject            *object1,
                                                          const gchar        *property1,
                                                          GObject            *object2,
-                                                         const gchar        *property2);
-void               exo_mutual_binding_unbind            (ExoMutualBinding   *binding);
+                                                         const gchar        *property2)
+  G_GNUC_DEPRECATED_FOR (g_object_bind_property() with G_BINDING_INVERT_BOOLEAN | G_BINDING_SYNC_CREATE flag);
+void               exo_mutual_binding_unbind            (ExoMutualBinding   *binding)
+  G_GNUC_DEPRECATED_FOR (g_binding_unbind() or g_object_unref());
 
 G_END_DECLS
 

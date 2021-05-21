@@ -147,7 +147,7 @@ exo_die_command_entry_init (ExoDieCommandEntry *command_entry)
 
   command_entry->entry = gtk_entry_new ();
   gtk_entry_set_activates_default (GTK_ENTRY (command_entry->entry), TRUE);
-  exo_mutual_binding_new (G_OBJECT (command_entry->entry), "text", G_OBJECT (command_entry), "text");
+  g_object_bind_property (G_OBJECT (command_entry->entry), "text", G_OBJECT (command_entry), "text", G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
   gtk_box_pack_start (GTK_BOX (command_entry), command_entry->entry, TRUE, TRUE, 0);
   gtk_widget_show (command_entry->entry);
 
