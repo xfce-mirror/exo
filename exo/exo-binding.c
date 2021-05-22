@@ -404,11 +404,13 @@ exo_binding_new_with_negation (GObject      *src_object,
                                GObject      *dst_object,
                                const gchar  *dst_property)
 {
+  G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   ExoBindingTransform transform = (ExoBindingTransform) (void (*)(void)) exo_g_value_transform_negate;
 
   return exo_binding_new_full (src_object, src_property,
                                dst_object, dst_property,
                                transform, NULL, NULL);
+  G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 
@@ -567,12 +569,14 @@ exo_mutual_binding_new_with_negation (GObject     *object1,
                                       GObject     *object2,
                                       const gchar *property2)
 {
+  G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   ExoBindingTransform transform = (ExoBindingTransform) (void (*)(void)) exo_g_value_transform_negate;
 
   return exo_mutual_binding_new_full (object1, property1,
                                       object2, property2,
                                       transform, transform,
                                       NULL, NULL);
+  G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 
