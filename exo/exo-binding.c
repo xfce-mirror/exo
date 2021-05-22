@@ -94,6 +94,8 @@ ExoBindingLink;
  *
  * Opaque structure representing a one-way binding between two properties.
  * It is automatically removed if one of the bound objects is finalized.
+ *
+ * Deprecated: xfce 4.18: In favor of GBinding
  **/
 struct _ExoBinding
 {
@@ -107,6 +109,8 @@ struct _ExoBinding
  *
  * Opaque structure representing a mutual binding between two properties.
  * It is automatically freed if one of the bound objects is finalized.
+ *
+ * Deprecated: xfce 4.18: In favor of GBinding
  **/
 struct _ExoMutualBinding
 {
@@ -302,6 +306,8 @@ exo_binding_link_init (ExoBindingLink     *blink,
  * Before binding the value of @dst_property is set to the
  * value of @src_property.
  *
+ * Deprecated: xfce 4.18: In favor of GBinding
+ *
  * Returns: The descriptor of the binding. It is automatically
  *          removed if one of the objects is finalized.
  **/
@@ -333,6 +339,8 @@ exo_binding_new (GObject      *src_object,
  *
  * Before binding the value of @dst_property is set to the
  * value of @src_property.
+ *
+ * Deprecated: xfce 4.18: In favor of GBinding
  *
  * Returns: The descriptor of the binding. It is automatically
  *          removed if one of the objects is finalized.
@@ -395,6 +403,8 @@ exo_binding_new_full (GObject            *src_object,
  *
  * Convenience function for binding with boolean negation of value.
  *
+ * Deprecated: xfce 4.18: In favor of GBinding
+ *
  * Returns: The descriptor of the binding. It is automatically
  *          removed if one of the objects is finalized.
  **/
@@ -424,6 +434,8 @@ exo_binding_new_with_negation (GObject      *src_object,
  *
  * This functions also calls the @destroy_notify function that
  * was specified when @binding was created.
+ *
+ * Deprecated: xfce 4.18: In favor of GBinding
  **/
 void
 exo_binding_unbind (ExoBinding *binding)
@@ -444,6 +456,8 @@ exo_binding_unbind (ExoBinding *binding)
  *
  * Before binding the value of @property2 is set to the value
  * of @property1.
+ *
+ * Deprecated: xfce 4.18: In favor of GBinding
  *
  * Returns: The descriptor of the binding. It is automatically
  *          removed if one of the objects is finalized.
@@ -480,6 +494,8 @@ exo_mutual_binding_new (GObject     *object1,
  * Both @transform and @reverse_transform should simultaneously be
  * %NULL or non-%NULL. If they are non-%NULL, they should be reverse
  * in each other.
+ *
+ * Deprecated: xfce 4.18: In favor of GBinding
  *
  * Returns: The descriptor of the binding. It is automatically
  *          removed if one of the objects is finalized.
@@ -560,6 +576,8 @@ exo_mutual_binding_new_full (GObject            *object1,
  *
  * Convenience function for binding with boolean negation of value.
  *
+ * Deprecated: xfce 4.18: In favor of GBinding
+ *
  * Returns: The descriptor of the binding. It is automatically removed
  *          if one of the objects if finalized.
  **/
@@ -590,6 +608,8 @@ exo_mutual_binding_new_with_negation (GObject     *object1,
  *
  * This functions also calls the @destroy_notify function that
  * was specified when @binding was created.
+ *
+ * Deprecated: xfce 4.18: In favor of GBinding
  **/
 void
 exo_mutual_binding_unbind (ExoMutualBinding *binding)
