@@ -331,7 +331,7 @@ exo_die_editor_init (ExoDieEditor *editor)
   label = gtk_label_new_with_mnemonic (_("Comm_and:"));
   gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
   g_object_set (label, "xalign", 1.0f, "yalign", 0.5f, NULL);
-  g_object_bind_property_full (editor, "mode", label, "mode",
+  g_object_bind_property_full (editor, "mode", label, "visible",
                                G_BINDING_SYNC_CREATE,
                                exo_die_true_if_application, NULL,
                                NULL, NULL);
