@@ -33,7 +33,6 @@
 
 #include <gdk/gdkkeysyms.h>
 
-#include <exo/exo-binding.h>
 #include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-gtk-extensions.h>
 #include <exo/exo-icon-chooser-dialog.h>
@@ -223,7 +222,7 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
 
   priv->filter_entry_timeout_source_id = 0;
   priv->filter_entry = gtk_entry_new ();
-  exo_binding_new (G_OBJECT (priv->filter_entry), "visible", G_OBJECT (label), "visible");
+  g_object_bind_property (G_OBJECT (priv->filter_entry), "visible", G_OBJECT (label), "visible", G_BINDING_SYNC_CREATE);
   gtk_grid_attach (GTK_GRID (table), priv->filter_entry, 1, 1, 1, 1);
   g_object_set (priv->filter_entry, "hexpand", TRUE, NULL);
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), priv->filter_entry);
@@ -242,7 +241,7 @@ exo_icon_chooser_dialog_init (ExoIconChooserDialog *icon_chooser_dialog)
 
   /* setup the icon chooser (shown by default) */
   priv->icon_chooser = exo_icon_view_new ();
-  exo_binding_new (G_OBJECT (priv->icon_chooser), "visible", G_OBJECT (scrolled_window), "visible");
+  g_object_bind_property (G_OBJECT (priv->icon_chooser), "visible", G_OBJECT (scrolled_window), "visible", G_BINDING_SYNC_CREATE);
   g_signal_connect_swapped (priv->icon_chooser, "item-activated", G_CALLBACK (gtk_window_activate_default), icon_chooser_dialog);
   g_signal_connect_swapped (priv->icon_chooser, "selection-changed", G_CALLBACK (exo_icon_chooser_dialog_selection_changed), icon_chooser_dialog);
   g_signal_connect_swapped (priv->icon_chooser, "start-interactive-search", G_CALLBACK (exo_icon_chooser_dialog_start_interactive_search), icon_chooser_dialog);

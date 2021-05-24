@@ -51,6 +51,8 @@
  * This function is mostly useful for binding boolean properties
  * with inversing.
  *
+ * Deprecated: xfce 4.18: Rarely used API
+ *
  * Returns: %TRUE on successful transformation.
  **/
 gboolean
