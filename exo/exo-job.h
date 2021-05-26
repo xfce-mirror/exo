@@ -38,12 +38,14 @@ G_BEGIN_DECLS
 
 typedef struct _ExoJobPrivate ExoJobPrivate;
 typedef struct _ExoJobClass   ExoJobClass;
+G_DEPRECATED_FOR (GTask)
 typedef struct _ExoJob        ExoJob;
 
 struct _ExoJobClass
 {
   GObjectClass __parent__;
 
+  G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   /* virtual methods */
   gboolean   (*execute)      (ExoJob      *job,
                               GError     **error);
@@ -56,6 +58,7 @@ struct _ExoJobClass
                               const gchar *message);
   void       (*percent)      (ExoJob      *job,
                               gdouble      percent);
+  G_GNUC_END_IGNORE_DEPRECATIONS
 };
 
 /**
@@ -72,27 +75,38 @@ struct _ExoJob
   ExoJobPrivate *priv;
 };
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 GType           exo_job_get_type               (void) G_GNUC_CONST;
 
+G_DEPRECATED_FOR (g_task_run_in_thread_async)
 ExoJob         *exo_job_launch                 (ExoJob        *job);
+G_DEPRECATED_FOR (g_cancellable_cancel)
 void            exo_job_cancel                 (ExoJob        *job);
+G_DEPRECATED_FOR (g_cancellable_is_cancelled)
 gboolean        exo_job_is_cancelled           (const ExoJob  *job);
+G_DEPRECATED_FOR (g_task_get_cancellable)
 GCancellable   *exo_job_get_cancellable        (const ExoJob  *job);
+G_DEPRECATED_FOR (g_task_return_error_if_cancelled)
 gboolean        exo_job_set_error_if_cancelled (ExoJob        *job,
                                                 GError       **error);
+G_DEPRECATED
 void            exo_job_emit                   (ExoJob        *job,
                                                 guint          signal_id,
                                                 GQuark         signal_detail,
                                                 ...);
+G_DEPRECATED
 void            exo_job_info_message           (ExoJob        *job,
                                                 const gchar   *format,
                                                 ...);
+G_DEPRECATED
 void            exo_job_percent                (ExoJob        *job,
                                                 gdouble        percent);
+G_DEPRECATED_FOR (g_task_run_in_thread)
 gboolean        exo_job_send_to_mainloop       (ExoJob        *job,
                                                 GSourceFunc    func,
                                                 gpointer       user_data,
                                                 GDestroyNotify destroy_notify);
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 G_END_DECLS
 
