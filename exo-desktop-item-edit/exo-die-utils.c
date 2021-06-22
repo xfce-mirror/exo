@@ -26,6 +26,7 @@
 #endif
 #include <stdio.h>
 
+#include <libxfce4util/libxfce4util.h>
 #include <exo-desktop-item-edit/exo-die-utils.h>
 
 
@@ -100,7 +101,7 @@ static void trust_launcher (GFile *gfile)
                                  NULL);
   }
 
-  g_object_unref (G_OBJECT (info));
+  g_object_unref (info);
 }
 
 
@@ -135,7 +136,6 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
   guint        n;
   gboolean     desktop_suffix;
   const gchar *suffix;
-  gchar       *path;
 
   g_return_val_if_fail (G_IS_FILE (base), FALSE);
   g_return_val_if_fail (key_file != NULL, FALSE);
@@ -155,14 +155,14 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
       g_free (name);
       if (desktop_suffix)
         {
-          file = G_FILE (g_object_ref (G_OBJECT (base)));
+          file = g_object_ref (base);
         }
       else
         {
           file_type = g_file_query_file_type (base, G_FILE_QUERY_INFO_NONE, NULL);
           if (file_type == G_FILE_TYPE_REGULAR)
             {
-              file = G_FILE (g_object_ref (G_OBJECT (base)));
+              file = g_object_ref (base);
             }
           else if (file_type == G_FILE_TYPE_DIRECTORY)
             {
@@ -184,7 +184,7 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
                 {
                   /* release the previous name */
                   g_free (filename);
-                  g_object_unref (G_OBJECT (file));
+                  g_object_unref (file);
 
                   /* generate a new file name */
                   filename = g_strdup_printf ("%s%d%s", name, n, suffix);
@@ -210,41 +210,27 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
   else
     {
       /* base is the file */
-      file = G_FILE (g_object_ref (G_OBJECT (base)));
+      file = g_object_ref (base);
     }
 
   /* determine the data for the key file */
   data = g_key_file_to_data (key_file, &length, error);
   if (G_UNLIKELY (data == NULL))
     {
-      g_object_unref (G_OBJECT (file));
+      g_object_unref (file);
       return FALSE;
     }
 
-  /* write the contents to the file */
-  if (g_file_is_native (file))
-    {
-      /* for local writes, to make sure the file is written to a tmp
-       * file before the origional desktop file is replaced */
-      path = g_file_get_path (file);
-      result = g_file_set_contents (path, data, length, error);
-      g_free (path);
-    }
-  else
-    {
-      /* for remote writes */
-      result = g_file_replace_contents (file, data, length, NULL, FALSE,
-                                        G_FILE_CREATE_REPLACE_DESTINATION,
-                                        NULL, NULL, error);
-    }
+  result = g_file_replace_contents (file, data, length, NULL, FALSE,
+                                    G_FILE_CREATE_NONE,
+                                    NULL, NULL, error);
 
-  if (trust) {
+  if (trust)
     trust_launcher (file);
-  }
 
   /* cleanup */
   g_free (data);
-  g_object_unref (G_OBJECT (file));
+  g_object_unref (file);
 
   return result;
 }
