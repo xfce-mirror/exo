@@ -26,6 +26,7 @@
 #endif
 #include <stdio.h>
 
+#include <libxfce4util/libxfce4util.h>
 #include <exo-desktop-item-edit/exo-die-utils.h>
 
 
