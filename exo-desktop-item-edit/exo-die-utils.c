@@ -101,6 +101,11 @@ static void trust_launcher (GFile *gfile)
   }
 
   g_object_unref (G_OBJECT (info));
+
+  #ifdef __XFCE_GIO_EXTENSIONS_H__
+  if (xfce_g_file_metadata_is_supported (gfile))
+    xfce_g_file_set_trusted (gfile, TRUE, NULL, NULL);
+  #endif /* __XFCE_GIO_EXTENSIONS_H__ */
 }
 
 
