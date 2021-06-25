@@ -226,6 +226,11 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
       return FALSE;
     }
 
+  #ifdef __XFCE_GIO_EXTENSIONS_H__
+  /* need to recalculate checksum */
+  trust = trust || xfce_g_file_is_trusted (file, NULL, NULL);
+  #endif /* __XFCE_GIO_EXTENSIONS_H__ */
+
   result = g_file_replace_contents (file, data, length, NULL, FALSE,
                                     G_FILE_CREATE_NONE,
                                     NULL, NULL, error);
