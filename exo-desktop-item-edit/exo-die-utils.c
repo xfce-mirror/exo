@@ -26,6 +26,7 @@
 #endif
 #include <stdio.h>
 
+#include <libxfce4util/libxfce4util.h>
 #include <exo-desktop-item-edit/exo-die-utils.h>
 
 
@@ -101,6 +102,9 @@ static void trust_launcher (GFile *gfile)
   }
 
   g_object_unref (info);
+
+  if (xfce_g_file_metadata_is_supported (gfile))
+    xfce_g_file_set_trusted (gfile, TRUE, NULL, NULL);
 }
 
 
@@ -219,6 +223,9 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
       g_object_unref (file);
       return FALSE;
     }
+
+  /* need to recalculate checksum */
+  trust = trust || xfce_g_file_is_trusted (file, NULL, NULL);
 
   result = g_file_replace_contents (file, data, length, NULL, FALSE,
                                     G_FILE_CREATE_NONE,
