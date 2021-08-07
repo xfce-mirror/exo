@@ -217,8 +217,8 @@ gchar*
 exo_strdup_strftime (const gchar     *format,
                      const struct tm *tm)
 {
-  static const gchar C_STANDARD_STRFTIME_CHARACTERS[] = "aAbBcdHIjmMpSUwWxXyYZ";
-  static const gchar C_STANDARD_NUMERIC_STRFTIME_CHARACTERS[] = "dHIjmMSUwWyY";
+  static const gchar C_STANDARD_STRFTIME_CHARACTERS[] = "aAbBcCdeFgGhHIjklmMnprRsStTuUVwWxXyYzZ";
+  static const gchar C_STANDARD_NUMERIC_STRFTIME_CHARACTERS[] = "CdegGHIjklmMsSuUVwWyY";
   static const gchar SUS_EXTENDED_STRFTIME_MODIFIERS[] = "EO";
   const gchar       *remainder;
   const gchar       *percent;
