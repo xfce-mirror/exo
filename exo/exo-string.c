@@ -292,7 +292,10 @@ exo_strdup_strftime (const gchar     *format,
           break;
         }
 
+#ifdef HAVE_STRFTIME_EXTENSION
       modifier = 0;
+#endif
+
       if (strchr (SUS_EXTENDED_STRFTIME_MODIFIERS, *remainder) != NULL)
         {
           modifier = *remainder++;
