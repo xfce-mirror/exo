@@ -5597,7 +5597,6 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       /* build up the initial items list */
       if (gtk_tree_model_get_iter_first (model, &iter))
         {
-          n = 0;
           do
             {
               item = g_slice_new0 (ExoIconViewItem);
