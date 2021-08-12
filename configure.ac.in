@@ -129,7 +129,7 @@ dnl *** action in the fourth parameter.  This sets its results in a cache   ***
 dnl *** variable that users can override to specify target system behavior. ***
 dnl ***************************************************************************
 AC_CACHE_CHECK([for strftime %E and %O modifiers],
-  [ac_cv_have_strftime_extension], [AC_RUN_IFELSE([AC_LANG_SOURCE([
+  [ac_cv_have_strftime_extension], [AC_RUN_IFELSE([AC_LANG_SOURCE([[
   #include <string.h>
   #include <time.h>
   int
@@ -142,7 +142,7 @@ AC_CACHE_CHECK([for strftime %E and %O modifiers],
       return 0;
     return 1;
   }
-    ])],
+    ]])],
     [ac_cv_have_strftime_extension=yes],
     [ac_cv_have_strftime_extension=no],
     [ac_cv_have_strftime_extension=cross])])
