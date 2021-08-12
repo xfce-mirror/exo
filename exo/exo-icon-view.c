@@ -4120,10 +4120,18 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
   order = g_newa (gint, length);
 
   for (i = 0; i < length; i++)
-    order[new_order[i]] = i;
+    {
+      if (G_UNLIKELY ((new_order[i] < 0) || (new_order[i] >= length)))
+        return;
 
-  for (i = 0, list = icon_view->priv->items; list != NULL; list = list->next, i++)
+      order[new_order[i]] = i;
+    }
+
+  for (i = 0, list = icon_view->priv->items; (list != NULL) && (i < length); list = list->next, i++)
     list_array[order[i]] = list;
+
+  if (G_UNLIKELY ((i != length) || (list != NULL)))
+    return;
 
   /* hook up the first item */
   icon_view->priv->items = list_array[0];
