@@ -3115,12 +3115,15 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
   gint                i;
   GtkAllocation       allocation;
 
+  if (G_UNLIKELY (priv->n_cells <= 0))
+    return first_item;
+
   rtl = (gtk_widget_get_direction (GTK_WIDGET (icon_view)) == GTK_TEXT_DIR_RTL);
   gtk_widget_get_allocation (GTK_WIDGET (icon_view), &allocation);
 
   max_width = g_newa (gint, priv->n_cells);
   max_height = g_newa (gint, priv->n_cells);
-  for (i = priv->n_cells; --i >= 0; )
+  for (i = 0; i < priv->n_cells; i++)
     {
       max_width[i] = 0;
       max_height[i] = 0;
@@ -3217,9 +3220,12 @@ exo_icon_view_layout_single_col (ExoIconView *icon_view,
   gint                i;
   GtkAllocation       allocation;
 
+  if (G_UNLIKELY (priv->n_cells <= 0))
+    return first_item;
+
   max_width = g_newa (gint, priv->n_cells);
   max_height = g_newa (gint, priv->n_cells);
-  for (i = priv->n_cells; --i >= 0; )
+  for (i = 0; i < priv->n_cells; i++)
     {
       max_width[i] = 0;
       max_height[i] = 0;
