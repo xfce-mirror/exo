@@ -3115,12 +3115,15 @@ exo_icon_view_layout_single_row (ExoIconView *icon_view,
   gint                i;
   GtkAllocation       allocation;
 
+  if (G_UNLIKELY (priv->n_cells <= 0))
+    return first_item;
+
   rtl = (gtk_widget_get_direction (GTK_WIDGET (icon_view)) == GTK_TEXT_DIR_RTL);
   gtk_widget_get_allocation (GTK_WIDGET (icon_view), &allocation);
 
   max_width = g_newa (gint, priv->n_cells);
   max_height = g_newa (gint, priv->n_cells);
-  for (i = priv->n_cells; --i >= 0; )
+  for (i = 0; i < priv->n_cells; i++)
     {
       max_width[i] = 0;
       max_height[i] = 0;
@@ -3217,9 +3220,12 @@ exo_icon_view_layout_single_col (ExoIconView *icon_view,
   gint                i;
   GtkAllocation       allocation;
 
+  if (G_UNLIKELY (priv->n_cells <= 0))
+    return first_item;
+
   max_width = g_newa (gint, priv->n_cells);
   max_height = g_newa (gint, priv->n_cells);
-  for (i = priv->n_cells; --i >= 0; )
+  for (i = 0; i < priv->n_cells; i++)
     {
       max_width[i] = 0;
       max_height[i] = 0;
@@ -3646,7 +3652,7 @@ exo_icon_view_calculate_item_size2 (ExoIconView     *icon_view,
 
   for (k = 0; k < 2; ++k)
     {
-      for (lp = icon_view->priv->cell_list, i = 0; lp != NULL; lp = lp->next, ++i)
+      for (lp = icon_view->priv->cell_list, i = 0; (lp != NULL) && (i < icon_view->priv->n_cells); lp = lp->next, ++i)
         {
           info = EXO_ICON_VIEW_CELL_INFO (lp->data);
           if (G_UNLIKELY (!gtk_cell_renderer_get_visible (info->cell) || info->pack == (k ? GTK_PACK_START : GTK_PACK_END)))
@@ -4113,17 +4119,25 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
 
   /* determine the number of items to reorder */
   length = gtk_tree_model_iter_n_children (model, NULL);
-  if (G_UNLIKELY (length == 0))
+  if (G_UNLIKELY (length <= 0))
     return;
 
   list_array = g_newa (GList *, length);
   order = g_newa (gint, length);
 
   for (i = 0; i < length; i++)
-    order[new_order[i]] = i;
+    {
+      if (G_UNLIKELY ((new_order[i] < 0) || (new_order[i] >= length)))
+        return;
 
-  for (i = 0, list = icon_view->priv->items; list != NULL; list = list->next, i++)
+      order[new_order[i]] = i;
+    }
+
+  for (i = 0, list = icon_view->priv->items; (list != NULL) && (i < length); list = list->next, i++)
     list_array[order[i]] = list;
+
+  if (G_UNLIKELY ((i != length) || (list != NULL)))
+    return;
 
   /* hook up the first item */
   icon_view->priv->items = list_array[0];
@@ -5597,7 +5611,6 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       /* build up the initial items list */
       if (gtk_tree_model_get_iter_first (model, &iter))
         {
-          n = 0;
           do
             {
               item = g_slice_new0 (ExoIconViewItem);

@@ -391,6 +391,8 @@ exo_job_emit_valist (ExoJob *job,
   exo_job_send_to_mainloop (job,
                             exo_job_emit_valist_in_mainloop,
                             &data, NULL);
+
+  va_end (data.var_args);
 }
 
 
