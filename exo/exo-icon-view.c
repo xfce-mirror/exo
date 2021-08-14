@@ -3652,7 +3652,7 @@ exo_icon_view_calculate_item_size2 (ExoIconView     *icon_view,
 
   for (k = 0; k < 2; ++k)
     {
-      for (lp = icon_view->priv->cell_list, i = 0; lp != NULL; lp = lp->next, ++i)
+      for (lp = icon_view->priv->cell_list, i = 0; (lp != NULL) && (i < icon_view->priv->n_cells); lp = lp->next, ++i)
         {
           info = EXO_ICON_VIEW_CELL_INFO (lp->data);
           if (G_UNLIKELY (!gtk_cell_renderer_get_visible (info->cell) || info->pack == (k ? GTK_PACK_START : GTK_PACK_END)))
