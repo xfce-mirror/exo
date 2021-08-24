@@ -4113,7 +4113,7 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
 
   /* determine the number of items to reorder */
   length = gtk_tree_model_iter_n_children (model, NULL);
-  if (G_UNLIKELY (length == 0))
+  if (G_UNLIKELY (length <= 0))
     return;
 
   list_array = g_newa (GList *, length);
@@ -5597,7 +5597,6 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
       /* build up the initial items list */
       if (gtk_tree_model_get_iter_first (model, &iter))
         {
-          n = 0;
           do
             {
               item = g_slice_new0 (ExoIconViewItem);

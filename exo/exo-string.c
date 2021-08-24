@@ -231,7 +231,7 @@ exo_strdup_strftime (const gchar     *format,
   gchar             *piece;
   gchar             *result;
   gchar             *converted;
-  gchar              modifier;
+  gchar              modifier = 0;
   gint               i;
 
   /* Format could be translated, and contain UTF-8 chars,
@@ -292,7 +292,6 @@ exo_strdup_strftime (const gchar     *format,
           break;
         }
 
-      modifier = 0;
       if (strchr (SUS_EXTENDED_STRFTIME_MODIFIERS, *remainder) != NULL)
         {
           modifier = *remainder++;
