@@ -359,10 +359,13 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
    */
   selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
 
-  /* Re-enable selection updates */
-  if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
+  if (GTK_IS_TREE_SELECTION (selection))
     {
-      gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
+      /* Re-enable selection updates */
+      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
+        {
+          gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
+        }
     }
 
   /* release the path (if any) */
