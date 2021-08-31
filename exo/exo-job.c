@@ -57,6 +57,7 @@
 
 
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 /* Signal identifiers */
 enum
 {
@@ -462,11 +463,9 @@ exo_job_launch (ExoJob *job)
 
   job->priv->context = g_main_context_ref_thread_default ();
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   g_io_scheduler_push_job (exo_job_scheduler_job_func, g_object_ref (job),
                            (GDestroyNotify) g_object_unref,
                            G_PRIORITY_HIGH, job->priv->cancellable);
-G_GNUC_END_IGNORE_DEPRECATIONS
 
   return job;
 }
@@ -660,11 +659,10 @@ exo_job_send_to_mainloop (ExoJob        *job,
   _exo_return_val_if_fail (EXO_IS_JOB (job), FALSE);
   _exo_return_val_if_fail (job->priv->scheduler_job != NULL, FALSE);
 
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   return g_io_scheduler_job_send_to_mainloop (job->priv->scheduler_job, func, user_data,
                                               destroy_notify);
-G_GNUC_END_IGNORE_DEPRECATIONS
 }
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 

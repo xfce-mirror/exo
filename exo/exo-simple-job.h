@@ -41,9 +41,12 @@ G_BEGIN_DECLS
  *
  * Returns: %TRUE on success, %FALSE in case of an error.
  **/
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+G_DEPRECATED
 typedef gboolean (*ExoSimpleJobFunc) (ExoJob      *job,
                                       GValueArray *param_values,
                                       GError     **error);
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 #define EXO_TYPE_SIMPLE_JOB            (exo_simple_job_get_type ())
@@ -54,13 +57,17 @@ typedef gboolean (*ExoSimpleJobFunc) (ExoJob      *job,
 #define EXO_SIMPLE_JOB_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EXO_TYPE_SIMPLE_JOB, ExoSimpleJobClass))
 
 typedef struct _ExoSimpleJobClass ExoSimpleJobClass;
+G_DEPRECATED_FOR (GTask)
 typedef struct _ExoSimpleJob      ExoSimpleJob;
 
 GType   exo_simple_job_get_type (void) G_GNUC_CONST;
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+G_DEPRECATED_FOR (g_task_run_in_thread_async)
 ExoJob *exo_simple_job_launch   (ExoSimpleJobFunc func,
                                  guint            n_param_values,
                                  ...) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 G_END_DECLS
 
