@@ -1,3 +1,16 @@
+4.17.1
+======
+- Add typecheck to prevent Gtk-CRITICAL (Issue #63)
+- Initialize `modifier` at the time of declaration
+- Remove redundant code
+- Fix AC_LANG_SOURCE macro
+- Fix `G_UNLIKELY` check
+- Fix memory leak
+- exo_strdup_strftime: Support additional encoding (Issue #66)
+- exo-die: Add trusted flag support
+- Translation Updates:
+  Catalan, Galician, Indonesian, Kazakh, Spanish
+
 4.17.0
 ======
 - Keep execute permission bit after launcher modification (Issue #64)
