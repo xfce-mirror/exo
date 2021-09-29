@@ -57,6 +57,7 @@
 
 
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
 static void     exo_simple_job_finalize   (GObject           *object);
 static gboolean exo_simple_job_execute    (ExoJob            *job,
                                            GError           **error);
@@ -282,6 +283,7 @@ exo_simple_job_launch (ExoSimpleJobFunc func,
   /* launch the job */
   return exo_job_launch (EXO_JOB (simple_job));
 }
+G_GNUC_END_IGNORE_DEPRECATIONS
 
 
 #define __EXO_SIMPLE_JOB_C__
