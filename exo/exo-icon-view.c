@@ -2511,10 +2511,12 @@ exo_icon_view_button_release_event (GtkWidget      *widget,
                   exo_icon_view_item_activated (icon_view, path);
                   gtk_tree_path_free (path);
                 }
-
-              /* reduce the selection to just the clicked item  */
-              exo_icon_view_unselect_all_internal (icon_view);
-              exo_icon_view_select_item (icon_view, item);
+              else
+                {
+                  /* reduce the selection to just the clicked item  */
+                  exo_icon_view_unselect_all_internal (icon_view);
+                  exo_icon_view_select_item (icon_view, item);
+                }
             }
 
           /* reset the last single clicked item */
