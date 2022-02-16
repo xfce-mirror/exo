@@ -241,14 +241,14 @@ main (int argc, char **argv)
                             G_KEY_FILE_DESKTOP_KEY_COMMENT, STR_FB (opt_comment, ""));
 
       /* type specific stuff */
-      if (exo_str_is_equal (opt_type, G_KEY_FILE_DESKTOP_TYPE_LINK))
+      if (g_strcmp0 (opt_type, G_KEY_FILE_DESKTOP_TYPE_LINK) == 0)
         {
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, "user-bookmarks"));
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_URL, STR_FB (opt_url, ""));
         }
-      else if (exo_str_is_equal (opt_type, G_KEY_FILE_DESKTOP_TYPE_DIRECTORY))
+      else if (g_strcmp0 (opt_type, G_KEY_FILE_DESKTOP_TYPE_DIRECTORY) == 0)
         {
           g_key_file_set_value (key_file, G_KEY_FILE_DESKTOP_GROUP,
                                 G_KEY_FILE_DESKTOP_KEY_ICON, STR_FB (opt_icon, ""));
