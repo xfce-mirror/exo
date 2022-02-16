@@ -962,7 +962,7 @@ exo_die_editor_set_name (ExoDieEditor *editor,
   g_return_if_fail (g_utf8_validate (name, -1, NULL));
 
   /* check if we have a new name */
-  if (!exo_str_is_equal (editor->name, name))
+  if (g_strcmp0 (editor->name, name) != 0)
     {
       /* apply the new name */
       g_free (editor->name);
@@ -1008,7 +1008,7 @@ exo_die_editor_set_comment (ExoDieEditor *editor,
   g_return_if_fail (g_utf8_validate (comment, -1, NULL));
 
   /* check if we have a new comment here */
-  if (!exo_str_is_equal (editor->comment, comment))
+  if (g_strcmp0 (editor->comment, comment) != 0)
     {
       /* apply the new comment */
       g_free (editor->comment);
@@ -1054,7 +1054,7 @@ exo_die_editor_set_command (ExoDieEditor *editor,
   g_return_if_fail (g_utf8_validate (command, -1, NULL));
 
   /* check if we have a new command here */
-  if (!exo_str_is_equal (editor->command, command))
+  if (g_strcmp0 (editor->command, command) != 0)
     {
       /* apply the new command */
       g_free (editor->command);
@@ -1101,7 +1101,7 @@ exo_die_editor_set_url (ExoDieEditor *editor,
   g_return_if_fail (g_utf8_validate (url, -1, NULL));
 
   /* check if we have a new URL here */
-  if (!exo_str_is_equal (editor->url, url))
+  if (g_strcmp0 (editor->url, url) != 0)
     {
       /* apply the new URL */
       g_free (editor->url);
@@ -1148,7 +1148,7 @@ exo_die_editor_set_path (ExoDieEditor *editor,
   g_return_if_fail (g_utf8_validate (path, -1, NULL));
 
   /* check if we have a new URL here */
-  if (!exo_str_is_equal (editor->path, path))
+  if (g_strcmp0 (editor->path, path) != 0)
     {
       /* apply the new URL */
       g_free (editor->path);
@@ -1201,7 +1201,7 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
   g_return_if_fail (g_utf8_validate (icon, -1, NULL));
 
   /* check if we have a new icon here */
-  if (!exo_str_is_equal (editor->icon, icon))
+  if (g_strcmp0 (editor->icon, icon) != 0)
     {
       /* apply the new icon */
       g_free (editor->icon);
