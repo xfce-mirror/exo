@@ -46,8 +46,8 @@
 #include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-marshal.h>
 #include <exo/exo-private.h>
-#include <exo/exo-string.h>
 #include <exo/exo-alias.h>
+#include <libxfce4util/libxfce4util.h>
 
 /**
  * SECTION: exo-icon-view
