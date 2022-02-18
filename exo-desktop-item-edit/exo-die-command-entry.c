@@ -30,6 +30,7 @@
 
 #include <exo-desktop-item-edit/exo-die-command-entry.h>
 #include <exo-desktop-item-edit/exo-die-command-model.h>
+#include <libxfce4util/libxfce4util.h>
 
 
 
