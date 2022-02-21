@@ -42,6 +42,7 @@
 #include <exo/exo-utils.h>
 #include <exo/exo-alias.h>
 #include <exo/exo-string.h>
+#include <libxfce4util/libxfce4util.h>
 
 
 
@@ -327,7 +328,7 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
         {
           /* determine the basename from the URI */
           slash = strrchr (uri, '/');
-          if (G_LIKELY (!exo_str_is_empty (slash)))
+          if (G_LIKELY (!xfce_str_is_empty (slash)))
             displayname = g_filename_display_name (slash + 1);
           else
             displayname = g_filename_display_name (uri);
