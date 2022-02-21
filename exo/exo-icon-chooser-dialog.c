@@ -41,6 +41,7 @@
 #include <exo/exo-string.h>
 #include <exo/exo-private.h>
 #include <exo/exo-alias.h>
+#include <libxfce4util/libxfce4util.h>
 
 #define FILTER_ENTRY_DELAY 300
 
@@ -550,7 +551,7 @@ exo_icon_chooser_dialog_entry_changed (gpointer user_data)
   priv->casefolded_text = NULL;
 
   text = gtk_entry_get_text (GTK_ENTRY (priv->filter_entry));
-  if (!exo_str_is_empty (text))
+  if (!xfce_str_is_empty (text))
     {
       /* case fold the search string */
       normalized = g_utf8_normalize (text, -1, G_NORMALIZE_ALL);
@@ -560,7 +561,7 @@ exo_icon_chooser_dialog_entry_changed (gpointer user_data)
 
   gtk_entry_set_icon_sensitive (GTK_ENTRY (priv->filter_entry),
                                 GTK_ENTRY_ICON_SECONDARY,
-                                !exo_str_is_empty (text));
+                                !xfce_str_is_empty (text));
 
   model = exo_icon_view_get_model (EXO_ICON_VIEW (priv->icon_chooser));
   if (G_LIKELY (model != NULL))
