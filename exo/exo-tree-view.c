@@ -23,10 +23,10 @@
 
 #include <exo/exo-config.h>
 #include <exo/exo-private.h>
-#include <exo/exo-string.h>
 #include <exo/exo-tree-view.h>
 #include <exo/exo-utils.h>
 #include <exo/exo-alias.h>
+#include <libxfce4util/libxfce4util.h>
 
 /**
  * SECTION: exo-tree-view
