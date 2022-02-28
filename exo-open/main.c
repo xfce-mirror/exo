@@ -39,6 +39,7 @@
 #include <exo/exo.h>
 
 
+
 #define USERCHARS       "-[:alnum:]"
 #define USERCHARS_CLASS "[" USERCHARS "]"
 #define PASSCHARS_CLASS "[-[:alnum:]\\Q,?;.:/!%$^*&~\"#'\\E]"
@@ -192,12 +193,11 @@ exo_open_launch_desktop_file (const gchar *arg)
       return FALSE;
     }
 
-  /* try to launch link type .desktop file */
+  /* try to launch "Link" type .desktop file */
   type = g_key_file_get_value (key_file,
                                G_KEY_FILE_DESKTOP_GROUP,
                                G_KEY_FILE_DESKTOP_KEY_TYPE,
                                NULL);
-  g_info ("Type: %s\n", type);
   if (g_strcmp0 (type, G_KEY_FILE_DESKTOP_TYPE_LINK) == 0)
     {
       link = g_key_file_get_value (key_file,
@@ -206,7 +206,6 @@ exo_open_launch_desktop_file (const gchar *arg)
                                    NULL);
       if (!exo_str_looks_like_an_uri (link))
         {
-          /* TODO: xfce_g_file_get_parent_path() */
           parent = g_file_get_parent (gfile);
           file_dir = g_file_get_path (parent);
           g_object_unref (parent);
@@ -216,7 +215,6 @@ exo_open_launch_desktop_file (const gchar *arg)
           link = exo_open_find_scheme (abs_path);
           g_free (abs_path);
         }
-      g_info ("URL: %s\n", link);
       result = exo_open_uri (link, NULL);
       g_free (link);
     }
