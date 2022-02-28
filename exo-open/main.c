@@ -213,7 +213,7 @@ exo_open_launch_desktop_file (const gchar *arg)
           abs_path = g_build_filename (file_dir, link, NULL);
           g_free (file_dir);
           g_free (link);
-          link = exo_open_find_scheme(abs_path);
+          link = exo_open_find_scheme (abs_path);
           g_free (abs_path);
         }
       g_info ("URL: %s\n", link);
