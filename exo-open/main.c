@@ -512,7 +512,7 @@ main (gint argc, gchar **argv)
   GtkWidget       *message_area;
   GtkWidget       *label;
   GError          *err = NULL;
-  gchar           *parameter, *quoted;
+  gchar           *parameter;
   gint             result = EXIT_SUCCESS;
   GString         *join;
   guint            i;
@@ -567,15 +567,9 @@ main (gint argc, gchar **argv)
                * arguments to be merged, this is a bit of magic to make
                * common cares work property, see sample above with xfrun4 */
               if (argc > 2 && strchr (argv[i], ' ') != NULL)
-                {
-                  quoted = g_shell_quote (argv[i]);
-                  join = g_string_append (join, quoted);
-                  g_free (quoted);
-                }
+                xfce_g_string_append_quoted (join, argv[i]);
               else
-                {
-                  join = g_string_append (join, argv[i]);
-                }
+                g_string_append (join, argv[i]);
             }
           parameter = g_string_free (join, FALSE);
         }
