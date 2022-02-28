@@ -31,6 +31,7 @@
 #endif
 
 #include <glib/gstdio.h>
+#include <glib.h>
 #include <gio/gio.h>
 #ifdef HAVE_GIO_UNIX
 #include <gio/gdesktopappinfo.h>
@@ -192,11 +193,17 @@ exo_open_launch_desktop_file (const gchar *arg)
     }
 
   /* try to launch link type .desktop file */
-  type = g_key_file_get_value (key_file, "Desktop Entry", "Type", NULL);
+  type = g_key_file_get_value (key_file,
+                               G_KEY_FILE_DESKTOP_GROUP,
+                               G_KEY_FILE_DESKTOP_KEY_TYPE,
+                               NULL);
   g_info ("Type: %s\n", type);
-  if (g_strcmp0 (type, "Link") == 0)
+  if (g_strcmp0 (type, G_KEY_FILE_DESKTOP_TYPE_LINK) == 0)
     {
-      link = g_key_file_get_value (key_file, "Desktop Entry", "URL", NULL);
+      link = g_key_file_get_value (key_file,
+                                   G_KEY_FILE_DESKTOP_GROUP,
+                                   G_KEY_FILE_DESKTOP_KEY_URL,
+                                   NULL);
       if (!exo_str_looks_like_an_uri (link))
         {
           /* TODO: xfce_g_file_get_parent_path() */
