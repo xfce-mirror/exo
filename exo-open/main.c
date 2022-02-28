@@ -103,6 +103,21 @@ static KnownSchemes known_schemes[] =
 
 
 
+/* Prototypes */
+static void     usage                        (void);
+static gboolean exo_open_launch_desktop_file (const gchar  *arg);
+static gchar   *exo_open_get_path            (const gchar  *string);
+static gchar   *exo_open_find_scheme         (const gchar  *string);
+static gboolean exo_open_launch_category     (const gchar  *category,
+                                              const gchar  *parameters);
+static gboolean exo_open_uri_known_category  (const gchar  *uri,
+                                              const gchar  *scheme,
+                                              gboolean     *succeed);
+static gboolean exo_open_uri                 (const gchar  *uri,
+                                              GError      **error);
+
+
+
 static void
 usage (void)
 {
@@ -145,6 +160,11 @@ exo_open_launch_desktop_file (const gchar *arg)
 {
 #ifdef HAVE_GIO_UNIX
   GFile           *gfile;
+  GFile           *parent;
+  gchar           *type;
+  gchar           *link;
+  gchar           *abs_path;
+  gchar           *file_dir;
   gchar           *contents;
   gsize            length;
   gboolean         result;
@@ -158,7 +178,6 @@ exo_open_launch_desktop_file (const gchar *arg)
 
   /* load the contents of the file */
   result = g_file_load_contents (gfile, NULL, &contents, &length, NULL, NULL);
-  g_object_unref (G_OBJECT (gfile));
   if (G_UNLIKELY (!result || length == 0))
     return FALSE;
 
@@ -170,6 +189,39 @@ exo_open_launch_desktop_file (const gchar *arg)
     {
       g_key_file_free (key_file);
       return FALSE;
+    }
+
+  /* try to launch link type .desktop file */
+  type = g_key_file_get_value (key_file, "Desktop Entry", "Type", NULL);
+  g_info ("Type: %s\n", type);
+  if (g_strcmp0 (type, "Link") == 0)
+    {
+      link = g_key_file_get_value (key_file, "Desktop Entry", "URL", NULL);
+      if (!exo_str_looks_like_an_uri (link))
+        {
+          /* TODO: xfce_g_file_get_parent_path() */
+          parent = g_file_get_parent (gfile);
+          file_dir = g_file_get_path (parent);
+          g_object_unref (parent);
+          abs_path = g_build_filename (file_dir, link, NULL);
+          g_free (file_dir);
+          g_free (link);
+          link = exo_open_find_scheme(abs_path);
+          g_free (abs_path);
+        }
+      g_info ("URL: %s\n", link);
+      result = exo_open_uri (link, NULL);
+      g_free (link);
+    }
+  else
+    result = FALSE;
+  g_free (type);
+  g_object_unref (G_OBJECT (gfile));
+
+  if (result)
+    {
+      g_key_file_free (key_file);
+      return TRUE;
     }
 
   /* create the appinfo */
