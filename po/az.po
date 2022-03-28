@@ -399,13 +399,13 @@ msgstr "_Ad:"
 #. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:312
 msgid "C_omment:"
-msgstr "_Yozum"
+msgstr "_Yozum:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:329
 msgid "Comm_and:"
-msgstr "_Göstəriş"
+msgstr "_Göstəriş:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
@@ -417,13 +417,13 @@ msgstr "_UQG (URL):"
 #. conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:362
 msgid "Working _Directory:"
-msgstr "Çalışma _Düzünü"
+msgstr "Çalışma _Dizini:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
 #: ../exo-desktop-item-edit/exo-die-editor.c:392
 msgid "_Icon:"
-msgstr "_İmgə"
+msgstr "_İmgə:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
@@ -477,11 +477,11 @@ msgstr "_Oldu"
 #. allocate the file chooser dialog
 #: ../exo-desktop-item-edit/exo-die-editor.c:635
 msgid "Select a working directory"
-msgstr "Çalışma düzününü seç"
+msgstr "Çalışma dizinini seç"
 
 #: ../exo-desktop-item-edit/exo-die-utils.c:205
 msgid "File location is not a regular file or directory"
-msgstr "Düzümün yerləşimi düzənli düzüm ya da düzün deyil"
+msgstr "Düzümün yerləşimi düzənli düzüm ya da dizin deyil"
 
 #. --- constants ---
 #: ../exo-desktop-item-edit/main.c:54
@@ -494,7 +494,7 @@ msgstr "Keçid Yarat"
 
 #: ../exo-desktop-item-edit/main.c:54
 msgid "Create Directory"
-msgstr "Düzün Yarat"
+msgstr "Dizin Yarat"
 
 #: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Launcher"
@@ -506,11 +506,11 @@ msgstr "Keçid Düzəlt"
 
 #: ../exo-desktop-item-edit/main.c:55
 msgid "Edit Directory"
-msgstr "Düzün Düzəlt"
+msgstr "Dizin Düzəlt"
 
 #: ../exo-desktop-item-edit/main.c:80
 msgid "Create a new desktop file in the given directory"
-msgstr "Verilmiş düzündə yeni iş qoyuluğu yarat"
+msgstr "Verilmiş dizinində yeni iş qoyuluğu yarat"
 
 #: ../exo-desktop-item-edit/main.c:81
 msgid "Type of desktop file to create (Application or Link)"
@@ -658,17 +658,17 @@ msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
-msgstr ""
+msgstr "  --launch BİÇİM [GÖSTƏRİCİlər...]       Üstün görülmüş BİÇİM uyğulamasını seçimə\n                                      uyğun GÖSTƏRİCİləri ilə başlat.\n                                      BİÇİM sıradakı dəyərlərdən biridir."
 
 #: ../exo-open/main.c:119
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
-msgstr ""
+msgstr "  --working-directory DİZİN       --launch seçimi işlədərkən\n                                      uyğulamalar üçün varsayılmış çalışma dizini."
 
 #: ../exo-open/main.c:122
 msgid "The following TYPEs are supported for the --launch command:"
-msgstr ""
+msgstr "Sıradakı BİÇİMlər --launch göstərişini dəstəkləyir:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
@@ -679,7 +679,7 @@ msgid ""
 "  MailReader       - The preferred Mail Reader.\n"
 "  FileManager      - The preferred File Manager.\n"
 "  TerminalEmulator - The preferred Terminal Emulator."
-msgstr ""
+msgstr "  WebBrowser       - Üstün görülmüş Tor Darayıcısı.\n  MailReader       - Üstün görülmüş Poçt Oxuyucusu.\n  FileManager      - Üstün görülmüş Düzüm Yönətməni.\n  TerminalEmulator - Üstün görülmüş Terminal Yamsılayıcısı."
 
 #: ../exo-open/main.c:133
 msgid ""
@@ -688,25 +688,25 @@ msgid ""
 "option, you can select which preferred application you want to run, and\n"
 "pass additional parameters to the application (i.e. for TerminalEmulator\n"
 "you can pass the command line that should be run in the terminal)."
-msgstr ""
+msgstr "--launch seçimini bəlirtməsəniz, exo-open bütün bəlirtilmiş UQG'ləri (URL)\nonların üstün görülmüş UQG işləyicilərini açacaq. --launch seçimini \nbəlirtsəniz, hansı üstün görülmüş uyğulamanı çalışdırmaq istədiyinizi seçə,\nuyğulamaya artıq göstəricilər ötürə bilərsiniz (götürək, TerminalEmulator \nüçün terminalda çalışası olacaq göstəriş ötürə bilərsiniz)."
 
 #: ../exo-open/main.c:195
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
-msgstr ""
+msgstr "%s GIO-Unix özəllikləri ilə yığılmayıbsa, iş qoyuluğu düzümlərinin başlanışı dəstəklənmir."
 
 #: ../exo-open/main.c:269
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr ""
+msgstr "\"%s\" ayırımı üçün üstün görülmüş uyğulamanı başlatmaq alınmadı."
 
 #: ../exo-open/main.c:571
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
-msgstr ""
+msgstr "\"%s\" üçün UQA (URİ) planını sezmək olanaqsızdır."
 
 #: ../exo-open/main.c:585
 msgid "Failed to open URI."
-msgstr ""
+msgstr "UQA'nı (URI) açmaq alınmadı."
