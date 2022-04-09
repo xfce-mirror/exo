@@ -124,13 +124,13 @@ static gboolean exo_open_uri_known_category  (const gchar  *uri,
                                               gboolean     *succeed);
 static gboolean exo_open_uri                 (const gchar  *uri,
                                               GError      **error);
-static gboolean exo_g_app_info_launch_uri   (GAppInfo          *appinfo,
-                                             const gchar       *uri,
-                                             GAppLaunchContext *context,
-                                             GError           **error);
-static void     launch_uri_callback         (GObject           *src,
-                                             GAsyncResult      *res,
-                                             gpointer           user_data);
+static gboolean exo_g_app_info_launch_uri    (GAppInfo          *appinfo,
+                                              const gchar       *uri,
+                                              GAppLaunchContext *context,
+                                              GError           **error);
+static void     launch_uri_callback          (GObject           *src,
+                                              GAsyncResult      *res,
+                                              gpointer           user_data);
 
 
 
