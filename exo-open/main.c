@@ -150,6 +150,22 @@ launch_uri_callback (GObject      *src,
 
 
 
+/**
+ * exo_g_app_info_launch_uri:
+ * @appinfo: a #GAppInfo.
+ * @uri: an utf-8 encoded uri to pass as an argument.
+ * @context: a #GAppLaunchContext or NULL.
+ * @error: a #GError.
+ *
+ * D-BUS friendly version of g_app_info_launch_uris.
+ * D-BUS-activated applications don't have to be started
+ * if the caller is terminated early. This function
+ * properly waits until the application is started.
+ *
+ * See also: https://gitlab.gnome.org/GNOME/glib/-/commit/051c6ba4e7111b04ab417403730b82de02a1c0d8
+ *
+ * Returns: %TRUE on success, %FALSE on error.
+ **/
 static gboolean
 exo_g_app_info_launch_uri  (GAppInfo          *appinfo,
                             const gchar       *uri,
