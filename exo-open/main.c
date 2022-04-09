@@ -103,6 +103,13 @@ static KnownSchemes known_schemes[] =
   { "^mailto$",          "MailReader" },
 };
 
+struct launch_uri_data
+{
+  gboolean is_done;
+  gboolean success;
+  GError  *error;
+};
+
 
 
 /* Prototypes */
@@ -117,6 +124,84 @@ static gboolean exo_open_uri_known_category  (const gchar  *uri,
                                               gboolean     *succeed);
 static gboolean exo_open_uri                 (const gchar  *uri,
                                               GError      **error);
+static gboolean exo_g_app_info_launch_uri    (GAppInfo          *appinfo,
+                                              const gchar       *uri,
+                                              GAppLaunchContext *context,
+                                              GError           **error);
+static void     launch_uri_callback          (GObject           *src,
+                                              GAsyncResult      *res,
+                                              gpointer           user_data);
+
+
+
+static void
+launch_uri_callback (GObject      *src,
+                     GAsyncResult *res,
+                     gpointer      user_data)
+{
+  struct launch_uri_data *data = user_data;
+
+  data->success = g_app_info_launch_uris_finish (G_APP_INFO (src),
+                                                 res,
+                                                 &data->error);
+  data->is_done = TRUE;
+  return;
+}
+
+
+
+/**
+ * exo_g_app_info_launch_uri:
+ * @appinfo: a #GAppInfo.
+ * @uri: an utf-8 encoded uri to pass as an argument.
+ * @context: a #GAppLaunchContext or NULL.
+ * @error: a #GError.
+ *
+ * D-BUS friendly version of g_app_info_launch_uris.
+ * D-BUS-activated applications don't have to be started
+ * if the caller is terminated early. This function
+ * properly waits until the application is started.
+ *
+ * See also: https://gitlab.gnome.org/GNOME/glib/-/commit/051c6ba4e7111b04ab417403730b82de02a1c0d8
+ *
+ * Returns: %TRUE on success, %FALSE on error.
+ **/
+static gboolean
+exo_g_app_info_launch_uri  (GAppInfo          *appinfo,
+                            const gchar       *uri,
+                            GAppLaunchContext *context,
+                            GError           **error)
+{
+  GList    fake_list;
+
+  struct launch_uri_data data;
+
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  fake_list.data = (gpointer) uri;
+  fake_list.prev = fake_list.next = NULL;
+
+  data.is_done = FALSE;
+  data.success = FALSE;
+  data.error   = NULL;
+
+  g_app_info_launch_uris_async (appinfo,
+                                &fake_list,
+                                NULL,
+                                NULL,
+                                launch_uri_callback,
+                                (gpointer) &data);
+
+  while (!data.is_done)
+    g_main_context_iteration (NULL, TRUE);
+
+  if (error == NULL)
+    g_clear_error (&data.error);
+  else
+    *error = data.error;
+
+  return data.success;
+}
 
 
 
@@ -381,7 +466,6 @@ exo_open_uri (const gchar  *uri,
   GAppInfo            *app_info;
   gchar               *path;
   const gchar         *executable;
-  GList                fake_list;
   const gchar * const *schemes;
   GError              *err = NULL;
   guint                i;
@@ -445,11 +529,8 @@ exo_open_uri (const gchar  *uri,
                   if (executable == NULL
                       || strcmp (executable, "exo-open") != 0)
                     {
-                      fake_list.data = (gpointer) uri;
-                      fake_list.prev = fake_list.next = NULL;
-
                       /* launch it */
-                      retval = g_app_info_launch_uris (app_info, &fake_list, NULL, &err);
+                      retval = exo_g_app_info_launch_uri (app_info, uri, NULL, &err);
                       succeed = TRUE;
                     }
 
