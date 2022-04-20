@@ -95,7 +95,8 @@ exo_execute_preferred_application (const gchar *category,
 static void
 set_environment (gchar *display)
 {
-  g_setenv ("DISPLAY", display, TRUE);
+  if (display != NULL)
+    g_setenv ("DISPLAY", display, TRUE);
 }
 
 static gchar *
@@ -252,9 +253,9 @@ exo_execute_preferred_application_on_screen (const gchar *category,
                                              GdkScreen   *screen,
                                              GError     **error)
 {
-  GdkDisplay *display;
+  GdkDisplay *display = NULL;
   gchar      *argv[5];
-  gchar      *display_name;
+  gchar      *display_name = NULL;
   gchar      *path = NULL;
   gint        argc = 0;
   gboolean    success;
@@ -295,9 +296,7 @@ exo_execute_preferred_application_on_screen (const gchar *category,
   display = gdk_screen_get_display (screen);
   if (display != NULL && GDK_IS_X11_DISPLAY (display))
     display_name = g_strdup (gdk_display_get_name (display));
-  else
 #endif /* GDK_WINDOWING_X11 */
-    display_name = g_strdup (g_getenv ("DISPLAY"));
 
   /* launch the command */
   success = g_spawn_async (working_directory,
