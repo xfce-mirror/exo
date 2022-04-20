@@ -25,8 +25,9 @@
 #include <gio/gdesktopappinfo.h>
 #endif
 
+#include <gdk/gdk.h>
 #ifdef GDK_WINDOWING_X11
-#include <gdk/x11/gdkx.h>
+#include <gdk/gdkx.h>
 #endif
 
 #include <exo/exo-execute.h>
