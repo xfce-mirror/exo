@@ -25,6 +25,11 @@
 #include <gio/gdesktopappinfo.h>
 #endif
 
+#include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
+#include <gdk/gdkx.h>
+#endif
+
 #include <exo/exo-execute.h>
 #include <exo/exo-alias.h>
 
@@ -286,8 +291,13 @@ exo_execute_preferred_application_on_screen (const gchar *category,
   argv[argc] = NULL;
 
   /* set the display environment variable */
+#ifdef GDK_WINDOWING_X11
   display = gdk_screen_get_display (screen);
-  display_name = g_strdup (gdk_display_get_name (display));
+  if (display != NULL && GDK_IS_X11_DISPLAY (display))
+    display_name = g_strdup (gdk_display_get_name (display));
+  else
+#endif /* GDK_WINDOWING_X11 */
+    display_name = g_strdup (g_getenv ("DISPLAY"));
 
   /* launch the command */
   success = g_spawn_async (working_directory,
