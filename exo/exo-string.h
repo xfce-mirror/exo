@@ -30,7 +30,7 @@
 
 G_BEGIN_DECLS
 
-gchar                *exo_str_elide_underscores  (const gchar     *text) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+gchar                *exo_str_elide_underscores  (const gchar     *text) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT G_GNUC_DEPRECATED;
 
 gboolean              exo_str_is_equal           (const gchar     *a,
                                                   const gchar     *b);
@@ -43,7 +43,7 @@ gchar                *exo_strdup_strftime        (const gchar     *format,
                                                   const struct tm *tm) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
 gchar               **exo_strndupv               (gchar          **strv,
-                                                  guint            num) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+                                                  guint            num) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT G_GNUC_DEPRECATED_FOR (g_strdupv());
 
 gboolean              exo_str_looks_like_an_uri  (const gchar     *str);
 
