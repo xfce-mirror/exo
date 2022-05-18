@@ -55,6 +55,8 @@
  * Returns a copy of @text with all mnemonic underscores
  * stripped off.
  *
+ * Deprecated: xfce 4.18: Unused within xfce project
+ *
  * Returns: A copy of @text without underscores. The returned string
  *          must be freed when no longer required.
  **/
@@ -376,6 +378,8 @@ exo_strdup_strftime (const gchar     *format,
  * Creates a new string vector containing the first @n elements
  * of @strv. If called on a %NULL value or @num is 0, exo_strndupv()
  * simply returns %NULL.
+ *
+ * Deprecated: xfce 4.18: Unused within xfce project
  *
  * Returns: A new NULL-terminated array of strings or %NULL.
  *          Should be freed using g_strfreev() when no longer needed.
