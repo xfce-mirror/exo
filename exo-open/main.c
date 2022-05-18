@@ -289,7 +289,7 @@ exo_open_launch_desktop_file (const gchar *arg)
                                    G_KEY_FILE_DESKTOP_GROUP,
                                    G_KEY_FILE_DESKTOP_KEY_URL,
                                    NULL);
-      if (!exo_str_looks_like_an_uri (link))
+      if (!g_uri_is_valid (link, G_URI_FLAGS_NONE, NULL))
         {
           parent = g_file_get_parent (gfile);
           file_dir = g_file_get_path (parent);
