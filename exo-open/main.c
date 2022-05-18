@@ -289,7 +289,7 @@ exo_open_launch_desktop_file (const gchar *arg)
                                    G_KEY_FILE_DESKTOP_GROUP,
                                    G_KEY_FILE_DESKTOP_KEY_URL,
                                    NULL);
-      if (!exo_str_looks_like_an_uri (link))
+      if (!g_uri_is_valid (link, G_URI_FLAGS_NONE, NULL))
         {
           parent = g_file_get_parent (gfile);
           file_dir = g_file_get_path (parent);
@@ -383,7 +383,7 @@ exo_open_find_scheme (const gchar *string)
 
   /* regular expression to check if it looks like an url, we don't need to check
    * for a complete url (http://) because this is already matched by the
-   * exo_str_looks_like_an_uri() test */
+   * g_uri_is_valid () test */
   if (g_regex_match_simple (MATCH_PATTERN_HTTP, string, G_REGEX_CASELESS, 0))
     return g_strconcat ("http://", string, NULL);
 
@@ -681,7 +681,7 @@ main (gint argc, gchar **argv)
               /* successfully launched a desktop file */
               continue;
             }
-          else if (exo_str_looks_like_an_uri (*argv))
+          else if (g_uri_is_valid (*argv, G_URI_FLAGS_NONE, NULL))
             {
               /* use the argument directly */
               uri = g_strdup (*argv);
