@@ -266,14 +266,14 @@ exo_execute_preferred_application_on_screen (const gchar *category,
 
   /* generate the argument vector */
 
-  path = g_find_program_in_path ("xfce4-mime-helper");
-  if (G_LIKELY(path != NULL))
-  {
-    argv[argc++] = path;
-    argv[argc++] = "--launch";
-    argv[argc++] = (gchar *)category;
-  }
-  else
+  //path = g_find_program_in_path ("xfce4-mime-helper");
+  //if (G_LIKELY(path != NULL))
+  //{
+  //  argv[argc++] = path;
+  //  argv[argc++] = "--launch";
+  //  argv[argc++] = (gchar *)category;
+  //}
+  //else
   {
     // Fallback mode
     path = find_fallback_application (category);
