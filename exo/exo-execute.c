@@ -25,6 +25,11 @@
 #include <gio/gdesktopappinfo.h>
 #endif
 
+#include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_X11
+#include <gdk/gdkx.h>
+#endif
+
 #include <exo/exo-execute.h>
 #include <exo/exo-alias.h>
 
@@ -90,7 +95,8 @@ exo_execute_preferred_application (const gchar *category,
 static void
 set_environment (gchar *display)
 {
-  g_setenv ("DISPLAY", display, TRUE);
+  if (display != NULL)
+    g_setenv ("DISPLAY", display, TRUE);
 }
 
 static gchar *
@@ -247,9 +253,9 @@ exo_execute_preferred_application_on_screen (const gchar *category,
                                              GdkScreen   *screen,
                                              GError     **error)
 {
-  GdkDisplay *display;
+  GdkDisplay *display = NULL;
   gchar      *argv[5];
-  gchar      *display_name;
+  gchar      *display_name = NULL;
   gchar      *path = NULL;
   gint        argc = 0;
   gboolean    success;
@@ -260,14 +266,14 @@ exo_execute_preferred_application_on_screen (const gchar *category,
 
   /* generate the argument vector */
 
-  path = g_find_program_in_path ("xfce4-mime-helper");
-  if (G_LIKELY(path != NULL))
-  {
-    argv[argc++] = path;
-    argv[argc++] = "--launch";
-    argv[argc++] = (gchar *)category;
-  }
-  else
+  //path = g_find_program_in_path ("xfce4-mime-helper");
+  //if (G_LIKELY(path != NULL))
+  //{
+  //  argv[argc++] = path;
+  //  argv[argc++] = "--launch";
+  //  argv[argc++] = (gchar *)category;
+  //}
+  //else
   {
     // Fallback mode
     path = find_fallback_application (category);
@@ -286,8 +292,11 @@ exo_execute_preferred_application_on_screen (const gchar *category,
   argv[argc] = NULL;
 
   /* set the display environment variable */
+#ifdef GDK_WINDOWING_X11
   display = gdk_screen_get_display (screen);
-  display_name = g_strdup (gdk_display_get_name (display));
+  if (display != NULL && GDK_IS_X11_DISPLAY (display))
+    display_name = g_strdup (gdk_display_get_name (display));
+#endif /* GDK_WINDOWING_X11 */
 
   /* launch the command */
   success = g_spawn_async (working_directory,
