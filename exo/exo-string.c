@@ -100,6 +100,8 @@ exo_str_elide_underscores (const gchar *text)
  *
  * You should always prefer this function over strcmp().
  *
+ * Deprecated: xfce 4.18: In favor of g_strcmp0()
+ *
  * Returns: %TRUE if @a equals @b, else %FALSE.
  **/
 gboolean
@@ -133,6 +135,8 @@ exo_str_is_equal (const gchar *a,
  * Note that @pattern and @replacement don't need to be of the
  * same size. If @replacement is %NULL, the pattern will be
  * removed from the string.
+ *
+ * Deprecated: xfce 4.18: Replaced by xfce_str_replace()
  *
  * Returns: a newly allocated copy of @str where all occurances of
  *          @pattern are replaced with @replacement. Or %NULL if
@@ -210,6 +214,8 @@ exo_str_replace (const gchar *str,
  * this is a pointer to a shared static struct which can be changed by subsequent
  * function calls, including any calls to g_warning() made by exo_strdup_strftime()
  * itself. Use e.g. localtime_r(3) or make a copy of the struct to pass in instead.
+ *
+ * Deprecated: xfce 4.18: In favor of g_date_time_format()
  *
  * Returns: a newly allocated string containing the formatted date/time.
  *
@@ -417,6 +423,8 @@ exo_strndupv (gchar **strv,
  * Check if @str looks like an uri. This function is no guarantee that
  * the uri exists, or is supported by the system.
  *
+ * Deprecated: xfce 4.18: In favor of g_uri_is_valid()
+ *
  * Returns: %TRUE if the @str looks like an URI
  *          according to RFC 2396, %FALSE otherwise.
  *
@@ -451,6 +459,8 @@ exo_str_looks_like_an_uri (const gchar *str)
  *
  * Check if @str looks like a commandline flag. This function simply
  * checks if the string begins with a single dash.
+ *
+ * Deprecated: xfce 4.18: In favor of g_str_has_prefix()
  *
  * Returns: %TRUE if the @str looks like a flag, %FALSE otherwise.
  *
