@@ -263,6 +263,16 @@ exo_open_launch_desktop_file (const gchar *arg)
   if (G_UNLIKELY (gfile == NULL))
     return FALSE;
 
+  /* Only execute local .desktop files to prevent execution of malicious launchers from  foreign locations */
+  if (g_file_has_uri_scheme (gfile, "file") == FALSE)
+    {
+      char *uri = g_file_get_uri (gfile);
+      g_warning ("Execution of remote .desktop file '%s' was skipped due to security concerns.", uri);
+      g_object_unref (gfile);
+      g_free (uri);
+      return FALSE;
+    }
+
   /* load the contents of the file */
   result = g_file_load_contents (gfile, NULL, &contents, &length, NULL, NULL);
   if (G_UNLIKELY (!result || length == 0))
