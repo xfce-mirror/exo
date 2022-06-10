@@ -1,3 +1,19 @@
+4.17.2
+======
+- exo-die: Don't touch exe line in .desktop files
+- exo-open : Only execute local .desktop files
+- Fix $DISPLAY being set to wrong value
+- exo-die, exo-open: Remove dependence on exo_str_is_equal(),
+exo_str_looks_like_an_uri()
+- Bump glib/gio/gthread version to 2.66.0
+- Fix unreliable D-BUS-activated app launch behavior
+- exo-open: Try to open Type=Link .desktop files
+- Use xfce-string functions
+- Dont reduce selection in single click mode (Issue #71)
+- Translation Updates:
+  Azerbaijani, Azerbaijani (Azerbaijan), Greek, Korean, Persian (Iran),
+  Romanian
+
 4.17.1
 ======
 - Add typecheck to prevent Gtk-CRITICAL (Issue #63)
