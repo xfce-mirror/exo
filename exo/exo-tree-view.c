@@ -87,6 +87,16 @@ static gboolean exo_tree_view_move_cursor                   (GtkTreeView      *v
                                                              gint              count);
 static gboolean exo_tree_view_single_click_timeout          (gpointer          user_data);
 static void     exo_tree_view_single_click_timeout_destroy  (gpointer          user_data);
+static gboolean select_true                                 (GtkTreeSelection *selection,
+                                                             GtkTreeModel     *model,
+                                                             GtkTreePath      *path,
+                                                             gboolean          path_currently_selected,
+                                                             gpointer          data);
+static gboolean select_false                                (GtkTreeSelection *selection,
+                                                             GtkTreeModel     *model,
+                                                             GtkTreePath      *path,
+                                                             gboolean          path_currently_selected,
+                                                             gpointer          data);
 
 
 
@@ -348,7 +358,7 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   if (event->type == GDK_BUTTON_PRESS && (event->state & gtk_accelerator_get_default_mod_mask ()) == 0
       && path != NULL && gtk_tree_selection_path_is_selected (selection, path))
     {
-      gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false, NULL, NULL);
+      gtk_tree_selection_set_select_function (selection, select_false, NULL, NULL);
     }
 
   /* call the parent's button press handler */
@@ -362,9 +372,9 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   if (GTK_IS_TREE_SELECTION (selection))
     {
       /* Re-enable selection updates */
-      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false))
+      if (G_LIKELY (gtk_tree_selection_get_select_function (selection) == select_false))
         {
-          gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
+          gtk_tree_selection_set_select_function (selection, select_true, NULL, NULL);
         }
     }
 
@@ -675,13 +685,13 @@ exo_tree_view_single_click_timeout (gpointer user_data)
               /* check if the hover path is selected (as it will be selected after the set_cursor() call) */
               hover_path_selected = gtk_tree_selection_path_is_selected (selection, tree_view->priv->hover_path);
               /* disable selection updates if the path is still selected */
-              gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_false, NULL, NULL);
+              gtk_tree_selection_set_select_function (selection, select_false, NULL, NULL);
 
               /* place the cursor on the hover row */
               gtk_tree_view_set_cursor (GTK_TREE_VIEW (tree_view), tree_view->priv->hover_path, cursor_column, FALSE);
 
               /* re-enable selection updates */
-              gtk_tree_selection_set_select_function (selection, (GtkTreeSelectionFunc) (void (*)(void)) exo_noop_true, NULL, NULL);
+              gtk_tree_selection_set_select_function (selection, select_true, NULL, NULL);
 
               /* check what to do */
               if ((gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE ||
@@ -842,6 +852,30 @@ exo_tree_view_set_single_click_timeout (ExoTreeView *tree_view,
       /* notify listeners */
       g_object_notify (G_OBJECT (tree_view), "single-click-timeout");
     }
+}
+
+
+
+static gboolean
+select_true (GtkTreeSelection *selection,
+             GtkTreeModel     *model,
+             GtkTreePath      *path,
+             gboolean          path_currently_selected,
+             gpointer          data)
+{
+  return TRUE;
+}
+
+
+
+static gboolean
+select_false (GtkTreeSelection *selection,
+              GtkTreeModel     *model,
+              GtkTreePath      *path,
+              gboolean          path_currently_selected,
+              gpointer          data)
+{
+  return FALSE;
 }
 
 

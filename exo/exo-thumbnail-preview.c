@@ -81,8 +81,6 @@ exo_thumbnail_preview_class_init (ExoThumbnailPreviewClass *klass)
 static void
 exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
 {
-  GtkWidget *button;
-  GtkWidget *label;
   GtkWidget *ebox;
   GtkWidget *vbox;
   GtkWidget *box;
@@ -91,6 +89,7 @@ exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
   _exo_i18n_init ();
 
   gtk_frame_set_shadow_type (GTK_FRAME (thumbnail_preview), GTK_SHADOW_IN);
+  gtk_frame_set_label (GTK_FRAME (thumbnail_preview), _("Preview"));
   gtk_widget_set_sensitive (GTK_WIDGET (thumbnail_preview), FALSE);
 
   ebox = gtk_event_box_new ();
@@ -101,19 +100,6 @@ exo_thumbnail_preview_init (ExoThumbnailPreview *thumbnail_preview)
   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_container_add (GTK_CONTAINER (ebox), vbox);
   gtk_widget_show (vbox);
-
-  button = gtk_button_new ();
-  g_signal_connect (G_OBJECT (button), "button-press-event", G_CALLBACK (exo_noop_true), NULL);
-  g_signal_connect (G_OBJECT (button), "button-release-event", G_CALLBACK (exo_noop_true), NULL);
-  g_signal_connect (G_OBJECT (button), "enter-notify-event", G_CALLBACK (exo_noop_true), NULL);
-  g_signal_connect (G_OBJECT (button), "leave-notify-event", G_CALLBACK (exo_noop_true), NULL);
-  gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 0);
-  gtk_widget_show (button);
-
-  label = gtk_label_new (_("Preview"));
-  g_object_set (label, "xalign", 0.0f, "yalign", 0.5f, NULL);
-  gtk_container_add (GTK_CONTAINER (button), label);
-  gtk_widget_show (label);
 
   box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 2);
 
