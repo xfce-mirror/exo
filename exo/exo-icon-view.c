@@ -2555,8 +2555,11 @@ exo_icon_view_scroll_event (GtkWidget      *widget,
     event->direction = GDK_SCROLL_RIGHT;
   else if (event->direction == GDK_SCROLL_SMOOTH)
     {
-      event->delta_x = event->delta_y;
-      event->delta_y = 0.0;
+      if (event->delta_x == 0.0)
+        {
+          event->delta_x = event->delta_y;
+          event->delta_y = 0.0;
+        }
     }
 
   /* scrolling will be handled by GtkScrolledWindow */
