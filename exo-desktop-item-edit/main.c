@@ -642,6 +642,9 @@ main (int argc, char **argv)
       g_clear_error (&error);
     }
 
+  /* has to be called manually because we are not using GtkApplication */
+  gtk_clipboard_store (gtk_widget_get_clipboard (dialog, GDK_SELECTION_CLIPBOARD));
+
   /* destroy the editor dialog */
   gtk_widget_destroy (dialog);
 
