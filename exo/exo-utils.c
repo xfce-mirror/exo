@@ -69,6 +69,8 @@ exo_noop (void)
  * returns %1, but don't want to perform any other
  * actions.
  *
+ * Deprecated: xfce 4.18: Use NULL pointer instead
+ *
  * Returns: the integer value %1.
  *
  * Since: 0.3.1
@@ -89,6 +91,8 @@ exo_noop_one (void)
  * situations where you just need a function that
  * returns %0, but don't want to perform any other
  * actions.
+ *
+ * Deprecated: xfce 4.18: Use NULL pointer instead
  *
  * Returns: the integer value %0.
  *
@@ -111,6 +115,8 @@ exo_noop_zero (void)
  * returns %NULL, but don't want to perform any
  * other actions.
  *
+ * Deprecated: xfce 4.18: Use NULL pointer instead
+ *
  * Returns: a %NULL pointer.
  *
  * Since: 0.3.1
@@ -131,6 +137,8 @@ exo_noop_null (void)
  * situations where you just need a function that
  * returns %TRUE, but don't want to perform any
  * other actions.
+ *
+ * Deprecated: xfce 4.18: Use NULL pointer instead
  *
  * Returns: the boolean value %TRUE.
  *
@@ -153,6 +161,8 @@ exo_noop_true (void)
  * returns %FALSE, but don't want to perform any
  * other actions.
  *
+ * Deprecated: xfce 4.18: Use NULL pointer instead
+ *
  * Returns: the boolean value %FALSE.
  *
  * Since: 0.3.1
@@ -167,4 +177,3 @@ exo_noop_false (void)
 
 #define __EXO_UTILS_C__
 #include <exo/exo-aliasdef.c>
-
