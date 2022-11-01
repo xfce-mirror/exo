@@ -237,14 +237,17 @@ void
 _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
                                 const gchar         *uri)
 {
-  struct stat statb;
-  GdkPixbuf  *thumbnail_framed;
-  GdkPixbuf  *thumbnail;
-  gchar      *icon_name = NULL;
-  gchar      *size_name = NULL;
-  gchar      *displayname;
-  gchar      *filename;
-  gchar      *slash;
+  struct stat      statb;
+  GdkPixbuf       *thumbnail_framed;
+  GdkPixbuf       *thumbnail;
+  cairo_surface_t *surface;
+  gchar           *icon_name = NULL;
+  gchar           *size_name = NULL;
+  gchar           *displayname;
+  gchar           *filename;
+  gchar           *slash;
+  gint             scale_factor;
+  ExoThumbnailSize thumbnail_size;
 
   _exo_return_if_fail (EXO_IS_THUMBNAIL_PREVIEW (thumbnail_preview));
 
@@ -330,11 +333,14 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
       else
         {
           /* try to load a thumbnail for the URI */
-          thumbnail = _exo_thumbnail_get_for_uri (uri, EXO_THUMBNAIL_SIZE_NORMAL, NULL);
+          scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (thumbnail_preview));
+          thumbnail_size = scale_factor > 1 ? EXO_THUMBNAIL_SIZE_LARGE : EXO_THUMBNAIL_SIZE_NORMAL;
+
+          thumbnail = _exo_thumbnail_get_for_uri (uri, thumbnail_size, NULL);
           if (thumbnail == NULL && G_LIKELY (filename != NULL))
             {
               /* but we can try to generate a thumbnail */
-              thumbnail = _exo_thumbnail_get_for_file (filename, EXO_THUMBNAIL_SIZE_NORMAL, NULL);
+              thumbnail = _exo_thumbnail_get_for_file (filename, thumbnail_size, NULL);
             }
 
           /* check if we have a thumbnail */
@@ -342,9 +348,11 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
             {
               /* setup the thumbnail for the image (using a frame if possible) */
               thumbnail_framed = thumbnail_add_frame (thumbnail);
-              gtk_image_set_from_pixbuf (GTK_IMAGE (thumbnail_preview->image), thumbnail_framed);
+              surface = gdk_cairo_surface_create_from_pixbuf (thumbnail_framed, scale_factor, gtk_widget_get_window (GTK_WIDGET (thumbnail_preview)));
+              gtk_image_set_from_surface (GTK_IMAGE (thumbnail_preview->image), surface);
               g_object_unref (G_OBJECT (thumbnail_framed));
               g_object_unref (G_OBJECT (thumbnail));
+              cairo_surface_destroy (surface);
             }
           else
             {
