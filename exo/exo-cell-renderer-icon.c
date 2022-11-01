@@ -378,10 +378,12 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   GtkIconInfo                      *icon_info = NULL;
   GdkPixbuf                        *icon = NULL;
   GdkPixbuf                        *temp;
+  cairo_surface_t                  *surface;
   GError                           *err = NULL;
   gchar                            *display_name = NULL;
   gint                             *icon_sizes;
   gint                              icon_size;
+  gint                              scale_factor;
   gint                              n;
 
   gdk_cairo_get_clip_rectangle (cr, expose_area);
@@ -389,6 +391,8 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   /* verify that we have an icon */
   if (G_UNLIKELY (priv->icon == NULL && priv->gicon == NULL))
     return;
+
+  scale_factor = gtk_widget_get_scale_factor (widget);
 
   /* icon may be either an image file or a named icon */
   if (priv->icon != NULL && g_path_is_absolute (priv->icon))
@@ -419,13 +423,13 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
             icon_size = priv->size;
 
           /* lookup the icon in the icon theme */
-          icon_info = gtk_icon_theme_lookup_icon (icon_theme, priv->icon, icon_size, 0);
+          icon_info = gtk_icon_theme_lookup_icon (icon_theme, priv->icon, icon_size * scale_factor, 0);
         }
       else if (priv->gicon != NULL)
         {
           icon_info = gtk_icon_theme_lookup_by_gicon (icon_theme,
                                                       priv->gicon,
-                                                      priv->size,
+                                                      priv->size * scale_factor,
                                                       GTK_ICON_LOOKUP_USE_BUILTIN);
         }
 
@@ -476,8 +480,8 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
     }
 
   /* determine the real icon size */
-  icon_area.width = gdk_pixbuf_get_width (icon);
-  icon_area.height = gdk_pixbuf_get_height (icon);
+  icon_area.width = gdk_pixbuf_get_width (icon) / scale_factor;
+  icon_area.height = gdk_pixbuf_get_height (icon) / scale_factor;
 
   /* scale down the icon on-demand */
   if (G_UNLIKELY (icon_area.width > cell_area->width || icon_area.height > cell_area->height))
@@ -488,8 +492,8 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
       icon = temp;
 
       /* determine the icon dimensions again */
-      icon_area.width = gdk_pixbuf_get_width (icon);
-      icon_area.height = gdk_pixbuf_get_height (icon);
+      icon_area.width = gdk_pixbuf_get_width (icon) / scale_factor;
+      icon_area.height = gdk_pixbuf_get_height (icon) / scale_factor;
     }
 
   icon_area.x = cell_area->x + (cell_area->width - icon_area.width) / 2;
@@ -546,9 +550,12 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
         }
 
       /* render the invalid parts of the icon */
-      gdk_cairo_set_source_pixbuf (cr, icon, icon_area.x, icon_area.y);
+      surface = gdk_cairo_surface_create_from_pixbuf (icon, scale_factor, gtk_widget_get_window (widget));
+      cairo_set_source_surface (cr, surface, icon_area.x, icon_area.y);
       cairo_rectangle (cr, draw_area.x, draw_area.y, draw_area.width, draw_area.height);
       cairo_fill (cr);
+
+      cairo_surface_destroy (surface);
     }
 
   /* release the file's icon */

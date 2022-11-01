@@ -102,6 +102,16 @@ update_preview (GtkFileChooser      *chooser,
 
 
 
+static void
+scale_factor_changed (ExoThumbnailPreview *thumbnail_preview,
+                      GParamSpec          *spec,
+                      GtkFileChooser      *chooser)
+{
+    update_preview (chooser, thumbnail_preview);
+}
+
+
+
 /**
  * exo_gtk_file_chooser_add_thumbnail_preview:
  * @chooser : a #GtkFileChooser.
@@ -139,6 +149,7 @@ exo_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
   gtk_file_chooser_set_preview_widget_active (chooser, TRUE);
   gtk_file_chooser_set_use_preview_label (chooser, FALSE);
   gtk_widget_show (thumbnail_preview);
+  g_signal_connect (G_OBJECT (thumbnail_preview), "notify::scale-factor", G_CALLBACK (scale_factor_changed), chooser);
 
   /* update the preview as necessary */
   g_signal_connect (G_OBJECT (chooser), "update-preview", G_CALLBACK (update_preview), thumbnail_preview);
