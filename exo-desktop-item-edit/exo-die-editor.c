@@ -1190,13 +1190,16 @@ void
 exo_die_editor_set_icon (ExoDieEditor *editor,
                          const gchar  *icon)
 {
-  GtkIconTheme *icon_theme;
-  GdkPixbuf    *pixbuf_scaled;
-  GdkPixbuf    *pixbuf = NULL;
-  GtkWidget    *image;
-  GtkWidget    *label;
-  gint          pixbuf_width;
-  gint          pixbuf_height;
+  GtkIconTheme    *icon_theme;
+  GdkPixbuf       *pixbuf_scaled;
+  GdkPixbuf       *pixbuf = NULL;
+  cairo_surface_t *surface;
+  GtkWidget       *image;
+  GtkWidget       *label;
+  gint             scale_factor;
+  gint             icon_size;
+  gint             pixbuf_width;
+  gint             pixbuf_height;
 
   g_return_if_fail (EXO_DIE_IS_EDITOR (editor));
   g_return_if_fail (g_utf8_validate (icon, -1, NULL));
@@ -1215,6 +1218,9 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
       if (gtk_bin_get_child (GTK_BIN (editor->icon_button)) != NULL)
         gtk_widget_destroy (gtk_bin_get_child (GTK_BIN (editor->icon_button)));
 
+      scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (editor));
+      icon_size = 48 * scale_factor;
+
       /* check the icon depending on the type */
       if (icon != NULL && g_path_is_absolute (icon))
         {
@@ -1227,7 +1233,7 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
           icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (editor)));
 
           /* try to load the named icon */
-          pixbuf = gtk_icon_theme_load_icon (icon_theme, icon, 48, 0, NULL);
+          pixbuf = gtk_icon_theme_load_icon (icon_theme, icon, icon_size, GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
         }
 
       /* setup the icon button */
@@ -1236,20 +1242,22 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
           /* scale down the icon if required */
           pixbuf_width = gdk_pixbuf_get_width (pixbuf);
           pixbuf_height = gdk_pixbuf_get_height (pixbuf);
-          if (G_UNLIKELY (pixbuf_width > 48 || pixbuf_height > 48))
+          if (G_UNLIKELY (pixbuf_width > icon_size || pixbuf_height > icon_size))
             {
-              pixbuf_scaled = exo_gdk_pixbuf_scale_ratio (pixbuf, 48);
+              pixbuf_scaled = exo_gdk_pixbuf_scale_ratio (pixbuf, icon_size);
               g_object_unref (G_OBJECT (pixbuf));
               pixbuf = pixbuf_scaled;
             }
+          surface = gdk_cairo_surface_create_from_pixbuf (pixbuf, scale_factor, gtk_widget_get_window (GTK_WIDGET (editor)));
 
           /* setup an image for the icon */
-          image = gtk_image_new_from_pixbuf (pixbuf);
+          image = gtk_image_new_from_surface (surface);
           gtk_container_add (GTK_CONTAINER (editor->icon_button), image);
           gtk_widget_show (image);
 
           /* release the pixbuf */
           g_object_unref (G_OBJECT (pixbuf));
+          cairo_surface_destroy (surface);
         }
       else
         {
