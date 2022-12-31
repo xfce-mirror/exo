@@ -744,13 +744,15 @@ exo_die_editor_cell_data_func (GtkCellLayout   *cell_layout,
                                GtkTreeIter     *iter,
                                gpointer         user_data)
 {
-  ExoDieEditor *editor = EXO_DIE_EDITOR (user_data);
-  GtkIconTheme *icon_theme;
-  GdkPixbuf    *pixbuf_scaled;
-  GdkPixbuf    *pixbuf = NULL;
-  gchar        *icon;
-  gint          pixbuf_width;
-  gint          pixbuf_height;
+  ExoDieEditor    *editor = EXO_DIE_EDITOR (user_data);
+  GtkIconTheme    *icon_theme;
+  GdkPixbuf       *pixbuf_scaled;
+  GdkPixbuf       *pixbuf = NULL;
+  cairo_surface_t *surface = NULL;
+  gchar           *icon;
+  gint             pixbuf_width;
+  gint             pixbuf_height;
+  gint             scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (editor));
 
   /* determine the icon for the row */
   gtk_tree_model_get (model, iter, EXO_DIE_DESKTOP_MODEL_COLUMN_ICON, &icon, -1);
@@ -767,7 +769,7 @@ exo_die_editor_cell_data_func (GtkCellLayout   *cell_layout,
       icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (editor)));
 
       /* try to load the named icon */
-      pixbuf = gtk_icon_theme_load_icon (icon_theme, icon, 16, 0, NULL);
+      pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, icon, 16, scale_factor, GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
     }
 
   /* setup the icon button */
@@ -776,20 +778,23 @@ exo_die_editor_cell_data_func (GtkCellLayout   *cell_layout,
       /* scale down the icon if required */
       pixbuf_width = gdk_pixbuf_get_width (pixbuf);
       pixbuf_height = gdk_pixbuf_get_height (pixbuf);
-      if (G_UNLIKELY (pixbuf_width > 16 || pixbuf_height > 16))
+      if (G_UNLIKELY (pixbuf_width > 16 * scale_factor || pixbuf_height > 16 * scale_factor))
         {
-          pixbuf_scaled = exo_gdk_pixbuf_scale_ratio (pixbuf, 16);
+          pixbuf_scaled = exo_gdk_pixbuf_scale_ratio (pixbuf, 16 * scale_factor);
           g_object_unref (G_OBJECT (pixbuf));
           pixbuf = pixbuf_scaled;
         }
+
+      surface = gdk_cairo_surface_create_from_pixbuf (pixbuf, scale_factor, gtk_widget_get_window (GTK_WIDGET (editor)));
+      g_object_unref (G_OBJECT (pixbuf));
     }
 
   /* setup the pixbuf for the renderer */
-  g_object_set (G_OBJECT (renderer), "pixbuf", pixbuf, NULL);
+  g_object_set (G_OBJECT (renderer), "surface", surface, NULL);
 
   /* cleanup */
-  if (G_LIKELY (pixbuf != NULL))
-    g_object_unref (G_OBJECT (pixbuf));
+  if (G_LIKELY (surface != NULL))
+    cairo_surface_destroy (surface);
   g_free (icon);
 }
 
@@ -1219,7 +1224,7 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
         gtk_widget_destroy (gtk_bin_get_child (GTK_BIN (editor->icon_button)));
 
       scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (editor));
-      icon_size = 48 * scale_factor;
+      icon_size = 48;
 
       /* check the icon depending on the type */
       if (icon != NULL && g_path_is_absolute (icon))
@@ -1233,7 +1238,7 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
           icon_theme = gtk_icon_theme_get_for_screen (gtk_widget_get_screen (GTK_WIDGET (editor)));
 
           /* try to load the named icon */
-          pixbuf = gtk_icon_theme_load_icon (icon_theme, icon, icon_size, GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
+          pixbuf = gtk_icon_theme_load_icon_for_scale (icon_theme, icon, icon_size, scale_factor, GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
         }
 
       /* setup the icon button */
@@ -1242,9 +1247,9 @@ exo_die_editor_set_icon (ExoDieEditor *editor,
           /* scale down the icon if required */
           pixbuf_width = gdk_pixbuf_get_width (pixbuf);
           pixbuf_height = gdk_pixbuf_get_height (pixbuf);
-          if (G_UNLIKELY (pixbuf_width > icon_size || pixbuf_height > icon_size))
+          if (G_UNLIKELY (pixbuf_width > icon_size * scale_factor || pixbuf_height > icon_size * scale_factor))
             {
-              pixbuf_scaled = exo_gdk_pixbuf_scale_ratio (pixbuf, icon_size);
+              pixbuf_scaled = exo_gdk_pixbuf_scale_ratio (pixbuf, icon_size * scale_factor);
               g_object_unref (G_OBJECT (pixbuf));
               pixbuf = pixbuf_scaled;
             }
