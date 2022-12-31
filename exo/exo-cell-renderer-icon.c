@@ -381,11 +381,8 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
   cairo_surface_t                  *surface;
   GError                           *err = NULL;
   gchar                            *display_name = NULL;
-  gint                             *theme_icon_sizes;
-  gint                              requested_icon_size;
-  gint                              selected_icon_size;
+  gint                              scaled_icon_size;
   gint                              scale_factor;
-  gint                              n;
 
   gdk_cairo_get_clip_rectangle (cr, expose_area);
 
@@ -394,13 +391,13 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
     return;
 
   scale_factor = gtk_widget_get_scale_factor (widget);
-  requested_icon_size = priv->size * scale_factor;
+  scaled_icon_size = priv->size * scale_factor;
 
   /* icon may be either an image file or a named icon */
   if (priv->icon != NULL && g_path_is_absolute (priv->icon))
     {
       /* load the icon via the thumbnail database */
-      icon = _exo_thumbnail_get_for_file (priv->icon, (requested_icon_size > 128) ? EXO_THUMBNAIL_SIZE_LARGE : EXO_THUMBNAIL_SIZE_NORMAL, &err);
+      icon = _exo_thumbnail_get_for_file (priv->icon, (scaled_icon_size > 128) ? EXO_THUMBNAIL_SIZE_LARGE : EXO_THUMBNAIL_SIZE_NORMAL, &err);
     }
   else if (priv->icon != NULL || priv->gicon != NULL)
     {
@@ -409,36 +406,19 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
 
       if (priv->icon != NULL)
         {
-          theme_icon_sizes = gtk_icon_theme_get_icon_sizes (icon_theme, priv->icon);
-          for (selected_icon_size = -1, n = 0; theme_icon_sizes[n] != 0; ++n)
-            {
-              /* we can use any size if scalable, because we load the file directly. also bail if we get an exact match. */
-              if (theme_icon_sizes[n] == -1 || theme_icon_sizes[n] == requested_icon_size)
-                {
-                  selected_icon_size = requested_icon_size;
-                  break;
-                }
-              /* selected icon size is still too small, but this icon size is better */
-              else if (selected_icon_size < requested_icon_size && theme_icon_sizes[n] > selected_icon_size)
-                selected_icon_size = theme_icon_sizes[n];
-              /* this icon is large enough, and is a closer match than what we've selected */
-              else if (theme_icon_sizes[n] > requested_icon_size && theme_icon_sizes[n] < selected_icon_size)
-                selected_icon_size = theme_icon_sizes[n];
-            }
-          g_free (theme_icon_sizes);
-
-          /* if we don't know any icon sizes at all, the icon is probably not present */
-          if (G_UNLIKELY (selected_icon_size < 0))
-            selected_icon_size = requested_icon_size;
-
           /* lookup the icon in the icon theme */
-          icon_info = gtk_icon_theme_lookup_icon (icon_theme, priv->icon, selected_icon_size, GTK_ICON_LOOKUP_FORCE_SIZE);
+          icon_info = gtk_icon_theme_lookup_icon_for_scale (icon_theme,
+                                                            priv->icon,
+                                                            priv->size,
+                                                            scale_factor,
+                                                            GTK_ICON_LOOKUP_FORCE_SIZE);
         }
       else if (priv->gicon != NULL)
         {
-          icon_info = gtk_icon_theme_lookup_by_gicon (icon_theme,
+          icon_info = gtk_icon_theme_lookup_by_gicon_for_scale (icon_theme,
                                                       priv->gicon,
-                                                      requested_icon_size,
+                                                      priv->size,
+                                                      scale_factor,
                                                       GTK_ICON_LOOKUP_USE_BUILTIN | GTK_ICON_LOOKUP_FORCE_SIZE);
         }
 
@@ -453,7 +433,7 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
            * real available cell area directly here, because loading thumbnails involves scaling anyway
            * and this way we need to the thumbnail pixbuf scale only once.
            */
-          icon = _exo_thumbnail_get_for_file (filename, (requested_icon_size > 128) ? EXO_THUMBNAIL_SIZE_LARGE : EXO_THUMBNAIL_SIZE_NORMAL, &err);
+          icon = _exo_thumbnail_get_for_file (filename, (scaled_icon_size > 128) ? EXO_THUMBNAIL_SIZE_LARGE : EXO_THUMBNAIL_SIZE_NORMAL, &err);
         }
       else
         {
