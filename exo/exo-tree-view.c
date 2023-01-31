@@ -22,6 +22,7 @@
 #endif
 
 #include <exo/exo-config.h>
+#include <exo/exo-gtk-extensions.h>
 #include <exo/exo-private.h>
 #include <exo/exo-tree-view.h>
 #include <exo/exo-utils.h>
@@ -194,6 +195,10 @@ exo_tree_view_init (ExoTreeView *tree_view)
   /* grab a pointer on the private data */
   tree_view->priv = exo_tree_view_get_instance_private (tree_view);
   tree_view->priv->single_click_timeout_id = -1;
+
+  gtk_tree_view_set_search_position_func (GTK_TREE_VIEW (tree_view),
+                                          (GtkTreeViewSearchPositionFunc) exo_gtk_position_search_box,
+                                          NULL, g_object_unref);
 }
 
 
