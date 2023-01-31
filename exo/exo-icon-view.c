@@ -8700,7 +8700,7 @@ exo_icon_view_search_position_func (ExoIconView *icon_view,
   else if (view_y + view_height < work_area_dimensions.y)
     y = work_area_dimensions.y;
   else
-    y = view_y + view_height;
+    y = view_y + view_height - requisition.height;
 
   display = gdk_window_get_display (view_window);
   if (display)
