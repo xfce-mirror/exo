@@ -42,6 +42,7 @@
 
 #include <exo/exo-config.h>
 #include <exo/exo-enum-types.h>
+#include <exo/exo-gtk-extensions.h>
 #include <exo/exo-icon-view.h>
 #include <exo/exo-cell-renderer-icon.h>
 #include <exo/exo-marshal.h>
@@ -332,9 +333,6 @@ static void                 exo_icon_view_set_pixbuf_column              (ExoIco
 static void                 exo_icon_view_set_icon_column                (ExoIconView            *icon_view,
                                                                           gint                    column);
 
-static void                 exo_icon_view_get_work_area_dimensions       (GdkWindow              *window,
-                                                                          GdkRectangle           *dimensions);
-
 /* Source side drag signals */
 static void exo_icon_view_drag_begin       (GtkWidget        *widget,
                                             GdkDragContext   *context);
@@ -401,9 +399,6 @@ static gboolean exo_icon_view_search_equal_func         (GtkTreeModel   *model,
                                                          gint            column,
                                                          const gchar    *key,
                                                          GtkTreeIter    *iter,
-                                                         gpointer        user_data);
-static void     exo_icon_view_search_position_func      (ExoIconView    *icon_view,
-                                                         GtkWidget      *search_dialog,
                                                          gpointer        user_data);
 static gboolean exo_icon_view_search_button_press_event (GtkWidget      *widget,
                                                          GdkEventButton *event,
@@ -634,27 +629,6 @@ exo_icon_view_get_accessible (GtkWidget *widget)
     }
 
   return GTK_WIDGET_CLASS (exo_icon_view_parent_class)->get_accessible (widget);
-}
-
-static void
-exo_icon_view_get_work_area_dimensions (GdkWindow *window, GdkRectangle *dimensions)
-{
-  GdkDisplay   *display;
-  GdkRectangle  geometry;
-
-  GdkMonitor   *monitor;
-
-  display = gdk_window_get_display (window);
-  monitor = gdk_display_get_monitor_at_window (display, window);
-  gdk_monitor_get_workarea (monitor, &geometry);
-
-  if (dimensions != NULL)
-    {
-       dimensions->x = geometry.x;
-       dimensions->y = geometry.y;
-       dimensions->width = geometry.width;
-       dimensions->height = geometry.height;
-    }
 }
 
 
@@ -1302,7 +1276,7 @@ exo_icon_view_init (ExoIconView *icon_view)
   icon_view->priv->enable_search = TRUE;
   icon_view->priv->search_column = -1;
   icon_view->priv->search_equal_func = exo_icon_view_search_equal_func;
-  icon_view->priv->search_position_func = exo_icon_view_search_position_func;
+  icon_view->priv->search_position_func = (ExoIconViewSearchPositionFunc) exo_gtk_position_search_box;
 
   icon_view->priv->flags = EXO_ICON_VIEW_DRAW_KEYFOCUS;
 }
@@ -8266,7 +8240,7 @@ exo_icon_view_set_search_position_func (ExoIconView                  *icon_view,
   if (icon_view->priv->search_position_destroy != NULL)
     (*icon_view->priv->search_position_destroy) (icon_view->priv->search_position_data);
 
-  icon_view->priv->search_position_func = (search_position_func != NULL) ? search_position_func : exo_icon_view_search_position_func;
+  icon_view->priv->search_position_func = (search_position_func != NULL) ? search_position_func : (ExoIconViewSearchPositionFunc) exo_gtk_position_search_box;
   icon_view->priv->search_position_data = search_position_data;
   icon_view->priv->search_position_destroy = search_position_destroy;
 }
@@ -8657,64 +8631,6 @@ exo_icon_view_search_equal_func (GtkTreeModel *model,
   g_free (normalized_key);
 
   return retval;
-}
-
-
-
-static void
-exo_icon_view_search_position_func (ExoIconView *icon_view,
-                                    GtkWidget   *search_dialog,
-                                    gpointer     user_data)
-{
-  GtkRequisition requisition;
-  GdkWindow     *view_window = gtk_widget_get_window (GTK_WIDGET (icon_view));
-  GdkRectangle   work_area_dimensions;
-  gint           view_width, view_height;
-  gint           view_x, view_y;
-  gint           x, y;
-  GdkDisplay    *display;
-  GdkRectangle   monitor_dimensions;
-  GdkMonitor    *monitor;
-
-  /* make sure the search dialog is realized */
-  gtk_widget_realize (search_dialog);
-
-  gdk_window_get_origin (view_window, &view_x, &view_y);
-  view_width = gdk_window_get_width (view_window);
-  view_height = gdk_window_get_height (view_window);
-
-  /* FIXME: make actual use of new Gtk3 layout system */
-  gtk_widget_get_preferred_width (search_dialog, NULL, &requisition.width);
-  gtk_widget_get_preferred_height (search_dialog, NULL, &requisition.height);
-
-  exo_icon_view_get_work_area_dimensions (view_window, &work_area_dimensions);
-  if (view_x + view_width > work_area_dimensions.x + work_area_dimensions.width)
-    x = work_area_dimensions.x + work_area_dimensions.width - requisition.width;
-  else if (view_x + view_width - requisition.width < work_area_dimensions.x)
-    x = work_area_dimensions.x;
-  else
-    x = view_x + view_width - requisition.width;
-
-  if (view_y + view_height > work_area_dimensions.y + work_area_dimensions.height)
-    y = work_area_dimensions.y + work_area_dimensions.height - requisition.height;
-  else if (view_y + view_height < work_area_dimensions.y)
-    y = work_area_dimensions.y;
-  else
-    y = view_y + view_height - requisition.height;
-
-  display = gdk_window_get_display (view_window);
-  if (display)
-    {
-      monitor = gdk_display_get_monitor_at_window (display, view_window);
-      if (monitor)
-        {
-          gdk_monitor_get_geometry (monitor, &monitor_dimensions);
-          if (y + requisition.height > monitor_dimensions.height)
-            y = monitor_dimensions.height - requisition.height;
-        }
-    }
-
-  gtk_window_move (GTK_WINDOW (search_dialog), x, y);
 }
 
 
