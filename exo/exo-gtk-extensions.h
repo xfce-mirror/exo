@@ -42,7 +42,9 @@ GtkWidget * exo_gtk_dialog_get_action_area              (GtkDialog *dialog);
 
 void        exo_gtk_dialog_add_secondary_button         (GtkDialog *dialog,
                                                          GtkWidget *button);
-
+void        exo_gtk_position_search_box                 (GtkWidget *view,
+                                                         GtkWidget *search_dialog,
+                                                         gpointer   user_data);
 G_END_DECLS
 
 #endif /* !__EXO_GTK_EXTENSIONS_H__ */
