@@ -27,6 +27,12 @@
 #include <string.h>
 #endif
 
+#include <gdk/gdk.h>
+
+#ifdef GDK_WINDOWING_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif
+
 #include <exo/exo-gtk-extensions.h>
 #include <exo/exo-private.h>
 #include <exo/exo-thumbnail-preview.h>
@@ -343,24 +349,30 @@ exo_gtk_position_search_box (GtkWidget *view,
   gtk_widget_get_preferred_height (search_dialog, NULL, &requisition.height);
 
   exo_gtk_get_work_area_dimensions (view_window, &work_area_dimensions);
-
-  if (getenv("WAYLAND_DISPLAY"))
-    x = view_x + view_width - requisition.width;
-  else if (view_x + view_width > work_area_dimensions.x + work_area_dimensions.width)
+    
+  if (view_x + view_width > work_area_dimensions.x + work_area_dimensions.width)
     x = work_area_dimensions.x + work_area_dimensions.width - requisition.width;
   else if (view_x + view_width - requisition.width < work_area_dimensions.x)
     x = work_area_dimensions.x;
   else
     x = view_x + view_width - requisition.width;
 
-  if (getenv("WAYLAND_DISPLAY"))
-    y = view_y + view_height - requisition.height;
-  else if (view_y + view_height > work_area_dimensions.y + work_area_dimensions.height)
+#ifdef GDK_WINDOWING_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+    x = view_x + view_width - requisition.width;
+#endif
+
+  if (view_y + view_height > work_area_dimensions.y + work_area_dimensions.height)
     y = work_area_dimensions.y + work_area_dimensions.height - requisition.height;
   else if (view_y + view_height < work_area_dimensions.y)
     y = work_area_dimensions.y;
   else
     y = view_y + view_height - requisition.height;
+
+#ifdef GDK_WINDOWING_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+    y = view_y + view_height - requisition.height;
+#endif
 
   display = gdk_window_get_display (view_window);
   if (display)
