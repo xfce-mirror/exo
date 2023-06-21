@@ -33,9 +33,8 @@
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif
-//ONLY TEST PURPOSE
 #ifdef HAVE_LIMITS_H
-#include <limits.h>
+#include <limits.h> // realpath()
 #endif
 
 #include <gio/gio.h>
@@ -215,7 +214,6 @@ main (int argc, char **argv)
 
   /* create a file from the arguments */
   gfile = g_file_new_for_commandline_arg (argv[1]);
-
   if (!opt_create_new && opt_type == NULL
       && !g_file_query_exists (gfile, NULL))
     {
