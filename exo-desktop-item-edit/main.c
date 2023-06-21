@@ -570,6 +570,7 @@ main (int argc, char **argv)
               /* destroy the chooser */
               gtk_widget_destroy (chooser);
             }
+#ifdef HAVE_REALPATH
           else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_TOO_MANY_LINKS))
             {
               relpath = g_file_get_path (gfile);
@@ -587,6 +588,7 @@ main (int argc, char **argv)
                   g_object_unref (gfile_local);
                 }
             }
+#endif
           else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED)
                    || g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_ACCES))
             {

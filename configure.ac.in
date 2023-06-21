@@ -119,6 +119,7 @@ dnl ************************************
 dnl *** Check for standard functions ***
 dnl ************************************
 AC_FUNC_MMAP()
+AC_CHECK_FUNCS([realpath])
 
 dnl ***************************************************************************
 dnl *** Check for strftime() extensions                                     ***
