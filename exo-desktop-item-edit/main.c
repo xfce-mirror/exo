@@ -33,6 +33,9 @@
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif
+#ifdef HAVE_LIMITS_H
+#include <limits.h> // realpath()
+#endif
 
 #include <gio/gio.h>
 #include <libxfce4ui/libxfce4ui.h>
@@ -566,6 +569,23 @@ main (int argc, char **argv)
 
               /* destroy the chooser */
               gtk_widget_destroy (chooser);
+            }
+          else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_TOO_MANY_LINKS))
+            {
+              relpath = g_file_get_path (gfile);
+              path = realpath (relpath, NULL);
+              g_free (relpath);
+
+              if (path != NULL)
+                {
+                  gfile_local = g_file_new_for_path (path);
+                  free (path); //not g_free
+
+                  g_clear_error (&error);
+
+                  exo_die_g_key_file_save (key_file, FALSE, trusted_launcher, gfile_local, mode, &error);
+                  g_object_unref (gfile_local);
+                }
             }
           else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED)
                    || g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_ACCES))
