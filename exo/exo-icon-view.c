@@ -3503,6 +3503,7 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
   ExoIconViewCellInfo *info;
   GList               *lp;
   gchar               *buffer;
+  gint                 cell_xpad;
 
   if (G_LIKELY (item->area.width != -1))
     return;
@@ -3550,9 +3551,9 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
 
             gtk_cell_renderer_get_aligned_area (info->cell, GTK_WIDGET (icon_view),
                                                 0, &cell_area, &aligned_area);
+            gtk_cell_renderer_get_padding (info->cell, &cell_xpad, NULL);
 
-            /* 4px padding for width to avoid truncated text in small zoom levels */
-            item->box[info->position].width = aligned_area.width + 4;
+            item->box[info->position].width = aligned_area.width + 2 * cell_xpad;
             item->box[info->position].height = aligned_area.height;
           }
         else
