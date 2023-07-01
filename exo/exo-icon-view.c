@@ -128,6 +128,7 @@ enum
   MOVE_CURSOR,
   ACTIVATE_CURSOR_ITEM,
   START_INTERACTIVE_SEARCH,
+  ICON_HOVERED,
   LAST_SIGNAL
 };
 
@@ -1016,6 +1017,23 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
                   G_TYPE_FROM_CLASS (gobject_class),
                   G_SIGNAL_RUN_LAST,
                   G_STRUCT_OFFSET (ExoIconViewClass, item_activated),
+                  NULL, NULL,
+                  g_cclosure_marshal_VOID__BOXED,
+                  G_TYPE_NONE, 1,
+                  GTK_TYPE_TREE_PATH);
+
+  /** EcoIconView::icon-hovered:
+   * @icon_view : an #ExoIconView.
+   * @path      : the #GtkTreePath of the hovered item.
+   *
+   * The ::icon-hovered signal is emitted when the mouse is hovered over a
+   * specific icon.
+   **/
+  icon_view_signals[ICON_HOVERED] =
+    g_signal_new (I_("icon-hovered"),
+                  G_TYPE_FROM_CLASS (gobject_class),
+                  G_SIGNAL_RUN_LAST,
+                  G_STRUCT_OFFSET (ExoIconViewClass, icon_hovered),
                   NULL, NULL,
                   g_cclosure_marshal_VOID__BOXED,
                   G_TYPE_NONE, 1,
@@ -1976,6 +1994,7 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
   gint             size;
   gint             abso;
   GtkAllocation    allocation;
+  GtkTreePath     *path;
 
   exo_icon_view_maybe_begin_drag (icon_view, event);
   gtk_widget_get_allocation (widget, &allocation);
@@ -2036,6 +2055,9 @@ exo_icon_view_motion_notify_event (GtkWidget      *widget,
           icon_view->priv->prelit_item = item;
           if (G_LIKELY (item != NULL))
             exo_icon_view_queue_draw_item (icon_view, item);
+
+          exo_icon_view_get_item_at_pos (icon_view, event->x, event->y, &path, NULL);
+          g_signal_emit (icon_view, icon_view_signals[ICON_HOVERED], 0, path);
 
           /* check if we are in single click mode right now */
           if (G_UNLIKELY (icon_view->priv->single_click))
