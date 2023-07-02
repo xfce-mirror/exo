@@ -3744,10 +3744,10 @@ exo_icon_view_paint_item (ExoIconView     *icon_view,
     {
       info = EXO_ICON_VIEW_CELL_INFO (lp->data);
 
-      cairo_save (cr);
-
       if (G_UNLIKELY (!gtk_cell_renderer_get_visible (info->cell)))
         continue;
+
+      cairo_save (cr);
 
       exo_icon_view_get_cell_area (icon_view, item, info, &cell_area);
 
