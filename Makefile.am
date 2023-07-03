@@ -32,15 +32,7 @@ EXTRA_DIST =								\
 	HACKING								\
 	NEWS								\
 	README.md                           \
-	THANKS								\
-	intltool-extract.in						\
-	intltool-merge.in						\
-	intltool-update.in
-
-DISTCLEANFILES =							\
-	intltool-extract						\
-	intltool-merge							\
-	intltool-update
+	THANKS
 
 DISTCHECK_CONFIGURE_FLAGS =						\
 	--enable-gtk-doc
