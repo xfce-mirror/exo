@@ -50,9 +50,11 @@
 #define PATHTERM_CLASS  "[^\\Q]'.}>) \t\r\n,\"\\E]"
 #define USERPASS        USERCHARS_CLASS "+(?:" PASSCHARS_CLASS "+)?"
 #define URLPATH         "(?:(/"PATHCHARS_CLASS"+(?:[(]"PATHCHARS_CLASS"*[)])*"PATHCHARS_CLASS"*)*"PATHTERM_CLASS")?"
+#define SCHEME          "[[:alpha:]][[:alnum:]+-.]*"
 
 #define MATCH_PATTERN_HTTP      "(?:www|ftp)" HOSTCHARS_CLASS "*\\." HOST PORT URLPATH
 #define MATCH_PATTERN_EMAIL     "(?:mailto:)?" USERCHARS_CLASS "[" USERCHARS ".]*\\@" HOSTCHARS_CLASS "+\\." HOST
+#define MATCH_PATTERN_URI       SCHEME "://.*"
 
 
 
@@ -692,6 +694,12 @@ main (gint argc, gchar **argv)
               continue;
             }
           else if (g_uri_is_valid (*argv, G_URI_FLAGS_NONE, NULL))
+            {
+              /* use the argument directly */
+              uri = g_strdup (*argv);
+            }
+          /* also allow uri-like string: issue exo#108 */
+          else if (g_regex_match_simple(MATCH_PATTERN_URI, *argv, G_REGEX_CASELESS, 0))
             {
               /* use the argument directly */
               uri = g_strdup (*argv);
