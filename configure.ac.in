@@ -24,16 +24,11 @@ dnl *** Full debug support for GIT snapshots ***
 dnl ********************************************
 m4_define([libexo_debug_default], [ifelse(libexo_version_tag(), [git], [yes], [minimum])])
 
-dnl ****************************
-dnl *** For intltool support ***
-dnl ****************************
-m4_define([intltool_minimum_version], [0.35])
-
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2004-2010 os-cillation.
-Copyright (c) 2004-2019 Xfce Development Team])
+Copyright (c) 2004-2023 Xfce Development Team])
 AC_INIT([exo], [libexo_version], [https://gitlab.xfce.org/xfce/exo])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
@@ -104,7 +99,6 @@ AM_PROG_AS()
 AC_PROG_CC()
 AM_PROG_CC_C_O()
 AC_PROG_INSTALL()
-IT_PROG_INTLTOOL([intltool_minimum_version], [no-xml])
 AC_CHECK_PROGS([PERL], [perl5 perl])
 
 dnl ***************************************
@@ -154,7 +148,11 @@ fi
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
-XDT_I18N()
+AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$PACKAGE"], [Name of default gettext domain])
+AC_SUBST([GETTEXT_PACKAGE])
+
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 
 dnl ***********************************
 dnl *** Check for required packages ***
