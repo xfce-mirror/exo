@@ -167,11 +167,6 @@ XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.17.2])
 XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.15.1])
 XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.66.0], [gio-unix], [GIO-Unix features])
 
-dnl *********************
-dnl *** Check for X11 ***
-dnl *********************
-XDT_CHECK_LIBX11_REQUIRE()
-
 dnl *************************
 dnl *** Check for gtk-doc ***
 dnl *************************

@@ -156,7 +156,6 @@ main (int argc, char **argv)
   gchar          **dirs;
   guint            i;
   const gchar     *mode_dir;
-  gint             ox, oy, ow, oh;
 
   /* setup translation domain */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
@@ -429,8 +428,10 @@ main (int argc, char **argv)
 
   /* check if a parent window id was specified */
 #if defined(GDK_WINDOWING_X11)
-  if (G_UNLIKELY (opt_xid != 0))
+  if (G_UNLIKELY (opt_xid != 0 && GDK_IS_X11_DISPLAY (gdk_display_get_default ())))
     {
+      gint ox, oy, ow, oh;
+
       /* try to determine the window for the id */
       xwindow = gdk_x11_window_foreign_new_for_display (gdk_display_get_default(), opt_xid);
       if (G_LIKELY (xwindow != NULL))

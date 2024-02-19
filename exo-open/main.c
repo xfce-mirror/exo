@@ -600,8 +600,6 @@ exo_open_uri (const gchar  *uri,
   return retval;
 }
 
-#include <gdk/gdkx.h>
-
 gint
 main (gint argc, gchar **argv)
 {
