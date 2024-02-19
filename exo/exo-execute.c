@@ -253,7 +253,6 @@ exo_execute_preferred_application_on_screen (const gchar *category,
                                              GdkScreen   *screen,
                                              GError     **error)
 {
-  GdkDisplay *display = NULL;
   gchar      *argv[5];
   gchar      *display_name = NULL;
   gchar      *path = NULL;
@@ -293,9 +292,8 @@ exo_execute_preferred_application_on_screen (const gchar *category,
 
   /* set the display environment variable */
 #ifdef GDK_WINDOWING_X11
-  display = gdk_screen_get_display (screen);
-  if (display != NULL && GDK_IS_X11_DISPLAY (display))
-    display_name = g_strdup (gdk_display_get_name (display));
+  if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+    display_name = g_strdup (gdk_display_get_name (gdk_display_get_default ()));
 #endif /* GDK_WINDOWING_X11 */
 
   /* launch the command */

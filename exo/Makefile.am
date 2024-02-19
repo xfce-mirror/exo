@@ -84,8 +84,7 @@ libexo_2_la_SOURCES =							\
 libexo_2_la_CFLAGS =							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(GIO_CFLAGS)							\
-	$(GTK_CFLAGS)							\
-	$(LIBX11_CFLAGS)
+	$(GTK_CFLAGS)
 
 libexo_2_la_LDFLAGS =							\
 	-export-dynamic							\
@@ -98,7 +97,6 @@ libexo_2_la_LIBADD =							\
 	$(GIO_LIBS)							\
 	$(GIO_UNIX_LIBS)							\
 	$(GTK_LIBS)							\
-	$(LIBX11_LIBS)							\
 	-lm
 
 pkgconfigdir = $(libdir)/pkgconfig
