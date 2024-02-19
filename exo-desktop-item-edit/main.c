@@ -328,7 +328,9 @@ main (int argc, char **argv)
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (exo_die_response_cb), dialog);
 
+#if !LIBXFCE4UI_CHECK_VERSION (4, 19, 3)
   xfce_titled_dialog_create_action_area (XFCE_TITLED_DIALOG (dialog));
+#endif
 
   /* add the "Help" button */
   button = gtk_button_new_with_mnemonic (_("_Help"));
