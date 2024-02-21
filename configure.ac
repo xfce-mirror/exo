@@ -11,28 +11,17 @@ dnl *** Version information ***
 dnl ***************************
 m4_define([libexo_verinfo], [1:0:1])
 m4_define([libexo_version_api], [2])
-m4_define([libexo_version_major], [4])
-m4_define([libexo_version_minor], [19])
-m4_define([libexo_version_micro], [0])
-m4_define([libexo_version_nano], [])
-m4_define([libexo_version_build], [@REVISION@])
-m4_define([libexo_version_tag], [git])
-m4_define([libexo_version], [libexo_version_major().libexo_version_minor().libexo_version_micro()ifelse(libexo_version_nano(), [], [], [.libexo_version_nano()])ifelse(libexo_version_tag(), [git], [libexo_version_tag()-libexo_version_build()], [libexo_version_tag()])])
-
-dnl ********************************************
-dnl *** Full debug support for GIT snapshots ***
-dnl ********************************************
-m4_define([libexo_debug_default], [ifelse(libexo_version_tag(), [git], [yes], [minimum])])
+XDT_VERSION_INIT([4.19.0], [git])
 
 dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2004-2010 os-cillation.
 Copyright (c) 2004-2023 Xfce Development Team])
-AC_INIT([exo], [libexo_version], [https://gitlab.xfce.org/xfce/exo])
+AC_INIT([exo], [xdt_version], [https://gitlab.xfce.org/xfce/exo])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
-AC_REVISION([@REVISION@])
+AC_REVISION([xdt_version_build])
 AC_CANONICAL_TARGET()
 
 dnl ***************************
@@ -53,9 +42,9 @@ dnl ****************************
 dnl *** Subst libexo version ***
 dnl ****************************
 LIBEXO_VERSION_API=libexo_version_api()
-LIBEXO_VERSION_MAJOR=libexo_version_major()
-LIBEXO_VERSION_MINOR=libexo_version_minor()
-LIBEXO_VERSION_MICRO=libexo_version_micro()
+LIBEXO_VERSION_MAJOR=xdt_version_major()
+LIBEXO_VERSION_MINOR=xdt_version_minor()
+LIBEXO_VERSION_MICRO=xdt_version_micro()
 AC_SUBST([LIBEXO_VERSION_API])
 AC_SUBST([LIBEXO_VERSION_MAJOR])
 AC_SUBST([LIBEXO_VERSION_MINOR])
@@ -175,7 +164,7 @@ GTK_DOC_CHECK([1.20])
 dnl ***********************************
 dnl *** Check for debugging support ***
 dnl ***********************************
-XDT_FEATURE_DEBUG([libexo_debug_default])
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 dnl **************************************
 dnl *** Check for linker optimizations ***
