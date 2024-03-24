@@ -84,6 +84,7 @@ libexo_2_la_SOURCES =							\
 libexo_2_la_CFLAGS =							\
 	$(LIBXFCE4UTIL_CFLAGS)						\
 	$(GIO_CFLAGS)							\
+	$(GIO_UNIX_CFLAGS)							\
 	$(GTK_CFLAGS)
 
 libexo_2_la_LDFLAGS =							\
