@@ -3108,7 +3108,6 @@ exo_icon_view_layout_single_row (ExoIconView   *icon_view,
   gint                i;
   GtkAllocation       allocation;
 
-printf("exo_icon_view_layout_single_row\n");
   rtl = (gtk_widget_get_direction (GTK_WIDGET (icon_view)) == GTK_TEXT_DIR_RTL);
   gtk_widget_get_allocation (GTK_WIDGET (icon_view), &allocation);
 
@@ -3357,7 +3356,6 @@ exo_icon_view_layout_rows (ExoIconView *icon_view,
 
   *y = icon_view->priv->margin;
 
-printf("exo_icon_view_layout_rows start\n");
   do
     {
       icons = exo_icon_view_layout_single_row (icon_view, icons,
@@ -4026,30 +4024,18 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
   GSequenceIter   *item_iter;
   gint idx;
 
-  if (icon_view->priv->items == NULL)
-    icon_view->priv->items = g_sequence_new (NULL);
-  
   idx = gtk_tree_path_get_indices(path)[0];
-  printf("exo_icon_view_row_inserted - idx: %i\n", idx);
   item_iter = g_sequence_get_iter_at_pos (icon_view->priv->items, idx);
 
   /* allocate the new item */
   item = g_slice_new0 (ExoIconViewItem);
   item->iter = *iter;
   item->area.width = -1;
+
   if (g_sequence_iter_is_end (item_iter))
-  {
-    printf("exo_icon_view_row_inserted - appending\n");
     g_sequence_append (icon_view->priv->items, item);
-  }
   else
-    {
-      //TODO: I suppose this should never happen ??
-      printf("exo_icon_view_row_inserted - inserting middle item\n");
-      g_sequence_insert_before (item_iter, item);
-    }
-    
-  
+    g_sequence_insert_before (item_iter, item);
 
   /* recalculate the layout */
   exo_icon_view_queue_layout (icon_view);
@@ -4138,9 +4124,6 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
   GSequenceIter *old_iter;
   gint           old_pos;
 
-
-printf("exo_icon_view_rows_reordered -skipped for now\n");
-return;
   /* cancel any editing attempt */
   exo_icon_view_stop_editing (icon_view, TRUE);
 
@@ -5511,7 +5494,6 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
 {
   ExoIconViewItem *item;
   GtkTreeIter      iter;
-  GSequence       *items = NULL;
   gint             n;
   GSequenceIter   *item_iter;
 
@@ -5597,12 +5579,9 @@ exo_icon_view_set_model (ExoIconView  *icon_view,
   /* activate the new model */
   icon_view->priv->model = model;
 
-printf ("exo_icon_view_set_model 1\n ");
-
   /* connect to the new model */
   if (G_LIKELY (model != NULL))
     {
-      printf ("exo_icon_view_set_model 2\n ");
       /* take a reference on the model */
       g_object_ref (G_OBJECT (model));
 
@@ -5631,21 +5610,18 @@ printf ("exo_icon_view_set_model 1\n ");
         }
 
       /* build up the initial items list */
-      items = g_sequence_new (NULL);
+      icon_view->priv->items = g_sequence_new (NULL);
       if (gtk_tree_model_get_iter_first (model, &iter))
         {
-          printf ("exo_icon_view_set_model - building sequence\n ");
-          
           do
             {
               item = g_slice_new0 (ExoIconViewItem);
               item->iter = iter;
               item->area.width = -1;
-               g_sequence_append (items, item);
+               g_sequence_append (icon_view->priv->items, item);
             }
           while (gtk_tree_model_iter_next (model, &iter));
         }
-      icon_view->priv->items = items;
 
       /* layout the new items */
       exo_icon_view_queue_layout (icon_view);

@@ -35,7 +35,7 @@ gint                    exo_noop_zero   (void) G_GNUC_PURE G_GNUC_DEPRECATED;
 gpointer                exo_noop_null   (void) G_GNUC_PURE G_GNUC_DEPRECATED;
 gboolean                exo_noop_true   (void) G_GNUC_PURE G_GNUC_DEPRECATED;
 gboolean                exo_noop_false  (void) G_GNUC_PURE G_GNUC_DEPRECATED;
-//gint find_index_in_sequence (GSequence *sequence, gpointer data);
+
 G_END_DECLS
 
 #endif /* !__EXO_UTILS_H__ */
