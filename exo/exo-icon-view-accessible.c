@@ -1814,7 +1814,7 @@ exo_icon_view_accessible_add_selection (AtkSelection *selection,
   icon_view = EXO_ICON_VIEW (widget);
 
   iter = g_sequence_get_iter_at_pos (icon_view->priv->items, i);
-  if (iter == NULL)
+  if (g_sequence_iter_is_end (iter))
     return FALSE;
 
   item = g_sequence_get (iter);
@@ -1917,7 +1917,7 @@ exo_icon_view_accessible_is_child_selected (AtkSelection *selection,
   icon_view = EXO_ICON_VIEW (widget);
 
   iter = g_sequence_get_iter_at_pos (icon_view->priv->items, i);
-  if (iter == NULL)
+  if (g_sequence_iter_is_end (iter))
     return FALSE;
 
   item = g_sequence_get (iter);

@@ -1727,6 +1727,9 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   /* apply the new size allocation */
   gtk_widget_set_allocation (widget, allocation);
 
+ if (g_sequence_is_empty (icon_view->priv->items))
+   return;
+
   /* move/resize the clipping window, the icons window
    * will be handled by exo_icon_view_layout().
    */
@@ -3162,7 +3165,7 @@ exo_icon_view_layout_single_row (ExoIconView   *icon_view,
   last_item = iter;
 
   /* Now go through the row again and align the icons */
-  for (iter = first_item; !g_sequence_iter_is_end (iter);iter = g_sequence_iter_next (iter))
+  for (iter = first_item; iter != last_item; iter = g_sequence_iter_next (iter))
     {
       item = EXO_ICON_VIEW_ITEM (g_sequence_get (iter));
 
@@ -3262,7 +3265,7 @@ exo_icon_view_layout_single_col (ExoIconView *icon_view,
   last_item = iter;
 
   /* Now go through the column again and align the icons */
-  for (iter = first_item; !g_sequence_iter_is_end (iter);iter = g_sequence_iter_next (iter))
+  for (iter = first_item; iter != last_item; iter = g_sequence_iter_next (iter))
     {
       item = EXO_ICON_VIEW_ITEM (g_sequence_get (iter));
 
@@ -3320,7 +3323,7 @@ exo_icon_view_layout_cols (ExoIconView *icon_view,
       /* count the number of rows in the first column */
       if (G_UNLIKELY (col == 0))
         {
-          for (iter = g_sequence_get_begin_iter (icon_view->priv->items), rows = 0; !g_sequence_iter_is_end (iter);iter = g_sequence_iter_next(iter), ++rows)
+          for (iter = g_sequence_get_begin_iter (icon_view->priv->items), rows = 0; iter != icons; iter = g_sequence_iter_next(iter), ++rows)
             ;
         }
 
@@ -3343,9 +3346,6 @@ exo_icon_view_layout_rows (ExoIconView *icon_view,
                            gint        *maximum_width,
                            gint         max_cols)
 {
-  if (icon_view->priv->items == NULL)
-    return 0;
-
   GSequenceIter *icons = g_sequence_get_begin_iter (icon_view->priv->items);
   GSequenceIter *iter;
   gint   row = 0;
@@ -3362,7 +3362,7 @@ exo_icon_view_layout_rows (ExoIconView *icon_view,
       /* count the number of columns in the first row */
       if (G_UNLIKELY (row == 0))
         {
-          for (iter = g_sequence_get_begin_iter (icon_view->priv->items), cols = 0; !g_sequence_iter_is_end (iter);iter = g_sequence_iter_next(iter), ++cols)
+          for (iter = g_sequence_get_begin_iter (icon_view->priv->items), cols = 0; iter != icons ;iter = g_sequence_iter_next(iter), ++cols)
             ;
         }
 
@@ -3396,6 +3396,9 @@ exo_icon_view_layout (ExoIconView *icon_view)
   /* verify that we still have a valid model */
   if (G_UNLIKELY (priv->model == NULL))
     return;
+
+ //if (g_sequence_is_empty (icon_view->priv->items))
+ //  return;
 
   gtk_widget_get_allocation (GTK_WIDGET (icon_view), &allocation);
 
@@ -4016,23 +4019,29 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
 {
   ExoIconViewItem *item;
   GSequenceIter   *item_iter;
-  
+  gint idx;
+
   if (icon_view->priv->items == NULL)
     icon_view->priv->items = g_sequence_new (NULL);
-
-  item_iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
+  
+  idx = gtk_tree_path_get_indices(path)[0];
+  printf("exo_icon_view_row_inserted - idx: %i\n", idx);
+  item_iter = g_sequence_get_iter_at_pos (icon_view->priv->items, idx);
 
   /* allocate the new item */
   item = g_slice_new0 (ExoIconViewItem);
   item->iter = *iter;
   item->area.width = -1;
   if (g_sequence_iter_is_end (item_iter))
+  {
+    printf("exo_icon_view_row_inserted - appending\n");
     g_sequence_append (icon_view->priv->items, item);
+  }
   else
     {
       //TODO: I suppose this should never happen ??
-      printf("exo_icon_view_row_inserted - replaxing item\n");
-      g_sequence_set (item_iter, item);
+      printf("exo_icon_view_row_inserted - inserting middle item\n");
+      g_sequence_insert_before (item_iter, item);
     }
     
   
@@ -4054,7 +4063,7 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
 
   /* determine the position and the item for the path */
   iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-  if (iter == NULL)
+  if (g_sequence_iter_is_end (iter))
     return;
 
   item = g_sequence_get (iter);
@@ -4067,11 +4076,11 @@ exo_icon_view_row_deleted (GtkTreeModel *model,
 
   /* use the next item (if any) as anchor, else use prev, otherwise reset anchor */
   if (G_UNLIKELY (item == icon_view->priv->anchor_item))
-    icon_view->priv->anchor_item = (next != NULL) ? g_sequence_get (next) : ((prev != NULL) ? g_sequence_get (prev) : NULL);
+    icon_view->priv->anchor_item = (!g_sequence_iter_is_end (next)) ? g_sequence_get (next) : ((prev != iter) ? g_sequence_get (prev) : NULL);
 
   /* use the next item (if any) as cursor, else use prev, otherwise reset cursor */
   if (G_UNLIKELY (item == icon_view->priv->cursor_item))
-    icon_view->priv->cursor_item = (next != NULL) ? g_sequence_get (next) : ((prev != NULL) ? g_sequence_get (prev) : NULL);
+    icon_view->priv->cursor_item = (!g_sequence_iter_is_end (next)) ? g_sequence_get (next) : ((prev != iter) ? g_sequence_get (prev) : NULL);
 
   if (G_UNLIKELY (item == icon_view->priv->prelit_item))
     {
@@ -4125,7 +4134,7 @@ exo_icon_view_rows_reordered (GtkTreeModel *model,
   gint           old_pos;
 
 
-printf("exo_icon_view_rows_reordered\n");
+printf("exo_icon_view_rows_reordered -skipped for now\n");
 return;
   /* cancel any editing attempt */
   exo_icon_view_stop_editing (icon_view, TRUE);
@@ -4324,25 +4333,31 @@ find_item_page_up_down (ExoIconView     *icon_view,
 
   if (count > 0)
     {
-      for (; iter != NULL; iter = g_sequence_iter_next (iter))
+      for (; !g_sequence_iter_is_end (iter); iter = g_sequence_iter_next (iter))
         {
-          for (next = g_sequence_iter_next (iter); next; next = g_sequence_iter_next (next))
+          for (next = g_sequence_iter_next (iter); !g_sequence_iter_is_end (iter); next = g_sequence_iter_next (next))
             if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == col)
               break;
 
-          if (next == NULL || EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->area.y > y)
+          if (next == NULL || EXO_ICON_VIEW_ITEM (g_sequence_get (next))->area.y > y)
             break;
         }
     }
   else
     {
-      for (; iter != NULL; iter = g_sequence_iter_prev (iter))
+      for (;;  iter = g_sequence_iter_prev (iter))
         {
-          for (prev = g_sequence_iter_prev (iter); prev; prev = g_sequence_iter_prev (prev))
+          for (prev = g_sequence_iter_prev (iter);; prev = g_sequence_iter_prev (prev))
+          {
             if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == col)
               break;
+            if (g_sequence_iter_is_begin (prev))
+              break;
+          }
+          if (g_sequence_iter_is_begin (prev))
+            break;
 
-          if (prev == NULL || EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->area.y < y)
+          if (prev == NULL || EXO_ICON_VIEW_ITEM (g_sequence_get (prev))->area.y < y)
             break;
         }
     }
@@ -4447,9 +4462,9 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
       if (count > 0)
         iter = g_sequence_get_begin_iter (icon_view->priv->items);
       else
-        iter = g_sequence_get_end_iter (icon_view->priv->items);
+        iter = g_sequence_iter_prev (g_sequence_get_end_iter (icon_view->priv->items));
       
-      if (iter != NULL)
+      if (!g_sequence_iter_is_end (iter))
         
       item = g_sequence_get (iter);
     }
@@ -4468,7 +4483,7 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
 
           /* determine the list position for the item */
           iter = find_element_in_sequence (icon_view->priv->items, item);
-          if (iter == NULL)
+          if (g_sequence_iter_is_end (iter))
             break;
         
           if (G_LIKELY (icon_view->priv->layout_mode == EXO_ICON_VIEW_LAYOUT_ROWS))
@@ -4476,14 +4491,14 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
               /* determine the item in the next/prev row */
               if (step > 0)
                 {
-                  for (iter = g_sequence_iter_next (iter); iter != NULL; iter = g_sequence_iter_next (iter))
+                  for (iter = g_sequence_iter_next (iter); !g_sequence_iter_is_end (iter); iter = g_sequence_iter_next (iter))
                     if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row + step
                         && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col)
                       break;
                  }
               else
                 {
-                  for (iter = g_sequence_iter_prev (iter); iter != NULL; iter = g_sequence_iter_prev (iter))
+                  for (iter = g_sequence_iter_prev (iter); !g_sequence_iter_is_end (iter); iter = g_sequence_iter_prev (iter))
                     if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row + step
                         && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col)
                       break;
@@ -4495,7 +4510,7 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
             }
 
           /* check if we found a matching item */
-          item = (iter != NULL) ? g_sequence_get (iter) : NULL;
+          item = (!g_sequence_iter_is_end (iter)) ? g_sequence_get (iter) : NULL;
 
           count = count - step;
         }
@@ -4565,9 +4580,9 @@ exo_icon_view_move_cursor_page_up_down (ExoIconView *icon_view,
       if (count > 0)
         iter = g_sequence_get_begin_iter (icon_view->priv->items);
       else
-        iter = g_sequence_get_end_iter (icon_view->priv->items);
+        iter = g_sequence_iter_prev (g_sequence_get_end_iter (icon_view->priv->items));
 
-      if (iter != NULL)
+      if (!g_sequence_iter_is_end (iter))
         item = g_sequence_get (iter);
     }
   else
@@ -4628,9 +4643,9 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
       if (count > 0)
         iter = g_sequence_get_begin_iter (icon_view->priv->items);
       else
-        iter = g_sequence_get_end_iter (icon_view->priv->items);
+        iter = g_sequence_iter_prev (g_sequence_get_end_iter (icon_view->priv->items));
 
-      if (iter != NULL)
+      if (!g_sequence_iter_is_end (iter))
         item = g_sequence_get (iter);
     }
   else
@@ -4662,14 +4677,14 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
               /* determine the item in the next/prev row */
               if (step > 0)
                 {
-                  for (iter = g_sequence_iter_next (iter); iter != NULL; iter = g_sequence_iter_next (iter))
+                  for (iter = g_sequence_iter_next (iter); !g_sequence_iter_is_end (iter); iter = g_sequence_iter_next (iter))
                     if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col + step
                         && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row)
                       break;
                  }
               else
                 {
-                  for (iter = g_sequence_iter_prev (iter); iter != NULL; iter = g_sequence_iter_prev (iter))
+                  for (iter = g_sequence_iter_prev (iter); !g_sequence_iter_is_end (iter); iter = g_sequence_iter_prev (iter))
                     if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col + step
                         && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row)
                       break;
@@ -4677,7 +4692,7 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
             }
 
           /* determine the item for the list position (if any) */
-          item = (iter != NULL) ? g_sequence_get (iter) : NULL;
+          item = (!g_sequence_iter_is_end (iter)) ? g_sequence_get (iter) : NULL;
 
           count = count - step;
         }
@@ -4741,7 +4756,7 @@ exo_icon_view_move_cursor_start_end (ExoIconView *icon_view,
   if (!gtk_widget_has_focus (GTK_WIDGET (icon_view)))
     return;
   
-  iter = (count < 0) ? g_sequence_get_begin_iter (icon_view->priv->items) : g_sequence_get_end_iter (icon_view->priv->items);
+  iter = (count < 0) ? g_sequence_get_begin_iter (icon_view->priv->items) : g_sequence_iter_prev (g_sequence_get_end_iter (icon_view->priv->items));
   if (G_UNLIKELY (iter == NULL))
     return;
 
@@ -5334,9 +5349,8 @@ exo_icon_view_get_visible_range (const ExoIconView *icon_view,
   if (start_path == NULL && end_path == NULL)
     return FALSE;
 
-  for (iter = g_sequence_get_begin_iter (icon_view->priv->items); !g_sequence_iter_is_end (iter);iter = g_sequence_iter_next (iter))
+  for (iter = g_sequence_get_begin_iter (icon_view->priv->items); !g_sequence_iter_is_end (iter);++i, iter = g_sequence_iter_next (iter))
     {
-      ++i;
       item = g_sequence_get (iter);
       if ((item->area.x + item->area.width >= (gint) gtk_adjustment_get_value (priv->hadjustment)) &&
           (item->area.y + item->area.height >= (gint) gtk_adjustment_get_value (priv->vadjustment)) &&
@@ -5820,7 +5834,7 @@ exo_icon_view_select_path (ExoIconView *icon_view,
   g_return_if_fail (gtk_tree_path_get_depth (path) > 0);
 
   iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-  if (iter == NULL)
+  if (g_sequence_iter_is_end (iter))
     return;
 
   item = g_sequence_get (iter);
@@ -5849,7 +5863,7 @@ exo_icon_view_unselect_path (ExoIconView *icon_view,
   g_return_if_fail (gtk_tree_path_get_depth (path) > 0);
 
   iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-  if (iter == NULL)
+  if (g_sequence_iter_is_end (iter))
     return;
 
   item = g_sequence_get (iter);
@@ -5889,9 +5903,8 @@ exo_icon_view_get_selected_items (const ExoIconView *icon_view)
   if (icon_view->priv->items == NULL)
     return NULL;
 
-  for (iter = g_sequence_get_begin_iter (icon_view->priv->items); !g_sequence_iter_is_end (iter);iter = g_sequence_iter_next (iter))
+  for (iter = g_sequence_get_begin_iter (icon_view->priv->items); !g_sequence_iter_is_end (iter);++i, iter = g_sequence_iter_next (iter))
     {
-      ++i;
       if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->selected)
         selected = g_list_prepend (selected, gtk_tree_path_new_from_indices (i, -1));
     }
@@ -6014,7 +6027,7 @@ exo_icon_view_path_is_selected (const ExoIconView *icon_view,
   g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, FALSE);
 
   iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-  if (iter == NULL)
+  if (g_sequence_iter_is_end (iter))
     return FALSE;
 
   item = g_sequence_get (iter);
@@ -6066,7 +6079,7 @@ exo_icon_view_get_item_column (ExoIconView *icon_view,
   g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, -1);
 
   iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-  if (iter == NULL)
+  if (g_sequence_iter_is_end (iter))
     return -1;
 
   item = g_sequence_get (iter);
@@ -6103,7 +6116,7 @@ exo_icon_view_get_item_row (ExoIconView *icon_view,
   g_return_val_if_fail (gtk_tree_path_get_depth (path) > 0, -1);
 
   iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-  if (iter == NULL)
+  if (g_sequence_iter_is_end (iter))
     return -1;
   
   item = g_sequence_get (iter);
@@ -6194,7 +6207,7 @@ exo_icon_view_set_cursor (ExoIconView     *icon_view,
   exo_icon_view_stop_editing (icon_view, TRUE);
 
   iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-  if (iter == NULL)
+  if (g_sequence_iter_is_end (iter))
     return;
 
   item = g_sequence_get (iter);
@@ -6289,7 +6302,7 @@ exo_icon_view_scroll_to_path (ExoIconView *icon_view,
   else
     {
       iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-      if (iter == NULL)
+      if (g_sequence_iter_is_end (iter))
         return;
 
       item = g_sequence_get (iter);
@@ -7636,7 +7649,7 @@ exo_icon_view_set_drag_dest_item (ExoIconView            *icon_view,
         {
           /* schedule a redraw for the previous path */
           iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(previous_path)[0]);
-          if (iter != NULL)
+          if (!g_sequence_iter_is_end (iter))
             {
               item = g_sequence_get (iter);
               if (G_LIKELY (item != NULL))
@@ -7671,7 +7684,7 @@ exo_icon_view_set_drag_dest_item (ExoIconView            *icon_view,
 
       /* schedule a redraw on the new path */
       iter = g_sequence_get_iter_at_pos (icon_view->priv->items, gtk_tree_path_get_indices(path)[0]);
-      if (iter == NULL)
+      if (g_sequence_iter_is_end (iter))
         return;
 
       item = g_sequence_get (iter);
