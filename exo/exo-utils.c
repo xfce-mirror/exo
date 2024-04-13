@@ -176,31 +176,6 @@ exo_noop_false (void)
 }
 
 
-// Function to find the index of an element in a GSequence
-gint find_index_in_sequence (GSequence *sequence, gpointer data) {
-    // Get an iterator to the first element of the sequence
-    GSequenceIter *iter = g_sequence_get_begin_iter(sequence);
-
-    // Loop through the sequence
-    gint index = 0;
-    while (!g_sequence_iter_is_end(iter)) {
-        // Get the data at the current iterator position
-        gpointer current_data = g_sequence_get(iter);
-
-        // Compare the data with the target data
-        if (current_data == data) {
-            // If the data matches, return the index
-            return index;
-        }
-
-        // Move the iterator to the next position
-        iter = g_sequence_iter_next(iter);
-        index++;
-    }
-
-    // If the data is not found, return -1
-    return -1;
-}
 
 #define __EXO_UTILS_C__
 #include <exo/exo-aliasdef.c>

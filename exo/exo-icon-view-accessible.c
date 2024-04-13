@@ -57,7 +57,7 @@ typedef struct
 
 static gint accessible_item_index (ExoIconViewItemAccessible *item)
 {
-  return find_index_in_sequence (EXO_ICON_VIEW (item->widget)->priv->items, item->item);
+  return exo_icon_view_find_item_index (EXO_ICON_VIEW (item->widget), item->item);
 }
 
 static const gchar *const exo_icon_view_item_accessible_action_names[] =
@@ -1204,7 +1204,7 @@ exo_icon_view_accessible_ref_child (AtkObject *accessible,
   if (iter)
     {
       ExoIconViewItem *item = g_sequence_get (iter);
-      gint item_index = find_index_in_sequence (icon_view->priv->items, item);
+      gint item_index = exo_icon_view_find_item_index (icon_view, item);
 
       g_return_val_if_fail (item_index == idx, NULL);
       obj = exo_icon_view_accessible_find_child (accessible, idx);
@@ -1785,7 +1785,7 @@ exo_icon_view_accessible_ref_accessible_at_point (AtkComponent *component,
   icon_view = EXO_ICON_VIEW (widget);
   atk_component_get_extents (component, &x_pos, &y_pos, NULL, NULL, coord_type);
   item = exo_icon_view_get_item_at_coords (icon_view, x - x_pos, y - y_pos, TRUE, NULL);
-  idx = find_index_in_sequence (icon_view->priv->items, item);
+  idx = exo_icon_view_find_item_index (icon_view, item);
   if (item)
     return exo_icon_view_accessible_ref_child (ATK_OBJECT (component), idx);
 
