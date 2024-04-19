@@ -4035,7 +4035,7 @@ exo_icon_view_row_inserted (GtkTreeModel *model,
   if (g_sequence_iter_is_end (item_iter))
     item_iter = g_sequence_append (icon_view->priv->items, item);
   else
-    g_sequence_insert_before (item_iter, item);
+    item_iter = g_sequence_insert_before (item_iter, item);
 
   /* keep a link to it's own iter to speedup index lookup */
   item->item_iter = item_iter;
@@ -4321,43 +4321,55 @@ find_item_page_up_down (ExoIconView     *icon_view,
                         ExoIconViewItem *current,
                         gint             count)
 {
-  GSequenceIter *iter = current->item_iter;
-  GSequenceIter *next, *prev;
+  GSequenceIter *iter;
+  GSequenceIter *column_match = NULL;
   gint   col = current->col;
   gint   y = current->area.y + count * gtk_adjustment_get_page_size (icon_view->priv->vadjustment);
 
   if (count > 0)
     {
-      for (; !g_sequence_iter_is_end (iter); iter = g_sequence_iter_next (iter))
-        {
-          for (next = g_sequence_iter_next (iter); !g_sequence_iter_is_end (iter); next = g_sequence_iter_next (next))
-            if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == col)
-              break;
+      GSequenceIter *next;
 
-          if (next == NULL || EXO_ICON_VIEW_ITEM (g_sequence_get (next))->area.y > y)
-            break;
+      for (iter = g_sequence_iter_next (current->item_iter); !g_sequence_iter_is_end (iter); iter = g_sequence_iter_next (iter))
+        {
+          next = g_sequence_iter_next (iter);
+
+          /* if we found an item which matches the correct column */
+          if (!g_sequence_iter_is_end (next) && EXO_ICON_VIEW_ITEM (g_sequence_get (next))->col == col)
+            {
+              /* found an item which is far enough down .. lets use our previous column match */
+              if (EXO_ICON_VIEW_ITEM (g_sequence_get (next))->area.y > y)
+                break;
+              column_match = next;
+            }
         }
     }
   else
     {
-      for (;;  iter = g_sequence_iter_prev (iter))
+      GSequenceIter *prev;
+
+      for (iter = g_sequence_iter_prev (current->item_iter);; iter = g_sequence_iter_prev (iter))
         {
-          for (prev = g_sequence_iter_prev (iter);; prev = g_sequence_iter_prev (prev))
-          {
-            if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == col)
-              break;
-            if (g_sequence_iter_is_begin (prev))
-              break;
-          }
-          if (g_sequence_iter_is_begin (prev))
+          prev = g_sequence_iter_prev (iter);
+
+          /* we reached the first element of the sequence, let's just use our latest column_match */
+          if (prev == iter)
             break;
 
-          if (prev == NULL || EXO_ICON_VIEW_ITEM (g_sequence_get (prev))->area.y < y)
-            break;
+          /* if we found an item which matches the correct column */
+          if (prev != iter && EXO_ICON_VIEW_ITEM (g_sequence_get (prev))->col == col)
+            {
+              /* found an item which is far enough up .. lets use our previous column match */
+              if (EXO_ICON_VIEW_ITEM (g_sequence_get (prev))->area.y < y)
+                break;
+              column_match = prev;
+            }
         }
     }
 
-  return (iter != NULL) ? g_sequence_get (iter) : NULL;
+  if (column_match != NULL && !g_sequence_iter_is_end (column_match))
+    return g_sequence_get (column_match);
+  return NULL;
 }
 
 
@@ -4418,13 +4430,14 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
   GtkDirectionType  direction;
   GtkWidget        *toplevel;
   GSequenceIter    *iter;
+  gboolean          found = FALSE;
 
   if (!gtk_widget_has_focus (GTK_WIDGET (icon_view)))
     return;
 
   direction = count < 0 ? GTK_DIR_UP : GTK_DIR_DOWN;
 
-  if (!icon_view->priv->cursor_item)
+    if (!icon_view->priv->cursor_item)
     {
       if (count > 0)
         iter = g_sequence_get_begin_iter (icon_view->priv->items);
@@ -4432,8 +4445,8 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
         iter = g_sequence_iter_prev (g_sequence_get_end_iter (icon_view->priv->items));
       
       if (!g_sequence_iter_is_end (iter))
-        
-      item = g_sequence_get (iter);
+
+        item = g_sequence_get (iter);
     }
   else
     {
@@ -4460,24 +4473,39 @@ exo_icon_view_move_cursor_up_down (ExoIconView *icon_view,
                 {
                   for (iter = g_sequence_iter_next (iter); !g_sequence_iter_is_end (iter); iter = g_sequence_iter_next (iter))
                     if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row + step
-                        && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col)
-                      break;
-                 }
+                          && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col)
+                                              break;
+                                        }
               else
                 {
-                  for (iter = g_sequence_iter_prev (iter); !g_sequence_iter_is_end (iter); iter = g_sequence_iter_prev (iter))
-                    if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row + step
+                  while (!g_sequence_iter_is_begin (iter))
+                    {
+                      if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == 0
+                        && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col)
+                        {
+                          found = TRUE;
+                          break;
+                        }
+
+                      if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row + step
                         && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col)
                       break;
+
+                      iter = g_sequence_iter_prev (iter);
+                   }
                 }
             }
           else
             {
-              iter = (step > 0) ? g_sequence_iter_next (iter) : g_sequence_iter_prev (iter);
+          iter = (step > 0) ? g_sequence_iter_next (iter) : g_sequence_iter_prev (iter);
             }
 
-          /* check if we found a matching item */
+          /* determine the item for the list position (if any) */
           item = (!g_sequence_iter_is_end (iter)) ? g_sequence_get (iter) : NULL;
+
+          /* stop if we reached the beginning or found the correct item */
+          if (found || g_sequence_iter_is_begin (iter))
+            break;
 
           count = count - step;
         }
@@ -4596,6 +4624,7 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
   GtkDirectionType  direction;
   GtkWidget        *toplevel;
   GSequenceIter    *iter;
+  gboolean          found = FALSE;
 
   if (!gtk_widget_has_focus (GTK_WIDGET (icon_view)))
     return;
@@ -4651,15 +4680,30 @@ exo_icon_view_move_cursor_left_right (ExoIconView *icon_view,
                  }
               else
                 {
-                  for (iter = g_sequence_iter_prev (iter); !g_sequence_iter_is_end (iter); iter = g_sequence_iter_prev (iter))
-                    if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col + step
-                        && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row)
-                      break;
+                  while (!g_sequence_iter_is_begin (iter))
+                    {
+                      if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == 0
+                          && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row)
+                          {
+                            found = TRUE;
+                            break;
+                          }
+
+                      if (EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->col == item->col + step
+                          && EXO_ICON_VIEW_ITEM (g_sequence_get (iter))->row == item->row)
+                        break;
+
+                      iter = g_sequence_iter_prev (iter);
+                    }
                 }
             }
 
           /* determine the item for the list position (if any) */
           item = (!g_sequence_iter_is_end (iter)) ? g_sequence_get (iter) : NULL;
+
+          /* stop if we reached the beginning or found the correct item */
+          if (found || g_sequence_iter_is_begin (iter))
+            break;
 
           count = count - step;
         }
