@@ -17,8 +17,6 @@
  * MA 02110-1301 USA
  */
 
-#include <exo/exo-utils.h>
-
 /* Accessibility Support */
 
 static gpointer accessible_parent_class;
@@ -55,10 +53,7 @@ typedef struct
   guint action_idle_handler;
 } ExoIconViewItemAccessible;
 
-static gint accessible_item_index (ExoIconViewItemAccessible *item)
-{
-  return g_sequence_iter_get_position (item->item->item_iter);
-}
+#define accessible_item_index(item) (g_sequence_iter_get_position (item->item->item_iter))
 
 static const gchar *const exo_icon_view_item_accessible_action_names[] =
 {
