@@ -27,6 +27,11 @@
 
 #include <exo/exo.h>
 
+/* prevent g_test_init from aborting */
+#ifdef G_DISABLE_ASSERT
+#undef G_DISABLE_ASSERT
+#endif
+
 
 
 static void
