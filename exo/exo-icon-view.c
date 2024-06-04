@@ -3534,8 +3534,11 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
       buffer = g_malloc0 (item->n_cells * (sizeof (GdkRectangle) + 2 * sizeof (gint)));
 
       /* assign the memory */
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wcast-align"
       item->box = (GdkRectangle *) buffer;
       item->after = (gint *) (buffer + item->n_cells * sizeof (GdkRectangle));
+#pragma clang diagnostic pop
       item->before = item->after + item->n_cells;
     }
 
