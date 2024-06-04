@@ -51,15 +51,15 @@ test_str_is_equal (void)
   const gchar *p = "cde";
 
   /* comparison that should return FALSE */
-  g_assert (!exo_str_is_equal ("a", NULL));
-  g_assert (!exo_str_is_equal (NULL, "b"));
-  g_assert (!exo_str_is_equal ("a", "abcde"));
-  g_assert (!exo_str_is_equal (p, "a"));
+  g_assert_true (!exo_str_is_equal ("a", NULL));
+  g_assert_true (!exo_str_is_equal (NULL, "b"));
+  g_assert_true (!exo_str_is_equal ("a", "abcde"));
+  g_assert_true (!exo_str_is_equal (p, "a"));
 
   /* comparison that should return TRUE */
-  g_assert (exo_str_is_equal (NULL, NULL));
-  g_assert (exo_str_is_equal ("test", "test"));
-  g_assert (exo_str_is_equal (p, p));
+  g_assert_true (exo_str_is_equal (NULL, NULL));
+  g_assert_true (exo_str_is_equal ("test", "test"));
+  g_assert_true (exo_str_is_equal (p, p));
 }
 
 
@@ -70,13 +70,13 @@ test_str_is_empty (void)
   const gchar *p;
 
   p = NULL;
-  g_assert (exo_str_is_empty (p));
+  g_assert_true (exo_str_is_empty (p));
 
   p = "";
-  g_assert (exo_str_is_empty (p));
+  g_assert_true (exo_str_is_empty (p));
 
   p = "a";
-  g_assert (!exo_str_is_empty (p));
+  g_assert_true (!exo_str_is_empty (p));
 }
 
 
@@ -96,7 +96,7 @@ test_str_replace (void)
   g_free (res);
 
   res = exo_str_replace (NULL, NULL, NULL);
-  g_assert (res == NULL);
+  g_assert_true (res == NULL);
 
   res = exo_str_replace (test, NULL, NULL);
   g_assert_cmpstr (res, ==, test);
@@ -134,10 +134,10 @@ test_strndupv (void)
   g_strfreev (res);
 
   res = exo_strndupv (input, 0);
-  g_assert (res == NULL);
+  g_assert_true (res == NULL);
 
   res = exo_strndupv (NULL, 2);
-  g_assert (res == NULL);
+  g_assert_true (res == NULL);
 
   g_strfreev (input);
 }

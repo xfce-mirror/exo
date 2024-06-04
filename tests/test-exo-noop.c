@@ -32,7 +32,7 @@
 static void
 test_noop_one (void)
 {
-  g_assert (exo_noop_one () == 1);
+  g_assert_true (exo_noop_one () == 1);
 }
 
 
@@ -40,7 +40,7 @@ test_noop_one (void)
 static void
 test_noop_zero (void)
 {
-  g_assert (exo_noop_zero () == 0);
+  g_assert_true (exo_noop_zero () == 0);
 }
 
 
@@ -48,7 +48,7 @@ test_noop_zero (void)
 static void
 test_noop_null (void)
 {
-  g_assert (exo_noop_null () == NULL);
+  g_assert_true (exo_noop_null () == NULL);
 }
 
 
@@ -56,7 +56,7 @@ test_noop_null (void)
 static void
 test_noop_true (void)
 {
-  g_assert (exo_noop_true () == TRUE);
+  g_assert_true (exo_noop_true () == TRUE);
 }
 
 
@@ -64,7 +64,7 @@ test_noop_true (void)
 static void
 test_noop_false (void)
 {
-  g_assert (exo_noop_false () == FALSE);
+  g_assert_true (exo_noop_false () == FALSE);
 }
 
 
