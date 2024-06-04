@@ -203,7 +203,18 @@ exo_binding_on_disconnect (gpointer  data,
   ExoBindingLink *blink = data;
   ExoBinding     *binding;
 
+  /*
+   * Silence '-Wcast-align' warning so it doesn't break CI build
+   * GCC 4.6 is required, see https://gcc.gnu.org/gcc-4.6/changes.html
+   */
+#if G_GNUC_CHECK_VERSION (4, 6)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wcast-align"
+#endif
   binding = (ExoBinding *) (((gchar *) blink) - G_STRUCT_OFFSET (ExoBinding, blink));
+#if G_GNUC_CHECK_VERSION (4, 6)
+#pragma GCC diagnostic pop
+#endif
 
   if (binding->destroy != NULL)
     binding->destroy (blink->user_data);
@@ -225,7 +236,14 @@ exo_mutual_binding_on_disconnect_object1 (gpointer  data,
   ExoBindingLink   *blink = data;
   GObject          *object2;
 
+#if G_GNUC_CHECK_VERSION (4, 6)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wcast-align"
+#endif
   binding = (ExoMutualBinding *) (((gchar *) blink) - G_STRUCT_OFFSET (ExoMutualBinding, direct));
+#if G_GNUC_CHECK_VERSION (4, 6)
+#pragma GCC diagnostic pop
+#endif
   binding->reverse.dst_object = NULL;
 
   object2 = binding->direct.dst_object;
@@ -250,7 +268,14 @@ exo_mutual_binding_on_disconnect_object2 (gpointer  data,
   ExoBindingLink   *blink = data;
   GObject          *object1;
 
+#if G_GNUC_CHECK_VERSION (4, 6)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wcast-align"
+#endif
   binding = (ExoMutualBinding *) (((gchar *) blink) - G_STRUCT_OFFSET (ExoMutualBinding, reverse));
+#if G_GNUC_CHECK_VERSION (4, 6)
+#pragma GCC diagnostic pop
+#endif
   binding->direct.dst_object = NULL;
 
   object1 = binding->reverse.dst_object;
