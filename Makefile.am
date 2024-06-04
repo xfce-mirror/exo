@@ -34,7 +34,7 @@ EXTRA_DIST =								\
 	README.md                           \
 	THANKS
 
-DISTCHECK_CONFIGURE_FLAGS =						\
+AM_DISTCHECK_CONFIGURE_FLAGS =						\
 	--enable-gtk-doc
 
 # vi:set ts=8 sw=8 noet ai nocindent:
