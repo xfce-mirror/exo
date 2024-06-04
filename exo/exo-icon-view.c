@@ -3533,17 +3533,8 @@ exo_icon_view_calculate_item_size (ExoIconView     *icon_view,
       /* allocate a single memory chunk for box, after and before */
       buffer = g_malloc0 (item->n_cells * (sizeof (GdkRectangle) + 2 * sizeof (gint)));
 
-      /* assign the memory */
-      /* Silence '-Wcast-align' warning so it doesn't break CI build:
-       * FIXME: deserves a proper fix, see https://gitlab.xfce.org/xfce/exo/-/issues/67#note_46808 */
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunknown-pragmas"
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wcast-align"
-      item->box = (GdkRectangle *) buffer;
-      item->after = (gint *) (buffer + item->n_cells * sizeof (GdkRectangle));
-#pragma clang diagnostic pop
-#pragma GCC diagnostic pop
+      item->box = (GdkRectangle *) (gpointer) buffer;
+      item->after = (gint *) (gpointer) (buffer + item->n_cells * sizeof (GdkRectangle));
       item->before = item->after + item->n_cells;
     }
 
