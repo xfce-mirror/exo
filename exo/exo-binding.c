@@ -203,7 +203,14 @@ exo_binding_on_disconnect (gpointer  data,
   ExoBindingLink *blink = data;
   ExoBinding     *binding;
 
+  /* Silence '-Wcast-align' warning so it doesn't break CI build */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunknown-pragmas"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wcast-align"
   binding = (ExoBinding *) (((gchar *) blink) - G_STRUCT_OFFSET (ExoBinding, blink));
+#pragma clang diagnostic pop
+#pragma GCC diagnostic pop
 
   if (binding->destroy != NULL)
     binding->destroy (blink->user_data);
@@ -225,7 +232,14 @@ exo_mutual_binding_on_disconnect_object1 (gpointer  data,
   ExoBindingLink   *blink = data;
   GObject          *object2;
 
+  /* Silence '-Wcast-align' warning so it doesn't break CI build */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunknown-pragmas"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wcast-align"
   binding = (ExoMutualBinding *) (((gchar *) blink) - G_STRUCT_OFFSET (ExoMutualBinding, direct));
+#pragma clang diagnostic pop
+#pragma GCC diagnostic pop
   binding->reverse.dst_object = NULL;
 
   object2 = binding->direct.dst_object;
@@ -250,7 +264,14 @@ exo_mutual_binding_on_disconnect_object2 (gpointer  data,
   ExoBindingLink   *blink = data;
   GObject          *object1;
 
+  /* Silence '-Wcast-align' warning so it doesn't break CI build */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunknown-pragmas"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wcast-align"
   binding = (ExoMutualBinding *) (((gchar *) blink) - G_STRUCT_OFFSET (ExoMutualBinding, reverse));
+#pragma clang diagnostic pop
+#pragma GCC diagnostic pop
   binding->direct.dst_object = NULL;
 
   object1 = binding->reverse.dst_object;

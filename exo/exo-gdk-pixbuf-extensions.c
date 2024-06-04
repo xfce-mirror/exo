@@ -128,8 +128,15 @@ exo_gdk_pixbuf_colorize (const GdkPixbuf *source,
   /* check if there's a good reason to use MMX */
   if (G_LIKELY (has_alpha && dst_row_stride == width * 4 && src_row_stride == width * 4 && (width * height) % 2 == 0))
     {
+      /* Silence '-Wcast-align' warning so it doesn't break CI build */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunknown-pragmas"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wcast-align"
       __m64 *pixdst = (__m64 *) gdk_pixbuf_get_pixels (dst);
       __m64 *pixsrc = (__m64 *) gdk_pixbuf_get_pixels (source);
+#pragma clang diagnostic pop
+#pragma GCC diagnostic pop
       __m64  alpha_mask = _mm_set_pi8 (0xff, 0, 0, 0, 0xff, 0, 0, 0);
       __m64  color_factor = _mm_set_pi16 (0, color->blue, color->green, color->red);
       __m64  zero = _mm_setzero_si64 ();
@@ -477,8 +484,14 @@ exo_gdk_pixbuf_spotlight (const GdkPixbuf *source)
   /* check if there's a good reason to use MMX */
   if (G_LIKELY (has_alpha && dst_row_stride == width * 4 && src_row_stride == width * 4 && (width * height) % 2 == 0))
     {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunknown-pragmas"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wcast-align"
       __m64 *pixdst = (__m64 *) gdk_pixbuf_get_pixels (dst);
       __m64 *pixsrc = (__m64 *) gdk_pixbuf_get_pixels (source);
+#pragma clang diagnostic pop
+#pragma GCC diagnostic pop
       __m64  alpha_mask = _mm_set_pi8 (0xff, 0, 0, 0, 0xff, 0, 0, 0);
       __m64  twentyfour = _mm_set_pi8 (0, 24, 24, 24, 0, 24, 24, 24);
       __m64  zero = _mm_setzero_si64 ();
