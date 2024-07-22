@@ -634,6 +634,7 @@ main (gint argc, gchar **argv)
     {
       g_fprintf (stderr, "exo-open: %s.\n", err->message);
       g_error_free (err);
+      g_option_context_free (context);
       return EXIT_FAILURE;
     }
 
@@ -778,5 +779,6 @@ main (gint argc, gchar **argv)
       usage ();
     }
 
+  g_option_context_free (context);
   return result;
 }
