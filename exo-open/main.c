@@ -634,8 +634,10 @@ main (gint argc, gchar **argv)
     {
       g_fprintf (stderr, "exo-open: %s.\n", err->message);
       g_error_free (err);
+      g_option_context_free (context);
       return EXIT_FAILURE;
     }
+  g_option_context_free (context);
 
   /* restore the startup-id for the child environment */
   if (startup_id != NULL)
