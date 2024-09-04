@@ -1730,9 +1730,6 @@ exo_icon_view_size_allocate (GtkWidget     *widget,
   /* apply the new size allocation */
   gtk_widget_set_allocation (widget, allocation);
 
-  if (g_sequence_is_empty (icon_view->priv->items))
-    return;
-
   /* move/resize the clipping window, the icons window
    * will be handled by exo_icon_view_layout().
    */
