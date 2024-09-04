@@ -280,6 +280,9 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
   GtkTreeSelection *selection;
   ExoTreeView      *tree_view = EXO_TREE_VIEW (widget);
   GtkTreePath      *path = NULL;
+  GtkTreePath      *cursor_path_start = NULL;
+  GtkTreePath      *cursor_path_end = NULL;
+  gboolean          ctrl_shift_clicked = FALSE;
   gboolean          result;
   gpointer          drag_data;
 
@@ -356,6 +359,17 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
         }
     }
 
+  /* determine if a ctrl+shift click occurred */
+  if (gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE
+      && event->button == 1 && event->type == GDK_BUTTON_PRESS
+      && event->state & GDK_CONTROL_MASK && event->state & GDK_SHIFT_MASK)
+    {
+      ctrl_shift_clicked = TRUE;
+
+      /* store old cursor position */
+      gtk_tree_view_get_cursor (GTK_TREE_VIEW (tree_view), &cursor_path_start, NULL);
+    }
+
   /* unfortunately GtkTreeView will unselect rows except the clicked one,
    * which makes dragging from a GtkTreeView problematic.
    * So we temporary disable selection updates if the path is still selected
@@ -381,6 +395,20 @@ exo_tree_view_button_press_event (GtkWidget      *widget,
         {
           gtk_tree_selection_set_select_function (selection, select_true, NULL, NULL);
         }
+    }
+
+  /* extend selection range on ctrl+shift click */
+  if (ctrl_shift_clicked)
+    {
+      /* store new cursor position */
+      gtk_tree_view_get_cursor (GTK_TREE_VIEW (tree_view), &cursor_path_end, NULL);
+
+      /* select all items between the old and new cursor position */
+      if (cursor_path_start != NULL && cursor_path_end != NULL)
+        gtk_tree_selection_select_range (selection, cursor_path_start, cursor_path_end);
+
+      gtk_tree_path_free (cursor_path_start);
+      gtk_tree_path_free (cursor_path_end);
     }
 
   /* release the path (if any) */
