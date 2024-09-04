@@ -593,7 +593,10 @@ exo_open_uri (const gchar  *uri,
   g_free (scheme);
 
   if (!retval && error != NULL)
-    *error = err;
+    {
+      g_error_free (*error);
+      *error = err;
+    }
   else if (err != NULL)
     g_error_free (err);
 
