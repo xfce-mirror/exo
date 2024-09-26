@@ -31,7 +31,7 @@ void      exo_die_g_key_file_set_locale_value (GKeyFile          *key_file,
                                                const gchar       *key,
                                                const gchar       *value);
 
-gboolean  exo_die_g_key_file_save             (GKeyFile          *key_file,
+GFile    *exo_die_g_key_file_save             (GKeyFile          *key_file,
                                                gboolean           create,
                                                gboolean           trust,
                                                GFile             *base,

@@ -62,6 +62,7 @@ static const gchar *ICON_NAMES[] = { "applications-other", "applications-interne
 
 /* --- globals --- */
 static gboolean opt_create_new = FALSE;
+static gboolean opt_print_saved_filename = FALSE;
 static gboolean opt_version = FALSE;
 static gchar   *opt_type = NULL;
 static gchar   *opt_name = NULL;
@@ -87,6 +88,7 @@ static GOptionEntry option_entries[] =
   { "command", 0, 0, G_OPTION_ARG_STRING, &opt_command, N_ ("Preset command when creating a launcher"), NULL, },
   { "url", 0, 0, G_OPTION_ARG_STRING, &opt_url, N_ ("Preset URL when creating a link"), NULL, },
   { "icon", 0, 0, G_OPTION_ARG_STRING, &opt_icon, N_ ("Preset icon when creating a desktop file"), NULL, },
+  { "print-saved-filename", 0, 0, G_OPTION_ARG_NONE, &opt_print_saved_filename, N_ ("Print the final saved filename after creating or editing the file"), NULL, },
   { "version", 'V', 0, G_OPTION_ARG_NONE, &opt_version, N_ ("Print version information and exit"), NULL, },
   { "xid", 0, G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_INT64, &opt_xid, NULL, NULL, },
   { NULL, },
@@ -156,6 +158,7 @@ main (int argc, char **argv)
   gchar          **dirs;
   guint            i;
   const gchar     *mode_dir;
+  GFile           *result_file = NULL;
 
   /* setup translation domain */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
@@ -518,7 +521,8 @@ main (int argc, char **argv)
         }
 
       /* try to save the file */
-      if (!exo_die_g_key_file_save (key_file, opt_create_new, trusted_launcher, gfile, mode, &error))
+      result_file = exo_die_g_key_file_save (key_file, opt_create_new, trusted_launcher, gfile, mode, &error);
+      if (result_file == NULL)
         {
           if (opt_create_new)
             {
@@ -567,7 +571,7 @@ main (int argc, char **argv)
 
                   /* try again to save to the new file */
                   gfile = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (chooser));
-                  exo_die_g_key_file_save (key_file, FALSE, trusted_launcher, gfile, mode, &error);
+                  result_file = exo_die_g_key_file_save (key_file, FALSE, trusted_launcher, gfile, mode, &error);
                 }
 
               /* destroy the chooser */
@@ -587,7 +591,7 @@ main (int argc, char **argv)
 
                   g_clear_error (&error);
 
-                  exo_die_g_key_file_save (key_file, FALSE, trusted_launcher, gfile_local, mode, &error);
+                  result_file = exo_die_g_key_file_save (key_file, FALSE, trusted_launcher, gfile_local, mode, &error);
                   g_object_unref (gfile_local);
                 }
             }
@@ -632,7 +636,7 @@ main (int argc, char **argv)
 
                       /* try another save */
                       gfile_local = g_file_new_for_path (path);
-                      exo_die_g_key_file_save (key_file, FALSE, trusted_launcher, gfile_local, mode, &error);
+                      result_file = exo_die_g_key_file_save (key_file, FALSE, trusted_launcher, gfile_local, mode, &error);
                       g_object_unref (G_OBJECT (gfile_local));
                     }
 
@@ -676,6 +680,16 @@ main (int argc, char **argv)
   /* cleanup */
   g_key_file_free (key_file);
   g_object_unref (G_OBJECT (gfile));
+
+  if (result == EXIT_SUCCESS && result_file != NULL && opt_print_saved_filename)
+    {
+      g_print ("%s\n", g_file_peek_path (result_file));
+    }
+
+  if (result_file != NULL)
+    {
+      g_object_unref (result_file);
+    }
 
   return result;
 }
