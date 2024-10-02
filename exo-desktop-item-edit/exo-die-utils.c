@@ -120,9 +120,9 @@ static void trust_launcher (GFile *gfile)
  *
  * Writes changes to the @key_file .desktop or .directory file.
  *
- * Return value: %TRUE if successfull, %FALSE otherwise.
+ * Return value: #GFile that was written, or %NULL on error.
  **/
-gboolean
+GFile *
 exo_die_g_key_file_save (GKeyFile          *key_file,
                          gboolean           create,
                          gboolean           trust,
@@ -140,9 +140,9 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
   gboolean     desktop_suffix;
   const gchar *suffix;
 
-  g_return_val_if_fail (G_IS_FILE (base), FALSE);
-  g_return_val_if_fail (key_file != NULL, FALSE);
-  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+  g_return_val_if_fail (G_IS_FILE (base), NULL);
+  g_return_val_if_fail (key_file != NULL, NULL);
+  g_return_val_if_fail (error == NULL || *error == NULL, NULL);
 
   /* check if we should create a new file */
   if (G_LIKELY (create))
@@ -199,14 +199,14 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
               g_free (name);
 
               if (G_UNLIKELY (file == NULL))
-                return FALSE;
+                return NULL;
             }
           else
             {
               /* base is not a directory, cannot save */
               g_set_error_literal (error, G_FILE_ERROR, g_file_error_from_errno (ENOTDIR),
                                    _("File location is not a regular file or directory"));
-              return FALSE;
+              return NULL;
             }
         }
     }
@@ -221,7 +221,7 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
   if (G_UNLIKELY (data == NULL))
     {
       g_object_unref (file);
-      return FALSE;
+      return NULL;
     }
 
   /* need to recalculate checksum */
@@ -236,7 +236,14 @@ exo_die_g_key_file_save (GKeyFile          *key_file,
 
   /* cleanup */
   g_free (data);
-  g_object_unref (file);
 
-  return result;
+  if (result)
+    {
+      return file;
+    }
+  else
+   {
+       g_object_unref (file);
+       return NULL;
+   }
 }
