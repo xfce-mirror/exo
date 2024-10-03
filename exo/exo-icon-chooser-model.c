@@ -515,6 +515,7 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
       /* Skip symbolic icons since they lead to double processing */
       if (icon_name_is_symbolic (lp->data))
       {
+        g_free (lp->data);
         continue;
       }
 
@@ -553,6 +554,7 @@ exo_icon_chooser_model_icon_theme_changed (GtkIconTheme        *icon_theme,
           /* Skip symbolic icons since they lead to double processing */
           if (icon_name_is_symbolic (lp->data))
           {
+            g_free (lp->data);
             continue;
           }
 
