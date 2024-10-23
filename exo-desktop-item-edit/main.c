@@ -192,10 +192,13 @@ main (int argc, char **argv)
   if (G_UNLIKELY (opt_version))
     {
       g_print ("%s %s\n\n", g_get_prgname (), PACKAGE_VERSION);
-      g_print (_("Copyright (c) %s\n"
-                 "        os-cillation e.K. All rights reserved.\n\n"
-                 "Written by Benedikt Meurer <benny@xfce.org>.\n\n"),
-               "2005-2007");
+
+      g_print ("%s\n", "Copyright (c) 2005-2007");
+      g_print ("\t%s\n\n", _("os-cillation e.K. All rights reserved."));
+      g_print ("%s\n", "Copyright (c) 2008-2024");
+      g_print ("\t%s\n\n", _("The Xfce development team. All rights reserved."));
+
+      g_print ("%s\n\n",_("Written by Benedikt Meurer <benny@xfce.org>."));
       g_print (_("%s comes with ABSOLUTELY NO WARRANTY,\n"
                  "You may redistribute copies of %s under the terms of\n"
                  "the GNU Lesser General Public License which can be found in the\n"
