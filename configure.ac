@@ -1,6 +1,6 @@
 dnl
 dnl Copyright (c) 2004-2009 os-cillation.
-dnl Copyright (c) 2009-2019 Xfce Development Team <xfce4-dev@xfce.org>
+dnl Copyright (c) 2009-2024 Xfce Development Team <xfce4-dev@xfce.org>
 dnl All rights reserved.
 dnl
 dnl Written by Benedikt Meurer <benny@xfce.org>.
@@ -17,7 +17,7 @@ dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2004-2010 os-cillation.
-Copyright (c) 2004-2023 Xfce Development Team])
+Copyright (c) 2004-2024 Xfce Development Team])
 AC_INIT([exo], [xdt_version], [https://gitlab.xfce.org/xfce/exo])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
