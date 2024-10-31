@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the exo.master package.
 # 
 # Translators:
 # Nikola Radovanović <cobisimo@gmail.com>, 2018
@@ -10,433 +10,433 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Exo\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-24 12:45+0200\n"
-"PO-Revision-Date: 2020-10-24 21:30+0000\n"
-"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
-"Language-Team: Serbian (http://www.transifex.com/xfce/exo/language/sr/)\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-10-31 00:45+0100\n"
+"PO-Revision-Date: 2013-07-02 20:30+0000\n"
+"Last-Translator: Саша Петровић <salepetronije@gmail.com>, 2013,2015,2017-2019\n"
+"Language-Team: Serbian (http://app.transifex.com/xfce/exo/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../exo/exo-cell-renderer-icon.c:138
+#: exo/exo-cell-renderer-icon.c:138
 msgid "Follow state"
 msgstr "Прати стање"
 
-#: ../exo/exo-cell-renderer-icon.c:139
+#: exo/exo-cell-renderer-icon.c:139
 msgid "Render differently based on the selection state."
 msgstr "Исцртава различито засновано на стању избора."
 
-#: ../exo/exo-cell-renderer-icon.c:160
+#: exo/exo-cell-renderer-icon.c:160
 msgid "Icon"
 msgstr "Сличица"
 
-#: ../exo/exo-cell-renderer-icon.c:161
+#: exo/exo-cell-renderer-icon.c:161
 msgid "The icon to render."
 msgstr "Сличица за исцртавање."
 
-#: ../exo/exo-cell-renderer-icon.c:179
+#: exo/exo-cell-renderer-icon.c:179
 msgid "GIcon"
 msgstr "Гномова сличица"
 
-#: ../exo/exo-cell-renderer-icon.c:180
+#: exo/exo-cell-renderer-icon.c:180
 msgid "The GIcon to render."
 msgstr "Гномова сличица за исцртавање."
 
-#: ../exo/exo-cell-renderer-icon.c:201
+#: exo/exo-cell-renderer-icon.c:201
 msgid "size"
 msgstr "величина"
 
-#: ../exo/exo-cell-renderer-icon.c:202
+#: exo/exo-cell-renderer-icon.c:202
 msgid "The size of the icon to render in pixels."
 msgstr "Величина сличице за исцртавање у тачкама."
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:787
+#: exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
 msgstr "Нисам успео да отворим датотеку „%s“: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:855
+#: exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
 msgstr "Нисам успео да прочитам датотеку „%s“: %s"
 
-#: ../exo/exo-gdk-pixbuf-extensions.c:896
+#: exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
 msgstr "Нисам успео да учитам слику „%s“: Разлог није познат, вероватно неисправан запис"
 
-#: ../exo/exo-gtk-extensions.c:219
+#: exo/exo-gtk-extensions.c:236
 #, c-format
 msgid "Failed to open \"%s\"."
 msgstr "Нисам успео да отворим „%s“."
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
-#: ../exo/exo-icon-chooser-dialog.c:100
+#: exo/exo-icon-chooser-dialog.c:104
 msgid "Action Icons"
 msgstr "Сличице радње"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ANIMATIONS
-#: ../exo/exo-icon-chooser-dialog.c:102
+#: exo/exo-icon-chooser-dialog.c:106
 msgid "Animations"
 msgstr "Анимације"
 
 #. EXO_ICON_CHOOSER_CONTEXT_APPLICATIONS
-#: ../exo/exo-icon-chooser-dialog.c:104
+#: exo/exo-icon-chooser-dialog.c:108
 msgid "Application Icons"
 msgstr "Сличице програма"
 
 #. EXO_ICON_CHOOSER_CONTEXT_CATEGORIES
-#: ../exo/exo-icon-chooser-dialog.c:106
+#: exo/exo-icon-chooser-dialog.c:110
 msgid "Menu Icons"
 msgstr "Сличице изборника"
 
 #. EXO_ICON_CHOOSER_CONTEXT_DEVICES
-#: ../exo/exo-icon-chooser-dialog.c:108
+#: exo/exo-icon-chooser-dialog.c:112
 msgid "Device Icons"
 msgstr "Сличице уређаја"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMBLEMS
-#: ../exo/exo-icon-chooser-dialog.c:110
+#: exo/exo-icon-chooser-dialog.c:114
 msgid "Emblems"
 msgstr "Обележја"
 
 #. EXO_ICON_CHOOSER_CONTEXT_EMOTES
-#: ../exo/exo-icon-chooser-dialog.c:112
+#: exo/exo-icon-chooser-dialog.c:116
 msgid "Emoticons"
 msgstr "Изрази лица"
 
 #. EXO_ICON_CHOOSER_CONTEXT_MIME_TYPES
-#: ../exo/exo-icon-chooser-dialog.c:114
+#: exo/exo-icon-chooser-dialog.c:118
 msgid "File Type Icons"
 msgstr "Сличице врсте датотеке"
 
 #. EXO_ICON_CHOOSER_CONTEXT_PLACES
-#: ../exo/exo-icon-chooser-dialog.c:116
+#: exo/exo-icon-chooser-dialog.c:120
 msgid "Location Icons"
 msgstr "Сличице места"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STATUS
-#: ../exo/exo-icon-chooser-dialog.c:118
+#: exo/exo-icon-chooser-dialog.c:122
 msgid "Status Icons"
 msgstr "Сличице стања"
 
 #. EXO_ICON_CHOOSER_CONTEXT_STOCK
-#: ../exo/exo-icon-chooser-dialog.c:120
+#: exo/exo-icon-chooser-dialog.c:124
 msgid "Stock Icons"
 msgstr "Основне сличице"
 
 #. EXO_ICON_CHOOSER_CONTEXT_OTHER
-#: ../exo/exo-icon-chooser-dialog.c:122
+#: exo/exo-icon-chooser-dialog.c:126
 msgid "Uncategorized Icons"
 msgstr "Неодређене сличице"
 
 #. EXO_ICON_CHOOSER_CONTEXT_ALL
-#: ../exo/exo-icon-chooser-dialog.c:126
+#: exo/exo-icon-chooser-dialog.c:130
 msgid "All Icons"
 msgstr "Све сличице"
 
 #. EXO_ICON_CHOOSER_CONTEXT_FILE
-#: ../exo/exo-icon-chooser-dialog.c:130 ../exo/exo-icon-chooser-dialog.c:275
+#: exo/exo-icon-chooser-dialog.c:134 exo/exo-icon-chooser-dialog.c:279
 msgid "Image Files"
 msgstr "Датотеке слика"
 
 #. EXO_ICON_CHOOSER_CONTEXT_NO_ICON
-#: ../exo/exo-icon-chooser-dialog.c:134
+#: exo/exo-icon-chooser-dialog.c:138
 msgid "No Icon"
 msgstr "Нема сличице"
 
 #. setup the context combo box
-#: ../exo/exo-icon-chooser-dialog.c:200
+#: exo/exo-icon-chooser-dialog.c:204
 msgid "Select _icon from:"
 msgstr "Изабери _сличицу из:"
 
 #. search filter
-#: ../exo/exo-icon-chooser-dialog.c:216
+#: exo/exo-icon-chooser-dialog.c:220
 msgid "_Search icon:"
 msgstr "_Потражи сличицу:"
 
-#: ../exo/exo-icon-chooser-dialog.c:227
+#: exo/exo-icon-chooser-dialog.c:232
 msgid "Clear search field"
 msgstr "Очистите поље претраге"
 
-#: ../exo/exo-icon-view.c:724
+#: exo/exo-icon-view.c:703
 msgid "Column Spacing"
 msgstr "Размак стубаца"
 
-#: ../exo/exo-icon-view.c:725
+#: exo/exo-icon-view.c:704
 msgid "Space which is inserted between grid column"
 msgstr "Размак који се убацује између стубаца мреже"
 
-#: ../exo/exo-icon-view.c:741
+#: exo/exo-icon-view.c:720
 msgid "Number of columns"
 msgstr "Број стубаца"
 
-#: ../exo/exo-icon-view.c:742
+#: exo/exo-icon-view.c:721
 msgid "Number of columns to display"
 msgstr "Број стубаца за приказивање"
 
-#: ../exo/exo-icon-view.c:756
+#: exo/exo-icon-view.c:735
 msgid "Enable Search"
 msgstr "Укључи претрагу"
 
-#: ../exo/exo-icon-view.c:757
+#: exo/exo-icon-view.c:736
 msgid "View allows user to search through columns interactively"
 msgstr "Преглед омогућава корисницима да траже међудејствујући кроз ступце"
 
-#: ../exo/exo-icon-view.c:774
+#: exo/exo-icon-view.c:753
 msgid "Width for each item"
 msgstr "Ширина сваке ставке"
 
-#: ../exo/exo-icon-view.c:775
+#: exo/exo-icon-view.c:754
 msgid "The width used for each item"
 msgstr "Ширина за сваку ставку"
 
-#: ../exo/exo-icon-view.c:793
+#: exo/exo-icon-view.c:772
 msgid "Layout mode"
 msgstr "Распоред"
 
-#: ../exo/exo-icon-view.c:794
+#: exo/exo-icon-view.c:773
 msgid "The layout mode"
 msgstr "Начин распореда"
 
-#: ../exo/exo-icon-view.c:810
+#: exo/exo-icon-view.c:789
 msgid "Margin"
 msgstr "Оквир"
 
-#: ../exo/exo-icon-view.c:811
+#: exo/exo-icon-view.c:790
 msgid "Space which is inserted at the edges of the icon view"
 msgstr "Размак који се убацује на крајевима прегледа сличица"
 
-#: ../exo/exo-icon-view.c:827
+#: exo/exo-icon-view.c:806
 msgid "Markup column"
 msgstr "Стубац ознаке"
 
-#: ../exo/exo-icon-view.c:828
+#: exo/exo-icon-view.c:807
 msgid "Model column used to retrieve the text if using Pango markup"
 msgstr "Стубац у моделу из којег се извлачи писмо уколико се користе Пангове ознаке"
 
-#: ../exo/exo-icon-view.c:842
+#: exo/exo-icon-view.c:821
 msgid "Icon View Model"
 msgstr "Начин прегледа сличице"
 
-#: ../exo/exo-icon-view.c:843
+#: exo/exo-icon-view.c:822
 msgid "The model for the icon view"
 msgstr "Начин преглед помоћу сличица"
 
-#: ../exo/exo-icon-view.c:856
+#: exo/exo-icon-view.c:835
 msgid "Orientation"
 msgstr "Усмерење"
 
-#: ../exo/exo-icon-view.c:857
+#: exo/exo-icon-view.c:836
 msgid ""
 "How the text and icon of each item are positioned relative to each other"
 msgstr "Како се писмо и сличица сваке ставке постављају једно у односу на друго"
 
-#: ../exo/exo-icon-view.c:873
+#: exo/exo-icon-view.c:852
 msgid "Pixbuf column"
 msgstr "Стубац сличице"
 
-#: ../exo/exo-icon-view.c:874
+#: exo/exo-icon-view.c:853
 msgid "Model column used to retrieve the icon pixbuf from"
 msgstr "Стубац начина приказа из које се извлачи сличица"
 
-#: ../exo/exo-icon-view.c:891
+#: exo/exo-icon-view.c:870
 msgid "Icon column"
 msgstr "Колона сличица"
 
-#: ../exo/exo-icon-view.c:892
+#: exo/exo-icon-view.c:871
 msgid ""
 "Model column used to retrieve the absolute path of an image file to render"
 msgstr "Колона која се користе за потпуну путању датотека слика за приказ"
 
-#: ../exo/exo-icon-view.c:907
+#: exo/exo-icon-view.c:886
 msgid "Reorderable"
 msgstr "Променљиви редослед"
 
-#: ../exo/exo-icon-view.c:908
+#: exo/exo-icon-view.c:887
 msgid "View is reorderable"
 msgstr "Дозвољена је измена редоследа"
 
-#: ../exo/exo-icon-view.c:923
+#: exo/exo-icon-view.c:902
 msgid "Row Spacing"
 msgstr "Размак редова"
 
-#: ../exo/exo-icon-view.c:924
+#: exo/exo-icon-view.c:903
 msgid "Space which is inserted between grid rows"
 msgstr "Размак који се убацује између редова мреже"
 
-#: ../exo/exo-icon-view.c:938
+#: exo/exo-icon-view.c:917
 msgid "Search Column"
 msgstr "Стубац претраге"
 
-#: ../exo/exo-icon-view.c:939
+#: exo/exo-icon-view.c:918
 msgid "Model column to search through when searching through item"
 msgstr "Стубац модел за претрагу приликом претраге кроз ставке"
 
-#: ../exo/exo-icon-view.c:953
+#: exo/exo-icon-view.c:932
 msgid "Selection mode"
 msgstr "Начин избора"
 
-#: ../exo/exo-icon-view.c:954
+#: exo/exo-icon-view.c:933
 msgid "The selection mode"
 msgstr "Начин избора"
 
-#: ../exo/exo-icon-view.c:969 ../exo/exo-tree-view.c:156
+#: exo/exo-icon-view.c:948 exo/exo-tree-view.c:167
 msgid "Single Click"
 msgstr "Једноструки клик"
 
-#: ../exo/exo-icon-view.c:970 ../exo/exo-tree-view.c:157
+#: exo/exo-icon-view.c:949 exo/exo-tree-view.c:168
 msgid "Whether the items in the view can be activated with single clicks"
 msgstr "Да ли ставке у прегледу могу бити покренуте једним кликом"
 
-#: ../exo/exo-icon-view.c:986 ../exo/exo-tree-view.c:173
+#: exo/exo-icon-view.c:965 exo/exo-tree-view.c:184
 msgid "Single Click Timeout"
 msgstr "Време за један клик"
 
-#: ../exo/exo-icon-view.c:987 ../exo/exo-tree-view.c:174
+#: exo/exo-icon-view.c:966 exo/exo-tree-view.c:185
 msgid ""
 "The amount of time after which the item under the mouse cursor will be "
 "selected automatically in single click mode"
 msgstr "Износ времена након кога ће ставка под показивачем миша бити изабрана када се користи покретање једним кликом"
 
-#: ../exo/exo-icon-view.c:1002
+#: exo/exo-icon-view.c:981
 msgid "Spacing"
 msgstr "Размаци"
 
-#: ../exo/exo-icon-view.c:1003
+#: exo/exo-icon-view.c:982
 msgid "Space which is inserted between cells of an item"
 msgstr "Размак који се убацује између ћелија ставке"
 
-#: ../exo/exo-icon-view.c:1018
+#: exo/exo-icon-view.c:997
 msgid "Text column"
 msgstr "Стубац писма"
 
-#: ../exo/exo-icon-view.c:1019
+#: exo/exo-icon-view.c:998
 msgid "Model column used to retrieve the text from"
 msgstr "Стубац у моделу из којег се извлачи писмо"
 
-#: ../exo/exo-thumbnail-preview.c:112
+#: exo/exo-thumbnail-preview.c:92
 msgid "Preview"
 msgstr "Преглед"
 
-#: ../exo/exo-thumbnail-preview.c:129 ../exo/exo-thumbnail-preview.c:270
+#: exo/exo-thumbnail-preview.c:116 exo/exo-thumbnail-preview.c:260
 msgid "No file selected"
 msgstr "Датотека није изабрана"
 
-#: ../exo/exo-thumbnail-preview.c:288
+#: exo/exo-thumbnail-preview.c:278
 msgid "Block Device"
 msgstr "Блок уређај"
 
-#: ../exo/exo-thumbnail-preview.c:293
+#: exo/exo-thumbnail-preview.c:283
 msgid "Character Device"
 msgstr "Знаковни уређај"
 
-#: ../exo/exo-thumbnail-preview.c:298
+#: exo/exo-thumbnail-preview.c:288
 msgid "Folder"
 msgstr "Фасцикла"
 
-#: ../exo/exo-thumbnail-preview.c:303
+#: exo/exo-thumbnail-preview.c:293
 msgid "FIFO"
 msgstr "ФИФО"
 
-#: ../exo/exo-thumbnail-preview.c:308
+#: exo/exo-thumbnail-preview.c:298
 msgid "Socket"
 msgstr "Прикључница"
 
 #. allocate the file chooser
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:257
+#: exo-desktop-item-edit/exo-die-command-entry.c:258
 msgid "Select an Application"
 msgstr "Изаберите програм"
 
 #. add the "Cancel" button
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:260
-#: ../exo-desktop-item-edit/exo-die-editor.c:594
-#: ../exo-desktop-item-edit/exo-die-editor.c:638
-#: ../exo-desktop-item-edit/main.c:343 ../exo-desktop-item-edit/main.c:532
+#: exo-desktop-item-edit/exo-die-command-entry.c:261
+#: exo-desktop-item-edit/exo-die-editor.c:624
+#: exo-desktop-item-edit/exo-die-editor.c:668 exo-desktop-item-edit/main.c:347
+#: exo-desktop-item-edit/main.c:539
 msgid "_Cancel"
 msgstr "_Откажи"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:261
+#: exo-desktop-item-edit/exo-die-command-entry.c:262
 msgid "_Open"
 msgstr "_Отвори"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:266
+#: exo-desktop-item-edit/exo-die-command-entry.c:267
 msgid "All Files"
 msgstr "Све датотеке"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:271
+#: exo-desktop-item-edit/exo-die-command-entry.c:272
 msgid "Executable Files"
 msgstr "Извршне датотеке"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:286
+#: exo-desktop-item-edit/exo-die-command-entry.c:287
 msgid "Perl Scripts"
 msgstr "Перлова скрипта"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:292
+#: exo-desktop-item-edit/exo-die-command-entry.c:293
 msgid "Python Scripts"
 msgstr "Питонова скрипта"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:298
+#: exo-desktop-item-edit/exo-die-command-entry.c:299
 msgid "Ruby Scripts"
 msgstr "Рубијева скрипта"
 
-#: ../exo-desktop-item-edit/exo-die-command-entry.c:304
+#: exo-desktop-item-edit/exo-die-command-entry.c:305
 msgid "Shell Scripts"
 msgstr "Скрипта шкољке"
 
-#: ../exo-desktop-item-edit/exo-die-desktop-model.c:288
+#: exo-desktop-item-edit/exo-die-desktop-model.c:283
 #, c-format
 msgid "Create Launcher <b>%s</b>"
 msgstr "Направи покретач <b>%s</b>"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:295
+#: exo-desktop-item-edit/exo-die-editor.c:298
 msgid "_Name:"
 msgstr "На_зив:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:312
+#: exo-desktop-item-edit/exo-die-editor.c:315
 msgid "C_omment:"
 msgstr "На_помена:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:329
+#: exo-desktop-item-edit/exo-die-editor.c:332
 msgid "Comm_and:"
 msgstr "На_редба:"
 
 #. TRANSLATORS: Label in "Create Link" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:345
+#: exo-desktop-item-edit/exo-die-editor.c:354
 msgid "_URL:"
 msgstr "_Адреса:"
 
 #. TRANSLATORS: Label in "Create Launcher" dialog, make sure to avoid mnemonic
 #. conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:362
+#: exo-desktop-item-edit/exo-die-editor.c:377
 msgid "Working _Directory:"
 msgstr "Радни _директоријум:"
 
 #. TRANSLATORS: Label in "Create Launcher"/"Create Link" dialog, make sure to
 #. avoid mnemonic conflicts
-#: ../exo-desktop-item-edit/exo-die-editor.c:392
+#: exo-desktop-item-edit/exo-die-editor.c:413
 msgid "_Icon:"
 msgstr "_Сличица:"
 
 #. TRANSLATORS: Label for the icon button in "Create Launcher"/"Create Link"
 #. dialog if no icon selected
 #. setup a label to tell that no icon was selected
-#: ../exo-desktop-item-edit/exo-die-editor.c:406
-#: ../exo-desktop-item-edit/exo-die-editor.c:1227
+#: exo-desktop-item-edit/exo-die-editor.c:427
+#: exo-desktop-item-edit/exo-die-editor.c:1270
 msgid "No icon"
 msgstr "Нема сличице"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:412
+#: exo-desktop-item-edit/exo-die-editor.c:433
 msgid "Options:"
 msgstr "Могућности:"
 
@@ -444,11 +444,11 @@ msgstr "Могућности:"
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: ../exo-desktop-item-edit/exo-die-editor.c:421
+#: exo-desktop-item-edit/exo-die-editor.c:445
 msgid "Use _startup notification"
 msgstr "Користи обавештења при _покретању"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:422
+#: exo-desktop-item-edit/exo-die-editor.c:446
 msgid ""
 "Select this option to enable startup notification when the command is run "
 "from the file manager or the menu. Not every application supports startup "
@@ -459,111 +459,117 @@ msgstr "Изаберите ову могућност да укључите об�
 #. avoid mnemonic conflicts
 #. *              and sync your translations with the translations in Thunar
 #. and xfce4-panel.
-#: ../exo-desktop-item-edit/exo-die-editor.c:435
+#: exo-desktop-item-edit/exo-die-editor.c:462
 msgid "Run in _terminal"
 msgstr "Покрени у _терминалу"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:436
+#: exo-desktop-item-edit/exo-die-editor.c:463
 msgid "Select this option to run the command in a terminal window."
 msgstr "Изаберите ову могућност да покренете наредбу у прозору терминала."
 
 #. allocate the icon chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:592
+#: exo-desktop-item-edit/exo-die-editor.c:622
 msgid "Select an icon"
 msgstr "Изаберите сличицу"
 
-#: ../exo-desktop-item-edit/exo-die-editor.c:595
-#: ../exo-desktop-item-edit/exo-die-editor.c:639
+#: exo-desktop-item-edit/exo-die-editor.c:625
+#: exo-desktop-item-edit/exo-die-editor.c:669
 msgid "_OK"
 msgstr "_У реду"
 
 #. allocate the file chooser dialog
-#: ../exo-desktop-item-edit/exo-die-editor.c:635
+#: exo-desktop-item-edit/exo-die-editor.c:665
 msgid "Select a working directory"
 msgstr "Изаберите радну фасциклу"
 
-#: ../exo-desktop-item-edit/exo-die-utils.c:205
+#: exo-desktop-item-edit/exo-die-utils.c:208
 msgid "File location is not a regular file or directory"
 msgstr "Место датотеке није редовна датотека или фасцикла"
 
 #. --- constants ---
-#: ../exo-desktop-item-edit/main.c:54
+#: exo-desktop-item-edit/main.c:57
 msgid "Create Launcher"
 msgstr "Направи покретач"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: exo-desktop-item-edit/main.c:57
 msgid "Create Link"
 msgstr "Направи везу"
 
-#: ../exo-desktop-item-edit/main.c:54
+#: exo-desktop-item-edit/main.c:57
 msgid "Create Directory"
 msgstr "Направи фасциклу"
 
-#: ../exo-desktop-item-edit/main.c:55
+#: exo-desktop-item-edit/main.c:58
 msgid "Edit Launcher"
 msgstr "Уреди покретач"
 
-#: ../exo-desktop-item-edit/main.c:55
+#: exo-desktop-item-edit/main.c:58
 msgid "Edit Link"
 msgstr "Уреди везу"
 
-#: ../exo-desktop-item-edit/main.c:55
+#: exo-desktop-item-edit/main.c:58
 msgid "Edit Directory"
 msgstr "Уреди фасциклу"
 
-#: ../exo-desktop-item-edit/main.c:80
+#: exo-desktop-item-edit/main.c:84
 msgid "Create a new desktop file in the given directory"
 msgstr "Прави нову датотеку радне површи у датој фасцикли"
 
-#: ../exo-desktop-item-edit/main.c:81
+#: exo-desktop-item-edit/main.c:85
 msgid "Type of desktop file to create (Application or Link)"
 msgstr "Врста датотеке радне површи за стварање (програм или веза)"
 
-#: ../exo-desktop-item-edit/main.c:82
+#: exo-desktop-item-edit/main.c:86
 msgid "Preset name when creating a desktop file"
 msgstr "Назив претподешавања приликом стварања датотеке радне површи"
 
-#: ../exo-desktop-item-edit/main.c:83
+#: exo-desktop-item-edit/main.c:87
 msgid "Preset comment when creating a desktop file"
 msgstr "Напомена претподешавања приликом стварања датотеке радне површи"
 
-#: ../exo-desktop-item-edit/main.c:84
+#: exo-desktop-item-edit/main.c:88
 msgid "Preset command when creating a launcher"
 msgstr "Наредба претподешавања приликом стварања покретача"
 
-#: ../exo-desktop-item-edit/main.c:85
+#: exo-desktop-item-edit/main.c:89
 msgid "Preset URL when creating a link"
 msgstr "Адреса претподешавања приликом стварања везе"
 
-#: ../exo-desktop-item-edit/main.c:86
+#: exo-desktop-item-edit/main.c:90
 msgid "Preset icon when creating a desktop file"
 msgstr "Сличица претподешавања приликом стварања датотеке радне површи"
 
-#: ../exo-desktop-item-edit/main.c:87
+#: exo-desktop-item-edit/main.c:91
+msgid "Print the final saved URI after creating or editing the file"
+msgstr ""
+
+#: exo-desktop-item-edit/main.c:92
 msgid "Print version information and exit"
 msgstr "Исписује податке о издању и излази"
 
 #. initialize Gtk+
-#: ../exo-desktop-item-edit/main.c:175
+#: exo-desktop-item-edit/main.c:174
 msgid "[FILE|FOLDER]"
 msgstr "[ДАТОТЕКА|ФАСЦИКЛА]"
 
 #. no error message, the GUI initialization failed
-#: ../exo-desktop-item-edit/main.c:187
+#: exo-desktop-item-edit/main.c:186
 msgid "Failed to open display"
 msgstr "Нисам успео да отворим приказ"
 
-#: ../exo-desktop-item-edit/main.c:199 ../exo-open/main.c:617
-#, c-format
-msgid ""
-"Copyright (c) %s\n"
-"        os-cillation e.K. All rights reserved.\n"
-"\n"
-"Written by Benedikt Meurer <benny@xfce.org>.\n"
-"\n"
-msgstr "Ауторска права (c) %s\n        ос-цилација е.К. Сва права су задржана.\n\nНаписао Бенедикт Мејер <benny@xfce.org>.\n\n"
+#: exo-desktop-item-edit/main.c:200 exo-open/main.c:771
+msgid "os-cillation e.K. All rights reserved."
+msgstr ""
 
-#: ../exo-desktop-item-edit/main.c:203 ../exo-open/main.c:621
+#: exo-desktop-item-edit/main.c:202 exo-open/main.c:773
+msgid "The Xfce development team. All rights reserved."
+msgstr "Развојна дружина Иксфце-а. Сва права су задржана."
+
+#: exo-desktop-item-edit/main.c:204 exo-open/main.c:775
+msgid "Written by Benedikt Meurer <benny@xfce.org>."
+msgstr "Написао Benedikt Meurer <benny@xfce.org>."
+
+#: exo-desktop-item-edit/main.c:205 exo-open/main.c:777
 #, c-format
 msgid ""
 "%s comes with ABSOLUTELY NO WARRANTY,\n"
@@ -573,110 +579,110 @@ msgid ""
 "\n"
 msgstr "%s долази БЕЗ ИКАКВОГ ЈЕМСТВА\nМожете да расподељујете примерке %s под одредбама\nГнуове мање опште јавне лиценце коју можете пронаћи\nу %s изворном пакету.\n\n"
 
-#: ../exo-desktop-item-edit/main.c:207 ../exo-open/main.c:625
+#: exo-desktop-item-edit/main.c:209 exo-open/main.c:781
 #, c-format
 msgid "Please report bugs to <%s>.\n"
 msgstr "Грешке пријавите на <%s>.\n"
 
-#: ../exo-desktop-item-edit/main.c:214
+#: exo-desktop-item-edit/main.c:216
 msgid "No file/folder specified"
 msgstr "Није наведена датотека/фасцикла"
 
-#: ../exo-desktop-item-edit/main.c:279
+#: exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
 msgstr "Нисам успео да учитам садржаје са „%s“: %s"
 
-#: ../exo-desktop-item-edit/main.c:284
+#: exo-desktop-item-edit/main.c:286
 #, c-format
 msgid "The file \"%s\" contains no data"
 msgstr "Датотека „%s“ не садржи податке"
 
 #. failed to parse the file
-#: ../exo-desktop-item-edit/main.c:297
+#: exo-desktop-item-edit/main.c:299
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
 msgstr "Нисам успео да обрадим садржаје „%s“: %s"
 
 #. we cannot continue without a type
-#: ../exo-desktop-item-edit/main.c:309
+#: exo-desktop-item-edit/main.c:311
 #, c-format
 msgid "File \"%s\" has no type key"
 msgstr "Датотека „%s“ нема кључ врсте"
 
 #. tell the user that we don't support the type
-#: ../exo-desktop-item-edit/main.c:319
+#: exo-desktop-item-edit/main.c:321
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
 msgstr "Неподржана врста датотеке радне површи „%s“"
 
 #. add the "Help" button
-#: ../exo-desktop-item-edit/main.c:337
+#: exo-desktop-item-edit/main.c:341
 msgid "_Help"
 msgstr "_Помоћ"
 
 #. add the "Create"/"Save" button (as default)
-#: ../exo-desktop-item-edit/main.c:347
+#: exo-desktop-item-edit/main.c:351
 msgid "C_reate"
 msgstr "_Направи"
 
-#: ../exo-desktop-item-edit/main.c:347 ../exo-desktop-item-edit/main.c:533
+#: exo-desktop-item-edit/main.c:351 exo-desktop-item-edit/main.c:540
 msgid "_Save"
 msgstr "_Сачувај"
 
 #. create failed, ask the user to specify a file name
-#: ../exo-desktop-item-edit/main.c:529
+#: exo-desktop-item-edit/main.c:536
 msgid "Choose filename"
 msgstr "Изаберите назив датотеке"
 
-#: ../exo-desktop-item-edit/main.c:636
+#: exo-desktop-item-edit/main.c:662
 #, c-format
 msgid "Failed to create \"%s\"."
 msgstr "Нисам успео да направим „%s“."
 
-#: ../exo-desktop-item-edit/main.c:636
+#: exo-desktop-item-edit/main.c:662
 #, c-format
 msgid "Failed to save \"%s\"."
 msgstr "Нисам успео да сачувам „%s“."
 
-#: ../exo-open/main.c:109
+#: exo-open/main.c:213
 msgid "Usage: exo-open [URLs...]"
 msgstr "Употреба: exo-open [адресе...]"
 
-#: ../exo-open/main.c:110
+#: exo-open/main.c:214
 msgid "       exo-open --launch TYPE [PARAMETERs...]"
 msgstr "       exo-open --launch ВРСТА [ОДРЕДНИЦе...]"
 
-#: ../exo-open/main.c:112
+#: exo-open/main.c:216
 msgid "  -?, --help                          Print this help message and exit"
 msgstr "  -?, --help                          Исписује ову поруку помоћи и излази"
 
-#: ../exo-open/main.c:113
+#: exo-open/main.c:217
 msgid ""
 "  -V, --version                       Print version information and exit"
 msgstr "  -V, --version                       Исписује податке о издању и излази"
 
-#: ../exo-open/main.c:115
+#: exo-open/main.c:219
 msgid ""
 "  --launch TYPE [PARAMETERs...]       Launch the preferred application of\n"
 "                                      TYPE with the optional PARAMETERs, where\n"
 "                                      TYPE is one of the following values."
 msgstr "  --launch ВРСТА [ПАРАМЕТРИ...]       Покреће омиљени програм\n                                      ВРСТЕ са могућим ОДРЕДНИЦАМ, где је\n                                      ВРСТА једна од следећих вредности."
 
-#: ../exo-open/main.c:119
+#: exo-open/main.c:223
 msgid ""
 "  --working-directory DIRECTORY       Default working directory for applications\n"
 "                                      when using the --launch option."
 msgstr "  --working-directory ДИРЕКТОРИЈУМ    Основни радни директоријум за програме\n                                      приликом коришћења могућности „--launch“."
 
-#: ../exo-open/main.c:122
+#: exo-open/main.c:226
 msgid "The following TYPEs are supported for the --launch command:"
 msgstr "Следеће ВРСТЕ су подржане за наредбу „--launch“:"
 
 #. Note to Translators: Do not translate the TYPEs (WebBrowser, MailReader,
 #. TerminalEmulator),
 #. * since the xfce4-mime-helper utility will not accept localized TYPEs.
-#: ../exo-open/main.c:128
+#: exo-open/main.c:232
 msgid ""
 "  WebBrowser       - The preferred Web Browser.\n"
 "  MailReader       - The preferred Mail Reader.\n"
@@ -684,7 +690,7 @@ msgid ""
 "  TerminalEmulator - The preferred Terminal Emulator."
 msgstr "  WebBrowser       — Омиљени веб прегледник.\n  MailReader       — Омиљени читач поште.\n  FileManager      — Омиљени управник датотека.\n  TerminalEmulator — Омиљени опонашач терминала."
 
-#: ../exo-open/main.c:133
+#: exo-open/main.c:237
 msgid ""
 "If you don't specify the --launch option, exo-open will open all specified\n"
 "URLs with their preferred URL handlers. Else, if you specify the --launch\n"
@@ -693,23 +699,23 @@ msgid ""
 "you can pass the command line that should be run in the terminal)."
 msgstr "Ако не наведете могућност „--launch“, ексо-опен ће отворити све наведене\nадресе са њиховим омиљеним руковаоцима адреса. Другачије, ако наведете\nмогућност „--launch“, можете да изаберете који омиљени програм желите да\nпокренете, и да проследите додатне одреднице програму (тј. за „TerminalEmulator“\nможете да проследите наредбу која би требала да буде покренута у терминалу)."
 
-#: ../exo-open/main.c:195
+#: exo-open/main.c:349
 #, c-format
 msgid ""
 "Launching desktop files is not supported when %s is compiled without GIO-"
 "Unix features."
 msgstr "Покретање датотека радне површи није подржано када је „%s“ преведен без ГИО-Јуникс-оих могућности."
 
-#: ../exo-open/main.c:269
+#: exo-open/main.c:423
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
 msgstr "Нисам успео да покренем омиљени програм за врсту „%s“."
 
-#: ../exo-open/main.c:571
+#: exo-open/main.c:724
 #, c-format
 msgid "Unable to detect the URI-scheme of \"%s\"."
 msgstr "Нисам успео да откријем образац адресе за „%s“."
 
-#: ../exo-open/main.c:585
+#: exo-open/main.c:738
 msgid "Failed to open URI."
 msgstr "Нисам успео да отворим УРИ."
