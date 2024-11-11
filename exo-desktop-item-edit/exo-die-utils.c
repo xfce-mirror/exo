@@ -65,6 +65,7 @@ exo_die_g_key_file_set_locale_value (GKeyFile    *key_file,
           g_free (name);
           break;
         }
+      g_free (name);
     }
 
   /* fallback to unlocalized */
