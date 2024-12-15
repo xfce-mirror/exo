@@ -11,7 +11,7 @@ dnl *** Version information ***
 dnl ***************************
 m4_define([libexo_verinfo], [1:0:1])
 m4_define([libexo_version_api], [2])
-XDT_VERSION_INIT([4.20.0])
+XDT_VERSION_INIT([4.20.0], [git])
 
 dnl ***************************
 dnl *** Initialize autoconf ***
