@@ -50,27 +50,27 @@ msgstr "madhësi"
 
 #: exo/exo-cell-renderer-icon.c:202
 msgid "The size of the icon to render in pixels."
-msgstr "Madhësia në piksel e ikonës që duhet vizatuar."
+msgstr "Madhësia në piksela e ikonës që duhet vizatuar."
 
 #: exo/exo-gdk-pixbuf-extensions.c:787
 #, c-format
 msgid "Failed to open file \"%s\": %s"
-msgstr "S’u arrit të hapej kartela \"%s\": %s"
+msgstr "S’u arrit të hapej kartela “%s”: %s"
 
 #: exo/exo-gdk-pixbuf-extensions.c:855
 #, c-format
 msgid "Failed to read file \"%s\": %s"
-msgstr "S’u arrit të lexohej kartela \"%s\": %s"
+msgstr "S’u arrit të lexohej kartela “%s”: %s"
 
 #: exo/exo-gdk-pixbuf-extensions.c:896
 #, c-format
 msgid "Failed to load image \"%s\": Unknown reason, probably a corrupt image file"
-msgstr "S’u arrit të ngarkohej figura \"%s\": Arsye e panjohur, ka gjasa për kartelë të dëmtuar figure"
+msgstr "S’u arrit të ngarkohej figura “%s”: Arsye e panjohur, ka gjasa për kartelë të dëmtuar figure"
 
 #: exo/exo-gtk-extensions.c:236
 #, c-format
 msgid "Failed to open \"%s\"."
-msgstr "S’u arrit të hapej \"%s\"."
+msgstr "S’u arrit të hapej “%s”."
 
 #. EXO_ICON_CHOOSER_CONTEXT_ACTIONS
 #: exo/exo-icon-chooser-dialog.c:104
@@ -211,11 +211,11 @@ msgstr "Hapësirë që futet në caqet e pamjes ikonë"
 
 #: exo/exo-icon-view.c:806
 msgid "Markup column"
-msgstr "Shtyllë \"markup\""
+msgstr "Shtyllë “markup”"
 
 #: exo/exo-icon-view.c:807
 msgid "Model column used to retrieve the text if using Pango markup"
-msgstr "Shtyllë model e përdorur për marrjen e tekstit, nëse përdoret \"markup\" Pango"
+msgstr "Shtyllë model e përdorur për marrjen e tekstit, nëse përdoret “markup” Pango"
 
 #: exo/exo-icon-view.c:821
 msgid "Icon View Model"
@@ -236,11 +236,11 @@ msgstr "Si vendosen në lidhje me njëri tjetrin teksti dhe ikona e secilit elem
 
 #: exo/exo-icon-view.c:852
 msgid "Pixbuf column"
-msgstr "Shtyllë \"pixbuf\""
+msgstr "Shtyllë “pixbuf”"
 
 #: exo/exo-icon-view.c:853
 msgid "Model column used to retrieve the icon pixbuf from"
-msgstr "Shtyllë model e përdorur për të pasur \"pixbuf\" ikone prej"
+msgstr "Shtyllë model e përdorur për të pasur “pixbuf” ikone prej"
 
 #: exo/exo-icon-view.c:870
 msgid "Icon column"
@@ -343,7 +343,7 @@ msgstr "FIFO"
 
 #: exo/exo-thumbnail-preview.c:298
 msgid "Socket"
-msgstr "\"Socket\""
+msgstr "“Socket”"
 
 #. allocate the file chooser
 #: exo-desktop-item-edit/exo-die-command-entry.c:258
@@ -544,7 +544,7 @@ msgstr "Pas krijimit, ose përpunimit të kartelës, shtypni URI përfundimtar t
 
 #: exo-desktop-item-edit/main.c:92
 msgid "Print version information and exit"
-msgstr "Shtyp të dhëna versioni dhe dil"
+msgstr "Shtyp hollësi versioni dhe dil"
 
 #. initialize Gtk+
 #: exo-desktop-item-edit/main.c:174
@@ -590,30 +590,30 @@ msgstr "S’u tregua kartelë/dosje"
 #: exo-desktop-item-edit/main.c:281
 #, c-format
 msgid "Failed to load contents from \"%s\": %s"
-msgstr "S’u arrit të ngarkohej lëndë prej \"%s\": %s"
+msgstr "S’u arrit të ngarkohej lëndë prej “%s”: %s"
 
 #: exo-desktop-item-edit/main.c:286
 #, c-format
 msgid "The file \"%s\" contains no data"
-msgstr "Kartela \"%s\" s’përmban të dhëna"
+msgstr "Kartela “%s” s’përmban të dhëna"
 
 #. failed to parse the file
 #: exo-desktop-item-edit/main.c:299
 #, c-format
 msgid "Failed to parse contents of \"%s\": %s"
-msgstr "S’u arrit të përtypej lëndë e \"%s\": %s"
+msgstr "S’u arrit të përtypej lëndë e “%s”: %s"
 
 #. we cannot continue without a type
 #: exo-desktop-item-edit/main.c:311
 #, c-format
 msgid "File \"%s\" has no type key"
-msgstr "Kartela \"%s\" s’ka kyç lloji"
+msgstr "Kartela “%s” s’ka kyç lloji"
 
 #. tell the user that we don't support the type
 #: exo-desktop-item-edit/main.c:321
 #, c-format
 msgid "Unsupported desktop file type \"%s\""
-msgstr "Lloj i pambuluar kartele desktopi \"%s\""
+msgstr "Lloj i pambuluar kartele desktopi “%s”"
 
 #. add the "Help" button
 #: exo-desktop-item-edit/main.c:341
@@ -637,12 +637,12 @@ msgstr "Zgjidhni emër kartele"
 #: exo-desktop-item-edit/main.c:662
 #, c-format
 msgid "Failed to create \"%s\"."
-msgstr "S’u arrit të krijohej \"%s\"."
+msgstr "S’u arrit të krijohej “%s”."
 
 #: exo-desktop-item-edit/main.c:662
 #, c-format
 msgid "Failed to save \"%s\"."
-msgstr "S’u arrit të ruhej \"%s\"."
+msgstr "S’u arrit të ruhej “%s”."
 
 #: exo-open/main.c:213
 msgid "Usage: exo-open [URLs...]"
@@ -708,7 +708,7 @@ msgstr "Nuk mbulohet nisja e kartelave të desktopit, kur %s është përpiluar 
 #: exo-open/main.c:423
 #, c-format
 msgid "Failed to launch preferred application for category \"%s\"."
-msgstr "S’u arrit të nisej aplikacioni parazgjedhje për kategorinë \"%s\"."
+msgstr "S’u arrit të nisej aplikacioni parazgjedhje për kategorinë “%s”."
 
 #: exo-open/main.c:724
 #, c-format
