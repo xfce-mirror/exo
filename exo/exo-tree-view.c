@@ -695,8 +695,12 @@ exo_tree_view_single_click_timeout (gpointer user_data)
               /* check if the item is not already selected (otherwise do nothing) */
               if (!gtk_tree_selection_path_is_selected (selection, tree_view->priv->hover_path))
                 {
-                  /* unselect all previously selected items */
-                  gtk_tree_selection_unselect_all (selection);
+                  /* skip if control is being pressed */
+                  if ((tree_view->priv->single_click_timeout_state & GDK_CONTROL_MASK) == 0)
+                    {
+                      /* unselect all previously selected items */
+                      gtk_tree_selection_unselect_all (selection);
+                    }
 
                   /* since we cannot access the anchor of a GtkTreeView, we
                    * use the cursor instead which is usually the same row.
