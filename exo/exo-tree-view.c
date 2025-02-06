@@ -690,7 +690,7 @@ exo_tree_view_single_click_timeout (gpointer user_data)
               gtk_tree_view_set_cursor (GTK_TREE_VIEW (tree_view), tree_view->priv->hover_path, cursor_column, FALSE);
             }
           else if ((tree_view->priv->single_click_timeout_state & GDK_SHIFT_MASK) != 0
-                && gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE)
+                   && gtk_tree_selection_get_mode (selection) == GTK_SELECTION_MULTIPLE)
             {
               /* check if the item is not already selected (otherwise do nothing) */
               if (!gtk_tree_selection_path_is_selected (selection, tree_view->priv->hover_path))
@@ -721,6 +721,7 @@ exo_tree_view_single_click_timeout (gpointer user_data)
             {
               /* check if the hover path is selected (as it will be selected after the set_cursor() call) */
               hover_path_selected = gtk_tree_selection_path_is_selected (selection, tree_view->priv->hover_path);
+
               /* disable selection updates if the path is still selected */
               gtk_tree_selection_set_select_function (selection, select_false, NULL, NULL);
 
