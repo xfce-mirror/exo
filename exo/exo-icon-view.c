@@ -4761,7 +4761,7 @@ exo_icon_view_move_cursor_start_end (ExoIconView *icon_view,
     return;
   
   iter = (count < 0) ? g_sequence_get_begin_iter (icon_view->priv->items) : g_sequence_iter_prev (g_sequence_get_end_iter (icon_view->priv->items));
-  if (G_UNLIKELY (iter == NULL))
+  if (G_UNLIKELY (iter == NULL || g_sequence_iter_is_end (iter)))
     return;
 
   item = EXO_ICON_VIEW_ITEM (g_sequence_get (iter));
