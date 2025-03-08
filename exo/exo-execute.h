@@ -32,23 +32,27 @@ gboolean exo_execute_preferred_application            (const gchar *category,
                                                        const gchar *parameter,
                                                        const gchar *working_directory,
                                                        gchar      **envp,
-                                                       GError     **error);
+                                                       GError     **error)
+G_DEPRECATED_FOR (xfce_execute_preferred_application);
 gboolean exo_execute_preferred_application_on_screen  (const gchar *category,
                                                        const gchar *parameter,
                                                        const gchar *working_directory,
                                                        gchar      **envp,
                                                        GdkScreen   *screen,
-                                                       GError     **error);
+                                                       GError     **error)
+G_DEPRECATED_FOR (xfce_execute_preferred_application);
 
 gboolean exo_execute_terminal_shell                   (const gchar *command_line,
                                                        const gchar *working_directory,
                                                        gchar      **envp,
-                                                       GError     **error);
+                                                       GError     **error)
+G_DEPRECATED_FOR (xfce_execute_terminal_shell);
 gboolean exo_execute_terminal_shell_on_screen         (const gchar *command_line,
                                                        const gchar *working_directory,
                                                        gchar      **envp,
                                                        GdkScreen   *screen,
-                                                       GError     **error);
+                                                       GError     **error)
+G_DEPRECATED_FOR (xfce_execute_terminal_shell);
 
 G_END_DECLS
 
