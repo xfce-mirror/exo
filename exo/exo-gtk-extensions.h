@@ -30,21 +30,24 @@
 
 G_BEGIN_DECLS
 
-void        exo_gtk_object_destroy_later                (GtkWidget      *object);
+void        exo_gtk_object_destroy_later                (GtkWidget      *object) G_DEPRECATED;
 
-void        exo_gtk_file_chooser_add_thumbnail_preview  (GtkFileChooser *chooser);
+void        exo_gtk_file_chooser_add_thumbnail_preview  (GtkFileChooser *chooser)
+G_DEPRECATED_FOR (xfce_gtk_file_chooser_add_thumbnail_preview);
 
 void        exo_gtk_url_about_dialog_hook               (GtkAboutDialog *about_dialog,
                                                          const gchar    *address,
-                                                         gpointer        user_data);
+                                                         gpointer        user_data)
+G_DEPRECATED_FOR (xfce_gtk_url_about_dialog_hook);
 
-GtkWidget * exo_gtk_dialog_get_action_area              (GtkDialog *dialog);
+GtkWidget * exo_gtk_dialog_get_action_area              (GtkDialog *dialog)
+G_DEPRECATED_FOR (xfce_gtk_dialog_get_action_area);
 
 void        exo_gtk_dialog_add_secondary_button         (GtkDialog *dialog,
-                                                         GtkWidget *button);
+                                                         GtkWidget *button) G_DEPRECATED;
 void        exo_gtk_position_search_box                 (GtkWidget *view,
                                                          GtkWidget *search_dialog,
-                                                         gpointer   user_data);
+                                                         gpointer   user_data) G_DEPRECATED;
 G_END_DECLS
 
 #endif /* !__EXO_GTK_EXTENSIONS_H__ */
