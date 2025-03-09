@@ -32,7 +32,7 @@ G_BEGIN_DECLS
 
 G_DEPRECATED
 gboolean  exo_g_value_transform_negate  (const GValue *src_value,
-                                         GValue       *dst_value);
+                                         GValue       *dst_value) G_DEPRECATED;
 
 G_END_DECLS
 
