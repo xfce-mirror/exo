@@ -71,6 +71,8 @@ later_destroy (gpointer object)
  *
  * Schedules an idle function to destroy the specified @object
  * when the application enters the main loop the next time.
+ *
+ * Deprecated: 4.21.0: Unused.
  **/
 void
 exo_gtk_object_destroy_later (GtkWidget *object)
@@ -141,6 +143,8 @@ scale_factor_changed (ExoThumbnailPreview *thumbnail_preview,
  * which of the selected files the preview will be displayed.
  *
  * Since: 0.3.1.9
+ *
+ * Deprecated: 4.21.0: Use xfce_gtk_file_chooser_add_thumbnail_preview() instead.
  **/
 void
 exo_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
@@ -196,6 +200,8 @@ exo_gtk_file_chooser_add_thumbnail_preview (GtkFileChooser *chooser)
  * that version this is implemented by default.
  *
  * Since: 0.5.0
+ *
+ * Deprecated: 4.21.0: Use xfce_gtk_url_about_dialog_hook() instead.
  **/
 void
 exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
@@ -256,6 +262,8 @@ exo_gtk_url_about_dialog_hook (GtkAboutDialog *about_dialog,
  * Returns: the action area.
  *
  * Since: 0.11.4
+ *
+ * Deprecated: 4.21.0: Use xfce_gtk_dialog_get_action_area() instead.
  **/
 GtkWidget *
 exo_gtk_dialog_get_action_area (GtkDialog *dialog)
@@ -275,6 +283,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  * Convenience function to add a secondary button to a #GtkDialog.
  *
  * Since: 0.11.4
+ *
+ * Deprecated: 4.21.0: Unused.
  **/
 void
 exo_gtk_dialog_add_secondary_button (GtkDialog *dialog,
@@ -321,6 +331,8 @@ exo_gtk_get_work_area_dimensions (GdkWindow    *window,
  *
  * Function to position the type-ahead search box below a view
  * The function usually will be used as callback.
+ *
+ * Deprecated: 4.21.0: Only used internally.
  **/
 void
 exo_gtk_position_search_box (GtkWidget *view,
