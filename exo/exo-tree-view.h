@@ -60,6 +60,8 @@ struct _ExoTreeViewClass
  *
  * The #ExoIconView struct contains only private fields and should
  * not be directly accessed.
+ *
+ * Deprecated: 4.21.0.
  **/
 struct _ExoTreeView
 {
@@ -72,13 +74,18 @@ struct _ExoTreeView
 
 GType      exo_tree_view_get_type                 (void) G_GNUC_CONST;
 
+G_DEPRECATED_FOR (xfce_tree_view_new)
 GtkWidget *exo_tree_view_new                      (void) G_GNUC_MALLOC;
 
+G_DEPRECATED_FOR (xfce_tree_view_get_single_click)
 gboolean   exo_tree_view_get_single_click         (const ExoTreeView *tree_view);
+G_DEPRECATED_FOR (xfce_tree_view_set_single_click)
 void       exo_tree_view_set_single_click         (ExoTreeView       *tree_view,
                                                    gboolean           single_click);
 
+G_DEPRECATED_FOR (xfce_tree_view_get_single_click_timeout)
 guint      exo_tree_view_get_single_click_timeout (const ExoTreeView *tree_view);
+G_DEPRECATED_FOR (xfce_tree_view_set_single_click_timeout)
 void       exo_tree_view_set_single_click_timeout (ExoTreeView       *tree_view,
                                                    guint              single_click_timeout);
 
