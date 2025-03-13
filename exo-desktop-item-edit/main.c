@@ -160,6 +160,8 @@ main (int argc, char **argv)
   const gchar     *mode_dir;
   GFile           *result_file = NULL;
 
+  g_warning ("exo-desktop-item-edit is deprecated, use xfce-desktop-item-edit from libxfce4ui >= 4.21.0 instead");
+
   /* setup translation domain */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
