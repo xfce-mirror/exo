@@ -160,6 +160,8 @@ exo_tree_view_class_init (ExoTreeViewClass *klass)
    * double click.
    *
    * Since: 0.3.1.3
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_SINGLE_CLICK,
@@ -177,6 +179,8 @@ exo_tree_view_class_init (ExoTreeViewClass *klass)
    * in single-click mode. A value of %0 disables the automatic selection.
    *
    * Since: 0.3.1.5
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_SINGLE_CLICK_TIMEOUT,
@@ -779,6 +783,8 @@ exo_tree_view_single_click_timeout_destroy (gpointer user_data)
  * Returns: the newly allocated #ExoTreeView.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_tree_view_new() instead.
  **/
 GtkWidget*
 exo_tree_view_new (void)
@@ -797,6 +803,8 @@ exo_tree_view_new (void)
  * Returns: whether @tree_view is in single-click mode.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_tree_view_get_single_click() instead.
  **/
 gboolean
 exo_tree_view_get_single_click (const ExoTreeView *tree_view)
@@ -816,6 +824,8 @@ exo_tree_view_get_single_click (const ExoTreeView *tree_view)
  * the default double-click mode will be used.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_tree_view_set_single_click() instead.
  **/
 void
 exo_tree_view_set_single_click (ExoTreeView *tree_view,
@@ -845,6 +855,8 @@ exo_tree_view_set_single_click (ExoTreeView *tree_view,
  *               the behavior is disabled.
  *
  * Since: 0.3.1.5
+ *
+ * Deprecated: 4.21.0: Use xfce_tree_view_get_single_click_timeout() instead.
  **/
 guint
 exo_tree_view_get_single_click_timeout (const ExoTreeView *tree_view)
@@ -870,6 +882,8 @@ exo_tree_view_get_single_click_timeout (const ExoTreeView *tree_view)
  * single-click mode, see exo_tree_view_set_single_click().
  *
  * Since: 0.3.1.5
+ *
+ * Deprecated: 4.21.0: Use xfce_tree_view_set_single_click_timeout() instead.
  **/
 void
 exo_tree_view_set_single_click_timeout (ExoTreeView *tree_view,

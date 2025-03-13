@@ -77,6 +77,8 @@
  * Returns: %TRUE on success, else %FALSE.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_execute_preferred_application() instead.
  **/
 gboolean
 exo_execute_preferred_application (const gchar *category,
@@ -244,6 +246,8 @@ find_fallback_application (const gchar *category)
  * Returns: %TRUE on success, else %FALSE.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_execute_preferred_application() instead.
  **/
 gboolean
 exo_execute_preferred_application_on_screen (const gchar *category,
@@ -335,6 +339,8 @@ exo_execute_preferred_application_on_screen (const gchar *category,
  * Returns: %TRUE on success, else %FALSE.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_execute_terminal_shell() instead.
  **/
 gboolean
 exo_execute_terminal_shell (const gchar *command_line,
@@ -377,6 +383,8 @@ exo_execute_terminal_shell (const gchar *command_line,
  * Returns: %TRUE on success, else %FALSE.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_execute_terminal_shell() instead.
  **/
 gboolean
 exo_execute_terminal_shell_on_screen (const gchar *command_line,

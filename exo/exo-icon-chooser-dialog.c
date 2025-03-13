@@ -618,6 +618,8 @@ exo_icon_chooser_dialog_selection_changed (ExoIconChooserDialog *icon_chooser_di
  * Returns: a new #ExoIconChooserDialog.
  *
  * Since: 0.3.1.9
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_chooser_dialog_new() instead.
  **/
 GtkWidget*
 exo_icon_chooser_dialog_new (const gchar *title,
@@ -666,6 +668,8 @@ exo_icon_chooser_dialog_new (const gchar *title,
  * Returns: the currently selected icon for @icon_chooser_dialog or %NULL if no icon is selected.
  *
  * Since: 0.3.1.9
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_chooser_dialog_get_icon() instead.
  **/
 gchar*
 exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_dialog)
@@ -731,6 +735,8 @@ exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_dialog)
  *          %FALSE otherwise.
  *
  * Since: 0.3.1.9
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_chooser_dialog_set_icon() instead.
  **/
 gboolean
 exo_icon_chooser_dialog_set_icon (ExoIconChooserDialog *icon_chooser_dialog,
