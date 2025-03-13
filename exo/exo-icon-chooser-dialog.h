@@ -70,12 +70,15 @@ struct _ExoIconChooserDialog
 
 GType      exo_icon_chooser_dialog_get_type (void) G_GNUC_CONST;
 
+G_DEPRECATED_FOR (xfce_icon_chooser_dialog_new)
 GtkWidget *exo_icon_chooser_dialog_new      (const gchar          *title,
                                              GtkWindow            *parent,
                                              const gchar          *first_button_text,
                                              ...) G_GNUC_MALLOC G_GNUC_NULL_TERMINATED G_GNUC_WARN_UNUSED_RESULT;
 
+G_DEPRECATED_FOR (xfce_icon_chooser_dialog_get_icon)
 gchar     *exo_icon_chooser_dialog_get_icon (ExoIconChooserDialog *icon_chooser_dialog) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
+G_DEPRECATED_FOR (xfce_icon_chooser_dialog_set_icon)
 gboolean   exo_icon_chooser_dialog_set_icon (ExoIconChooserDialog *icon_chooser_dialog,
                                              const gchar          *icon);
 
