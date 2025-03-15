@@ -137,6 +137,8 @@ exo_job_class_init (ExoJobClass *klass)
    * Callers interested in whether the @job was cancelled can connect to
    * the "cancelled" signal of the #GCancellable returned from
    * exo_job_get_cancellable().
+   *
+   * Deprecated: 4.21.0: Merged into thunar.
    **/
   job_signals[ERROR] =
     g_signal_new (I_("error"),
@@ -156,6 +158,8 @@ exo_job_class_init (ExoJobClass *klass)
    * was cancelled by the user. It may not be emitted by subclasses of
    * #ExoJob as it is automatically emitted by #ExoJob after the execute()
    * method has finished.
+   *
+   * Deprecated: 4.21.0: Merged into thunar.
    **/
   job_signals[FINISHED] =
     g_signal_new (I_("finished"),
@@ -176,6 +180,8 @@ exo_job_class_init (ExoJobClass *klass)
    *
    * The @message is garanteed to contain valid UTF-8, so it can be
    * displayed by #GtkWidget<!---->s out of the box.
+   *
+   * Deprecated: 4.21.0: Merged into thunar.
    **/
   job_signals[INFO_MESSAGE] =
     g_signal_new (I_("info-message"),
@@ -194,6 +200,8 @@ exo_job_class_init (ExoJobClass *klass)
    * This signal is emitted to present the overall progress of the
    * operation. The @percent value is garantied to be a value between
    * 0.0 and 100.0.
+   *
+   * Deprecated: 4.21.0: Merged into thunar.
    **/
   job_signals[PERCENT] =
     g_signal_new (I_("percent"),
@@ -250,6 +258,8 @@ exo_job_finalize (GObject *object)
  * This function is called by the #GIOScheduler at the end of the
  * operation. It checks if there were errors during the operation
  * and emits "error" and "finished" signals.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 static gboolean
 exo_job_async_ready (gpointer user_data)
@@ -291,6 +301,8 @@ exo_job_async_ready (gpointer user_data)
  * execute() function of #ExoJobClass.
  *
  * Returns: %FALSE, to stop the thread at the end of the operation.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 static gboolean
 exo_job_scheduler_job_func (GIOSchedulerJob *scheduler_job,
@@ -343,6 +355,8 @@ exo_job_scheduler_job_func (GIOSchedulerJob *scheduler_job,
  *
  * Returns: %FALSE, to keep the function from being called
  *          multiple times in a row.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 static gboolean
 exo_job_emit_valist_in_mainloop (gpointer user_data)
@@ -368,6 +382,8 @@ exo_job_emit_valist_in_mainloop (gpointer user_data)
  *
  * Sends a the signal with the given @signal_id and @signal_detail to the
  * main loop of the application and waits for listeners to handle it.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 static void
 exo_job_emit_valist (ExoJob *job,
@@ -407,6 +423,8 @@ exo_job_emit_valist (ExoJob *job,
  *
  * This function should never be called from outside the application's
  * main loop.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 static void
 exo_job_error (ExoJob       *job,
@@ -429,6 +447,8 @@ exo_job_error (ExoJob       *job,
  *
  * This function should never be called from outside the application's
  * main loop.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 static void
 exo_job_finished (ExoJob *job)
@@ -449,6 +469,8 @@ exo_job_finished (ExoJob *job)
  * and the end of the operation.
  *
  * Returns: the @job itself.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 ExoJob *
 exo_job_launch (ExoJob *job)
@@ -484,6 +506,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
  *
  * Calling this function when the @job has not been launched yet or
  * when it has already finished will have no effect.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 void
 exo_job_cancel (ExoJob *job)
@@ -504,6 +528,8 @@ exo_job_cancel (ExoJob *job)
  * by a call to exo_job_cancel().
  *
  * Returns: %TRUE if @job is cancelled.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 gboolean
 exo_job_is_cancelled (const ExoJob *job)
@@ -522,6 +548,8 @@ exo_job_is_cancelled (const ExoJob *job)
  *
  * Returns: the #GCancellable associated with the @job. It
  *          is owned by the @job and must not be released.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 GCancellable *
 exo_job_get_cancellable (const ExoJob *job)
@@ -547,6 +575,8 @@ exo_job_get_cancellable (const ExoJob *job)
  *
  * Returns: %TRUE if the job was cancelled and @error is now set,
  *          %FALSE otherwise.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 gboolean
 exo_job_set_error_if_cancelled (ExoJob  *job,
@@ -570,6 +600,8 @@ exo_job_set_error_if_cancelled (ExoJob  *job,
  *
  * Sends the signal with @signal_id and @signal_detail to the application's
  * main loop and waits for listeners to handle it.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 void
 exo_job_emit (ExoJob *job,
@@ -596,6 +628,8 @@ exo_job_emit (ExoJob *job,
  *
  * Generates and emits an "info-message" signal and sends it to the
  * application's main loop.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 void
 exo_job_info_message (ExoJob      *job,
@@ -626,6 +660,8 @@ exo_job_info_message (ExoJob      *job,
  *
  * Emits a "percent" signal and sends it to the application's main
  * loop. Also makes sure that @percent is between 0.0 and 100.0.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 void
 exo_job_percent (ExoJob *job,
@@ -650,6 +686,8 @@ exo_job_percent (ExoJob *job,
  * waiting for the result (and blocking the job in the meantime).
  *
  * Returns: The return value of @func.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 gboolean
 exo_job_send_to_mainloop (ExoJob        *job,
