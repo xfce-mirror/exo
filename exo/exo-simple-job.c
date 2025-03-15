@@ -76,6 +76,8 @@ struct _ExoSimpleJobClass
  *
  * The #ExoSimpleJob struct contains only private fields and should not be
  * directly accessed.
+ *
+ * Deprecated: 4.21.0: Unused.
  **/
 struct _ExoSimpleJob
 {
@@ -243,6 +245,8 @@ exo_simple_job_execute (ExoJob  *job,
  * using g_object_unref() when no longer needed.
  *
  * Returns: the launched #ExoJob.
+ *
+ * Deprecated: 4.21.0: Unused.
  **/
 ExoJob*
 exo_simple_job_launch (ExoSimpleJobFunc func,

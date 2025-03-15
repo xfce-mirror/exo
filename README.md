@@ -2,6 +2,8 @@
 
 # exo
 
+⚠️ **exo has been deprecated in favor of libxfce4ui and libxfce4util. The last
+release before archiving the repository is 4.22.0.** ⚠️
 
 exo is an extension library used in the Xfce desktop. It has some helper
 applications that are used throughout the entire desktop, to manage preferred 
