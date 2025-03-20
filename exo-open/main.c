@@ -617,6 +617,8 @@ main (gint argc, gchar **argv)
   guint            i;
   gchar           *uri;
 
+  g_warning ("exo-open is deprecated, use xfce-open from libxfce4ui >= 4.21.0 instead");
+
 #ifdef GETTEXT_PACKAGE
   /* setup i18n support */
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");

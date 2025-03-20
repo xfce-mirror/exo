@@ -32,9 +32,11 @@
 
 G_BEGIN_DECLS
 
+G_DEPRECATED
 GdkPixbuf *exo_gdk_pixbuf_colorize                  (const GdkPixbuf *source,
                                                      const GdkColor  *color) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
+G_DEPRECATED_FOR (xfce_gdk_pixbuf_frame)
 GdkPixbuf *exo_gdk_pixbuf_frame                     (const GdkPixbuf *source,
                                                      const GdkPixbuf *frame,
                                                      gint             left_offset,
@@ -42,19 +44,24 @@ GdkPixbuf *exo_gdk_pixbuf_frame                     (const GdkPixbuf *source,
                                                      gint             right_offset,
                                                      gint             bottom_offset) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
+G_DEPRECATED_FOR (xfce_gdk_pixbuf_lucent)
 GdkPixbuf *exo_gdk_pixbuf_lucent                    (const GdkPixbuf *source,
                                                      guint            percent) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
+G_DEPRECATED
 GdkPixbuf *exo_gdk_pixbuf_spotlight                 (const GdkPixbuf *source) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
 
+G_DEPRECATED_FOR (xfce_gdk_pixbuf_scale_down)
 GdkPixbuf *exo_gdk_pixbuf_scale_down                (GdkPixbuf       *source,
                                                      gboolean         preserve_aspect_ratio,
                                                      gint             dest_width,
                                                      gint             dest_height) G_GNUC_WARN_UNUSED_RESULT;
 
+G_DEPRECATED_FOR (xfce_gdk_pixbuf_scale_ratio)
 GdkPixbuf *exo_gdk_pixbuf_scale_ratio               (GdkPixbuf       *source,
                                                      gint             dest_size) G_GNUC_WARN_UNUSED_RESULT;
 
+G_DEPRECATED_FOR (xfce_gdk_pixbuf_new_from_file_at_max_size)
 GdkPixbuf *exo_gdk_pixbuf_new_from_file_at_max_size (const gchar     *filename,
                                                      gint             max_width,
                                                      gint             max_height,
@@ -64,4 +71,3 @@ GdkPixbuf *exo_gdk_pixbuf_new_from_file_at_max_size (const gchar     *filename,
 G_END_DECLS
 
 #endif /* !__EXO_GDK_PIXBUF_EXTENSIONS_H__ */
-

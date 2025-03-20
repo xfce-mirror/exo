@@ -131,6 +131,8 @@ exo_cell_renderer_icon_class_init (ExoCellRendererIconClass *klass)
    * which doesn't draw any item state indicators itself.
    *
    * Since: 0.3.1.9
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_FOLLOW_STATE,
@@ -153,6 +155,8 @@ exo_cell_renderer_icon_class_init (ExoCellRendererIconClass *klass)
    * these days.
    *
    * Since: 0.3.1.9
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_ICON,
@@ -172,6 +176,8 @@ exo_cell_renderer_icon_class_init (ExoCellRendererIconClass *klass)
    * using the current icon theme.
    *
    * Since: 0.4.0
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_GICON,
@@ -194,6 +200,8 @@ exo_cell_renderer_icon_class_init (ExoCellRendererIconClass *klass)
    * i.e. the view scrolls to the cell.
    *
    * Since: 0.3.1.9
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_SIZE,
@@ -566,6 +574,8 @@ exo_cell_renderer_icon_render (GtkCellRenderer     *renderer,
  * Returns: the newly allocated #ExoCellRendererIcon.
  *
  * Since: 0.3.1.9
+ *
+ * Deprecated: 4.21.0: Use xfce_cell_renderer_icon_new instead.
  **/
 GtkCellRenderer*
 exo_cell_renderer_icon_new (void)

@@ -63,6 +63,8 @@ struct _ExoJobClass
  *
  * The #ExoJob struct contains only private fields and should not be
  * directly accessed.
+ *
+ * Deprecated: 4.21.0: Merged into thunar.
  **/
 struct _ExoJob
 {
@@ -74,21 +76,30 @@ struct _ExoJob
 
 GType           exo_job_get_type               (void) G_GNUC_CONST;
 
+G_DEPRECATED
 ExoJob         *exo_job_launch                 (ExoJob        *job);
+G_DEPRECATED
 void            exo_job_cancel                 (ExoJob        *job);
+G_DEPRECATED
 gboolean        exo_job_is_cancelled           (const ExoJob  *job);
+G_DEPRECATED
 GCancellable   *exo_job_get_cancellable        (const ExoJob  *job);
+G_DEPRECATED
 gboolean        exo_job_set_error_if_cancelled (ExoJob        *job,
                                                 GError       **error);
+G_DEPRECATED
 void            exo_job_emit                   (ExoJob        *job,
                                                 guint          signal_id,
                                                 GQuark         signal_detail,
                                                 ...);
+G_DEPRECATED
 void            exo_job_info_message           (ExoJob        *job,
                                                 const gchar   *format,
                                                 ...);
+G_DEPRECATED
 void            exo_job_percent                (ExoJob        *job,
                                                 gdouble        percent);
+G_DEPRECATED
 gboolean        exo_job_send_to_mainloop       (ExoJob        *job,
                                                 GSourceFunc    func,
                                                 gpointer       user_data,

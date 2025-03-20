@@ -696,6 +696,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * the columns of the icon view.
    *
    * Since: 0.3.1
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_COLUMN_SPACING,
@@ -713,6 +715,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * be chosen automatically to fill the available area.
    *
    * Since: 0.3.1
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_COLUMNS,
@@ -728,6 +732,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * View allows user to search through columns interactively.
    *
    * Since: 0.3.1.3
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_ENABLE_SEARCH,
@@ -746,6 +752,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * suitable item size.
    *
    * Since: 0.3.1
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_ITEM_WIDTH,
@@ -765,6 +773,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * are layed out vertically in columns from left to right.
    *
    * Since: 0.3.1.5
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_LAYOUT_MODE,
@@ -782,6 +792,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * at the edges of the icon view.
    *
    * Since: 0.3.1
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_MARGIN,
@@ -799,6 +811,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * of type #G_TYPE_STRING. If this property and the text-column property
    * are both set to column numbers, it overrides the text column.
    * If both are set to -1, no texts are displayed.
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_MARKUP_COLUMN,
@@ -814,6 +828,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * The model property contains the #GtkTreeModel, which should be
    * display by this icon view. Setting this property to %NULL turns
    * off the display of anything.
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_MODEL,
@@ -828,6 +844,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    *
    * The orientation property specifies how the cells (i.e. the icon and
    * the text) of the item are positioned relative to each other.
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_ORIENTATION,
@@ -845,6 +863,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * containing the pixbufs which are displayed. The pixbuf column must be
    * of type #GDK_TYPE_PIXBUF. Setting this property to -1 turns off the
    * display of pixbufs.
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_PIXBUF_COLUMN,
@@ -863,6 +883,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * the display of icons.
    *
    * Since: 0.10.2
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_ICON_COLUMN,
@@ -879,6 +901,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * by Drag and Drop.
    *
    * Since: 0.3.1
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_REORDERABLE,
@@ -895,6 +919,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * the rows of the icon view.
    *
    * Since: 0.3.1
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_ROW_SPACING,
@@ -910,6 +936,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * Model column to search through when searching through code.
    *
    * Since: 0.3.1.3
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_SEARCH_COLUMN,
@@ -925,6 +953,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * The selection-mode property specifies the selection mode of
    * icon view. If the mode is #GTK_SELECTION_MULTIPLE, rubberband selection
    * is enabled, for the other modes, only keyboard selection is possible.
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_SELECTION_MODE,
@@ -941,6 +971,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * Determines whether items can be activated by single or double clicks.
    *
    * Since: 0.3.1.3
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_SINGLE_CLICK,
@@ -958,6 +990,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * single click mode. A value of %0 disables the automatic selection.
    *
    * Since: 0.3.1.5
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_SINGLE_CLICK_TIMEOUT,
@@ -974,6 +1008,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * the cells (i.e. the icon and the text) of an item.
    *
    * Since: 0.3.1
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_SPACING,
@@ -990,6 +1026,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * containing the texts which are displayed. The text column must be
    * of type #G_TYPE_STRING. If this property and the markup-column
    * property are both set to -1, no texts are displayed.
+   *
+   * Deprecated: 4.21.0.
    **/
   g_object_class_install_property (gobject_class,
                                    PROP_TEXT_COLUMN,
@@ -1015,6 +1053,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * when the user single clicks an item when the "activate-on-single-click"
    * property set to %TRUE. It is also emitted when a non-editable item is
    * selected and one of the keys: Space, Return or Enter is pressed.
+   *
+   * Deprecated: 4.21.0.
    **/
   icon_view_signals[ITEM_ACTIVATED] =
     g_signal_new (I_("item-activated"),
@@ -1032,6 +1072,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    *
    * The ::selection-changed signal is emitted when the selection
    * (i.e. the set of selected items) changes.
+   *
+   * Deprecated: 4.21.0.
    **/
   icon_view_signals[SELECTION_CHANGED] =
     g_signal_new (I_("selection-changed"),
@@ -1053,6 +1095,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * programmatically.
    *
    * The default binding for this signal is Ctrl-a.
+   *
+   * Deprecated: 4.21.0.
    **/
   icon_view_signals[SELECT_ALL] =
     g_signal_new (I_("select-all"),
@@ -1074,6 +1118,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * programmatically.
    *
    * The default binding for this signal is Ctrl-Shift-a.
+   *
+   * Deprecated: 4.21.0.
    **/
   icon_view_signals[UNSELECT_ALL] =
     g_signal_new (I_("unselect-all"),
@@ -1096,6 +1142,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * programmatically.
    *
    * There is no default binding for this signal.
+   *
+   * Deprecated: 4.21.0.
    **/
   icon_view_signals[SELECT_CURSOR_ITEM] =
     g_signal_new (I_("select-cursor-item"),
@@ -1119,6 +1167,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * programmatically.
    *
    * There is no default binding for this signal is Ctrl-Space.
+   *
+   * Deprecated: 4.21.0.
    **/
   icon_view_signals[TOGGLE_CURSOR_ITEM] =
     g_signal_new (I_("toggle-cursor-item"),
@@ -1141,6 +1191,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * programmatically.
    *
    * The default bindings for this signal are Space, Return and Enter.
+   *
+   * Deprecated: 4.21.0.
    **/
   icon_view_signals[ACTIVATE_CURSOR_ITEM] =
     g_signal_new (I_("activate-cursor-item"),
@@ -1157,6 +1209,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    *
    * The ::start-interative-search signal is emitted when the user starts
    * typing to jump to an item in the icon view.
+   *
+   * Deprecated: 4.21.0.
    **/
   icon_view_signals[START_INTERACTIVE_SEARCH] =
     g_signal_new (I_("start-interactive-search"),
@@ -1185,6 +1239,8 @@ exo_icon_view_class_init (ExoIconViewClass *klass)
    * * Home/End keys which move to the first/last item
    * * PageUp/PageDown which move by "pages" All of these will extend the
    * selection when combined with the Shift modifier.
+   *
+   * Deprecated: 4.21.0.
    **/
   icon_view_signals[MOVE_CURSOR] =
     g_signal_new (I_("move-cursor"),
@@ -5157,6 +5213,8 @@ exo_icon_view_cell_layout_reorder (GtkCellLayout   *layout,
  * Creates a new #ExoIconView widget
  *
  * Returns: A newly created #ExoIconView widget
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_new instead.
  **/
 GtkWidget*
 exo_icon_view_new (void)
@@ -5173,6 +5231,8 @@ exo_icon_view_new (void)
  * Creates a new #ExoIconView widget with the model @model.
  *
  * Returns: A newly created #ExoIconView widget.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_new_with_model instead.
  **/
 GtkWidget*
 exo_icon_view_new_with_model (GtkTreeModel *model)
@@ -5196,6 +5256,8 @@ exo_icon_view_new_with_model (GtkTreeModel *model)
  *
  * Converts widget coordinates to coordinates for the icon window
  * (the full scrollable area of the icon view).
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_widget_to_icon_coords instead.
  **/
 void
 exo_icon_view_widget_to_icon_coords (const ExoIconView *icon_view,
@@ -5224,6 +5286,8 @@ exo_icon_view_widget_to_icon_coords (const ExoIconView *icon_view,
  *
  * Converts icon view coordinates (coordinates in full scrollable
  * area of the icon view) to widget coordinates.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_icon_to_widget_coords instead.
  **/
 void
 exo_icon_view_icon_to_widget_coords (const ExoIconView *icon_view,
@@ -5254,6 +5318,8 @@ exo_icon_view_icon_to_widget_coords (const ExoIconView *icon_view,
  *
  * Returns: The #GtkTreePath corresponding to the icon or %NULL
  *          if no icon exists at that position.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_path_at_pos instead.
  **/
 GtkTreePath*
 exo_icon_view_get_path_at_pos (const ExoIconView *icon_view,
@@ -5292,6 +5358,8 @@ exo_icon_view_get_path_at_pos (const ExoIconView *icon_view,
  * Returns: %TRUE if an item exists at the specified position
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_item_at_pos instead.
  **/
 gboolean
 exo_icon_view_get_item_at_pos (const ExoIconView *icon_view,
@@ -5332,6 +5400,8 @@ exo_icon_view_get_item_at_pos (const ExoIconView *icon_view,
  * Returns: %TRUE, if valid paths were placed in @start_path and @end_path
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_visible_range instead.
  **/
 gboolean
 exo_icon_view_get_visible_range (const ExoIconView *icon_view,
@@ -5385,6 +5455,8 @@ exo_icon_view_get_visible_range (const ExoIconView *icon_view,
  *
  * Calls a function for each selected icon. Note that the model or
  * selection cannot be modified from within this function.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_selected_foreach instead.
  **/
 void
 exo_icon_view_selected_foreach (ExoIconView           *icon_view,
@@ -5413,6 +5485,8 @@ exo_icon_view_selected_foreach (ExoIconView           *icon_view,
  * Gets the selection mode of the @icon_view.
  *
  * Returns: the current selection mode
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_selection_mode instead.
  **/
 GtkSelectionMode
 exo_icon_view_get_selection_mode (const ExoIconView *icon_view)
@@ -5429,6 +5503,8 @@ exo_icon_view_get_selection_mode (const ExoIconView *icon_view)
  * @mode      : The selection mode
  *
  * Sets the selection mode of the @icon_view.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_selection_mode instead.
  **/
 void
 exo_icon_view_set_selection_mode (ExoIconView      *icon_view,
@@ -5459,6 +5535,8 @@ exo_icon_view_set_selection_mode (ExoIconView      *icon_view,
  * Returns: the layout mode of @icon_view.
  *
  * Since: 0.3.1.5
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_layout_mode instead.
  **/
 ExoIconViewLayoutMode
 exo_icon_view_get_layout_mode (const ExoIconView *icon_view)
@@ -5477,6 +5555,8 @@ exo_icon_view_get_layout_mode (const ExoIconView *icon_view)
  * Sets the layout mode of @icon_view to @layout_mode.
  *
  * Since: 0.3.1.5
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_layout_mode instead.
  **/
 void
 exo_icon_view_set_layout_mode (ExoIconView          *icon_view,
@@ -5512,6 +5592,8 @@ exo_icon_view_set_layout_mode (ExoIconView          *icon_view,
  * model is unset.
  *
  * Returns: A #GtkTreeModel, or %NULL if none is currently being used.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_model instead.
  **/
 GtkTreeModel*
 exo_icon_view_get_model (const ExoIconView *icon_view)
@@ -5531,6 +5613,8 @@ exo_icon_view_get_model (const ExoIconView *icon_view)
  * If the @icon_view already has a model set, it will remove
  * it before setting the new model.  If @model is %NULL, then
  * it will unset the old model.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_model instead.
  **/
 void
 exo_icon_view_set_model (ExoIconView  *icon_view,
@@ -5819,6 +5903,8 @@ update_pixbuf_cell (ExoIconView *icon_view)
  * @path      : The #GtkTreePath to be selected.
  *
  * Selects the row at @path.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_select_path instead.
  **/
 void
 exo_icon_view_select_path (ExoIconView *icon_view,
@@ -5848,6 +5934,8 @@ exo_icon_view_select_path (ExoIconView *icon_view,
  * @path      : The #GtkTreePath to be unselected.
  *
  * Unselects the row at @path.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_unselect_path instead.
  **/
 void
 exo_icon_view_unselect_path (ExoIconView *icon_view,
@@ -5888,6 +5976,8 @@ exo_icon_view_unselect_path (ExoIconView *icon_view,
  * </programlisting></informalexample>
  *
  * Returns: A #GList containing a #GtkTreePath for each selected row.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_selected_items instead.
  **/
 GList*
 exo_icon_view_get_selected_items (const ExoIconView *icon_view)
@@ -5918,6 +6008,8 @@ exo_icon_view_get_selected_items (const ExoIconView *icon_view)
  *
  * Selects all the icons. @icon_view must has its selection mode set
  * to #GTK_SELECTION_MULTIPLE.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_select_all instead.
  **/
 void
 exo_icon_view_select_all (ExoIconView *icon_view)
@@ -5954,6 +6046,8 @@ exo_icon_view_select_all (ExoIconView *icon_view)
  *
  * Selects all the icons that are currently not selected. @icon_view must
  * has its selection mode set to #GTK_SELECTION_MULTIPLE.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_selection_invert instead.
  **/
 void
 exo_icon_view_selection_invert (ExoIconView *icon_view)
@@ -5988,6 +6082,8 @@ exo_icon_view_selection_invert (ExoIconView *icon_view)
  * @icon_view : A #ExoIconView.
  *
  * Unselects all the icons.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_unselect_all instead.
  **/
 void
 exo_icon_view_unselect_all (ExoIconView *icon_view)
@@ -6012,6 +6108,8 @@ exo_icon_view_unselect_all (ExoIconView *icon_view)
  * selected. If @icon does not point to a valid location, %FALSE is returned.
  *
  * Returns: %TRUE if @path is selected.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_path_is_selected instead.
  **/
 gboolean
 exo_icon_view_path_is_selected (const ExoIconView *icon_view,
@@ -6040,6 +6138,8 @@ exo_icon_view_path_is_selected (const ExoIconView *icon_view,
  * @path      : the #GtkTreePath to be activated
  *
  * Activates the item determined by @path.
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_item_activated instead.
  **/
 void
 exo_icon_view_item_activated (ExoIconView *icon_view,
@@ -6064,6 +6164,8 @@ exo_icon_view_item_activated (ExoIconView *icon_view,
  * Returns: The column in which the item is displayed
  *
  * Since: 0.7.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_item_column instead.
  **/
 gint
 exo_icon_view_get_item_column (ExoIconView *icon_view,
@@ -6142,6 +6244,8 @@ exo_icon_view_get_item_row (ExoIconView *icon_view,
  * Returns: %TRUE if the cursor is set.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_cursor instead.
  **/
 gboolean
 exo_icon_view_get_cursor (const ExoIconView *icon_view,
@@ -6185,6 +6289,8 @@ exo_icon_view_get_cursor (const ExoIconView *icon_view,
  * Please note that editing can only happen when the widget is realized.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_cursor instead.
  **/
 void
 exo_icon_view_set_cursor (ExoIconView     *icon_view,
@@ -6265,6 +6371,8 @@ exo_icon_view_set_cursor (ExoIconView     *icon_view,
  * path will be modified to reflect this change.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_scroll_to_path instead.
  **/
 void
 exo_icon_view_scroll_to_path (ExoIconView *icon_view,
@@ -6352,6 +6460,8 @@ exo_icon_view_scroll_to_path (ExoIconView *icon_view,
  * Returns: the relative position of texts and icons
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_orientation instead.
  **/
 GtkOrientation
 exo_icon_view_get_orientation (const ExoIconView *icon_view)
@@ -6371,6 +6481,8 @@ exo_icon_view_get_orientation (const ExoIconView *icon_view)
  * are drawn beside the icons instead of below.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_orientation instead.
  **/
 void
 exo_icon_view_set_orientation (ExoIconView   *icon_view,
@@ -6599,6 +6711,8 @@ exo_icon_view_set_row_spacing (ExoIconView *icon_view,
  * Returns: the space between columns
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_column_spacing instead.
  **/
 gint
 exo_icon_view_get_column_spacing (const ExoIconView *icon_view)
@@ -6618,6 +6732,8 @@ exo_icon_view_get_column_spacing (const ExoIconView *icon_view)
  * which is inserted between the columns of the icon view.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_column_spacing instead.
  **/
 void
 exo_icon_view_set_column_spacing (ExoIconView *icon_view,
@@ -6647,6 +6763,8 @@ exo_icon_view_set_column_spacing (ExoIconView *icon_view,
  * Returns: the space at the borders
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_margin instead.
  **/
 gint
 exo_icon_view_get_margin (const ExoIconView *icon_view)
@@ -6667,6 +6785,8 @@ exo_icon_view_get_margin (const ExoIconView *icon_view)
  * of the icon view.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_margin instead.
  **/
 void
 exo_icon_view_set_margin (ExoIconView *icon_view,
@@ -7505,6 +7625,8 @@ exo_icon_view_drag_data_received (GtkWidget        *widget,
  * Turns @icon_view into a drag source for automatic DND.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_enable_model_drag_source instead.
  **/
 void
 exo_icon_view_enable_model_drag_source (ExoIconView              *icon_view,
@@ -7539,6 +7661,8 @@ exo_icon_view_enable_model_drag_source (ExoIconView              *icon_view,
  * Turns @icon_view into a drop destination for automatic DND.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_enable_model_drag_dest instead.
  **/
 void
 exo_icon_view_enable_model_drag_dest (ExoIconView          *icon_view,
@@ -7569,6 +7693,8 @@ exo_icon_view_enable_model_drag_dest (ExoIconView          *icon_view,
  * Undoes the effect of #exo_icon_view_enable_model_drag_source().
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_unset_model_drag_source instead.
  **/
 void
 exo_icon_view_unset_model_drag_source (ExoIconView *icon_view)
@@ -7593,6 +7719,8 @@ exo_icon_view_unset_model_drag_source (ExoIconView *icon_view)
  * Undoes the effect of #exo_icon_view_enable_model_drag_dest().
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_unset_model_drag_dest instead.
  **/
 void
 exo_icon_view_unset_model_drag_dest (ExoIconView *icon_view)
@@ -7702,6 +7830,8 @@ exo_icon_view_set_drag_dest_item (ExoIconView            *icon_view,
  * Gets information about the item that is highlighted for feedback.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_drag_dest_item instead.
  **/
 void
 exo_icon_view_get_drag_dest_item (ExoIconView              *icon_view,
@@ -7741,6 +7871,8 @@ exo_icon_view_get_drag_dest_item (ExoIconView              *icon_view,
  * Returns: whether there is an item at the given position.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_dest_item_at_pos instead.
  **/
 gboolean
 exo_icon_view_get_dest_item_at_pos (ExoIconView              *icon_view,
@@ -7801,6 +7933,8 @@ exo_icon_view_get_dest_item_at_pos (ExoIconView              *icon_view,
  * Returns: a newly-allocated pixmap of the drag icon.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_create_drag_icon instead.
  **/
 cairo_surface_t*
 exo_icon_view_create_drag_icon (ExoIconView *icon_view,
@@ -7854,6 +7988,8 @@ exo_icon_view_create_drag_icon (ExoIconView *icon_view,
  * Sets the column that contains the pixbuf to render.
  *
  * Since: 0.10.2
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_pixbuf_column instead.
  **/
 void
 exo_icon_view_set_pixbuf_column (ExoIconView *icon_view, gint column)
@@ -7875,6 +8011,8 @@ exo_icon_view_set_pixbuf_column (ExoIconView *icon_view, gint column)
  * Sets the column that contains the file to render.
  *
  * Since: 0.10.2
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_icon_column instead.
  **/
 void
 exo_icon_view_set_icon_column (ExoIconView *icon_view, gint column)
@@ -7898,6 +8036,8 @@ exo_icon_view_set_icon_column (ExoIconView *icon_view, gint column)
  * Returns: %TRUE if the list can be reordered.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_reorderable instead.
  **/
 gboolean
 exo_icon_view_get_reorderable (ExoIconView *icon_view)
@@ -7926,6 +8066,8 @@ exo_icon_view_get_reorderable (ExoIconView *icon_view)
  * handle drag and drop manually.
  *
  * Since: 0.3.1
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_reorderable instead.
  **/
 void
 exo_icon_view_set_reorderable (ExoIconView *icon_view,
@@ -7975,6 +8117,8 @@ exo_icon_view_set_reorderable (ExoIconView *icon_view,
  * Returns: whether @icon_view is currently in single click mode.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_single_click instead.
  **/
 gboolean
 exo_icon_view_get_single_click (const ExoIconView *icon_view)
@@ -7994,6 +8138,8 @@ exo_icon_view_get_single_click (const ExoIconView *icon_view)
  * afterwards, else @icon_view will be in double click mode.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_single_click instead.
  **/
 void
 exo_icon_view_set_single_click (ExoIconView *icon_view,
@@ -8027,6 +8173,8 @@ exo_icon_view_set_single_click (ExoIconView *icon_view,
  *          the behavior is disabled.
  *
  * Since: 0.3.1.5
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_single_click_timeout instead.
  **/
 guint
 exo_icon_view_get_single_click_timeout (const ExoIconView *icon_view)
@@ -8052,6 +8200,8 @@ exo_icon_view_get_single_click_timeout (const ExoIconView *icon_view)
  * single-click mode, see exo_icon_view_set_single_click().
  *
  * Since: 0.3.1.5
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_single_click_timeout instead.
  **/
 void
 exo_icon_view_set_single_click_timeout (ExoIconView *icon_view,
@@ -8178,6 +8328,8 @@ exo_icon_view_single_click_timeout_destroy (gpointer user_data)
  * Returns: whether or not to let the user search interactively.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_enable_search instead.
  **/
 gboolean
 exo_icon_view_get_enable_search (const ExoIconView *icon_view)
@@ -8200,6 +8352,8 @@ exo_icon_view_get_enable_search (const ExoIconView *icon_view)
  * using the "start-interactive-search" key binding.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_enable_search instead.
  **/
 void
 exo_icon_view_set_enable_search (ExoIconView *icon_view,
@@ -8227,6 +8381,8 @@ exo_icon_view_set_enable_search (ExoIconView *icon_view,
  * Returns: the column the interactive search code searches in.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_search_column instead.
  **/
 gint
 exo_icon_view_get_search_column (const ExoIconView *icon_view)
@@ -8251,6 +8407,8 @@ exo_icon_view_get_search_column (const ExoIconView *icon_view)
  * Note that @search_column refers to a column of the model.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_search_column instead.
  **/
 void
 exo_icon_view_set_search_column (ExoIconView *icon_view,
@@ -8277,6 +8435,8 @@ exo_icon_view_set_search_column (ExoIconView *icon_view,
  * Returns: the currently used compare function for the search code.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_search_equal_func instead.
  **/
 ExoIconViewSearchEqualFunc
 exo_icon_view_get_search_equal_func (const ExoIconView *icon_view)
@@ -8302,6 +8462,8 @@ exo_icon_view_get_search_equal_func (const ExoIconView *icon_view)
  * search equal function.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_search_equal_func instead.
  **/
 void
 exo_icon_view_set_search_equal_func (ExoIconView               *icon_view,
@@ -8332,6 +8494,8 @@ exo_icon_view_set_search_equal_func (ExoIconView               *icon_view,
  * Returns: the currently used function for positioning the search dialog.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_get_search_position_func instead.
  **/
 ExoIconViewSearchPositionFunc
 exo_icon_view_get_search_position_func (const ExoIconView *icon_view)
@@ -8355,6 +8519,8 @@ exo_icon_view_get_search_position_func (const ExoIconView *icon_view)
  * search position function.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_icon_view_set_search_position_func instead.
  **/
 void
 exo_icon_view_set_search_position_func (ExoIconView                  *icon_view,

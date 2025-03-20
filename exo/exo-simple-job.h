@@ -40,6 +40,8 @@ G_BEGIN_DECLS
  * for further details.
  *
  * Returns: %TRUE on success, %FALSE in case of an error.
+ *
+ * Deprecated: 4.21.0: Unused.
  **/
 typedef gboolean (*ExoSimpleJobFunc) (ExoJob      *job,
                                       GValueArray *param_values,
@@ -58,6 +60,7 @@ typedef struct _ExoSimpleJob      ExoSimpleJob;
 
 GType   exo_simple_job_get_type (void) G_GNUC_CONST;
 
+G_DEPRECATED
 ExoJob *exo_simple_job_launch   (ExoSimpleJobFunc func,
                                  guint            n_param_values,
                                  ...) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;

@@ -99,6 +99,8 @@
  * Returns: the colorized #GdkPixbuf.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Only used internally.
  **/
 GdkPixbuf*
 exo_gdk_pixbuf_colorize (const GdkPixbuf *source,
@@ -269,6 +271,8 @@ draw_frame_column (const GdkPixbuf *frame_image,
  * Returns: the framed version of @source.
  *
  * Since: 0.3.1.9
+ *
+ * Deprecated: 4.21.0: Use xfce_gdk_pixbuf_frame() instead.
  **/
 GdkPixbuf*
 exo_gdk_pixbuf_frame (const GdkPixbuf *source,
@@ -346,6 +350,8 @@ exo_gdk_pixbuf_frame (const GdkPixbuf *source,
  * Returns: a translucent version of @source.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Use xfce_gdk_pixbuf_lucent() instead.
  **/
 GdkPixbuf*
 exo_gdk_pixbuf_lucent (const GdkPixbuf *source,
@@ -449,6 +455,8 @@ lighten_channel (guchar cur_value)
  * Returns: the lightened version of @source.
  *
  * Since: 0.3.1.3
+ *
+ * Deprecated: 4.21.0: Only used internally.
  **/
 GdkPixbuf*
 exo_gdk_pixbuf_spotlight (const GdkPixbuf *source)
@@ -575,6 +583,8 @@ exo_gdk_pixbuf_spotlight (const GdkPixbuf *source)
  * Returns: the resulting #GdkPixbuf.
  *
  * Since: 0.3.1.1
+ *
+ * Deprecated: 4.21.0: Use xfce_gdk_pixbuf_scale_down() instead.
  **/
 GdkPixbuf*
 exo_gdk_pixbuf_scale_down (GdkPixbuf *source,
@@ -625,6 +635,8 @@ exo_gdk_pixbuf_scale_down (GdkPixbuf *source,
  * @source.
  *
  * Returns: A newly created #GdkPixbuf.
+ *
+ * Deprecated: 4.21.0: Use xfce_gdk_pixbuf_scale_ratio() instead.
  **/
 GdkPixbuf*
 exo_gdk_pixbuf_scale_ratio (GdkPixbuf *source,
@@ -749,6 +761,8 @@ size_prepared (GdkPixbufLoader  *loader,
  *          image, or the image file contained invalid data.
  *
  * Since: 0.3.1.9
+ *
+ * Deprecated: 4.21.0: Use xfce_gdk_pixbuf_new_from_file_at_max_size() instead.
  **/
 GdkPixbuf*
 exo_gdk_pixbuf_new_from_file_at_max_size (const gchar *filename,
