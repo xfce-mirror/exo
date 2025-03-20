@@ -771,7 +771,7 @@ main (gint argc, gchar **argv)
       g_print ("%s %s\n\n", g_get_prgname (), PACKAGE_VERSION);
       g_print ("%s\n", "Copyright (c) 2005-2007");
       g_print ("\t%s\n\n", _("os-cillation e.K. All rights reserved."));
-      g_print ("%s\n", "Copyright (c) 2009-2024");
+      g_print ("%s\n", "Copyright (c) 2009-2025");
       g_print ("\t%s\n\n", _("The Xfce development team. All rights reserved."));
 
       g_print ("%s\n\n",_("Written by Benedikt Meurer <benny@xfce.org>."));
