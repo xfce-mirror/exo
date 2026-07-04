@@ -316,7 +316,7 @@ _exo_thumbnail_preview_set_uri (ExoThumbnailPreview *thumbnail_preview,
       else
         {
           /* determine the basename from the URI */
-          slash = strrchr (uri, '/');
+          slash = (gchar *) strrchr (uri, '/');
           if (G_LIKELY (!xfce_str_is_empty (slash)))
             displayname = g_filename_display_name (slash + 1);
           else
