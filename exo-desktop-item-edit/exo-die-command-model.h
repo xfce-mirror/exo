@@ -46,7 +46,7 @@ typedef enum /*< enum >*/
   EXO_DIE_COMMAND_MODEL_N_COLUMNS,
 } ExoDieCommandModelColumn;
 
-GType               exo_die_command_model_get_type (void) G_GNUC_CONST;
+GType               exo_die_command_model_get_type (void);
 
 ExoDieCommandModel *exo_die_command_model_new      (void) G_GNUC_MALLOC;
 

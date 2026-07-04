@@ -42,7 +42,7 @@ typedef enum
   EXO_DIE_EDITOR_MODE_DIRECTORY
 } ExoDieEditorMode;
 
-GType exo_die_editor_mode_get_type (void) G_GNUC_CONST;
+GType exo_die_editor_mode_get_type (void);
 
 G_END_DECLS
 

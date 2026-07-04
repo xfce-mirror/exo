@@ -68,7 +68,7 @@ struct _ExoIconChooserDialog
   GtkDialog __parent__;
 };
 
-GType      exo_icon_chooser_dialog_get_type (void) G_GNUC_CONST;
+GType      exo_icon_chooser_dialog_get_type (void);
 
 G_DEPRECATED_FOR (xfce_icon_chooser_dialog_new)
 GtkWidget *exo_icon_chooser_dialog_new      (const gchar          *title,

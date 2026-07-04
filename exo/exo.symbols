@@ -49,7 +49,7 @@ exo_mutual_binding_unbind
 /* ExoCellRendererIcon methods */
 #if IN_HEADER(__EXO_CELL_RENDERER_ICON_H__)
 #if IN_SOURCE(__EXO_CELL_RENDERER_ICON_C__)
-exo_cell_renderer_icon_get_type G_GNUC_CONST
+exo_cell_renderer_icon_get_type
 exo_cell_renderer_icon_new G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 #endif
 #endif
@@ -69,8 +69,8 @@ exo_check_version
 /* exo-enum-types functions */
 #if IN_HEADER(__EXO_ENUM_TYPES_H__)
 #if IN_SOURCE(__EXO_ENUM_TYPES_C__)
-exo_icon_view_drop_position_get_type G_GNUC_CONST
-exo_icon_view_layout_mode_get_type G_GNUC_CONST
+exo_icon_view_drop_position_get_type
+exo_icon_view_layout_mode_get_type
 #endif
 #endif
 
@@ -119,7 +119,7 @@ exo_gtk_position_search_box
 /* ExoIconChooserDialog methods */
 #if IN_HEADER(__EXO_ICON_CHOOSER_DIALOG_H__)
 #if IN_SOURCE(__EXO_ICON_CHOOSER_DIALOG_C__)
-exo_icon_chooser_dialog_get_type G_GNUC_CONST
+exo_icon_chooser_dialog_get_type
 exo_icon_chooser_dialog_new G_GNUC_MALLOC G_GNUC_NULL_TERMINATED G_GNUC_WARN_UNUSED_RESULT
 exo_icon_chooser_dialog_get_icon G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 exo_icon_chooser_dialog_set_icon
@@ -129,7 +129,7 @@ exo_icon_chooser_dialog_set_icon
 /* ExoIconView methods */
 #if IN_HEADER(__EXO_ICON_VIEW_H__)
 #if IN_SOURCE(__EXO_ICON_VIEW_C__)
-exo_icon_view_get_type G_GNUC_CONST
+exo_icon_view_get_type
 exo_icon_view_new
 exo_icon_view_new_with_model
 exo_icon_view_get_model
@@ -202,7 +202,7 @@ exo_icon_view_set_search_position_func
 exo_job_cancel
 exo_job_emit
 exo_job_get_cancellable
-exo_job_get_type G_GNUC_CONST
+exo_job_get_type
 exo_job_info_message
 exo_job_is_cancelled
 exo_job_launch
@@ -227,7 +227,7 @@ exo_noop_false G_GNUC_PURE
 /* exo-simple-job functions */
 #if IN_HEADER(__EXO_SIMPLE_JOB_H__)
 #if IN_SOURCE(__EXO_SIMPLE_JOB_C__)
-exo_simple_job_get_type G_GNUC_CONST
+exo_simple_job_get_type
 exo_simple_job_launch G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT
 #endif
 #endif
@@ -247,7 +247,7 @@ exo_str_looks_like_an_uri
 
 #if IN_HEADER(__EXO_TREE_VIEW_H__)
 #if IN_SOURCE(__EXO_TREE_VIEW_C__)
-exo_tree_view_get_type G_GNUC_CONST
+exo_tree_view_get_type
 exo_tree_view_new G_GNUC_MALLOC
 exo_tree_view_get_single_click
 exo_tree_view_set_single_click

@@ -141,7 +141,7 @@ stamp-exo-enum-types.h: $(libexo_headers) Makefile
 	$(AM_V_GEN) ( cd $(srcdir) && glib-mkenums \
 		--fhead "#ifndef __EXO_ENUM_TYPES_H__\n#define __EXO_ENUM_TYPES_H__\n#include <libxfce4util/libxfce4util.h>\nG_BEGIN_DECLS\n" \
 		--fprod "/* enumerations from \"@filename@\" */\n" \
-		--vhead "GType @enum_name@_get_type (void) G_GNUC_CONST;\n#define EXO_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
+		--vhead "GType @enum_name@_get_type (void);\n#define EXO_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
 		--ftail "G_END_DECLS\n\n#endif /* !__EXO_ENUM_TYPES_H__ */" \
 		$(libexo_headers) ) >> xgen-eeth \
 	&& (cmp -s xgen-eeth exo-enum-types.h || cp xgen-eeth exo-enum-types.h ) \

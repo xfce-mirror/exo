@@ -193,7 +193,7 @@ struct _ExoIconViewClass
   void (*reserved9) (void);
 };
 
-GType                 exo_icon_view_get_type                  (void) G_GNUC_CONST;
+GType                 exo_icon_view_get_type                  (void);
 
 G_DEPRECATED_FOR (xfce_icon_view_new)
 GtkWidget            *exo_icon_view_new                       (void);

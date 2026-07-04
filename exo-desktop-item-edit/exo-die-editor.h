@@ -34,7 +34,7 @@ typedef struct _ExoDieEditor      ExoDieEditor;
 #define EXO_DIE_IS_EDITOR_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), EXO_DIE_TYPE_EDITOR))
 #define EXO_DIE_EDITOR_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), EXO_DIE_TYPE_EDITOR, ExoDieEditorClass))
 
-GType             exo_die_editor_get_type     (void) G_GNUC_CONST;
+GType             exo_die_editor_get_type     (void);
 
 GtkWidget        *exo_die_editor_new          (void) G_GNUC_MALLOC;
 
