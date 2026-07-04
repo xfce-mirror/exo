@@ -34,7 +34,7 @@ typedef struct _ExoDieCommandEntry      ExoDieCommandEntry;
 #define EXO_DIE_IS_COMMAND_ENTRY_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), EXO_DIE_TYPE_COMMAND_ENTRY))
 #define EXO_DIE_COMMAND_ENTRY_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), EXO_DIE_TYPE_COMMAND_ENTRY, ExoDieCommandEntryClass))
 
-GType        exo_die_command_entry_get_type (void) G_GNUC_CONST;
+GType        exo_die_command_entry_get_type (void);
 
 GtkWidget   *exo_die_command_entry_new      (void) G_GNUC_MALLOC;
 

@@ -58,7 +58,7 @@ typedef enum /*< enum >*/
   EXO_DIE_DESKTOP_MODEL_N_COLUMNS,
 } ExoDieDesktopModelColumn;
 
-GType               exo_die_desktop_model_get_type    (void) G_GNUC_CONST;
+GType               exo_die_desktop_model_get_type    (void);
 
 ExoDieDesktopModel *exo_die_desktop_model_new         (void) G_GNUC_MALLOC;
 

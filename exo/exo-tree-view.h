@@ -70,7 +70,7 @@ struct _ExoTreeView
   ExoTreeViewPrivate *priv;
 };
 
-GType      exo_tree_view_get_type                 (void) G_GNUC_CONST;
+GType      exo_tree_view_get_type                 (void);
 
 GtkWidget *exo_tree_view_new                      (void) G_GNUC_MALLOC;
 

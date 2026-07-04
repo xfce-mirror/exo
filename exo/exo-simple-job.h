@@ -56,7 +56,7 @@ typedef gboolean (*ExoSimpleJobFunc) (ExoJob      *job,
 typedef struct _ExoSimpleJobClass ExoSimpleJobClass;
 typedef struct _ExoSimpleJob      ExoSimpleJob;
 
-GType   exo_simple_job_get_type (void) G_GNUC_CONST;
+GType   exo_simple_job_get_type (void);
 
 ExoJob *exo_simple_job_launch   (ExoSimpleJobFunc func,
                                  guint            n_param_values,

@@ -84,7 +84,7 @@ typedef enum
   EXO_ICON_CHOOSER_MODEL_N_COLUMNS,
 } ExoIconChooserModelColumn;
 
-G_GNUC_INTERNAL GType                  exo_icon_chooser_model_get_type                (void) G_GNUC_CONST;
+G_GNUC_INTERNAL GType                  exo_icon_chooser_model_get_type                (void);
 
 G_GNUC_INTERNAL ExoIconChooserModel   *_exo_icon_chooser_model_get_for_widget         (GtkWidget           *widget) G_GNUC_WARN_UNUSED_RESULT;
 G_GNUC_INTERNAL ExoIconChooserModel   *_exo_icon_chooser_model_get_for_icon_theme     (GtkIconTheme        *icon_theme) G_GNUC_WARN_UNUSED_RESULT;

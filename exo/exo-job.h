@@ -72,7 +72,7 @@ struct _ExoJob
   ExoJobPrivate *priv;
 };
 
-GType           exo_job_get_type               (void) G_GNUC_CONST;
+GType           exo_job_get_type               (void);
 
 ExoJob         *exo_job_launch                 (ExoJob        *job);
 void            exo_job_cancel                 (ExoJob        *job);
