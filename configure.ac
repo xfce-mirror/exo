@@ -17,7 +17,7 @@ dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2004-2010 os-cillation.
-Copyright (c) 2004-2025 Xfce Development Team])
+Copyright (c) 2004-2026 Xfce Development Team])
 AC_INIT([exo], [xdt_version], [https://gitlab.xfce.org/xfce/exo])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
@@ -149,13 +149,13 @@ AC_SEARCH_LIBS([bind_textdomain_codeset], [intl],
 dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
-XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.72.0])
-XDT_CHECK_PACKAGE([GIO], [gio-2.0], [2.72.0])
-XDT_CHECK_PACKAGE([GTK], [gtk+-3.0], [3.24.0])
-XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.72.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.17.2])
-XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.15.1])
-XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.72.0], [gio-unix], [GIO-Unix features])
+XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.80.0])
+XDT_CHECK_PACKAGE([GIO], [gio-2.0], [2.80.0])
+XDT_CHECK_PACKAGE([GTK], [gtk+-3.0], [3.24.41])
+XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.80.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.20.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.20.0])
+XDT_CHECK_OPTIONAL_PACKAGE([GIO_UNIX], [gio-unix-2.0], [2.80.0], [gio-unix], [GIO-Unix features])
 
 dnl *************************
 dnl *** Check for gtk-doc ***

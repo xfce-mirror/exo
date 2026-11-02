@@ -200,7 +200,7 @@ main (int argc, char **argv)
 
       g_print ("%s\n", "Copyright (c) 2005-2007");
       g_print ("\t%s\n\n", _("os-cillation e.K. All rights reserved."));
-      g_print ("%s\n", "Copyright (c) 2008-2025");
+      g_print ("%s\n", "Copyright (c) 2008-2026");
       g_print ("\t%s\n\n", _("The Xfce development team. All rights reserved."));
 
       g_print ("%s\n\n",_("Written by Benedikt Meurer <benny@xfce.org>."));
@@ -334,10 +334,6 @@ main (int argc, char **argv)
   gtk_window_set_icon_name (GTK_WINDOW (dialog), ICON_NAMES[mode]);
   g_signal_connect (G_OBJECT (dialog), "response",
                     G_CALLBACK (exo_die_response_cb), dialog);
-
-#if !LIBXFCE4UI_CHECK_VERSION (4, 19, 3)
-  xfce_titled_dialog_create_action_area (XFCE_TITLED_DIALOG (dialog));
-#endif
 
   /* add the "Help" button */
   button = gtk_button_new_with_mnemonic (_("_Help"));
